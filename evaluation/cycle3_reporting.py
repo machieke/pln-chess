@@ -13,7 +13,7 @@ def report():
       'C3-01':('complete','baseline.json','Frozen B1/B2 candidate TVs/classes and optimization reproduced; B0 also measured.'),
       'C3-02':('complete','native-probes.json','Executed composition boundary and source signatures; no unsupported operator adopted.'),
       'C3-03':('complete','../../docs/cycle3-architecture.md','Versioned descriptors, explicit schema replay and separate observations.'),
-      'C3-04':('partial','transfer-proofs.json.gz','Reusable local and obstruction motifs transfer; true native conjunction unavailable.'),
+      'C3-04':('partial','transfer-proofs.json.xz','Reusable local and obstruction motifs transfer; true native conjunction unavailable.'),
       'C3-05':('complete','self-check-resolution.json','Every frozen self-check false positive tracked; independent attack curriculum and temporal frames evaluated.'),
       'C3-06':('partial','../../tests/test_cycle3.py','Castling phases, promotion and explicit predecessor tests; FEN-only EP remains unknown, historical legality not proved.'),
       'C3-07':('partial','induction.json','Original 14 formulas reproduced and controlled integration measured; no claimed novel cross-piece induction or forced benefit.'),
@@ -34,7 +34,7 @@ def report():
         for split in ('frozen-heldout-transfer','frozen-adversarial','new-challenge','new-independent-games'):
             m=comparisons[name][split]['metrics']
             lines.append('| '+name+' / '+split+' | '+str(m['candidates'])+' | '+' | '.join(percent(m[k]) for k in fields)+' | '+str(m['self_check_false_legal'])+' |')
-    lines.extend(['','## Every original self-check error','',str(resolution['outcomes'])+'. Correct negative classifications and abstentions are counted separately. Full before/after evidence is in `artifacts/cycle3/self-check-errors.json.gz`.','',
+    lines.extend(['','## Every original self-check error','',str(resolution['outcomes'])+'. Correct negative classifications and abstentions are counted separately. Full before/after evidence is in `artifacts/cycle3/self-check-errors.json.xz`.','',
                   '## Native semantics and induction','','Native MP, revision, negation and confidence choice produce the displayed TVs. Independent conditionals are not conjoined. Explicit joint-sensor inference and unary implication chains execute; native conjunction introduction/elimination does not. No safe-king belief follows from absent attack evidence.',
                   '',f"Induction classification changes: { {k:len(v) for k,v in induction['classification_changes'].items()} }. All 14 original native formulas are independently re-executed. Direct parents and induced hypotheses share evidence and are alternatives, never independently fused.",'',
                   '## Same-model optimization parity','', '| Fixture | Candidates | Reference s / calls | Cold s / calls | Warm s / calls | Full proof parity |','|---|---:|---:|---:|---:|---|'])

@@ -8,7 +8,7 @@ from pln_chess.pln import Runtime
 from pln_chess.evidence import Ledger
 from pln_chess.cycle3.model import train
 from training.cycle3 import generate
-from evaluation.cycle3 import evaluate,write_gzip,read_gzip
+from evaluation.cycle3 import evaluate,write_gzip,read_gzip,pack_reports
 from evaluation.cycle3_native import audit
 from evaluation.experiments import fit_calibrator,score_calibration
 
@@ -85,6 +85,7 @@ def main():
     write_json(OUT/'run.json',{'dataset_hash':dataset['hash'],'runtime':runtime.manifest,'engine_hash':engine,
                               'models':{k:m.version for k,m in models.items()},'elapsed_seconds':time.time()-started,
                               'command':'bash scripts/cycle3_reproduce.sh'})
+    pack_reports(OUT)
     from evaluation.cycle3_reporting import report
     report();print('CYCLE 3 COMPLETE',flush=True)
 

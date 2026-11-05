@@ -1,5 +1,5 @@
 """Cycle 3 full-set scoring and provenance. Oracle access is evaluation-only."""
-import gzip,json,resource,time
+import gzip,json,lzma,hashlib,resource,time
 from pathlib import Path
 import chess
 from pln_chess.common import ROOT,digest,read_json,write_json
@@ -19,7 +19,37 @@ def write_gzip(path,value):
 
 
 def read_gzip(path):
-    with gzip.open(path,'rt') as handle:return json.load(handle)
+    path=Path(path)
+    if not path.exists() and path.suffix=='.gz':path=path.with_suffix('.xz')
+    opener=lzma.open if path.suffix=='.xz' else gzip.open
+    with opener(path,'rt') as handle:return json.load(handle)
+
+
+def pack_reports(directory):
+    """Lossless long-dictionary encoding of repetitive proof/evidence JSON.
+
+    Reproduction writes gzip during execution; final delivery uses XZ to avoid
+    committing duplicate evidence identifiers repeatedly across many reports.
+    """
+    directory=Path(directory);receipts=[]
+    for source in sorted(directory.glob('*.json.gz')):
+        raw=gzip.decompress(source.read_bytes());target=source.with_suffix('.xz')
+        target.write_bytes(lzma.compress(raw,preset=6))
+        if lzma.decompress(target.read_bytes())!=raw:raise RuntimeError('Artifact encoding mismatch')
+        receipts.append({'logical_path':source.name,'stored_path':target.name,'json_sha256':hashlib.sha256(raw).hexdigest(),
+                         'gzip_bytes':source.stat().st_size,'xz_bytes':target.stat().st_size,'lossless':True})
+        source.unlink()  # Only the verified redundant generated encoding is removed.
+    index=directory/'comparison.json'
+    if index.exists():
+        data=read_json(index)
+        for variants in data.values():
+            for report in variants.values():
+                if report.get('artifact','').endswith('.gz') and (directory/Path(report['artifact']).name).with_suffix('.xz').exists():
+                    report['artifact']=str(Path(report['artifact']).with_suffix('.xz'))
+        write_json(index,data)
+    write_json(directory/'artifact-encoding.json',{'format':'XZ compressed JSON; read_gzip accepts both encodings and legacy .gz logical names',
+                                                 'files':receipts,'lossless':all(r['lossless'] for r in receipts)})
+    return receipts
 
 
 def infer(position,model,runtime,session=None,selected_moves=None,optimized=True,options=None):

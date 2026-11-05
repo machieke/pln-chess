@@ -231,3 +231,12 @@ def test_dataset_hash_families_and_candidate_completeness():
     for p in d['positions']:
         b=chess.Board(p['fen']);assert b.is_valid()
         assert {m.uci() for m in b.legal_moves}<={m.notation for m in candidates(Position.from_fen(p['fen']))}
+
+
+def test_proof_artifact_encoding_roundtrip(tmp_path):
+    from evaluation.cycle3 import write_gzip,read_gzip,pack_reports
+    value={'rows':[{'proof_id':'p','evidence_ids':['e1','e2'],'truth_value':{'strength':.91,'confidence':.52}}]*100}
+    path=tmp_path/'report.json.gz';write_gzip(path,value)
+    receipts=pack_reports(tmp_path)
+    assert receipts[0]['lossless'] and not path.exists()
+    assert read_gzip(path)==read_gzip(path.with_suffix('.xz'))==value
