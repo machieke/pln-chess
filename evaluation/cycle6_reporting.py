@@ -7,12 +7,53 @@ from scripts.cycle6_baseline import START,SPLITS
 
 OUT=Path(os.environ.get('C6_OUT',ROOT/'artifacts/cycle6'))
 
+def overlap_audit(out):
+    from collections import defaultdict
+    from training.cycle4 import symmetry_key
+    data=read_json(out/'datasets/dataset.json')
+    prior={name:read_json(ROOT/'artifacts'/name/'dataset.json') for name in ('cycle2','cycle3','cycle4/datasets','cycle5/datasets')}
+    index=defaultdict(list);seen=defaultdict(list);overlaps=[]
+    for name,old in prior.items():
+        for p in old['positions']:index[symmetry_key(p['fen'])].append({'dataset':name,'id':p['id'],'split':p['split']})
+    for p in data['positions']:
+        if p['split']=='adversarial':continue
+        key=symmetry_key(p['fen']);seen[key].append({'id':p['id'],'split':p['split'],'source_game':p['source_game']})
+        if index[key]:overlaps.append({'position':p['id'],'prior':index[key]})
+    within=[positions for positions in seen.values() if len(positions)>1]
+    assert not overlaps and not within,'New sampled game overlap detected'
+    write_json(out/'dataset-overlap-audit.json',{'new_dataset_hash':data['hash'],'prior_dataset_hashes':{k:v['hash'] for k,v in prior.items()},
+        'new_game_position_count':sum(len(x) for x in seen.values()),'new_sampled_games_vs_all_prior_positions':overlaps,
+        'within_new_game_position_symmetry_overlap':within,
+        'adversarial_scope':'Diagnostic/regression contexts may deliberately recur; they are not independent new-game evidence.',
+        'frozen_scope':'Original membership and hashes are in baseline/comparison.json; historical leakage receipts are preserved in baseline/inputs.json.xz.',
+        'curriculum_scope':'factorial-curriculum.json audits withheld abstract combinations. The full operational prior is not presented as novel factorization.'})
+
+def incomplete_examples(out):
+    from pln_chess.api import explain_move
+    from pln_chess.learning import Model
+    from pln_chess.pln import Runtime
+    from pln_chess.cycle6.inference import Cycle6Options
+    from scripts.cycle4_baseline import pack
+    runtime=Runtime();model=Model.load(out/'model/C6-full.json',runtime)
+    results={mode:explain_move('7k/8/8/8/8/8/2R5/2K5 w - - 0 1','c2e2',model,
+        Cycle6Options(mode=mode,max_native_invocations=0),runtime) for mode in ('operational','strict','experimental')}
+    assert all(r['truncated'] and r['candidate']['classification']=='incomplete' for r in results.values())
+    pack(out/'proofs/incomplete-budget.json.xz',{'scope':'Explicit zero native-invocation budget; not missing chess evidence. No unknown or illegal fallback.',
+        'results':results})
+
 def report(out=OUT):
     out=Path(out);docs=ROOT/'docs/cycle6';docs.mkdir(parents=True,exist_ok=True)
+    overlap_audit(out)
+    incomplete_examples(out)
     comparison=read_json(out/'comparison.json');base=read_json(out/'baseline/comparison.json');accept=read_json(out/'acceptance.json');verify=read_json(out/'verification.json')
     native=read_json(out/'native-probes/audit.json');negative=read_json(out/'negative-regressions.json');local=read_json(out/'locality.json');induction=read_json(out/'induction.json')
     bench={n:read_json(out/f'benchmarks/{n}.json') for n in ('C4','C5','C6-operational','C6-strict','C6-experimental')}
     source_head=read_json(out/'bootstrap-context.json')['source_head'];data=read_json(out/'datasets/dataset.json');model=read_json(out/'model/C6-full.json')
+    reuse=read_json(out/'baseline/reuse.json') if (out/'baseline/reuse.json').exists() else None
+    baseline_execution=("The frozen baselines were executed in the prior clean checkout and reused here only after runtime, protected-input and frozen-source byte checks passed. "
+        "`baseline/reuse.json` identifies both commits and every copied report hash; `executed_in_this_checkout` is false. "
+        "This checkout freshly executes the C6 evaluations, new-dataset baselines, research, benchmarks and tests." if reuse else
+        "All frozen baseline evaluations were freshly executed in this checkout.")
     def save(name,text):(docs/name).write_text(text.strip()+'\n')
     def metrics(name,split):return (base[name][split] if name in base and split in base[name] else comparison[name][split])['metrics']
     def counts(m):return f"{m['true_positive']} / {m['true_negative']} / {m['unknown']} / {m['incomplete']}"
@@ -21,6 +62,11 @@ def report(out=OUT):
         c4,c5,c6=[metrics(n,split) for n in ('C4','C5','C6-operational')]
         table.append(f"| {split} | {counts(c4)} | {counts(c5)} | {counts(c6)} | {c6['recall']:.6%} | {c6['exact_move_set_accuracy']:.6%} |")
     table='\n'.join(table)
+    new_exact=metrics('C6-operational','cycle6-independent-games')['exact_move_set_accuracy']
+    frozen_exact=metrics('C6-operational','frozen-heldout-transfer')['exact_move_set_accuracy']
+    exact_targets=f"Frozen exact-set accuracy is {frozen_exact:.3%} (75% research target {'met' if frozen_exact>=.75 else 'not met'}). New independent-game exact-set accuracy is {new_exact:.3%} (40% research target {'met' if new_exact>=.40 else 'not met'}). These research targets are reported separately from mandatory correctness gates."
+    empty_matches=', '.join(f"{split}: {r['metrics']['empty_terminal_exact']}" for split,r in comparison['C6-operational'].items() if r['metrics']['empty_terminal_exact'])
+    exact_targets+=f" Empty-terminal exact matches are {empty_matches or 'none'}; every other reported exact match has a nonempty legal move set."
     packages=[
       ('C6-01','complete','Starting state locked; 16 exact C4/C5 reruns and immutable input snapshot.'),
       ('C6-02','complete','Three independently selectable modes, public labels, raw channels, explicit host acceptance nodes.'),
@@ -30,7 +76,7 @@ def report(out=OUT):
       ('C6-06','complete','49 historical and 238 newer exact negatives with removal counterfactuals.'),
       ('C6-07','complete within structural scope','Versioned event replay covers rights, double-step, capture, EP and promotion; historical legal play unverified.'),
       ('C6-08','complete; no predictive gain','Native induction, sham, marginal and overlap ablations; induction stays disabled.'),
-      ('C6-09','complete audit','Pre-hash descriptors and transformations inspected; remaining contextual counterexamples retained.'),
+      ('C6-09','complete audit',f"{len(local['transforms'])} transform comparisons; {len(local['absolute_key_findings'])} absolute/global-key findings and {len(local['counterexamples'])} contextual counterexamples."),
       ('C6-10','complete verification','Mode/budget/evidence scoped caches and full proof parity; duplicated export and memory measured.'),
       ('C6-11','complete' if accept['passed'] else 'blocked gates',f"Default {accept['default_mode']}; blockers {accept['blockers']}."),
       ('C6-12','complete','API/CLI modes, migration, browser comparisons, raw diagnostics and examples.'),
@@ -43,7 +89,18 @@ def report(out=OUT):
         'C6_dataset_hash':data['hash'],'C6_dataset_file_sha256':hashlib.sha256((out/'datasets/dataset.json').read_bytes()).hexdigest(),
         'runtime':native['runtime'],'all_frozen_dataset_hashes':{k:base['C4'][k]['dataset_hash'] for k,_,_ in SPLITS},
         'production_code_hash':accept['production_code_hash'],'registration_hash':accept['registration_hash']}
+    hashes['model_artifacts']={str(p.relative_to(out)):{'version':read_json(p)['version'],'sha256':hashlib.sha256(p.read_bytes()).hexdigest()}
+        for p in sorted((out/'model').glob('*.json'))}
+    hashes['baseline_model_files']={name:hashlib.sha256((ROOT/f'artifacts/cycle{cycle}/model/{name}-full.json').read_bytes()).hexdigest()
+        for name,cycle in (('C4',4),('C5',5))}
     write_json(out/'versions.json',hashes)
+    examples=read_gzip(out/'proofs/examples.json.xz')
+    example_table=['| Case | Move | Operational / strict / experimental | Operational decision |','|---|---|---|---|']
+    for example in examples:
+        outputs=[example['C6'][mode]['candidate'] for mode in ('operational','strict','experimental')]
+        classifications=' / '.join(c['classification'] for c in outputs)
+        example_table.append(f"| {example['id']} | `{example['move']}` | {classifications} | {outputs[0]['decision_policy']} |")
+    example_table='\n'.join(example_table)
     save('architecture.md',f'''# Cycle 6 architecture
 
 C6 is a lossless schema-5 model wrapper. It retains the frozen C4 source model and C5 conditionals; it adds no chess rule, native operator, conjunction, host TV formula, or oracle dependency. Policy `{model['policy']}` separates evidence from acceptance.
@@ -61,6 +118,10 @@ The default is `{accept['default_mode']}`. A promotion receipt must pass every r
 Cache scopes include runtime manifest, model, mode, proof policy, observation/event versions, all budget/threshold/history settings, then position and evidence identities in the underlying source sessions. Changing mode clears both source caches. Ordered interned native nodes reconstruct full proofs losslessly; host acceptance nodes are separately labeled non-native.
 
 Migration: `pln-chess migrate-model --checkpoint artifacts/cycle5/model/C5-full.json --output /tmp/c6.json`. Exported C6 models embed the complete source, validate schema and runtime, and preserve the C5 semantic model hash. Old schemas remain readable with their original behavior.
+
+{example_table}
+
+These executed examples retain exact FENs, raw STVs, evidence groups and complete traces in `artifacts/cycle6/proofs/examples.json.xz`. The rook and king cases use negative obstruction/exposure chains. The knight `f6h5` lacks the required positive combination; unverified castling metadata supplies no historical theorem. The contradiction case is an isolated synthetic model with separately learned opposing ray evidence, never the production checkpoint. Every mode's raw diagnostic channel is preserved; acceptance policy alone distinguishes operational positives from strict/experimental abstention. A separate zero-budget example stays incomplete in all three modes.
 ''')
     inventory='| Symbol | Source lines | Runtime status |\n|---|---:|---|\n'+'\n'.join(f"| `{r['symbol']}` | {r['line']}–{r['end_line']} | {r['support']} |" for r in native['inventory'])
     controls='\n\n'.join(f"**{r['id']}**\n\n```metta\n{r['expression']}\n```\n\n```text\n{r['stdout']}\n```" for r in native['records'] if r['id'] in ('independent','missing-A','missing-B','swapped','contradictory-B','correlated','renamed','nested-full','nested-missing-A','nested-missing-B','inheritance-chain'))
@@ -123,11 +184,17 @@ Shared populations and sample construction limit these marginals. Zero marginal 
 
 {table}
 
+{exact_targets}
+
 Every frozen split uses its original members, source dataset hash, model and thresholds. Both baseline models were rerun; classifications, raw TVs, evidence/rule IDs, proof IDs and exact predicted sets match C5's preserved reports. Frozen inputs are copied in `baseline/inputs.json.xz`; immutable historical proof/report copies remain reachable through starting commit `{START}` and are verified unchanged. No prior artifact is rewritten.
+
+{baseline_execution}
 
 All-candidate and in-board metrics, confusion matrices, precision/recall/F1, error families, raw strength/confidence distributions and 300-draw clustered 95% bootstrap intervals are in each evaluation report. Empty-terminal exact matches are separated from nonempty exact sets. Confidence is not a calibrated probability. Exploratory strength-decile calibration is fitted on the declared validation split only and never affects inference.
 
-Four required variants are evaluated: frozen C4, strict C5/C6, C6 operational with negatives, and C6 operational without the new negatives. Every changed C4 classification links its host acceptance node and native proof in `verification.json`. All {negative['historical_preserved']} historical cases and {negative['new_preserved']} C5 negatives are preserved, with {negative['historical_removal_changes']} and {negative['new_removal_changes']} classification-changing removals. Every newer negative preserves the original C5 native proof exactly.
+`dataset-overlap-audit.json` checks every new sampled game position against all prior dataset positions and against one another under the preserved symmetry key. No overlap is present. Diagnostic adversarial fixtures deliberately include known regression contexts and are reported separately from independent games.
+
+Four required variants are evaluated: frozen C4, strict C5/C6, C6 operational with negatives, and C6 operational without the new negatives. Every frozen classification changed from C4 links its host acceptance node and native proof in `verification.json`; new-split evaluation rows retain the equivalent decision and proof references alongside their matched C4 reports. All {negative['historical_preserved']} historical cases and {negative['new_preserved']} C5 negatives are preserved, with {negative['historical_removal_changes']} and {negative['new_removal_changes']} classification-changing removals. Every newer negative preserves the original C5 native proof exactly.
 
 {btable}
 
@@ -147,6 +214,8 @@ Starting HEAD: `{START}`. Verified implementation HEAD: `{source_head}`. Final d
 
 Default policy: **{accept['default_mode']}**. Acceptance passed: **{accept['passed']}**; blockers: `{accept['blockers']}`. Operational predictions retain their partial conditional status. Strict and experimental do not manufacture positive proofs. Independent-premise native positive composition is **not achieved**.
 
+{exact_targets}
+
 Model and dataset versions:
 
 - C4: `{hashes['C4_model_version']}`.
@@ -161,9 +230,15 @@ Exact runtime manifest, PeTTa pin and every frozen dataset hash are in `artifact
 
 Verification: **{verify['tests_summary']}**. Clean dependency bootstrap: **{accept['checks']['clean_bootstrap']}**. All {verify['protected_file_count']} protected historical files remain byte-identical. Full-proof reconstruction, native probes and reference/cold/warm parity pass. The 49 and 238 causal regression ledgers are `proofs/original-49.json.xz` and `proofs/new-238.json.xz`.
 
-The inspector exposes comparison tables, evidence channels, history trust, proof gaps, budgets and diagnostic JSON export. ProofShot screenshots, recording and captured errors are retained in the delivery artifacts. API migrations and original-cycle tests remain intact.
+`proofs/examples.json.xz` records positive, negative, unknown, special-move and contradictory-evidence traces across modes. `proofs/incomplete-budget.json.xz` records a deliberately exhausted budget in all three modes; each remains incomplete and is never converted to unknown or illegal.
 
-Remaining scientific limits: learned joint observation categories are still host assembled; no native AND or universal safety theorem is available. The factorial temporal/exposure families lack new separately learned positive composition. Special-move history is external structural evidence. Induction shows no defensible global benefit and stays disabled. Global exposure and historical context can change under otherwise local-looking transforms; counterexamples are retained. The fixed geometric candidate grammar remains seeded inductive bias, not discovered chess rules.
+{baseline_execution}
+
+Source changes: `src/pln_chess/cycle6/` adds the schema wrapper, mode policy and versioned history receipts; shared API/CLI/inspector dispatch exposes those contracts. `training/cycle6.py` registers the new held-out data, `evaluation/cycle6*.py` preserves native proofs and research evidence, and `scripts/cycle6*.py` runs, verifies and reports the package. Existing C4/C5 native inference and historical test expectations are unchanged. The model hash is computed once per request, preserving complete candidate/proof parity while avoiding repeated serialization.
+
+The inspector exposes comparison tables, evidence channels, history trust, proof gaps, budgets and diagnostic JSON export. ProofShot screenshots, recording and captured errors are retained in the delivery artifacts. `ui-verification.json` records the observed source commit and harness limitations: the export Blob parsed correctly, but the browser download observer timed out; `strict-completed.png` is the completed strict result. API migrations and original-cycle tests remain intact.
+
+Remaining scientific limits: learned joint observation categories are still host assembled; no native AND or universal safety theorem is available. The factorial temporal/exposure families lack new separately learned positive composition. Special-move history is external structural evidence. Induction shows no defensible global benefit and stays disabled. Global exposure and historical context remain distinct from local movement observations; invariance is tested only where transformation semantics are preserved. The fixed geometric candidate grammar remains seeded inductive bias, not discovered chess rules.
 
 Next priorities are a separately authorized native semantics investigation, evidence-grounded temporal/exposure learning, independent external game validation, and reducing full-proof memory without changing native derivations. No custom conjunction extension was shipped.
 ''')
@@ -187,7 +262,9 @@ def manifest(out,docs):
         if path.is_file() and not relative.startswith(('artifacts/','docs/cycle6/')):
             files[relative]={'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'bytes':path.stat().st_size}
     write_json(out/'manifest.json',{'schema':1,'baseline_head':START,'verified_source_head':read_json(out/'bootstrap-context.json')['source_head'],
-        'packaging_head':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),'runtime':read_json(out/'versions.json')['runtime'],
+        'packaging_head_before_commit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
+        'delivery_commit':'The commit containing this manifest; resolve with git log -1 -- artifacts/cycle6/manifest.json. A manifest cannot embed its own containing commit hash.',
+        'runtime':read_json(out/'versions.json')['runtime'],
         'files':files,'self_excluded':True,'scope':'All Cycle 6 artifacts, generated reports and changed source files. Older evidence is bound by baseline/start.json and remains immutable.'})
     return files
 

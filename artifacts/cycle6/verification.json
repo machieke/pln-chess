@@ -1,0 +1,4555 @@
+{
+  "baseline_parity": [
+    {
+      "C4_projection_parity": true,
+      "C5_strict_classification_parity": true,
+      "native_proof_parity": true,
+      "split": "frozen-heldout-transfer"
+    },
+    {
+      "C4_projection_parity": true,
+      "C5_strict_classification_parity": true,
+      "native_proof_parity": true,
+      "split": "frozen-adversarial"
+    },
+    {
+      "C4_projection_parity": true,
+      "C5_strict_classification_parity": true,
+      "native_proof_parity": true,
+      "split": "cycle3-independent-games"
+    },
+    {
+      "C4_projection_parity": true,
+      "C5_strict_classification_parity": true,
+      "native_proof_parity": true,
+      "split": "cycle4-independent-games"
+    },
+    {
+      "C4_projection_parity": true,
+      "C5_strict_classification_parity": true,
+      "native_proof_parity": true,
+      "split": "cycle5-validation"
+    },
+    {
+      "C4_projection_parity": true,
+      "C5_strict_classification_parity": true,
+      "native_proof_parity": true,
+      "split": "cycle5-combination-holdout"
+    },
+    {
+      "C4_projection_parity": true,
+      "C5_strict_classification_parity": true,
+      "native_proof_parity": true,
+      "split": "cycle5-structural-holdout"
+    },
+    {
+      "C4_projection_parity": true,
+      "C5_strict_classification_parity": true,
+      "native_proof_parity": true,
+      "split": "cycle5-independent-games"
+    }
+  ],
+  "checks": {
+    "baseline": true,
+    "cache_parity": true,
+    "clean_bootstrap": true,
+    "frozen_errors": true,
+    "frozen_utility": true,
+    "native_probes": true,
+    "negatives": true,
+    "new_adversarial_errors": true,
+    "provenance": true,
+    "strict_abstention": true,
+    "tests": true
+  },
+  "classification_changes_from_C4": [
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "2bd6cfc9cee6f47ae1b8458f8865b7bae974d648e6aab2b01ef09454309cb6b9",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": "n1179",
+        "reason": "native-negative-chain"
+      },
+      "fixture": "heldout-transfer-ray-11",
+      "from": "unknown",
+      "move": "b3g8",
+      "proof_id": "0ba094691922cbce1961e9972197d52b203b76ed334ec7d8a099147bf758ca0a",
+      "split": "frozen-heldout-transfer",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "28124972d358be5c0cd17b1ec095d47e45759d6b90b63beea5f55150bd32ae91",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n45",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "heldout-transfer-ray-11",
+      "from": "unknown",
+      "move": "b3d3",
+      "proof_id": "9ce0b30359b2b3bcfd0f5b8ae5b9cab96858e7d0c7e0fc045f2d3bf28005ef14",
+      "split": "frozen-heldout-transfer",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "73d14994a780c9300f41009f50b0896b130cfde52257ecf1f679b84755338bf5",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n45",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "heldout-transfer-ray-11",
+      "from": "unknown",
+      "move": "b3e3",
+      "proof_id": "402f390137717c7530d6607a4336c02df876c33cc099e00ca786198029854bae",
+      "split": "frozen-heldout-transfer",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "07ae8b5806079d0f83d083242434e1e583d76b0c1ab0b9887a1d977968f70233",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n45",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "heldout-transfer-ray-11",
+      "from": "unknown",
+      "move": "b3f3",
+      "proof_id": "2f4ff3e2232fd16b9d0b5448a184aa8b68f200ef5cc36e40def862ec46b86126",
+      "split": "frozen-heldout-transfer",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "290d622e999029fd2b6e69f3d6f58c32eafdac0ce78d6765a06be5066d24eec6",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n45",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "heldout-transfer-ray-11",
+      "from": "unknown",
+      "move": "b3g3",
+      "proof_id": "622861316c1471d46000dcc5dea148408fa59d3ae3306be88b690b646e0cc488",
+      "split": "frozen-heldout-transfer",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "8ac7302ba094350a4cb879d85a03d9a2cfc628e31c129d2ecab49d38afbfb5fc",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n51",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "heldout-transfer-ray-12",
+      "from": "unknown",
+      "move": "a7a4",
+      "proof_id": "53c0f1bc5260e4cb33a9e8c6492b3d1eff8141b502b7f5c868a1f96ea1d22f1e",
+      "split": "frozen-heldout-transfer",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "941539c68377cd790a61a1d167411193363590be283c60a8acc9be50d97cfc5e",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n51",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "heldout-transfer-ray-12",
+      "from": "unknown",
+      "move": "a7a3",
+      "proof_id": "910e6fe779a64b37a571d16ea533e19174e9ca100b058e1d04084075f3655dc4",
+      "split": "frozen-heldout-transfer",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "fa47da0a2c5d2679450e2a7f5905267b29a80bef4c343150e8c26ce166d7c871",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n51",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "heldout-transfer-ray-12",
+      "from": "unknown",
+      "move": "a7a2",
+      "proof_id": "cf5aedd7964e1d64e25b97aa0c3424672e0348655f6d89370b824581286edf12",
+      "split": "frozen-heldout-transfer",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "c0ea208a4eb55f2b271b0089323210efb4af97c2b6f7191b22ae26705f2b3b91",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n51",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "heldout-transfer-ray-12",
+      "from": "unknown",
+      "move": "a7a1",
+      "proof_id": "ba8daf711c2321cfb2c9fe682b10d6425901d3d7b6dfe73af7d1207e80e40239",
+      "split": "frozen-heldout-transfer",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "f3786f44b1fa5475a0d37b068dd4aa9b797cb99a43bfa50dfabb782ff27b1581",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "heldout-transfer-ray-21",
+      "from": "unknown",
+      "move": "a1g1",
+      "proof_id": "e364154678936ffd4f15f929091ff358e55e6bdb7717d7093d4fc8bca5923dfe",
+      "split": "frozen-heldout-transfer",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "d6c585d77a3c60b2b9cf34eb7f8beb09e612f0fd55ce11c9c51254fe07324689",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "heldout-transfer-ray-21",
+      "from": "unknown",
+      "move": "a1h1",
+      "proof_id": "e3ec60333270d98b591f4646a359085cd72512f65db27b437ad5cda984c7af7e",
+      "split": "frozen-heldout-transfer",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "81463b9fe7f724976ee1bae96e20aa6a2e7c83326d02825463b0f28f37e6cba2",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n83",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "heldout-transfer-ray-29",
+      "from": "unknown",
+      "move": "b1d1",
+      "proof_id": "bd5e7139730c6e718c1028fa5310b91e7740b9ff1b00bb65dab656b7fff5f13d",
+      "split": "frozen-heldout-transfer",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "8981d71897708d58ce77e92f255164cccadcf9e87599f891137684def23e809e",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n73",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "heldout-transfer-ray-29",
+      "from": "unknown",
+      "move": "b1e1",
+      "proof_id": "b552900c63219bec89b684b0f386aa5c6c46a04eec5b4f0c94cce9bab499f2e1",
+      "split": "frozen-heldout-transfer",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "2423944f57b11cbc5af640e26f7f17a0d37ad68dd00f60c979cc478f10516f5e",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n73",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "heldout-transfer-ray-29",
+      "from": "unknown",
+      "move": "b1f1",
+      "proof_id": "f4d52c90f1f99fc1f4712531a0a01436e3342cf2d0fac2e08d646ce5c05b1719",
+      "split": "frozen-heldout-transfer",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "786de9729be7efda966173259846ad9c682feb1bb781c93bb5e5de4b989bfb42",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n73",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "heldout-transfer-ray-29",
+      "from": "unknown",
+      "move": "b1g1",
+      "proof_id": "a52c6233c14a280ac0d10fa8ffa15cf78a30d2b475af98ce829af3ec736eec9b",
+      "split": "frozen-heldout-transfer",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "7bf299457c9b7f959906697b2bbb3a88ef056b96ad3288be607dc7bef5bed36c",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n73",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "heldout-transfer-ray-29",
+      "from": "unknown",
+      "move": "b1h1",
+      "proof_id": "c082531cdde081b3b07a472a4a2d9e9086148b54424a4b7f0be36cea4be7bf35",
+      "split": "frozen-heldout-transfer",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "0e9f46fb50392113dc4f71f8e9fc23bdf49b1a90f00a9b6ee11ad5dfd34dd661",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n51",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "heldout-transfer-ray-30",
+      "from": "unknown",
+      "move": "b1b8",
+      "proof_id": "feb7cfbaa0e40f63c194e5a180acc47c12d0d9af6b688c44ae66f1f4db5163fc",
+      "split": "frozen-heldout-transfer",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "e2b18dbd37691804799c3598021bfb5ba09656b1698dfb077d38fb025b2fdf50",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n51",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "heldout-transfer-ray-33",
+      "from": "unknown",
+      "move": "a8h8",
+      "proof_id": "132e561b49950097b9cee8bce48e38f9cff88f33a5c84f7bbe22a2ee2074fca9",
+      "split": "frozen-heldout-transfer",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "04faa02755205506c5c6cc51001bd89c6792532c38f994d78630ec0b88989c1f",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n51",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "heldout-transfer-ray-33",
+      "from": "unknown",
+      "move": "a8a3",
+      "proof_id": "043a09f8106d611ca6225726dca85f8d6ccf96005a037817549c80362c3300d8",
+      "split": "frozen-heldout-transfer",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "72f396e2c28aa56453927d5259d3452ed435acd8fd355f280cb7750cfcf8bcd0",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n51",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "heldout-transfer-ray-33",
+      "from": "unknown",
+      "move": "a8a2",
+      "proof_id": "d4af96040d85c1619e56ac36dd0e0042c508248a40e3acdac9153d0436499357",
+      "split": "frozen-heldout-transfer",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "d49a93db63523495becbab0de7df973130abbee36c79221a49d68037713f7326",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n51",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "heldout-transfer-ray-33",
+      "from": "unknown",
+      "move": "a8a1",
+      "proof_id": "f0896dca22b55fb9a3151fba65f3e516f7e03b806a8a7f46ca4cd9c248ce9253",
+      "split": "frozen-heldout-transfer",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "8981d71897708d58ce77e92f255164cccadcf9e87599f891137684def23e809e",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n73",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "heldout-transfer-ray-35",
+      "from": "unknown",
+      "move": "b1e1",
+      "proof_id": "951831582e393e5dacf7eef28bf5e2b870ef108ff1f00c8b93b3ffed6554a845",
+      "split": "frozen-heldout-transfer",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "2423944f57b11cbc5af640e26f7f17a0d37ad68dd00f60c979cc478f10516f5e",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n73",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "heldout-transfer-ray-35",
+      "from": "unknown",
+      "move": "b1f1",
+      "proof_id": "a739913f5b044db63393f8d9866fe2beed0c67d80e15fc21acc6e9500b132dd4",
+      "split": "frozen-heldout-transfer",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "786de9729be7efda966173259846ad9c682feb1bb781c93bb5e5de4b989bfb42",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n73",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "heldout-transfer-ray-35",
+      "from": "unknown",
+      "move": "b1g1",
+      "proof_id": "12d1d1599223bfa8ba9e94416d55107be631147e903c9b532d7752fc6bcb4d62",
+      "split": "frozen-heldout-transfer",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "7bf299457c9b7f959906697b2bbb3a88ef056b96ad3288be607dc7bef5bed36c",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n73",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "heldout-transfer-ray-35",
+      "from": "unknown",
+      "move": "b1h1",
+      "proof_id": "b0101291c70cb2ba56cc459b33a118ab98097a09a80f28e3866900bed0dd639e",
+      "split": "frozen-heldout-transfer",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "412f1bfc5e0348760a494134095c61eeccbe3307a98998a77a405f3463880342",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n45",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "heldout-transfer-game-0",
+      "from": "unknown",
+      "move": "g6e8",
+      "proof_id": "3899ef9fb4072e69ed83b6988e2e7ae2bd7711689af2bc719e141527db6c29d2",
+      "split": "frozen-heldout-transfer",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "89990afe83028a36fa5a152c6a5ce3bd997eb11693e1ec04947a883946c7365f",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n47",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "heldout-transfer-game-1",
+      "from": "unknown",
+      "move": "e4e8",
+      "proof_id": "14afcf4d6a72a50be52bf973bbe2fd503bf41bd64147d968aabfa47b10e90100",
+      "split": "frozen-heldout-transfer",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "bde2b1c614391ca4548251c79e07c333c28479fe8466eeda862d758f608ada5d",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n47",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "heldout-transfer-game-1",
+      "from": "unknown",
+      "move": "e4b7",
+      "proof_id": "0247b081a4fe5e41120d9db8e5eeb7e81c665647e1c0c0addb7950a3c563a97d",
+      "split": "frozen-heldout-transfer",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "96bdaa8c11a849753cb519e73a892141fc9de17a8dd330d0450588c941330359",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n47",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "heldout-transfer-game-1",
+      "from": "unknown",
+      "move": "e4a8",
+      "proof_id": "7e47f467bb79dcdaee20c09bf4f5eb7f77f22e8e7356f2d11335ee2b112028b3",
+      "split": "frozen-heldout-transfer",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "43fc0ea3cacb9c0ad17af460e62423ab2804e01ddc5785777efc9d31b2351001",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n43",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "heldout-transfer-game-2",
+      "from": "unknown",
+      "move": "a4a7",
+      "proof_id": "0caae4a7722c7bad7758093c637322c4698e596ca917e1d9378115ff6771e50a",
+      "split": "frozen-heldout-transfer",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "b199b262c7c7b72bcd5d512ba8d131f0d5e82ab24c53a3f7aa7bcaa878723424",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n43",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "heldout-transfer-game-2",
+      "from": "unknown",
+      "move": "a4a8",
+      "proof_id": "1c008db20ed9c91aa327325e5ca912e5ad8b36f751c316f0a2f30b715092a9cc",
+      "split": "frozen-heldout-transfer",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "42b72d501d6eff18197fba7b41c99024e9a7342ff2fdff994759c14fe3958846",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n43",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "heldout-transfer-game-2",
+      "from": "unknown",
+      "move": "a4e8",
+      "proof_id": "9773c6274de24bb21799dcee71a12f9d8baca094b04753b8e4aa10eabbde6ec8",
+      "split": "frozen-heldout-transfer",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "ff5966f0ffc38da5a7aa852247f01b789675843d6d91efa955a601872e844019",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "adversarial-ray-2",
+      "from": "unknown",
+      "move": "b1b3",
+      "proof_id": "31445cb966e7c1db2a274548b4fa1840aa7598063d1a08dca6fcbd5db9928fa1",
+      "split": "frozen-adversarial",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "02946ccb22e8a613384be08535df7dfca7a2eca01c55f96ddc5bea57d8c7bc2b",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "adversarial-ray-2",
+      "from": "unknown",
+      "move": "b1b4",
+      "proof_id": "1c2976a6e0605728225efc604b3eb96617ffc7c40876e999c6e54ff8acba41c0",
+      "split": "frozen-adversarial",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "f3b06e63db8008a9faf28fc7a3d7350a449bb93148032ad826b89eb25b472d3b",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "adversarial-ray-2",
+      "from": "unknown",
+      "move": "b1b5",
+      "proof_id": "d410ccba25b17a703e2cd5d98a75cf06b8af12e3fc076d76a0e5951fa04539cf",
+      "split": "frozen-adversarial",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "951b259ed182b5a19471eee1ab95b0ce857729d4d1031235126ddf381773b58b",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "adversarial-ray-2",
+      "from": "unknown",
+      "move": "b1b6",
+      "proof_id": "28930cf4980b7544b8d6588fd61235fe9cfa8d71de53bdf1fb5e42c94a8183d8",
+      "split": "frozen-adversarial",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "b6f7c4765edfa21eb5234658be99b05551b1098b458ec64f6d556c76320426a9",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "adversarial-ray-2",
+      "from": "unknown",
+      "move": "b1b7",
+      "proof_id": "5c08f3923ebc3831baa2f917657d4a368625d5ad2250e572fbf1a05c0c0c9e3d",
+      "split": "frozen-adversarial",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "0e9f46fb50392113dc4f71f8e9fc23bdf49b1a90f00a9b6ee11ad5dfd34dd661",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "adversarial-ray-2",
+      "from": "unknown",
+      "move": "b1b8",
+      "proof_id": "1b4e09fda324f2c670c1e796ddf6c9858841c146d491bb116f0ca3fc312e11bd",
+      "split": "frozen-adversarial",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "ace941dac3306413994afead41978d7aa1378d875906891cd13344ccd56757ad",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n103",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "adversarial-game-0",
+      "from": "unknown",
+      "move": "h1h6",
+      "proof_id": "828d1efa082143caaf31ae37af445b23d91856f3a45f0fa7015eac23f0906a1f",
+      "split": "frozen-adversarial",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "5a7619bbb7061f0afcd45c15c64c826aa0f1df6376cb06ee4d6c2eb4391616e9",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n103",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "adversarial-game-0",
+      "from": "unknown",
+      "move": "h1h7",
+      "proof_id": "52e406636b6a4e77f8c03a3195fbb05434a9be4e234f5a76f65df377548cd7d0",
+      "split": "frozen-adversarial",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "6dc951199062bf538d7fa721d15c33bdaab6db9239d1d5aa46487d82ae866f9e",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n103",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "adversarial-game-0",
+      "from": "unknown",
+      "move": "h1h8",
+      "proof_id": "1d25e60bb7b86559402f8fd1cec6a688c47bac666afae9491ead74ce37595a51",
+      "split": "frozen-adversarial",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "0f51c99dc57ba3347e6b9f720ca34e82a3dca3cdb8128194b8fcb204822ea5af",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n169",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "independent-games-1",
+      "from": "unknown",
+      "move": "h5h2",
+      "proof_id": "5245dfec53d0b048784762f39320ffa6c3187d5ca4f7607980818a8fa7943ec3",
+      "split": "cycle3-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "919bcd0e95a85e63cb44ac75f341bf3b4ab95ce746b7fbcaee1da04ada8bd54e",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n169",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "independent-games-1",
+      "from": "unknown",
+      "move": "h5h1",
+      "proof_id": "5ddaeb8975e465ba075a000728767051359f70232387da92df721e2b3f5f408b",
+      "split": "cycle3-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "3bb6bd120ae8ed1f8714dcfb56a11ef2cab0ddffc6677d2b1ed658634bb00360",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n169",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "independent-games-1",
+      "from": "unknown",
+      "move": "h5e2",
+      "proof_id": "eb9b3b46b800cfcdfa984370fd8941a9c6e6b73f211ac19ed92880c00aea8aea",
+      "split": "cycle3-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "46d54461793a4becbe996cf4a3990ecaf0cc5fefe668b111ef8bbdf642697eba",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n169",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "independent-games-1",
+      "from": "unknown",
+      "move": "h5d1",
+      "proof_id": "1e19f77c319fbd0ebd44d3fd844ada97c8a21c525d1e76193d197d3d02e0440f",
+      "split": "cycle3-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "43fc0ea3cacb9c0ad17af460e62423ab2804e01ddc5785777efc9d31b2351001",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n47",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "independent-games-2",
+      "from": "unknown",
+      "move": "a4a7",
+      "proof_id": "8891328dedd1e28e0be7d2b832fd7b0bcf8319e1523f4f0a457e8a4e174d13d2",
+      "split": "cycle3-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "b199b262c7c7b72bcd5d512ba8d131f0d5e82ab24c53a3f7aa7bcaa878723424",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n47",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "independent-games-2",
+      "from": "unknown",
+      "move": "a4a8",
+      "proof_id": "4fd0e0b5fb33be3211c24eafd2650b6547936b17275f49dd6325fe4e70939a4d",
+      "split": "cycle3-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "774705c3b2537cde6343a1345fe05ed338877aa394516d3c49db1f008995201e",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n47",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "independent-games-2",
+      "from": "unknown",
+      "move": "a4d7",
+      "proof_id": "f014917046757e34b11a2890e2772e23c954e66c45ba585848d6c33f102b1a5e",
+      "split": "cycle3-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "42b72d501d6eff18197fba7b41c99024e9a7342ff2fdff994759c14fe3958846",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n47",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "independent-games-2",
+      "from": "unknown",
+      "move": "a4e8",
+      "proof_id": "9c27cc15a53fd0da031d28360f39a5fb4bff17ac49e23076bbe3138dc36f7aff",
+      "split": "cycle3-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "68312d8668eb0cf536a6088eef31435b9f50f4a2e246c6909fd935d2c4f034c7",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n117",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "independent-games-2",
+      "from": "unknown",
+      "move": "h2h5",
+      "proof_id": "87e6b95c670080d691e9cb65bb55e5f61dd3ede85ad1cc58dc70715fe02d8b74",
+      "split": "cycle3-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "a77ec0b465286030787a638b33b4f3b0936d33e6f90161b6b873dfd3c7503a43",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n117",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "independent-games-2",
+      "from": "unknown",
+      "move": "h2h6",
+      "proof_id": "5bb51ad9c3a65725d7453b1cc6fda7619110a051126cd2dbfa219dac4411fcd7",
+      "split": "cycle3-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "37da7218b9714a7aa9e84127578c4e741cd8c920645f6a9e5e59aab5ed15aa0f",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n117",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "independent-games-2",
+      "from": "unknown",
+      "move": "h2h7",
+      "proof_id": "8973a0dab0091b0263785c5458cd92506cf225279e3dece4ade66cc546945b82",
+      "split": "cycle3-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "07863453cd9c4f76e2a2b6cff5daaf89d0210ba7b9096804fd71da654bc353bd",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n117",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "independent-games-2",
+      "from": "unknown",
+      "move": "h2h8",
+      "proof_id": "262a5a7b2629e2da1c8ace479b9dcfd9bb817f36df489e290535f29ef23b20b7",
+      "split": "cycle3-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "cf8878a03412b7aede932407ad188d9dd7fa2fb4a7701ff0cf85ab17719545cf",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n65",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "independent-games-4",
+      "from": "unknown",
+      "move": "c4c8",
+      "proof_id": "ceb2c7cfd5d4bb3ca6ec0627ca60a5dbf74b0df5b1ba695cdb25aa4cc402112a",
+      "split": "cycle3-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "d1acc090c27c2c674ece96a829878b4135458b433c4a82572db5f653986628d9",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "independent-games-4",
+      "from": "unknown",
+      "move": "c4a6",
+      "proof_id": "6b8fa9c6ad612ec1b82e7c510f287427486d2287f29a0a7c493d6a4bd9bbf5f9",
+      "split": "cycle3-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "d0c4752fcbcb48777b7c70aa96c4edca80d3e704ea758803bee5f25d9b86175d",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n175",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "independent-games-5",
+      "from": "unknown",
+      "move": "c2e4",
+      "proof_id": "cfef272c1476bfca13a2a7b1b95290730ddb681b0e8a5f39bb81dfce57c13733",
+      "split": "cycle3-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "0e9104e317e9f87f5936e284b9599c43c01050110a78ad980f30e56d462aa07f",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n175",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "independent-games-5",
+      "from": "unknown",
+      "move": "c2f5",
+      "proof_id": "30996e8faa71e5b585a53565c401d9b76b07e1b724222963718c8296f3876488",
+      "split": "cycle3-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "29da1c5a4f23b10b3329202d497e787499e1af661bc863b5819e20ce243d250f",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n175",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "independent-games-5",
+      "from": "unknown",
+      "move": "c2g6",
+      "proof_id": "f3a922a548d4415084ed1d06c68b35a912bb149a15e7ee1bb8bd16d278898313",
+      "split": "cycle3-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "72ccb3bb6fa41bcc1108f38dc9a4a44557ea55ea65b5a70be68c2854ad28749a",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n175",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "independent-games-5",
+      "from": "unknown",
+      "move": "c2h7",
+      "proof_id": "acc221898363ac8ac6794c07f865069b1775b8c6e0df780edfdda841fe668836",
+      "split": "cycle3-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "1298a8dea09c4c830931c2bedaa2cd49637da6cee16885ea3849d7c6f75bd40d",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n175",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "independent-games-5",
+      "from": "unknown",
+      "move": "c2f2",
+      "proof_id": "1a7f726dccc38c9ff2136533bc9c885412d700b530c5e7c278b2f2e7b5bed7c1",
+      "split": "cycle3-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "eaa62a524313d79727a88d93d3bda15c89634615d28da0c7fff6bb47ad7ad90b",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n175",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "independent-games-5",
+      "from": "unknown",
+      "move": "c2g2",
+      "proof_id": "082709526c6ea79d94e33c092925d6861873467a84bef2bcd634cbbe6821fab7",
+      "split": "cycle3-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "7fb7641d8bc8594fe342ab30270d76f5867031bfb3f98d88f1b089612dbbfbe0",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n175",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "independent-games-5",
+      "from": "unknown",
+      "move": "c2h2",
+      "proof_id": "4741ee8a53740a7392e834106125ecdc407dac2726100cadce9262463d2fe93a",
+      "split": "cycle3-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "640f40d903e1132eff8f2316884a763da133e2281ea5708c81d5af9312053331",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n99",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "independent-games-6",
+      "from": "unknown",
+      "move": "c3c6",
+      "proof_id": "6e0b69d91607e7860e52a1ecb1de381fee18e290a5c722f5c91fca0ccdb92926",
+      "split": "cycle3-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "c776140c1847ff28e9aaf0d61c6d028b1357c12ea60f7a30266f95e02c97f75f",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n99",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "independent-games-6",
+      "from": "unknown",
+      "move": "c3c7",
+      "proof_id": "a5e388aa360a12c26073df1d43acc0aedbf3f7121438f00ff99155fbd99bb8f4",
+      "split": "cycle3-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "f38dae5cc5f9250b3884b7bacc734b5a4bd3970a635a2e40ce153b913da50a06",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n99",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "independent-games-6",
+      "from": "unknown",
+      "move": "c3c8",
+      "proof_id": "6a380b22a5d1faae90c20867791a7e6ee889ca2ad2efeb1cdbb987d7added53a",
+      "split": "cycle3-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "dbd9e3ead65c5c67374a0d0da319448efd8dc0e0a06b50f8d896f15da3c2f4a0",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n99",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "independent-games-6",
+      "from": "unknown",
+      "move": "c3f6",
+      "proof_id": "6369311c962d57535cc788ec2d3f315a2809df6c910eee4a10f94c34d8850cc9",
+      "split": "cycle3-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "ea35be448ee061779a2e86895cc200ff57c97d0110bf09c02f094953ed7564c8",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n99",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "independent-games-6",
+      "from": "unknown",
+      "move": "c3g7",
+      "proof_id": "f6c82775f97068beb5b2d54becf31f2e18157a9b6ba359ebcf627decbe2540d1",
+      "split": "cycle3-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "9f7c735b92d31267656391f7c6e2f40ae513689f788fb382bf4d5835a7a05b79",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n99",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "independent-games-6",
+      "from": "unknown",
+      "move": "c3h8",
+      "proof_id": "718191ca35c18e5e9c02730ecd942a0c5ec98da61e6139d5837aa5b51d82a985",
+      "split": "cycle3-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "f81607a79ce11bad32bac5aac6d4c5a528f4d7f30ee2c1fcd20e07ce000fde2f",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n21",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426242-ply-24",
+      "from": "unknown",
+      "move": "a6a8",
+      "proof_id": "52306feaa1dcbaba7e9c5a27a24091028248d408bcf7bf8c7c2f2389e8d1098d",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "699d3d63cf84842bf98576ce38afd0a757b5154a912929bfa03b6bf3b0bd91f2",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n21",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426242-ply-24",
+      "from": "unknown",
+      "move": "a6c8",
+      "proof_id": "1edf77271414c48479b1c4878710d4865fe3fbcaa46a573f0283f0aa978d6399",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "ca26c7b6815fa1d00a87fb2f7e70cf497ae9908a9fcb3f090922c06020413468",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n21",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426242-ply-24",
+      "from": "unknown",
+      "move": "a6g6",
+      "proof_id": "1288f8abf5d3ac340849eedef717c687fabee90950f3bda533809b3040d1810b",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "d223e108dd27d0b69b0d4243fc5a268e0f6453096bdb61c64e7ee44b96accc8b",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n21",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426242-ply-24",
+      "from": "unknown",
+      "move": "a6h6",
+      "proof_id": "c21f53cfceb9823589bc9879bd415faf65954fd22a30a1dd067d4772de306aae",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "8cbeffa783792d089e8cc1432451fd552e44f2c2d075e6446ed464ae89e0e2ff",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n27",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426242-ply-48",
+      "from": "unknown",
+      "move": "c5c7",
+      "proof_id": "6b1a36d2587a12db320a08c43b83c4ea1f56d288fd28ff186fcebd0c99e08cfc",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "793d9b52f81aba6f9b021a65620b9c9e1a4574a71b9165735e7ceee9d9cd82c2",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n33",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426242-ply-48",
+      "from": "unknown",
+      "move": "c5c8",
+      "proof_id": "b061ea9ffcf5bedde7b0ea7460a4d7ffebff05d9243295353c42f14815f7cb3f",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "58700cbeffde9669a7dc4cb5b1071bcdd708cc411ea16a72da6a475371172cce",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n33",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426242-ply-48",
+      "from": "unknown",
+      "move": "c5f8",
+      "proof_id": "9835140ae0c61f32c2f762917b3174d1df1700883e55e8f8cf8ead06de7c8f1f",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "fa05fc8c9540e82410ff8895bf62d49c064abb4d779cdbf34e0dbfa53a9ee2d2",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n27",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426242-ply-48",
+      "from": "unknown",
+      "move": "c5a7",
+      "proof_id": "bb3baa36ed0e8f32c574039b669c6acc9c2921bac4f04aeba1b33bbf49c63740",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "1a8cf20eea056e3791cc276a5d61a1e44f14ce7b5fd3f9501fe2a7896fb5b94b",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n55",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426243-ply-48",
+      "from": "unknown",
+      "move": "g8g6",
+      "proof_id": "5a2c45ea2d76ca838826c674ecaf1109e6717262c094400452d6c15e245d4f93",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "84cf43a1d2bf9d3366b46614c9651f918196299f7fc575e06b2686e8cfd1147a",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n55",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426243-ply-48",
+      "from": "unknown",
+      "move": "g8g5",
+      "proof_id": "25262a7de67e4ebdf32bde02fca2484c13818a1b90c711a4c131e6eec11f30d4",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "7a30a8f28d436dbcdf92bb3c6c290ae03ea68442b867cdc326b4adf6eb38a400",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n55",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426243-ply-48",
+      "from": "unknown",
+      "move": "g8g4",
+      "proof_id": "a20a5d86bb48aa3bbb21ecca4ba360c86fd0204fa7c14459df14f0736128bfd3",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "d39c70ad09e27af6db5e6670dfff0a4474ab95e0cde484261792a2c13e2c4ac7",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n55",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426243-ply-48",
+      "from": "unknown",
+      "move": "g8g3",
+      "proof_id": "85bf19c66183c78f2e053b7b709130ddb5589323fe2ff106c496cee8fc39eb22",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "3ca62ee1469fbda60955fc9f85aba8696a3e14fafd815e4cf59b5d74d6556b46",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n55",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426243-ply-48",
+      "from": "unknown",
+      "move": "g8g2",
+      "proof_id": "ef450d1a539f9036c75fff15788b2fe09085288ee7b5ebbb1fcaadcac5c83ee0",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "84a6a6d1e340c2bc87e5617c6d54e5c76016c3cfb99eeaafdfc1c6189e7b1cea",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n55",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426243-ply-48",
+      "from": "unknown",
+      "move": "g8e8",
+      "proof_id": "313bd1fae77683d66fcb371bc001a996d94e565bc641e1db72eb506465376ae0",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "c8c5e5b3f59b415e48fc0f72fc7703a72da208d81c4667b1932ab6fd8f5a71bd",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n55",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426243-ply-48",
+      "from": "unknown",
+      "move": "g8d8",
+      "proof_id": "03f10e1ed0b4905f7966e4d5deca4904fd73a676d50538fd765bfcd5f379cbc5",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "be6026a9421f89b7516909c66f289e82bfd0f37d9f521db7a4b73f6cab7c88a6",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n55",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426243-ply-48",
+      "from": "unknown",
+      "move": "g8c8",
+      "proof_id": "6b382655edaa9f79b51fb1c281d79120efab215a7c00cbf10ca7d45bde5f87f3",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "6cd8c950d37ab905f47c8a7acf553b07c06daa40ea555a3a81a2773f975b24ca",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n55",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426243-ply-48",
+      "from": "unknown",
+      "move": "g8b8",
+      "proof_id": "31cefb8d059e9404d45ec8552af942c4f2a8927d812bae39d3ca71675df2a91d",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "42e86c96f190ff0bf1f7fdd862668b2d6546191e60ce3c9b911eee869ca9affa",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n55",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426243-ply-48",
+      "from": "unknown",
+      "move": "g8a8",
+      "proof_id": "bbf79309ab27b668b3f1f317b62ce905db27e28566bae0bf8905bc9207db0965",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "6c2188e42d9e74c72613724fdfd11285424f1965d6ef71583c1729130b4df505",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": "n10229",
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426243-ply-48",
+      "from": "unknown",
+      "move": "g1g4",
+      "proof_id": "41e27e4668e18b1dc419f725de58cd2669ca49443b42909b1966da8108544e8d",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "4c7e88a6a09001fc852ff40084f39e86d6838bf406fbc4b816bbcc5edb6d2def",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": "n10340",
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426243-ply-48",
+      "from": "unknown",
+      "move": "g1g5",
+      "proof_id": "f750339c00769a195a36f54274ea8bd86e96fa06b18a03b80f5aa35cc25e69d8",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "718ec3d02dd5757e66b1924e920110b9d92ff202d87804aa9135d69d6e31a5ea",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426243-ply-48",
+      "from": "unknown",
+      "move": "g1g6",
+      "proof_id": "9bba64789b09282f350dd121ccc56f56e45a30d80b7ab1c4c5407b58e881a2b9",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "12692dd5db56b3c30614e195d201248c8a50ff76d99e9c7fa7408697d75a5b64",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426243-ply-48",
+      "from": "unknown",
+      "move": "g1g7",
+      "proof_id": "5505ddf0f00fb7e4baa7a6c00f56d5167cb76bebb3500acfba5c3786b83e23c8",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "f8b152d8d8b9db37a5eb7ad9c05c14dffa33383df6747e49305afd2af1afdb5d",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n71",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426245-ply-48",
+      "from": "unknown",
+      "move": "h4b4",
+      "proof_id": "5210d43cdd6201d9cb391c748f89bd4ba05e2a7a7b5966e57d176cdf93ba41a2",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "e1f5d9409f67fb985409448ad0cb4c19a6d052d2983a02ee7373be849087a3fa",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n71",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426245-ply-48",
+      "from": "unknown",
+      "move": "h4a4",
+      "proof_id": "16778a4da4c7c4b0bcf6d5af73ce896d290240246e5ca4a516a610aba3d8bc0b",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "55e1ca9e6742923072c2e8c39466e758735d4d1fb14719dc79ef1a6c1459c58a",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": "n4519",
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426245-ply-48",
+      "from": "unknown",
+      "move": "a1a3",
+      "proof_id": "3a8a7a20b5ad286f7e720d64cc325f8856e1acfe6da2d50863aac7e59111e25d",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "4eb0a3ef939296ae7f9e6d7a7ac05ee51bf06c35596b61fb02aff41681ac301d",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": "n9968",
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426245-ply-48",
+      "from": "unknown",
+      "move": "a1a4",
+      "proof_id": "7dc620644a40f5a0b645cc8391362bae31e1afc578ebb6094d8e02239dab5a24",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "9fc81f5148d9d58482f6eeaea62b9a379321ef03d8baea942bd21bde1e6865e0",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": "n10080",
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426245-ply-48",
+      "from": "unknown",
+      "move": "a1a5",
+      "proof_id": "7e1c2f14a1ba036877d75de704b717e172ae8d8b0b3b0aabeb1ddbf4fc13a79a",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "2d34da6c74d0a6fc1fb3a2dffe967769438de4c8dbd9179196fd17d5e72ae29a",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": "n10198",
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426245-ply-48",
+      "from": "unknown",
+      "move": "a1a6",
+      "proof_id": "2d0b1606f2dd6cfbbba9306be7fdbb4e5510155f10f89c610801a9205346e798",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "f89ded90d059da80cad2a094cedc447efd43e9ba2d16192080e5effd983daed9",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426245-ply-48",
+      "from": "unknown",
+      "move": "a1a7",
+      "proof_id": "a6b54d63dd865d44e399ce58900035a803dad129ada23ba2ae5d49449ba2135c",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "d8ac513eb7ec261ec5cdfed9ea1f520ea42fee792876dc7d4e86aa79ab1b55bc",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426245-ply-48",
+      "from": "unknown",
+      "move": "a1a8",
+      "proof_id": "d358b4267693e720769676e0263935437a48d51d45543c189a237228041786d5",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "2f45ca3fd5c48522a9247c4cb5b47f74e69a0b83f5b33311b7cb106ff108754a",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426246-ply-24",
+      "from": "unknown",
+      "move": "h1h4",
+      "proof_id": "11913ed1372ff2b14973b4c2a94663273ed0d3ea72407c7233ce129239976ff4",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "eee3578218e7b480842d3471491f31977543a1c89919bda69e7b5233d22fc93a",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426246-ply-24",
+      "from": "unknown",
+      "move": "h1h5",
+      "proof_id": "c3c6df7c49c776ace46f6c403e75a07a40944061cccc349dd69ed8ec813cedc9",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "ace941dac3306413994afead41978d7aa1378d875906891cd13344ccd56757ad",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n51",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426246-ply-24",
+      "from": "unknown",
+      "move": "h1h6",
+      "proof_id": "3e2764432935a468515727669cb2eb98d0f6fa3fadc2d63f7c75278cdf8ca326",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "5a7619bbb7061f0afcd45c15c64c826aa0f1df6376cb06ee4d6c2eb4391616e9",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n51",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426246-ply-24",
+      "from": "unknown",
+      "move": "h1h7",
+      "proof_id": "4c499142168c31859b32bc0078a15dda31ae35f34e9ec6efba9ed8e4e33fe15d",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "6dc951199062bf538d7fa721d15c33bdaab6db9239d1d5aa46487d82ae866f9e",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n51",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426246-ply-24",
+      "from": "unknown",
+      "move": "h1h8",
+      "proof_id": "58aee4eacc038ca80c4fc6a4bd9ab4fed0aa817b1b348947381e8427751478d2",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "eae3ddbcb2b250c480598adf747fe56680fe0c10ad1d6bdcd4dbf6c2f2dffffe",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n55",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426246-ply-48",
+      "from": "unknown",
+      "move": "h7h3",
+      "proof_id": "fbebe897d40869fef0505f5bb1f01066598e65e777db0146f6701d1dc85dc45d",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "5c864a0befe0753c5488fecbfc50582ebf447b0dc9b5dae347f4e761d8a53d3d",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n55",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426246-ply-48",
+      "from": "unknown",
+      "move": "h7h2",
+      "proof_id": "a5b8fef1903eb8bda9a8e56a2981d22156f61d678beb873f1aa0bc3a3f361d0e",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "bd5d320a3fe1740694e52911275cdd61452424c722f0f18bed97594326976f64",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n55",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426246-ply-48",
+      "from": "unknown",
+      "move": "h7h1",
+      "proof_id": "5d276c6597d30c417f07933312b719e9c0c0a836176354ce76bd827963bbd78d",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "2d34da6c74d0a6fc1fb3a2dffe967769438de4c8dbd9179196fd17d5e72ae29a",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": "n10198",
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426246-ply-48",
+      "from": "unknown",
+      "move": "a1a6",
+      "proof_id": "2fc0e1e0b7d928d436eaa1bfda7d5c1e7e2ed67935ccfd8f340914d7ff602a85",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "f89ded90d059da80cad2a094cedc447efd43e9ba2d16192080e5effd983daed9",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426246-ply-48",
+      "from": "unknown",
+      "move": "a1a7",
+      "proof_id": "8967dfa2239b4ee7804a570aa44c018908c0e700e54c5d2f7c129f6247632666",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "d8ac513eb7ec261ec5cdfed9ea1f520ea42fee792876dc7d4e86aa79ab1b55bc",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426246-ply-48",
+      "from": "unknown",
+      "move": "a1a8",
+      "proof_id": "07251285a08b4bcfd18204fb9cb718d5d508805278d9103072e8ff437b770f84",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "6519a8fcdae9bb95215c0cd32a1be9cafa3013f5bf5f2d332eb857930cc0c2bd",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": "n11362",
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426246-ply-48",
+      "from": "unknown",
+      "move": "d1h5",
+      "proof_id": "7739c9ba48767ee39732b3b04a611aa5253af459c44ed028c78cf97ea0ca1e20",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "793d9b52f81aba6f9b021a65620b9c9e1a4574a71b9165735e7ceee9d9cd82c2",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n33",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426248-ply-24",
+      "from": "unknown",
+      "move": "c5c8",
+      "proof_id": "c807931124970c50b68fe0f0bfd83137a8d15e40672d8b6badb82b3b88aaf92c",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "58700cbeffde9669a7dc4cb5b1071bcdd708cc411ea16a72da6a475371172cce",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n33",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426248-ply-24",
+      "from": "unknown",
+      "move": "c5f8",
+      "proof_id": "fd95f45ed5e81cc84957e1257e264ae8a3964c0ade15eeafa097c29bd7511361",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "0f6f399881afe731e6394a99a5656d6e53f07c4205bafda6494d6f68defa8f2c",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n33",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426248-ply-24",
+      "from": "unknown",
+      "move": "c5h5",
+      "proof_id": "916d7758c7dcf213e3e6234e8057419da90d9f35e3f395e27bd02d5ea0d4ad9e",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "51e34d28471b5788f5a0b6ec3391b73fc7071029df5502632068dc876a9116f2",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n27",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426249-ply-24",
+      "from": "unknown",
+      "move": "e5e8",
+      "proof_id": "ae9d4171b64e733c7c38051d2aad3acc901b45957c2cf15e920a352e257b3654",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "cac735173e7780acbbf9b94bbdcb59f7f4d557ad7255373a56a3fbcefe8ef2d0",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n47",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426249-ply-24",
+      "from": "unknown",
+      "move": "e5g5",
+      "proof_id": "e4c2a980647b3b0308316b17a55255ccd7333b7658a65026b95e46650b8f19aa",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "4fba1cec1f6e6a6c38d1b0c8f9868e59f8cfa37703d1c0ae5995f81bf7f4bffd",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n27",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426249-ply-24",
+      "from": "unknown",
+      "move": "e5h5",
+      "proof_id": "ccb781333cfeaea95523fb3c8492d317e2a281bf379b6a022fd43955a4496a17",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "2abbd37e75fe7a113e747935e55ca3321b7eec0ee73b3c29097cd3c530b4fc3c",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n47",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426249-ply-24",
+      "from": "unknown",
+      "move": "e5c7",
+      "proof_id": "877628126c68420bd2432ce1933966b84ea4a91e231416c304d28876adf314a2",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "28c6714b363c9d7bfd721c4c3b064cdf7b8515d26a01fbf4c989b7e61cd30e85",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n47",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426249-ply-24",
+      "from": "unknown",
+      "move": "e5b8",
+      "proof_id": "f0b62686e6700c084b4f33ba24b55c7d8a3ead4539389105f73de4f35420038e",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "7eb7467fdd8b491edf438bba599b426f0012d743d947f605c52442946e2a35e5",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n97",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426250-ply-48",
+      "from": "unknown",
+      "move": "a2a6",
+      "proof_id": "3b3f532d9ca86d7a5d19e39e8c32de018370108da29504026224846d76a5c680",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "277eb1423b8561e18c28e3bded3703769b33e3054f8dfa8dcfaa7a2936ff5f94",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n97",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426250-ply-48",
+      "from": "unknown",
+      "move": "a2a7",
+      "proof_id": "9e5188565eb1b0af81b941a27c3d6236341b8309e257d5cc71ca35a8693a2e64",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "7915c06ff4219f186d5e4ad55a0ad80a0589623b9b23c42a84d6089dca7ef3e2",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n97",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426250-ply-48",
+      "from": "unknown",
+      "move": "a2a8",
+      "proof_id": "ae5c0942843dd4f93c4955b7b4e0febeb2da3bfc3b3eed3b77af04b43061f184",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "ace941dac3306413994afead41978d7aa1378d875906891cd13344ccd56757ad",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n51",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426251-ply-48",
+      "from": "unknown",
+      "move": "h1h6",
+      "proof_id": "a25b25a461b2cd5c396bcba69ca4a713dd8910a197fc8c14fb2866804561c408",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "5a7619bbb7061f0afcd45c15c64c826aa0f1df6376cb06ee4d6c2eb4391616e9",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n51",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426251-ply-48",
+      "from": "unknown",
+      "move": "h1h7",
+      "proof_id": "07cf9f46cc31dea94965aaa9b269fa682f3067daa4149a74d1e7cf4bf8b498eb",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "6dc951199062bf538d7fa721d15c33bdaab6db9239d1d5aa46487d82ae866f9e",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n51",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426251-ply-48",
+      "from": "unknown",
+      "move": "h1h8",
+      "proof_id": "788d5fb86f8db12bce0f574632496b6d58cbf5552be4452e670e6da234575778",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "2c2732891ac5a66882efd66323292963ea22522b9b44b430af03e9ea0c844603",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n27",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426252-ply-48",
+      "from": "unknown",
+      "move": "e5e7",
+      "proof_id": "348ef2558e125ec3eaaff6d7003394a38fc2bcc346ac1e1224bab7fb4a966f86",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "51e34d28471b5788f5a0b6ec3391b73fc7071029df5502632068dc876a9116f2",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n27",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426252-ply-48",
+      "from": "unknown",
+      "move": "e5e8",
+      "proof_id": "70eb942ef42454abcb5e70f62e419a13c1b4e4e5a795b3065f5e65c78116c395",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "4fba1cec1f6e6a6c38d1b0c8f9868e59f8cfa37703d1c0ae5995f81bf7f4bffd",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n27",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426252-ply-48",
+      "from": "unknown",
+      "move": "e5h5",
+      "proof_id": "3a9f921a8e53f0531e562508009cdd12ee9544b62c4213e923277813a007387e",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "8cdf9fd965affa2edcc367132d48051b523e3684a85bb363f7d7d5aea62449d8",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n93",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426252-ply-48",
+      "from": "unknown",
+      "move": "b4b8",
+      "proof_id": "4d60b9f7b9aa41b9ecb57fcd1d33a1854023a546b36d116c85740bf4d613923c",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "0a437da6a53edddae4315012847d94d0dc99e5ab3e3a6a39856d1aeac0b91def",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n51",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426253-ply-48",
+      "from": "unknown",
+      "move": "c8g8",
+      "proof_id": "833019a39f6361d2acc300816a054d1079e9a52443832bf514a584a37835a9e6",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "ea60dcbb21d808ea28b09b5a6108ae6d09c4e9c5fef6a6efb259b1a0564190e5",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n51",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426253-ply-48",
+      "from": "unknown",
+      "move": "c8h8",
+      "proof_id": "a4f6afc3f08370bfd7c34a1a16f99d666adf2cc95e842e2911839adb22a1e20b",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "b4fac673c814a55cfbd6c3556697f991d86d431e6c65d1093226ba1fd2eab699",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n51",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426253-ply-48",
+      "from": "unknown",
+      "move": "c8c5",
+      "proof_id": "06a45601ed1647c8607970dd03f65e3bb97c7ac3db12f2ba6682c15a341896c5",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "60bdd06f6c0fdaccbd6f503475a0653488547f9687cd412366137fcb93c78a5b",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n51",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426253-ply-48",
+      "from": "unknown",
+      "move": "c8c4",
+      "proof_id": "da9eb58c38ebe7a2485486591c4b48ee82fe126b48db9b3040b1df583ddcbe9c",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "dc2029ed303dc07ce411e08f5b09ec9a6b405793f64215d52049fcdbd954026b",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n51",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426253-ply-48",
+      "from": "unknown",
+      "move": "c8a8",
+      "proof_id": "8b88c76497d631213669cc36b7a9bc4a81488b5b9215b11dd648c8ac6a6c2eb0",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "b199b262c7c7b72bcd5d512ba8d131f0d5e82ab24c53a3f7aa7bcaa878723424",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n121",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426253-ply-48",
+      "from": "unknown",
+      "move": "a4a8",
+      "proof_id": "4cc955fbef4c1336b8c58b856a912d37760b5c1690699fa93bc20f2cab11bdde",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "774705c3b2537cde6343a1345fe05ed338877aa394516d3c49db1f008995201e",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n121",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426253-ply-48",
+      "from": "unknown",
+      "move": "a4d7",
+      "proof_id": "a6a3f1f6ea93139ddb129e00b1ed03c4513ac4e2de34e111661981c225f0b945",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "42b72d501d6eff18197fba7b41c99024e9a7342ff2fdff994759c14fe3958846",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n121",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426253-ply-48",
+      "from": "unknown",
+      "move": "a4e8",
+      "proof_id": "f80b5c112a72d049419e971742090e275f60225c4c932a05c75cfb9ddf6c937b",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "c7d54caccef82ed45ff51b7d9393696f51f4f06cd4e31ce8cac904364edafec0",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n121",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426253-ply-48",
+      "from": "unknown",
+      "move": "a4c4",
+      "proof_id": "2ed7a17097720ab3855b1bfd533ba9b6b4956637704623e1b43604168472457a",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "ace941dac3306413994afead41978d7aa1378d875906891cd13344ccd56757ad",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n51",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426253-ply-48",
+      "from": "unknown",
+      "move": "h1h6",
+      "proof_id": "b028e39a52c9eb53923c4d867887201bdca76b3792c979d007f0baf6592c1f5f",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "5a7619bbb7061f0afcd45c15c64c826aa0f1df6376cb06ee4d6c2eb4391616e9",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n51",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426253-ply-48",
+      "from": "unknown",
+      "move": "h1h7",
+      "proof_id": "145580edf378fbe74a1bf4d444f0e603de3cb76af95f366e6cf29b1c72cc6cac",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "6dc951199062bf538d7fa721d15c33bdaab6db9239d1d5aa46487d82ae866f9e",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n51",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c4-independent-games-seed-426253-ply-48",
+      "from": "unknown",
+      "move": "h1h8",
+      "proof_id": "d5ed56a914424661a8dd21589e795fbd341b82cd2f94cb8e37b3f63556e5ffed",
+      "split": "cycle4-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "220bf588bc190beee8ed138c07917669fb70fc3ab9cf0ad71facb2584e3fb71b",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n43",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-validation-516151-ply-56",
+      "from": "unknown",
+      "move": "f4f8",
+      "proof_id": "9e02a1015dba5cfae5949633a40efe0b4d568cf244e65898eb4ec5df0fce9bb5",
+      "split": "cycle5-validation",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "febb6c499a0353ef78e5367c19a8cdf4968c63e1006e46d376d8b7fa1b1629aa",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n43",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-validation-516151-ply-56",
+      "from": "unknown",
+      "move": "f4c7",
+      "proof_id": "bdafce778f4a21d73a6f3c49617085bd0087ac58e12d0e692f127859eb3c1c55",
+      "split": "cycle5-validation",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "e9596371f441557b411ab7cd407b4f04629706a038fff9e0b6a29a660a661582",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n43",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-validation-516151-ply-56",
+      "from": "unknown",
+      "move": "f4b8",
+      "proof_id": "82f03daef23348fd96f5e73aabd950ac62255906f6d3146fdf77cabe4773df14",
+      "split": "cycle5-validation",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "fe15a6483810f2e955199bb5fc252415a4e7cbd96cb0bce3ac2af54da7145f7c",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n135",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-validation-516153-ply-28",
+      "from": "unknown",
+      "move": "d1b3",
+      "proof_id": "a793503cc29668b2ce32db97e596079a6da2fb0fb6ddd89a22bab7487169e965",
+      "split": "cycle5-validation",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "276f29a39b8d62674c4bf4b4f9a7a41e28ecc55b7671bba292fb6c5e06d813fe",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n135",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-validation-516153-ply-28",
+      "from": "unknown",
+      "move": "d1a4",
+      "proof_id": "31862840709ca22e60d44788fde46a8cffdf9a70de98774648be12d524cf6172",
+      "split": "cycle5-validation",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "58700cbeffde9669a7dc4cb5b1071bcdd708cc411ea16a72da6a475371172cce",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n45",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-validation-516153-ply-56",
+      "from": "unknown",
+      "move": "c5f8",
+      "proof_id": "09e9d4d6765a09f7ddd16295ad40f74d73ab9af0fe14d8ef11d7b70b72ea4b50",
+      "split": "cycle5-validation",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "d08ac1e008c145a479586765de5c938eab7fbc69ed9355d6e38762b6cda828ae",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n45",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-validation-516153-ply-56",
+      "from": "unknown",
+      "move": "c5a5",
+      "proof_id": "ffe2b70d5f2cb535674d71232eaf2c13009ebfa310ada0abfa2dabeab6a04b2e",
+      "split": "cycle5-validation",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "49481288957de61a4f52579271f9e07a574e0a1dc0b413a4558327eabd6228d7",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n93",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-validation-516154-ply-56",
+      "from": "unknown",
+      "move": "d4d6",
+      "proof_id": "be81a5f9b6fa2e9a0970fb2c96da937971d7430b13d0d616bf9e5e4492cb0fa2",
+      "split": "cycle5-validation",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "5c8783c3b595afdee4dfbd475bab1ac0e8a97d60b4ee930d330c420c45956bef",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n93",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-validation-516154-ply-56",
+      "from": "unknown",
+      "move": "d4d7",
+      "proof_id": "2decb4e7790050afaa52c57fe539ada85ba098c79d13f346cd50a3adb97f7dd1",
+      "split": "cycle5-validation",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "2175d07018ad26ba8a9dba5c4b92600f45713a157bdbc79bfb5e1ec3a3a80de1",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n93",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-validation-516154-ply-56",
+      "from": "unknown",
+      "move": "d4d8",
+      "proof_id": "5a5e138073e31b49232a18f53e00264f54bbc3dda26bed88c9846109d2bb513d",
+      "split": "cycle5-validation",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "cb3a99b49b3338ecf8b09c0adc3ec591c61d0296f6d9d394ffdef63d8d954208",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n93",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-validation-516154-ply-56",
+      "from": "unknown",
+      "move": "d4f4",
+      "proof_id": "2f2dc6d4b6cf44c1f689e3d922e7ee25233f0de6021926e9baacd473d5bca452",
+      "split": "cycle5-validation",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "151ecaaab6fd83b6c8ab7d5df746314ff3b68f0ad8574239fea1acbd569765bf",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n93",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-validation-516154-ply-56",
+      "from": "unknown",
+      "move": "d4g4",
+      "proof_id": "155e4ed4891ff75de1ad4bab0b2080a4b743ff97f775f1ccf198913e0ff4b644",
+      "split": "cycle5-validation",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "58d9ffcf6ce1f9aba2ed99532d52b6423d6fbee0bab14658123d81ae269f6238",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n93",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-validation-516154-ply-56",
+      "from": "unknown",
+      "move": "d4h4",
+      "proof_id": "d026d2de0984911d13dc866d3dab189dc81b97ef62e55b48cb1a65c31d362531",
+      "split": "cycle5-validation",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "dd68c08297c210966c48afb179de012d169ea9049aea6077dd6756bb34595fa7",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n93",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-validation-516154-ply-56",
+      "from": "unknown",
+      "move": "d4b6",
+      "proof_id": "8768d0bd7afbb283538d7b0972e6f3cf83a8f5b0e88fb76a3ff66fc8b3654203",
+      "split": "cycle5-validation",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "40285154cfb71043b59bca2463ab699f9b9013802f46b40147a146d27e0a064d",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n93",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-validation-516154-ply-56",
+      "from": "unknown",
+      "move": "d4a7",
+      "proof_id": "4e9be2b9c4778527af7fb929f2231e50625185ad5527ec32d119084544af0b28",
+      "split": "cycle5-validation",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "07b5e883922785ba8a00606cabc11ca9e9b4802ed5e3ab07e2b48df1bfb2b84d",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n55",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-capture-4",
+      "from": "unknown",
+      "move": "b4h4",
+      "proof_id": "0b7e5ab301adbf88576719be0d3ab85b013797c646fa903e9f0cc3ed8b22723a",
+      "split": "cycle5-combination-holdout",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "07b5e883922785ba8a00606cabc11ca9e9b4802ed5e3ab07e2b48df1bfb2b84d",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n55",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-capture-5",
+      "from": "unknown",
+      "move": "b4h4",
+      "proof_id": "0fb343c66e789209bd32b2f7ecdd0bf0cfc2f9fa26e85ffdd1b5961c1ea924ed",
+      "split": "cycle5-combination-holdout",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "ea87711ada7d24cc652dc530b6f67afdc5bbe3a57d449d271d863539b839582a",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n55",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-blocked-capture-4-Opponent",
+      "from": "unknown",
+      "move": "b4f4",
+      "proof_id": "581feb64f7f402d6b3e7314343a740e91673508b9ee264e69e568d33b6e1a622",
+      "split": "cycle5-combination-holdout",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "2fb41a53d0773df5054ca26972c4112bf42322ed1b70136222e87a20673e37d4",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n55",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-blocked-capture-4-Opponent",
+      "from": "unknown",
+      "move": "b4g4",
+      "proof_id": "ef38efc0e46b3a5880548a110cc1fda9106481d003f072af859f3fb20bcb35ac",
+      "split": "cycle5-combination-holdout",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "07b5e883922785ba8a00606cabc11ca9e9b4802ed5e3ab07e2b48df1bfb2b84d",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n55",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-blocked-capture-4-Opponent",
+      "from": "unknown",
+      "move": "b4h4",
+      "proof_id": "cedaf59a7eff4b675f8656e862c14aedaa1a11c82ee215eccd8017a3c3c64ac6",
+      "split": "cycle5-combination-holdout",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "ea87711ada7d24cc652dc530b6f67afdc5bbe3a57d449d271d863539b839582a",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n55",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-blocked-capture-5-Opponent",
+      "from": "unknown",
+      "move": "b4f4",
+      "proof_id": "d5052de64506b62a1aeeb77a7135af001135e8d1767c92b1915623b4fcec6b4f",
+      "split": "cycle5-combination-holdout",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "2fb41a53d0773df5054ca26972c4112bf42322ed1b70136222e87a20673e37d4",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n55",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-blocked-capture-5-Opponent",
+      "from": "unknown",
+      "move": "b4g4",
+      "proof_id": "0e15f7376638ca85d3fad39ae7da85a772b21b09d5fec1aa21682f8b3498180b",
+      "split": "cycle5-combination-holdout",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "07b5e883922785ba8a00606cabc11ca9e9b4802ed5e3ab07e2b48df1bfb2b84d",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n55",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-blocked-capture-5-Opponent",
+      "from": "unknown",
+      "move": "b4h4",
+      "proof_id": "115050957d2e87638bcc31153a283f2b1daea948e635acf5eed69d6fe31a5256",
+      "split": "cycle5-combination-holdout",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "e70f2c805cf9423d5189b18839dab130a84421cd3f0eda86d69b4be44ed83d04",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n65",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517151-ply-28",
+      "from": "unknown",
+      "move": "f3f7",
+      "proof_id": "b12664bef6ca4cc584eb04b935b05f7474f2f4616676ab3557cf5d5469baa5dc",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "5adffa6f9eae67a80963405128f5fabc079d9365d63cb970ef433b746d22b7b0",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n65",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517151-ply-28",
+      "from": "unknown",
+      "move": "f3f8",
+      "proof_id": "c04045ea27341873eae5305d6bc513d506b990398d87bcf7b51cddb9845fa6ec",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "e038b0e26afda1a3b6e624bcc28425a6f9aab7827c0b8952024a0f9287dab9c7",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n65",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517151-ply-28",
+      "from": "unknown",
+      "move": "f3c6",
+      "proof_id": "035040d2902aa1bf0ef004fbfd7e6c8cfabf466ea65ccb0c27628c0d0f51c1fc",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "30fb7e4c6d52eaf38ca88df6154b5c4835e9250c21efb85dfba6b45d1e30c101",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n65",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517151-ply-28",
+      "from": "unknown",
+      "move": "f3b7",
+      "proof_id": "ee03c8f7da6e7c22ef05c14b4bfb24f13c95d79e1897dbba5d31c91ad66294c3",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "9304815c697d5272d10f072404f6d8559e0957bb316e889082304f10afecd1bf",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n65",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517151-ply-28",
+      "from": "unknown",
+      "move": "f3a8",
+      "proof_id": "2898cb468817d92b97093cccf9381a567d39eb34aa8dc1e7a0f9cc095de2421b",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "ea60dcbb21d808ea28b09b5a6108ae6d09c4e9c5fef6a6efb259b1a0564190e5",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n51",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517151-ply-56",
+      "from": "unknown",
+      "move": "c8h8",
+      "proof_id": "f4c9281c762ceaab9629cce933bfcca29f6c36e7f815fd96ccc468bcdeb3c5cb",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "b4fac673c814a55cfbd6c3556697f991d86d431e6c65d1093226ba1fd2eab699",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n51",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517151-ply-56",
+      "from": "unknown",
+      "move": "c8c5",
+      "proof_id": "e061a3d5bbf9d3fb34654b4d19a662aa552e9fe467be65ee9814c36a93f7a782",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "60bdd06f6c0fdaccbd6f503475a0653488547f9687cd412366137fcb93c78a5b",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n51",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517151-ply-56",
+      "from": "unknown",
+      "move": "c8c4",
+      "proof_id": "5dc838791eadd9685334ee227833d7fe4ec143a68b67d0dcd87eaf6dee10bd4c",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "231194dc14a8b233d34658d5f0f8bc1c0392fde12b9a33605700b877b4b8606f",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n51",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517151-ply-56",
+      "from": "unknown",
+      "move": "c8c3",
+      "proof_id": "998dffbd95b619e2481330251352aa5d6feffe3ef8b8aa23e59e6b7a500dd23d",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "2b165f24242e9685d592c668997556047122c49f548bc1e1af1f21e15c76319b",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n51",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517151-ply-56",
+      "from": "unknown",
+      "move": "c8c2",
+      "proof_id": "9898563ee4a35cc94b994025cc00353982f122ab7e8703f3b32eee73edb53c3b",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "249b3b0be9fffc195883d655cfc2bf9adff1ed87bdd2a15b3829ef107ddec527",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n51",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517151-ply-56",
+      "from": "unknown",
+      "move": "c8c1",
+      "proof_id": "b21b2465280e13cb894234627f5cf4d95821973d742a857307a993d7e149c0f3",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "3f13c2c2ac529b63198b668ea8c72baac642b62ee6fd406eae85eb4ca705941c",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n61",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517151-ply-56",
+      "from": "unknown",
+      "move": "b6b8",
+      "proof_id": "7c8936013c78d4e4bed66968c9a0ab9d46582b740739e0f65c160f445961b88a",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "242df88243712e975adf0414c89a5529e2d4e883f238d84b3d34a32beba13335",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n61",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517151-ply-56",
+      "from": "unknown",
+      "move": "b6d6",
+      "proof_id": "7f0d6770cde0dc2b3b01bf0dac41565f05ff43b60395405c82687545d5da4ed3",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "df131adf4bb415db9722f4528ed1c83d29151133ce212fa0d881a6563c543230",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n61",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517151-ply-56",
+      "from": "unknown",
+      "move": "b6e6",
+      "proof_id": "2ce41b311f34d53500c7e422c2f0fa4357e18183f3070d6fd56b7daead5d9aec",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "606b9b35e6c58099dafe289bc28f426683d0249621598ce07fa324e2172e23fe",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n61",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517151-ply-56",
+      "from": "unknown",
+      "move": "b6f6",
+      "proof_id": "ec5e88d3cebec54065a5301f5992d7f54dc57ca4b1e8f8e5b2d5c532fe608a88",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "90532a5ebdd877870c0204fddb764595e0d68c12f88568b27934d551d878418e",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n61",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517151-ply-56",
+      "from": "unknown",
+      "move": "b6g6",
+      "proof_id": "4e9f37c43094e38f87313607230f7501dd975021a82572aaa7c26e503d61e2ce",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "0059ef3221cd9a225fdb4b096fb5bed0be69c12aa46993cf9d05d55221b46144",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n61",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517151-ply-56",
+      "from": "unknown",
+      "move": "b6h6",
+      "proof_id": "ad859bcea7900e35081338717ac86da280dd6b10243a13ad34dffe73dd7c8a91",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "43fc0ea3cacb9c0ad17af460e62423ab2804e01ddc5785777efc9d31b2351001",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n33",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517152-ply-28",
+      "from": "unknown",
+      "move": "a4a7",
+      "proof_id": "f3a8c8f2069d17e7e7abfedb7b45c42bfcad869a2b57812883802e5238d98047",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "b199b262c7c7b72bcd5d512ba8d131f0d5e82ab24c53a3f7aa7bcaa878723424",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n33",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517152-ply-28",
+      "from": "unknown",
+      "move": "a4a8",
+      "proof_id": "10ad3c28ee409c4d5aabef76af05549a6ea850ed895e2d04d78944244465128a",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "774705c3b2537cde6343a1345fe05ed338877aa394516d3c49db1f008995201e",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n33",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517152-ply-28",
+      "from": "unknown",
+      "move": "a4d7",
+      "proof_id": "df98b7f7a15bd9bc45860c522d781de352c756bef73432c3a24fbd46a4f59e01",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "42b72d501d6eff18197fba7b41c99024e9a7342ff2fdff994759c14fe3958846",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n33",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517152-ply-28",
+      "from": "unknown",
+      "move": "a4e8",
+      "proof_id": "144b1ca520d0440593bbf2dd2eac6340b67aa6409fc609e8fbd8ca5af2cda0ae",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "f2d23e812ec44dbeacc3745ba8a22d2be78265b53a4e4f6b8d8315cd94523cf3",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": "n4210",
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517153-ply-28",
+      "from": "unknown",
+      "move": "a2a5",
+      "proof_id": "c117d64082ef2177d72d5e8d222131fa347555eea545a60dc1944834f8c38815",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "7eb7467fdd8b491edf438bba599b426f0012d743d947f605c52442946e2a35e5",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": "n4335",
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517153-ply-28",
+      "from": "unknown",
+      "move": "a2a6",
+      "proof_id": "41c8983c32b6c75c8970b0c13cedb050f590125e010e8a2d2fbd9355ae8f5cc6",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "277eb1423b8561e18c28e3bded3703769b33e3054f8dfa8dcfaa7a2936ff5f94",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517153-ply-28",
+      "from": "unknown",
+      "move": "a2a7",
+      "proof_id": "560585c306d0f0ffe64b2f7d6a34500ce0b9f52a54c09233dafa2590651f788f",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "7915c06ff4219f186d5e4ad55a0ad80a0589623b9b23c42a84d6089dca7ef3e2",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517153-ply-28",
+      "from": "unknown",
+      "move": "a2a8",
+      "proof_id": "e1411fd43abdebd640ba65e05362f238412e5736f8e1380b135a3d603f79b74c",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "f9a4913299a71d868a276d976e63301077b3cfab0013f7de9f5523fbad615ea6",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517153-ply-28",
+      "from": "unknown",
+      "move": "a2g8",
+      "proof_id": "11c522f122b6192cd60c29649f3fe5697364bfc7db2e6987b74eea4cb57522bf",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "a9e90df2493a965d2bb6446258c68eff94a920284ca611bb013c20fe667840a6",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517155-ply-28",
+      "from": "unknown",
+      "move": "d2g5",
+      "proof_id": "5f2dd90a8fd504f958e535debf7496cd0ca8d52aa83056a5c6d7c4cd0ccc5a31",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "5b033f3a2017692fb984c19f2ff6fef6826a38015fe72bb5f665a4bffd31f7ef",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517155-ply-28",
+      "from": "unknown",
+      "move": "d2h6",
+      "proof_id": "7c312865ff582ce60292f48861497db1d9ab72068bd651fdc7d186bcc2f070c7",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "68312d8668eb0cf536a6088eef31435b9f50f4a2e246c6909fd935d2c4f034c7",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": "n5643",
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517157-ply-56",
+      "from": "unknown",
+      "move": "h2h5",
+      "proof_id": "e4a2425c66e798f90081cd0ba23727b6ddaf0fb7916588cd44a067ec82416619",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "a77ec0b465286030787a638b33b4f3b0936d33e6f90161b6b873dfd3c7503a43",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": "n5762",
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517157-ply-56",
+      "from": "unknown",
+      "move": "h2h6",
+      "proof_id": "5ebceec4391c6f5f82e4cf2e0d03ac696bf2f0c673501d7dc3b0cdfaa13515a2",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "37da7218b9714a7aa9e84127578c4e741cd8c920645f6a9e5e59aab5ed15aa0f",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": "n5887",
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517157-ply-56",
+      "from": "unknown",
+      "move": "h2h7",
+      "proof_id": "c849ee28e5e30e5f228f3b2a89588064f43df77ae67dcbc168e9111d27fec260",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "07863453cd9c4f76e2a2b6cff5daaf89d0210ba7b9096804fd71da654bc353bd",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": "n6012",
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517157-ply-56",
+      "from": "unknown",
+      "move": "h2h8",
+      "proof_id": "5431ea44d894e8520604ea510c432dc192836d9300dc9c6939be612307e96155",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "a0f706b7c828f1a34129a6aba0925f8e91e5fdab6c3ba0051d45c1e3fb588132",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517158-ply-28",
+      "from": "unknown",
+      "move": "h3h7",
+      "proof_id": "8109ffcad18e82b5f77cea4f0ddbda4bb8abd6094f6f565c8e259a7df1b45eed",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "099332b9370e0fc348fb7661ad8b26c4324af23152d22004066a38490e199312",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517158-ply-28",
+      "from": "unknown",
+      "move": "h3h8",
+      "proof_id": "30d075834996ba238f13abaa92230e0fd00c83de6f9217cef7bd83f9fa157d10",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "bc53f9bd7174ccd424f7a05f8b8f1401082ea70d9d8bb51d386570210b5b5e66",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n91",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517158-ply-28",
+      "from": "unknown",
+      "move": "h3d7",
+      "proof_id": "327731d2000754cec8b606fe8b97f8058e060a3431fe03481fa6efbb7c016fc8",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "1a6c0af694857b6eb9920192a19316b84ff7c3bc22c61ea0372d8411e7c6b53d",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n91",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517158-ply-28",
+      "from": "unknown",
+      "move": "h3c8",
+      "proof_id": "25caf03c0286d0d53b0723b27f4283c17953590295c79b8de95647c1686f5cb7",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "c40865bc737a22fa12d1848342d500e385af2f1e402aa4c275ff0b399f01b56b",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n27",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517158-ply-56",
+      "from": "unknown",
+      "move": "h5h7",
+      "proof_id": "af6abaa02ab576d9361c85f18330a4a7c9b771128080a64df5c7518ba84f2aa4",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "b4ec8cdb0a0aba92b732e5206bcf5109cf02ce54887af212f47bf3622d9dcc14",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n27",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517158-ply-56",
+      "from": "unknown",
+      "move": "h5h8",
+      "proof_id": "640929b4eacbcd81d67a91b80c594bbc81956d7fc4f9c9e76c3d628cbb19946a",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "9ce1d22eeb1dbd0f71dc63516bc81b7cd11dfbefa649d0021e5606c61bc2746d",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n27",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517158-ply-56",
+      "from": "unknown",
+      "move": "h5f5",
+      "proof_id": "dbfd6e4317397e4ff0bcf98836bbf2f23b6084712f11c241c0b3a1d5f49ad439",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "190d83ec41e4a42a6273651067212fc3c65146f360823614f87ac5c55625e1d9",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n27",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517158-ply-56",
+      "from": "unknown",
+      "move": "h5e5",
+      "proof_id": "b9161363b9d835702062eca69fc69d2c0dfc1e9bc5e95252fc217b849ea83bac",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "06f6a794e81a11c8633536162ecba97234b97a5733333e6c04314d6aa3d1393b",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n27",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517158-ply-56",
+      "from": "unknown",
+      "move": "h5d5",
+      "proof_id": "d93755b349b72c67098e46bf46e41d91387eeee1a2de9036972e8718021d1ddc",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "86698617fb37914789191d344d06463201f1c7f574c5192c8a40ebe25ad93cb7",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n27",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517158-ply-56",
+      "from": "unknown",
+      "move": "h5c5",
+      "proof_id": "8c138da32fcd250b9de6d2731e38aac1c49e575ba7a3009ff03fdaeb67f05ba2",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "acfa886978a17ca3204e744334714d83f8113650e58ecf554d3ec9e164185eb2",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n27",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517158-ply-56",
+      "from": "unknown",
+      "move": "h5b5",
+      "proof_id": "b7f87e28f256096270073f7458d635d270a5fddb74e217ac15006a7dc0979f0e",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "57c69d344bc7770dac5a9b09c98dee31e33982df720fdd420bd67cf6001eff1b",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n27",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517158-ply-56",
+      "from": "unknown",
+      "move": "h5a5",
+      "proof_id": "48c500289345d20c5ffcfc3b329f731e5d934baf2c1a7d73101b9ca6d2c36f43",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "65d0bd5dc5accade99a5bc2fb0f824e9902a3d3b04ec9007bce27659142fd4fe",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n27",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517158-ply-56",
+      "from": "unknown",
+      "move": "h5e8",
+      "proof_id": "78279d24b23f4afee64c2f37394176ebcb29bdfbcbf0199e3345a86acf344be4",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "7eafaf08ec216b4f0fd588b6c7a53adf49c8a2fe7049954e4b8832b2989114b5",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n47",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517159-ply-28",
+      "from": "unknown",
+      "move": "b3b6",
+      "proof_id": "ce72bf48456affa8d6a8b980c00717dd18323f6f46414437a6a7eaff02887322",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "c2de378f3f3385f5018611142eb8ccbed68e77b739c5cdd3ddd5236fd73704f1",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n65",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517159-ply-28",
+      "from": "unknown",
+      "move": "b3b7",
+      "proof_id": "0bb1dec3589fc41bcb251d9acc3807567c50cdf1664f4775a9eeaf0d299b9874",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "66088f84761c2a7d5ea323474c9e655edd51b0d40234e92bd5f2981c548cfa2b",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n65",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517159-ply-28",
+      "from": "unknown",
+      "move": "b3b8",
+      "proof_id": "0e12817a885d60ef23cc545fe5d0e254842ec2bebca398285f376bf033e2e763",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "f008c15b39b7df4226b53800553ddbf593ba08895a462706df3d44a18a237d2f",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n45",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517159-ply-56",
+      "from": "unknown",
+      "move": "f6h4",
+      "proof_id": "06fb31e869eb50696fe81992296693be1ba4982791f25d5fdb0c6acfcae09101",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "9e2799b69bac983a95a2f23cd877b72815061af63362df4591460fca92870973",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": "n2486",
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517159-ply-56",
+      "from": "unknown",
+      "move": "f6c6",
+      "proof_id": "f6b792781c88f2cd3d892c25e6e7530abd1baa1c4fb4fee2b417510a459d568c",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "672f6829aaada498a8ab6a12362555fec98dbb90e69e0f13049bad6e25ca0f28",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": "n2584",
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517159-ply-56",
+      "from": "unknown",
+      "move": "f6b6",
+      "proof_id": "7e411ba1db338e2ec2685eab358c0c109e0f30dc0aef1efe57238acff0e63131",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "79349771930b8ca852b049a565edd77f0b16800b0b32941d95513f127651ef72",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": "n2682",
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517159-ply-56",
+      "from": "unknown",
+      "move": "f6a6",
+      "proof_id": "64e38ee15409f6dfd9560cceb5b0b14a5508c4c08dbef3e4991a03f0d4aa675e",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "64f0a4920a12847e375464e4f1c9b9ef4423fed822951f66e793e6ec9772d5bf",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517159-ply-56",
+      "from": "unknown",
+      "move": "f6d8",
+      "proof_id": "95a0926133e93fd9fb7551bbf87e4f8001420f3bd134c6e99e53dbe189d58558",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "b3f2ee72a26f7f6aaa4ffe7c07800cbeb235af57d6e1c4b9d8a4023502e19121",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n65",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517160-ply-28",
+      "from": "unknown",
+      "move": "d3d7",
+      "proof_id": "e52d94337ae24f3bdc14535359ccdb4a338c63da23a61d4dcf91a8954b78e580",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "c261eb903bd0bee5a3b7ee6988074120128113d674fc34720aefc82f8613dd6a",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n65",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517160-ply-28",
+      "from": "unknown",
+      "move": "d3d8",
+      "proof_id": "c279f82109af9eeab059a1694dc5370c361b2d5e853e33d6bd25ea1ecb162ca3",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "9fc81f5148d9d58482f6eeaea62b9a379321ef03d8baea942bd21bde1e6865e0",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": "n10858",
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517160-ply-56",
+      "from": "unknown",
+      "move": "a1a5",
+      "proof_id": "04364a7c64ab7b8d51170c81bbdccaea25f1cf4af35febb89175efb7e141bb71",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "2d34da6c74d0a6fc1fb3a2dffe967769438de4c8dbd9179196fd17d5e72ae29a",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517160-ply-56",
+      "from": "unknown",
+      "move": "a1a6",
+      "proof_id": "80a961d274d0f7a2595c20fb3c65ccfb61ff291d5c2c5431c4a599934638553d",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "f89ded90d059da80cad2a094cedc447efd43e9ba2d16192080e5effd983daed9",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517160-ply-56",
+      "from": "unknown",
+      "move": "a1a7",
+      "proof_id": "737ad9baba194695e2577d3b1db4bbd81958aa4161fd91bd101c6319e9b9bf4e",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "d8ac513eb7ec261ec5cdfed9ea1f520ea42fee792876dc7d4e86aa79ab1b55bc",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517160-ply-56",
+      "from": "unknown",
+      "move": "a1a8",
+      "proof_id": "9c62e8b1bde8bb08679654cc50202c9807cd310a627819e598921433ba50659e",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "5a7619bbb7061f0afcd45c15c64c826aa0f1df6376cb06ee4d6c2eb4391616e9",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517161-ply-28",
+      "from": "unknown",
+      "move": "h1h7",
+      "proof_id": "3584660f52dc8b881eb0216822c4c3fc5c2be1605367d448a41d5e59ec9024e3",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "6dc951199062bf538d7fa721d15c33bdaab6db9239d1d5aa46487d82ae866f9e",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517161-ply-28",
+      "from": "unknown",
+      "move": "h1h8",
+      "proof_id": "da0b902d960fdf91e2bee55e81c6d573ae26bbcc8d13f1e3d96e6b33fd3afb4d",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "731318090bad025269700e5d193d845e42162fcd3b05f66264e8d0400a6be180",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n55",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517162-ply-56",
+      "from": "unknown",
+      "move": "a6f6",
+      "proof_id": "f1942121c81700943b54584d1db8ba00e4a4b74c1d5085155ddd8c98707b16cf",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "c2de378f3f3385f5018611142eb8ccbed68e77b739c5cdd3ddd5236fd73704f1",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n65",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517164-ply-28",
+      "from": "unknown",
+      "move": "b3b7",
+      "proof_id": "5d0466af66c2a2bcd8e87bfdffd8f9adc541d9c00fb4dcf7545759fd8a6cb01c",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "66088f84761c2a7d5ea323474c9e655edd51b0d40234e92bd5f2981c548cfa2b",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n65",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517164-ply-28",
+      "from": "unknown",
+      "move": "b3b8",
+      "proof_id": "6c3ddbc7ce3203ac89c17d79f71721cbcb451794514ea689fc590d970add0f13",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "7fea5c18e3f3b0b1d2d4a16b0edd023932a0c37e44ad95ca8e958d33a8066ada",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n65",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517164-ply-28",
+      "from": "unknown",
+      "move": "b3d5",
+      "proof_id": "e30598189ccc99d8dd9631fbf0fe05d775c7504b3730544470b9ad6157684c63",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "2e786441d02c947f60e7ab8963589f5682462896da748887cc56383559a75624",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n65",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517164-ply-28",
+      "from": "unknown",
+      "move": "b3e6",
+      "proof_id": "e99c9340000230d3f746a56dbfa0bc76e2cccfeffd5951eb4048fb2f4c444901",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "4246ec9b2d4fe3b9419d13f4278593f02dbc5a678b8a0e29e6fa9e9a5f4d0d64",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n65",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517164-ply-28",
+      "from": "unknown",
+      "move": "b3f7",
+      "proof_id": "39f1a7617ec8879e229decdd0a95aec631bce621720bb2fa71b6dea67e33c48d",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "2bd6cfc9cee6f47ae1b8458f8865b7bae974d648e6aab2b01ef09454309cb6b9",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n65",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517164-ply-28",
+      "from": "unknown",
+      "move": "b3g8",
+      "proof_id": "72a4fb89b02caa12d8318df0e8e628af7e200283a2523b57761f5940cd3a4b7c",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "62ffebdf380d646f32325ee1b163b9a3c57fd8f47f4241693eeedb7a5addd2a7",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n33",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517166-ply-28",
+      "from": "unknown",
+      "move": "b5b8",
+      "proof_id": "71a096b45d318332675d4114114096428683d4317655eea3d765c9badd737a67",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "9e9f607c41b8d3e9f005e1a155b4dc5789fdffac82441ab2db1fc86e6fc6e08c",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n33",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517166-ply-28",
+      "from": "unknown",
+      "move": "b5d7",
+      "proof_id": "c3fc65abe28e5e26b90beb90bd929b18075b1130907d58bce3dc84169f7e0dd7",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "unknown",
+        "C5_classification": "contradicted",
+        "id": "15c8fffdee9da5bb9d1ce101c73985cb08954a7854fa6c5bf5903249aca01bc6",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": "c5n33",
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517166-ply-28",
+      "from": "unknown",
+      "move": "b5e8",
+      "proof_id": "e9c97a5136add9948516bfc970d4d1b4f6b94599f9000fb3c5d440865275d3e2",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "b1297cc37fc58df7e9df49a3d072871a17cbd26d9987b447219a5a36da8b98e9",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517166-ply-28",
+      "from": "unknown",
+      "move": "b5e5",
+      "proof_id": "3bec789a5cb853ceedbb3c62f7ef4c9465225f97648b883748d2c8411b48b697",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "fc8fc062c370fabd2f1d3ca26e5ea1921189d155697f30d07a301de4024437fe",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517166-ply-28",
+      "from": "unknown",
+      "move": "b5f5",
+      "proof_id": "8b2e1ff12e69355cf06150996aa468119a63c0532be84385712dd32530e3a918",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "b1803b462b14eb1f00fc94a7403a63faf2d08d99c6b2b5053187a6eff5e08ed8",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517166-ply-28",
+      "from": "unknown",
+      "move": "b5g5",
+      "proof_id": "20687ad71f27a6d8e82c1b799802ab4dcc7f3d1103d2ac081acc6b3b4a58d47f",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    },
+    {
+      "decision": {
+        "C4_classification": "contradicted",
+        "C5_classification": "contradicted",
+        "id": "677947f7e8ff1c03ca5a0a40f68cf4e5df8dcd7bed7ad61925282ab744fe6df5",
+        "kind": "host acceptance policy",
+        "native": false,
+        "negative_node": null,
+        "positive_node": null,
+        "reason": "native-negative-chain"
+      },
+      "fixture": "c5-independent-games-517166-ply-28",
+      "from": "unknown",
+      "move": "b5h5",
+      "proof_id": "94e5a7b6dd36ff7f7d177745ad70c7c0b685cb1c04fb9b8f1732685110b654e3",
+      "split": "cycle5-independent-games",
+      "to": "supported-illegal"
+    }
+  ],
+  "errors": [],
+  "proof_reconstruction": [
+    {
+      "candidates": 1697,
+      "complete_proof_reconstruction": true,
+      "split": "cycle3-independent-games",
+      "variant": "C6-no-new-negatives"
+    },
+    {
+      "candidates": 4650,
+      "complete_proof_reconstruction": true,
+      "split": "cycle4-independent-games",
+      "variant": "C6-no-new-negatives"
+    },
+    {
+      "candidates": 516,
+      "complete_proof_reconstruction": true,
+      "split": "cycle5-combination-holdout",
+      "variant": "C6-no-new-negatives"
+    },
+    {
+      "candidates": 6427,
+      "complete_proof_reconstruction": true,
+      "split": "cycle5-independent-games",
+      "variant": "C6-no-new-negatives"
+    },
+    {
+      "candidates": 176,
+      "complete_proof_reconstruction": true,
+      "split": "cycle5-structural-holdout",
+      "variant": "C6-no-new-negatives"
+    },
+    {
+      "candidates": 1543,
+      "complete_proof_reconstruction": true,
+      "split": "cycle5-validation",
+      "variant": "C6-no-new-negatives"
+    },
+    {
+      "candidates": 620,
+      "complete_proof_reconstruction": true,
+      "split": "cycle6-adversarial",
+      "variant": "C6-no-new-negatives"
+    },
+    {
+      "candidates": 6043,
+      "complete_proof_reconstruction": true,
+      "split": "cycle6-independent-games",
+      "variant": "C6-no-new-negatives"
+    },
+    {
+      "candidates": 1281,
+      "complete_proof_reconstruction": true,
+      "split": "cycle6-validation",
+      "variant": "C6-no-new-negatives"
+    },
+    {
+      "candidates": 1208,
+      "complete_proof_reconstruction": true,
+      "split": "frozen-adversarial",
+      "variant": "C6-no-new-negatives"
+    },
+    {
+      "candidates": 2635,
+      "complete_proof_reconstruction": true,
+      "split": "frozen-heldout-transfer",
+      "variant": "C6-no-new-negatives"
+    },
+    {
+      "candidates": 1697,
+      "complete_proof_reconstruction": true,
+      "split": "cycle3-independent-games",
+      "variant": "C6-operational"
+    },
+    {
+      "candidates": 4650,
+      "complete_proof_reconstruction": true,
+      "split": "cycle4-independent-games",
+      "variant": "C6-operational"
+    },
+    {
+      "candidates": 516,
+      "complete_proof_reconstruction": true,
+      "split": "cycle5-combination-holdout",
+      "variant": "C6-operational"
+    },
+    {
+      "candidates": 6427,
+      "complete_proof_reconstruction": true,
+      "split": "cycle5-independent-games",
+      "variant": "C6-operational"
+    },
+    {
+      "candidates": 176,
+      "complete_proof_reconstruction": true,
+      "split": "cycle5-structural-holdout",
+      "variant": "C6-operational"
+    },
+    {
+      "candidates": 1543,
+      "complete_proof_reconstruction": true,
+      "split": "cycle5-validation",
+      "variant": "C6-operational"
+    },
+    {
+      "candidates": 620,
+      "complete_proof_reconstruction": true,
+      "split": "cycle6-adversarial",
+      "variant": "C6-operational"
+    },
+    {
+      "candidates": 6043,
+      "complete_proof_reconstruction": true,
+      "split": "cycle6-independent-games",
+      "variant": "C6-operational"
+    },
+    {
+      "candidates": 1281,
+      "complete_proof_reconstruction": true,
+      "split": "cycle6-validation",
+      "variant": "C6-operational"
+    },
+    {
+      "candidates": 1208,
+      "complete_proof_reconstruction": true,
+      "split": "frozen-adversarial",
+      "variant": "C6-operational"
+    },
+    {
+      "candidates": 2635,
+      "complete_proof_reconstruction": true,
+      "split": "frozen-heldout-transfer",
+      "variant": "C6-operational"
+    },
+    {
+      "candidates": 1697,
+      "complete_proof_reconstruction": true,
+      "split": "cycle3-independent-games",
+      "variant": "C6-strict"
+    },
+    {
+      "candidates": 4650,
+      "complete_proof_reconstruction": true,
+      "split": "cycle4-independent-games",
+      "variant": "C6-strict"
+    },
+    {
+      "candidates": 516,
+      "complete_proof_reconstruction": true,
+      "split": "cycle5-combination-holdout",
+      "variant": "C6-strict"
+    },
+    {
+      "candidates": 6427,
+      "complete_proof_reconstruction": true,
+      "split": "cycle5-independent-games",
+      "variant": "C6-strict"
+    },
+    {
+      "candidates": 176,
+      "complete_proof_reconstruction": true,
+      "split": "cycle5-structural-holdout",
+      "variant": "C6-strict"
+    },
+    {
+      "candidates": 1543,
+      "complete_proof_reconstruction": true,
+      "split": "cycle5-validation",
+      "variant": "C6-strict"
+    },
+    {
+      "candidates": 620,
+      "complete_proof_reconstruction": true,
+      "split": "cycle6-adversarial",
+      "variant": "C6-strict"
+    },
+    {
+      "candidates": 6043,
+      "complete_proof_reconstruction": true,
+      "split": "cycle6-independent-games",
+      "variant": "C6-strict"
+    },
+    {
+      "candidates": 1281,
+      "complete_proof_reconstruction": true,
+      "split": "cycle6-validation",
+      "variant": "C6-strict"
+    },
+    {
+      "candidates": 1208,
+      "complete_proof_reconstruction": true,
+      "split": "frozen-adversarial",
+      "variant": "C6-strict"
+    },
+    {
+      "candidates": 2635,
+      "complete_proof_reconstruction": true,
+      "split": "frozen-heldout-transfer",
+      "variant": "C6-strict"
+    }
+  ],
+  "protected_file_count": 527,
+  "protected_files_unchanged": true,
+  "tests_summary": "271 passed in 184.24s (0:03:04)"
+}

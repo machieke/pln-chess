@@ -1,0 +1,27 @@
+{
+  "clean_checkout": "/data/pln-chess-cycle6-clean-d877ced",
+  "clean_command": "TMPDIR=/dev/shm PYTHONDONTWRITEBYTECODE=1 C6_OUT=/data/pln-chess-cycle6-clean-output-d877ced C6_BASELINE_FROM=/data/pln-chess-cycle6-clean-output-3c90d4c bash scripts/cycle6_reproduce.sh",
+  "completion_evidence": [
+    "Driver process completed",
+    "All 39 evaluations and all research stages recorded",
+    "All five benchmark variants completed",
+    "Acceptance passed every required check",
+    "Reporting stage generated its manifest",
+    "Driver log has no error output"
+  ],
+  "final_commit": "The local Git commit containing this package; resolve with git log -1 -- artifacts/cycle6/manifest.json.",
+  "frozen_baseline_reuse": "3c90d4cf945d6fadc4ed0beda127231c268684fb",
+  "packaging_only_changes": [
+    "Updated reporting module adds explicit provenance, overlap audit, budget-incomplete examples, model hashes, target outcomes and a human-readable example table. It was executed successfully after the clean run; production and experimental inference sources are unchanged."
+  ],
+  "production_source_hash": "bce829b6b99aaecc6c3ec41a4baaece241d0e43dc40c872523c61488593c61f1",
+  "published": false,
+  "pushed": false,
+  "reporting_source_sha256": "02c84870e4d4c6914ec346b5dd81f98b0788bd2829a31dc08929a1c83b5bcad4",
+  "starting_head": "6c7538cedeb52fa4a921e3549ac57022ff7874d8",
+  "upstream_modified": false,
+  "verified_implementation_head": "d877ced3511aa9118733ebc70360ef12b1791a5a",
+  "workspace_logical_path": "/home/purplezky/work/takopi/pln-chess",
+  "workspace_physical_path": "/data/pln-chess-cycle6-delivery",
+  "workspace_relocation": "Verified copy on persistent /data, original path retained as symlink. Git objects are inside the checkout; old object backup retained separately."
+}

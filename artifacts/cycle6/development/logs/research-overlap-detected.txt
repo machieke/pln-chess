@@ -1,0 +1,19 @@
+NATIVE COMPLETE
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/purplezky/work/takopi/pln-chess/scripts/cycle6_deliver.py", line 56, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/home/purplezky/work/takopi/pln-chess/scripts/cycle6_deliver.py", line 53, in main
+    research(data,model,Runtime(timeout=180),OUT)
+  File "/home/purplezky/work/takopi/pln-chess/evaluation/cycle6_research.py", line 161, in research
+    factorial(data,model,runtime,out);print('FACTORIAL COMPLETE',flush=True)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/purplezky/work/takopi/pln-chess/evaluation/cycle6_research.py", line 46, in factorial
+    isolated=curriculum(data,model,runtime,out);results=[];controls=[]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/purplezky/work/takopi/pln-chess/evaluation/cycle6_research.py", line 36, in curriculum
+    assert not overlaps,overlaps
+           ^^^^^^^^^^^^
+AssertionError: ['d9620333af65ed6091e3e7c66ede0176f37830e34580762086d6eb3d924a157d']

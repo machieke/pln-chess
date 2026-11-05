@@ -1,0 +1,73 @@
+{
+  "checks": {
+    "api_verified_default": true,
+    "cli_verified_default": true,
+    "explicit_strict_abstention": true,
+    "inspector_verified_default": true,
+    "missing_receipt_preserves_strict": true,
+    "raw_STV_and_native_proof_unchanged": true
+  },
+  "cli_command": [
+    "/data/pln-chess-cycle6-delivery/.venv/bin/python",
+    "-m",
+    "pln_chess",
+    "inspect",
+    "--checkpoint",
+    "/data/pln-chess-cycle6-delivery/artifacts/cycle6/model/C6-full.json",
+    "--fen",
+    "7k/8/8/8/8/8/2R5/2K5 w - - 0 1",
+    "--move",
+    "c2e2",
+    "--format",
+    "json"
+  ],
+  "cli_exit_code": 0,
+  "cli_stderr": "",
+  "results": {
+    "api_default": {
+      "classification": "supported-legal",
+      "mode": "operational",
+      "proof_status": "native-conditional",
+      "raw_stv": {
+        "confidence": 0.9304166666666666,
+        "strength": 0.9983606557377048
+      }
+    },
+    "cli_default": {
+      "classification": "supported-legal",
+      "mode": "operational",
+      "proof_status": "native-conditional",
+      "raw_stv": {
+        "confidence": 0.9304166666666666,
+        "strength": 0.9983606557377048
+      }
+    },
+    "explicit_strict": {
+      "classification": "unknown",
+      "mode": "strict",
+      "proof_status": "insufficient-native-proof",
+      "raw_stv": {
+        "confidence": 0.9304166666666666,
+        "strength": 0.9983606557377048
+      }
+    },
+    "inspector_default": {
+      "classification": "supported-legal",
+      "mode": "operational",
+      "proof_status": "native-conditional",
+      "raw_stv": {
+        "confidence": 0.9304166666666666,
+        "strength": 0.9983606557377048
+      }
+    },
+    "missing_receipt": {
+      "classification": "unknown",
+      "mode": "strict",
+      "proof_status": "insufficient-native-proof",
+      "raw_stv": {
+        "confidence": 0.9304166666666666,
+        "strength": 0.9983606557377048
+      }
+    }
+  }
+}

@@ -1,0 +1,242 @@
+[
+  {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pln_chess",
+      "infer",
+      "--checkpoint",
+      "/data/pln-chess-cycle6-work/model/C6-full.json",
+      "--mode",
+      "operational",
+      "--fen",
+      "7k/8/8/8/8/8/8/2K5 w - - 0 1",
+      "--format",
+      "json"
+    ],
+    "exit_code": 0,
+    "mode": "operational",
+    "stderr": ""
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pln_chess",
+      "inspect",
+      "--checkpoint",
+      "/data/pln-chess-cycle6-work/model/C6-full.json",
+      "--mode",
+      "operational",
+      "--fen",
+      "7k/8/8/8/8/8/8/2K5 w - - 0 1",
+      "--format",
+      "json",
+      "--move",
+      "c1d1"
+    ],
+    "exit_code": 0,
+    "mode": "operational",
+    "stderr": ""
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pln_chess",
+      "evaluate",
+      "--checkpoint",
+      "/data/pln-chess-cycle6-work/model/C6-full.json",
+      "--mode",
+      "operational",
+      "--dataset",
+      "/data/pln-chess-cycle6-work/cli-fixtures/data.json",
+      "--split",
+      "test",
+      "--output",
+      "/data/pln-chess-cycle6-work/cli-fixtures/eval-operational.json.xz"
+    ],
+    "exit_code": 0,
+    "mode": "operational",
+    "stderr": ""
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pln_chess",
+      "benchmark",
+      "--checkpoint",
+      "/data/pln-chess-cycle6-work/model/C6-full.json",
+      "--mode",
+      "operational",
+      "--positions",
+      "/data/pln-chess-cycle6-work/cli-fixtures/positions.json",
+      "--output",
+      "/data/pln-chess-cycle6-work/cli-fixtures/bench-operational.json"
+    ],
+    "exit_code": 0,
+    "mode": "operational",
+    "stderr": ""
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pln_chess",
+      "infer",
+      "--checkpoint",
+      "/data/pln-chess-cycle6-work/model/C6-full.json",
+      "--mode",
+      "strict",
+      "--fen",
+      "7k/8/8/8/8/8/8/2K5 w - - 0 1",
+      "--format",
+      "json"
+    ],
+    "exit_code": 0,
+    "mode": "strict",
+    "stderr": ""
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pln_chess",
+      "inspect",
+      "--checkpoint",
+      "/data/pln-chess-cycle6-work/model/C6-full.json",
+      "--mode",
+      "strict",
+      "--fen",
+      "7k/8/8/8/8/8/8/2K5 w - - 0 1",
+      "--format",
+      "json",
+      "--move",
+      "c1d1"
+    ],
+    "exit_code": 0,
+    "mode": "strict",
+    "stderr": ""
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pln_chess",
+      "evaluate",
+      "--checkpoint",
+      "/data/pln-chess-cycle6-work/model/C6-full.json",
+      "--mode",
+      "strict",
+      "--dataset",
+      "/data/pln-chess-cycle6-work/cli-fixtures/data.json",
+      "--split",
+      "test",
+      "--output",
+      "/data/pln-chess-cycle6-work/cli-fixtures/eval-strict.json.xz"
+    ],
+    "exit_code": 0,
+    "mode": "strict",
+    "stderr": ""
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pln_chess",
+      "benchmark",
+      "--checkpoint",
+      "/data/pln-chess-cycle6-work/model/C6-full.json",
+      "--mode",
+      "strict",
+      "--positions",
+      "/data/pln-chess-cycle6-work/cli-fixtures/positions.json",
+      "--output",
+      "/data/pln-chess-cycle6-work/cli-fixtures/bench-strict.json"
+    ],
+    "exit_code": 0,
+    "mode": "strict",
+    "stderr": ""
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pln_chess",
+      "infer",
+      "--checkpoint",
+      "/data/pln-chess-cycle6-work/model/C6-full.json",
+      "--mode",
+      "experimental",
+      "--fen",
+      "7k/8/8/8/8/8/8/2K5 w - - 0 1",
+      "--format",
+      "json"
+    ],
+    "exit_code": 0,
+    "mode": "experimental",
+    "stderr": ""
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pln_chess",
+      "inspect",
+      "--checkpoint",
+      "/data/pln-chess-cycle6-work/model/C6-full.json",
+      "--mode",
+      "experimental",
+      "--fen",
+      "7k/8/8/8/8/8/8/2K5 w - - 0 1",
+      "--format",
+      "json",
+      "--move",
+      "c1d1"
+    ],
+    "exit_code": 0,
+    "mode": "experimental",
+    "stderr": ""
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pln_chess",
+      "evaluate",
+      "--checkpoint",
+      "/data/pln-chess-cycle6-work/model/C6-full.json",
+      "--mode",
+      "experimental",
+      "--dataset",
+      "/data/pln-chess-cycle6-work/cli-fixtures/data.json",
+      "--split",
+      "test",
+      "--output",
+      "/data/pln-chess-cycle6-work/cli-fixtures/eval-experimental.json.xz"
+    ],
+    "exit_code": 0,
+    "mode": "experimental",
+    "stderr": ""
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pln_chess",
+      "benchmark",
+      "--checkpoint",
+      "/data/pln-chess-cycle6-work/model/C6-full.json",
+      "--mode",
+      "experimental",
+      "--positions",
+      "/data/pln-chess-cycle6-work/cli-fixtures/positions.json",
+      "--output",
+      "/data/pln-chess-cycle6-work/cli-fixtures/bench-experimental.json"
+    ],
+    "exit_code": 0,
+    "mode": "experimental",
+    "stderr": ""
+  }
+]

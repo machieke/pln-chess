@@ -1,0 +1,2092 @@
+{
+  "cases": [
+    {
+      "contradictory": {
+        "castle_truth_value": {
+          "confidence": 0.0,
+          "strength": 0.5
+        },
+        "conflicts": [
+          "Contradictory historical successor"
+        ],
+        "ep_truth_value": {
+          "confidence": 0.0,
+          "strength": 0.5
+        },
+        "events": [],
+        "evidence": {
+          "castling_history_attested": true,
+          "confidence": 0.99,
+          "initial_fen": "7k/1p6/8/2P5/8/8/8/2K5 b - - 0 1",
+          "moves": [
+            "b7b5"
+          ],
+          "source": "C6-observed-events-double-step"
+        },
+        "fen": "7k/1p6/8/2P5/8/8/8/2K5 b - - 0 1",
+        "id": "9617f0e6ecae196fe330a54a8a6a86c59adf954f357fa6b8f4cbd0060582b33b",
+        "metadata": {
+          "ep": null,
+          "rights": "-"
+        },
+        "mode": "event-backed",
+        "provenance": "inconsistent supplied event history",
+        "schema": "history-v6.1",
+        "scope": "Temporal observations do not establish historical legality or current king safety.",
+        "source": "C6-observed-events-double-step",
+        "source_receipt_id": "78968a42a650de001599fd72a258c1223a331a4bc8c5705e51f5f57e0184483c",
+        "status": "conflicting",
+        "trust_mode": "observed-events"
+      },
+      "id": "double-step",
+      "incomplete": {
+        "castle_truth_value": {
+          "confidence": 0.99,
+          "strength": 0.0
+        },
+        "conflicts": [],
+        "ep_truth_value": {
+          "confidence": 0.0,
+          "strength": 0.5
+        },
+        "events": [],
+        "evidence": {
+          "castling_history_attested": true,
+          "confidence": 0.99,
+          "initial_fen": "7k/1p6/8/2P5/8/8/8/2K5 b - - 0 1",
+          "moves": [],
+          "source": "C6-observed-events-double-step"
+        },
+        "fen": "7k/1p6/8/2P5/8/8/8/2K5 b - - 0 1",
+        "history_gap": "Structural event consistency does not verify legal play; unmoved king/rook history requires a separate attestation.",
+        "history_receipt": {
+          "castling_history_attested": true,
+          "confidence": 0.99,
+          "ep_predecessor_observed": false,
+          "fen": "7k/1p6/8/2P5/8/8/8/2K5 b - - 0 1",
+          "id": "a35f06b18a292c64707f1d57c039345117ec42e1075eeb58ccc27eb8495cf430",
+          "initial_fen": "7k/1p6/8/2P5/8/8/8/2K5 b - - 0 1",
+          "moves": [],
+          "provenance": "supplied-temporal-evidence",
+          "scope": "Observed structural transitions; historical legality is unverified.",
+          "source": "C6-observed-events-double-step",
+          "transitions": []
+        },
+        "id": "2a6c393da0b22c11c9bd3da0f4d0d88a9a38b6efb287b9aff2c6d4d439d53276",
+        "metadata": {
+          "ep": null,
+          "rights": "-"
+        },
+        "mode": "event-backed",
+        "provenance": "supplied move events",
+        "schema": "history-v6.1",
+        "scope": "Temporal observations do not establish historical legality or current king safety.",
+        "source": "C6-observed-events-double-step",
+        "source_receipt_id": "78a82627c863fec7db34ce6a2e8ca190deab3bfdae86c51c2285699843d8c0ce",
+        "status": "truncated",
+        "trust_mode": "observed-events"
+      },
+      "modes": {
+        "observed-events": {
+          "castle_truth_value": {
+            "confidence": 0.99,
+            "strength": 0.0
+          },
+          "conflicts": [],
+          "ep_truth_value": {
+            "confidence": 0.99,
+            "strength": 1.0
+          },
+          "events": [
+            {
+              "after": "7k/8/8/1pP5/8/8/8/2K5 w - b6 0 2",
+              "after_state_id": "sb4b2d10e262cc4dc",
+              "before": "7k/1p6/8/2P5/8/8/8/2K5 b - - 0 1",
+              "before_state_id": "s8eb428a1536e2bf7",
+              "effects": {
+                "added_or_changed": [
+                  {
+                    "piece": [
+                      "Pawn",
+                      "Black"
+                    ],
+                    "square": [
+                      1,
+                      4
+                    ]
+                  }
+                ],
+                "ep_after": [
+                  1,
+                  5
+                ],
+                "ep_before": null,
+                "removed_or_changed": [
+                  {
+                    "piece": [
+                      "Pawn",
+                      "Black"
+                    ],
+                    "square": [
+                      1,
+                      6
+                    ]
+                  }
+                ],
+                "rights_after": "-",
+                "rights_before": "-"
+              },
+              "historical_legality": "unverified",
+              "id": "84fceb51a0a603fd1a4427d5f42143adf0212fa483eb4fec5682930f0065b914",
+              "kind": "externally-supplied-structural-transition",
+              "move": "b7b5",
+              "schema": "events-v6.1",
+              "sequence": 1,
+              "source": "C6-observed-events-double-step"
+            }
+          ],
+          "evidence": {
+            "castling_history_attested": true,
+            "confidence": 0.99,
+            "initial_fen": "7k/1p6/8/2P5/8/8/8/2K5 b - - 0 1",
+            "moves": [
+              "b7b5"
+            ],
+            "source": "C6-observed-events-double-step"
+          },
+          "fen": "7k/8/8/1pP5/8/8/8/2K5 w - b6 0 2",
+          "history_gap": "Structural event consistency does not verify legal play; unmoved king/rook history requires a separate attestation.",
+          "history_receipt": {
+            "castling_history_attested": true,
+            "confidence": 0.99,
+            "ep_predecessor_observed": true,
+            "fen": "7k/8/8/1pP5/8/8/8/2K5 w - b6 0 2",
+            "id": "490c8f0ee52b07f5a82e1c3ed5f0a07dd7378ebaf6542b37b2a82e98b5b658c5",
+            "initial_fen": "7k/1p6/8/2P5/8/8/8/2K5 b - - 0 1",
+            "moves": [
+              "b7b5"
+            ],
+            "provenance": "supplied-temporal-evidence",
+            "scope": "Observed structural transitions; historical legality is unverified.",
+            "source": "C6-observed-events-double-step",
+            "transitions": [
+              {
+                "after": "7k/8/8/1pP5/8/8/8/2K5 w - b6 0 2",
+                "before": "7k/1p6/8/2P5/8/8/8/2K5 b - - 0 1",
+                "move": "b7b5"
+              }
+            ]
+          },
+          "id": "3b78d20473d9d01196543519603470856c193d78cb70398cad045fa17437014e",
+          "metadata": {
+            "ep": [
+              1,
+              5
+            ],
+            "rights": "-"
+          },
+          "mode": "event-backed",
+          "provenance": "supplied move events",
+          "schema": "history-v6.1",
+          "scope": "Temporal observations do not establish historical legality or current king safety.",
+          "source": "C6-observed-events-double-step",
+          "source_receipt_id": "262a485f102a18960face33bac1ac51f8c5c01e14485766c16b616ab9029a84d",
+          "status": "structurally-consistent",
+          "trust_mode": "observed-events"
+        },
+        "trusted-fen": {
+          "castle_truth_value": {
+            "confidence": 0.99,
+            "strength": 0.0
+          },
+          "conflicts": [],
+          "ep_truth_value": {
+            "confidence": 0.99,
+            "strength": 1.0
+          },
+          "events": [],
+          "evidence": {
+            "castling_history_attested": true,
+            "confidence": 0.99,
+            "initial_fen": "7k/1p6/8/2P5/8/8/8/2K5 b - - 0 1",
+            "moves": [
+              "b7b5"
+            ],
+            "source": "C6-observed-events-double-step"
+          },
+          "fen": "7k/8/8/1pP5/8/8/8/2K5 w - b6 0 2",
+          "id": "dcdc88cff463e4c192f58b506fc05cf343d579c575802e1682e3fee79eacf30f",
+          "metadata": {
+            "ep": [
+              1,
+              5
+            ],
+            "rights": "-"
+          },
+          "mode": "trusted-metadata",
+          "provenance": "supplied metadata, not learned history",
+          "schema": "history-v6.1",
+          "scope": "Temporal observations do not establish historical legality or current king safety.",
+          "source": "C6-observed-events-double-step",
+          "source_receipt_id": "eb48cadc5d966ed309b994e72b635d97cf02a3759e3f4324b0166d2a71fd78b2",
+          "status": "external-claim",
+          "trust_mode": "trusted-fen"
+        },
+        "unknown": {
+          "castle_truth_value": {
+            "confidence": 0.0,
+            "strength": 0.5
+          },
+          "conflicts": [],
+          "ep_truth_value": {
+            "confidence": 0.0,
+            "strength": 0.5
+          },
+          "events": [],
+          "evidence": {},
+          "fen": "7k/8/8/1pP5/8/8/8/2K5 w - b6 0 2",
+          "id": "9f298bf26eb9d6b293cb6e4e1e8eebd1dbaa9c3ced0dcbc0990b554d7f8647c3",
+          "metadata": {
+            "ep": [
+              1,
+              5
+            ],
+            "rights": "-"
+          },
+          "mode": "fen-only",
+          "provenance": "unverified FEN metadata",
+          "schema": "history-v6.1",
+          "scope": "Temporal observations do not establish historical legality or current king safety.",
+          "source": null,
+          "source_receipt_id": "3c20aef46c992b4f0b025fcdf49c8cc9058aa6f821e68103e26ecc6953c375d2",
+          "status": "unknown",
+          "trust_mode": "unknown"
+        }
+      },
+      "rights_edit_conflict": {
+        "castle_truth_value": {
+          "confidence": 0.0,
+          "strength": 0.5
+        },
+        "conflicts": [
+          "Contradictory historical successor"
+        ],
+        "ep_truth_value": {
+          "confidence": 0.0,
+          "strength": 0.5
+        },
+        "events": [],
+        "evidence": {
+          "castling_history_attested": true,
+          "confidence": 0.99,
+          "initial_fen": "7k/1p6/8/2P5/8/8/8/2K5 b - - 0 1",
+          "moves": [
+            "b7b5"
+          ],
+          "source": "C6-observed-events-double-step"
+        },
+        "fen": "7k/8/8/1pP5/8/8/8/2K5 w K b6 0 2",
+        "id": "fd5500bbb2999b0ff18de0eef97766adcb0d67f6061f48e1e4587c0af37ba20c",
+        "metadata": {
+          "ep": [
+            1,
+            5
+          ],
+          "rights": "K"
+        },
+        "mode": "event-backed",
+        "provenance": "inconsistent supplied event history",
+        "schema": "history-v6.1",
+        "scope": "Temporal observations do not establish historical legality or current king safety.",
+        "source": "C6-observed-events-double-step",
+        "source_receipt_id": "94c9d37b07b2a07213834aaca87a16b6d41fa42a372ae17e29a51acb7bdd6398",
+        "status": "conflicting",
+        "trust_mode": "observed-events"
+      }
+    },
+    {
+      "contradictory": {
+        "castle_truth_value": {
+          "confidence": 0.0,
+          "strength": 0.5
+        },
+        "conflicts": [
+          "Contradictory historical successor"
+        ],
+        "ep_truth_value": {
+          "confidence": 0.0,
+          "strength": 0.5
+        },
+        "events": [],
+        "evidence": {
+          "castling_history_attested": true,
+          "confidence": 0.99,
+          "initial_fen": "6k1/8/8/8/8/8/8/4K2R w K - 0 1",
+          "moves": [
+            "h1h2"
+          ],
+          "source": "C6-observed-events-rook-right"
+        },
+        "fen": "6k1/8/8/8/8/8/8/4K2R w K - 0 1",
+        "id": "5c1616e13b7197c3c1307c3dd8000c1dd423f32a3e5b2f27c644469d7ba0ecae",
+        "metadata": {
+          "ep": null,
+          "rights": "K"
+        },
+        "mode": "event-backed",
+        "provenance": "inconsistent supplied event history",
+        "schema": "history-v6.1",
+        "scope": "Temporal observations do not establish historical legality or current king safety.",
+        "source": "C6-observed-events-rook-right",
+        "source_receipt_id": "7698b9caae54370ea210ae122180cbb119b08d46c8fd13ee268675da3f07210e",
+        "status": "conflicting",
+        "trust_mode": "observed-events"
+      },
+      "id": "rook-right",
+      "incomplete": {
+        "castle_truth_value": {
+          "confidence": 0.99,
+          "strength": 1.0
+        },
+        "conflicts": [],
+        "ep_truth_value": {
+          "confidence": 0.0,
+          "strength": 0.5
+        },
+        "events": [],
+        "evidence": {
+          "castling_history_attested": true,
+          "confidence": 0.99,
+          "initial_fen": "6k1/8/8/8/8/8/8/4K2R w K - 0 1",
+          "moves": [],
+          "source": "C6-observed-events-rook-right"
+        },
+        "fen": "6k1/8/8/8/8/8/8/4K2R w K - 0 1",
+        "history_gap": "Structural event consistency does not verify legal play; unmoved king/rook history requires a separate attestation.",
+        "history_receipt": {
+          "castling_history_attested": true,
+          "confidence": 0.99,
+          "ep_predecessor_observed": false,
+          "fen": "6k1/8/8/8/8/8/8/4K2R w K - 0 1",
+          "id": "43fbc9aacf23e8f950a3b7656b3429dfd7624995dcee152de81355e6f097e7e3",
+          "initial_fen": "6k1/8/8/8/8/8/8/4K2R w K - 0 1",
+          "moves": [],
+          "provenance": "supplied-temporal-evidence",
+          "scope": "Observed structural transitions; historical legality is unverified.",
+          "source": "C6-observed-events-rook-right",
+          "transitions": []
+        },
+        "id": "4f43814d53609a3a4ef36d1064d2a393791926f8a93f6add05f381ce690351c0",
+        "metadata": {
+          "ep": null,
+          "rights": "K"
+        },
+        "mode": "event-backed",
+        "provenance": "supplied move events",
+        "schema": "history-v6.1",
+        "scope": "Temporal observations do not establish historical legality or current king safety.",
+        "source": "C6-observed-events-rook-right",
+        "source_receipt_id": "0093fe15c96bfaa14d2da2312d8c7d07946ff3c145609da9bf1d4fd362229d09",
+        "status": "truncated",
+        "trust_mode": "observed-events"
+      },
+      "modes": {
+        "observed-events": {
+          "castle_truth_value": {
+            "confidence": 0.99,
+            "strength": 0.0
+          },
+          "conflicts": [],
+          "ep_truth_value": {
+            "confidence": 0.0,
+            "strength": 0.5
+          },
+          "events": [
+            {
+              "after": "6k1/8/8/8/8/8/7R/4K3 b - - 1 1",
+              "after_state_id": "s3b4fa78295666bd7",
+              "before": "6k1/8/8/8/8/8/8/4K2R w K - 0 1",
+              "before_state_id": "s7f98184053996fc9",
+              "effects": {
+                "added_or_changed": [
+                  {
+                    "piece": [
+                      "Rook",
+                      "White"
+                    ],
+                    "square": [
+                      7,
+                      1
+                    ]
+                  }
+                ],
+                "ep_after": null,
+                "ep_before": null,
+                "removed_or_changed": [
+                  {
+                    "piece": [
+                      "Rook",
+                      "White"
+                    ],
+                    "square": [
+                      7,
+                      0
+                    ]
+                  }
+                ],
+                "rights_after": "-",
+                "rights_before": "K"
+              },
+              "historical_legality": "unverified",
+              "id": "c59a25fe5775a5e44b0b65fb0abfa7fafc2f77079e4b7821d071c1c69a4e51c6",
+              "kind": "externally-supplied-structural-transition",
+              "move": "h1h2",
+              "schema": "events-v6.1",
+              "sequence": 1,
+              "source": "C6-observed-events-rook-right"
+            }
+          ],
+          "evidence": {
+            "castling_history_attested": true,
+            "confidence": 0.99,
+            "initial_fen": "6k1/8/8/8/8/8/8/4K2R w K - 0 1",
+            "moves": [
+              "h1h2"
+            ],
+            "source": "C6-observed-events-rook-right"
+          },
+          "fen": "6k1/8/8/8/8/8/7R/4K3 b - - 1 1",
+          "history_gap": "Structural event consistency does not verify legal play; unmoved king/rook history requires a separate attestation.",
+          "history_receipt": {
+            "castling_history_attested": true,
+            "confidence": 0.99,
+            "ep_predecessor_observed": false,
+            "fen": "6k1/8/8/8/8/8/7R/4K3 b - - 1 1",
+            "id": "4f94bfdee96c455c1315c1795e29b08153655f831947cf33b48e05a1cf4613d3",
+            "initial_fen": "6k1/8/8/8/8/8/8/4K2R w K - 0 1",
+            "moves": [
+              "h1h2"
+            ],
+            "provenance": "supplied-temporal-evidence",
+            "scope": "Observed structural transitions; historical legality is unverified.",
+            "source": "C6-observed-events-rook-right",
+            "transitions": [
+              {
+                "after": "6k1/8/8/8/8/8/7R/4K3 b - - 1 1",
+                "before": "6k1/8/8/8/8/8/8/4K2R w K - 0 1",
+                "move": "h1h2"
+              }
+            ]
+          },
+          "id": "46410a7cee1f6a3ec421ab1e83894f437f08b4874c6676ed3f16eee13b9c735e",
+          "metadata": {
+            "ep": null,
+            "rights": "-"
+          },
+          "mode": "event-backed",
+          "provenance": "supplied move events",
+          "schema": "history-v6.1",
+          "scope": "Temporal observations do not establish historical legality or current king safety.",
+          "source": "C6-observed-events-rook-right",
+          "source_receipt_id": "f7c0abb41bae18061ad0ad0b24a6513ad35d76aa194d87ec57950cf2f1cb2ad4",
+          "status": "structurally-consistent",
+          "trust_mode": "observed-events"
+        },
+        "trusted-fen": {
+          "castle_truth_value": {
+            "confidence": 0.99,
+            "strength": 0.0
+          },
+          "conflicts": [],
+          "ep_truth_value": {
+            "confidence": 0.99,
+            "strength": 0.0
+          },
+          "events": [],
+          "evidence": {
+            "castling_history_attested": true,
+            "confidence": 0.99,
+            "initial_fen": "6k1/8/8/8/8/8/8/4K2R w K - 0 1",
+            "moves": [
+              "h1h2"
+            ],
+            "source": "C6-observed-events-rook-right"
+          },
+          "fen": "6k1/8/8/8/8/8/7R/4K3 b - - 1 1",
+          "id": "7390405b5212406881f5d1f70310493630368e33ecb3d513f643cb9f7115d5a6",
+          "metadata": {
+            "ep": null,
+            "rights": "-"
+          },
+          "mode": "trusted-metadata",
+          "provenance": "supplied metadata, not learned history",
+          "schema": "history-v6.1",
+          "scope": "Temporal observations do not establish historical legality or current king safety.",
+          "source": "C6-observed-events-rook-right",
+          "source_receipt_id": "3319daec54f203abeffc5c16f6b31d09a0b8917038bf987a7c4f718f92daf100",
+          "status": "external-claim",
+          "trust_mode": "trusted-fen"
+        },
+        "unknown": {
+          "castle_truth_value": {
+            "confidence": 0.0,
+            "strength": 0.5
+          },
+          "conflicts": [],
+          "ep_truth_value": {
+            "confidence": 0.0,
+            "strength": 0.5
+          },
+          "events": [],
+          "evidence": {},
+          "fen": "6k1/8/8/8/8/8/7R/4K3 b - - 1 1",
+          "id": "47c1e76f1c9527846e47fb1122321707fa5df103b2f038d5342172851efe0c2f",
+          "metadata": {
+            "ep": null,
+            "rights": "-"
+          },
+          "mode": "fen-only",
+          "provenance": "unverified FEN metadata",
+          "schema": "history-v6.1",
+          "scope": "Temporal observations do not establish historical legality or current king safety.",
+          "source": null,
+          "source_receipt_id": "d565aebf2122c8da6eca24200f87c65e7d7a58acfff2bd2e607fdbae635054a4",
+          "status": "unknown",
+          "trust_mode": "unknown"
+        }
+      },
+      "rights_edit_conflict": {
+        "castle_truth_value": {
+          "confidence": 0.0,
+          "strength": 0.5
+        },
+        "conflicts": [
+          "Contradictory historical successor"
+        ],
+        "ep_truth_value": {
+          "confidence": 0.0,
+          "strength": 0.5
+        },
+        "events": [],
+        "evidence": {
+          "castling_history_attested": true,
+          "confidence": 0.99,
+          "initial_fen": "6k1/8/8/8/8/8/8/4K2R w K - 0 1",
+          "moves": [
+            "h1h2"
+          ],
+          "source": "C6-observed-events-rook-right"
+        },
+        "fen": "6k1/8/8/8/8/8/7R/4K3 b K - 1 1",
+        "id": "096893ce8f2fd31a68df1b32780dc94f4bfa03b336b3b8a02e2ed64202044818",
+        "metadata": {
+          "ep": null,
+          "rights": "K"
+        },
+        "mode": "event-backed",
+        "provenance": "inconsistent supplied event history",
+        "schema": "history-v6.1",
+        "scope": "Temporal observations do not establish historical legality or current king safety.",
+        "source": "C6-observed-events-rook-right",
+        "source_receipt_id": "d6b11096be17facda1a457327654bce1bd967b85c5c78dc806e70fe248e56d3b",
+        "status": "conflicting",
+        "trust_mode": "observed-events"
+      }
+    },
+    {
+      "contradictory": {
+        "castle_truth_value": {
+          "confidence": 0.0,
+          "strength": 0.5
+        },
+        "conflicts": [
+          "Contradictory historical successor"
+        ],
+        "ep_truth_value": {
+          "confidence": 0.0,
+          "strength": 0.5
+        },
+        "events": [],
+        "evidence": {
+          "castling_history_attested": true,
+          "confidence": 0.99,
+          "initial_fen": "6k1/8/8/8/8/8/8/4K2R w K - 0 1",
+          "moves": [
+            "e1e2"
+          ],
+          "source": "C6-observed-events-king-right"
+        },
+        "fen": "6k1/8/8/8/8/8/8/4K2R w K - 0 1",
+        "id": "cd0ce484f8e7d487bae77b0743efcbcd117bf0e6c841aa21f7f7ea38e5249d10",
+        "metadata": {
+          "ep": null,
+          "rights": "K"
+        },
+        "mode": "event-backed",
+        "provenance": "inconsistent supplied event history",
+        "schema": "history-v6.1",
+        "scope": "Temporal observations do not establish historical legality or current king safety.",
+        "source": "C6-observed-events-king-right",
+        "source_receipt_id": "57eda8c96e0f4ae01eaede78d2544d5d44927325c3525651960a40f981ff1eb7",
+        "status": "conflicting",
+        "trust_mode": "observed-events"
+      },
+      "id": "king-right",
+      "incomplete": {
+        "castle_truth_value": {
+          "confidence": 0.99,
+          "strength": 1.0
+        },
+        "conflicts": [],
+        "ep_truth_value": {
+          "confidence": 0.0,
+          "strength": 0.5
+        },
+        "events": [],
+        "evidence": {
+          "castling_history_attested": true,
+          "confidence": 0.99,
+          "initial_fen": "6k1/8/8/8/8/8/8/4K2R w K - 0 1",
+          "moves": [],
+          "source": "C6-observed-events-king-right"
+        },
+        "fen": "6k1/8/8/8/8/8/8/4K2R w K - 0 1",
+        "history_gap": "Structural event consistency does not verify legal play; unmoved king/rook history requires a separate attestation.",
+        "history_receipt": {
+          "castling_history_attested": true,
+          "confidence": 0.99,
+          "ep_predecessor_observed": false,
+          "fen": "6k1/8/8/8/8/8/8/4K2R w K - 0 1",
+          "id": "7bf6ab464ca9ae72ce2a104e38c2781576d6a1f7b6c0be26b2aff9b17f1d7479",
+          "initial_fen": "6k1/8/8/8/8/8/8/4K2R w K - 0 1",
+          "moves": [],
+          "provenance": "supplied-temporal-evidence",
+          "scope": "Observed structural transitions; historical legality is unverified.",
+          "source": "C6-observed-events-king-right",
+          "transitions": []
+        },
+        "id": "1e22d1ef7494c377b1c5139e5b00a5eb9a2f417d73ff135dc0772d111bec52aa",
+        "metadata": {
+          "ep": null,
+          "rights": "K"
+        },
+        "mode": "event-backed",
+        "provenance": "supplied move events",
+        "schema": "history-v6.1",
+        "scope": "Temporal observations do not establish historical legality or current king safety.",
+        "source": "C6-observed-events-king-right",
+        "source_receipt_id": "57d96c1819237d4039a5a02719128deb9a0bac2edae898d0b9c4fb7acc35598a",
+        "status": "truncated",
+        "trust_mode": "observed-events"
+      },
+      "modes": {
+        "observed-events": {
+          "castle_truth_value": {
+            "confidence": 0.99,
+            "strength": 0.0
+          },
+          "conflicts": [],
+          "ep_truth_value": {
+            "confidence": 0.0,
+            "strength": 0.5
+          },
+          "events": [
+            {
+              "after": "6k1/8/8/8/8/8/4K3/7R b - - 1 1",
+              "after_state_id": "s74741443c7083950",
+              "before": "6k1/8/8/8/8/8/8/4K2R w K - 0 1",
+              "before_state_id": "s7f98184053996fc9",
+              "effects": {
+                "added_or_changed": [
+                  {
+                    "piece": [
+                      "King",
+                      "White"
+                    ],
+                    "square": [
+                      4,
+                      1
+                    ]
+                  }
+                ],
+                "ep_after": null,
+                "ep_before": null,
+                "removed_or_changed": [
+                  {
+                    "piece": [
+                      "King",
+                      "White"
+                    ],
+                    "square": [
+                      4,
+                      0
+                    ]
+                  }
+                ],
+                "rights_after": "-",
+                "rights_before": "K"
+              },
+              "historical_legality": "unverified",
+              "id": "b4c343c773d209ed264f82da79bdbadd371c447f423cf8650bce73838998b089",
+              "kind": "externally-supplied-structural-transition",
+              "move": "e1e2",
+              "schema": "events-v6.1",
+              "sequence": 1,
+              "source": "C6-observed-events-king-right"
+            }
+          ],
+          "evidence": {
+            "castling_history_attested": true,
+            "confidence": 0.99,
+            "initial_fen": "6k1/8/8/8/8/8/8/4K2R w K - 0 1",
+            "moves": [
+              "e1e2"
+            ],
+            "source": "C6-observed-events-king-right"
+          },
+          "fen": "6k1/8/8/8/8/8/4K3/7R b - - 1 1",
+          "history_gap": "Structural event consistency does not verify legal play; unmoved king/rook history requires a separate attestation.",
+          "history_receipt": {
+            "castling_history_attested": true,
+            "confidence": 0.99,
+            "ep_predecessor_observed": false,
+            "fen": "6k1/8/8/8/8/8/4K3/7R b - - 1 1",
+            "id": "a85e089cc4cba073eeb253506c7a65ca6326704edb2d7b9900bbcc962963db7a",
+            "initial_fen": "6k1/8/8/8/8/8/8/4K2R w K - 0 1",
+            "moves": [
+              "e1e2"
+            ],
+            "provenance": "supplied-temporal-evidence",
+            "scope": "Observed structural transitions; historical legality is unverified.",
+            "source": "C6-observed-events-king-right",
+            "transitions": [
+              {
+                "after": "6k1/8/8/8/8/8/4K3/7R b - - 1 1",
+                "before": "6k1/8/8/8/8/8/8/4K2R w K - 0 1",
+                "move": "e1e2"
+              }
+            ]
+          },
+          "id": "de4988cee98691cf2291cddfd2c757200335b2708fe3d89d547cbce6120e3a67",
+          "metadata": {
+            "ep": null,
+            "rights": "-"
+          },
+          "mode": "event-backed",
+          "provenance": "supplied move events",
+          "schema": "history-v6.1",
+          "scope": "Temporal observations do not establish historical legality or current king safety.",
+          "source": "C6-observed-events-king-right",
+          "source_receipt_id": "44aeee8970f9ebb75aaea7002058f9cac66eda176c754d172fbf5060d1c10e37",
+          "status": "structurally-consistent",
+          "trust_mode": "observed-events"
+        },
+        "trusted-fen": {
+          "castle_truth_value": {
+            "confidence": 0.99,
+            "strength": 0.0
+          },
+          "conflicts": [],
+          "ep_truth_value": {
+            "confidence": 0.99,
+            "strength": 0.0
+          },
+          "events": [],
+          "evidence": {
+            "castling_history_attested": true,
+            "confidence": 0.99,
+            "initial_fen": "6k1/8/8/8/8/8/8/4K2R w K - 0 1",
+            "moves": [
+              "e1e2"
+            ],
+            "source": "C6-observed-events-king-right"
+          },
+          "fen": "6k1/8/8/8/8/8/4K3/7R b - - 1 1",
+          "id": "da6a3f51f8a4dc3cbd57e14e9aecc1f1566581d8663604a10cd30b3d1561c54a",
+          "metadata": {
+            "ep": null,
+            "rights": "-"
+          },
+          "mode": "trusted-metadata",
+          "provenance": "supplied metadata, not learned history",
+          "schema": "history-v6.1",
+          "scope": "Temporal observations do not establish historical legality or current king safety.",
+          "source": "C6-observed-events-king-right",
+          "source_receipt_id": "b8558eee398d4e634acce8342b0ed728b86652e37d1b0fb17a2ac3bae7dab5ce",
+          "status": "external-claim",
+          "trust_mode": "trusted-fen"
+        },
+        "unknown": {
+          "castle_truth_value": {
+            "confidence": 0.0,
+            "strength": 0.5
+          },
+          "conflicts": [],
+          "ep_truth_value": {
+            "confidence": 0.0,
+            "strength": 0.5
+          },
+          "events": [],
+          "evidence": {},
+          "fen": "6k1/8/8/8/8/8/4K3/7R b - - 1 1",
+          "id": "8eafcb4bad741193466202821493240e0172cba9adda43e1386337c40528918f",
+          "metadata": {
+            "ep": null,
+            "rights": "-"
+          },
+          "mode": "fen-only",
+          "provenance": "unverified FEN metadata",
+          "schema": "history-v6.1",
+          "scope": "Temporal observations do not establish historical legality or current king safety.",
+          "source": null,
+          "source_receipt_id": "16fbe70bf779fa216206c38906b876292c31c8f7762bbad349ae611104677205",
+          "status": "unknown",
+          "trust_mode": "unknown"
+        }
+      },
+      "rights_edit_conflict": {
+        "castle_truth_value": {
+          "confidence": 0.0,
+          "strength": 0.5
+        },
+        "conflicts": [
+          "Contradictory historical successor"
+        ],
+        "ep_truth_value": {
+          "confidence": 0.0,
+          "strength": 0.5
+        },
+        "events": [],
+        "evidence": {
+          "castling_history_attested": true,
+          "confidence": 0.99,
+          "initial_fen": "6k1/8/8/8/8/8/8/4K2R w K - 0 1",
+          "moves": [
+            "e1e2"
+          ],
+          "source": "C6-observed-events-king-right"
+        },
+        "fen": "6k1/8/8/8/8/8/4K3/7R b K - 1 1",
+        "id": "23dfa1d31e20ab74401721b373a5d591f7b1d03a47420ed831ca1c0c804366eb",
+        "metadata": {
+          "ep": null,
+          "rights": "K"
+        },
+        "mode": "event-backed",
+        "provenance": "inconsistent supplied event history",
+        "schema": "history-v6.1",
+        "scope": "Temporal observations do not establish historical legality or current king safety.",
+        "source": "C6-observed-events-king-right",
+        "source_receipt_id": "1b0e4c30c530ed35b852e4e35033a44e51f6b28bdc01a4467776408146363489",
+        "status": "conflicting",
+        "trust_mode": "observed-events"
+      }
+    },
+    {
+      "contradictory": {
+        "castle_truth_value": {
+          "confidence": 0.0,
+          "strength": 0.5
+        },
+        "conflicts": [
+          "Contradictory historical successor"
+        ],
+        "ep_truth_value": {
+          "confidence": 0.0,
+          "strength": 0.5
+        },
+        "events": [],
+        "evidence": {
+          "castling_history_attested": true,
+          "confidence": 0.99,
+          "initial_fen": "6k1/8/8/8/8/8/8/4K2R w K - 0 1",
+          "moves": [
+            "e1g1"
+          ],
+          "source": "C6-observed-events-castle"
+        },
+        "fen": "6k1/8/8/8/8/8/8/4K2R w K - 0 1",
+        "id": "070bba81a231b578290eed0a029a3044baf922290a4817c4e7edeac0ec812441",
+        "metadata": {
+          "ep": null,
+          "rights": "K"
+        },
+        "mode": "event-backed",
+        "provenance": "inconsistent supplied event history",
+        "schema": "history-v6.1",
+        "scope": "Temporal observations do not establish historical legality or current king safety.",
+        "source": "C6-observed-events-castle",
+        "source_receipt_id": "8763faf51fefe14a6c0179887e89174b1f5a474d3477572c6850dd110edaa807",
+        "status": "conflicting",
+        "trust_mode": "observed-events"
+      },
+      "id": "castle",
+      "incomplete": {
+        "castle_truth_value": {
+          "confidence": 0.99,
+          "strength": 1.0
+        },
+        "conflicts": [],
+        "ep_truth_value": {
+          "confidence": 0.0,
+          "strength": 0.5
+        },
+        "events": [],
+        "evidence": {
+          "castling_history_attested": true,
+          "confidence": 0.99,
+          "initial_fen": "6k1/8/8/8/8/8/8/4K2R w K - 0 1",
+          "moves": [],
+          "source": "C6-observed-events-castle"
+        },
+        "fen": "6k1/8/8/8/8/8/8/4K2R w K - 0 1",
+        "history_gap": "Structural event consistency does not verify legal play; unmoved king/rook history requires a separate attestation.",
+        "history_receipt": {
+          "castling_history_attested": true,
+          "confidence": 0.99,
+          "ep_predecessor_observed": false,
+          "fen": "6k1/8/8/8/8/8/8/4K2R w K - 0 1",
+          "id": "e3c26f5c762ae000cc72ae5070b1678a62f72dbadc03d434d0d670488086e42a",
+          "initial_fen": "6k1/8/8/8/8/8/8/4K2R w K - 0 1",
+          "moves": [],
+          "provenance": "supplied-temporal-evidence",
+          "scope": "Observed structural transitions; historical legality is unverified.",
+          "source": "C6-observed-events-castle",
+          "transitions": []
+        },
+        "id": "ccb8a17e16958339e9c205974fae6bbb7d0233879209d3664aa109e3e7d9934d",
+        "metadata": {
+          "ep": null,
+          "rights": "K"
+        },
+        "mode": "event-backed",
+        "provenance": "supplied move events",
+        "schema": "history-v6.1",
+        "scope": "Temporal observations do not establish historical legality or current king safety.",
+        "source": "C6-observed-events-castle",
+        "source_receipt_id": "4e940980bc82aaf159abe78f3cc70b2623000c59e2cde52a179351d9b012c81d",
+        "status": "truncated",
+        "trust_mode": "observed-events"
+      },
+      "modes": {
+        "observed-events": {
+          "castle_truth_value": {
+            "confidence": 0.99,
+            "strength": 0.0
+          },
+          "conflicts": [],
+          "ep_truth_value": {
+            "confidence": 0.0,
+            "strength": 0.5
+          },
+          "events": [
+            {
+              "after": "6k1/8/8/8/8/8/8/5RK1 b - - 1 1",
+              "after_state_id": "s68eb112d41d5e19f",
+              "before": "6k1/8/8/8/8/8/8/4K2R w K - 0 1",
+              "before_state_id": "s7f98184053996fc9",
+              "effects": {
+                "added_or_changed": [
+                  {
+                    "piece": [
+                      "Rook",
+                      "White"
+                    ],
+                    "square": [
+                      5,
+                      0
+                    ]
+                  },
+                  {
+                    "piece": [
+                      "King",
+                      "White"
+                    ],
+                    "square": [
+                      6,
+                      0
+                    ]
+                  }
+                ],
+                "ep_after": null,
+                "ep_before": null,
+                "removed_or_changed": [
+                  {
+                    "piece": [
+                      "King",
+                      "White"
+                    ],
+                    "square": [
+                      4,
+                      0
+                    ]
+                  },
+                  {
+                    "piece": [
+                      "Rook",
+                      "White"
+                    ],
+                    "square": [
+                      7,
+                      0
+                    ]
+                  }
+                ],
+                "rights_after": "-",
+                "rights_before": "K"
+              },
+              "historical_legality": "unverified",
+              "id": "5ef480e4dc5bd267565dfe12eaa4071c3a1e274b6e4f15a64728960683063186",
+              "kind": "externally-supplied-structural-transition",
+              "move": "e1g1",
+              "schema": "events-v6.1",
+              "sequence": 1,
+              "source": "C6-observed-events-castle"
+            }
+          ],
+          "evidence": {
+            "castling_history_attested": true,
+            "confidence": 0.99,
+            "initial_fen": "6k1/8/8/8/8/8/8/4K2R w K - 0 1",
+            "moves": [
+              "e1g1"
+            ],
+            "source": "C6-observed-events-castle"
+          },
+          "fen": "6k1/8/8/8/8/8/8/5RK1 b - - 1 1",
+          "history_gap": "Structural event consistency does not verify legal play; unmoved king/rook history requires a separate attestation.",
+          "history_receipt": {
+            "castling_history_attested": true,
+            "confidence": 0.99,
+            "ep_predecessor_observed": false,
+            "fen": "6k1/8/8/8/8/8/8/5RK1 b - - 1 1",
+            "id": "b0f9dc7e114d9169985d7e181a1234279b6f25e4de1fc854c89e24b7dd42c367",
+            "initial_fen": "6k1/8/8/8/8/8/8/4K2R w K - 0 1",
+            "moves": [
+              "e1g1"
+            ],
+            "provenance": "supplied-temporal-evidence",
+            "scope": "Observed structural transitions; historical legality is unverified.",
+            "source": "C6-observed-events-castle",
+            "transitions": [
+              {
+                "after": "6k1/8/8/8/8/8/8/5RK1 b - - 1 1",
+                "before": "6k1/8/8/8/8/8/8/4K2R w K - 0 1",
+                "move": "e1g1"
+              }
+            ]
+          },
+          "id": "b108ed5858adb8ea9a5c2fe34644430ff88cd9158f9023b58f57e6a1ba27ce8c",
+          "metadata": {
+            "ep": null,
+            "rights": "-"
+          },
+          "mode": "event-backed",
+          "provenance": "supplied move events",
+          "schema": "history-v6.1",
+          "scope": "Temporal observations do not establish historical legality or current king safety.",
+          "source": "C6-observed-events-castle",
+          "source_receipt_id": "4f2272239ff400c2f18fcd05aaf9ef73b035d7c08bd04b7421973eaf087ae65a",
+          "status": "structurally-consistent",
+          "trust_mode": "observed-events"
+        },
+        "trusted-fen": {
+          "castle_truth_value": {
+            "confidence": 0.99,
+            "strength": 0.0
+          },
+          "conflicts": [],
+          "ep_truth_value": {
+            "confidence": 0.99,
+            "strength": 0.0
+          },
+          "events": [],
+          "evidence": {
+            "castling_history_attested": true,
+            "confidence": 0.99,
+            "initial_fen": "6k1/8/8/8/8/8/8/4K2R w K - 0 1",
+            "moves": [
+              "e1g1"
+            ],
+            "source": "C6-observed-events-castle"
+          },
+          "fen": "6k1/8/8/8/8/8/8/5RK1 b - - 1 1",
+          "id": "021ba0c777eec76b7b3f039a611d2d020b5c4e243ffe8a20e42279632f81011c",
+          "metadata": {
+            "ep": null,
+            "rights": "-"
+          },
+          "mode": "trusted-metadata",
+          "provenance": "supplied metadata, not learned history",
+          "schema": "history-v6.1",
+          "scope": "Temporal observations do not establish historical legality or current king safety.",
+          "source": "C6-observed-events-castle",
+          "source_receipt_id": "90290648f6e354200a4434bf3a56669f897bd34815bd622e36bbab9819a231e0",
+          "status": "external-claim",
+          "trust_mode": "trusted-fen"
+        },
+        "unknown": {
+          "castle_truth_value": {
+            "confidence": 0.0,
+            "strength": 0.5
+          },
+          "conflicts": [],
+          "ep_truth_value": {
+            "confidence": 0.0,
+            "strength": 0.5
+          },
+          "events": [],
+          "evidence": {},
+          "fen": "6k1/8/8/8/8/8/8/5RK1 b - - 1 1",
+          "id": "b96f14491c8b758d21ac9b48898fb048ff8029f976ad4f8efe56782f595ee510",
+          "metadata": {
+            "ep": null,
+            "rights": "-"
+          },
+          "mode": "fen-only",
+          "provenance": "unverified FEN metadata",
+          "schema": "history-v6.1",
+          "scope": "Temporal observations do not establish historical legality or current king safety.",
+          "source": null,
+          "source_receipt_id": "64f84831325f21ce3d1b3098dc1737167fa8e1f9960054fc696de10a35cec127",
+          "status": "unknown",
+          "trust_mode": "unknown"
+        }
+      },
+      "rights_edit_conflict": {
+        "castle_truth_value": {
+          "confidence": 0.0,
+          "strength": 0.5
+        },
+        "conflicts": [
+          "Contradictory historical successor"
+        ],
+        "ep_truth_value": {
+          "confidence": 0.0,
+          "strength": 0.5
+        },
+        "events": [],
+        "evidence": {
+          "castling_history_attested": true,
+          "confidence": 0.99,
+          "initial_fen": "6k1/8/8/8/8/8/8/4K2R w K - 0 1",
+          "moves": [
+            "e1g1"
+          ],
+          "source": "C6-observed-events-castle"
+        },
+        "fen": "6k1/8/8/8/8/8/8/5RK1 b K - 1 1",
+        "id": "debc6b2a9c5b97c8a7b60ad01ef64567045d487a9fa8d33c4f047fd797d0f88e",
+        "metadata": {
+          "ep": null,
+          "rights": "K"
+        },
+        "mode": "event-backed",
+        "provenance": "inconsistent supplied event history",
+        "schema": "history-v6.1",
+        "scope": "Temporal observations do not establish historical legality or current king safety.",
+        "source": "C6-observed-events-castle",
+        "source_receipt_id": "43d2c74276b7e92864d92fed274b8b965dfa2820835aca330391fa0c5d78fea3",
+        "status": "conflicting",
+        "trust_mode": "observed-events"
+      }
+    },
+    {
+      "contradictory": {
+        "castle_truth_value": {
+          "confidence": 0.0,
+          "strength": 0.5
+        },
+        "conflicts": [
+          "Contradictory historical successor"
+        ],
+        "ep_truth_value": {
+          "confidence": 0.0,
+          "strength": 0.5
+        },
+        "events": [],
+        "evidence": {
+          "castling_history_attested": true,
+          "confidence": 0.99,
+          "initial_fen": "7k/P7/8/8/8/8/8/2K5 w - - 0 1",
+          "moves": [
+            "a7a8q"
+          ],
+          "source": "C6-observed-events-promotion"
+        },
+        "fen": "7k/P7/8/8/8/8/8/2K5 w - - 0 1",
+        "id": "127407110621b05f38e4a569893afe65ad569370fc4417bfbbd12f391d53ecbc",
+        "metadata": {
+          "ep": null,
+          "rights": "-"
+        },
+        "mode": "event-backed",
+        "provenance": "inconsistent supplied event history",
+        "schema": "history-v6.1",
+        "scope": "Temporal observations do not establish historical legality or current king safety.",
+        "source": "C6-observed-events-promotion",
+        "source_receipt_id": "fad81bfabe5de3210eeaa4d32b975807421d52646bb6429072048a79cf2aca54",
+        "status": "conflicting",
+        "trust_mode": "observed-events"
+      },
+      "id": "promotion",
+      "incomplete": {
+        "castle_truth_value": {
+          "confidence": 0.99,
+          "strength": 0.0
+        },
+        "conflicts": [],
+        "ep_truth_value": {
+          "confidence": 0.0,
+          "strength": 0.5
+        },
+        "events": [],
+        "evidence": {
+          "castling_history_attested": true,
+          "confidence": 0.99,
+          "initial_fen": "7k/P7/8/8/8/8/8/2K5 w - - 0 1",
+          "moves": [],
+          "source": "C6-observed-events-promotion"
+        },
+        "fen": "7k/P7/8/8/8/8/8/2K5 w - - 0 1",
+        "history_gap": "Structural event consistency does not verify legal play; unmoved king/rook history requires a separate attestation.",
+        "history_receipt": {
+          "castling_history_attested": true,
+          "confidence": 0.99,
+          "ep_predecessor_observed": false,
+          "fen": "7k/P7/8/8/8/8/8/2K5 w - - 0 1",
+          "id": "a09e3e5a05a2868f9751c48786adb52308fb6f2e2f53567fbc9f18aa09c5afab",
+          "initial_fen": "7k/P7/8/8/8/8/8/2K5 w - - 0 1",
+          "moves": [],
+          "provenance": "supplied-temporal-evidence",
+          "scope": "Observed structural transitions; historical legality is unverified.",
+          "source": "C6-observed-events-promotion",
+          "transitions": []
+        },
+        "id": "0450023d71bec51336a315fff0d68ebaaa9ebc8925c3f6ce09455db13fb2178a",
+        "metadata": {
+          "ep": null,
+          "rights": "-"
+        },
+        "mode": "event-backed",
+        "provenance": "supplied move events",
+        "schema": "history-v6.1",
+        "scope": "Temporal observations do not establish historical legality or current king safety.",
+        "source": "C6-observed-events-promotion",
+        "source_receipt_id": "593477aaf596f2fc4f57f810fddb33260cd5495c247f48576928df2d54699db0",
+        "status": "truncated",
+        "trust_mode": "observed-events"
+      },
+      "modes": {
+        "observed-events": {
+          "castle_truth_value": {
+            "confidence": 0.99,
+            "strength": 0.0
+          },
+          "conflicts": [],
+          "ep_truth_value": {
+            "confidence": 0.0,
+            "strength": 0.5
+          },
+          "events": [
+            {
+              "after": "Q6k/8/8/8/8/8/8/2K5 b - - 0 1",
+              "after_state_id": "scf5dc6712159ae0d",
+              "before": "7k/P7/8/8/8/8/8/2K5 w - - 0 1",
+              "before_state_id": "s164ac9d130a01355",
+              "effects": {
+                "added_or_changed": [
+                  {
+                    "piece": [
+                      "Queen",
+                      "White"
+                    ],
+                    "square": [
+                      0,
+                      7
+                    ]
+                  }
+                ],
+                "ep_after": null,
+                "ep_before": null,
+                "removed_or_changed": [
+                  {
+                    "piece": [
+                      "Pawn",
+                      "White"
+                    ],
+                    "square": [
+                      0,
+                      6
+                    ]
+                  }
+                ],
+                "rights_after": "-",
+                "rights_before": "-"
+              },
+              "historical_legality": "unverified",
+              "id": "7077cc4e0c286e1ff2a583fe2170176f1da1e0ba2f497dbdba1f187c3abac35a",
+              "kind": "externally-supplied-structural-transition",
+              "move": "a7a8q",
+              "schema": "events-v6.1",
+              "sequence": 1,
+              "source": "C6-observed-events-promotion"
+            }
+          ],
+          "evidence": {
+            "castling_history_attested": true,
+            "confidence": 0.99,
+            "initial_fen": "7k/P7/8/8/8/8/8/2K5 w - - 0 1",
+            "moves": [
+              "a7a8q"
+            ],
+            "source": "C6-observed-events-promotion"
+          },
+          "fen": "Q6k/8/8/8/8/8/8/2K5 b - - 0 1",
+          "history_gap": "Structural event consistency does not verify legal play; unmoved king/rook history requires a separate attestation.",
+          "history_receipt": {
+            "castling_history_attested": true,
+            "confidence": 0.99,
+            "ep_predecessor_observed": false,
+            "fen": "Q6k/8/8/8/8/8/8/2K5 b - - 0 1",
+            "id": "f26d33b44030c454cdacd095e70fb9f4fb01dd6159a336155203c5e0e3b51cbe",
+            "initial_fen": "7k/P7/8/8/8/8/8/2K5 w - - 0 1",
+            "moves": [
+              "a7a8q"
+            ],
+            "provenance": "supplied-temporal-evidence",
+            "scope": "Observed structural transitions; historical legality is unverified.",
+            "source": "C6-observed-events-promotion",
+            "transitions": [
+              {
+                "after": "Q6k/8/8/8/8/8/8/2K5 b - - 0 1",
+                "before": "7k/P7/8/8/8/8/8/2K5 w - - 0 1",
+                "move": "a7a8q"
+              }
+            ]
+          },
+          "id": "751a7362b0abf4c9afbf6a2e0bd1d0a548eded9ed2c9cace2bf3b019590f495a",
+          "metadata": {
+            "ep": null,
+            "rights": "-"
+          },
+          "mode": "event-backed",
+          "provenance": "supplied move events",
+          "schema": "history-v6.1",
+          "scope": "Temporal observations do not establish historical legality or current king safety.",
+          "source": "C6-observed-events-promotion",
+          "source_receipt_id": "7712794cb8b6cbdcbd3387ee6499fc2effd381aa98c1c9421818263880fcd6d8",
+          "status": "structurally-consistent",
+          "trust_mode": "observed-events"
+        },
+        "trusted-fen": {
+          "castle_truth_value": {
+            "confidence": 0.99,
+            "strength": 0.0
+          },
+          "conflicts": [],
+          "ep_truth_value": {
+            "confidence": 0.99,
+            "strength": 0.0
+          },
+          "events": [],
+          "evidence": {
+            "castling_history_attested": true,
+            "confidence": 0.99,
+            "initial_fen": "7k/P7/8/8/8/8/8/2K5 w - - 0 1",
+            "moves": [
+              "a7a8q"
+            ],
+            "source": "C6-observed-events-promotion"
+          },
+          "fen": "Q6k/8/8/8/8/8/8/2K5 b - - 0 1",
+          "id": "0634108b51c583a493515f649a1daf350dcbef3afb8323deea2f880b5a786be1",
+          "metadata": {
+            "ep": null,
+            "rights": "-"
+          },
+          "mode": "trusted-metadata",
+          "provenance": "supplied metadata, not learned history",
+          "schema": "history-v6.1",
+          "scope": "Temporal observations do not establish historical legality or current king safety.",
+          "source": "C6-observed-events-promotion",
+          "source_receipt_id": "5afe6090599b7d01754d5a160efb5e178c9643c6a4406aa77a311d74b44a5e3b",
+          "status": "external-claim",
+          "trust_mode": "trusted-fen"
+        },
+        "unknown": {
+          "castle_truth_value": {
+            "confidence": 0.0,
+            "strength": 0.5
+          },
+          "conflicts": [],
+          "ep_truth_value": {
+            "confidence": 0.0,
+            "strength": 0.5
+          },
+          "events": [],
+          "evidence": {},
+          "fen": "Q6k/8/8/8/8/8/8/2K5 b - - 0 1",
+          "id": "21cc040bd96467b64ff01ac4689729871b5882134b8b7744fa169b0a91b1700c",
+          "metadata": {
+            "ep": null,
+            "rights": "-"
+          },
+          "mode": "fen-only",
+          "provenance": "unverified FEN metadata",
+          "schema": "history-v6.1",
+          "scope": "Temporal observations do not establish historical legality or current king safety.",
+          "source": null,
+          "source_receipt_id": "79250c58757652ae04a8f70a95728a79d59891663f6ac46fc8e72b270f125faa",
+          "status": "unknown",
+          "trust_mode": "unknown"
+        }
+      },
+      "rights_edit_conflict": {
+        "castle_truth_value": {
+          "confidence": 0.0,
+          "strength": 0.5
+        },
+        "conflicts": [
+          "Contradictory historical successor"
+        ],
+        "ep_truth_value": {
+          "confidence": 0.0,
+          "strength": 0.5
+        },
+        "events": [],
+        "evidence": {
+          "castling_history_attested": true,
+          "confidence": 0.99,
+          "initial_fen": "7k/P7/8/8/8/8/8/2K5 w - - 0 1",
+          "moves": [
+            "a7a8q"
+          ],
+          "source": "C6-observed-events-promotion"
+        },
+        "fen": "Q6k/8/8/8/8/8/8/2K5 b K - 0 1",
+        "id": "3aa88dd77a98712103c183a3f311af3726399cb7a260e541cef002859967d5ab",
+        "metadata": {
+          "ep": null,
+          "rights": "K"
+        },
+        "mode": "event-backed",
+        "provenance": "inconsistent supplied event history",
+        "schema": "history-v6.1",
+        "scope": "Temporal observations do not establish historical legality or current king safety.",
+        "source": "C6-observed-events-promotion",
+        "source_receipt_id": "385066223601a097fb4ccb16cc33833cb985013c8960d1c34c3488fd0344f3f2",
+        "status": "conflicting",
+        "trust_mode": "observed-events"
+      }
+    },
+    {
+      "contradictory": {
+        "castle_truth_value": {
+          "confidence": 0.0,
+          "strength": 0.5
+        },
+        "conflicts": [
+          "Contradictory historical successor"
+        ],
+        "ep_truth_value": {
+          "confidence": 0.0,
+          "strength": 0.5
+        },
+        "events": [],
+        "evidence": {
+          "castling_history_attested": true,
+          "confidence": 0.99,
+          "initial_fen": "4k2r/8/8/8/8/8/8/4K2R b Kk - 0 1",
+          "moves": [
+            "h8h1"
+          ],
+          "source": "C6-observed-events-capture-right"
+        },
+        "fen": "4k2r/8/8/8/8/8/8/4K2R b Kk - 0 1",
+        "id": "abd0ffd11300dc85bb8215ef9efe7c26d5c80c42dd9d95b8becb24d8177dc26b",
+        "metadata": {
+          "ep": null,
+          "rights": "Kk"
+        },
+        "mode": "event-backed",
+        "provenance": "inconsistent supplied event history",
+        "schema": "history-v6.1",
+        "scope": "Temporal observations do not establish historical legality or current king safety.",
+        "source": "C6-observed-events-capture-right",
+        "source_receipt_id": "e3e7e943b387df2ce3e60d251cdc38b34f1c7baa789dde45616df1451dcca40f",
+        "status": "conflicting",
+        "trust_mode": "observed-events"
+      },
+      "id": "capture-right",
+      "incomplete": {
+        "castle_truth_value": {
+          "confidence": 0.99,
+          "strength": 1.0
+        },
+        "conflicts": [],
+        "ep_truth_value": {
+          "confidence": 0.0,
+          "strength": 0.5
+        },
+        "events": [],
+        "evidence": {
+          "castling_history_attested": true,
+          "confidence": 0.99,
+          "initial_fen": "4k2r/8/8/8/8/8/8/4K2R b Kk - 0 1",
+          "moves": [],
+          "source": "C6-observed-events-capture-right"
+        },
+        "fen": "4k2r/8/8/8/8/8/8/4K2R b Kk - 0 1",
+        "history_gap": "Structural event consistency does not verify legal play; unmoved king/rook history requires a separate attestation.",
+        "history_receipt": {
+          "castling_history_attested": true,
+          "confidence": 0.99,
+          "ep_predecessor_observed": false,
+          "fen": "4k2r/8/8/8/8/8/8/4K2R b Kk - 0 1",
+          "id": "b0566b024b246f9e08decf50fac78dd25d6112326ef6029c4bbcc38db9fc3af4",
+          "initial_fen": "4k2r/8/8/8/8/8/8/4K2R b Kk - 0 1",
+          "moves": [],
+          "provenance": "supplied-temporal-evidence",
+          "scope": "Observed structural transitions; historical legality is unverified.",
+          "source": "C6-observed-events-capture-right",
+          "transitions": []
+        },
+        "id": "637ee46b41d8b28d990f9b36770b9976f731af5839c3cad2a8af4dc6d491d742",
+        "metadata": {
+          "ep": null,
+          "rights": "Kk"
+        },
+        "mode": "event-backed",
+        "provenance": "supplied move events",
+        "schema": "history-v6.1",
+        "scope": "Temporal observations do not establish historical legality or current king safety.",
+        "source": "C6-observed-events-capture-right",
+        "source_receipt_id": "4525cb0deec58b707facf3869bc95628cb906cb29693080a652c77ac15451dd3",
+        "status": "truncated",
+        "trust_mode": "observed-events"
+      },
+      "modes": {
+        "observed-events": {
+          "castle_truth_value": {
+            "confidence": 0.99,
+            "strength": 0.0
+          },
+          "conflicts": [],
+          "ep_truth_value": {
+            "confidence": 0.0,
+            "strength": 0.5
+          },
+          "events": [
+            {
+              "after": "4k3/8/8/8/8/8/8/4K2r w - - 0 2",
+              "after_state_id": "s14c6b5d638a0c3f9",
+              "before": "4k2r/8/8/8/8/8/8/4K2R b Kk - 0 1",
+              "before_state_id": "se43081f8603a9239",
+              "effects": {
+                "added_or_changed": [
+                  {
+                    "piece": [
+                      "Rook",
+                      "Black"
+                    ],
+                    "square": [
+                      7,
+                      0
+                    ]
+                  }
+                ],
+                "ep_after": null,
+                "ep_before": null,
+                "removed_or_changed": [
+                  {
+                    "piece": [
+                      "Rook",
+                      "White"
+                    ],
+                    "square": [
+                      7,
+                      0
+                    ]
+                  },
+                  {
+                    "piece": [
+                      "Rook",
+                      "Black"
+                    ],
+                    "square": [
+                      7,
+                      7
+                    ]
+                  }
+                ],
+                "rights_after": "-",
+                "rights_before": "Kk"
+              },
+              "historical_legality": "unverified",
+              "id": "b4e8e18176df9990a1db94c79903061ec34c34d1091de24b6ffb005a47057e44",
+              "kind": "externally-supplied-structural-transition",
+              "move": "h8h1",
+              "schema": "events-v6.1",
+              "sequence": 1,
+              "source": "C6-observed-events-capture-right"
+            }
+          ],
+          "evidence": {
+            "castling_history_attested": true,
+            "confidence": 0.99,
+            "initial_fen": "4k2r/8/8/8/8/8/8/4K2R b Kk - 0 1",
+            "moves": [
+              "h8h1"
+            ],
+            "source": "C6-observed-events-capture-right"
+          },
+          "fen": "4k3/8/8/8/8/8/8/4K2r w - - 0 2",
+          "history_gap": "Structural event consistency does not verify legal play; unmoved king/rook history requires a separate attestation.",
+          "history_receipt": {
+            "castling_history_attested": true,
+            "confidence": 0.99,
+            "ep_predecessor_observed": false,
+            "fen": "4k3/8/8/8/8/8/8/4K2r w - - 0 2",
+            "id": "b91ccd9463e9187e09f288c84dbc74047b0f3b78b9b58a08f710b56a5c1c8805",
+            "initial_fen": "4k2r/8/8/8/8/8/8/4K2R b Kk - 0 1",
+            "moves": [
+              "h8h1"
+            ],
+            "provenance": "supplied-temporal-evidence",
+            "scope": "Observed structural transitions; historical legality is unverified.",
+            "source": "C6-observed-events-capture-right",
+            "transitions": [
+              {
+                "after": "4k3/8/8/8/8/8/8/4K2r w - - 0 2",
+                "before": "4k2r/8/8/8/8/8/8/4K2R b Kk - 0 1",
+                "move": "h8h1"
+              }
+            ]
+          },
+          "id": "324057450781abad8b34770a1d242e23fa265e6d271e51ab59d0f18ef078ad6c",
+          "metadata": {
+            "ep": null,
+            "rights": "-"
+          },
+          "mode": "event-backed",
+          "provenance": "supplied move events",
+          "schema": "history-v6.1",
+          "scope": "Temporal observations do not establish historical legality or current king safety.",
+          "source": "C6-observed-events-capture-right",
+          "source_receipt_id": "6b8d62a987dc7ac5c05e630598c4eefc58f64b8fe048c874d9d1ecc22e28ef56",
+          "status": "structurally-consistent",
+          "trust_mode": "observed-events"
+        },
+        "trusted-fen": {
+          "castle_truth_value": {
+            "confidence": 0.99,
+            "strength": 0.0
+          },
+          "conflicts": [],
+          "ep_truth_value": {
+            "confidence": 0.99,
+            "strength": 0.0
+          },
+          "events": [],
+          "evidence": {
+            "castling_history_attested": true,
+            "confidence": 0.99,
+            "initial_fen": "4k2r/8/8/8/8/8/8/4K2R b Kk - 0 1",
+            "moves": [
+              "h8h1"
+            ],
+            "source": "C6-observed-events-capture-right"
+          },
+          "fen": "4k3/8/8/8/8/8/8/4K2r w - - 0 2",
+          "id": "be7ca2cf1dc0db559a0bf074dded78f7056f26533d60eae15cbfceae9f615167",
+          "metadata": {
+            "ep": null,
+            "rights": "-"
+          },
+          "mode": "trusted-metadata",
+          "provenance": "supplied metadata, not learned history",
+          "schema": "history-v6.1",
+          "scope": "Temporal observations do not establish historical legality or current king safety.",
+          "source": "C6-observed-events-capture-right",
+          "source_receipt_id": "05c32379c0bf28ab05a2f9d13f4367110b4d6039d15c41d6c23db14ffa469780",
+          "status": "external-claim",
+          "trust_mode": "trusted-fen"
+        },
+        "unknown": {
+          "castle_truth_value": {
+            "confidence": 0.0,
+            "strength": 0.5
+          },
+          "conflicts": [],
+          "ep_truth_value": {
+            "confidence": 0.0,
+            "strength": 0.5
+          },
+          "events": [],
+          "evidence": {},
+          "fen": "4k3/8/8/8/8/8/8/4K2r w - - 0 2",
+          "id": "fda51298067fffda4d6ccf67072e10b0d751392faac54fbad9efaeb5cd0a822b",
+          "metadata": {
+            "ep": null,
+            "rights": "-"
+          },
+          "mode": "fen-only",
+          "provenance": "unverified FEN metadata",
+          "schema": "history-v6.1",
+          "scope": "Temporal observations do not establish historical legality or current king safety.",
+          "source": null,
+          "source_receipt_id": "39d209470b6f0b4e1d5f15ea8870c8065dc38fe69f3ee7c4e77da3f0a5326a3d",
+          "status": "unknown",
+          "trust_mode": "unknown"
+        }
+      },
+      "rights_edit_conflict": {
+        "castle_truth_value": {
+          "confidence": 0.0,
+          "strength": 0.5
+        },
+        "conflicts": [
+          "Contradictory historical successor"
+        ],
+        "ep_truth_value": {
+          "confidence": 0.0,
+          "strength": 0.5
+        },
+        "events": [],
+        "evidence": {
+          "castling_history_attested": true,
+          "confidence": 0.99,
+          "initial_fen": "4k2r/8/8/8/8/8/8/4K2R b Kk - 0 1",
+          "moves": [
+            "h8h1"
+          ],
+          "source": "C6-observed-events-capture-right"
+        },
+        "fen": "4k3/8/8/8/8/8/8/4K2r w K - 0 2",
+        "id": "21c134ec5ccb7cf8979c8d23773fbf7489e53e1c95d370c463bc7bb7613c2835",
+        "metadata": {
+          "ep": null,
+          "rights": "K"
+        },
+        "mode": "event-backed",
+        "provenance": "inconsistent supplied event history",
+        "schema": "history-v6.1",
+        "scope": "Temporal observations do not establish historical legality or current king safety.",
+        "source": "C6-observed-events-capture-right",
+        "source_receipt_id": "193be0532ac9a0fd95ae4c9e6d1a6c8633249ad467dd141f2844510bedd7caba",
+        "status": "conflicting",
+        "trust_mode": "observed-events"
+      }
+    },
+    {
+      "contradictory": {
+        "castle_truth_value": {
+          "confidence": 0.0,
+          "strength": 0.5
+        },
+        "conflicts": [
+          "Contradictory historical successor"
+        ],
+        "ep_truth_value": {
+          "confidence": 0.0,
+          "strength": 0.5
+        },
+        "events": [],
+        "evidence": {
+          "castling_history_attested": true,
+          "confidence": 0.99,
+          "initial_fen": "7k/8/8/1pP5/8/8/8/2K5 w - b6 0 1",
+          "moves": [
+            "c5b6"
+          ],
+          "source": "C6-observed-events-en-passant"
+        },
+        "fen": "7k/8/8/1pP5/8/8/8/2K5 w - b6 0 1",
+        "id": "e7de3a1c37da5c5d2c3f0cda7d112eb80d5cf26c1013780f84fdb8e3af7ade81",
+        "metadata": {
+          "ep": [
+            1,
+            5
+          ],
+          "rights": "-"
+        },
+        "mode": "event-backed",
+        "provenance": "inconsistent supplied event history",
+        "schema": "history-v6.1",
+        "scope": "Temporal observations do not establish historical legality or current king safety.",
+        "source": "C6-observed-events-en-passant",
+        "source_receipt_id": "f827a2faed3ac01fdae15289ca0f8f9f6e678e3ffdc2bcbec6a4e3140dda112e",
+        "status": "conflicting",
+        "trust_mode": "observed-events"
+      },
+      "id": "en-passant",
+      "incomplete": {
+        "castle_truth_value": {
+          "confidence": 0.99,
+          "strength": 0.0
+        },
+        "conflicts": [],
+        "ep_truth_value": {
+          "confidence": 0.0,
+          "strength": 0.5
+        },
+        "events": [],
+        "evidence": {
+          "castling_history_attested": true,
+          "confidence": 0.99,
+          "initial_fen": "7k/8/8/1pP5/8/8/8/2K5 w - b6 0 1",
+          "moves": [],
+          "source": "C6-observed-events-en-passant"
+        },
+        "fen": "7k/8/8/1pP5/8/8/8/2K5 w - b6 0 1",
+        "history_gap": "Structural event consistency does not verify legal play; unmoved king/rook history requires a separate attestation.",
+        "history_receipt": {
+          "castling_history_attested": true,
+          "confidence": 0.99,
+          "ep_predecessor_observed": false,
+          "fen": "7k/8/8/1pP5/8/8/8/2K5 w - b6 0 1",
+          "id": "cd32a6b560c69e5639146027fac81e4ab24d6d667bf1da837aa9404afa115b18",
+          "initial_fen": "7k/8/8/1pP5/8/8/8/2K5 w - b6 0 1",
+          "moves": [],
+          "provenance": "supplied-temporal-evidence",
+          "scope": "Observed structural transitions; historical legality is unverified.",
+          "source": "C6-observed-events-en-passant",
+          "transitions": []
+        },
+        "id": "5ab44c82da17c22db727afb667c34230c03f394ef815315d6161860d1931fc38",
+        "metadata": {
+          "ep": [
+            1,
+            5
+          ],
+          "rights": "-"
+        },
+        "mode": "event-backed",
+        "provenance": "supplied move events",
+        "schema": "history-v6.1",
+        "scope": "Temporal observations do not establish historical legality or current king safety.",
+        "source": "C6-observed-events-en-passant",
+        "source_receipt_id": "44f195cd488cb7063cc8e51c12d3296b227ab116cb341d444538a0b8a1411183",
+        "status": "truncated",
+        "trust_mode": "observed-events"
+      },
+      "modes": {
+        "observed-events": {
+          "castle_truth_value": {
+            "confidence": 0.99,
+            "strength": 0.0
+          },
+          "conflicts": [],
+          "ep_truth_value": {
+            "confidence": 0.0,
+            "strength": 0.5
+          },
+          "events": [
+            {
+              "after": "7k/8/1P6/8/8/8/8/2K5 b - - 0 1",
+              "after_state_id": "s5d79a6de2cfaa8f9",
+              "before": "7k/8/8/1pP5/8/8/8/2K5 w - b6 0 1",
+              "before_state_id": "s75220c31b08d041a",
+              "effects": {
+                "added_or_changed": [
+                  {
+                    "piece": [
+                      "Pawn",
+                      "White"
+                    ],
+                    "square": [
+                      1,
+                      5
+                    ]
+                  }
+                ],
+                "ep_after": null,
+                "ep_before": [
+                  1,
+                  5
+                ],
+                "removed_or_changed": [
+                  {
+                    "piece": [
+                      "Pawn",
+                      "Black"
+                    ],
+                    "square": [
+                      1,
+                      4
+                    ]
+                  },
+                  {
+                    "piece": [
+                      "Pawn",
+                      "White"
+                    ],
+                    "square": [
+                      2,
+                      4
+                    ]
+                  }
+                ],
+                "rights_after": "-",
+                "rights_before": "-"
+              },
+              "historical_legality": "unverified",
+              "id": "46066bb9845566e3bc6b68040ad79bd6b26e0402854d387d668ba6db5d59fd40",
+              "kind": "externally-supplied-structural-transition",
+              "move": "c5b6",
+              "schema": "events-v6.1",
+              "sequence": 1,
+              "source": "C6-observed-events-en-passant"
+            }
+          ],
+          "evidence": {
+            "castling_history_attested": true,
+            "confidence": 0.99,
+            "initial_fen": "7k/8/8/1pP5/8/8/8/2K5 w - b6 0 1",
+            "moves": [
+              "c5b6"
+            ],
+            "source": "C6-observed-events-en-passant"
+          },
+          "fen": "7k/8/1P6/8/8/8/8/2K5 b - - 0 1",
+          "history_gap": "Structural event consistency does not verify legal play; unmoved king/rook history requires a separate attestation.",
+          "history_receipt": {
+            "castling_history_attested": true,
+            "confidence": 0.99,
+            "ep_predecessor_observed": false,
+            "fen": "7k/8/1P6/8/8/8/8/2K5 b - - 0 1",
+            "id": "fc07f12450e38ffcb81a5e28af333526cc07da545cb476a54b8fd0c4fcb7bd64",
+            "initial_fen": "7k/8/8/1pP5/8/8/8/2K5 w - b6 0 1",
+            "moves": [
+              "c5b6"
+            ],
+            "provenance": "supplied-temporal-evidence",
+            "scope": "Observed structural transitions; historical legality is unverified.",
+            "source": "C6-observed-events-en-passant",
+            "transitions": [
+              {
+                "after": "7k/8/1P6/8/8/8/8/2K5 b - - 0 1",
+                "before": "7k/8/8/1pP5/8/8/8/2K5 w - b6 0 1",
+                "move": "c5b6"
+              }
+            ]
+          },
+          "id": "26078902d8ea1ffbf5548682d41288911fdf17299a19ced14bde8dabdfee3b9f",
+          "metadata": {
+            "ep": null,
+            "rights": "-"
+          },
+          "mode": "event-backed",
+          "provenance": "supplied move events",
+          "schema": "history-v6.1",
+          "scope": "Temporal observations do not establish historical legality or current king safety.",
+          "source": "C6-observed-events-en-passant",
+          "source_receipt_id": "1e702a9231c0b66eb84fd0c8f1b28c375b47f221b44d4b2b5e7113927bd7306e",
+          "status": "structurally-consistent",
+          "trust_mode": "observed-events"
+        },
+        "trusted-fen": {
+          "castle_truth_value": {
+            "confidence": 0.99,
+            "strength": 0.0
+          },
+          "conflicts": [],
+          "ep_truth_value": {
+            "confidence": 0.99,
+            "strength": 0.0
+          },
+          "events": [],
+          "evidence": {
+            "castling_history_attested": true,
+            "confidence": 0.99,
+            "initial_fen": "7k/8/8/1pP5/8/8/8/2K5 w - b6 0 1",
+            "moves": [
+              "c5b6"
+            ],
+            "source": "C6-observed-events-en-passant"
+          },
+          "fen": "7k/8/1P6/8/8/8/8/2K5 b - - 0 1",
+          "id": "88b3c496328eee49f29b8d33d7b8662ed26bc2ef9b0e0364bbc14ecb0ad3ed40",
+          "metadata": {
+            "ep": null,
+            "rights": "-"
+          },
+          "mode": "trusted-metadata",
+          "provenance": "supplied metadata, not learned history",
+          "schema": "history-v6.1",
+          "scope": "Temporal observations do not establish historical legality or current king safety.",
+          "source": "C6-observed-events-en-passant",
+          "source_receipt_id": "5ceddb816a024af2494ff1c1bb58582d261086b451ab6fcad394809b5d1642c2",
+          "status": "external-claim",
+          "trust_mode": "trusted-fen"
+        },
+        "unknown": {
+          "castle_truth_value": {
+            "confidence": 0.0,
+            "strength": 0.5
+          },
+          "conflicts": [],
+          "ep_truth_value": {
+            "confidence": 0.0,
+            "strength": 0.5
+          },
+          "events": [],
+          "evidence": {},
+          "fen": "7k/8/1P6/8/8/8/8/2K5 b - - 0 1",
+          "id": "a123bc9510e63a29ea443185dc7105aa425aba53a0a8b1afd0fe837d212b2961",
+          "metadata": {
+            "ep": null,
+            "rights": "-"
+          },
+          "mode": "fen-only",
+          "provenance": "unverified FEN metadata",
+          "schema": "history-v6.1",
+          "scope": "Temporal observations do not establish historical legality or current king safety.",
+          "source": null,
+          "source_receipt_id": "f6663e7b532b34e8e1b45bed136d000e6bb61796e6aa76514570bbee271e468e",
+          "status": "unknown",
+          "trust_mode": "unknown"
+        }
+      },
+      "rights_edit_conflict": {
+        "castle_truth_value": {
+          "confidence": 0.0,
+          "strength": 0.5
+        },
+        "conflicts": [
+          "Contradictory historical successor"
+        ],
+        "ep_truth_value": {
+          "confidence": 0.0,
+          "strength": 0.5
+        },
+        "events": [],
+        "evidence": {
+          "castling_history_attested": true,
+          "confidence": 0.99,
+          "initial_fen": "7k/8/8/1pP5/8/8/8/2K5 w - b6 0 1",
+          "moves": [
+            "c5b6"
+          ],
+          "source": "C6-observed-events-en-passant"
+        },
+        "fen": "7k/8/1P6/8/8/8/8/2K5 b K - 0 1",
+        "id": "fb0828fd70be68f0fa958c62118f85ef88b95e3f595af8685f5d4c38e3901643",
+        "metadata": {
+          "ep": null,
+          "rights": "K"
+        },
+        "mode": "event-backed",
+        "provenance": "inconsistent supplied event history",
+        "schema": "history-v6.1",
+        "scope": "Temporal observations do not establish historical legality or current king safety.",
+        "source": "C6-observed-events-en-passant",
+        "source_receipt_id": "d3dd735ddd38d3cb31472c842eb89495e39384de6d8df4fdfb28199afd7677a3",
+        "status": "conflicting",
+        "trust_mode": "observed-events"
+      }
+    }
+  ],
+  "no_legal_play_theorem": true
+}
