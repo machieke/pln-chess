@@ -1,0 +1,13 @@
+{
+  "schema": 5,
+  "seed": 515151,
+  "registration": "Locked before Cycle 5 fixture generation and learner changes. C2-C4 holdouts are retrospective regressions, never new training data.",
+  "training": "Frozen C4 labels plus a separately audited premise-only factorial curriculum; holdout combinations excluded from the latter. C4 prior overlap is reported separately.",
+  "games": {"validation": 4, "independent-games": 16, "plies": [28, 56], "max_plies": 180},
+  "policy": "C5-strict: retain supported native negative proofs; positive local projections remain diagnostic, and incomplete global composition yields unknown.",
+  "thresholds": {"min_confidence": 0.25, "supported_strength": 0.8, "contradicted_strength": 0.2},
+  "confidence_sweep": [0.15, 0.25, 0.5, 0.75],
+  "variants": ["C5-full", "C5-abstract-only", "C5-no-new-negatives"],
+  "induction": "Experimental only. Generate a bounded candidate relation from training descriptors and measured populations, with no pre-supplied consequent rule; compare disabled and sham controls, report local and global effects separately.",
+  "push": false
+}

@@ -1,5 +1,5 @@
 """Fresh-process, complete-proof reference/cold/warm benchmark for schemas 3/4."""
-import argparse,resource
+import argparse,resource,json
 from pathlib import Path
 from pln_chess.common import read_json,write_json,digest
 from pln_chess.learning import Model
@@ -13,13 +13,15 @@ def address_space_peak_kib():
 
 def benchmark(checkpoint,positions,output):
     runtime=Runtime(timeout=180);model=Model.load(checkpoint,runtime)
-    if model.schema==4:
+    if model.schema==5:
+        from pln_chess.cycle5.inference import infer_moves,Session
+    elif model.schema==4:
         from pln_chess.cycle4.inference import infer_moves
     else:
         from pln_chess.cycle3.inference import infer_moves
     records=[]
     for p in positions:
-        session=NativeSession(runtime);runs={};hashes=[]
+        session=Session(runtime) if model.schema==5 else NativeSession(runtime);runs={};hashes=[]
         for mode in ('reference','cold','warm'):
             r=infer_moves(p['fen'],model,runtime=runtime,session=None if mode=='reference' else session,optimized=mode!='reference')
             if r['truncated']:raise RuntimeError('Incomplete benchmark '+p['id'])
@@ -27,6 +29,10 @@ def benchmark(checkpoint,positions,output):
             runs[mode]={k:r[k] for k in ('elapsed_seconds','native_invocations','scheduled_invocations','cache_hits','cache_entries','proof_bytes_estimate')}
             runs[mode]['peak_process_rss_kib']=address_space_peak_kib()
             runs[mode]['inherited_rusage_peak_kib']=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
+            runs[mode]['serialized_candidate_bytes']=len(json.dumps(r['candidates'],sort_keys=True,separators=(',',':')).encode())
+            runs[mode]['grounded_atoms']=r['grounded_atoms']
+            runs[mode]['logical_proof_occurrences']=sum(len(c['proof_trace']) for c in r['candidates'])
+            runs[mode]['exported_dag_nodes']=len(r.get('proof_dag',{}))
             count=len(r['candidates'])
             del r
         assert len(set(hashes))==1

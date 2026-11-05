@@ -32,3 +32,8 @@ The legality case has two separately observed conditional channels: context → 
 The API exposes infer, explain, observe, train, import/export, hypothesis inspection, and transform comparison. Results carry raw TVs, evidence, model/runtime IDs, budgets and truncation. The loopback inspector renders these exact outputs. It contains no independent move logic.
 
 Static import/call checks plus a test that disables oracle imports protect the production boundary. These checks cannot prove arbitrary semantic properties of every possible future edit; manual review of the compact observation/scheduler code remains appropriate.
+
+
+## Cycle 5 scope
+
+The earlier-cycle description above is preserved. See the [Cycle 5 update](cycle5/architecture.md) for strict positive proof gaps, typed native negative chains, temporal trust modes and measured coverage loss. No universal correctness or completed positive conjunction is claimed.

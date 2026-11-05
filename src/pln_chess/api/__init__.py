@@ -20,7 +20,14 @@ def find_move(position,notation):
 def explain_move(position,move,checkpoint=None,options=None,runtime=None,temporal_evidence=None):
     position=Position.from_fen(position) if isinstance(position,str) else position
     receipt=None
-    if temporal_evidence is not None:
+    if isinstance(checkpoint,(str,Path)):
+        runtime=runtime or Runtime();checkpoint=Model.load(checkpoint,runtime)
+    if getattr(checkpoint,'schema',None)==5:
+        from dataclasses import asdict,replace
+        from pln_chess.cycle5.inference import Cycle5Options
+        options=options if isinstance(options,Cycle5Options) else Cycle5Options(**(asdict(options) if options else {}))
+        if temporal_evidence is not None:options=replace(options,temporal_evidence=temporal_evidence)
+    elif temporal_evidence is not None:
         from pln_chess.cycle4.history import HistoryEvidence
         history=HistoryEvidence(**temporal_evidence) if isinstance(temporal_evidence,dict) else temporal_evidence
         position,receipt=history.apply(position.fen())
@@ -41,7 +48,12 @@ def analyze_batch(requests,checkpoint,options=None,runtime=None):
     runtime=runtime or Runtime();model=Model.load(checkpoint,runtime) if isinstance(checkpoint,(str,Path)) else checkpoint
     results=[]
     for request in requests:
-        result=explain_move(request['fen'],request['move'],model,options,runtime,request.get('temporal_evidence'))
+        request_options=options
+        if model.schema==5 and 'temporal_mode' in request:
+            from dataclasses import replace
+            from pln_chess.cycle5.inference import Cycle5Options
+            request_options=replace(options or Cycle5Options(),temporal_mode=request['temporal_mode'])
+        result=explain_move(request['fen'],request['move'],model,request_options,runtime,request.get('temporal_evidence'))
         results.append(result)
     return {'model_version':model.version,'results':results,
             'unresolved':[i for i,r in enumerate(results) if r['candidate']['classification'] in ('unknown','incomplete')],
@@ -89,6 +101,13 @@ observe_training_example=observe_example
 
 def train(dataset,checkpoint=None,options=None,runtime=None,ledger_path=None):
     runtime=runtime or Runtime(); options=options or {}
+    if options.get('representation')=='typed-premise-planner-v5' or options.get('variant','').startswith('C5-'):
+        from pln_chess.cycle5.model import train as premise_train
+        from pln_chess.common import ROOT
+        base=Model.load(options.get('base_checkpoint',ROOT/'artifacts/cycle4/model/C4-full.json'),runtime)
+        model=premise_train(dataset,base,runtime,ledger_path,options.get('through_sequence'),options.get('retract_groups',()),options.get('variant','C5-full'))
+        if checkpoint:model.export(checkpoint)
+        return model
     if options.get('representation')=='factored-constraints-v4' or options.get('variant','').startswith('C4-'):
         from pln_chess.cycle4.model import train as factored_train
         return factored_train(dataset,checkpoint,options,runtime,ledger_path)

@@ -54,6 +54,9 @@ def evaluate(dataset,model,split,runtime,output=None,options=None,diagnostics=Fa
     options=options or Cycle4Options(max_proof_bytes=1024*1024*1024 if not model.training_report.get('dependence_aware',True) else 64*1024*1024)
     rows=[];positions=[];cases=[];proofs={};session=NativeSession(runtime)
     run=infer_moves if model.schema==4 else previous_infer
+    if model.schema==5:
+        from pln_chess.cycle5.inference import infer_moves as run,Session,Cycle5Options
+        session=Session(runtime);options=options if isinstance(options,Cycle5Options) else Cycle5Options(**vars(options))
     for fixture in dataset['positions']:
         if fixture['split']!=split:continue
         pos=Position.from_fen(fixture['fen']);moves={m.notation:m for m in candidates(pos)}
@@ -76,7 +79,8 @@ def evaluate(dataset,model,split,runtime,output=None,options=None,diagnostics=Fa
             if diagnostics and unresolved:
                 cases.append({**row,'source_target_relations':item['observations']['relations'],
                               'raw_context':item['observations']['context'],'matched_hypotheses':item.get('matched_hypotheses',[]),
-                              'attack_beliefs':item.get('attack_beliefs',[]),'selection_policy':item.get('decision_policy',item.get('selection_policy'))})
+                              'attack_beliefs':item.get('attack_beliefs',[]),'selection_policy':item.get('decision_policy',item.get('selection_policy')),
+                              **({'typed_premises':item['typed_premises'],'proof_plan':item['proof_plan'],'temporal_evidence':item['temporal_evidence']} if model.schema==5 else {})})
                 proofs[proof]=item['proof_trace']
         predicted={i['move'] for i in result['candidates'] if i['classification']=='supported'}
         positions.append({'fixture':fixture['id'],'family':fixture['family'],'source_game':fixture.get('source_game'),

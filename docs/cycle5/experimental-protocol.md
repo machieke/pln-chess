@@ -1,0 +1,11 @@
+# Registered experiment protocol
+
+[Configuration](../../configs/cycle5.json) was written before generating the new data or fitting typed beliefs. Seed 515151 generates four validation games and sixteen independent games, sampled at plies 28 and 56, retaining trajectories up to 180 plies. Sampled boards are checked against earlier cycle/training board symmetries; common opening prefixes are not falsely described as absent from random games and are never new training evidence.
+
+Local factorial training labels only selected premise families. Heldout combinations exclude fine and abstract context hashes, transformed-board equivalents, dependence ancestry and declared structural family IDs. Positive/negative capture and blocker controls span knight, rook, bishop, queen, pawn and king. Exposure/check-resolution and temporal fixtures are separate structural controls: a fully independent factorial curriculum for those families remains unfinished.
+
+Compare frozen C4, full C5, geometry-only added representation and C5 without new negative chains on identical complete candidate sets. The strict positive policy is identical across C5 ablations. The independent factorial arm drops all C4 observation hypotheses, retaining only separately trained bridge beliefs. A deliberately absolute-coordinate comparator exists only in evaluation. Full-model prior overlaps are reported explicitly.
+
+The induction experiment supplies no pre-fitted consequent rule, but bounded host proposals still use available typed geometry. Enabled/disabled/sham controls distinguish local activation from global proof completion. This does not satisfy a stronger claim of native concept discovery. Sample-efficiency checkpoints count distinct contexts rather than repeated observations and are explicitly sparse measurements.
+
+Decision thresholds are preregistered. A fixed 0.25 negative-detection confidence floor and monotonic display suppression prevent stricter presentation thresholds from exposing a positive local projection. Calibration uses validation only and never alters native TVs. Bootstrap intervals resample source games and are exploratory. Aspirational recall/exact-set targets are allowed to fail and must not be hidden by undefined precision or terminal empty-set matches.

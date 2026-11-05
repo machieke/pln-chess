@@ -21,3 +21,8 @@
 | General conjunction of legality constraints | audit MISSING-AND probe | blocked-by-native-rule | Requires verified upstream rule/composition |
 
 Inspect any focus fixture through `pln-chess inspect`; the fixture manifest records its FEN and focus move. All demonstration traces include an oracle comparison produced outside inference. The dataset contains strict held-out cases so correct training demonstrations cannot be confused with chess correctness. Candidate recall is separately assessed against complete oracle move sets.
+
+
+## Cycle 5 scope
+
+The earlier-cycle description above is preserved. See the [Cycle 5 update](cycle5/generalization-results.md) for strict positive proof gaps, typed native negative chains, temporal trust modes and measured coverage loss. No universal correctness or completed positive conjunction is claimed.

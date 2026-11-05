@@ -15,3 +15,8 @@ Relative abstraction is host-language grouping by typed sensory descriptors. Nat
 Sensor observations of a complete FEN use `(1,.99)` as a declared reliability assumption. An explicitly unknown cell makes the joint case observation confidence zero and inference abstains. Unknown rights prevent a castling-case inference. FEN does not prove complete game history; repetition, fifty-move adjudication and terminal game reasoning are outside the current model.
 
 Display thresholds are configurable: default confidence ≥ .25, strength ≥ .8 for supported, strength ≤ .2 for contradicted. These select labels only. Actual raw TVs and proof nodes are untouched. Evaluation fits an empirical validation-only probability mapping and reports it separately; that mapping never enters inference.
+
+
+## Cycle 5 scope
+
+The earlier-cycle description above is preserved. See the [Cycle 5 update](cycle5/learning-semantics.md) for strict positive proof gaps, typed native negative chains, temporal trust modes and measured coverage loss. No universal correctness or completed positive conjunction is claimed.

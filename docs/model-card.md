@@ -9,3 +9,8 @@ The audited native core lacks conjunction introduction. A category matching mult
 The oracle labels data only in training/evaluation. Production inference uses native MeTTa rules and cannot import the oracle. The native strength is a belief component; confidence is evidential support under upstream heuristics. Neither is automatically a calibrated probability of legality. Raw TVs are always retained. The separate validation-bin calibration experiment is small and exploratory.
 
 Reproducibility: pinned PLN/PeTTa commits and source hashes, exact interpreter lock, pinned Python dependencies, fixed dataset seed/hash, append-only evidence with dependence groups, hashed model manifests, deterministic replay, and machine-generated proofs. Limitations include categorical sparsity, lost observations, conservative exclusion of correlated conflicts, seeded geometry bias, no uncertainty propagation through individual missing-cell combinations, and a cold-subprocess runtime cost.
+
+
+## Cycle 5 scope
+
+The earlier-cycle description above is preserved. See the [Cycle 5 update](cycle5/model-card.md) for strict positive proof gaps, typed native negative chains, temporal trust modes and measured coverage loss. No universal correctness or completed positive conjunction is claimed.

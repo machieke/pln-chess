@@ -77,3 +77,12 @@ bash scripts/cycle3_reproduce.sh
 ```
 
 See [Cycle 3 report](docs/cycle3-final-report.md), [architecture](docs/cycle3-architecture.md), [native audit](docs/cycle3-native-pln-audit.md), [learning semantics](docs/cycle3-learning-semantics.md), and [experiment protocol](docs/cycle3-experiments.md). Machine-readable results and per-candidate error ledgers are under `artifacts/cycle3/`. Earlier checkpoints, fixtures and artifacts remain supported and preserved. FEN alone does not establish en passant history; explicit predecessor handling is documented in the architecture.
+
+
+## Cycle 5: strict premise proofs
+
+Cycle 5 preserves native negative constraint proofs and makes positive composition gaps explicit. Default C5 emits **supported illegal or unknown** until a defensible global positive theorem exists. C4's supported local projections remain available for comparison; C5's zero legal recall is an explicit research failure, not improved precision.
+
+Read the [engineering report](docs/cycle5/engineering-report.md), [native capability matrix](docs/cycle5/native-composition-matrix.md), [temporal trust modes](docs/cycle5/temporal-semantics.md), [model card](docs/cycle5/model-card.md), [API/CLI reference](docs/cycle5/api-cli.md), and [verification](docs/cycle5/verification.md). The new dataset separates clean local combination holdouts from comparisons containing the frozen C4 prior.
+
+Reproduce with `TMPDIR=/dev/shm bash scripts/cycle5_reproduce.sh`. Inspect with `.venv/bin/pln-chess serve --checkpoint artifacts/cycle5/model/C5-full.json`. The Cycle 5 brief authorizes local commits only; no push is part of this delivery.

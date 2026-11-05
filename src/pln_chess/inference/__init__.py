@@ -61,6 +61,9 @@ def infer_moves(position,checkpoint=None,options=None,runtime=None,selected_move
     model=Model.load(checkpoint,runtime) if isinstance(checkpoint,(str,__import__('pathlib').Path)) else checkpoint or Model(runtime.version)
     if representation is not None and representation!=model.variant:
         raise ValueError('Requested representation does not match checkpoint')
+    if model.schema==5:
+        from pln_chess.cycle5.inference import infer_moves as premise_infer
+        return premise_infer(position,model,options,runtime,selected_moves)
     if model.schema==4:
         from pln_chess.cycle4.inference import infer_moves as factored_infer
         return factored_infer(position,model,options,runtime,selected_moves)

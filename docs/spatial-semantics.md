@@ -11,3 +11,8 @@ The starting-rank feature is a pawn's distance from its owning-side edge. Castli
 Translations must preserve all relative observations, board boundaries, pawn edge context and history. The transform helper rejects nonempty castling rights or EP targets rather than assuming symmetry. A candidate whose boundary/pawn context changes is excluded from invariance claims. File reflection is tested as an involution and rejects castling rights. Rank reflection plus color/turn flip preserves owner-relative forward and maps EP targets; castling is rejected pending explicit mapping.
 
 `compare_transforms` checks context equality, raw TVs, matched rule IDs, and proof identity modulo renamed state/move IDs. It reports excluded candidates separately and fails on truncation. Tests also rename all piece IDs and inspect pre-hash descriptors for absolute square literals. The controlled transfer fixture moves the entire local configuration one file east; pawn orientation examples separately cover both owners.
+
+
+## Cycle 5 scope
+
+The earlier-cycle description above is preserved. See the [Cycle 5 update](cycle5/spatial-semantics.md) for strict positive proof gaps, typed native negative chains, temporal trust modes and measured coverage loss. No universal correctness or completed positive conjunction is claimed.

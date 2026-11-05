@@ -30,3 +30,8 @@ The upstream `examples/Direct.metta` folds modus ponens across several inputs. W
 ## Cycle 2 extension
 
 Measured-marginal induction, alternative-source probes, domains and conjunction limits are recorded in [native-pln-feasibility.md](cycle2/native-pln-feasibility.md). Exact expressions and actual outputs: [native-probes.json](../artifacts/cycle2/native-probes.json). Isolated pinned upstream observations: [upstream-audit.json](../artifacts/cycle2/upstream-audit.json).
+
+
+## Cycle 5 scope
+
+The earlier-cycle description above is preserved. See the [Cycle 5 update](cycle5/native-composition-matrix.md) for strict positive proof gaps, typed native negative chains, temporal trust modes and measured coverage loss. No universal correctness or completed positive conjunction is claimed.

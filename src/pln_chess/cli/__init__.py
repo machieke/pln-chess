@@ -14,6 +14,10 @@ from pln_chess.domain import Position
 def main(argv=None):
     parser=argparse.ArgumentParser(prog='pln-chess',description='Piece-relative native PLN research inspector')
     sub=parser.add_subparsers(dest='command',required=True)
+    p=sub.add_parser('composition-audit');p.add_argument('--output',default=str(ROOT/'artifacts/cycle5/native-probes/cli-audit.json'))
+    p=sub.add_parser('temporal-inspect');p.add_argument('--fen',required=True);p.add_argument('--mode',choices=('fen-only','trusted-metadata','event-backed'),default='fen-only');p.add_argument('--history')
+    p=sub.add_parser('compare-models');p.add_argument('--fen',required=True);p.add_argument('--move',required=True)
+    p.add_argument('--before',default=str(ROOT/'artifacts/cycle4/model/C4-full.json'));p.add_argument('--after',default=str(ROOT/'artifacts/cycle5/model/C5-full.json'))
     p=sub.add_parser('cycle4');p.add_argument('--action',choices=('train','evaluate','diagnose','audit'),default='evaluate')
     p.add_argument('--dataset',default=str(ROOT/'artifacts/cycle4/datasets/dataset.json'));p.add_argument('--split',default='structural-combination')
     p.add_argument('--checkpoint',default=str(ROOT/'artifacts/cycle4/model/C4-full.json'));p.add_argument('--output')
@@ -23,7 +27,8 @@ def main(argv=None):
     p.add_argument('--dataset',default=str(ROOT/'artifacts/cycle3/dataset.json'));p.add_argument('--split',default='challenge')
     p.add_argument('--checkpoint',default=str(ROOT/'artifacts/cycle3/C3-full-model.json'));p.add_argument('--induction',action='store_true')
     p=sub.add_parser('counterfactual');p.add_argument('--fen',required=True);p.add_argument('--move',required=True)
-    p.add_argument('--operation',required=True,choices=('add-blocker','remove-piece','move-piece','color-flip','remove-right'))
+    p.add_argument('--operation',choices=('add-blocker','remove-piece','move-piece','color-flip','remove-right'))
+    p.add_argument('--family',choices=('all','geometry','destination','ray','boundary','exposure','temporal'))
     p.add_argument('--square');p.add_argument('--target');p.add_argument('--right',default='K')
     p.add_argument('--checkpoint',default=str(ROOT/'artifacts/cycle3/C3-full-model.json'))
     p=sub.add_parser('cycle2'); p.add_argument('--dataset',default=str(ROOT/'artifacts/cycle2/dataset.json'))
@@ -34,20 +39,30 @@ def main(argv=None):
         p=sub.add_parser(name); p.add_argument('--fen',required=True); p.add_argument('--checkpoint',default=str(ROOT/'artifacts/model.json'))
         p.add_argument('--format',choices=('json','text'),default='json' if name=='infer' else 'text')
         p.add_argument('--max-invocations',type=int,default=20000); p.add_argument('--timeout',type=float,default=60)
+        p.add_argument('--temporal-mode',choices=('fen-only','trusted-metadata','event-backed'),default='fen-only')
         if name=='inspect':p.add_argument('--move',required=True);p.add_argument('--history')
     p=sub.add_parser('train'); p.add_argument('--config',default=str(ROOT/'configs/training.json'))
     p=sub.add_parser('evaluate'); p.add_argument('--split',default='heldout-transfer'); p.add_argument('--checkpoint',default=str(ROOT/'artifacts/model.json'))
+    p.add_argument('--dataset');p.add_argument('--output');p.add_argument('--variant',choices=('C5-full','C5-abstract-only','C5-no-new-negatives'))
     p=sub.add_parser('invariance'); p.add_argument('--fixture',default='transfer-source'); p.add_argument('--transform',choices=('translate',),default='translate')
     p.add_argument('--offset',default='1,0'); p.add_argument('--checkpoint',default=str(ROOT/'artifacts/model.json'))
     p=sub.add_parser('benchmark'); p.add_argument('--config',default=str(ROOT/'configs/benchmark.json'))
     p=sub.add_parser('report'); p.add_argument('--output',default=str(ROOT/'artifacts/final-report.md'))
     p=sub.add_parser('replay'); p.add_argument('--ledger',required=True); p.add_argument('--output',required=True); p.add_argument('--through',type=int)
-    p.add_argument('--representation',choices=('full','hierarchical','C3-full','C4-full'),default='full'); p.add_argument('--induction',action='store_true')
+    p.add_argument('--representation',choices=('full','hierarchical','C3-full','C4-full','C5-full'),default='full'); p.add_argument('--induction',action='store_true')
     p=sub.add_parser('hypothesis'); p.add_argument('id'); p.add_argument('--checkpoint',default=str(ROOT/'artifacts/model.json'))
     p=sub.add_parser('serve'); p.add_argument('--port',type=int,default=8765); p.add_argument('--checkpoint',default=str(ROOT/'artifacts/model.json'))
     args=parser.parse_args(argv)
     try:
-        if args.command=='cycle4':
+        if args.command=='composition-audit':
+            from evaluation.cycle5_native import audit
+            result=audit(args.output)
+        elif args.command=='temporal-inspect':
+            from pln_chess.cycle5.history import inspect
+            result=inspect(args.fen,args.mode,read_json(args.history) if args.history else None)
+        elif args.command=='compare-models':
+            runtime=Runtime();result={'C4':explain_move(args.fen,args.move,args.before,runtime=runtime),'C5':explain_move(args.fen,args.move,args.after,runtime=runtime)}
+        elif args.command=='cycle4':
             if args.action=='audit':
                 from evaluation.cycle4_native import audit
                 result=audit(Path(args.output) if args.output else ROOT/'artifacts/cycle4/native-probes/cli-audit.json')
@@ -67,8 +82,14 @@ def main(argv=None):
             result=analyze_batch(read_json(args.input),args.checkpoint);write_json(args.output,result)
             result={'output':args.output,'candidates':len(result['results']),'unresolved':len(result['unresolved'])}
         elif args.command=='counterfactual':
-            from pln_chess.cycle3.counterfactual import compare
-            result=compare(args.fen,args.move,args.checkpoint,args.operation,args.square,args.target,right=args.right)
+            if args.family:
+                from pln_chess.cycle5.inference import counterfactual
+                runtime=Runtime();result=counterfactual(args.fen,args.move,Model.load(args.checkpoint,runtime),runtime=runtime)
+                if args.family!='all':result['without']={args.family:result['without'][args.family]}
+            else:
+                if not args.operation:raise ValueError('Specify --operation or --family')
+                from pln_chess.cycle3.counterfactual import compare
+                result=compare(args.fen,args.move,args.checkpoint,args.operation,args.square,args.target,right=args.right)
         elif args.command=='cycle3':
             if args.action=='audit':
                 from evaluation.cycle3_native import audit
@@ -104,6 +125,9 @@ def main(argv=None):
             result={'passed':r['passed'],'runtime':r['runtime']['pln'],'tests':r['tests'],'blockers':r['blockers']}
         elif args.command in ('infer','inspect'):
             options=Options(max_native_invocations=args.max_invocations,timeout_seconds=args.timeout)
+            if read_json(args.checkpoint).get('schema')==5:
+                from pln_chess.cycle5.inference import Cycle5Options
+                options=Cycle5Options(max_native_invocations=args.max_invocations,timeout_seconds=args.timeout,temporal_mode=args.temporal_mode)
             result=explain_move(args.fen,args.move,args.checkpoint,options,temporal_evidence=read_json(args.history) if args.history else None) if args.command=='inspect' else infer_moves(args.fen,args.checkpoint,options)
             if args.format=='text':
                 print(Position.from_fen(args.fen).board_text())
@@ -137,9 +161,15 @@ def main(argv=None):
             result=compare_transforms(fixture['fen'],tuple(map(int,args.offset.split(','))),args.checkpoint,fixture['focus_move'])
         elif args.command=='evaluate':
             # Development command lazily accesses the isolated evaluation package.
-            from evaluation.experiments import evaluate
-            runtime=Runtime(); result=evaluate(read_json(ROOT/'fixtures/dataset.json'),Model.load(args.checkpoint,runtime),args.split,runtime)
-            write_json(ROOT/f'artifacts/evaluation-{args.split}.json',result)
+            runtime=Runtime();model=Model.load(args.checkpoint,runtime)
+            if model.schema==5:
+                from evaluation.cycle4 import evaluate
+                if args.variant:model.variant=args.variant
+                result=evaluate(read_json(args.dataset or ROOT/'artifacts/cycle5/datasets/dataset.json'),model,args.split,runtime,Path(args.output) if args.output else ROOT/f'artifacts/cycle5/evaluation/cli-{args.split}.json.xz',diagnostics=True)
+            else:
+                from evaluation.experiments import evaluate
+                result=evaluate(read_json(args.dataset or ROOT/'fixtures/dataset.json'),model,args.split,runtime)
+                write_json(args.output or ROOT/f'artifacts/evaluation-{args.split}.json',result)
             result={'split':result['split'],'metrics':result['metrics']}
         elif args.command=='benchmark':
             from evaluation.experiments import benchmark
