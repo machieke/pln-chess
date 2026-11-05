@@ -79,13 +79,16 @@ def tags(position,move,label):
 
 def evaluate(dataset,model,split,runtime,output=None):
     rows=[];positions=[];session=NativeSession(runtime);proofs={}
+    options=None
     if model.schema==3:
         from pln_chess.cycle3.native import NativeSession as ScopedSession
+        from pln_chess.cycle3.inference import Cycle3Options
         session=ScopedSession(runtime)
+        options=Cycle3Options(max_proof_bytes=1024*1024*1024 if not model.training_report.get('dependence_aware',True) else 64*1024*1024)
     for fixture in dataset['positions']:
         if fixture['split']!=split:continue
         pos=Position.from_fen(fixture['fen']);moves={m.notation:m for m in candidates(pos)}
-        result=infer(pos,model,runtime,session);expected={m.uci() for m in chess.Board(pos.fen()).legal_moves}
+        result=infer(pos,model,runtime,session,options=options);expected={m.uci() for m in chess.Board(pos.fen()).legal_moves}
         for item in result['candidates']:
             move=moves[item['move']];label=move.notation in expected;categories=tags(pos,move,label)
             trace=item['proof_trace'];proof=digest(trace)
@@ -112,6 +115,7 @@ def evaluate(dataset,model,split,runtime,output=None):
     metrics['uncertainty']=uncertainty(rows,positions)
     metrics['peak_process_rss_kib']=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
     report={'dataset_hash':dataset['hash'],'model_version':model.version,'split':split,'thresholds':vars(Options()),
+            'evaluation_budget':vars(options or Options()),
             'metrics':metrics,'rows':rows,'positions':positions,'error_proofs':proofs}
     if output:write_gzip(output,report)
     return report
