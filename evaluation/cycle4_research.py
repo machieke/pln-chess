@@ -37,6 +37,21 @@ def research(dataset,models,runtime,out):
         'definition':'Every C3 unknown, incomplete, false legal or false negative across the declared regressions and new holdouts. No candidate selection before counting.',
         'ranking':'Descending frequency, ties in stable dataset order; generality reviewed in coverage.md.'})
     write_json(out/'regressions.json',regressions)
+    ablation_errors=[];threshold_proofs=[]
+    for name in ('C4-observations','C4-no-exposure','C4-no-dependence','C4-conservative','C4-coverage'):
+        for path in sorted((out/'evaluation').glob(name+'-*.json.xz')):
+            report=read_gzip(path)
+            for r in report['rows']:
+                if r['label'] or r['classification']!='supported':continue
+                reason='Exposure chain disabled in this ablation.' if name in ('C4-observations','C4-no-exposure') else 'Shared decision thresholds change which attack premises count as supported; stronger thresholds need not monotonically reduce risk.'
+                ablation_errors.append({'variant':name,**r,'explanation':reason,'artifact':str(path.relative_to(out))})
+                if name in ('C4-conservative','C4-coverage'):
+                    from pln_chess.cycle4.inference import Cycle4Options
+                    conf,pos,neg=read_json(ROOT/'configs/cycle4.json')['threshold_ablations'][name[3:]]
+                    proof=explain_move(r['fen'],r['move'],models['C4-full'],Cycle4Options(min_confidence=conf,supported_strength=pos,contradicted_strength=neg),runtime)
+                    threshold_proofs.append({'variant':name,'row':r,'proof':proof,'explanation':reason})
+    pack(out/'ablations/all-false-legal.json.xz',ablation_errors)
+    pack(out/'ablations/threshold-failure-proofs.json.xz',threshold_proofs)
     # All 23 + 26 original Cycle 2 false legal cases, including cases already fixed in C3.
     b1=Model.load(ROOT/'artifacts/cycle2/B1-model.json',runtime);old_errors=[]
     for split in ('heldout-transfer','adversarial'):

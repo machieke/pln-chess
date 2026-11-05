@@ -1,0 +1,10 @@
+# Next engineering cycle
+
+1. **Establish a positive composition theorem.** Require a verified native strategy for movement, path, destination and safety premises with explicit dependence semantics. Unary negative chains are useful but do not prove full legality. A candidate upstream contribution must have boundary tests, license/source provenance and independent runtime validation before production use.
+2. **Separate detection thresholds from presentation thresholds.** The Cycle 4 conservative ablation can remove a weak attack warning and expose a false positive. Pre-register a monotonic abstention policy and test it on a fresh game set; do not tune against the retained failure cases and call that a fresh holdout.
+3. **Resolve the remaining exact-set failures.** Investigate missing local categories, promotion and temporal history separately. Preserve the older eight-game zero-exact-set result as a regression. Evaluate more independently generated games and longer trajectories, with game-cluster uncertainty estimates.
+4. **Build scoped temporal proofs.** Treat predecessor observations, castling-movement attestations and their provenance as distinct propositions. Structural consistency alone does not certify a legal history; a FEN flag is insufficient. Retain unknown when required evidence is absent.
+5. **Test induction beyond a supplied abstraction.** Cycle 4 induction activates a deliberately withheld coarse rule but duplicates the manually seeded projection. Pre-register a task where native induction proposes a representation the revision-only baseline genuinely lacks, and retain negative controls and measured marginals.
+6. **Intern logical proofs, not only calculations.** Preserve instance bindings and ancestry while reducing repeated host grounding and exported proof occurrences. Require full reference/cache proof equivalence, bounded work accounting and fresh-process latency/RSS measurements before adopting a scheduler change.
+
+Do not expand into strategy or gameplay until these movement-legality and uncertainty limits have been characterized on independent data.

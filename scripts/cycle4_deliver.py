@@ -81,6 +81,9 @@ def main():
         if tests.returncode:raise RuntimeError('Test suite failed')
     write_json(OUT/'run.json',{'dataset_hash':dataset['hash'],'models':{k:m.version for k,m in models.items()},'runtime':rt.manifest,
                               'engine_hash':engine,'elapsed_seconds':time.time()-started,'command':'bash scripts/cycle4_reproduce.sh'})
+    if not args.skip_tests:
+        from evaluation.cycle4_reporting import report
+        report(OUT)
     print('CYCLE 4 COMPLETE',flush=True)
 
 if __name__=='__main__':main()
