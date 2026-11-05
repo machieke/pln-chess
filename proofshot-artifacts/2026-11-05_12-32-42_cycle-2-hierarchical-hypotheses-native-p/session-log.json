@@ -1,0 +1,137 @@
+[
+  {
+    "action": "snapshot -i",
+    "relativeTimeSec": 5,
+    "timestamp": "2026-11-05T12:33:11.137Z"
+  },
+  {
+    "action": "select @e2 B2",
+    "relativeTimeSec": 12.8,
+    "timestamp": "2026-11-05T12:33:18.893Z"
+  },
+  {
+    "action": "check @e6",
+    "relativeTimeSec": 13.1,
+    "timestamp": "2026-11-05T12:33:19.238Z"
+  },
+  {
+    "action": "click @e5",
+    "relativeTimeSec": 14.4,
+    "timestamp": "2026-11-05T12:33:20.504Z"
+  },
+  {
+    "action": "eval JSON.stringify({status:document.querySelector('#status').textContent,comparison:document.querySelector('#model-comparison').textContent.slice(0,1200),hierarchy:document.querySelector('#hierarchy').textContent.slice(0,180),cells:document.querySelectorAll('.cell').length})",
+    "relativeTimeSec": 78.8,
+    "timestamp": "2026-11-05T12:34:24.896Z"
+  },
+  {
+    "action": "screenshot cycle2-comparison.png",
+    "relativeTimeSec": 79.1,
+    "timestamp": "2026-11-05T12:34:25.246Z"
+  },
+  {
+    "action": "fill #fen 8/6k1/8/8/8/2R1P3/2K5/8 w - - 0 1",
+    "relativeTimeSec": 111.8,
+    "timestamp": "2026-11-05T12:34:57.909Z"
+  },
+  {
+    "action": "fill #move c3g3",
+    "relativeTimeSec": 112.2,
+    "timestamp": "2026-11-05T12:34:58.266Z"
+  },
+  {
+    "action": "click #run",
+    "relativeTimeSec": 112.5,
+    "timestamp": "2026-11-05T12:34:58.596Z"
+  },
+  {
+    "action": "eval document.querySelector('#model-comparison').parentElement.open=true; document.querySelector('.workspace').scrollIntoView(); JSON.stringify({summary:document.querySelector('#summary').textContent,comparison:document.querySelector('#model-comparison').textContent})",
+    "relativeTimeSec": 158.4,
+    "timestamp": "2026-11-05T12:35:44.538Z"
+  },
+  {
+    "action": "screenshot unseen-blocker-hierarchy.png --full",
+    "relativeTimeSec": 158.8,
+    "timestamp": "2026-11-05T12:35:44.905Z"
+  },
+  {
+    "action": "screenshot unseen-blocker-hierarchy.png",
+    "relativeTimeSec": 166,
+    "timestamp": "2026-11-05T12:35:52.101Z"
+  },
+  {
+    "action": "set viewport 390 844",
+    "relativeTimeSec": 166.4,
+    "timestamp": "2026-11-05T12:35:52.469Z"
+  },
+  {
+    "action": "eval window.scrollTo(0,0);JSON.stringify({viewport:innerWidth,document:document.documentElement.scrollWidth})",
+    "relativeTimeSec": 166.9,
+    "timestamp": "2026-11-05T12:35:52.999Z"
+  },
+  {
+    "action": "screenshot cycle2-mobile-controls.png",
+    "relativeTimeSec": 167.2,
+    "timestamp": "2026-11-05T12:35:53.342Z"
+  },
+  {
+    "action": "eval document.querySelector('.workspace').scrollIntoView();JSON.stringify({width:innerWidth,document:document.documentElement.scrollWidth,cells:document.querySelectorAll('.cell').length,summary:document.querySelector('#summary').textContent})",
+    "relativeTimeSec": 230.3,
+    "timestamp": "2026-11-05T12:36:56.433Z"
+  },
+  {
+    "action": "screenshot cycle2-mobile-proof.png",
+    "relativeTimeSec": 230.7,
+    "timestamp": "2026-11-05T12:36:56.781Z"
+  },
+  {
+    "action": "uncheck #compare-models",
+    "relativeTimeSec": 268.8,
+    "timestamp": "2026-11-05T12:37:34.916Z"
+  },
+  {
+    "action": "fill #fen 2r4k/8/8/8/8/8/2R5/2K5 w - - 0 1",
+    "relativeTimeSec": 269.2,
+    "timestamp": "2026-11-05T12:37:35.303Z"
+  },
+  {
+    "action": "fill #move c2e2",
+    "relativeTimeSec": 269.5,
+    "timestamp": "2026-11-05T12:37:35.642Z"
+  },
+  {
+    "action": "click #run",
+    "relativeTimeSec": 269.9,
+    "timestamp": "2026-11-05T12:37:36.016Z"
+  },
+  {
+    "action": "eval document.querySelector('#title').scrollIntoView();JSON.stringify({summary:document.querySelector('#summary').textContent,gaps:document.querySelector('#gaps').textContent,hierarchy:document.querySelector('#hierarchy').textContent.slice(0,280)})",
+    "relativeTimeSec": 286.8,
+    "timestamp": "2026-11-05T12:37:52.892Z"
+  },
+  {
+    "action": "screenshot exposure-conflict.png",
+    "relativeTimeSec": 287.1,
+    "timestamp": "2026-11-05T12:37:53.226Z"
+  },
+  {
+    "action": "fill #fen invalid",
+    "relativeTimeSec": 287.5,
+    "timestamp": "2026-11-05T12:37:53.582Z"
+  },
+  {
+    "action": "click #run",
+    "relativeTimeSec": 287.8,
+    "timestamp": "2026-11-05T12:37:53.917Z"
+  },
+  {
+    "action": "eval JSON.stringify({status:document.querySelector('#status').textContent,cleared:document.querySelector('#hierarchy').textContent===''&&document.querySelector('#summary').textContent===''})",
+    "relativeTimeSec": 321.5,
+    "timestamp": "2026-11-05T12:38:27.623Z"
+  },
+  {
+    "action": "screenshot invalid-input-clears-proof.png",
+    "relativeTimeSec": 321.9,
+    "timestamp": "2026-11-05T12:38:27.963Z"
+  }
+]

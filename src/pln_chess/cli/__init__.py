@@ -14,6 +14,9 @@ from pln_chess.domain import Position
 def main(argv=None):
     parser=argparse.ArgumentParser(prog='pln-chess',description='Piece-relative native PLN research inspector')
     sub=parser.add_subparsers(dest='command',required=True)
+    p=sub.add_parser('cycle2'); p.add_argument('--dataset',default=str(ROOT/'artifacts/cycle2/dataset.json'))
+    p.add_argument('--action',choices=('train','evaluate','audit'),default='evaluate'); p.add_argument('--split',default='heldout-transfer')
+    p.add_argument('--induction',action='store_true'); p.add_argument('--checkpoint',default=str(ROOT/'artifacts/cycle2/B1-model.json'))
     audit=sub.add_parser('runtime-audit'); audit.add_argument('--output',default=str(ROOT/'artifacts/runtime-audit.json'))
     for name in ('infer','inspect'):
         p=sub.add_parser(name); p.add_argument('--fen',required=True); p.add_argument('--checkpoint',default=str(ROOT/'artifacts/model.json'))
@@ -27,11 +30,26 @@ def main(argv=None):
     p=sub.add_parser('benchmark'); p.add_argument('--config',default=str(ROOT/'configs/benchmark.json'))
     p=sub.add_parser('report'); p.add_argument('--output',default=str(ROOT/'artifacts/final-report.md'))
     p=sub.add_parser('replay'); p.add_argument('--ledger',required=True); p.add_argument('--output',required=True); p.add_argument('--through',type=int)
+    p.add_argument('--representation',choices=('full','hierarchical'),default='full'); p.add_argument('--induction',action='store_true')
     p=sub.add_parser('hypothesis'); p.add_argument('id'); p.add_argument('--checkpoint',default=str(ROOT/'artifacts/model.json'))
     p=sub.add_parser('serve'); p.add_argument('--port',type=int,default=8765); p.add_argument('--checkpoint',default=str(ROOT/'artifacts/model.json'))
     args=parser.parse_args(argv)
     try:
-        if args.command=='runtime-audit':
+        if args.command=='cycle2':
+            if args.action=='audit':
+                from evaluation.cycle2_native import audit
+                result=audit(ROOT/'artifacts/cycle2/native-probes.json')
+            elif args.action=='train':
+                from pln_chess.cycle2.model import train as train_hierarchy
+                data=read_json(args.dataset)
+                model=train_hierarchy([r for r in data['examples'] if r['split']=='train' and r.get('training_eligible',True)],args.checkpoint,
+                                      {'induction':args.induction},ledger_path=ROOT/'artifacts/cycle2/cli-evidence.jsonl')
+                result={'version':model.version,'hypotheses':len(model.hypotheses),'induced':len(model.induction)}
+            else:
+                from evaluation.cycle2 import evaluate as evaluate_hierarchy
+                runtime=Runtime();result=evaluate_hierarchy(read_json(args.dataset),Model.load(args.checkpoint,runtime),args.split,runtime)
+                write_json(ROOT/f'artifacts/cycle2/cli-{args.split}.json',result);result=result['metrics']
+        elif args.command=='runtime-audit':
             from pln_chess.pln.audit import runtime_audit
             r=runtime_audit(args.output)
             result={'passed':r['passed'],'runtime':r['runtime']['pln'],'tests':r['tests'],'blockers':r['blockers']}
@@ -59,7 +77,7 @@ def main(argv=None):
                     'native_invocations':model.training_report['native_invocations']}
         elif args.command=='replay':
             from pln_chess.evidence import Ledger
-            model=train(Ledger(args.ledger),args.output,{'through_sequence':args.through})
+            model=train(Ledger(args.ledger),args.output,{'through_sequence':args.through,'variant':args.representation,'induction':args.induction})
             result={'version':model.version,'through_sequence':args.through,'hypotheses':len(model.hypotheses)}
         elif args.command=='hypothesis': result=import_model(args.checkpoint).inspect_hypothesis(args.id)
         elif args.command=='invariance':

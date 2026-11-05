@@ -1,0 +1,963 @@
+{
+  "dataset_hash": "54a54613957657e4e9180bcc06897314fb8d64e974eee05524290aaee43e6c26",
+  "engine_hash": "ba529b545f8758f2d9ee1fc55b77b6c3d86135c8706cb6b7a055daee0d88d79b",
+  "metrics": {
+    "abstention_rate": 0.6052631578947368,
+    "by_tier": {
+      "None": {
+        "abstention_rate": 0.6052631578947368,
+        "candidates": 38,
+        "coverage": 0.39473684210526316,
+        "exact_move_set_accuracy": null,
+        "f1": 0.0,
+        "false_legal_rate": 0.0,
+        "false_negative_including_abstention": 19,
+        "false_positive": 0,
+        "grounded_atoms": 0,
+        "incomplete_positions": 0,
+        "latency_seconds": {
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "native_invocations": 0,
+        "precision": null,
+        "recall": 0.0,
+        "selective_accuracy": 1.0,
+        "self_check_false_legal": 0,
+        "true_negative": 15,
+        "true_positive": 0
+      }
+    },
+    "candidates": 38,
+    "coverage": 0.39473684210526316,
+    "exact_move_set_accuracy": 0.0,
+    "f1": 0.0,
+    "false_legal_rate": 0.0,
+    "false_negative_including_abstention": 19,
+    "false_positive": 0,
+    "grounded_atoms": 1001,
+    "in_board": {
+      "abstention_rate": 0.9583333333333334,
+      "candidates": 24,
+      "coverage": 0.041666666666666664,
+      "exact_move_set_accuracy": 0.0,
+      "f1": 0.0,
+      "false_legal_rate": 0.0,
+      "false_negative_including_abstention": 19,
+      "false_positive": 0,
+      "grounded_atoms": 1001,
+      "incomplete_positions": 0,
+      "latency_seconds": {
+        "p50": 1.30837485473603,
+        "p95": 1.30837485473603,
+        "p99": 1.30837485473603
+      },
+      "native_invocations": 649,
+      "precision": null,
+      "recall": 0.0,
+      "selective_accuracy": 1.0,
+      "self_check_false_legal": 0,
+      "true_negative": 1,
+      "true_positive": 0
+    },
+    "incomplete_positions": 0,
+    "latency_seconds": {
+      "p50": 1.30837485473603,
+      "p95": 1.30837485473603,
+      "p99": 1.30837485473603
+    },
+    "native_invocations": 649,
+    "peak_process_rss_kib": 172740,
+    "per_piece": {
+      "King": {
+        "abstention_rate": 1.0,
+        "candidates": 10,
+        "coverage": 0.0,
+        "exact_move_set_accuracy": null,
+        "f1": 0.0,
+        "false_legal_rate": 0.0,
+        "false_negative_including_abstention": 7,
+        "false_positive": 0,
+        "grounded_atoms": 0,
+        "incomplete_positions": 0,
+        "latency_seconds": {
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "native_invocations": 0,
+        "precision": null,
+        "recall": 0.0,
+        "selective_accuracy": null,
+        "self_check_false_legal": 0,
+        "true_negative": 0,
+        "true_positive": 0
+      },
+      "Rook": {
+        "abstention_rate": 0.4642857142857143,
+        "candidates": 28,
+        "coverage": 0.5357142857142857,
+        "exact_move_set_accuracy": null,
+        "f1": 0.0,
+        "false_legal_rate": 0.0,
+        "false_negative_including_abstention": 12,
+        "false_positive": 0,
+        "grounded_atoms": 0,
+        "incomplete_positions": 0,
+        "latency_seconds": {
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "native_invocations": 0,
+        "precision": null,
+        "recall": 0.0,
+        "selective_accuracy": 1.0,
+        "self_check_false_legal": 0,
+        "true_negative": 15,
+        "true_positive": 0
+      }
+    },
+    "precision": null,
+    "proof_depth_mean": 4.2105263157894735,
+    "recall": 0.0,
+    "selective_accuracy": 1.0,
+    "self_check_false_legal": 0,
+    "self_check_false_legal_rate": 0.0,
+    "true_negative": 15,
+    "true_positive": 0,
+    "uncertainty": {
+      "method": "300 deterministic position-cluster bootstrap resamples; exploratory, families may remain correlated",
+      "precision": null,
+      "recall": [
+        0.0,
+        0.0
+      ]
+    },
+    "unseen_exact_context": {
+      "abstention_rate": 0,
+      "candidates": 0,
+      "coverage": 0,
+      "exact_move_set_accuracy": null,
+      "f1": null,
+      "false_legal_rate": null,
+      "false_negative_including_abstention": 0,
+      "false_positive": 0,
+      "grounded_atoms": 0,
+      "incomplete_positions": 0,
+      "latency_seconds": {
+        "p50": null,
+        "p95": null,
+        "p99": null
+      },
+      "native_invocations": 0,
+      "precision": null,
+      "recall": null,
+      "selective_accuracy": null,
+      "self_check_false_legal": 0,
+      "true_negative": 0,
+      "true_positive": 0
+    }
+  },
+  "model_version": "a115ea0dc36a988e99341ba081679e63ba6233ed975ec61fd6734fdb2f07f1be",
+  "positions": [
+    {
+      "elapsed": 1.30837485473603,
+      "error": null,
+      "exact": false,
+      "expected": [
+        "c2b1",
+        "c2b2",
+        "c2b3",
+        "c2c1",
+        "c2d1",
+        "c2d2",
+        "c2d3",
+        "c3a3",
+        "c3b3",
+        "c3c4",
+        "c3c5",
+        "c3c6",
+        "c3c7",
+        "c3c8",
+        "c3d3",
+        "c3e3",
+        "c3f3",
+        "c3g3",
+        "c3h3"
+      ],
+      "family": "paired-locality",
+      "fixture": "irrelevant-knight",
+      "grounded_atoms": 1001,
+      "native_invocations": 649,
+      "predicted": [],
+      "scheduled_invocations": 649,
+      "truncated": false
+    }
+  ],
+  "rows": [
+    {
+      "attack_conflicts": 0,
+      "chosen_hypothesis": null,
+      "classification": "unknown",
+      "destination_exists": true,
+      "exact_context_match": null,
+      "fixture": "irrelevant-knight",
+      "label": true,
+      "move": "c3c4",
+      "new_board": true,
+      "piece": "Rook",
+      "proof_depth": 5,
+      "proof_nodes": 23,
+      "self_check": false,
+      "tier": null,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "attack_conflicts": 0,
+      "chosen_hypothesis": null,
+      "classification": "unknown",
+      "destination_exists": true,
+      "exact_context_match": null,
+      "fixture": "irrelevant-knight",
+      "label": true,
+      "move": "c3c5",
+      "new_board": true,
+      "piece": "Rook",
+      "proof_depth": 5,
+      "proof_nodes": 23,
+      "self_check": false,
+      "tier": null,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "attack_conflicts": 0,
+      "chosen_hypothesis": null,
+      "classification": "unknown",
+      "destination_exists": true,
+      "exact_context_match": null,
+      "fixture": "irrelevant-knight",
+      "label": true,
+      "move": "c3c6",
+      "new_board": true,
+      "piece": "Rook",
+      "proof_depth": 5,
+      "proof_nodes": 23,
+      "self_check": false,
+      "tier": null,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "attack_conflicts": 0,
+      "chosen_hypothesis": null,
+      "classification": "unknown",
+      "destination_exists": true,
+      "exact_context_match": null,
+      "fixture": "irrelevant-knight",
+      "label": true,
+      "move": "c3c7",
+      "new_board": true,
+      "piece": "Rook",
+      "proof_depth": 5,
+      "proof_nodes": 23,
+      "self_check": false,
+      "tier": null,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "attack_conflicts": 0,
+      "chosen_hypothesis": null,
+      "classification": "unknown",
+      "destination_exists": true,
+      "exact_context_match": null,
+      "fixture": "irrelevant-knight",
+      "label": true,
+      "move": "c3c8",
+      "new_board": true,
+      "piece": "Rook",
+      "proof_depth": 5,
+      "proof_nodes": 23,
+      "self_check": false,
+      "tier": null,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "attack_conflicts": 0,
+      "chosen_hypothesis": null,
+      "classification": "contradicted",
+      "destination_exists": false,
+      "exact_context_match": null,
+      "fixture": "irrelevant-knight",
+      "label": false,
+      "move": "c3(2,8)",
+      "new_board": true,
+      "piece": "Rook",
+      "proof_depth": 3,
+      "proof_nodes": 8,
+      "self_check": false,
+      "tier": null,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "attack_conflicts": 0,
+      "chosen_hypothesis": null,
+      "classification": "contradicted",
+      "destination_exists": false,
+      "exact_context_match": null,
+      "fixture": "irrelevant-knight",
+      "label": false,
+      "move": "c3(2,9)",
+      "new_board": true,
+      "piece": "Rook",
+      "proof_depth": 3,
+      "proof_nodes": 8,
+      "self_check": false,
+      "tier": null,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "attack_conflicts": 0,
+      "chosen_hypothesis": null,
+      "classification": "unknown",
+      "destination_exists": true,
+      "exact_context_match": null,
+      "fixture": "irrelevant-knight",
+      "label": true,
+      "move": "c3d3",
+      "new_board": true,
+      "piece": "Rook",
+      "proof_depth": 5,
+      "proof_nodes": 23,
+      "self_check": false,
+      "tier": null,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "attack_conflicts": 0,
+      "chosen_hypothesis": null,
+      "classification": "unknown",
+      "destination_exists": true,
+      "exact_context_match": null,
+      "fixture": "irrelevant-knight",
+      "label": true,
+      "move": "c3e3",
+      "new_board": true,
+      "piece": "Rook",
+      "proof_depth": 5,
+      "proof_nodes": 23,
+      "self_check": false,
+      "tier": null,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "attack_conflicts": 0,
+      "chosen_hypothesis": null,
+      "classification": "unknown",
+      "destination_exists": true,
+      "exact_context_match": null,
+      "fixture": "irrelevant-knight",
+      "label": true,
+      "move": "c3f3",
+      "new_board": true,
+      "piece": "Rook",
+      "proof_depth": 5,
+      "proof_nodes": 23,
+      "self_check": false,
+      "tier": null,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "attack_conflicts": 0,
+      "chosen_hypothesis": null,
+      "classification": "unknown",
+      "destination_exists": true,
+      "exact_context_match": null,
+      "fixture": "irrelevant-knight",
+      "label": true,
+      "move": "c3g3",
+      "new_board": true,
+      "piece": "Rook",
+      "proof_depth": 5,
+      "proof_nodes": 23,
+      "self_check": false,
+      "tier": null,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "attack_conflicts": 0,
+      "chosen_hypothesis": null,
+      "classification": "unknown",
+      "destination_exists": true,
+      "exact_context_match": null,
+      "fixture": "irrelevant-knight",
+      "label": true,
+      "move": "c3h3",
+      "new_board": true,
+      "piece": "Rook",
+      "proof_depth": 5,
+      "proof_nodes": 23,
+      "self_check": false,
+      "tier": null,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "attack_conflicts": 0,
+      "chosen_hypothesis": null,
+      "classification": "contradicted",
+      "destination_exists": false,
+      "exact_context_match": null,
+      "fixture": "irrelevant-knight",
+      "label": false,
+      "move": "c3(8,2)",
+      "new_board": true,
+      "piece": "Rook",
+      "proof_depth": 3,
+      "proof_nodes": 8,
+      "self_check": false,
+      "tier": null,
+      "truth_value": {
+        "confidence": 0.7392857142857144,
+        "strength": 0.008620689655172376
+      }
+    },
+    {
+      "attack_conflicts": 0,
+      "chosen_hypothesis": null,
+      "classification": "contradicted",
+      "destination_exists": false,
+      "exact_context_match": null,
+      "fixture": "irrelevant-knight",
+      "label": false,
+      "move": "c3(9,2)",
+      "new_board": true,
+      "piece": "Rook",
+      "proof_depth": 3,
+      "proof_nodes": 8,
+      "self_check": false,
+      "tier": null,
+      "truth_value": {
+        "confidence": 0.7392857142857144,
+        "strength": 0.008620689655172376
+      }
+    },
+    {
+      "attack_conflicts": 0,
+      "chosen_hypothesis": null,
+      "classification": "contradicted",
+      "destination_exists": true,
+      "exact_context_match": null,
+      "fixture": "irrelevant-knight",
+      "label": false,
+      "move": "c3c2",
+      "new_board": true,
+      "piece": "Rook",
+      "proof_depth": 3,
+      "proof_nodes": 8,
+      "self_check": false,
+      "tier": null,
+      "truth_value": {
+        "confidence": 0.6571551724137932,
+        "strength": 0.012820512820512775
+      }
+    },
+    {
+      "attack_conflicts": 0,
+      "chosen_hypothesis": null,
+      "classification": "unknown",
+      "destination_exists": true,
+      "exact_context_match": null,
+      "fixture": "irrelevant-knight",
+      "label": false,
+      "move": "c3c1",
+      "new_board": true,
+      "piece": "Rook",
+      "proof_depth": 5,
+      "proof_nodes": 23,
+      "self_check": false,
+      "tier": null,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "attack_conflicts": 0,
+      "chosen_hypothesis": null,
+      "classification": "contradicted",
+      "destination_exists": false,
+      "exact_context_match": null,
+      "fixture": "irrelevant-knight",
+      "label": false,
+      "move": "c3(2,-1)",
+      "new_board": true,
+      "piece": "Rook",
+      "proof_depth": 3,
+      "proof_nodes": 8,
+      "self_check": false,
+      "tier": null,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "attack_conflicts": 0,
+      "chosen_hypothesis": null,
+      "classification": "contradicted",
+      "destination_exists": false,
+      "exact_context_match": null,
+      "fixture": "irrelevant-knight",
+      "label": false,
+      "move": "c3(2,-2)",
+      "new_board": true,
+      "piece": "Rook",
+      "proof_depth": 3,
+      "proof_nodes": 8,
+      "self_check": false,
+      "tier": null,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "attack_conflicts": 0,
+      "chosen_hypothesis": null,
+      "classification": "contradicted",
+      "destination_exists": false,
+      "exact_context_match": null,
+      "fixture": "irrelevant-knight",
+      "label": false,
+      "move": "c3(2,-3)",
+      "new_board": true,
+      "piece": "Rook",
+      "proof_depth": 3,
+      "proof_nodes": 8,
+      "self_check": false,
+      "tier": null,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "attack_conflicts": 0,
+      "chosen_hypothesis": null,
+      "classification": "contradicted",
+      "destination_exists": false,
+      "exact_context_match": null,
+      "fixture": "irrelevant-knight",
+      "label": false,
+      "move": "c3(2,-4)",
+      "new_board": true,
+      "piece": "Rook",
+      "proof_depth": 3,
+      "proof_nodes": 8,
+      "self_check": false,
+      "tier": null,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "attack_conflicts": 0,
+      "chosen_hypothesis": null,
+      "classification": "contradicted",
+      "destination_exists": false,
+      "exact_context_match": null,
+      "fixture": "irrelevant-knight",
+      "label": false,
+      "move": "c3(2,-5)",
+      "new_board": true,
+      "piece": "Rook",
+      "proof_depth": 3,
+      "proof_nodes": 8,
+      "self_check": false,
+      "tier": null,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "attack_conflicts": 0,
+      "chosen_hypothesis": null,
+      "classification": "unknown",
+      "destination_exists": true,
+      "exact_context_match": null,
+      "fixture": "irrelevant-knight",
+      "label": true,
+      "move": "c3b3",
+      "new_board": true,
+      "piece": "Rook",
+      "proof_depth": 5,
+      "proof_nodes": 23,
+      "self_check": false,
+      "tier": null,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "attack_conflicts": 0,
+      "chosen_hypothesis": null,
+      "classification": "unknown",
+      "destination_exists": true,
+      "exact_context_match": null,
+      "fixture": "irrelevant-knight",
+      "label": true,
+      "move": "c3a3",
+      "new_board": true,
+      "piece": "Rook",
+      "proof_depth": 5,
+      "proof_nodes": 23,
+      "self_check": false,
+      "tier": null,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "attack_conflicts": 0,
+      "chosen_hypothesis": null,
+      "classification": "contradicted",
+      "destination_exists": false,
+      "exact_context_match": null,
+      "fixture": "irrelevant-knight",
+      "label": false,
+      "move": "c3(-1,2)",
+      "new_board": true,
+      "piece": "Rook",
+      "proof_depth": 3,
+      "proof_nodes": 8,
+      "self_check": false,
+      "tier": null,
+      "truth_value": {
+        "confidence": 0.7392857142857144,
+        "strength": 0.008620689655172376
+      }
+    },
+    {
+      "attack_conflicts": 0,
+      "chosen_hypothesis": null,
+      "classification": "contradicted",
+      "destination_exists": false,
+      "exact_context_match": null,
+      "fixture": "irrelevant-knight",
+      "label": false,
+      "move": "c3(-2,2)",
+      "new_board": true,
+      "piece": "Rook",
+      "proof_depth": 3,
+      "proof_nodes": 8,
+      "self_check": false,
+      "tier": null,
+      "truth_value": {
+        "confidence": 0.7392857142857144,
+        "strength": 0.008620689655172376
+      }
+    },
+    {
+      "attack_conflicts": 0,
+      "chosen_hypothesis": null,
+      "classification": "contradicted",
+      "destination_exists": false,
+      "exact_context_match": null,
+      "fixture": "irrelevant-knight",
+      "label": false,
+      "move": "c3(-3,2)",
+      "new_board": true,
+      "piece": "Rook",
+      "proof_depth": 3,
+      "proof_nodes": 8,
+      "self_check": false,
+      "tier": null,
+      "truth_value": {
+        "confidence": 0.7392857142857144,
+        "strength": 0.008620689655172376
+      }
+    },
+    {
+      "attack_conflicts": 0,
+      "chosen_hypothesis": null,
+      "classification": "contradicted",
+      "destination_exists": false,
+      "exact_context_match": null,
+      "fixture": "irrelevant-knight",
+      "label": false,
+      "move": "c3(-4,2)",
+      "new_board": true,
+      "piece": "Rook",
+      "proof_depth": 3,
+      "proof_nodes": 8,
+      "self_check": false,
+      "tier": null,
+      "truth_value": {
+        "confidence": 0.7392857142857144,
+        "strength": 0.008620689655172376
+      }
+    },
+    {
+      "attack_conflicts": 0,
+      "chosen_hypothesis": null,
+      "classification": "contradicted",
+      "destination_exists": false,
+      "exact_context_match": null,
+      "fixture": "irrelevant-knight",
+      "label": false,
+      "move": "c3(-5,2)",
+      "new_board": true,
+      "piece": "Rook",
+      "proof_depth": 3,
+      "proof_nodes": 8,
+      "self_check": false,
+      "tier": null,
+      "truth_value": {
+        "confidence": 0.7392857142857144,
+        "strength": 0.008620689655172376
+      }
+    },
+    {
+      "attack_conflicts": 0,
+      "chosen_hypothesis": null,
+      "classification": "unknown",
+      "destination_exists": true,
+      "exact_context_match": null,
+      "fixture": "irrelevant-knight",
+      "label": false,
+      "move": "c2c3",
+      "new_board": true,
+      "piece": "King",
+      "proof_depth": 5,
+      "proof_nodes": 23,
+      "self_check": false,
+      "tier": null,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "attack_conflicts": 0,
+      "chosen_hypothesis": null,
+      "classification": "unknown",
+      "destination_exists": true,
+      "exact_context_match": null,
+      "fixture": "irrelevant-knight",
+      "label": true,
+      "move": "c2d3",
+      "new_board": true,
+      "piece": "King",
+      "proof_depth": 5,
+      "proof_nodes": 23,
+      "self_check": false,
+      "tier": null,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "attack_conflicts": 0,
+      "chosen_hypothesis": null,
+      "classification": "unknown",
+      "destination_exists": true,
+      "exact_context_match": null,
+      "fixture": "irrelevant-knight",
+      "label": true,
+      "move": "c2d2",
+      "new_board": true,
+      "piece": "King",
+      "proof_depth": 5,
+      "proof_nodes": 23,
+      "self_check": false,
+      "tier": null,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "attack_conflicts": 0,
+      "chosen_hypothesis": null,
+      "classification": "unknown",
+      "destination_exists": true,
+      "exact_context_match": null,
+      "fixture": "irrelevant-knight",
+      "label": true,
+      "move": "c2d1",
+      "new_board": true,
+      "piece": "King",
+      "proof_depth": 5,
+      "proof_nodes": 23,
+      "self_check": false,
+      "tier": null,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "attack_conflicts": 0,
+      "chosen_hypothesis": null,
+      "classification": "unknown",
+      "destination_exists": true,
+      "exact_context_match": null,
+      "fixture": "irrelevant-knight",
+      "label": true,
+      "move": "c2c1",
+      "new_board": true,
+      "piece": "King",
+      "proof_depth": 5,
+      "proof_nodes": 23,
+      "self_check": false,
+      "tier": null,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "attack_conflicts": 0,
+      "chosen_hypothesis": null,
+      "classification": "unknown",
+      "destination_exists": true,
+      "exact_context_match": null,
+      "fixture": "irrelevant-knight",
+      "label": true,
+      "move": "c2b1",
+      "new_board": true,
+      "piece": "King",
+      "proof_depth": 5,
+      "proof_nodes": 23,
+      "self_check": false,
+      "tier": null,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "attack_conflicts": 0,
+      "chosen_hypothesis": null,
+      "classification": "unknown",
+      "destination_exists": true,
+      "exact_context_match": null,
+      "fixture": "irrelevant-knight",
+      "label": true,
+      "move": "c2b2",
+      "new_board": true,
+      "piece": "King",
+      "proof_depth": 5,
+      "proof_nodes": 23,
+      "self_check": false,
+      "tier": null,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "attack_conflicts": 0,
+      "chosen_hypothesis": null,
+      "classification": "unknown",
+      "destination_exists": true,
+      "exact_context_match": null,
+      "fixture": "irrelevant-knight",
+      "label": true,
+      "move": "c2b3",
+      "new_board": true,
+      "piece": "King",
+      "proof_depth": 5,
+      "proof_nodes": 23,
+      "self_check": false,
+      "tier": null,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "attack_conflicts": 0,
+      "chosen_hypothesis": null,
+      "classification": "unknown",
+      "destination_exists": true,
+      "exact_context_match": null,
+      "fixture": "irrelevant-knight",
+      "label": false,
+      "move": "c2a2",
+      "new_board": true,
+      "piece": "King",
+      "proof_depth": 5,
+      "proof_nodes": 23,
+      "self_check": false,
+      "tier": null,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "attack_conflicts": 0,
+      "chosen_hypothesis": null,
+      "classification": "unknown",
+      "destination_exists": true,
+      "exact_context_match": null,
+      "fixture": "irrelevant-knight",
+      "label": false,
+      "move": "c2e2",
+      "new_board": true,
+      "piece": "King",
+      "proof_depth": 5,
+      "proof_nodes": 23,
+      "self_check": false,
+      "tier": null,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    }
+  ],
+  "scope": "full bounded candidate sets; warm pure-native expression cache within each split for schema 2",
+  "split": "irrelevant-context"
+}

@@ -4,6 +4,17 @@ A piece-relative chess research package using **actual native MeTTa PLN** rules.
 
 **Coverage is native-partial.** The audited PLN core has no conjunction-introduction rule. This package learns conditional beliefs on typed relative observation categories and derives unary attack/exposure counterevidence. It does not claim a compositional proof of full chess legality. Read [the capability audit](docs/pln-compatibility-matrix.md), [coverage](docs/chess-coverage.md), and [measured final report](docs/final-report.md).
 
+## Cycle 2: local relational transfer
+
+Cycle 2 adds reusable ray/destination hypotheses, separate learned exposure evidence, guarded native induction, full B0–B7 comparisons, and native calculation caching with proof-parity checks. It remains **native-partial**; local conditional generalization is not a compositional legality theorem. See the [Cycle 2 report](docs/cycle2/final-report.md), [architecture](docs/cycle2/architecture.md), and [limitations](docs/cycle2/limitations.md), and [verification](docs/cycle2/verification.md).
+
+```bash
+bash scripts/cycle2_reproduce.sh
+.venv/bin/pln-chess serve --port 8765 --checkpoint artifacts/cycle2/B1-model.json
+```
+
+This installs/verifies the same pinned dependencies and regenerates isolated Cycle 2 datasets, checkpoints, full-set evaluations, ablations, benchmarks, tests and reports. It preserves Cycle 1 artifacts and restores frozen inputs from checksummed repository archives when absent. Allow roughly 15–25 minutes for the full native baseline and comparisons. The inspector can compare B0, B1 and experimental B2 on one move and shows hierarchy, marginal premises, evidence overlap and abstention. B1 is the default Cycle 2 model; B2 induction is opt-in. Existing schema-1 checkpoints and commands remain supported.
+
 ## Reproduce the package
 
 System prerequisites: Linux x86-64, Git, `uv`, and **SWI-Prolog 10.0.1 with Janus and PCRE** available as `swipl`. Python 3.12.12 is selected/downloaded by uv. No paid services or remote writes are needed. The bootstrap refuses missing/mismatched native dependencies with an explicit diagnostic; it never substitutes Python inference.

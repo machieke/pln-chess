@@ -28,6 +28,10 @@ def explain_move(position,move,checkpoint=None,options=None,runtime=None):
 def observe_example(position,move,label,source,dependence_group,ledger_path,
                     runtime=None,variant='full',transformation_lineage=None,
                     auxiliary_labels=None,idempotency_key=None,observation_confidence=0.5):
+    if variant in ('hierarchical','no-obstruction','no-exact'):
+        from pln_chess.cycle2.model import observe_example as hierarchical_observe
+        return hierarchical_observe(position,move,label,source,dependence_group,ledger_path,runtime,variant,
+                                    transformation_lineage,auxiliary_labels,idempotency_key,observation_confidence)
     runtime=runtime or Runtime(); position=Position.from_fen(position) if isinstance(position,str) else position
     move=find_move(position,move) if isinstance(move,str) else move
     if move is None: raise ValueError('Move outside candidate grammar')
@@ -54,6 +58,9 @@ observe_training_example=observe_example
 
 def train(dataset,checkpoint=None,options=None,runtime=None,ledger_path=None):
     runtime=runtime or Runtime(); options=options or {}
+    if options.get('representation')=='hierarchical-relative-v2' or options.get('variant') in ('hierarchical','no-obstruction','no-exact'):
+        from pln_chess.cycle2.model import train as hierarchical_train
+        return hierarchical_train(dataset,checkpoint,options,runtime,ledger_path)
     if isinstance(dataset,Ledger): ledger=dataset
     else:
         rows=read_json(dataset) if isinstance(dataset,(str,Path)) else dataset

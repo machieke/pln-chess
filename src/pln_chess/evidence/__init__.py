@@ -10,6 +10,33 @@ from pln_chess.pln import TV
 class Ledger:
     def __init__(self,path): self.path=Path(path)
 
+    def append_many(self,payloads):
+        """One locked transaction for bulk ingestion, with the same payload hashes.
+
+        Validate all inputs before writing; a crash can leave a valid prefix, and
+        retry is idempotent. Each payload retains its own evidence identity.
+        """
+        payloads=list(payloads)
+        for payload in payloads:
+            required=('position_id','candidate_id','relative_feature_fingerprint','label','source','dependence_group','observation_tv','targets','runtime_version','model_version','transformation_lineage')
+            if any(k not in payload for k in required): raise ValueError('Missing evidence field')
+            if not payload['source'] or not payload['dependence_group'] or type(payload['label']) is not bool: raise ValueError('Invalid evidence identity/label')
+            if TV.from_json(payload['observation_tv']).confidence>=1: raise ValueError('Finite revision confidence required')
+        self.path.parent.mkdir(parents=True,exist_ok=True)
+        with self.path.open('a+') as file:
+            fcntl.flock(file,fcntl.LOCK_EX);records=self.records();known={r['evidence_id']:r['sequence'] for r in records};sequence=len(records);results=[]
+            for payload in payloads:
+                eid=digest(payload)
+                if eid in known:
+                    results.append({'evidence_id':eid,'sequence':known[eid],'status':'duplicate'});continue
+                sequence+=1;known[eid]=sequence
+                record={'sequence':sequence,'timestamp':datetime.now(timezone.utc).isoformat(),'evidence_id':eid,'idempotency_key':eid,'payload':payload}
+                file.write(canonical(record)+'\n');results.append({'evidence_id':eid,'sequence':sequence,'status':'appended'})
+            file.flush()
+            import os
+            os.fsync(file.fileno())
+        return results
+
     def records(self):
         if not self.path.exists(): return []
         records=[]

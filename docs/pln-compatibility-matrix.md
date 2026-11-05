@@ -26,3 +26,7 @@ Run `pln-chess runtime-audit` or `pytest tests/test_native.py -q`. Actual stdout
 The native modus ponens implementation has a fixed `.02` background strength and confidence that depends on premise/implication strengths. Strength and confidence are separate. Native revision converts confidence to evidence weight with `c/(1-c)` and back with `w/(w+1)`; the bridge never implements these formulas in Python. Each observation has confidence `.5`; priors have strength `.5`, confidence `.05`. These are disclosed modeling choices, not learned chess rules.
 
 The upstream `examples/Direct.metta` folds modus ponens across several inputs. We deliberately do not interpret that as conjunction: its asymmetry and `.02` background do not supply verified AND semantics. Nested implications also do not solve this gap. The reduced model uses a joint categorical sensory proposition rather than claiming its fields were logically conjoined by PLN. This capability gate constrains every coverage claim.
+
+## Cycle 2 extension
+
+Measured-marginal induction, alternative-source probes, domains and conjunction limits are recorded in [native-pln-feasibility.md](cycle2/native-pln-feasibility.md). Exact expressions and actual outputs: [native-probes.json](../artifacts/cycle2/native-probes.json). Isolated pinned upstream observations: [upstream-audit.json](../artifacts/cycle2/upstream-audit.json).

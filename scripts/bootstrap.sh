@@ -23,4 +23,8 @@ if [ ! -f .runtime/petta/run.sh ]; then
   git -C .runtime/petta checkout --detach ee5cacb6a6ecdd554a1c773aaf47e9a0f8a5af0f
 fi
 export PYTHONPATH="$PWD${PYTHONPATH:+:$PYTHONPATH}"
+if [[ "${1:-}" == '--dependencies-only' ]]; then
+  .venv/bin/python -c 'from pln_chess.pln import Runtime; Runtime().verify(); print("Pinned native runtime verified")'
+  exit 0
+fi
 .venv/bin/python scripts/deliver.py

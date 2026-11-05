@@ -31,7 +31,11 @@ class Model:
 
     @classmethod
     def load(cls,path,runtime=None):
-        data=read_json(path); version=data.pop('version'); model=cls(**data)
+        data=read_json(path)
+        if data.get('schema')==2:
+            from pln_chess.cycle2.model import HierarchicalModel
+            return HierarchicalModel.load(path,runtime)
+        version=data.pop('version'); model=cls(**data)
         if model.schema != 1 or model.grammar != GRAMMAR_VERSION: raise ValueError('Unsupported checkpoint schema/grammar')
         if model.version!=version: raise ValueError('Checkpoint integrity mismatch')
         if runtime and runtime.version!=model.runtime_version: raise ValueError('Checkpoint/runtime mismatch')

@@ -1,0 +1,46 @@
+{
+  "branches": [
+    {
+      "branch": "main",
+      "candidate_lines": [
+        "(= (Consistency_ImplicationImplicantConjunction $As $Bs $Cs $ACs $BCs)"
+      ],
+      "commit": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+      "conjunction_probe": "(AND-PROBE ())\ntrue\ntrue\n",
+      "date": "2026-03-15T00:50:27+01:00",
+      "license": "MIT",
+      "repository": "https://github.com/trueagi-io/PLN",
+      "sha256": "cdfb3f18bd7b336440fc7b4409209afddf0e64c41f17dee7eefc8f02718de433",
+      "source": "artifacts/cycle2/research/4405956947c4b53c7ff01bd565aa3b114bc970a1.metta",
+      "status": "executed"
+    },
+    {
+      "branch": "PLN_v0.6",
+      "commit": "789e743e430891dfb24eaa966992815974e1f9bb",
+      "date": "2026-02-16T22:36:04+01:00",
+      "status": "different-module-layout; no drop-in compatibility claimed"
+    },
+    {
+      "branch": "pln0.9",
+      "candidate_lines": [
+        "(= (Consistency_ImplicationImplicantConjunction $As $Bs $Cs $ACs $BCs)"
+      ],
+      "commit": "faa3f39697480c2eab6ced183792f8e74a20da31",
+      "conjunction_probe": "(AND-PROBE ())\ntrue\ntrue\n",
+      "date": "2026-03-15T00:48:09+01:00",
+      "license": "MIT",
+      "repository": "https://github.com/trueagi-io/PLN",
+      "sha256": "cdfb3f18bd7b336440fc7b4409209afddf0e64c41f17dee7eefc8f02718de433",
+      "source": "artifacts/cycle2/research/faa3f39697480c2eab6ced183792f8e74a20da31.metta",
+      "status": "executed"
+    },
+    {
+      "branch": "Modularity",
+      "commit": "ed2322a1d662a044be8d34d699f553a0cad04432",
+      "date": "2025-08-07T00:27:10+02:00",
+      "status": "different-module-layout; no drop-in compatibility claimed"
+    }
+  ],
+  "decision": "No demonstrated drop-in native conjunction from tested maintained repository refs. Production runtime unchanged.",
+  "scope": "Pinned main and three candidate branches; not an exhaustive theorem about all upstream repositories."
+}
