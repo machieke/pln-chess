@@ -1,0 +1,271 @@
+[
+  {
+    "classification": "contradicted",
+    "conditional_tv": {
+      "confidence": 0.8895348837209303,
+      "strength": 0.003267973856209153
+    },
+    "descriptor": {
+      "destination": "Empty",
+      "destination_kind": null,
+      "effect": "ordinary",
+      "motion": "orthogonal",
+      "piece": "Rook",
+      "promotion": null,
+      "ray_contents": [
+        "Friendly"
+      ]
+    },
+    "exact_context_used": false,
+    "fen": "8/1K6/R2N4/8/1n6/8/8/bk6 w - - 0 1",
+    "final_tv": {
+      "confidence": 0.8777616279069769,
+      "strength": 0.0032679738562090277
+    },
+    "hypothesis_id": "c3:f5ccac6b5f9230b1a1a3afca",
+    "motif": "Rook relative motif",
+    "move": "a6e6",
+    "route": "local",
+    "training": [
+      {
+        "evidence_id": "5f0ecb063ec4e4c93eaf7ed62f0ea5ac81d21c59e5c96e89ac0c054521b7add2",
+        "group": "historical-rook-east",
+        "input": {
+          "fen": "7k/8/8/8/8/8/2RP4/2K5 w - - 0 1",
+          "move": "c2e2"
+        },
+        "source": "python-chess/1.11.2"
+      },
+      {
+        "evidence_id": "6703fbc2e6c89a20bce36e2d17c93d38f467b2ea13eeae167987fff04bd33ab8",
+        "group": "historical-castle-queenside",
+        "input": {
+          "fen": "4k3/8/8/8/8/8/8/RN2K3 w Q - 0 1",
+          "move": "a1c1"
+        },
+        "source": "python-chess/1.11.2"
+      },
+      {
+        "evidence_id": "26f6bf7339870367e78c23da0c8a9543ef66a567f4205e59c6ba76491682f65a",
+        "group": "historical-promotion-main",
+        "input": {
+          "fen": "2R5/2P4k/8/8/8/8/8/K7 w - - 0 1",
+          "move": "c8c6"
+        },
+        "source": "python-chess/1.11.2"
+      }
+    ]
+  },
+  {
+    "classification": "supported",
+    "conditional_tv": {
+      "confidence": 0.9233870967741936,
+      "strength": 0.9978165938864629
+    },
+    "descriptor": {
+      "destination": "Empty",
+      "destination_kind": null,
+      "effect": "ordinary",
+      "motion": "diagonal",
+      "piece": "Bishop",
+      "promotion": null,
+      "ray_contents": []
+    },
+    "exact_context_used": false,
+    "fen": "8/8/1n6/8/8/4K3/kB6/5b2 w - - 0 1",
+    "final_tv": {
+      "confidence": 0.9121572580645162,
+      "strength": 0.9978165938864629
+    },
+    "hypothesis_id": "c3:c17297b47e1e442df877d6ac",
+    "motif": "Bishop relative motif",
+    "move": "b2f6",
+    "route": "local",
+    "training": [
+      {
+        "evidence_id": "589227496c6b4b23aa578155caf119c1726f7c6a21e2435dc2bb7c08eee62732",
+        "group": "historical-bishop-main",
+        "input": {
+          "fen": "8/7k/8/8/8/2B5/8/K7 w - - 0 1",
+          "move": "c3d4"
+        },
+        "source": "python-chess/1.11.2"
+      },
+      {
+        "evidence_id": "f282cd03b46149eb7fde2d83fcb13594d203a09eacc11b4ee316f60b1e47b796",
+        "group": "train-ray-1",
+        "input": {
+          "fen": "8/8/1k6/8/8/5B2/8/4K3 w - - 0 1",
+          "move": "f3g4"
+        },
+        "source": "python-chess/1.11.2"
+      },
+      {
+        "evidence_id": "771e69f392e61173d8ffa4012eadd3ed967a4c4abe1bd5590ac9db4d370bfafb",
+        "group": "train-ray-4",
+        "input": {
+          "fen": "4K3/8/8/6N1/5B2/8/8/1k6 w - - 0 1",
+          "move": "f4g3"
+        },
+        "source": "python-chess/1.11.2"
+      }
+    ]
+  },
+  {
+    "classification": "supported",
+    "conditional_tv": {
+      "confidence": 0.9233870967741936,
+      "strength": 0.9978165938864629
+    },
+    "descriptor": {
+      "destination": "Empty",
+      "destination_kind": null,
+      "effect": "ordinary",
+      "motion": "orthogonal",
+      "piece": "Queen",
+      "promotion": null,
+      "ray_contents": []
+    },
+    "exact_context_used": false,
+    "fen": "8/Q7/8/4n3/7k/8/1b3K2/8 w - - 0 1",
+    "final_tv": {
+      "confidence": 0.9121572580645162,
+      "strength": 0.9978165938864629
+    },
+    "hypothesis_id": "c3:6e51f3f827487ca07567e612",
+    "motif": "Queen relative motif",
+    "move": "a7e7",
+    "route": "local",
+    "training": [
+      {
+        "evidence_id": "d8b241d242c3b9ffb5b82c4dddf9e7e8f2df007c7295a725d89e5aacfef6223a",
+        "group": "historical-queen-main",
+        "input": {
+          "fen": "7k/8/8/8/2Q5/8/8/K7 w - - 0 1",
+          "move": "c4c5"
+        },
+        "source": "python-chess/1.11.2"
+      },
+      {
+        "evidence_id": "9c7ed712af6943e13834b8cd565933c40d34d2a806f7709c36277330980c27e2",
+        "group": "train-ray-2",
+        "input": {
+          "fen": "8/8/3Q4/4K3/8/8/8/6k1 w - - 0 1",
+          "move": "d6d7"
+        },
+        "source": "python-chess/1.11.2"
+      },
+      {
+        "evidence_id": "76353c464eeadd24abe8561cd266c92864476b7375a06869f3002f9fb1e6fb4b",
+        "group": "train-ray-5",
+        "input": {
+          "fen": "8/1N6/Q7/8/2K5/8/1k6/8 w - - 0 1",
+          "move": "a6a7"
+        },
+        "source": "python-chess/1.11.2"
+      }
+    ]
+  },
+  {
+    "classification": "unknown",
+    "conditional_tv": {
+      "confidence": 0.8020833333333335,
+      "strength": 0.9935064935064936
+    },
+    "descriptor": {
+      "motion": "diagonal",
+      "piece": "Bishop",
+      "ray_contents": []
+    },
+    "exact_context_used": false,
+    "fen": "7n/8/4k2b/8/R7/6K1/8/8 w - - 0 1",
+    "final_tv": {
+      "confidence": 0.8077418379685609,
+      "strength": 0.8253822629969418
+    },
+    "hypothesis_id": "c3:88f480b8f273a12c32914816",
+    "motif": "Bishop king-exposure",
+    "move": "g3f4",
+    "route": "attack",
+    "training": [
+      {
+        "evidence_id": "1148e0de7717bd44d6557f1f0507fecd4a373aa47442e8c9b9efc6198ebdad30",
+        "group": "contact-bishop-0",
+        "input": {
+          "fen": "8/8/8/8/3K4/4b3/7k/8 w - - 0 1",
+          "move": "d4c5"
+        },
+        "source": "python-chess/1.11.2"
+      },
+      {
+        "evidence_id": "3f4567124f37d661f83f1e6e1b02e8739eba9f225ef43663479791ecd8a3a56d",
+        "group": "contact-bishop-1",
+        "input": {
+          "fen": "8/2Kb4/8/k7/8/8/8/8 w - - 0 1",
+          "move": "c7c8"
+        },
+        "source": "python-chess/1.11.2"
+      },
+      {
+        "evidence_id": "62c372ac6c3d8e90016d267184edcaafda61cf992b246578407f020b18a14c20",
+        "group": "contact-bishop-2",
+        "input": {
+          "fen": "8/2k5/8/5K2/8/4b3/8/8 w - - 0 1",
+          "move": "f5g5"
+        },
+        "source": "python-chess/1.11.2"
+      }
+    ]
+  },
+  {
+    "classification": "unknown",
+    "conditional_tv": {
+      "confidence": 0.8020833333333335,
+      "strength": 0.9935064935064936
+    },
+    "descriptor": {
+      "motion": "diagonal",
+      "piece": "Bishop",
+      "ray_contents": []
+    },
+    "exact_context_used": false,
+    "fen": "k7/8/7b/8/8/4N3/8/2K5 w - - 0 1",
+    "final_tv": {
+      "confidence": 0.936671270718232,
+      "strength": 0.9985422740524781
+    },
+    "hypothesis_id": "c3:88f480b8f273a12c32914816",
+    "motif": "Knight jump with newly combined exposure",
+    "move": "e3f5",
+    "route": "attack",
+    "training": [
+      {
+        "evidence_id": "1148e0de7717bd44d6557f1f0507fecd4a373aa47442e8c9b9efc6198ebdad30",
+        "group": "contact-bishop-0",
+        "input": {
+          "fen": "8/8/8/8/3K4/4b3/7k/8 w - - 0 1",
+          "move": "d4c5"
+        },
+        "source": "python-chess/1.11.2"
+      },
+      {
+        "evidence_id": "3f4567124f37d661f83f1e6e1b02e8739eba9f225ef43663479791ecd8a3a56d",
+        "group": "contact-bishop-1",
+        "input": {
+          "fen": "8/2Kb4/8/k7/8/8/8/8 w - - 0 1",
+          "move": "c7c8"
+        },
+        "source": "python-chess/1.11.2"
+      },
+      {
+        "evidence_id": "62c372ac6c3d8e90016d267184edcaafda61cf992b246578407f020b18a14c20",
+        "group": "contact-bishop-2",
+        "input": {
+          "fen": "8/2k5/8/5K2/8/4b3/8/8 w - - 0 1",
+          "move": "f5g5"
+        },
+        "source": "python-chess/1.11.2"
+      }
+    ]
+  }
+]

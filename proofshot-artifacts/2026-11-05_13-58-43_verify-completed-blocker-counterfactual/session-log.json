@@ -1,0 +1,57 @@
+[
+  {
+    "action": "eval document.querySelectorAll('details')[0].open=true",
+    "relativeTimeSec": 5,
+    "timestamp": "2026-11-05T14:01:04.687Z"
+  },
+  {
+    "action": "click #perturb",
+    "relativeTimeSec": 5.3,
+    "timestamp": "2026-11-05T14:01:05.010Z"
+  },
+  {
+    "action": "wait 2000",
+    "relativeTimeSec": 5.7,
+    "timestamp": "2026-11-05T14:01:05.343Z"
+  },
+  {
+    "action": "eval JSON.stringify({status:document.querySelector('#status').textContent,text:document.querySelector('#counterfactual').textContent.slice(0,700)})",
+    "relativeTimeSec": 8,
+    "timestamp": "2026-11-05T14:01:07.713Z"
+  },
+  {
+    "action": "eval JSON.stringify({button:document.querySelector('#perturb').outerHTML,edit:document.querySelector('#edit').value,fen:document.querySelector('#fen').value})",
+    "relativeTimeSec": 17.3,
+    "timestamp": "2026-11-05T14:01:17.018Z"
+  },
+  {
+    "action": "eval document.querySelector('#perturb').click()",
+    "relativeTimeSec": 17.7,
+    "timestamp": "2026-11-05T14:01:17.349Z"
+  },
+  {
+    "action": "wait 2000",
+    "relativeTimeSec": 18,
+    "timestamp": "2026-11-05T14:01:17.675Z"
+  },
+  {
+    "action": "eval document.querySelector('#counterfactual').textContent.slice(0,850)",
+    "relativeTimeSec": 20.3,
+    "timestamp": "2026-11-05T14:01:20.027Z"
+  },
+  {
+    "action": "screenshot completed-blocker-change.png",
+    "relativeTimeSec": 20.7,
+    "timestamp": "2026-11-05T14:01:20.376Z"
+  },
+  {
+    "action": "eval document.querySelector('#counterfactual').scrollIntoView({block:'center'})",
+    "relativeTimeSec": 38.1,
+    "timestamp": "2026-11-05T14:01:37.788Z"
+  },
+  {
+    "action": "screenshot blocker-native-result.png",
+    "relativeTimeSec": 38.4,
+    "timestamp": "2026-11-05T14:01:38.126Z"
+  }
+]

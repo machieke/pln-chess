@@ -1,0 +1,93 @@
+Using CPython 3.12.12
+Creating virtual environment at: .venv
+Activate with: source .venv/bin/activate
+Resolved 6 packages in 67ms
+Uninstalled 1 package in 0.63ms
+ - pln-chess==0.1.0 (from file:///tmp/pln-chess-cycle3-clean-ouhg9p1n)
+Resolved 1 package in 1ms
+   Building pln-chess @ file:///tmp/pln-chess-cycle3-clean-ouhg9p1n
+      Built pln-chess @ file:///tmp/pln-chess-cycle3-clean-ouhg9p1n
+Prepared 1 package in 607ms
+Installed 1 package in 1ms
+ + pln-chess==0.1.0 (from file:///tmp/pln-chess-cycle3-clean-ouhg9p1n)
+Pinned native runtime verified
+B1 heldout-transfer True {'precision': 0.972488038277512, 'recall': 0.9553466509988249, 'f1': 0.963841138114997, 'abstention_rate': 0.17685009487666037, 'exact_move_set_accuracy': 0.425, 'self_check_false_legal': 23, 'false_positive': 23}
+B1 adversarial True {'precision': 0.8938775510204081, 'recall': 0.9647577092511013, 'f1': 0.9279661016949152, 'abstention_rate': 0.26076158940397354, 'exact_move_set_accuracy': 0.4583333333333333, 'self_check_false_legal': 26, 'false_positive': 26}
+B2 heldout-transfer True {'precision': 0.972488038277512, 'recall': 0.9553466509988249, 'f1': 0.963841138114997, 'abstention_rate': 0.17685009487666037, 'exact_move_set_accuracy': 0.425, 'self_check_false_legal': 23, 'false_positive': 23}
+B2 adversarial True {'precision': 0.8938775510204081, 'recall': 0.9647577092511013, 'f1': 0.9279661016949152, 'abstention_rate': 0.26076158940397354, 'exact_move_set_accuracy': 0.4583333333333333, 'self_check_false_legal': 26, 'false_positive': 26}
+BASELINE COMPLETE
+TRAIN C3-full 776 14
+TRAIN no-obstruction 710 14
+TRAIN no-dependence 776 14
+TRAIN exact-context-only 1532 0
+EVAL B1 frozen heldout-transfer {'precision': 0.972488038277512, 'recall': 0.9553466509988249, 'abstention_rate': 0.17685009487666037, 'self_check_false_legal': 23, 'exact_move_set_accuracy': 0.425}
+EVAL B2 frozen heldout-transfer {'precision': 0.972488038277512, 'recall': 0.9553466509988249, 'abstention_rate': 0.17685009487666037, 'self_check_false_legal': 23, 'exact_move_set_accuracy': 0.425}
+EVAL B1 frozen adversarial {'precision': 0.8938775510204081, 'recall': 0.9647577092511013, 'abstention_rate': 0.26076158940397354, 'self_check_false_legal': 26, 'exact_move_set_accuracy': 0.4583333333333333}
+EVAL B2 frozen adversarial {'precision': 0.8938775510204081, 'recall': 0.9647577092511013, 'abstention_rate': 0.26076158940397354, 'self_check_false_legal': 26, 'exact_move_set_accuracy': 0.4583333333333333}
+EVAL B1 new challenge {'precision': 0.7523809523809524, 'recall': 0.9404761904761905, 'abstention_rate': 0.21739130434782605, 'self_check_false_legal': 50, 'exact_move_set_accuracy': 0.4782608695652174}
+EVAL B2 new challenge {'precision': 0.7523809523809524, 'recall': 0.9404761904761905, 'abstention_rate': 0.21739130434782605, 'self_check_false_legal': 50, 'exact_move_set_accuracy': 0.4782608695652174}
+EVAL B1 new independent-games {'precision': 0.9678714859437751, 'recall': 0.8827838827838828, 'abstention_rate': 0.291101944608132, 'self_check_false_legal': 8, 'exact_move_set_accuracy': 0.0}
+EVAL B2 new independent-games {'precision': 0.9678714859437751, 'recall': 0.8827838827838828, 'abstention_rate': 0.291101944608132, 'self_check_false_legal': 8, 'exact_move_set_accuracy': 0.0}
+EVAL B1 new validation {'precision': 1.0, 'recall': 0.9007633587786259, 'abstention_rate': 0.23026315789473684, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.0}
+EVAL B2 new validation {'precision': 1.0, 'recall': 0.9007633587786259, 'abstention_rate': 0.23026315789473684, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.0}
+EVAL no-obstruction frozen heldout-transfer {'precision': 0.8736330498177399, 'recall': 0.8448883666274971, 'abstention_rate': 0.1370018975332068, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.1}
+EVAL C3-full frozen heldout-transfer {'precision': 1.0, 'recall': 0.9553466509988249, 'abstention_rate': 0.18140417457305502, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.675}
+EVAL no-obstruction frozen adversarial {'precision': 0.8944954128440367, 'recall': 0.8590308370044053, 'abstention_rate': 0.2491721854304636, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.5833333333333334}
+EVAL C3-full frozen adversarial {'precision': 1.0, 'recall': 0.973568281938326, 'abstention_rate': 0.2822847682119205, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.75}
+EVAL no-obstruction new challenge {'precision': 0.9207317073170732, 'recall': 0.8988095238095238, 'abstention_rate': 0.24592391304347827, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.5652173913043478}
+EVAL C3-full new challenge {'precision': 1.0, 'recall': 0.9404761904761905, 'abstention_rate': 0.29483695652173914, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.6956521739130435}
+EVAL B0 frozen heldout-transfer {'precision': None, 'recall': 0.0, 'abstention_rate': 0.7886148007590132, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.0}
+EVAL no-obstruction new independent-games {'precision': 0.571830985915493, 'recall': 0.7435897435897436, 'abstention_rate': 0.14319387153800822, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.0}
+EVAL C3-full new independent-games {'precision': 1.0, 'recall': 0.8864468864468864, 'abstention_rate': 0.2981732469063052, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.0}
+EVAL no-obstruction new validation {'precision': 0.6012269938650306, 'recall': 0.7480916030534351, 'abstention_rate': 0.13026315789473686, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.0}
+EVAL C3-full new validation {'precision': 1.0, 'recall': 0.9083969465648855, 'abstention_rate': 0.2315789473684211, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.0}
+EVAL exact-context-only frozen heldout-transfer {'precision': None, 'recall': 0.0, 'abstention_rate': 0.8903225806451613, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.0}
+EVAL B0 frozen adversarial {'precision': 1.0, 'recall': 0.05286343612334802, 'abstention_rate': 0.6920529801324503, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.08333333333333333}
+EVAL exact-context-only frozen adversarial {'precision': 1.0, 'recall': 0.030837004405286344, 'abstention_rate': 0.8675496688741722, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.08333333333333333}
+EVAL B0 new challenge {'precision': 1.0, 'recall': 0.02976190476190476, 'abstention_rate': 0.7391304347826086, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.0}
+EVAL exact-context-only new challenge {'precision': 1.0, 'recall': 0.02976190476190476, 'abstention_rate': 0.8614130434782609, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.0}
+EVAL no-dependence frozen heldout-transfer {'precision': 1.0, 'recall': 0.8519388954171563, 'abstention_rate': 0.20493358633776093, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.025}
+EVAL exact-context-only new independent-games {'precision': None, 'recall': 0.0, 'abstention_rate': 0.8886269888037713, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.0}
+EVAL exact-context-only new validation {'precision': None, 'recall': 0.0, 'abstention_rate': 0.8736842105263158, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.0}
+EVAL no-dependence frozen adversarial {'precision': 1.0, 'recall': 0.788546255506608, 'abstention_rate': 0.30215231788079466, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.20833333333333334}
+EVAL C3-local frozen heldout-transfer {'precision': 0.9033333333333333, 'recall': 0.9553466509988249, 'abstention_rate': 0.1483870967741936, 'self_check_false_legal': 87, 'exact_move_set_accuracy': 0.2}
+EVAL C3-local frozen adversarial {'precision': 0.5695876288659794, 'recall': 0.973568281938326, 'abstention_rate': 0.14403973509933776, 'self_check_false_legal': 167, 'exact_move_set_accuracy': 0.16666666666666666}
+EVAL no-dependence new challenge {'precision': 1.0, 'recall': 0.6964285714285714, 'abstention_rate': 0.34239130434782605, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.0}
+EVAL C3-local new challenge {'precision': 0.5080385852090032, 'recall': 0.9404761904761905, 'abstention_rate': 0.08695652173913049, 'self_check_false_legal': 151, 'exact_move_set_accuracy': 0.13043478260869565}
+EVAL C3-local new independent-games {'precision': 0.9565217391304348, 'recall': 0.8864468864468864, 'abstention_rate': 0.2916912197996464, 'self_check_false_legal': 11, 'exact_move_set_accuracy': 0.0}
+EVAL C3-local new validation {'precision': 1.0, 'recall': 0.9083969465648855, 'abstention_rate': 0.2315789473684211, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.0}
+EVAL no-dependence new independent-games {'precision': 1.0, 'recall': 0.8498168498168498, 'abstention_rate': 0.3011196228638774, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.0}
+EVAL C3-exposure frozen heldout-transfer {'precision': 1.0, 'recall': 0.9553466509988249, 'abstention_rate': 0.18140417457305502, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.675}
+EVAL C3-exposure frozen adversarial {'precision': 1.0, 'recall': 0.973568281938326, 'abstention_rate': 0.2822847682119205, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.75}
+EVAL no-dependence new validation {'precision': 1.0, 'recall': 0.8702290076335878, 'abstention_rate': 0.23815789473684212, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.0}
+EVAL C3-exposure new challenge {'precision': 1.0, 'recall': 0.9404761904761905, 'abstention_rate': 0.29483695652173914, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.6956521739130435}
+EVAL B0 new independent-games {'precision': None, 'recall': 0.0, 'abstention_rate': 0.7507365939893931, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.0}
+EVAL C3-exposure new independent-games {'precision': 1.0, 'recall': 0.8864468864468864, 'abstention_rate': 0.2981732469063052, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.0}
+EVAL C3-induction frozen heldout-transfer {'precision': 1.0, 'recall': 0.9553466509988249, 'abstention_rate': 0.18140417457305502, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.675}
+EVAL C3-exposure new validation {'precision': 1.0, 'recall': 0.9083969465648855, 'abstention_rate': 0.2315789473684211, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.0}
+EVAL C3-induction frozen adversarial {'precision': 1.0, 'recall': 0.973568281938326, 'abstention_rate': 0.2822847682119205, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.75}
+EVAL no-exposure frozen heldout-transfer {'precision': 0.9033333333333333, 'recall': 0.9553466509988249, 'abstention_rate': 0.1483870967741936, 'self_check_false_legal': 87, 'exact_move_set_accuracy': 0.2}
+EVAL C3-induction new challenge {'precision': 1.0, 'recall': 0.9404761904761905, 'abstention_rate': 0.29483695652173914, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.6956521739130435}
+EVAL no-exposure frozen adversarial {'precision': 0.5695876288659794, 'recall': 0.973568281938326, 'abstention_rate': 0.14403973509933776, 'self_check_false_legal': 167, 'exact_move_set_accuracy': 0.16666666666666666}
+EVAL C3-induction new independent-games {'precision': 1.0, 'recall': 0.8864468864468864, 'abstention_rate': 0.2981732469063052, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.0}
+EVAL C3-induction new validation {'precision': 1.0, 'recall': 0.9083969465648855, 'abstention_rate': 0.2315789473684211, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.0}
+EVAL no-exposure new challenge {'precision': 0.5080385852090032, 'recall': 0.9404761904761905, 'abstention_rate': 0.08695652173913049, 'self_check_false_legal': 151, 'exact_move_set_accuracy': 0.13043478260869565}
+EVAL B0 new validation {'precision': None, 'recall': 0.0, 'abstention_rate': 0.7105263157894737, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.0}
+EVAL no-exposure new independent-games {'precision': 0.9565217391304348, 'recall': 0.8864468864468864, 'abstention_rate': 0.2916912197996464, 'self_check_false_legal': 11, 'exact_move_set_accuracy': 0.0}
+EVAL no-exposure new validation {'precision': 1.0, 'recall': 0.9083969465648855, 'abstention_rate': 0.2315789473684211, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.0}
+EVAL no-induction frozen heldout-transfer {'precision': 1.0, 'recall': 0.9553466509988249, 'abstention_rate': 0.18140417457305502, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.675}
+EVAL no-arbitration frozen heldout-transfer {'precision': 0.9033333333333333, 'recall': 0.9553466509988249, 'abstention_rate': 0.1483870967741936, 'self_check_false_legal': 87, 'exact_move_set_accuracy': 0.2}
+EVAL no-induction frozen adversarial {'precision': 1.0, 'recall': 0.973568281938326, 'abstention_rate': 0.2822847682119205, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.75}
+EVAL no-arbitration frozen adversarial {'precision': 0.572538860103627, 'recall': 0.973568281938326, 'abstention_rate': 0.14403973509933776, 'self_check_false_legal': 165, 'exact_move_set_accuracy': 0.16666666666666666}
+EVAL no-induction new challenge {'precision': 1.0, 'recall': 0.9404761904761905, 'abstention_rate': 0.29483695652173914, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.6956521739130435}
+EVAL no-arbitration new challenge {'precision': 0.5180327868852459, 'recall': 0.9404761904761905, 'abstention_rate': 0.08695652173913049, 'self_check_false_legal': 147, 'exact_move_set_accuracy': 0.17391304347826086}
+EVAL no-induction new independent-games {'precision': 1.0, 'recall': 0.8864468864468864, 'abstention_rate': 0.2981732469063052, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.0}
+EVAL no-arbitration new independent-games {'precision': 0.9565217391304348, 'recall': 0.8864468864468864, 'abstention_rate': 0.2916912197996464, 'self_check_false_legal': 11, 'exact_move_set_accuracy': 0.0}
+EVAL no-induction new validation {'precision': 1.0, 'recall': 0.9083969465648855, 'abstention_rate': 0.2315789473684211, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.0}
+EVAL no-arbitration new validation {'precision': 1.0, 'recall': 0.9083969465648855, 'abstention_rate': 0.2315789473684211, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.0}
+RESEARCH proofs, induction, learning curves and full parity complete
+........................................................................ [ 51%]
+.....................................................................    [100%]
+141 passed in 98.89s (0:01:38)
+
+CYCLE 3 COMPLETE

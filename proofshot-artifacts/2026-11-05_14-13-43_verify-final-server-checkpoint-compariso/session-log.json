@@ -1,0 +1,32 @@
+[
+  {
+    "action": "check #compare-models",
+    "relativeTimeSec": 5,
+    "timestamp": "2026-11-05T14:15:58.602Z"
+  },
+  {
+    "action": "click #run",
+    "relativeTimeSec": 5.3,
+    "timestamp": "2026-11-05T14:15:58.940Z"
+  },
+  {
+    "action": "wait --fn document.querySelector('#model-comparison').textContent.includes('default')",
+    "relativeTimeSec": 5.7,
+    "timestamp": "2026-11-05T14:15:59.322Z"
+  },
+  {
+    "action": "eval JSON.stringify({selected:document.querySelector('#model').value,summary:document.querySelector('#summary').textContent,hasIndependentConditions:document.querySelector('#conditions').textContent.includes('PathUnoccupied'),comparisonHasDefault:document.querySelector('#model-comparison').textContent.includes('default'),status:document.querySelector('#status').textContent})",
+    "relativeTimeSec": 10,
+    "timestamp": "2026-11-05T14:16:03.663Z"
+  },
+  {
+    "action": "eval document.querySelector('#conditions').scrollIntoView({block:'start'})",
+    "relativeTimeSec": 10.4,
+    "timestamp": "2026-11-05T14:16:04.025Z"
+  },
+  {
+    "action": "screenshot final-server-checkpoint-comparison.png",
+    "relativeTimeSec": 10.8,
+    "timestamp": "2026-11-05T14:16:04.439Z"
+  }
+]

@@ -1,0 +1,49 @@
+{
+  "call_reduction": 86.9746835443038,
+  "candidates": 214,
+  "checkpoint_bytes": 5582318,
+  "cold_speedup": 15.432330500026241,
+  "compared": "Full TVs, classifications, native logical nodes, rule IDs, and evidence lineage",
+  "fixture": {
+    "dependence_group": "game-0",
+    "family": "game-0",
+    "fen": "r1bqkbr1/pp1pp2p/2n5/2p2p2/4P2p/2N5/PPPP1R1N/R1BQKB2 w Qq - 3 10",
+    "focus_move": "c3d5",
+    "id": "game-0",
+    "lineage": [],
+    "split": "train"
+  },
+  "parity": true,
+  "runs": [
+    {
+      "cache_hits": 0,
+      "elapsed_seconds": 20.421129726804793,
+      "mode": "reference",
+      "native_invocations": 13742,
+      "scheduled_invocations": 13742,
+      "truncated": false
+    },
+    {
+      "cache_hits": 13584,
+      "elapsed_seconds": 1.32326933555305,
+      "mode": "cold",
+      "native_invocations": 158,
+      "scheduled_invocations": 13742,
+      "truncated": false
+    },
+    {
+      "cache_hits": 13742,
+      "elapsed_seconds": 0.9818677138537169,
+      "mode": "warm",
+      "native_invocations": 0,
+      "scheduled_invocations": 13742,
+      "truncated": false
+    }
+  ],
+  "stage_profile": {
+    "BestConfidenceCandidate": 2394,
+    "Truth_ModusPonens": 7576,
+    "Truth_Negation": 3772
+  },
+  "warm_mode": "In-memory memoized pure native expression results; no long-lived PeTTa process or Python TV calculation"
+}
