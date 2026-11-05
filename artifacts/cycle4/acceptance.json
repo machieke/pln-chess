@@ -1,0 +1,86 @@
+[
+  {
+    "criterion": "H1 verified native calculus",
+    "evidence": "native-probes/audit.json",
+    "outcome": "No vendor changes; all production truth arithmetic native",
+    "status": "pass"
+  },
+  {
+    "criterion": "H2 no production oracle",
+    "evidence": "pytest.txt; tests/test_cycle4.py",
+    "outcome": "Import-blocked production execution and full suite",
+    "status": "pass"
+  },
+  {
+    "criterion": "H3 three-way output",
+    "evidence": "evaluation/; tests/test_cycle4.py",
+    "outcome": "Supported / contradicted / unknown, plus explicit incomplete status",
+    "status": "pass"
+  },
+  {
+    "criterion": "H4 dependence, replay, hashes and invariance",
+    "evidence": "pytest.txt; preservation.json",
+    "outcome": "Explicit lineage, scoped cache and parity tests",
+    "status": "pass"
+  },
+  {
+    "criterion": "H5 no universal abstention",
+    "evidence": "comparison.json",
+    "outcome": "Independent recall 95.37%; coverage 96.73%",
+    "status": "pass"
+  },
+  {
+    "criterion": "H6 compatibility and old artifact immutability",
+    "evidence": "preservation.json; pytest.txt",
+    "outcome": "317 frozen files unchanged; schemas 1\u20134 supported",
+    "status": "pass"
+  },
+  {
+    "criterion": "H7 local only",
+    "evidence": "final local git history",
+    "outcome": "No push, deployment, account mutation or destructive reset performed",
+    "status": "pass"
+  },
+  {
+    "criterion": "A1 native proof lineage and oracle boundary",
+    "evidence": "native-probes/audit.json; pytest.txt",
+    "outcome": "Native source locked; explicit antecedent/bridge groups checked",
+    "status": "pass"
+  },
+  {
+    "criterion": "A2 no regression in prior proof/invariance/replay tests",
+    "evidence": "baseline.json; pytest.txt",
+    "outcome": "Original tests retained; all five C3 split proofs exactly reproduced",
+    "status": "pass"
+  },
+  {
+    "criterion": "A3 zero observed self-check errors without coverage collapse",
+    "evidence": "comparison.json",
+    "outcome": "Frozen 0, adversarial 0; coverage 96.85% / 97.68%",
+    "status": "pass"
+  },
+  {
+    "criterion": "A4 independent exact \u226525%, recall \u226590%, precision \u226598%",
+    "evidence": "evaluation/C4-full-cycle4-independent-games.json.xz",
+    "outcome": "41.67%, 95.37%, 100.00%",
+    "status": "pass"
+  },
+  {
+    "criterion": "A5 three independently trained premise families",
+    "evidence": "proofs/before-after-examples.json.xz; native-probes/audit.json",
+    "outcome": "Attack, exposure and illegality in a disjoint native unary chain. General multi-condition conjunction remains unproved.",
+    "status": "scoped alternative"
+  },
+  {
+    "criterion": "A6 five newly resolved structural families",
+    "evidence": "proof-examples-summary.json",
+    "outcome": "6 represented resolved primary families, plus unsuccessful case",
+    "status": "pass"
+  },
+  {
+    "criterion": "A7 cold \u22643 seconds, memory \u22642\u00d7 comparable C3",
+    "evidence": "benchmarks/inference.json; benchmarks/C3-reference.json",
+    "outcome": "Cold 2.135s; fresh-process RSS 217772 / C3 208212 KiB",
+    "status": "pass"
+  }
+]

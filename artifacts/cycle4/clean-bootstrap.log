@@ -1,0 +1,72 @@
+Using CPython 3.12.12
+Creating virtual environment at: .venv
+Activate with: source .venv/bin/activate
+Resolved 6 packages in 71ms
+Uninstalled 1 package in 0.86ms
+ - pln-chess==0.1.0 (from file:///tmp/pln-chess-cycle4-clean-8wgzhstv)
+Resolved 1 package in 2ms
+   Building pln-chess @ file:///tmp/pln-chess-cycle4-clean-8wgzhstv
+      Built pln-chess @ file:///tmp/pln-chess-cycle4-clean-8wgzhstv
+Prepared 1 package in 599ms
+Installed 1 package in 4ms
+ + pln-chess==0.1.0 (from file:///tmp/pln-chess-cycle4-clean-8wgzhstv)
+Pinned native runtime verified
+BASELINE frozen heldout-transfer True {'precision': 1.0, 'recall': 0.9553466509988249, 'f1': 0.9771634615384616, 'abstention_rate': 0.18140417457305502, 'exact_move_set_accuracy': 0.675, 'self_check_false_legal': 0}
+BASELINE frozen adversarial True {'precision': 1.0, 'recall': 0.973568281938326, 'f1': 0.9866071428571429, 'abstention_rate': 0.2822847682119205, 'exact_move_set_accuracy': 0.75, 'self_check_false_legal': 0}
+BASELINE new challenge True {'precision': 1.0, 'recall': 0.9404761904761905, 'f1': 0.9693251533742331, 'abstention_rate': 0.29483695652173914, 'exact_move_set_accuracy': 0.6956521739130435, 'self_check_false_legal': 0}
+BASELINE new independent-games True {'precision': 1.0, 'recall': 0.8864468864468864, 'f1': 0.9398058252427185, 'abstention_rate': 0.2981732469063052, 'exact_move_set_accuracy': 0.0, 'self_check_false_legal': 0}
+BASELINE new validation True {'precision': 1.0, 'recall': 0.9083969465648855, 'f1': 0.952, 'abstention_rate': 0.2315789473684211, 'exact_move_set_accuracy': 0.0, 'self_check_false_legal': 0}
+BASELINE COMPLETE {'reference': {'elapsed_seconds': 24.650697259232402, 'native_invocations': 17318, 'scheduled_invocations': 17318, 'cache_hits': 0, 'proof_bytes_estimate': 35481988, 'truncated': False}, 'cold': {'elapsed_seconds': 2.0487931556999683, 'native_invocations': 179, 'scheduled_invocations': 17318, 'cache_hits': 17139, 'proof_bytes_estimate': 35481988, 'truncated': False}, 'warm': {'elapsed_seconds': 1.6343071544542909, 'native_invocations': 0, 'scheduled_invocations': 17318, 'cache_hits': 17318, 'proof_bytes_estimate': 35481988, 'truncated': False}}
+TRAIN C4-full f76d02067c40ed2dfe73287581cbacf61339dcbe8cae166a4480f41db4aa9b5f 381
+TRAIN C4-no-dependence 764c6602acc7687ac34aea42a4322c54d61dedf77756d5ecd2c460a5d43260a3 381
+EVAL C3 frozen heldout-transfer {'precision': 1.0, 'recall': 0.9553466509988249, 'abstention_rate': 0.18140417457305502, 'false_positive': 0, 'false_illegal': 0, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.675}
+EVAL C4-full frozen heldout-transfer {'precision': 1.0, 'recall': 0.9776733254994124, 'abstention_rate': 0.03149905123339658, 'false_positive': 0, 'false_illegal': 0, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.75}
+EVAL C3 frozen adversarial {'precision': 1.0, 'recall': 0.973568281938326, 'abstention_rate': 0.2822847682119205, 'false_positive': 0, 'false_illegal': 0, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.75}
+EVAL C4-full frozen adversarial {'precision': 1.0, 'recall': 0.9911894273127754, 'abstention_rate': 0.023178807947019875, 'false_positive': 0, 'false_illegal': 0, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.9166666666666666}
+EVAL C4-no-dependence frozen heldout-transfer {'precision': 1.0, 'recall': 0.9776733254994124, 'abstention_rate': 0.030360531309297945, 'false_positive': 0, 'false_illegal': 0, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.75}
+EVAL C3 cycle3 independent-games {'precision': 1.0, 'recall': 0.8864468864468864, 'abstention_rate': 0.2981732469063052, 'false_positive': 0, 'false_illegal': 0, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.0}
+EVAL C4-full cycle3 independent-games {'precision': 1.0, 'recall': 0.9523809523809523, 'abstention_rate': 0.038892162639952876, 'false_positive': 0, 'false_illegal': 0, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.0}
+EVAL C3 cycle4 validation {'precision': 1.0, 'recall': 0.9170305676855895, 'abstention_rate': 0.2990224266820012, 'false_positive': 0, 'false_illegal': 0, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.0}
+EVAL C4-full cycle4 validation {'precision': 1.0, 'recall': 0.9606986899563319, 'abstention_rate': 0.023001725129384698, 'false_positive': 0, 'false_illegal': 0, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.25}
+EVAL C3 cycle4 structural-combination {'precision': 1.0, 'recall': 0.9411764705882353, 'abstention_rate': 0.2263279445727483, 'false_positive': 0, 'false_illegal': 0, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.75}
+EVAL C4-no-dependence frozen adversarial {'precision': 1.0, 'recall': 0.9911894273127754, 'abstention_rate': 0.021523178807947074, 'false_positive': 0, 'false_illegal': 0, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.9166666666666666}
+EVAL C4-full cycle4 structural-combination {'precision': 1.0, 'recall': 0.957983193277311, 'abstention_rate': 0.0323325635103926, 'false_positive': 0, 'false_illegal': 0, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.8333333333333334}
+EVAL C4-no-dependence cycle3 independent-games {'precision': 1.0, 'recall': 0.9523809523809523, 'abstention_rate': 0.038892162639952876, 'false_positive': 0, 'false_illegal': 0, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.0}
+EVAL C3 cycle4 independent-games {'precision': 1.0, 'recall': 0.9224030037546934, 'abstention_rate': 0.2505376344086021, 'false_positive': 0, 'false_illegal': 0, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.2916666666666667}
+EVAL C4-full cycle4 independent-games {'precision': 1.0, 'recall': 0.9536921151439299, 'abstention_rate': 0.03268817204301078, 'false_positive': 0, 'false_illegal': 0, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.4166666666666667}
+EVAL C4-observations frozen heldout-transfer {'precision': 0.9043478260869565, 'recall': 0.9776733254994124, 'abstention_rate': 0.12447817836812147, 'false_positive': 88, 'false_illegal': 0, 'self_check_false_legal': 88, 'exact_move_set_accuracy': 0.225}
+EVAL C4-full cycle3 challenge {'precision': 1.0, 'recall': 0.9642857142857143, 'abstention_rate': 0.028532608695652217, 'false_positive': 0, 'false_illegal': 0, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.8695652173913043}
+EVAL C4-full cycle4 translation-control {'precision': 1.0, 'recall': 1.0, 'abstention_rate': 0.022058823529411797, 'false_positive': 0, 'false_illegal': 0, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 1.0}
+EVAL C4-no-dependence cycle4 validation {'precision': 1.0, 'recall': 0.9606986899563319, 'abstention_rate': 0.023001725129384698, 'false_positive': 0, 'false_illegal': 0, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.25}
+EVAL C4-observations frozen adversarial {'precision': 0.5710659898477157, 'recall': 0.9911894273127754, 'abstention_rate': 0.1283112582781457, 'false_positive': 169, 'false_illegal': 0, 'self_check_false_legal': 169, 'exact_move_set_accuracy': 0.20833333333333334}
+EVAL C4-observations cycle3 independent-games {'precision': 0.959409594095941, 'recall': 0.9523809523809523, 'abstention_rate': 0.23983500294637594, 'false_positive': 11, 'false_illegal': 0, 'self_check_false_legal': 11, 'exact_move_set_accuracy': 0.0}
+EVAL C4-no-dependence cycle4 structural-combination {'precision': 1.0, 'recall': 0.957983193277311, 'abstention_rate': 0.020785219399538146, 'false_positive': 0, 'false_illegal': 0, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.8333333333333334}
+EVAL C4-observations cycle4 validation {'precision': 0.8396946564885496, 'recall': 0.9606986899563319, 'abstention_rate': 0.22369177688326625, 'false_positive': 42, 'false_illegal': 0, 'self_check_false_legal': 42, 'exact_move_set_accuracy': 0.125}
+EVAL C4-observations cycle4 structural-combination {'precision': 0.6666666666666666, 'recall': 0.957983193277311, 'abstention_rate': 0.08545034642032334, 'false_positive': 57, 'false_illegal': 0, 'self_check_false_legal': 57, 'exact_move_set_accuracy': 0.3333333333333333}
+EVAL C4-no-exposure frozen heldout-transfer {'precision': 0.9043478260869565, 'recall': 0.9776733254994124, 'abstention_rate': 0.03984819734345346, 'false_positive': 88, 'false_illegal': 0, 'self_check_false_legal': 88, 'exact_move_set_accuracy': 0.225}
+EVAL C4-observations cycle4 independent-games {'precision': 0.9465838509316771, 'recall': 0.9536921151439299, 'abstention_rate': 0.20107526881720428, 'false_positive': 43, 'false_illegal': 0, 'self_check_false_legal': 43, 'exact_move_set_accuracy': 0.16666666666666666}
+EVAL C4-no-exposure frozen adversarial {'precision': 0.5710659898477157, 'recall': 0.9911894273127754, 'abstention_rate': 0.05049668874172186, 'false_positive': 169, 'false_illegal': 0, 'self_check_false_legal': 169, 'exact_move_set_accuracy': 0.20833333333333334}
+EVAL C4-no-exposure cycle3 independent-games {'precision': 0.959409594095941, 'recall': 0.9523809523809523, 'abstention_rate': 0.038892162639952876, 'false_positive': 11, 'false_illegal': 0, 'self_check_false_legal': 11, 'exact_move_set_accuracy': 0.0}
+EVAL C4-no-exposure cycle4 validation {'precision': 0.8396946564885496, 'recall': 0.9606986899563319, 'abstention_rate': 0.024151811385853983, 'false_positive': 42, 'false_illegal': 0, 'self_check_false_legal': 42, 'exact_move_set_accuracy': 0.125}
+EVAL C4-no-exposure cycle4 structural-combination {'precision': 0.6666666666666666, 'recall': 0.957983193277311, 'abstention_rate': 0.034642032332563466, 'false_positive': 57, 'false_illegal': 0, 'self_check_false_legal': 57, 'exact_move_set_accuracy': 0.3333333333333333}
+EVAL C4-conservative frozen heldout-transfer {'precision': 1.0, 'recall': 0.9776733254994124, 'abstention_rate': 0.03870967741935483, 'false_positive': 0, 'false_illegal': 0, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.75}
+EVAL C4-conservative frozen adversarial {'precision': 0.9911894273127754, 'recall': 0.9911894273127754, 'abstention_rate': 0.028145695364238388, 'false_positive': 2, 'false_illegal': 0, 'self_check_false_legal': 2, 'exact_move_set_accuracy': 0.875}
+EVAL C4-no-exposure cycle4 independent-games {'precision': 0.9465838509316771, 'recall': 0.9536921151439299, 'abstention_rate': 0.03419354838709676, 'false_positive': 43, 'false_illegal': 0, 'self_check_false_legal': 43, 'exact_move_set_accuracy': 0.16666666666666666}
+EVAL C4-conservative cycle3 independent-games {'precision': 1.0, 'recall': 0.9523809523809523, 'abstention_rate': 0.047731290512669444, 'false_positive': 0, 'false_illegal': 0, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.0}
+EVAL C4-no-dependence cycle4 independent-games {'precision': 1.0, 'recall': 0.9536921151439299, 'abstention_rate': 0.03247311827956989, 'false_positive': 0, 'false_illegal': 0, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.4166666666666667}
+EVAL C4-conservative cycle4 validation {'precision': 0.995475113122172, 'recall': 0.9606986899563319, 'abstention_rate': 0.03335250143760782, 'false_positive': 1, 'false_illegal': 0, 'self_check_false_legal': 1, 'exact_move_set_accuracy': 0.125}
+EVAL C4-conservative cycle4 structural-combination {'precision': 1.0, 'recall': 0.9243697478991597, 'abstention_rate': 0.06235565819861433, 'false_positive': 0, 'false_illegal': 0, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.8333333333333334}
+EVAL C4-coverage frozen heldout-transfer {'precision': 1.0, 'recall': 0.9776733254994124, 'abstention_rate': 0.03149905123339658, 'false_positive': 0, 'false_illegal': 0, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.75}
+EVAL C4-coverage frozen adversarial {'precision': 1.0, 'recall': 0.9911894273127754, 'abstention_rate': 0.023178807947019875, 'false_positive': 0, 'false_illegal': 0, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.9166666666666666}
+EVAL C4-coverage cycle3 independent-games {'precision': 1.0, 'recall': 0.9523809523809523, 'abstention_rate': 0.038892162639952876, 'false_positive': 0, 'false_illegal': 0, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.0}
+EVAL C4-conservative cycle4 independent-games {'precision': 1.0, 'recall': 0.9536921151439299, 'abstention_rate': 0.04387096774193544, 'false_positive': 0, 'false_illegal': 0, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.4166666666666667}
+EVAL C4-coverage cycle4 validation {'precision': 1.0, 'recall': 0.9606986899563319, 'abstention_rate': 0.023001725129384698, 'false_positive': 0, 'false_illegal': 0, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.25}
+EVAL C4-coverage cycle4 structural-combination {'precision': 1.0, 'recall': 0.957983193277311, 'abstention_rate': 0.0323325635103926, 'false_positive': 0, 'false_illegal': 0, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.8333333333333334}
+EVAL C4-coverage cycle4 independent-games {'precision': 1.0, 'recall': 0.9536921151439299, 'abstention_rate': 0.03268817204301078, 'false_positive': 0, 'false_illegal': 0, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.4166666666666667}
+RESEARCH COMPLETE
+........................................................................ [ 37%]
+........................................................................ [ 74%]
+..................................................                       [100%]
+194 passed in 121.41s (0:02:01)
+
+CYCLE 4 COMPLETE

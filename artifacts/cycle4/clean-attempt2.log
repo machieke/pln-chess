@@ -1,0 +1,28 @@
+Using CPython 3.12.12
+Creating virtual environment at: .venv
+Activate with: source .venv/bin/activate
+Resolved 6 packages in 2ms
+Uninstalled 1 package in 0.51ms
+ - pln-chess==0.1.0 (from file:///tmp/pln-chess-cycle4-clean-8wgzhstv)
+Resolved 1 package in 1ms
+   Building pln-chess @ file:///tmp/pln-chess-cycle4-clean-8wgzhstv
+      Built pln-chess @ file:///tmp/pln-chess-cycle4-clean-8wgzhstv
+Prepared 1 package in 607ms
+Installed 1 package in 1ms
+ + pln-chess==0.1.0 (from file:///tmp/pln-chess-cycle4-clean-8wgzhstv)
+Pinned native runtime verified
+BASELINE frozen heldout-transfer True {'precision': 1.0, 'recall': 0.9553466509988249, 'f1': 0.9771634615384616, 'abstention_rate': 0.18140417457305502, 'exact_move_set_accuracy': 0.675, 'self_check_false_legal': 0}
+BASELINE frozen adversarial True {'precision': 1.0, 'recall': 0.973568281938326, 'f1': 0.9866071428571429, 'abstention_rate': 0.2822847682119205, 'exact_move_set_accuracy': 0.75, 'self_check_false_legal': 0}
+BASELINE new challenge True {'precision': 1.0, 'recall': 0.9404761904761905, 'f1': 0.9693251533742331, 'abstention_rate': 0.29483695652173914, 'exact_move_set_accuracy': 0.6956521739130435, 'self_check_false_legal': 0}
+BASELINE new independent-games True {'precision': 1.0, 'recall': 0.8864468864468864, 'f1': 0.9398058252427185, 'abstention_rate': 0.2981732469063052, 'exact_move_set_accuracy': 0.0, 'self_check_false_legal': 0}
+BASELINE new validation True {'precision': 1.0, 'recall': 0.9083969465648855, 'f1': 0.952, 'abstention_rate': 0.2315789473684211, 'exact_move_set_accuracy': 0.0, 'self_check_false_legal': 0}
+BASELINE COMPLETE {'reference': {'elapsed_seconds': 24.65352048072964, 'native_invocations': 17318, 'scheduled_invocations': 17318, 'cache_hits': 0, 'proof_bytes_estimate': 35481988, 'truncated': False}, 'cold': {'elapsed_seconds': 2.112871775403619, 'native_invocations': 179, 'scheduled_invocations': 17318, 'cache_hits': 17139, 'proof_bytes_estimate': 35481988, 'truncated': False}, 'warm': {'elapsed_seconds': 1.7395640313625336, 'native_invocations': 0, 'scheduled_invocations': 17318, 'cache_hits': 17318, 'proof_bytes_estimate': 35481988, 'truncated': False}}
+TRAIN C4-full f76d02067c40ed2dfe73287581cbacf61339dcbe8cae166a4480f41db4aa9b5f 381
+TRAIN C4-no-dependence 764c6602acc7687ac34aea42a4322c54d61dedf77756d5ecd2c460a5d43260a3 381
+EVAL C3 frozen heldout-transfer {'precision': 1.0, 'recall': 0.9553466509988249, 'abstention_rate': 0.18140417457305502, 'false_positive': 0, 'false_illegal': 0, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.675}
+EVAL C4-full frozen heldout-transfer {'precision': 1.0, 'recall': 0.9776733254994124, 'abstention_rate': 0.03149905123339658, 'false_positive': 0, 'false_illegal': 0, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.75}
+EVAL C3 frozen adversarial {'precision': 1.0, 'recall': 0.973568281938326, 'abstention_rate': 0.2822847682119205, 'false_positive': 0, 'false_illegal': 0, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.75}
+EVAL C4-full frozen adversarial {'precision': 1.0, 'recall': 0.9911894273127754, 'abstention_rate': 0.023178807947019875, 'false_positive': 0, 'false_illegal': 0, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.9166666666666666}
+EVAL C4-no-dependence frozen heldout-transfer {'precision': 1.0, 'recall': 0.9776733254994124, 'abstention_rate': 0.030360531309297945, 'false_positive': 0, 'false_illegal': 0, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.75}
+EVAL C3 cycle3 independent-games {'precision': 1.0, 'recall': 0.8864468864468864, 'abstention_rate': 0.2981732469063052, 'false_positive': 0, 'false_illegal': 0, 'self_check_false_legal': 0, 'exact_move_set_accuracy': 0.0}
+Terminated

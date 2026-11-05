@@ -1,0 +1,37 @@
+TRAIN C4-full f76d02067c40ed2dfe73287581cbacf61339dcbe8cae166a4480f41db4aa9b5f 381
+TRAIN C4-no-dependence 764c6602acc7687ac34aea42a4322c54d61dedf77756d5ecd2c460a5d43260a3 381
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/home/purplezky/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/concurrent/futures/process.py", line 264, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/purplezky/work/takopi/pln-chess/scripts/cycle4_deliver.py", line 39, in worker
+    r=evaluate(data,model,split,runtime,options=options,diagnostics=name in ('C3','C4-full'))
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/purplezky/work/takopi/pln-chess/evaluation/cycle4.py", line 94, in evaluate
+    metrics['bootstrap']=bootstrap(rows,positions)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/purplezky/work/takopi/pln-chess/evaluation/cycle4.py", line 39, in bootstrap
+    keys=sorted(groups);by={p['fixture']:[r for r in rows if r['fixture']==p['fixture']] for p in positions}
+         ^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'int' and 'str'
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/purplezky/work/takopi/pln-chess/scripts/cycle4_deliver.py", line 86, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/home/purplezky/work/takopi/pln-chess/scripts/cycle4_deliver.py", line 72, in main
+    name,result,cal=future.result();reports[name]=result;calibration[name]=cal
+                    ^^^^^^^^^^^^^^^
+  File "/home/purplezky/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/purplezky/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+TypeError: '<' not supported between instances of 'int' and 'str'

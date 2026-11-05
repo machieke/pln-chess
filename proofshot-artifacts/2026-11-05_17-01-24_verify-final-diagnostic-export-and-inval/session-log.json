@@ -1,0 +1,42 @@
+[
+  {
+    "action": "click #run",
+    "relativeTimeSec": 5,
+    "timestamp": "2026-11-05T17:03:42.162Z"
+  },
+  {
+    "action": "wait --fn document.querySelector('#title').textContent.includes('c2e2')",
+    "relativeTimeSec": 5.3,
+    "timestamp": "2026-11-05T17:03:42.518Z"
+  },
+  {
+    "action": "screenshot valid-result-before-reset.png",
+    "relativeTimeSec": 5.9,
+    "timestamp": "2026-11-05T17:03:43.079Z"
+  },
+  {
+    "action": "fill #fen invalid FEN",
+    "relativeTimeSec": 6.2,
+    "timestamp": "2026-11-05T17:03:43.451Z"
+  },
+  {
+    "action": "click #run",
+    "relativeTimeSec": 6.6,
+    "timestamp": "2026-11-05T17:03:43.809Z"
+  },
+  {
+    "action": "wait --fn document.querySelector('#status').textContent.startsWith('Error:')",
+    "relativeTimeSec": 7,
+    "timestamp": "2026-11-05T17:03:44.162Z"
+  },
+  {
+    "action": "eval ({resultCleared:current===null,proofs:document.querySelector('#proof-list').children.length,facts:document.querySelector('#factored').textContent,status:document.querySelector('#status').textContent})",
+    "relativeTimeSec": 7.3,
+    "timestamp": "2026-11-05T17:03:44.515Z"
+  },
+  {
+    "action": "screenshot invalid-input-clears-diagnostic.png",
+    "relativeTimeSec": 7.6,
+    "timestamp": "2026-11-05T17:03:44.853Z"
+  }
+]

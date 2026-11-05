@@ -1,0 +1,27 @@
+{
+  "skill": "/home/purplezky/.codex/skills/proofshot/SKILL.md",
+  "sessions": [
+    "proofshot-artifacts/2026-11-05_16-51-56_verify-cycle-4-factored-premises-c3-comp",
+    "proofshot-artifacts/2026-11-05_17-01-24_verify-final-diagnostic-export-and-inval",
+    "proofshot-artifacts/2026-11-05_17-13-10_capture-visible-cycle-4-factored-evidenc"
+  ],
+  "screenshots": 9,
+  "web_source_sha256": "5be9f953112519bf8b811df6770e3c17606796850adb1ecfa8fde0582ba6a121",
+  "model_version": "f76d02067c40ed2dfe73287581cbacf61339dcbe8cae166a4480f41db4aa9b5f",
+  "checks": {
+    "C3_vs_C4_comparison": true,
+    "factored_premise_origins": true,
+    "native_negative_with_local_support_retained": true,
+    "unknown_EP_history": true,
+    "JSON_export_contents_verified": true,
+    "invalid_input_clears_export_and_proofs": true,
+    "mobile_390_no_horizontal_overflow": true
+  },
+  "console_errors": 0,
+  "server_errors": 0,
+  "notes": [
+    "Export blob intercepted only in the browser harness to verify the actual downloaded JSON; production click handler exercised.",
+    "Final visible-proof session stop was resumed after interruption; all three sessions include completed SUMMARY.md and video.",
+    "Later backend changes separated optional history scopes and corrected benchmark measurement. Default no-history screenshot cases and web source are unchanged; final automated inspector contract runs on the delivered source."
+  ]
+}

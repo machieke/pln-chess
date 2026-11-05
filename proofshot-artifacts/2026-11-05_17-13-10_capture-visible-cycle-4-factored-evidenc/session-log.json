@@ -1,0 +1,57 @@
+[
+  {
+    "action": "fill #fen k3r3/8/8/8/8/4R3/8/4K3 w - - 0 1",
+    "relativeTimeSec": 5,
+    "timestamp": "2026-11-05T17:13:55.695Z"
+  },
+  {
+    "action": "fill #move e3f3",
+    "relativeTimeSec": 5.4,
+    "timestamp": "2026-11-05T17:13:56.100Z"
+  },
+  {
+    "action": "check #compare-models",
+    "relativeTimeSec": 5.8,
+    "timestamp": "2026-11-05T17:13:56.437Z"
+  },
+  {
+    "action": "click #run",
+    "relativeTimeSec": 6.1,
+    "timestamp": "2026-11-05T17:13:56.775Z"
+  },
+  {
+    "action": "wait --fn document.querySelector('#title').textContent.includes('e3f3')",
+    "relativeTimeSec": 6.5,
+    "timestamp": "2026-11-05T17:13:57.138Z"
+  },
+  {
+    "action": "eval document.querySelector('#model-comparison').parentElement.open=true;document.querySelector('#model-comparison').scrollIntoView();",
+    "relativeTimeSec": 247.2,
+    "timestamp": "2026-11-05T17:17:57.921Z"
+  },
+  {
+    "action": "screenshot visible-model-comparison.png",
+    "relativeTimeSec": 247.6,
+    "timestamp": "2026-11-05T17:17:58.288Z"
+  },
+  {
+    "action": "eval document.querySelector('#factored').scrollIntoView();",
+    "relativeTimeSec": 248,
+    "timestamp": "2026-11-05T17:17:58.652Z"
+  },
+  {
+    "action": "screenshot visible-factored-native-premises.png",
+    "relativeTimeSec": 248.3,
+    "timestamp": "2026-11-05T17:17:58.987Z"
+  },
+  {
+    "action": "eval document.querySelector('#model-comparison').parentElement.open=true;document.querySelector('#model-comparison').scrollTop=1100;document.querySelector('#model-comparison').scrollIntoView();",
+    "relativeTimeSec": 359.6,
+    "timestamp": "2026-11-05T17:19:50.269Z"
+  },
+  {
+    "action": "screenshot visible-c3-c4-raw-results.png",
+    "relativeTimeSec": 359.9,
+    "timestamp": "2026-11-05T17:19:50.598Z"
+  }
+]

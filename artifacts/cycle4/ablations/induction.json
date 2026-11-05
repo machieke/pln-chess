@@ -1,0 +1,3649 @@
+{
+  "arm_metrics": {
+    "manually_seeded_abstraction": {
+      "abstention_rate": 0.6666666666666667,
+      "calibration_scope": "Descriptive raw-strength score on 15 synthetic probes; confidence is not treated as probability and no calibrator is fitted here.",
+      "candidates": 15,
+      "coverage": 0.3333333333333333,
+      "exact_move_set_accuracy": null,
+      "f1": 1.0,
+      "false_legal_rate": 0.0,
+      "false_negative_including_abstention": 0,
+      "false_positive": 0,
+      "grounded_atoms": 0,
+      "incomplete_positions": 0,
+      "latency_seconds": {
+        "p50": null,
+        "p95": null,
+        "p99": null
+      },
+      "native_invocations": 0,
+      "precision": 1.0,
+      "raw_strength_squared_error": 0.16666756248320344,
+      "recall": 1.0,
+      "selective_accuracy": 1.0,
+      "self_check_false_legal": 0,
+      "true_negative": 0,
+      "true_positive": 5
+    },
+    "native_induction": {
+      "abstention_rate": 0.6666666666666667,
+      "calibration_scope": "Descriptive raw-strength score on 15 synthetic probes; confidence is not treated as probability and no calibrator is fitted here.",
+      "candidates": 15,
+      "coverage": 0.3333333333333333,
+      "exact_move_set_accuracy": null,
+      "f1": 1.0,
+      "false_legal_rate": 0.0,
+      "false_negative_including_abstention": 0,
+      "false_positive": 0,
+      "grounded_atoms": 0,
+      "incomplete_positions": 0,
+      "latency_seconds": {
+        "p50": null,
+        "p95": null,
+        "p99": null
+      },
+      "native_invocations": 0,
+      "precision": 1.0,
+      "raw_strength_squared_error": 0.16666666666666666,
+      "recall": 1.0,
+      "selective_accuracy": 1.0,
+      "self_check_false_legal": 0,
+      "true_negative": 0,
+      "true_positive": 5
+    },
+    "revision_only_distance_specific": {
+      "abstention_rate": 1.0,
+      "calibration_scope": "Descriptive raw-strength score on 15 synthetic probes; confidence is not treated as probability and no calibrator is fitted here.",
+      "candidates": 15,
+      "coverage": 0.0,
+      "exact_move_set_accuracy": null,
+      "f1": 0.0,
+      "false_legal_rate": 0.0,
+      "false_negative_including_abstention": 5,
+      "false_positive": 0,
+      "grounded_atoms": 0,
+      "incomplete_positions": 0,
+      "latency_seconds": {
+        "p50": null,
+        "p95": null,
+        "p99": null
+      },
+      "native_invocations": 0,
+      "precision": null,
+      "raw_strength_squared_error": 0.25,
+      "recall": 0.0,
+      "selective_accuracy": null,
+      "self_check_false_legal": 0,
+      "true_negative": 0,
+      "true_positive": 0
+    }
+  },
+  "calibration": "Too few synthetic control cases for calibrated probabilities; raw strength/confidence reported separately. Production validation calibration is in calibration.json.",
+  "counts": {
+    "A": 16,
+    "B": 16,
+    "BA": 16,
+    "BC": 16,
+    "C": 79,
+    "N": 86
+  },
+  "diagnosis": {
+    "a_no_rule": false,
+    "b_never_matched": false,
+    "c_low_confidence": false,
+    "d_suppressed": true,
+    "e_redundant_representation": true
+  },
+  "interpretation": "Native induction activates a deliberately withheld coarse conditional in the distance-specific control. The same generalization is already available through explicit host abstraction and native revision; no unique production benefit is established.",
+  "legacy_diagnosis": "The same antecedents have direct revision evidence with higher confidence. Induction remains an alternative, never independent evidence to revise into its source. Its Truth_w2c(sBC*cBC*cBA) confidence is at most 0.5 for valid STVs. No classification benefit is forced.",
+  "legacy_reproduction": [
+    {
+      "counts": {
+        "A": 2,
+        "B": 2,
+        "BA": 2,
+        "BC": 0,
+        "C": 12,
+        "N": 16
+      },
+      "cycle": "C2",
+      "dependence_groups": [
+        "historical-rook-east",
+        "historical-castle-main",
+        "historical-castle-queenside",
+        "historical-promotion-main",
+        "train-ray-0",
+        "train-ray-3",
+        "train-ray-6",
+        "train-ray-9",
+        "train-ray-12",
+        "train-ray-15",
+        "train-ray-18",
+        "train-ray-21",
+        "train-game-0",
+        "train-game-1",
+        "train-game-2",
+        "paired-locality"
+      ],
+      "evidence_ids": [
+        "77e5994105837ff460ed106737a38767d9e682f05049e26978c89d46ec1215cc",
+        "fd3bbcaa2c354cf9ca3b657fbe2465e6d6d26a9f53e4a0342249158028404ad4",
+        "f180dce72241a244f8216af06015fa61a417100b2120061c01cfb4f408fc56f9",
+        "b4fe029cada03881e4ac5c8e42a6abc5490d9ffdef4937df8f27f83c873229b4",
+        "c08beb0509f8c4ad7045f79b36c23994b8411fd933460d4e0111631b2656be86",
+        "742d3bf61cabbb85c55a6db4b5602ddfbcc826b83069bbab8a61bee705e80630",
+        "f52b2f4927c76139efed994063aa40fd34ae3a4975e406e192540bccb6939f5e",
+        "61467db98092b09a4a3718b5ec0b1e42bfff82cf98992d64f13806147e28a9ed",
+        "8ed6699df756c6759937fdbf4d435c4673f9f5abfc09f16602096b6713e61a37",
+        "d1ae0a5ef86b9d62409f6110358b03de71ebc5505eb68a27721f0af50c34f5d9",
+        "b01e97b82198e66c472f88a0f7e1d2ba733e25471b7c6b40442e2eb19d4995c8",
+        "14bed4910d8d93380132301358b29e0fc2d386f3d83c861b088c428d4b29c063",
+        "8139fd8c59517be16e71beba2ec2411b6e91a553d4ed671c5d2234f58e546d2d",
+        "159c8bb6e38d1cdf36a0f3fb9b8b91afdd22fabe3960415100867d4c7069a4ea",
+        "fbfd80e66109565430a91f1f95ab0d14e8b2d301f7175e76d61b5e0f2cfe8487",
+        "724df06873fefa9ec6bd4e8cbcd9290672b0ed9180f259c48afa8f260bf3c8c5"
+      ],
+      "expression": "(Truth_Induction (stv 0.125 0.6666666666666666) (stv 0.125 0.6666666666666666) (stv 0.75 0.6666666666666666) (stv 1.0 0.6666666666666666) (stv 0.0 0.6666666666666666))",
+      "hypothesis": "c2:1ef54ea7d9ff6a4e2ce8eafe",
+      "parity": true,
+      "tv": {
+        "confidence": 0.0,
+        "strength": 0.0
+      }
+    },
+    {
+      "counts": {
+        "A": 9,
+        "B": 9,
+        "BA": 9,
+        "BC": 9,
+        "C": 9,
+        "N": 18
+      },
+      "cycle": "C2",
+      "dependence_groups": [
+        "historical-rook-east",
+        "historical-knight-main",
+        "historical-castle-queenside",
+        "train-ray-3",
+        "train-ray-4",
+        "train-ray-5",
+        "train-ray-6",
+        "train-ray-7",
+        "train-ray-8",
+        "train-ray-15",
+        "train-ray-16",
+        "train-ray-17",
+        "train-ray-18",
+        "train-ray-19",
+        "train-ray-20",
+        "train-game-0",
+        "train-game-1",
+        "train-game-2"
+      ],
+      "evidence_ids": [
+        "0a789e9dbc674921d0594c67d1b221855166a709687bd3038ce39bbf903d9ee8",
+        "a637829f559941e2103ca7c30fbbf83156ff4f49f7c9b548bf572a8f22255382",
+        "7fd8cfa84fc6677849420e708fd0f6571edc9491ac8c11e5959269528997a5c4",
+        "22387ac20fc02f71dad2718a293e91786c05c528500f0bb7511d509e875aad62",
+        "df9417f5be99b667694ab4f59323a2aab16d301563dcdb4dd146ae7d1c3dfb6f",
+        "e1b26305e26383d5959163f09e0cb58071c59e7d2d724fde56b5b4a0990fe441",
+        "940c978ad6b9d1e20094ce3e1e8eae92a656743107012c808a0de2de82ed0381",
+        "80ea9117b61eafa98bc6be285b77d56ee4a944da0ff00a83ac7501204edb6b17",
+        "dc91f55939769fb388cb9417d4f29c91da87da6d47333c18767de410fb1df12a",
+        "8ae7bd832894525e9c795230374d70b77be5a23daf96670daee7721b5de61817",
+        "6bab2fc8e12ad32a820345c3241740b4c50d494861bdf06b5058d19c56351f44",
+        "7c48f88bea562382f1a22563169a3bfda533f341ec8d89beb867860ce1df505b",
+        "6dbd5aa6c341573675109531f52106b077ff83dc31fa6580446a6f04f7ed8c74",
+        "8caa1db353aa98d94a4012b5c854d3d0963d8f48afb6556fa88b2788c4c9884d",
+        "d4d1fec07f25e1407f56b5b9e144a38c3be2b4030a6d5006ff87045d7d242dc6",
+        "a023125a5a5a3bbce5b4d8501f9f377a86df9c227c2d1274a99eda4e331cc3b8",
+        "689f15f38d1b6cfbadf3ad15931890a112e1dbd5fefe3c3d6f61cac74abb5502",
+        "00cc367604333ba043f6468ea4ca6165b575bb74697816d5099b58e34f350080"
+      ],
+      "expression": "(Truth_Induction (stv 0.5 0.9) (stv 0.5 0.9) (stv 0.5 0.9) (stv 1.0 0.9) (stv 1.0 0.9))",
+      "hypothesis": "c2:2a6bbb4d0463d4e5c42ee395",
+      "parity": true,
+      "tv": {
+        "confidence": 0.44751381215469616,
+        "strength": 1.0
+      }
+    },
+    {
+      "counts": {
+        "A": 2,
+        "B": 2,
+        "BA": 2,
+        "BC": 2,
+        "C": 7,
+        "N": 9
+      },
+      "cycle": "C2",
+      "dependence_groups": [
+        "historical-rook-east",
+        "historical-bishop-main",
+        "historical-knight-main",
+        "historical-pawn-main",
+        "historical-ep-main",
+        "historical-promotion-main",
+        "train-game-0",
+        "train-game-1",
+        "train-game-2"
+      ],
+      "evidence_ids": [
+        "5dc07a0aba1ef6d42b8d349fec27315d8a47fc8949231ba1d080c1cad1591979",
+        "c106c03b9ca06ffcd9440f08dda0d7f8ac32a090b91d8c668a3bd50521f72dfc",
+        "3209ac4d8502d5e050c521da86be13392e3ccc02974f6405609f2edb25d28fd9",
+        "3de3684bf92c9762b8b5cef33a648ef4ee67964a86d0bd626a07006210d008d9",
+        "d862bed73131f4614dc7638b1c545b77457630019ac087a543e58c4c91ab191f",
+        "3f811bbd816ac2b38b7515da16b50a38aa117e61aa0a77159d26a1f21519827e",
+        "8ac55776ec24dd76f7ef4f50b2f567019c92012b55f6637eadb3d5ebac581e79",
+        "4a23fe465768af6ad6013e50dcb5670860b847b7006758c8b577f05dbe572982",
+        "8b3ec8b057907aed70ce95878d510e7e376666b6d09201ba6d43820f8d4cc2c7"
+      ],
+      "expression": "(Truth_Induction (stv 0.2222222222222222 0.6666666666666666) (stv 0.2222222222222222 0.6666666666666666) (stv 0.7777777777777778 0.6666666666666666) (stv 1.0 0.6666666666666666) (stv 1.0 0.6666666666666666))",
+      "hypothesis": "c2:40d640bbd99a4fbeb9023f3e",
+      "parity": true,
+      "tv": {
+        "confidence": 0.30769230769230765,
+        "strength": 1.0
+      }
+    },
+    {
+      "counts": {
+        "A": 8,
+        "B": 8,
+        "BA": 8,
+        "BC": 0,
+        "C": 9,
+        "N": 18
+      },
+      "cycle": "C2",
+      "dependence_groups": [
+        "historical-rook-east",
+        "historical-knight-main",
+        "historical-castle-queenside",
+        "train-ray-3",
+        "train-ray-4",
+        "train-ray-5",
+        "train-ray-6",
+        "train-ray-7",
+        "train-ray-8",
+        "train-ray-15",
+        "train-ray-16",
+        "train-ray-17",
+        "train-ray-18",
+        "train-ray-19",
+        "train-ray-20",
+        "train-game-0",
+        "train-game-1",
+        "train-game-2"
+      ],
+      "evidence_ids": [
+        "0a789e9dbc674921d0594c67d1b221855166a709687bd3038ce39bbf903d9ee8",
+        "a637829f559941e2103ca7c30fbbf83156ff4f49f7c9b548bf572a8f22255382",
+        "7fd8cfa84fc6677849420e708fd0f6571edc9491ac8c11e5959269528997a5c4",
+        "22387ac20fc02f71dad2718a293e91786c05c528500f0bb7511d509e875aad62",
+        "df9417f5be99b667694ab4f59323a2aab16d301563dcdb4dd146ae7d1c3dfb6f",
+        "e1b26305e26383d5959163f09e0cb58071c59e7d2d724fde56b5b4a0990fe441",
+        "940c978ad6b9d1e20094ce3e1e8eae92a656743107012c808a0de2de82ed0381",
+        "80ea9117b61eafa98bc6be285b77d56ee4a944da0ff00a83ac7501204edb6b17",
+        "dc91f55939769fb388cb9417d4f29c91da87da6d47333c18767de410fb1df12a",
+        "8ae7bd832894525e9c795230374d70b77be5a23daf96670daee7721b5de61817",
+        "6bab2fc8e12ad32a820345c3241740b4c50d494861bdf06b5058d19c56351f44",
+        "7c48f88bea562382f1a22563169a3bfda533f341ec8d89beb867860ce1df505b",
+        "6dbd5aa6c341573675109531f52106b077ff83dc31fa6580446a6f04f7ed8c74",
+        "8caa1db353aa98d94a4012b5c854d3d0963d8f48afb6556fa88b2788c4c9884d",
+        "d4d1fec07f25e1407f56b5b9e144a38c3be2b4030a6d5006ff87045d7d242dc6",
+        "a023125a5a5a3bbce5b4d8501f9f377a86df9c227c2d1274a99eda4e331cc3b8",
+        "689f15f38d1b6cfbadf3ad15931890a112e1dbd5fefe3c3d6f61cac74abb5502",
+        "00cc367604333ba043f6468ea4ca6165b575bb74697816d5099b58e34f350080"
+      ],
+      "expression": "(Truth_Induction (stv 0.4444444444444444 0.8888888888888888) (stv 0.4444444444444444 0.8888888888888888) (stv 0.5 0.8888888888888888) (stv 1.0 0.8888888888888888) (stv 0.0 0.8888888888888888))",
+      "hypothesis": "c2:4a0a62980dba0fc98fd9a3ff",
+      "parity": true,
+      "tv": {
+        "confidence": 0.0,
+        "strength": 0.0
+      }
+    },
+    {
+      "counts": {
+        "A": 2,
+        "B": 2,
+        "BA": 2,
+        "BC": 2,
+        "C": 7,
+        "N": 9
+      },
+      "cycle": "C2",
+      "dependence_groups": [
+        "historical-rook-east",
+        "historical-bishop-main",
+        "historical-knight-main",
+        "historical-pawn-main",
+        "historical-ep-main",
+        "historical-promotion-main",
+        "train-game-0",
+        "train-game-1",
+        "train-game-2"
+      ],
+      "evidence_ids": [
+        "5dc07a0aba1ef6d42b8d349fec27315d8a47fc8949231ba1d080c1cad1591979",
+        "c106c03b9ca06ffcd9440f08dda0d7f8ac32a090b91d8c668a3bd50521f72dfc",
+        "3209ac4d8502d5e050c521da86be13392e3ccc02974f6405609f2edb25d28fd9",
+        "3de3684bf92c9762b8b5cef33a648ef4ee67964a86d0bd626a07006210d008d9",
+        "d862bed73131f4614dc7638b1c545b77457630019ac087a543e58c4c91ab191f",
+        "3f811bbd816ac2b38b7515da16b50a38aa117e61aa0a77159d26a1f21519827e",
+        "8ac55776ec24dd76f7ef4f50b2f567019c92012b55f6637eadb3d5ebac581e79",
+        "4a23fe465768af6ad6013e50dcb5670860b847b7006758c8b577f05dbe572982",
+        "8b3ec8b057907aed70ce95878d510e7e376666b6d09201ba6d43820f8d4cc2c7"
+      ],
+      "expression": "(Truth_Induction (stv 0.2222222222222222 0.6666666666666666) (stv 0.2222222222222222 0.6666666666666666) (stv 0.7777777777777778 0.6666666666666666) (stv 1.0 0.6666666666666666) (stv 1.0 0.6666666666666666))",
+      "hypothesis": "c2:4c72a9d7a5b4e909d599f113",
+      "parity": true,
+      "tv": {
+        "confidence": 0.30769230769230765,
+        "strength": 1.0
+      }
+    },
+    {
+      "counts": {
+        "A": 2,
+        "B": 2,
+        "BA": 2,
+        "BC": 0,
+        "C": 9,
+        "N": 12
+      },
+      "cycle": "C2",
+      "dependence_groups": [
+        "historical-bishop-main",
+        "train-ray-1",
+        "train-ray-4",
+        "train-ray-7",
+        "train-ray-10",
+        "train-ray-13",
+        "train-ray-16",
+        "train-ray-19",
+        "train-ray-22",
+        "train-game-0",
+        "train-game-1",
+        "train-game-2"
+      ],
+      "evidence_ids": [
+        "5d6e1474ae9fce5abb0feb21f8380a378ee62037788f4d45ff123f4874f1365c",
+        "9d7903332c094dd0b0b3730bcd765d6585e2861c82e065c9f3d624b700a12d00",
+        "133733330bf6f6e0aca772b678e8a8a61760dd3cab586b95c5afed2c70929c00",
+        "3ec5a38b10f3e2198e3243743d8b3219c4874070d1999e23c11d0810e5bf7618",
+        "029be0fc9cfbba80e89f75db62c3ce6f6841f08eed050f190706afb916c65b9d",
+        "ba642e55f71dc0b4c16a108aaaeca3e49609bfddfc11bc91f7121939574c10e1",
+        "47d73361c2cfd825c115cd7e2e85cbd7f0fc5d092e3c9e64c1ed4a7924aa55db",
+        "aaa66167fc595798289ea8a7da9aa2769c70f001fbff609432cdfe4f72968bca",
+        "65539a00b6272cecffe50070407774e2b6d7516ee2ec6d5c63695b60b147a862",
+        "12d14d969d4f9d8ed3c87ee36192dee40eebaab362aa2055df6a36519a5c920b",
+        "eec0e2da57366189fa8a1974f70072e6b903da2e6307275a83d387aad4fceb7a",
+        "7952368fc5a4ae2e793a40cb7f6cdd08115521dbd6584f13fee8a4937add0f1d"
+      ],
+      "expression": "(Truth_Induction (stv 0.16666666666666666 0.6666666666666666) (stv 0.16666666666666666 0.6666666666666666) (stv 0.75 0.6666666666666666) (stv 1.0 0.6666666666666666) (stv 0.0 0.6666666666666666))",
+      "hypothesis": "c2:4d8ede2e28449f955188a374",
+      "parity": true,
+      "tv": {
+        "confidence": 0.0,
+        "strength": 0.0
+      }
+    },
+    {
+      "counts": {
+        "A": 2,
+        "B": 2,
+        "BA": 2,
+        "BC": 0,
+        "C": 7,
+        "N": 9
+      },
+      "cycle": "C2",
+      "dependence_groups": [
+        "historical-rook-east",
+        "historical-bishop-main",
+        "historical-knight-main",
+        "historical-pawn-main",
+        "historical-ep-main",
+        "historical-promotion-main",
+        "train-game-0",
+        "train-game-1",
+        "train-game-2"
+      ],
+      "evidence_ids": [
+        "5dc07a0aba1ef6d42b8d349fec27315d8a47fc8949231ba1d080c1cad1591979",
+        "c106c03b9ca06ffcd9440f08dda0d7f8ac32a090b91d8c668a3bd50521f72dfc",
+        "3209ac4d8502d5e050c521da86be13392e3ccc02974f6405609f2edb25d28fd9",
+        "3de3684bf92c9762b8b5cef33a648ef4ee67964a86d0bd626a07006210d008d9",
+        "d862bed73131f4614dc7638b1c545b77457630019ac087a543e58c4c91ab191f",
+        "3f811bbd816ac2b38b7515da16b50a38aa117e61aa0a77159d26a1f21519827e",
+        "8ac55776ec24dd76f7ef4f50b2f567019c92012b55f6637eadb3d5ebac581e79",
+        "4a23fe465768af6ad6013e50dcb5670860b847b7006758c8b577f05dbe572982",
+        "8b3ec8b057907aed70ce95878d510e7e376666b6d09201ba6d43820f8d4cc2c7"
+      ],
+      "expression": "(Truth_Induction (stv 0.2222222222222222 0.6666666666666666) (stv 0.2222222222222222 0.6666666666666666) (stv 0.7777777777777778 0.6666666666666666) (stv 1.0 0.6666666666666666) (stv 0.0 0.6666666666666666))",
+      "hypothesis": "c2:6c2945d4d7afb1f3361c43a9",
+      "parity": true,
+      "tv": {
+        "confidence": 0.0,
+        "strength": 0.0
+      }
+    },
+    {
+      "counts": {
+        "A": 8,
+        "B": 8,
+        "BA": 8,
+        "BC": 8,
+        "C": 9,
+        "N": 12
+      },
+      "cycle": "C2",
+      "dependence_groups": [
+        "historical-bishop-main",
+        "train-ray-1",
+        "train-ray-4",
+        "train-ray-7",
+        "train-ray-10",
+        "train-ray-13",
+        "train-ray-16",
+        "train-ray-19",
+        "train-ray-22",
+        "train-game-0",
+        "train-game-1",
+        "train-game-2"
+      ],
+      "evidence_ids": [
+        "5d6e1474ae9fce5abb0feb21f8380a378ee62037788f4d45ff123f4874f1365c",
+        "9d7903332c094dd0b0b3730bcd765d6585e2861c82e065c9f3d624b700a12d00",
+        "133733330bf6f6e0aca772b678e8a8a61760dd3cab586b95c5afed2c70929c00",
+        "3ec5a38b10f3e2198e3243743d8b3219c4874070d1999e23c11d0810e5bf7618",
+        "029be0fc9cfbba80e89f75db62c3ce6f6841f08eed050f190706afb916c65b9d",
+        "ba642e55f71dc0b4c16a108aaaeca3e49609bfddfc11bc91f7121939574c10e1",
+        "47d73361c2cfd825c115cd7e2e85cbd7f0fc5d092e3c9e64c1ed4a7924aa55db",
+        "aaa66167fc595798289ea8a7da9aa2769c70f001fbff609432cdfe4f72968bca",
+        "65539a00b6272cecffe50070407774e2b6d7516ee2ec6d5c63695b60b147a862",
+        "12d14d969d4f9d8ed3c87ee36192dee40eebaab362aa2055df6a36519a5c920b",
+        "eec0e2da57366189fa8a1974f70072e6b903da2e6307275a83d387aad4fceb7a",
+        "7952368fc5a4ae2e793a40cb7f6cdd08115521dbd6584f13fee8a4937add0f1d"
+      ],
+      "expression": "(Truth_Induction (stv 0.6666666666666666 0.8888888888888888) (stv 0.6666666666666666 0.8888888888888888) (stv 0.75 0.8888888888888888) (stv 1.0 0.8888888888888888) (stv 1.0 0.8888888888888888))",
+      "hypothesis": "c2:6cbd9dae6a4a5983b4178856",
+      "parity": true,
+      "tv": {
+        "confidence": 0.4413793103448276,
+        "strength": 1.0
+      }
+    },
+    {
+      "counts": {
+        "A": 2,
+        "B": 2,
+        "BA": 2,
+        "BC": 0,
+        "C": 27,
+        "N": 38
+      },
+      "cycle": "C2",
+      "dependence_groups": [
+        "historical-rook-east",
+        "historical-bishop-main",
+        "historical-queen-main",
+        "historical-knight-main",
+        "historical-pawn-main",
+        "historical-king-main",
+        "historical-castle-main",
+        "historical-castle-queenside",
+        "historical-ep-main",
+        "historical-promotion-main",
+        "train-ray-0",
+        "train-ray-1",
+        "train-ray-2",
+        "train-ray-3",
+        "train-ray-4",
+        "train-ray-5",
+        "train-ray-6",
+        "train-ray-7",
+        "train-ray-8",
+        "train-ray-9",
+        "train-ray-10",
+        "train-ray-11",
+        "train-ray-12",
+        "train-ray-13",
+        "train-ray-14",
+        "train-ray-15",
+        "train-ray-16",
+        "train-ray-17",
+        "train-ray-18",
+        "train-ray-19",
+        "train-ray-20",
+        "train-ray-21",
+        "train-ray-22",
+        "train-ray-23",
+        "train-game-0",
+        "train-game-1",
+        "train-game-2",
+        "paired-locality"
+      ],
+      "evidence_ids": [
+        "c6fea6d52f47f838e54eb26f9d56ac733aae85274ebdda66713be6344d3a9fbe",
+        "2e41e8e2a047482ec4a8156d1acd38ad4c1d427f2494e133a52581b9634688e9",
+        "114d2bbe9dbcff68e9dc852a7710fe39c647a3e1394660f08f4e3a721a2c20f5",
+        "98906ed3a20b61fe6b06a3b7799bbde395101deb196c8dee6cc6d2f8a0e39eb5",
+        "d8a28d3aad9a7b5368ea025e9098575caf8baefc55f9d14f747110918684a15a",
+        "3788f706338de2996793d056469fcf3b70a92d2b5afa2d9160ebd1a3239a2649",
+        "5bc6740779915209dc333afdbaf1b1acfe3a147fc3464e3c0fa1058c1a7cbaf0",
+        "f2e4bed83954f1af4d3b9b6b38a98efc78c502303230a9f07452850f20cc7fcd",
+        "4d68ca592fb55a59d4b95af253c46d6c04cefa071cb0e47917e8a0baedaec38d",
+        "4326ac7f9d7cb76be87656225ba7cb463f88bd11cd4db9e8aceedd38669725cf",
+        "027d96641064c9c72247dbc69c7861a1f2e3493d613111ad851b1098d4e33f9e",
+        "165d5bdfb7c04d13ca88046f3cb16b665fa502737db33bab88186aa667f39050",
+        "c24a00145f58433f6d37a454722d0f094ffca2bf43f96a1c59c4e1a845e6549a",
+        "1d856d16aece5e0f4ef43321c9c87e6e6418d11a9696e370cc904e8632334ef3",
+        "b4e18e697d80a92d80974f5ff1b7b6d47c93196a42f6027cc90376d396e29004",
+        "10bd4a0e663a9532f53aa859995746d592dd9db9865366283e066fa40cc8d2cc",
+        "b715b41fd79d09ea693134337b4d73096d95cbfc3c3a15f26c0048109aa815b0",
+        "8e2bee26deb40281c47d8f78cdb31efd3a69297b7124d24aecfe53ecbd46e213",
+        "b986a3e4500639ff4bc124abc2d8586825b194b2f4d44fad63bc1b1f7899e7fe",
+        "9e9a74e3c2891e1cf14d48ddf5fd96124921982acfaa64cc9731c3b9d1e50654",
+        "fe41c389e95b797ec82cb5787537a35e4098baab26dcd048c6c1783cbe620fc6",
+        "8ba1f913a463b1f87e8197f3a63697073900d6880dfd59b8277fdefb5bbe7393",
+        "e9d7763c3c0681c82e8112eac34733c1c1f0bc88393978475a035d14248ded5d",
+        "9345d763b9fee96111535884e4839f93780909c407df61c6dfb322fd3c6abf2c",
+        "589c272b66aa88ac9e749d930d17e788607813342d0f5a2fd4f80765fb6c4e7d",
+        "dfc5f371833a74ce5f9b54507559f369a880724964c7493238d690caf48f6b52",
+        "b4c7bd39dea652eb6ffe2e7d8796c42332add42f9edc6ed558669ce692ed891a",
+        "ca4e4024c2002f4ce5b55057335d0af48962e8e7427daa48c5707da243250bd3",
+        "e497fdb7b8a85b6a9905ca9b932d69fa730653e19dd096fbe7e5636c9e96c2a3",
+        "bfdf4e14cd723780268f63724e6b2ab3ec3f4d549b6b7b5609730eae3f809d9b",
+        "88b250e10b77aa0ead284df5d4a5c185aaa0d043693b8427b18401268674edaf",
+        "e15cb9f9aa80858ed694bb4aaa1331bf77710343054fd4c145ed9075a5f8e5b9",
+        "d3cdf7ac2acc78d8e10f5c6cf9917c1601c624a26a1b78ef67576eefa9b4d4c8",
+        "e316a4f6ac729f787a2dc91cf116332d0faf59a5fc1cd61237bd100c939895f7",
+        "6d572cd284554f5d45fd5d5ec80e55312f7f586529fa24cd589c74e4a70ef1b8",
+        "459327c4a8ffd8414bf64b7164f70a8256d9673f29d4264c471c3aa3b7c84221",
+        "0573f29387c3fb27e71c396dee5674fda69876fb53ce583c1477e73e226fc87e",
+        "9f3d3e9631eb68b980df065f5c38d318f13b4b6023f15f1d7c683b07951a2762"
+      ],
+      "expression": "(Truth_Induction (stv 0.05263157894736842 0.6666666666666666) (stv 0.05263157894736842 0.6666666666666666) (stv 0.7105263157894737 0.6666666666666666) (stv 1.0 0.6666666666666666) (stv 0.0 0.6666666666666666))",
+      "hypothesis": "c2:815e02e7c3e66d50af2ab615",
+      "parity": true,
+      "tv": {
+        "confidence": 0.0,
+        "strength": 0.0
+      }
+    },
+    {
+      "counts": {
+        "A": 2,
+        "B": 2,
+        "BA": 2,
+        "BC": 0,
+        "C": 10,
+        "N": 12
+      },
+      "cycle": "C2",
+      "dependence_groups": [
+        "historical-queen-main",
+        "train-ray-2",
+        "train-ray-5",
+        "train-ray-8",
+        "train-ray-11",
+        "train-ray-14",
+        "train-ray-17",
+        "train-ray-20",
+        "train-ray-23",
+        "train-game-0",
+        "train-game-1",
+        "train-game-2"
+      ],
+      "evidence_ids": [
+        "e55a248f84bef3a38b00b555cff5036e570de42ed86b7a4bdffee71a27ff374b",
+        "698b9b257bacea0042729df99dc7aa4c58de001c85c35c6c70ce62f7bf0b9405",
+        "451ad7a2367af708c7e50c2cf1eef8eecc5ffc7285c2a4d449174bf3493438d0",
+        "114bfefb0a94b2fd5287e7c42ad199e4b15744e5cda4ca41c08f3cdbbd2fc911",
+        "937825bd98489bd2494ee70328011e78cf03bed51932c4dc047dec872eac7066",
+        "a04b7228e29595f6eb37a07fbc006912a7c5893c5d5ffc535d587b762a93563c",
+        "6437d54c2084d65258eaf85b456965b86a7814f9a781c59176d997e8af6ce8a6",
+        "5e23401b9b699be40c9b98b4f299335e4ccb286d304189e02b0ccdb3d378c59a",
+        "5092c69ab852630a0323dc1d2121cf1143a4116cb5242a6ee7bdc2c20d34805c",
+        "52b434289c45b1106376171403876f66f87c102812fb7ab238d938c1d486bc33",
+        "4720191f1338be79819aa9b50072b120c4a0e70aa8d1f5d7904748c45ea87e1c",
+        "dbe844a19c7349cb8ccffb1e0a79cee2c6a5e2197b71807d39e9aa4c332bc396"
+      ],
+      "expression": "(Truth_Induction (stv 0.16666666666666666 0.6666666666666666) (stv 0.16666666666666666 0.6666666666666666) (stv 0.8333333333333334 0.6666666666666666) (stv 1.0 0.6666666666666666) (stv 0.0 0.6666666666666666))",
+      "hypothesis": "c2:a999cf24997aabb1bb554b0d",
+      "parity": true,
+      "tv": {
+        "confidence": 0.0,
+        "strength": 0.0
+      }
+    },
+    {
+      "counts": {
+        "A": 10,
+        "B": 10,
+        "BA": 10,
+        "BC": 10,
+        "C": 10,
+        "N": 12
+      },
+      "cycle": "C2",
+      "dependence_groups": [
+        "historical-queen-main",
+        "train-ray-2",
+        "train-ray-5",
+        "train-ray-8",
+        "train-ray-11",
+        "train-ray-14",
+        "train-ray-17",
+        "train-ray-20",
+        "train-ray-23",
+        "train-game-0",
+        "train-game-1",
+        "train-game-2"
+      ],
+      "evidence_ids": [
+        "e55a248f84bef3a38b00b555cff5036e570de42ed86b7a4bdffee71a27ff374b",
+        "698b9b257bacea0042729df99dc7aa4c58de001c85c35c6c70ce62f7bf0b9405",
+        "451ad7a2367af708c7e50c2cf1eef8eecc5ffc7285c2a4d449174bf3493438d0",
+        "114bfefb0a94b2fd5287e7c42ad199e4b15744e5cda4ca41c08f3cdbbd2fc911",
+        "937825bd98489bd2494ee70328011e78cf03bed51932c4dc047dec872eac7066",
+        "a04b7228e29595f6eb37a07fbc006912a7c5893c5d5ffc535d587b762a93563c",
+        "6437d54c2084d65258eaf85b456965b86a7814f9a781c59176d997e8af6ce8a6",
+        "5e23401b9b699be40c9b98b4f299335e4ccb286d304189e02b0ccdb3d378c59a",
+        "5092c69ab852630a0323dc1d2121cf1143a4116cb5242a6ee7bdc2c20d34805c",
+        "52b434289c45b1106376171403876f66f87c102812fb7ab238d938c1d486bc33",
+        "4720191f1338be79819aa9b50072b120c4a0e70aa8d1f5d7904748c45ea87e1c",
+        "dbe844a19c7349cb8ccffb1e0a79cee2c6a5e2197b71807d39e9aa4c332bc396"
+      ],
+      "expression": "(Truth_Induction (stv 0.8333333333333334 0.9090909090909091) (stv 0.8333333333333334 0.9090909090909091) (stv 0.8333333333333334 0.9090909090909091) (stv 1.0 0.9090909090909091) (stv 1.0 0.9090909090909091))",
+      "hypothesis": "c2:c4cea81dd58b6238c493f95a",
+      "parity": true,
+      "tv": {
+        "confidence": 0.4524886877828054,
+        "strength": 1.0
+      }
+    },
+    {
+      "counts": {
+        "A": 7,
+        "B": 7,
+        "BA": 7,
+        "BC": 0,
+        "C": 27,
+        "N": 38
+      },
+      "cycle": "C2",
+      "dependence_groups": [
+        "historical-rook-east",
+        "historical-bishop-main",
+        "historical-queen-main",
+        "historical-knight-main",
+        "historical-pawn-main",
+        "historical-king-main",
+        "historical-castle-main",
+        "historical-castle-queenside",
+        "historical-ep-main",
+        "historical-promotion-main",
+        "train-ray-0",
+        "train-ray-1",
+        "train-ray-2",
+        "train-ray-3",
+        "train-ray-4",
+        "train-ray-5",
+        "train-ray-6",
+        "train-ray-7",
+        "train-ray-8",
+        "train-ray-9",
+        "train-ray-10",
+        "train-ray-11",
+        "train-ray-12",
+        "train-ray-13",
+        "train-ray-14",
+        "train-ray-15",
+        "train-ray-16",
+        "train-ray-17",
+        "train-ray-18",
+        "train-ray-19",
+        "train-ray-20",
+        "train-ray-21",
+        "train-ray-22",
+        "train-ray-23",
+        "train-game-0",
+        "train-game-1",
+        "train-game-2",
+        "paired-locality"
+      ],
+      "evidence_ids": [
+        "c6fea6d52f47f838e54eb26f9d56ac733aae85274ebdda66713be6344d3a9fbe",
+        "2e41e8e2a047482ec4a8156d1acd38ad4c1d427f2494e133a52581b9634688e9",
+        "114d2bbe9dbcff68e9dc852a7710fe39c647a3e1394660f08f4e3a721a2c20f5",
+        "98906ed3a20b61fe6b06a3b7799bbde395101deb196c8dee6cc6d2f8a0e39eb5",
+        "d8a28d3aad9a7b5368ea025e9098575caf8baefc55f9d14f747110918684a15a",
+        "3788f706338de2996793d056469fcf3b70a92d2b5afa2d9160ebd1a3239a2649",
+        "5bc6740779915209dc333afdbaf1b1acfe3a147fc3464e3c0fa1058c1a7cbaf0",
+        "f2e4bed83954f1af4d3b9b6b38a98efc78c502303230a9f07452850f20cc7fcd",
+        "4d68ca592fb55a59d4b95af253c46d6c04cefa071cb0e47917e8a0baedaec38d",
+        "4326ac7f9d7cb76be87656225ba7cb463f88bd11cd4db9e8aceedd38669725cf",
+        "027d96641064c9c72247dbc69c7861a1f2e3493d613111ad851b1098d4e33f9e",
+        "165d5bdfb7c04d13ca88046f3cb16b665fa502737db33bab88186aa667f39050",
+        "c24a00145f58433f6d37a454722d0f094ffca2bf43f96a1c59c4e1a845e6549a",
+        "1d856d16aece5e0f4ef43321c9c87e6e6418d11a9696e370cc904e8632334ef3",
+        "b4e18e697d80a92d80974f5ff1b7b6d47c93196a42f6027cc90376d396e29004",
+        "10bd4a0e663a9532f53aa859995746d592dd9db9865366283e066fa40cc8d2cc",
+        "b715b41fd79d09ea693134337b4d73096d95cbfc3c3a15f26c0048109aa815b0",
+        "8e2bee26deb40281c47d8f78cdb31efd3a69297b7124d24aecfe53ecbd46e213",
+        "b986a3e4500639ff4bc124abc2d8586825b194b2f4d44fad63bc1b1f7899e7fe",
+        "9e9a74e3c2891e1cf14d48ddf5fd96124921982acfaa64cc9731c3b9d1e50654",
+        "fe41c389e95b797ec82cb5787537a35e4098baab26dcd048c6c1783cbe620fc6",
+        "8ba1f913a463b1f87e8197f3a63697073900d6880dfd59b8277fdefb5bbe7393",
+        "e9d7763c3c0681c82e8112eac34733c1c1f0bc88393978475a035d14248ded5d",
+        "9345d763b9fee96111535884e4839f93780909c407df61c6dfb322fd3c6abf2c",
+        "589c272b66aa88ac9e749d930d17e788607813342d0f5a2fd4f80765fb6c4e7d",
+        "dfc5f371833a74ce5f9b54507559f369a880724964c7493238d690caf48f6b52",
+        "b4c7bd39dea652eb6ffe2e7d8796c42332add42f9edc6ed558669ce692ed891a",
+        "ca4e4024c2002f4ce5b55057335d0af48962e8e7427daa48c5707da243250bd3",
+        "e497fdb7b8a85b6a9905ca9b932d69fa730653e19dd096fbe7e5636c9e96c2a3",
+        "bfdf4e14cd723780268f63724e6b2ab3ec3f4d549b6b7b5609730eae3f809d9b",
+        "88b250e10b77aa0ead284df5d4a5c185aaa0d043693b8427b18401268674edaf",
+        "e15cb9f9aa80858ed694bb4aaa1331bf77710343054fd4c145ed9075a5f8e5b9",
+        "d3cdf7ac2acc78d8e10f5c6cf9917c1601c624a26a1b78ef67576eefa9b4d4c8",
+        "e316a4f6ac729f787a2dc91cf116332d0faf59a5fc1cd61237bd100c939895f7",
+        "6d572cd284554f5d45fd5d5ec80e55312f7f586529fa24cd589c74e4a70ef1b8",
+        "459327c4a8ffd8414bf64b7164f70a8256d9673f29d4264c471c3aa3b7c84221",
+        "0573f29387c3fb27e71c396dee5674fda69876fb53ce583c1477e73e226fc87e",
+        "9f3d3e9631eb68b980df065f5c38d318f13b4b6023f15f1d7c683b07951a2762"
+      ],
+      "expression": "(Truth_Induction (stv 0.18421052631578946 0.875) (stv 0.18421052631578946 0.875) (stv 0.7105263157894737 0.875) (stv 1.0 0.875) (stv 0.0 0.875))",
+      "hypothesis": "c2:c5fc5bb9473e6a483df969f0",
+      "parity": true,
+      "tv": {
+        "confidence": 0.0,
+        "strength": 0.0
+      }
+    },
+    {
+      "counts": {
+        "A": 28,
+        "B": 28,
+        "BA": 28,
+        "BC": 27,
+        "C": 27,
+        "N": 38
+      },
+      "cycle": "C2",
+      "dependence_groups": [
+        "historical-rook-east",
+        "historical-bishop-main",
+        "historical-queen-main",
+        "historical-knight-main",
+        "historical-pawn-main",
+        "historical-king-main",
+        "historical-castle-main",
+        "historical-castle-queenside",
+        "historical-ep-main",
+        "historical-promotion-main",
+        "train-ray-0",
+        "train-ray-1",
+        "train-ray-2",
+        "train-ray-3",
+        "train-ray-4",
+        "train-ray-5",
+        "train-ray-6",
+        "train-ray-7",
+        "train-ray-8",
+        "train-ray-9",
+        "train-ray-10",
+        "train-ray-11",
+        "train-ray-12",
+        "train-ray-13",
+        "train-ray-14",
+        "train-ray-15",
+        "train-ray-16",
+        "train-ray-17",
+        "train-ray-18",
+        "train-ray-19",
+        "train-ray-20",
+        "train-ray-21",
+        "train-ray-22",
+        "train-ray-23",
+        "train-game-0",
+        "train-game-1",
+        "train-game-2",
+        "paired-locality"
+      ],
+      "evidence_ids": [
+        "c6fea6d52f47f838e54eb26f9d56ac733aae85274ebdda66713be6344d3a9fbe",
+        "2e41e8e2a047482ec4a8156d1acd38ad4c1d427f2494e133a52581b9634688e9",
+        "114d2bbe9dbcff68e9dc852a7710fe39c647a3e1394660f08f4e3a721a2c20f5",
+        "98906ed3a20b61fe6b06a3b7799bbde395101deb196c8dee6cc6d2f8a0e39eb5",
+        "d8a28d3aad9a7b5368ea025e9098575caf8baefc55f9d14f747110918684a15a",
+        "3788f706338de2996793d056469fcf3b70a92d2b5afa2d9160ebd1a3239a2649",
+        "5bc6740779915209dc333afdbaf1b1acfe3a147fc3464e3c0fa1058c1a7cbaf0",
+        "f2e4bed83954f1af4d3b9b6b38a98efc78c502303230a9f07452850f20cc7fcd",
+        "4d68ca592fb55a59d4b95af253c46d6c04cefa071cb0e47917e8a0baedaec38d",
+        "4326ac7f9d7cb76be87656225ba7cb463f88bd11cd4db9e8aceedd38669725cf",
+        "027d96641064c9c72247dbc69c7861a1f2e3493d613111ad851b1098d4e33f9e",
+        "165d5bdfb7c04d13ca88046f3cb16b665fa502737db33bab88186aa667f39050",
+        "c24a00145f58433f6d37a454722d0f094ffca2bf43f96a1c59c4e1a845e6549a",
+        "1d856d16aece5e0f4ef43321c9c87e6e6418d11a9696e370cc904e8632334ef3",
+        "b4e18e697d80a92d80974f5ff1b7b6d47c93196a42f6027cc90376d396e29004",
+        "10bd4a0e663a9532f53aa859995746d592dd9db9865366283e066fa40cc8d2cc",
+        "b715b41fd79d09ea693134337b4d73096d95cbfc3c3a15f26c0048109aa815b0",
+        "8e2bee26deb40281c47d8f78cdb31efd3a69297b7124d24aecfe53ecbd46e213",
+        "b986a3e4500639ff4bc124abc2d8586825b194b2f4d44fad63bc1b1f7899e7fe",
+        "9e9a74e3c2891e1cf14d48ddf5fd96124921982acfaa64cc9731c3b9d1e50654",
+        "fe41c389e95b797ec82cb5787537a35e4098baab26dcd048c6c1783cbe620fc6",
+        "8ba1f913a463b1f87e8197f3a63697073900d6880dfd59b8277fdefb5bbe7393",
+        "e9d7763c3c0681c82e8112eac34733c1c1f0bc88393978475a035d14248ded5d",
+        "9345d763b9fee96111535884e4839f93780909c407df61c6dfb322fd3c6abf2c",
+        "589c272b66aa88ac9e749d930d17e788607813342d0f5a2fd4f80765fb6c4e7d",
+        "dfc5f371833a74ce5f9b54507559f369a880724964c7493238d690caf48f6b52",
+        "b4c7bd39dea652eb6ffe2e7d8796c42332add42f9edc6ed558669ce692ed891a",
+        "ca4e4024c2002f4ce5b55057335d0af48962e8e7427daa48c5707da243250bd3",
+        "e497fdb7b8a85b6a9905ca9b932d69fa730653e19dd096fbe7e5636c9e96c2a3",
+        "bfdf4e14cd723780268f63724e6b2ab3ec3f4d549b6b7b5609730eae3f809d9b",
+        "88b250e10b77aa0ead284df5d4a5c185aaa0d043693b8427b18401268674edaf",
+        "e15cb9f9aa80858ed694bb4aaa1331bf77710343054fd4c145ed9075a5f8e5b9",
+        "d3cdf7ac2acc78d8e10f5c6cf9917c1601c624a26a1b78ef67576eefa9b4d4c8",
+        "e316a4f6ac729f787a2dc91cf116332d0faf59a5fc1cd61237bd100c939895f7",
+        "6d572cd284554f5d45fd5d5ec80e55312f7f586529fa24cd589c74e4a70ef1b8",
+        "459327c4a8ffd8414bf64b7164f70a8256d9673f29d4264c471c3aa3b7c84221",
+        "0573f29387c3fb27e71c396dee5674fda69876fb53ce583c1477e73e226fc87e",
+        "9f3d3e9631eb68b980df065f5c38d318f13b4b6023f15f1d7c683b07951a2762"
+      ],
+      "expression": "(Truth_Induction (stv 0.7368421052631579 0.9655172413793104) (stv 0.7368421052631579 0.9655172413793104) (stv 0.7105263157894737 0.9655172413793104) (stv 1.0 0.9655172413793104) (stv 0.9642857142857143 0.9655172413793104))",
+      "hypothesis": "c2:da2d05388714aec2a75eb274",
+      "parity": true,
+      "tv": {
+        "confidence": 0.4733876017532874,
+        "strength": 0.9642857142857143
+      }
+    },
+    {
+      "counts": {
+        "A": 13,
+        "B": 13,
+        "BA": 13,
+        "BC": 12,
+        "C": 12,
+        "N": 16
+      },
+      "cycle": "C2",
+      "dependence_groups": [
+        "historical-rook-east",
+        "historical-castle-main",
+        "historical-castle-queenside",
+        "historical-promotion-main",
+        "train-ray-0",
+        "train-ray-3",
+        "train-ray-6",
+        "train-ray-9",
+        "train-ray-12",
+        "train-ray-15",
+        "train-ray-18",
+        "train-ray-21",
+        "train-game-0",
+        "train-game-1",
+        "train-game-2",
+        "paired-locality"
+      ],
+      "evidence_ids": [
+        "77e5994105837ff460ed106737a38767d9e682f05049e26978c89d46ec1215cc",
+        "fd3bbcaa2c354cf9ca3b657fbe2465e6d6d26a9f53e4a0342249158028404ad4",
+        "f180dce72241a244f8216af06015fa61a417100b2120061c01cfb4f408fc56f9",
+        "b4fe029cada03881e4ac5c8e42a6abc5490d9ffdef4937df8f27f83c873229b4",
+        "c08beb0509f8c4ad7045f79b36c23994b8411fd933460d4e0111631b2656be86",
+        "742d3bf61cabbb85c55a6db4b5602ddfbcc826b83069bbab8a61bee705e80630",
+        "f52b2f4927c76139efed994063aa40fd34ae3a4975e406e192540bccb6939f5e",
+        "61467db98092b09a4a3718b5ec0b1e42bfff82cf98992d64f13806147e28a9ed",
+        "8ed6699df756c6759937fdbf4d435c4673f9f5abfc09f16602096b6713e61a37",
+        "d1ae0a5ef86b9d62409f6110358b03de71ebc5505eb68a27721f0af50c34f5d9",
+        "b01e97b82198e66c472f88a0f7e1d2ba733e25471b7c6b40442e2eb19d4995c8",
+        "14bed4910d8d93380132301358b29e0fc2d386f3d83c861b088c428d4b29c063",
+        "8139fd8c59517be16e71beba2ec2411b6e91a553d4ed671c5d2234f58e546d2d",
+        "159c8bb6e38d1cdf36a0f3fb9b8b91afdd22fabe3960415100867d4c7069a4ea",
+        "fbfd80e66109565430a91f1f95ab0d14e8b2d301f7175e76d61b5e0f2cfe8487",
+        "724df06873fefa9ec6bd4e8cbcd9290672b0ed9180f259c48afa8f260bf3c8c5"
+      ],
+      "expression": "(Truth_Induction (stv 0.8125 0.9285714285714286) (stv 0.8125 0.9285714285714286) (stv 0.75 0.9285714285714286) (stv 1.0 0.9285714285714286) (stv 0.9230769230769231 0.9285714285714286))",
+      "hypothesis": "c2:f7eca0e9b05f4a25e45c4f1f",
+      "parity": true,
+      "tv": {
+        "confidence": 0.4431818181818182,
+        "strength": 0.9230769230769231
+      }
+    },
+    {
+      "counts": {
+        "A": 2,
+        "B": 2,
+        "BA": 2,
+        "BC": 0,
+        "C": 9,
+        "N": 12
+      },
+      "cycle": "C3",
+      "dependence_groups": [
+        "historical-bishop-main",
+        "train-ray-1",
+        "train-ray-4",
+        "train-ray-7",
+        "train-ray-10",
+        "train-ray-13",
+        "train-ray-16",
+        "train-ray-19",
+        "train-ray-22",
+        "train-game-0",
+        "train-game-1",
+        "train-game-2"
+      ],
+      "evidence_ids": [
+        "589227496c6b4b23aa578155caf119c1726f7c6a21e2435dc2bb7c08eee62732",
+        "f282cd03b46149eb7fde2d83fcb13594d203a09eacc11b4ee316f60b1e47b796",
+        "7e69bf9bf5edc3f9fc6d4bd41324e85b115d8742ebeba27ce675e482acc21e48",
+        "942345465474c99988e3178e538d7cc1e17b0f55b3d5f92974b6bfd143cdfbf2",
+        "ce5d4ebd23fbb1db613408a57d066c64de08ef42abb016c8c4f6b9f811cf5dd7",
+        "123ebbb1e0a728bb60395dd1ebcc5c6b704912a9db49db623f8ac9aab923e3b6",
+        "81e6ea3391631c73a07fc2ee35f82ebef1ddea0ee12a14cc5f29e8ffc6675994",
+        "4ed0837a94ee0be790be49e9635fcecf3a976e84229318a6982e4563abb265f7",
+        "2232a0e097386c34de4673a04b6013fc568ea24a64c42c6dae98265b133a279b",
+        "ecb74c9567e03d95516dcd0ca3cc602e5b5790095d7242eae33aa9df4243afaf",
+        "e9cbacc4cdea6c041c2e94068a42ef0e88bc0d730231b6edfc780ddd8f152a59",
+        "fe7ff55734654b3a1367a8ed18eaabd599b4b3cff255e59437566f1ff72f6d56"
+      ],
+      "expression": "(Truth_Induction (stv 0.16666666666666666 0.6666666666666666) (stv 0.16666666666666666 0.6666666666666666) (stv 0.75 0.6666666666666666) (stv 1.0 0.6666666666666666) (stv 0.0 0.6666666666666666))",
+      "hypothesis": "c3:1eccb6aa9da7ffde5eb67752",
+      "parity": true,
+      "tv": {
+        "confidence": 0.0,
+        "strength": 0.0
+      }
+    },
+    {
+      "counts": {
+        "A": 8,
+        "B": 8,
+        "BA": 8,
+        "BC": 0,
+        "C": 9,
+        "N": 18
+      },
+      "cycle": "C3",
+      "dependence_groups": [
+        "historical-rook-east",
+        "historical-knight-main",
+        "historical-castle-queenside",
+        "train-ray-3",
+        "train-ray-4",
+        "train-ray-5",
+        "train-ray-6",
+        "train-ray-7",
+        "train-ray-8",
+        "train-ray-15",
+        "train-ray-16",
+        "train-ray-17",
+        "train-ray-18",
+        "train-ray-19",
+        "train-ray-20",
+        "train-game-0",
+        "train-game-1",
+        "train-game-2"
+      ],
+      "evidence_ids": [
+        "8df696d49f2f7844f6faac52b7877e4a5cb19d89ce3902145b8b5b9ef82260f6",
+        "731c2001eeb13a6c44e7d108f2dae18fb5c0aecc45e9a387af5860c95d82e12c",
+        "554ea18fa7fe5fd49ac9ee1209aac9fee1d7cde4f0a02e5e87dd369f49fc98be",
+        "f4691605d4ccce428a0f26711afdeb7d4db108195400ba12c8e06d2df900e9d8",
+        "d63549921cca848b945756f2abc58532df5cb577e9165cd13ea17616d995484a",
+        "5943d3b46c64499f1a58a1d7fc872076a2dca2ebe63cac3763fff9b0de11985b",
+        "35d4a994964c001546c6318965f3757ebc6d31b00439b1d87143124b57bfcc73",
+        "de52fa4d50f0be8ea19b8ac56e5e1add07a5c3356f20352de4e02920f33cd739",
+        "d768bbcdbbff49d348c4e6807398494443c652c230948174adcfb651ccf72239",
+        "39d50855f24f222e40442a8c90cae07ec10b9e0244cd105758759fe7867a907b",
+        "b06d267e6c3995354672da024107a599efd1bc4b17c342eba570c566750d6154",
+        "4fc4b6ccaf5a97ad58c685ce59379a96489f5ec5c8fa80799dccb95aa50935c3",
+        "b7d86931236c7218db13b0de6c4e3fd6f351ba78605aac79bef6a1d05afb5ec7",
+        "135edc1c754f8935763f6c0a12c36e4339fbab00f8220b7c51105d480f58bcca",
+        "42558896fa7c9eeed1ce953f76b1ef845b3ccdafdcece7530953c5046e29928a",
+        "ada0bac1597cc4767e83092d9e18c8c1bae635b4394388eafe6b5028ea5dae47",
+        "b2336364001fceb5192995ca6f304b07350bcc41aecb3a9df5bf5a9134217e36",
+        "b7e365dc0345fe86a4c35155068fbd1f601a434816fd837e841972fee72d0860"
+      ],
+      "expression": "(Truth_Induction (stv 0.4444444444444444 0.8888888888888888) (stv 0.4444444444444444 0.8888888888888888) (stv 0.5 0.8888888888888888) (stv 1.0 0.8888888888888888) (stv 0.0 0.8888888888888888))",
+      "hypothesis": "c3:1f00c5a36f8720a1a88e3d6e",
+      "parity": true,
+      "tv": {
+        "confidence": 0.0,
+        "strength": 0.0
+      }
+    },
+    {
+      "counts": {
+        "A": 2,
+        "B": 2,
+        "BA": 2,
+        "BC": 0,
+        "C": 7,
+        "N": 9
+      },
+      "cycle": "C3",
+      "dependence_groups": [
+        "historical-rook-east",
+        "historical-bishop-main",
+        "historical-knight-main",
+        "historical-pawn-main",
+        "historical-ep-main",
+        "historical-promotion-main",
+        "train-game-0",
+        "train-game-1",
+        "train-game-2"
+      ],
+      "evidence_ids": [
+        "339131c987d592801df17fb997ac57e07f1de976bd18d3032f0c3c7832167d6d",
+        "4df33a61bdb161c76146bc3da8ea3dd28cbd1eaa6f9da54621bfbb9d95be78af",
+        "7f79c70950d7d93614503e7efbe02508df4da06d14ca7d10a3b55c09ab4db373",
+        "eb19664568fa1592ccf9c453a60244232c75f650443389f0872be13edd024408",
+        "9048cc9a9f210d1b507bac3e0be02aa304f23de15585b5a3731b44ac89201eef",
+        "edb8f34222e224997910a9b2368f03ecdc2866ac2bbd7933dd8f7e30fbf1cf97",
+        "ed62c3e3b0d345e02a362ee3734cb8c660ab541074f6cc8a421081551eebaf53",
+        "64efdace31292026a4a0e0b414de0a757c45aab7e72993378eddcef0709f7f74",
+        "29ed869329e1b39eadbf5e3f839558dba91b93c723eaa5dd787ac55ba7cc9774"
+      ],
+      "expression": "(Truth_Induction (stv 0.2222222222222222 0.6666666666666666) (stv 0.2222222222222222 0.6666666666666666) (stv 0.7777777777777778 0.6666666666666666) (stv 1.0 0.6666666666666666) (stv 0.0 0.6666666666666666))",
+      "hypothesis": "c3:3009c0fcf9b4c519cd15e5e4",
+      "parity": true,
+      "tv": {
+        "confidence": 0.0,
+        "strength": 0.0
+      }
+    },
+    {
+      "counts": {
+        "A": 9,
+        "B": 9,
+        "BA": 9,
+        "BC": 9,
+        "C": 9,
+        "N": 18
+      },
+      "cycle": "C3",
+      "dependence_groups": [
+        "historical-rook-east",
+        "historical-knight-main",
+        "historical-castle-queenside",
+        "train-ray-3",
+        "train-ray-4",
+        "train-ray-5",
+        "train-ray-6",
+        "train-ray-7",
+        "train-ray-8",
+        "train-ray-15",
+        "train-ray-16",
+        "train-ray-17",
+        "train-ray-18",
+        "train-ray-19",
+        "train-ray-20",
+        "train-game-0",
+        "train-game-1",
+        "train-game-2"
+      ],
+      "evidence_ids": [
+        "8df696d49f2f7844f6faac52b7877e4a5cb19d89ce3902145b8b5b9ef82260f6",
+        "731c2001eeb13a6c44e7d108f2dae18fb5c0aecc45e9a387af5860c95d82e12c",
+        "554ea18fa7fe5fd49ac9ee1209aac9fee1d7cde4f0a02e5e87dd369f49fc98be",
+        "f4691605d4ccce428a0f26711afdeb7d4db108195400ba12c8e06d2df900e9d8",
+        "d63549921cca848b945756f2abc58532df5cb577e9165cd13ea17616d995484a",
+        "5943d3b46c64499f1a58a1d7fc872076a2dca2ebe63cac3763fff9b0de11985b",
+        "35d4a994964c001546c6318965f3757ebc6d31b00439b1d87143124b57bfcc73",
+        "de52fa4d50f0be8ea19b8ac56e5e1add07a5c3356f20352de4e02920f33cd739",
+        "d768bbcdbbff49d348c4e6807398494443c652c230948174adcfb651ccf72239",
+        "39d50855f24f222e40442a8c90cae07ec10b9e0244cd105758759fe7867a907b",
+        "b06d267e6c3995354672da024107a599efd1bc4b17c342eba570c566750d6154",
+        "4fc4b6ccaf5a97ad58c685ce59379a96489f5ec5c8fa80799dccb95aa50935c3",
+        "b7d86931236c7218db13b0de6c4e3fd6f351ba78605aac79bef6a1d05afb5ec7",
+        "135edc1c754f8935763f6c0a12c36e4339fbab00f8220b7c51105d480f58bcca",
+        "42558896fa7c9eeed1ce953f76b1ef845b3ccdafdcece7530953c5046e29928a",
+        "ada0bac1597cc4767e83092d9e18c8c1bae635b4394388eafe6b5028ea5dae47",
+        "b2336364001fceb5192995ca6f304b07350bcc41aecb3a9df5bf5a9134217e36",
+        "b7e365dc0345fe86a4c35155068fbd1f601a434816fd837e841972fee72d0860"
+      ],
+      "expression": "(Truth_Induction (stv 0.5 0.9) (stv 0.5 0.9) (stv 0.5 0.9) (stv 1.0 0.9) (stv 1.0 0.9))",
+      "hypothesis": "c3:3d10416d15c1fb833bf5224b",
+      "parity": true,
+      "tv": {
+        "confidence": 0.44751381215469616,
+        "strength": 1.0
+      }
+    },
+    {
+      "counts": {
+        "A": 2,
+        "B": 2,
+        "BA": 2,
+        "BC": 0,
+        "C": 10,
+        "N": 12
+      },
+      "cycle": "C3",
+      "dependence_groups": [
+        "historical-queen-main",
+        "train-ray-2",
+        "train-ray-5",
+        "train-ray-8",
+        "train-ray-11",
+        "train-ray-14",
+        "train-ray-17",
+        "train-ray-20",
+        "train-ray-23",
+        "train-game-0",
+        "train-game-1",
+        "train-game-2"
+      ],
+      "evidence_ids": [
+        "d8b241d242c3b9ffb5b82c4dddf9e7e8f2df007c7295a725d89e5aacfef6223a",
+        "9c7ed712af6943e13834b8cd565933c40d34d2a806f7709c36277330980c27e2",
+        "76353c464eeadd24abe8561cd266c92864476b7375a06869f3002f9fb1e6fb4b",
+        "240b66f17cdf501252b27179dff534706089c0cced41c69f06d045c772fbe49f",
+        "e684e60fedb29b5f79e0637cd830a867c11d9421b066c4470d8592b6a2d9163c",
+        "9c775fda0512424e9e813c4b2607f32b9c0160f4275885893ced7e9e10307753",
+        "cdd1d4acad0ebd960b321fab348f8b763b0b60b6b674c48f105f474d9a7a0f6b",
+        "77e7d1321518f8d3cc8f15bdb53a6e5d4285b219ec99347ae93e9f7d5819a40a",
+        "ce167d81fb99ec243bc94d22df6640eb9edb20b27611fa80033f30cd48b8d639",
+        "891aaf2f59042a0e5108998aada64021aec846ff5a0e13d3402a287023bda750",
+        "770049dc0518a93013f641df185c662d6903e0c6e6afa62cd6a26328c6074842",
+        "1a39b3704237ea877ed4c759329b11da3b742312b30172a69ef4ae66018f336c"
+      ],
+      "expression": "(Truth_Induction (stv 0.16666666666666666 0.6666666666666666) (stv 0.16666666666666666 0.6666666666666666) (stv 0.8333333333333334 0.6666666666666666) (stv 1.0 0.6666666666666666) (stv 0.0 0.6666666666666666))",
+      "hypothesis": "c3:4478c00a46d4aca2c6937d4d",
+      "parity": true,
+      "tv": {
+        "confidence": 0.0,
+        "strength": 0.0
+      }
+    },
+    {
+      "counts": {
+        "A": 11,
+        "B": 11,
+        "BA": 11,
+        "BC": 0,
+        "C": 61,
+        "N": 86
+      },
+      "cycle": "C3",
+      "dependence_groups": [
+        "historical-rook-east",
+        "historical-bishop-main",
+        "historical-queen-main",
+        "historical-knight-main",
+        "historical-pawn-main",
+        "historical-king-main",
+        "historical-castle-main",
+        "historical-castle-queenside",
+        "historical-ep-main",
+        "historical-promotion-main",
+        "train-ray-0",
+        "train-ray-1",
+        "train-ray-2",
+        "train-ray-3",
+        "train-ray-4",
+        "train-ray-5",
+        "train-ray-6",
+        "train-ray-7",
+        "train-ray-8",
+        "train-ray-9",
+        "train-ray-10",
+        "train-ray-11",
+        "train-ray-12",
+        "train-ray-13",
+        "train-ray-14",
+        "train-ray-15",
+        "train-ray-16",
+        "train-ray-17",
+        "train-ray-18",
+        "train-ray-19",
+        "train-ray-20",
+        "train-ray-21",
+        "train-ray-22",
+        "train-ray-23",
+        "train-game-0",
+        "train-game-1",
+        "train-game-2",
+        "paired-locality",
+        "contact-pawn-0",
+        "contact-pawn-1",
+        "contact-pawn-2",
+        "contact-pawn-3",
+        "contact-pawn-4",
+        "contact-pawn-5",
+        "contact-pawn-6",
+        "contact-pawn-7",
+        "contact-knight-0",
+        "contact-knight-1",
+        "contact-knight-2",
+        "contact-knight-3",
+        "contact-knight-4",
+        "contact-knight-5",
+        "contact-knight-6",
+        "contact-knight-7",
+        "contact-bishop-0",
+        "contact-bishop-1",
+        "contact-bishop-2",
+        "contact-bishop-3",
+        "contact-bishop-4",
+        "contact-bishop-5",
+        "contact-bishop-6",
+        "contact-bishop-7",
+        "contact-rook-0",
+        "contact-rook-1",
+        "contact-rook-2",
+        "contact-rook-3",
+        "contact-rook-4",
+        "contact-rook-5",
+        "contact-rook-6",
+        "contact-rook-7",
+        "contact-queen-0",
+        "contact-queen-1",
+        "contact-queen-2",
+        "contact-queen-3",
+        "contact-queen-4",
+        "contact-queen-5",
+        "contact-queen-6",
+        "contact-queen-7",
+        "contact-king-0",
+        "contact-king-1",
+        "contact-king-2",
+        "contact-king-3",
+        "contact-king-4",
+        "contact-king-5",
+        "contact-king-6",
+        "contact-king-7"
+      ],
+      "evidence_ids": [
+        "ced40ac9fc9de55ebe088e26688264e42d6d0d74d7d38a22792c285875006539",
+        "0f78aa7202a9e939ca7ab00caebb1fba8b505d298b74e2b37e48be34d1829a08",
+        "1b41109e3e84d33981110061ac1dea7083b6316595b0c665a185e4a121f33bbb",
+        "604a534a0f963f14a25cc66cd37abd5e7785bba13b855439da750b12b7e444fc",
+        "acf934ba273b1593e26e508eb66da549bffc630a202821032fe12583dd1b124f",
+        "057a9a662a30bdd7fe9aa9ee5a5dc1b4a379930570a8b51ff1e5831c33c572de",
+        "1db6d56751cc05ab0c3b75d66d8ff4ca9dcb3b3031e59001d24476c67690678b",
+        "d7166aeec6d9e4d0463313c9f45934340a711bb67d381c43b9250d4792fdb8d9",
+        "93d7bcf7fc67ca538ee37b1a0b55c6392ac1f028fe68e6c7649e266ca0e078a2",
+        "09df9472fccb8de10b4d878639663364d31fa614eeee6aa537bed3d098786ea6",
+        "96506e5a9288a005c6ccec11e3ad3d624e2dfdc9cb7a574645dcb452a50bb5b4",
+        "b83f28eac6e93bacb24be665a5a1978f1f36b3c3a6662b432334eede7829e705",
+        "1b1e3cc8efe44fd3cd3c240e4c6e31c4f2575a013e6bae7da019aa3e1a5405b0",
+        "0615136e7d369f18db14ae8638eddbbbf189ba7cdec9e1e7730acdd9037aae7f",
+        "05e6a43784d5370ac468607289b18f6220a184af5034a7030d8b22a7ea53424b",
+        "ceafd60c76257e1b3cafcd7e83137f7ca4c1e2509985bfb0a4f6f623d53b995f",
+        "72bd6ab73ab1af10903ba65990dc93914dda47a5a2da9ceea764e304a2df46af",
+        "247de96f3d3cf4ca8d06bb8efa517ac3f242eacb5459bec02d1eae40433784df",
+        "37e4912a7b16ac93d401a09e55da57da61bea1bd8b2f3f7f5cc19f0ca97b7462",
+        "ed1bf5efa9f5b37a3b0972ce60b3bb36449768ab0daba51781d5e31efe0a9a67",
+        "5eff5379c086bbc3d86e8b450061a73f5a98e6ccb5cea47cfd7eb698f9c6a252",
+        "b74f44eaeab9cc68fb87b620867961771dd16c1ef87eb8dae1bbf821f8afd116",
+        "b53c7fb50329af290e242518c3314d7d79e38f04540e77f4d9a2ce066f573ca2",
+        "9a512c51313508ac4bdf797ab9b1a741689d2819ac1f04457a79a1bd8a7d22c2",
+        "c008ffd7345915275edc8e1d8feab210823d6840810927fd792046e7310c63dc",
+        "3ae41fea0660ee920bafa9f02de120edbb4a8e30b639c7f95dd8c341ac12f1ed",
+        "c019eae41261313d874a928eda4298a4d30397eafd96dfe20210128c400f7657",
+        "270591c651d5e7dcd391e67ba71e921fc7ccdcb72a72b6c56c0ff23da32e023d",
+        "6e58edc424c868d25f4b48fdc374a64c89ad4e214e172eba25713447e79ec320",
+        "77ebcb9d83d191b86a77978d163d9a29a0584d47162831bff001fd563c60364d",
+        "d2542486c2ebe080a9402213b1e28849cb56502f0a98f683f23040300868d466",
+        "fa309403ddfc2d6beac8d8aff0ee48672dace08de4a43950b3ea88565eb6e108",
+        "ab82e8adbe13520605c38bc294be8bbffe26838c198ff97c7320d041ece74653",
+        "2d57fd3b6fa551b122683e5be19d8d56c1988491550e566d7e1d66cbfd901abf",
+        "34190ce9cb45c872783c090033488e06c162e46457655f85e12c5ceabf6934c4",
+        "a8e6f2f75c14c925baa3b92f492544562de6993599fe647c8a6830b1532c796e",
+        "8ece462c5ffb216619b5a8f3a853f7d362015594fce1cf8b00d47c929c006c65",
+        "83fc558675235e471c45edb142004bdd50efe338ecb86cfda8db91424cddc2a2",
+        "27ed0356d76fd42d3beb17fc296b9f724317f771d7a6622248328445b2946708",
+        "44056c99f0ef280a0310ec476c939006e708dcf2f84ca286c69758c5a2e7bf8e",
+        "dd9ff983a77d08adc03e9e180fa6764cc4565cbe2470a83d14c15c4a132fac30",
+        "167b6024d2896f58e96dda3e743fa7126bc3982e4b9fc142310d615458c9d1c7",
+        "992a1a46c03676a8cf24a6fc99e483cbe4d37ceb156c0434f5fc4eb6029cf8ba",
+        "35af132a09bcb91dcb0d977b8984c07659c893035c8589c36543d6facba72f4b",
+        "a682b32c7cdac4b0c16ec4ae558f3496d8c49ef8f1699e69cd478143bdc7bd8c",
+        "cc3db40ac564ba1a66efef6ac3e6a5b7389ce89e57f1128a519d92ddeee91ab5",
+        "f97bb0eea5e667349ef89f347993ddd2b4fcca939e31b5efbd60d78f0ae7104c",
+        "a879cb71b3da7d401d47ad43dae4530a5e69a2db225e12ba341b53a9deec5c9f",
+        "326a3fcaaf826e70a98566ff34ddc1bb41e80e32c93e2c1b2d1051cae17fb5de",
+        "b7d950b825da5e7ef419b0484922365963e783e177c3e932f224fdb32a7ad06d",
+        "fa21e3f3380a2c344c897918c2fc22941047d0309bb572fcfbe4acc8692be3fc",
+        "df21b6a11812ecc1927fd41c317e39acf2a6122096fc94c54f00cc9047b48b38",
+        "089aa8078691f0e052aab3df4d6e29338b2502dbf191f9fa1f4614d6dfb2bcc5",
+        "f29ea540efab900a5051f0a0247302c38b8be61dad312381114490b1ae62a0fe",
+        "7658159e2ac7d772109ea1aa2fd9207f6ca02a2aa0a0673ed13e60da99edeec5",
+        "3f4567124f37d661f83f1e6e1b02e8739eba9f225ef43663479791ecd8a3a56d",
+        "0c3e4851788688f4b1d115440d8aa968686988a9458ce6bf45bb96a69e71404c",
+        "9d97860e62a7559cd14b7427d37df201bbde81dcdb3cc65bb5657d8ed3b9915a",
+        "8c61c3388bf0b50c12cb056cdec6e9e4ed443d42b0fdef8bdbf93cc55878adfb",
+        "8ee924d54c06de355968179003d2b4500548b5722f21aac23e1685cca4654988",
+        "0f88e5248f3e60d57dec7772d4504cd132c0ced3297f0c22d4dd914ca867caa6",
+        "f4762469676516268a4f7570ee7eb168439648b26ea936905b8b2ab811f9ab35",
+        "443377ee2831f181a2dd66dcb23354cd5c18d69b3eb92619b98854b9e00c16a9",
+        "66b03e8536c930e26be2434304036b011b9becb8617f81b833e9e01037e8b1e3",
+        "08564f6de9b3409cf3e1d3077064a925926a42be9fb8656d038de680cc9e8260",
+        "3c4bf9296cac5688f00580d93ee7e5cc49eddcfd4e7ed548795e821d94bc8e31",
+        "afa4c19271d7c08d5691e54af9fa88ebba0126a02ae9293f125d3be9e15e7d70",
+        "8265ebe7a02381596a244d725f3db72fe756fa8d65da12697208450a96b49bb8",
+        "02e0238eea261d9a19959a6076b7833219cf42e48e4afd48f8df166eaceee5d6",
+        "77e4afac7f3c0dd67a2841b703f9892c730e7584c82ac7df70c300dbf52b42cf",
+        "246c5a8a86e7fbeb63ebbf4be16a79504b866374c18fe635bcab31db388f798f",
+        "31241238650df0aa6295208453309a2459337af210cd736806e0f72c7b0cedbf",
+        "b46f140e320d4b0779c8d70f022b729e29d011c58ef1f7199e6bb45e6adfc8bb",
+        "68039dc6ee6b00c978b9e57c6581083629a4dd12bdbf34ca4b64765e546781a6",
+        "57cee1b1e8ebde7f1e8c3cb24369f8aad09098f608d7dee47b1979cd44213025",
+        "39b9ca307e6d0861c277449f1e9cb960cd6b8f2f2d2e590c97e88ddcc3557987",
+        "63e03368fc39aa58d9f9aac37b7e4dce9d1c3eebfd507e1f909510a2c4a955be",
+        "705bf518197fb5d5ea69c9a705233802d051c3b564feac977c75d8c938cd8abf",
+        "c9cf1018661a2dda16f9b334ed356f68af1d2889a36900d067e0beaa88d1b219",
+        "d3d518cb7fe52194b09a68d7c813717963bbaf08cfc3e4a397d1b587f903976b",
+        "927aef7e974be1a90570aa3da19d9f7588d05def1f4efdb5152cb216a2bd2b8a",
+        "14b80896b23709666dc6dd83eea3f19b9698c1454adc73eb50718f8fdfef5bf6",
+        "372ccdbbfcf35d20693b68df116edd22fcf25181ea870ece8e5d21a7ea5364a0",
+        "7d8509e49366fff2b043cf4dbf135759f7cf32a4cfc80461bf2175f647765f6f",
+        "4a9b85e2e694c3a00c71102639a6645744c7be2d16030206396ac010413dd1fc",
+        "06a0eaf08e224b9c6d8439b770d5e19991f20bd15fc0ad4d8396d88f9200c746"
+      ],
+      "expression": "(Truth_Induction (stv 0.12790697674418605 0.9166666666666666) (stv 0.12790697674418605 0.9166666666666666) (stv 0.7093023255813954 0.9166666666666666) (stv 1.0 0.9166666666666666) (stv 0.0 0.9166666666666666))",
+      "hypothesis": "c3:5e90f3a5549112b907a38872",
+      "parity": true,
+      "tv": {
+        "confidence": 0.0,
+        "strength": 0.0
+      }
+    },
+    {
+      "counts": {
+        "A": 10,
+        "B": 10,
+        "BA": 10,
+        "BC": 10,
+        "C": 10,
+        "N": 12
+      },
+      "cycle": "C3",
+      "dependence_groups": [
+        "historical-queen-main",
+        "train-ray-2",
+        "train-ray-5",
+        "train-ray-8",
+        "train-ray-11",
+        "train-ray-14",
+        "train-ray-17",
+        "train-ray-20",
+        "train-ray-23",
+        "train-game-0",
+        "train-game-1",
+        "train-game-2"
+      ],
+      "evidence_ids": [
+        "d8b241d242c3b9ffb5b82c4dddf9e7e8f2df007c7295a725d89e5aacfef6223a",
+        "9c7ed712af6943e13834b8cd565933c40d34d2a806f7709c36277330980c27e2",
+        "76353c464eeadd24abe8561cd266c92864476b7375a06869f3002f9fb1e6fb4b",
+        "240b66f17cdf501252b27179dff534706089c0cced41c69f06d045c772fbe49f",
+        "e684e60fedb29b5f79e0637cd830a867c11d9421b066c4470d8592b6a2d9163c",
+        "9c775fda0512424e9e813c4b2607f32b9c0160f4275885893ced7e9e10307753",
+        "cdd1d4acad0ebd960b321fab348f8b763b0b60b6b674c48f105f474d9a7a0f6b",
+        "77e7d1321518f8d3cc8f15bdb53a6e5d4285b219ec99347ae93e9f7d5819a40a",
+        "ce167d81fb99ec243bc94d22df6640eb9edb20b27611fa80033f30cd48b8d639",
+        "891aaf2f59042a0e5108998aada64021aec846ff5a0e13d3402a287023bda750",
+        "770049dc0518a93013f641df185c662d6903e0c6e6afa62cd6a26328c6074842",
+        "1a39b3704237ea877ed4c759329b11da3b742312b30172a69ef4ae66018f336c"
+      ],
+      "expression": "(Truth_Induction (stv 0.8333333333333334 0.9090909090909091) (stv 0.8333333333333334 0.9090909090909091) (stv 0.8333333333333334 0.9090909090909091) (stv 1.0 0.9090909090909091) (stv 1.0 0.9090909090909091))",
+      "hypothesis": "c3:6e51f3f827487ca07567e612",
+      "parity": true,
+      "tv": {
+        "confidence": 0.4524886877828054,
+        "strength": 1.0
+      }
+    },
+    {
+      "counts": {
+        "A": 70,
+        "B": 70,
+        "BA": 70,
+        "BC": 59,
+        "C": 61,
+        "N": 86
+      },
+      "cycle": "C3",
+      "dependence_groups": [
+        "historical-rook-east",
+        "historical-bishop-main",
+        "historical-queen-main",
+        "historical-knight-main",
+        "historical-pawn-main",
+        "historical-king-main",
+        "historical-castle-main",
+        "historical-castle-queenside",
+        "historical-ep-main",
+        "historical-promotion-main",
+        "train-ray-0",
+        "train-ray-1",
+        "train-ray-2",
+        "train-ray-3",
+        "train-ray-4",
+        "train-ray-5",
+        "train-ray-6",
+        "train-ray-7",
+        "train-ray-8",
+        "train-ray-9",
+        "train-ray-10",
+        "train-ray-11",
+        "train-ray-12",
+        "train-ray-13",
+        "train-ray-14",
+        "train-ray-15",
+        "train-ray-16",
+        "train-ray-17",
+        "train-ray-18",
+        "train-ray-19",
+        "train-ray-20",
+        "train-ray-21",
+        "train-ray-22",
+        "train-ray-23",
+        "train-game-0",
+        "train-game-1",
+        "train-game-2",
+        "paired-locality",
+        "contact-pawn-0",
+        "contact-pawn-1",
+        "contact-pawn-2",
+        "contact-pawn-3",
+        "contact-pawn-4",
+        "contact-pawn-5",
+        "contact-pawn-6",
+        "contact-pawn-7",
+        "contact-knight-0",
+        "contact-knight-1",
+        "contact-knight-2",
+        "contact-knight-3",
+        "contact-knight-4",
+        "contact-knight-5",
+        "contact-knight-6",
+        "contact-knight-7",
+        "contact-bishop-0",
+        "contact-bishop-1",
+        "contact-bishop-2",
+        "contact-bishop-3",
+        "contact-bishop-4",
+        "contact-bishop-5",
+        "contact-bishop-6",
+        "contact-bishop-7",
+        "contact-rook-0",
+        "contact-rook-1",
+        "contact-rook-2",
+        "contact-rook-3",
+        "contact-rook-4",
+        "contact-rook-5",
+        "contact-rook-6",
+        "contact-rook-7",
+        "contact-queen-0",
+        "contact-queen-1",
+        "contact-queen-2",
+        "contact-queen-3",
+        "contact-queen-4",
+        "contact-queen-5",
+        "contact-queen-6",
+        "contact-queen-7",
+        "contact-king-0",
+        "contact-king-1",
+        "contact-king-2",
+        "contact-king-3",
+        "contact-king-4",
+        "contact-king-5",
+        "contact-king-6",
+        "contact-king-7"
+      ],
+      "evidence_ids": [
+        "ced40ac9fc9de55ebe088e26688264e42d6d0d74d7d38a22792c285875006539",
+        "0f78aa7202a9e939ca7ab00caebb1fba8b505d298b74e2b37e48be34d1829a08",
+        "1b41109e3e84d33981110061ac1dea7083b6316595b0c665a185e4a121f33bbb",
+        "604a534a0f963f14a25cc66cd37abd5e7785bba13b855439da750b12b7e444fc",
+        "acf934ba273b1593e26e508eb66da549bffc630a202821032fe12583dd1b124f",
+        "057a9a662a30bdd7fe9aa9ee5a5dc1b4a379930570a8b51ff1e5831c33c572de",
+        "1db6d56751cc05ab0c3b75d66d8ff4ca9dcb3b3031e59001d24476c67690678b",
+        "d7166aeec6d9e4d0463313c9f45934340a711bb67d381c43b9250d4792fdb8d9",
+        "93d7bcf7fc67ca538ee37b1a0b55c6392ac1f028fe68e6c7649e266ca0e078a2",
+        "09df9472fccb8de10b4d878639663364d31fa614eeee6aa537bed3d098786ea6",
+        "96506e5a9288a005c6ccec11e3ad3d624e2dfdc9cb7a574645dcb452a50bb5b4",
+        "b83f28eac6e93bacb24be665a5a1978f1f36b3c3a6662b432334eede7829e705",
+        "1b1e3cc8efe44fd3cd3c240e4c6e31c4f2575a013e6bae7da019aa3e1a5405b0",
+        "0615136e7d369f18db14ae8638eddbbbf189ba7cdec9e1e7730acdd9037aae7f",
+        "05e6a43784d5370ac468607289b18f6220a184af5034a7030d8b22a7ea53424b",
+        "ceafd60c76257e1b3cafcd7e83137f7ca4c1e2509985bfb0a4f6f623d53b995f",
+        "72bd6ab73ab1af10903ba65990dc93914dda47a5a2da9ceea764e304a2df46af",
+        "247de96f3d3cf4ca8d06bb8efa517ac3f242eacb5459bec02d1eae40433784df",
+        "37e4912a7b16ac93d401a09e55da57da61bea1bd8b2f3f7f5cc19f0ca97b7462",
+        "ed1bf5efa9f5b37a3b0972ce60b3bb36449768ab0daba51781d5e31efe0a9a67",
+        "5eff5379c086bbc3d86e8b450061a73f5a98e6ccb5cea47cfd7eb698f9c6a252",
+        "b74f44eaeab9cc68fb87b620867961771dd16c1ef87eb8dae1bbf821f8afd116",
+        "b53c7fb50329af290e242518c3314d7d79e38f04540e77f4d9a2ce066f573ca2",
+        "9a512c51313508ac4bdf797ab9b1a741689d2819ac1f04457a79a1bd8a7d22c2",
+        "c008ffd7345915275edc8e1d8feab210823d6840810927fd792046e7310c63dc",
+        "3ae41fea0660ee920bafa9f02de120edbb4a8e30b639c7f95dd8c341ac12f1ed",
+        "c019eae41261313d874a928eda4298a4d30397eafd96dfe20210128c400f7657",
+        "270591c651d5e7dcd391e67ba71e921fc7ccdcb72a72b6c56c0ff23da32e023d",
+        "6e58edc424c868d25f4b48fdc374a64c89ad4e214e172eba25713447e79ec320",
+        "77ebcb9d83d191b86a77978d163d9a29a0584d47162831bff001fd563c60364d",
+        "d2542486c2ebe080a9402213b1e28849cb56502f0a98f683f23040300868d466",
+        "fa309403ddfc2d6beac8d8aff0ee48672dace08de4a43950b3ea88565eb6e108",
+        "ab82e8adbe13520605c38bc294be8bbffe26838c198ff97c7320d041ece74653",
+        "2d57fd3b6fa551b122683e5be19d8d56c1988491550e566d7e1d66cbfd901abf",
+        "34190ce9cb45c872783c090033488e06c162e46457655f85e12c5ceabf6934c4",
+        "a8e6f2f75c14c925baa3b92f492544562de6993599fe647c8a6830b1532c796e",
+        "8ece462c5ffb216619b5a8f3a853f7d362015594fce1cf8b00d47c929c006c65",
+        "83fc558675235e471c45edb142004bdd50efe338ecb86cfda8db91424cddc2a2",
+        "27ed0356d76fd42d3beb17fc296b9f724317f771d7a6622248328445b2946708",
+        "44056c99f0ef280a0310ec476c939006e708dcf2f84ca286c69758c5a2e7bf8e",
+        "dd9ff983a77d08adc03e9e180fa6764cc4565cbe2470a83d14c15c4a132fac30",
+        "167b6024d2896f58e96dda3e743fa7126bc3982e4b9fc142310d615458c9d1c7",
+        "992a1a46c03676a8cf24a6fc99e483cbe4d37ceb156c0434f5fc4eb6029cf8ba",
+        "35af132a09bcb91dcb0d977b8984c07659c893035c8589c36543d6facba72f4b",
+        "a682b32c7cdac4b0c16ec4ae558f3496d8c49ef8f1699e69cd478143bdc7bd8c",
+        "cc3db40ac564ba1a66efef6ac3e6a5b7389ce89e57f1128a519d92ddeee91ab5",
+        "f97bb0eea5e667349ef89f347993ddd2b4fcca939e31b5efbd60d78f0ae7104c",
+        "a879cb71b3da7d401d47ad43dae4530a5e69a2db225e12ba341b53a9deec5c9f",
+        "326a3fcaaf826e70a98566ff34ddc1bb41e80e32c93e2c1b2d1051cae17fb5de",
+        "b7d950b825da5e7ef419b0484922365963e783e177c3e932f224fdb32a7ad06d",
+        "fa21e3f3380a2c344c897918c2fc22941047d0309bb572fcfbe4acc8692be3fc",
+        "df21b6a11812ecc1927fd41c317e39acf2a6122096fc94c54f00cc9047b48b38",
+        "089aa8078691f0e052aab3df4d6e29338b2502dbf191f9fa1f4614d6dfb2bcc5",
+        "f29ea540efab900a5051f0a0247302c38b8be61dad312381114490b1ae62a0fe",
+        "7658159e2ac7d772109ea1aa2fd9207f6ca02a2aa0a0673ed13e60da99edeec5",
+        "3f4567124f37d661f83f1e6e1b02e8739eba9f225ef43663479791ecd8a3a56d",
+        "0c3e4851788688f4b1d115440d8aa968686988a9458ce6bf45bb96a69e71404c",
+        "9d97860e62a7559cd14b7427d37df201bbde81dcdb3cc65bb5657d8ed3b9915a",
+        "8c61c3388bf0b50c12cb056cdec6e9e4ed443d42b0fdef8bdbf93cc55878adfb",
+        "8ee924d54c06de355968179003d2b4500548b5722f21aac23e1685cca4654988",
+        "0f88e5248f3e60d57dec7772d4504cd132c0ced3297f0c22d4dd914ca867caa6",
+        "f4762469676516268a4f7570ee7eb168439648b26ea936905b8b2ab811f9ab35",
+        "443377ee2831f181a2dd66dcb23354cd5c18d69b3eb92619b98854b9e00c16a9",
+        "66b03e8536c930e26be2434304036b011b9becb8617f81b833e9e01037e8b1e3",
+        "08564f6de9b3409cf3e1d3077064a925926a42be9fb8656d038de680cc9e8260",
+        "3c4bf9296cac5688f00580d93ee7e5cc49eddcfd4e7ed548795e821d94bc8e31",
+        "afa4c19271d7c08d5691e54af9fa88ebba0126a02ae9293f125d3be9e15e7d70",
+        "8265ebe7a02381596a244d725f3db72fe756fa8d65da12697208450a96b49bb8",
+        "02e0238eea261d9a19959a6076b7833219cf42e48e4afd48f8df166eaceee5d6",
+        "77e4afac7f3c0dd67a2841b703f9892c730e7584c82ac7df70c300dbf52b42cf",
+        "246c5a8a86e7fbeb63ebbf4be16a79504b866374c18fe635bcab31db388f798f",
+        "31241238650df0aa6295208453309a2459337af210cd736806e0f72c7b0cedbf",
+        "b46f140e320d4b0779c8d70f022b729e29d011c58ef1f7199e6bb45e6adfc8bb",
+        "68039dc6ee6b00c978b9e57c6581083629a4dd12bdbf34ca4b64765e546781a6",
+        "57cee1b1e8ebde7f1e8c3cb24369f8aad09098f608d7dee47b1979cd44213025",
+        "39b9ca307e6d0861c277449f1e9cb960cd6b8f2f2d2e590c97e88ddcc3557987",
+        "63e03368fc39aa58d9f9aac37b7e4dce9d1c3eebfd507e1f909510a2c4a955be",
+        "705bf518197fb5d5ea69c9a705233802d051c3b564feac977c75d8c938cd8abf",
+        "c9cf1018661a2dda16f9b334ed356f68af1d2889a36900d067e0beaa88d1b219",
+        "d3d518cb7fe52194b09a68d7c813717963bbaf08cfc3e4a397d1b587f903976b",
+        "927aef7e974be1a90570aa3da19d9f7588d05def1f4efdb5152cb216a2bd2b8a",
+        "14b80896b23709666dc6dd83eea3f19b9698c1454adc73eb50718f8fdfef5bf6",
+        "372ccdbbfcf35d20693b68df116edd22fcf25181ea870ece8e5d21a7ea5364a0",
+        "7d8509e49366fff2b043cf4dbf135759f7cf32a4cfc80461bf2175f647765f6f",
+        "4a9b85e2e694c3a00c71102639a6645744c7be2d16030206396ac010413dd1fc",
+        "06a0eaf08e224b9c6d8439b770d5e19991f20bd15fc0ad4d8396d88f9200c746"
+      ],
+      "expression": "(Truth_Induction (stv 0.813953488372093 0.9859154929577465) (stv 0.813953488372093 0.9859154929577465) (stv 0.7093023255813954 0.9859154929577465) (stv 1.0 0.9859154929577465) (stv 0.8428571428571429 0.9859154929577465))",
+      "hypothesis": "c3:6ef8ce0b965f89bcbec9b7b9",
+      "parity": true,
+      "tv": {
+        "confidence": 0.45033257005779087,
+        "strength": 0.8428571428571429
+      }
+    },
+    {
+      "counts": {
+        "A": 2,
+        "B": 2,
+        "BA": 2,
+        "BC": 2,
+        "C": 7,
+        "N": 9
+      },
+      "cycle": "C3",
+      "dependence_groups": [
+        "historical-rook-east",
+        "historical-bishop-main",
+        "historical-knight-main",
+        "historical-pawn-main",
+        "historical-ep-main",
+        "historical-promotion-main",
+        "train-game-0",
+        "train-game-1",
+        "train-game-2"
+      ],
+      "evidence_ids": [
+        "339131c987d592801df17fb997ac57e07f1de976bd18d3032f0c3c7832167d6d",
+        "4df33a61bdb161c76146bc3da8ea3dd28cbd1eaa6f9da54621bfbb9d95be78af",
+        "7f79c70950d7d93614503e7efbe02508df4da06d14ca7d10a3b55c09ab4db373",
+        "eb19664568fa1592ccf9c453a60244232c75f650443389f0872be13edd024408",
+        "9048cc9a9f210d1b507bac3e0be02aa304f23de15585b5a3731b44ac89201eef",
+        "edb8f34222e224997910a9b2368f03ecdc2866ac2bbd7933dd8f7e30fbf1cf97",
+        "ed62c3e3b0d345e02a362ee3734cb8c660ab541074f6cc8a421081551eebaf53",
+        "64efdace31292026a4a0e0b414de0a757c45aab7e72993378eddcef0709f7f74",
+        "29ed869329e1b39eadbf5e3f839558dba91b93c723eaa5dd787ac55ba7cc9774"
+      ],
+      "expression": "(Truth_Induction (stv 0.2222222222222222 0.6666666666666666) (stv 0.2222222222222222 0.6666666666666666) (stv 0.7777777777777778 0.6666666666666666) (stv 1.0 0.6666666666666666) (stv 1.0 0.6666666666666666))",
+      "hypothesis": "c3:82a0a36255613640f94b9f83",
+      "parity": true,
+      "tv": {
+        "confidence": 0.30769230769230765,
+        "strength": 1.0
+      }
+    },
+    {
+      "counts": {
+        "A": 2,
+        "B": 2,
+        "BA": 2,
+        "BC": 0,
+        "C": 12,
+        "N": 16
+      },
+      "cycle": "C3",
+      "dependence_groups": [
+        "historical-rook-east",
+        "historical-castle-main",
+        "historical-castle-queenside",
+        "historical-promotion-main",
+        "train-ray-0",
+        "train-ray-3",
+        "train-ray-6",
+        "train-ray-9",
+        "train-ray-12",
+        "train-ray-15",
+        "train-ray-18",
+        "train-ray-21",
+        "train-game-0",
+        "train-game-1",
+        "train-game-2",
+        "paired-locality"
+      ],
+      "evidence_ids": [
+        "ea07fbf2b8e5ab25a488112173fd08783afd60f33fc37d60821cde6f69b9edb4",
+        "c6628add8990ad7c08fb131b806aabc8b630b6da3d74164eeba3a1ea53495b7b",
+        "40a3f0c4d5d6e80265e145a65257c2c5cd04b5d399fd037c2b59c0ec262526e8",
+        "3b2495392857149a9c37c799163ce03cf6286b0089afbb92613ae2b5efc75082",
+        "385f5adba0c3264db8dce28ba5cc03dda9f5773d762aac6f38f243d200b01751",
+        "84657b63b69584f248f8ee58d5638251723801633aed670d5b7e303fe0edc93a",
+        "8d3dd2d0eb0bfad01ca621e8de521ddce66b5ea081cfccc40a71ff0e5d1cdaf9",
+        "627123cb41e63b9254bf5764253f450cb5ab911bb328a78dd0627f44cab06449",
+        "91d22c68553ce8c37609183dad443da30544cdcbd2c9bc7aa5697e9ed7280ff3",
+        "b94ac65929d7bebaefb5f6c0b5d6d08bbfd04b720b983d67db057cbd5afae727",
+        "b545a384fbbc08d58f63123cb0953e0a400b40ef9fd4de3af33d2cbbde2232f0",
+        "7a33829870ae6676851aa7a24be065e8f9ac7598512b7167c10c8f9524178137",
+        "bfeb1e919ea03f692b352bcdd581e837e2d781dd0054a98c26bd8a3d803c5c91",
+        "80057cb7314a5c7fcf5f975f5b4336f3bfd3ac4c42054a63c2b12506a4d7af08",
+        "588d185965173aacf1534589a27d3bdded7dce826ec928704264f979a3ddc285",
+        "6811c4069e0486837a5a488807deee41e42059a90b46509a17d07538eccc4721"
+      ],
+      "expression": "(Truth_Induction (stv 0.125 0.6666666666666666) (stv 0.125 0.6666666666666666) (stv 0.75 0.6666666666666666) (stv 1.0 0.6666666666666666) (stv 0.0 0.6666666666666666))",
+      "hypothesis": "c3:99da6979f724e903a5657628",
+      "parity": true,
+      "tv": {
+        "confidence": 0.0,
+        "strength": 0.0
+      }
+    },
+    {
+      "counts": {
+        "A": 2,
+        "B": 2,
+        "BA": 2,
+        "BC": 2,
+        "C": 7,
+        "N": 9
+      },
+      "cycle": "C3",
+      "dependence_groups": [
+        "historical-rook-east",
+        "historical-bishop-main",
+        "historical-knight-main",
+        "historical-pawn-main",
+        "historical-ep-main",
+        "historical-promotion-main",
+        "train-game-0",
+        "train-game-1",
+        "train-game-2"
+      ],
+      "evidence_ids": [
+        "339131c987d592801df17fb997ac57e07f1de976bd18d3032f0c3c7832167d6d",
+        "4df33a61bdb161c76146bc3da8ea3dd28cbd1eaa6f9da54621bfbb9d95be78af",
+        "7f79c70950d7d93614503e7efbe02508df4da06d14ca7d10a3b55c09ab4db373",
+        "eb19664568fa1592ccf9c453a60244232c75f650443389f0872be13edd024408",
+        "9048cc9a9f210d1b507bac3e0be02aa304f23de15585b5a3731b44ac89201eef",
+        "edb8f34222e224997910a9b2368f03ecdc2866ac2bbd7933dd8f7e30fbf1cf97",
+        "ed62c3e3b0d345e02a362ee3734cb8c660ab541074f6cc8a421081551eebaf53",
+        "64efdace31292026a4a0e0b414de0a757c45aab7e72993378eddcef0709f7f74",
+        "29ed869329e1b39eadbf5e3f839558dba91b93c723eaa5dd787ac55ba7cc9774"
+      ],
+      "expression": "(Truth_Induction (stv 0.2222222222222222 0.6666666666666666) (stv 0.2222222222222222 0.6666666666666666) (stv 0.7777777777777778 0.6666666666666666) (stv 1.0 0.6666666666666666) (stv 1.0 0.6666666666666666))",
+      "hypothesis": "c3:bc5b90c3909f343307c02768",
+      "parity": true,
+      "tv": {
+        "confidence": 0.30769230769230765,
+        "strength": 1.0
+      }
+    },
+    {
+      "counts": {
+        "A": 8,
+        "B": 8,
+        "BA": 8,
+        "BC": 8,
+        "C": 9,
+        "N": 12
+      },
+      "cycle": "C3",
+      "dependence_groups": [
+        "historical-bishop-main",
+        "train-ray-1",
+        "train-ray-4",
+        "train-ray-7",
+        "train-ray-10",
+        "train-ray-13",
+        "train-ray-16",
+        "train-ray-19",
+        "train-ray-22",
+        "train-game-0",
+        "train-game-1",
+        "train-game-2"
+      ],
+      "evidence_ids": [
+        "589227496c6b4b23aa578155caf119c1726f7c6a21e2435dc2bb7c08eee62732",
+        "f282cd03b46149eb7fde2d83fcb13594d203a09eacc11b4ee316f60b1e47b796",
+        "7e69bf9bf5edc3f9fc6d4bd41324e85b115d8742ebeba27ce675e482acc21e48",
+        "942345465474c99988e3178e538d7cc1e17b0f55b3d5f92974b6bfd143cdfbf2",
+        "ce5d4ebd23fbb1db613408a57d066c64de08ef42abb016c8c4f6b9f811cf5dd7",
+        "123ebbb1e0a728bb60395dd1ebcc5c6b704912a9db49db623f8ac9aab923e3b6",
+        "81e6ea3391631c73a07fc2ee35f82ebef1ddea0ee12a14cc5f29e8ffc6675994",
+        "4ed0837a94ee0be790be49e9635fcecf3a976e84229318a6982e4563abb265f7",
+        "2232a0e097386c34de4673a04b6013fc568ea24a64c42c6dae98265b133a279b",
+        "ecb74c9567e03d95516dcd0ca3cc602e5b5790095d7242eae33aa9df4243afaf",
+        "e9cbacc4cdea6c041c2e94068a42ef0e88bc0d730231b6edfc780ddd8f152a59",
+        "fe7ff55734654b3a1367a8ed18eaabd599b4b3cff255e59437566f1ff72f6d56"
+      ],
+      "expression": "(Truth_Induction (stv 0.6666666666666666 0.8888888888888888) (stv 0.6666666666666666 0.8888888888888888) (stv 0.75 0.8888888888888888) (stv 1.0 0.8888888888888888) (stv 1.0 0.8888888888888888))",
+      "hypothesis": "c3:c17297b47e1e442df877d6ac",
+      "parity": true,
+      "tv": {
+        "confidence": 0.4413793103448276,
+        "strength": 1.0
+      }
+    },
+    {
+      "counts": {
+        "A": 13,
+        "B": 13,
+        "BA": 13,
+        "BC": 12,
+        "C": 12,
+        "N": 16
+      },
+      "cycle": "C3",
+      "dependence_groups": [
+        "historical-rook-east",
+        "historical-castle-main",
+        "historical-castle-queenside",
+        "historical-promotion-main",
+        "train-ray-0",
+        "train-ray-3",
+        "train-ray-6",
+        "train-ray-9",
+        "train-ray-12",
+        "train-ray-15",
+        "train-ray-18",
+        "train-ray-21",
+        "train-game-0",
+        "train-game-1",
+        "train-game-2",
+        "paired-locality"
+      ],
+      "evidence_ids": [
+        "ea07fbf2b8e5ab25a488112173fd08783afd60f33fc37d60821cde6f69b9edb4",
+        "c6628add8990ad7c08fb131b806aabc8b630b6da3d74164eeba3a1ea53495b7b",
+        "40a3f0c4d5d6e80265e145a65257c2c5cd04b5d399fd037c2b59c0ec262526e8",
+        "3b2495392857149a9c37c799163ce03cf6286b0089afbb92613ae2b5efc75082",
+        "385f5adba0c3264db8dce28ba5cc03dda9f5773d762aac6f38f243d200b01751",
+        "84657b63b69584f248f8ee58d5638251723801633aed670d5b7e303fe0edc93a",
+        "8d3dd2d0eb0bfad01ca621e8de521ddce66b5ea081cfccc40a71ff0e5d1cdaf9",
+        "627123cb41e63b9254bf5764253f450cb5ab911bb328a78dd0627f44cab06449",
+        "91d22c68553ce8c37609183dad443da30544cdcbd2c9bc7aa5697e9ed7280ff3",
+        "b94ac65929d7bebaefb5f6c0b5d6d08bbfd04b720b983d67db057cbd5afae727",
+        "b545a384fbbc08d58f63123cb0953e0a400b40ef9fd4de3af33d2cbbde2232f0",
+        "7a33829870ae6676851aa7a24be065e8f9ac7598512b7167c10c8f9524178137",
+        "bfeb1e919ea03f692b352bcdd581e837e2d781dd0054a98c26bd8a3d803c5c91",
+        "80057cb7314a5c7fcf5f975f5b4336f3bfd3ac4c42054a63c2b12506a4d7af08",
+        "588d185965173aacf1534589a27d3bdded7dce826ec928704264f979a3ddc285",
+        "6811c4069e0486837a5a488807deee41e42059a90b46509a17d07538eccc4721"
+      ],
+      "expression": "(Truth_Induction (stv 0.8125 0.9285714285714286) (stv 0.8125 0.9285714285714286) (stv 0.75 0.9285714285714286) (stv 1.0 0.9285714285714286) (stv 0.9230769230769231 0.9285714285714286))",
+      "hypothesis": "c3:c94191681833090af6a997ae",
+      "parity": true,
+      "tv": {
+        "confidence": 0.4431818181818182,
+        "strength": 0.9230769230769231
+      }
+    },
+    {
+      "counts": {
+        "A": 2,
+        "B": 2,
+        "BA": 2,
+        "BC": 0,
+        "C": 61,
+        "N": 86
+      },
+      "cycle": "C3",
+      "dependence_groups": [
+        "historical-rook-east",
+        "historical-bishop-main",
+        "historical-queen-main",
+        "historical-knight-main",
+        "historical-pawn-main",
+        "historical-king-main",
+        "historical-castle-main",
+        "historical-castle-queenside",
+        "historical-ep-main",
+        "historical-promotion-main",
+        "train-ray-0",
+        "train-ray-1",
+        "train-ray-2",
+        "train-ray-3",
+        "train-ray-4",
+        "train-ray-5",
+        "train-ray-6",
+        "train-ray-7",
+        "train-ray-8",
+        "train-ray-9",
+        "train-ray-10",
+        "train-ray-11",
+        "train-ray-12",
+        "train-ray-13",
+        "train-ray-14",
+        "train-ray-15",
+        "train-ray-16",
+        "train-ray-17",
+        "train-ray-18",
+        "train-ray-19",
+        "train-ray-20",
+        "train-ray-21",
+        "train-ray-22",
+        "train-ray-23",
+        "train-game-0",
+        "train-game-1",
+        "train-game-2",
+        "paired-locality",
+        "contact-pawn-0",
+        "contact-pawn-1",
+        "contact-pawn-2",
+        "contact-pawn-3",
+        "contact-pawn-4",
+        "contact-pawn-5",
+        "contact-pawn-6",
+        "contact-pawn-7",
+        "contact-knight-0",
+        "contact-knight-1",
+        "contact-knight-2",
+        "contact-knight-3",
+        "contact-knight-4",
+        "contact-knight-5",
+        "contact-knight-6",
+        "contact-knight-7",
+        "contact-bishop-0",
+        "contact-bishop-1",
+        "contact-bishop-2",
+        "contact-bishop-3",
+        "contact-bishop-4",
+        "contact-bishop-5",
+        "contact-bishop-6",
+        "contact-bishop-7",
+        "contact-rook-0",
+        "contact-rook-1",
+        "contact-rook-2",
+        "contact-rook-3",
+        "contact-rook-4",
+        "contact-rook-5",
+        "contact-rook-6",
+        "contact-rook-7",
+        "contact-queen-0",
+        "contact-queen-1",
+        "contact-queen-2",
+        "contact-queen-3",
+        "contact-queen-4",
+        "contact-queen-5",
+        "contact-queen-6",
+        "contact-queen-7",
+        "contact-king-0",
+        "contact-king-1",
+        "contact-king-2",
+        "contact-king-3",
+        "contact-king-4",
+        "contact-king-5",
+        "contact-king-6",
+        "contact-king-7"
+      ],
+      "evidence_ids": [
+        "ced40ac9fc9de55ebe088e26688264e42d6d0d74d7d38a22792c285875006539",
+        "0f78aa7202a9e939ca7ab00caebb1fba8b505d298b74e2b37e48be34d1829a08",
+        "1b41109e3e84d33981110061ac1dea7083b6316595b0c665a185e4a121f33bbb",
+        "604a534a0f963f14a25cc66cd37abd5e7785bba13b855439da750b12b7e444fc",
+        "acf934ba273b1593e26e508eb66da549bffc630a202821032fe12583dd1b124f",
+        "057a9a662a30bdd7fe9aa9ee5a5dc1b4a379930570a8b51ff1e5831c33c572de",
+        "1db6d56751cc05ab0c3b75d66d8ff4ca9dcb3b3031e59001d24476c67690678b",
+        "d7166aeec6d9e4d0463313c9f45934340a711bb67d381c43b9250d4792fdb8d9",
+        "93d7bcf7fc67ca538ee37b1a0b55c6392ac1f028fe68e6c7649e266ca0e078a2",
+        "09df9472fccb8de10b4d878639663364d31fa614eeee6aa537bed3d098786ea6",
+        "96506e5a9288a005c6ccec11e3ad3d624e2dfdc9cb7a574645dcb452a50bb5b4",
+        "b83f28eac6e93bacb24be665a5a1978f1f36b3c3a6662b432334eede7829e705",
+        "1b1e3cc8efe44fd3cd3c240e4c6e31c4f2575a013e6bae7da019aa3e1a5405b0",
+        "0615136e7d369f18db14ae8638eddbbbf189ba7cdec9e1e7730acdd9037aae7f",
+        "05e6a43784d5370ac468607289b18f6220a184af5034a7030d8b22a7ea53424b",
+        "ceafd60c76257e1b3cafcd7e83137f7ca4c1e2509985bfb0a4f6f623d53b995f",
+        "72bd6ab73ab1af10903ba65990dc93914dda47a5a2da9ceea764e304a2df46af",
+        "247de96f3d3cf4ca8d06bb8efa517ac3f242eacb5459bec02d1eae40433784df",
+        "37e4912a7b16ac93d401a09e55da57da61bea1bd8b2f3f7f5cc19f0ca97b7462",
+        "ed1bf5efa9f5b37a3b0972ce60b3bb36449768ab0daba51781d5e31efe0a9a67",
+        "5eff5379c086bbc3d86e8b450061a73f5a98e6ccb5cea47cfd7eb698f9c6a252",
+        "b74f44eaeab9cc68fb87b620867961771dd16c1ef87eb8dae1bbf821f8afd116",
+        "b53c7fb50329af290e242518c3314d7d79e38f04540e77f4d9a2ce066f573ca2",
+        "9a512c51313508ac4bdf797ab9b1a741689d2819ac1f04457a79a1bd8a7d22c2",
+        "c008ffd7345915275edc8e1d8feab210823d6840810927fd792046e7310c63dc",
+        "3ae41fea0660ee920bafa9f02de120edbb4a8e30b639c7f95dd8c341ac12f1ed",
+        "c019eae41261313d874a928eda4298a4d30397eafd96dfe20210128c400f7657",
+        "270591c651d5e7dcd391e67ba71e921fc7ccdcb72a72b6c56c0ff23da32e023d",
+        "6e58edc424c868d25f4b48fdc374a64c89ad4e214e172eba25713447e79ec320",
+        "77ebcb9d83d191b86a77978d163d9a29a0584d47162831bff001fd563c60364d",
+        "d2542486c2ebe080a9402213b1e28849cb56502f0a98f683f23040300868d466",
+        "fa309403ddfc2d6beac8d8aff0ee48672dace08de4a43950b3ea88565eb6e108",
+        "ab82e8adbe13520605c38bc294be8bbffe26838c198ff97c7320d041ece74653",
+        "2d57fd3b6fa551b122683e5be19d8d56c1988491550e566d7e1d66cbfd901abf",
+        "34190ce9cb45c872783c090033488e06c162e46457655f85e12c5ceabf6934c4",
+        "a8e6f2f75c14c925baa3b92f492544562de6993599fe647c8a6830b1532c796e",
+        "8ece462c5ffb216619b5a8f3a853f7d362015594fce1cf8b00d47c929c006c65",
+        "83fc558675235e471c45edb142004bdd50efe338ecb86cfda8db91424cddc2a2",
+        "27ed0356d76fd42d3beb17fc296b9f724317f771d7a6622248328445b2946708",
+        "44056c99f0ef280a0310ec476c939006e708dcf2f84ca286c69758c5a2e7bf8e",
+        "dd9ff983a77d08adc03e9e180fa6764cc4565cbe2470a83d14c15c4a132fac30",
+        "167b6024d2896f58e96dda3e743fa7126bc3982e4b9fc142310d615458c9d1c7",
+        "992a1a46c03676a8cf24a6fc99e483cbe4d37ceb156c0434f5fc4eb6029cf8ba",
+        "35af132a09bcb91dcb0d977b8984c07659c893035c8589c36543d6facba72f4b",
+        "a682b32c7cdac4b0c16ec4ae558f3496d8c49ef8f1699e69cd478143bdc7bd8c",
+        "cc3db40ac564ba1a66efef6ac3e6a5b7389ce89e57f1128a519d92ddeee91ab5",
+        "f97bb0eea5e667349ef89f347993ddd2b4fcca939e31b5efbd60d78f0ae7104c",
+        "a879cb71b3da7d401d47ad43dae4530a5e69a2db225e12ba341b53a9deec5c9f",
+        "326a3fcaaf826e70a98566ff34ddc1bb41e80e32c93e2c1b2d1051cae17fb5de",
+        "b7d950b825da5e7ef419b0484922365963e783e177c3e932f224fdb32a7ad06d",
+        "fa21e3f3380a2c344c897918c2fc22941047d0309bb572fcfbe4acc8692be3fc",
+        "df21b6a11812ecc1927fd41c317e39acf2a6122096fc94c54f00cc9047b48b38",
+        "089aa8078691f0e052aab3df4d6e29338b2502dbf191f9fa1f4614d6dfb2bcc5",
+        "f29ea540efab900a5051f0a0247302c38b8be61dad312381114490b1ae62a0fe",
+        "7658159e2ac7d772109ea1aa2fd9207f6ca02a2aa0a0673ed13e60da99edeec5",
+        "3f4567124f37d661f83f1e6e1b02e8739eba9f225ef43663479791ecd8a3a56d",
+        "0c3e4851788688f4b1d115440d8aa968686988a9458ce6bf45bb96a69e71404c",
+        "9d97860e62a7559cd14b7427d37df201bbde81dcdb3cc65bb5657d8ed3b9915a",
+        "8c61c3388bf0b50c12cb056cdec6e9e4ed443d42b0fdef8bdbf93cc55878adfb",
+        "8ee924d54c06de355968179003d2b4500548b5722f21aac23e1685cca4654988",
+        "0f88e5248f3e60d57dec7772d4504cd132c0ced3297f0c22d4dd914ca867caa6",
+        "f4762469676516268a4f7570ee7eb168439648b26ea936905b8b2ab811f9ab35",
+        "443377ee2831f181a2dd66dcb23354cd5c18d69b3eb92619b98854b9e00c16a9",
+        "66b03e8536c930e26be2434304036b011b9becb8617f81b833e9e01037e8b1e3",
+        "08564f6de9b3409cf3e1d3077064a925926a42be9fb8656d038de680cc9e8260",
+        "3c4bf9296cac5688f00580d93ee7e5cc49eddcfd4e7ed548795e821d94bc8e31",
+        "afa4c19271d7c08d5691e54af9fa88ebba0126a02ae9293f125d3be9e15e7d70",
+        "8265ebe7a02381596a244d725f3db72fe756fa8d65da12697208450a96b49bb8",
+        "02e0238eea261d9a19959a6076b7833219cf42e48e4afd48f8df166eaceee5d6",
+        "77e4afac7f3c0dd67a2841b703f9892c730e7584c82ac7df70c300dbf52b42cf",
+        "246c5a8a86e7fbeb63ebbf4be16a79504b866374c18fe635bcab31db388f798f",
+        "31241238650df0aa6295208453309a2459337af210cd736806e0f72c7b0cedbf",
+        "b46f140e320d4b0779c8d70f022b729e29d011c58ef1f7199e6bb45e6adfc8bb",
+        "68039dc6ee6b00c978b9e57c6581083629a4dd12bdbf34ca4b64765e546781a6",
+        "57cee1b1e8ebde7f1e8c3cb24369f8aad09098f608d7dee47b1979cd44213025",
+        "39b9ca307e6d0861c277449f1e9cb960cd6b8f2f2d2e590c97e88ddcc3557987",
+        "63e03368fc39aa58d9f9aac37b7e4dce9d1c3eebfd507e1f909510a2c4a955be",
+        "705bf518197fb5d5ea69c9a705233802d051c3b564feac977c75d8c938cd8abf",
+        "c9cf1018661a2dda16f9b334ed356f68af1d2889a36900d067e0beaa88d1b219",
+        "d3d518cb7fe52194b09a68d7c813717963bbaf08cfc3e4a397d1b587f903976b",
+        "927aef7e974be1a90570aa3da19d9f7588d05def1f4efdb5152cb216a2bd2b8a",
+        "14b80896b23709666dc6dd83eea3f19b9698c1454adc73eb50718f8fdfef5bf6",
+        "372ccdbbfcf35d20693b68df116edd22fcf25181ea870ece8e5d21a7ea5364a0",
+        "7d8509e49366fff2b043cf4dbf135759f7cf32a4cfc80461bf2175f647765f6f",
+        "4a9b85e2e694c3a00c71102639a6645744c7be2d16030206396ac010413dd1fc",
+        "06a0eaf08e224b9c6d8439b770d5e19991f20bd15fc0ad4d8396d88f9200c746"
+      ],
+      "expression": "(Truth_Induction (stv 0.023255813953488372 0.6666666666666666) (stv 0.023255813953488372 0.6666666666666666) (stv 0.7093023255813954 0.6666666666666666) (stv 1.0 0.6666666666666666) (stv 0.0 0.6666666666666666))",
+      "hypothesis": "c3:d12113856234c031ba601b4c",
+      "parity": true,
+      "tv": {
+        "confidence": 0.0,
+        "strength": 0.0
+      }
+    }
+  ],
+  "marginals": [
+    {
+      "confidence": 0.9411764705882353,
+      "strength": 0.18604651162790697
+    },
+    {
+      "confidence": 0.9411764705882353,
+      "strength": 0.18604651162790697
+    },
+    {
+      "confidence": 0.9411764705882353,
+      "strength": 0.9186046511627907
+    },
+    {
+      "confidence": 0.9411764705882353,
+      "strength": 1.0
+    },
+    {
+      "confidence": 0.9411764705882353,
+      "strength": 1.0
+    }
+  ],
+  "native_expression": "(Truth_Induction (stv 0.18604651162790697 0.9411764705882353) (stv 0.18604651162790697 0.9411764705882353) (stv 0.9186046511627907 0.9411764705882353) (stv 1.0 0.9411764705882353) (stv 1.0 0.9411764705882353))",
+  "native_truth_value": {
+    "confidence": 0.46972477064220186,
+    "strength": 1.0
+  },
+  "population": [
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "bc06932b139e2122ed28a7af247785b9d4002f3c9b4e66297caed76a3a922a70",
+      "group": "contact-bishop-0",
+      "input": {
+        "fen": "8/8/8/8/3K4/4b3/7k/8 w - - 0 1",
+        "move": "d4d5"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "cb4184a1a9009a6d0a48569f2e35ccd30bc2f9783cf0928d502750c009fdbea1",
+      "group": "contact-bishop-1",
+      "input": {
+        "fen": "8/2Kb4/8/k7/8/8/8/8 w - - 0 1",
+        "move": "c7c8"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "b53ee766a90d01e1056b088d2fa35b07231ebe322805f9cdbc808daed20f4d90",
+      "group": "contact-bishop-2",
+      "input": {
+        "fen": "8/2k5/8/5K2/8/4b3/8/8 w - - 0 1",
+        "move": "f5f6"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "41f8c03e6b64e9fa71c5ff3d502ad56523ef303498a76d0228d6aba1e4a87a4e",
+      "group": "contact-bishop-3",
+      "input": {
+        "fen": "8/8/8/5Kb1/8/8/8/3k4 w - - 0 1",
+        "move": "f5f6"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": false,
+      "evidence_fingerprint": "c4e6071abbbdac0430d7e376c131f972b7ce7c4b3d59001be38720185b7a0572",
+      "group": "contact-bishop-4",
+      "input": {
+        "fen": "3K4/5b2/8/8/8/8/3k4/8 w - - 0 1",
+        "move": "d8(3,8)"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "6caaa68932c56ccdbafcb33309921eaab6be97d4da29c401d6ebcf56aa7e53cb",
+      "group": "contact-bishop-5",
+      "input": {
+        "fen": "8/6k1/2b5/8/8/8/8/6K1 w - - 0 1",
+        "move": "g1g2"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "38cc6fef94ef1da39fffbc6d652e0f9886e1274daa36813cfa299487af662a2b",
+      "group": "contact-bishop-6",
+      "input": {
+        "fen": "b7/8/8/2k5/8/7K/8/8 w - - 0 1",
+        "move": "h3h4"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "01bebf94da93448583b5293574acdb78980608cbdf784131e4b7bc8b63eb9162",
+      "group": "contact-bishop-7",
+      "input": {
+        "fen": "b7/8/2K5/7k/8/8/8/8 w - - 0 1",
+        "move": "c6c7"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "c8703718c0f2a6617c97f0bd93ac8989c47ce99716c2bc99b169bf699a025e4b",
+      "group": "contact-king-0",
+      "input": {
+        "fen": "8/8/8/8/7K/5k2/8/8 w - - 0 1",
+        "move": "h4h5"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "e0b48377cfd40ad6646e26a440bd7fce9871b6a9a978e7426f588435d480acc3",
+      "group": "contact-king-1",
+      "input": {
+        "fen": "8/8/8/8/8/2K4k/8/8 w - - 0 1",
+        "move": "c3c4"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "972334632f6583886d606f6045fdeb4c8664da5c8df9c5dac6f159d20384e9f8",
+      "group": "contact-king-2",
+      "input": {
+        "fen": "8/8/1K6/3k4/8/8/8/8 w - - 0 1",
+        "move": "b6b7"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "95172cbb0af9275caa4b8f0d4422fae5c0d724594200ac4b0959b1a529dba56e",
+      "group": "contact-king-3",
+      "input": {
+        "fen": "8/6K1/4k3/8/8/8/8/8 w - - 0 1",
+        "move": "g7g8"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "e0b1b1e888f66defa95d5dd7bfaac58c325d136842d8164f47681f2e7134f03c",
+      "group": "contact-king-4",
+      "input": {
+        "fen": "8/8/8/8/2k5/K7/8/8 w - - 0 1",
+        "move": "a3a4"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": false,
+      "evidence_fingerprint": "b74e0c367ea26a4e9d98a40b044a85acfc2910f664eb65166ad6abfb14a620d3",
+      "group": "contact-king-5",
+      "input": {
+        "fen": "K7/2k5/8/8/8/8/8/8 w - - 0 1",
+        "move": "a8(0,8)"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "680e55d58a51ea265b11e68495ba435fb1a21699d5c0a44601a9b04af1856745",
+      "group": "contact-king-6",
+      "input": {
+        "fen": "8/8/1k6/8/2K5/8/8/8 w - - 0 1",
+        "move": "c4c5"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "08e28333c76c2ce792b58c2a91b240e445fe3505cbdb5057cd302ab3fc6ac931",
+      "group": "contact-king-7",
+      "input": {
+        "fen": "8/2K5/8/2k5/8/8/8/8 w - - 0 1",
+        "move": "c7c8"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "83a8c0a6a90fdf611b53ae14ad0a6696c09b506b676b9e174adb85b0db789bb9",
+      "group": "contact-knight-0",
+      "input": {
+        "fen": "8/2Kn4/8/8/8/8/4k3/8 w - - 0 1",
+        "move": "c7c8"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "8ed70135eb386b471573b2bd416ee477ce3fb9953a2f6f5ace37048da2b436e3",
+      "group": "contact-knight-1",
+      "input": {
+        "fen": "3k4/8/8/8/5Kn1/8/8/8 w - - 0 1",
+        "move": "f4f5"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "165989369632fd61bf8c1fccb800de398fa248b2125d1d5bf1e4e58e6d17337f",
+      "group": "contact-knight-2",
+      "input": {
+        "fen": "8/3K1n2/8/8/8/8/4k3/8 w - - 0 1",
+        "move": "d7d8"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "eb99ddae133671278ba92dfa2e4a8584cdad2bbd7160fcdc9f10d625a8580fd3",
+      "group": "contact-knight-3",
+      "input": {
+        "fen": "8/8/3k4/n7/8/2K5/8/8 w - - 0 1",
+        "move": "c3c4"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "c620a57be3e3b55b2cc193452a544898bb7d1939ab7e07afc3981fe00304541a",
+      "group": "contact-knight-4",
+      "input": {
+        "fen": "8/2n1K3/8/4k3/8/8/8/8 w - - 0 1",
+        "move": "e7e8"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "3f751c624131900fb822cb6f3f30fcf6a7dd6e81c5fd96db5a4cc0c274ced338",
+      "group": "contact-knight-5",
+      "input": {
+        "fen": "8/5n2/1K6/8/8/8/8/k7 w - - 0 1",
+        "move": "b6b7"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "ca11d758b659276270657747c20ae224da7c9ad69b297ff65d45d91ba7149e22",
+      "group": "contact-knight-6",
+      "input": {
+        "fen": "8/8/8/4K3/3n4/8/8/5k2 w - - 0 1",
+        "move": "e5e6"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "aa1cb663736b8188e5544067da4a323bdb952020868405cdd7476ab938aceb16",
+      "group": "contact-knight-7",
+      "input": {
+        "fen": "8/8/8/1n2K3/8/8/k7/8 w - - 0 1",
+        "move": "e5e6"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "fad3b15f0af7479691d978c37933d092ba1fddcbd5c3d6e2691d61930ac8fe4b",
+      "group": "contact-pawn-0",
+      "input": {
+        "fen": "8/8/8/3pk3/K7/8/8/8 w - - 0 1",
+        "move": "a4a5"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "9fd58f6d05bd54be225f92b15857124dfd48d0a6d84a1232d3dab2a7a2dd65b9",
+      "group": "contact-pawn-1",
+      "input": {
+        "fen": "8/8/2k5/1p6/8/1K6/8/8 w - - 0 1",
+        "move": "b3b4"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "95fb2f70f555486f683e5a3994b8df5dcf53a5cdd38b2a91a28507e84c4a424d",
+      "group": "contact-pawn-2",
+      "input": {
+        "fen": "8/8/8/4K1p1/6k1/8/8/8 w - - 0 1",
+        "move": "e5e6"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "08441bcf8c9b66154998342e405d39d7e4d42427a1dca78191a684bac44a6ae7",
+      "group": "contact-pawn-3",
+      "input": {
+        "fen": "8/8/8/2K1p3/7k/8/8/8 w - - 0 1",
+        "move": "c5c6"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "25da2af660c053dd81efd797634dcaf04178663b1be97e0a2626dad618156429",
+      "group": "contact-pawn-4",
+      "input": {
+        "fen": "8/8/8/8/8/3k4/7p/5K2 w - - 0 1",
+        "move": "f1f2"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "0c739df637f3cc62886f613c236f1e1c6292face1bb2a16224e06ecd55d33b7a",
+      "group": "contact-pawn-5",
+      "input": {
+        "fen": "8/8/8/5k2/8/3Kp3/8/8 w - - 0 1",
+        "move": "d3d4"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "8874114aec002ba24a5e139e5a93069d703ec529f7432895dac567c16bfe2091",
+      "group": "contact-pawn-6",
+      "input": {
+        "fen": "8/8/6p1/8/6K1/8/8/3k4 w - - 0 1",
+        "move": "g4g5"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "17c5fa4805d5d12a4531b84c9bf4e24c6791b8ca33b34aa59768a5b9889b5436",
+      "group": "contact-pawn-7",
+      "input": {
+        "fen": "8/1p1K4/8/8/8/8/8/3k4 w - - 0 1",
+        "move": "d7d8"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "fd1b19470402f422abe98675dd397133a74927a9cd50d3eea8f250afeccb728f",
+      "group": "contact-queen-0",
+      "input": {
+        "fen": "8/8/8/7k/8/8/7K/3q4 w - - 0 1",
+        "move": "h2h3"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "9c0388f8b185a5a72e60bee1ae87d373462333d00cc530dcde937e7d9a42dc92",
+      "group": "contact-queen-1",
+      "input": {
+        "fen": "8/8/8/8/5K2/7k/8/2q5 w - - 0 1",
+        "move": "f4f5"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "817416a70ecf906ee2e66a9946ef8d02d22432183828f522ff446553b508a51d",
+      "group": "contact-queen-2",
+      "input": {
+        "fen": "8/8/k1q5/8/8/5K2/8/8 w - - 0 1",
+        "move": "f3f4"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": false,
+      "evidence_fingerprint": "6c4f2b0239457577a9aa85dd7da5aa955a8388f1f885188822c64197b6299193",
+      "group": "contact-queen-3",
+      "input": {
+        "fen": "6K1/8/8/8/2q5/8/8/3k4 w - - 0 1",
+        "move": "g8(6,8)"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "9095da5faa7cb9c665459b492d919bfa14be169750165d1aa2d74a3c7f061706",
+      "group": "contact-queen-4",
+      "input": {
+        "fen": "8/8/3k4/1K5q/8/8/8/8 w - - 0 1",
+        "move": "b5b6"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "5b7796e6319a575f99305ca370bdeeff8d755e4eadde0f4b1230bcf64d3ff680",
+      "group": "contact-queen-5",
+      "input": {
+        "fen": "8/8/k5K1/8/8/8/5q2/8 w - - 0 1",
+        "move": "g6g7"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "249bdbbbf83d3675fed8e98e88f96eac3febcb25726a8cf6e176c87003b7005d",
+      "group": "contact-queen-6",
+      "input": {
+        "fen": "8/k7/8/8/4K3/8/8/7q w - - 0 1",
+        "move": "e4e5"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "d612133f7165e7336aeba92da652509d0ec1bc861522afacea4fa56d03ab9f64",
+      "group": "contact-queen-7",
+      "input": {
+        "fen": "8/8/8/5k2/8/8/1q6/1K6 w - - 0 1",
+        "move": "b1b2"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "db78c0e8c8c0be452c0404eca82b00685e563cde3c32fb69eebee518f4446732",
+      "group": "contact-rook-0",
+      "input": {
+        "fen": "8/8/2r5/8/6k1/8/8/3K4 w - - 0 1",
+        "move": "d1d2"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": false,
+      "evidence_fingerprint": "fbadeb5adb91ad796d2035f57ae0442e355fae7b39ed17808c5955b5a78f21cd",
+      "group": "contact-rook-1",
+      "input": {
+        "fen": "1K6/8/8/8/3k4/8/r7/8 w - - 0 1",
+        "move": "b8(1,8)"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "135261f480f6515d39fa334fb8780b5902af55f03fe672bba9556db367a962db",
+      "group": "contact-rook-2",
+      "input": {
+        "fen": "8/5k2/8/8/5K2/8/8/3r4 w - - 0 1",
+        "move": "f4f5"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "ee1e18b5f045cdfdc67fb4028bbcca2c33f89aa4932de58bd061119634b31e9e",
+      "group": "contact-rook-3",
+      "input": {
+        "fen": "1r6/1K6/8/6k1/8/8/8/8 w - - 0 1",
+        "move": "b7b8"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "9c8ba4e228c67c04d2f28902590919020174026690d3c67b1ed1f29905b7c19d",
+      "group": "contact-rook-4",
+      "input": {
+        "fen": "8/8/3k4/5K2/8/8/8/4r3 w - - 0 1",
+        "move": "f5f6"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "a304d26a36a556b74f1cd384677eab368b50cf6b71c2bd987918c8705ddbb8cc",
+      "group": "contact-rook-5",
+      "input": {
+        "fen": "8/8/1K4r1/8/8/7k/8/8 w - - 0 1",
+        "move": "b6b7"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "2b46a5e8e31d1936a3488d1e1b01cdfaa7d3382a35c34d859b8358257041b5cc",
+      "group": "contact-rook-6",
+      "input": {
+        "fen": "8/8/8/8/8/8/6r1/k4K2 w - - 0 1",
+        "move": "f1f2"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "cd52aa567f0592b9af5219378e28192bb4c91232824340df7846876d00245fe6",
+      "group": "contact-rook-7",
+      "input": {
+        "fen": "8/8/8/6K1/8/8/6rk/8 w - - 0 1",
+        "move": "g5g6"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "658f656d1f38db3cded13b8f035e39120c284eca97caad5b8702fd95847d5d03",
+      "group": "historical-bishop-main",
+      "input": {
+        "fen": "8/7k/8/8/8/2B5/8/K7 w - - 0 1",
+        "move": "c3d4"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": true,
+      "B": true,
+      "C": true,
+      "evidence_fingerprint": "c5dfc24c03d3ad8ad5844421cf14217bd1bee0c8acc613cda16e454574e83286",
+      "group": "historical-castle-main",
+      "input": {
+        "fen": "4k3/8/8/8/8/8/8/4K2R w K - 0 1",
+        "move": "h1h2"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": true,
+      "B": true,
+      "C": true,
+      "evidence_fingerprint": "1faf5b3f5c4b2127531f302002211cf517dacf0b405e10c4f919a4453952b2d7",
+      "group": "historical-castle-queenside",
+      "input": {
+        "fen": "4k3/8/8/8/8/8/8/R3K3 w Q - 0 1",
+        "move": "a1a2"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "a86c3d165063375937e9ff8297f48ad21c999026e75e8b03ad92b211adf22566",
+      "group": "historical-ep-main",
+      "input": {
+        "fen": "7k/8/8/2Pp4/8/8/8/K7 w - d6 0 1",
+        "move": "c5c6"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "8117ba67f61969d9106422ffae6f1098f186dd030d7ec31ca450b49dc0d1d6ab",
+      "group": "historical-king-main",
+      "input": {
+        "fen": "7k/8/8/8/8/8/2K5/8 w - - 0 1",
+        "move": "c2c3"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "d5027731a28f52d36a9757e05a6398996334c06fcf5c1c2d0f2251ef0a672989",
+      "group": "historical-knight-main",
+      "input": {
+        "fen": "7k/8/8/3P4/2N5/8/8/K7 w - - 0 1",
+        "move": "d5d6"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "0dae12a786900e1c0c045638e6a51207895066cbfed0d4c3981013af3d8344ea",
+      "group": "historical-pawn-main",
+      "input": {
+        "fen": "7k/8/8/8/8/8/2P5/K7 w - - 0 1",
+        "move": "c2c3"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": true,
+      "B": true,
+      "C": true,
+      "evidence_fingerprint": "3445aef8cf5c0848d2bf7e9c601864dd6278ee934f26778710e68d820f513b7e",
+      "group": "historical-promotion-main",
+      "input": {
+        "fen": "2R5/2P4k/8/8/8/8/8/K7 w - - 0 1",
+        "move": "c8d8"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "a3d41e6381967d26107267ed5518a23238262c396a1af7bb52ac3f3c88551d90",
+      "group": "historical-queen-main",
+      "input": {
+        "fen": "7k/8/8/8/2Q5/8/8/K7 w - - 0 1",
+        "move": "c4c5"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": true,
+      "B": true,
+      "C": true,
+      "evidence_fingerprint": "4160758d3aa04fbd6c0ae87fb88f444b0f2b3cd0cb3e9d36f67334df7ea74afa",
+      "group": "historical-rook-east",
+      "input": {
+        "fen": "7k/8/8/8/8/8/2R5/2K5 w - - 0 1",
+        "move": "c2c3"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": true,
+      "B": true,
+      "C": true,
+      "evidence_fingerprint": "8c80cea3196b0e2ffc89c90b332985a163b71227ef5e49a092e7b8683c6e6da9",
+      "group": "paired-locality",
+      "input": {
+        "fen": "8/6k1/8/8/8/2R5/2K5/8 w - - 0 1",
+        "move": "c3c4"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": true,
+      "B": true,
+      "C": true,
+      "evidence_fingerprint": "8e2d4a94cc8a8b43835dcd1547836274dbb49165ec878d4e88edfc119b1e0576",
+      "group": "train-game-0",
+      "input": {
+        "fen": "rnb1kb1r/1p1pqpp1/2p2n2/1B2p2p/4P2N/1pP2P2/P2P2PP/RNBQ1RK1 w kq - 0 10",
+        "move": "f1f2"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": true,
+      "B": true,
+      "C": true,
+      "evidence_fingerprint": "2605a063548f041bbcd7e1f3b572e5c85f504b0e94a1565df11162d71629b177",
+      "group": "train-game-1",
+      "input": {
+        "fen": "r1b2br1/pp1qk1pp/2p5/P2pPp2/1nP1P1n1/NP1PQ2N/6PP/R1B1KB1R w KQ - 3 14",
+        "move": "a1a2"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": true,
+      "B": true,
+      "C": true,
+      "evidence_fingerprint": "fd6b7afddbd48be8b60530d7e6d24fae376e0a2f730026b8c8c3b6e4f43ddbf0",
+      "group": "train-game-2",
+      "input": {
+        "fen": "1r1qkb2/2p3pr/2np1p1n/pp1bp3/PP3P1p/2PPP3/1B3QPP/RN2KBNR w K - 4 18",
+        "move": "a1a2"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": true,
+      "B": true,
+      "C": true,
+      "evidence_fingerprint": "fb3773ccb6046d894c5523987cf63603194731626b79a2cfb6e2157956a17530",
+      "group": "train-ray-0",
+      "input": {
+        "fen": "5K2/8/8/8/8/5R2/8/6k1 w - - 0 1",
+        "move": "f3f4"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "05b694ee065101c75c959c147765fdd84efba2fcdd3d7e4dbec74b6a6e0bf9bf",
+      "group": "train-ray-1",
+      "input": {
+        "fen": "8/8/1k6/8/8/5B2/8/4K3 w - - 0 1",
+        "move": "f3g4"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "2d3480a36a0ce435a48180686f32ce1c2fa248a2d28fb33c409b645d552b8af1",
+      "group": "train-ray-10",
+      "input": {
+        "fen": "8/8/8/8/4Kn2/8/3B3k/8 w - - 0 1",
+        "move": "e4e5"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "0c5c4440cf6bcde4f3fcd6b3317588e4a7655fc9cae9b63b0ea233410e55851e",
+      "group": "train-ray-11",
+      "input": {
+        "fen": "3k4/7n/8/5Q2/2K5/8/8/8 w - - 0 1",
+        "move": "f5f6"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": true,
+      "B": true,
+      "C": true,
+      "evidence_fingerprint": "43302022da872476b388b8ae1d35fa568169eb47975c007300b23b23e0db1dda",
+      "group": "train-ray-12",
+      "input": {
+        "fen": "8/5R2/8/k7/8/8/8/7K w - - 0 1",
+        "move": "f7f8"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "60fbf63b967179e12bfc05e29d6f2b4dcc1a47ecdcf0d8543815760cbb4a57f7",
+      "group": "train-ray-13",
+      "input": {
+        "fen": "8/8/B2K4/8/k7/8/8/8 w - - 0 1",
+        "move": "a6b7"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "6ee0275ad3fc3257a82f60b5e4231a6f340dc2bdb64412fb29d951e8f043bd6c",
+      "group": "train-ray-14",
+      "input": {
+        "fen": "1k6/8/2K5/8/Q7/8/8/8 w - - 0 1",
+        "move": "c6c7"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": true,
+      "B": true,
+      "C": true,
+      "evidence_fingerprint": "2b65b22d649804363d3a028e1367a17da9b2a78a062b7efefcbe70b75b7a8785",
+      "group": "train-ray-15",
+      "input": {
+        "fen": "4K2k/8/8/8/8/4RN2/8/8 w - - 0 1",
+        "move": "e3e4"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": false,
+      "evidence_fingerprint": "11ea0b6ae6eb6979f4bcd8cce14da2e0b23df6d5d09db4f3c5e67c157c639c60",
+      "group": "train-ray-16",
+      "input": {
+        "fen": "4K3/8/6k1/1N6/B7/8/8/8 w - - 0 1",
+        "move": "e8(4,8)"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "8cef0cd7cb608b1e4a04eadfd1a3c5e4abd2518af7c57c5c775e635bb4c85a5c",
+      "group": "train-ray-17",
+      "input": {
+        "fen": "8/6N1/5Q2/8/k7/8/3K4/8 w - - 0 1",
+        "move": "g7f5"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": true,
+      "B": true,
+      "C": true,
+      "evidence_fingerprint": "da05ee144fc2253880a86032b76ed43015b5877be4968790374e41f093068f5a",
+      "group": "train-ray-18",
+      "input": {
+        "fen": "8/8/8/8/2K5/7k/R1N5/8 w - - 0 1",
+        "move": "a2a3"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": false,
+      "evidence_fingerprint": "d94d0fbc9614239edbf02cb6e303e8e3a016f59ba06460f2f043f7055b205c19",
+      "group": "train-ray-19",
+      "input": {
+        "fen": "1k5K/8/8/5N2/8/3B4/8/8 w - - 0 1",
+        "move": "h8(7,8)"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "f8eacd14db01d8eea14f4535385603751016dacb02489e624d361c820aa2ba8a",
+      "group": "train-ray-2",
+      "input": {
+        "fen": "8/8/3Q4/4K3/8/8/8/6k1 w - - 0 1",
+        "move": "d6d7"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "58d231f369503dc8feffef396202c3635871af85afdecb5e533b1a815e080bcc",
+      "group": "train-ray-20",
+      "input": {
+        "fen": "8/6k1/8/1K6/8/8/Q1N5/8 w - - 0 1",
+        "move": "b5b6"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": true,
+      "B": true,
+      "C": true,
+      "evidence_fingerprint": "5cdd779faa288e9789495290c470278dc1b1f8e23883f9eb2c420337098367da",
+      "group": "train-ray-21",
+      "input": {
+        "fen": "8/8/8/8/5k2/4R1n1/8/7K w - - 0 1",
+        "move": "e3e4"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "77d69b90408590c0a7f2cac4d48d435ccdfc33dff4267bdaf8752685808da20a",
+      "group": "train-ray-22",
+      "input": {
+        "fen": "8/8/7n/8/5B2/8/1k2K3/8 w - - 0 1",
+        "move": "f4g5"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "78290e8ac0987606d84f6306f17f288713e2852c6a796989de676b82ab73e96d",
+      "group": "train-ray-23",
+      "input": {
+        "fen": "8/8/8/5k2/8/2n5/3K4/Q7 w - - 0 1",
+        "move": "d2d3"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": true,
+      "B": true,
+      "C": true,
+      "evidence_fingerprint": "88675ec430902bf3ee6b0ae8588834b78ec37295d935a96fa995ad43a7108568",
+      "group": "train-ray-3",
+      "input": {
+        "fen": "7K/8/8/1k6/8/8/8/5RN1 w - - 0 1",
+        "move": "f1f2"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": false,
+      "evidence_fingerprint": "d0e4759fc4d1223dce2030f8c7c6dcd98fb4c060091a7df540f0ac3d49462499",
+      "group": "train-ray-4",
+      "input": {
+        "fen": "4K3/8/8/6N1/5B2/8/8/1k6 w - - 0 1",
+        "move": "e8(4,8)"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "41804dc1f6f770d669353949564749747056e058eed5a6c78ea885850f5a7a4b",
+      "group": "train-ray-5",
+      "input": {
+        "fen": "8/1N6/Q7/8/2K5/8/1k6/8 w - - 0 1",
+        "move": "b7a5"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": true,
+      "B": true,
+      "C": true,
+      "evidence_fingerprint": "110a1588c96e7f58bbf99be9fd58b42ec42605f35d2cd814fa2d88446e0d4980",
+      "group": "train-ray-6",
+      "input": {
+        "fen": "6K1/8/8/8/1R1N4/8/7k/8 w - - 0 1",
+        "move": "b4b5"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "9401b763312adafd1a3b9f08bce5b445e35f2694251341a4386a41283aa32ca7",
+      "group": "train-ray-7",
+      "input": {
+        "fen": "8/8/8/3N1k2/8/1B6/8/4K3 w - - 0 1",
+        "move": "d5c3"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": false,
+      "B": false,
+      "C": true,
+      "evidence_fingerprint": "d97f5f5af87bc8ac6e89a6f52028235b2b0beed9aaed0351b7fef2de7c8c3b61",
+      "group": "train-ray-8",
+      "input": {
+        "fen": "8/8/8/K7/8/8/4Q1Nk/8 w - - 0 1",
+        "move": "a5a6"
+      },
+      "source": "python-chess/1.11.2"
+    },
+    {
+      "A": true,
+      "B": true,
+      "C": true,
+      "evidence_fingerprint": "d15a642de5f05b86e4d26ed4bde93579cff109588f65e7f617f48b15e5a11c59",
+      "group": "train-ray-9",
+      "input": {
+        "fen": "3R1n2/4K3/8/7k/8/8/8/8 w - - 0 1",
+        "move": "d8e8"
+      },
+      "source": "python-chess/1.11.2"
+    }
+  ],
+  "production": "Experimental only, disabled. The C4-full and no-induction production configurations are identical in semantics.",
+  "production_direct_hypothesis": {
+    "contradicting_evidence": [],
+    "dependence_groups": [
+      "historical-castle-main",
+      "historical-castle-queenside",
+      "historical-promotion-main",
+      "historical-rook-east",
+      "paired-locality",
+      "train-game-0",
+      "train-game-1",
+      "train-game-2",
+      "train-ray-0",
+      "train-ray-12",
+      "train-ray-15",
+      "train-ray-18",
+      "train-ray-21",
+      "train-ray-3",
+      "train-ray-6",
+      "train-ray-9"
+    ],
+    "derivation": "Typed relative projection; never a native conjunction.",
+    "descriptor": {
+      "destination": "Empty",
+      "effect": "ordinary",
+      "motion": "orthogonal",
+      "piece": "Rook",
+      "promotion": null,
+      "ray_contents": []
+    },
+    "evidence_ids": [
+      "dabd0515e18f159ac6439ff2930552e9330265db82e11223df822de5c89c0096",
+      "25fa265f273cec5f2b9f61b3c47462bbece9a15281617dfa040df48f192944a8",
+      "3d21170160a0e90642c64f305f02c5ccbe2b0357a3b79e86e89cf241d4face5e",
+      "dd124c18384c91b52358b4a3ae5468417f50b8730d6561a7a5c863e6c82ba7e0",
+      "ddebf741c4390aef85cd0f463e6268e11aa4f7348c365b8b3559cfbed55d5bb5",
+      "00d8962005a039ed00979793201b26bcd056bb5394e80422de0e41f3292c7f17",
+      "ebb453221ad503d969b3d23e22bb57045096d7dce81300ee770beebf5c57cb1c",
+      "cb104065378136936aa4e4a0511bc64527672cbb6356da2b349eae7fa88ef14b",
+      "8cf16e8d18e4fb61f6d39885112446a00277ea49d6afadddfb18136de2b35f95",
+      "d6e2bf6bf17de6068d99e0372d63e0b19a3d33fa632fca233542d1769168f706",
+      "a7dc5e42ccb19dbac800d3933b5921abd177248bc156fa22c8facf7b76761df1",
+      "bc3a94147dbfb9497a6ba8fa510db1d948103ec4f93d3935508c27a3d1296a69",
+      "410aed97eb858bcbb5ff365103d4921148d12d56688e87e32cd61409593ff7bc",
+      "16329023f8bdce2fc448ca68044d822cddb65924bca5d1e6da31311dcf71b8e2",
+      "3f4ed321dfd10c8b1f729fbad01b02f68af2e0bb9c147a12dd9d6484c7dec017",
+      "1b5b1f3a12bea93f98a8cfc43bb6c334385d2b911d96d913d5dbbf334d29f27f"
+    ],
+    "id": "c4:a8de3a29ef9877ed10d7b463",
+    "negative": {
+      "confidence": 0.9413580246913581,
+      "strength": 0.0016393442622950848
+    },
+    "origin": "direct-native-revision",
+    "positive": {
+      "confidence": 0.9413580246913581,
+      "strength": 0.9983606557377048
+    },
+    "provenance": "host-grounded",
+    "supporting_evidence": [
+      "dabd0515e18f159ac6439ff2930552e9330265db82e11223df822de5c89c0096",
+      "25fa265f273cec5f2b9f61b3c47462bbece9a15281617dfa040df48f192944a8",
+      "3d21170160a0e90642c64f305f02c5ccbe2b0357a3b79e86e89cf241d4face5e",
+      "dd124c18384c91b52358b4a3ae5468417f50b8730d6561a7a5c863e6c82ba7e0",
+      "ddebf741c4390aef85cd0f463e6268e11aa4f7348c365b8b3559cfbed55d5bb5",
+      "00d8962005a039ed00979793201b26bcd056bb5394e80422de0e41f3292c7f17",
+      "ebb453221ad503d969b3d23e22bb57045096d7dce81300ee770beebf5c57cb1c",
+      "cb104065378136936aa4e4a0511bc64527672cbb6356da2b349eae7fa88ef14b",
+      "8cf16e8d18e4fb61f6d39885112446a00277ea49d6afadddfb18136de2b35f95",
+      "d6e2bf6bf17de6068d99e0372d63e0b19a3d33fa632fca233542d1769168f706",
+      "a7dc5e42ccb19dbac800d3933b5921abd177248bc156fa22c8facf7b76761df1",
+      "bc3a94147dbfb9497a6ba8fa510db1d948103ec4f93d3935508c27a3d1296a69",
+      "410aed97eb858bcbb5ff365103d4921148d12d56688e87e32cd61409593ff7bc",
+      "16329023f8bdce2fc448ca68044d822cddb65924bca5d1e6da31311dcf71b8e2",
+      "3f4ed321dfd10c8b1f729fbad01b02f68af2e0bb9c147a12dd9d6484c7dec017",
+      "1b5b1f3a12bea93f98a8cfc43bb6c334385d2b911d96d913d5dbbf334d29f27f"
+    ],
+    "target": "LocalAdmissibility",
+    "tier": 4
+  },
+  "runtime": {
+    "atomspace": "PeTTa native in-process MeTTa space (no Hyperon AtomSpace dependency)",
+    "petta": {
+      "branch": "main",
+      "commit": "ee5cacb6a6ecdd554a1c773aaf47e9a0f8a5af0f",
+      "files": {
+        "run.sh": "269a50bc47e8a5f614f1999161d7f5f6ea51c4615d39f12a404540071f124ff0",
+        "src/ext_points.pl": "0b5f1b115e29892ab1bf5833c022df4c2f3f1558cb04f57a8f52de5ccdad8436",
+        "src/filereader.pl": "fb677e03ffbf945f8c752aa02c8db481cebfbdd219660bee387af596e3ce7bc1",
+        "src/load_cache.pl": "619fc64d253221d06907234d2b94d8c3395b4a6facbe56b2a4bb38c84c9c0ac3",
+        "src/main.pl": "2a57276bb0cd32f29e0bd983c2640f1e9bc1646e22bfc266230d3dc13b9ecc6c",
+        "src/metta.pl": "9ee89a19768c82052606b738e7abd88971c5ac826b7cf9fc1ab770e02779337d",
+        "src/parser.pl": "69ab6dd840fcc585d916fd25a496a09dd30ca9aaacf6e55baaa67c8c020c84c1",
+        "src/spaces.pl": "553acea6a6ad210ff46cb0c883af7587295c689fcd5d768566428607417f0bb0",
+        "src/specializer.pl": "b27a2a6430914c11dc9cd0d27b9a3aa5945064607c48979b7a2a0e50bd0f5141",
+        "src/translator.pl": "cda4dcfc4f77ff0d3feb858b1502ec685fb8b1ddbd7cc555193b76ac7de12220",
+        "src/typecheck.pl": "c45a5a66001255004944731e72dc7a2b71872328027c0f23117442896767e91c",
+        "src/typecheck/abstract_domain.pl": "7fafddae3126fc3ab6f9c2380a4809d0dc5331ae1a622df3be6176167d90d8b9",
+        "src/typecheck/analysis_proofs.pl": "96687dbdd49730b355200eb8135aec8a55953daa1dc250196743951565b5350f",
+        "src/typecheck/builtin_registry.pl": "e0a65099592fa3283ff6f31e90f776366f499eb8e172102393b96bd8183d5005",
+        "src/typecheck/call_summaries.pl": "adb9383a34fd3c0cbaa6e898fd1ee41fcbe2a90327af1b96f4db29bd22c46c00",
+        "src/typecheck/clause_checks.pl": "3b072c51563542b85d8195137dfc06d60932fe25acf14c2dafdadc53367fefc3",
+        "src/typecheck/decl_store.pl": "52f5c17cf51e871a11d81f284094bdb945d3876b799f9157e5131eea3dfdd615",
+        "src/typecheck/dependency_graph.pl": "f344d62ad9e084d2b9ab7dc235094de83db87815cb7b1935c97794490abddaf1",
+        "src/typecheck/det_analysis.pl": "bc04e7791253c3e12b45c81be3f0a7fc419c310898a7b2dab89f86cb329eca9a",
+        "src/typecheck/det_proofs.pl": "1e34de0eb4fad3e79ff5b551e2f966595063db5a6cb268aac45e90448f80fd74",
+        "src/typecheck/det_validate.pl": "98738eb738f4aa76b64d1412ab5e839d151e1bef1fda1019396151a4e1d6ac58",
+        "src/typecheck/flags_arrows.pl": "454f1a1d6b47fe390fc3a8fc11297c6acc798bab6a4f5dc3f009ce79fcc844ed",
+        "src/typecheck/inference.pl": "62d0f2ae9ca97b622cec0676dd3de50016311d940e981e98d243f345579f4430",
+        "src/typecheck/ir_analyzer.pl": "02520b61ccccaba064f62f72f68162bc9b033abec64b77f6e2374e9134b1fe83",
+        "src/typecheck/oracles.pl": "c3ec9fc6e02cf78f58a7f441977fe7ceedad34a78a2a27a43fa52e809256b649",
+        "src/typecheck/relational_ir.pl": "c35f43237b3178ae81f207a79905e9aeb998f8eeac3cc9dce323c6fe62fc0037",
+        "src/typecheck/type_lang.pl": "d9cc0fbdc06002a8249c5b77fa999fb50be4b040626728b66a7e80f2b46255e0",
+        "src/typecheck/unified_checker_bridge.pl": "53ae3521a8265b9680f5434caa2384e0a3831739c53325a6bc2c737b02c2a01a",
+        "src/typecheck/unified_checker_cache.pl": "684f13666c61a1b15ecaf42443d41f15d76efa5d032225a87c873b76ca1da930",
+        "src/typecheck/value_checks.pl": "a8013f13afffd637ba9038c9cf2ef1d8cd056a135696fa676ca5fe88ada25ae6"
+      },
+      "repository": "https://github.com/trueagi-io/PeTTa"
+    },
+    "pln": {
+      "branch": "main",
+      "commit": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+      "repository": "https://github.com/trueagi-io/PLN",
+      "sha256": "cdfb3f18bd7b336440fc7b4409209afddf0e64c41f17dee7eefc8f02718de433",
+      "source": "vendor/pln/lib_pln.metta"
+    },
+    "python": "3.12.12",
+    "schema": 1,
+    "swipl": "SWI-Prolog version 10.0.1 for x86_64-linux",
+    "truth_value": "(stv strength confidence)"
+  },
+  "sampling": "One observation per source group, preferentially the declared rook distance-one stratum, otherwise first ledger row. This is stratified selection, not a random chess population.",
+  "tasks": [
+    {
+      "control": "held-out-distance",
+      "evaluation_label": true,
+      "fen": "7k/8/8/8/8/8/R7/1K6 w - - 0 1",
+      "manually_seeded_abstraction": {
+        "class": "supported",
+        "tv": {
+          "confidence": 0.9304166666666666,
+          "strength": 0.9983606557377048
+        }
+      },
+      "matched": true,
+      "move": "a2d2",
+      "native_induction": {
+        "class": "supported",
+        "tv": {
+          "confidence": 0.4650275229357798,
+          "strength": 1.0
+        }
+      },
+      "revision_only_distance_specific": {
+        "class": "unknown",
+        "tv": {
+          "confidence": 0.0,
+          "strength": 0.5
+        }
+      }
+    },
+    {
+      "control": "friendly-destination",
+      "evaluation_label": false,
+      "fen": "7k/8/8/8/8/8/R2P4/1K6 w - - 0 1",
+      "manually_seeded_abstraction": {
+        "class": "unknown",
+        "tv": {
+          "confidence": 0.0,
+          "strength": 0.5
+        }
+      },
+      "matched": false,
+      "move": "a2d2",
+      "native_induction": {
+        "class": "unknown",
+        "tv": {
+          "confidence": 0.0,
+          "strength": 0.5
+        }
+      },
+      "revision_only_distance_specific": {
+        "class": "unknown",
+        "tv": {
+          "confidence": 0.0,
+          "strength": 0.5
+        }
+      }
+    },
+    {
+      "control": "wrong-geometry",
+      "evaluation_label": false,
+      "fen": "7k/8/8/8/8/8/R7/1K6 w - - 0 1",
+      "manually_seeded_abstraction": {
+        "class": "unknown",
+        "tv": {
+          "confidence": 0.0,
+          "strength": 0.5
+        }
+      },
+      "matched": false,
+      "move": "a2b3",
+      "native_induction": {
+        "class": "unknown",
+        "tv": {
+          "confidence": 0.0,
+          "strength": 0.5
+        }
+      },
+      "revision_only_distance_specific": {
+        "class": "unknown",
+        "tv": {
+          "confidence": 0.0,
+          "strength": 0.5
+        }
+      }
+    },
+    {
+      "control": "held-out-distance",
+      "evaluation_label": true,
+      "fen": "7k/8/8/8/8/8/R7/1K6 w - - 0 1",
+      "manually_seeded_abstraction": {
+        "class": "supported",
+        "tv": {
+          "confidence": 0.9304166666666666,
+          "strength": 0.9983606557377048
+        }
+      },
+      "matched": true,
+      "move": "a2h2",
+      "native_induction": {
+        "class": "supported",
+        "tv": {
+          "confidence": 0.4650275229357798,
+          "strength": 1.0
+        }
+      },
+      "revision_only_distance_specific": {
+        "class": "unknown",
+        "tv": {
+          "confidence": 0.0,
+          "strength": 0.5
+        }
+      }
+    },
+    {
+      "control": "friendly-destination",
+      "evaluation_label": false,
+      "fen": "7k/8/8/8/8/8/R6P/1K6 w - - 0 1",
+      "manually_seeded_abstraction": {
+        "class": "unknown",
+        "tv": {
+          "confidence": 0.0,
+          "strength": 0.5
+        }
+      },
+      "matched": false,
+      "move": "a2h2",
+      "native_induction": {
+        "class": "unknown",
+        "tv": {
+          "confidence": 0.0,
+          "strength": 0.5
+        }
+      },
+      "revision_only_distance_specific": {
+        "class": "unknown",
+        "tv": {
+          "confidence": 0.0,
+          "strength": 0.5
+        }
+      }
+    },
+    {
+      "control": "wrong-geometry",
+      "evaluation_label": false,
+      "fen": "7k/8/8/8/8/8/R7/1K6 w - - 0 1",
+      "manually_seeded_abstraction": {
+        "class": "unknown",
+        "tv": {
+          "confidence": 0.0,
+          "strength": 0.5
+        }
+      },
+      "matched": false,
+      "move": "a2b3",
+      "native_induction": {
+        "class": "unknown",
+        "tv": {
+          "confidence": 0.0,
+          "strength": 0.5
+        }
+      },
+      "revision_only_distance_specific": {
+        "class": "unknown",
+        "tv": {
+          "confidence": 0.0,
+          "strength": 0.5
+        }
+      }
+    },
+    {
+      "control": "held-out-distance",
+      "evaluation_label": true,
+      "fen": "7k/8/8/8/8/6R1/8/1K6 w - - 0 1",
+      "manually_seeded_abstraction": {
+        "class": "supported",
+        "tv": {
+          "confidence": 0.9304166666666666,
+          "strength": 0.9983606557377048
+        }
+      },
+      "matched": true,
+      "move": "g3b3",
+      "native_induction": {
+        "class": "supported",
+        "tv": {
+          "confidence": 0.4650275229357798,
+          "strength": 1.0
+        }
+      },
+      "revision_only_distance_specific": {
+        "class": "unknown",
+        "tv": {
+          "confidence": 0.0,
+          "strength": 0.5
+        }
+      }
+    },
+    {
+      "control": "friendly-destination",
+      "evaluation_label": false,
+      "fen": "7k/8/8/8/8/1P4R1/8/1K6 w - - 0 1",
+      "manually_seeded_abstraction": {
+        "class": "unknown",
+        "tv": {
+          "confidence": 0.0,
+          "strength": 0.5
+        }
+      },
+      "matched": false,
+      "move": "g3b3",
+      "native_induction": {
+        "class": "unknown",
+        "tv": {
+          "confidence": 0.0,
+          "strength": 0.5
+        }
+      },
+      "revision_only_distance_specific": {
+        "class": "unknown",
+        "tv": {
+          "confidence": 0.0,
+          "strength": 0.5
+        }
+      }
+    },
+    {
+      "control": "wrong-geometry",
+      "evaluation_label": false,
+      "fen": "7k/8/8/8/8/6R1/8/1K6 w - - 0 1",
+      "manually_seeded_abstraction": {
+        "class": "unknown",
+        "tv": {
+          "confidence": 0.0,
+          "strength": 0.5
+        }
+      },
+      "matched": false,
+      "move": "g3h4",
+      "native_induction": {
+        "class": "unknown",
+        "tv": {
+          "confidence": 0.0,
+          "strength": 0.5
+        }
+      },
+      "revision_only_distance_specific": {
+        "class": "unknown",
+        "tv": {
+          "confidence": 0.0,
+          "strength": 0.5
+        }
+      }
+    },
+    {
+      "control": "held-out-distance",
+      "evaluation_label": true,
+      "fen": "7k/8/8/8/8/8/8/1KR5 w - - 0 1",
+      "manually_seeded_abstraction": {
+        "class": "supported",
+        "tv": {
+          "confidence": 0.9304166666666666,
+          "strength": 0.9983606557377048
+        }
+      },
+      "matched": true,
+      "move": "c1c6",
+      "native_induction": {
+        "class": "supported",
+        "tv": {
+          "confidence": 0.4650275229357798,
+          "strength": 1.0
+        }
+      },
+      "revision_only_distance_specific": {
+        "class": "unknown",
+        "tv": {
+          "confidence": 0.0,
+          "strength": 0.5
+        }
+      }
+    },
+    {
+      "control": "friendly-destination",
+      "evaluation_label": false,
+      "fen": "7k/8/2P5/8/8/8/8/1KR5 w - - 0 1",
+      "manually_seeded_abstraction": {
+        "class": "unknown",
+        "tv": {
+          "confidence": 0.0,
+          "strength": 0.5
+        }
+      },
+      "matched": false,
+      "move": "c1c6",
+      "native_induction": {
+        "class": "unknown",
+        "tv": {
+          "confidence": 0.0,
+          "strength": 0.5
+        }
+      },
+      "revision_only_distance_specific": {
+        "class": "unknown",
+        "tv": {
+          "confidence": 0.0,
+          "strength": 0.5
+        }
+      }
+    },
+    {
+      "control": "wrong-geometry",
+      "evaluation_label": false,
+      "fen": "7k/8/8/8/8/8/8/1KR5 w - - 0 1",
+      "manually_seeded_abstraction": {
+        "class": "unknown",
+        "tv": {
+          "confidence": 0.0,
+          "strength": 0.5
+        }
+      },
+      "matched": false,
+      "move": "c1d2",
+      "native_induction": {
+        "class": "unknown",
+        "tv": {
+          "confidence": 0.0,
+          "strength": 0.5
+        }
+      },
+      "revision_only_distance_specific": {
+        "class": "unknown",
+        "tv": {
+          "confidence": 0.0,
+          "strength": 0.5
+        }
+      }
+    },
+    {
+      "control": "held-out-distance",
+      "evaluation_label": true,
+      "fen": "7k/2R5/8/8/8/8/8/1K6 w - - 0 1",
+      "manually_seeded_abstraction": {
+        "class": "supported",
+        "tv": {
+          "confidence": 0.9304166666666666,
+          "strength": 0.9983606557377048
+        }
+      },
+      "matched": true,
+      "move": "c7c2",
+      "native_induction": {
+        "class": "supported",
+        "tv": {
+          "confidence": 0.4650275229357798,
+          "strength": 1.0
+        }
+      },
+      "revision_only_distance_specific": {
+        "class": "unknown",
+        "tv": {
+          "confidence": 0.0,
+          "strength": 0.5
+        }
+      }
+    },
+    {
+      "control": "friendly-destination",
+      "evaluation_label": false,
+      "fen": "7k/2R5/8/8/8/8/2P5/1K6 w - - 0 1",
+      "manually_seeded_abstraction": {
+        "class": "unknown",
+        "tv": {
+          "confidence": 0.0,
+          "strength": 0.5
+        }
+      },
+      "matched": false,
+      "move": "c7c2",
+      "native_induction": {
+        "class": "unknown",
+        "tv": {
+          "confidence": 0.0,
+          "strength": 0.5
+        }
+      },
+      "revision_only_distance_specific": {
+        "class": "unknown",
+        "tv": {
+          "confidence": 0.0,
+          "strength": 0.5
+        }
+      }
+    },
+    {
+      "control": "wrong-geometry",
+      "evaluation_label": false,
+      "fen": "7k/2R5/8/8/8/8/8/1K6 w - - 0 1",
+      "manually_seeded_abstraction": {
+        "class": "unknown",
+        "tv": {
+          "confidence": 0.0,
+          "strength": 0.5
+        }
+      },
+      "matched": false,
+      "move": "c7d8",
+      "native_induction": {
+        "class": "unknown",
+        "tv": {
+          "confidence": 0.0,
+          "strength": 0.5
+        }
+      },
+      "revision_only_distance_specific": {
+        "class": "unknown",
+        "tv": {
+          "confidence": 0.0,
+          "strength": 0.5
+        }
+      }
+    }
+  ]
+}

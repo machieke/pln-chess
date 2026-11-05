@@ -1,0 +1,30 @@
+{
+  "PLN_examples": [
+    {
+      "path": "examples/DeductionRevision.metta",
+      "sha256": "88335966e0442ab819639cf715b73bd3b9052223ef0641508cb701259ee709ae",
+      "url": "https://github.com/trueagi-io/PLN/blob/4405956947c4b53c7ff01bd565aa3b114bc970a1/examples/DeductionRevision.metta",
+      "status": "source-inspected; direct operator probes executed separately"
+    },
+    {
+      "path": "examples/RavenInduction.metta",
+      "sha256": "cb05e17f977dd13d08695e7ce13d4db9dfa4b93f13b85711338127d68ae45806",
+      "url": "https://github.com/trueagi-io/PLN/blob/4405956947c4b53c7ff01bd565aa3b114bc970a1/examples/RavenInduction.metta",
+      "status": "source-inspected; direct operator probes executed separately"
+    },
+    {
+      "path": "ruletests/inversion.metta",
+      "sha256": "0de891b7681110088f2dba9324edb9752a37e80325dfd58d709fc8d3610461c4",
+      "url": "https://github.com/trueagi-io/PLN/blob/4405956947c4b53c7ff01bd565aa3b114bc970a1/ruletests/inversion.metta",
+      "status": "source-inspected; direct operator probes executed separately"
+    }
+  ],
+  "PeTTa": {
+    "source": "src/translator.pl",
+    "lines": [
+      1430,
+      1431
+    ],
+    "finding": "let* lowers to nested let bindings; this is execution structure, not conjunction truth semantics."
+  }
+}
