@@ -252,3 +252,11 @@ def test_bootstrap_accepts_legacy_integer_game_zero():
                {'fixture':'c','source_game':None,'exact':True,'elapsed':0}]
     rows=[{'fixture':p['fixture'],'label':True,'classification':'supported'} for p in positions]
     assert bootstrap(rows,positions,draws=5)['independent_clusters']==2
+
+def test_fresh_address_space_memory_excludes_parent_peak():
+    # Allocate/touch memory in the parent; exec a small fresh Python process.
+    memory=bytearray(32*1024*1024)
+    code="from evaluation.cycle4_benchmark import address_space_peak_kib; import resource; print(address_space_peak_kib(),resource.getrusage(resource.RUSAGE_SELF).ru_maxrss)"
+    current,inherited=map(int,subprocess.check_output([sys.executable,'-c',code],text=True).split())
+    assert 0<current<inherited
+    assert len(memory)==32*1024*1024
