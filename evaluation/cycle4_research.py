@@ -1,6 +1,6 @@
 """Complete regression, abstention, induction and isolated performance evidence."""
 from collections import Counter
-import copy,resource
+import copy,resource,subprocess,sys
 from pln_chess.common import ROOT,read_json,write_json,digest
 from pln_chess.api import explain_move
 from pln_chess.learning import Model
@@ -78,17 +78,10 @@ def research(dataset,models,runtime,out):
     # Reference/cold/warm equality of every candidate including complete native proofs.
     frozen=read_json(ROOT/'artifacts/cycle2/dataset.json');benchmark_positions=[next(p for p in frozen['positions'] if p['id']=='game-0')]
     benchmark_positions += [next(p for p in dataset['positions'] if p['split']==s) for s in ('structural-combination','independent-games')]
-    benchmarks=[]
-    for p in benchmark_positions:
-        s=NativeSession(runtime);results={};hashes=[]
-        for mode in ('reference','cold','warm'):
-            r=infer_moves(p['fen'],models['C4-full'],runtime=runtime,session=None if mode=='reference' else s,optimized=mode!='reference')
-            if r['truncated']:raise RuntimeError('Incomplete benchmark '+p['id'])
-            hashes.append(digest(r['candidates']));results[mode]={k:r[k] for k in ('elapsed_seconds','native_invocations','scheduled_invocations','cache_hits','cache_entries','proof_bytes_estimate','unique_groundings','unexplored_branches','peak_process_rss_kib')}
-        assert len(set(hashes))==1
-        benchmarks.append({'fixture':p['id'],'fen':p['fen'],'candidates':len(r['candidates']),'runs':results,'full_proof_parity':True,'semantic_digest':hashes[0]})
-    write_json(out/'benchmarks/inference.json',{'corpus':benchmarks,'checkpoint_bytes':(out/'model/C4-full.json').stat().st_size,
-               'peak_process_rss_kib':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
-               'rss_scope':'Peak entire parent research process including loaded diagnostic reports; not isolated inference RSS.',
-               'budget_scope':'Proof-byte estimate is metadata accounting, not an OS memory limit.'})
+    write_json(out/'benchmarks/positions.json',benchmark_positions)
+    for name,checkpoint in [('inference',out/'model/C4-full.json'),('C3-reference',ROOT/'artifacts/cycle3/C3-full-model.json')]:
+        subprocess.run([sys.executable,'-m','evaluation.cycle4_benchmark','--checkpoint',str(checkpoint),
+                        '--positions',str(out/'benchmarks/positions.json'),'--output',str(out/f'benchmarks/{name}.json')],check=True)
+    write_json(out/'benchmarks/research-process.json',{'peak_process_rss_kib':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
+               'scope':'Entire parent research process including complete diagnostic and provenance reports; not inference-only.'})
     print('RESEARCH COMPLETE',flush=True)
