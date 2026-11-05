@@ -36,6 +36,7 @@ def inspector_infer(payload,checkpoint=None):
         if not payload.get('move'):raise ValueError('Choose one move for model comparison')
         keys=['B0','B1','B2']
         if paths['C3-full'].exists():keys.append('C3-full')
+        if name=='default':keys.append('default')
         return {'comparisons':{key:explain_move(position,payload['move'],paths[key]) for key in keys}}
     return explain_move(position,payload['move'],paths[name]) if payload.get('move') else infer_moves(position,paths[name])
 

@@ -212,6 +212,13 @@ def test_inspector_cycle3_contract(full,runtime):
     assert a['candidate']['condition_beliefs']
 
 
+def test_comparison_keeps_server_checkpoint_selected(full):
+    from pln_chess.cli.web import inspector_infer
+    result=inspector_infer({'fen':FEN,'move':'c3e3','compare':True},full)
+    assert result['comparisons']['default']['model_version']==full.version
+    assert result['comparisons']['default']['candidate']['condition_beliefs']
+
+
 def test_native_composition_boundary():
     from evaluation.cycle3_native import audit
     r=audit();assert r['records'] and 'independent-premises ())' in r['raw']
