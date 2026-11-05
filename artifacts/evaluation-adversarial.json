@@ -1,0 +1,4635 @@
+{
+  "dataset_hash": "67485e0eda18c05d6c74c1dbe7ccf00bd306e4ea5e2805e4a4a39111c2ce183a",
+  "metrics": {
+    "abstention_rate": 0.5606060606060606,
+    "candidates": 330,
+    "coverage": 0.4393939393939394,
+    "exact_move_set_accuracy": 0.4,
+    "f1": 0.36363636363636365,
+    "false_legal_rate": 0.0,
+    "false_negative_including_abstention": 42,
+    "false_positive": 0,
+    "grounded_atoms": 18330,
+    "in_board_only": {
+      "abstention_rate": 0.9161290322580645,
+      "candidates": 155,
+      "coverage": 0.08387096774193549,
+      "exact_move_set_accuracy": 0.4,
+      "f1": 0.36363636363636365,
+      "false_legal_rate": 0.0,
+      "false_negative_including_abstention": 42,
+      "false_positive": 0,
+      "grounded_atoms": 18330,
+      "incomplete_positions": 0,
+      "latency_seconds": {
+        "p50": 0.6158991800621152,
+        "p95": 28.150905111804605,
+        "p99": 28.150905111804605
+      },
+      "native_invocations": 15330,
+      "precision": 1.0,
+      "recall": 0.2222222222222222,
+      "selective_accuracy": 1.0,
+      "self_check_false_legal": 0,
+      "true_negative": 1,
+      "true_positive": 12
+    },
+    "incomplete_positions": 0,
+    "latency_seconds": {
+      "p50": 0.6158991800621152,
+      "p95": 28.150905111804605,
+      "p99": 28.150905111804605
+    },
+    "native_invocations": 15330,
+    "per_piece": {
+      "Bishop": {
+        "abstention_rate": 0.44047619047619047,
+        "candidates": 84,
+        "coverage": 0.5595238095238095,
+        "exact_move_set_accuracy": null,
+        "f1": 0.0,
+        "false_legal_rate": 0.0,
+        "false_negative_including_abstention": 12,
+        "false_positive": 0,
+        "grounded_atoms": 0,
+        "incomplete_positions": 0,
+        "latency_seconds": {
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "native_invocations": 0,
+        "precision": null,
+        "recall": 0.0,
+        "selective_accuracy": 1.0,
+        "self_check_false_legal": 0,
+        "true_negative": 47,
+        "true_positive": 0
+      },
+      "King": {
+        "abstention_rate": 0.5800000000000001,
+        "candidates": 50,
+        "coverage": 0.42,
+        "exact_move_set_accuracy": null,
+        "f1": 0.5333333333333333,
+        "false_legal_rate": 0.0,
+        "false_negative_including_abstention": 7,
+        "false_positive": 0,
+        "grounded_atoms": 0,
+        "incomplete_positions": 0,
+        "latency_seconds": {
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "native_invocations": 0,
+        "precision": 1.0,
+        "recall": 0.36363636363636365,
+        "selective_accuracy": 1.0,
+        "self_check_false_legal": 0,
+        "true_negative": 17,
+        "true_positive": 4
+      },
+      "Knight": {
+        "abstention_rate": 0.5,
+        "candidates": 24,
+        "coverage": 0.5,
+        "exact_move_set_accuracy": null,
+        "f1": 0.0,
+        "false_legal_rate": 0.0,
+        "false_negative_including_abstention": 7,
+        "false_positive": 0,
+        "grounded_atoms": 0,
+        "incomplete_positions": 0,
+        "latency_seconds": {
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "native_invocations": 0,
+        "precision": null,
+        "recall": 0.0,
+        "selective_accuracy": 1.0,
+        "self_check_false_legal": 0,
+        "true_negative": 12,
+        "true_positive": 0
+      },
+      "Pawn": {
+        "abstention_rate": 0.96875,
+        "candidates": 32,
+        "coverage": 0.03125,
+        "exact_move_set_accuracy": null,
+        "f1": 0.0,
+        "false_legal_rate": 0.0,
+        "false_negative_including_abstention": 7,
+        "false_positive": 0,
+        "grounded_atoms": 0,
+        "incomplete_positions": 0,
+        "latency_seconds": {
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "native_invocations": 0,
+        "precision": null,
+        "recall": 0.0,
+        "selective_accuracy": 1.0,
+        "self_check_false_legal": 0,
+        "true_negative": 1,
+        "true_positive": 0
+      },
+      "Queen": {
+        "abstention_rate": 0.625,
+        "candidates": 56,
+        "coverage": 0.375,
+        "exact_move_set_accuracy": null,
+        "f1": 0.0,
+        "false_legal_rate": 0.0,
+        "false_negative_including_abstention": 5,
+        "false_positive": 0,
+        "grounded_atoms": 0,
+        "incomplete_positions": 0,
+        "latency_seconds": {
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "native_invocations": 0,
+        "precision": null,
+        "recall": 0.0,
+        "selective_accuracy": 1.0,
+        "self_check_false_legal": 0,
+        "true_negative": 21,
+        "true_positive": 0
+      },
+      "Rook": {
+        "abstention_rate": 0.48809523809523814,
+        "candidates": 84,
+        "coverage": 0.5119047619047619,
+        "exact_move_set_accuracy": null,
+        "f1": 0.8,
+        "false_legal_rate": 0.0,
+        "false_negative_including_abstention": 4,
+        "false_positive": 0,
+        "grounded_atoms": 0,
+        "incomplete_positions": 0,
+        "latency_seconds": {
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "native_invocations": 0,
+        "precision": 1.0,
+        "recall": 0.6666666666666666,
+        "selective_accuracy": 1.0,
+        "self_check_false_legal": 0,
+        "true_negative": 35,
+        "true_positive": 8
+      }
+    },
+    "precision": 1.0,
+    "recall": 0.2222222222222222,
+    "selective_accuracy": 1.0,
+    "self_check_false_legal": 0,
+    "true_negative": 133,
+    "true_positive": 12
+  },
+  "model_version": "a115ea0dc36a988e99341ba081679e63ba6233ed975ec61fd6734fdb2f07f1be",
+  "positions": [
+    {
+      "candidate_count": 10,
+      "elapsed": 0.4865237409248948,
+      "error": null,
+      "exact": true,
+      "expected": [],
+      "family": "terminal-mate",
+      "fixture": "mate",
+      "grounded_atoms": 205,
+      "native_invocations": 133,
+      "pieces": 3,
+      "predicted": [],
+      "truncated": false
+    },
+    {
+      "candidate_count": 10,
+      "elapsed": 0.499067572876811,
+      "error": null,
+      "exact": true,
+      "expected": [],
+      "family": "terminal-stalemate",
+      "fixture": "stalemate",
+      "grounded_atoms": 212,
+      "native_invocations": 140,
+      "pieces": 3,
+      "predicted": [],
+      "truncated": false
+    },
+    {
+      "candidate_count": 18,
+      "elapsed": 0.6158991800621152,
+      "error": null,
+      "exact": false,
+      "expected": [
+        "a1b3",
+        "a1c2",
+        "b1a2",
+        "b1b2",
+        "b1c1",
+        "b1c2"
+      ],
+      "family": "edge-knight",
+      "fixture": "edge-knight",
+      "grounded_atoms": 336,
+      "native_invocations": 208,
+      "pieces": 3,
+      "predicted": [],
+      "truncated": false
+    },
+    {
+      "candidate_count": 66,
+      "elapsed": 1.4574986388906837,
+      "error": null,
+      "exact": false,
+      "expected": [
+        "e1d1",
+        "e1d2",
+        "e1e2",
+        "e1f2",
+        "f1a6",
+        "f1b5",
+        "f1c4",
+        "f1d3",
+        "f1e2",
+        "f1g2",
+        "f1h3",
+        "h1g1",
+        "h1h2",
+        "h1h3",
+        "h1h4",
+        "h1h5",
+        "h1h6",
+        "h1h7",
+        "h1h8"
+      ],
+      "family": "castle-occupied",
+      "fixture": "castle-occupied",
+      "grounded_atoms": 1376,
+      "native_invocations": 744,
+      "pieces": 4,
+      "predicted": [
+        "e1d1",
+        "e1d2",
+        "e1e2",
+        "e1f2",
+        "h1g1",
+        "h1h2",
+        "h1h3",
+        "h1h4",
+        "h1h5",
+        "h1h6",
+        "h1h7",
+        "h1h8"
+      ],
+      "truncated": false
+    },
+    {
+      "candidate_count": 226,
+      "elapsed": 28.150905111804605,
+      "error": null,
+      "exact": false,
+      "expected": [
+        "a4b2",
+        "a4c3",
+        "a6b5",
+        "a6b7",
+        "a6c8",
+        "b8a8",
+        "b8b7",
+        "b8c8",
+        "c5b4",
+        "c5d4",
+        "d6d5",
+        "d7c8",
+        "d7e7",
+        "d7e8",
+        "d8c7",
+        "d8c8",
+        "d8e7",
+        "d8e8",
+        "d8f6",
+        "e6e5",
+        "f7f5",
+        "f7f6",
+        "f8e7",
+        "f8g7",
+        "g5g4",
+        "h6f5",
+        "h6g4",
+        "h6g8",
+        "h8g8"
+      ],
+      "family": "game-3",
+      "fixture": "game-3",
+      "grounded_atoms": 16201,
+      "native_invocations": 14105,
+      "pieces": 32,
+      "predicted": [],
+      "truncated": false
+    }
+  ],
+  "rows": [
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "mate",
+      "label": false,
+      "move": "h8(7,8)",
+      "piece": "King",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.8980714285714287,
+        "strength": 0.002617801047120283
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "mate",
+      "label": false,
+      "move": "h8(8,8)",
+      "piece": "King",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.8980714285714287,
+        "strength": 0.002617801047120283
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "mate",
+      "label": false,
+      "move": "h8(8,7)",
+      "piece": "King",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.6571551724137932,
+        "strength": 0.012820512820512775
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "mate",
+      "label": false,
+      "move": "h8(8,6)",
+      "piece": "King",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.6571551724137932,
+        "strength": 0.012820512820512775
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "mate",
+      "label": false,
+      "move": "h8h7",
+      "piece": "King",
+      "self_check": true,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "mate",
+      "label": false,
+      "move": "h8g7",
+      "piece": "King",
+      "self_check": true,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "mate",
+      "label": false,
+      "move": "h8g8",
+      "piece": "King",
+      "self_check": true,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "mate",
+      "label": false,
+      "move": "h8(6,8)",
+      "piece": "King",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.8980714285714287,
+        "strength": 0.002617801047120283
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "mate",
+      "label": false,
+      "move": "h8f8",
+      "piece": "King",
+      "self_check": true,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "mate",
+      "label": false,
+      "move": "h8(9,7)",
+      "piece": "King",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "stalemate",
+      "label": false,
+      "move": "h8(7,8)",
+      "piece": "King",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.8980714285714287,
+        "strength": 0.002617801047120283
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "stalemate",
+      "label": false,
+      "move": "h8(8,8)",
+      "piece": "King",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.8980714285714287,
+        "strength": 0.002617801047120283
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "stalemate",
+      "label": false,
+      "move": "h8(8,7)",
+      "piece": "King",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.6571551724137932,
+        "strength": 0.012820512820512775
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "stalemate",
+      "label": false,
+      "move": "h8(8,6)",
+      "piece": "King",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.6571551724137932,
+        "strength": 0.012820512820512775
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "stalemate",
+      "label": false,
+      "move": "h8h7",
+      "piece": "King",
+      "self_check": true,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "stalemate",
+      "label": false,
+      "move": "h8g7",
+      "piece": "King",
+      "self_check": true,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "stalemate",
+      "label": false,
+      "move": "h8g8",
+      "piece": "King",
+      "self_check": true,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "stalemate",
+      "label": false,
+      "move": "h8(6,8)",
+      "piece": "King",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.8980714285714287,
+        "strength": 0.002617801047120283
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "stalemate",
+      "label": false,
+      "move": "h8f8",
+      "piece": "King",
+      "self_check": true,
+      "truth_value": {
+        "confidence": 0.02942504296875001,
+        "strength": 0.024009999999999976
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "stalemate",
+      "label": false,
+      "move": "h8(9,7)",
+      "piece": "King",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "edge-knight",
+      "label": false,
+      "move": "a1(-1,-2)",
+      "piece": "Knight",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.7392857142857144,
+        "strength": 0.008620689655172376
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "edge-knight",
+      "label": false,
+      "move": "a1(-1,2)",
+      "piece": "Knight",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "edge-knight",
+      "label": false,
+      "move": "a1(1,-2)",
+      "piece": "Knight",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.7392857142857144,
+        "strength": 0.008620689655172376
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "edge-knight",
+      "label": true,
+      "move": "a1b3",
+      "piece": "Knight",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "edge-knight",
+      "label": false,
+      "move": "a1(-2,-1)",
+      "piece": "Knight",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "edge-knight",
+      "label": false,
+      "move": "a1(-2,1)",
+      "piece": "Knight",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "edge-knight",
+      "label": false,
+      "move": "a1(2,-1)",
+      "piece": "Knight",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.6571551724137932,
+        "strength": 0.012820512820512775
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "edge-knight",
+      "label": true,
+      "move": "a1c2",
+      "piece": "Knight",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "edge-knight",
+      "label": true,
+      "move": "b1b2",
+      "piece": "King",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "edge-knight",
+      "label": true,
+      "move": "b1c2",
+      "piece": "King",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "edge-knight",
+      "label": true,
+      "move": "b1c1",
+      "piece": "King",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "edge-knight",
+      "label": false,
+      "move": "b1(2,-1)",
+      "piece": "King",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.8980714285714287,
+        "strength": 0.002617801047120283
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "edge-knight",
+      "label": false,
+      "move": "b1(1,-1)",
+      "piece": "King",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.8980714285714287,
+        "strength": 0.002617801047120283
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "edge-knight",
+      "label": false,
+      "move": "b1(0,-1)",
+      "piece": "King",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.8980714285714287,
+        "strength": 0.002617801047120283
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "edge-knight",
+      "label": false,
+      "move": "b1a1",
+      "piece": "King",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "edge-knight",
+      "label": true,
+      "move": "b1a2",
+      "piece": "King",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "edge-knight",
+      "label": false,
+      "move": "b1(-1,0)",
+      "piece": "King",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "edge-knight",
+      "label": false,
+      "move": "b1d1",
+      "piece": "King",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "supported",
+      "destination_exists": true,
+      "fixture": "castle-occupied",
+      "label": true,
+      "move": "e1e2",
+      "piece": "King",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.6571551724137932,
+        "strength": 0.9871794871794872
+      }
+    },
+    {
+      "classification": "supported",
+      "destination_exists": true,
+      "fixture": "castle-occupied",
+      "label": true,
+      "move": "e1f2",
+      "piece": "King",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.6571551724137932,
+        "strength": 0.9871794871794872
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "e1f1",
+      "piece": "King",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "e1(5,-1)",
+      "piece": "King",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.8980714285714287,
+        "strength": 0.002617801047120283
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "e1(4,-1)",
+      "piece": "King",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.8980714285714287,
+        "strength": 0.002617801047120283
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "e1(3,-1)",
+      "piece": "King",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.8980714285714287,
+        "strength": 0.002617801047120283
+      }
+    },
+    {
+      "classification": "supported",
+      "destination_exists": true,
+      "fixture": "castle-occupied",
+      "label": true,
+      "move": "e1d1",
+      "piece": "King",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.6571551724137932,
+        "strength": 0.9871794871794872
+      }
+    },
+    {
+      "classification": "supported",
+      "destination_exists": true,
+      "fixture": "castle-occupied",
+      "label": true,
+      "move": "e1d2",
+      "piece": "King",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.6571551724137932,
+        "strength": 0.9871794871794872
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": true,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "e1c1",
+      "piece": "King",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "e1g1",
+      "piece": "King",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "castle-occupied",
+      "label": true,
+      "move": "f1g2",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "castle-occupied",
+      "label": true,
+      "move": "f1h3",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "f1(8,3)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "f1(9,4)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "f1(10,5)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "f1(11,6)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "f1(12,7)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "f1(6,-1)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "f1(7,-2)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "f1(8,-3)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "f1(9,-4)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "f1(10,-5)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "f1(11,-6)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "f1(12,-7)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "f1(4,-1)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "f1(3,-2)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "f1(2,-3)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "f1(1,-4)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "f1(0,-5)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "f1(-1,-6)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "f1(-2,-7)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "castle-occupied",
+      "label": true,
+      "move": "f1e2",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "castle-occupied",
+      "label": true,
+      "move": "f1d3",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "castle-occupied",
+      "label": true,
+      "move": "f1c4",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "castle-occupied",
+      "label": true,
+      "move": "f1b5",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "castle-occupied",
+      "label": true,
+      "move": "f1a6",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "f1(-1,6)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "f1(-2,7)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "supported",
+      "destination_exists": true,
+      "fixture": "castle-occupied",
+      "label": true,
+      "move": "h1h2",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.6571551724137932,
+        "strength": 0.9871794871794872
+      }
+    },
+    {
+      "classification": "supported",
+      "destination_exists": true,
+      "fixture": "castle-occupied",
+      "label": true,
+      "move": "h1h3",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.6571551724137932,
+        "strength": 0.9871794871794872
+      }
+    },
+    {
+      "classification": "supported",
+      "destination_exists": true,
+      "fixture": "castle-occupied",
+      "label": true,
+      "move": "h1h4",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.6571551724137932,
+        "strength": 0.9871794871794872
+      }
+    },
+    {
+      "classification": "supported",
+      "destination_exists": true,
+      "fixture": "castle-occupied",
+      "label": true,
+      "move": "h1h5",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.6571551724137932,
+        "strength": 0.9871794871794872
+      }
+    },
+    {
+      "classification": "supported",
+      "destination_exists": true,
+      "fixture": "castle-occupied",
+      "label": true,
+      "move": "h1h6",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.6571551724137932,
+        "strength": 0.9871794871794872
+      }
+    },
+    {
+      "classification": "supported",
+      "destination_exists": true,
+      "fixture": "castle-occupied",
+      "label": true,
+      "move": "h1h7",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.6571551724137932,
+        "strength": 0.9871794871794872
+      }
+    },
+    {
+      "classification": "supported",
+      "destination_exists": true,
+      "fixture": "castle-occupied",
+      "label": true,
+      "move": "h1h8",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.6571551724137932,
+        "strength": 0.9871794871794872
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "h1(8,0)",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "h1(9,0)",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "h1(10,0)",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "h1(11,0)",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "h1(12,0)",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "h1(13,0)",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "h1(14,0)",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "h1(7,-1)",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.7392857142857144,
+        "strength": 0.008620689655172376
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "h1(7,-2)",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.7392857142857144,
+        "strength": 0.008620689655172376
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "h1(7,-3)",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.7392857142857144,
+        "strength": 0.008620689655172376
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "h1(7,-4)",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.7392857142857144,
+        "strength": 0.008620689655172376
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "h1(7,-5)",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.7392857142857144,
+        "strength": 0.008620689655172376
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "h1(7,-6)",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.7392857142857144,
+        "strength": 0.008620689655172376
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "h1(7,-7)",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.7392857142857144,
+        "strength": 0.008620689655172376
+      }
+    },
+    {
+      "classification": "supported",
+      "destination_exists": true,
+      "fixture": "castle-occupied",
+      "label": true,
+      "move": "h1g1",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.9750000000000001
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "h1f1",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "h1e1",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "h1d1",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "h1c1",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "h1b1",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "castle-occupied",
+      "label": false,
+      "move": "h1a1",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "b8(1,8)",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.7392857142857144,
+        "strength": 0.008620689655172376
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "b8(1,9)",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.7392857142857144,
+        "strength": 0.008620689655172376
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "b8(1,10)",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.7392857142857144,
+        "strength": 0.008620689655172376
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "b8(1,11)",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.7392857142857144,
+        "strength": 0.008620689655172376
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "b8(1,12)",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.7392857142857144,
+        "strength": 0.008620689655172376
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "b8(1,13)",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.7392857142857144,
+        "strength": 0.008620689655172376
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "b8(1,14)",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.7392857142857144,
+        "strength": 0.008620689655172376
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": true,
+      "move": "b8c8",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "b8d8",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "b8e8",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "b8f8",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "b8g8",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "b8h8",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "b8(8,7)",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": true,
+      "move": "b8b7",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "b8b6",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "b8b5",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "b8b4",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "b8b3",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "b8b2",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "b8b1",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": true,
+      "move": "b8a8",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "b8(-1,7)",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "b8(-2,7)",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "b8(-3,7)",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "b8(-4,7)",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "b8(-5,7)",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "b8(-6,7)",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8(3,8)",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8(3,9)",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8(3,10)",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8(3,11)",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8(3,12)",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8(3,13)",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8(3,14)",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8(4,8)",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8(5,9)",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8(6,10)",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8(7,11)",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8(8,12)",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8(9,13)",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8(10,14)",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": true,
+      "move": "d8e8",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8f8",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8g8",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8h8",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8(8,7)",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8(9,7)",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8(10,7)",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": true,
+      "move": "d8e7",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": true,
+      "move": "d8f6",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8g5",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8h4",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8(8,2)",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8(9,1)",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8(10,0)",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8d7",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8d6",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8d5",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8d4",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8d3",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8d2",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8d1",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": true,
+      "move": "d8c7",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8b6",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8a5",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8(-1,3)",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8(-2,2)",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8(-3,1)",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8(-4,0)",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": true,
+      "move": "d8c8",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8b8",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8a8",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8(-1,7)",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8(-2,7)",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8(-3,7)",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8(-4,7)",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8(2,8)",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8(1,9)",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8(0,10)",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8(-1,11)",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8(-2,12)",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8(-3,13)",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d8(-4,14)",
+      "piece": "Queen",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "f8(6,8)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "f8(7,9)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "f8(8,10)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "f8(9,11)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "f8(10,12)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "f8(11,13)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "f8(12,14)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": true,
+      "move": "f8g7",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "f8h6",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "f8(8,4)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "f8(9,3)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "f8(10,2)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "f8(11,1)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "f8(12,0)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": true,
+      "move": "f8e7",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "f8d6",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "f8c5",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "f8b4",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "f8a3",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "f8(-1,1)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "f8(-2,0)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "f8(4,8)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "f8(3,9)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "f8(2,10)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "f8(1,11)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "f8(0,12)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "f8(-1,13)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "f8(-2,14)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "h8(7,8)",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.7392857142857144,
+        "strength": 0.008620689655172376
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "h8(7,9)",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.7392857142857144,
+        "strength": 0.008620689655172376
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "h8(7,10)",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.7392857142857144,
+        "strength": 0.008620689655172376
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "h8(7,11)",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.7392857142857144,
+        "strength": 0.008620689655172376
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "h8(7,12)",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.7392857142857144,
+        "strength": 0.008620689655172376
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "h8(7,13)",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.7392857142857144,
+        "strength": 0.008620689655172376
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "h8(7,14)",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.7392857142857144,
+        "strength": 0.008620689655172376
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "h8(8,7)",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "h8(9,7)",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "h8(10,7)",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "h8(11,7)",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "h8(12,7)",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "h8(13,7)",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "h8(14,7)",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "h8h7",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "h8h6",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "h8h5",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "h8h4",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "h8h3",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "h8h2",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "h8h1",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": true,
+      "move": "h8g8",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "h8f8",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "h8e8",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "h8d8",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "h8c8",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "h8b8",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "h8a8",
+      "piece": "Rook",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "a7a6",
+      "piece": "Pawn",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "a7a5",
+      "piece": "Pawn",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "a7(-1,5)",
+      "piece": "Pawn",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "a7b6",
+      "piece": "Pawn",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d7d8",
+      "piece": "King",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": true,
+      "move": "d7e8",
+      "piece": "King",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": true,
+      "move": "d7e7",
+      "piece": "King",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d7e6",
+      "piece": "King",
+      "self_check": true,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d7d6",
+      "piece": "King",
+      "self_check": true,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d7c6",
+      "piece": "King",
+      "self_check": true,
+      "truth_value": {
+        "confidence": 0.02942504296875001,
+        "strength": 0.024009999999999976
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d7c7",
+      "piece": "King",
+      "self_check": true,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": true,
+      "move": "d7c8",
+      "piece": "King",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d7b7",
+      "piece": "King",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d7f7",
+      "piece": "King",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": true,
+      "move": "f7f6",
+      "piece": "Pawn",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": true,
+      "move": "f7f5",
+      "piece": "Pawn",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "f7e6",
+      "piece": "Pawn",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "f7g6",
+      "piece": "Pawn",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "h7h6",
+      "piece": "Pawn",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "h7h5",
+      "piece": "Pawn",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "h7g6",
+      "piece": "Pawn",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "h7(8,5)",
+      "piece": "Pawn",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": true,
+      "move": "a6b7",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": true,
+      "move": "a6c8",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "a6(3,8)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "a6(4,9)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "a6(5,10)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "a6(6,11)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "a6(7,12)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": true,
+      "move": "a6b5",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "a6c4",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "a6d3",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "a6e2",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "a6f1",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "a6(6,-1)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "a6(7,-2)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "a6(-1,4)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "a6(-2,3)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "a6(-3,2)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "a6(-4,1)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "a6(-5,0)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "a6(-6,-1)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "a6(-7,-2)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "a6(-1,6)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "a6(-2,7)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "a6(-3,8)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "a6(-4,9)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "a6(-5,10)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "a6(-6,11)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "a6(-7,12)",
+      "piece": "Bishop",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "b6b5",
+      "piece": "Pawn",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "b6b4",
+      "piece": "Pawn",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "b6a5",
+      "piece": "Pawn",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "b6c5",
+      "piece": "Pawn",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": true,
+      "move": "d6d5",
+      "piece": "Pawn",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d6d4",
+      "piece": "Pawn",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d6c5",
+      "piece": "Pawn",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "d6e5",
+      "piece": "Pawn",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": true,
+      "move": "e6e5",
+      "piece": "Pawn",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "e6e4",
+      "piece": "Pawn",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "e6d5",
+      "piece": "Pawn",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "e6f5",
+      "piece": "Pawn",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": true,
+      "move": "h6g4",
+      "piece": "Knight",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": true,
+      "move": "h6g8",
+      "piece": "Knight",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "h6(8,3)",
+      "piece": "Knight",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "h6(8,7)",
+      "piece": "Knight",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.7392857142857144,
+        "strength": 0.008620689655172376
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": true,
+      "move": "h6f5",
+      "piece": "Knight",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "h6f7",
+      "piece": "Knight",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "h6(9,4)",
+      "piece": "Knight",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "h6(9,6)",
+      "piece": "Knight",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.6571551724137932,
+        "strength": 0.012820512820512775
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "c5c4",
+      "piece": "Pawn",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "c5c3",
+      "piece": "Pawn",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": true,
+      "move": "c5b4",
+      "piece": "Pawn",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": true,
+      "move": "c5d4",
+      "piece": "Pawn",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": true,
+      "move": "g5g4",
+      "piece": "Pawn",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "g5g3",
+      "piece": "Pawn",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "g5f4",
+      "piece": "Pawn",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "g5h4",
+      "piece": "Pawn",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "a4(-1,1)",
+      "piece": "Knight",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "a4(-1,5)",
+      "piece": "Knight",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.7392857142857144,
+        "strength": 0.008620689655172376
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": true,
+      "move": "a4b2",
+      "piece": "Knight",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "a4b6",
+      "piece": "Knight",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "a4(-2,2)",
+      "piece": "Knight",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "contradicted",
+      "destination_exists": false,
+      "fixture": "game-3",
+      "label": false,
+      "move": "a4(-2,4)",
+      "piece": "Knight",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.4950000000000001,
+        "strength": 0.02499999999999991
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": true,
+      "move": "a4c3",
+      "piece": "Knight",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    },
+    {
+      "classification": "unknown",
+      "destination_exists": true,
+      "fixture": "game-3",
+      "label": false,
+      "move": "a4c5",
+      "piece": "Knight",
+      "self_check": false,
+      "truth_value": {
+        "confidence": 0.02475,
+        "strength": 0.5
+      }
+    }
+  ],
+  "runtime_version": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+  "scope": "complete bounded candidate sets",
+  "split": "adversarial"
+}

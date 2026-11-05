@@ -1,0 +1,874 @@
+{
+  "budget": {
+    "contradicted_strength": 0.2,
+    "max_native_invocations": 20000,
+    "min_confidence": 0.25,
+    "supported_strength": 0.8,
+    "timeout_seconds": 60
+  },
+  "candidate": {
+    "attack_beliefs": [
+      {
+        "attacker_id": "p0",
+        "evidence_ids": [
+          "276b08aca5083db4e86d487db0af5beb5c75531b5d1a91c75e04dd4591a0e281",
+          "f330e0594f3fbe61d810034491ae6ae3408c6a093a7bf6fedab346d59e674164",
+          "d985989e5ac35ea24304cd5047bb9d42e4f778b33bf78089b8f8a3e28364af52",
+          "5c4049ea73ccd20ccf14b491b4e9b41149861b1c125bf61226eea6614e2cd9e7",
+          "1ed8885aa54c76365cda79e6446a85e24554aaf9c9940363cd81864fc128da74",
+          "9f5092ed8cdcb1b5ae4793a7df41ba35428ee29850db9966823e2b8095234171"
+        ],
+        "exposure_support": {
+          "confidence": 4.01524983776769e-06,
+          "strength": 0.024260869565217395
+        },
+        "truth_value": {
+          "confidence": 0.8459328358208955,
+          "strength": 0.004347826086956497
+        }
+      }
+    ],
+    "candidate_id": "md2589bc2c4116c54",
+    "classification": "supported",
+    "context_only_truth_value": {
+      "confidence": 0.4950000000000001,
+      "strength": 0.9750000000000001
+    },
+    "counterevidence_ids": [
+      "1ed8885aa54c76365cda79e6446a85e24554aaf9c9940363cd81864fc128da74",
+      "276b08aca5083db4e86d487db0af5beb5c75531b5d1a91c75e04dd4591a0e281",
+      "5c4049ea73ccd20ccf14b491b4e9b41149861b1c125bf61226eea6614e2cd9e7",
+      "9f5092ed8cdcb1b5ae4793a7df41ba35428ee29850db9966823e2b8095234171",
+      "d985989e5ac35ea24304cd5047bb9d42e4f778b33bf78089b8f8a3e28364af52",
+      "f330e0594f3fbe61d810034491ae6ae3408c6a093a7bf6fedab346d59e674164"
+    ],
+    "evidence_ids": [
+      "1ed8885aa54c76365cda79e6446a85e24554aaf9c9940363cd81864fc128da74",
+      "276b08aca5083db4e86d487db0af5beb5c75531b5d1a91c75e04dd4591a0e281",
+      "5c4049ea73ccd20ccf14b491b4e9b41149861b1c125bf61226eea6614e2cd9e7",
+      "9f5092ed8cdcb1b5ae4793a7df41ba35428ee29850db9966823e2b8095234171",
+      "d985989e5ac35ea24304cd5047bb9d42e4f778b33bf78089b8f8a3e28364af52",
+      "f22533cc08f9df8b9ac6f82b72fcff24c017c5306e84fee5f525c82befbb66b8",
+      "f330e0594f3fbe61d810034491ae6ae3408c6a093a7bf6fedab346d59e674164"
+    ],
+    "gaps": [
+      "No compositional conjunction proof; legality uses a learned joint observation category."
+    ],
+    "legal_move_truth_value": {
+      "confidence": 0.4950000000000001,
+      "strength": 0.9750000000000001
+    },
+    "matched_rule_ids": [
+      "attack-to-exposure-prior",
+      "attack:1e9caeb4af0347fc7cbcbccd:negative",
+      "attack:1e9caeb4af0347fc7cbcbccd:positive",
+      "context:b49d404f6632a7000c440110:negative",
+      "context:b49d404f6632a7000c440110:positive",
+      "exposure-to-negative-legality-prior",
+      "geometry:5906c372d4c32f7c5e6dd3b5:negative",
+      "geometry:5906c372d4c32f7c5e6dd3b5:positive"
+    ],
+    "move": "c2e2",
+    "movement_truth_value": {
+      "confidence": 0.7889062500000001,
+      "strength": 0.9935064935064936
+    },
+    "observations": {
+      "atoms": [
+        {
+          "args": [
+            "p1",
+            "Rook"
+          ],
+          "predicate": "PieceType",
+          "tv": {
+            "confidence": 0.99,
+            "strength": 1.0
+          }
+        },
+        {
+          "args": [
+            "p1",
+            "White"
+          ],
+          "predicate": "Owner",
+          "tv": {
+            "confidence": 0.99,
+            "strength": 1.0
+          }
+        },
+        {
+          "args": [
+            "sf58a3d614c768e1a",
+            "White"
+          ],
+          "predicate": "SideToMove",
+          "tv": {
+            "confidence": 0.99,
+            "strength": 1.0
+          }
+        },
+        {
+          "args": [
+            "sf58a3d614c768e1a",
+            "p1",
+            "md2589bc2c4116c54"
+          ],
+          "predicate": "CandidateMove",
+          "tv": {
+            "confidence": 0.99,
+            "strength": 1.0
+          }
+        },
+        {
+          "args": [
+            "sf58a3d614c768e1a",
+            "md2589bc2c4116c54",
+            "context:b49d404f6632a7000c440110"
+          ],
+          "predicate": "RelativeObservation",
+          "tv": {
+            "confidence": 0.99,
+            "strength": 1.0
+          },
+          "value": {
+            "castle_king_edge_distance": null,
+            "castle_rights": null,
+            "castle_rook": null,
+            "castle_rook_kind": null,
+            "castle_rook_path": [],
+            "castle_transit": [],
+            "destination": "Opponent",
+            "destination_exists": true,
+            "destination_kind": "Knight",
+            "effect": "ordinary",
+            "ep_offset": null,
+            "geometry": {
+              "direction": "E",
+              "distance": 2,
+              "family": "orthogonal",
+              "offset": [
+                2,
+                0
+              ]
+            },
+            "intermediate": [
+              "Empty"
+            ],
+            "own_king_count": 1,
+            "pawn_end_edge_distance": null,
+            "pawn_start_edge_distance": null,
+            "piece": "Rook",
+            "postmove_opponents": [
+              {
+                "geometry": {
+                  "direction": "NW",
+                  "distance": 7,
+                  "family": "offset",
+                  "offset": [
+                    -5,
+                    7
+                  ]
+                },
+                "intermediate": [],
+                "piece": "King"
+              }
+            ],
+            "promotion": null,
+            "rights_known": null
+          }
+        },
+        {
+          "args": [
+            "sf58a3d614c768e1a",
+            "md2589bc2c4116c54",
+            1,
+            "Empty"
+          ],
+          "predicate": "IntermediateOccupancy",
+          "tv": {
+            "confidence": 0.99,
+            "strength": 1.0
+          }
+        },
+        {
+          "args": [
+            "sf58a3d614c768e1a",
+            "md2589bc2c4116c54",
+            "Opponent"
+          ],
+          "predicate": "DestinationOccupancy",
+          "tv": {
+            "confidence": 0.99,
+            "strength": 1.0
+          }
+        },
+        {
+          "args": [
+            "sf58a3d614c768e1a",
+            "md2589bc2c4116c54"
+          ],
+          "predicate": "DestinationExists",
+          "tv": {
+            "confidence": 0.99,
+            "strength": 1.0
+          }
+        }
+      ],
+      "attacks": [
+        {
+          "attacker_id": "p0",
+          "descriptor": {
+            "geometry": {
+              "direction": "NW",
+              "distance": 7,
+              "family": "offset",
+              "offset": [
+                -5,
+                7
+              ]
+            },
+            "intermediate": [],
+            "piece": "King"
+          },
+          "key": "attack:1e9caeb4af0347fc7cbcbccd",
+          "king_id": "p3"
+        }
+      ],
+      "candidate_id": "md2589bc2c4116c54",
+      "complete": true,
+      "context": {
+        "castle_king_edge_distance": null,
+        "castle_rights": null,
+        "castle_rook": null,
+        "castle_rook_kind": null,
+        "castle_rook_path": [],
+        "castle_transit": [],
+        "destination": "Opponent",
+        "destination_exists": true,
+        "destination_kind": "Knight",
+        "effect": "ordinary",
+        "ep_offset": null,
+        "geometry": {
+          "direction": "E",
+          "distance": 2,
+          "family": "orthogonal",
+          "offset": [
+            2,
+            0
+          ]
+        },
+        "intermediate": [
+          "Empty"
+        ],
+        "own_king_count": 1,
+        "pawn_end_edge_distance": null,
+        "pawn_start_edge_distance": null,
+        "piece": "Rook",
+        "postmove_opponents": [
+          {
+            "geometry": {
+              "direction": "NW",
+              "distance": 7,
+              "family": "offset",
+              "offset": [
+                -5,
+                7
+              ]
+            },
+            "intermediate": [],
+            "piece": "King"
+          }
+        ],
+        "promotion": null,
+        "rights_known": null
+      },
+      "geometry_key": "geometry:5906c372d4c32f7c5e6dd3b5",
+      "key": "context:b49d404f6632a7000c440110",
+      "move": "c2e2",
+      "pattern": {
+        "effect": "ordinary",
+        "geometry": {
+          "direction": "E",
+          "distance": 2,
+          "family": "orthogonal",
+          "offset": [
+            2,
+            0
+          ]
+        },
+        "piece": "Rook",
+        "promotion": null
+      },
+      "piece": "Rook",
+      "position_id": "sf58a3d614c768e1a",
+      "tv": {
+        "confidence": 0.99,
+        "strength": 1.0
+      },
+      "variant": "full"
+    },
+    "piece": "Rook",
+    "proof_trace": [
+      {
+        "conclusion": "(LegalMove sf58a3d614c768e1a md2589bc2c4116c54)",
+        "evidence_ids": [
+          "f22533cc08f9df8b9ac6f82b72fcff24c017c5306e84fee5f525c82befbb66b8"
+        ],
+        "id": "n0",
+        "matched_rule_ids": [
+          "context:b49d404f6632a7000c440110:positive"
+        ],
+        "native_expression": "(let ($a $t) (|- ((RelativeObservation sf58a3d614c768e1a md2589bc2c4116c54) (stv 1.0 0.99)) ((Implication (RelativeObservation sf58a3d614c768e1a md2589bc2c4116c54) (LegalMove sf58a3d614c768e1a md2589bc2c4116c54)) (stv 0.9750000000000001 0.5128205128205129))) $t)",
+        "operator": "modus-ponens",
+        "premises": [
+          {
+            "atom": "(RelativeObservation sf58a3d614c768e1a md2589bc2c4116c54)",
+            "truth_value": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "atom": "(Implication (RelativeObservation sf58a3d614c768e1a md2589bc2c4116c54) (LegalMove sf58a3d614c768e1a md2589bc2c4116c54))",
+            "hypothesis_id": "context:b49d404f6632a7000c440110",
+            "truth_value": {
+              "confidence": 0.5128205128205129,
+              "strength": 0.9750000000000001
+            }
+          }
+        ],
+        "truth_value": {
+          "confidence": 0.4950000000000001,
+          "strength": 0.9750000000000001
+        }
+      },
+      {
+        "conclusion": "(Not (LegalMove sf58a3d614c768e1a md2589bc2c4116c54))",
+        "evidence_ids": [
+          "f22533cc08f9df8b9ac6f82b72fcff24c017c5306e84fee5f525c82befbb66b8"
+        ],
+        "id": "n1",
+        "matched_rule_ids": [
+          "context:b49d404f6632a7000c440110:negative"
+        ],
+        "native_expression": "(let ($a $t) (|- ((RelativeObservation sf58a3d614c768e1a md2589bc2c4116c54) (stv 1.0 0.99)) ((Implication (RelativeObservation sf58a3d614c768e1a md2589bc2c4116c54) (Not (LegalMove sf58a3d614c768e1a md2589bc2c4116c54))) (stv 0.025000000000000005 0.5128205128205129))) $t)",
+        "operator": "modus-ponens",
+        "premises": [
+          {
+            "atom": "(RelativeObservation sf58a3d614c768e1a md2589bc2c4116c54)",
+            "truth_value": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "atom": "(Implication (RelativeObservation sf58a3d614c768e1a md2589bc2c4116c54) (Not (LegalMove sf58a3d614c768e1a md2589bc2c4116c54)))",
+            "hypothesis_id": "context:b49d404f6632a7000c440110",
+            "truth_value": {
+              "confidence": 0.5128205128205129,
+              "strength": 0.025000000000000005
+            }
+          }
+        ],
+        "truth_value": {
+          "confidence": 0.012692307692307697,
+          "strength": 0.025000000000000005
+        }
+      },
+      {
+        "conclusion": "(LegalMove sf58a3d614c768e1a md2589bc2c4116c54)",
+        "evidence_ids": [
+          "f22533cc08f9df8b9ac6f82b72fcff24c017c5306e84fee5f525c82befbb66b8"
+        ],
+        "id": "n2",
+        "matched_rule_ids": [],
+        "native_expression": "(let ($a $t) (|- ((Not (LegalMove sf58a3d614c768e1a md2589bc2c4116c54)) (n1))) $t)",
+        "operator": "negation-elimination",
+        "premises": [
+          {
+            "node": "n1",
+            "truth_value": {
+              "confidence": 0.012692307692307697,
+              "strength": 0.025000000000000005
+            }
+          }
+        ],
+        "truth_value": {
+          "confidence": 0.012692307692307697,
+          "strength": 0.975
+        }
+      },
+      {
+        "conclusion": "(LegalMove sf58a3d614c768e1a md2589bc2c4116c54)",
+        "evidence_ids": [
+          "f22533cc08f9df8b9ac6f82b72fcff24c017c5306e84fee5f525c82befbb66b8"
+        ],
+        "id": "n3",
+        "matched_rule_ids": [],
+        "native_expression": "(let ($tv $ev) (BestConfidenceCandidate (((n0) (positive)) ((n2) (negative)))) $tv)",
+        "operator": "evidence-choice",
+        "premises": [
+          {
+            "node": "n0",
+            "truth_value": {
+              "confidence": 0.4950000000000001,
+              "strength": 0.9750000000000001
+            }
+          },
+          {
+            "node": "n2",
+            "truth_value": {
+              "confidence": 0.012692307692307697,
+              "strength": 0.975
+            }
+          }
+        ],
+        "truth_value": {
+          "confidence": 0.4950000000000001,
+          "strength": 0.9750000000000001
+        }
+      },
+      {
+        "conclusion": "(MovementPatternSupported md2589bc2c4116c54)",
+        "evidence_ids": [
+          "08aa5dcd02cf826eb0e334c0493333d7a0bfd6ce578be4901588b02c89285ef9",
+          "16e7ea44da72510a2d4730a0520b56927e095f4af81ba3bd08bde78b47916027",
+          "beac4c1e7915fb6864e078561191d6bd0f5828839d5607ad4e73d78920fce091",
+          "c8ee71e99538e4e54afb9209722b6ec05f2cf381562904726758ed1948a509e6"
+        ],
+        "id": "n4",
+        "matched_rule_ids": [
+          "geometry:5906c372d4c32f7c5e6dd3b5:positive"
+        ],
+        "native_expression": "(let ($a $t) (|- ((RelativePattern md2589bc2c4116c54) (stv 1.0 0.99)) ((Implication (RelativePattern md2589bc2c4116c54) (MovementPatternSupported md2589bc2c4116c54)) (stv 0.9935064935064936 0.8020833333333335))) $t)",
+        "operator": "modus-ponens",
+        "premises": [
+          {
+            "atom": "(RelativePattern md2589bc2c4116c54)",
+            "truth_value": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "atom": "(Implication (RelativePattern md2589bc2c4116c54) (MovementPatternSupported md2589bc2c4116c54))",
+            "hypothesis_id": "geometry:5906c372d4c32f7c5e6dd3b5",
+            "truth_value": {
+              "confidence": 0.8020833333333335,
+              "strength": 0.9935064935064936
+            }
+          }
+        ],
+        "truth_value": {
+          "confidence": 0.7889062500000001,
+          "strength": 0.9935064935064936
+        }
+      },
+      {
+        "conclusion": "(Not (MovementPatternSupported md2589bc2c4116c54))",
+        "evidence_ids": [
+          "08aa5dcd02cf826eb0e334c0493333d7a0bfd6ce578be4901588b02c89285ef9",
+          "16e7ea44da72510a2d4730a0520b56927e095f4af81ba3bd08bde78b47916027",
+          "beac4c1e7915fb6864e078561191d6bd0f5828839d5607ad4e73d78920fce091",
+          "c8ee71e99538e4e54afb9209722b6ec05f2cf381562904726758ed1948a509e6"
+        ],
+        "id": "n5",
+        "matched_rule_ids": [
+          "geometry:5906c372d4c32f7c5e6dd3b5:negative"
+        ],
+        "native_expression": "(let ($a $t) (|- ((RelativePattern md2589bc2c4116c54) (stv 1.0 0.99)) ((Implication (RelativePattern md2589bc2c4116c54) (Not (MovementPatternSupported md2589bc2c4116c54))) (stv 0.006493506493506497 0.8020833333333335))) $t)",
+        "operator": "modus-ponens",
+        "premises": [
+          {
+            "atom": "(RelativePattern md2589bc2c4116c54)",
+            "truth_value": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "atom": "(Implication (RelativePattern md2589bc2c4116c54) (Not (MovementPatternSupported md2589bc2c4116c54)))",
+            "hypothesis_id": "geometry:5906c372d4c32f7c5e6dd3b5",
+            "truth_value": {
+              "confidence": 0.8020833333333335,
+              "strength": 0.006493506493506497
+            }
+          }
+        ],
+        "truth_value": {
+          "confidence": 0.005156250000000004,
+          "strength": 0.006493506493506497
+        }
+      },
+      {
+        "conclusion": "(MovementPatternSupported md2589bc2c4116c54)",
+        "evidence_ids": [
+          "08aa5dcd02cf826eb0e334c0493333d7a0bfd6ce578be4901588b02c89285ef9",
+          "16e7ea44da72510a2d4730a0520b56927e095f4af81ba3bd08bde78b47916027",
+          "beac4c1e7915fb6864e078561191d6bd0f5828839d5607ad4e73d78920fce091",
+          "c8ee71e99538e4e54afb9209722b6ec05f2cf381562904726758ed1948a509e6"
+        ],
+        "id": "n6",
+        "matched_rule_ids": [],
+        "native_expression": "(let ($a $t) (|- ((Not (MovementPatternSupported md2589bc2c4116c54)) (n5))) $t)",
+        "operator": "negation-elimination",
+        "premises": [
+          {
+            "node": "n5",
+            "truth_value": {
+              "confidence": 0.005156250000000004,
+              "strength": 0.006493506493506497
+            }
+          }
+        ],
+        "truth_value": {
+          "confidence": 0.005156250000000004,
+          "strength": 0.9935064935064934
+        }
+      },
+      {
+        "conclusion": "(MovementPatternSupported md2589bc2c4116c54)",
+        "evidence_ids": [
+          "08aa5dcd02cf826eb0e334c0493333d7a0bfd6ce578be4901588b02c89285ef9",
+          "16e7ea44da72510a2d4730a0520b56927e095f4af81ba3bd08bde78b47916027",
+          "beac4c1e7915fb6864e078561191d6bd0f5828839d5607ad4e73d78920fce091",
+          "c8ee71e99538e4e54afb9209722b6ec05f2cf381562904726758ed1948a509e6"
+        ],
+        "id": "n7",
+        "matched_rule_ids": [],
+        "native_expression": "(let ($tv $ev) (BestConfidenceCandidate (((n4) (positive)) ((n6) (negative)))) $tv)",
+        "operator": "evidence-choice",
+        "premises": [
+          {
+            "node": "n4",
+            "truth_value": {
+              "confidence": 0.7889062500000001,
+              "strength": 0.9935064935064936
+            }
+          },
+          {
+            "node": "n6",
+            "truth_value": {
+              "confidence": 0.005156250000000004,
+              "strength": 0.9935064935064934
+            }
+          }
+        ],
+        "truth_value": {
+          "confidence": 0.7889062500000001,
+          "strength": 0.9935064935064936
+        }
+      },
+      {
+        "conclusion": "(Attack p0 p3 md2589bc2c4116c54)",
+        "evidence_ids": [
+          "1ed8885aa54c76365cda79e6446a85e24554aaf9c9940363cd81864fc128da74",
+          "276b08aca5083db4e86d487db0af5beb5c75531b5d1a91c75e04dd4591a0e281",
+          "5c4049ea73ccd20ccf14b491b4e9b41149861b1c125bf61226eea6614e2cd9e7",
+          "9f5092ed8cdcb1b5ae4793a7df41ba35428ee29850db9966823e2b8095234171",
+          "d985989e5ac35ea24304cd5047bb9d42e4f778b33bf78089b8f8a3e28364af52",
+          "f330e0594f3fbe61d810034491ae6ae3408c6a093a7bf6fedab346d59e674164"
+        ],
+        "id": "n8",
+        "matched_rule_ids": [
+          "attack:1e9caeb4af0347fc7cbcbccd:positive"
+        ],
+        "native_expression": "(let ($a $t) (|- ((OpponentFrame p0 md2589bc2c4116c54) (stv 1.0 0.99)) ((Implication (OpponentFrame p0 md2589bc2c4116c54) (Attack p0 p3 md2589bc2c4116c54)) (stv 0.004347826086956525 0.8582089552238806))) $t)",
+        "operator": "modus-ponens",
+        "premises": [
+          {
+            "atom": "(OpponentFrame p0 md2589bc2c4116c54)",
+            "truth_value": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "atom": "(Implication (OpponentFrame p0 md2589bc2c4116c54) (Attack p0 p3 md2589bc2c4116c54))",
+            "hypothesis_id": "attack:1e9caeb4af0347fc7cbcbccd",
+            "truth_value": {
+              "confidence": 0.8582089552238806,
+              "strength": 0.004347826086956525
+            }
+          }
+        ],
+        "truth_value": {
+          "confidence": 0.0036940298507462718,
+          "strength": 0.004347826086956525
+        }
+      },
+      {
+        "conclusion": "(Not (Attack p0 p3 md2589bc2c4116c54))",
+        "evidence_ids": [
+          "1ed8885aa54c76365cda79e6446a85e24554aaf9c9940363cd81864fc128da74",
+          "276b08aca5083db4e86d487db0af5beb5c75531b5d1a91c75e04dd4591a0e281",
+          "5c4049ea73ccd20ccf14b491b4e9b41149861b1c125bf61226eea6614e2cd9e7",
+          "9f5092ed8cdcb1b5ae4793a7df41ba35428ee29850db9966823e2b8095234171",
+          "d985989e5ac35ea24304cd5047bb9d42e4f778b33bf78089b8f8a3e28364af52",
+          "f330e0594f3fbe61d810034491ae6ae3408c6a093a7bf6fedab346d59e674164"
+        ],
+        "id": "n9",
+        "matched_rule_ids": [
+          "attack:1e9caeb4af0347fc7cbcbccd:negative"
+        ],
+        "native_expression": "(let ($a $t) (|- ((OpponentFrame p0 md2589bc2c4116c54) (stv 1.0 0.99)) ((Implication (OpponentFrame p0 md2589bc2c4116c54) (Not (Attack p0 p3 md2589bc2c4116c54))) (stv 0.9956521739130435 0.8582089552238806))) $t)",
+        "operator": "modus-ponens",
+        "premises": [
+          {
+            "atom": "(OpponentFrame p0 md2589bc2c4116c54)",
+            "truth_value": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "atom": "(Implication (OpponentFrame p0 md2589bc2c4116c54) (Not (Attack p0 p3 md2589bc2c4116c54)))",
+            "hypothesis_id": "attack:1e9caeb4af0347fc7cbcbccd",
+            "truth_value": {
+              "confidence": 0.8582089552238806,
+              "strength": 0.9956521739130435
+            }
+          }
+        ],
+        "truth_value": {
+          "confidence": 0.8459328358208955,
+          "strength": 0.9956521739130435
+        }
+      },
+      {
+        "conclusion": "(Attack p0 p3 md2589bc2c4116c54)",
+        "evidence_ids": [
+          "1ed8885aa54c76365cda79e6446a85e24554aaf9c9940363cd81864fc128da74",
+          "276b08aca5083db4e86d487db0af5beb5c75531b5d1a91c75e04dd4591a0e281",
+          "5c4049ea73ccd20ccf14b491b4e9b41149861b1c125bf61226eea6614e2cd9e7",
+          "9f5092ed8cdcb1b5ae4793a7df41ba35428ee29850db9966823e2b8095234171",
+          "d985989e5ac35ea24304cd5047bb9d42e4f778b33bf78089b8f8a3e28364af52",
+          "f330e0594f3fbe61d810034491ae6ae3408c6a093a7bf6fedab346d59e674164"
+        ],
+        "id": "n10",
+        "matched_rule_ids": [],
+        "native_expression": "(let ($a $t) (|- ((Not (Attack p0 p3 md2589bc2c4116c54)) (n9))) $t)",
+        "operator": "negation-elimination",
+        "premises": [
+          {
+            "node": "n9",
+            "truth_value": {
+              "confidence": 0.8459328358208955,
+              "strength": 0.9956521739130435
+            }
+          }
+        ],
+        "truth_value": {
+          "confidence": 0.8459328358208955,
+          "strength": 0.004347826086956497
+        }
+      },
+      {
+        "conclusion": "(Attack p0 p3 md2589bc2c4116c54)",
+        "evidence_ids": [
+          "1ed8885aa54c76365cda79e6446a85e24554aaf9c9940363cd81864fc128da74",
+          "276b08aca5083db4e86d487db0af5beb5c75531b5d1a91c75e04dd4591a0e281",
+          "5c4049ea73ccd20ccf14b491b4e9b41149861b1c125bf61226eea6614e2cd9e7",
+          "9f5092ed8cdcb1b5ae4793a7df41ba35428ee29850db9966823e2b8095234171",
+          "d985989e5ac35ea24304cd5047bb9d42e4f778b33bf78089b8f8a3e28364af52",
+          "f330e0594f3fbe61d810034491ae6ae3408c6a093a7bf6fedab346d59e674164"
+        ],
+        "id": "n11",
+        "matched_rule_ids": [],
+        "native_expression": "(let ($tv $ev) (BestConfidenceCandidate (((n8) (positive)) ((n10) (negative)))) $tv)",
+        "operator": "evidence-choice",
+        "premises": [
+          {
+            "node": "n8",
+            "truth_value": {
+              "confidence": 0.0036940298507462718,
+              "strength": 0.004347826086956525
+            }
+          },
+          {
+            "node": "n10",
+            "truth_value": {
+              "confidence": 0.8459328358208955,
+              "strength": 0.004347826086956497
+            }
+          }
+        ],
+        "truth_value": {
+          "confidence": 0.8459328358208955,
+          "strength": 0.004347826086956497
+        }
+      },
+      {
+        "conclusion": "(WouldExposeOwnKing sf58a3d614c768e1a md2589bc2c4116c54)",
+        "evidence_ids": [
+          "1ed8885aa54c76365cda79e6446a85e24554aaf9c9940363cd81864fc128da74",
+          "276b08aca5083db4e86d487db0af5beb5c75531b5d1a91c75e04dd4591a0e281",
+          "5c4049ea73ccd20ccf14b491b4e9b41149861b1c125bf61226eea6614e2cd9e7",
+          "9f5092ed8cdcb1b5ae4793a7df41ba35428ee29850db9966823e2b8095234171",
+          "d985989e5ac35ea24304cd5047bb9d42e4f778b33bf78089b8f8a3e28364af52",
+          "f330e0594f3fbe61d810034491ae6ae3408c6a093a7bf6fedab346d59e674164"
+        ],
+        "id": "n12",
+        "matched_rule_ids": [
+          "attack-to-exposure-prior"
+        ],
+        "native_expression": "(let ($a $t) (|- ((Attack p0 p3 md2589bc2c4116c54) (n8)) ((Implication (Attack p0 p3 md2589bc2c4116c54) (WouldExposeOwnKing sf58a3d614c768e1a md2589bc2c4116c54)) (stv 1.0 0.25))) $t)",
+        "operator": "modus-ponens",
+        "premises": [
+          {
+            "node": "n8",
+            "truth_value": {
+              "confidence": 0.0036940298507462718,
+              "strength": 0.004347826086956525
+            }
+          },
+          {
+            "atom": "(Implication (Attack p0 p3 md2589bc2c4116c54) (WouldExposeOwnKing sf58a3d614c768e1a md2589bc2c4116c54))",
+            "truth_value": {
+              "confidence": 0.25,
+              "strength": 1.0
+            }
+          }
+        ],
+        "truth_value": {
+          "confidence": 4.01524983776769e-06,
+          "strength": 0.024260869565217395
+        }
+      },
+      {
+        "conclusion": "(Not (LegalMove sf58a3d614c768e1a md2589bc2c4116c54))",
+        "evidence_ids": [
+          "1ed8885aa54c76365cda79e6446a85e24554aaf9c9940363cd81864fc128da74",
+          "276b08aca5083db4e86d487db0af5beb5c75531b5d1a91c75e04dd4591a0e281",
+          "5c4049ea73ccd20ccf14b491b4e9b41149861b1c125bf61226eea6614e2cd9e7",
+          "9f5092ed8cdcb1b5ae4793a7df41ba35428ee29850db9966823e2b8095234171",
+          "d985989e5ac35ea24304cd5047bb9d42e4f778b33bf78089b8f8a3e28364af52",
+          "f330e0594f3fbe61d810034491ae6ae3408c6a093a7bf6fedab346d59e674164"
+        ],
+        "id": "n13",
+        "matched_rule_ids": [
+          "exposure-to-negative-legality-prior"
+        ],
+        "native_expression": "(let ($a $t) (|- ((WouldExposeOwnKing sf58a3d614c768e1a md2589bc2c4116c54) (n12)) ((Implication (WouldExposeOwnKing sf58a3d614c768e1a md2589bc2c4116c54) (Not (LegalMove sf58a3d614c768e1a md2589bc2c4116c54))) (stv 1.0 0.25))) $t)",
+        "operator": "modus-ponens",
+        "premises": [
+          {
+            "node": "n12",
+            "truth_value": {
+              "confidence": 4.01524983776769e-06,
+              "strength": 0.024260869565217395
+            }
+          },
+          {
+            "atom": "(Implication (WouldExposeOwnKing sf58a3d614c768e1a md2589bc2c4116c54) (Not (LegalMove sf58a3d614c768e1a md2589bc2c4116c54)))",
+            "truth_value": {
+              "confidence": 0.25,
+              "strength": 1.0
+            }
+          }
+        ],
+        "truth_value": {
+          "confidence": 2.435336314646056e-08,
+          "strength": 0.04377565217391305
+        }
+      },
+      {
+        "conclusion": "(LegalMove sf58a3d614c768e1a md2589bc2c4116c54)",
+        "evidence_ids": [
+          "1ed8885aa54c76365cda79e6446a85e24554aaf9c9940363cd81864fc128da74",
+          "276b08aca5083db4e86d487db0af5beb5c75531b5d1a91c75e04dd4591a0e281",
+          "5c4049ea73ccd20ccf14b491b4e9b41149861b1c125bf61226eea6614e2cd9e7",
+          "9f5092ed8cdcb1b5ae4793a7df41ba35428ee29850db9966823e2b8095234171",
+          "d985989e5ac35ea24304cd5047bb9d42e4f778b33bf78089b8f8a3e28364af52",
+          "f330e0594f3fbe61d810034491ae6ae3408c6a093a7bf6fedab346d59e674164"
+        ],
+        "id": "n14",
+        "matched_rule_ids": [],
+        "native_expression": "(let ($a $t) (|- ((Not (LegalMove sf58a3d614c768e1a md2589bc2c4116c54)) (n13))) $t)",
+        "operator": "negation-elimination",
+        "premises": [
+          {
+            "node": "n13",
+            "truth_value": {
+              "confidence": 2.435336314646056e-08,
+              "strength": 0.04377565217391305
+            }
+          }
+        ],
+        "truth_value": {
+          "confidence": 2.435336314646056e-08,
+          "strength": 0.956224347826087
+        }
+      },
+      {
+        "conclusion": "(LegalMove sf58a3d614c768e1a md2589bc2c4116c54)",
+        "evidence_ids": [
+          "1ed8885aa54c76365cda79e6446a85e24554aaf9c9940363cd81864fc128da74",
+          "276b08aca5083db4e86d487db0af5beb5c75531b5d1a91c75e04dd4591a0e281",
+          "5c4049ea73ccd20ccf14b491b4e9b41149861b1c125bf61226eea6614e2cd9e7",
+          "9f5092ed8cdcb1b5ae4793a7df41ba35428ee29850db9966823e2b8095234171",
+          "d985989e5ac35ea24304cd5047bb9d42e4f778b33bf78089b8f8a3e28364af52",
+          "f22533cc08f9df8b9ac6f82b72fcff24c017c5306e84fee5f525c82befbb66b8",
+          "f330e0594f3fbe61d810034491ae6ae3408c6a093a7bf6fedab346d59e674164"
+        ],
+        "id": "n15",
+        "matched_rule_ids": [],
+        "native_expression": "(let ($tv $ev) (BestConfidenceCandidate (((n3) (context)) ((n14) (attack0)))) $tv)",
+        "operator": "evidence-choice",
+        "premises": [
+          {
+            "node": "n3",
+            "truth_value": {
+              "confidence": 0.4950000000000001,
+              "strength": 0.9750000000000001
+            }
+          },
+          {
+            "node": "n14",
+            "truth_value": {
+              "confidence": 2.435336314646056e-08,
+              "strength": 0.956224347826087
+            }
+          }
+        ],
+        "truth_value": {
+          "confidence": 0.4950000000000001,
+          "strength": 0.9750000000000001
+        }
+      }
+    ],
+    "relative_pattern": {
+      "effect": "ordinary",
+      "geometry": {
+        "direction": "E",
+        "distance": 2,
+        "family": "orthogonal",
+        "offset": [
+          2,
+          0
+        ]
+      },
+      "piece": "Rook",
+      "promotion": null
+    },
+    "status": "native-partial"
+  },
+  "coverage": "native-partial",
+  "elapsed_seconds": 0.4602746944874525,
+  "error": null,
+  "evaluation_only_oracle": {
+    "label": true,
+    "source": "python-chess/1.11.2"
+  },
+  "fen": "7k/8/8/8/8/8/2R1n3/2K5 w - - 0 1",
+  "grounded_atoms": 24,
+  "model_version": "a115ea0dc36a988e99341ba081679e63ba6233ed975ec61fd6734fdb2f07f1be",
+  "native_invocations": 16,
+  "position_id": "sf58a3d614c768e1a",
+  "representation": "full",
+  "runtime_version": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+  "scheduled_invocations": 16,
+  "schema": 1,
+  "truncated": false
+}

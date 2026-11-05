@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools==75.8.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pln-chess"
+version = "0.1.0"
+description = "Auditable piece-relative chess beliefs using pinned native MeTTa PLN"
+requires-python = ">=3.12"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest==8.3.5", "chess==1.11.2"]
+
+[project.scripts]
+pln-chess = "pln_chess.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src", "."]
+include = ["pln_chess*", "training*", "evaluation*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "."]

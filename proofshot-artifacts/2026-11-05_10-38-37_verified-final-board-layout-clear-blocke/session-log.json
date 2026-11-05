@@ -1,0 +1,242 @@
+[
+  {
+    "action": "click #run",
+    "relativeTimeSec": 5,
+    "timestamp": "2026-11-05T10:40:27.260Z"
+  },
+  {
+    "action": "get text #summary",
+    "relativeTimeSec": 12.9,
+    "timestamp": "2026-11-05T10:40:35.192Z"
+  },
+  {
+    "action": "eval JSON.stringify(Array.from(document.querySelectorAll(\".cell\")).slice(0,16).map(e=>Math.round(e.getBoundingClientRect().height)))",
+    "relativeTimeSec": 13.3,
+    "timestamp": "2026-11-05T10:40:35.558Z"
+  },
+  {
+    "action": "screenshot clear-even-board.png",
+    "relativeTimeSec": 13.6,
+    "timestamp": "2026-11-05T10:40:35.887Z"
+  },
+  {
+    "action": "fill #fen 7k/8/8/8/8/8/2RP4/2K5 w - - 0 1",
+    "relativeTimeSec": 14.1,
+    "timestamp": "2026-11-05T10:40:36.338Z"
+  },
+  {
+    "action": "click #run",
+    "relativeTimeSec": 14.4,
+    "timestamp": "2026-11-05T10:40:36.684Z"
+  },
+  {
+    "action": "get text #summary",
+    "relativeTimeSec": 142.2,
+    "timestamp": "2026-11-05T10:42:44.433Z"
+  },
+  {
+    "action": "screenshot blocked-proof.png",
+    "relativeTimeSec": 142.5,
+    "timestamp": "2026-11-05T10:42:44.772Z"
+  },
+  {
+    "action": "fill #fen 2r4k/8/8/8/8/8/2R5/2K5 w - - 0 1",
+    "relativeTimeSec": 142.9,
+    "timestamp": "2026-11-05T10:42:45.162Z"
+  },
+  {
+    "action": "click #run",
+    "relativeTimeSec": 143.2,
+    "timestamp": "2026-11-05T10:42:45.489Z"
+  },
+  {
+    "action": "get text #summary",
+    "relativeTimeSec": 152.4,
+    "timestamp": "2026-11-05T10:42:54.694Z"
+  },
+  {
+    "action": "screenshot pinned-proof.png",
+    "relativeTimeSec": 152.8,
+    "timestamp": "2026-11-05T10:42:55.076Z"
+  },
+  {
+    "action": "fill #fen 7k/8/8/8/8/8/2R5/2K5 w - - 0 1",
+    "relativeTimeSec": 153.2,
+    "timestamp": "2026-11-05T10:42:55.417Z"
+  },
+  {
+    "action": "fill #move ",
+    "relativeTimeSec": 153.5,
+    "timestamp": "2026-11-05T10:42:55.775Z"
+  },
+  {
+    "action": "click #run",
+    "relativeTimeSec": 153.9,
+    "timestamp": "2026-11-05T10:42:56.181Z"
+  },
+  {
+    "action": "get text #status",
+    "relativeTimeSec": 162.2,
+    "timestamp": "2026-11-05T10:43:04.456Z"
+  },
+  {
+    "action": "eval document.querySelectorAll(\"#moves button\").length",
+    "relativeTimeSec": 162.5,
+    "timestamp": "2026-11-05T10:43:04.770Z"
+  },
+  {
+    "action": "screenshot full-candidates.png",
+    "relativeTimeSec": 162.8,
+    "timestamp": "2026-11-05T10:43:05.085Z"
+  },
+  {
+    "action": "click #experiments",
+    "relativeTimeSec": 163.3,
+    "timestamp": "2026-11-05T10:43:05.514Z"
+  },
+  {
+    "action": "get text #comparison",
+    "relativeTimeSec": 220.6,
+    "timestamp": "2026-11-05T10:44:02.823Z"
+  },
+  {
+    "action": "set viewport 390 844",
+    "relativeTimeSec": 220.9,
+    "timestamp": "2026-11-05T10:44:03.142Z"
+  },
+  {
+    "action": "eval window.scrollTo(0,0); JSON.stringify({width:innerWidth,scrollWidth:document.documentElement.scrollWidth})",
+    "relativeTimeSec": 221.4,
+    "timestamp": "2026-11-05T10:44:03.668Z"
+  },
+  {
+    "action": "screenshot mobile-inspector.png",
+    "relativeTimeSec": 221.7,
+    "timestamp": "2026-11-05T10:44:03.988Z"
+  },
+  {
+    "action": "click #experiments",
+    "relativeTimeSec": 269.5,
+    "timestamp": "2026-11-05T10:44:51.804Z"
+  },
+  {
+    "action": "get text #comparison",
+    "relativeTimeSec": 269.9,
+    "timestamp": "2026-11-05T10:44:52.137Z"
+  },
+  {
+    "action": "screenshot learning-and-transfer.png",
+    "relativeTimeSec": 270.3,
+    "timestamp": "2026-11-05T10:44:52.505Z"
+  },
+  {
+    "action": "eval JSON.stringify({script:document.scripts[0].textContent.slice(-700),result:document.getElementById(\"comparison\").textContent})",
+    "relativeTimeSec": 278.4,
+    "timestamp": "2026-11-05T10:45:00.686Z"
+  },
+  {
+    "action": "eval document.getElementById(\"experiments\").click(); \"clicked\"",
+    "relativeTimeSec": 285.3,
+    "timestamp": "2026-11-05T10:45:07.541Z"
+  },
+  {
+    "action": "get text #comparison",
+    "relativeTimeSec": 285.7,
+    "timestamp": "2026-11-05T10:45:07.916Z"
+  },
+  {
+    "action": "set viewport 1280 900",
+    "relativeTimeSec": 298,
+    "timestamp": "2026-11-05T10:45:20.244Z"
+  },
+  {
+    "action": "scrollintoview #experiments",
+    "relativeTimeSec": 298.5,
+    "timestamp": "2026-11-05T10:45:20.788Z"
+  },
+  {
+    "action": "eval const e=document.getElementById(\"experiments\"); const r=e.getBoundingClientRect(); document.getElementById(\"comparison\").textContent=\"Waiting for click\"; JSON.stringify({rect:r.toJSON(),atPoint:document.elementFromPoint(r.x+r.width/2,r.y+r.height/2)?.id})",
+    "relativeTimeSec": 298.9,
+    "timestamp": "2026-11-05T10:45:21.117Z"
+  },
+  {
+    "action": "click #experiments",
+    "relativeTimeSec": 299.2,
+    "timestamp": "2026-11-05T10:45:21.437Z"
+  },
+  {
+    "action": "eval document.getElementById(\"comparison\").textContent.startsWith(\"{\")",
+    "relativeTimeSec": 299.5,
+    "timestamp": "2026-11-05T10:45:21.789Z"
+  },
+  {
+    "action": "screenshot recorded-comparisons.png",
+    "relativeTimeSec": 320,
+    "timestamp": "2026-11-05T10:45:42.251Z"
+  },
+  {
+    "action": "scrollintoview #fen",
+    "relativeTimeSec": 320.4,
+    "timestamp": "2026-11-05T10:45:42.656Z"
+  },
+  {
+    "action": "fill #fen invalid-fen",
+    "relativeTimeSec": 320.7,
+    "timestamp": "2026-11-05T10:45:43.001Z"
+  },
+  {
+    "action": "click #run",
+    "relativeTimeSec": 321.1,
+    "timestamp": "2026-11-05T10:45:43.353Z"
+  },
+  {
+    "action": "get text #status",
+    "relativeTimeSec": 321.5,
+    "timestamp": "2026-11-05T10:45:43.736Z"
+  },
+  {
+    "action": "get text #title",
+    "relativeTimeSec": 321.8,
+    "timestamp": "2026-11-05T10:45:44.067Z"
+  },
+  {
+    "action": "screenshot invalid-input.png",
+    "relativeTimeSec": 322.2,
+    "timestamp": "2026-11-05T10:45:44.409Z"
+  },
+  {
+    "action": "fill #fen 7k/8/8/8/8/8/2R5/2K5 w - - 0 1",
+    "relativeTimeSec": 467.1,
+    "timestamp": "2026-11-05T10:48:09.402Z"
+  },
+  {
+    "action": "fill #move c2e2",
+    "relativeTimeSec": 467.5,
+    "timestamp": "2026-11-05T10:48:09.754Z"
+  },
+  {
+    "action": "click #run",
+    "relativeTimeSec": 467.8,
+    "timestamp": "2026-11-05T10:48:10.094Z"
+  },
+  {
+    "action": "set viewport 390 844",
+    "relativeTimeSec": 468.2,
+    "timestamp": "2026-11-05T10:48:10.412Z"
+  },
+  {
+    "action": "scrollintoview #board",
+    "relativeTimeSec": 468.7,
+    "timestamp": "2026-11-05T10:48:10.920Z"
+  },
+  {
+    "action": "screenshot mobile-board-and-proof.png",
+    "relativeTimeSec": 469,
+    "timestamp": "2026-11-05T10:48:11.245Z"
+  },
+  {
+    "action": "eval JSON.stringify({viewport:innerWidth,document:document.documentElement.scrollWidth,boardSquares:document.querySelectorAll(\".cell\").length})",
+    "relativeTimeSec": 469.4,
+    "timestamp": "2026-11-05T10:48:11.615Z"
+  }
+]

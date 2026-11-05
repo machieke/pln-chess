@@ -1,0 +1,295 @@
+{
+  "budget": {
+    "contradicted_strength": 0.2,
+    "max_native_invocations": 20000,
+    "min_confidence": 0.25,
+    "supported_strength": 0.8,
+    "timeout_seconds": 60
+  },
+  "candidate": {
+    "attack_beliefs": [],
+    "candidate_id": "m7bb88eb38ae00d71",
+    "classification": "unknown",
+    "counterevidence_ids": [],
+    "evidence_ids": [],
+    "gaps": [
+      "No compositional conjunction proof; legality uses a learned joint observation category.",
+      "Incomplete observation: joint sensor has zero confidence."
+    ],
+    "legal_move_truth_value": {
+      "confidence": 0.0,
+      "strength": 0.5
+    },
+    "matched_rule_ids": [],
+    "move": "c3e3",
+    "movement_truth_value": {
+      "confidence": 0.0,
+      "strength": 0.5
+    },
+    "observations": {
+      "atoms": [
+        {
+          "args": [
+            "p1",
+            "Rook"
+          ],
+          "predicate": "PieceType",
+          "tv": {
+            "confidence": 0.99,
+            "strength": 1.0
+          }
+        },
+        {
+          "args": [
+            "p1",
+            "White"
+          ],
+          "predicate": "Owner",
+          "tv": {
+            "confidence": 0.99,
+            "strength": 1.0
+          }
+        },
+        {
+          "args": [
+            "s5e4c47e3b49d2b61",
+            "White"
+          ],
+          "predicate": "SideToMove",
+          "tv": {
+            "confidence": 0.99,
+            "strength": 1.0
+          }
+        },
+        {
+          "args": [
+            "s5e4c47e3b49d2b61",
+            "p1",
+            "m7bb88eb38ae00d71"
+          ],
+          "predicate": "CandidateMove",
+          "tv": {
+            "confidence": 0.99,
+            "strength": 1.0
+          }
+        },
+        {
+          "args": [
+            "s5e4c47e3b49d2b61",
+            "m7bb88eb38ae00d71",
+            "context:be8e949c047a56d60ad1b3f2"
+          ],
+          "predicate": "RelativeObservation",
+          "tv": {
+            "confidence": 0.0,
+            "strength": 1.0
+          },
+          "value": {
+            "castle_king_edge_distance": null,
+            "castle_rights": null,
+            "castle_rook": null,
+            "castle_rook_kind": null,
+            "castle_rook_path": [],
+            "castle_transit": [],
+            "destination": "Empty",
+            "destination_exists": true,
+            "destination_kind": null,
+            "effect": "ordinary",
+            "ep_offset": null,
+            "geometry": {
+              "direction": "E",
+              "distance": 2,
+              "family": "orthogonal",
+              "offset": [
+                2,
+                0
+              ]
+            },
+            "intermediate": [
+              "Unknown"
+            ],
+            "own_king_count": 1,
+            "pawn_end_edge_distance": null,
+            "pawn_start_edge_distance": null,
+            "piece": "Rook",
+            "postmove_opponents": [
+              {
+                "geometry": {
+                  "direction": "NW",
+                  "distance": 5,
+                  "family": "offset",
+                  "offset": [
+                    -4,
+                    5
+                  ]
+                },
+                "intermediate": [],
+                "piece": "King"
+              }
+            ],
+            "promotion": null,
+            "rights_known": null
+          }
+        },
+        {
+          "args": [
+            "s5e4c47e3b49d2b61",
+            "m7bb88eb38ae00d71",
+            1,
+            "Unknown"
+          ],
+          "predicate": "IntermediateOccupancy",
+          "tv": {
+            "confidence": 0,
+            "strength": 1
+          }
+        },
+        {
+          "args": [
+            "s5e4c47e3b49d2b61",
+            "m7bb88eb38ae00d71",
+            "Empty"
+          ],
+          "predicate": "DestinationOccupancy",
+          "tv": {
+            "confidence": 0.0,
+            "strength": 1.0
+          }
+        },
+        {
+          "args": [
+            "s5e4c47e3b49d2b61",
+            "m7bb88eb38ae00d71"
+          ],
+          "predicate": "DestinationExists",
+          "tv": {
+            "confidence": 0.99,
+            "strength": 1.0
+          }
+        }
+      ],
+      "attacks": [
+        {
+          "attacker_id": "p0",
+          "descriptor": {
+            "geometry": {
+              "direction": "NW",
+              "distance": 5,
+              "family": "offset",
+              "offset": [
+                -4,
+                5
+              ]
+            },
+            "intermediate": [],
+            "piece": "King"
+          },
+          "key": "attack:4df124b008564fa7c6d05d34",
+          "king_id": "p2"
+        }
+      ],
+      "candidate_id": "m7bb88eb38ae00d71",
+      "complete": false,
+      "context": {
+        "castle_king_edge_distance": null,
+        "castle_rights": null,
+        "castle_rook": null,
+        "castle_rook_kind": null,
+        "castle_rook_path": [],
+        "castle_transit": [],
+        "destination": "Empty",
+        "destination_exists": true,
+        "destination_kind": null,
+        "effect": "ordinary",
+        "ep_offset": null,
+        "geometry": {
+          "direction": "E",
+          "distance": 2,
+          "family": "orthogonal",
+          "offset": [
+            2,
+            0
+          ]
+        },
+        "intermediate": [
+          "Unknown"
+        ],
+        "own_king_count": 1,
+        "pawn_end_edge_distance": null,
+        "pawn_start_edge_distance": null,
+        "piece": "Rook",
+        "postmove_opponents": [
+          {
+            "geometry": {
+              "direction": "NW",
+              "distance": 5,
+              "family": "offset",
+              "offset": [
+                -4,
+                5
+              ]
+            },
+            "intermediate": [],
+            "piece": "King"
+          }
+        ],
+        "promotion": null,
+        "rights_known": null
+      },
+      "geometry_key": "geometry:5906c372d4c32f7c5e6dd3b5",
+      "key": "context:be8e949c047a56d60ad1b3f2",
+      "move": "c3e3",
+      "pattern": {
+        "effect": "ordinary",
+        "geometry": {
+          "direction": "E",
+          "distance": 2,
+          "family": "orthogonal",
+          "offset": [
+            2,
+            0
+          ]
+        },
+        "piece": "Rook",
+        "promotion": null
+      },
+      "piece": "Rook",
+      "position_id": "s5e4c47e3b49d2b61",
+      "tv": {
+        "confidence": 0.0,
+        "strength": 1.0
+      },
+      "variant": "full"
+    },
+    "piece": "Rook",
+    "proof_trace": [],
+    "relative_pattern": {
+      "effect": "ordinary",
+      "geometry": {
+        "direction": "E",
+        "distance": 2,
+        "family": "orthogonal",
+        "offset": [
+          2,
+          0
+        ]
+      },
+      "piece": "Rook",
+      "promotion": null
+    },
+    "status": "native-partial"
+  },
+  "coverage": "native-partial",
+  "elapsed_seconds": 0.029387906193733215,
+  "error": null,
+  "fen": "8/6k1/8/8/8/2R5/2K5/8 w - - 0 1",
+  "grounded_atoms": 8,
+  "model_version": "a115ea0dc36a988e99341ba081679e63ba6233ed975ec61fd6734fdb2f07f1be",
+  "native_invocations": 0,
+  "position_id": "s5e4c47e3b49d2b61",
+  "representation": "full",
+  "runtime_version": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+  "scheduled_invocations": 0,
+  "schema": 1,
+  "truncated": false
+}
