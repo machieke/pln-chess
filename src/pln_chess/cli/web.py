@@ -1,5 +1,6 @@
 """Loopback-only inspector for actual native results; no chess implementation."""
 from http.server import ThreadingHTTPServer,BaseHTTPRequestHandler
+from pathlib import Path
 import json
 from pln_chess.api import infer_moves,explain_move
 from pln_chess.domain import Position
@@ -29,7 +30,8 @@ def inspector_infer(payload,checkpoint=None):
            'B1':ROOT/'artifacts/cycle2/B1-model.json','B2':ROOT/'artifacts/cycle2/B2-model.json','default':checkpoint,'C3-full':ROOT/'artifacts/cycle3/C3-full-model.json','C4-full':ROOT/'artifacts/cycle4/model/C4-full.json','C5-full':ROOT/'artifacts/cycle5/model/C5-full.json'}
     name=payload.get('model','default')
     if name not in paths:raise ValueError('Unknown representation selector')
-    if name=='C5-full' or (name=='default' and checkpoint and read_json(checkpoint).get('schema')==5):
+    default_schema=read_json(checkpoint).get('schema') if name=='default' and isinstance(checkpoint,(str,Path)) else getattr(checkpoint,'schema',None)
+    if name=='C5-full' or (name=='default' and default_schema==5):
         from pln_chess.cycle5.inference import Cycle5Options
         options=Cycle5Options(temporal_mode=payload.get('temporal_mode','fen-only'),temporal_evidence=payload.get('temporal_evidence'),max_native_invocations=int(payload.get('max_invocations',20000)))
         if payload.get('compare'):

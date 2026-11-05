@@ -174,6 +174,8 @@ def test_inspector_c5_contract(model,runtime,monkeypatch,tmp_path):
     assert r['candidate']['classification']=='incomplete'
     r=web.inspector_infer({'model':'default','fen':FEN,'move':'f6h5','max_invocations':0},root/'artifacts/cycle5/model/C5-full.json')
     assert r['candidate']['classification']=='incomplete'
+    r=web.inspector_infer({'model':'default','fen':FEN,'move':'f6h5','max_invocations':0},model)
+    assert r['candidate']['classification']=='incomplete'
     with pytest.raises(ValueError):web.inspector_infer({'model':'C5-full','fen':'malformed','move':'f6h5'})
 
 def test_batch_temporal_mode(model,runtime):
