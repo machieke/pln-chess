@@ -17,12 +17,19 @@ def find_move(position,notation):
     return next((m for m in candidates(position) if m.notation==notation),None)
 
 
-def explain_move(position,move,checkpoint=None,options=None,runtime=None,temporal_evidence=None):
+def explain_move(position,move,checkpoint=None,options=None,runtime=None,temporal_evidence=None,mode=None):
     position=Position.from_fen(position) if isinstance(position,str) else position
     receipt=None
     if isinstance(checkpoint,(str,Path)):
         runtime=runtime or Runtime();checkpoint=Model.load(checkpoint,runtime)
-    if getattr(checkpoint,'schema',None)==5:
+    if getattr(checkpoint,'schema',None)==6:
+        from dataclasses import asdict,replace
+        from pln_chess.cycle6.inference import Cycle6Options
+        options=options if isinstance(options,Cycle6Options) else Cycle6Options(**(asdict(options) if options else {}))
+        if temporal_evidence is not None:options=replace(options,temporal_evidence=temporal_evidence)
+        if mode is not None:options=replace(options,mode=mode)
+    elif mode is not None:raise ValueError('Explicit proof modes require a Cycle 6 checkpoint')
+    elif getattr(checkpoint,'schema',None)==5:
         from dataclasses import asdict,replace
         from pln_chess.cycle5.inference import Cycle5Options
         options=options if isinstance(options,Cycle5Options) else Cycle5Options(**(asdict(options) if options else {}))
@@ -42,18 +49,21 @@ def explain_move(position,move,checkpoint=None,options=None,runtime=None,tempora
     return {k:v for k,v in result.items() if k!='candidates'} | {'candidate':result['candidates'][0]} | ({'temporal_evidence':receipt} if receipt else {})
 
 
-def analyze_batch(requests,checkpoint,options=None,runtime=None):
+def analyze_batch(requests,checkpoint,options=None,runtime=None,mode=None):
     """Bounded production diagnostic export; never invokes a reference engine."""
     if not isinstance(requests,list) or len(requests)>64:raise ValueError('Batch must contain at most 64 requests')
     runtime=runtime or Runtime();model=Model.load(checkpoint,runtime) if isinstance(checkpoint,(str,Path)) else checkpoint
     results=[]
     for request in requests:
         request_options=options
-        if model.schema==5 and 'temporal_mode' in request:
+        if model.schema in (5,6) and 'temporal_mode' in request:
             from dataclasses import replace
             from pln_chess.cycle5.inference import Cycle5Options
-            request_options=replace(options or Cycle5Options(),temporal_mode=request['temporal_mode'])
-        result=explain_move(request['fen'],request['move'],model,request_options,runtime,request.get('temporal_evidence'))
+            if model.schema==6:
+                from pln_chess.cycle6.inference import Cycle6Options
+                request_options=replace(options or Cycle6Options(),temporal_mode=request['temporal_mode'])
+            else:request_options=replace(options or Cycle5Options(),temporal_mode=request['temporal_mode'])
+        result=explain_move(request['fen'],request['move'],model,request_options,runtime,request.get('temporal_evidence'),mode=request.get('mode',mode))
         results.append(result)
     return {'model_version':model.version,'results':results,
             'unresolved':[i for i,r in enumerate(results) if r['candidate']['classification'] in ('unknown','incomplete')],

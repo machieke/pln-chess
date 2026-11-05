@@ -86,3 +86,23 @@ Cycle 5 preserves native negative constraint proofs and makes positive compositi
 Read the [engineering report](docs/cycle5/engineering-report.md), [native capability matrix](docs/cycle5/native-composition-matrix.md), [temporal trust modes](docs/cycle5/temporal-semantics.md), [model card](docs/cycle5/model-card.md), [API/CLI reference](docs/cycle5/api-cli.md), and [verification](docs/cycle5/verification.md). The new dataset separates clean local combination holdouts from comparisons containing the frozen C4 prior.
 
 Reproduce with `TMPDIR=/dev/shm bash scripts/cycle5_reproduce.sh`. Inspect with `.venv/bin/pln-chess serve --checkpoint artifacts/cycle5/model/C5-full.json`. The Cycle 5 brief authorizes local commits only; no push is part of this delivery.
+
+## Cycle 6: explicit proof modes
+
+Cycle 6 restores useful C4 predictions while keeping their partial proof status visible. `operational` accepts learned conditional evidence and verified negative chains. `strict` abstains on positive moves without a complete native derivation. `experimental` isolates the existing-native composition investigation; no successful independent-premise conjunction is claimed.
+
+```bash
+bash scripts/cycle6_reproduce.sh
+.venv/bin/pln-chess inspect --checkpoint artifacts/cycle6/model/C6-full.json --mode operational --fen '7k/8/8/8/8/8/2R5/2K5 w - - 0 1' --move c2e2
+.venv/bin/pln-chess inspect --checkpoint artifacts/cycle6/model/C6-full.json --mode strict --fen '7k/8/8/8/8/8/2R5/2K5 w - - 0 1' --move c2e2
+.venv/bin/pln-chess inspect --checkpoint artifacts/cycle6/model/C6-full.json --mode experimental --fen '2bk3K/8/5N2/7n/8/2B5/8/8 w - - 0 1' --move f6h5
+.venv/bin/pln-chess evaluate --checkpoint artifacts/cycle6/model/C6-full.json --mode operational --dataset artifacts/cycle6/datasets/dataset.json --split independent-games --output /tmp/c6-games.json.xz
+.venv/bin/pln-chess benchmark --checkpoint artifacts/cycle6/model/C6-full.json --mode operational --positions artifacts/cycle5/benchmarks/positions.json --output /tmp/c6-benchmark.json
+.venv/bin/pln-chess serve --checkpoint artifacts/cycle6/model/C6-full.json
+```
+
+All three modes retain the same raw native evidence channels. An unknown strict classification can carry strong local evidence: strength, confidence, and proof acceptance are different quantities. Public labels are `supported-legal`, `supported-illegal`, `unknown`, and `incomplete`; `legacy_classification` supports older metric consumers. Python accepts `explain_move(..., mode='operational')`, `infer_moves(..., mode='strict')`, and per-request batch modes. The inspector compares C4/C5/C6 and exports full diagnostic JSON.
+
+A matching acceptance receipt enables operational as the C6 default only after the recorded gates pass. Missing or stale receipts retain strict. Earlier checkpoints keep their original semantics. Migrate a C5 checkpoint with `pln-chess migrate-model --checkpoint artifacts/cycle5/model/C5-full.json --output /tmp/c6.json`.
+
+See [the Cycle 6 report](docs/cycle6/final-report.md), [mode contracts](docs/cycle6/architecture.md), and [native capability audit](docs/cycle6/native-capability-audit.md). Reproduction writes versioned output and never pushes. A fully fresh clone is required to independently satisfy the clean-bootstrap promotion gate.

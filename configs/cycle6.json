@@ -1,0 +1,20 @@
+{
+  "schema": 6,
+  "policy": "evidence-channels-v6.1",
+  "modes": ["operational", "strict", "experimental"],
+  "default_without_verified_receipt": "strict",
+  "source_checkpoint": "artifacts/cycle5/model/C5-full.json",
+  "new_game_seed": 616161,
+  "new_game_count": 16,
+  "sample_plies": [28, 56],
+  "min_confidence": 0.25,
+  "supported_strength": 0.8,
+  "contradicted_strength": 0.2,
+  "induction_in_operational": false,
+  "custom_conjunction": false,
+  "required_frozen_recall": 0.9776733254994124,
+  "required_cycle4_game_recall": 0.9536921151439299,
+  "maximum_observed_false_legal": 0,
+  "maximum_observed_false_illegal": 0,
+  "promotion": "Only a matching acceptance.json with every required executed check can select operational by default."
+}

@@ -32,6 +32,9 @@ class Model:
     @classmethod
     def load(cls,path,runtime=None):
         data=read_json(path)
+        if data.get('schema')==6:
+            from pln_chess.cycle6.model import ModeModel
+            return ModeModel.load(path,runtime)
         if data.get('schema')==5:
             from pln_chess.cycle5.model import PremiseModel
             return PremiseModel.load(path,runtime)

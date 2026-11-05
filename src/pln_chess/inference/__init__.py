@@ -55,12 +55,19 @@ def classify(tv,options,incomplete=False):
     if tv.strength <= options.contradicted_strength: return 'contradicted'
     return 'unknown'
 
-def infer_moves(position,checkpoint=None,options=None,runtime=None,selected_moves=None,representation=None):
+def infer_moves(position,checkpoint=None,options=None,runtime=None,selected_moves=None,representation=None,mode=None):
     position=Position.from_fen(position) if isinstance(position,str) else position
+    if mode is not None:
+        from pln_chess.cycle6.inference import Cycle6Options
+        settings=asdict(options) if options else {};settings['mode']=mode;options=Cycle6Options(**settings)
     options=options or Options(); runtime=runtime or Runtime(timeout=options.timeout_seconds)
     model=Model.load(checkpoint,runtime) if isinstance(checkpoint,(str,__import__('pathlib').Path)) else checkpoint or Model(runtime.version)
     if representation is not None and representation!=model.variant:
         raise ValueError('Requested representation does not match checkpoint')
+    if model.schema==6:
+        from pln_chess.cycle6.inference import infer_moves as mode_infer
+        return mode_infer(position,model,options,runtime,selected_moves)
+    if mode is not None:raise ValueError('Explicit proof modes require a Cycle 6 checkpoint; migrate schema 5 first')
     if model.schema==5:
         from pln_chess.cycle5.inference import infer_moves as premise_infer
         return premise_infer(position,model,options,runtime,selected_moves)
