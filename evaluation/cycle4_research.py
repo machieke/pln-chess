@@ -91,7 +91,7 @@ def research(dataset,models,runtime,out):
         'before_tv':c['before']['candidate']['legal_move_truth_value'],'after_tv':c['after']['candidate']['legal_move_truth_value'],
         'rules':c['after']['candidate']['matched_rule_ids']} for c in proof_examples])
     # Reference/cold/warm equality of every candidate including complete native proofs.
-    frozen=read_json(ROOT/'artifacts/cycle2/dataset.json');benchmark_positions=[next(p for p in frozen['positions'] if p['id']=='game-0')]
+    frozen=read_json(ROOT/'fixtures/dataset.json');benchmark_positions=[next(p for p in frozen['positions'] if p['id']=='game-0')]
     benchmark_positions += [next(p for p in dataset['positions'] if p['split']==s) for s in ('structural-combination','independent-games')]
     write_json(out/'benchmarks/positions.json',benchmark_positions)
     for name,checkpoint in [('inference',out/'model/C4-full.json'),('C3-reference',ROOT/'artifacts/cycle3/C3-full-model.json')]:
