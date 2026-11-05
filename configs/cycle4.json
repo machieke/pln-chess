@@ -1,0 +1,14 @@
+{
+  "schema": 4,
+  "ontology": "factored-constraints-v4",
+  "seed": 424242,
+  "registration": "Fixed before generating or evaluating the Cycle 4 independent holdout. Frozen C2/C3 sets are retrospective regressions, never training inputs.",
+  "training": "Cycle 3 training records only; local outcome uses auxiliary pseudo-legal label. Independent attack/exposure/legality pools retained.",
+  "curriculum": {"validation_games": 4, "independent_games": 12, "positions_per_game": 2, "plies": [24, 48], "structural_cases": 12},
+  "thresholds": {"min_confidence": 0.25, "supported_strength": 0.8, "contradicted_strength": 0.2},
+  "threshold_ablations": {"conservative": [0.5, 0.9, 0.1], "coverage": [0.15, 0.7, 0.3]},
+  "budgets": {"max_native_invocations": 20000, "max_proof_bytes": 67108864, "max_cache_entries": 50000, "timeout_seconds": 60},
+  "induction_task": "Withhold a local distance subgroup, estimate explicit A/B/C marginals on independent training groups, test native induced conditional activation on the withheld subgroup. No test-selected thresholds.",
+  "composition": "Learned unary constraint chains. No conjunction implementation or claim. Local positive projection explicitly remains non-compositional.",
+  "push": false
+}

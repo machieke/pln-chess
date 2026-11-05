@@ -14,6 +14,11 @@ from pln_chess.domain import Position
 def main(argv=None):
     parser=argparse.ArgumentParser(prog='pln-chess',description='Piece-relative native PLN research inspector')
     sub=parser.add_subparsers(dest='command',required=True)
+    p=sub.add_parser('cycle4');p.add_argument('--action',choices=('train','evaluate','diagnose','audit'),default='evaluate')
+    p.add_argument('--dataset',default=str(ROOT/'artifacts/cycle4/datasets/dataset.json'));p.add_argument('--split',default='structural-combination')
+    p.add_argument('--checkpoint',default=str(ROOT/'artifacts/cycle4/model/C4-full.json'));p.add_argument('--output')
+    p=sub.add_parser('analyze-batch');p.add_argument('--input',required=True);p.add_argument('--output',required=True)
+    p.add_argument('--checkpoint',default=str(ROOT/'artifacts/cycle4/model/C4-full.json'))
     p=sub.add_parser('cycle3');p.add_argument('--action',choices=('train','evaluate','audit'),default='evaluate')
     p.add_argument('--dataset',default=str(ROOT/'artifacts/cycle3/dataset.json'));p.add_argument('--split',default='challenge')
     p.add_argument('--checkpoint',default=str(ROOT/'artifacts/cycle3/C3-full-model.json'));p.add_argument('--induction',action='store_true')
@@ -29,7 +34,7 @@ def main(argv=None):
         p=sub.add_parser(name); p.add_argument('--fen',required=True); p.add_argument('--checkpoint',default=str(ROOT/'artifacts/model.json'))
         p.add_argument('--format',choices=('json','text'),default='json' if name=='infer' else 'text')
         p.add_argument('--max-invocations',type=int,default=20000); p.add_argument('--timeout',type=float,default=60)
-        if name=='inspect': p.add_argument('--move',required=True)
+        if name=='inspect':p.add_argument('--move',required=True);p.add_argument('--history')
     p=sub.add_parser('train'); p.add_argument('--config',default=str(ROOT/'configs/training.json'))
     p=sub.add_parser('evaluate'); p.add_argument('--split',default='heldout-transfer'); p.add_argument('--checkpoint',default=str(ROOT/'artifacts/model.json'))
     p=sub.add_parser('invariance'); p.add_argument('--fixture',default='transfer-source'); p.add_argument('--transform',choices=('translate',),default='translate')
@@ -37,12 +42,31 @@ def main(argv=None):
     p=sub.add_parser('benchmark'); p.add_argument('--config',default=str(ROOT/'configs/benchmark.json'))
     p=sub.add_parser('report'); p.add_argument('--output',default=str(ROOT/'artifacts/final-report.md'))
     p=sub.add_parser('replay'); p.add_argument('--ledger',required=True); p.add_argument('--output',required=True); p.add_argument('--through',type=int)
-    p.add_argument('--representation',choices=('full','hierarchical','C3-full'),default='full'); p.add_argument('--induction',action='store_true')
+    p.add_argument('--representation',choices=('full','hierarchical','C3-full','C4-full'),default='full'); p.add_argument('--induction',action='store_true')
     p=sub.add_parser('hypothesis'); p.add_argument('id'); p.add_argument('--checkpoint',default=str(ROOT/'artifacts/model.json'))
     p=sub.add_parser('serve'); p.add_argument('--port',type=int,default=8765); p.add_argument('--checkpoint',default=str(ROOT/'artifacts/model.json'))
     args=parser.parse_args(argv)
     try:
-        if args.command=='counterfactual':
+        if args.command=='cycle4':
+            if args.action=='audit':
+                from evaluation.cycle4_native import audit
+                result=audit(Path(args.output) if args.output else ROOT/'artifacts/cycle4/native-probes/cli-audit.json')
+            elif args.action=='train':
+                from pln_chess.cycle4.model import train as factored_train
+                data=read_json(args.dataset)
+                model=factored_train([r for r in data['examples'] if r['split']=='train'],args.checkpoint,
+                                    ledger_path=ROOT/'artifacts/cycle4/cli-evidence.jsonl')
+                result={'version':model.version,'hypotheses':len(model.hypotheses)}
+            else:
+                from evaluation.cycle4 import evaluate
+                runtime=Runtime();path=Path(args.output) if args.output else ROOT/f'artifacts/cycle4/evaluation/cli-{args.split}.json.xz'
+                report=evaluate(read_json(args.dataset),Model.load(args.checkpoint,runtime),args.split,runtime,path,diagnostics=args.action=='diagnose')
+                result={'metrics':report['metrics'],'artifact':str(path),'oracle_scope':'Evaluation only'}
+        elif args.command=='analyze-batch':
+            from pln_chess.api import analyze_batch
+            result=analyze_batch(read_json(args.input),args.checkpoint);write_json(args.output,result)
+            result={'output':args.output,'candidates':len(result['results']),'unresolved':len(result['unresolved'])}
+        elif args.command=='counterfactual':
             from pln_chess.cycle3.counterfactual import compare
             result=compare(args.fen,args.move,args.checkpoint,args.operation,args.square,args.target,right=args.right)
         elif args.command=='cycle3':
@@ -80,7 +104,7 @@ def main(argv=None):
             result={'passed':r['passed'],'runtime':r['runtime']['pln'],'tests':r['tests'],'blockers':r['blockers']}
         elif args.command in ('infer','inspect'):
             options=Options(max_native_invocations=args.max_invocations,timeout_seconds=args.timeout)
-            result=explain_move(args.fen,args.move,args.checkpoint,options) if args.command=='inspect' else infer_moves(args.fen,args.checkpoint,options)
+            result=explain_move(args.fen,args.move,args.checkpoint,options,temporal_evidence=read_json(args.history) if args.history else None) if args.command=='inspect' else infer_moves(args.fen,args.checkpoint,options)
             if args.format=='text':
                 print(Position.from_fen(args.fen).board_text())
                 items=[result['candidate']] if args.command=='inspect' else result['candidates']
@@ -88,6 +112,9 @@ def main(argv=None):
                     print(f"\n{item['move']}: {item['classification']} {item['legal_move_truth_value']}")
                     if args.command=='inspect':
                         print('Relative features:',json.dumps(item['observations']['context'],indent=2))
+                        if item.get('factored_premises'):
+                            print('Factored premises:',json.dumps(item['factored_premises'],indent=2))
+                            print('Decision policy:',item.get('decision_policy'))
                         for step in item['proof_trace']:
                             print(f"{step['id']}: {step['operator']} -> {step['conclusion']} {step['truth_value']}")
                         print('Evidence IDs:',', '.join(item['evidence_ids']))

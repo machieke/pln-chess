@@ -17,17 +17,39 @@ def find_move(position,notation):
     return next((m for m in candidates(position) if m.notation==notation),None)
 
 
-def explain_move(position,move,checkpoint=None,options=None,runtime=None):
+def explain_move(position,move,checkpoint=None,options=None,runtime=None,temporal_evidence=None):
     position=Position.from_fen(position) if isinstance(position,str) else position
+    receipt=None
+    if temporal_evidence is not None:
+        from pln_chess.cycle4.history import HistoryEvidence
+        history=HistoryEvidence(**temporal_evidence) if isinstance(temporal_evidence,dict) else temporal_evidence
+        position,receipt=history.apply(position.fen())
     candidate=find_move(position,move) if isinstance(move,str) else move
     if candidate is None: raise ValueError('Move is outside the seeded candidate grammar')
     result=infer_moves(position,checkpoint,options,runtime,[candidate])
-    return {k:v for k,v in result.items() if k!='candidates'} | {'candidate':result['candidates'][0]}
+    return {k:v for k,v in result.items() if k!='candidates'} | {'candidate':result['candidates'][0]} | ({'temporal_evidence':receipt} if receipt else {})
+
+
+def analyze_batch(requests,checkpoint,options=None,runtime=None):
+    """Bounded production diagnostic export; never invokes a reference engine."""
+    if not isinstance(requests,list) or len(requests)>64:raise ValueError('Batch must contain at most 64 requests')
+    runtime=runtime or Runtime();model=Model.load(checkpoint,runtime) if isinstance(checkpoint,(str,Path)) else checkpoint
+    results=[]
+    for request in requests:
+        result=explain_move(request['fen'],request['move'],model,options,runtime,request.get('temporal_evidence'))
+        results.append(result)
+    return {'model_version':model.version,'results':results,
+            'unresolved':[i for i,r in enumerate(results) if r['candidate']['classification'] in ('unknown','incomplete')],
+            'scope':'Production inference diagnostics; no oracle comparison.'}
 
 
 def observe_example(position,move,label,source,dependence_group,ledger_path,
                     runtime=None,variant='full',transformation_lineage=None,
                     auxiliary_labels=None,idempotency_key=None,observation_confidence=0.5):
+    if variant.startswith('C4-'):
+        from pln_chess.cycle4.model import observe_example as factored_observe
+        return factored_observe(position,move,label,source,dependence_group,ledger_path,runtime,variant,
+                                transformation_lineage,auxiliary_labels,idempotency_key,observation_confidence)
     if variant.startswith('C3-'):
         from pln_chess.cycle3.model import observe_example as relational_observe
         return relational_observe(position,move,label,source,dependence_group,ledger_path,runtime,variant,
@@ -62,6 +84,9 @@ observe_training_example=observe_example
 
 def train(dataset,checkpoint=None,options=None,runtime=None,ledger_path=None):
     runtime=runtime or Runtime(); options=options or {}
+    if options.get('representation')=='factored-constraints-v4' or options.get('variant','').startswith('C4-'):
+        from pln_chess.cycle4.model import train as factored_train
+        return factored_train(dataset,checkpoint,options,runtime,ledger_path)
     if options.get('representation')=='relative-conditions-v3' or options.get('variant','').startswith('C3-'):
         from pln_chess.cycle3.model import train as relational_train
         return relational_train(dataset,checkpoint,options,runtime,ledger_path)
