@@ -14,6 +14,7 @@ from scripts.cycle4_baseline import pack
 def metric_rows(rows):return [{**r,'classification':r['legacy_classification']} for r in rows]
 
 def evaluate(dataset,model,split,runtime,output=None,options=None):
+    version=model.version
     options=options or Cycle6Options(mode='operational');rows=[];positions=[];proofs=[];proof_index={};decisions={};session=Session(runtime)
     for fixture in dataset['positions']:
         if fixture['split']!=split:continue
@@ -38,7 +39,7 @@ def evaluate(dataset,model,split,runtime,output=None,options=None):
                 'proof_id':digest(item['proof_trace']),'proof_refs':refs,'decision_ref':decision['id'],
                 'rule_ids':item['matched_rule_ids'],'native_rule_ids':item['native_rule_ids'],'evidence_ids':item['evidence_ids'],
                 'dependence_groups':item['dependence_groups'],'evidence_channels':item['evidence_channels'],
-                'observation_sources':item['observation_sources'],'model_version':model.version,'runtime_version':runtime.version,
+                'observation_sources':item['observation_sources'],'model_version':version,'runtime_version':runtime.version,
                 'proof_depth':proof_depth(item['proof_trace']),'abstention_reason':item['abstention_reason'],'mode_comparison':item['mode_comparison']})
         predicted={i['move'] for i in result['candidates'] if i['classification']=='supported-legal'}
         positions.append({'fixture':fixture['id'],'family':fixture['family'],'source_game':fixture.get('source_game'),
@@ -53,7 +54,7 @@ def evaluate(dataset,model,split,runtime,output=None,options=None):
         per_piece={p:summarize([r for r in mr if r['piece']==p],[]) for p in sorted({r['piece'] for r in mr})},
         per_family={p:summarize([r for r in mr if r['family']==p],[]) for p in sorted({r['family'] for r in mr})})
     metrics['strength_confidence']={cls:{field:{'min':min(v),'max':max(v),'mean':statistics.mean(v)} for field in ('strength','confidence') if (v:=[r['truth_value'][field] for r in rows if r['classification']==cls])} for cls in metrics['classification_counts']}
-    report={'dataset_hash':dataset['hash'],'model_version':model.version,'runtime_version':runtime.version,'mode':options.mode,'split':split,
+    report={'dataset_hash':dataset['hash'],'model_version':version,'runtime_version':runtime.version,'mode':options.mode,'split':split,
         'metrics':metrics,'rows':rows,'positions':positions,'native_proof_dag':proofs,'policy_decisions':decisions,
         'thresholds':vars(options),'oracle_scope':'Training/evaluation boundary only. Mode inference receives no labels.',
         'proof_dag_encoding':'ordered-interned-v1','proof_export':'Lossless ordered interned native nodes. Ordered per-candidate refs reconstruct complete original proof_trace; policy nodes are explicitly non-native.'}

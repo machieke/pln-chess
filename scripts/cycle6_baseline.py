@@ -43,8 +43,44 @@ def run(out):
     write_json(out/'baseline/comparison.json',results)
     return results
 
+def reuse(out,source):
+    """Reuse an executed baseline only when all frozen code and inputs match."""
+    import shutil
+    out,source=Path(out),Path(source)
+    previous=read_json(source/'baseline/start.json');head=previous['actual_head']
+    if previous['runtime']!=Runtime().manifest:raise ValueError('Baseline runtime changed')
+    for path,expected in previous['protected_files'].items():
+        if hashlib.sha256((ROOT/path).read_bytes()).hexdigest()!=expected:raise ValueError('Protected baseline input changed: '+path)
+    paths=subprocess.check_output(['git','ls-tree','-r','--name-only',head],text=True).splitlines()
+    checked={}
+    for path in paths:
+        if not path.endswith('.py') or not path.startswith(('src/','evaluation/','training/','scripts/')) or 'cycle6' in path:continue
+        original=subprocess.check_output(['git','show',head+':'+path])
+        actual=(ROOT/path).read_bytes()
+        if actual!=original:raise ValueError('Frozen baseline source changed: '+path)
+        checked[path]=hashlib.sha256(actual).hexdigest()
+    if not checked:raise ValueError('No baseline sources verified')
+    comparison=read_json(source/'baseline/comparison.json')
+    if any(set(comparison[name])!={x[0] for x in SPLITS} or not all(v['proof_parity'] for v in comparison[name].values()) for name in ('C4','C5')):
+        raise ValueError('Baseline comparison is incomplete or not proof matched')
+    lock(out);(out/'baseline/start.json').rename(out/'baseline/current-checkout.json')
+    copied={}
+    for path in sorted((source/'baseline').iterdir()):
+        if not path.is_file():continue
+        destination=out/'baseline'/path.name;shutil.copy2(path,destination)
+        sha=hashlib.sha256(path.read_bytes()).hexdigest()
+        assert hashlib.sha256(destination.read_bytes()).hexdigest()==sha
+        copied[path.name]=sha
+    write_json(out/'baseline/reuse.json',{'executed_in_this_checkout':False,'executed_source_head':head,
+        'current_head':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
+        'validated_unchanged_inputs':True,'frozen_source_hashes':checked,'copied_report_hashes':copied,
+        'reason':'Freshly executed C4/C5 baselines reused after a Cycle 6-only optimization. Frozen inference/evaluation source, runtime, models, configs and datasets are byte-identical; no dataset or threshold substitution.'})
+    return comparison
+
 if __name__=='__main__':
     import argparse
-    parser=argparse.ArgumentParser();parser.add_argument('--out',required=True);parser.add_argument('--lock-only',action='store_true');a=parser.parse_args()
-    lock(a.out)
-    if not a.lock_only:run(a.out)
+    parser=argparse.ArgumentParser();parser.add_argument('--out',required=True);parser.add_argument('--lock-only',action='store_true');parser.add_argument('--reuse-from');a=parser.parse_args()
+    if a.reuse_from:reuse(a.out,a.reuse_from)
+    else:
+        lock(a.out)
+        if not a.lock_only:run(a.out)

@@ -106,3 +106,5 @@ All three modes retain the same raw native evidence channels. An unknown strict 
 A matching acceptance receipt enables operational as the C6 default only after the recorded gates pass. Missing or stale receipts retain strict. Earlier checkpoints keep their original semantics. Migrate a C5 checkpoint with `pln-chess migrate-model --checkpoint artifacts/cycle5/model/C5-full.json --output /tmp/c6.json`.
 
 See [the Cycle 6 report](docs/cycle6/final-report.md), [mode contracts](docs/cycle6/architecture.md), and [native capability audit](docs/cycle6/native-capability-audit.md). Reproduction writes versioned output and never pushes. A fully fresh clone is required to independently satisfy the clean-bootstrap promotion gate.
+
+For a subsequent Cycle 6-only change, `C6_BASELINE_FROM=/path/to/previous/output bash scripts/cycle6_reproduce.sh` can reuse the exact executed C4/C5 baselines. This is fail-closed: runtime, protected inputs, and all frozen inference/evaluation sources must match byte for byte. The receipt explicitly records reuse and the original execution commit; the default command reruns the baselines.

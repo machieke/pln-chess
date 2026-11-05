@@ -16,7 +16,11 @@ p.write_text(json.dumps({'fresh_venv':not Path('.venv').exists(),'fresh_runtime'
 PY
 bash scripts/bootstrap.sh --dependencies-only > "$C6_OUT/logs/bootstrap.txt" 2>&1
 .venv/bin/python -m pytest -q > "$C6_OUT/pytest.txt" 2>&1
-.venv/bin/python -m scripts.cycle6_baseline --out "$C6_OUT" > "$C6_OUT/logs/baseline.txt" 2>&1
+if [[ -n "${C6_BASELINE_FROM:-}" ]]; then
+  .venv/bin/python -m scripts.cycle6_baseline --out "$C6_OUT" --reuse-from "$C6_BASELINE_FROM" > "$C6_OUT/logs/baseline.txt" 2>&1
+else
+  .venv/bin/python -m scripts.cycle6_baseline --out "$C6_OUT" > "$C6_OUT/logs/baseline.txt" 2>&1
+fi
 .venv/bin/python -m scripts.cycle6_deliver --stage all > "$C6_OUT/logs/delivery.txt" 2>&1
 .venv/bin/python -m scripts.cycle6_verify > "$C6_OUT/logs/verification.txt" 2>&1
 .venv/bin/python -m evaluation.cycle6_reporting

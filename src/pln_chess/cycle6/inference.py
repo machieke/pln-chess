@@ -58,13 +58,14 @@ def infer_moves(position,checkpoint,options=None,runtime=None,selected_moves=Non
     started=time.perf_counter();runtime=runtime or Runtime()
     model=ModeModel.load(checkpoint,runtime) if isinstance(checkpoint,(str,Path)) else checkpoint
     if getattr(model,'schema',None)!=6 or model.runtime_version!=runtime.version:raise ValueError('Cycle 6 checkpoint/runtime mismatch')
+    version=model.version
     options=options if isinstance(options,Cycle6Options) else Cycle6Options(**(asdict(options) if options else {}))
     options=replace(options,mode=options.mode or default_mode(model))
     source=model.source_model()
     if model.variant=='C6-no-new-negatives':source.variant='C5-no-new-negatives'
     session=session or Session(runtime,optimized,options.max_cache_entries)
     if not isinstance(session,Session):raise ValueError('Cycle 6 requires a mode-scoped Session')
-    scope=digest([runtime.manifest,model.version,options.mode,POLICY,'typed-premise-planner-v5','events-v6.1',asdict(options)])
+    scope=digest([runtime.manifest,version,options.mode,POLICY,'typed-premise-planner-v5','events-v6.1',asdict(options)])
     session.bind(scope)
     settings=asdict(options);settings.pop('mode')
     result=source_infer(position,source,Cycle5Options(**settings),runtime,selected_moves,session.source,optimized)
@@ -87,7 +88,7 @@ def infer_moves(position,checkpoint,options=None,runtime=None,selected_moves=Non
             proof_complete=cls=='contradicted',negative_proof_complete=cls=='contradicted',positive_proof_complete=False,dependence_groups=groups,
             native_rule_ids=sorted({n['operator'] for n in item['proof_trace']}),
             observation_sources={'geometry':'host piece-relative board sensor','destination':'host occupancy sensor','ray':'host relative ray scan','exposure':'host structural successor and opponent frames; learned native attack conditionals','temporal':'external observations; no historical legality theorem'},
-            policy_version=POLICY,model_version=model.version,runtime_version=runtime.version,temporal_evidence=temporal,
+            policy_version=POLICY,model_version=version,runtime_version=runtime.version,temporal_evidence=temporal,
             evidence_channels={'C4':legacy,'C5':strict,'local_native_stv':legacy['local_truth_value'],'new_negative':new_negative,'dependency_conflicts':unsafe,'overlap_groups':sorted(pg&ng),
                 'positive_nodes':[n['id'] for n in positive_nodes],'negative_nodes':[n['id'] for n in negative_nodes]},
             mode_comparison={m:{'classification':LABELS[decision(legacy,strict,replace(options,mode=m),new_negative,strict['status']=='temporal-conflict',bool(unsafe))[0]],
@@ -97,7 +98,7 @@ def infer_moves(position,checkpoint,options=None,runtime=None,selected_moves=Non
                 'C4_classification':legacy['classification'],'C5_classification':strict['classification'],'reason':reason})
         item['gaps']=list(dict.fromkeys(item['gaps']+item['proof_plan']['gaps']))
         item['abstention_reason']=item['gaps']+[reason] if cls in ('unknown','incomplete') else []
-    result.update(schema=6,mode=options.mode,policy_version=POLICY,model_version=model.version,representation=model.variant,
+    result.update(schema=6,mode=options.mode,policy_version=POLICY,model_version=version,representation=model.variant,
         source_model_version=source.version,budget=asdict(options),cache_scope=digest([scope,result['cache_scope']]),temporal_evidence=temporal,
         elapsed_seconds=time.perf_counter()-started,coverage='Operational predictions are partial conditional evidence; strict and experimental require unavailable positive composition.')
     return result
