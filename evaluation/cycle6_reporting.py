@@ -12,7 +12,7 @@ def report(out=OUT):
     comparison=read_json(out/'comparison.json');base=read_json(out/'baseline/comparison.json');accept=read_json(out/'acceptance.json');verify=read_json(out/'verification.json')
     native=read_json(out/'native-probes/audit.json');negative=read_json(out/'negative-regressions.json');local=read_json(out/'locality.json');induction=read_json(out/'induction.json')
     bench={n:read_json(out/f'benchmarks/{n}.json') for n in ('C4','C5','C6-operational','C6-strict','C6-experimental')}
-    source_head=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip();data=read_json(out/'datasets/dataset.json');model=read_json(out/'model/C6-full.json')
+    source_head=read_json(out/'bootstrap-context.json')['source_head'];data=read_json(out/'datasets/dataset.json');model=read_json(out/'model/C6-full.json')
     def save(name,text):(docs/name).write_text(text.strip()+'\n')
     def metrics(name,split):return (base[name][split] if name in base and split in base[name] else comparison[name][split])['metrics']
     def counts(m):return f"{m['true_positive']} / {m['true_negative']} / {m['unknown']} / {m['incomplete']}"
@@ -167,6 +167,28 @@ Remaining scientific limits: learned joint observation categories are still host
 
 Next priorities are a separately authorized native semantics investigation, evidence-grounded temporal/exposure learning, independent external game validation, and reducing full-proof memory without changing native derivations. No custom conjunction extension was shipped.
 ''')
+    from evaluation.cycle6_supplement import audit as supplemental_audit
+    supplemental_audit(out/'native-source-addendum.json')
+    with (docs/'native-capability-audit.md').open('a') as f:
+        f.write('\nThe optional local-history addendum inspects conjunction-related Maxima experiments separately from executable MeTTa. The pinned `Consistency_ImplicationImplicantConjunction` helper was executed and returned Boolean `true`; it supplies no STV and introduces no conjunction inference rule. See `artifacts/cycle6/native-source-addendum.json` for exact expressions, stdout, local commit and source hashes.\n')
+    manifest(out,docs)
     return docs
+
+def manifest(out,docs):
+    out=Path(out);files={}
+    for path in sorted(out.rglob('*')):
+        if path.is_file() and path.name!='manifest.json':
+            files['artifacts/cycle6/'+str(path.relative_to(out))]={'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'bytes':path.stat().st_size}
+    for path in sorted(Path(docs).glob('*.md')):
+        files[str(path.relative_to(ROOT))]={'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'bytes':path.stat().st_size}
+    source_paths=subprocess.check_output(['git','diff','--name-only',START,'HEAD'],text=True).splitlines()
+    for relative in source_paths:
+        path=ROOT/relative
+        if path.is_file() and not relative.startswith(('artifacts/','docs/cycle6/')):
+            files[relative]={'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'bytes':path.stat().st_size}
+    write_json(out/'manifest.json',{'schema':1,'baseline_head':START,'verified_source_head':read_json(out/'bootstrap-context.json')['source_head'],
+        'packaging_head':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),'runtime':read_json(out/'versions.json')['runtime'],
+        'files':files,'self_excluded':True,'scope':'All Cycle 6 artifacts, generated reports and changed source files. Older evidence is bound by baseline/start.json and remains immutable.'})
+    return files
 
 if __name__=='__main__':report()
