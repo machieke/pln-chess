@@ -36,6 +36,7 @@ def audit(output=None):
     raw=runtime.execute(body)
     assert '(C4PROBE conjunction-introduction ())' in raw
     assert '(C4PROBE conjunction-elimination ())' in raw
+    assert '(C4PROBE inheritance-predicate ())' in raw
     assert values['chain-unknown-middle'].confidence==0
     assert values['deduction-measured']==values['deduction-zero-confidence-marginal']
     assert values['deduction-inconsistent'].confidence==0
@@ -50,7 +51,7 @@ def audit(output=None):
     result={'runtime':runtime.manifest,'previous_probes':previous,'records':records,'raw':raw,
             'decision':{'production':'Three separately learned conditional families can contribute along a unary native MP chain. This does not combine independent movement/path/safety conditions by conjunction.',
                         'deduction':'Native deduction verified with measured probability-consistent marginals; zero marginal confidence does not suppress output. Experimental only, not chosen for production.',
-                        'inheritance':'Native predicate transfer verified; type membership must be supplied or learned. No automatically discovered slider taxonomy claimed.',
+                        'inheritance':'The tested predicate-transfer wrapper returns no derivation in this runtime. Treat this candidate as unsupported; no discovered slider taxonomy or production inheritance transfer is claimed.',
                         'conjunction':'Absent in pinned runtime. Optional upstream port was not shipped: no independently validated drop-in semantics.',
                         'nesting':'Nested implications are curried conditional applications, not a verified conjunction theorem.',
                         'negative_controls':'Unknown/missing chain edge kills confidence; shared-stamp gate rejects repeated support; wrong shape produces no binding.'}}

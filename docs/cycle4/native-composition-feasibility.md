@@ -8,6 +8,8 @@ The selected production strategy is unary conditional composition with separatel
 
 The pinned `|-` returns no derivation for independent `A`, `B` supplied as conjunction introduction, and no derivation for elimination from `And(A,B)`. An explicitly supplied joint sensor can be an MP antecedent, but that does not prove the conjunction. Nested implication application works operationally; it is not assumed to be conjunction.
 
+The tested inheritance-to-predicate transfer wrapper also returns no derivation. Its source-level rule must not be confused with an operationally verified capability. This negative result is asserted by the audit and no production inheritance abstraction is shipped.
+
 `Truth_Deduction` works for the measured, probability-consistent probe and returns zero confidence for an inconsistent probe. However, setting all marginal confidences to zero leaves the consistent output unchanged. That operational behavior is preserved in the audit and is a reason not to use deduction as a production substitute for unknown-condition composition. Native inversion has its upstream confidence penalty; it is not treated as unrestricted Bayesian inversion. Similarity and equivalence remain laboratory operators.
 
 `Truth_Revision` increases confidence when the same premise is repeated. It has no stamp argument. `StampDisjoint` rejects overlapping evidence in the explicit native guard. The production scheduler enforces equivalent source-group separation before building each chain and never revises alternative inferred paths together.
