@@ -1,0 +1,40 @@
+Using CPython 3.12.12
+Creating virtual environment at: .venv
+Activate with: source .venv/bin/activate
+Resolved 6 packages in 129ms
+warning: Failed to hardlink files; falling back to full copy. This may lead to degraded performance.
+         If the cache and target directories are on different filesystems, hardlinking may not be supported.
+         If this is intentional, set `export UV_LINK_MODE=copy` or use `--link-mode=copy` to suppress this warning.
+Installed 6 packages in 33ms
+ + chess==1.11.2
+ + iniconfig==2.3.1
+ + packaging==26.3
+ + pluggy==1.7.0
+ + pytest==8.3.5
+ + setuptools==75.8.0
+Resolved 1 package in 1ms
+   Building pln-chess @ file:///dev/shm/pln-chess-cycle5-clean-np7693am
+      Built pln-chess @ file:///dev/shm/pln-chess-cycle5-clean-np7693am
+Prepared 1 package in 595ms
+warning: Failed to hardlink files; falling back to full copy. This may lead to degraded performance.
+         If the cache and target directories are on different filesystems, hardlinking may not be supported.
+         If this is intentional, set `export UV_LINK_MODE=copy` or use `--link-mode=copy` to suppress this warning.
+Installed 1 package in 4ms
+ + pln-chess==0.1.0 (from file:///dev/shm/pln-chess-cycle5-clean-np7693am)
+Cloning into '.runtime/petta'...
+HEAD is now at ee5cacb Merge pull request #268 from NatnaelTigistu/fix/py-call-callable-objects
+Pinned native runtime verified
+C4 BASELINE frozen-heldout-transfer 0.9776733254994124 83
+C4 BASELINE frozen-adversarial 0.9911894273127754 28
+C4 BASELINE cycle3-independent-games 0.9523809523809523 66
+C4 BASELINE cycle4-independent-games 0.9536921151439299 152
+C5 BASELINE COMPLETE
+TRAIN f1893f11340954d8af675a1738d98cdcc01bf818294e0e8448b1f6a4ca5defb2 42
+EVAL C4 frozen-heldout-transfer {'candidates': 2635, 'true_positive': 832, 'true_negative': 1720, 'unknown': 83, 'false_positive': 0, 'false_illegal': 0, 'incomplete': 0, 'recall': 0.9776733254994124, 'exact_move_set_accuracy': 0.75}
+EVAL C4 frozen-adversarial {'candidates': 1208, 'true_positive': 225, 'true_negative': 955, 'unknown': 28, 'false_positive': 0, 'false_illegal': 0, 'incomplete': 0, 'recall': 0.9911894273127754, 'exact_move_set_accuracy': 0.9166666666666666}
+EVAL C4 cycle3-independent-games {'candidates': 1697, 'true_positive': 260, 'true_negative': 1371, 'unknown': 66, 'false_positive': 0, 'false_illegal': 0, 'incomplete': 0, 'recall': 0.9523809523809523, 'exact_move_set_accuracy': 0.0}
+EVAL C4 cycle4-independent-games {'candidates': 4650, 'true_positive': 762, 'true_negative': 3736, 'unknown': 152, 'false_positive': 0, 'false_illegal': 0, 'incomplete': 0, 'recall': 0.9536921151439299, 'exact_move_set_accuracy': 0.4166666666666667}
+EVAL C4 cycle5-validation {'candidates': 1543, 'true_positive': 257, 'true_negative': 1236, 'unknown': 50, 'false_positive': 0, 'false_illegal': 0, 'incomplete': 0, 'recall': 0.9553903345724907, 'exact_move_set_accuracy': 0.375}
+EVAL C4 cycle5-combination-holdout {'candidates': 516, 'true_positive': 183, 'true_negative': 319, 'unknown': 14, 'false_positive': 0, 'false_illegal': 0, 'incomplete': 0, 'recall': 0.9838709677419355, 'exact_move_set_accuracy': 0.7857142857142857}
+EVAL C4 cycle5-structural-holdout {'candidates': 176, 'true_positive': 60, 'true_negative': 109, 'unknown': 7, 'false_positive': 0, 'false_illegal': 0, 'incomplete': 0, 'recall': 0.967741935483871, 'exact_move_set_accuracy': 0.6666666666666666}
+EVAL C5-abstract-only frozen-heldout-transfer {'candidates': 2635, 'true_positive': 0, 'true_negative': 1720, 'unknown': 915, 'false_positive': 0, 'false_illegal': 0, 'incomplete': 0, 'recall': 0.0, 'exact_move_set_accuracy': 0.0}

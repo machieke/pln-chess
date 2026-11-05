@@ -25,4 +25,4 @@ Inspect any focus fixture through `pln-chess inspect`; the fixture manifest reco
 
 ## Cycle 5 scope
 
-The earlier-cycle description above is preserved. See the [Cycle 5 update](cycle5/generalization-results.md) for strict positive proof gaps, typed native negative chains, temporal trust modes and measured coverage loss. No universal correctness or completed positive conjunction is claimed.
+The earlier-cycle description above is preserved. See the [Cycle 5 coverage matrix and proof examples](cycle5/chess-coverage.md) and [complete results](cycle5/generalization-results.md) for strict positive proof gaps, typed native negative chains, temporal trust modes and measured coverage loss. No universal correctness or completed positive conjunction is claimed.

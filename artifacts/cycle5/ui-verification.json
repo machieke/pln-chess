@@ -1,0 +1,75 @@
+{
+  "checks": [
+    "C4/C5 comparison",
+    "unresolved knight typed premises and proof gap",
+    "trusted metadata reliability 0.8",
+    "event-backed EP reliability 0.99 with unknown castle history",
+    "zero native budget gives incomplete",
+    "malformed FEN clears results and export",
+    "native-runtime error rendering via explicitly identified browser response harness",
+    "real NativeError boundary injection in automated tests",
+    "390x844 viewport without horizontal overflow",
+    "downloaded JSON schema 5 and proof plan"
+  ],
+  "completed_sessions": 2,
+  "harness": "logs/ui-check.py",
+  "html_sha256": "d6ec6a3a19d3de7b8e41fb4befd94bd460b2d955a92404e7c5a07a0241e54390",
+  "log": "logs/ui-final.log",
+  "model_version": "f1893f11340954d8af675a1738d98cdcc01bf818294e0e8448b1f6a4ca5defb2",
+  "runtime_error_scope": "The browser test substitutes a 503 response; it does not remove the native backend. Automated tests independently raise NativeError at the runtime boundary.",
+  "screenshots": 8,
+  "sessions": [
+    {
+      "complete": false,
+      "console_errors": null,
+      "metadata": {
+        "branch": "master",
+        "commitSha": "d5cfcb126acc9c3e5da669744d661e6895fb9303",
+        "description": "Verify Cycle 5 proof gaps, C4 comparison, temporal trust, budget exhaustion, invalid input and mobile layout",
+        "startedAt": "2026-11-05T18:35:14.594Z"
+      },
+      "path": "proofshot-artifacts/2026-11-05_18-35-14_verify-cycle-5-proof-gaps-c4-comparison",
+      "screenshots": [],
+      "server_errors": null
+    },
+    {
+      "complete": true,
+      "console_errors": 0,
+      "metadata": {
+        "branch": "master",
+        "commitSha": "d5cfcb126acc9c3e5da669744d661e6895fb9303",
+        "description": "Cycle 5 strict proof gaps, temporal trust, raw comparison and error handling",
+        "startedAt": "2026-11-05T18:37:40.428Z"
+      },
+      "path": "proofshot-artifacts/2026-11-05_18-37-40_cycle-5-strict-proof-gaps-temporal-trust",
+      "screenshots": [
+        "proofshot-artifacts/2026-11-05_18-37-40_cycle-5-strict-proof-gaps-temporal-trust/c4-c5-strict-comparison.png",
+        "proofshot-artifacts/2026-11-05_18-37-40_cycle-5-strict-proof-gaps-temporal-trust/unresolved-knight-premises.png"
+      ],
+      "server_errors": 0
+    },
+    {
+      "complete": true,
+      "console_errors": 0,
+      "metadata": {
+        "branch": "master",
+        "commitSha": "d5cfcb126acc9c3e5da669744d661e6895fb9303",
+        "description": "Final Cycle 5 temporal modes, incomplete budget, invalid input, native failure contract and mobile verification",
+        "startedAt": "2026-11-05T18:51:24.727Z"
+      },
+      "path": "proofshot-artifacts/2026-11-05_18-51-24_final-cycle-5-temporal-modes-incomplete",
+      "screenshots": [
+        "proofshot-artifacts/2026-11-05_18-51-24_final-cycle-5-temporal-modes-incomplete/event-backed-ep-scope.png",
+        "proofshot-artifacts/2026-11-05_18-51-24_final-cycle-5-temporal-modes-incomplete/incomplete-proof-budget.png",
+        "proofshot-artifacts/2026-11-05_18-51-24_final-cycle-5-temporal-modes-incomplete/invalid-input-clears-results.png",
+        "proofshot-artifacts/2026-11-05_18-51-24_final-cycle-5-temporal-modes-incomplete/mobile-proof-gap-and-export.png",
+        "proofshot-artifacts/2026-11-05_18-51-24_final-cycle-5-temporal-modes-incomplete/native-runtime-error-contract.png",
+        "proofshot-artifacts/2026-11-05_18-51-24_final-cycle-5-temporal-modes-incomplete/trusted-temporal-metadata.png"
+      ],
+      "server_errors": 0
+    }
+  ],
+  "skill": "/home/purplezky/.codex/skills/proofshot/SKILL.md",
+  "source_scope": "Recordings used the uncommitted Cycle 5 worktree, so ProofShot metadata names starting HEAD d5cfcb1. The inspector HTML is unchanged between the first Cycle 5 source commit and the final source commit. A subsequent Python backend fix restores in-memory checkpoint compatibility and is covered by the full clean suite.",
+  "video_scope": "ProofShot trims idle recording time; session durations in its summaries can exceed encoded playback duration."
+}

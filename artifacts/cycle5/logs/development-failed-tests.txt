@@ -1,0 +1,150 @@
+.....................................................F.................. [ 31%]
+..................................FF.................................... [ 63%]
+........................................................................ [ 95%]
+...........                                                              [100%]
+=================================== FAILURES ===================================
+_________________ test_inspector_uses_same_inference_contract __________________
+
+learned = HierarchicalModel(runtime_version='4405956947c4b53c7ff01bd565aa3b114bc970a1', variant='hierarchical', hypotheses={'c2:...itionals; never fused or revised together.', 'induction_enabled': False}, schema=2, grammar='hierarchical-relative-v2')
+runtime = <pln_chess.pln.runtime.Runtime object at 0x7f1be7442ae0>
+
+    def test_inspector_uses_same_inference_contract(learned,runtime):
+        from pln_chess.cli.web import inspector_infer
+>       a=inspector_infer({'fen':FEN,'move':'c3e3'},learned)
+
+tests/test_cycle2.py:190: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/pln_chess/cli/web.py:32: in inspector_infer
+    if name=='C5-full' or (name=='default' and checkpoint and read_json(checkpoint).get('schema')==5):
+src/pln_chess/common.py:17: in read_json
+    return json.loads(Path(path).read_text())
+../../../.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/pathlib.py:1162: in __init__
+    super().__init__(*args)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[AttributeError("'PosixPath' object has no attribute '_raw_paths'") raised in repr()] PosixPath object at 0x7f1be6e252a0>
+args = (HierarchicalModel(runtime_version='4405956947c4b53c7ff01bd565aa3b114bc970a1', variant='hierarchical', hypotheses={'c2...ionals; never fused or revised together.', 'induction_enabled': False}, schema=2, grammar='hierarchical-relative-v2'),)
+paths = []
+arg = HierarchicalModel(runtime_version='4405956947c4b53c7ff01bd565aa3b114bc970a1', variant='hierarchical', hypotheses={'c2:...itionals; never fused or revised together.', 'induction_enabled': False}, schema=2, grammar='hierarchical-relative-v2')
+path = HierarchicalModel(runtime_version='4405956947c4b53c7ff01bd565aa3b114bc970a1', variant='hierarchical', hypotheses={'c2:...itionals; never fused or revised together.', 'induction_enabled': False}, schema=2, grammar='hierarchical-relative-v2')
+
+    def __init__(self, *args):
+        paths = []
+        for arg in args:
+            if isinstance(arg, PurePath):
+                if arg._flavour is not self._flavour:
+                    # GH-103631: Convert separators for backwards compatibility.
+                    paths.append(arg.as_posix())
+                else:
+                    paths.extend(arg._raw_paths)
+            else:
+                try:
+                    path = os.fspath(arg)
+                except TypeError:
+                    path = arg
+                if not isinstance(path, str):
+>                   raise TypeError(
+                        "argument should be a str or an os.PathLike "
+                        "object where __fspath__ returns a str, "
+                        f"not {type(path).__name__!r}")
+E                   TypeError: argument should be a str or an os.PathLike object where __fspath__ returns a str, not 'HierarchicalModel'
+
+../../../.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/pathlib.py:373: TypeError
+________________________ test_inspector_cycle3_contract ________________________
+
+full = RelationalModel(runtime_version='4405956947c4b53c7ff01bd565aa3b114bc970a1', variant='C3-full', hypotheses={'c3:0048cd7...relabel schema-2 hashes.', 'native_revision_nodes': 8608, 'records': 1906}, schema=3, grammar='relative-conditions-v3')
+runtime = <pln_chess.pln.runtime.Runtime object at 0x7f1be7442ae0>
+
+    def test_inspector_cycle3_contract(full,runtime):
+        from pln_chess.cli.web import inspector_infer
+>       a=inspector_infer({'fen':FEN,'move':'c3e3'},full)
+
+tests/test_cycle3.py:209: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/pln_chess/cli/web.py:32: in inspector_infer
+    if name=='C5-full' or (name=='default' and checkpoint and read_json(checkpoint).get('schema')==5):
+src/pln_chess/common.py:17: in read_json
+    return json.loads(Path(path).read_text())
+../../../.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/pathlib.py:1162: in __init__
+    super().__init__(*args)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[AttributeError("'PosixPath' object has no attribute '_raw_paths'") raised in repr()] PosixPath object at 0x7f1be6fd13f0>
+args = (RelationalModel(runtime_version='4405956947c4b53c7ff01bd565aa3b114bc970a1', variant='C3-full', hypotheses={'c3:0048cd...label schema-2 hashes.', 'native_revision_nodes': 8608, 'records': 1906}, schema=3, grammar='relative-conditions-v3'),)
+paths = []
+arg = RelationalModel(runtime_version='4405956947c4b53c7ff01bd565aa3b114bc970a1', variant='C3-full', hypotheses={'c3:0048cd7...relabel schema-2 hashes.', 'native_revision_nodes': 8608, 'records': 1906}, schema=3, grammar='relative-conditions-v3')
+path = RelationalModel(runtime_version='4405956947c4b53c7ff01bd565aa3b114bc970a1', variant='C3-full', hypotheses={'c3:0048cd7...relabel schema-2 hashes.', 'native_revision_nodes': 8608, 'records': 1906}, schema=3, grammar='relative-conditions-v3')
+
+    def __init__(self, *args):
+        paths = []
+        for arg in args:
+            if isinstance(arg, PurePath):
+                if arg._flavour is not self._flavour:
+                    # GH-103631: Convert separators for backwards compatibility.
+                    paths.append(arg.as_posix())
+                else:
+                    paths.extend(arg._raw_paths)
+            else:
+                try:
+                    path = os.fspath(arg)
+                except TypeError:
+                    path = arg
+                if not isinstance(path, str):
+>                   raise TypeError(
+                        "argument should be a str or an os.PathLike "
+                        "object where __fspath__ returns a str, "
+                        f"not {type(path).__name__!r}")
+E                   TypeError: argument should be a str or an os.PathLike object where __fspath__ returns a str, not 'RelationalModel'
+
+../../../.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/pathlib.py:373: TypeError
+_______________ test_comparison_keeps_server_checkpoint_selected _______________
+
+full = RelationalModel(runtime_version='4405956947c4b53c7ff01bd565aa3b114bc970a1', variant='C3-full', hypotheses={'c3:0048cd7...relabel schema-2 hashes.', 'native_revision_nodes': 8608, 'records': 1906}, schema=3, grammar='relative-conditions-v3')
+
+    def test_comparison_keeps_server_checkpoint_selected(full):
+        from pln_chess.cli.web import inspector_infer
+>       result=inspector_infer({'fen':FEN,'move':'c3e3','compare':True},full)
+
+tests/test_cycle3.py:217: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/pln_chess/cli/web.py:32: in inspector_infer
+    if name=='C5-full' or (name=='default' and checkpoint and read_json(checkpoint).get('schema')==5):
+src/pln_chess/common.py:17: in read_json
+    return json.loads(Path(path).read_text())
+../../../.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/pathlib.py:1162: in __init__
+    super().__init__(*args)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[AttributeError("'PosixPath' object has no attribute '_raw_paths'") raised in repr()] PosixPath object at 0x7f1be6ae57e0>
+args = (RelationalModel(runtime_version='4405956947c4b53c7ff01bd565aa3b114bc970a1', variant='C3-full', hypotheses={'c3:0048cd...label schema-2 hashes.', 'native_revision_nodes': 8608, 'records': 1906}, schema=3, grammar='relative-conditions-v3'),)
+paths = []
+arg = RelationalModel(runtime_version='4405956947c4b53c7ff01bd565aa3b114bc970a1', variant='C3-full', hypotheses={'c3:0048cd7...relabel schema-2 hashes.', 'native_revision_nodes': 8608, 'records': 1906}, schema=3, grammar='relative-conditions-v3')
+path = RelationalModel(runtime_version='4405956947c4b53c7ff01bd565aa3b114bc970a1', variant='C3-full', hypotheses={'c3:0048cd7...relabel schema-2 hashes.', 'native_revision_nodes': 8608, 'records': 1906}, schema=3, grammar='relative-conditions-v3')
+
+    def __init__(self, *args):
+        paths = []
+        for arg in args:
+            if isinstance(arg, PurePath):
+                if arg._flavour is not self._flavour:
+                    # GH-103631: Convert separators for backwards compatibility.
+                    paths.append(arg.as_posix())
+                else:
+                    paths.extend(arg._raw_paths)
+            else:
+                try:
+                    path = os.fspath(arg)
+                except TypeError:
+                    path = arg
+                if not isinstance(path, str):
+>                   raise TypeError(
+                        "argument should be a str or an os.PathLike "
+                        "object where __fspath__ returns a str, "
+                        f"not {type(path).__name__!r}")
+E                   TypeError: argument should be a str or an os.PathLike object where __fspath__ returns a str, not 'RelationalModel'
+
+../../../.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/pathlib.py:373: TypeError
+=========================== short test summary info ============================
+FAILED tests/test_cycle2.py::test_inspector_uses_same_inference_contract - Ty...
+FAILED tests/test_cycle3.py::test_inspector_cycle3_contract - TypeError: argu...
+FAILED tests/test_cycle3.py::test_comparison_keeps_server_checkpoint_selected
+3 failed, 224 passed in 145.66s (0:02:25)

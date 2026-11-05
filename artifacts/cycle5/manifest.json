@@ -1,0 +1,940 @@
+{
+  "files": {
+    "NEXT_CYCLE.md": {
+      "bytes": 1501,
+      "sha256": "79e8d7980e71557f2d6f1ed510a922d7fc8ebcb9a501a4eae834d4bd827f4994"
+    },
+    "PLN_Chess_Codex_Cycle_5_Implementation_Brief.md": {
+      "bytes": 23730,
+      "sha256": "5affd0ead5d24764c699eeed749c441bc9a208b42ec562b1723d7dbc20399d6c"
+    },
+    "README.md": {
+      "bytes": 7738,
+      "sha256": "4b9387c1cd4d3fe685ee2eafc3818b4675a0934f700202546a41856af44f7055"
+    },
+    "artifacts/cycle5/acceptance.json": {
+      "bytes": 2844,
+      "sha256": "bebd06569ef1e70ee53f45db72d1c64fd6f491198c1ec35552b2805934828688"
+    },
+    "artifacts/cycle5/artifact-encoding.json": {
+      "bytes": 13425,
+      "sha256": "6fdf4f1b12621084fd4642d84f5963a1548af7d9e3e4e242e1e4012c3acf721b"
+    },
+    "artifacts/cycle5/baseline-start.json": {
+      "bytes": 56833,
+      "sha256": "1117f221fe5ed1985d8282585a5a0a538c0846f0fa93e446390f1578cf50fb69"
+    },
+    "artifacts/cycle5/baseline.json": {
+      "bytes": 151894,
+      "sha256": "ae29bfd7af8aef30b8ba263bd13daefd8b1639c1b17806869717f69f835d6537"
+    },
+    "artifacts/cycle5/baseline/cycle3-independent-games.json.xz": {
+      "bytes": 271836,
+      "sha256": "8d7621ed567ed28a9adc762e304a42e78ffb3fbdc88f1cce38892272469c51d2"
+    },
+    "artifacts/cycle5/baseline/cycle4-independent-games.json.xz": {
+      "bytes": 576220,
+      "sha256": "12bcebf77fb6b9b5dd761b190309d1d5650d5f1998d656c67acd8477d9de57c1"
+    },
+    "artifacts/cycle5/baseline/frozen-adversarial.json.xz": {
+      "bytes": 173840,
+      "sha256": "28c24603415b465b75e10bceb141dedf0451988a19c60c7d4d36bf009c75b40e"
+    },
+    "artifacts/cycle5/baseline/frozen-heldout-transfer.json.xz": {
+      "bytes": 345420,
+      "sha256": "6ad47387a1c497f7c26373a188c9290a31845c73c490745d47d5feb81a7cc6a7"
+    },
+    "artifacts/cycle5/baseline/original-49-errors.json.xz": {
+      "bytes": 183284,
+      "sha256": "dbad7b93b4996355d2e534d619cc980985d44b68f6e648f87295e17524f535a9"
+    },
+    "artifacts/cycle5/benchmarks/C4.json": {
+      "bytes": 7874,
+      "sha256": "5df417091c8c11496dbbe9f6818de2ffc21c9dac7d0ffe8d6988c537a84c3b50"
+    },
+    "artifacts/cycle5/benchmarks/C5.json": {
+      "bytes": 7928,
+      "sha256": "e42e37b794d3f948cd20a29f686099ffcd44dac5380afad6a4aa8499c9bac755"
+    },
+    "artifacts/cycle5/benchmarks/positions.json": {
+      "bytes": 1130,
+      "sha256": "2e2825ca799163881532afc9e925d295887fba77932d29036ea1786fc730be3a"
+    },
+    "artifacts/cycle5/calibration.json": {
+      "bytes": 8020,
+      "sha256": "768fabb11dc0074ef241e97ec8abfedbb1e24347deb4ba1deb726c6b7c356fbf"
+    },
+    "artifacts/cycle5/changed-files.json": {
+      "bytes": 9623,
+      "sha256": "6a1029e1244078310176ac8ba227042d32959f57f5dfbea9818e4112fdad7dcd"
+    },
+    "artifacts/cycle5/clean-attempt1-location.json": {
+      "bytes": 210,
+      "sha256": "f8ca78fb84f3fdc8d3558ce1a293fcc71ace0e7e9e6a153326236404d24827d4"
+    },
+    "artifacts/cycle5/clean-baseline-start.json": {
+      "bytes": 56694,
+      "sha256": "d50e9b05bf8783e921a51d15599e27e39b652fb045d8c60bcc9debcd3dd69f0e"
+    },
+    "artifacts/cycle5/clean-location.json": {
+      "bytes": 210,
+      "sha256": "cc435fd85dc1ace6f1ceea1668d0a5dccb5c9b82e0e67abf7bff85dd7c2de10d"
+    },
+    "artifacts/cycle5/comparison.json": {
+      "bytes": 674088,
+      "sha256": "a088c9170f268e40baddbdf13d8f9c3d36697ffc0b01281141c58a257f861bc3"
+    },
+    "artifacts/cycle5/datasets/dataset.json": {
+      "bytes": 3884476,
+      "sha256": "3c38d8644579b07d808ff1332a75922e535adafdb824a4813e21f4d63baa51a2"
+    },
+    "artifacts/cycle5/evaluation/C4-cycle3-independent-games.json.xz": {
+      "bytes": 272388,
+      "sha256": "7ae96f6631481e5f750af51cd2f24f6076c4278546085b1ca09209861b54a17d"
+    },
+    "artifacts/cycle5/evaluation/C4-cycle4-independent-games.json.xz": {
+      "bytes": 576076,
+      "sha256": "3a7ce072278414c1d99dd05dfad36803876888f4bdd0b84a5ed40ce9c88e3b15"
+    },
+    "artifacts/cycle5/evaluation/C4-cycle5-combination-holdout.json.xz": {
+      "bytes": 59504,
+      "sha256": "7ee2cf5d23f274bfc22f03a0c968152be15274ce284961bda9545290a835811e"
+    },
+    "artifacts/cycle5/evaluation/C4-cycle5-independent-games.json.xz": {
+      "bytes": 533600,
+      "sha256": "50e08b62fab45bfdf82d49bbf5cb68b4bc6378992b18b90567c74b58a9b69853"
+    },
+    "artifacts/cycle5/evaluation/C4-cycle5-structural-holdout.json.xz": {
+      "bytes": 39940,
+      "sha256": "c05a22260062c297a6cab61ad430cade627091ac7c05557d228ac8d972c4069e"
+    },
+    "artifacts/cycle5/evaluation/C4-cycle5-validation.json.xz": {
+      "bytes": 153372,
+      "sha256": "25d591276beb0d92a4d537b5a20c5a2faa0158b708cf14a901e5bffd61dbab6e"
+    },
+    "artifacts/cycle5/evaluation/C4-frozen-adversarial.json.xz": {
+      "bytes": 173980,
+      "sha256": "a7af18a7cf6059d5da5dbc50e87a24ec67171b9ed7374ad474c490bc159eb354"
+    },
+    "artifacts/cycle5/evaluation/C4-frozen-heldout-transfer.json.xz": {
+      "bytes": 345540,
+      "sha256": "4381ba4645647e611e8253f58a6d96706e2071bb3dc00bcb36bc0fc14ed2f00d"
+    },
+    "artifacts/cycle5/evaluation/C5-abstract-only-cycle3-independent-games.json.xz": {
+      "bytes": 190264,
+      "sha256": "1fa822b2ad7edbbca2d9f094d13ffa4d74c97a8131326c165b13501905700113"
+    },
+    "artifacts/cycle5/evaluation/C5-abstract-only-cycle4-independent-games.json.xz": {
+      "bytes": 403188,
+      "sha256": "08c90578b7349fd112fd15253c33700c81c1b7ce18fb71d20d6c6fecf6a43159"
+    },
+    "artifacts/cycle5/evaluation/C5-abstract-only-cycle5-combination-holdout.json.xz": {
+      "bytes": 69756,
+      "sha256": "cfe731a162f2327f4fd4083f32722ddad8767bbfb59fe24cfc36d5a22abc8925"
+    },
+    "artifacts/cycle5/evaluation/C5-abstract-only-cycle5-independent-games.json.xz": {
+      "bytes": 559344,
+      "sha256": "0d72565e1cc75085c4657429f318ec142fdeea079472b532ef7ae536ad2c0df7"
+    },
+    "artifacts/cycle5/evaluation/C5-abstract-only-cycle5-structural-holdout.json.xz": {
+      "bytes": 47732,
+      "sha256": "fa0aafc5685bb6b1bbe310de974f6eeb982811ac5ffbeae64320df81e1b6e6c4"
+    },
+    "artifacts/cycle5/evaluation/C5-abstract-only-cycle5-validation.json.xz": {
+      "bytes": 166220,
+      "sha256": "f77421ba29345302b0313a36bf5d86ac4450c9e38edbaef3f23f5c94ecfe7b22"
+    },
+    "artifacts/cycle5/evaluation/C5-abstract-only-frozen-adversarial.json.xz": {
+      "bytes": 160320,
+      "sha256": "be81de2dda32cf73b145061a43fffc9af369e66049f05c565dc9af8028f52b14"
+    },
+    "artifacts/cycle5/evaluation/C5-abstract-only-frozen-heldout-transfer.json.xz": {
+      "bytes": 271632,
+      "sha256": "ef79c77a79622633824d9413327b1e285971a64576bb2a10f0f7813d99780b49"
+    },
+    "artifacts/cycle5/evaluation/C5-full-cycle3-independent-games.json.xz": {
+      "bytes": 749944,
+      "sha256": "532dcc210fc321b9d334d0c50a32ba3622d63a017297f1bd3aa18c9ce9842212"
+    },
+    "artifacts/cycle5/evaluation/C5-full-cycle4-independent-games.json.xz": {
+      "bytes": 1878076,
+      "sha256": "534ae95b3aa308cce174d9dd935ef4f30fc6fa12074125c7b7b99937c863d30f"
+    },
+    "artifacts/cycle5/evaluation/C5-full-cycle5-combination-holdout.json.xz": {
+      "bytes": 183132,
+      "sha256": "b2ac167b9e246e1f5ecd55ac8cd99d2c84867c8d120630426e0a7ba517bb9be5"
+    },
+    "artifacts/cycle5/evaluation/C5-full-cycle5-independent-games.json.xz": {
+      "bytes": 2279508,
+      "sha256": "eb5ba281478ace67c8affbbd19b13f88d6e51d1dfc1907e4ff2086daa0ff9454"
+    },
+    "artifacts/cycle5/evaluation/C5-full-cycle5-structural-holdout.json.xz": {
+      "bytes": 110344,
+      "sha256": "cf8a180c63b3bc89ca41ac94f2a30bd80c0def736ebf0a3e4234642748e8fc46"
+    },
+    "artifacts/cycle5/evaluation/C5-full-cycle5-validation.json.xz": {
+      "bytes": 675124,
+      "sha256": "87dc4e9c0b8951a6d9a6895d7e7e53a4e5616dd3dadb75ff11cd4c9f0ed97629"
+    },
+    "artifacts/cycle5/evaluation/C5-full-frozen-adversarial.json.xz": {
+      "bytes": 429828,
+      "sha256": "0f89d4872087e76dc4c5d7b721fd8bb04d1f7c194a67e7846050338743a22633"
+    },
+    "artifacts/cycle5/evaluation/C5-full-frozen-heldout-transfer.json.xz": {
+      "bytes": 1188808,
+      "sha256": "0b71ba6baf200a888f2d354d9c39d7ae4e5f937d9fae9934a9be09ef5ceb6821"
+    },
+    "artifacts/cycle5/evaluation/C5-no-new-negatives-cycle3-independent-games.json.xz": {
+      "bytes": 215144,
+      "sha256": "4d905adb5f62757719700c509dbde957e927a387b1ed9d8e30a281c37e9d1a8a"
+    },
+    "artifacts/cycle5/evaluation/C5-no-new-negatives-cycle4-independent-games.json.xz": {
+      "bytes": 445976,
+      "sha256": "89e5dfe17ac4ee5b526a80185e2ac4356cd64078674b605a6c61b75ad00a4214"
+    },
+    "artifacts/cycle5/evaluation/C5-no-new-negatives-cycle5-combination-holdout.json.xz": {
+      "bytes": 81436,
+      "sha256": "3b0a303fb5c45d30b98f5dc109472a4e1e51d7f2a576976ba0c95970eeef6d36"
+    },
+    "artifacts/cycle5/evaluation/C5-no-new-negatives-cycle5-independent-games.json.xz": {
+      "bytes": 622748,
+      "sha256": "69219aac77f47b7352541072f542a3dbd8ff1c4e534476048db2031dd50b0fb2"
+    },
+    "artifacts/cycle5/evaluation/C5-no-new-negatives-cycle5-structural-holdout.json.xz": {
+      "bytes": 56484,
+      "sha256": "caa5f37a9574c7b92785c6643901bd683df560a3e618860a9df97d9caa2e66e9"
+    },
+    "artifacts/cycle5/evaluation/C5-no-new-negatives-cycle5-validation.json.xz": {
+      "bytes": 187316,
+      "sha256": "d5133d06654afe49c9cb4ba91a13d03ed3b0839ae3ca5bceb617b9b2c83e3a6a"
+    },
+    "artifacts/cycle5/evaluation/C5-no-new-negatives-frozen-adversarial.json.xz": {
+      "bytes": 179556,
+      "sha256": "160824f62f8a4e0c13bf9a1083c031b777576a90142d0cdbbd416b3e9d69e91c"
+    },
+    "artifacts/cycle5/evaluation/C5-no-new-negatives-frozen-heldout-transfer.json.xz": {
+      "bytes": 300376,
+      "sha256": "456dffca2cf2ebdb6410805641808d4e522d08ff01a6815f182b368a0bdf0849"
+    },
+    "artifacts/cycle5/factorial.json.xz": {
+      "bytes": 44496,
+      "sha256": "4ff8565039c14a76a76cd10ad77910702be9a9b0c7b9c43a6eaa2e8ca0c69601"
+    },
+    "artifacts/cycle5/induction.json": {
+      "bytes": 138165,
+      "sha256": "f02d19893a82a896dfbd21be9068616889401d03196ffc7c5f3e3dc251255bf6"
+    },
+    "artifacts/cycle5/logs/baseline-tests.txt": {
+      "bytes": 272,
+      "sha256": "d44ecf95ba45e663afe4b4598268ee512c0a1eb050bc3b5c867ab5d652497436"
+    },
+    "artifacts/cycle5/logs/clean-attempt1.log": {
+      "bytes": 3623,
+      "sha256": "fabbadae679ad2f989ad203c54321c3172c08a5602cb469d7d78bf8025b31ce2"
+    },
+    "artifacts/cycle5/logs/clean-bootstrap.log": {
+      "bytes": 9529,
+      "sha256": "da08ecc1b5f9f33dcebe332faac8994cde418124d1a395c8a2ee6c3201bd3195"
+    },
+    "artifacts/cycle5/logs/compatibility-fix-tests.txt": {
+      "bytes": 98,
+      "sha256": "f8a59a34a4288f02abf0c37b44231e51fff80748a7ae219a12c6650fca2c0d19"
+    },
+    "artifacts/cycle5/logs/development-failed-tests.txt": {
+      "bytes": 9901,
+      "sha256": "b1722bda18af3c437bcab470b65ccc3935075215b9ae728c13cb9e4a044f8f41"
+    },
+    "artifacts/cycle5/logs/development.log": {
+      "bytes": 17986,
+      "sha256": "8308e2441a09e23c7ccd56976cf4b4aeee46c11aa8e84b4fee0cdae30816fef9"
+    },
+    "artifacts/cycle5/logs/packaging-attempt1.log": {
+      "bytes": 234,
+      "sha256": "c740aca72edfcdeca7069e865e148881f2462582ead48f51fb69beb4b78cd7f1"
+    },
+    "artifacts/cycle5/logs/packaging.log": {
+      "bytes": 3207,
+      "sha256": "c31a5b9eeb8e7e81bea19cb785da46c6ec0ec402d2ad666e812aaf93e76351bd"
+    },
+    "artifacts/cycle5/logs/preclean-tests.log": {
+      "bytes": 100,
+      "sha256": "e72fb4a78ae88720786d3de0a1094c0cd31254e7d78f5aeb318a7e7828c4e189"
+    },
+    "artifacts/cycle5/logs/storage-relocation.json": {
+      "bytes": 562,
+      "sha256": "952be70be04138a3dffcd7ea231703a3f553ff7f36646d7fc3e6420fdf956fb8"
+    },
+    "artifacts/cycle5/logs/ui-check.py": {
+      "bytes": 4395,
+      "sha256": "3f6400423cefe9f14dac333991ccd45abdce8ad5685f5d692d7278e0ff805571"
+    },
+    "artifacts/cycle5/logs/ui-final.log": {
+      "bytes": 2501,
+      "sha256": "addafe33c1eaab3d6ea9fbb023de2cebc9984fb15a5357f81c4e33e6c987bea1"
+    },
+    "artifacts/cycle5/model/C5-abstract-only.json": {
+      "bytes": 1485664,
+      "sha256": "453cfffd6eb04dee41d3621fe26a38e5ba7573fb2d97427e1aea0615b1846014"
+    },
+    "artifacts/cycle5/model/C5-factorial-only.json": {
+      "bytes": 42625,
+      "sha256": "37e86848b6a34a2af7d9b9b0c0c4b330f2e33321436e28eae06bc34aacd081ca"
+    },
+    "artifacts/cycle5/model/C5-full.json": {
+      "bytes": 1485655,
+      "sha256": "5d8d40447c7fab4320cdc18ff83fbaff40affb535514b38a4a0bb315f3ccc2b2"
+    },
+    "artifacts/cycle5/model/C5-no-new-negatives.json": {
+      "bytes": 1485667,
+      "sha256": "ec24dc168da967e9b41bb059def90d4642dd383dcfa0fddc055e95eaf1f93d0d"
+    },
+    "artifacts/cycle5/model/evidence.json.xz": {
+      "bytes": 131252,
+      "sha256": "42204d9951309fa7f04a05baa9fe843a010a15eee545fbce26d9300f472e9b97"
+    },
+    "artifacts/cycle5/native-probes/audit.json": {
+      "bytes": 59772,
+      "sha256": "b634df1f207449f82a2fb445798dd5381ccf423d4d94cf6cdecce291b03c7b05"
+    },
+    "artifacts/cycle5/native-probes/audit.metta": {
+      "bytes": 1952,
+      "sha256": "48a31454d3698d7906d79436a78017029032dc59c5e04419da95f1e383f1cbf0"
+    },
+    "artifacts/cycle5/new-negative-summary.json": {
+      "bytes": 430,
+      "sha256": "ab52ea7fc4f5c81877e69f54e9f7b0a4724e4ed3372a49c4e83a2df724cf6005"
+    },
+    "artifacts/cycle5/package-status.json": {
+      "bytes": 2930,
+      "sha256": "cc66db406ef13e7d75133b29eefd650075422f70f563926c4d7ecb8f4496b826"
+    },
+    "artifacts/cycle5/proof-examples.json": {
+      "bytes": 2975,
+      "sha256": "953cd79e9bd9756c021e83af7f70b2db91485473fb85fac6f666b4b204dc71d5"
+    },
+    "artifacts/cycle5/proofs/before-after.json.xz": {
+      "bytes": 88196,
+      "sha256": "7e5b37bbf3b87c2295ec7a5bbb9c09bfa63354fc7a14eca8d1d163f33641e3bf"
+    },
+    "artifacts/cycle5/proofs/family-counterfactuals.json.xz": {
+      "bytes": 55660,
+      "sha256": "bd0d3110216aa29f36c27b487bc98ba91f1d71d04f135885dd28455833dbe10f"
+    },
+    "artifacts/cycle5/proofs/new-negative-counterfactuals.json.xz": {
+      "bytes": 595016,
+      "sha256": "661ed3ad94a057b59d436715140f959cb24c9da8e7cec78cc3afd9761a1874c0"
+    },
+    "artifacts/cycle5/proofs/original-49-errors.json.xz": {
+      "bytes": 248876,
+      "sha256": "c666a71e6920a27569e1ccd059c60a6039964801f024cb059404fdd1f21a903e"
+    },
+    "artifacts/cycle5/pytest.txt": {
+      "bytes": 352,
+      "sha256": "c7c268ced0d80b2d11d2fa9a92ab65894a5f85b02d66dcfe20b0086f7dbc5fa4"
+    },
+    "artifacts/cycle5/reproduction-parity.json": {
+      "bytes": 8453,
+      "sha256": "d7fe2584a575fd9d6268928b00f98c474f9aabe10a41c2246c4cab69841b1478"
+    },
+    "artifacts/cycle5/run.json": {
+      "bytes": 4361,
+      "sha256": "583e72a94a76c63168cc29136b6090ee4b626c65a92940376e91d6121f52d09f"
+    },
+    "artifacts/cycle5/selective-risk.json": {
+      "bytes": 2881,
+      "sha256": "d553ce16e6e7b309411afeebfe226912c6dff82c36f1e6d76425da8930fc41fc"
+    },
+    "artifacts/cycle5/temporal.json": {
+      "bytes": 6344,
+      "sha256": "af87874955a4957a7627e3e7f29e596636a18ef922646573b613e07db27cbea0"
+    },
+    "artifacts/cycle5/ui-verification.json": {
+      "bytes": 4077,
+      "sha256": "e99a71de7a222a2693b16c8a41d6fce7a406aac80275ccd38e9dc68b5dffff7a"
+    },
+    "artifacts/cycle5/verification.json": {
+      "bytes": 17254,
+      "sha256": "233d9ef28bc2d508409a8038083b9be66fdf88f00d259da9437ca491836dfa5a"
+    },
+    "configs/benchmark.json": {
+      "bytes": 108,
+      "sha256": "d15248030d243c4dd72bdab99e2fda1ba88f57920d387a7db4228dc7a0b52b27"
+    },
+    "configs/cycle3.json": {
+      "bytes": 622,
+      "sha256": "da3104b28ead61a020965a5bb8e1a956ef4c8649defc7be538368a277f39d1be"
+    },
+    "configs/cycle4.json": {
+      "bytes": 1239,
+      "sha256": "e4424156bad56f882e292aa4d2958addaeffd0172485f2257c5c331b31a94f50"
+    },
+    "configs/cycle5.json": {
+      "bytes": 1106,
+      "sha256": "b2b912ee8d4bab04480a2f4e00e08b03129a4dceff6ef7f6566e41a243485860"
+    },
+    "configs/runtime-lock.json": {
+      "bytes": 3750,
+      "sha256": "c3a147aaae05e3f6f33f4e9319200010fca09ae6528bf61536b1976f79f6ed96"
+    },
+    "configs/training.json": {
+      "bytes": 165,
+      "sha256": "da892727713cb6a90daef9061ee6df737f57c669d33f17b3218408b8b434af95"
+    },
+    "docs/architecture.md": {
+      "bytes": 4085,
+      "sha256": "06d8a6172f3c015dd2ec1f72ed254ae50cf062549636f90d5c8959b69988fe01"
+    },
+    "docs/chess-coverage.md": {
+      "bytes": 3538,
+      "sha256": "bc5e0f4370f2e96f08655df31b5c15f72c46e12759d8a090ac12dc37679250ba"
+    },
+    "docs/cycle5/api-cli.md": {
+      "bytes": 2263,
+      "sha256": "7c79919c0418ff72e6353ac790cc7cbca094f736a3ca2241d9a20476d5644af0"
+    },
+    "docs/cycle5/architecture.md": {
+      "bytes": 2805,
+      "sha256": "b3ca5a26b941d665c09372c9a4f679053500c657c6ade0fff5064722904d93c3"
+    },
+    "docs/cycle5/baseline.md": {
+      "bytes": 2303,
+      "sha256": "74625933dca47a4a6628a9753b6e79fa37a9dc2787af77accd10b9fb374182f1"
+    },
+    "docs/cycle5/chess-coverage.md": {
+      "bytes": 2975,
+      "sha256": "c87ea0d136ec2c78e92a2a838eefdf059783cdb4c4ce495a7f2ef3eb1a338205"
+    },
+    "docs/cycle5/composition-feasibility.md": {
+      "bytes": 2095,
+      "sha256": "daad43492bf30c8da4ddd2ef4c6b5d55d33b2bb8a1c84a99f81db2b516d3a496"
+    },
+    "docs/cycle5/engineering-report.md": {
+      "bytes": 11594,
+      "sha256": "75d6e8ab426ec84286565e72d6dd97eddafcb7aff130ab01641b37e7156d12e8"
+    },
+    "docs/cycle5/experimental-protocol.md": {
+      "bytes": 2274,
+      "sha256": "4d94f430af758717d83d60f65f04bc66663ae26c9d8b8729147375b9bc55117c"
+    },
+    "docs/cycle5/generalization-results.md": {
+      "bytes": 7900,
+      "sha256": "16bd90dbddd16a563261b468ac0f731ccbb194e1447df24a547d3e780962c836"
+    },
+    "docs/cycle5/induction-results.md": {
+      "bytes": 871,
+      "sha256": "db9c74b1c4bf20916b507cf69f3cd86316a07d278da3ebda4da12e2342e8b9b4"
+    },
+    "docs/cycle5/learning-semantics.md": {
+      "bytes": 1711,
+      "sha256": "c9f820b78833ffe05796cd48b42afc3a81ba045d7d16826db99fae4a6d2926b5"
+    },
+    "docs/cycle5/model-card.md": {
+      "bytes": 1843,
+      "sha256": "78dacd593dcb8f9ab6a0316c71fe3afa82c7713d9adf63e3ee23044729823794"
+    },
+    "docs/cycle5/native-composition-matrix.md": {
+      "bytes": 1917,
+      "sha256": "3ecae05976ee5afd4ac9d1039bb1ffcdea93b940e5f25f68927060d00d72cec7"
+    },
+    "docs/cycle5/performance.md": {
+      "bytes": 2037,
+      "sha256": "bf41882d4ee0a1e34a389787d9b87ec4974968b8942910c8ed5b9915d93cc9aa"
+    },
+    "docs/cycle5/spatial-semantics.md": {
+      "bytes": 1278,
+      "sha256": "dfbbdaa2dc137083a7fdad21e526bd0a07d1452b17381783f9961ecc71158f66"
+    },
+    "docs/cycle5/temporal-semantics.md": {
+      "bytes": 2218,
+      "sha256": "1eb0dcf0d610629c32af23ac6491758b759ddfd7d87783a9573b009bab864575"
+    },
+    "docs/cycle5/verification.md": {
+      "bytes": 4927,
+      "sha256": "63dbc3bd27bac1239a94e6fb61b4a12a1c1dc6d949cad0fc624336d3315bb669"
+    },
+    "docs/learning-semantics.md": {
+      "bytes": 3809,
+      "sha256": "39a3227342e6bbf82cdc5954a3c628a19e9fbdc03ab416989676741b4c1ae418"
+    },
+    "docs/model-card.md": {
+      "bytes": 2481,
+      "sha256": "47b36a05950b53e4f6c3535b9b227d670a62b16c9769d0488a5874f0f8d21834"
+    },
+    "docs/pln-compatibility-matrix.md": {
+      "bytes": 5471,
+      "sha256": "ec53a5a14f90486356d0cae14aa708b2ef5a8fe201f46114ff9c8b554d5cb04a"
+    },
+    "docs/spatial-semantics.md": {
+      "bytes": 3158,
+      "sha256": "2ca262ed643a7e755d00e3e1672a7a644f03f5b9ef6d15ff605738d3ec0b342a"
+    },
+    "evaluation/__init__.py": {
+      "bytes": 70,
+      "sha256": "78a1d7585972ee67a97b1c9d2be0b0a5587a8d5b6fa60f49e45bd1080c67150f"
+    },
+    "evaluation/cycle2.py": {
+      "bytes": 12533,
+      "sha256": "cea789f4c02294c76d7a0612b39690f68f5f4832797df18a3be5bce25540be07"
+    },
+    "evaluation/cycle2_native.py": {
+      "bytes": 6880,
+      "sha256": "b47032f796557706174a63f92924cd40241460ea1ef0d3e8d1831af61633b9a6"
+    },
+    "evaluation/cycle2_reporting.py": {
+      "bytes": 9310,
+      "sha256": "6a1c2b0b0d8c935010c1ab1eebe44a8b209a2104c1d2d83e3b144e18f2a18c2d"
+    },
+    "evaluation/cycle3.py": {
+      "bytes": 7536,
+      "sha256": "9b013c4e72bc1cdf656347191e1cec75d3e60379d45a6032259b6d39ff4a8065"
+    },
+    "evaluation/cycle3_native.py": {
+      "bytes": 3637,
+      "sha256": "3ce53ed41bd2c9248ff0f1c9adb50d86afdd8bc1d79fead2faeb612ed3d54081"
+    },
+    "evaluation/cycle3_reporting.py": {
+      "bytes": 10706,
+      "sha256": "c88fce81ce64fe8b7a6e9514133c71fbdec8e7d69b9e65c835fd5c35db2d6b26"
+    },
+    "evaluation/cycle3_research.py": {
+      "bytes": 9004,
+      "sha256": "be0872d1625391bf006227604d0c3773b9e6106fe69d4e46412855c228d6b492"
+    },
+    "evaluation/cycle4.py": {
+      "bytes": 8136,
+      "sha256": "6196d658044f7adf6f5929aaf7f13187e5e7bd89fc9742c9aed84bb54e47cec3"
+    },
+    "evaluation/cycle4_benchmark.py": {
+      "bytes": 3216,
+      "sha256": "76f7193032c7d656217a8b6b67f24d883026c97c6681c93e5d245366074159af"
+    },
+    "evaluation/cycle4_induction.py": {
+      "bytes": 6774,
+      "sha256": "ed5134ba4afe557aedff59c17736abcb2ba5768036327e1e47eae111bf9a7b1e"
+    },
+    "evaluation/cycle4_native.py": {
+      "bytes": 5345,
+      "sha256": "bfad27cd7b9236e8c51b30308bf81bde3a1184bcdcbe8f27eee49e0e4fe3dc26"
+    },
+    "evaluation/cycle4_reporting.py": {
+      "bytes": 16915,
+      "sha256": "506f6d9b3680d533ceb1939944c0ffaf95840215b182528c47727cd5cb670eae"
+    },
+    "evaluation/cycle4_research.py": {
+      "bytes": 8338,
+      "sha256": "5fd09abb573c55d44f8b1f0c127e2f65deed35cad3d07bae6e5d79866b8565e5"
+    },
+    "evaluation/cycle5_native.py": {
+      "bytes": 3540,
+      "sha256": "b86b52fb227f296ec2199966cb9d19a88bcfab7f888b5e03b0f3781bbbf1a327"
+    },
+    "evaluation/cycle5_reporting.py": {
+      "bytes": 10969,
+      "sha256": "7fa81f61c53d3f84c1bc483cacc7e3b4b82aea376f343ddd294ce85a6f4d7224"
+    },
+    "evaluation/cycle5_research.py": {
+      "bytes": 12767,
+      "sha256": "c94d487146aa96fbe4869a18b003af46b43503948662ce3a70323147cd8cac8e"
+    },
+    "evaluation/experiments.py": {
+      "bytes": 11805,
+      "sha256": "5002d2471e11dfe737cb6969159f87827885da8f95473d058cf3b2c2df6c5c27"
+    },
+    "evaluation/reporting.py": {
+      "bytes": 9538,
+      "sha256": "fa14e6cf1ad42e88dcc8fb5304269c0c046b2c5ff6ab8323c6332b6eba7e4ba0"
+    },
+    "proofshot-artifacts/2026-11-05_18-35-14_verify-cycle-5-proof-gaps-c4-comparison/metadata.json": {
+      "bytes": 256,
+      "sha256": "9f24bec5216cc2ba7b90ba588603efeceecfd8dcd1447f78b4627c4107e6669d"
+    },
+    "proofshot-artifacts/2026-11-05_18-35-14_verify-cycle-5-proof-gaps-c4-comparison/server.log": {
+      "bytes": 58,
+      "sha256": "4b0caea16442186e0b3dd01b7b2ee82b9d41d346d29fd91b681094833fb08e82"
+    },
+    "proofshot-artifacts/2026-11-05_18-37-40_cycle-5-strict-proof-gaps-temporal-trust/SUMMARY.md": {
+      "bytes": 740,
+      "sha256": "b8f1c94711f394cc12ff9d2547b249e5875307af99ca89c060fe3e61cf597d61"
+    },
+    "proofshot-artifacts/2026-11-05_18-37-40_cycle-5-strict-proof-gaps-temporal-trust/c4-c5-strict-comparison.png": {
+      "bytes": 68544,
+      "sha256": "f2ff0b8e1877ac2a74797a833dc3ad0640732011a86432c01711ac8a1968a82c"
+    },
+    "proofshot-artifacts/2026-11-05_18-37-40_cycle-5-strict-proof-gaps-temporal-trust/console-output.log": {
+      "bytes": 8,
+      "sha256": "eed43c8f830cc1c62a696335e56b15a142092139cca610517a8310a96966ed51"
+    },
+    "proofshot-artifacts/2026-11-05_18-37-40_cycle-5-strict-proof-gaps-temporal-trust/metadata.json": {
+      "bytes": 224,
+      "sha256": "ed4f41e97197a8d8b37515bdc8de9fd1344f7b83add07b93449229ca30d183a5"
+    },
+    "proofshot-artifacts/2026-11-05_18-37-40_cycle-5-strict-proof-gaps-temporal-trust/server.log": {
+      "bytes": 561,
+      "sha256": "12f12d7abe84aa39f5e2dd5ab02422e7ab5197d3fdf8b86881519e30fb6f5e44"
+    },
+    "proofshot-artifacts/2026-11-05_18-37-40_cycle-5-strict-proof-gaps-temporal-trust/session-log.json": {
+      "bytes": 2106,
+      "sha256": "299d86cb19682a99180308b7413f4f8bdd41889a0c5480bcdfaf721281e4ebae"
+    },
+    "proofshot-artifacts/2026-11-05_18-37-40_cycle-5-strict-proof-gaps-temporal-trust/session.webm": {
+      "bytes": 1036019,
+      "sha256": "c4645e81b1fc9fcbfd819f863f25b54c8ddffc2d2382277f0f2fb0da1706ce11"
+    },
+    "proofshot-artifacts/2026-11-05_18-37-40_cycle-5-strict-proof-gaps-temporal-trust/unresolved-knight-premises.png": {
+      "bytes": 66149,
+      "sha256": "4820184e03d388e52c717a7d123f24c1785fd18b1aa79d968215ea056b3641ae"
+    },
+    "proofshot-artifacts/2026-11-05_18-37-40_cycle-5-strict-proof-gaps-temporal-trust/viewer.html": {
+      "bytes": 44193,
+      "sha256": "79ef470cc6e5c4960f6f33d5357eb7dfdb80e8e477dbd0fa913ed6b3e6281fc6"
+    },
+    "proofshot-artifacts/2026-11-05_18-51-24_final-cycle-5-temporal-modes-incomplete/SUMMARY.md": {
+      "bytes": 1051,
+      "sha256": "e006ff2104e5b8e8345bf46f40790445e3da68fc8158bc8be2381fe2c0e9fe58"
+    },
+    "proofshot-artifacts/2026-11-05_18-51-24_final-cycle-5-temporal-modes-incomplete/console-output.log": {
+      "bytes": 8,
+      "sha256": "eed43c8f830cc1c62a696335e56b15a142092139cca610517a8310a96966ed51"
+    },
+    "proofshot-artifacts/2026-11-05_18-51-24_final-cycle-5-temporal-modes-incomplete/event-backed-ep-scope.png": {
+      "bytes": 61513,
+      "sha256": "39f69a197d44214c2099d55dabff5f851b0f090437ff6b213d47885ba4295a01"
+    },
+    "proofshot-artifacts/2026-11-05_18-51-24_final-cycle-5-temporal-modes-incomplete/incomplete-proof-budget.png": {
+      "bytes": 103215,
+      "sha256": "4ec5b1539b350b01fdf9a1454109333b53de9d67c5ad071a77332398b2e9c5f7"
+    },
+    "proofshot-artifacts/2026-11-05_18-51-24_final-cycle-5-temporal-modes-incomplete/invalid-input-clears-results.png": {
+      "bytes": 67137,
+      "sha256": "caf8ea87edfae0aa2b27e9e2e448d08ef3ccc975b58c5e4056720ee21042a351"
+    },
+    "proofshot-artifacts/2026-11-05_18-51-24_final-cycle-5-temporal-modes-incomplete/metadata.json": {
+      "bytes": 259,
+      "sha256": "5b67c52def4e0f378eaddb024789e96e62e2d1803ff5d9dadb1eec798e0a72e8"
+    },
+    "proofshot-artifacts/2026-11-05_18-51-24_final-cycle-5-temporal-modes-incomplete/mobile-proof-gap-and-export.png": {
+      "bytes": 84522,
+      "sha256": "f9999c7380dc5c78de6df43d9b91fcc9b0ad4aabebfc2aa59c8cde46c63dce62"
+    },
+    "proofshot-artifacts/2026-11-05_18-51-24_final-cycle-5-temporal-modes-incomplete/native-runtime-error-contract.png": {
+      "bytes": 65619,
+      "sha256": "29c62f6c1309a60d6573e17173b985c9e84c2698d1a8cc6c7a28aad8e4cad713"
+    },
+    "proofshot-artifacts/2026-11-05_18-51-24_final-cycle-5-temporal-modes-incomplete/server.log": {
+      "bytes": 801,
+      "sha256": "14b0c420ac8082cfa6148dd88c2816ac123da2cb43ec34a475ab45546645782e"
+    },
+    "proofshot-artifacts/2026-11-05_18-51-24_final-cycle-5-temporal-modes-incomplete/session-log.json": {
+      "bytes": 6084,
+      "sha256": "568ed8ca1a41090f63383e6c447b98242be4ce02801d0a7a15c9c7294fa37742"
+    },
+    "proofshot-artifacts/2026-11-05_18-51-24_final-cycle-5-temporal-modes-incomplete/session.webm": {
+      "bytes": 277497,
+      "sha256": "c7c2bf6424934bab3c50991140571632441aa852015e39672c1d021b45ee501d"
+    },
+    "proofshot-artifacts/2026-11-05_18-51-24_final-cycle-5-temporal-modes-incomplete/trusted-temporal-metadata.png": {
+      "bytes": 56378,
+      "sha256": "6027b35b188d3a2fcf824e395a488f5d3121e1f0702d49096cb878562a8b1f2f"
+    },
+    "proofshot-artifacts/2026-11-05_18-51-24_final-cycle-5-temporal-modes-incomplete/viewer.html": {
+      "bytes": 59475,
+      "sha256": "0b642bb62eebad732c2872ebbd2dc452dc59555f9396a7f921c0c471334b31cf"
+    },
+    "pyproject.toml": {
+      "bytes": 575,
+      "sha256": "bd1d708b3d6adaa39acde3bca1106a3d54cd30c89f855bf7a57aeb7b053be1c6"
+    },
+    "requirements-dev.lock": {
+      "bytes": 94,
+      "sha256": "39eb93308c38a5eb9536d93cc08e5dade14002fa1359c2aa80fd9709155f6029"
+    },
+    "scripts/bootstrap.sh": {
+      "bytes": 1297,
+      "sha256": "baadc3d83a043e2319e33223cac3189afd7173d5164757e585346c96ee66ee9a"
+    },
+    "scripts/cycle2_deliver.py": {
+      "bytes": 5333,
+      "sha256": "45a85ac2582170bf644eb0044fc52bcac8f9ce3de739e30da44a415e43781152"
+    },
+    "scripts/cycle2_reproduce.sh": {
+      "bytes": 208,
+      "sha256": "89440b654968b146afaa8ac80d9482ef087f974c7351b513c571d5b8bdc26bb1"
+    },
+    "scripts/cycle3_baseline.py": {
+      "bytes": 3104,
+      "sha256": "ba561d266b1cbbdef679c7c2d6d6af1ec135871037d59604dfbda1eaee7cfa4b"
+    },
+    "scripts/cycle3_deliver.py": {
+      "bytes": 6253,
+      "sha256": "e70bbfda1640e467c259e01a1377bdc70902a9a25c9ef808990a03fdca0d28bb"
+    },
+    "scripts/cycle3_reproduce.sh": {
+      "bytes": 156,
+      "sha256": "9eb398fc2d083c8fb30509a20fa3d172fa9c6f4d0bbae49f0276cbd0f70b0fad"
+    },
+    "scripts/cycle4_baseline.py": {
+      "bytes": 3876,
+      "sha256": "30100b2d574a19e79483689b2559cb788a1edda543a72e585dd46d4d60f1623d"
+    },
+    "scripts/cycle4_deliver.py": {
+      "bytes": 6339,
+      "sha256": "4a5a1ae55dba0683f2cfc09d5c8e57255e74f7c561d3ac65150dc0b25742f8ab"
+    },
+    "scripts/cycle4_reproduce.sh": {
+      "bytes": 192,
+      "sha256": "f97a4521dd141ac7e02c765b2a0cf653fb59e5bd4ad2171b65dd57ea1946466f"
+    },
+    "scripts/cycle5_baseline.py": {
+      "bytes": 3349,
+      "sha256": "9bff832fe36935906d4e61f0e767980e240b705ad923eac2c0d20fdcce1e55bd"
+    },
+    "scripts/cycle5_deliver.py": {
+      "bytes": 7007,
+      "sha256": "9197e506881c23e6756bdccd708257e7b8618b20b94e55889ac6fdebcd1fb832"
+    },
+    "scripts/cycle5_reproduce.sh": {
+      "bytes": 192,
+      "sha256": "0ee51cbbbd944e2a90e1a18cec61c6a3960b85f34cf762c0a7abca06adb7b924"
+    },
+    "scripts/deliver.py": {
+      "bytes": 7138,
+      "sha256": "8d118f2a24353afb9cf076d9f056bff1b43badab936c9ebd84f63ef8362d6739"
+    },
+    "scripts/finalize.py": {
+      "bytes": 157,
+      "sha256": "5436b864a9570dcc91d0a67b02c559eb13798107fb01fb2126d363b5416df742"
+    },
+    "src/pln_chess/__init__.py": {
+      "bytes": 94,
+      "sha256": "f16635abeba91549f3dc337a010e5d139d2e1ffa156c9a7be3794799e4d07f01"
+    },
+    "src/pln_chess/__main__.py": {
+      "bytes": 56,
+      "sha256": "05a457ae27e7edd227ea329aaa90a3c2c223f35c1b1543e8460027201d9b9059"
+    },
+    "src/pln_chess/api/__init__.py": {
+      "bytes": 11397,
+      "sha256": "66640760081cfc4040944252f7b119b81fc1abe115801bddfab3f44702699cb1"
+    },
+    "src/pln_chess/cli/__init__.py": {
+      "bytes": 15565,
+      "sha256": "fb72bcfcb819f4e32ec37eb5e76fe9499e599abea122336a4d5a55cade01c499"
+    },
+    "src/pln_chess/cli/web.py": {
+      "bytes": 19584,
+      "sha256": "1bd84532b4cb533db2fed2f1305733dddac0221c6e97dab30b89c8eb569804d1"
+    },
+    "src/pln_chess/common.py": {
+      "bytes": 700,
+      "sha256": "2c36d2f0fd79c311678b2535adb0957288616d9371be531cb19e21d9ea823b75"
+    },
+    "src/pln_chess/cycle2/__init__.py": {
+      "bytes": 110,
+      "sha256": "929e649828d40fbb39a95711f078e96ce5daf5f70c79d5e877d576825164c2c5"
+    },
+    "src/pln_chess/cycle2/descriptors.py": {
+      "bytes": 3896,
+      "sha256": "b5715cc383154a8be0a18d9b26a37470a0bc67801cf4a4941f829836521bae2b"
+    },
+    "src/pln_chess/cycle2/inference.py": {
+      "bytes": 11187,
+      "sha256": "3c308bf5b6a90ce1133e0381c32db89b71e6216efeb47dd2e9490f620b87f63d"
+    },
+    "src/pln_chess/cycle2/model.py": {
+      "bytes": 11012,
+      "sha256": "538c3c4fa15bc32b379608600cb50b036d374368b8fdbe8f624750678c603dbb"
+    },
+    "src/pln_chess/cycle2/native.py": {
+      "bytes": 1658,
+      "sha256": "01cb7e07dd0b1456184c33e8f99b4d22e4438ddcaae4c0006bc78bb9523cddd3"
+    },
+    "src/pln_chess/cycle3/__init__.py": {
+      "bytes": 106,
+      "sha256": "44dc74a6a4992c0200af163c8d47d1fcba696d7ae15ef960e15c4d91d23a85b6"
+    },
+    "src/pln_chess/cycle3/counterfactual.py": {
+      "bytes": 2957,
+      "sha256": "6f57bcd55ef8bafa5cf167086c5653c1d884a49a4b42b1d74147c78f3a4c5f29"
+    },
+    "src/pln_chess/cycle3/descriptors.py": {
+      "bytes": 3857,
+      "sha256": "d68a5719c5af10eae167f4242fd71004e507efd319fac4a1c3aa0081683de671"
+    },
+    "src/pln_chess/cycle3/history.py": {
+      "bytes": 959,
+      "sha256": "7dd891a2d86ab09b0f4d126ee5887426334341aa0b5146e780cd5d34a5216752"
+    },
+    "src/pln_chess/cycle3/inference.py": {
+      "bytes": 13527,
+      "sha256": "6007d3eea13c1e5edfc6b0652e5f34a7751c727a293bc40538366551a462dbe7"
+    },
+    "src/pln_chess/cycle3/model.py": {
+      "bytes": 12703,
+      "sha256": "3f5b1e4ac260a9ec279ce57f2c60302ba20770bdc0379132a8f26515e29d363b"
+    },
+    "src/pln_chess/cycle3/native.py": {
+      "bytes": 2025,
+      "sha256": "999dde0a77c7d9bad19c772ffaea012bd2f556fd5d9cdb09336d460a0bb9a468"
+    },
+    "src/pln_chess/cycle4/__init__.py": {
+      "bytes": 116,
+      "sha256": "fe1c22f1692c9c2d5f812917ca6a0d27218b2612ae9070a2f7dfd5933f172bbf"
+    },
+    "src/pln_chess/cycle4/history.py": {
+      "bytes": 2017,
+      "sha256": "4143030038ff15bd19c7649c03fbb8bd32f788833ab5a3e288c23f07247a30f3"
+    },
+    "src/pln_chess/cycle4/inference.py": {
+      "bytes": 14946,
+      "sha256": "4e0cd42c0df87d5c5497aa4a344d32fa81b11c8bc62d74cb4c7301c47039203d"
+    },
+    "src/pln_chess/cycle4/model.py": {
+      "bytes": 10099,
+      "sha256": "6d9b42ba56a01a0a75da325f26a5734f0b56fc67264fedc350e217fae20653a8"
+    },
+    "src/pln_chess/cycle4/ontology.py": {
+      "bytes": 3462,
+      "sha256": "8b28686e708414e4d5a6ac91fe834dc7d19e7d9b88ef463500a120fc3ceb92ba"
+    },
+    "src/pln_chess/cycle5/__init__.py": {
+      "bytes": 110,
+      "sha256": "050d9c6d3e6028809005f33fb047204e43bf3507e8fc206f429f511450e24107"
+    },
+    "src/pln_chess/cycle5/history.py": {
+      "bytes": 3282,
+      "sha256": "6a6d0fe322a2d97e8beff72e427da725eb048e83fd369bc94d7fafb667eb3eb6"
+    },
+    "src/pln_chess/cycle5/inference.py": {
+      "bytes": 14677,
+      "sha256": "7fa64d75415e84ab55c6948a3f2fd6c5890d5bb0409badc56244f8995a6714bf"
+    },
+    "src/pln_chess/cycle5/model.py": {
+      "bytes": 5122,
+      "sha256": "85d8badc6d4559013a0e1582bdc5fde2119cd1fc412778e0228293a537001178"
+    },
+    "src/pln_chess/cycle5/ontology.py": {
+      "bytes": 2558,
+      "sha256": "0c87c88c6701d35c6cbdf6e7a667b7bec5bc0b1bdb9764fcd19eab2607010b2c"
+    },
+    "src/pln_chess/domain/__init__.py": {
+      "bytes": 6244,
+      "sha256": "df9176d6cc0c3c55441a0cb1284acee13426d6ff299f47c7e16c1ab0bc0062a0"
+    },
+    "src/pln_chess/evidence/__init__.py": {
+      "bytes": 4451,
+      "sha256": "66a5d6b1cff7e640862f6155d54dcc098102a1fb61d371c0d08cb96ecacabe71"
+    },
+    "src/pln_chess/hypotheses/__init__.py": {
+      "bytes": 1585,
+      "sha256": "9443395805e3d1f07227b5cd25cda572f3341adc36138954ef007a5903108542"
+    },
+    "src/pln_chess/inference/__init__.py": {
+      "bytes": 11204,
+      "sha256": "b65beb1aac948744ea6e9eb8d2012dd7088ede5bcd1c9d706059717f97d45fc5"
+    },
+    "src/pln_chess/learning/__init__.py": {
+      "bytes": 6787,
+      "sha256": "ec33340c6ea2b09f545e691e73c9bc073fbe8afa86dd7cf3a1185e7f6191b503"
+    },
+    "src/pln_chess/observations/__init__.py": {
+      "bytes": 6574,
+      "sha256": "8c3c6add650dc631f2be7b3042b5ee8cc5694637925f207b8952c29e00564d74"
+    },
+    "src/pln_chess/observations/ontology.py": {
+      "bytes": 1482,
+      "sha256": "999808cf11f035c510947f367c2f23bf0a86167ae2d52976ab69327ca65a043a"
+    },
+    "src/pln_chess/pln/__init__.py": {
+      "bytes": 124,
+      "sha256": "9d294abdf48dd7a0b5559ad84ef1824ecc1ff9a28a44e953d6b0b75f395d1337"
+    },
+    "src/pln_chess/pln/audit.py": {
+      "bytes": 3364,
+      "sha256": "b378f9db7e23590dbdad40d5eb2dafe53edce401aa9b28dbd09bb2defcc45273"
+    },
+    "src/pln_chess/pln/runtime.py": {
+      "bytes": 6552,
+      "sha256": "1188a8725c041981324982b1e626e6a60f548c31e00e2ef6f6f345c719e20dee"
+    },
+    "src/pln_chess/spatial/__init__.py": {
+      "bytes": 2508,
+      "sha256": "086f8542557e299ce894b827c52ff1997a356ba242ffaf80f8a62f1e3c66c743"
+    },
+    "tests/conftest.py": {
+      "bytes": 254,
+      "sha256": "9e0cc33e0c0859667c6fecd2ef01501b16f94c7f5933f15cd377348b20cf268b"
+    },
+    "tests/test_boundaries.py": {
+      "bytes": 2373,
+      "sha256": "756ac4257a7cbc11346bf7eb759e15b470fc38ecadb8e773d0a817fd7e9a7869"
+    },
+    "tests/test_chess_contrasts.py": {
+      "bytes": 2601,
+      "sha256": "a0f492f3bbde9bd2b76468778105c1b0e4d0f2bb00179edda58bd4f86617137a"
+    },
+    "tests/test_cycle2.py": {
+      "bytes": 13775,
+      "sha256": "7a609ba33ceb3b8b1144be25f67f3bfc6491f25643b0c849761cddabe190e40c"
+    },
+    "tests/test_cycle3.py": {
+      "bytes": 13390,
+      "sha256": "48bdd02c4df9de32670fb218ac78d9ae711aaf404623e2ab69589736b7c2dc00"
+    },
+    "tests/test_cycle4.py": {
+      "bytes": 14992,
+      "sha256": "44eb47da4be865192d8ebe35d62af894d06b4fa3e7eb3c96f3ed3306179b71d1"
+    },
+    "tests/test_cycle5.py": {
+      "bytes": 11584,
+      "sha256": "04bcdd8ad4380b2e89e6f8fce1e972194416076d1225c10152e8c0f8e6b6870e"
+    },
+    "tests/test_datasets.py": {
+      "bytes": 952,
+      "sha256": "2adc53ee401835626cead35dc62951809a3005f8ba8b59366e22d7ecf98d008b"
+    },
+    "tests/test_learning.py": {
+      "bytes": 3812,
+      "sha256": "04ef4871e7f6836d601887534c78e6e31593e1dbd697c2b0542aeb033536c537"
+    },
+    "tests/test_native.py": {
+      "bytes": 1227,
+      "sha256": "339f1b2ea4ec10ee4b5f9113f326148e7002b80a66719207b15cf0cf8d739f15"
+    },
+    "tests/test_spatial.py": {
+      "bytes": 4011,
+      "sha256": "2c865474018ce374dc621cfc0a4d9a6b130dea83ca82611936986ac4884572e0"
+    },
+    "training/__init__.py": {
+      "bytes": 73,
+      "sha256": "6cbf39c57215ed73193de494dfb405dd3a896b86f4f03c21df3f182eb60ce755"
+    },
+    "training/cycle2.py": {
+      "bytes": 7499,
+      "sha256": "da3ac4c0e0e20823669164672c71fd01d6fbfcdcf9198692f09e1e5540e01cb8"
+    },
+    "training/cycle3.py": {
+      "bytes": 8135,
+      "sha256": "18fea93ce2f09ffe25a428b3759e628a7f366e6395cb7d11b6cbcf4da2f2bcfb"
+    },
+    "training/cycle4.py": {
+      "bytes": 7344,
+      "sha256": "ce51b4fda213c88532127201a8b5f3d560f93577ef61d9ab493ac6bd6eaedf80"
+    },
+    "training/cycle5.py": {
+      "bytes": 11810,
+      "sha256": "d3e8a57d10d43066742c4df7be1068d59f99e8ec91181bebe6bc58a476748dbc"
+    },
+    "training/factory.py": {
+      "bytes": 7459,
+      "sha256": "b60d0b1161235838eca7b138bf3547fb054caadaa5a9a0730b9b3b9d7e20c4ac"
+    },
+    "vendor/pln/lib_pln.metta": {
+      "bytes": 18128,
+      "sha256": "cdfb3f18bd7b336440fc7b4409209afddf0e64c41f17dee7eefc8f02718de433"
+    }
+  },
+  "schema": 1,
+  "scope": "Delivered source, configuration, tests, Cycle 5 artifacts/docs and UI evidence. Manifest excludes itself; historical protected hashes are in baseline-start.json.",
+  "starting_commit": "d5cfcb126acc9c3e5da669744d661e6895fb9303",
+  "verified_source_commit": "f8b7834cc79ce495d3cf2c67019a91d7b5d08b8e"
+}

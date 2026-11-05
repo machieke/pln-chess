@@ -1,0 +1,27 @@
+[
+  {
+    "action": "snapshot -i",
+    "relativeTimeSec": 5,
+    "timestamp": "2026-11-05T18:38:53.796Z"
+  },
+  {
+    "action": "eval (async()=>{document.getElementById(\"model\").value=\"C5-full\";document.getElementById(\"compare-models\").checked=true;document.getElementById(\"form\").requestSubmit();for(let n=0;n<300&&document.getElementById(\"run\").disabled;n++)await new Promise(r=>setTimeout(r,100));const data=JSON.parse(document.getElementById(\"raw\").textContent);if(data.candidate.classification!==\"unknown\")throw Error(\"Expected strict proof gap\");document.getElementById(\"model-comparison\").parentElement.open=true;document.getElementById(\"model-comparison\").scrollIntoView();return {status:document.getElementById(\"status\").textContent,comparison:JSON.parse(document.getElementById(\"model-comparison\").textContent),gap:data.candidate.proof_plan};})()",
+    "relativeTimeSec": 25.5,
+    "timestamp": "2026-11-05T18:39:14.335Z"
+  },
+  {
+    "action": "screenshot c4-c5-strict-comparison.png",
+    "relativeTimeSec": 27.8,
+    "timestamp": "2026-11-05T18:39:16.627Z"
+  },
+  {
+    "action": "eval (async()=>{document.getElementById(\"compare-models\").checked=false;document.getElementById(\"fen\").value=\"2bk3K/8/5N2/7n/8/2B5/8/8 w - - 0 1\";document.getElementById(\"move\").value=\"f6h5\";document.getElementById(\"form\").requestSubmit();for(let n=0;n<300&&document.getElementById(\"run\").disabled;n++)await new Promise(r=>setTimeout(r,100));const d=JSON.parse(document.getElementById(\"raw\").textContent);if(d.candidate.classification!==\"unknown\"||!d.candidate.typed_premises.length)throw Error(\"Missing typed proof gap\");document.getElementById(\"proof-plan\").scrollIntoView();return {classification:d.candidate.classification,premises:d.candidate.typed_premises.map(p=>({family:p.family,tv:p.truth_value})),plan:d.candidate.proof_plan};})()",
+    "relativeTimeSec": 219.5,
+    "timestamp": "2026-11-05T18:42:28.311Z"
+  },
+  {
+    "action": "screenshot unresolved-knight-premises.png",
+    "relativeTimeSec": 221.1,
+    "timestamp": "2026-11-05T18:42:29.957Z"
+  }
+]

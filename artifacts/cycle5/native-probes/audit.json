@@ -1,0 +1,1377 @@
+{
+  "decision": "No demonstrated native independent-premise conjunction. Supplied compound antecedents and curried rules do not learn an unseen conjunction. Strict positive planner leaves global legality unknown.",
+  "previous_audit": {
+    "decision": {
+      "conjunction": "Absent in pinned runtime. Optional upstream port was not shipped: no independently validated drop-in semantics.",
+      "deduction": "Native deduction verified with measured probability-consistent marginals; zero marginal confidence does not suppress output. Experimental only, not chosen for production.",
+      "inheritance": "The tested predicate-transfer wrapper returns no derivation in this runtime. Treat this candidate as unsupported; no discovered slider taxonomy or production inheritance transfer is claimed.",
+      "negative_controls": "Unknown/missing chain edge kills confidence; shared-stamp gate rejects repeated support; wrong shape produces no binding.",
+      "nesting": "Nested implications are curried conditional applications, not a verified conjunction theorem.",
+      "production": "Three separately learned conditional families can contribute along a unary native MP chain. This does not combine independent movement/path/safety conditions by conjunction."
+    },
+    "previous_probes": {
+      "cycle2_probes": {
+        "composition": "Unary chaining verified; conjunction introduction/elimination and conditionalization unsupported in pinned core. Nested implication is not conjunction.",
+        "induction_caution": "The rule-layer |- induction supplies STV A, STV B, STV C while the formula expects target A, common B, outcome C. Non-symmetric measured populations use the directly verified Truth_Induction formula with explicit roles; no silent argument reinterpretation.",
+        "raw": "(PROBE induction-inheritance (((Inheritance A B) (stv 0.5535714285714285 0.3243243243243244))))\n(PROBE conjunction-introduction ())\n(PROBE conjunction-elimination ())\n(PROBE conditionalization ())\n(PROBE incomplete-input ())\n(PROBE degenerate-marginal ())\n(PROBE confidence-one-revision ())\n(PROBE overlap false)\n(PROBE disjoint true)\n(PROBE zero-confidence-choice ())\n(PROBE conditional-chain (C (stv 0.7220000000000001 0.3265920000000001)))\ntrue\ntrue\ntrue\ntrue\ntrue\ntrue\ntrue\ntrue\ntrue\ntrue\ntrue\ntrue\n",
+        "records": [
+          {
+            "commit": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+            "domain": "Finite STVs in [0,1]; probability-consistent positive marginals for conditional formulas.",
+            "expected": [
+              0.724,
+              0.5184
+            ],
+            "expression": "(let ($a $t) (|- (A (stv 0.8 0.9)) ((Implication A B) (stv 0.9 0.8))) $t)",
+            "id": "modus_ponens",
+            "operator": "Truth_ModusPonens",
+            "output": {
+              "confidence": 0.5184000000000001,
+              "strength": 0.7240000000000001
+            },
+            "source": "vendor/pln/lib_pln.metta:124",
+            "status": "verified-production"
+          },
+          {
+            "commit": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+            "domain": "Finite STVs in [0,1]; probability-consistent positive marginals for conditional formulas.",
+            "expected": [
+              0.5,
+              0.6666666666666666
+            ],
+            "expression": "(let ($a $t) (|- (A (stv 1.0 0.5)) (A (stv 0.0 0.5))) $t)",
+            "id": "revision",
+            "operator": "Truth_Revision",
+            "output": {
+              "confidence": 0.6666666666666666,
+              "strength": 0.5
+            },
+            "source": "vendor/pln/lib_pln.metta:136",
+            "status": "verified-production"
+          },
+          {
+            "commit": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+            "domain": "Finite STVs in [0,1]; probability-consistent positive marginals for conditional formulas.",
+            "expected": [
+              0.1,
+              0.8
+            ],
+            "expression": "(let ($a $t) (|- ((Not A) (stv 0.9 0.8))) $t)",
+            "id": "negation",
+            "operator": "Truth_Negation",
+            "output": {
+              "confidence": 0.8,
+              "strength": 0.09999999999999998
+            },
+            "source": "vendor/pln/lib_pln.metta:147",
+            "status": "verified-production"
+          },
+          {
+            "commit": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+            "domain": "Finite STVs in [0,1]; probability-consistent positive marginals for conditional formulas.",
+            "expected": [
+              0.62,
+              0.3584
+            ],
+            "expression": "(Truth_Deduction (stv 0.5 0.9) (stv 0.5 0.9) (stv 0.5 0.9) (stv 0.8 0.8) (stv 0.7 0.8))",
+            "id": "deduction",
+            "operator": "Truth_Deduction",
+            "output": {
+              "confidence": 0.35840000000000005,
+              "strength": 0.6199999999999999
+            },
+            "source": "vendor/pln/lib_pln.metta:84",
+            "status": "verified-experimental"
+          },
+          {
+            "commit": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+            "domain": "Finite STVs in [0,1]; probability-consistent positive marginals for conditional formulas.",
+            "expected": [
+              0.52,
+              0.27745664739884396
+            ],
+            "expression": "(Truth_Induction (stv 0.5 0.9) (stv 0.25 0.9) (stv 0.5 0.9) (stv 0.8 0.8) (stv 0.6 0.8))",
+            "id": "induction",
+            "operator": "Truth_Induction",
+            "output": {
+              "confidence": 0.27745664739884396,
+              "strength": 0.52
+            },
+            "source": "vendor/pln/lib_pln.metta:102",
+            "status": "verified-experimental"
+          },
+          {
+            "commit": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+            "domain": "Finite STVs in [0,1]; probability-consistent positive marginals for conditional formulas.",
+            "expected": [
+              0.3,
+              0.8
+            ],
+            "expression": "(let ($tv $ev) (BestConfidenceCandidate (((stv 0.3 0.8) (e)) ((stv 0.9 0.2) (e)))) $tv)",
+            "id": "choice",
+            "operator": "BestConfidenceCandidate",
+            "output": {
+              "confidence": 0.8,
+              "strength": 0.3
+            },
+            "source": "vendor/pln/lib_pln.metta:412",
+            "status": "verified-production"
+          },
+          {
+            "commit": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+            "domain": "Finite STVs in [0,1]; probability-consistent positive marginals for conditional formulas.",
+            "expected": [
+              0.5,
+              0.75
+            ],
+            "expression": "(stv 0.5 (Truth_w2c 3.0))",
+            "id": "weight_to_confidence",
+            "operator": "Truth_w2c",
+            "output": {
+              "confidence": 0.75,
+              "strength": 0.5
+            },
+            "source": "vendor/pln/lib_pln.metta:75",
+            "status": "verified-production"
+          },
+          {
+            "commit": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+            "domain": "Finite STVs in [0,1]; probability-consistent positive marginals for conditional formulas.",
+            "expected": [
+              1,
+              0
+            ],
+            "expression": "(Truth_Deduction (stv 0.9 0.9) (stv 0.1 0.9) (stv 0.5 0.9) (stv 0.9 0.8) (stv 0.7 0.8))",
+            "id": "bad_deduction",
+            "operator": "Truth_Deduction",
+            "output": {
+              "confidence": 0.0,
+              "strength": 1.0
+            },
+            "source": "vendor/pln/lib_pln.metta:84",
+            "status": "verified-experimental"
+          },
+          {
+            "commit": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+            "domain": "Finite STVs in [0,1]; probability-consistent positive marginals for conditional formulas.",
+            "expected": null,
+            "expression": "(Truth_inversion (stv 0.3 0.8) (stv 0.7 0.6))",
+            "id": "inversion",
+            "operator": "Truth_inversion",
+            "output": {
+              "confidence": 0.288,
+              "strength": 0.7
+            },
+            "source": "vendor/pln/lib_pln.metta:150",
+            "status": "verified-experimental"
+          },
+          {
+            "commit": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+            "domain": "Finite STVs in [0,1]; probability-consistent positive marginals for conditional formulas.",
+            "expected": null,
+            "expression": "(Truth_Abduction (stv 0.4 0.8) (stv 0.5 0.8) (stv 0.3 0.8) (stv 0.6 0.7) (stv 0.7 0.7))",
+            "id": "abduction",
+            "operator": "Truth_Abduction",
+            "output": {
+              "confidence": 0.22720247295208654,
+              "strength": 0.324
+            },
+            "source": "vendor/pln/lib_pln.metta:112",
+            "status": "verified-experimental"
+          },
+          {
+            "commit": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+            "domain": "Finite STVs in [0,1]; probability-consistent positive marginals for conditional formulas.",
+            "expected": null,
+            "expression": "(Truth_equivalenceToImplication (stv 0.5 0.8) (stv 0.5 0.8) (stv 0.5 0.7))",
+            "id": "equivalence",
+            "operator": "Truth_equivalenceToImplication",
+            "output": {
+              "confidence": 0.7,
+              "strength": 0.6666666666666666
+            },
+            "source": "vendor/pln/lib_pln.metta:156",
+            "status": "verified-experimental"
+          },
+          {
+            "commit": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+            "domain": "Finite STVs in [0,1]; probability-consistent positive marginals for conditional formulas.",
+            "expected": null,
+            "expression": "(Truth_transitiveSimilarity (stv 0.5 0.8) (stv 0.5 0.8) (stv 0.5 0.8) (stv 0.7 0.7) (stv 0.6 0.7))",
+            "id": "similarity",
+            "operator": "Truth_transitiveSimilarity",
+            "output": {
+              "confidence": 0.43119999999999997,
+              "strength": 0.4945054945054945
+            },
+            "source": "vendor/pln/lib_pln.metta:174",
+            "status": "verified-experimental"
+          },
+          {
+            "commit": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+            "domain": "Finite STVs in [0,1]; probability-consistent positive marginals for conditional formulas.",
+            "expected": null,
+            "expression": "(Truth_ModusPonens (stv 1.0 0.0) (stv 0.8 0.9))",
+            "id": "zero-confidence-mp",
+            "operator": "Truth_ModusPonens",
+            "output": {
+              "confidence": 0.0,
+              "strength": 0.8
+            },
+            "source": "vendor/pln/lib_pln.metta:124",
+            "status": "verified-experimental"
+          },
+          {
+            "commit": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+            "domain": "Finite STVs in [0,1]; probability-consistent positive marginals for conditional formulas.",
+            "expected": null,
+            "expression": "(Truth_ModusPonens (stv 1.0 1.0) (stv 0.8 1.0))",
+            "id": "confidence-one-mp",
+            "operator": "Truth_ModusPonens",
+            "output": {
+              "confidence": 0.8,
+              "strength": 0.8
+            },
+            "source": "vendor/pln/lib_pln.metta:124",
+            "status": "verified-experimental"
+          },
+          {
+            "commit": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+            "domain": "Finite STVs in [0,1]; probability-consistent positive marginals for conditional formulas.",
+            "expected": null,
+            "expression": "(Truth_Induction (stv 0.4 0.8) (stv 0.2 0.8) (stv 0.3 0.8) (stv 1.0 0.8) (stv 0.75 0.8))",
+            "id": "measured-induction",
+            "operator": "Truth_Induction",
+            "output": {
+              "confidence": 0.3243243243243244,
+              "strength": 0.46875
+            },
+            "source": "vendor/pln/lib_pln.metta:102",
+            "status": "verified-experimental"
+          },
+          {
+            "expression": "(collapse (|- ((Inheritance C A) (stv 1.0 0.8)) ((Inheritance C B) (stv 0.75 0.8))))",
+            "id": "induction-inheritance",
+            "output": "(PROBE induction-inheritance (((Inheritance A B) (stv 0.5535714285714285 0.3243243243243244))))",
+            "status": "verified-experimental"
+          },
+          {
+            "expression": "(collapse (|- (A (stv 0.8 0.9)) (B (stv 0.7 0.9))))",
+            "id": "conjunction-introduction",
+            "output": "(PROBE conjunction-introduction ())",
+            "status": "unsupported"
+          },
+          {
+            "expression": "(collapse (|- ((And A B) (stv 0.8 0.9))))",
+            "id": "conjunction-elimination",
+            "output": "(PROBE conjunction-elimination ())",
+            "status": "unsupported"
+          },
+          {
+            "expression": "(collapse (|- ((And A B) (stv 0.8 0.9)) (A (stv 0.7 0.8))))",
+            "id": "conditionalization",
+            "output": "(PROBE conditionalization ())",
+            "status": "unsupported"
+          },
+          {
+            "expression": "(collapse (Truth_Induction (stv 0.4 0.8) (STV Unknown) (stv 0.3 0.8) (stv 1.0 0.8) (stv 0.75 0.8)))",
+            "id": "incomplete-input",
+            "output": "(PROBE incomplete-input ())",
+            "status": "unsupported"
+          },
+          {
+            "expression": "(collapse (Truth_Induction (stv 0.0 0.8) (stv 0.2 0.8) (stv 0.3 0.8) (stv 1.0 0.8) (stv 0.75 0.8)))",
+            "id": "degenerate-marginal",
+            "output": "(PROBE degenerate-marginal ())",
+            "status": "unsupported"
+          },
+          {
+            "expression": "(collapse (Truth_Revision (stv 1.0 1.0) (stv 0.0 0.5)))",
+            "id": "confidence-one-revision",
+            "output": "(PROBE confidence-one-revision ())",
+            "status": "unsupported"
+          },
+          {
+            "expression": "(StampDisjoint (e1 e2) (e2 e3))",
+            "id": "overlap",
+            "output": "(PROBE overlap false)",
+            "status": "verified-experimental"
+          },
+          {
+            "expression": "(StampDisjoint (e1) (e2))",
+            "id": "disjoint",
+            "output": "(PROBE disjoint true)",
+            "status": "verified-experimental"
+          },
+          {
+            "expression": "(BestConfidenceCandidate (((stv 0.5 0.0) (e))))",
+            "id": "zero-confidence-choice",
+            "output": "(PROBE zero-confidence-choice ())",
+            "status": "unsupported"
+          },
+          {
+            "expression": "(let ($b $btv) (|- (A (stv 1.0 0.9)) ((Implication A B) (stv 0.9 0.8))) (|- ($b $btv) ((Implication B C) (stv 0.8 0.7))))",
+            "id": "conditional-chain",
+            "output": "(PROBE conditional-chain (C (stv 0.7220000000000001 0.3265920000000001)))",
+            "status": "verified-experimental"
+          }
+        ],
+        "runtime": {
+          "atomspace": "PeTTa native in-process MeTTa space (no Hyperon AtomSpace dependency)",
+          "petta": {
+            "branch": "main",
+            "commit": "ee5cacb6a6ecdd554a1c773aaf47e9a0f8a5af0f",
+            "files": {
+              "run.sh": "269a50bc47e8a5f614f1999161d7f5f6ea51c4615d39f12a404540071f124ff0",
+              "src/ext_points.pl": "0b5f1b115e29892ab1bf5833c022df4c2f3f1558cb04f57a8f52de5ccdad8436",
+              "src/filereader.pl": "fb677e03ffbf945f8c752aa02c8db481cebfbdd219660bee387af596e3ce7bc1",
+              "src/load_cache.pl": "619fc64d253221d06907234d2b94d8c3395b4a6facbe56b2a4bb38c84c9c0ac3",
+              "src/main.pl": "2a57276bb0cd32f29e0bd983c2640f1e9bc1646e22bfc266230d3dc13b9ecc6c",
+              "src/metta.pl": "9ee89a19768c82052606b738e7abd88971c5ac826b7cf9fc1ab770e02779337d",
+              "src/parser.pl": "69ab6dd840fcc585d916fd25a496a09dd30ca9aaacf6e55baaa67c8c020c84c1",
+              "src/spaces.pl": "553acea6a6ad210ff46cb0c883af7587295c689fcd5d768566428607417f0bb0",
+              "src/specializer.pl": "b27a2a6430914c11dc9cd0d27b9a3aa5945064607c48979b7a2a0e50bd0f5141",
+              "src/translator.pl": "cda4dcfc4f77ff0d3feb858b1502ec685fb8b1ddbd7cc555193b76ac7de12220",
+              "src/typecheck.pl": "c45a5a66001255004944731e72dc7a2b71872328027c0f23117442896767e91c",
+              "src/typecheck/abstract_domain.pl": "7fafddae3126fc3ab6f9c2380a4809d0dc5331ae1a622df3be6176167d90d8b9",
+              "src/typecheck/analysis_proofs.pl": "96687dbdd49730b355200eb8135aec8a55953daa1dc250196743951565b5350f",
+              "src/typecheck/builtin_registry.pl": "e0a65099592fa3283ff6f31e90f776366f499eb8e172102393b96bd8183d5005",
+              "src/typecheck/call_summaries.pl": "adb9383a34fd3c0cbaa6e898fd1ee41fcbe2a90327af1b96f4db29bd22c46c00",
+              "src/typecheck/clause_checks.pl": "3b072c51563542b85d8195137dfc06d60932fe25acf14c2dafdadc53367fefc3",
+              "src/typecheck/decl_store.pl": "52f5c17cf51e871a11d81f284094bdb945d3876b799f9157e5131eea3dfdd615",
+              "src/typecheck/dependency_graph.pl": "f344d62ad9e084d2b9ab7dc235094de83db87815cb7b1935c97794490abddaf1",
+              "src/typecheck/det_analysis.pl": "bc04e7791253c3e12b45c81be3f0a7fc419c310898a7b2dab89f86cb329eca9a",
+              "src/typecheck/det_proofs.pl": "1e34de0eb4fad3e79ff5b551e2f966595063db5a6cb268aac45e90448f80fd74",
+              "src/typecheck/det_validate.pl": "98738eb738f4aa76b64d1412ab5e839d151e1bef1fda1019396151a4e1d6ac58",
+              "src/typecheck/flags_arrows.pl": "454f1a1d6b47fe390fc3a8fc11297c6acc798bab6a4f5dc3f009ce79fcc844ed",
+              "src/typecheck/inference.pl": "62d0f2ae9ca97b622cec0676dd3de50016311d940e981e98d243f345579f4430",
+              "src/typecheck/ir_analyzer.pl": "02520b61ccccaba064f62f72f68162bc9b033abec64b77f6e2374e9134b1fe83",
+              "src/typecheck/oracles.pl": "c3ec9fc6e02cf78f58a7f441977fe7ceedad34a78a2a27a43fa52e809256b649",
+              "src/typecheck/relational_ir.pl": "c35f43237b3178ae81f207a79905e9aeb998f8eeac3cc9dce323c6fe62fc0037",
+              "src/typecheck/type_lang.pl": "d9cc0fbdc06002a8249c5b77fa999fb50be4b040626728b66a7e80f2b46255e0",
+              "src/typecheck/unified_checker_bridge.pl": "53ae3521a8265b9680f5434caa2384e0a3831739c53325a6bc2c737b02c2a01a",
+              "src/typecheck/unified_checker_cache.pl": "684f13666c61a1b15ecaf42443d41f15d76efa5d032225a87c873b76ca1da930",
+              "src/typecheck/value_checks.pl": "a8013f13afffd637ba9038c9cf2ef1d8cd056a135696fa676ca5fe88ada25ae6"
+            },
+            "repository": "https://github.com/trueagi-io/PeTTa"
+          },
+          "pln": {
+            "branch": "main",
+            "commit": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+            "repository": "https://github.com/trueagi-io/PLN",
+            "sha256": "cdfb3f18bd7b336440fc7b4409209afddf0e64c41f17dee7eefc8f02718de433",
+            "source": "vendor/pln/lib_pln.metta"
+          },
+          "python": "3.12.12",
+          "schema": 1,
+          "swipl": "SWI-Prolog version 10.0.1 for x86_64-linux",
+          "truth_value": "(stv strength confidence)"
+        }
+      },
+      "decision": {
+        "joint_sensor": "Explicit And atom can be an MP antecedent; its observation must be supplied. This does not construct And from A and B.",
+        "production": "Native conditional MP and unary exposure chains, revision, negation and confidence choice.",
+        "stamps": "Truth_* functions do not enforce stamps. Host scheduler selects alternatives and never revises overlapping inference paths.",
+        "unsupported": "Conjunction introduction/elimination; no safe king conclusion from missing attack hypotheses.",
+        "upstream": "Cycle 2 pinned opt-in branch probes retained in artifacts/cycle2/upstream-audit.json; no alternate adopted."
+      },
+      "operators": [
+        {
+          "line": 71,
+          "signature": "(= (Truth_c2w $c)",
+          "source": "vendor/pln/lib_pln.metta"
+        },
+        {
+          "line": 75,
+          "signature": "(= (Truth_w2c $w)",
+          "source": "vendor/pln/lib_pln.metta"
+        },
+        {
+          "line": 79,
+          "signature": "(= (Truth_or $a $b) ",
+          "source": "vendor/pln/lib_pln.metta"
+        },
+        {
+          "line": 84,
+          "signature": "(= (Truth_Deduction (stv $Ps $Pc)",
+          "source": "vendor/pln/lib_pln.metta"
+        },
+        {
+          "line": 102,
+          "signature": "(= (Truth_Induction (stv $sA $cA)",
+          "source": "vendor/pln/lib_pln.metta"
+        },
+        {
+          "line": 112,
+          "signature": "(= (Truth_Abduction (stv $sA $cA)",
+          "source": "vendor/pln/lib_pln.metta"
+        },
+        {
+          "line": 124,
+          "signature": "(= (Truth_ModusPonens (stv $Ps $Pc) (stv $PQs $PQc)) ",
+          "source": "vendor/pln/lib_pln.metta"
+        },
+        {
+          "line": 129,
+          "signature": "(= (Truth_SymmetricModusPonens (stv $sA $cA) (stv $sAB $cAB))",
+          "source": "vendor/pln/lib_pln.metta"
+        },
+        {
+          "line": 136,
+          "signature": "(= (Truth_Revision (stv $f1 $c1) (stv $f2 $c2))",
+          "source": "vendor/pln/lib_pln.metta"
+        },
+        {
+          "line": 147,
+          "signature": "(= (Truth_Negation (stv $s $c))",
+          "source": "vendor/pln/lib_pln.metta"
+        },
+        {
+          "line": 150,
+          "signature": "(= (Truth_inversion (stv $Bs $Bc) (stv $ABs $ABc))",
+          "source": "vendor/pln/lib_pln.metta"
+        },
+        {
+          "line": 156,
+          "signature": "(= (Truth_equivalenceToImplication (stv $As $Ac) (stv $Bs $Bc) (stv $ABs $ABc))",
+          "source": "vendor/pln/lib_pln.metta"
+        },
+        {
+          "line": 174,
+          "signature": "(= (Truth_transitiveSimilarity (stv $As $Ac)",
+          "source": "vendor/pln/lib_pln.metta"
+        },
+        {
+          "line": 197,
+          "signature": "(= (Truth_evaluationImplication (stv $As $Ac)",
+          "source": "vendor/pln/lib_pln.metta"
+        },
+        {
+          "line": 211,
+          "signature": "(= (|- ($T $T1) ",
+          "source": "vendor/pln/lib_pln.metta"
+        },
+        {
+          "line": 216,
+          "signature": "(= (|- ($A $T1) ",
+          "source": "vendor/pln/lib_pln.metta"
+        },
+        {
+          "line": 226,
+          "signature": "(= (|- ($A $TruthA)",
+          "source": "vendor/pln/lib_pln.metta"
+        },
+        {
+          "line": 236,
+          "signature": "(= (|- (($LinkType $A $B) $T1)",
+          "source": "vendor/pln/lib_pln.metta"
+        },
+        {
+          "line": 246,
+          "signature": "(= (|- (($LinkType $C $A) $T1)",
+          "source": "vendor/pln/lib_pln.metta"
+        },
+        {
+          "line": 254,
+          "signature": "(= (|- (($LinkType $A $C) $T1)",
+          "source": "vendor/pln/lib_pln.metta"
+        },
+        {
+          "line": 263,
+          "signature": "(= (|- ((Evaluation (Predicate $x)",
+          "source": "vendor/pln/lib_pln.metta"
+        },
+        {
+          "line": 270,
+          "signature": "(= (|- ((Evaluation (Predicate $x)",
+          "source": "vendor/pln/lib_pln.metta"
+        },
+        {
+          "line": 277,
+          "signature": "(= (|- ((Evaluation (Predicate $x)",
+          "source": "vendor/pln/lib_pln.metta"
+        },
+        {
+          "line": 284,
+          "signature": "(= (|- ((Not $A) $T)) ($A (Truth_Negation $T)))",
+          "source": "vendor/pln/lib_pln.metta"
+        },
+        {
+          "line": 287,
+          "signature": "(= (|- ((Inheritance $A $B) $Truth))",
+          "source": "vendor/pln/lib_pln.metta"
+        },
+        {
+          "line": 291,
+          "signature": "(= (|- ((Implication $A $B) $Truth))",
+          "source": "vendor/pln/lib_pln.metta"
+        },
+        {
+          "line": 295,
+          "signature": "(= (|- ((Equivalence $A $B) $Truth))",
+          "source": "vendor/pln/lib_pln.metta"
+        },
+        {
+          "line": 299,
+          "signature": "(= (|- ((Equivalence $A $B) $Truth))",
+          "source": "vendor/pln/lib_pln.metta"
+        },
+        {
+          "line": 304,
+          "signature": "(= (|- ((Similarity $A $B) $T1)",
+          "source": "vendor/pln/lib_pln.metta"
+        },
+        {
+          "line": 311,
+          "signature": "(= (|- ((Evaluation $A $B) $TruthAB)",
+          "source": "vendor/pln/lib_pln.metta"
+        },
+        {
+          "line": 319,
+          "signature": "(= (|- ((Member $A $B) $T1)",
+          "source": "vendor/pln/lib_pln.metta"
+        },
+        {
+          "line": 335,
+          "signature": "(= (StampDisjoint $Ev1 $Ev2)",
+          "source": "vendor/pln/lib_pln.metta"
+        },
+        {
+          "line": 345,
+          "signature": "(= (StampConcat $stamp $addition)",
+          "source": "vendor/pln/lib_pln.metta"
+        },
+        {
+          "line": 412,
+          "signature": "(= (BestConfidenceCandidate $tuple)",
+          "source": "vendor/pln/lib_pln.metta"
+        }
+      ],
+      "raw": "(C3PROBE independent-premises ())\n(C3PROBE joint-sensor-conditional ((C (stv 0.9 0.7128000000000001))))\n(C3PROBE joint-sensor-elimination ())\n(C3PROBE nested-implication ((C (stv 0.9 0.6351048000000001))))\n(C3PROBE grounded-binding (((Pattern Rook) (stv 0.9 0.7128000000000001))))\n(C3PROBE unbound-query (((Pattern Rook) (stv 0.9 0.7128000000000001))))\n(C3PROBE contradiction-not-revision ())\n(C3PROBE shared-stamp false)\n(C3PROBE distinct-stamp true)\n(C3PROBE zero-confidence-revision ())\n(C3PROBE invalid-confidence-one ())\n(C3PROBE multiple-counters ((stv 0.95 0.9) (local)))\n(C3PROBE stronger-counter ((stv 0.02 0.9) (attack)))\n(C3PROBE low-confidence-mp (stv 0.95 0.00855))\n(C3PROBE zero-strength-mp (stv 0.02 0.0))\ntrue\ntrue\ntrue\ntrue\ntrue\ntrue\ntrue\ntrue\ntrue\ntrue\ntrue\ntrue\ntrue\ntrue\ntrue\ntrue\n",
+      "records": [
+        {
+          "expression": "(collapse (|- (A (stv 0.9 0.8)) (B (stv 0.9 0.8))))",
+          "id": "independent-premises",
+          "result": "(C3PROBE independent-premises ())"
+        },
+        {
+          "expression": "(collapse (|- ((And A B) (stv 1.0 0.99)) ((Implication (And A B) C) (stv 0.9 0.8))))",
+          "id": "joint-sensor-conditional",
+          "result": "(C3PROBE joint-sensor-conditional ((C (stv 0.9 0.7128000000000001))))"
+        },
+        {
+          "expression": "(collapse (|- ((And A B) (stv 0.9 0.8))))",
+          "id": "joint-sensor-elimination",
+          "result": "(C3PROBE joint-sensor-elimination ())"
+        },
+        {
+          "expression": "(let ($b $btv) (|- (A (stv 1.0 0.99)) ((Implication A (Implication B C)) (stv 0.9 0.8))) (collapse (|- (B (stv 1.0 0.99)) ($b $btv))))",
+          "id": "nested-implication",
+          "result": "(C3PROBE nested-implication ((C (stv 0.9 0.6351048000000001))))"
+        },
+        {
+          "expression": "(collapse (|- ((Seen Rook Orthogonal) (stv 1.0 0.99)) ((Implication (Seen Rook Orthogonal) (Pattern Rook)) (stv 0.9 0.8))))",
+          "id": "grounded-binding",
+          "result": "(C3PROBE grounded-binding (((Pattern Rook) (stv 0.9 0.7128000000000001))))"
+        },
+        {
+          "expression": "(collapse (|- ((Seen Rook Orthogonal) (stv 1.0 0.99)) ((Implication (Seen $piece Orthogonal) (Pattern $piece)) (stv 0.9 0.8))))",
+          "id": "unbound-query",
+          "result": "(C3PROBE unbound-query (((Pattern Rook) (stv 0.9 0.7128000000000001))))"
+        },
+        {
+          "expression": "(collapse (|- (A (stv 0.9 0.8)) ((Not A) (stv 0.9 0.8))))",
+          "id": "contradiction-not-revision",
+          "result": "(C3PROBE contradiction-not-revision ())"
+        },
+        {
+          "expression": "(StampDisjoint (source-a source-b) (source-b source-c))",
+          "id": "shared-stamp",
+          "result": "(C3PROBE shared-stamp false)"
+        },
+        {
+          "expression": "(StampDisjoint (source-a) (source-b))",
+          "id": "distinct-stamp",
+          "result": "(C3PROBE distinct-stamp true)"
+        },
+        {
+          "expression": "(collapse (Truth_Revision (stv 0.5 0.0) (stv 0.9 0.0)))",
+          "id": "zero-confidence-revision",
+          "result": "(C3PROBE zero-confidence-revision ())"
+        },
+        {
+          "expression": "(collapse (Truth_Revision (stv 0.9 1.0) (stv 0.1 0.5)))",
+          "id": "invalid-confidence-one",
+          "result": "(C3PROBE invalid-confidence-one ())"
+        },
+        {
+          "expression": "(BestConfidenceCandidate (((stv 0.95 0.9) (local)) ((stv 0.02 0.8) (attack1)) ((stv 0.01 0.85) (attack2))))",
+          "id": "multiple-counters",
+          "result": "(C3PROBE multiple-counters ((stv 0.95 0.9) (local)))"
+        },
+        {
+          "expression": "(BestConfidenceCandidate (((stv 0.95 0.8) (local)) ((stv 0.02 0.9) (attack))))",
+          "id": "stronger-counter",
+          "result": "(C3PROBE stronger-counter ((stv 0.02 0.9) (attack)))"
+        },
+        {
+          "expression": "(Truth_ModusPonens (stv 1.0 0.01) (stv 0.95 0.9))",
+          "id": "low-confidence-mp",
+          "result": "(C3PROBE low-confidence-mp (stv 0.95 0.00855))"
+        },
+        {
+          "expression": "(Truth_ModusPonens (stv 0.0 0.9) (stv 1.0 0.9))",
+          "id": "zero-strength-mp",
+          "result": "(C3PROBE zero-strength-mp (stv 0.02 0.0))"
+        }
+      ],
+      "runtime": {
+        "atomspace": "PeTTa native in-process MeTTa space (no Hyperon AtomSpace dependency)",
+        "petta": {
+          "branch": "main",
+          "commit": "ee5cacb6a6ecdd554a1c773aaf47e9a0f8a5af0f",
+          "files": {
+            "run.sh": "269a50bc47e8a5f614f1999161d7f5f6ea51c4615d39f12a404540071f124ff0",
+            "src/ext_points.pl": "0b5f1b115e29892ab1bf5833c022df4c2f3f1558cb04f57a8f52de5ccdad8436",
+            "src/filereader.pl": "fb677e03ffbf945f8c752aa02c8db481cebfbdd219660bee387af596e3ce7bc1",
+            "src/load_cache.pl": "619fc64d253221d06907234d2b94d8c3395b4a6facbe56b2a4bb38c84c9c0ac3",
+            "src/main.pl": "2a57276bb0cd32f29e0bd983c2640f1e9bc1646e22bfc266230d3dc13b9ecc6c",
+            "src/metta.pl": "9ee89a19768c82052606b738e7abd88971c5ac826b7cf9fc1ab770e02779337d",
+            "src/parser.pl": "69ab6dd840fcc585d916fd25a496a09dd30ca9aaacf6e55baaa67c8c020c84c1",
+            "src/spaces.pl": "553acea6a6ad210ff46cb0c883af7587295c689fcd5d768566428607417f0bb0",
+            "src/specializer.pl": "b27a2a6430914c11dc9cd0d27b9a3aa5945064607c48979b7a2a0e50bd0f5141",
+            "src/translator.pl": "cda4dcfc4f77ff0d3feb858b1502ec685fb8b1ddbd7cc555193b76ac7de12220",
+            "src/typecheck.pl": "c45a5a66001255004944731e72dc7a2b71872328027c0f23117442896767e91c",
+            "src/typecheck/abstract_domain.pl": "7fafddae3126fc3ab6f9c2380a4809d0dc5331ae1a622df3be6176167d90d8b9",
+            "src/typecheck/analysis_proofs.pl": "96687dbdd49730b355200eb8135aec8a55953daa1dc250196743951565b5350f",
+            "src/typecheck/builtin_registry.pl": "e0a65099592fa3283ff6f31e90f776366f499eb8e172102393b96bd8183d5005",
+            "src/typecheck/call_summaries.pl": "adb9383a34fd3c0cbaa6e898fd1ee41fcbe2a90327af1b96f4db29bd22c46c00",
+            "src/typecheck/clause_checks.pl": "3b072c51563542b85d8195137dfc06d60932fe25acf14c2dafdadc53367fefc3",
+            "src/typecheck/decl_store.pl": "52f5c17cf51e871a11d81f284094bdb945d3876b799f9157e5131eea3dfdd615",
+            "src/typecheck/dependency_graph.pl": "f344d62ad9e084d2b9ab7dc235094de83db87815cb7b1935c97794490abddaf1",
+            "src/typecheck/det_analysis.pl": "bc04e7791253c3e12b45c81be3f0a7fc419c310898a7b2dab89f86cb329eca9a",
+            "src/typecheck/det_proofs.pl": "1e34de0eb4fad3e79ff5b551e2f966595063db5a6cb268aac45e90448f80fd74",
+            "src/typecheck/det_validate.pl": "98738eb738f4aa76b64d1412ab5e839d151e1bef1fda1019396151a4e1d6ac58",
+            "src/typecheck/flags_arrows.pl": "454f1a1d6b47fe390fc3a8fc11297c6acc798bab6a4f5dc3f009ce79fcc844ed",
+            "src/typecheck/inference.pl": "62d0f2ae9ca97b622cec0676dd3de50016311d940e981e98d243f345579f4430",
+            "src/typecheck/ir_analyzer.pl": "02520b61ccccaba064f62f72f68162bc9b033abec64b77f6e2374e9134b1fe83",
+            "src/typecheck/oracles.pl": "c3ec9fc6e02cf78f58a7f441977fe7ceedad34a78a2a27a43fa52e809256b649",
+            "src/typecheck/relational_ir.pl": "c35f43237b3178ae81f207a79905e9aeb998f8eeac3cc9dce323c6fe62fc0037",
+            "src/typecheck/type_lang.pl": "d9cc0fbdc06002a8249c5b77fa999fb50be4b040626728b66a7e80f2b46255e0",
+            "src/typecheck/unified_checker_bridge.pl": "53ae3521a8265b9680f5434caa2384e0a3831739c53325a6bc2c737b02c2a01a",
+            "src/typecheck/unified_checker_cache.pl": "684f13666c61a1b15ecaf42443d41f15d76efa5d032225a87c873b76ca1da930",
+            "src/typecheck/value_checks.pl": "a8013f13afffd637ba9038c9cf2ef1d8cd056a135696fa676ca5fe88ada25ae6"
+          },
+          "repository": "https://github.com/trueagi-io/PeTTa"
+        },
+        "pln": {
+          "branch": "main",
+          "commit": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+          "repository": "https://github.com/trueagi-io/PLN",
+          "sha256": "cdfb3f18bd7b336440fc7b4409209afddf0e64c41f17dee7eefc8f02718de433",
+          "source": "vendor/pln/lib_pln.metta"
+        },
+        "python": "3.12.12",
+        "schema": 1,
+        "swipl": "SWI-Prolog version 10.0.1 for x86_64-linux",
+        "truth_value": "(stv strength confidence)"
+      }
+    },
+    "raw": "(C4PROBE conjunction-introduction ())\n(C4PROBE conjunction-elimination ())\n(C4PROBE typed-variable-binding (((Pattern Rook) (stv 0.9 0.7128000000000001))))\n(C4PROBE wrong-variable-binding ())\n(C4PROBE inheritance-predicate ())\n(C4PROBE deduction-wrapper (((Implication A C) (stv 0.7500000000000001 0.46080000000000015))))\n(C4PROBE independent-gate (stv 1.0 0.888888888888889))\ntrue\ntrue\ntrue\ntrue\ntrue\ntrue\ntrue\ntrue\n",
+    "records": [
+      {
+        "evidence_overlap": "Truth functions do not inspect stamps; caller must enforce lineage.",
+        "expression": "(let* (($b (Truth_ModusPonens (stv 1.0 0.99) (stv 0.98 0.9))) ($c (Truth_ModusPonens $b (stv 0.97 0.9)))) (Truth_ModusPonens $c (stv 0.96 0.9)))",
+        "id": "three-independent-chain",
+        "output": {
+          "confidence": 0.6138162173582207,
+          "strength": 0.9139399999999999
+        },
+        "source_lines": {
+          "Truth_ModusPonens": 124
+        },
+        "symbols": [
+          "Truth_ModusPonens"
+        ]
+      },
+      {
+        "evidence_overlap": "Truth functions do not inspect stamps; caller must enforce lineage.",
+        "expression": "(let* (($b (Truth_ModusPonens (stv 1.0 0.99) (stv 0.98 0.9))) ($c (Truth_ModusPonens $b (stv 0.5 0.0)))) (Truth_ModusPonens $c (stv 0.96 0.9)))",
+        "id": "chain-unknown-middle",
+        "output": {
+          "confidence": 0.0,
+          "strength": 0.48097599999999996
+        },
+        "source_lines": {
+          "Truth_ModusPonens": 124
+        },
+        "symbols": [
+          "Truth_ModusPonens"
+        ]
+      },
+      {
+        "evidence_overlap": "Truth functions do not inspect stamps; caller must enforce lineage.",
+        "expression": "(let* (($b (Truth_ModusPonens (stv 1.0 0.99) (stv 0.98 0.9))) ($c (Truth_ModusPonens $b (stv 0.01 0.9)))) (Truth_ModusPonens $c (stv 0.96 0.9)))",
+        "id": "chain-negative-middle",
+        "output": {
+          "confidence": 6.787131740928e-05,
+          "strength": 0.029588000000000003
+        },
+        "source_lines": {
+          "Truth_ModusPonens": 124
+        },
+        "symbols": [
+          "Truth_ModusPonens"
+        ]
+      },
+      {
+        "evidence_overlap": "Truth functions do not inspect stamps; caller must enforce lineage.",
+        "expression": "(Truth_Deduction (stv 0.2 0.8) (stv 0.4 0.8) (stv 0.5 0.8) (stv 0.9 0.8) (stv 0.8 0.8))",
+        "id": "deduction-measured",
+        "output": {
+          "confidence": 0.46080000000000015,
+          "strength": 0.7500000000000001
+        },
+        "source_lines": {
+          "Truth_Deduction": 84
+        },
+        "symbols": [
+          "Truth_Deduction"
+        ]
+      },
+      {
+        "evidence_overlap": "Truth functions do not inspect stamps; caller must enforce lineage.",
+        "expression": "(Truth_Deduction (stv 0.9 0.8) (stv 0.1 0.8) (stv 0.5 0.8) (stv 0.9 0.8) (stv 0.8 0.8))",
+        "id": "deduction-inconsistent",
+        "output": {
+          "confidence": 0.0,
+          "strength": 1.0
+        },
+        "source_lines": {
+          "Truth_Deduction": 84
+        },
+        "symbols": [
+          "Truth_Deduction"
+        ]
+      },
+      {
+        "evidence_overlap": "Truth functions do not inspect stamps; caller must enforce lineage.",
+        "expression": "(Truth_Deduction (stv 0.2 0.0) (stv 0.4 0.0) (stv 0.5 0.0) (stv 0.9 0.8) (stv 0.8 0.8))",
+        "id": "deduction-zero-confidence-marginal",
+        "output": {
+          "confidence": 0.46080000000000015,
+          "strength": 0.7500000000000001
+        },
+        "source_lines": {
+          "Truth_Deduction": 84
+        },
+        "symbols": [
+          "Truth_Deduction"
+        ]
+      },
+      {
+        "evidence_overlap": "Truth functions do not inspect stamps; caller must enforce lineage.",
+        "expression": "(Truth_Revision (stv 1.0 0.8) (stv 0.0 0.8))",
+        "id": "revision-independent-conflict",
+        "output": {
+          "confidence": 0.888888888888889,
+          "strength": 0.5
+        },
+        "source_lines": {
+          "Truth_Revision": 136
+        },
+        "symbols": [
+          "Truth_Revision"
+        ]
+      },
+      {
+        "evidence_overlap": "Truth functions do not inspect stamps; caller must enforce lineage.",
+        "expression": "(Truth_Revision (stv 1.0 0.8) (stv 1.0 0.8))",
+        "id": "revision-repeated-premise",
+        "output": {
+          "confidence": 0.888888888888889,
+          "strength": 1.0
+        },
+        "source_lines": {
+          "Truth_Revision": 136
+        },
+        "symbols": [
+          "Truth_Revision"
+        ]
+      },
+      {
+        "evidence_overlap": "Truth functions do not inspect stamps; caller must enforce lineage.",
+        "expression": "(Truth_inversion (stv 0.0 0.8) (stv 0.9 0.8))",
+        "id": "inversion-boundary-zero",
+        "output": {
+          "confidence": 0.384,
+          "strength": 0.9
+        },
+        "source_lines": {
+          "Truth_inversion": 150
+        },
+        "symbols": [
+          "Truth_inversion"
+        ]
+      },
+      {
+        "evidence_overlap": "Truth functions do not inspect stamps; caller must enforce lineage.",
+        "expression": "(Truth_ModusPonens (stv 1.0 1.0) (stv 1.0 1.0))",
+        "id": "mp-certain",
+        "output": {
+          "confidence": 1.0,
+          "strength": 1.0
+        },
+        "source_lines": {
+          "Truth_ModusPonens": 124
+        },
+        "symbols": [
+          "Truth_ModusPonens"
+        ]
+      },
+      {
+        "evidence_overlap": "Truth functions do not inspect stamps; caller must enforce lineage.",
+        "expression": "(Truth_Negation (stv 0.5 0.0))",
+        "id": "negation-unknown",
+        "output": {
+          "confidence": 0.0,
+          "strength": 0.5
+        },
+        "source_lines": {
+          "Truth_Negation": 147
+        },
+        "symbols": [
+          "Truth_Negation"
+        ]
+      },
+      {
+        "expression": "(collapse (|- (A (stv 0.9 0.8)) (B (stv 0.9 0.8))))",
+        "id": "conjunction-introduction",
+        "output": "(C4PROBE conjunction-introduction ())"
+      },
+      {
+        "expression": "(collapse (|- ((And A B) (stv 0.9 0.8))))",
+        "id": "conjunction-elimination",
+        "output": "(C4PROBE conjunction-elimination ())"
+      },
+      {
+        "expression": "(collapse (|- ((Seen Rook Orthogonal) (stv 1.0 0.99)) ((Implication (Seen $p Orthogonal) (Pattern $p)) (stv 0.9 0.8))))",
+        "id": "typed-variable-binding",
+        "output": "(C4PROBE typed-variable-binding (((Pattern Rook) (stv 0.9 0.7128000000000001))))"
+      },
+      {
+        "expression": "(collapse (|- ((Seen Bishop Diagonal) (stv 1.0 0.99)) ((Implication (Seen $p Orthogonal) (Pattern $p)) (stv 0.9 0.8))))",
+        "id": "wrong-variable-binding",
+        "output": "(C4PROBE wrong-variable-binding ())"
+      },
+      {
+        "expression": "(collapse (|- ((Evaluation (Predicate Blocked) (List (Concept Slider))) (stv 0.9 0.8)) ((Inheritance (Concept Rook) (Concept Slider)) (stv 0.95 0.8))))",
+        "id": "inheritance-predicate",
+        "output": "(C4PROBE inheritance-predicate ())"
+      },
+      {
+        "expression": "(collapse (|- ((Implication A B) (stv 0.9 0.8)) ((Implication B C) (stv 0.8 0.8))))",
+        "id": "deduction-wrapper",
+        "output": "(C4PROBE deduction-wrapper (((Implication A C) (stv 0.7500000000000001 0.46080000000000015))))"
+      },
+      {
+        "expression": "(if (StampDisjoint (e1 e2) (e2 e3)) (Truth_Revision (stv 1.0 0.8) (stv 1.0 0.8)) (empty))",
+        "id": "correlated-gate",
+        "output": null
+      },
+      {
+        "expression": "(if (StampDisjoint (e1) (e2)) (Truth_Revision (stv 1.0 0.8) (stv 1.0 0.8)) (empty))",
+        "id": "independent-gate",
+        "output": "(C4PROBE independent-gate (stv 1.0 0.888888888888889))"
+      }
+    ],
+    "runtime": {
+      "atomspace": "PeTTa native in-process MeTTa space (no Hyperon AtomSpace dependency)",
+      "petta": {
+        "branch": "main",
+        "commit": "ee5cacb6a6ecdd554a1c773aaf47e9a0f8a5af0f",
+        "files": {
+          "run.sh": "269a50bc47e8a5f614f1999161d7f5f6ea51c4615d39f12a404540071f124ff0",
+          "src/ext_points.pl": "0b5f1b115e29892ab1bf5833c022df4c2f3f1558cb04f57a8f52de5ccdad8436",
+          "src/filereader.pl": "fb677e03ffbf945f8c752aa02c8db481cebfbdd219660bee387af596e3ce7bc1",
+          "src/load_cache.pl": "619fc64d253221d06907234d2b94d8c3395b4a6facbe56b2a4bb38c84c9c0ac3",
+          "src/main.pl": "2a57276bb0cd32f29e0bd983c2640f1e9bc1646e22bfc266230d3dc13b9ecc6c",
+          "src/metta.pl": "9ee89a19768c82052606b738e7abd88971c5ac826b7cf9fc1ab770e02779337d",
+          "src/parser.pl": "69ab6dd840fcc585d916fd25a496a09dd30ca9aaacf6e55baaa67c8c020c84c1",
+          "src/spaces.pl": "553acea6a6ad210ff46cb0c883af7587295c689fcd5d768566428607417f0bb0",
+          "src/specializer.pl": "b27a2a6430914c11dc9cd0d27b9a3aa5945064607c48979b7a2a0e50bd0f5141",
+          "src/translator.pl": "cda4dcfc4f77ff0d3feb858b1502ec685fb8b1ddbd7cc555193b76ac7de12220",
+          "src/typecheck.pl": "c45a5a66001255004944731e72dc7a2b71872328027c0f23117442896767e91c",
+          "src/typecheck/abstract_domain.pl": "7fafddae3126fc3ab6f9c2380a4809d0dc5331ae1a622df3be6176167d90d8b9",
+          "src/typecheck/analysis_proofs.pl": "96687dbdd49730b355200eb8135aec8a55953daa1dc250196743951565b5350f",
+          "src/typecheck/builtin_registry.pl": "e0a65099592fa3283ff6f31e90f776366f499eb8e172102393b96bd8183d5005",
+          "src/typecheck/call_summaries.pl": "adb9383a34fd3c0cbaa6e898fd1ee41fcbe2a90327af1b96f4db29bd22c46c00",
+          "src/typecheck/clause_checks.pl": "3b072c51563542b85d8195137dfc06d60932fe25acf14c2dafdadc53367fefc3",
+          "src/typecheck/decl_store.pl": "52f5c17cf51e871a11d81f284094bdb945d3876b799f9157e5131eea3dfdd615",
+          "src/typecheck/dependency_graph.pl": "f344d62ad9e084d2b9ab7dc235094de83db87815cb7b1935c97794490abddaf1",
+          "src/typecheck/det_analysis.pl": "bc04e7791253c3e12b45c81be3f0a7fc419c310898a7b2dab89f86cb329eca9a",
+          "src/typecheck/det_proofs.pl": "1e34de0eb4fad3e79ff5b551e2f966595063db5a6cb268aac45e90448f80fd74",
+          "src/typecheck/det_validate.pl": "98738eb738f4aa76b64d1412ab5e839d151e1bef1fda1019396151a4e1d6ac58",
+          "src/typecheck/flags_arrows.pl": "454f1a1d6b47fe390fc3a8fc11297c6acc798bab6a4f5dc3f009ce79fcc844ed",
+          "src/typecheck/inference.pl": "62d0f2ae9ca97b622cec0676dd3de50016311d940e981e98d243f345579f4430",
+          "src/typecheck/ir_analyzer.pl": "02520b61ccccaba064f62f72f68162bc9b033abec64b77f6e2374e9134b1fe83",
+          "src/typecheck/oracles.pl": "c3ec9fc6e02cf78f58a7f441977fe7ceedad34a78a2a27a43fa52e809256b649",
+          "src/typecheck/relational_ir.pl": "c35f43237b3178ae81f207a79905e9aeb998f8eeac3cc9dce323c6fe62fc0037",
+          "src/typecheck/type_lang.pl": "d9cc0fbdc06002a8249c5b77fa999fb50be4b040626728b66a7e80f2b46255e0",
+          "src/typecheck/unified_checker_bridge.pl": "53ae3521a8265b9680f5434caa2384e0a3831739c53325a6bc2c737b02c2a01a",
+          "src/typecheck/unified_checker_cache.pl": "684f13666c61a1b15ecaf42443d41f15d76efa5d032225a87c873b76ca1da930",
+          "src/typecheck/value_checks.pl": "a8013f13afffd637ba9038c9cf2ef1d8cd056a135696fa676ca5fe88ada25ae6"
+        },
+        "repository": "https://github.com/trueagi-io/PeTTa"
+      },
+      "pln": {
+        "branch": "main",
+        "commit": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+        "repository": "https://github.com/trueagi-io/PLN",
+        "sha256": "cdfb3f18bd7b336440fc7b4409209afddf0e64c41f17dee7eefc8f02718de433",
+        "source": "vendor/pln/lib_pln.metta"
+      },
+      "python": "3.12.12",
+      "schema": 1,
+      "swipl": "SWI-Prolog version 10.0.1 for x86_64-linux",
+      "truth_value": "(stv strength confidence)"
+    }
+  },
+  "raw": "(C5PROBE independent-geometry-destination ())\n(C5PROBE compound-antecedent-supplied ((Local (stv 0.857 0.5472000000000001))))\n(C5PROBE compound-antecedent-missing ())\n(C5PROBE curried-supplied-rule ((Local (stv 0.8402599999999999 0.3676571136000001))))\n(C5PROBE curry-from-joint ())\n(C5PROBE uncurry-from-nested ())\n(C5PROBE intensional-conjunction ())\n(C5PROBE context-combination ())\n(C5PROBE scope-matched (((Typed Knight Opponent) (stv 0.857 0.5472000000000001))))\n(C5PROBE scope-repeated-variable-mismatch ())\n(C5PROBE shared-ancestor ())\n(C5PROBE independent-stamps (stv 1.0 0.888888888888889))\ntrue\ntrue\ntrue\ntrue\ntrue\ntrue\ntrue\ntrue\ntrue\ntrue\ntrue\ntrue\ntrue\n",
+  "records": [
+    {
+      "expression": "(collapse (|- ((Geometry Knight Jump) (stv 0.95 0.9)) ((Destination Opponent) (stv 0.98 0.8))))",
+      "id": "independent-geometry-destination",
+      "input_truth_values": [
+        "(stv 0.95 0.9)",
+        "(stv 0.98 0.8)"
+      ],
+      "native_source": "vendor/pln/lib_pln.metta",
+      "output": "(C5PROBE independent-geometry-destination ())",
+      "premises": "Literal independently named facts; supplied compound/nested rules are explicit experimental assumptions.",
+      "source_lines": [
+        211,
+        216,
+        226,
+        236,
+        246,
+        254,
+        263,
+        270,
+        277,
+        284,
+        287,
+        291,
+        295,
+        299,
+        304,
+        311,
+        319,
+        335
+      ],
+      "status": "probe-only"
+    },
+    {
+      "expression": "(collapse (|- ((And Geometry Destination) (stv 0.9 0.8)) ((Implication (And Geometry Destination) Local) (stv 0.95 0.8))))",
+      "id": "compound-antecedent-supplied",
+      "input_truth_values": [
+        "(stv 0.9 0.8)",
+        "(stv 0.95 0.8)"
+      ],
+      "native_source": "vendor/pln/lib_pln.metta",
+      "output": "(C5PROBE compound-antecedent-supplied ((Local (stv 0.857 0.5472000000000001))))",
+      "premises": "Literal independently named facts; supplied compound/nested rules are explicit experimental assumptions.",
+      "source_lines": [
+        211,
+        216,
+        226,
+        236,
+        246,
+        254,
+        263,
+        270,
+        277,
+        284,
+        287,
+        291,
+        295,
+        299,
+        304,
+        311,
+        319,
+        335
+      ],
+      "status": "native-partial"
+    },
+    {
+      "expression": "(collapse (|- (Geometry (stv 0.9 0.8)) ((Implication (And Geometry Destination) Local) (stv 0.95 0.8))))",
+      "id": "compound-antecedent-missing",
+      "input_truth_values": [
+        "(stv 0.9 0.8)",
+        "(stv 0.95 0.8)"
+      ],
+      "native_source": "vendor/pln/lib_pln.metta",
+      "output": "(C5PROBE compound-antecedent-missing ())",
+      "premises": "Literal independently named facts; supplied compound/nested rules are explicit experimental assumptions.",
+      "source_lines": [
+        211,
+        216,
+        226,
+        236,
+        246,
+        254,
+        263,
+        270,
+        277,
+        284,
+        287,
+        291,
+        295,
+        299,
+        304,
+        311,
+        319,
+        335
+      ],
+      "status": "probe-only"
+    },
+    {
+      "expression": "(collapse (let ($b $tv) (|- (Geometry (stv 0.9 0.8)) ((Implication Geometry (Implication Destination Local)) (stv 0.95 0.8))) (|- (Destination (stv 0.98 0.8)) ($b $tv))))",
+      "id": "curried-supplied-rule",
+      "input_truth_values": [
+        "(stv 0.9 0.8)",
+        "(stv 0.95 0.8)",
+        "(stv 0.98 0.8)"
+      ],
+      "native_source": "vendor/pln/lib_pln.metta",
+      "output": "(C5PROBE curried-supplied-rule ((Local (stv 0.8402599999999999 0.3676571136000001))))",
+      "premises": "Literal independently named facts; supplied compound/nested rules are explicit experimental assumptions.",
+      "source_lines": [
+        211,
+        216,
+        226,
+        236,
+        246,
+        254,
+        263,
+        270,
+        277,
+        284,
+        287,
+        291,
+        295,
+        299,
+        304,
+        311,
+        319,
+        335
+      ],
+      "status": "native-partial"
+    },
+    {
+      "expression": "(collapse (|- ((Implication (And Geometry Destination) Local) (stv 0.95 0.8))))",
+      "id": "curry-from-joint",
+      "input_truth_values": [
+        "(stv 0.95 0.8)"
+      ],
+      "native_source": "vendor/pln/lib_pln.metta",
+      "output": "(C5PROBE curry-from-joint ())",
+      "premises": "Literal independently named facts; supplied compound/nested rules are explicit experimental assumptions.",
+      "source_lines": [
+        211,
+        216,
+        226,
+        236,
+        246,
+        254,
+        263,
+        270,
+        277,
+        284,
+        287,
+        291,
+        295,
+        299,
+        304,
+        311,
+        319,
+        335
+      ],
+      "status": "probe-only"
+    },
+    {
+      "expression": "(collapse (|- ((Implication Geometry (Implication Destination Local)) (stv 0.95 0.8))))",
+      "id": "uncurry-from-nested",
+      "input_truth_values": [
+        "(stv 0.95 0.8)"
+      ],
+      "native_source": "vendor/pln/lib_pln.metta",
+      "output": "(C5PROBE uncurry-from-nested ())",
+      "premises": "Literal independently named facts; supplied compound/nested rules are explicit experimental assumptions.",
+      "source_lines": [
+        211,
+        216,
+        226,
+        236,
+        246,
+        254,
+        263,
+        270,
+        277,
+        284,
+        287,
+        291,
+        295,
+        299,
+        304,
+        311,
+        319,
+        335
+      ],
+      "status": "probe-only"
+    },
+    {
+      "expression": "(collapse (|- ((IntensionalInheritance A B) (stv 0.9 0.8)) ((IntensionalInheritance A C) (stv 0.9 0.8))))",
+      "id": "intensional-conjunction",
+      "input_truth_values": [
+        "(stv 0.9 0.8)",
+        "(stv 0.9 0.8)"
+      ],
+      "native_source": "vendor/pln/lib_pln.metta",
+      "output": "(C5PROBE intensional-conjunction ())",
+      "premises": "Literal independently named facts; supplied compound/nested rules are explicit experimental assumptions.",
+      "source_lines": [
+        211,
+        216,
+        226,
+        236,
+        246,
+        254,
+        263,
+        270,
+        277,
+        284,
+        287,
+        291,
+        295,
+        299,
+        304,
+        311,
+        319,
+        335
+      ],
+      "status": "probe-only"
+    },
+    {
+      "expression": "(collapse (|- ((Context Board Geometry) (stv 0.9 0.8)) ((Context Board Destination) (stv 0.9 0.8))))",
+      "id": "context-combination",
+      "input_truth_values": [
+        "(stv 0.9 0.8)",
+        "(stv 0.9 0.8)"
+      ],
+      "native_source": "vendor/pln/lib_pln.metta",
+      "output": "(C5PROBE context-combination ())",
+      "premises": "Literal independently named facts; supplied compound/nested rules are explicit experimental assumptions.",
+      "source_lines": [
+        211,
+        216,
+        226,
+        236,
+        246,
+        254,
+        263,
+        270,
+        277,
+        284,
+        287,
+        291,
+        295,
+        299,
+        304,
+        311,
+        319,
+        335
+      ],
+      "status": "probe-only"
+    },
+    {
+      "expression": "(collapse (|- ((Seen Knight Opponent) (stv 0.9 0.8)) ((Implication (Seen $p $d) (Typed $p $d)) (stv 0.95 0.8))))",
+      "id": "scope-matched",
+      "input_truth_values": [
+        "(stv 0.9 0.8)",
+        "(stv 0.95 0.8)"
+      ],
+      "native_source": "vendor/pln/lib_pln.metta",
+      "output": "(C5PROBE scope-matched (((Typed Knight Opponent) (stv 0.857 0.5472000000000001))))",
+      "premises": "Literal independently named facts; supplied compound/nested rules are explicit experimental assumptions.",
+      "source_lines": [
+        211,
+        216,
+        226,
+        236,
+        246,
+        254,
+        263,
+        270,
+        277,
+        284,
+        287,
+        291,
+        295,
+        299,
+        304,
+        311,
+        319,
+        335
+      ],
+      "status": "probe-only"
+    },
+    {
+      "expression": "(collapse (|- ((Seen Knight Opponent) (stv 0.9 0.8)) ((Implication (Seen $p $p) Same) (stv 0.95 0.8))))",
+      "id": "scope-repeated-variable-mismatch",
+      "input_truth_values": [
+        "(stv 0.9 0.8)",
+        "(stv 0.95 0.8)"
+      ],
+      "native_source": "vendor/pln/lib_pln.metta",
+      "output": "(C5PROBE scope-repeated-variable-mismatch ())",
+      "premises": "Literal independently named facts; supplied compound/nested rules are explicit experimental assumptions.",
+      "source_lines": [
+        211,
+        216,
+        226,
+        236,
+        246,
+        254,
+        263,
+        270,
+        277,
+        284,
+        287,
+        291,
+        295,
+        299,
+        304,
+        311,
+        319,
+        335
+      ],
+      "status": "probe-only"
+    },
+    {
+      "expression": "(collapse (if (StampDisjoint (geometry source1) (destination source1)) (Truth_Revision (stv 1.0 0.8) (stv 1.0 0.8)) (empty)))",
+      "id": "shared-ancestor",
+      "input_truth_values": [
+        "(stv 1.0 0.8)",
+        "(stv 1.0 0.8)"
+      ],
+      "native_source": "vendor/pln/lib_pln.metta",
+      "output": "(C5PROBE shared-ancestor ())",
+      "premises": "Literal independently named facts; supplied compound/nested rules are explicit experimental assumptions.",
+      "source_lines": [
+        211,
+        216,
+        226,
+        236,
+        246,
+        254,
+        263,
+        270,
+        277,
+        284,
+        287,
+        291,
+        295,
+        299,
+        304,
+        311,
+        319,
+        335
+      ],
+      "status": "probe-only"
+    },
+    {
+      "expression": "(if (StampDisjoint (geometry source1) (destination source2)) (Truth_Revision (stv 1.0 0.8) (stv 1.0 0.8)) (empty))",
+      "id": "independent-stamps",
+      "input_truth_values": [
+        "(stv 1.0 0.8)",
+        "(stv 1.0 0.8)"
+      ],
+      "native_source": "vendor/pln/lib_pln.metta",
+      "output": "(C5PROBE independent-stamps (stv 1.0 0.888888888888889))",
+      "premises": "Literal independently named facts; supplied compound/nested rules are explicit experimental assumptions.",
+      "source_lines": [
+        211,
+        216,
+        226,
+        236,
+        246,
+        254,
+        263,
+        270,
+        277,
+        284,
+        287,
+        291,
+        295,
+        299,
+        304,
+        311,
+        319,
+        335
+      ],
+      "status": "probe-only"
+    }
+  ],
+  "runtime": {
+    "atomspace": "PeTTa native in-process MeTTa space (no Hyperon AtomSpace dependency)",
+    "petta": {
+      "branch": "main",
+      "commit": "ee5cacb6a6ecdd554a1c773aaf47e9a0f8a5af0f",
+      "files": {
+        "run.sh": "269a50bc47e8a5f614f1999161d7f5f6ea51c4615d39f12a404540071f124ff0",
+        "src/ext_points.pl": "0b5f1b115e29892ab1bf5833c022df4c2f3f1558cb04f57a8f52de5ccdad8436",
+        "src/filereader.pl": "fb677e03ffbf945f8c752aa02c8db481cebfbdd219660bee387af596e3ce7bc1",
+        "src/load_cache.pl": "619fc64d253221d06907234d2b94d8c3395b4a6facbe56b2a4bb38c84c9c0ac3",
+        "src/main.pl": "2a57276bb0cd32f29e0bd983c2640f1e9bc1646e22bfc266230d3dc13b9ecc6c",
+        "src/metta.pl": "9ee89a19768c82052606b738e7abd88971c5ac826b7cf9fc1ab770e02779337d",
+        "src/parser.pl": "69ab6dd840fcc585d916fd25a496a09dd30ca9aaacf6e55baaa67c8c020c84c1",
+        "src/spaces.pl": "553acea6a6ad210ff46cb0c883af7587295c689fcd5d768566428607417f0bb0",
+        "src/specializer.pl": "b27a2a6430914c11dc9cd0d27b9a3aa5945064607c48979b7a2a0e50bd0f5141",
+        "src/translator.pl": "cda4dcfc4f77ff0d3feb858b1502ec685fb8b1ddbd7cc555193b76ac7de12220",
+        "src/typecheck.pl": "c45a5a66001255004944731e72dc7a2b71872328027c0f23117442896767e91c",
+        "src/typecheck/abstract_domain.pl": "7fafddae3126fc3ab6f9c2380a4809d0dc5331ae1a622df3be6176167d90d8b9",
+        "src/typecheck/analysis_proofs.pl": "96687dbdd49730b355200eb8135aec8a55953daa1dc250196743951565b5350f",
+        "src/typecheck/builtin_registry.pl": "e0a65099592fa3283ff6f31e90f776366f499eb8e172102393b96bd8183d5005",
+        "src/typecheck/call_summaries.pl": "adb9383a34fd3c0cbaa6e898fd1ee41fcbe2a90327af1b96f4db29bd22c46c00",
+        "src/typecheck/clause_checks.pl": "3b072c51563542b85d8195137dfc06d60932fe25acf14c2dafdadc53367fefc3",
+        "src/typecheck/decl_store.pl": "52f5c17cf51e871a11d81f284094bdb945d3876b799f9157e5131eea3dfdd615",
+        "src/typecheck/dependency_graph.pl": "f344d62ad9e084d2b9ab7dc235094de83db87815cb7b1935c97794490abddaf1",
+        "src/typecheck/det_analysis.pl": "bc04e7791253c3e12b45c81be3f0a7fc419c310898a7b2dab89f86cb329eca9a",
+        "src/typecheck/det_proofs.pl": "1e34de0eb4fad3e79ff5b551e2f966595063db5a6cb268aac45e90448f80fd74",
+        "src/typecheck/det_validate.pl": "98738eb738f4aa76b64d1412ab5e839d151e1bef1fda1019396151a4e1d6ac58",
+        "src/typecheck/flags_arrows.pl": "454f1a1d6b47fe390fc3a8fc11297c6acc798bab6a4f5dc3f009ce79fcc844ed",
+        "src/typecheck/inference.pl": "62d0f2ae9ca97b622cec0676dd3de50016311d940e981e98d243f345579f4430",
+        "src/typecheck/ir_analyzer.pl": "02520b61ccccaba064f62f72f68162bc9b033abec64b77f6e2374e9134b1fe83",
+        "src/typecheck/oracles.pl": "c3ec9fc6e02cf78f58a7f441977fe7ceedad34a78a2a27a43fa52e809256b649",
+        "src/typecheck/relational_ir.pl": "c35f43237b3178ae81f207a79905e9aeb998f8eeac3cc9dce323c6fe62fc0037",
+        "src/typecheck/type_lang.pl": "d9cc0fbdc06002a8249c5b77fa999fb50be4b040626728b66a7e80f2b46255e0",
+        "src/typecheck/unified_checker_bridge.pl": "53ae3521a8265b9680f5434caa2384e0a3831739c53325a6bc2c737b02c2a01a",
+        "src/typecheck/unified_checker_cache.pl": "684f13666c61a1b15ecaf42443d41f15d76efa5d032225a87c873b76ca1da930",
+        "src/typecheck/value_checks.pl": "a8013f13afffd637ba9038c9cf2ef1d8cd056a135696fa676ca5fe88ada25ae6"
+      },
+      "repository": "https://github.com/trueagi-io/PeTTa"
+    },
+    "pln": {
+      "branch": "main",
+      "commit": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+      "repository": "https://github.com/trueagi-io/PLN",
+      "sha256": "cdfb3f18bd7b336440fc7b4409209afddf0e64c41f17dee7eefc8f02718de433",
+      "source": "vendor/pln/lib_pln.metta"
+    },
+    "python": "3.12.12",
+    "schema": 1,
+    "swipl": "SWI-Prolog version 10.0.1 for x86_64-linux",
+    "truth_value": "(stv strength confidence)"
+  }
+}
