@@ -35,7 +35,9 @@ def root_cause(item,label,move,position,categories):
 
 def bootstrap(rows,positions,draws=300):
     rng=random.Random(424242);groups={}
-    for p in positions:groups.setdefault(p['source_game'] or p['fixture'],[]).append(p['fixture'])
+    for p in positions:
+        key=('game',str(p['source_game'])) if p['source_game'] is not None else ('fixture',p['fixture'])
+        groups.setdefault(key,[]).append(p['fixture'])
     keys=sorted(groups);by={p['fixture']:[r for r in rows if r['fixture']==p['fixture']] for p in positions}
     samples={k:[] for k in ('precision','recall','coverage','exact_move_set_accuracy')}
     for _ in range(draws):

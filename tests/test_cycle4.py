@@ -232,3 +232,11 @@ def test_dataset_isolation_and_fixed_registration():
     assert len([g for g in d['games'] if g['split']=='independent-games'])==12
     assert d['leakage_audit']['train_test_board_symmetry_overlap']==[]
     assert all(r['split']=='train' for r in d['examples'])
+
+def test_bootstrap_accepts_legacy_integer_game_zero():
+    from evaluation.cycle4 import bootstrap
+    positions=[{'fixture':'a','source_game':0,'exact':True,'elapsed':0},
+               {'fixture':'b','source_game':0,'exact':True,'elapsed':0},
+               {'fixture':'c','source_game':None,'exact':True,'elapsed':0}]
+    rows=[{'fixture':p['fixture'],'label':True,'classification':'supported'} for p in positions]
+    assert bootstrap(rows,positions,draws=5)['independent_clusters']==2
