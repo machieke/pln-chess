@@ -30,5 +30,7 @@ class HistoryEvidence:
                  'scope':'Observed structural transitions; historical legality is unverified.',
                  'provenance':'supplied-temporal-evidence','fen':expected_fen}
         receipt['id']=digest(receipt)
-        known=self.confidence>=.99 and (ep_established or self.castling_history_attested)
+        # The legacy Position flag is used by the EP observer only in Cycle 4.
+        # Castling attestation is carried independently in inference options.
+        known=self.confidence>=.99 and ep_established
         return replace(state,history_known=known),receipt

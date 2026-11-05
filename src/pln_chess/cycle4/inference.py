@@ -18,7 +18,11 @@ from pln_chess.cycle4.model import FactoredModel
 
 @dataclass(frozen=True)
 class Cycle4Options(Cycle3Options):
-    pass
+    castling_history_attested:bool=False
+
+    def __post_init__(self):
+        super().__post_init__()
+        if type(self.castling_history_attested) is not bool:raise ValueError('Invalid castling history attestation')
 
 
 def infer_moves(position,checkpoint,options=None,runtime=None,selected_moves=None,session=None,optimized=True):
@@ -158,7 +162,7 @@ def infer_moves(position,checkpoint,options=None,runtime=None,selected_moves=Non
         if item['observations']['pattern']['effect'] in ('castle','en-passant'):
             if getattr(options,'history_consistency','unknown')=='contradictory':
                 item['classification']='unknown';item['gaps'].append('Contradictory temporal evidence.')
-            elif item['classification']=='supported' and not position.history_known:
+            elif item['classification']=='supported' and not (getattr(options,'castling_history_attested',False) if item['observations']['pattern']['effect']=='castle' else position.history_known):
                 item['classification']='unknown';item['gaps'].append('Historical preconditions are not established by FEN flags.')
         item['legal_move_truth_value']=final.json()
         if local is None:item['gaps'].append('No matching pooled local hypothesis.')

@@ -24,6 +24,11 @@ def explain_move(position,move,checkpoint=None,options=None,runtime=None,tempora
         from pln_chess.cycle4.history import HistoryEvidence
         history=HistoryEvidence(**temporal_evidence) if isinstance(temporal_evidence,dict) else temporal_evidence
         position,receipt=history.apply(position.fen())
+        from dataclasses import asdict
+        from pln_chess.cycle4.inference import Cycle4Options
+        settings=asdict(options) if options is not None else {}
+        settings['castling_history_attested']=receipt['castling_history_attested'] and receipt['confidence']>=.99
+        options=Cycle4Options(**settings)
     candidate=find_move(position,move) if isinstance(move,str) else move
     if candidate is None: raise ValueError('Move is outside the seeded candidate grammar')
     result=infer_moves(position,checkpoint,options,runtime,[candidate])

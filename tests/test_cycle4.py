@@ -155,6 +155,18 @@ def test_ordinary_predecessor_does_not_attest_castling():
     h=HistoryEvidence(p.fen(),('h2h1q',),'observation')
     assert not h.apply(after.fen())[0].history_known
 
+def test_castling_attestation_does_not_establish_ep_predecessor():
+    fen='6k1/8/8/3Pp3/8/8/8/K7 w - e6 0 1'
+    h=HistoryEvidence(fen,(),'declared-castling-history',castling_history_attested=True)
+    assert not h.apply(fen)[0].history_known
+
+def test_ep_predecessor_does_not_attest_castling(model,runtime):
+    p=Position.from_fen('k7/4p3/8/3P4/8/8/8/4K2R b K - 0 1');after=p.successor(find_move(p,'e7e5'))
+    h=HistoryEvidence(p.fen(),('e7e5',),'observed-double-push')
+    result=explain_move(after,'e1g1',model,runtime=runtime,temporal_evidence=h)
+    assert result['candidate']['classification']=='unknown'
+    assert result['budget']['castling_history_attested'] is False
+
 @pytest.mark.parametrize('promotion',list('qrbn'))
 def test_promotion_structural_replacement(promotion):
     p=Position.from_fen('8/3P2k1/8/8/8/8/8/1K6 w - - 0 1');m=find_move(p,'d7d8'+promotion)
