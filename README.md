@@ -65,3 +65,15 @@ The delivered package also passed a [clean-copy bootstrap verification](docs/ver
 [Architecture](docs/architecture.md), [spatial semantics](docs/spatial-semantics.md), [learning semantics](docs/learning-semantics.md), [experiments](docs/experiments.md), [decisions](docs/decisions.md), and [model card](docs/model-card.md) explain the boundaries. `artifacts/` contains exact native traces, evidence/checkpoints, dataset/runtime manifests, complete-set metrics, calibration, ablations, timing/memory results, and test output. [Browser verification](docs/ui-verification.md) includes recorded desktop/mobile interactions and error handling. Tests distinguish trained demonstrations from held-out performance and prevent oracle calls in production inference.
 
 A checkout is the supported distribution: install it editable, or set `PLN_CHESS_ROOT` to the checkout containing configs/vendor/runtime/artifacts. The Python package deliberately does not bundle system native interpreters into a wheel.
+# Cycle 3
+
+Cycle 3 adds separate condition beliefs, learned post-move and castling-transit exposure, a new contact curriculum, independent adversaries, and explicit history uncertainty. It remains a **native-partial** learner: the pinned runtime does not prove conjunction of movement and king safety.
+
+```bash
+bash scripts/cycle3_reproduce.sh
+.venv/bin/pln-chess cycle3 --action audit
+.venv/bin/pln-chess serve --port 8765 --checkpoint artifacts/cycle3/C3-full-model.json
+.venv/bin/pln-chess counterfactual --fen '7k/8/8/8/8/8/2R5/2K5 w - - 0 1' --move c2e2 --operation add-blocker --square d2
+```
+
+See [Cycle 3 report](docs/cycle3-final-report.md), [architecture](docs/cycle3-architecture.md), [native audit](docs/cycle3-native-pln-audit.md), [learning semantics](docs/cycle3-learning-semantics.md), and [experiment protocol](docs/cycle3-experiments.md). Machine-readable results and per-candidate error ledgers are under `artifacts/cycle3/`. Earlier checkpoints, fixtures and artifacts remain supported and preserved. FEN alone does not establish en passant history; explicit predecessor handling is documented in the architecture.

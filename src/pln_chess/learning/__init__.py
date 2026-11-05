@@ -32,6 +32,9 @@ class Model:
     @classmethod
     def load(cls,path,runtime=None):
         data=read_json(path)
+        if data.get('schema')==3:
+            from pln_chess.cycle3.model import RelationalModel
+            return RelationalModel.load(path,runtime)
         if data.get('schema')==2:
             from pln_chess.cycle2.model import HierarchicalModel
             return HierarchicalModel.load(path,runtime)

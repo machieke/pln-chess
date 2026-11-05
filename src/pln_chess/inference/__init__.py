@@ -61,6 +61,9 @@ def infer_moves(position,checkpoint=None,options=None,runtime=None,selected_move
     model=Model.load(checkpoint,runtime) if isinstance(checkpoint,(str,__import__('pathlib').Path)) else checkpoint or Model(runtime.version)
     if representation is not None and representation!=model.variant:
         raise ValueError('Requested representation does not match checkpoint')
+    if model.schema==3:
+        from pln_chess.cycle3.inference import infer_moves as relational_infer
+        return relational_infer(position,model,options,runtime,selected_moves)
     if model.schema==2:
         from pln_chess.cycle2.inference import infer_moves as hierarchical_infer
         return hierarchical_infer(position,model,options,runtime,selected_moves)

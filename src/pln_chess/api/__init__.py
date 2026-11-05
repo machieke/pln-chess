@@ -28,6 +28,10 @@ def explain_move(position,move,checkpoint=None,options=None,runtime=None):
 def observe_example(position,move,label,source,dependence_group,ledger_path,
                     runtime=None,variant='full',transformation_lineage=None,
                     auxiliary_labels=None,idempotency_key=None,observation_confidence=0.5):
+    if variant.startswith('C3-'):
+        from pln_chess.cycle3.model import observe_example as relational_observe
+        return relational_observe(position,move,label,source,dependence_group,ledger_path,runtime,variant,
+                                  transformation_lineage,auxiliary_labels,idempotency_key,observation_confidence)
     if variant in ('hierarchical','no-obstruction','no-exact'):
         from pln_chess.cycle2.model import observe_example as hierarchical_observe
         return hierarchical_observe(position,move,label,source,dependence_group,ledger_path,runtime,variant,
@@ -58,6 +62,9 @@ observe_training_example=observe_example
 
 def train(dataset,checkpoint=None,options=None,runtime=None,ledger_path=None):
     runtime=runtime or Runtime(); options=options or {}
+    if options.get('representation')=='relative-conditions-v3' or options.get('variant','').startswith('C3-'):
+        from pln_chess.cycle3.model import train as relational_train
+        return relational_train(dataset,checkpoint,options,runtime,ledger_path)
     if options.get('representation')=='hierarchical-relative-v2' or options.get('variant') in ('hierarchical','no-obstruction','no-exact'):
         from pln_chess.cycle2.model import train as hierarchical_train
         return hierarchical_train(dataset,checkpoint,options,runtime,ledger_path)

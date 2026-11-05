@@ -14,6 +14,13 @@ from pln_chess.domain import Position
 def main(argv=None):
     parser=argparse.ArgumentParser(prog='pln-chess',description='Piece-relative native PLN research inspector')
     sub=parser.add_subparsers(dest='command',required=True)
+    p=sub.add_parser('cycle3');p.add_argument('--action',choices=('train','evaluate','audit'),default='evaluate')
+    p.add_argument('--dataset',default=str(ROOT/'artifacts/cycle3/dataset.json'));p.add_argument('--split',default='challenge')
+    p.add_argument('--checkpoint',default=str(ROOT/'artifacts/cycle3/C3-full-model.json'));p.add_argument('--induction',action='store_true')
+    p=sub.add_parser('counterfactual');p.add_argument('--fen',required=True);p.add_argument('--move',required=True)
+    p.add_argument('--operation',required=True,choices=('add-blocker','remove-piece','move-piece','color-flip','remove-right'))
+    p.add_argument('--square');p.add_argument('--target');p.add_argument('--right',default='K')
+    p.add_argument('--checkpoint',default=str(ROOT/'artifacts/cycle3/C3-full-model.json'))
     p=sub.add_parser('cycle2'); p.add_argument('--dataset',default=str(ROOT/'artifacts/cycle2/dataset.json'))
     p.add_argument('--action',choices=('train','evaluate','audit'),default='evaluate'); p.add_argument('--split',default='heldout-transfer')
     p.add_argument('--induction',action='store_true'); p.add_argument('--checkpoint',default=str(ROOT/'artifacts/cycle2/B1-model.json'))
@@ -30,12 +37,30 @@ def main(argv=None):
     p=sub.add_parser('benchmark'); p.add_argument('--config',default=str(ROOT/'configs/benchmark.json'))
     p=sub.add_parser('report'); p.add_argument('--output',default=str(ROOT/'artifacts/final-report.md'))
     p=sub.add_parser('replay'); p.add_argument('--ledger',required=True); p.add_argument('--output',required=True); p.add_argument('--through',type=int)
-    p.add_argument('--representation',choices=('full','hierarchical'),default='full'); p.add_argument('--induction',action='store_true')
+    p.add_argument('--representation',choices=('full','hierarchical','C3-full'),default='full'); p.add_argument('--induction',action='store_true')
     p=sub.add_parser('hypothesis'); p.add_argument('id'); p.add_argument('--checkpoint',default=str(ROOT/'artifacts/model.json'))
     p=sub.add_parser('serve'); p.add_argument('--port',type=int,default=8765); p.add_argument('--checkpoint',default=str(ROOT/'artifacts/model.json'))
     args=parser.parse_args(argv)
     try:
-        if args.command=='cycle2':
+        if args.command=='counterfactual':
+            from pln_chess.cycle3.counterfactual import compare
+            result=compare(args.fen,args.move,args.checkpoint,args.operation,args.square,args.target,right=args.right)
+        elif args.command=='cycle3':
+            if args.action=='audit':
+                from evaluation.cycle3_native import audit
+                result=audit(ROOT/'artifacts/cycle3/native-probes.json')
+            elif args.action=='train':
+                from pln_chess.cycle3.model import train as relational_train
+                data=read_json(args.dataset)
+                model=relational_train([r for r in data['examples'] if r['split']=='train'],args.checkpoint,
+                                       {'induction':args.induction},ledger_path=ROOT/'artifacts/cycle3/cli-evidence.jsonl')
+                result={'version':model.version,'hypotheses':len(model.hypotheses),'induced':len(model.induction)}
+            else:
+                from evaluation.cycle3 import evaluate
+                runtime=Runtime();report=evaluate(read_json(args.dataset),Model.load(args.checkpoint,runtime),args.split,runtime,
+                                                 ROOT/f'artifacts/cycle3/cli-{args.split}.json.gz')
+                result=report['metrics']
+        elif args.command=='cycle2':
             if args.action=='audit':
                 from evaluation.cycle2_native import audit
                 result=audit(ROOT/'artifacts/cycle2/native-probes.json')
