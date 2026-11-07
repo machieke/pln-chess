@@ -1,0 +1,51 @@
+{
+  "passed": true,
+  "checks": {
+    "model/C7-frozen.json": {
+      "exact_bytes": true,
+      "sha256": "06abcf43f70495ee62d69b9a28a79f388fea54cc45099f62b8119984a7858b2f"
+    },
+    "model/C7-learned-0.json": {
+      "exact_bytes": true,
+      "sha256": "188caabcc7e53e0d6e229ec274932f98fb0de761031caa09de81764268507165"
+    },
+    "model/C7-learned-2.json": {
+      "exact_bytes": true,
+      "sha256": "f30daa7c3a688e88c128765d3bf4a3b8339d70022f1f00e63f5b8e18a13de842"
+    },
+    "model/C7-learned-4.json": {
+      "exact_bytes": true,
+      "sha256": "02f465bf15d11b48b4e07162233a4fb8c8ff7867e848c95a48b3d544b93e4f75"
+    },
+    "model/C7-learned-8-no-dependence.json": {
+      "exact_bytes": true,
+      "sha256": "b60e24f4ea00ada68e2e6d49015bf4d104b3866057ffc8a25219e5c4aad9e848"
+    },
+    "model/C7-learned-8.json": {
+      "exact_bytes": true,
+      "sha256": "9a4008e68253cf8069fd821bc97df1cb6eed8fa94173ffebd8947379ae097592"
+    },
+    "training/selection.json": {
+      "exact_bytes": true,
+      "decoded_json_equal": true,
+      "sha256": "7791c80e209bb519b2911a9e935b1ee8c7fd74c35e97ecd79ed7106a51a00d23",
+      "decoded_bytes_equal": true
+    },
+    "training/examples.json.xz": {
+      "exact_bytes": false,
+      "decoded_json_equal": true,
+      "sha256": "aadb9d7f3f21c2f6243757d5131e9e05ab458a391ca0806c454fa44242d2e281",
+      "decoded_bytes_equal": true
+    }
+  },
+  "dataset_content_fields_equal": [
+    "positions",
+    "games",
+    "leakage",
+    "oracle_version"
+  ],
+  "compression_note": "The development examples archive used an earlier JSON/XZ packing policy. The decoded JSON is identical; raw compressed bytes differ.",
+  "dataset_hash_changed_reason": "The registration adds the 100000-node offline budget after development resource exhaustion; game and position content did not change.",
+  "development_dataset_hash": "68219475963ed4a9f55f786fe87704e2fde89a383f473a532794a37c5a62a5db",
+  "canonical_dataset_hash": "c9150082734efc5f8c5b6dad49fd1bb4c4ebded2873e87376e4abe64de9921bd"
+}

@@ -1,0 +1,322 @@
+[
+  {
+    "body": "\n!(println! (C7PROBE mp (Truth_ModusPonens (stv 0.9 0.8) (stv 0.95 0.8))))",
+    "stdout": "(C7PROBE mp (stv 0.857 0.5472000000000001))\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE deduction (Truth_Deduction (stv 0.2 0.8) (stv 0.4 0.8) (stv 0.5 0.8) (stv 0.9 0.8) (stv 0.8 0.8))))",
+    "stdout": "(C7PROBE deduction (stv 0.7500000000000001 0.46080000000000015))\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE induction (Truth_Induction (stv 0.2 0.8) (stv 0.1 0.8) (stv 0.5 0.8) (stv 1.0 0.8) (stv 0.8 0.8))))",
+    "stdout": "(C7PROBE induction (stv 0.6333333333333334 0.3386243386243387))\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE abduction (Truth_Abduction (stv 0.2 0.8) (stv 0.4 0.8) (stv 0.3 0.8) (stv 0.8 0.8) (stv 0.7 0.8))))",
+    "stdout": "(C7PROBE abduction (stv 0.44999999999999996 0.3386243386243387))\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE revision (Truth_Revision (stv 1.0 0.8) (stv 0.0 0.8))))",
+    "stdout": "(C7PROBE revision (stv 0.5 0.888888888888889))\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE negation (Truth_Negation (stv 0.9 0.8))))",
+    "stdout": "(C7PROBE negation (stv 0.09999999999999998 0.8))\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE inversion (Truth_inversion (stv 0.4 0.8) (stv 0.9 0.8))))",
+    "stdout": "(C7PROBE inversion (stv 0.9 0.384))\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE equivalence (Truth_equivalenceToImplication (stv 0.2 0.8) (stv 0.4 0.8) (stv 0.5 0.8))))",
+    "stdout": "(C7PROBE equivalence (stv 1.0 0.8))\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE similarity (Truth_transitiveSimilarity (stv 0.4 0.8) (stv 0.4 0.8) (stv 0.4 0.8) (stv 0.7 0.8) (stv 0.7 0.8))))",
+    "stdout": "(C7PROBE similarity (stv 0.5372340425531914 0.5824))\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE evaluation (Truth_evaluationImplication (stv 0.4 0.8) (stv 0.2 0.8) (stv 0.5 0.8) (stv 0.9 0.8) (stv 0.8 0.8))))",
+    "stdout": "(C7PROBE evaluation (stv 0.7500000000000001 0.46080000000000015))\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE symmetric-mp (Truth_SymmetricModusPonens (stv 0.9 0.8) (stv 0.95 0.8))))",
+    "stdout": "(C7PROBE symmetric-mp (stv 0.894 0.6368000000000001))\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE choice (let ($tv $e) (BestConfidenceCandidate (((stv 0.9 0.7) (sourceA)) ((stv 0.1 0.8) (sourceB)))) $tv)))",
+    "stdout": "(C7PROBE choice (stv 0.1 0.8))\ntrue\ntrue\n"
+  },
+  {
+    "body": "(= (STV A) (stv 0.4 0.8))\n(= (STV B) (stv 0.4 0.8))\n(= (STV C) (stv 0.4 0.8))\n!(println! (C7PROBE inheritance-deduction (collapse (|- ((Inheritance A B) (stv 0.9 0.8)) ((Inheritance B C) (stv 0.8 0.8))))))",
+    "stdout": "(C7PROBE inheritance-deduction (((Inheritance A C) (stv 0.7333333333333334 0.46080000000000015))))\ntrue\ntrue\n"
+  },
+  {
+    "body": "(= (STV A) (stv 0.4 0.8))\n(= (STV B) (stv 0.4 0.8))\n(= (STV C) (stv 0.4 0.8))\n!(println! (C7PROBE inheritance-predicate (collapse (|- ((Evaluation (Predicate Eligible) (List (Concept B))) (stv 0.9 0.8)) ((Inheritance (Concept A) (Concept B)) (stv 0.95 0.8))))))",
+    "stdout": "(C7PROBE inheritance-predicate ())\ntrue\ntrue\n"
+  },
+  {
+    "body": "(= (STV A) (stv 0.4 0.8))\n(= (STV B) (stv 0.4 0.8))\n(= (STV C) (stv 0.4 0.8))\n!(println! (C7PROBE equivalence-wrapper (collapse (|- ((Equivalence A B) (stv 0.5 0.8))))))",
+    "stdout": "(C7PROBE equivalence-wrapper (((Implication A B) (stv 0.6666666666666666 0.8)) ((Implication B A) (stv 0.6666666666666666 0.8))))\ntrue\ntrue\n"
+  },
+  {
+    "body": "(= (STV A) (stv 0.4 0.8))\n(= (STV B) (stv 0.4 0.8))\n(= (STV C) (stv 0.4 0.8))\n!(println! (C7PROBE unary-chain (collapse (let ($p $tv) (|- (A (stv 0.9 0.8)) ((Implication A B) (stv 0.95 0.8))) (|- ($p $tv) ((Implication B C) (stv 0.95 0.8)))))))",
+    "stdout": "(C7PROBE unary-chain ((C (stv 0.8170099999999999 0.3564023040000001))))\ntrue\ntrue\n"
+  },
+  {
+    "body": "(= (STV A) (stv 0.4 0.8))\n(= (STV B) (stv 0.4 0.8))\n(= (STV C) (stv 0.4 0.8))\n!(println! (C7PROBE negative-wrapper (collapse (|- ((Not A) (stv 0.9 0.8))))))",
+    "stdout": "(C7PROBE negative-wrapper ((A (stv 0.09999999999999998 0.8))))\ntrue\ntrue\n"
+  },
+  {
+    "body": "(= (STV A) (stv 0.4 0.8))\n(= (STV B) (stv 0.4 0.8))\n(= (STV C) (stv 0.4 0.8))\n!(println! (C7PROBE revision-zero (collapse (Truth_Revision (stv 0.5 0.0) (stv 0.5 0.0)))))",
+    "stdout": "(C7PROBE revision-zero ())\ntrue\ntrue\n"
+  },
+  {
+    "body": "(= (STV A) (stv 0.4 0.8))\n(= (STV B) (stv 0.4 0.8))\n(= (STV C) (stv 0.4 0.8))\n!(println! (C7PROBE revision-one (collapse (Truth_Revision (stv 1.0 1.0) (stv 1.0 0.5)))))",
+    "stdout": "(C7PROBE revision-one ())\ntrue\ntrue\n"
+  },
+  {
+    "body": "(= (STV A) (stv 0.4 0.8))\n(= (STV B) (stv 0.4 0.8))\n(= (STV C) (stv 0.4 0.8))\n!(println! (C7PROBE mp-zero (Truth_ModusPonens (stv 1.0 0.0) (stv 1.0 1.0))))",
+    "stdout": "(C7PROBE mp-zero (stv 1.0 0.0))\ntrue\ntrue\n"
+  },
+  {
+    "body": "(= (STV A) (stv 0.4 0.8))\n(= (STV B) (stv 0.4 0.8))\n(= (STV C) (stv 0.4 0.8))\n!(println! (C7PROBE mp-one (Truth_ModusPonens (stv 1.0 1.0) (stv 1.0 1.0))))",
+    "stdout": "(C7PROBE mp-one (stv 1.0 1.0))\ntrue\ntrue\n"
+  },
+  {
+    "body": "(= (STV A) (stv 0.4 0.8))\n(= (STV B) (stv 0.4 0.8))\n(= (STV C) (stv 0.4 0.8))\n!(println! (C7PROBE choice-zero (BestConfidenceCandidate (((stv 1.0 0.0) (a)) ((stv 0.0 0.0) (b))))))",
+    "stdout": "(C7PROBE choice-zero ())\ntrue\ntrue\n"
+  },
+  {
+    "body": "(= (STV A) (stv 0.4 0.8))\n(= (STV B) (stv 0.4 0.8))\n(= (STV C) (stv 0.4 0.8))\n!(println! (C7PROBE choice-tie (BestConfidenceCandidate (((stv 0.9 0.8) (a)) ((stv 0.1 0.8) (b))))))",
+    "stdout": "(C7PROBE choice-tie ((stv 0.9 0.8) (a)))\ntrue\ntrue\n"
+  },
+  {
+    "body": "(= (STV A) (stv 0.4 0.8))\n(= (STV B) (stv 0.4 0.8))\n(= (STV C) (stv 0.4 0.8))\n!(println! (C7PROBE symmetric-zero-strength (Truth_SymmetricModusPonens (stv 0.0 0.8) (stv 1.0 0.8))))",
+    "stdout": "(C7PROBE symmetric-zero-strength (stv 0.4 0.6400000000000001))\ntrue\ntrue\n"
+  },
+  {
+    "body": "(= (STV A) (stv 0.4 0.8))\n(= (STV B) (stv 0.4 0.8))\n(= (STV C) (stv 0.4 0.8))\n!(println! (C7PROBE stamp-shared (StampDisjoint (a shared) (b shared))))",
+    "stdout": "(C7PROBE stamp-shared false)\ntrue\ntrue\n"
+  },
+  {
+    "body": "(= (STV A) (stv 0.4 0.8))\n(= (STV B) (stv 0.4 0.8))\n(= (STV C) (stv 0.4 0.8))\n!(println! (C7PROBE stamp-independent (StampDisjoint (a) (b))))",
+    "stdout": "(C7PROBE stamp-independent true)\ntrue\ntrue\n"
+  },
+  {
+    "body": "!(let* (($learn (Truth_Revision (stv 0.5 0.05) (stv 1.0 0.5)))) (progn (println! (RESULT learn $learn))))",
+    "stdout": "(RESULT learn (stv 0.9750000000000001 0.5128205128205129))\ntrue\ntrue\n"
+  },
+  {
+    "body": "!(let* (($learn (Truth_Revision (stv 0.9750000000000001 0.5128205128205129) (stv 1.0 0.5)))) (progn (println! (RESULT learn $learn))))",
+    "stdout": "(RESULT learn (stv 0.9871794871794872 0.6724137931034483))\ntrue\ntrue\n"
+  },
+  {
+    "body": "!(let* (($learn (Truth_Revision (stv 0.9871794871794872 0.6724137931034483) (stv 1.0 0.5)))) (progn (println! (RESULT learn $learn))))",
+    "stdout": "(RESULT learn (stv 0.9913793103448276 0.7532467532467534))\ntrue\ntrue\n"
+  },
+  {
+    "body": "!(let* (($learn (Truth_Revision (stv 0.9913793103448276 0.7532467532467534) (stv 1.0 0.5)))) (progn (println! (RESULT learn $learn))))",
+    "stdout": "(RESULT learn (stv 0.9935064935064936 0.8020833333333335))\ntrue\ntrue\n"
+  },
+  {
+    "body": "!(let* (($learn (Truth_Revision (stv 0.5 0.05) (stv 1.0 0.5)))) (progn (println! (RESULT learn $learn))))",
+    "stdout": "(RESULT learn (stv 0.9750000000000001 0.5128205128205129))\ntrue\ntrue\n"
+  },
+  {
+    "body": "!(let* (($learn (Truth_Revision (stv 0.9750000000000001 0.5128205128205129) (stv 1.0 0.5)))) (progn (println! (RESULT learn $learn))))",
+    "stdout": "(RESULT learn (stv 0.9871794871794872 0.6724137931034483))\ntrue\ntrue\n"
+  },
+  {
+    "body": "!(let* (($learn (Truth_Revision (stv 0.9871794871794872 0.6724137931034483) (stv 1.0 0.5)))) (progn (println! (RESULT learn $learn))))",
+    "stdout": "(RESULT learn (stv 0.9913793103448276 0.7532467532467534))\ntrue\ntrue\n"
+  },
+  {
+    "body": "!(let* (($learn (Truth_Revision (stv 0.9913793103448276 0.7532467532467534) (stv 1.0 0.5)))) (progn (println! (RESULT learn $learn))))",
+    "stdout": "(RESULT learn (stv 0.9935064935064936 0.8020833333333335))\ntrue\ntrue\n"
+  },
+  {
+    "body": "!(let* (($conflict (Truth_Revision (stv 0.9935064935064936 0.8020833333333335) (stv 0.0 0.8)))) (progn (println! (RESULT conflict $conflict))))",
+    "stdout": "(RESULT conflict (stv 0.5000000000000002 0.8895348837209303))\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE nested-implication-A-only (collapse (let ($p $tv) (|- (A (stv 0.9935064935064936 0.8020833333333335)) ((Implication A (Implication B Eligible)) (stv 0.95 0.8))) (|- (B (stv 0.5 0.0)) ($p $tv))))))",
+    "stdout": "(C7PROBE nested-implication-A-only ((Eligible (stv 0.48198051948051945 0.0))))\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE nested-implication-B-only (collapse (let ($p $tv) (|- (A (stv 0.5 0.0)) ((Implication A (Implication B Eligible)) (stv 0.95 0.8))) (|- (B (stv 0.9935064935064936 0.8020833333333335)) ($p $tv))))))",
+    "stdout": "(C7PROBE nested-implication-B-only ((Eligible (stv 0.4819805194805195 0.0))))\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE nested-implication-A+B (collapse (let ($p $tv) (|- (A (stv 0.9935064935064936 0.8020833333333335)) ((Implication A (Implication B Eligible)) (stv 0.95 0.8))) (|- (B (stv 0.9935064935064936 0.8020833333333335)) ($p $tv))))))",
+    "stdout": "(C7PROBE nested-implication-A+B ((Eligible (stv 0.9379612919547984 0.45556260336343357))))\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE nested-implication-negative-B (collapse (let ($p $tv) (|- (A (stv 0.9935064935064936 0.8020833333333335)) ((Implication A (Implication B Eligible)) (stv 0.95 0.8))) (|- (B (stv 0.0 0.8)) ($p $tv))))))",
+    "stdout": "(C7PROBE nested-implication-negative-B ((Eligible (stv 0.02 0.0))))\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE nested-implication-delete-A (collapse (let ($p $tv) (|- (A (stv 0.5 0.0)) ((Implication A (Implication B Eligible)) (stv 0.95 0.8))) (|- (B (stv 0.9935064935064936 0.8020833333333335)) ($p $tv))))))",
+    "stdout": "(C7PROBE nested-implication-delete-A ((Eligible (stv 0.4819805194805195 0.0))))\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE nested-implication-delete-B (collapse (let ($p $tv) (|- (A (stv 0.9935064935064936 0.8020833333333335)) ((Implication A (Implication B Eligible)) (stv 0.95 0.8))) (|- (B (stv 0.5 0.0)) ($p $tv))))))",
+    "stdout": "(C7PROBE nested-implication-delete-B ((Eligible (stv 0.48198051948051945 0.0))))\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE nested-implication-reverse (collapse (let ($p $tv) (|- (A (stv 0.9935064935064936 0.8020833333333335)) ((Implication A (Implication B Eligible)) (stv 0.95 0.8))) (|- (B (stv 0.9935064935064936 0.8020833333333335)) ($p $tv))))))",
+    "stdout": "(C7PROBE nested-implication-reverse ((Eligible (stv 0.9379612919547984 0.45556260336343357))))\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE nested-implication-contradict-B (collapse (let ($p $tv) (|- (A (stv 0.9935064935064936 0.8020833333333335)) ((Implication A (Implication B Eligible)) (stv 0.95 0.8))) (|- (B (stv 0.5000000000000002 0.8895348837209303)) ($p $tv))))))",
+    "stdout": "(C7PROBE nested-implication-contradict-B ((Eligible (stv 0.4819805194805197 0.25426749955168393))))\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE nested-implication-no-supplied-conditional (collapse (|- (A (stv 0.9935064935064936 0.8020833333333335)) (B (stv 0.9935064935064936 0.8020833333333335))))))",
+    "stdout": "(C7PROBE nested-implication-no-supplied-conditional ())\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE nested-implication-premise-reversal (collapse (let ($p $tv) (|- (B (stv 0.9935064935064936 0.8020833333333335)) ((Implication A (Implication B Eligible)) (stv 0.95 0.8))) (|- (A (stv 0.9935064935064936 0.8020833333333335)) ($p $tv))))))",
+    "stdout": "(C7PROBE nested-implication-premise-reversal ())\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE nested-implication-correlated-duplicate (collapse (if (StampDisjoint (A shared) (B shared)) (collapse (let ($p $tv) (|- (A (stv 0.9935064935064936 0.8020833333333335)) ((Implication A (Implication B Eligible)) (stv 0.95 0.8))) (|- (B (stv 0.9935064935064936 0.8020833333333335)) ($p $tv)))) (empty)))))",
+    "stdout": "(C7PROBE nested-implication-correlated-duplicate ())\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE nested-implication-duplicate-revision-unguarded (Truth_Revision (stv 0.9935064935064936 0.8020833333333335) (stv 0.9935064935064936 0.8020833333333335))))",
+    "stdout": "(C7PROBE nested-implication-duplicate-revision-unguarded (stv 0.9935064935064936 0.8901734104046244))\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE nested-implication-duplicate-revision-guarded (collapse (if (StampDisjoint (A) (A)) (Truth_Revision (stv 0.9935064935064936 0.8020833333333335) (stv 0.9935064935064936 0.8020833333333335)) (empty)))))",
+    "stdout": "(C7PROBE nested-implication-duplicate-revision-guarded ())\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE product-antecedent-A-only (collapse (let ($p $tv) (|- (A (stv 0.9935064935064936 0.8020833333333335)) (B (stv 0.5 0.0))) (|- ($p $tv) ((Implication (Product A B) Eligible) (stv 0.95 0.8)))))))",
+    "stdout": "(C7PROBE product-antecedent-A-only ())\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE product-antecedent-B-only (collapse (let ($p $tv) (|- (A (stv 0.5 0.0)) (B (stv 0.9935064935064936 0.8020833333333335))) (|- ($p $tv) ((Implication (Product A B) Eligible) (stv 0.95 0.8)))))))",
+    "stdout": "(C7PROBE product-antecedent-B-only ())\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE product-antecedent-A+B (collapse (let ($p $tv) (|- (A (stv 0.9935064935064936 0.8020833333333335)) (B (stv 0.9935064935064936 0.8020833333333335))) (|- ($p $tv) ((Implication (Product A B) Eligible) (stv 0.95 0.8)))))))",
+    "stdout": "(C7PROBE product-antecedent-A+B ())\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE product-antecedent-negative-B (collapse (let ($p $tv) (|- (A (stv 0.9935064935064936 0.8020833333333335)) (B (stv 0.0 0.8))) (|- ($p $tv) ((Implication (Product A B) Eligible) (stv 0.95 0.8)))))))",
+    "stdout": "(C7PROBE product-antecedent-negative-B ())\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE product-antecedent-delete-A (collapse (let ($p $tv) (|- (A (stv 0.5 0.0)) (B (stv 0.9935064935064936 0.8020833333333335))) (|- ($p $tv) ((Implication (Product A B) Eligible) (stv 0.95 0.8)))))))",
+    "stdout": "(C7PROBE product-antecedent-delete-A ())\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE product-antecedent-delete-B (collapse (let ($p $tv) (|- (A (stv 0.9935064935064936 0.8020833333333335)) (B (stv 0.5 0.0))) (|- ($p $tv) ((Implication (Product A B) Eligible) (stv 0.95 0.8)))))))",
+    "stdout": "(C7PROBE product-antecedent-delete-B ())\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE product-antecedent-reverse (collapse (let ($p $tv) (|- (A (stv 0.9935064935064936 0.8020833333333335)) (B (stv 0.9935064935064936 0.8020833333333335))) (|- ($p $tv) ((Implication (Product A B) Eligible) (stv 0.95 0.8)))))))",
+    "stdout": "(C7PROBE product-antecedent-reverse ())\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE product-antecedent-contradict-B (collapse (let ($p $tv) (|- (A (stv 0.9935064935064936 0.8020833333333335)) (B (stv 0.5000000000000002 0.8895348837209303))) (|- ($p $tv) ((Implication (Product A B) Eligible) (stv 0.95 0.8)))))))",
+    "stdout": "(C7PROBE product-antecedent-contradict-B ())\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE product-antecedent-host-joint-control (collapse (|- ((Product A B) (stv 0.9935064935064936 0.8020833333333335)) ((Implication (Product A B) Eligible) (stv 0.95 0.8))))))",
+    "stdout": "(C7PROBE product-antecedent-host-joint-control ((Eligible (stv 0.9439610389610389 0.6056250000000001))))\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE product-antecedent-explicit-And-antecedent (collapse (|- (A (stv 0.9935064935064936 0.8020833333333335)) ((Implication (And A B) Eligible) (stv 0.95 0.8))))))",
+    "stdout": "(C7PROBE product-antecedent-explicit-And-antecedent ())\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE product-antecedent-premise-reversal (collapse (|- (B (stv 0.9935064935064936 0.8020833333333335)) (A (stv 0.9935064935064936 0.8020833333333335))))))",
+    "stdout": "(C7PROBE product-antecedent-premise-reversal ())\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE product-antecedent-correlated-duplicate (collapse (if (StampDisjoint (A shared) (B shared)) (collapse (let ($p $tv) (|- (A (stv 0.9935064935064936 0.8020833333333335)) (B (stv 0.9935064935064936 0.8020833333333335))) (|- ($p $tv) ((Implication (Product A B) Eligible) (stv 0.95 0.8))))) (empty)))))",
+    "stdout": "(C7PROBE product-antecedent-correlated-duplicate ())\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE product-antecedent-duplicate-revision-unguarded (Truth_Revision (stv 0.9935064935064936 0.8020833333333335) (stv 0.9935064935064936 0.8020833333333335))))",
+    "stdout": "(C7PROBE product-antecedent-duplicate-revision-unguarded (stv 0.9935064935064936 0.8901734104046244))\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE product-antecedent-duplicate-revision-guarded (collapse (if (StampDisjoint (A) (A)) (Truth_Revision (stv 0.9935064935064936 0.8020833333333335) (stv 0.9935064935064936 0.8020833333333335)) (empty)))))",
+    "stdout": "(C7PROBE product-antecedent-duplicate-revision-guarded ())\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE conditional-inheritance-A-only (collapse (|- ((Inheritance (Concept Candidate) (Concept KnightStep)) (stv 0.9935064935064936 0.8020833333333335)) ((Evaluation (Predicate Eligible) (List (Concept OpponentDestination))) (stv 0.5 0.0))))))",
+    "stdout": "(C7PROBE conditional-inheritance-A-only ())\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE conditional-inheritance-B-only (collapse (|- ((Inheritance (Concept Candidate) (Concept KnightStep)) (stv 0.5 0.0)) ((Evaluation (Predicate Eligible) (List (Concept OpponentDestination))) (stv 0.9935064935064936 0.8020833333333335))))))",
+    "stdout": "(C7PROBE conditional-inheritance-B-only ())\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE conditional-inheritance-A+B (collapse (|- ((Inheritance (Concept Candidate) (Concept KnightStep)) (stv 0.9935064935064936 0.8020833333333335)) ((Evaluation (Predicate Eligible) (List (Concept OpponentDestination))) (stv 0.9935064935064936 0.8020833333333335))))))",
+    "stdout": "(C7PROBE conditional-inheritance-A+B ())\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE conditional-inheritance-negative-B (collapse (|- ((Inheritance (Concept Candidate) (Concept KnightStep)) (stv 0.9935064935064936 0.8020833333333335)) ((Evaluation (Predicate Eligible) (List (Concept OpponentDestination))) (stv 0.0 0.8))))))",
+    "stdout": "(C7PROBE conditional-inheritance-negative-B ())\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE conditional-inheritance-delete-A (collapse (|- ((Inheritance (Concept Candidate) (Concept KnightStep)) (stv 0.5 0.0)) ((Evaluation (Predicate Eligible) (List (Concept OpponentDestination))) (stv 0.9935064935064936 0.8020833333333335))))))",
+    "stdout": "(C7PROBE conditional-inheritance-delete-A ())\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE conditional-inheritance-delete-B (collapse (|- ((Inheritance (Concept Candidate) (Concept KnightStep)) (stv 0.9935064935064936 0.8020833333333335)) ((Evaluation (Predicate Eligible) (List (Concept OpponentDestination))) (stv 0.5 0.0))))))",
+    "stdout": "(C7PROBE conditional-inheritance-delete-B ())\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE conditional-inheritance-reverse (collapse (|- ((Inheritance (Concept Candidate) (Concept KnightStep)) (stv 0.9935064935064936 0.8020833333333335)) ((Evaluation (Predicate Eligible) (List (Concept OpponentDestination))) (stv 0.9935064935064936 0.8020833333333335))))))",
+    "stdout": "(C7PROBE conditional-inheritance-reverse ())\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE conditional-inheritance-contradict-B (collapse (|- ((Inheritance (Concept Candidate) (Concept KnightStep)) (stv 0.9935064935064936 0.8020833333333335)) ((Evaluation (Predicate Eligible) (List (Concept OpponentDestination))) (stv 0.5000000000000002 0.8895348837209303))))))",
+    "stdout": "(C7PROBE conditional-inheritance-contradict-B ())\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE conditional-inheritance-aligned-type-control (collapse (|- ((Evaluation (Predicate Eligible) (List (Concept KnightStep))) (stv 0.9935064935064936 0.8020833333333335)) ((Inheritance (Concept Candidate) (Concept KnightStep)) (stv 0.9935064935064936 0.8020833333333335))))))",
+    "stdout": "(C7PROBE conditional-inheritance-aligned-type-control ())\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE conditional-inheritance-premise-reversal (collapse (|- ((Evaluation (Predicate Eligible) (List (Concept OpponentDestination))) (stv 0.9935064935064936 0.8020833333333335)) ((Inheritance (Concept Candidate) (Concept KnightStep)) (stv 0.9935064935064936 0.8020833333333335))))))",
+    "stdout": "(C7PROBE conditional-inheritance-premise-reversal ())\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE conditional-inheritance-correlated-duplicate (collapse (if (StampDisjoint (A shared) (B shared)) (collapse (|- ((Inheritance (Concept Candidate) (Concept KnightStep)) (stv 0.9935064935064936 0.8020833333333335)) ((Evaluation (Predicate Eligible) (List (Concept OpponentDestination))) (stv 0.9935064935064936 0.8020833333333335)))) (empty)))))",
+    "stdout": "(C7PROBE conditional-inheritance-correlated-duplicate ())\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE conditional-inheritance-duplicate-revision-unguarded (Truth_Revision (stv 0.9935064935064936 0.8020833333333335) (stv 0.9935064935064936 0.8020833333333335))))",
+    "stdout": "(C7PROBE conditional-inheritance-duplicate-revision-unguarded (stv 0.9935064935064936 0.8901734104046244))\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE conditional-inheritance-duplicate-revision-guarded (collapse (if (StampDisjoint (A) (A)) (Truth_Revision (stv 0.9935064935064936 0.8020833333333335) (stv 0.9935064935064936 0.8020833333333335)) (empty)))))",
+    "stdout": "(C7PROBE conditional-inheritance-duplicate-revision-guarded ())\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE scheduler-independent-only (PLN.Query ((Sentence (A (stv 0.9935064935064936 0.8020833333333335)) (learn-A)) (Sentence (B (stv 0.9935064935064936 0.8020833333333335)) (learn-B))) Eligible 12 30 60)))",
+    "stdout": "(SELECTED (Sentence (A (stv 0.9935064935064936 0.8020833333333335)) (learn-A)))\n(SELECTED (Sentence (B (stv 0.9935064935064936 0.8020833333333335)) (learn-B)))\n(C7PROBE scheduler-independent-only ())\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE scheduler-supplied-nested (PLN.Query ((Sentence (A (stv 0.9935064935064936 0.8020833333333335)) (learn-A)) (Sentence (B (stv 0.9935064935064936 0.8020833333333335)) (learn-B)) (Sentence ((Implication A (Implication B Eligible)) (stv 0.95 0.8)) (supplied-rule))) Eligible 12 30 60)))",
+    "stdout": "(SELECTED (Sentence (A (stv 0.9935064935064936 0.8020833333333335)) (learn-A)))\n(SELECTED (Sentence (B (stv 0.9935064935064936 0.8020833333333335)) (learn-B)))\n(SELECTED (Sentence ((Implication A (Implication B Eligible)) (stv 0.95 0.8)) (supplied-rule)))\n(SELECTED (Sentence ((Implication B Eligible) (stv 0.9439610389610389 0.6056250000000001)) (learn-A supplied-rule)))\n(SELECTED (Sentence (Eligible (stv 0.9379612919547984 0.45556260336343357)) (learn-A learn-B supplied-rule)))\n(C7PROBE scheduler-supplied-nested ((stv 0.9379612919547984 0.45556260336343357) (learn-A learn-B supplied-rule)))\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE scheduler-deleted-A (PLN.Query ((Sentence (B (stv 0.9935064935064936 0.8020833333333335)) (learn-B)) (Sentence ((Implication A (Implication B Eligible)) (stv 0.95 0.8)) (supplied-rule))) Eligible 12 30 60)))",
+    "stdout": "(SELECTED (Sentence (B (stv 0.9935064935064936 0.8020833333333335)) (learn-B)))\n(SELECTED (Sentence ((Implication A (Implication B Eligible)) (stv 0.95 0.8)) (supplied-rule)))\n(C7PROBE scheduler-deleted-A ())\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE scheduler-deleted-B (PLN.Query ((Sentence (A (stv 0.9935064935064936 0.8020833333333335)) (learn-A)) (Sentence ((Implication A (Implication B Eligible)) (stv 0.95 0.8)) (supplied-rule))) Eligible 12 30 60)))",
+    "stdout": "(SELECTED (Sentence (A (stv 0.9935064935064936 0.8020833333333335)) (learn-A)))\n(SELECTED (Sentence ((Implication A (Implication B Eligible)) (stv 0.95 0.8)) (supplied-rule)))\n(SELECTED (Sentence ((Implication B Eligible) (stv 0.9439610389610389 0.6056250000000001)) (learn-A supplied-rule)))\n(C7PROBE scheduler-deleted-B ())\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE scheduler-shared-stamp (PLN.Query ((Sentence (A (stv 0.9935064935064936 0.8020833333333335)) (shared)) (Sentence (B (stv 0.9935064935064936 0.8020833333333335)) (shared)) (Sentence ((Implication A (Implication B Eligible)) (stv 0.95 0.8)) (supplied-rule))) Eligible 12 30 60)))",
+    "stdout": "(SELECTED (Sentence (A (stv 0.9935064935064936 0.8020833333333335)) (shared)))\n(SELECTED (Sentence (B (stv 0.9935064935064936 0.8020833333333335)) (shared)))\n(SELECTED (Sentence ((Implication A (Implication B Eligible)) (stv 0.95 0.8)) (supplied-rule)))\n(SELECTED (Sentence ((Implication B Eligible) (stv 0.9439610389610389 0.6056250000000001)) (shared supplied-rule)))\n(C7PROBE scheduler-shared-stamp ())\ntrue\ntrue\n"
+  }
+]

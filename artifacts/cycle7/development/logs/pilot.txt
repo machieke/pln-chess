@@ -1,0 +1,20 @@
+EVAL C7-learned-0 cycle6-independent-games {'recall': 0.9757174392935982, 'exact_move_set_accuracy': 0.46875, 'false_positive': 0, 'false_illegal': 0, 'self_check_false_legal': 0, 'unknown': 101, 'incomplete': 0}
+EVAL C7-learned-0 cycle7-independent-games {'recall': 0.9754170324846356, 'exact_move_set_accuracy': 0.53125, 'false_positive': 4, 'false_illegal': 4, 'self_check_false_legal': 0, 'unknown': 103, 'incomplete': 0}
+EVAL C7-learned-2 cycle6-independent-games {'recall': 1.0, 'exact_move_set_accuracy': 1.0, 'false_positive': 0, 'false_illegal': 0, 'self_check_false_legal': 0, 'unknown': 75, 'incomplete': 0}
+EVAL C7-learned-2 cycle7-independent-games {'recall': 0.9929762949956101, 'exact_move_set_accuracy': 0.84375, 'false_positive': 4, 'false_illegal': 4, 'self_check_false_legal': 0, 'unknown': 83, 'incomplete': 0}
+EVAL C7-learned-4 cycle6-independent-games {'recall': 1.0, 'exact_move_set_accuracy': 1.0, 'false_positive': 0, 'false_illegal': 0, 'self_check_false_legal': 0, 'unknown': 63, 'incomplete': 0}
+EVAL C7-learned-4 cycle7-independent-games {'recall': 0.9929762949956101, 'exact_move_set_accuracy': 0.84375, 'false_positive': 4, 'false_illegal': 4, 'self_check_false_legal': 0, 'unknown': 83, 'incomplete': 0}
+EVAL C7-learned-8 cycle6-independent-games {'recall': 1.0, 'exact_move_set_accuracy': 1.0, 'false_positive': 0, 'false_illegal': 0, 'self_check_false_legal': 0, 'unknown': 62, 'incomplete': 0}
+EVAL C7-learned-8 cycle7-independent-games {'recall': 0.9929762949956101, 'exact_move_set_accuracy': 0.84375, 'false_positive': 4, 'false_illegal': 4, 'self_check_false_legal': 0, 'unknown': 82, 'incomplete': 1}
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/data/pln-chess-cycle6-delivery/scripts/cycle7_deliver.py", line 80, in <module>
+    no.source['source']['hypotheses']={k:h for k,h in no.source['source']['hypotheses'].items() if h['family']=='geometry'}
+     ^^^^^^^^^^^^^^^^^^^^
+  File "/data/pln-chess-cycle6-delivery/scripts/cycle7_deliver.py", line 50, in evaluations
+    evaluate_arm(model.variant,model,Cycle7Options(mode='operational'),jobs(True))
+  File "/data/pln-chess-cycle6-delivery/scripts/cycle7_deliver.py", line 37, in evaluate_arm
+    if r['metrics']['incomplete']:raise RuntimeError('Incomplete evaluation '+name+' '+key)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Incomplete evaluation C7-learned-8 cycle7-independent-games

@@ -1,0 +1,3020 @@
+{
+  "interpretation": "Native wrappers require exact Concept/Predicate/List types. Source-present predicate substitution returns empty in these exact runtime probes; source presence is not executable capability. All domains follow the pinned definitions; finite probes are not a proof of totality.",
+  "native_definitions": [
+    {
+      "definition": "(= (and5 $0 $1 $2 $3 $4)\n   (and $0 (and $1 (and $2 (and $3 $4)))))",
+      "end_line": 3,
+      "line": 2,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "and5"
+    },
+    {
+      "definition": "(= (min5 $0 $1 $2 $3 $4)\n   (min $0 (min $1 (min $2 (min $3 $4)))))",
+      "end_line": 7,
+      "line": 6,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "min5"
+    },
+    {
+      "definition": "(= (/safe $A $B)\n   (if (> $B 0.0)\n       (/ $A $B)\n       (empty)))",
+      "end_line": 13,
+      "line": 10,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "/safe"
+    },
+    {
+      "definition": "(= (clamp $v $min $max) (min $max (max $v $min)))",
+      "end_line": 16,
+      "line": 16,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "clamp"
+    },
+    {
+      "definition": "(= (negate $arg) (- 1.0 $arg))",
+      "end_line": 18,
+      "line": 18,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "negate"
+    },
+    {
+      "definition": "(= (invert $arg) (/safe 1.0 $arg))",
+      "end_line": 21,
+      "line": 21,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "invert"
+    },
+    {
+      "definition": "(= (PushUnique $L $x)\n   (if (is-member $x $L)\n       $L\n       (append $L ($x))))",
+      "end_line": 27,
+      "line": 24,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "PushUnique"
+    },
+    {
+      "definition": "(= (ConcatUnique $L1 $L2)\n   (if (== $L2 ())\n       $L1\n       (let* (($head (car-atom $L2))\n              ($tail (cdr-atom $L2)))\n             (ConcatUnique (PushUnique $L1 $head) $tail))))",
+      "end_line": 34,
+      "line": 29,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "ConcatUnique"
+    },
+    {
+      "definition": "(= (smallest-intersection-probability $As $Bs)\n   (clamp (/ (- (+ $As $Bs) 1) $As) 0 1))",
+      "end_line": 44,
+      "line": 43,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "smallest-intersection-probability"
+    },
+    {
+      "definition": "(= (largest-intersection-probability $As $Bs)\n   (clamp (/ $Bs $As) 0 1))",
+      "end_line": 48,
+      "line": 47,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "largest-intersection-probability"
+    },
+    {
+      "definition": "(= (conditional-probability-consistency $As $Bs $ABs)\n   (and (< 0 $As)\n        (and (<= (smallest-intersection-probability $As $Bs) $ABs)\n             (<= $ABs (largest-intersection-probability $As $Bs)))))",
+      "end_line": 54,
+      "line": 51,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "conditional-probability-consistency"
+    },
+    {
+      "definition": "(= (Consistency_ImplicationImplicantConjunction $As $Bs $Cs $ACs $BCs)\n   ; Conditional probability consistency checks:\n   ; P(C|A) <= P(C)/P(A)  =>  $sAC <= $sC / $sA\n   ; P(C|B) <= P(C)/P(B)  =>  $sBC <= $sC / $sB\n   ; Also ensure denominators are not zero for the checks.\n   (and5 (> $As 0) (> $Bs 0) (> $Cs 0) ; Avoid division by zero and ensure meaningful probabilities\n         (<= $ACs (/ $Cs $As))\n         (<= $BCs (/ $Cs $Bs))))",
+      "end_line": 63,
+      "line": 56,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "Consistency_ImplicationImplicantConjunction"
+    },
+    {
+      "definition": "(= (STV $stv) (empty))",
+      "end_line": 68,
+      "line": 68,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "STV"
+    },
+    {
+      "definition": "(= (Truth_c2w $c)\n   (/safe $c (- 1 $c)))",
+      "end_line": 72,
+      "line": 71,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "Truth_c2w"
+    },
+    {
+      "definition": "(= (Truth_w2c $w)\n   (/safe $w (+ $w 1)))",
+      "end_line": 76,
+      "line": 75,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "Truth_w2c"
+    },
+    {
+      "definition": "(= (Truth_or $a $b) \n   (- 1 (* (- 1 $a) (- 1 $b))))",
+      "end_line": 80,
+      "line": 79,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "Truth_or"
+    },
+    {
+      "definition": "(= (Truth_Deduction (stv $Ps $Pc)\n                    (stv $Qs $Qc)\n                    (stv $Rs $Rc)\n                    (stv $PQs $PQc)\n                    (stv $QRs $QRc))\n   (if (and (conditional-probability-consistency $Ps $Qs $PQs)\n            (conditional-probability-consistency $Qs $Rs $QRs))\n       ; Preconditions are met\n       (stv (if (< 0.9999 $Qs)                  ; avoid division by 0\n                ; Qs tends to 1\n                $Rs\n                ; Otherwise\n                (+ (* $PQs $QRs) (/safe (* (- 1 $PQs) (- $Rs (* $Qs $QRs))) (- 1 $Qs))))\n            (* (* $PQs $QRs) (* $PQc $QRc)))\n       ; Preconditions are not met\n       (stv 1 0)))",
+      "end_line": 99,
+      "line": 84,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "Truth_Deduction"
+    },
+    {
+      "definition": "(= (Truth_Induction (stv $sA $cA)\n                    (stv $sB $cB)\n                    (stv $sC $cC)\n                    (stv $sBA $cBA)\n                    (stv $sBC $cBC))\n   (stv (+ (/safe (* (* $sBA $sBC) $sB) $sA)\n           (* (- 1 (/safe (* $sBA $sB) $sA))\n              (/safe (- $sC (* $sB $sBC)) (- 1 $sB))))\n        (Truth_w2c (* (* $sBC $cBC) $cBA))))",
+      "end_line": 110,
+      "line": 102,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "Truth_Induction"
+    },
+    {
+      "definition": "(= (Truth_Abduction (stv $sA $cA)\n                    (stv $sB $cB)\n                    (stv $sC $cC)\n                    (stv $sAB $cAB)\n                    (stv $sCB $cCB))\n   (stv (+ (/safe (* (* $sAB $sCB) $sC)\n                  $sB)\n           (/safe (* $sC (* (- 1 $sAB) (- 1 $sCB)))\n                  (- 1 $sB)))\n        (Truth_w2c (* (* $sAB $cAB) $cCB))))",
+      "end_line": 121,
+      "line": 112,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "Truth_Abduction"
+    },
+    {
+      "definition": "(= (Truth_ModusPonens (stv $Ps $Pc) (stv $PQs $PQc)) \n   (stv (+ (* $Ps $PQs) (* 0.02 (- 1 $Ps)))\n        (* (* $Ps $PQs) (* $Pc $PQc))))",
+      "end_line": 126,
+      "line": 124,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "Truth_ModusPonens"
+    },
+    {
+      "definition": "(= (Truth_SymmetricModusPonens (stv $sA $cA) (stv $sAB $cAB))\n   (let* (($snotAB 0.2)\n          ($cnotAB 1.0))\n         (stv (+ (* $sA $sAB) (* (* $snotAB (negate $sA)) (+ 1.0 $sAB)))\n              (* (* $cA $cAB) (Truth_or $sA $sAB)))))",
+      "end_line": 133,
+      "line": 129,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "Truth_SymmetricModusPonens"
+    },
+    {
+      "definition": "(= (Truth_Revision (stv $f1 $c1) (stv $f2 $c2))\n   (let* (($w1 (Truth_c2w $c1))\n          ($w2 (Truth_c2w $c2))\n          ($w (+ $w1 $w2))\n          ($f (/safe (+ (* $w1 $f1) (* $w2 $f2)) $w))\n          ($c (Truth_w2c $w)))\n         (stv (min 1.0 $f)\n              (min 1.0 (max (max $c $c1) $c2)))))",
+      "end_line": 143,
+      "line": 136,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "Truth_Revision"
+    },
+    {
+      "definition": "(= (Truth_Negation (stv $s $c))\n   (stv (- 1.0 $s) $c))",
+      "end_line": 148,
+      "line": 147,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "Truth_Negation"
+    },
+    {
+      "definition": "(= (Truth_inversion (stv $Bs $Bc) (stv $ABs $ABc))\n   ; confidence depends on Truth of (target) B node, which is not according to OpenCOG classic.\n   ; confidence penality not according to OpenCOG classic PLN. Is weaker in this implementation.\n   (stv $ABs (* $Bc (* $ABc 0.6))))",
+      "end_line": 153,
+      "line": 150,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "Truth_inversion"
+    },
+    {
+      "definition": "(= (Truth_equivalenceToImplication (stv $As $Ac) (stv $Bs $Bc) (stv $ABs $ABc))\n    (let* (($ConclS (if (< 0.99 (* $ABs $ABc)) ; Hack to work around the lack of distributional\n                                               ; TV. If ABs is high enough, we just set $ConclS as $ABs\n                        $ABs\n                        ;; Formula based on PLN book formula for sim2inh\n                        (/safe (* (+ 1.0 (/safe $Bs $As)) $ABs) (+ 1.0 $ABs)))))\n          (stv $ConclS $ABc)))",
+      "end_line": 162,
+      "line": 156,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "Truth_equivalenceToImplication"
+    },
+    {
+      "definition": "(= (TransitiveSimilarityStrength $sA $sB $sC $sAB $sBC)\n   (let* (($T1 (/ (* (+ 1.0 (/ $sB $sA)) $sAB) (+ 1.0 $sAB)))\n          ($T2 (/ (* (+ 1.0 (/ $sC $sB)) $sBC) (+ 1.0 $sBC)))\n          ($T3 (/ (* (+ 1.0 (/ $sB $sC)) $sBC) (+ 1.0 $sBC)))\n          ($T4 (/ (* (+ 1.0 (/ $sA $sB)) $sAB) (+ 1.0 $sAB))))\n         (invert (- (+ (invert (+ (* $T1 $T2) (* (negate $T1) (/safe (- $sC (* $sB $T2)) (negate $sB)))))\n                       (invert (+ (* $T3 $T4) (* (negate $T3) (/safe (- $sC (* $sB $T4)) (negate $sB)))))) 1.0))))",
+      "end_line": 171,
+      "line": 165,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "TransitiveSimilarityStrength"
+    },
+    {
+      "definition": "(= (Truth_transitiveSimilarity (stv $As $Ac)\n                               (stv $Bs $Bc)\n                               (stv $Cs $Cc)\n                               (stv $ABs $ABc)\n                               (stv $BCs $BCc))\n   (let* (($ConclS (TransitiveSimilarityStrength $As $Bs $Cs $ABs $BCs))\n          ($ConclC (* (* $ABc $BCc) (Truth_or $ABs $BCs))))\n         (stv $ConclS $ConclC)))",
+      "end_line": 181,
+      "line": 174,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "Truth_transitiveSimilarity"
+    },
+    {
+      "definition": "(= (simpleDeductionStrength $sA $sB $sC $sAB $sBC)\n   (if (and (conditional-probability-consistency $sA $sB $sAB)\n            (conditional-probability-consistency $sB $sC $sBC))\n       ;; Preconditions are met\n       (if (< 0.99 $sB)\n           ;; sB tends to 1\n           $sC\n           ;; otherwise\n           (+ (* $sAB $sBC) (/safe (* (- 1.0 $sAB) (- $sC (* $sB $sBC))) (- 1.0 $sB))))\n       ;; Preconditions are not met\n       (empty)))",
+      "end_line": 194,
+      "line": 184,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "simpleDeductionStrength"
+    },
+    {
+      "definition": "(= (Truth_evaluationImplication (stv $As $Ac)\n                                (stv $Bs $Bc)\n                                (stv $Cs $Cc)\n                                (stv $ABs $ABc)\n                                (stv $ACs $ACc))\n   (let* (($ConclS (simpleDeductionStrength $Bs $As $Cs $ABs $ACs))\n          ($ConclC (* (* $ABs $ACs) (* $ABc $ACc))))\n         (stv $ConclS $ConclC)))",
+      "end_line": 204,
+      "line": 197,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "Truth_evaluationImplication"
+    },
+    {
+      "definition": "(= (|- ($T $T1) \n       ($T $T2))\n   ($T (Truth_Revision $T1 $T2)))",
+      "end_line": 213,
+      "line": 211,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "|-"
+    },
+    {
+      "definition": "(= (|- ($A $T1) \n       ((Implication $A $B) $T2))\n   ($B (Truth_ModusPonens $T1 $T2)))",
+      "end_line": 218,
+      "line": 216,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "|-"
+    },
+    {
+      "definition": "(= (SymmetricModusPonensRuleGuard Similarity) True)",
+      "end_line": 221,
+      "line": 221,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "SymmetricModusPonensRuleGuard"
+    },
+    {
+      "definition": "(= (SymmetricModusPonensRuleGuard IntentionalSimilarity) True)",
+      "end_line": 222,
+      "line": 222,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "SymmetricModusPonensRuleGuard"
+    },
+    {
+      "definition": "(= (SymmetricModusPonensRuleGuard ExtensionalSimilarity) True)",
+      "end_line": 223,
+      "line": 223,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "SymmetricModusPonensRuleGuard"
+    },
+    {
+      "definition": "(= (|- ($A $TruthA)\n       (($LinkType $A $B) $TruthAB))\n   (if (SymmetricModusPonensRuleGuard $LinkType)\n       ($B (Truth_SymmetricModusPonens $TruthA $TruthAB)) (empty)))",
+      "end_line": 229,
+      "line": 226,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "|-"
+    },
+    {
+      "definition": "(= (SyllogisticRuleGuard Inheritance) True)",
+      "end_line": 232,
+      "line": 232,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "SyllogisticRuleGuard"
+    },
+    {
+      "definition": "(= (SyllogisticRuleGuard Implication) True)",
+      "end_line": 233,
+      "line": 233,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "SyllogisticRuleGuard"
+    },
+    {
+      "definition": "(= (|- (($LinkType $A $B) $T1)\n       (($LinkType $B $C) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $C)\n        (Truth_Deduction (STV $A)\n                         (STV $B)\n                         (STV $C) $T1 $T2)) (empty)))",
+      "end_line": 242,
+      "line": 236,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "|-"
+    },
+    {
+      "definition": "(= (|- (($LinkType $C $A) $T1)\n       (($LinkType $C $B) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $B) (Truth_Induction (STV $A)\n                                           (STV $B)\n                                           (STV $C) $T1 $T2)) (empty)))",
+      "end_line": 251,
+      "line": 246,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "|-"
+    },
+    {
+      "definition": "(= (|- (($LinkType $A $C) $T1)\n       (($LinkType $B $C) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $B) (Truth_Abduction (STV $A)\n                                           (STV $B)\n                                           (STV $C) $T1 $T2)) (empty)))",
+      "end_line": 259,
+      "line": 254,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "|-"
+    },
+    {
+      "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C))) $T1)\n       ((Inheritance (Concept $S) (Concept $C)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $S))) (Truth_ModusPonens $T1 $T2)))",
+      "end_line": 267,
+      "line": 263,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "|-"
+    },
+    {
+      "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C1) (Concept $C2))) $T1)\n       ((Inheritance (Concept $S) (Concept $C1)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $S) (Concept $C2))) (Truth_ModusPonens $T1 $T2)))",
+      "end_line": 274,
+      "line": 270,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "|-"
+    },
+    {
+      "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C1) (Concept $C2))) $T1)\n       ((Inheritance (Concept $S) (Concept $C2)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $C1) (Concept $S))) (Truth_ModusPonens $T1 $T2)))",
+      "end_line": 281,
+      "line": 277,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "|-"
+    },
+    {
+      "definition": "(= (|- ((Not $A) $T)) ($A (Truth_Negation $T)))",
+      "end_line": 284,
+      "line": 284,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "|-"
+    },
+    {
+      "definition": "(= (|- ((Inheritance $A $B) $Truth))\n   ((Inheritance $B $A) (Truth_inversion (STV $B) $Truth)))",
+      "end_line": 288,
+      "line": 287,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "|-"
+    },
+    {
+      "definition": "(= (|- ((Implication $A $B) $Truth))\n   ((Implication $B $A) (Truth_inversion (STV $B) $Truth)))",
+      "end_line": 292,
+      "line": 291,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "|-"
+    },
+    {
+      "definition": "(= (|- ((Equivalence $A $B) $Truth))\n   ((Implication $A $B) (Truth_equivalenceToImplication (STV $A)\n                                                        (STV $B) $Truth)))",
+      "end_line": 297,
+      "line": 295,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "|-"
+    },
+    {
+      "definition": "(= (|- ((Equivalence $A $B) $Truth))\n   ((Implication $B $A) (Truth_equivalenceToImplication (STV $A)\n                                                        (STV $B) $Truth)))",
+      "end_line": 301,
+      "line": 299,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "|-"
+    },
+    {
+      "definition": "(= (|- ((Similarity $A $B) $T1)\n       ((Similarity $B $C) $T2))\n   ((Similarity $A $C) (Truth_transitiveSimilarity (STV $A)\n                                                   (STV $B)\n                                                   (STV $C) $T1 $T2)))",
+      "end_line": 308,
+      "line": 304,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "|-"
+    },
+    {
+      "definition": "(= (|- ((Evaluation $A $B) $TruthAB)\n       ((Implication $A $C) $TruthAC))\n   ((Evaluation $C $B) (Truth_evaluationImplication (STV $A)\n                                                    (STV $B)\n                                                    (STV $C) $TruthAB $TruthAC)))",
+      "end_line": 315,
+      "line": 311,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "|-"
+    },
+    {
+      "definition": "(= (|- ((Member $A $B) $T1)\n       ((Inheritance $B $C) $T2))\n   ((Member $A $C) (Truth_Deduction (STV $A)\n                                    (STV $B)\n                                    (STV $C) $T1 $T2)))",
+      "end_line": 323,
+      "line": 319,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "|-"
+    },
+    {
+      "definition": "(= (PLN.Config.MaxSteps) 100)",
+      "end_line": 326,
+      "line": 326,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "PLN.Config.MaxSteps"
+    },
+    {
+      "definition": "(= (PLN.Config.TaskQueueSize) 10)",
+      "end_line": 329,
+      "line": 329,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "PLN.Config.TaskQueueSize"
+    },
+    {
+      "definition": "(= (PLN.Config.BeliefQueueSize) 100)",
+      "end_line": 332,
+      "line": 332,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "PLN.Config.BeliefQueueSize"
+    },
+    {
+      "definition": "(= (StampDisjoint $Ev1 $Ev2)\n   (if (== $Ev1 ())\n       True\n       (let* (($x (car-atom $Ev1))\n              ($rest (cdr-atom $Ev1)))\n             (if (is-member $x $Ev2)\n                 False\n                 (StampDisjoint $rest $Ev2)))))",
+      "end_line": 342,
+      "line": 335,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "StampDisjoint"
+    },
+    {
+      "definition": "(= (StampConcat $stamp $addition)\n   (if (== $addition ())\n       $stamp\n       (msort (append $stamp $addition))))",
+      "end_line": 348,
+      "line": 345,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "StampConcat"
+    },
+    {
+      "definition": "(= (BestCandidate $evaluateCandidateFunction $bestCandidate $tuple)\n   (if (== $tuple ())\n       $bestCandidate\n       (let* (($head (car-atom $tuple))\n              ($tail (cdr-atom $tuple)))\n             (if (> ($evaluateCandidateFunction $head)\n                    ($evaluateCandidateFunction $bestCandidate))\n                 (BestCandidate $evaluateCandidateFunction $head $tail)\n                 (BestCandidate $evaluateCandidateFunction $bestCandidate $tail)))))",
+      "end_line": 359,
+      "line": 351,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "BestCandidate"
+    },
+    {
+      "definition": "(= (PriorityRank (Sentence ($x (stv $f $c)) $Ev1)) $c)",
+      "end_line": 362,
+      "line": 362,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "PriorityRank"
+    },
+    {
+      "definition": "(= (PriorityRank ()) -99999.0)",
+      "end_line": 363,
+      "line": 363,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "PriorityRank"
+    },
+    {
+      "definition": "(= (PriorityRankNeg (Sentence ($x (stv $f $c)) $Ev1)) (- 0.0 $c))",
+      "end_line": 366,
+      "line": 366,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "PriorityRankNeg"
+    },
+    {
+      "definition": "(= (PriorityRankNeg ()) -99999.0)",
+      "end_line": 367,
+      "line": 367,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "PriorityRankNeg"
+    },
+    {
+      "definition": "(= (LimitSize $L $size)\n   (if (< (length $L) $size)\n       $L\n       (let $lowestPriorityItem (BestCandidate PriorityRankNeg () $L)\n            (LimitSize (exclude-item $lowestPriorityItem $L) $size))))",
+      "end_line": 374,
+      "line": 370,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "LimitSize"
+    },
+    {
+      "definition": "(= (PLN.Derive $Tasks $Beliefs $steps $maxsteps $taskqueuesize $beliefqueuesize)\n   (if (or (> $steps $maxsteps) (== $Tasks ()))\n       ($Tasks $Beliefs)\n       (let (Sentence $x $Ev1) (BestCandidate PriorityRank () $Tasks)\n            (let $derivations\n                 (collapse (superpose ((let* (((Sentence $y $Ev2) (superpose $Beliefs)))\n                                             (if (StampDisjoint $Ev1 $Ev2)\n                                                 (let $stamp (msort (append $Ev1 $Ev2))\n                                                      (superpose ((case (|- $x $y)\n                                                                    ((($Txy $TVxy) (Sentence ($Txy $TVxy) $stamp))))\n                                                                  (case (|- $y $x)\n                                                                    ((($Tyx $TVyx) (Sentence ($Tyx $TVyx) $stamp)))))))\n                                                 (empty)))\n                                       (case (|- $x) ((($T3 $TV3) (Sentence ($T3 $TV3) $Ev1)))))))\n                 (progn (println! (SELECTED (Sentence $x $Ev1)))\n                        (PLN.Derive (LimitSize (exclude-item (Sentence $x $Ev1) (ConcatUnique $Tasks $derivations)) $taskqueuesize)\n                                    (LimitSize (ConcatUnique $Beliefs $derivations) $beliefqueuesize)\n                                    (+ $steps 1)\n                                    $maxsteps\n                                    $taskqueuesize\n                                    $beliefqueuesize))))))",
+      "end_line": 397,
+      "line": 377,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "PLN.Derive"
+    },
+    {
+      "definition": "(= (PLN.Derive $Tasks $Beliefs $maxsteps $taskqueuesize $beliefqueuesize)\n   (PLN.Derive $Tasks $Beliefs 1 $maxsteps $taskqueuesize $beliefqueuesize))",
+      "end_line": 400,
+      "line": 399,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "PLN.Derive"
+    },
+    {
+      "definition": "(= (PLN.Derive $Tasks $Beliefs $maxsteps)\n   (PLN.Derive $Tasks $Beliefs $maxsteps (PLN.Config.TaskQueueSize) (PLN.Config.BeliefQueueSize)))",
+      "end_line": 403,
+      "line": 402,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "PLN.Derive"
+    },
+    {
+      "definition": "(= (PLN.Derive $Tasks $Beliefs)\n   (PLN.Derive $Tasks $Beliefs (PLN.Config.MaxSteps)))",
+      "end_line": 406,
+      "line": 405,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "PLN.Derive"
+    },
+    {
+      "definition": "(= (ConfidenceRank ((stv $f $c) $Ev)) $c)",
+      "end_line": 409,
+      "line": 409,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "ConfidenceRank"
+    },
+    {
+      "definition": "(= (ConfidenceRank ()) 0)",
+      "end_line": 410,
+      "line": 410,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "ConfidenceRank"
+    },
+    {
+      "definition": "(= (BestConfidenceCandidate $tuple)\n   (BestCandidate ConfidenceRank () $tuple))",
+      "end_line": 413,
+      "line": 412,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "BestConfidenceCandidate"
+    },
+    {
+      "definition": "(= (PLN.Query $Tasks $Beliefs $term $maxsteps $taskqueuesize $beliefqueuesize)\n   (BestConfidenceCandidate\n    (collapse (let ($TasksRet $BeliefsRet) (PLN.Derive $Tasks $Beliefs $maxsteps $taskqueuesize $beliefqueuesize)\n                    (case (superpose $BeliefsRet)\n                          (((Sentence ($Term $TV) $Ev) (case (== $Term $term)\n                                                             ((True ($TV $Ev)))))))))))",
+      "end_line": 421,
+      "line": 416,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "PLN.Query"
+    },
+    {
+      "definition": "(= (PLN.Query $kb $term $maxsteps $taskqueuesize $beliefqueuesize)\n   (PLN.Query $kb $kb $term $maxsteps $taskqueuesize $beliefqueuesize))",
+      "end_line": 424,
+      "line": 423,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "PLN.Query"
+    },
+    {
+      "definition": "(= (PLN.Query $kb $term $maxsteps)\n   (PLN.Query $kb $term $maxsteps (PLN.Config.TaskQueueSize) (PLN.Config.BeliefQueueSize))) ;default space bound",
+      "end_line": 427,
+      "line": 426,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "PLN.Query"
+    },
+    {
+      "definition": "(= (PLN.Query $kb $term)\n   (PLN.Query $kb $term (PLN.Config.MaxSteps))) ;default steps bound",
+      "end_line": 430,
+      "line": 429,
+      "source": "vendor/pln/lib_pln.metta",
+      "symbol": "PLN.Query"
+    }
+  ],
+  "operators": [
+    {
+      "domain": "Two STVs in [0,1]^2; native MP maps valid inputs to valid STVs; zero premise confidence gives zero output confidence.",
+      "expression": "(Truth_ModusPonens (stv 0.9 0.8) (stv 0.95 0.8))",
+      "id": "mp",
+      "preamble": "",
+      "production_integrated": true,
+      "result": "(C7PROBE mp (stv 0.857 0.5472000000000001))",
+      "runtime_executable": true,
+      "source": [
+        {
+          "definition": "(= (Truth_ModusPonens (stv $Ps $Pc) (stv $PQs $PQc)) \n   (stv (+ (* $Ps $PQs) (* 0.02 (- 1 $Ps)))\n        (* (* $Ps $PQs) (* $Pc $PQc))))",
+          "end_line": 126,
+          "line": 124,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "Truth_ModusPonens"
+        }
+      ],
+      "source_present": true,
+      "stdout": "(C7PROBE mp (stv 0.857 0.5472000000000001))\ntrue\ntrue\n",
+      "stvs": [
+        {
+          "confidence": 0.5472000000000001,
+          "strength": 0.857
+        }
+      ]
+    },
+    {
+      "domain": "Five STVs; positive P,Q strengths and conditional-probability-consistency guards. Guard failure returns (stv 1 0); Q strength >.9999 uses R strength.",
+      "expression": "(Truth_Deduction (stv 0.2 0.8) (stv 0.4 0.8) (stv 0.5 0.8) (stv 0.9 0.8) (stv 0.8 0.8))",
+      "id": "deduction",
+      "preamble": "",
+      "production_integrated": true,
+      "result": "(C7PROBE deduction (stv 0.7500000000000001 0.46080000000000015))",
+      "runtime_executable": true,
+      "source": [
+        {
+          "definition": "(= (Truth_Deduction (stv $Ps $Pc)\n                    (stv $Qs $Qc)\n                    (stv $Rs $Rc)\n                    (stv $PQs $PQc)\n                    (stv $QRs $QRc))\n   (if (and (conditional-probability-consistency $Ps $Qs $PQs)\n            (conditional-probability-consistency $Qs $Rs $QRs))\n       ; Preconditions are met\n       (stv (if (< 0.9999 $Qs)                  ; avoid division by 0\n                ; Qs tends to 1\n                $Rs\n                ; Otherwise\n                (+ (* $PQs $QRs) (/safe (* (- 1 $PQs) (- $Rs (* $Qs $QRs))) (- 1 $Qs))))\n            (* (* $PQs $QRs) (* $PQc $QRc)))\n       ; Preconditions are not met\n       (stv 1 0)))",
+          "end_line": 99,
+          "line": 84,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "Truth_Deduction"
+        }
+      ],
+      "source_present": true,
+      "stdout": "(C7PROBE deduction (stv 0.7500000000000001 0.46080000000000015))\ntrue\ntrue\n",
+      "stvs": [
+        {
+          "confidence": 0.46080000000000015,
+          "strength": 0.7500000000000001
+        }
+      ]
+    },
+    {
+      "domain": "Five STVs; A strength>0, 0<B strength<1; returned strength must also lie in [0,1]. Native formula does not validate consistency or provenance.",
+      "expression": "(Truth_Induction (stv 0.2 0.8) (stv 0.1 0.8) (stv 0.5 0.8) (stv 1.0 0.8) (stv 0.8 0.8))",
+      "id": "induction",
+      "preamble": "",
+      "production_integrated": true,
+      "result": "(C7PROBE induction (stv 0.6333333333333334 0.3386243386243387))",
+      "runtime_executable": true,
+      "source": [
+        {
+          "definition": "(= (Truth_Induction (stv $sA $cA)\n                    (stv $sB $cB)\n                    (stv $sC $cC)\n                    (stv $sBA $cBA)\n                    (stv $sBC $cBC))\n   (stv (+ (/safe (* (* $sBA $sBC) $sB) $sA)\n           (* (- 1 (/safe (* $sBA $sB) $sA))\n              (/safe (- $sC (* $sB $sBC)) (- 1 $sB))))\n        (Truth_w2c (* (* $sBC $cBC) $cBA))))",
+          "end_line": 110,
+          "line": 102,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "Truth_Induction"
+        }
+      ],
+      "source_present": true,
+      "stdout": "(C7PROBE induction (stv 0.6333333333333334 0.3386243386243387))\ntrue\ntrue\n",
+      "stvs": [
+        {
+          "confidence": 0.3386243386243387,
+          "strength": 0.6333333333333334
+        }
+      ]
+    },
+    {
+      "domain": "Five STVs; 0<B strength<1; returned strength must lie in [0,1]. Native formula does not validate consistency or provenance.",
+      "expression": "(Truth_Abduction (stv 0.2 0.8) (stv 0.4 0.8) (stv 0.3 0.8) (stv 0.8 0.8) (stv 0.7 0.8))",
+      "id": "abduction",
+      "preamble": "",
+      "production_integrated": false,
+      "result": "(C7PROBE abduction (stv 0.44999999999999996 0.3386243386243387))",
+      "runtime_executable": true,
+      "source": [
+        {
+          "definition": "(= (Truth_Abduction (stv $sA $cA)\n                    (stv $sB $cB)\n                    (stv $sC $cC)\n                    (stv $sAB $cAB)\n                    (stv $sCB $cCB))\n   (stv (+ (/safe (* (* $sAB $sCB) $sC)\n                  $sB)\n           (/safe (* $sC (* (- 1 $sAB) (- 1 $sCB)))\n                  (- 1 $sB)))\n        (Truth_w2c (* (* $sAB $cAB) $cCB))))",
+          "end_line": 121,
+          "line": 112,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "Truth_Abduction"
+        }
+      ],
+      "source_present": true,
+      "stdout": "(C7PROBE abduction (stv 0.44999999999999996 0.3386243386243387))\ntrue\ntrue\n",
+      "stvs": [
+        {
+          "confidence": 0.3386243386243387,
+          "strength": 0.44999999999999996
+        }
+      ]
+    },
+    {
+      "domain": "Two STVs; confidences in [0,1), at least one positive. Both zero or either one invokes empty safe division; no usable STV.",
+      "expression": "(Truth_Revision (stv 1.0 0.8) (stv 0.0 0.8))",
+      "id": "revision",
+      "preamble": "",
+      "production_integrated": true,
+      "result": "(C7PROBE revision (stv 0.5 0.888888888888889))",
+      "runtime_executable": true,
+      "source": [
+        {
+          "definition": "(= (Truth_Revision (stv $f1 $c1) (stv $f2 $c2))\n   (let* (($w1 (Truth_c2w $c1))\n          ($w2 (Truth_c2w $c2))\n          ($w (+ $w1 $w2))\n          ($f (/safe (+ (* $w1 $f1) (* $w2 $f2)) $w))\n          ($c (Truth_w2c $w)))\n         (stv (min 1.0 $f)\n              (min 1.0 (max (max $c $c1) $c2)))))",
+          "end_line": 143,
+          "line": 136,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "Truth_Revision"
+        }
+      ],
+      "source_present": true,
+      "stdout": "(C7PROBE revision (stv 0.5 0.888888888888889))\ntrue\ntrue\n",
+      "stvs": [
+        {
+          "confidence": 0.888888888888889,
+          "strength": 0.5
+        }
+      ]
+    },
+    {
+      "domain": "One STV in [0,1]^2; confidence preserved, involutive strength complement.",
+      "expression": "(Truth_Negation (stv 0.9 0.8))",
+      "id": "negation",
+      "preamble": "",
+      "production_integrated": true,
+      "result": "(C7PROBE negation (stv 0.09999999999999998 0.8))",
+      "runtime_executable": true,
+      "source": [
+        {
+          "definition": "(= (Truth_Negation (stv $s $c))\n   (stv (- 1.0 $s) $c))",
+          "end_line": 148,
+          "line": 147,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "Truth_Negation"
+        }
+      ],
+      "source_present": true,
+      "stdout": "(C7PROBE negation (stv 0.09999999999999998 0.8))\ntrue\ntrue\n",
+      "stvs": [
+        {
+          "confidence": 0.8,
+          "strength": 0.09999999999999998
+        }
+      ]
+    },
+    {
+      "domain": "Two STVs in [0,1]^2; uses B confidence, supplied link strength/confidence and native .6 penalty.",
+      "expression": "(Truth_inversion (stv 0.4 0.8) (stv 0.9 0.8))",
+      "id": "inversion",
+      "preamble": "",
+      "production_integrated": false,
+      "result": "(C7PROBE inversion (stv 0.9 0.384))",
+      "runtime_executable": true,
+      "source": [
+        {
+          "definition": "(= (Truth_inversion (stv $Bs $Bc) (stv $ABs $ABc))\n   ; confidence depends on Truth of (target) B node, which is not according to OpenCOG classic.\n   ; confidence penality not according to OpenCOG classic PLN. Is weaker in this implementation.\n   (stv $ABs (* $Bc (* $ABc 0.6))))",
+          "end_line": 153,
+          "line": 150,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "Truth_inversion"
+        }
+      ],
+      "source_present": true,
+      "stdout": "(C7PROBE inversion (stv 0.9 0.384))\ntrue\ntrue\n",
+      "stvs": [
+        {
+          "confidence": 0.384,
+          "strength": 0.9
+        }
+      ]
+    },
+    {
+      "domain": "Three STVs; A strength>0 unless high-equivalence shortcut applies; output strength must lie in [0,1]. No unconditional domain validation.",
+      "expression": "(Truth_equivalenceToImplication (stv 0.2 0.8) (stv 0.4 0.8) (stv 0.5 0.8))",
+      "id": "equivalence",
+      "preamble": "",
+      "production_integrated": false,
+      "result": "(C7PROBE equivalence (stv 1.0 0.8))",
+      "runtime_executable": true,
+      "source": [
+        {
+          "definition": "(= (Truth_equivalenceToImplication (stv $As $Ac) (stv $Bs $Bc) (stv $ABs $ABc))\n    (let* (($ConclS (if (< 0.99 (* $ABs $ABc)) ; Hack to work around the lack of distributional\n                                               ; TV. If ABs is high enough, we just set $ConclS as $ABs\n                        $ABs\n                        ;; Formula based on PLN book formula for sim2inh\n                        (/safe (* (+ 1.0 (/safe $Bs $As)) $ABs) (+ 1.0 $ABs)))))\n          (stv $ConclS $ABc)))",
+          "end_line": 162,
+          "line": 156,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "Truth_equivalenceToImplication"
+        }
+      ],
+      "source_present": true,
+      "stdout": "(C7PROBE equivalence (stv 1.0 0.8))\ntrue\ntrue\n",
+      "stvs": [
+        {
+          "confidence": 0.8,
+          "strength": 1.0
+        }
+      ]
+    },
+    {
+      "domain": "Five STVs; positive marginal strengths, all native division denominators nonzero, resulting strength in [0,1]. No blanket totality claim.",
+      "expression": "(Truth_transitiveSimilarity (stv 0.4 0.8) (stv 0.4 0.8) (stv 0.4 0.8) (stv 0.7 0.8) (stv 0.7 0.8))",
+      "id": "similarity",
+      "preamble": "",
+      "production_integrated": false,
+      "result": "(C7PROBE similarity (stv 0.5372340425531914 0.5824))",
+      "runtime_executable": true,
+      "source": [
+        {
+          "definition": "(= (Truth_transitiveSimilarity (stv $As $Ac)\n                               (stv $Bs $Bc)\n                               (stv $Cs $Cc)\n                               (stv $ABs $ABc)\n                               (stv $BCs $BCc))\n   (let* (($ConclS (TransitiveSimilarityStrength $As $Bs $Cs $ABs $BCs))\n          ($ConclC (* (* $ABc $BCc) (Truth_or $ABs $BCs))))\n         (stv $ConclS $ConclC)))",
+          "end_line": 181,
+          "line": 174,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "Truth_transitiveSimilarity"
+        }
+      ],
+      "source_present": true,
+      "stdout": "(C7PROBE similarity (stv 0.5372340425531914 0.5824))\ntrue\ntrue\n",
+      "stvs": [
+        {
+          "confidence": 0.5824,
+          "strength": 0.5372340425531914
+        }
+      ]
+    },
+    {
+      "domain": "Five STVs; simpleDeductionStrength consistency guards and nonzero safe-division denominators; invalid case returns empty.",
+      "expression": "(Truth_evaluationImplication (stv 0.4 0.8) (stv 0.2 0.8) (stv 0.5 0.8) (stv 0.9 0.8) (stv 0.8 0.8))",
+      "id": "evaluation",
+      "preamble": "",
+      "production_integrated": false,
+      "result": "(C7PROBE evaluation (stv 0.7500000000000001 0.46080000000000015))",
+      "runtime_executable": true,
+      "source": [
+        {
+          "definition": "(= (Truth_evaluationImplication (stv $As $Ac)\n                                (stv $Bs $Bc)\n                                (stv $Cs $Cc)\n                                (stv $ABs $ABc)\n                                (stv $ACs $ACc))\n   (let* (($ConclS (simpleDeductionStrength $Bs $As $Cs $ABs $ACs))\n          ($ConclC (* (* $ABs $ACs) (* $ABc $ACc))))\n         (stv $ConclS $ConclC)))",
+          "end_line": 204,
+          "line": 197,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "Truth_evaluationImplication"
+        }
+      ],
+      "source_present": true,
+      "stdout": "(C7PROBE evaluation (stv 0.7500000000000001 0.46080000000000015))\ntrue\ntrue\n",
+      "stvs": [
+        {
+          "confidence": 0.46080000000000015,
+          "strength": 0.7500000000000001
+        }
+      ]
+    },
+    {
+      "domain": "Two STVs in [0,1]^2. Native hard-coded alternate conditional .2 is a model assumption; output lies in [0,1].",
+      "expression": "(Truth_SymmetricModusPonens (stv 0.9 0.8) (stv 0.95 0.8))",
+      "id": "symmetric-mp",
+      "preamble": "",
+      "production_integrated": false,
+      "result": "(C7PROBE symmetric-mp (stv 0.894 0.6368000000000001))",
+      "runtime_executable": true,
+      "source": [
+        {
+          "definition": "(= (Truth_SymmetricModusPonens (stv $sA $cA) (stv $sAB $cAB))\n   (let* (($snotAB 0.2)\n          ($cnotAB 1.0))\n         (stv (+ (* $sA $sAB) (* (* $snotAB (negate $sA)) (+ 1.0 $sAB)))\n              (* (* $cA $cAB) (Truth_or $sA $sAB)))))",
+          "end_line": 133,
+          "line": 129,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "Truth_SymmetricModusPonens"
+        }
+      ],
+      "source_present": true,
+      "stdout": "(C7PROBE symmetric-mp (stv 0.894 0.6368000000000001))\ntrue\ntrue\n",
+      "stvs": [
+        {
+          "confidence": 0.6368000000000001,
+          "strength": 0.894
+        }
+      ]
+    },
+    {
+      "domain": "Tuple of (STV evidence) pairs; picks greatest confidence, first wins ties; empty tuple or all-zero confidence gives (). No fusion.",
+      "expression": "(let ($tv $e) (BestConfidenceCandidate (((stv 0.9 0.7) (sourceA)) ((stv 0.1 0.8) (sourceB)))) $tv)",
+      "id": "choice",
+      "preamble": "",
+      "production_integrated": true,
+      "result": "(C7PROBE choice (stv 0.1 0.8))",
+      "runtime_executable": true,
+      "source": [
+        {
+          "definition": "(= (BestConfidenceCandidate $tuple)\n   (BestCandidate ConfidenceRank () $tuple))",
+          "end_line": 413,
+          "line": 412,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "BestConfidenceCandidate"
+        }
+      ],
+      "source_present": true,
+      "stdout": "(C7PROBE choice (stv 0.1 0.8))\ntrue\ntrue\n",
+      "stvs": [
+        {
+          "confidence": 0.8,
+          "strength": 0.1
+        }
+      ]
+    }
+  ],
+  "runtime": {
+    "atomspace": "PeTTa native in-process MeTTa space (no Hyperon AtomSpace dependency)",
+    "petta": {
+      "branch": "main",
+      "commit": "ee5cacb6a6ecdd554a1c773aaf47e9a0f8a5af0f",
+      "files": {
+        "run.sh": "269a50bc47e8a5f614f1999161d7f5f6ea51c4615d39f12a404540071f124ff0",
+        "src/ext_points.pl": "0b5f1b115e29892ab1bf5833c022df4c2f3f1558cb04f57a8f52de5ccdad8436",
+        "src/filereader.pl": "fb677e03ffbf945f8c752aa02c8db481cebfbdd219660bee387af596e3ce7bc1",
+        "src/load_cache.pl": "619fc64d253221d06907234d2b94d8c3395b4a6facbe56b2a4bb38c84c9c0ac3",
+        "src/main.pl": "2a57276bb0cd32f29e0bd983c2640f1e9bc1646e22bfc266230d3dc13b9ecc6c",
+        "src/metta.pl": "9ee89a19768c82052606b738e7abd88971c5ac826b7cf9fc1ab770e02779337d",
+        "src/parser.pl": "69ab6dd840fcc585d916fd25a496a09dd30ca9aaacf6e55baaa67c8c020c84c1",
+        "src/spaces.pl": "553acea6a6ad210ff46cb0c883af7587295c689fcd5d768566428607417f0bb0",
+        "src/specializer.pl": "b27a2a6430914c11dc9cd0d27b9a3aa5945064607c48979b7a2a0e50bd0f5141",
+        "src/translator.pl": "cda4dcfc4f77ff0d3feb858b1502ec685fb8b1ddbd7cc555193b76ac7de12220",
+        "src/typecheck.pl": "c45a5a66001255004944731e72dc7a2b71872328027c0f23117442896767e91c",
+        "src/typecheck/abstract_domain.pl": "7fafddae3126fc3ab6f9c2380a4809d0dc5331ae1a622df3be6176167d90d8b9",
+        "src/typecheck/analysis_proofs.pl": "96687dbdd49730b355200eb8135aec8a55953daa1dc250196743951565b5350f",
+        "src/typecheck/builtin_registry.pl": "e0a65099592fa3283ff6f31e90f776366f499eb8e172102393b96bd8183d5005",
+        "src/typecheck/call_summaries.pl": "adb9383a34fd3c0cbaa6e898fd1ee41fcbe2a90327af1b96f4db29bd22c46c00",
+        "src/typecheck/clause_checks.pl": "3b072c51563542b85d8195137dfc06d60932fe25acf14c2dafdadc53367fefc3",
+        "src/typecheck/decl_store.pl": "52f5c17cf51e871a11d81f284094bdb945d3876b799f9157e5131eea3dfdd615",
+        "src/typecheck/dependency_graph.pl": "f344d62ad9e084d2b9ab7dc235094de83db87815cb7b1935c97794490abddaf1",
+        "src/typecheck/det_analysis.pl": "bc04e7791253c3e12b45c81be3f0a7fc419c310898a7b2dab89f86cb329eca9a",
+        "src/typecheck/det_proofs.pl": "1e34de0eb4fad3e79ff5b551e2f966595063db5a6cb268aac45e90448f80fd74",
+        "src/typecheck/det_validate.pl": "98738eb738f4aa76b64d1412ab5e839d151e1bef1fda1019396151a4e1d6ac58",
+        "src/typecheck/flags_arrows.pl": "454f1a1d6b47fe390fc3a8fc11297c6acc798bab6a4f5dc3f009ce79fcc844ed",
+        "src/typecheck/inference.pl": "62d0f2ae9ca97b622cec0676dd3de50016311d940e981e98d243f345579f4430",
+        "src/typecheck/ir_analyzer.pl": "02520b61ccccaba064f62f72f68162bc9b033abec64b77f6e2374e9134b1fe83",
+        "src/typecheck/oracles.pl": "c3ec9fc6e02cf78f58a7f441977fe7ceedad34a78a2a27a43fa52e809256b649",
+        "src/typecheck/relational_ir.pl": "c35f43237b3178ae81f207a79905e9aeb998f8eeac3cc9dce323c6fe62fc0037",
+        "src/typecheck/type_lang.pl": "d9cc0fbdc06002a8249c5b77fa999fb50be4b040626728b66a7e80f2b46255e0",
+        "src/typecheck/unified_checker_bridge.pl": "53ae3521a8265b9680f5434caa2384e0a3831739c53325a6bc2c737b02c2a01a",
+        "src/typecheck/unified_checker_cache.pl": "684f13666c61a1b15ecaf42443d41f15d76efa5d032225a87c873b76ca1da930",
+        "src/typecheck/value_checks.pl": "a8013f13afffd637ba9038c9cf2ef1d8cd056a135696fa676ca5fe88ada25ae6"
+      },
+      "repository": "https://github.com/trueagi-io/PeTTa"
+    },
+    "pln": {
+      "branch": "main",
+      "commit": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+      "repository": "https://github.com/trueagi-io/PLN",
+      "sha256": "cdfb3f18bd7b336440fc7b4409209afddf0e64c41f17dee7eefc8f02718de433",
+      "source": "vendor/pln/lib_pln.metta"
+    },
+    "python": "3.12.12",
+    "schema": 1,
+    "swipl": "SWI-Prolog version 10.0.1 for x86_64-linux",
+    "truth_value": "(stv strength confidence)"
+  },
+  "signature_and_edge_cases": [
+    {
+      "expression": "(collapse (|- ((Inheritance A B) (stv 0.9 0.8)) ((Inheritance B C) (stv 0.8 0.8))))",
+      "id": "inheritance-deduction",
+      "preamble": "(= (STV A) (stv 0.4 0.8))\n(= (STV B) (stv 0.4 0.8))\n(= (STV C) (stv 0.4 0.8))",
+      "production_integrated": false,
+      "result": "(C7PROBE inheritance-deduction (((Inheritance A C) (stv 0.7333333333333334 0.46080000000000015))))",
+      "runtime_result_kind": "STV-returned",
+      "scope": "Exact wrapper/control probe; do not generalize a failing probe to every possible signature.",
+      "source": [
+        {
+          "definition": "(= (|- ($T $T1) \n       ($T $T2))\n   ($T (Truth_Revision $T1 $T2)))",
+          "end_line": 213,
+          "line": 211,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ($A $T1) \n       ((Implication $A $B) $T2))\n   ($B (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 218,
+          "line": 216,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ($A $TruthA)\n       (($LinkType $A $B) $TruthAB))\n   (if (SymmetricModusPonensRuleGuard $LinkType)\n       ($B (Truth_SymmetricModusPonens $TruthA $TruthAB)) (empty)))",
+          "end_line": 229,
+          "line": 226,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- (($LinkType $A $B) $T1)\n       (($LinkType $B $C) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $C)\n        (Truth_Deduction (STV $A)\n                         (STV $B)\n                         (STV $C) $T1 $T2)) (empty)))",
+          "end_line": 242,
+          "line": 236,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- (($LinkType $C $A) $T1)\n       (($LinkType $C $B) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $B) (Truth_Induction (STV $A)\n                                           (STV $B)\n                                           (STV $C) $T1 $T2)) (empty)))",
+          "end_line": 251,
+          "line": 246,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- (($LinkType $A $C) $T1)\n       (($LinkType $B $C) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $B) (Truth_Abduction (STV $A)\n                                           (STV $B)\n                                           (STV $C) $T1 $T2)) (empty)))",
+          "end_line": 259,
+          "line": 254,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C))) $T1)\n       ((Inheritance (Concept $S) (Concept $C)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $S))) (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 267,
+          "line": 263,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C1) (Concept $C2))) $T1)\n       ((Inheritance (Concept $S) (Concept $C1)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $S) (Concept $C2))) (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 274,
+          "line": 270,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C1) (Concept $C2))) $T1)\n       ((Inheritance (Concept $S) (Concept $C2)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $C1) (Concept $S))) (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 281,
+          "line": 277,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Not $A) $T)) ($A (Truth_Negation $T)))",
+          "end_line": 284,
+          "line": 284,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Inheritance $A $B) $Truth))\n   ((Inheritance $B $A) (Truth_inversion (STV $B) $Truth)))",
+          "end_line": 288,
+          "line": 287,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Implication $A $B) $Truth))\n   ((Implication $B $A) (Truth_inversion (STV $B) $Truth)))",
+          "end_line": 292,
+          "line": 291,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Equivalence $A $B) $Truth))\n   ((Implication $A $B) (Truth_equivalenceToImplication (STV $A)\n                                                        (STV $B) $Truth)))",
+          "end_line": 297,
+          "line": 295,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Equivalence $A $B) $Truth))\n   ((Implication $B $A) (Truth_equivalenceToImplication (STV $A)\n                                                        (STV $B) $Truth)))",
+          "end_line": 301,
+          "line": 299,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Similarity $A $B) $T1)\n       ((Similarity $B $C) $T2))\n   ((Similarity $A $C) (Truth_transitiveSimilarity (STV $A)\n                                                   (STV $B)\n                                                   (STV $C) $T1 $T2)))",
+          "end_line": 308,
+          "line": 304,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation $A $B) $TruthAB)\n       ((Implication $A $C) $TruthAC))\n   ((Evaluation $C $B) (Truth_evaluationImplication (STV $A)\n                                                    (STV $B)\n                                                    (STV $C) $TruthAB $TruthAC)))",
+          "end_line": 315,
+          "line": 311,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Member $A $B) $T1)\n       ((Inheritance $B $C) $T2))\n   ((Member $A $C) (Truth_Deduction (STV $A)\n                                    (STV $B)\n                                    (STV $C) $T1 $T2)))",
+          "end_line": 323,
+          "line": 319,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (StampDisjoint $Ev1 $Ev2)\n   (if (== $Ev1 ())\n       True\n       (let* (($x (car-atom $Ev1))\n              ($rest (cdr-atom $Ev1)))\n             (if (is-member $x $Ev2)\n                 False\n                 (StampDisjoint $rest $Ev2)))))",
+          "end_line": 342,
+          "line": 335,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "StampDisjoint"
+        },
+        {
+          "definition": "(= (BestConfidenceCandidate $tuple)\n   (BestCandidate ConfidenceRank () $tuple))",
+          "end_line": 413,
+          "line": 412,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "BestConfidenceCandidate"
+        }
+      ],
+      "source_present": true,
+      "stdout": "(C7PROBE inheritance-deduction (((Inheritance A C) (stv 0.7333333333333334 0.46080000000000015))))\ntrue\ntrue\n",
+      "stvs": [
+        {
+          "confidence": 0.46080000000000015,
+          "strength": 0.7333333333333334
+        }
+      ]
+    },
+    {
+      "expression": "(collapse (|- ((Evaluation (Predicate Eligible) (List (Concept B))) (stv 0.9 0.8)) ((Inheritance (Concept A) (Concept B)) (stv 0.95 0.8))))",
+      "id": "inheritance-predicate",
+      "preamble": "(= (STV A) (stv 0.4 0.8))\n(= (STV B) (stv 0.4 0.8))\n(= (STV C) (stv 0.4 0.8))",
+      "production_integrated": false,
+      "result": "(C7PROBE inheritance-predicate ())",
+      "runtime_result_kind": "empty",
+      "scope": "Exact wrapper/control probe; do not generalize a failing probe to every possible signature.",
+      "source": [
+        {
+          "definition": "(= (|- ($T $T1) \n       ($T $T2))\n   ($T (Truth_Revision $T1 $T2)))",
+          "end_line": 213,
+          "line": 211,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ($A $T1) \n       ((Implication $A $B) $T2))\n   ($B (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 218,
+          "line": 216,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ($A $TruthA)\n       (($LinkType $A $B) $TruthAB))\n   (if (SymmetricModusPonensRuleGuard $LinkType)\n       ($B (Truth_SymmetricModusPonens $TruthA $TruthAB)) (empty)))",
+          "end_line": 229,
+          "line": 226,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- (($LinkType $A $B) $T1)\n       (($LinkType $B $C) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $C)\n        (Truth_Deduction (STV $A)\n                         (STV $B)\n                         (STV $C) $T1 $T2)) (empty)))",
+          "end_line": 242,
+          "line": 236,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- (($LinkType $C $A) $T1)\n       (($LinkType $C $B) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $B) (Truth_Induction (STV $A)\n                                           (STV $B)\n                                           (STV $C) $T1 $T2)) (empty)))",
+          "end_line": 251,
+          "line": 246,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- (($LinkType $A $C) $T1)\n       (($LinkType $B $C) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $B) (Truth_Abduction (STV $A)\n                                           (STV $B)\n                                           (STV $C) $T1 $T2)) (empty)))",
+          "end_line": 259,
+          "line": 254,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C))) $T1)\n       ((Inheritance (Concept $S) (Concept $C)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $S))) (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 267,
+          "line": 263,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C1) (Concept $C2))) $T1)\n       ((Inheritance (Concept $S) (Concept $C1)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $S) (Concept $C2))) (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 274,
+          "line": 270,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C1) (Concept $C2))) $T1)\n       ((Inheritance (Concept $S) (Concept $C2)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $C1) (Concept $S))) (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 281,
+          "line": 277,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Not $A) $T)) ($A (Truth_Negation $T)))",
+          "end_line": 284,
+          "line": 284,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Inheritance $A $B) $Truth))\n   ((Inheritance $B $A) (Truth_inversion (STV $B) $Truth)))",
+          "end_line": 288,
+          "line": 287,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Implication $A $B) $Truth))\n   ((Implication $B $A) (Truth_inversion (STV $B) $Truth)))",
+          "end_line": 292,
+          "line": 291,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Equivalence $A $B) $Truth))\n   ((Implication $A $B) (Truth_equivalenceToImplication (STV $A)\n                                                        (STV $B) $Truth)))",
+          "end_line": 297,
+          "line": 295,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Equivalence $A $B) $Truth))\n   ((Implication $B $A) (Truth_equivalenceToImplication (STV $A)\n                                                        (STV $B) $Truth)))",
+          "end_line": 301,
+          "line": 299,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Similarity $A $B) $T1)\n       ((Similarity $B $C) $T2))\n   ((Similarity $A $C) (Truth_transitiveSimilarity (STV $A)\n                                                   (STV $B)\n                                                   (STV $C) $T1 $T2)))",
+          "end_line": 308,
+          "line": 304,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation $A $B) $TruthAB)\n       ((Implication $A $C) $TruthAC))\n   ((Evaluation $C $B) (Truth_evaluationImplication (STV $A)\n                                                    (STV $B)\n                                                    (STV $C) $TruthAB $TruthAC)))",
+          "end_line": 315,
+          "line": 311,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Member $A $B) $T1)\n       ((Inheritance $B $C) $T2))\n   ((Member $A $C) (Truth_Deduction (STV $A)\n                                    (STV $B)\n                                    (STV $C) $T1 $T2)))",
+          "end_line": 323,
+          "line": 319,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (StampDisjoint $Ev1 $Ev2)\n   (if (== $Ev1 ())\n       True\n       (let* (($x (car-atom $Ev1))\n              ($rest (cdr-atom $Ev1)))\n             (if (is-member $x $Ev2)\n                 False\n                 (StampDisjoint $rest $Ev2)))))",
+          "end_line": 342,
+          "line": 335,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "StampDisjoint"
+        },
+        {
+          "definition": "(= (BestConfidenceCandidate $tuple)\n   (BestCandidate ConfidenceRank () $tuple))",
+          "end_line": 413,
+          "line": 412,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "BestConfidenceCandidate"
+        }
+      ],
+      "source_present": true,
+      "stdout": "(C7PROBE inheritance-predicate ())\ntrue\ntrue\n",
+      "stvs": []
+    },
+    {
+      "expression": "(collapse (|- ((Equivalence A B) (stv 0.5 0.8))))",
+      "id": "equivalence-wrapper",
+      "preamble": "(= (STV A) (stv 0.4 0.8))\n(= (STV B) (stv 0.4 0.8))\n(= (STV C) (stv 0.4 0.8))",
+      "production_integrated": false,
+      "result": "(C7PROBE equivalence-wrapper (((Implication A B) (stv 0.6666666666666666 0.8)) ((Implication B A) (stv 0.6666666666666666 0.8))))",
+      "runtime_result_kind": "STV-returned",
+      "scope": "Exact wrapper/control probe; do not generalize a failing probe to every possible signature.",
+      "source": [
+        {
+          "definition": "(= (|- ($T $T1) \n       ($T $T2))\n   ($T (Truth_Revision $T1 $T2)))",
+          "end_line": 213,
+          "line": 211,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ($A $T1) \n       ((Implication $A $B) $T2))\n   ($B (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 218,
+          "line": 216,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ($A $TruthA)\n       (($LinkType $A $B) $TruthAB))\n   (if (SymmetricModusPonensRuleGuard $LinkType)\n       ($B (Truth_SymmetricModusPonens $TruthA $TruthAB)) (empty)))",
+          "end_line": 229,
+          "line": 226,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- (($LinkType $A $B) $T1)\n       (($LinkType $B $C) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $C)\n        (Truth_Deduction (STV $A)\n                         (STV $B)\n                         (STV $C) $T1 $T2)) (empty)))",
+          "end_line": 242,
+          "line": 236,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- (($LinkType $C $A) $T1)\n       (($LinkType $C $B) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $B) (Truth_Induction (STV $A)\n                                           (STV $B)\n                                           (STV $C) $T1 $T2)) (empty)))",
+          "end_line": 251,
+          "line": 246,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- (($LinkType $A $C) $T1)\n       (($LinkType $B $C) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $B) (Truth_Abduction (STV $A)\n                                           (STV $B)\n                                           (STV $C) $T1 $T2)) (empty)))",
+          "end_line": 259,
+          "line": 254,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C))) $T1)\n       ((Inheritance (Concept $S) (Concept $C)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $S))) (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 267,
+          "line": 263,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C1) (Concept $C2))) $T1)\n       ((Inheritance (Concept $S) (Concept $C1)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $S) (Concept $C2))) (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 274,
+          "line": 270,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C1) (Concept $C2))) $T1)\n       ((Inheritance (Concept $S) (Concept $C2)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $C1) (Concept $S))) (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 281,
+          "line": 277,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Not $A) $T)) ($A (Truth_Negation $T)))",
+          "end_line": 284,
+          "line": 284,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Inheritance $A $B) $Truth))\n   ((Inheritance $B $A) (Truth_inversion (STV $B) $Truth)))",
+          "end_line": 288,
+          "line": 287,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Implication $A $B) $Truth))\n   ((Implication $B $A) (Truth_inversion (STV $B) $Truth)))",
+          "end_line": 292,
+          "line": 291,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Equivalence $A $B) $Truth))\n   ((Implication $A $B) (Truth_equivalenceToImplication (STV $A)\n                                                        (STV $B) $Truth)))",
+          "end_line": 297,
+          "line": 295,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Equivalence $A $B) $Truth))\n   ((Implication $B $A) (Truth_equivalenceToImplication (STV $A)\n                                                        (STV $B) $Truth)))",
+          "end_line": 301,
+          "line": 299,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Similarity $A $B) $T1)\n       ((Similarity $B $C) $T2))\n   ((Similarity $A $C) (Truth_transitiveSimilarity (STV $A)\n                                                   (STV $B)\n                                                   (STV $C) $T1 $T2)))",
+          "end_line": 308,
+          "line": 304,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation $A $B) $TruthAB)\n       ((Implication $A $C) $TruthAC))\n   ((Evaluation $C $B) (Truth_evaluationImplication (STV $A)\n                                                    (STV $B)\n                                                    (STV $C) $TruthAB $TruthAC)))",
+          "end_line": 315,
+          "line": 311,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Member $A $B) $T1)\n       ((Inheritance $B $C) $T2))\n   ((Member $A $C) (Truth_Deduction (STV $A)\n                                    (STV $B)\n                                    (STV $C) $T1 $T2)))",
+          "end_line": 323,
+          "line": 319,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (StampDisjoint $Ev1 $Ev2)\n   (if (== $Ev1 ())\n       True\n       (let* (($x (car-atom $Ev1))\n              ($rest (cdr-atom $Ev1)))\n             (if (is-member $x $Ev2)\n                 False\n                 (StampDisjoint $rest $Ev2)))))",
+          "end_line": 342,
+          "line": 335,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "StampDisjoint"
+        },
+        {
+          "definition": "(= (BestConfidenceCandidate $tuple)\n   (BestCandidate ConfidenceRank () $tuple))",
+          "end_line": 413,
+          "line": 412,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "BestConfidenceCandidate"
+        }
+      ],
+      "source_present": true,
+      "stdout": "(C7PROBE equivalence-wrapper (((Implication A B) (stv 0.6666666666666666 0.8)) ((Implication B A) (stv 0.6666666666666666 0.8))))\ntrue\ntrue\n",
+      "stvs": [
+        {
+          "confidence": 0.8,
+          "strength": 0.6666666666666666
+        },
+        {
+          "confidence": 0.8,
+          "strength": 0.6666666666666666
+        }
+      ]
+    },
+    {
+      "expression": "(collapse (let ($p $tv) (|- (A (stv 0.9 0.8)) ((Implication A B) (stv 0.95 0.8))) (|- ($p $tv) ((Implication B C) (stv 0.95 0.8)))))",
+      "id": "unary-chain",
+      "preamble": "(= (STV A) (stv 0.4 0.8))\n(= (STV B) (stv 0.4 0.8))\n(= (STV C) (stv 0.4 0.8))",
+      "production_integrated": false,
+      "result": "(C7PROBE unary-chain ((C (stv 0.8170099999999999 0.3564023040000001))))",
+      "runtime_result_kind": "STV-returned",
+      "scope": "Exact wrapper/control probe; do not generalize a failing probe to every possible signature.",
+      "source": [
+        {
+          "definition": "(= (|- ($T $T1) \n       ($T $T2))\n   ($T (Truth_Revision $T1 $T2)))",
+          "end_line": 213,
+          "line": 211,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ($A $T1) \n       ((Implication $A $B) $T2))\n   ($B (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 218,
+          "line": 216,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ($A $TruthA)\n       (($LinkType $A $B) $TruthAB))\n   (if (SymmetricModusPonensRuleGuard $LinkType)\n       ($B (Truth_SymmetricModusPonens $TruthA $TruthAB)) (empty)))",
+          "end_line": 229,
+          "line": 226,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- (($LinkType $A $B) $T1)\n       (($LinkType $B $C) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $C)\n        (Truth_Deduction (STV $A)\n                         (STV $B)\n                         (STV $C) $T1 $T2)) (empty)))",
+          "end_line": 242,
+          "line": 236,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- (($LinkType $C $A) $T1)\n       (($LinkType $C $B) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $B) (Truth_Induction (STV $A)\n                                           (STV $B)\n                                           (STV $C) $T1 $T2)) (empty)))",
+          "end_line": 251,
+          "line": 246,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- (($LinkType $A $C) $T1)\n       (($LinkType $B $C) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $B) (Truth_Abduction (STV $A)\n                                           (STV $B)\n                                           (STV $C) $T1 $T2)) (empty)))",
+          "end_line": 259,
+          "line": 254,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C))) $T1)\n       ((Inheritance (Concept $S) (Concept $C)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $S))) (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 267,
+          "line": 263,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C1) (Concept $C2))) $T1)\n       ((Inheritance (Concept $S) (Concept $C1)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $S) (Concept $C2))) (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 274,
+          "line": 270,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C1) (Concept $C2))) $T1)\n       ((Inheritance (Concept $S) (Concept $C2)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $C1) (Concept $S))) (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 281,
+          "line": 277,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Not $A) $T)) ($A (Truth_Negation $T)))",
+          "end_line": 284,
+          "line": 284,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Inheritance $A $B) $Truth))\n   ((Inheritance $B $A) (Truth_inversion (STV $B) $Truth)))",
+          "end_line": 288,
+          "line": 287,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Implication $A $B) $Truth))\n   ((Implication $B $A) (Truth_inversion (STV $B) $Truth)))",
+          "end_line": 292,
+          "line": 291,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Equivalence $A $B) $Truth))\n   ((Implication $A $B) (Truth_equivalenceToImplication (STV $A)\n                                                        (STV $B) $Truth)))",
+          "end_line": 297,
+          "line": 295,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Equivalence $A $B) $Truth))\n   ((Implication $B $A) (Truth_equivalenceToImplication (STV $A)\n                                                        (STV $B) $Truth)))",
+          "end_line": 301,
+          "line": 299,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Similarity $A $B) $T1)\n       ((Similarity $B $C) $T2))\n   ((Similarity $A $C) (Truth_transitiveSimilarity (STV $A)\n                                                   (STV $B)\n                                                   (STV $C) $T1 $T2)))",
+          "end_line": 308,
+          "line": 304,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation $A $B) $TruthAB)\n       ((Implication $A $C) $TruthAC))\n   ((Evaluation $C $B) (Truth_evaluationImplication (STV $A)\n                                                    (STV $B)\n                                                    (STV $C) $TruthAB $TruthAC)))",
+          "end_line": 315,
+          "line": 311,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Member $A $B) $T1)\n       ((Inheritance $B $C) $T2))\n   ((Member $A $C) (Truth_Deduction (STV $A)\n                                    (STV $B)\n                                    (STV $C) $T1 $T2)))",
+          "end_line": 323,
+          "line": 319,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (StampDisjoint $Ev1 $Ev2)\n   (if (== $Ev1 ())\n       True\n       (let* (($x (car-atom $Ev1))\n              ($rest (cdr-atom $Ev1)))\n             (if (is-member $x $Ev2)\n                 False\n                 (StampDisjoint $rest $Ev2)))))",
+          "end_line": 342,
+          "line": 335,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "StampDisjoint"
+        },
+        {
+          "definition": "(= (BestConfidenceCandidate $tuple)\n   (BestCandidate ConfidenceRank () $tuple))",
+          "end_line": 413,
+          "line": 412,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "BestConfidenceCandidate"
+        }
+      ],
+      "source_present": true,
+      "stdout": "(C7PROBE unary-chain ((C (stv 0.8170099999999999 0.3564023040000001))))\ntrue\ntrue\n",
+      "stvs": [
+        {
+          "confidence": 0.3564023040000001,
+          "strength": 0.8170099999999999
+        }
+      ]
+    },
+    {
+      "expression": "(collapse (|- ((Not A) (stv 0.9 0.8))))",
+      "id": "negative-wrapper",
+      "preamble": "(= (STV A) (stv 0.4 0.8))\n(= (STV B) (stv 0.4 0.8))\n(= (STV C) (stv 0.4 0.8))",
+      "production_integrated": false,
+      "result": "(C7PROBE negative-wrapper ((A (stv 0.09999999999999998 0.8))))",
+      "runtime_result_kind": "STV-returned",
+      "scope": "Exact wrapper/control probe; do not generalize a failing probe to every possible signature.",
+      "source": [
+        {
+          "definition": "(= (|- ($T $T1) \n       ($T $T2))\n   ($T (Truth_Revision $T1 $T2)))",
+          "end_line": 213,
+          "line": 211,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ($A $T1) \n       ((Implication $A $B) $T2))\n   ($B (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 218,
+          "line": 216,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ($A $TruthA)\n       (($LinkType $A $B) $TruthAB))\n   (if (SymmetricModusPonensRuleGuard $LinkType)\n       ($B (Truth_SymmetricModusPonens $TruthA $TruthAB)) (empty)))",
+          "end_line": 229,
+          "line": 226,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- (($LinkType $A $B) $T1)\n       (($LinkType $B $C) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $C)\n        (Truth_Deduction (STV $A)\n                         (STV $B)\n                         (STV $C) $T1 $T2)) (empty)))",
+          "end_line": 242,
+          "line": 236,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- (($LinkType $C $A) $T1)\n       (($LinkType $C $B) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $B) (Truth_Induction (STV $A)\n                                           (STV $B)\n                                           (STV $C) $T1 $T2)) (empty)))",
+          "end_line": 251,
+          "line": 246,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- (($LinkType $A $C) $T1)\n       (($LinkType $B $C) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $B) (Truth_Abduction (STV $A)\n                                           (STV $B)\n                                           (STV $C) $T1 $T2)) (empty)))",
+          "end_line": 259,
+          "line": 254,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C))) $T1)\n       ((Inheritance (Concept $S) (Concept $C)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $S))) (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 267,
+          "line": 263,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C1) (Concept $C2))) $T1)\n       ((Inheritance (Concept $S) (Concept $C1)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $S) (Concept $C2))) (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 274,
+          "line": 270,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C1) (Concept $C2))) $T1)\n       ((Inheritance (Concept $S) (Concept $C2)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $C1) (Concept $S))) (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 281,
+          "line": 277,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Not $A) $T)) ($A (Truth_Negation $T)))",
+          "end_line": 284,
+          "line": 284,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Inheritance $A $B) $Truth))\n   ((Inheritance $B $A) (Truth_inversion (STV $B) $Truth)))",
+          "end_line": 288,
+          "line": 287,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Implication $A $B) $Truth))\n   ((Implication $B $A) (Truth_inversion (STV $B) $Truth)))",
+          "end_line": 292,
+          "line": 291,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Equivalence $A $B) $Truth))\n   ((Implication $A $B) (Truth_equivalenceToImplication (STV $A)\n                                                        (STV $B) $Truth)))",
+          "end_line": 297,
+          "line": 295,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Equivalence $A $B) $Truth))\n   ((Implication $B $A) (Truth_equivalenceToImplication (STV $A)\n                                                        (STV $B) $Truth)))",
+          "end_line": 301,
+          "line": 299,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Similarity $A $B) $T1)\n       ((Similarity $B $C) $T2))\n   ((Similarity $A $C) (Truth_transitiveSimilarity (STV $A)\n                                                   (STV $B)\n                                                   (STV $C) $T1 $T2)))",
+          "end_line": 308,
+          "line": 304,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation $A $B) $TruthAB)\n       ((Implication $A $C) $TruthAC))\n   ((Evaluation $C $B) (Truth_evaluationImplication (STV $A)\n                                                    (STV $B)\n                                                    (STV $C) $TruthAB $TruthAC)))",
+          "end_line": 315,
+          "line": 311,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Member $A $B) $T1)\n       ((Inheritance $B $C) $T2))\n   ((Member $A $C) (Truth_Deduction (STV $A)\n                                    (STV $B)\n                                    (STV $C) $T1 $T2)))",
+          "end_line": 323,
+          "line": 319,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (StampDisjoint $Ev1 $Ev2)\n   (if (== $Ev1 ())\n       True\n       (let* (($x (car-atom $Ev1))\n              ($rest (cdr-atom $Ev1)))\n             (if (is-member $x $Ev2)\n                 False\n                 (StampDisjoint $rest $Ev2)))))",
+          "end_line": 342,
+          "line": 335,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "StampDisjoint"
+        },
+        {
+          "definition": "(= (BestConfidenceCandidate $tuple)\n   (BestCandidate ConfidenceRank () $tuple))",
+          "end_line": 413,
+          "line": 412,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "BestConfidenceCandidate"
+        }
+      ],
+      "source_present": true,
+      "stdout": "(C7PROBE negative-wrapper ((A (stv 0.09999999999999998 0.8))))\ntrue\ntrue\n",
+      "stvs": [
+        {
+          "confidence": 0.8,
+          "strength": 0.09999999999999998
+        }
+      ]
+    },
+    {
+      "expression": "(collapse (Truth_Revision (stv 0.5 0.0) (stv 0.5 0.0)))",
+      "id": "revision-zero",
+      "preamble": "(= (STV A) (stv 0.4 0.8))\n(= (STV B) (stv 0.4 0.8))\n(= (STV C) (stv 0.4 0.8))",
+      "production_integrated": false,
+      "result": "(C7PROBE revision-zero ())",
+      "runtime_result_kind": "empty",
+      "scope": "Exact wrapper/control probe; do not generalize a failing probe to every possible signature.",
+      "source": [
+        {
+          "definition": "(= (Truth_Revision (stv $f1 $c1) (stv $f2 $c2))\n   (let* (($w1 (Truth_c2w $c1))\n          ($w2 (Truth_c2w $c2))\n          ($w (+ $w1 $w2))\n          ($f (/safe (+ (* $w1 $f1) (* $w2 $f2)) $w))\n          ($c (Truth_w2c $w)))\n         (stv (min 1.0 $f)\n              (min 1.0 (max (max $c $c1) $c2)))))",
+          "end_line": 143,
+          "line": 136,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "Truth_Revision"
+        },
+        {
+          "definition": "(= (|- ($T $T1) \n       ($T $T2))\n   ($T (Truth_Revision $T1 $T2)))",
+          "end_line": 213,
+          "line": 211,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ($A $T1) \n       ((Implication $A $B) $T2))\n   ($B (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 218,
+          "line": 216,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ($A $TruthA)\n       (($LinkType $A $B) $TruthAB))\n   (if (SymmetricModusPonensRuleGuard $LinkType)\n       ($B (Truth_SymmetricModusPonens $TruthA $TruthAB)) (empty)))",
+          "end_line": 229,
+          "line": 226,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- (($LinkType $A $B) $T1)\n       (($LinkType $B $C) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $C)\n        (Truth_Deduction (STV $A)\n                         (STV $B)\n                         (STV $C) $T1 $T2)) (empty)))",
+          "end_line": 242,
+          "line": 236,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- (($LinkType $C $A) $T1)\n       (($LinkType $C $B) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $B) (Truth_Induction (STV $A)\n                                           (STV $B)\n                                           (STV $C) $T1 $T2)) (empty)))",
+          "end_line": 251,
+          "line": 246,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- (($LinkType $A $C) $T1)\n       (($LinkType $B $C) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $B) (Truth_Abduction (STV $A)\n                                           (STV $B)\n                                           (STV $C) $T1 $T2)) (empty)))",
+          "end_line": 259,
+          "line": 254,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C))) $T1)\n       ((Inheritance (Concept $S) (Concept $C)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $S))) (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 267,
+          "line": 263,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C1) (Concept $C2))) $T1)\n       ((Inheritance (Concept $S) (Concept $C1)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $S) (Concept $C2))) (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 274,
+          "line": 270,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C1) (Concept $C2))) $T1)\n       ((Inheritance (Concept $S) (Concept $C2)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $C1) (Concept $S))) (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 281,
+          "line": 277,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Not $A) $T)) ($A (Truth_Negation $T)))",
+          "end_line": 284,
+          "line": 284,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Inheritance $A $B) $Truth))\n   ((Inheritance $B $A) (Truth_inversion (STV $B) $Truth)))",
+          "end_line": 288,
+          "line": 287,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Implication $A $B) $Truth))\n   ((Implication $B $A) (Truth_inversion (STV $B) $Truth)))",
+          "end_line": 292,
+          "line": 291,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Equivalence $A $B) $Truth))\n   ((Implication $A $B) (Truth_equivalenceToImplication (STV $A)\n                                                        (STV $B) $Truth)))",
+          "end_line": 297,
+          "line": 295,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Equivalence $A $B) $Truth))\n   ((Implication $B $A) (Truth_equivalenceToImplication (STV $A)\n                                                        (STV $B) $Truth)))",
+          "end_line": 301,
+          "line": 299,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Similarity $A $B) $T1)\n       ((Similarity $B $C) $T2))\n   ((Similarity $A $C) (Truth_transitiveSimilarity (STV $A)\n                                                   (STV $B)\n                                                   (STV $C) $T1 $T2)))",
+          "end_line": 308,
+          "line": 304,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation $A $B) $TruthAB)\n       ((Implication $A $C) $TruthAC))\n   ((Evaluation $C $B) (Truth_evaluationImplication (STV $A)\n                                                    (STV $B)\n                                                    (STV $C) $TruthAB $TruthAC)))",
+          "end_line": 315,
+          "line": 311,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Member $A $B) $T1)\n       ((Inheritance $B $C) $T2))\n   ((Member $A $C) (Truth_Deduction (STV $A)\n                                    (STV $B)\n                                    (STV $C) $T1 $T2)))",
+          "end_line": 323,
+          "line": 319,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (StampDisjoint $Ev1 $Ev2)\n   (if (== $Ev1 ())\n       True\n       (let* (($x (car-atom $Ev1))\n              ($rest (cdr-atom $Ev1)))\n             (if (is-member $x $Ev2)\n                 False\n                 (StampDisjoint $rest $Ev2)))))",
+          "end_line": 342,
+          "line": 335,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "StampDisjoint"
+        },
+        {
+          "definition": "(= (BestConfidenceCandidate $tuple)\n   (BestCandidate ConfidenceRank () $tuple))",
+          "end_line": 413,
+          "line": 412,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "BestConfidenceCandidate"
+        }
+      ],
+      "source_present": true,
+      "stdout": "(C7PROBE revision-zero ())\ntrue\ntrue\n",
+      "stvs": []
+    },
+    {
+      "expression": "(collapse (Truth_Revision (stv 1.0 1.0) (stv 1.0 0.5)))",
+      "id": "revision-one",
+      "preamble": "(= (STV A) (stv 0.4 0.8))\n(= (STV B) (stv 0.4 0.8))\n(= (STV C) (stv 0.4 0.8))",
+      "production_integrated": false,
+      "result": "(C7PROBE revision-one ())",
+      "runtime_result_kind": "empty",
+      "scope": "Exact wrapper/control probe; do not generalize a failing probe to every possible signature.",
+      "source": [
+        {
+          "definition": "(= (Truth_Revision (stv $f1 $c1) (stv $f2 $c2))\n   (let* (($w1 (Truth_c2w $c1))\n          ($w2 (Truth_c2w $c2))\n          ($w (+ $w1 $w2))\n          ($f (/safe (+ (* $w1 $f1) (* $w2 $f2)) $w))\n          ($c (Truth_w2c $w)))\n         (stv (min 1.0 $f)\n              (min 1.0 (max (max $c $c1) $c2)))))",
+          "end_line": 143,
+          "line": 136,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "Truth_Revision"
+        },
+        {
+          "definition": "(= (|- ($T $T1) \n       ($T $T2))\n   ($T (Truth_Revision $T1 $T2)))",
+          "end_line": 213,
+          "line": 211,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ($A $T1) \n       ((Implication $A $B) $T2))\n   ($B (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 218,
+          "line": 216,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ($A $TruthA)\n       (($LinkType $A $B) $TruthAB))\n   (if (SymmetricModusPonensRuleGuard $LinkType)\n       ($B (Truth_SymmetricModusPonens $TruthA $TruthAB)) (empty)))",
+          "end_line": 229,
+          "line": 226,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- (($LinkType $A $B) $T1)\n       (($LinkType $B $C) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $C)\n        (Truth_Deduction (STV $A)\n                         (STV $B)\n                         (STV $C) $T1 $T2)) (empty)))",
+          "end_line": 242,
+          "line": 236,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- (($LinkType $C $A) $T1)\n       (($LinkType $C $B) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $B) (Truth_Induction (STV $A)\n                                           (STV $B)\n                                           (STV $C) $T1 $T2)) (empty)))",
+          "end_line": 251,
+          "line": 246,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- (($LinkType $A $C) $T1)\n       (($LinkType $B $C) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $B) (Truth_Abduction (STV $A)\n                                           (STV $B)\n                                           (STV $C) $T1 $T2)) (empty)))",
+          "end_line": 259,
+          "line": 254,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C))) $T1)\n       ((Inheritance (Concept $S) (Concept $C)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $S))) (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 267,
+          "line": 263,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C1) (Concept $C2))) $T1)\n       ((Inheritance (Concept $S) (Concept $C1)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $S) (Concept $C2))) (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 274,
+          "line": 270,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C1) (Concept $C2))) $T1)\n       ((Inheritance (Concept $S) (Concept $C2)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $C1) (Concept $S))) (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 281,
+          "line": 277,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Not $A) $T)) ($A (Truth_Negation $T)))",
+          "end_line": 284,
+          "line": 284,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Inheritance $A $B) $Truth))\n   ((Inheritance $B $A) (Truth_inversion (STV $B) $Truth)))",
+          "end_line": 288,
+          "line": 287,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Implication $A $B) $Truth))\n   ((Implication $B $A) (Truth_inversion (STV $B) $Truth)))",
+          "end_line": 292,
+          "line": 291,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Equivalence $A $B) $Truth))\n   ((Implication $A $B) (Truth_equivalenceToImplication (STV $A)\n                                                        (STV $B) $Truth)))",
+          "end_line": 297,
+          "line": 295,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Equivalence $A $B) $Truth))\n   ((Implication $B $A) (Truth_equivalenceToImplication (STV $A)\n                                                        (STV $B) $Truth)))",
+          "end_line": 301,
+          "line": 299,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Similarity $A $B) $T1)\n       ((Similarity $B $C) $T2))\n   ((Similarity $A $C) (Truth_transitiveSimilarity (STV $A)\n                                                   (STV $B)\n                                                   (STV $C) $T1 $T2)))",
+          "end_line": 308,
+          "line": 304,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation $A $B) $TruthAB)\n       ((Implication $A $C) $TruthAC))\n   ((Evaluation $C $B) (Truth_evaluationImplication (STV $A)\n                                                    (STV $B)\n                                                    (STV $C) $TruthAB $TruthAC)))",
+          "end_line": 315,
+          "line": 311,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Member $A $B) $T1)\n       ((Inheritance $B $C) $T2))\n   ((Member $A $C) (Truth_Deduction (STV $A)\n                                    (STV $B)\n                                    (STV $C) $T1 $T2)))",
+          "end_line": 323,
+          "line": 319,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (StampDisjoint $Ev1 $Ev2)\n   (if (== $Ev1 ())\n       True\n       (let* (($x (car-atom $Ev1))\n              ($rest (cdr-atom $Ev1)))\n             (if (is-member $x $Ev2)\n                 False\n                 (StampDisjoint $rest $Ev2)))))",
+          "end_line": 342,
+          "line": 335,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "StampDisjoint"
+        },
+        {
+          "definition": "(= (BestConfidenceCandidate $tuple)\n   (BestCandidate ConfidenceRank () $tuple))",
+          "end_line": 413,
+          "line": 412,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "BestConfidenceCandidate"
+        }
+      ],
+      "source_present": true,
+      "stdout": "(C7PROBE revision-one ())\ntrue\ntrue\n",
+      "stvs": []
+    },
+    {
+      "expression": "(Truth_ModusPonens (stv 1.0 0.0) (stv 1.0 1.0))",
+      "id": "mp-zero",
+      "preamble": "(= (STV A) (stv 0.4 0.8))\n(= (STV B) (stv 0.4 0.8))\n(= (STV C) (stv 0.4 0.8))",
+      "production_integrated": false,
+      "result": "(C7PROBE mp-zero (stv 1.0 0.0))",
+      "runtime_result_kind": "STV-returned",
+      "scope": "Exact wrapper/control probe; do not generalize a failing probe to every possible signature.",
+      "source": [
+        {
+          "definition": "(= (Truth_ModusPonens (stv $Ps $Pc) (stv $PQs $PQc)) \n   (stv (+ (* $Ps $PQs) (* 0.02 (- 1 $Ps)))\n        (* (* $Ps $PQs) (* $Pc $PQc))))",
+          "end_line": 126,
+          "line": 124,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "Truth_ModusPonens"
+        },
+        {
+          "definition": "(= (|- ($T $T1) \n       ($T $T2))\n   ($T (Truth_Revision $T1 $T2)))",
+          "end_line": 213,
+          "line": 211,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ($A $T1) \n       ((Implication $A $B) $T2))\n   ($B (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 218,
+          "line": 216,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ($A $TruthA)\n       (($LinkType $A $B) $TruthAB))\n   (if (SymmetricModusPonensRuleGuard $LinkType)\n       ($B (Truth_SymmetricModusPonens $TruthA $TruthAB)) (empty)))",
+          "end_line": 229,
+          "line": 226,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- (($LinkType $A $B) $T1)\n       (($LinkType $B $C) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $C)\n        (Truth_Deduction (STV $A)\n                         (STV $B)\n                         (STV $C) $T1 $T2)) (empty)))",
+          "end_line": 242,
+          "line": 236,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- (($LinkType $C $A) $T1)\n       (($LinkType $C $B) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $B) (Truth_Induction (STV $A)\n                                           (STV $B)\n                                           (STV $C) $T1 $T2)) (empty)))",
+          "end_line": 251,
+          "line": 246,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- (($LinkType $A $C) $T1)\n       (($LinkType $B $C) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $B) (Truth_Abduction (STV $A)\n                                           (STV $B)\n                                           (STV $C) $T1 $T2)) (empty)))",
+          "end_line": 259,
+          "line": 254,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C))) $T1)\n       ((Inheritance (Concept $S) (Concept $C)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $S))) (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 267,
+          "line": 263,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C1) (Concept $C2))) $T1)\n       ((Inheritance (Concept $S) (Concept $C1)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $S) (Concept $C2))) (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 274,
+          "line": 270,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C1) (Concept $C2))) $T1)\n       ((Inheritance (Concept $S) (Concept $C2)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $C1) (Concept $S))) (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 281,
+          "line": 277,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Not $A) $T)) ($A (Truth_Negation $T)))",
+          "end_line": 284,
+          "line": 284,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Inheritance $A $B) $Truth))\n   ((Inheritance $B $A) (Truth_inversion (STV $B) $Truth)))",
+          "end_line": 288,
+          "line": 287,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Implication $A $B) $Truth))\n   ((Implication $B $A) (Truth_inversion (STV $B) $Truth)))",
+          "end_line": 292,
+          "line": 291,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Equivalence $A $B) $Truth))\n   ((Implication $A $B) (Truth_equivalenceToImplication (STV $A)\n                                                        (STV $B) $Truth)))",
+          "end_line": 297,
+          "line": 295,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Equivalence $A $B) $Truth))\n   ((Implication $B $A) (Truth_equivalenceToImplication (STV $A)\n                                                        (STV $B) $Truth)))",
+          "end_line": 301,
+          "line": 299,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Similarity $A $B) $T1)\n       ((Similarity $B $C) $T2))\n   ((Similarity $A $C) (Truth_transitiveSimilarity (STV $A)\n                                                   (STV $B)\n                                                   (STV $C) $T1 $T2)))",
+          "end_line": 308,
+          "line": 304,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation $A $B) $TruthAB)\n       ((Implication $A $C) $TruthAC))\n   ((Evaluation $C $B) (Truth_evaluationImplication (STV $A)\n                                                    (STV $B)\n                                                    (STV $C) $TruthAB $TruthAC)))",
+          "end_line": 315,
+          "line": 311,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Member $A $B) $T1)\n       ((Inheritance $B $C) $T2))\n   ((Member $A $C) (Truth_Deduction (STV $A)\n                                    (STV $B)\n                                    (STV $C) $T1 $T2)))",
+          "end_line": 323,
+          "line": 319,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (StampDisjoint $Ev1 $Ev2)\n   (if (== $Ev1 ())\n       True\n       (let* (($x (car-atom $Ev1))\n              ($rest (cdr-atom $Ev1)))\n             (if (is-member $x $Ev2)\n                 False\n                 (StampDisjoint $rest $Ev2)))))",
+          "end_line": 342,
+          "line": 335,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "StampDisjoint"
+        },
+        {
+          "definition": "(= (BestConfidenceCandidate $tuple)\n   (BestCandidate ConfidenceRank () $tuple))",
+          "end_line": 413,
+          "line": 412,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "BestConfidenceCandidate"
+        }
+      ],
+      "source_present": true,
+      "stdout": "(C7PROBE mp-zero (stv 1.0 0.0))\ntrue\ntrue\n",
+      "stvs": [
+        {
+          "confidence": 0.0,
+          "strength": 1.0
+        }
+      ]
+    },
+    {
+      "expression": "(Truth_ModusPonens (stv 1.0 1.0) (stv 1.0 1.0))",
+      "id": "mp-one",
+      "preamble": "(= (STV A) (stv 0.4 0.8))\n(= (STV B) (stv 0.4 0.8))\n(= (STV C) (stv 0.4 0.8))",
+      "production_integrated": false,
+      "result": "(C7PROBE mp-one (stv 1.0 1.0))",
+      "runtime_result_kind": "STV-returned",
+      "scope": "Exact wrapper/control probe; do not generalize a failing probe to every possible signature.",
+      "source": [
+        {
+          "definition": "(= (Truth_ModusPonens (stv $Ps $Pc) (stv $PQs $PQc)) \n   (stv (+ (* $Ps $PQs) (* 0.02 (- 1 $Ps)))\n        (* (* $Ps $PQs) (* $Pc $PQc))))",
+          "end_line": 126,
+          "line": 124,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "Truth_ModusPonens"
+        },
+        {
+          "definition": "(= (|- ($T $T1) \n       ($T $T2))\n   ($T (Truth_Revision $T1 $T2)))",
+          "end_line": 213,
+          "line": 211,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ($A $T1) \n       ((Implication $A $B) $T2))\n   ($B (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 218,
+          "line": 216,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ($A $TruthA)\n       (($LinkType $A $B) $TruthAB))\n   (if (SymmetricModusPonensRuleGuard $LinkType)\n       ($B (Truth_SymmetricModusPonens $TruthA $TruthAB)) (empty)))",
+          "end_line": 229,
+          "line": 226,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- (($LinkType $A $B) $T1)\n       (($LinkType $B $C) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $C)\n        (Truth_Deduction (STV $A)\n                         (STV $B)\n                         (STV $C) $T1 $T2)) (empty)))",
+          "end_line": 242,
+          "line": 236,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- (($LinkType $C $A) $T1)\n       (($LinkType $C $B) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $B) (Truth_Induction (STV $A)\n                                           (STV $B)\n                                           (STV $C) $T1 $T2)) (empty)))",
+          "end_line": 251,
+          "line": 246,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- (($LinkType $A $C) $T1)\n       (($LinkType $B $C) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $B) (Truth_Abduction (STV $A)\n                                           (STV $B)\n                                           (STV $C) $T1 $T2)) (empty)))",
+          "end_line": 259,
+          "line": 254,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C))) $T1)\n       ((Inheritance (Concept $S) (Concept $C)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $S))) (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 267,
+          "line": 263,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C1) (Concept $C2))) $T1)\n       ((Inheritance (Concept $S) (Concept $C1)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $S) (Concept $C2))) (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 274,
+          "line": 270,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C1) (Concept $C2))) $T1)\n       ((Inheritance (Concept $S) (Concept $C2)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $C1) (Concept $S))) (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 281,
+          "line": 277,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Not $A) $T)) ($A (Truth_Negation $T)))",
+          "end_line": 284,
+          "line": 284,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Inheritance $A $B) $Truth))\n   ((Inheritance $B $A) (Truth_inversion (STV $B) $Truth)))",
+          "end_line": 288,
+          "line": 287,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Implication $A $B) $Truth))\n   ((Implication $B $A) (Truth_inversion (STV $B) $Truth)))",
+          "end_line": 292,
+          "line": 291,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Equivalence $A $B) $Truth))\n   ((Implication $A $B) (Truth_equivalenceToImplication (STV $A)\n                                                        (STV $B) $Truth)))",
+          "end_line": 297,
+          "line": 295,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Equivalence $A $B) $Truth))\n   ((Implication $B $A) (Truth_equivalenceToImplication (STV $A)\n                                                        (STV $B) $Truth)))",
+          "end_line": 301,
+          "line": 299,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Similarity $A $B) $T1)\n       ((Similarity $B $C) $T2))\n   ((Similarity $A $C) (Truth_transitiveSimilarity (STV $A)\n                                                   (STV $B)\n                                                   (STV $C) $T1 $T2)))",
+          "end_line": 308,
+          "line": 304,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation $A $B) $TruthAB)\n       ((Implication $A $C) $TruthAC))\n   ((Evaluation $C $B) (Truth_evaluationImplication (STV $A)\n                                                    (STV $B)\n                                                    (STV $C) $TruthAB $TruthAC)))",
+          "end_line": 315,
+          "line": 311,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Member $A $B) $T1)\n       ((Inheritance $B $C) $T2))\n   ((Member $A $C) (Truth_Deduction (STV $A)\n                                    (STV $B)\n                                    (STV $C) $T1 $T2)))",
+          "end_line": 323,
+          "line": 319,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (StampDisjoint $Ev1 $Ev2)\n   (if (== $Ev1 ())\n       True\n       (let* (($x (car-atom $Ev1))\n              ($rest (cdr-atom $Ev1)))\n             (if (is-member $x $Ev2)\n                 False\n                 (StampDisjoint $rest $Ev2)))))",
+          "end_line": 342,
+          "line": 335,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "StampDisjoint"
+        },
+        {
+          "definition": "(= (BestConfidenceCandidate $tuple)\n   (BestCandidate ConfidenceRank () $tuple))",
+          "end_line": 413,
+          "line": 412,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "BestConfidenceCandidate"
+        }
+      ],
+      "source_present": true,
+      "stdout": "(C7PROBE mp-one (stv 1.0 1.0))\ntrue\ntrue\n",
+      "stvs": [
+        {
+          "confidence": 1.0,
+          "strength": 1.0
+        }
+      ]
+    },
+    {
+      "expression": "(BestConfidenceCandidate (((stv 1.0 0.0) (a)) ((stv 0.0 0.0) (b))))",
+      "id": "choice-zero",
+      "preamble": "(= (STV A) (stv 0.4 0.8))\n(= (STV B) (stv 0.4 0.8))\n(= (STV C) (stv 0.4 0.8))",
+      "production_integrated": false,
+      "result": "(C7PROBE choice-zero ())",
+      "runtime_result_kind": "empty",
+      "scope": "Exact wrapper/control probe; do not generalize a failing probe to every possible signature.",
+      "source": [
+        {
+          "definition": "(= (|- ($T $T1) \n       ($T $T2))\n   ($T (Truth_Revision $T1 $T2)))",
+          "end_line": 213,
+          "line": 211,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ($A $T1) \n       ((Implication $A $B) $T2))\n   ($B (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 218,
+          "line": 216,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ($A $TruthA)\n       (($LinkType $A $B) $TruthAB))\n   (if (SymmetricModusPonensRuleGuard $LinkType)\n       ($B (Truth_SymmetricModusPonens $TruthA $TruthAB)) (empty)))",
+          "end_line": 229,
+          "line": 226,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- (($LinkType $A $B) $T1)\n       (($LinkType $B $C) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $C)\n        (Truth_Deduction (STV $A)\n                         (STV $B)\n                         (STV $C) $T1 $T2)) (empty)))",
+          "end_line": 242,
+          "line": 236,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- (($LinkType $C $A) $T1)\n       (($LinkType $C $B) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $B) (Truth_Induction (STV $A)\n                                           (STV $B)\n                                           (STV $C) $T1 $T2)) (empty)))",
+          "end_line": 251,
+          "line": 246,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- (($LinkType $A $C) $T1)\n       (($LinkType $B $C) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $B) (Truth_Abduction (STV $A)\n                                           (STV $B)\n                                           (STV $C) $T1 $T2)) (empty)))",
+          "end_line": 259,
+          "line": 254,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C))) $T1)\n       ((Inheritance (Concept $S) (Concept $C)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $S))) (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 267,
+          "line": 263,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C1) (Concept $C2))) $T1)\n       ((Inheritance (Concept $S) (Concept $C1)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $S) (Concept $C2))) (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 274,
+          "line": 270,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C1) (Concept $C2))) $T1)\n       ((Inheritance (Concept $S) (Concept $C2)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $C1) (Concept $S))) (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 281,
+          "line": 277,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Not $A) $T)) ($A (Truth_Negation $T)))",
+          "end_line": 284,
+          "line": 284,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Inheritance $A $B) $Truth))\n   ((Inheritance $B $A) (Truth_inversion (STV $B) $Truth)))",
+          "end_line": 288,
+          "line": 287,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Implication $A $B) $Truth))\n   ((Implication $B $A) (Truth_inversion (STV $B) $Truth)))",
+          "end_line": 292,
+          "line": 291,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Equivalence $A $B) $Truth))\n   ((Implication $A $B) (Truth_equivalenceToImplication (STV $A)\n                                                        (STV $B) $Truth)))",
+          "end_line": 297,
+          "line": 295,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Equivalence $A $B) $Truth))\n   ((Implication $B $A) (Truth_equivalenceToImplication (STV $A)\n                                                        (STV $B) $Truth)))",
+          "end_line": 301,
+          "line": 299,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Similarity $A $B) $T1)\n       ((Similarity $B $C) $T2))\n   ((Similarity $A $C) (Truth_transitiveSimilarity (STV $A)\n                                                   (STV $B)\n                                                   (STV $C) $T1 $T2)))",
+          "end_line": 308,
+          "line": 304,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation $A $B) $TruthAB)\n       ((Implication $A $C) $TruthAC))\n   ((Evaluation $C $B) (Truth_evaluationImplication (STV $A)\n                                                    (STV $B)\n                                                    (STV $C) $TruthAB $TruthAC)))",
+          "end_line": 315,
+          "line": 311,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Member $A $B) $T1)\n       ((Inheritance $B $C) $T2))\n   ((Member $A $C) (Truth_Deduction (STV $A)\n                                    (STV $B)\n                                    (STV $C) $T1 $T2)))",
+          "end_line": 323,
+          "line": 319,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (StampDisjoint $Ev1 $Ev2)\n   (if (== $Ev1 ())\n       True\n       (let* (($x (car-atom $Ev1))\n              ($rest (cdr-atom $Ev1)))\n             (if (is-member $x $Ev2)\n                 False\n                 (StampDisjoint $rest $Ev2)))))",
+          "end_line": 342,
+          "line": 335,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "StampDisjoint"
+        },
+        {
+          "definition": "(= (BestConfidenceCandidate $tuple)\n   (BestCandidate ConfidenceRank () $tuple))",
+          "end_line": 413,
+          "line": 412,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "BestConfidenceCandidate"
+        }
+      ],
+      "source_present": true,
+      "stdout": "(C7PROBE choice-zero ())\ntrue\ntrue\n",
+      "stvs": []
+    },
+    {
+      "expression": "(BestConfidenceCandidate (((stv 0.9 0.8) (a)) ((stv 0.1 0.8) (b))))",
+      "id": "choice-tie",
+      "preamble": "(= (STV A) (stv 0.4 0.8))\n(= (STV B) (stv 0.4 0.8))\n(= (STV C) (stv 0.4 0.8))",
+      "production_integrated": false,
+      "result": "(C7PROBE choice-tie ((stv 0.9 0.8) (a)))",
+      "runtime_result_kind": "STV-returned",
+      "scope": "Exact wrapper/control probe; do not generalize a failing probe to every possible signature.",
+      "source": [
+        {
+          "definition": "(= (|- ($T $T1) \n       ($T $T2))\n   ($T (Truth_Revision $T1 $T2)))",
+          "end_line": 213,
+          "line": 211,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ($A $T1) \n       ((Implication $A $B) $T2))\n   ($B (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 218,
+          "line": 216,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ($A $TruthA)\n       (($LinkType $A $B) $TruthAB))\n   (if (SymmetricModusPonensRuleGuard $LinkType)\n       ($B (Truth_SymmetricModusPonens $TruthA $TruthAB)) (empty)))",
+          "end_line": 229,
+          "line": 226,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- (($LinkType $A $B) $T1)\n       (($LinkType $B $C) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $C)\n        (Truth_Deduction (STV $A)\n                         (STV $B)\n                         (STV $C) $T1 $T2)) (empty)))",
+          "end_line": 242,
+          "line": 236,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- (($LinkType $C $A) $T1)\n       (($LinkType $C $B) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $B) (Truth_Induction (STV $A)\n                                           (STV $B)\n                                           (STV $C) $T1 $T2)) (empty)))",
+          "end_line": 251,
+          "line": 246,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- (($LinkType $A $C) $T1)\n       (($LinkType $B $C) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $B) (Truth_Abduction (STV $A)\n                                           (STV $B)\n                                           (STV $C) $T1 $T2)) (empty)))",
+          "end_line": 259,
+          "line": 254,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C))) $T1)\n       ((Inheritance (Concept $S) (Concept $C)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $S))) (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 267,
+          "line": 263,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C1) (Concept $C2))) $T1)\n       ((Inheritance (Concept $S) (Concept $C1)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $S) (Concept $C2))) (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 274,
+          "line": 270,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C1) (Concept $C2))) $T1)\n       ((Inheritance (Concept $S) (Concept $C2)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $C1) (Concept $S))) (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 281,
+          "line": 277,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Not $A) $T)) ($A (Truth_Negation $T)))",
+          "end_line": 284,
+          "line": 284,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Inheritance $A $B) $Truth))\n   ((Inheritance $B $A) (Truth_inversion (STV $B) $Truth)))",
+          "end_line": 288,
+          "line": 287,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Implication $A $B) $Truth))\n   ((Implication $B $A) (Truth_inversion (STV $B) $Truth)))",
+          "end_line": 292,
+          "line": 291,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Equivalence $A $B) $Truth))\n   ((Implication $A $B) (Truth_equivalenceToImplication (STV $A)\n                                                        (STV $B) $Truth)))",
+          "end_line": 297,
+          "line": 295,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Equivalence $A $B) $Truth))\n   ((Implication $B $A) (Truth_equivalenceToImplication (STV $A)\n                                                        (STV $B) $Truth)))",
+          "end_line": 301,
+          "line": 299,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Similarity $A $B) $T1)\n       ((Similarity $B $C) $T2))\n   ((Similarity $A $C) (Truth_transitiveSimilarity (STV $A)\n                                                   (STV $B)\n                                                   (STV $C) $T1 $T2)))",
+          "end_line": 308,
+          "line": 304,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation $A $B) $TruthAB)\n       ((Implication $A $C) $TruthAC))\n   ((Evaluation $C $B) (Truth_evaluationImplication (STV $A)\n                                                    (STV $B)\n                                                    (STV $C) $TruthAB $TruthAC)))",
+          "end_line": 315,
+          "line": 311,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Member $A $B) $T1)\n       ((Inheritance $B $C) $T2))\n   ((Member $A $C) (Truth_Deduction (STV $A)\n                                    (STV $B)\n                                    (STV $C) $T1 $T2)))",
+          "end_line": 323,
+          "line": 319,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (StampDisjoint $Ev1 $Ev2)\n   (if (== $Ev1 ())\n       True\n       (let* (($x (car-atom $Ev1))\n              ($rest (cdr-atom $Ev1)))\n             (if (is-member $x $Ev2)\n                 False\n                 (StampDisjoint $rest $Ev2)))))",
+          "end_line": 342,
+          "line": 335,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "StampDisjoint"
+        },
+        {
+          "definition": "(= (BestConfidenceCandidate $tuple)\n   (BestCandidate ConfidenceRank () $tuple))",
+          "end_line": 413,
+          "line": 412,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "BestConfidenceCandidate"
+        }
+      ],
+      "source_present": true,
+      "stdout": "(C7PROBE choice-tie ((stv 0.9 0.8) (a)))\ntrue\ntrue\n",
+      "stvs": [
+        {
+          "confidence": 0.8,
+          "strength": 0.9
+        }
+      ]
+    },
+    {
+      "expression": "(Truth_SymmetricModusPonens (stv 0.0 0.8) (stv 1.0 0.8))",
+      "id": "symmetric-zero-strength",
+      "preamble": "(= (STV A) (stv 0.4 0.8))\n(= (STV B) (stv 0.4 0.8))\n(= (STV C) (stv 0.4 0.8))",
+      "production_integrated": false,
+      "result": "(C7PROBE symmetric-zero-strength (stv 0.4 0.6400000000000001))",
+      "runtime_result_kind": "STV-returned",
+      "scope": "Exact wrapper/control probe; do not generalize a failing probe to every possible signature.",
+      "source": [
+        {
+          "definition": "(= (Truth_SymmetricModusPonens (stv $sA $cA) (stv $sAB $cAB))\n   (let* (($snotAB 0.2)\n          ($cnotAB 1.0))\n         (stv (+ (* $sA $sAB) (* (* $snotAB (negate $sA)) (+ 1.0 $sAB)))\n              (* (* $cA $cAB) (Truth_or $sA $sAB)))))",
+          "end_line": 133,
+          "line": 129,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "Truth_SymmetricModusPonens"
+        },
+        {
+          "definition": "(= (|- ($T $T1) \n       ($T $T2))\n   ($T (Truth_Revision $T1 $T2)))",
+          "end_line": 213,
+          "line": 211,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ($A $T1) \n       ((Implication $A $B) $T2))\n   ($B (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 218,
+          "line": 216,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ($A $TruthA)\n       (($LinkType $A $B) $TruthAB))\n   (if (SymmetricModusPonensRuleGuard $LinkType)\n       ($B (Truth_SymmetricModusPonens $TruthA $TruthAB)) (empty)))",
+          "end_line": 229,
+          "line": 226,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- (($LinkType $A $B) $T1)\n       (($LinkType $B $C) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $C)\n        (Truth_Deduction (STV $A)\n                         (STV $B)\n                         (STV $C) $T1 $T2)) (empty)))",
+          "end_line": 242,
+          "line": 236,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- (($LinkType $C $A) $T1)\n       (($LinkType $C $B) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $B) (Truth_Induction (STV $A)\n                                           (STV $B)\n                                           (STV $C) $T1 $T2)) (empty)))",
+          "end_line": 251,
+          "line": 246,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- (($LinkType $A $C) $T1)\n       (($LinkType $B $C) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $B) (Truth_Abduction (STV $A)\n                                           (STV $B)\n                                           (STV $C) $T1 $T2)) (empty)))",
+          "end_line": 259,
+          "line": 254,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C))) $T1)\n       ((Inheritance (Concept $S) (Concept $C)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $S))) (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 267,
+          "line": 263,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C1) (Concept $C2))) $T1)\n       ((Inheritance (Concept $S) (Concept $C1)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $S) (Concept $C2))) (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 274,
+          "line": 270,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C1) (Concept $C2))) $T1)\n       ((Inheritance (Concept $S) (Concept $C2)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $C1) (Concept $S))) (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 281,
+          "line": 277,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Not $A) $T)) ($A (Truth_Negation $T)))",
+          "end_line": 284,
+          "line": 284,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Inheritance $A $B) $Truth))\n   ((Inheritance $B $A) (Truth_inversion (STV $B) $Truth)))",
+          "end_line": 288,
+          "line": 287,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Implication $A $B) $Truth))\n   ((Implication $B $A) (Truth_inversion (STV $B) $Truth)))",
+          "end_line": 292,
+          "line": 291,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Equivalence $A $B) $Truth))\n   ((Implication $A $B) (Truth_equivalenceToImplication (STV $A)\n                                                        (STV $B) $Truth)))",
+          "end_line": 297,
+          "line": 295,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Equivalence $A $B) $Truth))\n   ((Implication $B $A) (Truth_equivalenceToImplication (STV $A)\n                                                        (STV $B) $Truth)))",
+          "end_line": 301,
+          "line": 299,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Similarity $A $B) $T1)\n       ((Similarity $B $C) $T2))\n   ((Similarity $A $C) (Truth_transitiveSimilarity (STV $A)\n                                                   (STV $B)\n                                                   (STV $C) $T1 $T2)))",
+          "end_line": 308,
+          "line": 304,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation $A $B) $TruthAB)\n       ((Implication $A $C) $TruthAC))\n   ((Evaluation $C $B) (Truth_evaluationImplication (STV $A)\n                                                    (STV $B)\n                                                    (STV $C) $TruthAB $TruthAC)))",
+          "end_line": 315,
+          "line": 311,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Member $A $B) $T1)\n       ((Inheritance $B $C) $T2))\n   ((Member $A $C) (Truth_Deduction (STV $A)\n                                    (STV $B)\n                                    (STV $C) $T1 $T2)))",
+          "end_line": 323,
+          "line": 319,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (StampDisjoint $Ev1 $Ev2)\n   (if (== $Ev1 ())\n       True\n       (let* (($x (car-atom $Ev1))\n              ($rest (cdr-atom $Ev1)))\n             (if (is-member $x $Ev2)\n                 False\n                 (StampDisjoint $rest $Ev2)))))",
+          "end_line": 342,
+          "line": 335,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "StampDisjoint"
+        },
+        {
+          "definition": "(= (BestConfidenceCandidate $tuple)\n   (BestCandidate ConfidenceRank () $tuple))",
+          "end_line": 413,
+          "line": 412,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "BestConfidenceCandidate"
+        }
+      ],
+      "source_present": true,
+      "stdout": "(C7PROBE symmetric-zero-strength (stv 0.4 0.6400000000000001))\ntrue\ntrue\n",
+      "stvs": [
+        {
+          "confidence": 0.6400000000000001,
+          "strength": 0.4
+        }
+      ]
+    },
+    {
+      "expression": "(StampDisjoint (a shared) (b shared))",
+      "id": "stamp-shared",
+      "preamble": "(= (STV A) (stv 0.4 0.8))\n(= (STV B) (stv 0.4 0.8))\n(= (STV C) (stv 0.4 0.8))",
+      "production_integrated": false,
+      "result": "(C7PROBE stamp-shared false)",
+      "runtime_result_kind": "non-STV-result",
+      "scope": "Exact wrapper/control probe; do not generalize a failing probe to every possible signature.",
+      "source": [
+        {
+          "definition": "(= (|- ($T $T1) \n       ($T $T2))\n   ($T (Truth_Revision $T1 $T2)))",
+          "end_line": 213,
+          "line": 211,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ($A $T1) \n       ((Implication $A $B) $T2))\n   ($B (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 218,
+          "line": 216,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ($A $TruthA)\n       (($LinkType $A $B) $TruthAB))\n   (if (SymmetricModusPonensRuleGuard $LinkType)\n       ($B (Truth_SymmetricModusPonens $TruthA $TruthAB)) (empty)))",
+          "end_line": 229,
+          "line": 226,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- (($LinkType $A $B) $T1)\n       (($LinkType $B $C) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $C)\n        (Truth_Deduction (STV $A)\n                         (STV $B)\n                         (STV $C) $T1 $T2)) (empty)))",
+          "end_line": 242,
+          "line": 236,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- (($LinkType $C $A) $T1)\n       (($LinkType $C $B) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $B) (Truth_Induction (STV $A)\n                                           (STV $B)\n                                           (STV $C) $T1 $T2)) (empty)))",
+          "end_line": 251,
+          "line": 246,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- (($LinkType $A $C) $T1)\n       (($LinkType $B $C) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $B) (Truth_Abduction (STV $A)\n                                           (STV $B)\n                                           (STV $C) $T1 $T2)) (empty)))",
+          "end_line": 259,
+          "line": 254,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C))) $T1)\n       ((Inheritance (Concept $S) (Concept $C)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $S))) (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 267,
+          "line": 263,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C1) (Concept $C2))) $T1)\n       ((Inheritance (Concept $S) (Concept $C1)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $S) (Concept $C2))) (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 274,
+          "line": 270,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C1) (Concept $C2))) $T1)\n       ((Inheritance (Concept $S) (Concept $C2)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $C1) (Concept $S))) (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 281,
+          "line": 277,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Not $A) $T)) ($A (Truth_Negation $T)))",
+          "end_line": 284,
+          "line": 284,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Inheritance $A $B) $Truth))\n   ((Inheritance $B $A) (Truth_inversion (STV $B) $Truth)))",
+          "end_line": 288,
+          "line": 287,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Implication $A $B) $Truth))\n   ((Implication $B $A) (Truth_inversion (STV $B) $Truth)))",
+          "end_line": 292,
+          "line": 291,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Equivalence $A $B) $Truth))\n   ((Implication $A $B) (Truth_equivalenceToImplication (STV $A)\n                                                        (STV $B) $Truth)))",
+          "end_line": 297,
+          "line": 295,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Equivalence $A $B) $Truth))\n   ((Implication $B $A) (Truth_equivalenceToImplication (STV $A)\n                                                        (STV $B) $Truth)))",
+          "end_line": 301,
+          "line": 299,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Similarity $A $B) $T1)\n       ((Similarity $B $C) $T2))\n   ((Similarity $A $C) (Truth_transitiveSimilarity (STV $A)\n                                                   (STV $B)\n                                                   (STV $C) $T1 $T2)))",
+          "end_line": 308,
+          "line": 304,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation $A $B) $TruthAB)\n       ((Implication $A $C) $TruthAC))\n   ((Evaluation $C $B) (Truth_evaluationImplication (STV $A)\n                                                    (STV $B)\n                                                    (STV $C) $TruthAB $TruthAC)))",
+          "end_line": 315,
+          "line": 311,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Member $A $B) $T1)\n       ((Inheritance $B $C) $T2))\n   ((Member $A $C) (Truth_Deduction (STV $A)\n                                    (STV $B)\n                                    (STV $C) $T1 $T2)))",
+          "end_line": 323,
+          "line": 319,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (StampDisjoint $Ev1 $Ev2)\n   (if (== $Ev1 ())\n       True\n       (let* (($x (car-atom $Ev1))\n              ($rest (cdr-atom $Ev1)))\n             (if (is-member $x $Ev2)\n                 False\n                 (StampDisjoint $rest $Ev2)))))",
+          "end_line": 342,
+          "line": 335,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "StampDisjoint"
+        },
+        {
+          "definition": "(= (BestConfidenceCandidate $tuple)\n   (BestCandidate ConfidenceRank () $tuple))",
+          "end_line": 413,
+          "line": 412,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "BestConfidenceCandidate"
+        }
+      ],
+      "source_present": true,
+      "stdout": "(C7PROBE stamp-shared false)\ntrue\ntrue\n",
+      "stvs": []
+    },
+    {
+      "expression": "(StampDisjoint (a) (b))",
+      "id": "stamp-independent",
+      "preamble": "(= (STV A) (stv 0.4 0.8))\n(= (STV B) (stv 0.4 0.8))\n(= (STV C) (stv 0.4 0.8))",
+      "production_integrated": false,
+      "result": "(C7PROBE stamp-independent true)",
+      "runtime_result_kind": "non-STV-result",
+      "scope": "Exact wrapper/control probe; do not generalize a failing probe to every possible signature.",
+      "source": [
+        {
+          "definition": "(= (|- ($T $T1) \n       ($T $T2))\n   ($T (Truth_Revision $T1 $T2)))",
+          "end_line": 213,
+          "line": 211,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ($A $T1) \n       ((Implication $A $B) $T2))\n   ($B (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 218,
+          "line": 216,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ($A $TruthA)\n       (($LinkType $A $B) $TruthAB))\n   (if (SymmetricModusPonensRuleGuard $LinkType)\n       ($B (Truth_SymmetricModusPonens $TruthA $TruthAB)) (empty)))",
+          "end_line": 229,
+          "line": 226,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- (($LinkType $A $B) $T1)\n       (($LinkType $B $C) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $C)\n        (Truth_Deduction (STV $A)\n                         (STV $B)\n                         (STV $C) $T1 $T2)) (empty)))",
+          "end_line": 242,
+          "line": 236,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- (($LinkType $C $A) $T1)\n       (($LinkType $C $B) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $B) (Truth_Induction (STV $A)\n                                           (STV $B)\n                                           (STV $C) $T1 $T2)) (empty)))",
+          "end_line": 251,
+          "line": 246,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- (($LinkType $A $C) $T1)\n       (($LinkType $B $C) $T2))\n   (if (SyllogisticRuleGuard $LinkType)\n       (($LinkType $A $B) (Truth_Abduction (STV $A)\n                                           (STV $B)\n                                           (STV $C) $T1 $T2)) (empty)))",
+          "end_line": 259,
+          "line": 254,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C))) $T1)\n       ((Inheritance (Concept $S) (Concept $C)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $S))) (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 267,
+          "line": 263,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C1) (Concept $C2))) $T1)\n       ((Inheritance (Concept $S) (Concept $C1)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $S) (Concept $C2))) (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 274,
+          "line": 270,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation (Predicate $x)\n                    (List (Concept $C1) (Concept $C2))) $T1)\n       ((Inheritance (Concept $S) (Concept $C2)) $T2))\n   ((Evaluation (Predicate $x)\n                (List (Concept $C1) (Concept $S))) (Truth_ModusPonens $T1 $T2)))",
+          "end_line": 281,
+          "line": 277,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Not $A) $T)) ($A (Truth_Negation $T)))",
+          "end_line": 284,
+          "line": 284,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Inheritance $A $B) $Truth))\n   ((Inheritance $B $A) (Truth_inversion (STV $B) $Truth)))",
+          "end_line": 288,
+          "line": 287,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Implication $A $B) $Truth))\n   ((Implication $B $A) (Truth_inversion (STV $B) $Truth)))",
+          "end_line": 292,
+          "line": 291,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Equivalence $A $B) $Truth))\n   ((Implication $A $B) (Truth_equivalenceToImplication (STV $A)\n                                                        (STV $B) $Truth)))",
+          "end_line": 297,
+          "line": 295,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Equivalence $A $B) $Truth))\n   ((Implication $B $A) (Truth_equivalenceToImplication (STV $A)\n                                                        (STV $B) $Truth)))",
+          "end_line": 301,
+          "line": 299,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Similarity $A $B) $T1)\n       ((Similarity $B $C) $T2))\n   ((Similarity $A $C) (Truth_transitiveSimilarity (STV $A)\n                                                   (STV $B)\n                                                   (STV $C) $T1 $T2)))",
+          "end_line": 308,
+          "line": 304,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Evaluation $A $B) $TruthAB)\n       ((Implication $A $C) $TruthAC))\n   ((Evaluation $C $B) (Truth_evaluationImplication (STV $A)\n                                                    (STV $B)\n                                                    (STV $C) $TruthAB $TruthAC)))",
+          "end_line": 315,
+          "line": 311,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (|- ((Member $A $B) $T1)\n       ((Inheritance $B $C) $T2))\n   ((Member $A $C) (Truth_Deduction (STV $A)\n                                    (STV $B)\n                                    (STV $C) $T1 $T2)))",
+          "end_line": 323,
+          "line": 319,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "|-"
+        },
+        {
+          "definition": "(= (StampDisjoint $Ev1 $Ev2)\n   (if (== $Ev1 ())\n       True\n       (let* (($x (car-atom $Ev1))\n              ($rest (cdr-atom $Ev1)))\n             (if (is-member $x $Ev2)\n                 False\n                 (StampDisjoint $rest $Ev2)))))",
+          "end_line": 342,
+          "line": 335,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "StampDisjoint"
+        },
+        {
+          "definition": "(= (BestConfidenceCandidate $tuple)\n   (BestCandidate ConfidenceRank () $tuple))",
+          "end_line": 413,
+          "line": 412,
+          "source": "vendor/pln/lib_pln.metta",
+          "symbol": "BestConfidenceCandidate"
+        }
+      ],
+      "source_present": true,
+      "stdout": "(C7PROBE stamp-independent true)\ntrue\ntrue\n",
+      "stvs": []
+    }
+  ]
+}

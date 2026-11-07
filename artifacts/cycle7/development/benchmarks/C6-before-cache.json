@@ -1,0 +1,221 @@
+{
+  "checkpoint_bytes": 1565206,
+  "model_version": "801834df61c75a99c3a3e1d0a91b0fc30ba6875238ba5ea0f5731fe2fe2a1a08",
+  "production_code_hash": "ac8dfcae9ab1c6e687631da00cae931d0e7e92af8e630aeff05fe3e0c2c4f5a3",
+  "profile": "         5882923 function calls (5375802 primitive calls) in 6.086 seconds\n\n   Ordered by: cumulative time\n   List reduced from 333 to 40 due to restriction <40>\n\n   ncalls  tottime  percall  cumtime  percall filename:lineno(function)\n        1    0.030    0.030    6.111    6.111 inference.py:57(infer_moves)\n        1    0.064    0.064    5.890    5.890 inference.py:37(infer_moves)\n        1    0.056    0.056    3.353    3.353 inference.py:28(infer_moves)\n        3    0.040    0.013    2.167    0.722 native.py:17(batch)\n   114136    0.098    0.000    2.160    0.000 common.py:13(digest)\n   150565    0.134    0.000    1.818    0.000 __init__.py:183(dumps)\n      642    0.009    0.000    1.730    0.003 ontology.py:13(descriptors)\n   150565    0.135    0.000    1.659    0.000 encoder.py:183(encode)\n   117317    0.046    0.000    1.611    0.000 common.py:10(canonical)\n   150565    1.469    0.000    1.469    0.000 encoder.py:205(iterencode)\n        3    0.002    0.001    1.447    0.482 runtime.py:82(batch)\n        3    0.000    0.000    1.440    0.480 runtime.py:65(execute)\n        3    0.000    0.000    1.438    0.479 subprocess.py:506(run)\n        3    0.000    0.000    1.436    0.479 subprocess.py:1165(communicate)\n        3    0.001    0.000    1.436    0.479 subprocess.py:2062(_communicate)\n      261    0.001    0.000    1.433    0.005 selectors.py:402(select)\n      261    1.433    0.005    1.433    0.005 {method 'poll' of 'select.poll' objects}\n      428    0.012    0.000    1.128    0.003 descriptors.py:14(descriptors)\n      428    0.010    0.000    1.017    0.002 descriptors.py:31(descriptors)\n      428    0.017    0.000    0.929    0.002 __init__.py:36(observe)\n     3593    0.005    0.000    0.664    0.000 __init__.py:111(id)\n     3596    0.109    0.000    0.627    0.000 __init__.py:96(fen)\n    61935    0.028    0.000    0.612    0.000 dataclasses.py:1308(asdict)\n406541/61935    0.209    0.000    0.561    0.000 dataclasses.py:1332(_asdict_inner)\n    16800    0.005    0.000    0.513    0.000 native.py:10(version)\n    16460    0.129    0.000    0.458    0.000 inference.py:38(node)\n    61922    0.016    0.000    0.446    0.000 runtime.py:27(json)\n     2562    0.023    0.000    0.384    0.000 inference.py:49(conditional)\n   114136    0.381    0.000    0.381    0.000 {built-in method _hashlib.openssl_sha256}\n   236445    0.111    0.000    0.360    0.000 __init__.py:93(at)\n     2350    0.032    0.000    0.318    0.000 inference.py:58(chain)\n   356558    0.072    0.000    0.278    0.000 {built-in method builtins.next}\n    61935    0.199    0.000    0.242    0.000 dataclasses.py:1278(fields)\n   340113    0.201    0.000    0.201    0.000 __init__.py:94(<genexpr>)\n67587/988    0.027    0.000    0.182    0.000 dataclasses.py:1382(<genexpr>)\n        5    0.003    0.001    0.177    0.035 model.py:26(version)\n   100688    0.097    0.000    0.166    0.000 __init__.py:29(symbol)\n    11672    0.024    0.000    0.123    0.000 ontology.py:8(relation)\n    48032    0.087    0.000    0.106    0.000 {built-in method builtins.sorted}\n      445    0.007    0.000    0.082    0.000 __init__.py:18(attack_observations)\n\n\n",
+  "records": [
+    {
+      "candidate_count": 214,
+      "digest": "7245d779a2f1047d3a48d5baf085d62a7f6c1e45fc21542ef24ef931b410d295",
+      "fen": "r1bqkbr1/pp1pp2p/2n5/2p2p2/4P2p/2N5/PPPP1R1N/R1BQKB2 w Qq - 3 10",
+      "fixture": "game-0",
+      "full_candidate_parity": true,
+      "runs": {
+        "cold": {
+          "cache_entries": 389,
+          "cache_hits": 16411,
+          "elapsed_seconds": 4.755242680199444,
+          "grounded_atoms": 19309,
+          "native_invocations": 389,
+          "peak_rss_kib": 260212,
+          "proof_bytes_estimate": 29831017,
+          "proof_graph_bytes": 38902925,
+          "proof_nodes": 16800,
+          "proof_occurrences": 21428,
+          "scheduled_invocations": 16800,
+          "serialized_candidate_bytes": 87747254,
+          "wall_seconds": 5.505029013380408
+        },
+        "reference": {
+          "cache_entries": 0,
+          "cache_hits": 0,
+          "elapsed_seconds": 30.869706229306757,
+          "grounded_atoms": 19309,
+          "native_invocations": 16800,
+          "peak_rss_kib": 260212,
+          "proof_bytes_estimate": 29831017,
+          "proof_graph_bytes": 38902925,
+          "proof_nodes": 16800,
+          "proof_occurrences": 21428,
+          "scheduled_invocations": 16800,
+          "serialized_candidate_bytes": 87747254,
+          "wall_seconds": 31.879079265519977
+        },
+        "warm": {
+          "cache_entries": 389,
+          "cache_hits": 16800,
+          "elapsed_seconds": 3.129314513877034,
+          "grounded_atoms": 19309,
+          "native_invocations": 0,
+          "peak_rss_kib": 260212,
+          "proof_bytes_estimate": 29831017,
+          "proof_graph_bytes": 38902925,
+          "proof_nodes": 16800,
+          "proof_occurrences": 21428,
+          "scheduled_invocations": 16800,
+          "serialized_candidate_bytes": 87747254,
+          "wall_seconds": 3.851437907665968
+        }
+      }
+    },
+    {
+      "candidate_count": 226,
+      "digest": "5a5a5d284027eb06c274251e006619eb86c2f13c27505ae367b612c12f39e679",
+      "fen": "rnb2bn1/pp1k1pp1/3pp1r1/q1p5/4P3/NPPB1N1p/P1QP1PPP/1RBK2R1 w - - 6 15",
+      "fixture": "c7-sicilian-708074-ply-28",
+      "full_candidate_parity": true,
+      "runs": {
+        "cold": {
+          "cache_entries": 398,
+          "cache_hits": 18517,
+          "elapsed_seconds": 4.952363533899188,
+          "grounded_atoms": 21559,
+          "native_invocations": 398,
+          "peak_rss_kib": 281796,
+          "proof_bytes_estimate": 32813928,
+          "proof_graph_bytes": 42740460,
+          "proof_nodes": 18915,
+          "proof_occurrences": 23945,
+          "scheduled_invocations": 18915,
+          "serialized_candidate_bytes": 95093134,
+          "wall_seconds": 5.933027078397572
+        },
+        "reference": {
+          "cache_entries": 0,
+          "cache_hits": 0,
+          "elapsed_seconds": 34.834020596928895,
+          "grounded_atoms": 21559,
+          "native_invocations": 18915,
+          "peak_rss_kib": 281796,
+          "proof_bytes_estimate": 32813928,
+          "proof_graph_bytes": 42740460,
+          "proof_nodes": 18915,
+          "proof_occurrences": 23945,
+          "scheduled_invocations": 18915,
+          "serialized_candidate_bytes": 95093134,
+          "wall_seconds": 35.62112674396485
+        },
+        "warm": {
+          "cache_entries": 398,
+          "cache_hits": 18915,
+          "elapsed_seconds": 3.5916941724717617,
+          "grounded_atoms": 21559,
+          "native_invocations": 0,
+          "peak_rss_kib": 281796,
+          "proof_bytes_estimate": 32813928,
+          "proof_graph_bytes": 42740460,
+          "proof_nodes": 18915,
+          "proof_occurrences": 23945,
+          "scheduled_invocations": 18915,
+          "serialized_candidate_bytes": 95093134,
+          "wall_seconds": 4.759682760573924
+        }
+      }
+    },
+    {
+      "candidate_count": 226,
+      "digest": "04fabe075e6eb2094283c3036b14fa6384910d3ff3fb03331cc13be6bf55ce39",
+      "fen": "r4b1r/1p2k1pp/p1Bpqn2/2p1pP2/PP4P1/2P5/2QP1P1P/RNB2KNR w - - 5 15",
+      "fixture": "c7-sicilian-708076-ply-28",
+      "full_candidate_parity": true,
+      "runs": {
+        "cold": {
+          "cache_entries": 403,
+          "cache_hits": 15638,
+          "elapsed_seconds": 4.747801399789751,
+          "grounded_atoms": 18667,
+          "native_invocations": 403,
+          "peak_rss_kib": 281796,
+          "proof_bytes_estimate": 29708524,
+          "proof_graph_bytes": 38726209,
+          "proof_nodes": 16041,
+          "proof_occurrences": 20935,
+          "scheduled_invocations": 16041,
+          "serialized_candidate_bytes": 89600268,
+          "wall_seconds": 5.495880635455251
+        },
+        "reference": {
+          "cache_entries": 0,
+          "cache_hits": 0,
+          "elapsed_seconds": 29.04317908640951,
+          "grounded_atoms": 18667,
+          "native_invocations": 16041,
+          "peak_rss_kib": 281796,
+          "proof_bytes_estimate": 29708524,
+          "proof_graph_bytes": 38726209,
+          "proof_nodes": 16041,
+          "proof_occurrences": 20935,
+          "scheduled_invocations": 16041,
+          "serialized_candidate_bytes": 89600268,
+          "wall_seconds": 29.826724628917873
+        },
+        "warm": {
+          "cache_entries": 403,
+          "cache_hits": 16041,
+          "elapsed_seconds": 3.1751299584284425,
+          "grounded_atoms": 18667,
+          "native_invocations": 0,
+          "peak_rss_kib": 281796,
+          "proof_bytes_estimate": 29708524,
+          "proof_graph_bytes": 38726209,
+          "proof_nodes": 16041,
+          "proof_occurrences": 20935,
+          "scheduled_invocations": 16041,
+          "serialized_candidate_bytes": 89600268,
+          "wall_seconds": 4.182851389050484
+        }
+      }
+    }
+  ],
+  "runtime": {
+    "atomspace": "PeTTa native in-process MeTTa space (no Hyperon AtomSpace dependency)",
+    "petta": {
+      "branch": "main",
+      "commit": "ee5cacb6a6ecdd554a1c773aaf47e9a0f8a5af0f",
+      "files": {
+        "run.sh": "269a50bc47e8a5f614f1999161d7f5f6ea51c4615d39f12a404540071f124ff0",
+        "src/ext_points.pl": "0b5f1b115e29892ab1bf5833c022df4c2f3f1558cb04f57a8f52de5ccdad8436",
+        "src/filereader.pl": "fb677e03ffbf945f8c752aa02c8db481cebfbdd219660bee387af596e3ce7bc1",
+        "src/load_cache.pl": "619fc64d253221d06907234d2b94d8c3395b4a6facbe56b2a4bb38c84c9c0ac3",
+        "src/main.pl": "2a57276bb0cd32f29e0bd983c2640f1e9bc1646e22bfc266230d3dc13b9ecc6c",
+        "src/metta.pl": "9ee89a19768c82052606b738e7abd88971c5ac826b7cf9fc1ab770e02779337d",
+        "src/parser.pl": "69ab6dd840fcc585d916fd25a496a09dd30ca9aaacf6e55baaa67c8c020c84c1",
+        "src/spaces.pl": "553acea6a6ad210ff46cb0c883af7587295c689fcd5d768566428607417f0bb0",
+        "src/specializer.pl": "b27a2a6430914c11dc9cd0d27b9a3aa5945064607c48979b7a2a0e50bd0f5141",
+        "src/translator.pl": "cda4dcfc4f77ff0d3feb858b1502ec685fb8b1ddbd7cc555193b76ac7de12220",
+        "src/typecheck.pl": "c45a5a66001255004944731e72dc7a2b71872328027c0f23117442896767e91c",
+        "src/typecheck/abstract_domain.pl": "7fafddae3126fc3ab6f9c2380a4809d0dc5331ae1a622df3be6176167d90d8b9",
+        "src/typecheck/analysis_proofs.pl": "96687dbdd49730b355200eb8135aec8a55953daa1dc250196743951565b5350f",
+        "src/typecheck/builtin_registry.pl": "e0a65099592fa3283ff6f31e90f776366f499eb8e172102393b96bd8183d5005",
+        "src/typecheck/call_summaries.pl": "adb9383a34fd3c0cbaa6e898fd1ee41fcbe2a90327af1b96f4db29bd22c46c00",
+        "src/typecheck/clause_checks.pl": "3b072c51563542b85d8195137dfc06d60932fe25acf14c2dafdadc53367fefc3",
+        "src/typecheck/decl_store.pl": "52f5c17cf51e871a11d81f284094bdb945d3876b799f9157e5131eea3dfdd615",
+        "src/typecheck/dependency_graph.pl": "f344d62ad9e084d2b9ab7dc235094de83db87815cb7b1935c97794490abddaf1",
+        "src/typecheck/det_analysis.pl": "bc04e7791253c3e12b45c81be3f0a7fc419c310898a7b2dab89f86cb329eca9a",
+        "src/typecheck/det_proofs.pl": "1e34de0eb4fad3e79ff5b551e2f966595063db5a6cb268aac45e90448f80fd74",
+        "src/typecheck/det_validate.pl": "98738eb738f4aa76b64d1412ab5e839d151e1bef1fda1019396151a4e1d6ac58",
+        "src/typecheck/flags_arrows.pl": "454f1a1d6b47fe390fc3a8fc11297c6acc798bab6a4f5dc3f009ce79fcc844ed",
+        "src/typecheck/inference.pl": "62d0f2ae9ca97b622cec0676dd3de50016311d940e981e98d243f345579f4430",
+        "src/typecheck/ir_analyzer.pl": "02520b61ccccaba064f62f72f68162bc9b033abec64b77f6e2374e9134b1fe83",
+        "src/typecheck/oracles.pl": "c3ec9fc6e02cf78f58a7f441977fe7ceedad34a78a2a27a43fa52e809256b649",
+        "src/typecheck/relational_ir.pl": "c35f43237b3178ae81f207a79905e9aeb998f8eeac3cc9dce323c6fe62fc0037",
+        "src/typecheck/type_lang.pl": "d9cc0fbdc06002a8249c5b77fa999fb50be4b040626728b66a7e80f2b46255e0",
+        "src/typecheck/unified_checker_bridge.pl": "53ae3521a8265b9680f5434caa2384e0a3831739c53325a6bc2c737b02c2a01a",
+        "src/typecheck/unified_checker_cache.pl": "684f13666c61a1b15ecaf42443d41f15d76efa5d032225a87c873b76ca1da930",
+        "src/typecheck/value_checks.pl": "a8013f13afffd637ba9038c9cf2ef1d8cd056a135696fa676ca5fe88ada25ae6"
+      },
+      "repository": "https://github.com/trueagi-io/PeTTa"
+    },
+    "pln": {
+      "branch": "main",
+      "commit": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+      "repository": "https://github.com/trueagi-io/PLN",
+      "sha256": "cdfb3f18bd7b336440fc7b4409209afddf0e64c41f17dee7eefc8f02718de433",
+      "source": "vendor/pln/lib_pln.metta"
+    },
+    "python": "3.12.12",
+    "schema": 1,
+    "swipl": "SWI-Prolog version 10.0.1 for x86_64-linux",
+    "truth_value": "(stv strength confidence)"
+  }
+}

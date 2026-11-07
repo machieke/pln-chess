@@ -1,0 +1,18 @@
+C7-frozen {'model_version': '3b14445d136a01d77dd60e5b2dca2d49f525903a85db2283f0281dc86d74859c', 'cases': 287, 'intact_negative': 287, 'removed_unknown': 287, 'exact_native_proof_parity': 287, 'regressions': []}
+C7-learned-8 {'model_version': '6e346866eae1176c002cbb0fc332c6edfcae3e92c2117abf44396d19e02d660a', 'cases': 287, 'intact_negative': 287, 'removed_unknown': 287, 'exact_native_proof_parity': 287, 'regressions': []}
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/data/pln-chess-cycle6-delivery/evaluation/cycle7_research.py", line 63, in <module>
+    print(temporal(BackoffModel.load(out/'model/C7-frozen.json',rt),rt,out),flush=True)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/pln-chess-cycle6-delivery/evaluation/cycle7_research.py", line 46, in temporal
+    receipt=inspect(q,trust,evidence)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/purplezky/work/takopi/pln-chess/src/pln_chess/cycle6/history.py", line 8, in inspect
+    r=previous(position,canonical_mode(mode),evidence);events=[]
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/purplezky/work/takopi/pln-chess/src/pln_chess/cycle5/history.py", line 21, in inspect
+    if mode!='fen-only' and not e.get('source'):raise ValueError('A source is required for temporal trust')
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: A source is required for temporal trust

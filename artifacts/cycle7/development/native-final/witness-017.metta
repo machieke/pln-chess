@@ -1,0 +1,5 @@
+!(import! &self "/data/pln-chess-cycle6-delivery/vendor/pln/lib_pln.metta")
+(= (STV A) (stv 0.4 0.8))
+(= (STV B) (stv 0.4 0.8))
+(= (STV C) (stv 0.4 0.8))
+!(println! (C7PROBE revision-zero (collapse (Truth_Revision (stv 0.5 0.0) (stv 0.5 0.0)))))

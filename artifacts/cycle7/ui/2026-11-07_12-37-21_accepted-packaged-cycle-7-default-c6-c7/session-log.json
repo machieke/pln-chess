@@ -1,0 +1,277 @@
+[
+  {
+    "action": "snapshot -i",
+    "relativeTimeSec": 5,
+    "timestamp": "2026-11-07T12:40:05.782Z"
+  },
+  {
+    "action": "set viewport 1280 900",
+    "relativeTimeSec": 13,
+    "timestamp": "2026-11-07T12:40:13.744Z"
+  },
+  {
+    "action": "screenshot initial.png",
+    "relativeTimeSec": 13.6,
+    "timestamp": "2026-11-07T12:40:14.357Z"
+  },
+  {
+    "action": "eval (async()=>{document.getElementById('form').requestSubmit();while(document.getElementById('run').disabled)await new Promise(r=>setTimeout(r,100));return {summary:document.getElementById('summary').innerText,table:document.getElementById('mode-table').innerText,status:document.getElementById('status').innerText};})()",
+    "relativeTimeSec": 14.1,
+    "timestamp": "2026-11-07T12:40:14.830Z"
+  },
+  {
+    "action": "screenshot verified-default.png",
+    "relativeTimeSec": 15.8,
+    "timestamp": "2026-11-07T12:40:16.614Z"
+  },
+  {
+    "action": "eval (async()=>{document.getElementById('model').value='C7-default';document.getElementById('compare-models').checked=true;document.getElementById('form').requestSubmit();while(document.getElementById('run').disabled)await new Promise(r=>setTimeout(r,100));return {summary:document.getElementById('summary').innerText,table:document.getElementById('mode-table').innerText,status:document.getElementById('status').innerText};})()",
+    "relativeTimeSec": 24.4,
+    "timestamp": "2026-11-07T12:40:25.123Z"
+  },
+  {
+    "action": "screenshot c6-c7-comparison.png",
+    "relativeTimeSec": 27.1,
+    "timestamp": "2026-11-07T12:40:27.838Z"
+  },
+  {
+    "action": "eval (async()=>{const original=URL.createObjectURL.bind(URL);URL.createObjectURL=(blob)=>{blob.text().then(async t=>{window.__exportText=t;window.__exported=JSON.parse(t);window.__exportHash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(t)))).map(n=>n.toString(16).padStart(2,'0')).join('');window.__exportBytes=blob.size;});return original(blob)};document.getElementById('export-diagnostic').click();while(!window.__exportHash)await new Promise(r=>setTimeout(r,100));return {keys:Object.keys(window.__exported),hash:window.__exportHash,bytes:window.__exportBytes};})()",
+    "relativeTimeSec": 36,
+    "timestamp": "2026-11-07T12:40:36.816Z"
+  },
+  {
+    "action": "eval window.__exportText",
+    "relativeTimeSec": 36.6,
+    "timestamp": "2026-11-07T12:40:37.363Z"
+  },
+  {
+    "action": "eval (async()=>{document.getElementById('compare-models').checked=false;document.getElementById('mode').value='strict';document.getElementById('form').requestSubmit();while(document.getElementById('run').disabled)await new Promise(r=>setTimeout(r,100));return {summary:document.getElementById('summary').innerText,status:document.getElementById('status').innerText};})()",
+    "relativeTimeSec": 49,
+    "timestamp": "2026-11-07T12:40:49.727Z"
+  },
+  {
+    "action": "screenshot strict-abstention.png",
+    "relativeTimeSec": 50.7,
+    "timestamp": "2026-11-07T12:40:51.517Z"
+  },
+  {
+    "action": "eval (async()=>{document.getElementById('compare-models').checked=false;document.getElementById('mode').value='experimental';document.getElementById('form').requestSubmit();while(document.getElementById('run').disabled)await new Promise(r=>setTimeout(r,100));return {summary:document.getElementById('summary').innerText,status:document.getElementById('status').innerText};})()",
+    "relativeTimeSec": 51.2,
+    "timestamp": "2026-11-07T12:40:52.012Z"
+  },
+  {
+    "action": "screenshot experimental-abstention.png",
+    "relativeTimeSec": 52.9,
+    "timestamp": "2026-11-07T12:40:53.717Z"
+  },
+  {
+    "action": "eval ({schema:window.__exported.schema,type:typeof window.__exported.comparisons,keys:Object.keys(window.__exported.comparisons),equal:window.__exported.native_proof_equal,scope:window.__exported.scope})",
+    "relativeTimeSec": 53.4,
+    "timestamp": "2026-11-07T12:40:54.212Z"
+  },
+  {
+    "action": "eval window.__exportText.slice(0,100)",
+    "relativeTimeSec": 68.7,
+    "timestamp": "2026-11-07T12:41:09.463Z"
+  },
+  {
+    "action": "eval ({c6keys:Object.keys(window.__exported.comparisons['C6-operational']),c7keys:Object.keys(window.__exported.comparisons['C7-operational'])})",
+    "relativeTimeSec": 69.1,
+    "timestamp": "2026-11-07T12:41:09.867Z"
+  },
+  {
+    "action": "eval (async()=>{document.getElementById('mode').value='operational';document.getElementById('fen').value='7k/8/8/8/8/8/2RP4/2K5 w - - 0 1';document.getElementById('move').value='c2h2';document.getElementById('form').requestSubmit();while(document.getElementById('run').disabled)await new Promise(r=>setTimeout(r,100));return {summary:document.getElementById('summary').innerText,status:document.getElementById('status').innerText};})()",
+    "relativeTimeSec": 69.5,
+    "timestamp": "2026-11-07T12:41:10.252Z"
+  },
+  {
+    "action": "screenshot blocked-rook-negative.png",
+    "relativeTimeSec": 71.6,
+    "timestamp": "2026-11-07T12:41:12.391Z"
+  },
+  {
+    "action": "eval (async()=>{document.getElementById('mode').value='operational';document.getElementById('fen').value='2bk3K/8/5N2/7n/8/2B5/8/8 w - - 0 1';document.getElementById('move').value='f6h5';document.getElementById('form').requestSubmit();while(document.getElementById('run').disabled)await new Promise(r=>setTimeout(r,100));return {summary:document.getElementById('summary').innerText,status:document.getElementById('status').innerText};})()",
+    "relativeTimeSec": 72.1,
+    "timestamp": "2026-11-07T12:41:12.868Z"
+  },
+  {
+    "action": "screenshot unresolved-knight.png",
+    "relativeTimeSec": 73.8,
+    "timestamp": "2026-11-07T12:41:14.601Z"
+  },
+  {
+    "action": "eval window.__exportText.slice(0,100000)",
+    "relativeTimeSec": 88.6,
+    "timestamp": "2026-11-07T12:41:29.389Z"
+  },
+  {
+    "action": "eval window.__exportText.slice(100000,200000)",
+    "relativeTimeSec": 89,
+    "timestamp": "2026-11-07T12:41:29.765Z"
+  },
+  {
+    "action": "eval window.__exportText.slice(200000,300000)",
+    "relativeTimeSec": 89.3,
+    "timestamp": "2026-11-07T12:41:30.107Z"
+  },
+  {
+    "action": "eval window.__exportText.slice(300000,400000)",
+    "relativeTimeSec": 89.7,
+    "timestamp": "2026-11-07T12:41:30.455Z"
+  },
+  {
+    "action": "eval window.__exportText.slice(400000,500000)",
+    "relativeTimeSec": 90.1,
+    "timestamp": "2026-11-07T12:41:30.839Z"
+  },
+  {
+    "action": "eval window.__exportText.slice(500000,600000)",
+    "relativeTimeSec": 90.4,
+    "timestamp": "2026-11-07T12:41:31.213Z"
+  },
+  {
+    "action": "eval window.__exportText.slice(600000,700000)",
+    "relativeTimeSec": 90.8,
+    "timestamp": "2026-11-07T12:41:31.611Z"
+  },
+  {
+    "action": "eval window.__exportText.slice(700000,800000)",
+    "relativeTimeSec": 91.2,
+    "timestamp": "2026-11-07T12:41:31.966Z"
+  },
+  {
+    "action": "eval window.__exportText.slice(800000,900000)",
+    "relativeTimeSec": 91.5,
+    "timestamp": "2026-11-07T12:41:32.286Z"
+  },
+  {
+    "action": "eval window.__exportText.slice(900000,1000000)",
+    "relativeTimeSec": 91.9,
+    "timestamp": "2026-11-07T12:41:32.625Z"
+  },
+  {
+    "action": "eval window.__exportText.slice(1000000,1100000)",
+    "relativeTimeSec": 92.2,
+    "timestamp": "2026-11-07T12:41:33.009Z"
+  },
+  {
+    "action": "eval window.__exportText.slice(1100000,1200000)",
+    "relativeTimeSec": 92.6,
+    "timestamp": "2026-11-07T12:41:33.388Z"
+  },
+  {
+    "action": "eval window.__exportText.slice(1200000,1300000)",
+    "relativeTimeSec": 93,
+    "timestamp": "2026-11-07T12:41:33.761Z"
+  },
+  {
+    "action": "eval window.__exportText.slice(1300000,1400000)",
+    "relativeTimeSec": 93.3,
+    "timestamp": "2026-11-07T12:41:34.118Z"
+  },
+  {
+    "action": "eval window.__exportText.slice(1400000,1500000)",
+    "relativeTimeSec": 93.7,
+    "timestamp": "2026-11-07T12:41:34.504Z"
+  },
+  {
+    "action": "eval window.__exportText.slice(1500000,1600000)",
+    "relativeTimeSec": 94.1,
+    "timestamp": "2026-11-07T12:41:34.834Z"
+  },
+  {
+    "action": "eval window.__exportText.slice(1600000,1700000)",
+    "relativeTimeSec": 94.4,
+    "timestamp": "2026-11-07T12:41:35.198Z"
+  },
+  {
+    "action": "eval window.__exportText.slice(1700000,1800000)",
+    "relativeTimeSec": 94.8,
+    "timestamp": "2026-11-07T12:41:35.568Z"
+  },
+  {
+    "action": "eval (async()=>{document.getElementById('max-invocations').value='0';document.getElementById('form').requestSubmit();while(document.getElementById('run').disabled)await new Promise(r=>setTimeout(r,100));return {summary:document.getElementById('summary').innerText,status:document.getElementById('status').innerText};})()",
+    "relativeTimeSec": 95.2,
+    "timestamp": "2026-11-07T12:41:35.982Z"
+  },
+  {
+    "action": "screenshot incomplete-budget.png",
+    "relativeTimeSec": 96.1,
+    "timestamp": "2026-11-07T12:41:36.886Z"
+  },
+  {
+    "action": "set viewport 390 844",
+    "relativeTimeSec": 96.6,
+    "timestamp": "2026-11-07T12:41:37.346Z"
+  },
+  {
+    "action": "eval ({viewport:innerWidth,document:document.documentElement.scrollWidth,height:innerHeight})",
+    "relativeTimeSec": 97.2,
+    "timestamp": "2026-11-07T12:41:37.968Z"
+  },
+  {
+    "action": "screenshot mobile-top.png",
+    "relativeTimeSec": 97.6,
+    "timestamp": "2026-11-07T12:41:38.369Z"
+  },
+  {
+    "action": "eval ({viewport:innerWidth,document:document.documentElement.scrollWidth,height:innerHeight})",
+    "relativeTimeSec": 107.7,
+    "timestamp": "2026-11-07T12:41:48.479Z"
+  },
+  {
+    "action": "screenshot mobile-top-verified.png",
+    "relativeTimeSec": 108.1,
+    "timestamp": "2026-11-07T12:41:48.898Z"
+  },
+  {
+    "action": "eval (async()=>{document.getElementById('max-invocations').value='200000';document.getElementById('fen').value='7k/8/8/8/8/8/2R5/2K5 w - - 0 1';document.getElementById('move').value='c2e2';document.getElementById('form').requestSubmit();while(document.getElementById('run').disabled)await new Promise(r=>setTimeout(r,100));document.getElementById('summary').scrollIntoView();return {summary:document.getElementById('summary').innerText,viewport:innerWidth,document:document.documentElement.scrollWidth,height:innerHeight};})()",
+    "relativeTimeSec": 108.6,
+    "timestamp": "2026-11-07T12:41:49.415Z"
+  },
+  {
+    "action": "screenshot mobile-result.png",
+    "relativeTimeSec": 110.4,
+    "timestamp": "2026-11-07T12:41:51.179Z"
+  },
+  {
+    "action": "eval (()=>{window.scrollTo(0,0);return {viewport:innerWidth,document:document.documentElement.scrollWidth,height:innerHeight}})()",
+    "relativeTimeSec": 127.8,
+    "timestamp": "2026-11-07T12:42:08.591Z"
+  },
+  {
+    "action": "screenshot mobile-top-390.png",
+    "relativeTimeSec": 128.2,
+    "timestamp": "2026-11-07T12:42:09.004Z"
+  },
+  {
+    "action": "--session pln-chess-cycle7-final set viewport 390 844",
+    "relativeTimeSec": 141.9,
+    "timestamp": "2026-11-07T12:42:22.660Z"
+  },
+  {
+    "action": "eval ({w:innerWidth,h:innerHeight})",
+    "relativeTimeSec": 142.3,
+    "timestamp": "2026-11-07T12:42:23.110Z"
+  },
+  {
+    "action": "eval (()=>{window.scrollTo(0,0);return {viewport:innerWidth,document:document.documentElement.scrollWidth,height:innerHeight}})()",
+    "relativeTimeSec": 151.6,
+    "timestamp": "2026-11-07T12:42:32.390Z"
+  },
+  {
+    "action": "screenshot mobile-top-390-verified.png",
+    "relativeTimeSec": 152,
+    "timestamp": "2026-11-07T12:42:32.791Z"
+  },
+  {
+    "action": "eval (()=>{document.getElementById('summary').scrollIntoView();return {viewport:innerWidth,document:document.documentElement.scrollWidth,height:innerHeight,summary:document.getElementById('summary').innerText}})()",
+    "relativeTimeSec": 152.5,
+    "timestamp": "2026-11-07T12:42:33.275Z"
+  },
+  {
+    "action": "screenshot mobile-result-390-verified.png",
+    "relativeTimeSec": 152.9,
+    "timestamp": "2026-11-07T12:42:33.667Z"
+  }
+]

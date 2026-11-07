@@ -1,0 +1,5 @@
+!(import! &self "/data/pln-chess-cycle7-clean-0eab14c/vendor/pln/lib_pln.metta")
+(= (STV A) (stv 0.4 0.8))
+(= (STV B) (stv 0.4 0.8))
+(= (STV C) (stv 0.4 0.8))
+!(println! (C7PROBE equivalence-wrapper (collapse (|- ((Equivalence A B) (stv 0.5 0.8))))))

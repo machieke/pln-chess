@@ -1,0 +1,22 @@
+tests passed
+native passed
+training passed
+matrix-frozen passed
+matrix-strict passed
+matrix-learned passed
+pilot passed
+ablations passed
+matrix-baselines passed
+research passed
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/data/pln-chess-cycle7-clean-0eab14c/scripts/cycle7_run.py", line 41, in <module>
+    if __name__=='__main__':run()
+                            ^^^^^
+  File "/data/pln-chess-cycle7-clean-0eab14c/scripts/cycle7_run.py", line 36, in run
+    command('analysis',['-m','evaluation.cycle7_analysis',str(OUT)])
+  File "/data/pln-chess-cycle7-clean-0eab14c/scripts/cycle7_run.py", line 19, in command
+    if result.returncode:raise RuntimeError(f'{name} failed; inspect {log}')
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: analysis failed; inspect /data/pln-chess-cycle7-clean-output-0eab14c/logs/analysis.txt

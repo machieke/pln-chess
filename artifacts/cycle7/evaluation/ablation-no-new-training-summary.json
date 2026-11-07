@@ -1,0 +1,988 @@
+{
+  "cycle6-independent-games": {
+    "artifact": "evaluation/ablation-no-new-training-cycle6-independent-games.json.xz",
+    "dataset_hash": "7619eb3bec12ab89313818c2fc913a449df90943280cfb13926c788fab6147c1",
+    "metrics": {
+      "abstention_rate": 0.016713552871090553,
+      "bootstrap": {
+        "independent_clusters": 16,
+        "interval95": {
+          "coverage": [
+            0.9802194405810539,
+            0.9860993388709951
+          ],
+          "exact_move_set_accuracy": [
+            0.34375,
+            0.59375
+          ],
+          "precision": [
+            1.0,
+            1.0
+          ],
+          "recall": [
+            0.9684684684684685,
+            0.9834319526627219
+          ]
+        },
+        "method": "Percentile bootstrap of source games (positions for non-game motifs); exploratory, 300 draws."
+      },
+      "candidates": 6043,
+      "classification_counts": {
+        "supported-illegal": 5058,
+        "supported-legal": 884,
+        "unknown": 101
+      },
+      "coverage": 0.9832864471289094,
+      "empty_terminal_exact": 0,
+      "exact_move_set_accuracy": 0.46875,
+      "f1": 0.9877094972067039,
+      "false_illegal": 0,
+      "false_legal_rate": 0.0,
+      "false_negative_including_abstention": 22,
+      "false_positive": 0,
+      "grounded_atoms": 508655,
+      "in_board_only": {
+        "abstention_rate": 0.03316912972085384,
+        "candidates": 3045,
+        "coverage": 0.9668308702791462,
+        "exact_move_set_accuracy": 0.46875,
+        "f1": 0.9877094972067039,
+        "false_legal_rate": 0.0,
+        "false_negative_including_abstention": 22,
+        "false_positive": 0,
+        "grounded_atoms": 508655,
+        "incomplete_positions": 0,
+        "latency_seconds": {
+          "p50": 5.256012540310621,
+          "p95": 6.50633669923991,
+          "p99": 6.623487171716988
+        },
+        "native_invocations": 14203,
+        "precision": 1.0,
+        "recall": 0.9757174392935982,
+        "selective_accuracy": 1.0,
+        "self_check_false_legal": 0,
+        "true_negative": 2060,
+        "true_positive": 884
+      },
+      "incomplete": 0,
+      "incomplete_positions": 0,
+      "latency_seconds": {
+        "p50": 5.256012540310621,
+        "p95": 6.50633669923991,
+        "p99": 6.623487171716988
+      },
+      "native_invocations": 14203,
+      "nonempty_exact": 15,
+      "per_family": {
+        "c6-independent-games-618161": {
+          "abstention_rate": 0.015625,
+          "candidates": 384,
+          "coverage": 0.984375,
+          "exact_move_set_accuracy": null,
+          "f1": 0.9923664122137404,
+          "false_legal_rate": 0.0,
+          "false_negative_including_abstention": 1,
+          "false_positive": 0,
+          "grounded_atoms": 0,
+          "incomplete_positions": 0,
+          "latency_seconds": {
+            "p50": null,
+            "p95": null,
+            "p99": null
+          },
+          "native_invocations": 0,
+          "precision": 1.0,
+          "recall": 0.9848484848484849,
+          "selective_accuracy": 1.0,
+          "self_check_false_legal": 0,
+          "true_negative": 313,
+          "true_positive": 65
+        },
+        "c6-independent-games-618162": {
+          "abstention_rate": 0.009615384615384581,
+          "candidates": 416,
+          "coverage": 0.9903846153846154,
+          "exact_move_set_accuracy": null,
+          "f1": 0.9859154929577465,
+          "false_legal_rate": 0.0,
+          "false_negative_including_abstention": 1,
+          "false_positive": 0,
+          "grounded_atoms": 0,
+          "incomplete_positions": 0,
+          "latency_seconds": {
+            "p50": null,
+            "p95": null,
+            "p99": null
+          },
+          "native_invocations": 0,
+          "precision": 1.0,
+          "recall": 0.9722222222222222,
+          "selective_accuracy": 1.0,
+          "self_check_false_legal": 0,
+          "true_negative": 377,
+          "true_positive": 35
+        },
+        "c6-independent-games-618163": {
+          "abstention_rate": 0.025000000000000022,
+          "candidates": 280,
+          "coverage": 0.975,
+          "exact_move_set_accuracy": null,
+          "f1": 1.0,
+          "false_legal_rate": 0.0,
+          "false_negative_including_abstention": 0,
+          "false_positive": 0,
+          "grounded_atoms": 0,
+          "incomplete_positions": 0,
+          "latency_seconds": {
+            "p50": null,
+            "p95": null,
+            "p99": null
+          },
+          "native_invocations": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "selective_accuracy": 1.0,
+          "self_check_false_legal": 0,
+          "true_negative": 222,
+          "true_positive": 51
+        },
+        "c6-independent-games-618164": {
+          "abstention_rate": 0.01834862385321101,
+          "candidates": 436,
+          "coverage": 0.981651376146789,
+          "exact_move_set_accuracy": null,
+          "f1": 0.9798657718120806,
+          "false_legal_rate": 0.0,
+          "false_negative_including_abstention": 3,
+          "false_positive": 0,
+          "grounded_atoms": 0,
+          "incomplete_positions": 0,
+          "latency_seconds": {
+            "p50": null,
+            "p95": null,
+            "p99": null
+          },
+          "native_invocations": 0,
+          "precision": 1.0,
+          "recall": 0.9605263157894737,
+          "selective_accuracy": 1.0,
+          "self_check_false_legal": 0,
+          "true_negative": 355,
+          "true_positive": 73
+        },
+        "c6-independent-games-618165": {
+          "abstention_rate": 0.011904761904761862,
+          "candidates": 336,
+          "coverage": 0.9880952380952381,
+          "exact_move_set_accuracy": null,
+          "f1": 0.9887640449438202,
+          "false_legal_rate": 0.0,
+          "false_negative_including_abstention": 1,
+          "false_positive": 0,
+          "grounded_atoms": 0,
+          "incomplete_positions": 0,
+          "latency_seconds": {
+            "p50": null,
+            "p95": null,
+            "p99": null
+          },
+          "native_invocations": 0,
+          "precision": 1.0,
+          "recall": 0.9777777777777777,
+          "selective_accuracy": 1.0,
+          "self_check_false_legal": 0,
+          "true_negative": 288,
+          "true_positive": 44
+        },
+        "c6-independent-games-618166": {
+          "abstention_rate": 0.023017902813299185,
+          "candidates": 391,
+          "coverage": 0.9769820971867008,
+          "exact_move_set_accuracy": null,
+          "f1": 0.9924812030075187,
+          "false_legal_rate": 0.0,
+          "false_negative_including_abstention": 1,
+          "false_positive": 0,
+          "grounded_atoms": 0,
+          "incomplete_positions": 0,
+          "latency_seconds": {
+            "p50": null,
+            "p95": null,
+            "p99": null
+          },
+          "native_invocations": 0,
+          "precision": 1.0,
+          "recall": 0.9850746268656716,
+          "selective_accuracy": 1.0,
+          "self_check_false_legal": 0,
+          "true_negative": 316,
+          "true_positive": 66
+        },
+        "c6-independent-games-618167": {
+          "abstention_rate": 0.0182648401826484,
+          "candidates": 438,
+          "coverage": 0.9817351598173516,
+          "exact_move_set_accuracy": null,
+          "f1": 0.9894736842105263,
+          "false_legal_rate": 0.0,
+          "false_negative_including_abstention": 1,
+          "false_positive": 0,
+          "grounded_atoms": 0,
+          "incomplete_positions": 0,
+          "latency_seconds": {
+            "p50": null,
+            "p95": null,
+            "p99": null
+          },
+          "native_invocations": 0,
+          "precision": 1.0,
+          "recall": 0.9791666666666666,
+          "selective_accuracy": 1.0,
+          "self_check_false_legal": 0,
+          "true_negative": 383,
+          "true_positive": 47
+        },
+        "c6-independent-games-618168": {
+          "abstention_rate": 0.010000000000000009,
+          "candidates": 400,
+          "coverage": 0.99,
+          "exact_move_set_accuracy": null,
+          "f1": 1.0,
+          "false_legal_rate": 0.0,
+          "false_negative_including_abstention": 0,
+          "false_positive": 0,
+          "grounded_atoms": 0,
+          "incomplete_positions": 0,
+          "latency_seconds": {
+            "p50": null,
+            "p95": null,
+            "p99": null
+          },
+          "native_invocations": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "selective_accuracy": 1.0,
+          "self_check_false_legal": 0,
+          "true_negative": 326,
+          "true_positive": 70
+        },
+        "c6-independent-games-618169": {
+          "abstention_rate": 0.015306122448979553,
+          "candidates": 392,
+          "coverage": 0.9846938775510204,
+          "exact_move_set_accuracy": null,
+          "f1": 0.9876543209876543,
+          "false_legal_rate": 0.0,
+          "false_negative_including_abstention": 1,
+          "false_positive": 0,
+          "grounded_atoms": 0,
+          "incomplete_positions": 0,
+          "latency_seconds": {
+            "p50": null,
+            "p95": null,
+            "p99": null
+          },
+          "native_invocations": 0,
+          "precision": 1.0,
+          "recall": 0.975609756097561,
+          "selective_accuracy": 1.0,
+          "self_check_false_legal": 0,
+          "true_negative": 346,
+          "true_positive": 40
+        },
+        "c6-independent-games-618170": {
+          "abstention_rate": 0.009615384615384581,
+          "candidates": 312,
+          "coverage": 0.9903846153846154,
+          "exact_move_set_accuracy": null,
+          "f1": 0.9894736842105263,
+          "false_legal_rate": 0.0,
+          "false_negative_including_abstention": 1,
+          "false_positive": 0,
+          "grounded_atoms": 0,
+          "incomplete_positions": 0,
+          "latency_seconds": {
+            "p50": null,
+            "p95": null,
+            "p99": null
+          },
+          "native_invocations": 0,
+          "precision": 1.0,
+          "recall": 0.9791666666666666,
+          "selective_accuracy": 1.0,
+          "self_check_false_legal": 0,
+          "true_negative": 262,
+          "true_positive": 47
+        },
+        "c6-independent-games-618171": {
+          "abstention_rate": 0.015060240963855387,
+          "candidates": 332,
+          "coverage": 0.9849397590361446,
+          "exact_move_set_accuracy": null,
+          "f1": 0.9743589743589743,
+          "false_legal_rate": 0.0,
+          "false_negative_including_abstention": 2,
+          "false_positive": 0,
+          "grounded_atoms": 0,
+          "incomplete_positions": 0,
+          "latency_seconds": {
+            "p50": null,
+            "p95": null,
+            "p99": null
+          },
+          "native_invocations": 0,
+          "precision": 1.0,
+          "recall": 0.95,
+          "selective_accuracy": 1.0,
+          "self_check_false_legal": 0,
+          "true_negative": 289,
+          "true_positive": 38
+        },
+        "c6-independent-games-618172": {
+          "abstention_rate": 0.02409638554216864,
+          "candidates": 332,
+          "coverage": 0.9759036144578314,
+          "exact_move_set_accuracy": null,
+          "f1": 0.9743589743589743,
+          "false_legal_rate": 0.0,
+          "false_negative_including_abstention": 3,
+          "false_positive": 0,
+          "grounded_atoms": 0,
+          "incomplete_positions": 0,
+          "latency_seconds": {
+            "p50": null,
+            "p95": null,
+            "p99": null
+          },
+          "native_invocations": 0,
+          "precision": 1.0,
+          "recall": 0.95,
+          "selective_accuracy": 1.0,
+          "self_check_false_legal": 0,
+          "true_negative": 267,
+          "true_positive": 57
+        },
+        "c6-independent-games-618173": {
+          "abstention_rate": 0.012499999999999956,
+          "candidates": 400,
+          "coverage": 0.9875,
+          "exact_move_set_accuracy": null,
+          "f1": 0.9931972789115646,
+          "false_legal_rate": 0.0,
+          "false_negative_including_abstention": 1,
+          "false_positive": 0,
+          "grounded_atoms": 0,
+          "incomplete_positions": 0,
+          "latency_seconds": {
+            "p50": null,
+            "p95": null,
+            "p99": null
+          },
+          "native_invocations": 0,
+          "precision": 1.0,
+          "recall": 0.9864864864864865,
+          "selective_accuracy": 1.0,
+          "self_check_false_legal": 0,
+          "true_negative": 322,
+          "true_positive": 73
+        },
+        "c6-independent-games-618174": {
+          "abstention_rate": 0.02298850574712641,
+          "candidates": 435,
+          "coverage": 0.9770114942528736,
+          "exact_move_set_accuracy": null,
+          "f1": 0.9795918367346939,
+          "false_legal_rate": 0.0,
+          "false_negative_including_abstention": 3,
+          "false_positive": 0,
+          "grounded_atoms": 0,
+          "incomplete_positions": 0,
+          "latency_seconds": {
+            "p50": null,
+            "p95": null,
+            "p99": null
+          },
+          "native_invocations": 0,
+          "precision": 1.0,
+          "recall": 0.96,
+          "selective_accuracy": 1.0,
+          "self_check_false_legal": 0,
+          "true_negative": 353,
+          "true_positive": 72
+        },
+        "c6-independent-games-618175": {
+          "abstention_rate": 0.006329113924050667,
+          "candidates": 316,
+          "coverage": 0.9936708860759493,
+          "exact_move_set_accuracy": null,
+          "f1": 0.9795918367346939,
+          "false_legal_rate": 0.0,
+          "false_negative_including_abstention": 1,
+          "false_positive": 0,
+          "grounded_atoms": 0,
+          "incomplete_positions": 0,
+          "latency_seconds": {
+            "p50": null,
+            "p95": null,
+            "p99": null
+          },
+          "native_invocations": 0,
+          "precision": 1.0,
+          "recall": 0.96,
+          "selective_accuracy": 1.0,
+          "self_check_false_legal": 0,
+          "true_negative": 290,
+          "true_positive": 24
+        },
+        "c6-independent-games-618176": {
+          "abstention_rate": 0.02708803611738153,
+          "candidates": 443,
+          "coverage": 0.9729119638826185,
+          "exact_move_set_accuracy": null,
+          "f1": 0.9879518072289156,
+          "false_legal_rate": 0.0,
+          "false_negative_including_abstention": 2,
+          "false_positive": 0,
+          "grounded_atoms": 0,
+          "incomplete_positions": 0,
+          "latency_seconds": {
+            "p50": null,
+            "p95": null,
+            "p99": null
+          },
+          "native_invocations": 0,
+          "precision": 1.0,
+          "recall": 0.9761904761904762,
+          "selective_accuracy": 1.0,
+          "self_check_false_legal": 0,
+          "true_negative": 349,
+          "true_positive": 82
+        }
+      },
+      "per_piece": {
+        "Bishop": {
+          "abstention_rate": 0.003896103896103842,
+          "candidates": 1540,
+          "coverage": 0.9961038961038962,
+          "exact_move_set_accuracy": null,
+          "f1": 1.0,
+          "false_legal_rate": 0.0,
+          "false_negative_including_abstention": 0,
+          "false_positive": 0,
+          "grounded_atoms": 0,
+          "incomplete_positions": 0,
+          "latency_seconds": {
+            "p50": null,
+            "p95": null,
+            "p99": null
+          },
+          "native_invocations": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "selective_accuracy": 1.0,
+          "self_check_false_legal": 0,
+          "true_negative": 1377,
+          "true_positive": 157
+        },
+        "King": {
+          "abstention_rate": 0.021874999999999978,
+          "candidates": 320,
+          "coverage": 0.978125,
+          "exact_move_set_accuracy": null,
+          "f1": 1.0,
+          "false_legal_rate": 0.0,
+          "false_negative_including_abstention": 0,
+          "false_positive": 0,
+          "grounded_atoms": 0,
+          "incomplete_positions": 0,
+          "latency_seconds": {
+            "p50": null,
+            "p95": null,
+            "p99": null
+          },
+          "native_invocations": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "selective_accuracy": 1.0,
+          "self_check_false_legal": 0,
+          "true_negative": 223,
+          "true_positive": 90
+        },
+        "Knight": {
+          "abstention_rate": 0.0580357142857143,
+          "candidates": 448,
+          "coverage": 0.9419642857142857,
+          "exact_move_set_accuracy": null,
+          "f1": 0.9290322580645162,
+          "false_legal_rate": 0.0,
+          "false_negative_including_abstention": 22,
+          "false_positive": 0,
+          "grounded_atoms": 0,
+          "incomplete_positions": 0,
+          "latency_seconds": {
+            "p50": null,
+            "p95": null,
+            "p99": null
+          },
+          "native_invocations": 0,
+          "precision": 1.0,
+          "recall": 0.8674698795180723,
+          "selective_accuracy": 1.0,
+          "self_check_false_legal": 0,
+          "true_negative": 278,
+          "true_positive": 144
+        },
+        "Pawn": {
+          "abstention_rate": 0.022326674500587562,
+          "candidates": 851,
+          "coverage": 0.9776733254994124,
+          "exact_move_set_accuracy": null,
+          "f1": 1.0,
+          "false_legal_rate": 0.0,
+          "false_negative_including_abstention": 0,
+          "false_positive": 0,
+          "grounded_atoms": 0,
+          "incomplete_positions": 0,
+          "latency_seconds": {
+            "p50": null,
+            "p95": null,
+            "p99": null
+          },
+          "native_invocations": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "selective_accuracy": 1.0,
+          "self_check_false_legal": 0,
+          "true_negative": 621,
+          "true_positive": 211
+        },
+        "Queen": {
+          "abstention_rate": 0.011904761904761862,
+          "candidates": 1176,
+          "coverage": 0.9880952380952381,
+          "exact_move_set_accuracy": null,
+          "f1": 1.0,
+          "false_legal_rate": 0.0,
+          "false_negative_including_abstention": 0,
+          "false_positive": 0,
+          "grounded_atoms": 0,
+          "incomplete_positions": 0,
+          "latency_seconds": {
+            "p50": null,
+            "p95": null,
+            "p99": null
+          },
+          "native_invocations": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "selective_accuracy": 1.0,
+          "self_check_false_legal": 0,
+          "true_negative": 1032,
+          "true_positive": 130
+        },
+        "Rook": {
+          "abstention_rate": 0.016978922716627598,
+          "candidates": 1708,
+          "coverage": 0.9830210772833724,
+          "exact_move_set_accuracy": null,
+          "f1": 1.0,
+          "false_legal_rate": 0.0,
+          "false_negative_including_abstention": 0,
+          "false_positive": 0,
+          "grounded_atoms": 0,
+          "incomplete_positions": 0,
+          "latency_seconds": {
+            "p50": null,
+            "p95": null,
+            "p99": null
+          },
+          "native_invocations": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "selective_accuracy": 1.0,
+          "self_check_false_legal": 0,
+          "true_negative": 1527,
+          "true_positive": 152
+        }
+      },
+      "precision": 1.0,
+      "recall": 0.9757174392935982,
+      "selective_accuracy": 1.0,
+      "self_check_false_legal": 0,
+      "strength_confidence": {
+        "supported-illegal": {
+          "confidence": {
+            "max": 0.9097761277262921,
+            "mean": 0.8268531831573102,
+            "min": 0.39880201564640244
+          },
+          "strength": {
+            "max": 0.0295781249999999,
+            "mean": 0.00533771994815794,
+            "min": 0.002186085559935824
+          }
+        },
+        "supported-legal": {
+          "confidence": {
+            "max": 0.9783282950423215,
+            "mean": 0.8991061141440997,
+            "min": 0.7392857142857144
+          },
+          "strength": {
+            "max": 0.9996941896024465,
+            "mean": 0.9960087521124303,
+            "min": 0.8318777292576423
+          }
+        },
+        "unknown": {
+          "confidence": {
+            "max": 0.7392857142857144,
+            "mean": 0.10948228840247873,
+            "min": 0.0
+          },
+          "strength": {
+            "max": 0.5,
+            "mean": 0.4951348583134175,
+            "min": 0.008620689655172376
+          }
+        }
+      },
+      "true_negative": 5058,
+      "true_positive": 884,
+      "unknown": 101
+    },
+    "model_version": "350fbf2c823985b5e05cbea517e0fa2e7de85f1326d06fc3b61ce7a0b5dd7754",
+    "positions": 32,
+    "proof_coverage": {
+      "learned-conditional": 884,
+      "negative-supported": 5058,
+      "unknown": 101
+    }
+  },
+  "cycle7-independent-games": {
+    "artifact": "evaluation/ablation-no-new-training-cycle7-independent-games.json.xz",
+    "dataset_hash": "c9150082734efc5f8c5b6dad49fd1bb4c4ebded2873e87376e4abe64de9921bd",
+    "metrics": {
+      "abstention_rate": 0.0161797046811184,
+      "bootstrap": {
+        "independent_clusters": 16,
+        "interval95": {
+          "coverage": [
+            0.9802152579930358,
+            0.9866394215655454
+          ],
+          "exact_move_set_accuracy": [
+            0.34375,
+            0.71875
+          ],
+          "precision": [
+            0.9866332497911445,
+            1.0
+          ],
+          "recall": [
+            0.9618874773139746,
+            0.9878787878787879
+          ]
+        },
+        "method": "Percentile bootstrap of source games (positions for non-game motifs); exploratory, 300 draws."
+      },
+      "candidates": 6366,
+      "classification_counts": {
+        "supported-illegal": 5148,
+        "supported-legal": 1115,
+        "unknown": 103
+      },
+      "coverage": 0.9838202953188816,
+      "empty_terminal_exact": 0,
+      "exact_move_set_accuracy": 0.53125,
+      "f1": 0.9858030168589175,
+      "false_illegal": 4,
+      "false_legal_rate": 0.0007652573177731012,
+      "false_negative_including_abstention": 28,
+      "false_positive": 4,
+      "grounded_atoms": 565944,
+      "in_board_only": {
+        "abstention_rate": 0.0315273951637588,
+        "candidates": 3267,
+        "coverage": 0.9684726048362412,
+        "exact_move_set_accuracy": 0.53125,
+        "f1": 0.9858030168589175,
+        "false_legal_rate": 0.0018796992481203006,
+        "false_negative_including_abstention": 28,
+        "false_positive": 4,
+        "grounded_atoms": 565944,
+        "incomplete_positions": 0,
+        "latency_seconds": {
+          "p50": 5.0098020089790225,
+          "p95": 8.25738055165857,
+          "p99": 8.279253986664116
+        },
+        "native_invocations": 14296,
+        "precision": 0.9964125560538116,
+        "recall": 0.9754170324846356,
+        "selective_accuracy": 0.9974715549936789,
+        "self_check_false_legal": 0,
+        "true_negative": 2045,
+        "true_positive": 1111
+      },
+      "incomplete": 0,
+      "incomplete_positions": 0,
+      "latency_seconds": {
+        "p50": 5.0098020089790225,
+        "p95": 8.25738055165857,
+        "p99": 8.279253986664116
+      },
+      "native_invocations": 14296,
+      "nonempty_exact": 17,
+      "per_family": {
+        "french": {
+          "abstention_rate": 0.016099635479951413,
+          "candidates": 3292,
+          "coverage": 0.9839003645200486,
+          "exact_move_set_accuracy": null,
+          "f1": 0.9805249788314987,
+          "false_legal_rate": 0.0014847809948032665,
+          "false_negative_including_abstention": 19,
+          "false_positive": 4,
+          "grounded_atoms": 0,
+          "incomplete_positions": 0,
+          "latency_seconds": {
+            "p50": null,
+            "p95": null,
+            "p99": null
+          },
+          "native_invocations": 0,
+          "precision": 0.9931389365351629,
+          "recall": 0.9682274247491639,
+          "selective_accuracy": 0.9975301018832973,
+          "self_check_false_legal": 0,
+          "true_negative": 2652,
+          "true_positive": 579
+        },
+        "sicilian": {
+          "abstention_rate": 0.01626545217957054,
+          "candidates": 3074,
+          "coverage": 0.9837345478204295,
+          "exact_move_set_accuracy": null,
+          "f1": 0.9916123019571296,
+          "false_legal_rate": 0.0,
+          "false_negative_including_abstention": 9,
+          "false_positive": 0,
+          "grounded_atoms": 0,
+          "incomplete_positions": 0,
+          "latency_seconds": {
+            "p50": null,
+            "p95": null,
+            "p99": null
+          },
+          "native_invocations": 0,
+          "precision": 1.0,
+          "recall": 0.9833641404805915,
+          "selective_accuracy": 1.0,
+          "self_check_false_legal": 0,
+          "true_negative": 2492,
+          "true_positive": 532
+        }
+      },
+      "per_piece": {
+        "Bishop": {
+          "abstention_rate": 0.005639097744360888,
+          "candidates": 1596,
+          "coverage": 0.9943609022556391,
+          "exact_move_set_accuracy": null,
+          "f1": 1.0,
+          "false_legal_rate": 0.0,
+          "false_negative_including_abstention": 0,
+          "false_positive": 0,
+          "grounded_atoms": 0,
+          "incomplete_positions": 0,
+          "latency_seconds": {
+            "p50": null,
+            "p95": null,
+            "p99": null
+          },
+          "native_invocations": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "selective_accuracy": 1.0,
+          "self_check_false_legal": 0,
+          "true_negative": 1369,
+          "true_positive": 218
+        },
+        "King": {
+          "abstention_rate": 0.03749999999999998,
+          "candidates": 320,
+          "coverage": 0.9625,
+          "exact_move_set_accuracy": null,
+          "f1": 0.9809523809523809,
+          "false_legal_rate": 0.0,
+          "false_negative_including_abstention": 4,
+          "false_positive": 0,
+          "grounded_atoms": 0,
+          "incomplete_positions": 0,
+          "latency_seconds": {
+            "p50": null,
+            "p95": null,
+            "p99": null
+          },
+          "native_invocations": 0,
+          "precision": 1.0,
+          "recall": 0.9626168224299065,
+          "selective_accuracy": 1.0,
+          "self_check_false_legal": 0,
+          "true_negative": 205,
+          "true_positive": 103
+        },
+        "Knight": {
+          "abstention_rate": 0.05701754385964908,
+          "candidates": 456,
+          "coverage": 0.9429824561403509,
+          "exact_move_set_accuracy": null,
+          "f1": 0.9397590361445783,
+          "false_legal_rate": 0.0,
+          "false_negative_including_abstention": 20,
+          "false_positive": 0,
+          "grounded_atoms": 0,
+          "incomplete_positions": 0,
+          "latency_seconds": {
+            "p50": null,
+            "p95": null,
+            "p99": null
+          },
+          "native_invocations": 0,
+          "precision": 1.0,
+          "recall": 0.8863636363636364,
+          "selective_accuracy": 1.0,
+          "self_check_false_legal": 0,
+          "true_negative": 274,
+          "true_positive": 156
+        },
+        "Pawn": {
+          "abstention_rate": 0.0022573363431150906,
+          "candidates": 886,
+          "coverage": 0.9977426636568849,
+          "exact_move_set_accuracy": null,
+          "f1": 0.9831223628691983,
+          "false_legal_rate": 0.0061633281972265025,
+          "false_negative_including_abstention": 4,
+          "false_positive": 4,
+          "grounded_atoms": 0,
+          "incomplete_positions": 0,
+          "latency_seconds": {
+            "p50": null,
+            "p95": null,
+            "p99": null
+          },
+          "native_invocations": 0,
+          "precision": 0.9831223628691983,
+          "recall": 0.9831223628691983,
+          "selective_accuracy": 0.9909502262443439,
+          "self_check_false_legal": 0,
+          "true_negative": 643,
+          "true_positive": 233
+        },
+        "Queen": {
+          "abstention_rate": 0.01041666666666663,
+          "candidates": 1344,
+          "coverage": 0.9895833333333334,
+          "exact_move_set_accuracy": null,
+          "f1": 1.0,
+          "false_legal_rate": 0.0,
+          "false_negative_including_abstention": 0,
+          "false_positive": 0,
+          "grounded_atoms": 0,
+          "incomplete_positions": 0,
+          "latency_seconds": {
+            "p50": null,
+            "p95": null,
+            "p99": null
+          },
+          "native_invocations": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "selective_accuracy": 1.0,
+          "self_check_false_legal": 0,
+          "true_negative": 1112,
+          "true_positive": 218
+        },
+        "Rook": {
+          "abstention_rate": 0.0226757369614512,
+          "candidates": 1764,
+          "coverage": 0.9773242630385488,
+          "exact_move_set_accuracy": null,
+          "f1": 1.0,
+          "false_legal_rate": 0.0,
+          "false_negative_including_abstention": 0,
+          "false_positive": 0,
+          "grounded_atoms": 0,
+          "incomplete_positions": 0,
+          "latency_seconds": {
+            "p50": null,
+            "p95": null,
+            "p99": null
+          },
+          "native_invocations": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "selective_accuracy": 1.0,
+          "self_check_false_legal": 0,
+          "true_negative": 1541,
+          "true_positive": 183
+        }
+      },
+      "precision": 0.9964125560538116,
+      "recall": 0.9754170324846356,
+      "selective_accuracy": 0.9987226568737027,
+      "self_check_false_legal": 0,
+      "strength_confidence": {
+        "supported-illegal": {
+          "confidence": {
+            "max": 0.9097761277262921,
+            "mean": 0.8271872104881441,
+            "min": 0.39880201564640244
+          },
+          "strength": {
+            "max": 0.0295781249999999,
+            "mean": 0.005373775024213217,
+            "min": 0.002186085559935824
+          }
+        },
+        "supported-legal": {
+          "confidence": {
+            "max": 0.9783282950423215,
+            "mean": 0.895964945877283,
+            "min": 0.4950000000000001
+          },
+          "strength": {
+            "max": 0.9996941896024465,
+            "mean": 0.9946980024580862,
+            "min": 0.8318777292576423
+          }
+        },
+        "unknown": {
+          "confidence": {
+            "max": 0.7392857142857144,
+            "mean": 0.10786089761764275,
+            "min": 0.0
+          },
+          "strength": {
+            "max": 0.9750000000000001,
+            "mean": 0.5044526280549045,
+            "min": 0.008620689655172376
+          }
+        }
+      },
+      "true_negative": 5144,
+      "true_positive": 1111,
+      "unknown": 103
+    },
+    "model_version": "350fbf2c823985b5e05cbea517e0fa2e7de85f1326d06fc3b61ce7a0b5dd7754",
+    "positions": 32,
+    "proof_coverage": {
+      "learned-conditional": 1115,
+      "negative-supported": 5148,
+      "unknown": 103
+    }
+  }
+}

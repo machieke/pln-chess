@@ -1,0 +1,5 @@
+!(import! &self "/data/pln-chess-cycle6-delivery/vendor/pln/lib_pln.metta")
+(= (STV A) (stv 0.4 0.8))
+(= (STV B) (stv 0.4 0.8))
+(= (STV C) (stv 0.4 0.8))
+!(println! (C7PROBE symmetric-zero-strength (Truth_SymmetricModusPonens (stv 0.0 0.8) (stv 1.0 0.8))))

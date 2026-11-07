@@ -1,0 +1,5 @@
+!(import! &self "/data/pln-chess-cycle6-delivery/vendor/pln/lib_pln.metta")
+(= (STV A) (stv 0.4 0.8))
+(= (STV B) (stv 0.4 0.8))
+(= (STV C) (stv 0.4 0.8))
+!(println! (C7PROBE unary-chain (collapse (let ($p $tv) (|- (A (stv 0.9 0.8)) ((Implication A B) (stv 0.95 0.8))) (|- ($p $tv) ((Implication B C) (stv 0.95 0.8)))))))

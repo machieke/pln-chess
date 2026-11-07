@@ -1,0 +1,107 @@
+{
+  "cases": [
+    {
+      "case": "packaged-verified-default",
+      "classification": "supported-legal",
+      "fen": "7k/8/8/8/8/8/2R5/2K5 w - - 0 1",
+      "mode": "operational",
+      "move": "c2e2",
+      "native_invocations": 53,
+      "proof_status": "learned-conditional",
+      "truncated": false
+    },
+    {
+      "C6_proof_status": "native-conditional",
+      "C7_proof_status": "learned-conditional",
+      "case": "explicit-C7-and-C6-comparison",
+      "native_proof_equal": true,
+      "raw_stv_equal": true
+    },
+    {
+      "case": "strict",
+      "classification": "unknown",
+      "proof_status": "unknown",
+      "raw_stv": {
+        "confidence": 0.9304166666666666,
+        "strength": 0.9983606557377048
+      }
+    },
+    {
+      "case": "experimental",
+      "classification": "unknown",
+      "proof_status": "unknown",
+      "raw_stv": {
+        "confidence": 0.9304166666666666,
+        "strength": 0.9983606557377048
+      }
+    },
+    {
+      "case": "blocked-rook",
+      "classification": "supported-illegal",
+      "fen": "7k/8/8/8/8/8/2RP4/2K5 w - - 0 1",
+      "move": "c2h2",
+      "native_invocations": 70,
+      "proof_status": "negative-supported"
+    },
+    {
+      "case": "unresolved-knight",
+      "classification": "unknown",
+      "fen": "2bk3K/8/5N2/7n/8/2B5/8/8 w - - 0 1",
+      "move": "f6h5",
+      "native_invocations": 44,
+      "proof_status": "unknown"
+    },
+    {
+      "case": "zero-budget",
+      "classification": "incomplete",
+      "native_invocations": 0,
+      "proof_status": "incomplete",
+      "truncated": true
+    }
+  ],
+  "console_errors": 0,
+  "default_override": false,
+  "desktop_viewport": [
+    1280,
+    900
+  ],
+  "export": {
+    "actual_export_button_blob": true,
+    "bytes": 1734153,
+    "comparisons": [
+      "C6-operational",
+      "C7-operational"
+    ],
+    "dependence_groups_each": 90,
+    "evidence_ids_each": 264,
+    "native_nodes_each": 57,
+    "path": "artifacts/cycle7/proofs/browser-export.json",
+    "positive_proof_complete_each": false,
+    "schema": "cycle-comparison-v7",
+    "sha256": "b7e557d76c7722c4d4afbf46e388c1c21d65371a8bffffd95fd6aa3e4885ca85",
+    "typed_premises_each": 4
+  },
+  "mobile_document_width": 375,
+  "mobile_horizontal_overflow": false,
+  "mobile_viewport": [
+    390,
+    844
+  ],
+  "model_version": "3b14445d136a01d77dd60e5b2dca2d49f525903a85db2283f0281dc86d74859c",
+  "passed": true,
+  "production_source_hash": "d88c975ee788b968b9d8919a66422800090fa2f06c4a1fe869515879611634de",
+  "proof_directory": "artifacts/cycle7/ui/2026-11-07_12-37-21_accepted-packaged-cycle-7-default-c6-c7",
+  "server_command": "env -u C7_OUT -u C6_OUT TMPDIR=/dev/shm .venv/bin/python -m pln_chess serve --port 8768",
+  "server_errors": 0,
+  "source_head": "a94b7816f0a97e253adc319acb4a8cb2f0e27996",
+  "tool_limitations": [
+    "Implicit-session viewport setting did not change the observed viewport; explicit session setting worked. Earlier mislabeled attempts are retained and documented.",
+    "Export exceeded ProofShot stdout buffer; unchanged Blob was extracted in chunks and SHA-256 verified.",
+    "ProofShot left its owned app server running; it was explicitly terminated after recording."
+  ],
+  "video": {
+    "bytes": 1339302,
+    "duration_seconds": 155.9,
+    "wall_seconds_reported_by_tool": 314
+  }
+}

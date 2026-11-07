@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/data/pln-chess-cycle7-clean-0eab14c/evaluation/cycle7_analysis.py", line 92, in <module>
+    run(sys.argv[1])
+  File "/data/pln-chess-cycle7-clean-0eab14c/evaluation/cycle7_analysis.py", line 75, in run
+    delta=paired(base,after)
+          ^^^^^^^^^^^^^^^^^^
+  File "/data/pln-chess-cycle7-clean-0eab14c/evaluation/cycle7_analysis.py", line 21, in paired
+    rng=random.Random(707);keys=sorted(clusters);samples=[]
+                                ^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'int' and 'str'

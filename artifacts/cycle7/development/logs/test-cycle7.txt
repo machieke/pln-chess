@@ -1,0 +1,17 @@
+.....................F..                                                 [100%]
+=================================== FAILURES ===================================
+___________________ test_native_typed_inheritance_signature ____________________
+
+rt = <pln_chess.pln.runtime.Runtime object at 0x7f252dc25c40>
+
+    def test_native_typed_inheritance_signature(rt):
+        correct='(collapse (|- ((Evaluation (Predicate Eligible) (List (Concept B))) (stv 0.9 0.8)) ((Inheritance (Concept A) (Concept B)) (stv 0.95 0.8))))'
+        wrong='(collapse (|- ((Evaluation Eligible B) (stv 0.9 0.8)) ((Inheritance A B) (stv 0.95 0.8))))'
+        raw=rt.execute(f'!(println! (TYPED {correct}))\n!(println! (UNTYPED {wrong}))')
+>       assert '(Evaluation (Predicate Eligible) (List (Concept A)))' in raw and '(UNTYPED ())' in raw
+E       AssertionError: assert ('(Evaluation (Predicate Eligible) (List (Concept A)))' in '(TYPED ())\n(UNTYPED ())\ntrue\ntrue\ntrue\n')
+
+tests/test_cycle7.py:112: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_cycle7.py::test_native_typed_inheritance_signature - Assert...
+1 failed, 23 passed in 48.70s
