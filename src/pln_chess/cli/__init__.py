@@ -12,7 +12,8 @@ from pln_chess.domain import Position
 
 
 def main(argv=None):
-    latest=ROOT/'artifacts/cycle6/model/C6-full.json'
+    latest=ROOT/'artifacts/cycle7/model/C7-default.json'
+    if not latest.exists():latest=ROOT/'artifacts/cycle6/model/C6-full.json'
     default_checkpoint=latest if latest.exists() else ROOT/'artifacts/model.json'
     parser=argparse.ArgumentParser(prog='pln-chess',description='Piece-relative native PLN research inspector')
     sub=parser.add_subparsers(dest='command',required=True)
@@ -21,6 +22,7 @@ def main(argv=None):
     p=sub.add_parser('temporal-inspect');p.add_argument('--fen',required=True);p.add_argument('--mode',choices=('fen-only','trusted-metadata','event-backed'),default='fen-only');p.add_argument('--history')
     p=sub.add_parser('compare-models');p.add_argument('--fen',required=True);p.add_argument('--move',required=True)
     p.add_argument('--before',default=str(ROOT/'artifacts/cycle4/model/C4-full.json'));p.add_argument('--after',default=str(ROOT/'artifacts/cycle5/model/C5-full.json'))
+    p=sub.add_parser('compare-cycles');p.add_argument('--fen',required=True);p.add_argument('--move',required=True);p.add_argument('--checkpoint',default=str(default_checkpoint));p.add_argument('--mode',choices=('operational','strict','experimental'),default='operational')
     p=sub.add_parser('cycle4');p.add_argument('--action',choices=('train','evaluate','diagnose','audit'),default='evaluate')
     p.add_argument('--dataset',default=str(ROOT/'artifacts/cycle4/datasets/dataset.json'));p.add_argument('--split',default='structural-combination')
     p.add_argument('--checkpoint',default=str(ROOT/'artifacts/cycle4/model/C4-full.json'));p.add_argument('--output')
@@ -69,6 +71,9 @@ def main(argv=None):
             result=inspect(args.fen,args.mode,read_json(args.history) if args.history else None)
         elif args.command=='compare-models':
             runtime=Runtime();result={'C4':explain_move(args.fen,args.move,args.before,runtime=runtime),'C5':explain_move(args.fen,args.move,args.after,runtime=runtime)}
+        elif args.command=='compare-cycles':
+            from pln_chess.cycle7.api import compare_cycles
+            result=compare_cycles(args.fen,args.move,args.checkpoint,args.mode)
         elif args.command=='cycle4':
             if args.action=='audit':
                 from evaluation.cycle4_native import audit
@@ -132,7 +137,10 @@ def main(argv=None):
             result={'passed':r['passed'],'runtime':r['runtime']['pln'],'tests':r['tests'],'blockers':r['blockers']}
         elif args.command in ('infer','inspect'):
             options=Options(max_native_invocations=args.max_invocations,timeout_seconds=args.timeout)
-            if read_json(args.checkpoint).get('schema')==6:
+            if read_json(args.checkpoint).get('schema')==7:
+                from pln_chess.cycle7.inference import Cycle7Options
+                options=Cycle7Options(mode=args.mode,max_native_invocations=args.max_invocations,timeout_seconds=args.timeout,temporal_mode=args.temporal_mode)
+            elif read_json(args.checkpoint).get('schema')==6:
                 from pln_chess.cycle6.inference import Cycle6Options
                 options=Cycle6Options(mode=args.mode,max_native_invocations=args.max_invocations,timeout_seconds=args.timeout,temporal_mode=args.temporal_mode)
             elif args.mode is not None:raise ValueError('--mode requires a Cycle 6 checkpoint; use migrate-model')
@@ -175,7 +183,11 @@ def main(argv=None):
         elif args.command=='evaluate':
             # Development command lazily accesses the isolated evaluation package.
             runtime=Runtime();model=Model.load(args.checkpoint,runtime)
-            if model.schema==6:
+            if model.schema==7:
+                from evaluation.cycle7 import evaluate
+                from pln_chess.cycle7.inference import Cycle7Options,default_mode
+                result=evaluate(read_json(args.dataset or ROOT/'artifacts/cycle7/datasets/dataset.json'),model,args.split,runtime,Path(args.output) if args.output else ROOT/f'artifacts/cycle7/evaluation/cli-{args.split}.json.xz',Cycle7Options(mode=args.mode or default_mode(model)))
+            elif model.schema==6:
                 from evaluation.cycle6 import evaluate
                 from pln_chess.cycle6.inference import Cycle6Options,default_mode
                 result=evaluate(read_json(args.dataset or ROOT/'artifacts/cycle6/datasets/dataset.json'),model,args.split,runtime,Path(args.output) if args.output else ROOT/f'artifacts/cycle6/evaluation/cli-{args.split}.json.xz',Cycle6Options(mode=args.mode or default_mode(model)))
@@ -188,13 +200,16 @@ def main(argv=None):
                 from evaluation.experiments import evaluate
                 result=evaluate(read_json(args.dataset or ROOT/'fixtures/dataset.json'),model,args.split,runtime)
                 write_json(args.output or ROOT/f'artifacts/evaluation-{args.split}.json',result)
-            result={'split':result['split'],'metrics':result['metrics'],**({k:result[k] for k in ('mode','model_version','runtime_version')} if model.schema==6 else {})}
+            result={'split':result['split'],'metrics':result['metrics'],**({k:result[k] for k in ('mode','model_version','runtime_version')} if model.schema in (6,7) else {})}
         elif args.command=='benchmark':
             from evaluation.experiments import benchmark
             config=read_json(args.config); runtime=Runtime()
             checkpoint=args.checkpoint or (str(default_checkpoint) if args.mode else ROOT/config['checkpoint'])
             model=Model.load(checkpoint,runtime)
-            if model.schema==6:
+            if model.schema==7:
+                from evaluation.cycle7_cli import benchmark
+                result=benchmark(model,args.positions,args.output,args.mode)
+            elif model.schema==6:
                 from evaluation.cycle6_benchmark import benchmark as mode_benchmark
                 from pln_chess.cycle6.inference import default_mode
                 result=mode_benchmark(checkpoint,read_json(args.positions or ROOT/'artifacts/cycle5/benchmarks/positions.json'),args.output or ROOT/'artifacts/cycle6/benchmarks/cli.json',args.mode or default_mode(model))

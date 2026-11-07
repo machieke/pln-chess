@@ -39,6 +39,9 @@ def default_mode(model):
         receipt=read_json(path)
         if receipt.get('passed') is True and receipt.get('model_version')==model.version and receipt.get('runtime_version')==model.runtime_version and receipt.get('policy')==POLICY and receipt.get('all_required_checks_executed') is True and all(receipt.get('checks',{}).get(k) is True for k in REQUIRED_CHECKS) and receipt.get('production_code_hash')==production_code_hash() and receipt.get('registration_hash')==digest(read_json(ROOT/'configs/cycle6.json')):
             return 'operational'
+    if 'C6_OUT' not in os.environ:
+        from pln_chess.cycle7.inference import legacy_default_mode
+        return legacy_default_mode(model)
     return 'strict'
 
 def decision(legacy,strict,options,new_negative=True,history_conflict=False,premise_conflict=False):
@@ -73,7 +76,7 @@ def infer_moves(position,checkpoint,options=None,runtime=None,selected_moves=Non
     for item in result['candidates']:
         legacy=item['legacy_projection'];strict={'classification':item['classification'],'truth_value':item['legal_move_truth_value'],'status':item['status']}
         new_negative=legacy['classification']!='contradicted' and strict['classification']=='contradicted'
-        unsafe=[p for p in item.get('typed_premises',[]) if p['family'] in ('ray','destination','boundary','exposure') and classify(TV.from_json(p['truth_value']),Cycle5Options())=='supported' and (p.get('bridge_overlap') or (p.get('supporting_evidence') and p.get('contradicting_evidence')))]
+        unsafe=[p for p in item.get('typed_premises',[]) if p['family'] in ('ray','destination','boundary','exposure') and classify(TV.from_json(p['truth_value']),Cycle5Options())=='supported' and ((p.get('bridge_overlap') and options.dependence_aware) or (p.get('supporting_evidence') and p.get('contradicting_evidence')))]
         cls,reason=decision(legacy,strict,options,new_negative,strict['status']=='temporal-conflict',bool(unsafe))
         # Selected diagnostic channel is identical across modes. An unknown
         # classification can therefore carry a strong local TV; policy is explicit.

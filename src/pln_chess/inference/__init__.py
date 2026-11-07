@@ -59,11 +59,18 @@ def infer_moves(position,checkpoint=None,options=None,runtime=None,selected_move
     position=Position.from_fen(position) if isinstance(position,str) else position
     if mode is not None:
         from pln_chess.cycle6.inference import Cycle6Options
-        settings=asdict(options) if options else {};settings['mode']=mode;options=Cycle6Options(**settings)
+        settings=asdict(options) if options else {};settings['mode']=mode
+        if any(k in settings for k in ('backoff','new_training','max_backoff_level')):
+            from pln_chess.cycle7.inference import Cycle7Options
+            options=Cycle7Options(**settings)
+        else:options=Cycle6Options(**settings)
     options=options or Options(); runtime=runtime or Runtime(timeout=options.timeout_seconds)
     model=Model.load(checkpoint,runtime) if isinstance(checkpoint,(str,__import__('pathlib').Path)) else checkpoint or Model(runtime.version)
     if representation is not None and representation!=model.variant:
         raise ValueError('Requested representation does not match checkpoint')
+    if model.schema==7:
+        from pln_chess.cycle7.inference import infer_moves as cycle7_infer
+        return cycle7_infer(position,model,options,runtime,selected_moves)
     if model.schema==6:
         from pln_chess.cycle6.inference import infer_moves as mode_infer
         return mode_infer(position,model,options,runtime,selected_moves)

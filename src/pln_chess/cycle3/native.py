@@ -16,11 +16,12 @@ class NativeSession:
 
     def batch(self,nodes):
         refs={}; symbolic={}; jobs=[]; cached={}; identities={}
+        version=self.version
         for name,expr in nodes:
             # A digest of the exact pure expression and prerequisite identities.
             # No reordering, TV arithmetic, statistical fusion or evidence deduplication.
             keyexpr=re.sub(r'\(([A-Za-z][\w-]*)\)',lambda m:'(Dependency '+identities[m[1]]+')' if m[1] in identities else m[0],expr)
-            key=digest([self.version,self.scope,keyexpr]);identities[name]=key
+            key=digest([version,self.scope,keyexpr]);identities[name]=key
             if self.optimized and key in self.cache:
                 cached[name]=self.cache[key];refs[name]=self.cache[key].metta();self.hits+=1
             elif self.optimized and key in symbolic:

@@ -2,6 +2,17 @@
 
 A piece-relative chess research package using **actual native MeTTa PLN** rules. It includes a pinned runtime audit, six-piece candidate grammar, structural special-move states, append-only evidence, native revision learning, inference/proof APIs, CLI, local inspector, datasets, tests, ablations and measured reports.
 
+Cycle 7 is documented in the [engineering report](docs/cycle7/final-report.md), [bounded native feasibility result](docs/cycle7/native-feasibility.md), and [user decision memo](docs/cycle7/decision-memo.md). It adds versioned proof labels, a C6/C7 inspector comparison, offline active learning, bounded conditional backoff experiments, independent opening-family evaluation, and a source-bound operational-default receipt. Native positive composition remains unproved; rejected learning experiments remain separate from the accepted default.
+
+```bash
+C7_OUT=/data/pln-chess-cycle7-output bash scripts/cycle7_reproduce.sh
+.venv/bin/pln-chess compare-cycles --fen '2bk3K/8/5N2/7n/8/2B5/8/8 w - - 0 1' --move f6h5
+.venv/bin/pln-chess inspect --checkpoint artifacts/cycle7/model/C7-default.json --fen '7k/8/8/8/8/8/2R5/2K5 w - - 0 1' --move c2e2
+.venv/bin/python -m scripts.cycle7_witness 0
+```
+
+Use a fresh clone for the clean-bootstrap acceptance gate. The full Cycle 7 driver records commands and native transcripts, preserves prior-cycle artifacts, commits no generated runtime caches, and never pushes or publishes. [API migration](docs/cycle7/architecture-and-api.md) explains schema 7 and compatibility with earlier checkpoints.
+
 **Coverage is native-partial.** The audited PLN core has no conjunction-introduction rule. This package learns conditional beliefs on typed relative observation categories and derives unary attack/exposure counterevidence. It does not claim a compositional proof of full chess legality. Read [the capability audit](docs/pln-compatibility-matrix.md), [coverage](docs/chess-coverage.md), and [measured final report](docs/final-report.md).
 
 ## Cycle 2: local relational transfer

@@ -1,0 +1,17 @@
+{
+  "schema": 7,
+  "starting_head": "ebe58a980d601ad8b8167a6533619c383109e08d",
+  "seed": 707070,
+  "train_games": 8,
+  "test_games_per_family": 8,
+  "sample_plies": [28, 56],
+  "active_examples_per_game": 24,
+  "independent_group_budgets": [0, 2, 4, 8],
+  "backoff_levels": ["exact", "ray-contents-masked", "destination-and-ray-masked"],
+  "selection": "missing exact local rule first, then structural novelty; labels hidden until selection",
+  "promotion": "Zero observed errors on all locked suites and no worse C6/new-game recall and exact sets; otherwise frozen C6 source remains default.",
+  "native_encoding_budget": 3,
+  "evaluation_max_native_invocations": 100000,
+  "evaluation_budget_reason": "The development full-budget pilot exhausted the shared 20000-node cap on one two-stage position. All canonical offline arms use 100000; production remains 20000.",
+  "production_new_operator": false
+}

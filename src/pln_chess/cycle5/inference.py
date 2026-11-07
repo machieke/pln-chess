@@ -23,8 +23,10 @@ class Cycle5Options(Cycle4Options):
     temporal_mode:str='fen-only'
     temporal_evidence:dict|None=None
     suppress_families:tuple=()
+    dependence_aware:bool=True
     def __post_init__(self):
         super().__post_init__()
+        if type(self.dependence_aware) is not bool:raise ValueError('Invalid dependence policy')
         if self.temporal_mode not in MODES:raise ValueError('Unknown temporal mode')
         if set(self.suppress_families)-set(FAMILIES):raise ValueError('Unknown premise family')
         if self.temporal_evidence is not None and not isinstance(self.temporal_evidence,dict):raise ValueError('Temporal evidence must be an object')
@@ -48,6 +50,7 @@ def infer_moves(position,checkpoint,options=None,runtime=None,selected_moves=Non
     session=session or Session(runtime,optimized,options.max_cache_entries)
     if not isinstance(session,Session):raise ValueError('Cycle 5 requires its scoped two-stage Session')
     base=model.base_model();suppressed=set(options.suppress_families)
+    if not options.dependence_aware:base.training_report['dependence_aware']=False
     if suppressed:
         base=copy.deepcopy(base)
         targets={'geometry':{'GeometryObserved','LocalAdmissibility'},'destination':{'DestinationConflict','LocalAdmissibility'},
@@ -103,7 +106,7 @@ def infer_moves(position,checkpoint,options=None,runtime=None,selected_moves=Non
                     if bridge and model.variant=='C5-full' and not (h['supporting_evidence'] and h['contradicting_evidence']):
                         overlap=set(h['dependence_groups'])&set(bridge['dependence_groups'])
                         entry['bridge_overlap']=sorted(overlap)
-                        if not overlap:
+                        if not overlap or not options.dependence_aware:
                             if rel['id'] not in paths:
                                 ids=h['evidence_ids']+bridge['evidence_ids'];groups=h['dependence_groups']+bridge['dependence_groups']
                                 n=node('Truth_ModusPonens',f'(Truth_ModusPonens ({b["positive"]}) {TV.from_json(bridge["positive"]).metta()})','Not LegalMove',[{'node':b['positive']},{'hypothesis':bridge['id'],'truth_value':bridge['positive']}],ids,groups,[bridge['id']])
