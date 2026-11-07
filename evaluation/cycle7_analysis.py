@@ -17,7 +17,12 @@ def paired(before,after):
             'before_exact':p['exact'],'after_exact':q['exact'],'added_predictions':sorted(set(q['predicted'])-set(p['predicted'])),
             'removed_predictions':sorted(set(p['predicted'])-set(q['predicted'])),
             'before_tp':len(expected&set(p['predicted'])),'after_tp':len(expected&set(q['predicted']))}
-        deltas.append(row);clusters[p.get('source_game') or fid].append(row)
+        game=p.get('source_game')
+        # Historical IDs include integers, strings and missing values. Keep
+        # zero as a valid game ID and keep typed IDs distinct from fixtures.
+        value=game if game is not None else fid
+        cluster=('game' if game is not None else 'fixture',type(value).__name__,str(value))
+        deltas.append(row);clusters[cluster].append(row)
     rng=random.Random(707);keys=sorted(clusters);samples=[]
     for _ in range(1000):
         rows=[r for k in rng.choices(keys,k=len(keys)) for r in clusters[k]];total=sum(r['legal_candidates'] for r in rows)

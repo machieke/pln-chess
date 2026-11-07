@@ -34,6 +34,7 @@ def run():
     for variant in ('C6','C7'):
         command('benchmark-'+variant,['-m','evaluation.cycle7_benchmark','--out',str(OUT),'--variant',variant])
     command('analysis',['-m','evaluation.cycle7_analysis',str(OUT)])
+    command('structural-supplement',['-m','scripts.cycle7_structural_metrics','--out',str(OUT)])
     command('verification',['-m','scripts.cycle7_verify'])
     command('smoke',['-m','scripts.cycle7_smoke'])
     command('report',['-m','evaluation.cycle7_reporting'])

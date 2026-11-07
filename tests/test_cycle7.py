@@ -200,3 +200,14 @@ def test_dependence_ablation_retains_real_provenance(model,rt):
     unsafe=premise_infer(p,changed,Cycle5Options(dependence_aware=False),rt,[m])['candidates'][0]
     assert safe['classification']=='unknown' and unsafe['classification']=='contradicted'
     assert any(x.get('bridge_overlap') for x in unsafe['typed_premises'])
+def test_paired_bootstrap_mixed_game_ids_and_zero():
+    from evaluation.cycle7_analysis import paired
+    positions=[{'fixture':f'fixture-{i}','family':'control','source_game':game,
+                'expected':['a2a3'],'predicted':['a2a3'],'exact':True}
+               for i,game in enumerate((0,0,'0',None))]
+    report={'dataset_hash':'same-locked-data','positions':positions,
+            'rows':[{'fixture':p['fixture'],'move':'a2a3','label':True} for p in positions]}
+    result=paired(report,report)
+    assert result['cluster_count']==3
+    assert result['recall_delta_95_percentile_interval']==[0.,0.]
+    assert result['exact_set_delta_95_percentile_interval']==[0.,0.]
