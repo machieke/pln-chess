@@ -35,6 +35,9 @@ def accepted_receipt(model,legacy=False):
         field='accepted_legacy_model_versions' if legacy else 'accepted_model_versions'
         if r.get('passed') is True and r.get('all_required_checks_executed') is True and all(r.get('checks',{}).get(k) is True for k in ('baseline','negatives','native','evaluation','parity','tests','clean_bootstrap')) and model.version in r.get(field,[]) and r.get('production_code_hash')==production_code_hash() and r.get('registration_hash')==digest(read_json(ROOT/'configs/cycle7.json')) and r.get('runtime_version')==model.runtime_version:
             return not legacy or r.get('legacy_registration_hash')==digest(read_json(ROOT/'configs/cycle6.json'))
+    if 'C7_OUT' not in os.environ:
+        from pln_chess.cycle8.inference import accepted
+        return accepted(model,legacy=True)
     return False
 
 def default_mode(model):return 'operational' if accepted_receipt(model) else 'strict'
@@ -107,6 +110,9 @@ def infer_moves(position,checkpoint,options=None,runtime=None,selected_moves=Non
             selected[item['candidate_id']]={'level':'frozen-exact','rule_id':k,'lineage':base[k]['evidence_ids']}
         item['legacy_proof_status']=item['proof_status'];item['proof_status']=proof_category(item)
         item['proof_status_schema']='proof-status-v7';item['backoff']=selected.get(item['candidate_id'],{'level':'none','rule_id':None,'lineage':[]})
+        # A budget-exhausted multi-candidate planner can return before it creates
+        # premise metadata. Preserve a complete diagnostic contract for that case.
+        item.setdefault('typed_premises',[])
         item['partial_native_premises']=[p['id'] for p in item['typed_premises'] if p['status']=='learned-native-conditional']
         item['premise_proof_status']='native-unary/partial' if item['partial_native_premises'] else 'unknown'
         item['positive_proof_complete']=False

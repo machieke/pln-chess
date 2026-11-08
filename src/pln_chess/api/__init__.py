@@ -22,7 +22,13 @@ def explain_move(position,move,checkpoint=None,options=None,runtime=None,tempora
     receipt=None
     if isinstance(checkpoint,(str,Path)):
         runtime=runtime or Runtime();checkpoint=Model.load(checkpoint,runtime)
-    if getattr(checkpoint,'schema',None)==7:
+    if getattr(checkpoint,'schema',None)==8:
+        from dataclasses import asdict,replace
+        from pln_chess.cycle8.inference import Cycle8Options
+        options=options if isinstance(options,Cycle8Options) else Cycle8Options(**(asdict(options) if options else {}))
+        if temporal_evidence is not None:options=replace(options,temporal_evidence=temporal_evidence)
+        if mode is not None:options=replace(options,mode=mode)
+    elif getattr(checkpoint,'schema',None)==7:
         from dataclasses import asdict,replace
         from pln_chess.cycle7.inference import Cycle7Options
         options=options if isinstance(options,Cycle7Options) else Cycle7Options(**(asdict(options) if options else {}))
@@ -62,10 +68,13 @@ def analyze_batch(requests,checkpoint,options=None,runtime=None,mode=None):
     results=[]
     for request in requests:
         request_options=options
-        if model.schema in (5,6,7) and 'temporal_mode' in request:
+        if model.schema in (5,6,7,8) and 'temporal_mode' in request:
             from dataclasses import replace
             from pln_chess.cycle5.inference import Cycle5Options
-            if model.schema==7:
+            if model.schema==8:
+                from pln_chess.cycle8.inference import Cycle8Options
+                request_options=replace(options or Cycle8Options(),temporal_mode=request['temporal_mode'])
+            elif model.schema==7:
                 from pln_chess.cycle7.inference import Cycle7Options
                 request_options=replace(options or Cycle7Options(),temporal_mode=request['temporal_mode'])
             elif model.schema==6:

@@ -32,6 +32,9 @@ class Model:
     @classmethod
     def load(cls,path,runtime=None):
         data=read_json(path)
+        if data.get('schema')==8:
+            from pln_chess.cycle8.model import PromotionModel
+            return PromotionModel.load(path,runtime)
         if data.get('schema')==7:
             from pln_chess.cycle7.model import BackoffModel
             return BackoffModel.load(path,runtime)
