@@ -14,7 +14,7 @@ from evaluation.experiments import quantile
 from evaluation.cycle7_io import pack
 
 
-def run(out,variant,repetitions=None,checkpoint=None,fixtures=None):
+def run(out,variant,repetitions=None,checkpoint=None,fixtures=None,mode='operational'):
     out=Path(out);config=read_json(ROOT/'configs/cycle8.json');rt=Runtime(timeout=180)
     path=Path(checkpoint) if checkpoint else ROOT/'artifacts/cycle7/model/C7-frozen.json' if variant=='C7-frozen' else out/f'model/{variant}.json'
     model=Model.load(path,rt)
@@ -22,7 +22,8 @@ def run(out,variant,repetitions=None,checkpoint=None,fixtures=None):
         from pln_chess.cycle8.inference import infer_moves,Session,Cycle8Options as Options
     else:
         from pln_chess.cycle7.inference import infer_moves,Session,Cycle7Options as Options
-    options=Options(mode='operational',max_native_invocations=100000,timeout_seconds=180)
+    options=Options(mode=mode,max_native_invocations=100000,timeout_seconds=180)
+    artifact_variant=variant if mode=='operational' else variant+'-'+mode
     repetitions=repetitions or config['benchmark_repetitions']
     if fixtures is None:
         old=read_json(ROOT/'artifacts/cycle5/benchmarks/positions.json')[0]
@@ -49,7 +50,7 @@ def run(out,variant,repetitions=None,checkpoint=None,fixtures=None):
                     'proof_graph_bytes':len(json.dumps(result['proof_dag'],separators=(',',':')).encode())}
                 samples.append(sample)
                 if repetition==0 and arm=='reference':
-                    pack(out/f'benchmarks/proofs/{variant}-{fixture["scope"]}.json.xz',result)
+                    pack(out/f'benchmarks/proofs/{artifact_variant}-{fixture["scope"]}.json.xz',result)
                 assert not result['truncated'],(variant,fixture['id'],arm,result['error'])
                 if arm=='warm':assert result['native_invocations']==0,(variant,fixture['id'],result['native_invocations'])
             assert len(set(hashes))==1,(variant,fixture['id'],hashes)
@@ -65,7 +66,7 @@ def run(out,variant,repetitions=None,checkpoint=None,fixtures=None):
                 'timeout_rate':sum(bool(r['error']) and ('timeout' in r['error'].lower() or 'wall' in r['error'].lower()) for r in selected)/len(selected)}
         records.append({'fixture':fixture,'samples':samples,'aggregates':aggregates,'full_candidate_and_native_proof_parity':True})
         print(variant,fixture['scope'],{k:v['latency_seconds'] for k,v in aggregates.items()},flush=True)
-        write_json(out/f'benchmarks/{variant}.json',{'model_version':model.version,'checkpoint_bytes':path.stat().st_size,
+        write_json(out/f'benchmarks/{artifact_variant}.json',{'model_version':model.version,'mode':mode,'checkpoint_bytes':path.stat().st_size,
             'production_code_hash':production_code_hash(),'runtime':rt.manifest,'records':records,
             'quantiles':'Nearest-rank empirical quantiles; five samples per arm. p95/p99 are maxima, not reliable population tail estimates.',
             'memory':'Process high-water RSS, cumulative across fixtures and repetitions; not per-call allocation.',

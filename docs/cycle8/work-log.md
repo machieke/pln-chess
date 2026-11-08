@@ -25,3 +25,13 @@ not change model architecture, training, thresholds, registration or eligibility
 `configs/cycle8-replay.json` freezes dataset/model replay digests before the clean
 study. Full matrix outcomes and acceptance are still pending at implementation
 commit time.
+
+During final interface review, the new benchmark CLI branch was found to ignore
+an explicit strict/experimental mode. It now forwards the mode and writes
+mode-specific benchmark artifacts; a focused routing test passes. This change
+is made while clean baseline workers are still importing the separate immutable
+C7 checkout, before any clean C8 tests, training or evaluation begin. The clean
+working checkout advances to the committed interface/report revision. Bootstrap
+context retains its original HEAD and records this transition explicitly; native
+pins and dependency files are unchanged. The C8 study subprocesses all start from
+the updated clean source. No baseline rerun with changed C8 code is substituted.

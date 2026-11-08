@@ -222,7 +222,8 @@ def main(argv=None):
             model=Model.load(checkpoint,runtime)
             if model.schema==8:
                 from evaluation.cycle8_benchmark import run
-                result={'records':run(cycle8_out,model.variant,checkpoint=checkpoint,fixtures=read_json(args.positions) if args.positions else None)}
+                from pln_chess.cycle8.inference import default_mode
+                result={'records':run(cycle8_out,model.variant,checkpoint=checkpoint,fixtures=read_json(args.positions) if args.positions else None,mode=args.mode or default_mode(model))}
                 if args.output:write_json(args.output,result)
             elif model.schema==7:
                 from evaluation.cycle7_cli import benchmark

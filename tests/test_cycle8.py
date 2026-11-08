@@ -160,3 +160,14 @@ def test_inspector_uses_shared_comparison_and_exports_proofs(trained,rt,tmp_path
     assert not result['comparisons']['C8-experimental']['candidate']['proof_complete']
     ordinary=inspector_infer({**payload,'compare':False})
     assert ordinary['candidate']['classification']=='supported-legal'
+
+
+def test_cli_benchmark_preserves_explicit_mode(frozen,tmp_path,monkeypatch,capsys):
+    from pln_chess.cli import main
+    import evaluation.cycle8_benchmark as benchmark
+    path=tmp_path/'frozen.json';frozen.export(path);seen={}
+    def capture(*args,**kwargs):
+        seen.update(kwargs);return []
+    monkeypatch.setattr(benchmark,'run',capture)
+    assert main(['benchmark','--checkpoint',str(path),'--mode','strict'])==0
+    assert seen['mode']=='strict'
