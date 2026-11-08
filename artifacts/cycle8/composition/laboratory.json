@@ -1,0 +1,5798 @@
+{
+  "assumptions_remaining": [
+    "Population transport",
+    "Calibrated marginal probability bounds",
+    "A learned relation from the joint proposition to the desired consequent"
+  ],
+  "mathematical_checks": {
+    "attaining_joint_tables": 882,
+    "duplicate_certificate_idempotence": true,
+    "exact_marginal_pairs": 441,
+    "inconsistent_constraints_rejected": true,
+    "interval_pairs": 225,
+    "pairwise_not_mutual_counterexample": {
+      "all_marginals": "1/2",
+      "all_pairwise_intersections": "1/4",
+      "even_parity_P111": "0",
+      "naive_pairwise_product_P111": "1/8",
+      "odd_parity_P111": "1/4"
+    },
+    "passed": true,
+    "scope": "Exact finite arithmetic checks supplement the analytic proofs; they do not validate empirical independence or STV calibration."
+  },
+  "native_controls": [
+    {
+      "budget": {
+        "query_attempts": 30,
+        "query_depth": 60,
+        "query_steps": 12
+      },
+      "dependence_groups": [
+        "C7-micro-A-0",
+        "C7-micro-A-1",
+        "C7-micro-A-2",
+        "C7-micro-A-3",
+        "C7-micro-B-0",
+        "C7-micro-B-1",
+        "C7-micro-B-2",
+        "C7-micro-B-3"
+      ],
+      "derivation_order": [
+        "A",
+        "B",
+        "independent-premises"
+      ],
+      "evidence_ids": [
+        "520daa8c38d35087728d8d0f931e79293747c1cb88f940c12a8f870ccef15be0",
+        "4bfde41dec74f6780660be22b14fc93c7eda14a804dfc9c3612b89cb010d4ac7",
+        "43355c1b0797f517469b56f1d1d29398ec7337a47586598b7ee2a1c273a1109e",
+        "3bf01abeca3df2dc861a14ba816bacb4b67579fba8df7d5a86afd7c52a951d04",
+        "e8eb5e39b5106037f01da66698d526593541c53709370f743c9857a127a9ecbb",
+        "0252cb26e37479b104127b6cb1f89c2e6cff8fbfe33ccee83240f3f8d02ccf10",
+        "64c1b5ba87409eb8250778779a20b2bea136f617430feabb6d8e5471f20e913d",
+        "48c2ed45b1e941478dfbf2c2e11673c0723e8860bcedea49dd333530a38880cf"
+      ],
+      "expression": "(PLN.Query ((Sentence (A (stv 0.9935064935064936 0.8020833333333335)) (source-A)) (Sentence (B (stv 0.9935064935064936 0.8020833333333335)) (source-B))) C 12 30 60)",
+      "id": "independent-premises",
+      "model_version": "C8-existing-native-controls-v1",
+      "native_complete_positive_proof": false,
+      "preamble": "",
+      "premise_ids": [
+        "A",
+        "B"
+      ],
+      "proof_status": "unknown-conclusion",
+      "result": "(C7PROBE independent-premises ())",
+      "rule_ids": [
+        "PLN.Query"
+      ],
+      "runtime_version": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+      "stdout": "(SELECTED (Sentence (A (stv 0.9935064935064936 0.8020833333333335)) (source-A)))\n(SELECTED (Sentence (B (stv 0.9935064935064936 0.8020833333333335)) (source-B)))\n(C7PROBE independent-premises ())\ntrue\ntrue\n",
+      "stvs": []
+    },
+    {
+      "budget": {
+        "query_attempts": 30,
+        "query_depth": 60,
+        "query_steps": 12
+      },
+      "dependence_groups": [
+        "C7-micro-A-0",
+        "C7-micro-A-1",
+        "C7-micro-A-2",
+        "C7-micro-A-3",
+        "C7-micro-B-0",
+        "C7-micro-B-1",
+        "C7-micro-B-2",
+        "C7-micro-B-3",
+        "supplied-conditional"
+      ],
+      "derivation_order": [
+        "A",
+        "B",
+        "supplied-conditional"
+      ],
+      "evidence_ids": [
+        "520daa8c38d35087728d8d0f931e79293747c1cb88f940c12a8f870ccef15be0",
+        "4bfde41dec74f6780660be22b14fc93c7eda14a804dfc9c3612b89cb010d4ac7",
+        "43355c1b0797f517469b56f1d1d29398ec7337a47586598b7ee2a1c273a1109e",
+        "3bf01abeca3df2dc861a14ba816bacb4b67579fba8df7d5a86afd7c52a951d04",
+        "e8eb5e39b5106037f01da66698d526593541c53709370f743c9857a127a9ecbb",
+        "0252cb26e37479b104127b6cb1f89c2e6cff8fbfe33ccee83240f3f8d02ccf10",
+        "64c1b5ba87409eb8250778779a20b2bea136f617430feabb6d8e5471f20e913d",
+        "48c2ed45b1e941478dfbf2c2e11673c0723e8860bcedea49dd333530a38880cf",
+        "4bfbd7dee165311560304ac0d9b1dc88b46e5bc9102f227bcab8aeb8854451f7"
+      ],
+      "expression": "(PLN.Query ((Sentence (A (stv 0.9935064935064936 0.8020833333333335)) (source-A)) (Sentence (B (stv 0.9935064935064936 0.8020833333333335)) (source-B)) (Sentence ((Implication A (Implication B C)) (stv 0.95 0.8)) (supplied-rule))) C 12 30 60)",
+      "id": "supplied-conditional",
+      "model_version": "C8-existing-native-controls-v1",
+      "native_complete_positive_proof": false,
+      "preamble": "",
+      "premise_ids": [
+        "A",
+        "B"
+      ],
+      "proof_status": "native-partial-proof",
+      "result": "(C7PROBE supplied-conditional ((stv 0.9379612919547984 0.45556260336343357) (source-A source-B supplied-rule)))",
+      "rule_ids": [
+        "PLN.Query"
+      ],
+      "runtime_version": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+      "stdout": "(SELECTED (Sentence (A (stv 0.9935064935064936 0.8020833333333335)) (source-A)))\n(SELECTED (Sentence (B (stv 0.9935064935064936 0.8020833333333335)) (source-B)))\n(SELECTED (Sentence ((Implication A (Implication B C)) (stv 0.95 0.8)) (supplied-rule)))\n(SELECTED (Sentence ((Implication B C) (stv 0.9439610389610389 0.6056250000000001)) (source-A supplied-rule)))\n(SELECTED (Sentence (C (stv 0.9379612919547984 0.45556260336343357)) (source-A source-B supplied-rule)))\n(C7PROBE supplied-conditional ((stv 0.9379612919547984 0.45556260336343357) (source-A source-B supplied-rule)))\ntrue\ntrue\n",
+      "stvs": [
+        {
+          "confidence": 0.45556260336343357,
+          "strength": 0.9379612919547984
+        }
+      ]
+    },
+    {
+      "budget": {
+        "query_attempts": 30,
+        "query_depth": 60,
+        "query_steps": 12
+      },
+      "dependence_groups": [
+        "C7-micro-A-0",
+        "C7-micro-A-1",
+        "C7-micro-A-2",
+        "C7-micro-A-3",
+        "supplied-conditional"
+      ],
+      "derivation_order": [
+        "A",
+        "unknown-B"
+      ],
+      "evidence_ids": [
+        "520daa8c38d35087728d8d0f931e79293747c1cb88f940c12a8f870ccef15be0",
+        "4bfde41dec74f6780660be22b14fc93c7eda14a804dfc9c3612b89cb010d4ac7",
+        "43355c1b0797f517469b56f1d1d29398ec7337a47586598b7ee2a1c273a1109e",
+        "3bf01abeca3df2dc861a14ba816bacb4b67579fba8df7d5a86afd7c52a951d04",
+        "4bfbd7dee165311560304ac0d9b1dc88b46e5bc9102f227bcab8aeb8854451f7"
+      ],
+      "expression": "(PLN.Query ((Sentence (A (stv 0.9935064935064936 0.8020833333333335)) (source-A)) (Sentence (B (stv 0.5 0.0)) (source-B)) (Sentence ((Implication A (Implication B C)) (stv 0.95 0.8)) (supplied-rule))) C 12 30 60)",
+      "id": "unknown-B",
+      "model_version": "C8-existing-native-controls-v1",
+      "native_complete_positive_proof": false,
+      "preamble": "",
+      "premise_ids": [
+        "A"
+      ],
+      "proof_status": "unknown-conclusion",
+      "result": "(C7PROBE unknown-B ())",
+      "rule_ids": [
+        "PLN.Query"
+      ],
+      "runtime_version": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+      "stdout": "(SELECTED (Sentence (A (stv 0.9935064935064936 0.8020833333333335)) (source-A)))\n(SELECTED (Sentence ((Implication A (Implication B C)) (stv 0.95 0.8)) (supplied-rule)))\n(SELECTED (Sentence ((Implication B C) (stv 0.9439610389610389 0.6056250000000001)) (source-A supplied-rule)))\n(SELECTED (Sentence (B (stv 0.5 0.0)) (source-B)))\n(SELECTED (Sentence (C (stv 0.48198051948051945 0.0)) (source-A source-B supplied-rule)))\n(C7PROBE unknown-B ())\ntrue\ntrue\n",
+      "stvs": []
+    },
+    {
+      "budget": {
+        "query_attempts": 30,
+        "query_depth": 60,
+        "query_steps": 12
+      },
+      "dependence_groups": [
+        "C7-micro-A-0",
+        "C7-micro-A-1",
+        "C7-micro-A-2",
+        "C7-micro-A-3",
+        "C7-micro-B-0",
+        "C7-micro-B-1",
+        "C7-micro-B-2",
+        "C7-micro-B-3",
+        "supplied-conditional"
+      ],
+      "derivation_order": [
+        "A",
+        "B",
+        "shared-evidence"
+      ],
+      "evidence_ids": [
+        "520daa8c38d35087728d8d0f931e79293747c1cb88f940c12a8f870ccef15be0",
+        "4bfde41dec74f6780660be22b14fc93c7eda14a804dfc9c3612b89cb010d4ac7",
+        "43355c1b0797f517469b56f1d1d29398ec7337a47586598b7ee2a1c273a1109e",
+        "3bf01abeca3df2dc861a14ba816bacb4b67579fba8df7d5a86afd7c52a951d04",
+        "e8eb5e39b5106037f01da66698d526593541c53709370f743c9857a127a9ecbb",
+        "0252cb26e37479b104127b6cb1f89c2e6cff8fbfe33ccee83240f3f8d02ccf10",
+        "64c1b5ba87409eb8250778779a20b2bea136f617430feabb6d8e5471f20e913d",
+        "48c2ed45b1e941478dfbf2c2e11673c0723e8860bcedea49dd333530a38880cf",
+        "4bfbd7dee165311560304ac0d9b1dc88b46e5bc9102f227bcab8aeb8854451f7"
+      ],
+      "expression": "(PLN.Query ((Sentence (A (stv 0.9935064935064936 0.8020833333333335)) (shared)) (Sentence (B (stv 0.9935064935064936 0.8020833333333335)) (shared)) (Sentence ((Implication A (Implication B C)) (stv 0.95 0.8)) (supplied-rule))) C 12 30 60)",
+      "id": "shared-evidence",
+      "model_version": "C8-existing-native-controls-v1",
+      "native_complete_positive_proof": false,
+      "preamble": "",
+      "premise_ids": [
+        "A",
+        "B"
+      ],
+      "proof_status": "unknown-conclusion",
+      "result": "(C7PROBE shared-evidence ())",
+      "rule_ids": [
+        "PLN.Query"
+      ],
+      "runtime_version": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+      "stdout": "(SELECTED (Sentence (A (stv 0.9935064935064936 0.8020833333333335)) (shared)))\n(SELECTED (Sentence (B (stv 0.9935064935064936 0.8020833333333335)) (shared)))\n(SELECTED (Sentence ((Implication A (Implication B C)) (stv 0.95 0.8)) (supplied-rule)))\n(SELECTED (Sentence ((Implication B C) (stv 0.9439610389610389 0.6056250000000001)) (shared supplied-rule)))\n(C7PROBE shared-evidence ())\ntrue\ntrue\n",
+      "stvs": []
+    },
+    {
+      "budget": {
+        "query_attempts": 30,
+        "query_depth": 60,
+        "query_steps": 12
+      },
+      "dependence_groups": [
+        "C7-micro-A-0",
+        "C7-micro-A-1",
+        "C7-micro-A-2",
+        "C7-micro-A-3"
+      ],
+      "derivation_order": [
+        "A",
+        "native-duplicate-revision"
+      ],
+      "evidence_ids": [
+        "520daa8c38d35087728d8d0f931e79293747c1cb88f940c12a8f870ccef15be0",
+        "4bfde41dec74f6780660be22b14fc93c7eda14a804dfc9c3612b89cb010d4ac7",
+        "43355c1b0797f517469b56f1d1d29398ec7337a47586598b7ee2a1c273a1109e",
+        "3bf01abeca3df2dc861a14ba816bacb4b67579fba8df7d5a86afd7c52a951d04"
+      ],
+      "expression": "(Truth_Revision (stv 0.9935064935064936 0.8020833333333335) (stv 0.9935064935064936 0.8020833333333335))",
+      "id": "native-duplicate-revision",
+      "model_version": "C8-existing-native-controls-v1",
+      "native_complete_positive_proof": false,
+      "preamble": "",
+      "premise_ids": [
+        "A"
+      ],
+      "proof_status": "native-partial-proof",
+      "result": "(C7PROBE native-duplicate-revision (stv 0.9935064935064936 0.8901734104046244))",
+      "rule_ids": [
+        "Truth_Revision"
+      ],
+      "runtime_version": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+      "stdout": "(C7PROBE native-duplicate-revision (stv 0.9935064935064936 0.8901734104046244))\ntrue\ntrue\n",
+      "stvs": [
+        {
+          "confidence": 0.8901734104046244,
+          "strength": 0.9935064935064936
+        }
+      ]
+    },
+    {
+      "budget": {
+        "query_attempts": 30,
+        "query_depth": 60,
+        "query_steps": 12
+      },
+      "dependence_groups": [
+        "C7-micro-A-0",
+        "C7-micro-A-1",
+        "C7-micro-A-2",
+        "C7-micro-A-3",
+        "supplied-counterobservation"
+      ],
+      "derivation_order": [
+        "A",
+        "native-conflicting-revision"
+      ],
+      "evidence_ids": [
+        "520daa8c38d35087728d8d0f931e79293747c1cb88f940c12a8f870ccef15be0",
+        "4bfde41dec74f6780660be22b14fc93c7eda14a804dfc9c3612b89cb010d4ac7",
+        "43355c1b0797f517469b56f1d1d29398ec7337a47586598b7ee2a1c273a1109e",
+        "3bf01abeca3df2dc861a14ba816bacb4b67579fba8df7d5a86afd7c52a951d04",
+        "b44077151e93f14b208a802a80332edace628609b4a5404f07bdb549c87e351f"
+      ],
+      "expression": "(Truth_Revision (stv 0.9935064935064936 0.8020833333333335) (stv 0.0 0.8))",
+      "id": "native-conflicting-revision",
+      "model_version": "C8-existing-native-controls-v1",
+      "native_complete_positive_proof": false,
+      "preamble": "",
+      "premise_ids": [
+        "A"
+      ],
+      "proof_status": "native-partial-proof",
+      "result": "(C7PROBE native-conflicting-revision (stv 0.5000000000000002 0.8895348837209303))",
+      "rule_ids": [
+        "Truth_Revision"
+      ],
+      "runtime_version": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+      "stdout": "(C7PROBE native-conflicting-revision (stv 0.5000000000000002 0.8895348837209303))\ntrue\ntrue\n",
+      "stvs": [
+        {
+          "confidence": 0.8895348837209303,
+          "strength": 0.5000000000000002
+        }
+      ]
+    },
+    {
+      "budget": {
+        "query_attempts": 30,
+        "query_depth": 60,
+        "query_steps": 12
+      },
+      "dependence_groups": [
+        "C7-micro-A-0",
+        "C7-micro-A-1",
+        "C7-micro-A-2",
+        "C7-micro-A-3"
+      ],
+      "derivation_order": [
+        "A",
+        "native-negation"
+      ],
+      "evidence_ids": [
+        "520daa8c38d35087728d8d0f931e79293747c1cb88f940c12a8f870ccef15be0",
+        "4bfde41dec74f6780660be22b14fc93c7eda14a804dfc9c3612b89cb010d4ac7",
+        "43355c1b0797f517469b56f1d1d29398ec7337a47586598b7ee2a1c273a1109e",
+        "3bf01abeca3df2dc861a14ba816bacb4b67579fba8df7d5a86afd7c52a951d04"
+      ],
+      "expression": "(Truth_Negation (stv 0.9935064935064936 0.8020833333333335))",
+      "id": "native-negation",
+      "model_version": "C8-existing-native-controls-v1",
+      "native_complete_positive_proof": false,
+      "preamble": "",
+      "premise_ids": [
+        "A"
+      ],
+      "proof_status": "native-partial-proof",
+      "result": "(C7PROBE native-negation (stv 0.00649350649350644 0.8020833333333335))",
+      "rule_ids": [
+        "Truth_Negation"
+      ],
+      "runtime_version": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+      "stdout": "(C7PROBE native-negation (stv 0.00649350649350644 0.8020833333333335))\ntrue\ntrue\n",
+      "stvs": [
+        {
+          "confidence": 0.8020833333333335,
+          "strength": 0.00649350649350644
+        }
+      ]
+    }
+  ],
+  "native_positive_composition": "not demonstrated",
+  "premise_training": [
+    {
+      "descriptor": {
+        "abstract_combination": "9a5349573e6a31d9b24eb6ce0a6820a183790c1b3a621d67dbc305d6c8c8e145",
+        "atoms": [
+          {
+            "args": [
+              "p1",
+              "Knight"
+            ],
+            "predicate": "PieceType",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "args": [
+              "p1",
+              "White"
+            ],
+            "predicate": "Owner",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "args": [
+              "se35a120cab027571",
+              "White"
+            ],
+            "predicate": "SideToMove",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "args": [
+              "se35a120cab027571",
+              "p1",
+              "m29d56e5a948464ec"
+            ],
+            "predicate": "CandidateMove",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "args": [
+              "se35a120cab027571",
+              "m29d56e5a948464ec",
+              "context:b5ef82f50c980213850b025c"
+            ],
+            "predicate": "RelativeObservation",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            },
+            "value": {
+              "castle_king_edge_distance": null,
+              "castle_rights": null,
+              "castle_rook": null,
+              "castle_rook_kind": null,
+              "castle_rook_path": [],
+              "castle_transit": [],
+              "destination": "Empty",
+              "destination_exists": true,
+              "destination_kind": null,
+              "effect": "ordinary",
+              "ep_offset": null,
+              "geometry": {
+                "direction": "NE",
+                "distance": 2,
+                "family": "offset",
+                "offset": [
+                  1,
+                  2
+                ]
+              },
+              "intermediate": [],
+              "own_king_count": 1,
+              "pawn_end_edge_distance": null,
+              "pawn_start_edge_distance": null,
+              "piece": "Knight",
+              "postmove_opponents": [
+                {
+                  "geometry": {
+                    "direction": "NW",
+                    "distance": 7,
+                    "family": "diagonal",
+                    "offset": [
+                      -7,
+                      7
+                    ]
+                  },
+                  "intermediate": [
+                    "Empty",
+                    "Empty",
+                    "Empty",
+                    "Empty",
+                    "Empty",
+                    "Empty"
+                  ],
+                  "piece": "King"
+                }
+              ],
+              "promotion": null,
+              "rights_known": null
+            }
+          },
+          {
+            "args": [
+              "se35a120cab027571",
+              "m29d56e5a948464ec",
+              "Empty"
+            ],
+            "predicate": "DestinationOccupancy",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "args": [
+              "se35a120cab027571",
+              "m29d56e5a948464ec"
+            ],
+            "predicate": "DestinationExists",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          }
+        ],
+        "attack_relations": [
+          {
+            "attacker_id": "p0",
+            "descriptor": {
+              "geometry": {
+                "direction": "NW",
+                "distance": 7,
+                "family": "diagonal",
+                "offset": [
+                  -7,
+                  7
+                ]
+              },
+              "intermediate": [
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty"
+              ],
+              "piece": "King"
+            },
+            "key": "attack:04b7ea13325d4fd46f16efde",
+            "king_id": "p2",
+            "phase": "successor",
+            "relation": {
+              "derivation": "Typed relative projection; never a native conjunction.",
+              "descriptor": {
+                "motion": [
+                  7,
+                  7
+                ],
+                "piece": "King",
+                "ray_contents": []
+              },
+              "id": "c4:56eaffa0f584573c0b482771",
+              "provenance": "host-grounded",
+              "target": "Attack",
+              "tier": 3
+            }
+          }
+        ],
+        "attacks": [
+          {
+            "attacker_id": "p0",
+            "descriptor": {
+              "geometry": {
+                "direction": "NW",
+                "distance": 7,
+                "family": "diagonal",
+                "offset": [
+                  -7,
+                  7
+                ]
+              },
+              "intermediate": [
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty"
+              ],
+              "piece": "King"
+            },
+            "key": "attack:04b7ea13325d4fd46f16efde",
+            "king_id": "p2"
+          }
+        ],
+        "boundary": "Movement keys exclude opponent-to-king frames. Exposure is separately indexed.",
+        "candidate_id": "m29d56e5a948464ec",
+        "cell_relations": [],
+        "complete": true,
+        "composition": "Unary native constraint chains; pooled local observation is explicitly non-compositional.",
+        "context": {
+          "castle_king_edge_distance": null,
+          "castle_rights": null,
+          "castle_rook": null,
+          "castle_rook_kind": null,
+          "castle_rook_path": [],
+          "castle_transit": [],
+          "destination": "Empty",
+          "destination_exists": true,
+          "destination_kind": null,
+          "effect": "ordinary",
+          "ep_offset": null,
+          "geometry": {
+            "direction": "NE",
+            "distance": 2,
+            "family": "offset",
+            "offset": [
+              1,
+              2
+            ]
+          },
+          "intermediate": [],
+          "own_king_count": 1,
+          "pawn_end_edge_distance": null,
+          "pawn_start_edge_distance": null,
+          "piece": "Knight",
+          "postmove_opponents": [
+            {
+              "geometry": {
+                "direction": "NW",
+                "distance": 7,
+                "family": "diagonal",
+                "offset": [
+                  -7,
+                  7
+                ]
+              },
+              "intermediate": [
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty"
+              ],
+              "piece": "King"
+            }
+          ],
+          "promotion": null,
+          "rights_known": null
+        },
+        "factored_premises": [
+          {
+            "predicate": "PieceClass",
+            "provenance": "sensed",
+            "roles": {
+              "mover": "Knight"
+            }
+          },
+          {
+            "predicate": "Displacement",
+            "provenance": "host-grounded",
+            "roles": {
+              "offset": [
+                1,
+                2
+              ],
+              "source": "source",
+              "target": "destination"
+            }
+          },
+          {
+            "predicate": "DestinationRelation",
+            "provenance": "sensed",
+            "roles": {
+              "kind": null,
+              "occupancy": "Empty"
+            }
+          },
+          {
+            "predicate": "BoundaryRelation",
+            "provenance": "sensed",
+            "roles": {
+              "destination_exists": true
+            }
+          },
+          {
+            "predicate": "TemporalObservation",
+            "provenance": "sensed",
+            "roles": {
+              "castle_rook_path": []
+            }
+          },
+          {
+            "predicate": "CandidateSuccessor",
+            "provenance": "host-grounded",
+            "roles": {
+              "operation": "ordinary",
+              "promotion": null
+            }
+          }
+        ],
+        "fine_combination": "4fd4b00a936b8e1a5747b34dc77bc9f1eed7c20511d959dedd2b96d79392d891",
+        "geometry_key": "geometry:26d794920c7dd0877e492b0a",
+        "hierarchy": {
+          "abstraction": [
+            {
+              "composition": "not native AND",
+              "descriptor": {
+                "effect": "ordinary",
+                "motion": [
+                  1,
+                  2
+                ],
+                "piece": "Knight",
+                "promotion": null
+              },
+              "family": "geometry",
+              "id": "c5:cba003d2ea4c4b9707b94e62",
+              "origin": "host-grounded local abstraction",
+              "target": "GeometryCompatible"
+            },
+            {
+              "composition": "not native AND",
+              "descriptor": {
+                "occupancy": "Empty",
+                "royal_contact": false
+              },
+              "family": "destination",
+              "id": "c5:84f2a4cb4f3ccfa9e8220275",
+              "origin": "host-grounded local abstraction",
+              "target": "DestinationConflict"
+            },
+            {
+              "composition": "not native AND",
+              "descriptor": {
+                "exists": true
+              },
+              "family": "boundary",
+              "id": "c5:af5ee7c6d5cff7372b2bba27",
+              "origin": "host-grounded local abstraction",
+              "target": "BoundaryConflict"
+            }
+          ],
+          "refinement_policy": "No automatic refinement from heldout errors. Conflict remains visible; no generated exact-context rule.",
+          "sensor": [
+            {
+              "predicate": "PieceClass",
+              "provenance": "sensed",
+              "roles": {
+                "mover": "Knight"
+              }
+            },
+            {
+              "predicate": "Displacement",
+              "provenance": "host-grounded",
+              "roles": {
+                "offset": [
+                  1,
+                  2
+                ],
+                "source": "source",
+                "target": "destination"
+              }
+            },
+            {
+              "predicate": "DestinationRelation",
+              "provenance": "sensed",
+              "roles": {
+                "kind": null,
+                "occupancy": "Empty"
+              }
+            },
+            {
+              "predicate": "BoundaryRelation",
+              "provenance": "sensed",
+              "roles": {
+                "destination_exists": true
+              }
+            },
+            {
+              "predicate": "TemporalObservation",
+              "provenance": "sensed",
+              "roles": {
+                "castle_rook_path": []
+              }
+            },
+            {
+              "predicate": "CandidateSuccessor",
+              "provenance": "host-grounded",
+              "roles": {
+                "operation": "ordinary",
+                "promotion": null
+              }
+            }
+          ]
+        },
+        "history": {
+          "castling_rights_known": true,
+          "ep_target_asserted": false,
+          "known": false
+        },
+        "key": "context:b5ef82f50c980213850b025c",
+        "local_context": {
+          "destination": "Empty",
+          "effect": "ordinary",
+          "motion": [
+            1,
+            2
+          ],
+          "piece": "Knight",
+          "promotion": null,
+          "ray_contents": []
+        },
+        "missing": [],
+        "move": "d4e6",
+        "pattern": {
+          "effect": "ordinary",
+          "geometry": {
+            "direction": "NE",
+            "distance": 2,
+            "family": "offset",
+            "offset": [
+              1,
+              2
+            ]
+          },
+          "piece": "Knight",
+          "promotion": null
+        },
+        "piece": "Knight",
+        "position_id": "se35a120cab027571",
+        "ray_motifs": {
+          "cells": [],
+          "content_classes": [],
+          "first_nonempty": null,
+          "occupied_count": 0,
+          "prefix_empty_count": 0,
+          "suffix_empty_count": 0
+        },
+        "relations": [
+          {
+            "derivation": "Typed relative projection; never a native conjunction.",
+            "descriptor": {
+              "destination": "Empty",
+              "effect": "ordinary",
+              "motion": [
+                1,
+                2
+              ],
+              "piece": "Knight",
+              "promotion": null,
+              "ray_contents": []
+            },
+            "id": "c4:1c4c6a593af0d8cdc51b36fb",
+            "provenance": "host-grounded",
+            "target": "LocalAdmissibility",
+            "tier": 4
+          },
+          {
+            "derivation": "Typed relative projection; never a native conjunction.",
+            "descriptor": {
+              "effect": "ordinary",
+              "motion": [
+                1,
+                2
+              ],
+              "piece": "Knight",
+              "promotion": null
+            },
+            "id": "c4:763d77f1c7cf50f8fce0433f",
+            "provenance": "host-grounded",
+            "target": "GeometryObserved",
+            "tier": 1
+          },
+          {
+            "derivation": "Typed relative projection; never a native conjunction.",
+            "descriptor": {
+              "kind": null,
+              "occupancy": "Empty"
+            },
+            "id": "c4:0d6fc7b06fa06fc43efa039d",
+            "provenance": "host-grounded",
+            "target": "DestinationConflict",
+            "tier": 2
+          },
+          {
+            "derivation": "Typed relative projection; never a native conjunction.",
+            "descriptor": {
+              "exists": true
+            },
+            "id": "c4:973a3e06c1ebda356381f261",
+            "provenance": "host-grounded",
+            "target": "BoundaryConflict",
+            "tier": 2
+          }
+        ],
+        "relative_neighborhood": {
+          "destination": {
+            "occupancy": "Empty",
+            "royal_contact": false
+          },
+          "geometry": {
+            "direction": "NE",
+            "distance": 2,
+            "family": "offset",
+            "offset": [
+              1,
+              2
+            ]
+          },
+          "opponent_frames": [
+            {
+              "descriptor": {
+                "motion": [
+                  7,
+                  7
+                ],
+                "piece": "King",
+                "ray_contents": []
+              },
+              "phase": "successor"
+            }
+          ],
+          "owner_forward": "White",
+          "pre_move_opponent_frames": [
+            {
+              "geometry": {
+                "direction": "NW",
+                "distance": 7,
+                "family": "diagonal",
+                "offset": [
+                  -7,
+                  7
+                ]
+              },
+              "intermediate": [
+                "Empty",
+                "Empty",
+                "Empty",
+                "Opponent",
+                "Empty",
+                "Empty"
+              ],
+              "piece": "King"
+            }
+          ],
+          "ray_cells": [],
+          "signed_displacement": [
+            1,
+            2
+          ],
+          "source_occupancy": "Knight"
+        },
+        "schema": "factored-constraints-v4",
+        "temporal_observations": {
+          "castle_rook_path": []
+        },
+        "tv": {
+          "confidence": 0.99,
+          "strength": 1.0
+        },
+        "typed_relations": [
+          {
+            "composition": "not native AND",
+            "descriptor": {
+              "effect": "ordinary",
+              "motion": [
+                1,
+                2
+              ],
+              "piece": "Knight",
+              "promotion": null
+            },
+            "family": "geometry",
+            "id": "c5:cba003d2ea4c4b9707b94e62",
+            "origin": "host-grounded local abstraction",
+            "target": "GeometryCompatible"
+          },
+          {
+            "composition": "not native AND",
+            "descriptor": {
+              "occupancy": "Empty",
+              "royal_contact": false
+            },
+            "family": "destination",
+            "id": "c5:84f2a4cb4f3ccfa9e8220275",
+            "origin": "host-grounded local abstraction",
+            "target": "DestinationConflict"
+          },
+          {
+            "composition": "not native AND",
+            "descriptor": {
+              "exists": true
+            },
+            "family": "boundary",
+            "id": "c5:af5ee7c6d5cff7372b2bba27",
+            "origin": "host-grounded local abstraction",
+            "target": "BoundaryConflict"
+          }
+        ],
+        "variant": "C4-full"
+      },
+      "evidence_id": "520daa8c38d35087728d8d0f931e79293747c1cb88f940c12a8f870ccef15be0",
+      "expression": "(Truth_Revision (stv 0.5 0.05) (stv 1.0 0.5))",
+      "family": "A",
+      "fen": "7k/8/8/8/3N4/8/8/K7 w - - 0 1",
+      "label": true,
+      "move": "d4e6",
+      "observation": "knight relative (1,2) geometry",
+      "output": {
+        "confidence": 0.5128205128205129,
+        "strength": 0.9750000000000001
+      },
+      "prior": {
+        "confidence": 0.05,
+        "strength": 0.5
+      },
+      "source_group": "C7-micro-A-0"
+    },
+    {
+      "descriptor": {
+        "abstract_combination": "9a5349573e6a31d9b24eb6ce0a6820a183790c1b3a621d67dbc305d6c8c8e145",
+        "atoms": [
+          {
+            "args": [
+              "p1",
+              "Knight"
+            ],
+            "predicate": "PieceType",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "args": [
+              "p1",
+              "White"
+            ],
+            "predicate": "Owner",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "args": [
+              "sd78124b2e06fd158",
+              "White"
+            ],
+            "predicate": "SideToMove",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "args": [
+              "sd78124b2e06fd158",
+              "p1",
+              "m80eca80b0462d8eb"
+            ],
+            "predicate": "CandidateMove",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "args": [
+              "sd78124b2e06fd158",
+              "m80eca80b0462d8eb",
+              "context:b5ef82f50c980213850b025c"
+            ],
+            "predicate": "RelativeObservation",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            },
+            "value": {
+              "castle_king_edge_distance": null,
+              "castle_rights": null,
+              "castle_rook": null,
+              "castle_rook_kind": null,
+              "castle_rook_path": [],
+              "castle_transit": [],
+              "destination": "Empty",
+              "destination_exists": true,
+              "destination_kind": null,
+              "effect": "ordinary",
+              "ep_offset": null,
+              "geometry": {
+                "direction": "NE",
+                "distance": 2,
+                "family": "offset",
+                "offset": [
+                  1,
+                  2
+                ]
+              },
+              "intermediate": [],
+              "own_king_count": 1,
+              "pawn_end_edge_distance": null,
+              "pawn_start_edge_distance": null,
+              "piece": "Knight",
+              "postmove_opponents": [
+                {
+                  "geometry": {
+                    "direction": "NW",
+                    "distance": 7,
+                    "family": "diagonal",
+                    "offset": [
+                      -7,
+                      7
+                    ]
+                  },
+                  "intermediate": [
+                    "Empty",
+                    "Empty",
+                    "Empty",
+                    "Empty",
+                    "Empty",
+                    "Empty"
+                  ],
+                  "piece": "King"
+                }
+              ],
+              "promotion": null,
+              "rights_known": null
+            }
+          },
+          {
+            "args": [
+              "sd78124b2e06fd158",
+              "m80eca80b0462d8eb",
+              "Empty"
+            ],
+            "predicate": "DestinationOccupancy",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "args": [
+              "sd78124b2e06fd158",
+              "m80eca80b0462d8eb"
+            ],
+            "predicate": "DestinationExists",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          }
+        ],
+        "attack_relations": [
+          {
+            "attacker_id": "p0",
+            "descriptor": {
+              "geometry": {
+                "direction": "NW",
+                "distance": 7,
+                "family": "diagonal",
+                "offset": [
+                  -7,
+                  7
+                ]
+              },
+              "intermediate": [
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty"
+              ],
+              "piece": "King"
+            },
+            "key": "attack:04b7ea13325d4fd46f16efde",
+            "king_id": "p2",
+            "phase": "successor",
+            "relation": {
+              "derivation": "Typed relative projection; never a native conjunction.",
+              "descriptor": {
+                "motion": [
+                  7,
+                  7
+                ],
+                "piece": "King",
+                "ray_contents": []
+              },
+              "id": "c4:56eaffa0f584573c0b482771",
+              "provenance": "host-grounded",
+              "target": "Attack",
+              "tier": 3
+            }
+          }
+        ],
+        "attacks": [
+          {
+            "attacker_id": "p0",
+            "descriptor": {
+              "geometry": {
+                "direction": "NW",
+                "distance": 7,
+                "family": "diagonal",
+                "offset": [
+                  -7,
+                  7
+                ]
+              },
+              "intermediate": [
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty"
+              ],
+              "piece": "King"
+            },
+            "key": "attack:04b7ea13325d4fd46f16efde",
+            "king_id": "p2"
+          }
+        ],
+        "boundary": "Movement keys exclude opponent-to-king frames. Exposure is separately indexed.",
+        "candidate_id": "m80eca80b0462d8eb",
+        "cell_relations": [],
+        "complete": true,
+        "composition": "Unary native constraint chains; pooled local observation is explicitly non-compositional.",
+        "context": {
+          "castle_king_edge_distance": null,
+          "castle_rights": null,
+          "castle_rook": null,
+          "castle_rook_kind": null,
+          "castle_rook_path": [],
+          "castle_transit": [],
+          "destination": "Empty",
+          "destination_exists": true,
+          "destination_kind": null,
+          "effect": "ordinary",
+          "ep_offset": null,
+          "geometry": {
+            "direction": "NE",
+            "distance": 2,
+            "family": "offset",
+            "offset": [
+              1,
+              2
+            ]
+          },
+          "intermediate": [],
+          "own_king_count": 1,
+          "pawn_end_edge_distance": null,
+          "pawn_start_edge_distance": null,
+          "piece": "Knight",
+          "postmove_opponents": [
+            {
+              "geometry": {
+                "direction": "NW",
+                "distance": 7,
+                "family": "diagonal",
+                "offset": [
+                  -7,
+                  7
+                ]
+              },
+              "intermediate": [
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty"
+              ],
+              "piece": "King"
+            }
+          ],
+          "promotion": null,
+          "rights_known": null
+        },
+        "factored_premises": [
+          {
+            "predicate": "PieceClass",
+            "provenance": "sensed",
+            "roles": {
+              "mover": "Knight"
+            }
+          },
+          {
+            "predicate": "Displacement",
+            "provenance": "host-grounded",
+            "roles": {
+              "offset": [
+                1,
+                2
+              ],
+              "source": "source",
+              "target": "destination"
+            }
+          },
+          {
+            "predicate": "DestinationRelation",
+            "provenance": "sensed",
+            "roles": {
+              "kind": null,
+              "occupancy": "Empty"
+            }
+          },
+          {
+            "predicate": "BoundaryRelation",
+            "provenance": "sensed",
+            "roles": {
+              "destination_exists": true
+            }
+          },
+          {
+            "predicate": "TemporalObservation",
+            "provenance": "sensed",
+            "roles": {
+              "castle_rook_path": []
+            }
+          },
+          {
+            "predicate": "CandidateSuccessor",
+            "provenance": "host-grounded",
+            "roles": {
+              "operation": "ordinary",
+              "promotion": null
+            }
+          }
+        ],
+        "fine_combination": "4fd4b00a936b8e1a5747b34dc77bc9f1eed7c20511d959dedd2b96d79392d891",
+        "geometry_key": "geometry:26d794920c7dd0877e492b0a",
+        "hierarchy": {
+          "abstraction": [
+            {
+              "composition": "not native AND",
+              "descriptor": {
+                "effect": "ordinary",
+                "motion": [
+                  1,
+                  2
+                ],
+                "piece": "Knight",
+                "promotion": null
+              },
+              "family": "geometry",
+              "id": "c5:cba003d2ea4c4b9707b94e62",
+              "origin": "host-grounded local abstraction",
+              "target": "GeometryCompatible"
+            },
+            {
+              "composition": "not native AND",
+              "descriptor": {
+                "occupancy": "Empty",
+                "royal_contact": false
+              },
+              "family": "destination",
+              "id": "c5:84f2a4cb4f3ccfa9e8220275",
+              "origin": "host-grounded local abstraction",
+              "target": "DestinationConflict"
+            },
+            {
+              "composition": "not native AND",
+              "descriptor": {
+                "exists": true
+              },
+              "family": "boundary",
+              "id": "c5:af5ee7c6d5cff7372b2bba27",
+              "origin": "host-grounded local abstraction",
+              "target": "BoundaryConflict"
+            }
+          ],
+          "refinement_policy": "No automatic refinement from heldout errors. Conflict remains visible; no generated exact-context rule.",
+          "sensor": [
+            {
+              "predicate": "PieceClass",
+              "provenance": "sensed",
+              "roles": {
+                "mover": "Knight"
+              }
+            },
+            {
+              "predicate": "Displacement",
+              "provenance": "host-grounded",
+              "roles": {
+                "offset": [
+                  1,
+                  2
+                ],
+                "source": "source",
+                "target": "destination"
+              }
+            },
+            {
+              "predicate": "DestinationRelation",
+              "provenance": "sensed",
+              "roles": {
+                "kind": null,
+                "occupancy": "Empty"
+              }
+            },
+            {
+              "predicate": "BoundaryRelation",
+              "provenance": "sensed",
+              "roles": {
+                "destination_exists": true
+              }
+            },
+            {
+              "predicate": "TemporalObservation",
+              "provenance": "sensed",
+              "roles": {
+                "castle_rook_path": []
+              }
+            },
+            {
+              "predicate": "CandidateSuccessor",
+              "provenance": "host-grounded",
+              "roles": {
+                "operation": "ordinary",
+                "promotion": null
+              }
+            }
+          ]
+        },
+        "history": {
+          "castling_rights_known": true,
+          "ep_target_asserted": false,
+          "known": false
+        },
+        "key": "context:b5ef82f50c980213850b025c",
+        "local_context": {
+          "destination": "Empty",
+          "effect": "ordinary",
+          "motion": [
+            1,
+            2
+          ],
+          "piece": "Knight",
+          "promotion": null,
+          "ray_contents": []
+        },
+        "missing": [],
+        "move": "c3d5",
+        "pattern": {
+          "effect": "ordinary",
+          "geometry": {
+            "direction": "NE",
+            "distance": 2,
+            "family": "offset",
+            "offset": [
+              1,
+              2
+            ]
+          },
+          "piece": "Knight",
+          "promotion": null
+        },
+        "piece": "Knight",
+        "position_id": "sd78124b2e06fd158",
+        "ray_motifs": {
+          "cells": [],
+          "content_classes": [],
+          "first_nonempty": null,
+          "occupied_count": 0,
+          "prefix_empty_count": 0,
+          "suffix_empty_count": 0
+        },
+        "relations": [
+          {
+            "derivation": "Typed relative projection; never a native conjunction.",
+            "descriptor": {
+              "destination": "Empty",
+              "effect": "ordinary",
+              "motion": [
+                1,
+                2
+              ],
+              "piece": "Knight",
+              "promotion": null,
+              "ray_contents": []
+            },
+            "id": "c4:1c4c6a593af0d8cdc51b36fb",
+            "provenance": "host-grounded",
+            "target": "LocalAdmissibility",
+            "tier": 4
+          },
+          {
+            "derivation": "Typed relative projection; never a native conjunction.",
+            "descriptor": {
+              "effect": "ordinary",
+              "motion": [
+                1,
+                2
+              ],
+              "piece": "Knight",
+              "promotion": null
+            },
+            "id": "c4:763d77f1c7cf50f8fce0433f",
+            "provenance": "host-grounded",
+            "target": "GeometryObserved",
+            "tier": 1
+          },
+          {
+            "derivation": "Typed relative projection; never a native conjunction.",
+            "descriptor": {
+              "kind": null,
+              "occupancy": "Empty"
+            },
+            "id": "c4:0d6fc7b06fa06fc43efa039d",
+            "provenance": "host-grounded",
+            "target": "DestinationConflict",
+            "tier": 2
+          },
+          {
+            "derivation": "Typed relative projection; never a native conjunction.",
+            "descriptor": {
+              "exists": true
+            },
+            "id": "c4:973a3e06c1ebda356381f261",
+            "provenance": "host-grounded",
+            "target": "BoundaryConflict",
+            "tier": 2
+          }
+        ],
+        "relative_neighborhood": {
+          "destination": {
+            "occupancy": "Empty",
+            "royal_contact": false
+          },
+          "geometry": {
+            "direction": "NE",
+            "distance": 2,
+            "family": "offset",
+            "offset": [
+              1,
+              2
+            ]
+          },
+          "opponent_frames": [
+            {
+              "descriptor": {
+                "motion": [
+                  7,
+                  7
+                ],
+                "piece": "King",
+                "ray_contents": []
+              },
+              "phase": "successor"
+            }
+          ],
+          "owner_forward": "White",
+          "pre_move_opponent_frames": [
+            {
+              "geometry": {
+                "direction": "NW",
+                "distance": 7,
+                "family": "diagonal",
+                "offset": [
+                  -7,
+                  7
+                ]
+              },
+              "intermediate": [
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Opponent",
+                "Empty"
+              ],
+              "piece": "King"
+            }
+          ],
+          "ray_cells": [],
+          "signed_displacement": [
+            1,
+            2
+          ],
+          "source_occupancy": "Knight"
+        },
+        "schema": "factored-constraints-v4",
+        "temporal_observations": {
+          "castle_rook_path": []
+        },
+        "tv": {
+          "confidence": 0.99,
+          "strength": 1.0
+        },
+        "typed_relations": [
+          {
+            "composition": "not native AND",
+            "descriptor": {
+              "effect": "ordinary",
+              "motion": [
+                1,
+                2
+              ],
+              "piece": "Knight",
+              "promotion": null
+            },
+            "family": "geometry",
+            "id": "c5:cba003d2ea4c4b9707b94e62",
+            "origin": "host-grounded local abstraction",
+            "target": "GeometryCompatible"
+          },
+          {
+            "composition": "not native AND",
+            "descriptor": {
+              "occupancy": "Empty",
+              "royal_contact": false
+            },
+            "family": "destination",
+            "id": "c5:84f2a4cb4f3ccfa9e8220275",
+            "origin": "host-grounded local abstraction",
+            "target": "DestinationConflict"
+          },
+          {
+            "composition": "not native AND",
+            "descriptor": {
+              "exists": true
+            },
+            "family": "boundary",
+            "id": "c5:af5ee7c6d5cff7372b2bba27",
+            "origin": "host-grounded local abstraction",
+            "target": "BoundaryConflict"
+          }
+        ],
+        "variant": "C4-full"
+      },
+      "evidence_id": "4bfde41dec74f6780660be22b14fc93c7eda14a804dfc9c3612b89cb010d4ac7",
+      "expression": "(Truth_Revision (stv 0.9750000000000001 0.5128205128205129) (stv 1.0 0.5))",
+      "family": "A",
+      "fen": "7k/8/8/8/8/2N5/8/K7 w - - 0 1",
+      "label": true,
+      "move": "c3d5",
+      "observation": "knight relative (1,2) geometry",
+      "output": {
+        "confidence": 0.6724137931034483,
+        "strength": 0.9871794871794872
+      },
+      "prior": {
+        "confidence": 0.5128205128205129,
+        "strength": 0.9750000000000001
+      },
+      "source_group": "C7-micro-A-1"
+    },
+    {
+      "descriptor": {
+        "abstract_combination": "9a5349573e6a31d9b24eb6ce0a6820a183790c1b3a621d67dbc305d6c8c8e145",
+        "atoms": [
+          {
+            "args": [
+              "p1",
+              "Knight"
+            ],
+            "predicate": "PieceType",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "args": [
+              "p1",
+              "White"
+            ],
+            "predicate": "Owner",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "args": [
+              "sefdd1a9fbeffbf5f",
+              "White"
+            ],
+            "predicate": "SideToMove",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "args": [
+              "sefdd1a9fbeffbf5f",
+              "p1",
+              "ma5e0c38eb094b919"
+            ],
+            "predicate": "CandidateMove",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "args": [
+              "sefdd1a9fbeffbf5f",
+              "ma5e0c38eb094b919",
+              "context:b5ef82f50c980213850b025c"
+            ],
+            "predicate": "RelativeObservation",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            },
+            "value": {
+              "castle_king_edge_distance": null,
+              "castle_rights": null,
+              "castle_rook": null,
+              "castle_rook_kind": null,
+              "castle_rook_path": [],
+              "castle_transit": [],
+              "destination": "Empty",
+              "destination_exists": true,
+              "destination_kind": null,
+              "effect": "ordinary",
+              "ep_offset": null,
+              "geometry": {
+                "direction": "NE",
+                "distance": 2,
+                "family": "offset",
+                "offset": [
+                  1,
+                  2
+                ]
+              },
+              "intermediate": [],
+              "own_king_count": 1,
+              "pawn_end_edge_distance": null,
+              "pawn_start_edge_distance": null,
+              "piece": "Knight",
+              "postmove_opponents": [
+                {
+                  "geometry": {
+                    "direction": "NW",
+                    "distance": 7,
+                    "family": "diagonal",
+                    "offset": [
+                      -7,
+                      7
+                    ]
+                  },
+                  "intermediate": [
+                    "Empty",
+                    "Empty",
+                    "Empty",
+                    "Empty",
+                    "Empty",
+                    "Empty"
+                  ],
+                  "piece": "King"
+                }
+              ],
+              "promotion": null,
+              "rights_known": null
+            }
+          },
+          {
+            "args": [
+              "sefdd1a9fbeffbf5f",
+              "ma5e0c38eb094b919",
+              "Empty"
+            ],
+            "predicate": "DestinationOccupancy",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "args": [
+              "sefdd1a9fbeffbf5f",
+              "ma5e0c38eb094b919"
+            ],
+            "predicate": "DestinationExists",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          }
+        ],
+        "attack_relations": [
+          {
+            "attacker_id": "p0",
+            "descriptor": {
+              "geometry": {
+                "direction": "NW",
+                "distance": 7,
+                "family": "diagonal",
+                "offset": [
+                  -7,
+                  7
+                ]
+              },
+              "intermediate": [
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty"
+              ],
+              "piece": "King"
+            },
+            "key": "attack:04b7ea13325d4fd46f16efde",
+            "king_id": "p2",
+            "phase": "successor",
+            "relation": {
+              "derivation": "Typed relative projection; never a native conjunction.",
+              "descriptor": {
+                "motion": [
+                  7,
+                  7
+                ],
+                "piece": "King",
+                "ray_contents": []
+              },
+              "id": "c4:56eaffa0f584573c0b482771",
+              "provenance": "host-grounded",
+              "target": "Attack",
+              "tier": 3
+            }
+          }
+        ],
+        "attacks": [
+          {
+            "attacker_id": "p0",
+            "descriptor": {
+              "geometry": {
+                "direction": "NW",
+                "distance": 7,
+                "family": "diagonal",
+                "offset": [
+                  -7,
+                  7
+                ]
+              },
+              "intermediate": [
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty"
+              ],
+              "piece": "King"
+            },
+            "key": "attack:04b7ea13325d4fd46f16efde",
+            "king_id": "p2"
+          }
+        ],
+        "boundary": "Movement keys exclude opponent-to-king frames. Exposure is separately indexed.",
+        "candidate_id": "ma5e0c38eb094b919",
+        "cell_relations": [],
+        "complete": true,
+        "composition": "Unary native constraint chains; pooled local observation is explicitly non-compositional.",
+        "context": {
+          "castle_king_edge_distance": null,
+          "castle_rights": null,
+          "castle_rook": null,
+          "castle_rook_kind": null,
+          "castle_rook_path": [],
+          "castle_transit": [],
+          "destination": "Empty",
+          "destination_exists": true,
+          "destination_kind": null,
+          "effect": "ordinary",
+          "ep_offset": null,
+          "geometry": {
+            "direction": "NE",
+            "distance": 2,
+            "family": "offset",
+            "offset": [
+              1,
+              2
+            ]
+          },
+          "intermediate": [],
+          "own_king_count": 1,
+          "pawn_end_edge_distance": null,
+          "pawn_start_edge_distance": null,
+          "piece": "Knight",
+          "postmove_opponents": [
+            {
+              "geometry": {
+                "direction": "NW",
+                "distance": 7,
+                "family": "diagonal",
+                "offset": [
+                  -7,
+                  7
+                ]
+              },
+              "intermediate": [
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty"
+              ],
+              "piece": "King"
+            }
+          ],
+          "promotion": null,
+          "rights_known": null
+        },
+        "factored_premises": [
+          {
+            "predicate": "PieceClass",
+            "provenance": "sensed",
+            "roles": {
+              "mover": "Knight"
+            }
+          },
+          {
+            "predicate": "Displacement",
+            "provenance": "host-grounded",
+            "roles": {
+              "offset": [
+                1,
+                2
+              ],
+              "source": "source",
+              "target": "destination"
+            }
+          },
+          {
+            "predicate": "DestinationRelation",
+            "provenance": "sensed",
+            "roles": {
+              "kind": null,
+              "occupancy": "Empty"
+            }
+          },
+          {
+            "predicate": "BoundaryRelation",
+            "provenance": "sensed",
+            "roles": {
+              "destination_exists": true
+            }
+          },
+          {
+            "predicate": "TemporalObservation",
+            "provenance": "sensed",
+            "roles": {
+              "castle_rook_path": []
+            }
+          },
+          {
+            "predicate": "CandidateSuccessor",
+            "provenance": "host-grounded",
+            "roles": {
+              "operation": "ordinary",
+              "promotion": null
+            }
+          }
+        ],
+        "fine_combination": "4fd4b00a936b8e1a5747b34dc77bc9f1eed7c20511d959dedd2b96d79392d891",
+        "geometry_key": "geometry:26d794920c7dd0877e492b0a",
+        "hierarchy": {
+          "abstraction": [
+            {
+              "composition": "not native AND",
+              "descriptor": {
+                "effect": "ordinary",
+                "motion": [
+                  1,
+                  2
+                ],
+                "piece": "Knight",
+                "promotion": null
+              },
+              "family": "geometry",
+              "id": "c5:cba003d2ea4c4b9707b94e62",
+              "origin": "host-grounded local abstraction",
+              "target": "GeometryCompatible"
+            },
+            {
+              "composition": "not native AND",
+              "descriptor": {
+                "occupancy": "Empty",
+                "royal_contact": false
+              },
+              "family": "destination",
+              "id": "c5:84f2a4cb4f3ccfa9e8220275",
+              "origin": "host-grounded local abstraction",
+              "target": "DestinationConflict"
+            },
+            {
+              "composition": "not native AND",
+              "descriptor": {
+                "exists": true
+              },
+              "family": "boundary",
+              "id": "c5:af5ee7c6d5cff7372b2bba27",
+              "origin": "host-grounded local abstraction",
+              "target": "BoundaryConflict"
+            }
+          ],
+          "refinement_policy": "No automatic refinement from heldout errors. Conflict remains visible; no generated exact-context rule.",
+          "sensor": [
+            {
+              "predicate": "PieceClass",
+              "provenance": "sensed",
+              "roles": {
+                "mover": "Knight"
+              }
+            },
+            {
+              "predicate": "Displacement",
+              "provenance": "host-grounded",
+              "roles": {
+                "offset": [
+                  1,
+                  2
+                ],
+                "source": "source",
+                "target": "destination"
+              }
+            },
+            {
+              "predicate": "DestinationRelation",
+              "provenance": "sensed",
+              "roles": {
+                "kind": null,
+                "occupancy": "Empty"
+              }
+            },
+            {
+              "predicate": "BoundaryRelation",
+              "provenance": "sensed",
+              "roles": {
+                "destination_exists": true
+              }
+            },
+            {
+              "predicate": "TemporalObservation",
+              "provenance": "sensed",
+              "roles": {
+                "castle_rook_path": []
+              }
+            },
+            {
+              "predicate": "CandidateSuccessor",
+              "provenance": "host-grounded",
+              "roles": {
+                "operation": "ordinary",
+                "promotion": null
+              }
+            }
+          ]
+        },
+        "history": {
+          "castling_rights_known": true,
+          "ep_target_asserted": false,
+          "known": false
+        },
+        "key": "context:b5ef82f50c980213850b025c",
+        "local_context": {
+          "destination": "Empty",
+          "effect": "ordinary",
+          "motion": [
+            1,
+            2
+          ],
+          "piece": "Knight",
+          "promotion": null,
+          "ray_contents": []
+        },
+        "missing": [],
+        "move": "e3f5",
+        "pattern": {
+          "effect": "ordinary",
+          "geometry": {
+            "direction": "NE",
+            "distance": 2,
+            "family": "offset",
+            "offset": [
+              1,
+              2
+            ]
+          },
+          "piece": "Knight",
+          "promotion": null
+        },
+        "piece": "Knight",
+        "position_id": "sefdd1a9fbeffbf5f",
+        "ray_motifs": {
+          "cells": [],
+          "content_classes": [],
+          "first_nonempty": null,
+          "occupied_count": 0,
+          "prefix_empty_count": 0,
+          "suffix_empty_count": 0
+        },
+        "relations": [
+          {
+            "derivation": "Typed relative projection; never a native conjunction.",
+            "descriptor": {
+              "destination": "Empty",
+              "effect": "ordinary",
+              "motion": [
+                1,
+                2
+              ],
+              "piece": "Knight",
+              "promotion": null,
+              "ray_contents": []
+            },
+            "id": "c4:1c4c6a593af0d8cdc51b36fb",
+            "provenance": "host-grounded",
+            "target": "LocalAdmissibility",
+            "tier": 4
+          },
+          {
+            "derivation": "Typed relative projection; never a native conjunction.",
+            "descriptor": {
+              "effect": "ordinary",
+              "motion": [
+                1,
+                2
+              ],
+              "piece": "Knight",
+              "promotion": null
+            },
+            "id": "c4:763d77f1c7cf50f8fce0433f",
+            "provenance": "host-grounded",
+            "target": "GeometryObserved",
+            "tier": 1
+          },
+          {
+            "derivation": "Typed relative projection; never a native conjunction.",
+            "descriptor": {
+              "kind": null,
+              "occupancy": "Empty"
+            },
+            "id": "c4:0d6fc7b06fa06fc43efa039d",
+            "provenance": "host-grounded",
+            "target": "DestinationConflict",
+            "tier": 2
+          },
+          {
+            "derivation": "Typed relative projection; never a native conjunction.",
+            "descriptor": {
+              "exists": true
+            },
+            "id": "c4:973a3e06c1ebda356381f261",
+            "provenance": "host-grounded",
+            "target": "BoundaryConflict",
+            "tier": 2
+          }
+        ],
+        "relative_neighborhood": {
+          "destination": {
+            "occupancy": "Empty",
+            "royal_contact": false
+          },
+          "geometry": {
+            "direction": "NE",
+            "distance": 2,
+            "family": "offset",
+            "offset": [
+              1,
+              2
+            ]
+          },
+          "opponent_frames": [
+            {
+              "descriptor": {
+                "motion": [
+                  7,
+                  7
+                ],
+                "piece": "King",
+                "ray_contents": []
+              },
+              "phase": "successor"
+            }
+          ],
+          "owner_forward": "White",
+          "pre_move_opponent_frames": [
+            {
+              "geometry": {
+                "direction": "NW",
+                "distance": 7,
+                "family": "diagonal",
+                "offset": [
+                  -7,
+                  7
+                ]
+              },
+              "intermediate": [
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty"
+              ],
+              "piece": "King"
+            }
+          ],
+          "ray_cells": [],
+          "signed_displacement": [
+            1,
+            2
+          ],
+          "source_occupancy": "Knight"
+        },
+        "schema": "factored-constraints-v4",
+        "temporal_observations": {
+          "castle_rook_path": []
+        },
+        "tv": {
+          "confidence": 0.99,
+          "strength": 1.0
+        },
+        "typed_relations": [
+          {
+            "composition": "not native AND",
+            "descriptor": {
+              "effect": "ordinary",
+              "motion": [
+                1,
+                2
+              ],
+              "piece": "Knight",
+              "promotion": null
+            },
+            "family": "geometry",
+            "id": "c5:cba003d2ea4c4b9707b94e62",
+            "origin": "host-grounded local abstraction",
+            "target": "GeometryCompatible"
+          },
+          {
+            "composition": "not native AND",
+            "descriptor": {
+              "occupancy": "Empty",
+              "royal_contact": false
+            },
+            "family": "destination",
+            "id": "c5:84f2a4cb4f3ccfa9e8220275",
+            "origin": "host-grounded local abstraction",
+            "target": "DestinationConflict"
+          },
+          {
+            "composition": "not native AND",
+            "descriptor": {
+              "exists": true
+            },
+            "family": "boundary",
+            "id": "c5:af5ee7c6d5cff7372b2bba27",
+            "origin": "host-grounded local abstraction",
+            "target": "BoundaryConflict"
+          }
+        ],
+        "variant": "C4-full"
+      },
+      "evidence_id": "43355c1b0797f517469b56f1d1d29398ec7337a47586598b7ee2a1c273a1109e",
+      "expression": "(Truth_Revision (stv 0.9871794871794872 0.6724137931034483) (stv 1.0 0.5))",
+      "family": "A",
+      "fen": "7k/8/8/8/8/4N3/8/K7 w - - 0 1",
+      "label": true,
+      "move": "e3f5",
+      "observation": "knight relative (1,2) geometry",
+      "output": {
+        "confidence": 0.7532467532467534,
+        "strength": 0.9913793103448276
+      },
+      "prior": {
+        "confidence": 0.6724137931034483,
+        "strength": 0.9871794871794872
+      },
+      "source_group": "C7-micro-A-2"
+    },
+    {
+      "descriptor": {
+        "abstract_combination": "9a5349573e6a31d9b24eb6ce0a6820a183790c1b3a621d67dbc305d6c8c8e145",
+        "atoms": [
+          {
+            "args": [
+              "p1",
+              "Knight"
+            ],
+            "predicate": "PieceType",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "args": [
+              "p1",
+              "White"
+            ],
+            "predicate": "Owner",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "args": [
+              "sac8d986b642f9d94",
+              "White"
+            ],
+            "predicate": "SideToMove",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "args": [
+              "sac8d986b642f9d94",
+              "p1",
+              "m2c63b8c744a696a9"
+            ],
+            "predicate": "CandidateMove",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "args": [
+              "sac8d986b642f9d94",
+              "m2c63b8c744a696a9",
+              "context:b5ef82f50c980213850b025c"
+            ],
+            "predicate": "RelativeObservation",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            },
+            "value": {
+              "castle_king_edge_distance": null,
+              "castle_rights": null,
+              "castle_rook": null,
+              "castle_rook_kind": null,
+              "castle_rook_path": [],
+              "castle_transit": [],
+              "destination": "Empty",
+              "destination_exists": true,
+              "destination_kind": null,
+              "effect": "ordinary",
+              "ep_offset": null,
+              "geometry": {
+                "direction": "NE",
+                "distance": 2,
+                "family": "offset",
+                "offset": [
+                  1,
+                  2
+                ]
+              },
+              "intermediate": [],
+              "own_king_count": 1,
+              "pawn_end_edge_distance": null,
+              "pawn_start_edge_distance": null,
+              "piece": "Knight",
+              "postmove_opponents": [
+                {
+                  "geometry": {
+                    "direction": "NW",
+                    "distance": 7,
+                    "family": "diagonal",
+                    "offset": [
+                      -7,
+                      7
+                    ]
+                  },
+                  "intermediate": [
+                    "Empty",
+                    "Empty",
+                    "Empty",
+                    "Empty",
+                    "Empty",
+                    "Empty"
+                  ],
+                  "piece": "King"
+                }
+              ],
+              "promotion": null,
+              "rights_known": null
+            }
+          },
+          {
+            "args": [
+              "sac8d986b642f9d94",
+              "m2c63b8c744a696a9",
+              "Empty"
+            ],
+            "predicate": "DestinationOccupancy",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "args": [
+              "sac8d986b642f9d94",
+              "m2c63b8c744a696a9"
+            ],
+            "predicate": "DestinationExists",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          }
+        ],
+        "attack_relations": [
+          {
+            "attacker_id": "p0",
+            "descriptor": {
+              "geometry": {
+                "direction": "NW",
+                "distance": 7,
+                "family": "diagonal",
+                "offset": [
+                  -7,
+                  7
+                ]
+              },
+              "intermediate": [
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty"
+              ],
+              "piece": "King"
+            },
+            "key": "attack:04b7ea13325d4fd46f16efde",
+            "king_id": "p2",
+            "phase": "successor",
+            "relation": {
+              "derivation": "Typed relative projection; never a native conjunction.",
+              "descriptor": {
+                "motion": [
+                  7,
+                  7
+                ],
+                "piece": "King",
+                "ray_contents": []
+              },
+              "id": "c4:56eaffa0f584573c0b482771",
+              "provenance": "host-grounded",
+              "target": "Attack",
+              "tier": 3
+            }
+          }
+        ],
+        "attacks": [
+          {
+            "attacker_id": "p0",
+            "descriptor": {
+              "geometry": {
+                "direction": "NW",
+                "distance": 7,
+                "family": "diagonal",
+                "offset": [
+                  -7,
+                  7
+                ]
+              },
+              "intermediate": [
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty"
+              ],
+              "piece": "King"
+            },
+            "key": "attack:04b7ea13325d4fd46f16efde",
+            "king_id": "p2"
+          }
+        ],
+        "boundary": "Movement keys exclude opponent-to-king frames. Exposure is separately indexed.",
+        "candidate_id": "m2c63b8c744a696a9",
+        "cell_relations": [],
+        "complete": true,
+        "composition": "Unary native constraint chains; pooled local observation is explicitly non-compositional.",
+        "context": {
+          "castle_king_edge_distance": null,
+          "castle_rights": null,
+          "castle_rook": null,
+          "castle_rook_kind": null,
+          "castle_rook_path": [],
+          "castle_transit": [],
+          "destination": "Empty",
+          "destination_exists": true,
+          "destination_kind": null,
+          "effect": "ordinary",
+          "ep_offset": null,
+          "geometry": {
+            "direction": "NE",
+            "distance": 2,
+            "family": "offset",
+            "offset": [
+              1,
+              2
+            ]
+          },
+          "intermediate": [],
+          "own_king_count": 1,
+          "pawn_end_edge_distance": null,
+          "pawn_start_edge_distance": null,
+          "piece": "Knight",
+          "postmove_opponents": [
+            {
+              "geometry": {
+                "direction": "NW",
+                "distance": 7,
+                "family": "diagonal",
+                "offset": [
+                  -7,
+                  7
+                ]
+              },
+              "intermediate": [
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty"
+              ],
+              "piece": "King"
+            }
+          ],
+          "promotion": null,
+          "rights_known": null
+        },
+        "factored_premises": [
+          {
+            "predicate": "PieceClass",
+            "provenance": "sensed",
+            "roles": {
+              "mover": "Knight"
+            }
+          },
+          {
+            "predicate": "Displacement",
+            "provenance": "host-grounded",
+            "roles": {
+              "offset": [
+                1,
+                2
+              ],
+              "source": "source",
+              "target": "destination"
+            }
+          },
+          {
+            "predicate": "DestinationRelation",
+            "provenance": "sensed",
+            "roles": {
+              "kind": null,
+              "occupancy": "Empty"
+            }
+          },
+          {
+            "predicate": "BoundaryRelation",
+            "provenance": "sensed",
+            "roles": {
+              "destination_exists": true
+            }
+          },
+          {
+            "predicate": "TemporalObservation",
+            "provenance": "sensed",
+            "roles": {
+              "castle_rook_path": []
+            }
+          },
+          {
+            "predicate": "CandidateSuccessor",
+            "provenance": "host-grounded",
+            "roles": {
+              "operation": "ordinary",
+              "promotion": null
+            }
+          }
+        ],
+        "fine_combination": "4fd4b00a936b8e1a5747b34dc77bc9f1eed7c20511d959dedd2b96d79392d891",
+        "geometry_key": "geometry:26d794920c7dd0877e492b0a",
+        "hierarchy": {
+          "abstraction": [
+            {
+              "composition": "not native AND",
+              "descriptor": {
+                "effect": "ordinary",
+                "motion": [
+                  1,
+                  2
+                ],
+                "piece": "Knight",
+                "promotion": null
+              },
+              "family": "geometry",
+              "id": "c5:cba003d2ea4c4b9707b94e62",
+              "origin": "host-grounded local abstraction",
+              "target": "GeometryCompatible"
+            },
+            {
+              "composition": "not native AND",
+              "descriptor": {
+                "occupancy": "Empty",
+                "royal_contact": false
+              },
+              "family": "destination",
+              "id": "c5:84f2a4cb4f3ccfa9e8220275",
+              "origin": "host-grounded local abstraction",
+              "target": "DestinationConflict"
+            },
+            {
+              "composition": "not native AND",
+              "descriptor": {
+                "exists": true
+              },
+              "family": "boundary",
+              "id": "c5:af5ee7c6d5cff7372b2bba27",
+              "origin": "host-grounded local abstraction",
+              "target": "BoundaryConflict"
+            }
+          ],
+          "refinement_policy": "No automatic refinement from heldout errors. Conflict remains visible; no generated exact-context rule.",
+          "sensor": [
+            {
+              "predicate": "PieceClass",
+              "provenance": "sensed",
+              "roles": {
+                "mover": "Knight"
+              }
+            },
+            {
+              "predicate": "Displacement",
+              "provenance": "host-grounded",
+              "roles": {
+                "offset": [
+                  1,
+                  2
+                ],
+                "source": "source",
+                "target": "destination"
+              }
+            },
+            {
+              "predicate": "DestinationRelation",
+              "provenance": "sensed",
+              "roles": {
+                "kind": null,
+                "occupancy": "Empty"
+              }
+            },
+            {
+              "predicate": "BoundaryRelation",
+              "provenance": "sensed",
+              "roles": {
+                "destination_exists": true
+              }
+            },
+            {
+              "predicate": "TemporalObservation",
+              "provenance": "sensed",
+              "roles": {
+                "castle_rook_path": []
+              }
+            },
+            {
+              "predicate": "CandidateSuccessor",
+              "provenance": "host-grounded",
+              "roles": {
+                "operation": "ordinary",
+                "promotion": null
+              }
+            }
+          ]
+        },
+        "history": {
+          "castling_rights_known": true,
+          "ep_target_asserted": false,
+          "known": false
+        },
+        "key": "context:b5ef82f50c980213850b025c",
+        "local_context": {
+          "destination": "Empty",
+          "effect": "ordinary",
+          "motion": [
+            1,
+            2
+          ],
+          "piece": "Knight",
+          "promotion": null,
+          "ray_contents": []
+        },
+        "missing": [],
+        "move": "b4c6",
+        "pattern": {
+          "effect": "ordinary",
+          "geometry": {
+            "direction": "NE",
+            "distance": 2,
+            "family": "offset",
+            "offset": [
+              1,
+              2
+            ]
+          },
+          "piece": "Knight",
+          "promotion": null
+        },
+        "piece": "Knight",
+        "position_id": "sac8d986b642f9d94",
+        "ray_motifs": {
+          "cells": [],
+          "content_classes": [],
+          "first_nonempty": null,
+          "occupied_count": 0,
+          "prefix_empty_count": 0,
+          "suffix_empty_count": 0
+        },
+        "relations": [
+          {
+            "derivation": "Typed relative projection; never a native conjunction.",
+            "descriptor": {
+              "destination": "Empty",
+              "effect": "ordinary",
+              "motion": [
+                1,
+                2
+              ],
+              "piece": "Knight",
+              "promotion": null,
+              "ray_contents": []
+            },
+            "id": "c4:1c4c6a593af0d8cdc51b36fb",
+            "provenance": "host-grounded",
+            "target": "LocalAdmissibility",
+            "tier": 4
+          },
+          {
+            "derivation": "Typed relative projection; never a native conjunction.",
+            "descriptor": {
+              "effect": "ordinary",
+              "motion": [
+                1,
+                2
+              ],
+              "piece": "Knight",
+              "promotion": null
+            },
+            "id": "c4:763d77f1c7cf50f8fce0433f",
+            "provenance": "host-grounded",
+            "target": "GeometryObserved",
+            "tier": 1
+          },
+          {
+            "derivation": "Typed relative projection; never a native conjunction.",
+            "descriptor": {
+              "kind": null,
+              "occupancy": "Empty"
+            },
+            "id": "c4:0d6fc7b06fa06fc43efa039d",
+            "provenance": "host-grounded",
+            "target": "DestinationConflict",
+            "tier": 2
+          },
+          {
+            "derivation": "Typed relative projection; never a native conjunction.",
+            "descriptor": {
+              "exists": true
+            },
+            "id": "c4:973a3e06c1ebda356381f261",
+            "provenance": "host-grounded",
+            "target": "BoundaryConflict",
+            "tier": 2
+          }
+        ],
+        "relative_neighborhood": {
+          "destination": {
+            "occupancy": "Empty",
+            "royal_contact": false
+          },
+          "geometry": {
+            "direction": "NE",
+            "distance": 2,
+            "family": "offset",
+            "offset": [
+              1,
+              2
+            ]
+          },
+          "opponent_frames": [
+            {
+              "descriptor": {
+                "motion": [
+                  7,
+                  7
+                ],
+                "piece": "King",
+                "ray_contents": []
+              },
+              "phase": "successor"
+            }
+          ],
+          "owner_forward": "White",
+          "pre_move_opponent_frames": [
+            {
+              "geometry": {
+                "direction": "NW",
+                "distance": 7,
+                "family": "diagonal",
+                "offset": [
+                  -7,
+                  7
+                ]
+              },
+              "intermediate": [
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty"
+              ],
+              "piece": "King"
+            }
+          ],
+          "ray_cells": [],
+          "signed_displacement": [
+            1,
+            2
+          ],
+          "source_occupancy": "Knight"
+        },
+        "schema": "factored-constraints-v4",
+        "temporal_observations": {
+          "castle_rook_path": []
+        },
+        "tv": {
+          "confidence": 0.99,
+          "strength": 1.0
+        },
+        "typed_relations": [
+          {
+            "composition": "not native AND",
+            "descriptor": {
+              "effect": "ordinary",
+              "motion": [
+                1,
+                2
+              ],
+              "piece": "Knight",
+              "promotion": null
+            },
+            "family": "geometry",
+            "id": "c5:cba003d2ea4c4b9707b94e62",
+            "origin": "host-grounded local abstraction",
+            "target": "GeometryCompatible"
+          },
+          {
+            "composition": "not native AND",
+            "descriptor": {
+              "occupancy": "Empty",
+              "royal_contact": false
+            },
+            "family": "destination",
+            "id": "c5:84f2a4cb4f3ccfa9e8220275",
+            "origin": "host-grounded local abstraction",
+            "target": "DestinationConflict"
+          },
+          {
+            "composition": "not native AND",
+            "descriptor": {
+              "exists": true
+            },
+            "family": "boundary",
+            "id": "c5:af5ee7c6d5cff7372b2bba27",
+            "origin": "host-grounded local abstraction",
+            "target": "BoundaryConflict"
+          }
+        ],
+        "variant": "C4-full"
+      },
+      "evidence_id": "3bf01abeca3df2dc861a14ba816bacb4b67579fba8df7d5a86afd7c52a951d04",
+      "expression": "(Truth_Revision (stv 0.9913793103448276 0.7532467532467534) (stv 1.0 0.5))",
+      "family": "A",
+      "fen": "7k/8/8/8/1N6/8/8/K7 w - - 0 1",
+      "label": true,
+      "move": "b4c6",
+      "observation": "knight relative (1,2) geometry",
+      "output": {
+        "confidence": 0.8020833333333335,
+        "strength": 0.9935064935064936
+      },
+      "prior": {
+        "confidence": 0.7532467532467534,
+        "strength": 0.9913793103448276
+      },
+      "source_group": "C7-micro-A-3"
+    },
+    {
+      "descriptor": {
+        "abstract_combination": "25f17ad79e3847ed89c6e804a72b05f3004a628eef6c546bb199e923d13dfe31",
+        "atoms": [
+          {
+            "args": [
+              "p2",
+              "Rook"
+            ],
+            "predicate": "PieceType",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "args": [
+              "p2",
+              "White"
+            ],
+            "predicate": "Owner",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "args": [
+              "s5ab910daaffe0dd1",
+              "White"
+            ],
+            "predicate": "SideToMove",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "args": [
+              "s5ab910daaffe0dd1",
+              "p2",
+              "mbcbc90a03e3aa904"
+            ],
+            "predicate": "CandidateMove",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "args": [
+              "s5ab910daaffe0dd1",
+              "mbcbc90a03e3aa904",
+              "context:b404c75df83af783c7f2a5ef"
+            ],
+            "predicate": "RelativeObservation",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            },
+            "value": {
+              "castle_king_edge_distance": null,
+              "castle_rights": null,
+              "castle_rook": null,
+              "castle_rook_kind": null,
+              "castle_rook_path": [],
+              "castle_transit": [],
+              "destination": "Opponent",
+              "destination_exists": true,
+              "destination_kind": "Pawn",
+              "effect": "ordinary",
+              "ep_offset": null,
+              "geometry": {
+                "direction": "N",
+                "distance": 1,
+                "family": "orthogonal",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              "intermediate": [],
+              "own_king_count": 1,
+              "pawn_end_edge_distance": null,
+              "pawn_start_edge_distance": null,
+              "piece": "Rook",
+              "postmove_opponents": [
+                {
+                  "geometry": {
+                    "direction": "NW",
+                    "distance": 7,
+                    "family": "diagonal",
+                    "offset": [
+                      -7,
+                      7
+                    ]
+                  },
+                  "intermediate": [
+                    "Empty",
+                    "Empty",
+                    "Empty",
+                    "Empty",
+                    "Empty",
+                    "Empty"
+                  ],
+                  "piece": "King"
+                }
+              ],
+              "promotion": null,
+              "rights_known": null
+            }
+          },
+          {
+            "args": [
+              "s5ab910daaffe0dd1",
+              "mbcbc90a03e3aa904",
+              "Opponent"
+            ],
+            "predicate": "DestinationOccupancy",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "args": [
+              "s5ab910daaffe0dd1",
+              "mbcbc90a03e3aa904"
+            ],
+            "predicate": "DestinationExists",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          }
+        ],
+        "attack_relations": [
+          {
+            "attacker_id": "p0",
+            "descriptor": {
+              "geometry": {
+                "direction": "NW",
+                "distance": 7,
+                "family": "diagonal",
+                "offset": [
+                  -7,
+                  7
+                ]
+              },
+              "intermediate": [
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty"
+              ],
+              "piece": "King"
+            },
+            "key": "attack:04b7ea13325d4fd46f16efde",
+            "king_id": "p3",
+            "phase": "successor",
+            "relation": {
+              "derivation": "Typed relative projection; never a native conjunction.",
+              "descriptor": {
+                "motion": [
+                  7,
+                  7
+                ],
+                "piece": "King",
+                "ray_contents": []
+              },
+              "id": "c4:56eaffa0f584573c0b482771",
+              "provenance": "host-grounded",
+              "target": "Attack",
+              "tier": 3
+            }
+          }
+        ],
+        "attacks": [
+          {
+            "attacker_id": "p0",
+            "descriptor": {
+              "geometry": {
+                "direction": "NW",
+                "distance": 7,
+                "family": "diagonal",
+                "offset": [
+                  -7,
+                  7
+                ]
+              },
+              "intermediate": [
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty"
+              ],
+              "piece": "King"
+            },
+            "key": "attack:04b7ea13325d4fd46f16efde",
+            "king_id": "p3"
+          }
+        ],
+        "boundary": "Movement keys exclude opponent-to-king frames. Exposure is separately indexed.",
+        "candidate_id": "mbcbc90a03e3aa904",
+        "cell_relations": [],
+        "complete": true,
+        "composition": "Unary native constraint chains; pooled local observation is explicitly non-compositional.",
+        "context": {
+          "castle_king_edge_distance": null,
+          "castle_rights": null,
+          "castle_rook": null,
+          "castle_rook_kind": null,
+          "castle_rook_path": [],
+          "castle_transit": [],
+          "destination": "Opponent",
+          "destination_exists": true,
+          "destination_kind": "Pawn",
+          "effect": "ordinary",
+          "ep_offset": null,
+          "geometry": {
+            "direction": "N",
+            "distance": 1,
+            "family": "orthogonal",
+            "offset": [
+              0,
+              1
+            ]
+          },
+          "intermediate": [],
+          "own_king_count": 1,
+          "pawn_end_edge_distance": null,
+          "pawn_start_edge_distance": null,
+          "piece": "Rook",
+          "postmove_opponents": [
+            {
+              "geometry": {
+                "direction": "NW",
+                "distance": 7,
+                "family": "diagonal",
+                "offset": [
+                  -7,
+                  7
+                ]
+              },
+              "intermediate": [
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty"
+              ],
+              "piece": "King"
+            }
+          ],
+          "promotion": null,
+          "rights_known": null
+        },
+        "factored_premises": [
+          {
+            "predicate": "PieceClass",
+            "provenance": "sensed",
+            "roles": {
+              "mover": "Rook"
+            }
+          },
+          {
+            "predicate": "Displacement",
+            "provenance": "host-grounded",
+            "roles": {
+              "offset": [
+                0,
+                1
+              ],
+              "source": "source",
+              "target": "destination"
+            }
+          },
+          {
+            "predicate": "DestinationRelation",
+            "provenance": "sensed",
+            "roles": {
+              "kind": "Pawn",
+              "occupancy": "Opponent"
+            }
+          },
+          {
+            "predicate": "BoundaryRelation",
+            "provenance": "sensed",
+            "roles": {
+              "destination_exists": true
+            }
+          },
+          {
+            "predicate": "TemporalObservation",
+            "provenance": "sensed",
+            "roles": {
+              "castle_rook_path": []
+            }
+          },
+          {
+            "predicate": "CandidateSuccessor",
+            "provenance": "host-grounded",
+            "roles": {
+              "operation": "ordinary",
+              "promotion": null
+            }
+          }
+        ],
+        "fine_combination": "c9ef16cd7651bf1641cf8d8e3d8d20764b5dfbf69e5be31c218a9d902debf0ad",
+        "geometry_key": "geometry:2a8c91a9960ff819c9a6db75",
+        "hierarchy": {
+          "abstraction": [
+            {
+              "composition": "not native AND",
+              "descriptor": {
+                "effect": "ordinary",
+                "motion": "orthogonal",
+                "piece": "Rook",
+                "promotion": null
+              },
+              "family": "geometry",
+              "id": "c5:de58fb418d94e32480c24699",
+              "origin": "host-grounded local abstraction",
+              "target": "GeometryCompatible"
+            },
+            {
+              "composition": "not native AND",
+              "descriptor": {
+                "occupancy": "Opponent",
+                "royal_contact": false
+              },
+              "family": "destination",
+              "id": "c5:25c546f81f17ec3f0c5f0b34",
+              "origin": "host-grounded local abstraction",
+              "target": "DestinationConflict"
+            },
+            {
+              "composition": "not native AND",
+              "descriptor": {
+                "exists": true
+              },
+              "family": "boundary",
+              "id": "c5:af5ee7c6d5cff7372b2bba27",
+              "origin": "host-grounded local abstraction",
+              "target": "BoundaryConflict"
+            }
+          ],
+          "refinement_policy": "No automatic refinement from heldout errors. Conflict remains visible; no generated exact-context rule.",
+          "sensor": [
+            {
+              "predicate": "PieceClass",
+              "provenance": "sensed",
+              "roles": {
+                "mover": "Rook"
+              }
+            },
+            {
+              "predicate": "Displacement",
+              "provenance": "host-grounded",
+              "roles": {
+                "offset": [
+                  0,
+                  1
+                ],
+                "source": "source",
+                "target": "destination"
+              }
+            },
+            {
+              "predicate": "DestinationRelation",
+              "provenance": "sensed",
+              "roles": {
+                "kind": "Pawn",
+                "occupancy": "Opponent"
+              }
+            },
+            {
+              "predicate": "BoundaryRelation",
+              "provenance": "sensed",
+              "roles": {
+                "destination_exists": true
+              }
+            },
+            {
+              "predicate": "TemporalObservation",
+              "provenance": "sensed",
+              "roles": {
+                "castle_rook_path": []
+              }
+            },
+            {
+              "predicate": "CandidateSuccessor",
+              "provenance": "host-grounded",
+              "roles": {
+                "operation": "ordinary",
+                "promotion": null
+              }
+            }
+          ]
+        },
+        "history": {
+          "castling_rights_known": true,
+          "ep_target_asserted": false,
+          "known": false
+        },
+        "key": "context:b404c75df83af783c7f2a5ef",
+        "local_context": {
+          "destination": "Opponent",
+          "effect": "ordinary",
+          "motion": "orthogonal",
+          "piece": "Rook",
+          "promotion": null,
+          "ray_contents": []
+        },
+        "missing": [],
+        "move": "d4d5",
+        "pattern": {
+          "effect": "ordinary",
+          "geometry": {
+            "direction": "N",
+            "distance": 1,
+            "family": "orthogonal",
+            "offset": [
+              0,
+              1
+            ]
+          },
+          "piece": "Rook",
+          "promotion": null
+        },
+        "piece": "Rook",
+        "position_id": "s5ab910daaffe0dd1",
+        "ray_motifs": {
+          "cells": [],
+          "content_classes": [],
+          "first_nonempty": null,
+          "occupied_count": 0,
+          "prefix_empty_count": 0,
+          "suffix_empty_count": 0
+        },
+        "relations": [
+          {
+            "derivation": "Typed relative projection; never a native conjunction.",
+            "descriptor": {
+              "destination": "Opponent",
+              "effect": "ordinary",
+              "motion": "orthogonal",
+              "piece": "Rook",
+              "promotion": null,
+              "ray_contents": []
+            },
+            "id": "c4:fd5ca38afbc4a932b49a8584",
+            "provenance": "host-grounded",
+            "target": "LocalAdmissibility",
+            "tier": 4
+          },
+          {
+            "derivation": "Typed relative projection; never a native conjunction.",
+            "descriptor": {
+              "effect": "ordinary",
+              "motion": "orthogonal",
+              "piece": "Rook",
+              "promotion": null
+            },
+            "id": "c4:84ced4355988cac5252fd310",
+            "provenance": "host-grounded",
+            "target": "GeometryObserved",
+            "tier": 1
+          },
+          {
+            "derivation": "Typed relative projection; never a native conjunction.",
+            "descriptor": {
+              "kind": "Pawn",
+              "occupancy": "Opponent"
+            },
+            "id": "c4:e5fc8057332adcd31ba18970",
+            "provenance": "host-grounded",
+            "target": "DestinationConflict",
+            "tier": 2
+          },
+          {
+            "derivation": "Typed relative projection; never a native conjunction.",
+            "descriptor": {
+              "exists": true
+            },
+            "id": "c4:973a3e06c1ebda356381f261",
+            "provenance": "host-grounded",
+            "target": "BoundaryConflict",
+            "tier": 2
+          }
+        ],
+        "relative_neighborhood": {
+          "destination": {
+            "occupancy": "Opponent",
+            "royal_contact": false
+          },
+          "geometry": {
+            "direction": "N",
+            "distance": 1,
+            "family": "orthogonal",
+            "offset": [
+              0,
+              1
+            ]
+          },
+          "opponent_frames": [
+            {
+              "descriptor": {
+                "motion": [
+                  7,
+                  7
+                ],
+                "piece": "King",
+                "ray_contents": []
+              },
+              "phase": "successor"
+            }
+          ],
+          "owner_forward": "White",
+          "pre_move_opponent_frames": [
+            {
+              "geometry": {
+                "direction": "NW",
+                "distance": 4,
+                "family": "offset",
+                "offset": [
+                  -3,
+                  4
+                ]
+              },
+              "intermediate": [],
+              "piece": "Pawn"
+            },
+            {
+              "geometry": {
+                "direction": "NW",
+                "distance": 7,
+                "family": "diagonal",
+                "offset": [
+                  -7,
+                  7
+                ]
+              },
+              "intermediate": [
+                "Empty",
+                "Empty",
+                "Empty",
+                "Opponent",
+                "Empty",
+                "Empty"
+              ],
+              "piece": "King"
+            }
+          ],
+          "ray_cells": [],
+          "signed_displacement": [
+            0,
+            1
+          ],
+          "source_occupancy": "Rook"
+        },
+        "schema": "factored-constraints-v4",
+        "temporal_observations": {
+          "castle_rook_path": []
+        },
+        "tv": {
+          "confidence": 0.99,
+          "strength": 1.0
+        },
+        "typed_relations": [
+          {
+            "composition": "not native AND",
+            "descriptor": {
+              "effect": "ordinary",
+              "motion": "orthogonal",
+              "piece": "Rook",
+              "promotion": null
+            },
+            "family": "geometry",
+            "id": "c5:de58fb418d94e32480c24699",
+            "origin": "host-grounded local abstraction",
+            "target": "GeometryCompatible"
+          },
+          {
+            "composition": "not native AND",
+            "descriptor": {
+              "occupancy": "Opponent",
+              "royal_contact": false
+            },
+            "family": "destination",
+            "id": "c5:25c546f81f17ec3f0c5f0b34",
+            "origin": "host-grounded local abstraction",
+            "target": "DestinationConflict"
+          },
+          {
+            "composition": "not native AND",
+            "descriptor": {
+              "exists": true
+            },
+            "family": "boundary",
+            "id": "c5:af5ee7c6d5cff7372b2bba27",
+            "origin": "host-grounded local abstraction",
+            "target": "BoundaryConflict"
+          }
+        ],
+        "variant": "C4-full"
+      },
+      "evidence_id": "e8eb5e39b5106037f01da66698d526593541c53709370f743c9857a127a9ecbb",
+      "expression": "(Truth_Revision (stv 0.5 0.05) (stv 1.0 0.5))",
+      "family": "B",
+      "fen": "7k/8/8/3p4/3R4/8/8/K7 w - - 0 1",
+      "label": true,
+      "move": "d4d5",
+      "observation": "opponent occupancy eligibility, independently supervised",
+      "output": {
+        "confidence": 0.5128205128205129,
+        "strength": 0.9750000000000001
+      },
+      "prior": {
+        "confidence": 0.05,
+        "strength": 0.5
+      },
+      "source_group": "C7-micro-B-0"
+    },
+    {
+      "descriptor": {
+        "abstract_combination": "25f17ad79e3847ed89c6e804a72b05f3004a628eef6c546bb199e923d13dfe31",
+        "atoms": [
+          {
+            "args": [
+              "p2",
+              "Rook"
+            ],
+            "predicate": "PieceType",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "args": [
+              "p2",
+              "White"
+            ],
+            "predicate": "Owner",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "args": [
+              "scab5cf74e8eb7099",
+              "White"
+            ],
+            "predicate": "SideToMove",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "args": [
+              "scab5cf74e8eb7099",
+              "p2",
+              "m67a8b37cf91d8871"
+            ],
+            "predicate": "CandidateMove",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "args": [
+              "scab5cf74e8eb7099",
+              "m67a8b37cf91d8871",
+              "context:b404c75df83af783c7f2a5ef"
+            ],
+            "predicate": "RelativeObservation",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            },
+            "value": {
+              "castle_king_edge_distance": null,
+              "castle_rights": null,
+              "castle_rook": null,
+              "castle_rook_kind": null,
+              "castle_rook_path": [],
+              "castle_transit": [],
+              "destination": "Opponent",
+              "destination_exists": true,
+              "destination_kind": "Pawn",
+              "effect": "ordinary",
+              "ep_offset": null,
+              "geometry": {
+                "direction": "N",
+                "distance": 1,
+                "family": "orthogonal",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              "intermediate": [],
+              "own_king_count": 1,
+              "pawn_end_edge_distance": null,
+              "pawn_start_edge_distance": null,
+              "piece": "Rook",
+              "postmove_opponents": [
+                {
+                  "geometry": {
+                    "direction": "NW",
+                    "distance": 7,
+                    "family": "diagonal",
+                    "offset": [
+                      -7,
+                      7
+                    ]
+                  },
+                  "intermediate": [
+                    "Empty",
+                    "Empty",
+                    "Empty",
+                    "Empty",
+                    "Empty",
+                    "Empty"
+                  ],
+                  "piece": "King"
+                }
+              ],
+              "promotion": null,
+              "rights_known": null
+            }
+          },
+          {
+            "args": [
+              "scab5cf74e8eb7099",
+              "m67a8b37cf91d8871",
+              "Opponent"
+            ],
+            "predicate": "DestinationOccupancy",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "args": [
+              "scab5cf74e8eb7099",
+              "m67a8b37cf91d8871"
+            ],
+            "predicate": "DestinationExists",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          }
+        ],
+        "attack_relations": [
+          {
+            "attacker_id": "p0",
+            "descriptor": {
+              "geometry": {
+                "direction": "NW",
+                "distance": 7,
+                "family": "diagonal",
+                "offset": [
+                  -7,
+                  7
+                ]
+              },
+              "intermediate": [
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty"
+              ],
+              "piece": "King"
+            },
+            "key": "attack:04b7ea13325d4fd46f16efde",
+            "king_id": "p3",
+            "phase": "successor",
+            "relation": {
+              "derivation": "Typed relative projection; never a native conjunction.",
+              "descriptor": {
+                "motion": [
+                  7,
+                  7
+                ],
+                "piece": "King",
+                "ray_contents": []
+              },
+              "id": "c4:56eaffa0f584573c0b482771",
+              "provenance": "host-grounded",
+              "target": "Attack",
+              "tier": 3
+            }
+          }
+        ],
+        "attacks": [
+          {
+            "attacker_id": "p0",
+            "descriptor": {
+              "geometry": {
+                "direction": "NW",
+                "distance": 7,
+                "family": "diagonal",
+                "offset": [
+                  -7,
+                  7
+                ]
+              },
+              "intermediate": [
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty"
+              ],
+              "piece": "King"
+            },
+            "key": "attack:04b7ea13325d4fd46f16efde",
+            "king_id": "p3"
+          }
+        ],
+        "boundary": "Movement keys exclude opponent-to-king frames. Exposure is separately indexed.",
+        "candidate_id": "m67a8b37cf91d8871",
+        "cell_relations": [],
+        "complete": true,
+        "composition": "Unary native constraint chains; pooled local observation is explicitly non-compositional.",
+        "context": {
+          "castle_king_edge_distance": null,
+          "castle_rights": null,
+          "castle_rook": null,
+          "castle_rook_kind": null,
+          "castle_rook_path": [],
+          "castle_transit": [],
+          "destination": "Opponent",
+          "destination_exists": true,
+          "destination_kind": "Pawn",
+          "effect": "ordinary",
+          "ep_offset": null,
+          "geometry": {
+            "direction": "N",
+            "distance": 1,
+            "family": "orthogonal",
+            "offset": [
+              0,
+              1
+            ]
+          },
+          "intermediate": [],
+          "own_king_count": 1,
+          "pawn_end_edge_distance": null,
+          "pawn_start_edge_distance": null,
+          "piece": "Rook",
+          "postmove_opponents": [
+            {
+              "geometry": {
+                "direction": "NW",
+                "distance": 7,
+                "family": "diagonal",
+                "offset": [
+                  -7,
+                  7
+                ]
+              },
+              "intermediate": [
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty"
+              ],
+              "piece": "King"
+            }
+          ],
+          "promotion": null,
+          "rights_known": null
+        },
+        "factored_premises": [
+          {
+            "predicate": "PieceClass",
+            "provenance": "sensed",
+            "roles": {
+              "mover": "Rook"
+            }
+          },
+          {
+            "predicate": "Displacement",
+            "provenance": "host-grounded",
+            "roles": {
+              "offset": [
+                0,
+                1
+              ],
+              "source": "source",
+              "target": "destination"
+            }
+          },
+          {
+            "predicate": "DestinationRelation",
+            "provenance": "sensed",
+            "roles": {
+              "kind": "Pawn",
+              "occupancy": "Opponent"
+            }
+          },
+          {
+            "predicate": "BoundaryRelation",
+            "provenance": "sensed",
+            "roles": {
+              "destination_exists": true
+            }
+          },
+          {
+            "predicate": "TemporalObservation",
+            "provenance": "sensed",
+            "roles": {
+              "castle_rook_path": []
+            }
+          },
+          {
+            "predicate": "CandidateSuccessor",
+            "provenance": "host-grounded",
+            "roles": {
+              "operation": "ordinary",
+              "promotion": null
+            }
+          }
+        ],
+        "fine_combination": "c9ef16cd7651bf1641cf8d8e3d8d20764b5dfbf69e5be31c218a9d902debf0ad",
+        "geometry_key": "geometry:2a8c91a9960ff819c9a6db75",
+        "hierarchy": {
+          "abstraction": [
+            {
+              "composition": "not native AND",
+              "descriptor": {
+                "effect": "ordinary",
+                "motion": "orthogonal",
+                "piece": "Rook",
+                "promotion": null
+              },
+              "family": "geometry",
+              "id": "c5:de58fb418d94e32480c24699",
+              "origin": "host-grounded local abstraction",
+              "target": "GeometryCompatible"
+            },
+            {
+              "composition": "not native AND",
+              "descriptor": {
+                "occupancy": "Opponent",
+                "royal_contact": false
+              },
+              "family": "destination",
+              "id": "c5:25c546f81f17ec3f0c5f0b34",
+              "origin": "host-grounded local abstraction",
+              "target": "DestinationConflict"
+            },
+            {
+              "composition": "not native AND",
+              "descriptor": {
+                "exists": true
+              },
+              "family": "boundary",
+              "id": "c5:af5ee7c6d5cff7372b2bba27",
+              "origin": "host-grounded local abstraction",
+              "target": "BoundaryConflict"
+            }
+          ],
+          "refinement_policy": "No automatic refinement from heldout errors. Conflict remains visible; no generated exact-context rule.",
+          "sensor": [
+            {
+              "predicate": "PieceClass",
+              "provenance": "sensed",
+              "roles": {
+                "mover": "Rook"
+              }
+            },
+            {
+              "predicate": "Displacement",
+              "provenance": "host-grounded",
+              "roles": {
+                "offset": [
+                  0,
+                  1
+                ],
+                "source": "source",
+                "target": "destination"
+              }
+            },
+            {
+              "predicate": "DestinationRelation",
+              "provenance": "sensed",
+              "roles": {
+                "kind": "Pawn",
+                "occupancy": "Opponent"
+              }
+            },
+            {
+              "predicate": "BoundaryRelation",
+              "provenance": "sensed",
+              "roles": {
+                "destination_exists": true
+              }
+            },
+            {
+              "predicate": "TemporalObservation",
+              "provenance": "sensed",
+              "roles": {
+                "castle_rook_path": []
+              }
+            },
+            {
+              "predicate": "CandidateSuccessor",
+              "provenance": "host-grounded",
+              "roles": {
+                "operation": "ordinary",
+                "promotion": null
+              }
+            }
+          ]
+        },
+        "history": {
+          "castling_rights_known": true,
+          "ep_target_asserted": false,
+          "known": false
+        },
+        "key": "context:b404c75df83af783c7f2a5ef",
+        "local_context": {
+          "destination": "Opponent",
+          "effect": "ordinary",
+          "motion": "orthogonal",
+          "piece": "Rook",
+          "promotion": null,
+          "ray_contents": []
+        },
+        "missing": [],
+        "move": "c3c4",
+        "pattern": {
+          "effect": "ordinary",
+          "geometry": {
+            "direction": "N",
+            "distance": 1,
+            "family": "orthogonal",
+            "offset": [
+              0,
+              1
+            ]
+          },
+          "piece": "Rook",
+          "promotion": null
+        },
+        "piece": "Rook",
+        "position_id": "scab5cf74e8eb7099",
+        "ray_motifs": {
+          "cells": [],
+          "content_classes": [],
+          "first_nonempty": null,
+          "occupied_count": 0,
+          "prefix_empty_count": 0,
+          "suffix_empty_count": 0
+        },
+        "relations": [
+          {
+            "derivation": "Typed relative projection; never a native conjunction.",
+            "descriptor": {
+              "destination": "Opponent",
+              "effect": "ordinary",
+              "motion": "orthogonal",
+              "piece": "Rook",
+              "promotion": null,
+              "ray_contents": []
+            },
+            "id": "c4:fd5ca38afbc4a932b49a8584",
+            "provenance": "host-grounded",
+            "target": "LocalAdmissibility",
+            "tier": 4
+          },
+          {
+            "derivation": "Typed relative projection; never a native conjunction.",
+            "descriptor": {
+              "effect": "ordinary",
+              "motion": "orthogonal",
+              "piece": "Rook",
+              "promotion": null
+            },
+            "id": "c4:84ced4355988cac5252fd310",
+            "provenance": "host-grounded",
+            "target": "GeometryObserved",
+            "tier": 1
+          },
+          {
+            "derivation": "Typed relative projection; never a native conjunction.",
+            "descriptor": {
+              "kind": "Pawn",
+              "occupancy": "Opponent"
+            },
+            "id": "c4:e5fc8057332adcd31ba18970",
+            "provenance": "host-grounded",
+            "target": "DestinationConflict",
+            "tier": 2
+          },
+          {
+            "derivation": "Typed relative projection; never a native conjunction.",
+            "descriptor": {
+              "exists": true
+            },
+            "id": "c4:973a3e06c1ebda356381f261",
+            "provenance": "host-grounded",
+            "target": "BoundaryConflict",
+            "tier": 2
+          }
+        ],
+        "relative_neighborhood": {
+          "destination": {
+            "occupancy": "Opponent",
+            "royal_contact": false
+          },
+          "geometry": {
+            "direction": "N",
+            "distance": 1,
+            "family": "orthogonal",
+            "offset": [
+              0,
+              1
+            ]
+          },
+          "opponent_frames": [
+            {
+              "descriptor": {
+                "motion": [
+                  7,
+                  7
+                ],
+                "piece": "King",
+                "ray_contents": []
+              },
+              "phase": "successor"
+            }
+          ],
+          "owner_forward": "White",
+          "pre_move_opponent_frames": [
+            {
+              "geometry": {
+                "direction": "NW",
+                "distance": 3,
+                "family": "offset",
+                "offset": [
+                  -2,
+                  3
+                ]
+              },
+              "intermediate": [],
+              "piece": "Pawn"
+            },
+            {
+              "geometry": {
+                "direction": "NW",
+                "distance": 7,
+                "family": "diagonal",
+                "offset": [
+                  -7,
+                  7
+                ]
+              },
+              "intermediate": [
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Opponent",
+                "Empty"
+              ],
+              "piece": "King"
+            }
+          ],
+          "ray_cells": [],
+          "signed_displacement": [
+            0,
+            1
+          ],
+          "source_occupancy": "Rook"
+        },
+        "schema": "factored-constraints-v4",
+        "temporal_observations": {
+          "castle_rook_path": []
+        },
+        "tv": {
+          "confidence": 0.99,
+          "strength": 1.0
+        },
+        "typed_relations": [
+          {
+            "composition": "not native AND",
+            "descriptor": {
+              "effect": "ordinary",
+              "motion": "orthogonal",
+              "piece": "Rook",
+              "promotion": null
+            },
+            "family": "geometry",
+            "id": "c5:de58fb418d94e32480c24699",
+            "origin": "host-grounded local abstraction",
+            "target": "GeometryCompatible"
+          },
+          {
+            "composition": "not native AND",
+            "descriptor": {
+              "occupancy": "Opponent",
+              "royal_contact": false
+            },
+            "family": "destination",
+            "id": "c5:25c546f81f17ec3f0c5f0b34",
+            "origin": "host-grounded local abstraction",
+            "target": "DestinationConflict"
+          },
+          {
+            "composition": "not native AND",
+            "descriptor": {
+              "exists": true
+            },
+            "family": "boundary",
+            "id": "c5:af5ee7c6d5cff7372b2bba27",
+            "origin": "host-grounded local abstraction",
+            "target": "BoundaryConflict"
+          }
+        ],
+        "variant": "C4-full"
+      },
+      "evidence_id": "0252cb26e37479b104127b6cb1f89c2e6cff8fbfe33ccee83240f3f8d02ccf10",
+      "expression": "(Truth_Revision (stv 0.9750000000000001 0.5128205128205129) (stv 1.0 0.5))",
+      "family": "B",
+      "fen": "7k/8/8/8/2p5/2R5/8/K7 w - - 0 1",
+      "label": true,
+      "move": "c3c4",
+      "observation": "opponent occupancy eligibility, independently supervised",
+      "output": {
+        "confidence": 0.6724137931034483,
+        "strength": 0.9871794871794872
+      },
+      "prior": {
+        "confidence": 0.5128205128205129,
+        "strength": 0.9750000000000001
+      },
+      "source_group": "C7-micro-B-1"
+    },
+    {
+      "descriptor": {
+        "abstract_combination": "25f17ad79e3847ed89c6e804a72b05f3004a628eef6c546bb199e923d13dfe31",
+        "atoms": [
+          {
+            "args": [
+              "p2",
+              "Rook"
+            ],
+            "predicate": "PieceType",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "args": [
+              "p2",
+              "White"
+            ],
+            "predicate": "Owner",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "args": [
+              "sc1acc85664f3aedb",
+              "White"
+            ],
+            "predicate": "SideToMove",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "args": [
+              "sc1acc85664f3aedb",
+              "p2",
+              "me2076f082d80c2cb"
+            ],
+            "predicate": "CandidateMove",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "args": [
+              "sc1acc85664f3aedb",
+              "me2076f082d80c2cb",
+              "context:b404c75df83af783c7f2a5ef"
+            ],
+            "predicate": "RelativeObservation",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            },
+            "value": {
+              "castle_king_edge_distance": null,
+              "castle_rights": null,
+              "castle_rook": null,
+              "castle_rook_kind": null,
+              "castle_rook_path": [],
+              "castle_transit": [],
+              "destination": "Opponent",
+              "destination_exists": true,
+              "destination_kind": "Pawn",
+              "effect": "ordinary",
+              "ep_offset": null,
+              "geometry": {
+                "direction": "N",
+                "distance": 1,
+                "family": "orthogonal",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              "intermediate": [],
+              "own_king_count": 1,
+              "pawn_end_edge_distance": null,
+              "pawn_start_edge_distance": null,
+              "piece": "Rook",
+              "postmove_opponents": [
+                {
+                  "geometry": {
+                    "direction": "NW",
+                    "distance": 7,
+                    "family": "diagonal",
+                    "offset": [
+                      -7,
+                      7
+                    ]
+                  },
+                  "intermediate": [
+                    "Empty",
+                    "Empty",
+                    "Empty",
+                    "Empty",
+                    "Empty",
+                    "Empty"
+                  ],
+                  "piece": "King"
+                }
+              ],
+              "promotion": null,
+              "rights_known": null
+            }
+          },
+          {
+            "args": [
+              "sc1acc85664f3aedb",
+              "me2076f082d80c2cb",
+              "Opponent"
+            ],
+            "predicate": "DestinationOccupancy",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "args": [
+              "sc1acc85664f3aedb",
+              "me2076f082d80c2cb"
+            ],
+            "predicate": "DestinationExists",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          }
+        ],
+        "attack_relations": [
+          {
+            "attacker_id": "p0",
+            "descriptor": {
+              "geometry": {
+                "direction": "NW",
+                "distance": 7,
+                "family": "diagonal",
+                "offset": [
+                  -7,
+                  7
+                ]
+              },
+              "intermediate": [
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty"
+              ],
+              "piece": "King"
+            },
+            "key": "attack:04b7ea13325d4fd46f16efde",
+            "king_id": "p3",
+            "phase": "successor",
+            "relation": {
+              "derivation": "Typed relative projection; never a native conjunction.",
+              "descriptor": {
+                "motion": [
+                  7,
+                  7
+                ],
+                "piece": "King",
+                "ray_contents": []
+              },
+              "id": "c4:56eaffa0f584573c0b482771",
+              "provenance": "host-grounded",
+              "target": "Attack",
+              "tier": 3
+            }
+          }
+        ],
+        "attacks": [
+          {
+            "attacker_id": "p0",
+            "descriptor": {
+              "geometry": {
+                "direction": "NW",
+                "distance": 7,
+                "family": "diagonal",
+                "offset": [
+                  -7,
+                  7
+                ]
+              },
+              "intermediate": [
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty"
+              ],
+              "piece": "King"
+            },
+            "key": "attack:04b7ea13325d4fd46f16efde",
+            "king_id": "p3"
+          }
+        ],
+        "boundary": "Movement keys exclude opponent-to-king frames. Exposure is separately indexed.",
+        "candidate_id": "me2076f082d80c2cb",
+        "cell_relations": [],
+        "complete": true,
+        "composition": "Unary native constraint chains; pooled local observation is explicitly non-compositional.",
+        "context": {
+          "castle_king_edge_distance": null,
+          "castle_rights": null,
+          "castle_rook": null,
+          "castle_rook_kind": null,
+          "castle_rook_path": [],
+          "castle_transit": [],
+          "destination": "Opponent",
+          "destination_exists": true,
+          "destination_kind": "Pawn",
+          "effect": "ordinary",
+          "ep_offset": null,
+          "geometry": {
+            "direction": "N",
+            "distance": 1,
+            "family": "orthogonal",
+            "offset": [
+              0,
+              1
+            ]
+          },
+          "intermediate": [],
+          "own_king_count": 1,
+          "pawn_end_edge_distance": null,
+          "pawn_start_edge_distance": null,
+          "piece": "Rook",
+          "postmove_opponents": [
+            {
+              "geometry": {
+                "direction": "NW",
+                "distance": 7,
+                "family": "diagonal",
+                "offset": [
+                  -7,
+                  7
+                ]
+              },
+              "intermediate": [
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty"
+              ],
+              "piece": "King"
+            }
+          ],
+          "promotion": null,
+          "rights_known": null
+        },
+        "factored_premises": [
+          {
+            "predicate": "PieceClass",
+            "provenance": "sensed",
+            "roles": {
+              "mover": "Rook"
+            }
+          },
+          {
+            "predicate": "Displacement",
+            "provenance": "host-grounded",
+            "roles": {
+              "offset": [
+                0,
+                1
+              ],
+              "source": "source",
+              "target": "destination"
+            }
+          },
+          {
+            "predicate": "DestinationRelation",
+            "provenance": "sensed",
+            "roles": {
+              "kind": "Pawn",
+              "occupancy": "Opponent"
+            }
+          },
+          {
+            "predicate": "BoundaryRelation",
+            "provenance": "sensed",
+            "roles": {
+              "destination_exists": true
+            }
+          },
+          {
+            "predicate": "TemporalObservation",
+            "provenance": "sensed",
+            "roles": {
+              "castle_rook_path": []
+            }
+          },
+          {
+            "predicate": "CandidateSuccessor",
+            "provenance": "host-grounded",
+            "roles": {
+              "operation": "ordinary",
+              "promotion": null
+            }
+          }
+        ],
+        "fine_combination": "c9ef16cd7651bf1641cf8d8e3d8d20764b5dfbf69e5be31c218a9d902debf0ad",
+        "geometry_key": "geometry:2a8c91a9960ff819c9a6db75",
+        "hierarchy": {
+          "abstraction": [
+            {
+              "composition": "not native AND",
+              "descriptor": {
+                "effect": "ordinary",
+                "motion": "orthogonal",
+                "piece": "Rook",
+                "promotion": null
+              },
+              "family": "geometry",
+              "id": "c5:de58fb418d94e32480c24699",
+              "origin": "host-grounded local abstraction",
+              "target": "GeometryCompatible"
+            },
+            {
+              "composition": "not native AND",
+              "descriptor": {
+                "occupancy": "Opponent",
+                "royal_contact": false
+              },
+              "family": "destination",
+              "id": "c5:25c546f81f17ec3f0c5f0b34",
+              "origin": "host-grounded local abstraction",
+              "target": "DestinationConflict"
+            },
+            {
+              "composition": "not native AND",
+              "descriptor": {
+                "exists": true
+              },
+              "family": "boundary",
+              "id": "c5:af5ee7c6d5cff7372b2bba27",
+              "origin": "host-grounded local abstraction",
+              "target": "BoundaryConflict"
+            }
+          ],
+          "refinement_policy": "No automatic refinement from heldout errors. Conflict remains visible; no generated exact-context rule.",
+          "sensor": [
+            {
+              "predicate": "PieceClass",
+              "provenance": "sensed",
+              "roles": {
+                "mover": "Rook"
+              }
+            },
+            {
+              "predicate": "Displacement",
+              "provenance": "host-grounded",
+              "roles": {
+                "offset": [
+                  0,
+                  1
+                ],
+                "source": "source",
+                "target": "destination"
+              }
+            },
+            {
+              "predicate": "DestinationRelation",
+              "provenance": "sensed",
+              "roles": {
+                "kind": "Pawn",
+                "occupancy": "Opponent"
+              }
+            },
+            {
+              "predicate": "BoundaryRelation",
+              "provenance": "sensed",
+              "roles": {
+                "destination_exists": true
+              }
+            },
+            {
+              "predicate": "TemporalObservation",
+              "provenance": "sensed",
+              "roles": {
+                "castle_rook_path": []
+              }
+            },
+            {
+              "predicate": "CandidateSuccessor",
+              "provenance": "host-grounded",
+              "roles": {
+                "operation": "ordinary",
+                "promotion": null
+              }
+            }
+          ]
+        },
+        "history": {
+          "castling_rights_known": true,
+          "ep_target_asserted": false,
+          "known": false
+        },
+        "key": "context:b404c75df83af783c7f2a5ef",
+        "local_context": {
+          "destination": "Opponent",
+          "effect": "ordinary",
+          "motion": "orthogonal",
+          "piece": "Rook",
+          "promotion": null,
+          "ray_contents": []
+        },
+        "missing": [],
+        "move": "e3e4",
+        "pattern": {
+          "effect": "ordinary",
+          "geometry": {
+            "direction": "N",
+            "distance": 1,
+            "family": "orthogonal",
+            "offset": [
+              0,
+              1
+            ]
+          },
+          "piece": "Rook",
+          "promotion": null
+        },
+        "piece": "Rook",
+        "position_id": "sc1acc85664f3aedb",
+        "ray_motifs": {
+          "cells": [],
+          "content_classes": [],
+          "first_nonempty": null,
+          "occupied_count": 0,
+          "prefix_empty_count": 0,
+          "suffix_empty_count": 0
+        },
+        "relations": [
+          {
+            "derivation": "Typed relative projection; never a native conjunction.",
+            "descriptor": {
+              "destination": "Opponent",
+              "effect": "ordinary",
+              "motion": "orthogonal",
+              "piece": "Rook",
+              "promotion": null,
+              "ray_contents": []
+            },
+            "id": "c4:fd5ca38afbc4a932b49a8584",
+            "provenance": "host-grounded",
+            "target": "LocalAdmissibility",
+            "tier": 4
+          },
+          {
+            "derivation": "Typed relative projection; never a native conjunction.",
+            "descriptor": {
+              "effect": "ordinary",
+              "motion": "orthogonal",
+              "piece": "Rook",
+              "promotion": null
+            },
+            "id": "c4:84ced4355988cac5252fd310",
+            "provenance": "host-grounded",
+            "target": "GeometryObserved",
+            "tier": 1
+          },
+          {
+            "derivation": "Typed relative projection; never a native conjunction.",
+            "descriptor": {
+              "kind": "Pawn",
+              "occupancy": "Opponent"
+            },
+            "id": "c4:e5fc8057332adcd31ba18970",
+            "provenance": "host-grounded",
+            "target": "DestinationConflict",
+            "tier": 2
+          },
+          {
+            "derivation": "Typed relative projection; never a native conjunction.",
+            "descriptor": {
+              "exists": true
+            },
+            "id": "c4:973a3e06c1ebda356381f261",
+            "provenance": "host-grounded",
+            "target": "BoundaryConflict",
+            "tier": 2
+          }
+        ],
+        "relative_neighborhood": {
+          "destination": {
+            "occupancy": "Opponent",
+            "royal_contact": false
+          },
+          "geometry": {
+            "direction": "N",
+            "distance": 1,
+            "family": "orthogonal",
+            "offset": [
+              0,
+              1
+            ]
+          },
+          "opponent_frames": [
+            {
+              "descriptor": {
+                "motion": [
+                  7,
+                  7
+                ],
+                "piece": "King",
+                "ray_contents": []
+              },
+              "phase": "successor"
+            }
+          ],
+          "owner_forward": "White",
+          "pre_move_opponent_frames": [
+            {
+              "geometry": {
+                "direction": "NW",
+                "distance": 4,
+                "family": "offset",
+                "offset": [
+                  -4,
+                  3
+                ]
+              },
+              "intermediate": [],
+              "piece": "Pawn"
+            },
+            {
+              "geometry": {
+                "direction": "NW",
+                "distance": 7,
+                "family": "diagonal",
+                "offset": [
+                  -7,
+                  7
+                ]
+              },
+              "intermediate": [
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty"
+              ],
+              "piece": "King"
+            }
+          ],
+          "ray_cells": [],
+          "signed_displacement": [
+            0,
+            1
+          ],
+          "source_occupancy": "Rook"
+        },
+        "schema": "factored-constraints-v4",
+        "temporal_observations": {
+          "castle_rook_path": []
+        },
+        "tv": {
+          "confidence": 0.99,
+          "strength": 1.0
+        },
+        "typed_relations": [
+          {
+            "composition": "not native AND",
+            "descriptor": {
+              "effect": "ordinary",
+              "motion": "orthogonal",
+              "piece": "Rook",
+              "promotion": null
+            },
+            "family": "geometry",
+            "id": "c5:de58fb418d94e32480c24699",
+            "origin": "host-grounded local abstraction",
+            "target": "GeometryCompatible"
+          },
+          {
+            "composition": "not native AND",
+            "descriptor": {
+              "occupancy": "Opponent",
+              "royal_contact": false
+            },
+            "family": "destination",
+            "id": "c5:25c546f81f17ec3f0c5f0b34",
+            "origin": "host-grounded local abstraction",
+            "target": "DestinationConflict"
+          },
+          {
+            "composition": "not native AND",
+            "descriptor": {
+              "exists": true
+            },
+            "family": "boundary",
+            "id": "c5:af5ee7c6d5cff7372b2bba27",
+            "origin": "host-grounded local abstraction",
+            "target": "BoundaryConflict"
+          }
+        ],
+        "variant": "C4-full"
+      },
+      "evidence_id": "64c1b5ba87409eb8250778779a20b2bea136f617430feabb6d8e5471f20e913d",
+      "expression": "(Truth_Revision (stv 0.9871794871794872 0.6724137931034483) (stv 1.0 0.5))",
+      "family": "B",
+      "fen": "7k/8/8/8/4p3/4R3/8/K7 w - - 0 1",
+      "label": true,
+      "move": "e3e4",
+      "observation": "opponent occupancy eligibility, independently supervised",
+      "output": {
+        "confidence": 0.7532467532467534,
+        "strength": 0.9913793103448276
+      },
+      "prior": {
+        "confidence": 0.6724137931034483,
+        "strength": 0.9871794871794872
+      },
+      "source_group": "C7-micro-B-2"
+    },
+    {
+      "descriptor": {
+        "abstract_combination": "25f17ad79e3847ed89c6e804a72b05f3004a628eef6c546bb199e923d13dfe31",
+        "atoms": [
+          {
+            "args": [
+              "p2",
+              "Rook"
+            ],
+            "predicate": "PieceType",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "args": [
+              "p2",
+              "White"
+            ],
+            "predicate": "Owner",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "args": [
+              "sfecdd825f33e81fd",
+              "White"
+            ],
+            "predicate": "SideToMove",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "args": [
+              "sfecdd825f33e81fd",
+              "p2",
+              "m4c9f6793680c2de3"
+            ],
+            "predicate": "CandidateMove",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "args": [
+              "sfecdd825f33e81fd",
+              "m4c9f6793680c2de3",
+              "context:b404c75df83af783c7f2a5ef"
+            ],
+            "predicate": "RelativeObservation",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            },
+            "value": {
+              "castle_king_edge_distance": null,
+              "castle_rights": null,
+              "castle_rook": null,
+              "castle_rook_kind": null,
+              "castle_rook_path": [],
+              "castle_transit": [],
+              "destination": "Opponent",
+              "destination_exists": true,
+              "destination_kind": "Pawn",
+              "effect": "ordinary",
+              "ep_offset": null,
+              "geometry": {
+                "direction": "N",
+                "distance": 1,
+                "family": "orthogonal",
+                "offset": [
+                  0,
+                  1
+                ]
+              },
+              "intermediate": [],
+              "own_king_count": 1,
+              "pawn_end_edge_distance": null,
+              "pawn_start_edge_distance": null,
+              "piece": "Rook",
+              "postmove_opponents": [
+                {
+                  "geometry": {
+                    "direction": "NW",
+                    "distance": 7,
+                    "family": "diagonal",
+                    "offset": [
+                      -7,
+                      7
+                    ]
+                  },
+                  "intermediate": [
+                    "Empty",
+                    "Empty",
+                    "Empty",
+                    "Empty",
+                    "Empty",
+                    "Empty"
+                  ],
+                  "piece": "King"
+                }
+              ],
+              "promotion": null,
+              "rights_known": null
+            }
+          },
+          {
+            "args": [
+              "sfecdd825f33e81fd",
+              "m4c9f6793680c2de3",
+              "Opponent"
+            ],
+            "predicate": "DestinationOccupancy",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          },
+          {
+            "args": [
+              "sfecdd825f33e81fd",
+              "m4c9f6793680c2de3"
+            ],
+            "predicate": "DestinationExists",
+            "tv": {
+              "confidence": 0.99,
+              "strength": 1.0
+            }
+          }
+        ],
+        "attack_relations": [
+          {
+            "attacker_id": "p0",
+            "descriptor": {
+              "geometry": {
+                "direction": "NW",
+                "distance": 7,
+                "family": "diagonal",
+                "offset": [
+                  -7,
+                  7
+                ]
+              },
+              "intermediate": [
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty"
+              ],
+              "piece": "King"
+            },
+            "key": "attack:04b7ea13325d4fd46f16efde",
+            "king_id": "p3",
+            "phase": "successor",
+            "relation": {
+              "derivation": "Typed relative projection; never a native conjunction.",
+              "descriptor": {
+                "motion": [
+                  7,
+                  7
+                ],
+                "piece": "King",
+                "ray_contents": []
+              },
+              "id": "c4:56eaffa0f584573c0b482771",
+              "provenance": "host-grounded",
+              "target": "Attack",
+              "tier": 3
+            }
+          }
+        ],
+        "attacks": [
+          {
+            "attacker_id": "p0",
+            "descriptor": {
+              "geometry": {
+                "direction": "NW",
+                "distance": 7,
+                "family": "diagonal",
+                "offset": [
+                  -7,
+                  7
+                ]
+              },
+              "intermediate": [
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty"
+              ],
+              "piece": "King"
+            },
+            "key": "attack:04b7ea13325d4fd46f16efde",
+            "king_id": "p3"
+          }
+        ],
+        "boundary": "Movement keys exclude opponent-to-king frames. Exposure is separately indexed.",
+        "candidate_id": "m4c9f6793680c2de3",
+        "cell_relations": [],
+        "complete": true,
+        "composition": "Unary native constraint chains; pooled local observation is explicitly non-compositional.",
+        "context": {
+          "castle_king_edge_distance": null,
+          "castle_rights": null,
+          "castle_rook": null,
+          "castle_rook_kind": null,
+          "castle_rook_path": [],
+          "castle_transit": [],
+          "destination": "Opponent",
+          "destination_exists": true,
+          "destination_kind": "Pawn",
+          "effect": "ordinary",
+          "ep_offset": null,
+          "geometry": {
+            "direction": "N",
+            "distance": 1,
+            "family": "orthogonal",
+            "offset": [
+              0,
+              1
+            ]
+          },
+          "intermediate": [],
+          "own_king_count": 1,
+          "pawn_end_edge_distance": null,
+          "pawn_start_edge_distance": null,
+          "piece": "Rook",
+          "postmove_opponents": [
+            {
+              "geometry": {
+                "direction": "NW",
+                "distance": 7,
+                "family": "diagonal",
+                "offset": [
+                  -7,
+                  7
+                ]
+              },
+              "intermediate": [
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty"
+              ],
+              "piece": "King"
+            }
+          ],
+          "promotion": null,
+          "rights_known": null
+        },
+        "factored_premises": [
+          {
+            "predicate": "PieceClass",
+            "provenance": "sensed",
+            "roles": {
+              "mover": "Rook"
+            }
+          },
+          {
+            "predicate": "Displacement",
+            "provenance": "host-grounded",
+            "roles": {
+              "offset": [
+                0,
+                1
+              ],
+              "source": "source",
+              "target": "destination"
+            }
+          },
+          {
+            "predicate": "DestinationRelation",
+            "provenance": "sensed",
+            "roles": {
+              "kind": "Pawn",
+              "occupancy": "Opponent"
+            }
+          },
+          {
+            "predicate": "BoundaryRelation",
+            "provenance": "sensed",
+            "roles": {
+              "destination_exists": true
+            }
+          },
+          {
+            "predicate": "TemporalObservation",
+            "provenance": "sensed",
+            "roles": {
+              "castle_rook_path": []
+            }
+          },
+          {
+            "predicate": "CandidateSuccessor",
+            "provenance": "host-grounded",
+            "roles": {
+              "operation": "ordinary",
+              "promotion": null
+            }
+          }
+        ],
+        "fine_combination": "c9ef16cd7651bf1641cf8d8e3d8d20764b5dfbf69e5be31c218a9d902debf0ad",
+        "geometry_key": "geometry:2a8c91a9960ff819c9a6db75",
+        "hierarchy": {
+          "abstraction": [
+            {
+              "composition": "not native AND",
+              "descriptor": {
+                "effect": "ordinary",
+                "motion": "orthogonal",
+                "piece": "Rook",
+                "promotion": null
+              },
+              "family": "geometry",
+              "id": "c5:de58fb418d94e32480c24699",
+              "origin": "host-grounded local abstraction",
+              "target": "GeometryCompatible"
+            },
+            {
+              "composition": "not native AND",
+              "descriptor": {
+                "occupancy": "Opponent",
+                "royal_contact": false
+              },
+              "family": "destination",
+              "id": "c5:25c546f81f17ec3f0c5f0b34",
+              "origin": "host-grounded local abstraction",
+              "target": "DestinationConflict"
+            },
+            {
+              "composition": "not native AND",
+              "descriptor": {
+                "exists": true
+              },
+              "family": "boundary",
+              "id": "c5:af5ee7c6d5cff7372b2bba27",
+              "origin": "host-grounded local abstraction",
+              "target": "BoundaryConflict"
+            }
+          ],
+          "refinement_policy": "No automatic refinement from heldout errors. Conflict remains visible; no generated exact-context rule.",
+          "sensor": [
+            {
+              "predicate": "PieceClass",
+              "provenance": "sensed",
+              "roles": {
+                "mover": "Rook"
+              }
+            },
+            {
+              "predicate": "Displacement",
+              "provenance": "host-grounded",
+              "roles": {
+                "offset": [
+                  0,
+                  1
+                ],
+                "source": "source",
+                "target": "destination"
+              }
+            },
+            {
+              "predicate": "DestinationRelation",
+              "provenance": "sensed",
+              "roles": {
+                "kind": "Pawn",
+                "occupancy": "Opponent"
+              }
+            },
+            {
+              "predicate": "BoundaryRelation",
+              "provenance": "sensed",
+              "roles": {
+                "destination_exists": true
+              }
+            },
+            {
+              "predicate": "TemporalObservation",
+              "provenance": "sensed",
+              "roles": {
+                "castle_rook_path": []
+              }
+            },
+            {
+              "predicate": "CandidateSuccessor",
+              "provenance": "host-grounded",
+              "roles": {
+                "operation": "ordinary",
+                "promotion": null
+              }
+            }
+          ]
+        },
+        "history": {
+          "castling_rights_known": true,
+          "ep_target_asserted": false,
+          "known": false
+        },
+        "key": "context:b404c75df83af783c7f2a5ef",
+        "local_context": {
+          "destination": "Opponent",
+          "effect": "ordinary",
+          "motion": "orthogonal",
+          "piece": "Rook",
+          "promotion": null,
+          "ray_contents": []
+        },
+        "missing": [],
+        "move": "b4b5",
+        "pattern": {
+          "effect": "ordinary",
+          "geometry": {
+            "direction": "N",
+            "distance": 1,
+            "family": "orthogonal",
+            "offset": [
+              0,
+              1
+            ]
+          },
+          "piece": "Rook",
+          "promotion": null
+        },
+        "piece": "Rook",
+        "position_id": "sfecdd825f33e81fd",
+        "ray_motifs": {
+          "cells": [],
+          "content_classes": [],
+          "first_nonempty": null,
+          "occupied_count": 0,
+          "prefix_empty_count": 0,
+          "suffix_empty_count": 0
+        },
+        "relations": [
+          {
+            "derivation": "Typed relative projection; never a native conjunction.",
+            "descriptor": {
+              "destination": "Opponent",
+              "effect": "ordinary",
+              "motion": "orthogonal",
+              "piece": "Rook",
+              "promotion": null,
+              "ray_contents": []
+            },
+            "id": "c4:fd5ca38afbc4a932b49a8584",
+            "provenance": "host-grounded",
+            "target": "LocalAdmissibility",
+            "tier": 4
+          },
+          {
+            "derivation": "Typed relative projection; never a native conjunction.",
+            "descriptor": {
+              "effect": "ordinary",
+              "motion": "orthogonal",
+              "piece": "Rook",
+              "promotion": null
+            },
+            "id": "c4:84ced4355988cac5252fd310",
+            "provenance": "host-grounded",
+            "target": "GeometryObserved",
+            "tier": 1
+          },
+          {
+            "derivation": "Typed relative projection; never a native conjunction.",
+            "descriptor": {
+              "kind": "Pawn",
+              "occupancy": "Opponent"
+            },
+            "id": "c4:e5fc8057332adcd31ba18970",
+            "provenance": "host-grounded",
+            "target": "DestinationConflict",
+            "tier": 2
+          },
+          {
+            "derivation": "Typed relative projection; never a native conjunction.",
+            "descriptor": {
+              "exists": true
+            },
+            "id": "c4:973a3e06c1ebda356381f261",
+            "provenance": "host-grounded",
+            "target": "BoundaryConflict",
+            "tier": 2
+          }
+        ],
+        "relative_neighborhood": {
+          "destination": {
+            "occupancy": "Opponent",
+            "royal_contact": false
+          },
+          "geometry": {
+            "direction": "N",
+            "distance": 1,
+            "family": "orthogonal",
+            "offset": [
+              0,
+              1
+            ]
+          },
+          "opponent_frames": [
+            {
+              "descriptor": {
+                "motion": [
+                  7,
+                  7
+                ],
+                "piece": "King",
+                "ray_contents": []
+              },
+              "phase": "successor"
+            }
+          ],
+          "owner_forward": "White",
+          "pre_move_opponent_frames": [
+            {
+              "geometry": {
+                "direction": "NW",
+                "distance": 4,
+                "family": "offset",
+                "offset": [
+                  -1,
+                  4
+                ]
+              },
+              "intermediate": [],
+              "piece": "Pawn"
+            },
+            {
+              "geometry": {
+                "direction": "NW",
+                "distance": 7,
+                "family": "diagonal",
+                "offset": [
+                  -7,
+                  7
+                ]
+              },
+              "intermediate": [
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty",
+                "Empty"
+              ],
+              "piece": "King"
+            }
+          ],
+          "ray_cells": [],
+          "signed_displacement": [
+            0,
+            1
+          ],
+          "source_occupancy": "Rook"
+        },
+        "schema": "factored-constraints-v4",
+        "temporal_observations": {
+          "castle_rook_path": []
+        },
+        "tv": {
+          "confidence": 0.99,
+          "strength": 1.0
+        },
+        "typed_relations": [
+          {
+            "composition": "not native AND",
+            "descriptor": {
+              "effect": "ordinary",
+              "motion": "orthogonal",
+              "piece": "Rook",
+              "promotion": null
+            },
+            "family": "geometry",
+            "id": "c5:de58fb418d94e32480c24699",
+            "origin": "host-grounded local abstraction",
+            "target": "GeometryCompatible"
+          },
+          {
+            "composition": "not native AND",
+            "descriptor": {
+              "occupancy": "Opponent",
+              "royal_contact": false
+            },
+            "family": "destination",
+            "id": "c5:25c546f81f17ec3f0c5f0b34",
+            "origin": "host-grounded local abstraction",
+            "target": "DestinationConflict"
+          },
+          {
+            "composition": "not native AND",
+            "descriptor": {
+              "exists": true
+            },
+            "family": "boundary",
+            "id": "c5:af5ee7c6d5cff7372b2bba27",
+            "origin": "host-grounded local abstraction",
+            "target": "BoundaryConflict"
+          }
+        ],
+        "variant": "C4-full"
+      },
+      "evidence_id": "48c2ed45b1e941478dfbf2c2e11673c0723e8860bcedea49dd333530a38880cf",
+      "expression": "(Truth_Revision (stv 0.9913793103448276 0.7532467532467534) (stv 1.0 0.5))",
+      "family": "B",
+      "fen": "7k/8/8/1p6/1R6/8/8/K7 w - - 0 1",
+      "label": true,
+      "move": "b4b5",
+      "observation": "opponent occupancy eligibility, independently supervised",
+      "output": {
+        "confidence": 0.8020833333333335,
+        "strength": 0.9935064935064936
+      },
+      "prior": {
+        "confidence": 0.7532467532467534,
+        "strength": 0.9913793103448276
+      },
+      "source_group": "C7-micro-B-3"
+    }
+  ],
+  "premise_training_scope": "Pinned C7 synthetic marginal curriculum reexecuted independently; disjoint source groups do not establish statistical independence.",
+  "production_operator_enabled": false,
+  "records": [
+    {
+      "assumption": {
+        "assumption_id": "toy-generated-independent-Bernoulli-population",
+        "kind": "population-event-factorization"
+      },
+      "budget": {
+        "arithmetic": "exact rational",
+        "max_atoms": 3
+      },
+      "confidence": null,
+      "dependence_groups": [
+        "A",
+        "B"
+      ],
+      "derivation_order": [
+        "A",
+        "B",
+        "independent-positive"
+      ],
+      "evidence_ids": [
+        "46405d05af21bbe56d7c6f89e532c3e3514249b6cc133f15dac84dcc88afcb56",
+        "4214d57826429bb67efe49c934559ff3dbc64be2b277d24a7843c82a304635c9"
+      ],
+      "expression": "IndependentJoint([4/5,4/5],[3/5,3/5],certificate)",
+      "id": "independent-positive",
+      "model_version": "isolated-mathematical-spec-v1",
+      "native": false,
+      "native_stv": null,
+      "premise_ids": [
+        "A",
+        "B"
+      ],
+      "proof_status": "proposed-rule-experimental-result",
+      "result": {
+        "decimal_lower": 0.48,
+        "decimal_upper": 0.48,
+        "lower": "12/25",
+        "upper": "12/25"
+      },
+      "rule_id": "proposed-credal-joint-v1",
+      "runtime_version": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+      "without_assumption": {
+        "decimal_lower": 0.4,
+        "decimal_upper": 0.6,
+        "lower": "2/5",
+        "upper": "3/5"
+      }
+    },
+    {
+      "budget": {
+        "arithmetic": "exact rational",
+        "max_atoms": 3
+      },
+      "confidence": null,
+      "dependence_groups": [
+        "A-positive",
+        "B-negative"
+      ],
+      "derivation_order": [
+        "A-positive",
+        "B-negative",
+        "positive-negative"
+      ],
+      "evidence_ids": [
+        "25fd6a872f2a7dd572829ebec6e097343ad0699575afc71ba8a83792ef06c206",
+        "ea66580ee63d1074d9b5842bbd6387eb48a85ddf6dfc08f518f6aa63620f55f1"
+      ],
+      "expression": "Frechet([9/10,9/10],[1/10,1/10])",
+      "id": "positive-negative",
+      "model_version": "isolated-mathematical-spec-v1",
+      "native": false,
+      "native_stv": null,
+      "premise_ids": [
+        "A-positive",
+        "B-negative"
+      ],
+      "proof_status": "proposed-rule-experimental-result",
+      "result": {
+        "decimal_lower": 0.0,
+        "decimal_upper": 0.1,
+        "lower": "0",
+        "upper": "1/10"
+      },
+      "rule_id": "proposed-credal-joint-v1",
+      "runtime_version": "4405956947c4b53c7ff01bd565aa3b114bc970a1"
+    },
+    {
+      "budget": {
+        "arithmetic": "exact rational",
+        "max_atoms": 3
+      },
+      "confidence": null,
+      "dependence_groups": [
+        "A",
+        "B-unknown"
+      ],
+      "derivation_order": [
+        "A",
+        "B-unknown",
+        "unknown-premise"
+      ],
+      "evidence_ids": [
+        "46405d05af21bbe56d7c6f89e532c3e3514249b6cc133f15dac84dcc88afcb56",
+        "1ffb9b9352fd311cbab07ebcf786ce894dd7583c8131a533793d4a530b5c0d58"
+      ],
+      "expression": "Frechet([4/5,4/5],[0,1])",
+      "id": "unknown-premise",
+      "model_version": "isolated-mathematical-spec-v1",
+      "native": false,
+      "native_stv": null,
+      "premise_ids": [
+        "A",
+        "B-unknown"
+      ],
+      "proof_status": "proposed-rule-experimental-result",
+      "result": {
+        "decimal_lower": 0.0,
+        "decimal_upper": 0.8,
+        "lower": "0",
+        "upper": "4/5"
+      },
+      "rule_id": "proposed-credal-joint-v1",
+      "runtime_version": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+      "support_status": "unknown"
+    },
+    {
+      "budget": {
+        "arithmetic": "exact rational",
+        "max_atoms": 3
+      },
+      "confidence": null,
+      "dependence": "identity, not independence",
+      "dependence_groups": [
+        "A",
+        "B-same-event"
+      ],
+      "derivation_order": [
+        "A",
+        "B-same-event",
+        "correlated"
+      ],
+      "evidence_ids": [
+        "46405d05af21bbe56d7c6f89e532c3e3514249b6cc133f15dac84dcc88afcb56",
+        "c185856db00b2c2721546b3a702bf7937f91380d3c8b5a5afa5de20d223e54cb"
+      ],
+      "expression": "Joint(P(A)=4/5, B=A)",
+      "id": "correlated",
+      "model_version": "isolated-mathematical-spec-v1",
+      "naive_product": "16/25",
+      "native": false,
+      "native_stv": null,
+      "premise_ids": [
+        "A",
+        "B-same-event"
+      ],
+      "proof_status": "proposed-rule-experimental-result",
+      "result": {
+        "decimal_lower": 0.8,
+        "decimal_upper": 0.8,
+        "lower": "4/5",
+        "upper": "4/5"
+      },
+      "rule_id": "proposed-credal-joint-v1",
+      "runtime_version": "4405956947c4b53c7ff01bd565aa3b114bc970a1"
+    },
+    {
+      "budget": {
+        "arithmetic": "exact rational",
+        "max_atoms": 3
+      },
+      "confidence": null,
+      "confidence_certificate": {
+        "after": "19/20",
+        "before": "19/20",
+        "meaning": "coverage lower bound, not native STV confidence"
+      },
+      "dependence_groups": [
+        "A"
+      ],
+      "derivation_order": [
+        "A",
+        "duplicate"
+      ],
+      "evidence_ids": [
+        "46405d05af21bbe56d7c6f89e532c3e3514249b6cc133f15dac84dcc88afcb56"
+      ],
+      "expression": "And(A,A) = A",
+      "id": "duplicate",
+      "input_ids": [
+        "A",
+        "A"
+      ],
+      "model_version": "isolated-mathematical-spec-v1",
+      "native": false,
+      "native_stv": null,
+      "premise_ids": [
+        "A"
+      ],
+      "proof_status": "proposed-rule-experimental-result",
+      "result": {
+        "decimal_lower": 0.8,
+        "decimal_upper": 0.8,
+        "lower": "4/5",
+        "upper": "4/5"
+      },
+      "rule_id": "proposed-credal-joint-v1",
+      "runtime_version": "4405956947c4b53c7ff01bd565aa3b114bc970a1"
+    },
+    {
+      "budget": {
+        "arithmetic": "exact rational",
+        "max_atoms": 3
+      },
+      "confidence": null,
+      "dependence_groups": [
+        "A",
+        "not-A"
+      ],
+      "derivation_order": [
+        "A",
+        "not-A",
+        "contradiction"
+      ],
+      "evidence_ids": [
+        "46405d05af21bbe56d7c6f89e532c3e3514249b6cc133f15dac84dcc88afcb56",
+        "6915570f4a4aff0b9566cda9950ea9e5d48050e1651cddedc51b31ca932ff8a1"
+      ],
+      "expression": "And(A,Not(A))",
+      "id": "contradiction",
+      "inconsistent_assessment": "P(A)>=4/5 and P(A)<=1/5 returns InconsistentConstraints, not this zero probability",
+      "model_version": "isolated-mathematical-spec-v1",
+      "native": false,
+      "native_stv": null,
+      "premise_ids": [
+        "A",
+        "not-A"
+      ],
+      "proof_status": "proposed-rule-experimental-result",
+      "result": {
+        "decimal_lower": 0.0,
+        "decimal_upper": 0.0,
+        "lower": "0",
+        "upper": "0"
+      },
+      "rule_id": "proposed-credal-joint-v1",
+      "runtime_version": "4405956947c4b53c7ff01bd565aa3b114bc970a1"
+    },
+    {
+      "budget": {
+        "arithmetic": "exact rational",
+        "max_atoms": 3
+      },
+      "confidence": null,
+      "dependence_groups": [
+        "A",
+        "B"
+      ],
+      "derivation_order": [
+        "A",
+        "B",
+        "heldout-conclusion"
+      ],
+      "evidence_ids": [
+        "46405d05af21bbe56d7c6f89e532c3e3514249b6cc133f15dac84dcc88afcb56",
+        "4214d57826429bb67efe49c934559ff3dbc64be2b277d24a7843c82a304635c9"
+      ],
+      "expression": "C from A,B without any relation to C",
+      "id": "heldout-conclusion",
+      "model_version": "isolated-mathematical-spec-v1",
+      "native": false,
+      "native_stv": null,
+      "premise_ids": [
+        "A",
+        "B"
+      ],
+      "proof_status": "proposed-rule-experimental-result",
+      "result": {
+        "decimal_lower": 0.0,
+        "decimal_upper": 1.0,
+        "lower": "0",
+        "upper": "1"
+      },
+      "rule_id": "proposed-credal-joint-v1",
+      "runtime_version": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+      "support_status": "unsupported-inference",
+      "with_supplied_conditionals": {
+        "decimal_lower": 0.484,
+        "decimal_upper": 0.484,
+        "lower": "121/250",
+        "upper": "121/250"
+      }
+    },
+    {
+      "budget": {
+        "arithmetic": "exact rational",
+        "max_atoms": 3
+      },
+      "confidence": null,
+      "dependence_groups": [
+        "knight-relative-geometry",
+        "opponent-destination"
+      ],
+      "derivation_order": [
+        "knight-relative-geometry",
+        "opponent-destination",
+        "chess-relative"
+      ],
+      "evidence_ids": [
+        "3a0901ba897e67245b0d6a80fb80b099877661b2e4fabb7fc4e64bb5b0bd964f",
+        "e27db9e12d35c8ac4a09c72a8fa6a34d94521ae7691ed9fdf3ac85f175f5bf92"
+      ],
+      "expression": "Lift learned knight geometry and destination STVs without calibration",
+      "fen": "2bk3K/8/5N2/7n/8/2B5/8/8 w - - 0 1",
+      "id": "chess-relative",
+      "model_version": "isolated-mathematical-spec-v1",
+      "move": "f6h5",
+      "native": false,
+      "native_premises": {
+        "A": {
+          "confidence": 0.8020833333333335,
+          "strength": 0.9935064935064936
+        },
+        "B": {
+          "confidence": 0.8020833333333335,
+          "strength": 0.9935064935064936
+        }
+      },
+      "native_stv": null,
+      "premise_ids": [
+        "knight-relative-geometry",
+        "opponent-destination"
+      ],
+      "proof_status": "proposed-rule-experimental-result",
+      "reason": "No approved STV-to-interval calibration or eligibility implication; no complete native proof",
+      "result": {
+        "decimal_lower": 0.0,
+        "decimal_upper": 1.0,
+        "lower": "0",
+        "upper": "1"
+      },
+      "rule_id": "proposed-credal-joint-v1",
+      "runtime_version": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+      "support_status": "unknown"
+    }
+  ],
+  "runtime": {
+    "atomspace": "PeTTa native in-process MeTTa space (no Hyperon AtomSpace dependency)",
+    "petta": {
+      "branch": "main",
+      "commit": "ee5cacb6a6ecdd554a1c773aaf47e9a0f8a5af0f",
+      "files": {
+        "run.sh": "269a50bc47e8a5f614f1999161d7f5f6ea51c4615d39f12a404540071f124ff0",
+        "src/ext_points.pl": "0b5f1b115e29892ab1bf5833c022df4c2f3f1558cb04f57a8f52de5ccdad8436",
+        "src/filereader.pl": "fb677e03ffbf945f8c752aa02c8db481cebfbdd219660bee387af596e3ce7bc1",
+        "src/load_cache.pl": "619fc64d253221d06907234d2b94d8c3395b4a6facbe56b2a4bb38c84c9c0ac3",
+        "src/main.pl": "2a57276bb0cd32f29e0bd983c2640f1e9bc1646e22bfc266230d3dc13b9ecc6c",
+        "src/metta.pl": "9ee89a19768c82052606b738e7abd88971c5ac826b7cf9fc1ab770e02779337d",
+        "src/parser.pl": "69ab6dd840fcc585d916fd25a496a09dd30ca9aaacf6e55baaa67c8c020c84c1",
+        "src/spaces.pl": "553acea6a6ad210ff46cb0c883af7587295c689fcd5d768566428607417f0bb0",
+        "src/specializer.pl": "b27a2a6430914c11dc9cd0d27b9a3aa5945064607c48979b7a2a0e50bd0f5141",
+        "src/translator.pl": "cda4dcfc4f77ff0d3feb858b1502ec685fb8b1ddbd7cc555193b76ac7de12220",
+        "src/typecheck.pl": "c45a5a66001255004944731e72dc7a2b71872328027c0f23117442896767e91c",
+        "src/typecheck/abstract_domain.pl": "7fafddae3126fc3ab6f9c2380a4809d0dc5331ae1a622df3be6176167d90d8b9",
+        "src/typecheck/analysis_proofs.pl": "96687dbdd49730b355200eb8135aec8a55953daa1dc250196743951565b5350f",
+        "src/typecheck/builtin_registry.pl": "e0a65099592fa3283ff6f31e90f776366f499eb8e172102393b96bd8183d5005",
+        "src/typecheck/call_summaries.pl": "adb9383a34fd3c0cbaa6e898fd1ee41fcbe2a90327af1b96f4db29bd22c46c00",
+        "src/typecheck/clause_checks.pl": "3b072c51563542b85d8195137dfc06d60932fe25acf14c2dafdadc53367fefc3",
+        "src/typecheck/decl_store.pl": "52f5c17cf51e871a11d81f284094bdb945d3876b799f9157e5131eea3dfdd615",
+        "src/typecheck/dependency_graph.pl": "f344d62ad9e084d2b9ab7dc235094de83db87815cb7b1935c97794490abddaf1",
+        "src/typecheck/det_analysis.pl": "bc04e7791253c3e12b45c81be3f0a7fc419c310898a7b2dab89f86cb329eca9a",
+        "src/typecheck/det_proofs.pl": "1e34de0eb4fad3e79ff5b551e2f966595063db5a6cb268aac45e90448f80fd74",
+        "src/typecheck/det_validate.pl": "98738eb738f4aa76b64d1412ab5e839d151e1bef1fda1019396151a4e1d6ac58",
+        "src/typecheck/flags_arrows.pl": "454f1a1d6b47fe390fc3a8fc11297c6acc798bab6a4f5dc3f009ce79fcc844ed",
+        "src/typecheck/inference.pl": "62d0f2ae9ca97b622cec0676dd3de50016311d940e981e98d243f345579f4430",
+        "src/typecheck/ir_analyzer.pl": "02520b61ccccaba064f62f72f68162bc9b033abec64b77f6e2374e9134b1fe83",
+        "src/typecheck/oracles.pl": "c3ec9fc6e02cf78f58a7f441977fe7ceedad34a78a2a27a43fa52e809256b649",
+        "src/typecheck/relational_ir.pl": "c35f43237b3178ae81f207a79905e9aeb998f8eeac3cc9dce323c6fe62fc0037",
+        "src/typecheck/type_lang.pl": "d9cc0fbdc06002a8249c5b77fa999fb50be4b040626728b66a7e80f2b46255e0",
+        "src/typecheck/unified_checker_bridge.pl": "53ae3521a8265b9680f5434caa2384e0a3831739c53325a6bc2c737b02c2a01a",
+        "src/typecheck/unified_checker_cache.pl": "684f13666c61a1b15ecaf42443d41f15d76efa5d032225a87c873b76ca1da930",
+        "src/typecheck/value_checks.pl": "a8013f13afffd637ba9038c9cf2ef1d8cd056a135696fa676ca5fe88ada25ae6"
+      },
+      "repository": "https://github.com/trueagi-io/PeTTa"
+    },
+    "pln": {
+      "branch": "main",
+      "commit": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+      "repository": "https://github.com/trueagi-io/PLN",
+      "sha256": "cdfb3f18bd7b336440fc7b4409209afddf0e64c41f17dee7eefc8f02718de433",
+      "source": "vendor/pln/lib_pln.metta"
+    },
+    "python": "3.12.12",
+    "schema": 1,
+    "swipl": "SWI-Prolog version 10.0.1 for x86_64-linux",
+    "truth_value": "(stv strength confidence)"
+  }
+}

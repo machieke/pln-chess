@@ -1,0 +1,18 @@
+browser f7f8q passed
+browser f7f8r passed
+browser f7f8b passed
+browser f7f8n passed
+browser f7e8q passed
+browser f7e8r passed
+browser f7e8b passed
+browser f7e8n passed
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/data/pln-chess-cycle6-delivery/scripts/cycle8_ui_verify.py", line 149, in <module>
+    args=parser.parse_args();run(args.out,args.work,args.port)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/pln-chess-cycle6-delivery/scripts/cycle8_ui_verify.py", line 105, in run
+    assert mobile['width']==390 and mobile['scrollWidth']<=390,mobile
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'height': 900, 'scrollWidth': 1265, 'width': 1280}

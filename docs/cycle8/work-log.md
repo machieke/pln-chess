@@ -35,3 +35,63 @@ working checkout advances to the committed interface/report revision. Bootstrap
 context retains its original HEAD and records this transition explicitly; native
 pins and dependency files are unchanged. The C8 study subprocesses all start from
 the updated clean source. No baseline rerun with changed C8 code is substituted.
+
+The clean run reproduced all 38 original baseline evaluations exactly, then
+completed 81 registered matrix evaluations. All 347 tests passed. Both registered
+candidate models recorded zero false-legal, false-illegal, self-check false-legal
+and incomplete results across their 16 suites. The promotion candidate supported
+the correct decision in all eight original error cases; the frozen and exact-only
+models abstained on those cases. Each of the three C8 control models preserved
+all 287 negative/removal pairs with exact historical native trace parity, plus
+the temporal controls.
+
+The clean transfer run found 52 successful case demonstrations from 26 source
+groups among 96 attempted focus moves. Eighteen groups were combination or
+adversarial holdouts. Ten representative groups retain complete training evidence,
+native expressions, proofs and removal results. All 32 metamorphic promotion
+controls preserved their descriptors and correct supported decisions. These
+counts do not make mirrored examples independent or establish unseen-atomic-type
+generalization. Serial cache benchmarks and fail-closed acceptance follow these
+controls; promotion is not inferred from the preliminary matrix alone.
+
+The fresh reproduction completed successfully at implementation commit
+`4453b46217319fdbf22ac1d344c20111758798af`. The verifier reconstructed all
+236,414 evaluation row proofs, preserved all 1,366 protected historical files,
+and established frozen native parity on all 16 suites. All 240 serial benchmark
+samples passed full candidate/proof equality, with zero warm native invocations
+and no truncation. Both registered candidates passed every behavioral gate with
+zero lost prior supported decisions; the registered preference selected
+`C8-promotion-relative` as the operational default. Its accepted model version is
+`1217e17552ff611bebf0efc650245b05fb71c93a8175b579b025d6273d5d781d`.
+
+The clean default API, CLI, batch-mode, inspector export and legacy C6/C7 smoke
+checks passed. Production source remains byte-identical to the verified
+implementation. Supplementary audits found no complete-board translation or
+symmetry overlap across C8 partitions or with historical training positions.
+Final browser evidence, reports and the artifact manifest are produced from the
+delivery checkout; their helpers do not change production inference.
+
+Final ProofShot verification passed with zero console and server errors. The real
+form exercised the accepted default, all eight original promotion comparisons,
+promotion evidence, strict abstention, zero-budget incompleteness, invalid-input
+clearing and a 390-pixel viewport. Desktop, promotion-panel and mobile screenshots
+were visually inspected. The actual browser export contains 3,848,153 bytes;
+its browser-computed SHA-256 matches the preserved diagnostic JSON. Video, full
+command receipts and server/browser logs are bundled with the clean evidence.
+
+Two final-browser tooling failures are retained separately. The first functional
+pass left ProofShot's detached HTTP server running; cleanup now verifies and
+terminates the owned server group. The next pass detected a resize command that
+had not changed the actual viewport; it failed the mobile assertion and still
+closed the server. The final pass uses a fresh browser session, waits for the
+measured viewport, and invalidates stale success receipts before running. Its
+cleanup receipt confirms both ownership and a closed port. Exact earlier verifier
+sources and failed-run evidence remain in the development directories.
+
+After copying the clean output into `artifacts/cycle8`, a separate real CLI
+default check passed without an external output override. Its full proof is in
+`proofs/delivery-default.json.xz`, with `delivery-smoke.json` recording the command
+and source/model binding. The original clean smoke artifacts are unchanged.
+All fourteen packages are complete. The delivery commit contains the generated
+reports, all evidence and the final manifest; no push or new native operator is
+part of this cycle.

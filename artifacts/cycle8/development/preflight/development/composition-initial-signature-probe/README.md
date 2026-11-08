@@ -1,0 +1,1 @@
+The initial negation probe used the wrong symbol case (Truth_negation); MeTTa returned it unevaluated. This was detected from the actual output and corrected to the pinned Truth_Negation signature. No result from the unevaluated expression is treated as a native TV. The full laboratory was rerun.

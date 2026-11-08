@@ -1,0 +1,69 @@
+{
+  "accepted_legacy_model_versions": [
+    "3b14445d136a01d77dd60e5b2dca2d49f525903a85db2283f0281dc86d74859c",
+    "801834df61c75a99c3a3e1d0a91b0fc30ba6875238ba5ea0f5731fe2fe2a1a08"
+  ],
+  "accepted_model_versions": [
+    "1217e17552ff611bebf0efc650245b05fb71c93a8175b579b025d6273d5d781d",
+    "95094b3c1ec22441023cefdd5c13914a03e135611dbe6fc22f2a326bef65c8f4"
+  ],
+  "all_required_checks_executed": true,
+  "candidate_decisions": {
+    "C8-no-promotion-training": {
+      "eligible": true,
+      "rejection_reasons": []
+    },
+    "C8-promotion-relative": {
+      "eligible": true,
+      "rejection_reasons": []
+    }
+  },
+  "checks": {
+    "baseline": true,
+    "cache_parity": true,
+    "clean_bootstrap": true,
+    "evaluation": true,
+    "native_boundary": true,
+    "negatives": true,
+    "provenance": true,
+    "tests": true
+  },
+  "default_mode": "operational",
+  "legacy_registrations": {
+    "6": "cc8685591e9b460caeb0c890395d47f14aefdccbabad90d6ad7b9b093b0ccef6",
+    "7": "e86847169c3fe8b4209c4903684c9359a21a993e1edb1e83fe556a8a3783a37a"
+  },
+  "new_learning_promoted": true,
+  "passed": true,
+  "preserved_model_new_suite_errors": {
+    "cycle8-adversarial": {
+      "false_illegal": 0,
+      "false_positive": 0,
+      "incomplete": 0,
+      "self_check_false_legal": 0
+    },
+    "cycle8-combination-holdout": {
+      "false_illegal": 0,
+      "false_positive": 0,
+      "incomplete": 0,
+      "self_check_false_legal": 0
+    },
+    "cycle8-independent-games": {
+      "false_illegal": 0,
+      "false_positive": 0,
+      "incomplete": 0,
+      "self_check_false_legal": 0
+    },
+    "cycle8-validation": {
+      "false_illegal": 0,
+      "false_positive": 0,
+      "incomplete": 0,
+      "self_check_false_legal": 0
+    }
+  },
+  "production_code_hash": "8193abb72b2caaa40fead3ee0d6dbb2fad9a460be35781e6d4429794a4e25cdb",
+  "registration_hash": "e9b7566389d8d0865a5fdc2013fe81985c15646fa05d6b1b1e83f533198a96d9",
+  "runtime_version": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+  "scope": "Empirical acceptance on registered synthetic suites; positive claims remain partial native conditionals, not universal safety or calibrated probability guarantees.",
+  "selected_variant": "C8-promotion-relative"
+}

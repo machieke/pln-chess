@@ -68,3 +68,8 @@ IDs. The no-promotion-training arm keeps the C7 exact-only learner and was
 registered as a possible conservative fallback **before** C8 outcomes. Destructive
 ablations are never eligible for promotion. The observed effects, including null
 results, belong in the evaluation report rather than being presumed beneficial.
+
+The exact-only fallback is informed by C7's earlier no-backoff diagnostic on two
+game cohorts. C8 does not present that choice as a blind discovery. Its new
+acceptance evidence is the complete old/new suite matrix under the preregistered
+zero-error and no-loss gates.

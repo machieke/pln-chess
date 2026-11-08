@@ -2,6 +2,27 @@
 
 A piece-relative chess research package using **actual native MeTTa PLN** rules. It includes a pinned runtime audit, six-piece candidate grammar, structural special-move states, append-only evidence, native revision learning, inference/proof APIs, CLI, local inspector, datasets, tests, ablations and measured reports.
 
+Cycle 8 adds learned relative promotion transitions, destination-aware evidence,
+inspector comparisons of four checkpoints, and a separate mathematical proposal for
+native multi-premise composition. Read the [engineering report](docs/cycle8/final-report.md),
+[acceptance results](docs/cycle8/evaluation.md), [decision memo](docs/cycle8/decision-memo.md),
+and [composition proposal](docs/cycle8/native-composition-proposal.md). No new native
+operator is enabled; supported positive classifications still carry partial proofs.
+
+```bash
+C8_OUT=/data/pln-chess-cycle8-output bash scripts/cycle8_reproduce.sh
+.venv/bin/pln-chess compare-generations --fen 'r1b1nk1r/pp3P2/nbp3pp/1N2P3/1P1P2P1/2Q5/P1K1N2P/R3R3 w - - 3 29' --move f7e8n
+.venv/bin/pln-chess serve --port 8765
+```
+
+Use a fresh clone for clean Cycle 8 reproduction. The source-bound acceptance
+receipt selects the operational default only after all registered gates pass.
+[Reproduction instructions](docs/cycle8/reproduction.md) include the complete
+evidence bundle, supplementary audits, real-browser verification and reporting
+commands. [API details](docs/cycle8/architecture-and-api.md) describe schema 8,
+proof status, modes and preserved historical checkpoints. Cycle 8 commits remain
+local under its brief; no push is part of the delivery.
+
 Cycle 7 is documented in the [engineering report](docs/cycle7/final-report.md), [bounded native feasibility result](docs/cycle7/native-feasibility.md), and [user decision memo](docs/cycle7/decision-memo.md). It adds versioned proof labels, a C6/C7 inspector comparison, offline active learning, bounded conditional backoff experiments, independent opening-family evaluation, and a source-bound operational-default receipt. Native positive composition remains unproved; rejected learning experiments remain separate from the accepted default.
 
 ```bash

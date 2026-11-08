@@ -5,6 +5,8 @@ accept schema 8. Existing schemas remain loadable. `Cycle8Options` extends the
 existing budgets and modes with an explicit promotion-training switch. Cache
 sessions separate immutable source inference from bounded promotion projections;
 retraction or model changes invalidate native scope keys.
+The inherited `new_training` option controls C7 source evidence;
+`promotion_training` separately controls the C8 promotion pass.
 
 A candidate carries the relative promotion transition, typed observation IDs,
 selected promotion rule and grounded rule IDs, evidence IDs, dependence groups,

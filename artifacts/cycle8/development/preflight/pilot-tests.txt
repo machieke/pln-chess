@@ -1,0 +1,97 @@
+.................F.........                                              [100%]
+=================================== FAILURES ===================================
+________________ test_cold_warm_reference_proofs_are_identical _________________
+
+trained = (PromotionModel(source={'source': {'grammar': 'explicit-proof-modes-v6', 'policy': 'evidence-channels-v6.1', 'schema':...ed': True}, 'confidence': 0.5, ...}, ...], 'hash': '0ca7f913cca7f460ec2a031aa2adb1b6e9f407b77dd40fe43da84cd8abec7c07'})
+rt = <pln_chess.pln.runtime.Runtime object at 0x7fd475c0c5f0>
+
+    def test_cold_warm_reference_proofs_are_identical(trained,rt):
+        model,_=trained;p=Position.from_fen(PROMOTION);moves=[find_move(p,'f7e8n'),find_move(p,'f7f8n')]
+        options=Cycle8Options(mode='operational');session=Session(rt)
+        reference=infer_moves(p,model,options,rt,moves,optimized=False)
+        cold=infer_moves(p,model,options,rt,moves,session)
+        warm=infer_moves(p,model,options,rt,moves,session)
+        assert reference['candidates']==cold['candidates']==warm['candidates']
+        assert warm['native_invocations']==0 and cold['native_invocations']>0
+>       limited=infer_moves(p,model,replace(options,max_native_invocations=0),rt,moves,session)
+
+tests/test_cycle8.py:111: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/pln_chess/cycle8/inference.py:71: in infer_moves
+    result=source_infer(position,source,source_options,runtime,moves,session.source,optimized)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+position = Position(pieces=(Piece(id='p0', kind='Rook', owner='Black', square=(0, 7)), Piece(id='p1', kind='Bishop', owner='Black...turn='White', rights='-', ep=None, halfmove=3, fullmove=29, unknown_squares=(), history_known=False, rights_known=True)
+checkpoint = BackoffModel(source={'grammar': 'explicit-proof-modes-v6', 'policy': 'evidence-channels-v6.1', 'schema': 6, 'source': ...'C6-full'}, hypotheses={}, training_report={}, variant='C7-frozen', schema=7, grammar='bounded-conditional-backoff-v7')
+options = Cycle7Options(max_native_invocations=0, timeout_seconds=60, min_confidence=0.25, supported_strength=0.8, contradicted_...suppress_families=(), dependence_aware=True, mode='operational', backoff=False, new_training=True, max_backoff_level=0)
+runtime = <pln_chess.pln.runtime.Runtime object at 0x7fd475c0c5f0>
+selected_moves = [Move(start=(5, 6), end=(4, 7), promotion='n', effect='ordinary'), Move(start=(5, 6), end=(5, 7), promotion='n', effect='ordinary')]
+session = <pln_chess.cycle7.inference.Session object at 0x7fd475a2baa0>
+optimized = True
+
+    def infer_moves(position,checkpoint,options=None,runtime=None,selected_moves=None,session=None,optimized=True):
+        started=time.perf_counter();runtime=runtime or Runtime()
+        model=BackoffModel.load(checkpoint,runtime) if isinstance(checkpoint,(str,Path)) else checkpoint
+        if model.schema!=7 or model.runtime_version!=runtime.version:raise ValueError('Cycle 7 checkpoint/runtime mismatch')
+        options=options if isinstance(options,Cycle7Options) else Cycle7Options(**(asdict(options) if options else {}))
+        options=replace(options,mode=options.mode or default_mode(model));version=model.version
+        position=Position.from_fen(position) if isinstance(position,str) else position
+        moves=list(selected_moves) if selected_moves is not None else list(candidates(position))
+        source=model.source_model();base=source.source['base']['hypotheses'];frozen_keys=frozenset(base);selected={}
+        settings=asdict(options)
+        for k in ('backoff','new_training','max_backoff_level'):settings.pop(k)
+        session=session or Session(runtime,optimized,options.max_cache_entries)
+        if not isinstance(session,Session):raise ValueError('Cycle 7 requires its two-stage session')
+        result=source_infer(position,source,Cycle6Options(**settings),runtime,moves,session.frozen,optimized)
+        initial={i['candidate_id']:i for i in result['candidates']};affected=[]
+        # Existing local hypotheses always win, including low-confidence or disputed
+        # hypotheses. Coarse evidence cannot displace specific counterevidence.
+        for move in moves if model.hypotheses else ():
+            if initial[move.id]['classification']!='unknown':continue
+            rel=next(r for r in descriptors(position,move)['relations'] if r['target']=='LocalAdmissibility')
+            if rel['id'] in frozen_keys:
+                selected[move.id]={'level':'frozen-exact','rule_id':rel['id'],'lineage':base[rel['id']]['evidence_ids']}
+                continue
+            levels=(range(options.max_backoff_level+1) if options.backoff else (0,)) if options.mode=='operational' else ()
+            for level in levels:
+                h=model.hypotheses.get(key(rel['descriptor'],level))
+                if h is None or (not options.new_training and h.get('new_training')):continue
+                # This is a host projection of a single learned conditional, explicitly
+                # recorded. It does not combine independently learned premise TVs.
+                base[rel['id']]={**h,**rel,'origin':'C7-host-projected-learned-conditional'}
+                selected[move.id]={'level':LEVELS[level],'level_index':level,'rule_id':h['id'],
+                    'grounded_rule_id':rel['id'],'lineage':h['evidence_ids'],'dependence_groups':h['dependence_groups'],
+                    'projected_descriptor':h['descriptor'],'host_projection':True}
+                affected.append(move)
+                break
+        if affected:
+            remaining=max(0,options.max_native_invocations-result['scheduled_invocations'])
+            # Use a stable configured timeout in the cache scope. Both stages check
+            # the overall wall budget; a timeout is incomplete, never a negative.
+            stage_options=replace(Cycle6Options(**settings),max_native_invocations=remaining,
+                max_proof_bytes=max(1,options.max_proof_bytes-result['proof_bytes_estimate']))
+            extra=source_infer(position,source,stage_options,runtime,affected,session.backoff,optimized)
+            changed={i['candidate_id']:i for i in extra['candidates']}
+            if time.perf_counter()-started>options.timeout_seconds:
+                extra['truncated']=True;extra['error']='Combined Cycle 7 wall time budget exhausted'
+                for item in changed.values():
+                    item.update(classification='incomplete',legacy_classification='incomplete',status='incomplete',proof_complete=False,
+                        negative_proof_complete=False,abstention_reason=[extra['error']])
+            result['candidates']=[changed.get(i['candidate_id'],i) for i in result['candidates']]
+            for k in ('native_invocations','scheduled_invocations','cache_hits','cache_entries','grounded_atoms','proof_bytes_estimate'):
+                result[k]+=extra[k]
+            result['truncated']|=extra['truncated'];result['error']=extra['error'] or result['error']
+            result['proof_dag']={digest(n):n for i in result['candidates'] for n in i['proof_trace']}
+        for item in result['candidates']:
+            if item['candidate_id'] not in selected and item.get('chosen_hypothesis_id'):
+                k=item['chosen_hypothesis_id']
+                selected[item['candidate_id']]={'level':'frozen-exact','rule_id':k,'lineage':base[k]['evidence_ids']}
+            item['legacy_proof_status']=item['proof_status'];item['proof_status']=proof_category(item)
+            item['proof_status_schema']='proof-status-v7';item['backoff']=selected.get(item['candidate_id'],{'level':'none','rule_id':None,'lineage':[]})
+>           item['partial_native_premises']=[p['id'] for p in item['typed_premises'] if p['status']=='learned-native-conditional']
+E           KeyError: 'typed_premises'
+
+src/pln_chess/cycle7/inference.py:113: KeyError
+=========================== short test summary info ============================
+FAILED tests/test_cycle8.py::test_cold_warm_reference_proofs_are_identical - ...
+1 failed, 26 passed in 50.20s

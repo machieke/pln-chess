@@ -1,0 +1,22 @@
+Starting: C8_OUT=/data/pln-chess-cycle8-clean-output TMPDIR=/dev/shm /data/pln-chess-cycle6-delivery/.venv/bin/python -m pln_chess serve --checkpoint /data/pln-chess-cycle8-clean-output/model/C8-default.json --port 18769
+✓ Dev server started on :18769
+  Server logs → /data/pln-chess-cycle8-clean-output/ui/2026-11-08_03-28-51_cycle-8-accepted-default-all-eight-promo/server.log
+Opening browser...
+✓ Browser ready
+✓ Recording started
+
+✅ ProofShot session started
+
+Server:     C8_OUT=/data/pln-chess-cycle8-clean-output TMPDIR=/dev/shm /data/pln-chess-cycle6-delivery/.venv/bin/python -m pln_chess serve --checkpoint /data/pln-chess-cycle8-clean-output/model/C8-default.json --port 18769 on :18769
+Browser:    Chromium (headless)
+Recording:  /data/pln-chess-cycle8-clean-output/ui/2026-11-08_03-28-51_cycle-8-accepted-default-all-eight-promo/session.webm
+Errors log: /data/pln-chess-cycle8-clean-output/ui/2026-11-08_03-28-51_cycle-8-accepted-default-all-eight-promo/server.log
+Verifying:  Cycle 8 accepted default, all eight promotion comparisons, modes, budget, export and mobile layout
+
+Use proofshot exec to navigate and test:
+  proofshot exec snapshot -i            # See interactive elements
+  proofshot exec click @e3              # Click an element
+  proofshot exec fill @e2 "text"        # Fill a form field
+  proofshot exec screenshot step.png    # Capture a moment
+
+When done, run: proofshot stop

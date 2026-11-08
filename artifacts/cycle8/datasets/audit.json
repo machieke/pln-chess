@@ -1,0 +1,264 @@
+{
+  "balance": "Constructed complete scenarios have both owner orientations and all four promotion choices. Label counts and independent game outcomes are not forced to 50/50. Incomplete observations and game samples are reported separately.",
+  "dataset_hash": "2170ba2431dbc3ff4701b6520dcee2b8612b819f4ef8b8e6eebaee12cee0e639",
+  "generalization_scope": "Complete interaction families are disjoint. Reusable atomic transition types deliberately recur; these are not unseen-type or arbitrary-context safety proofs.",
+  "leakage": {
+    "color_controls": "Color mirrors share their source group and transformation ancestry within one split. They are not independent samples.",
+    "excluded_generation_candidates": {},
+    "family_definition": "Complete interaction configuration: isolated or single-ray training; two/three/four additional interacting pieces in validation/combination/adversarial sets. Atomic local promotion predicates deliberately recur.",
+    "sampling": "Constructed supervision and seeded synthetic games are not human games or a claim of IID population sampling.",
+    "structural_families": {
+      "adversarial": [
+        "4-distractors/incomplete-observation",
+        "4-interacting-distractors/diagonal-empty",
+        "4-interacting-distractors/diagonal-friendly",
+        "4-interacting-distractors/diagonal-opponent-bishop",
+        "4-interacting-distractors/diagonal-opponent-knight",
+        "4-interacting-distractors/diagonal-opponent-queen",
+        "4-interacting-distractors/diagonal-opponent-rook",
+        "4-interacting-distractors/forward-empty",
+        "4-interacting-distractors/forward-friendly",
+        "4-interacting-distractors/forward-opponent-bishop",
+        "4-interacting-distractors/forward-opponent-king",
+        "4-interacting-distractors/forward-opponent-knight",
+        "4-interacting-distractors/forward-opponent-queen",
+        "4-interacting-distractors/forward-opponent-rook",
+        "4-interacting-distractors/single-check-evasion",
+        "4-interacting-distractors/single-diagonal-pin",
+        "4-interacting-distractors/single-file-exposure"
+      ],
+      "combination-holdout": [
+        "3-interacting-distractors/diagonal-empty",
+        "3-interacting-distractors/diagonal-friendly",
+        "3-interacting-distractors/diagonal-opponent-bishop",
+        "3-interacting-distractors/diagonal-opponent-knight",
+        "3-interacting-distractors/diagonal-opponent-queen",
+        "3-interacting-distractors/diagonal-opponent-rook",
+        "3-interacting-distractors/forward-empty",
+        "3-interacting-distractors/forward-friendly",
+        "3-interacting-distractors/forward-opponent-bishop",
+        "3-interacting-distractors/forward-opponent-king",
+        "3-interacting-distractors/forward-opponent-knight",
+        "3-interacting-distractors/forward-opponent-queen",
+        "3-interacting-distractors/forward-opponent-rook",
+        "3-interacting-distractors/single-check-evasion",
+        "3-interacting-distractors/single-diagonal-pin",
+        "3-interacting-distractors/single-file-exposure"
+      ],
+      "independent-games": [
+        "game/caro-kann",
+        "game/scandinavian"
+      ],
+      "train": [
+        "0-distractors/incomplete-observation",
+        "game/queen-pawn",
+        "isolated/diagonal-empty",
+        "isolated/diagonal-friendly",
+        "isolated/diagonal-opponent-bishop",
+        "isolated/diagonal-opponent-knight",
+        "isolated/diagonal-opponent-queen",
+        "isolated/diagonal-opponent-rook",
+        "isolated/forward-empty",
+        "isolated/forward-friendly",
+        "isolated/forward-opponent-bishop",
+        "isolated/forward-opponent-king",
+        "isolated/forward-opponent-knight",
+        "isolated/forward-opponent-queen",
+        "isolated/forward-opponent-rook",
+        "isolated/single-check-evasion",
+        "isolated/single-diagonal-pin",
+        "isolated/single-file-exposure"
+      ],
+      "validation": [
+        "2-interacting-distractors/diagonal-empty",
+        "2-interacting-distractors/diagonal-friendly",
+        "2-interacting-distractors/diagonal-opponent-bishop",
+        "2-interacting-distractors/diagonal-opponent-knight",
+        "2-interacting-distractors/diagonal-opponent-queen",
+        "2-interacting-distractors/diagonal-opponent-rook",
+        "2-interacting-distractors/forward-empty",
+        "2-interacting-distractors/forward-friendly",
+        "2-interacting-distractors/forward-opponent-bishop",
+        "2-interacting-distractors/forward-opponent-king",
+        "2-interacting-distractors/forward-opponent-knight",
+        "2-interacting-distractors/forward-opponent-queen",
+        "2-interacting-distractors/forward-opponent-rook",
+        "2-interacting-distractors/single-check-evasion",
+        "2-interacting-distractors/single-diagonal-pin",
+        "2-interacting-distractors/single-file-exposure",
+        "game/english"
+      ]
+    },
+    "train_test_family_overlap": [],
+    "train_test_game_overlap": [],
+    "train_test_symmetry_overlap": [],
+    "train_test_translation_overlap": []
+  },
+  "partitions": {
+    "adversarial": {
+      "families": {
+        "4-distractors/incomplete-observation": 4,
+        "4-interacting-distractors/diagonal-empty": 2,
+        "4-interacting-distractors/diagonal-friendly": 2,
+        "4-interacting-distractors/diagonal-opponent-bishop": 2,
+        "4-interacting-distractors/diagonal-opponent-knight": 2,
+        "4-interacting-distractors/diagonal-opponent-queen": 2,
+        "4-interacting-distractors/diagonal-opponent-rook": 2,
+        "4-interacting-distractors/forward-empty": 2,
+        "4-interacting-distractors/forward-friendly": 2,
+        "4-interacting-distractors/forward-opponent-bishop": 2,
+        "4-interacting-distractors/forward-opponent-king": 2,
+        "4-interacting-distractors/forward-opponent-knight": 2,
+        "4-interacting-distractors/forward-opponent-queen": 2,
+        "4-interacting-distractors/forward-opponent-rook": 2,
+        "4-interacting-distractors/single-check-evasion": 2,
+        "4-interacting-distractors/single-diagonal-pin": 2,
+        "4-interacting-distractors/single-file-exposure": 2
+      },
+      "focus_positions": 36,
+      "focus_relative_keys_seen_in_training": 36,
+      "incomplete_observation_positions": 4,
+      "owners": {
+        "Black": 16,
+        "White": 20
+      },
+      "positions": 36,
+      "source_games": 0,
+      "source_groups": 20,
+      "training_choices": {},
+      "training_global_labels": {},
+      "training_local_labels": {}
+    },
+    "combination-holdout": {
+      "families": {
+        "3-interacting-distractors/diagonal-empty": 2,
+        "3-interacting-distractors/diagonal-friendly": 2,
+        "3-interacting-distractors/diagonal-opponent-bishop": 2,
+        "3-interacting-distractors/diagonal-opponent-knight": 2,
+        "3-interacting-distractors/diagonal-opponent-queen": 2,
+        "3-interacting-distractors/diagonal-opponent-rook": 2,
+        "3-interacting-distractors/forward-empty": 2,
+        "3-interacting-distractors/forward-friendly": 2,
+        "3-interacting-distractors/forward-opponent-bishop": 2,
+        "3-interacting-distractors/forward-opponent-king": 2,
+        "3-interacting-distractors/forward-opponent-knight": 2,
+        "3-interacting-distractors/forward-opponent-queen": 2,
+        "3-interacting-distractors/forward-opponent-rook": 2,
+        "3-interacting-distractors/single-check-evasion": 2,
+        "3-interacting-distractors/single-diagonal-pin": 2,
+        "3-interacting-distractors/single-file-exposure": 2
+      },
+      "focus_positions": 32,
+      "focus_relative_keys_seen_in_training": 32,
+      "incomplete_observation_positions": 0,
+      "owners": {
+        "Black": 16,
+        "White": 16
+      },
+      "positions": 32,
+      "source_games": 0,
+      "source_groups": 16,
+      "training_choices": {},
+      "training_global_labels": {},
+      "training_local_labels": {}
+    },
+    "independent-games": {
+      "families": {
+        "game/caro-kann": 8,
+        "game/scandinavian": 8
+      },
+      "focus_positions": 0,
+      "focus_relative_keys_seen_in_training": 0,
+      "incomplete_observation_positions": 0,
+      "owners": {
+        "White": 16
+      },
+      "positions": 16,
+      "source_games": 8,
+      "source_groups": 8,
+      "training_choices": {},
+      "training_global_labels": {},
+      "training_local_labels": {}
+    },
+    "train": {
+      "families": {
+        "0-distractors/incomplete-observation": 4,
+        "game/queen-pawn": 8,
+        "isolated/diagonal-empty": 8,
+        "isolated/diagonal-friendly": 8,
+        "isolated/diagonal-opponent-bishop": 8,
+        "isolated/diagonal-opponent-knight": 8,
+        "isolated/diagonal-opponent-queen": 8,
+        "isolated/diagonal-opponent-rook": 8,
+        "isolated/forward-empty": 8,
+        "isolated/forward-friendly": 8,
+        "isolated/forward-opponent-bishop": 8,
+        "isolated/forward-opponent-king": 8,
+        "isolated/forward-opponent-knight": 8,
+        "isolated/forward-opponent-queen": 8,
+        "isolated/forward-opponent-rook": 8,
+        "isolated/single-check-evasion": 8,
+        "isolated/single-diagonal-pin": 8,
+        "isolated/single-file-exposure": 8
+      },
+      "focus_positions": 132,
+      "focus_relative_keys_seen_in_training": 132,
+      "incomplete_observation_positions": 4,
+      "owners": {
+        "Black": 64,
+        "White": 76
+      },
+      "positions": 140,
+      "source_games": 4,
+      "source_groups": 72,
+      "training_choices": {
+        "b": 397,
+        "n": 397,
+        "q": 397,
+        "r": 397
+      },
+      "training_global_labels": {
+        "False": 1164,
+        "True": 424
+      },
+      "training_local_labels": {
+        "False": 1060,
+        "True": 528
+      }
+    },
+    "validation": {
+      "families": {
+        "2-interacting-distractors/diagonal-empty": 2,
+        "2-interacting-distractors/diagonal-friendly": 2,
+        "2-interacting-distractors/diagonal-opponent-bishop": 2,
+        "2-interacting-distractors/diagonal-opponent-knight": 2,
+        "2-interacting-distractors/diagonal-opponent-queen": 2,
+        "2-interacting-distractors/diagonal-opponent-rook": 2,
+        "2-interacting-distractors/forward-empty": 2,
+        "2-interacting-distractors/forward-friendly": 2,
+        "2-interacting-distractors/forward-opponent-bishop": 2,
+        "2-interacting-distractors/forward-opponent-king": 2,
+        "2-interacting-distractors/forward-opponent-knight": 2,
+        "2-interacting-distractors/forward-opponent-queen": 2,
+        "2-interacting-distractors/forward-opponent-rook": 2,
+        "2-interacting-distractors/single-check-evasion": 2,
+        "2-interacting-distractors/single-diagonal-pin": 2,
+        "2-interacting-distractors/single-file-exposure": 2,
+        "game/english": 8
+      },
+      "focus_positions": 32,
+      "focus_relative_keys_seen_in_training": 32,
+      "incomplete_observation_positions": 0,
+      "owners": {
+        "Black": 16,
+        "White": 24
+      },
+      "positions": 40,
+      "source_games": 4,
+      "source_groups": 20,
+      "training_choices": {},
+      "training_global_labels": {},
+      "training_local_labels": {}
+    }
+  }
+}

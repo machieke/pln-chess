@@ -1,0 +1,62 @@
+[
+  {
+    "body": "!(let* (($learn (Truth_Revision (stv 0.5 0.05) (stv 1.0 0.5)))) (progn (println! (RESULT learn $learn))))",
+    "stdout": "(RESULT learn (stv 0.9750000000000001 0.5128205128205129))\ntrue\ntrue\n"
+  },
+  {
+    "body": "!(let* (($learn (Truth_Revision (stv 0.9750000000000001 0.5128205128205129) (stv 1.0 0.5)))) (progn (println! (RESULT learn $learn))))",
+    "stdout": "(RESULT learn (stv 0.9871794871794872 0.6724137931034483))\ntrue\ntrue\n"
+  },
+  {
+    "body": "!(let* (($learn (Truth_Revision (stv 0.9871794871794872 0.6724137931034483) (stv 1.0 0.5)))) (progn (println! (RESULT learn $learn))))",
+    "stdout": "(RESULT learn (stv 0.9913793103448276 0.7532467532467534))\ntrue\ntrue\n"
+  },
+  {
+    "body": "!(let* (($learn (Truth_Revision (stv 0.9913793103448276 0.7532467532467534) (stv 1.0 0.5)))) (progn (println! (RESULT learn $learn))))",
+    "stdout": "(RESULT learn (stv 0.9935064935064936 0.8020833333333335))\ntrue\ntrue\n"
+  },
+  {
+    "body": "!(let* (($learn (Truth_Revision (stv 0.5 0.05) (stv 1.0 0.5)))) (progn (println! (RESULT learn $learn))))",
+    "stdout": "(RESULT learn (stv 0.9750000000000001 0.5128205128205129))\ntrue\ntrue\n"
+  },
+  {
+    "body": "!(let* (($learn (Truth_Revision (stv 0.9750000000000001 0.5128205128205129) (stv 1.0 0.5)))) (progn (println! (RESULT learn $learn))))",
+    "stdout": "(RESULT learn (stv 0.9871794871794872 0.6724137931034483))\ntrue\ntrue\n"
+  },
+  {
+    "body": "!(let* (($learn (Truth_Revision (stv 0.9871794871794872 0.6724137931034483) (stv 1.0 0.5)))) (progn (println! (RESULT learn $learn))))",
+    "stdout": "(RESULT learn (stv 0.9913793103448276 0.7532467532467534))\ntrue\ntrue\n"
+  },
+  {
+    "body": "!(let* (($learn (Truth_Revision (stv 0.9913793103448276 0.7532467532467534) (stv 1.0 0.5)))) (progn (println! (RESULT learn $learn))))",
+    "stdout": "(RESULT learn (stv 0.9935064935064936 0.8020833333333335))\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE independent-premises (PLN.Query ((Sentence (A (stv 0.9935064935064936 0.8020833333333335)) (source-A)) (Sentence (B (stv 0.9935064935064936 0.8020833333333335)) (source-B))) C 12 30 60)))",
+    "stdout": "(SELECTED (Sentence (A (stv 0.9935064935064936 0.8020833333333335)) (source-A)))\n(SELECTED (Sentence (B (stv 0.9935064935064936 0.8020833333333335)) (source-B)))\n(C7PROBE independent-premises ())\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE supplied-conditional (PLN.Query ((Sentence (A (stv 0.9935064935064936 0.8020833333333335)) (source-A)) (Sentence (B (stv 0.9935064935064936 0.8020833333333335)) (source-B)) (Sentence ((Implication A (Implication B C)) (stv 0.95 0.8)) (supplied-rule))) C 12 30 60)))",
+    "stdout": "(SELECTED (Sentence (A (stv 0.9935064935064936 0.8020833333333335)) (source-A)))\n(SELECTED (Sentence (B (stv 0.9935064935064936 0.8020833333333335)) (source-B)))\n(SELECTED (Sentence ((Implication A (Implication B C)) (stv 0.95 0.8)) (supplied-rule)))\n(SELECTED (Sentence ((Implication B C) (stv 0.9439610389610389 0.6056250000000001)) (source-A supplied-rule)))\n(SELECTED (Sentence (C (stv 0.9379612919547984 0.45556260336343357)) (source-A source-B supplied-rule)))\n(C7PROBE supplied-conditional ((stv 0.9379612919547984 0.45556260336343357) (source-A source-B supplied-rule)))\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE unknown-B (PLN.Query ((Sentence (A (stv 0.9935064935064936 0.8020833333333335)) (source-A)) (Sentence (B (stv 0.5 0.0)) (source-B)) (Sentence ((Implication A (Implication B C)) (stv 0.95 0.8)) (supplied-rule))) C 12 30 60)))",
+    "stdout": "(SELECTED (Sentence (A (stv 0.9935064935064936 0.8020833333333335)) (source-A)))\n(SELECTED (Sentence ((Implication A (Implication B C)) (stv 0.95 0.8)) (supplied-rule)))\n(SELECTED (Sentence ((Implication B C) (stv 0.9439610389610389 0.6056250000000001)) (source-A supplied-rule)))\n(SELECTED (Sentence (B (stv 0.5 0.0)) (source-B)))\n(SELECTED (Sentence (C (stv 0.48198051948051945 0.0)) (source-A source-B supplied-rule)))\n(C7PROBE unknown-B ())\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE shared-evidence (PLN.Query ((Sentence (A (stv 0.9935064935064936 0.8020833333333335)) (shared)) (Sentence (B (stv 0.9935064935064936 0.8020833333333335)) (shared)) (Sentence ((Implication A (Implication B C)) (stv 0.95 0.8)) (supplied-rule))) C 12 30 60)))",
+    "stdout": "(SELECTED (Sentence (A (stv 0.9935064935064936 0.8020833333333335)) (shared)))\n(SELECTED (Sentence (B (stv 0.9935064935064936 0.8020833333333335)) (shared)))\n(SELECTED (Sentence ((Implication A (Implication B C)) (stv 0.95 0.8)) (supplied-rule)))\n(SELECTED (Sentence ((Implication B C) (stv 0.9439610389610389 0.6056250000000001)) (shared supplied-rule)))\n(C7PROBE shared-evidence ())\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE native-duplicate-revision (Truth_Revision (stv 0.9935064935064936 0.8020833333333335) (stv 0.9935064935064936 0.8020833333333335))))",
+    "stdout": "(C7PROBE native-duplicate-revision (stv 0.9935064935064936 0.8901734104046244))\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE native-conflicting-revision (Truth_Revision (stv 0.9935064935064936 0.8020833333333335) (stv 0.0 0.8))))",
+    "stdout": "(C7PROBE native-conflicting-revision (stv 0.5000000000000002 0.8895348837209303))\ntrue\ntrue\n"
+  },
+  {
+    "body": "\n!(println! (C7PROBE native-negation (Truth_negation (stv 0.9935064935064936 0.8020833333333335))))",
+    "stdout": "(C7PROBE native-negation (Truth_negation (stv 0.9935064935064936 0.8020833333333335)))\ntrue\ntrue\n"
+  }
+]
