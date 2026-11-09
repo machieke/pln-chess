@@ -59,7 +59,12 @@ def explain_move(position,move,checkpoint=None,options=None,runtime=None,tempora
         from dataclasses import asdict,replace
         from pln_chess.cycle8.inference import Cycle8Options
         options=options if isinstance(options,Cycle8Options) else Cycle8Options(**(asdict(options) if options else {}))
-        if temporal_evidence is not None:options=replace(options,temporal_evidence=temporal_evidence)
+        if isinstance(temporal_evidence,dict) and temporal_evidence.get('schema')=='temporal-transport-v10':
+            from pln_chess.cycle10.temporal import native_options
+            if temporal_evidence.get('model_version') not in (None,checkpoint.version):raise ValueError('Temporal receipt belongs to a different model')
+            if temporal_evidence.get('runtime_version') not in (None,checkpoint.runtime_version):raise ValueError('Temporal receipt belongs to a different runtime')
+            options=native_options(temporal_evidence,options);receipt=temporal_evidence
+        elif temporal_evidence is not None:options=replace(options,temporal_evidence=temporal_evidence)
         if mode is not None:options=replace(options,mode=mode)
     elif getattr(checkpoint,'schema',None)==7:
         from dataclasses import asdict,replace
@@ -91,7 +96,8 @@ def explain_move(position,move,checkpoint=None,options=None,runtime=None,tempora
     candidate=find_move(position,move) if isinstance(move,str) else move
     if candidate is None: raise ValueError('Move is outside the seeded candidate grammar')
     result=infer_moves(position,checkpoint,options,runtime,[candidate])
-    return {k:v for k,v in result.items() if k!='candidates'} | {'candidate':result['candidates'][0]} | ({'temporal_evidence':receipt} if receipt else {})
+    extra={('temporal_transport' if receipt.get('schema')=='temporal-transport-v10' else 'temporal_evidence'):receipt} if receipt else {}
+    return {k:v for k,v in result.items() if k!='candidates'} | {'candidate':result['candidates'][0]} | extra
 
 
 def analyze_batch(requests,checkpoint,options=None,runtime=None,mode=None):

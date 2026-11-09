@@ -3,7 +3,7 @@ from dataclasses import replace
 import pytest
 from pln_chess.common import ROOT,digest
 from pln_chess.domain import Position
-from pln_chess.api import find_move
+from pln_chess.api import find_move,explain_move
 from pln_chess.cycle8.model import PromotionModel
 from pln_chess.cycle8.inference import infer_moves,Cycle8Options,Session
 from pln_chess.cycle10.temporal import replay,native_options
@@ -32,6 +32,8 @@ def test_observed_predecessor_resolves_only_with_its_native_temporal_evidence(mo
     assert removed['candidates'][0]['classification']=='unknown'
     assert not known['candidates'][0]['positive_proof_complete']
     assert known['candidates'][0]['proof_trace'] and known['error'] is None
+    public=explain_move(fen,'g5f6',model,runtime=runtime,temporal_evidence=history,mode='operational')
+    assert public['candidate']==known['candidates'][0] and public['temporal_transport']['id']==history['id']
 
 
 def test_conflicting_supplied_predecessor_cannot_establish_eligibility(model,runtime):

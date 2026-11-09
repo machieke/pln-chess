@@ -45,6 +45,12 @@ def run(out):
     fixture=next(f for f in data['positions'] if f.get('source_game')==record['id'])
     history=replay_recorded_game(record['id'],fixture['ply']);assert history['resulting_fen']==fixture['fen']
     cli_history=cli(['history-replay','--game-id',record['id'],'--ply',str(fixture['ply'])]);assert cli_history==history
+    transport_file=out/'smoke/versioned-history.json';write_json(transport_file,history)
+    if fixture['ply']<len(record['moves']):
+        inspected=cli(['inspect','--fen',fixture['fen'],'--move',record['moves'][fixture['ply']],
+            '--checkpoint',str(out/'model/C10-default.json'),'--history',str(transport_file),'--mode','operational','--format','json'])
+        assert inspected['temporal_transport']['id']==history['id']
+        assert inspected['candidate']['temporal_evidence']['mode']=='event-backed'
     game=chess.pgn.Game();game.setup(chess.Board(record['initial_fen']));game.headers.update(record['headers']);node=game
     for notation in record['moves']:node=node.add_variation(chess.Move.from_uci(notation))
     pgn=out/'smoke/published-game-export.pgn';pgn.write_text(str(game)+'\n',encoding='utf-8')

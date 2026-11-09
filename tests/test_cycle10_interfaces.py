@@ -76,3 +76,11 @@ def test_temporal_receipt_survives_json_and_retains_nonlegal_structural_scope():
     assert verify(json.loads(json.dumps(history)))
     assert history['historical_legality']=='unverified'
     assert all(p['truth_value'] is None for p in history['propositions'])
+
+
+def test_public_history_transport_rejects_stale_model_binding_before_native_inference():
+    from pln_chess.api import explain_move
+    history=replay('7k/5p2/8/6P1/8/8/8/K7 b - - 0 1',['f7f5'],source='source',model_version='old')
+    model=SimpleNamespace(schema=8,version='new',runtime_version='runtime')
+    with pytest.raises(ValueError,match='different model'):
+        explain_move(history['resulting_fen'],'g5f6',model,temporal_evidence=history,mode='operational')
