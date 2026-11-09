@@ -57,3 +57,14 @@ def test_symmetry_exclusion_retains_ep_and_rights_as_separate_metadata():
     assert translation_key(a)==translation_key(b) # conservative geometry exclusion
     assert canonical(a)!=canonical(b) # epistemic difference is not erased in provenance
     assert translation_key(a)==translation_key(chess.Board(a).mirror().fen(en_passant='fen'))
+
+
+def test_full_plane_symmetry_audit_covers_diagonal_reflections():
+    from training.cycle10_overlap import all_symmetry_key
+    board=chess.Board('7k/8/8/8/2R5/8/1K6/8 w - - 0 1');key=all_symmetry_key(board.fen())
+    for transform in (chess.flip_horizontal,chess.flip_vertical,chess.flip_diagonal):
+        assert all_symmetry_key(board.transform(transform).fen())==key
+        assert all_symmetry_key(board.mirror().transform(transform).fen())==key
+    path=ROOT/'artifacts/cycle10/datasets/all-symmetry-audit.json'
+    if path.exists():
+        audit=read_json(path);assert audit['passed'] and not audit['historical_overlaps'] and not audit['repeated_or_transformed_positions']
