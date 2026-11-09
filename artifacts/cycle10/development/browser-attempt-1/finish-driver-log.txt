@@ -1,0 +1,15 @@
+application-smoke passed
+post-acceptance-tests passed
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/data/pln-chess-cycle6-delivery/scripts/cycle10_finish.py", line 61, in <module>
+    a=p.parse_args();run(a.out,a.docs,a.browser_work,a.plot_python,not a.skip_browser,a.wait,a.port)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/pln-chess-cycle6-delivery/scripts/cycle10_finish.py", line 40, in run
+    if browser:command('browser',['-m','scripts.cycle10_ui_verify','--out',str(out),'--work',str(work),'--port',str(port)])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/pln-chess-cycle6-delivery/scripts/cycle10_finish.py", line 32, in command
+    if r.returncode:raise RuntimeError(f'{name}: {log}')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: browser: /data/pln-chess-cycle6-delivery/artifacts/cycle10/delivery/logs/browser.txt

@@ -24,6 +24,16 @@
       "log": "development/attempt-003-frozen-source-check.txt",
       "resolution": "Place the identical runtime link beneath an ignored .runtime directory; retain original source bytes, runtime identity and completed benchmark.",
       "result": "Frozen evaluation stopped before inference"
+    },
+    {
+      "cause": "CDP Accessibility.getFullAXTree timed out on the diagnostic page containing large raw JSON reports.",
+      "cleanup": "ProofShot stop recorded zero console/server errors; owned port 18780 was confirmed closed.",
+      "id": "attempt-004",
+      "kind": "browser-verification-tool-timeout",
+      "log": "development/browser-attempt-1/browser-log.txt",
+      "resolution": "Rerun the full functional session and capture final mobile accessibility controls on a freshly opened page. Preserve the loaded-page screenshots and actual export hash; no production code or native gate changes.",
+      "result": "Final loaded-page accessibility snapshot timed out after functional checks and screenshots; no successful browser receipt was issued.",
+      "session": "ui/2026-11-09_22-31-40_cycle-10-accepted-model-external-sources"
     }
   ]
 }

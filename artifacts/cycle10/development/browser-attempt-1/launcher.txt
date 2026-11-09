@@ -1,0 +1,22 @@
+Starting: exec /data/pln-chess-cycle6-delivery/.venv/bin/python /data/pln-chess-cycle10-browser-final-1/owned-server.py
+✓ Dev server started on :18780
+  Server logs → /data/pln-chess-cycle6-delivery/artifacts/cycle10/ui/2026-11-09_22-31-40_cycle-10-accepted-model-external-sources/server.log
+Opening browser...
+✓ Browser ready
+✓ Recording started
+
+✅ ProofShot session started
+
+Server:     exec /data/pln-chess-cycle6-delivery/.venv/bin/python /data/pln-chess-cycle10-browser-final-1/owned-server.py on :18780
+Browser:    Chromium (headless)
+Recording:  /data/pln-chess-cycle6-delivery/artifacts/cycle10/ui/2026-11-09_22-31-40_cycle-10-accepted-model-external-sources/session.webm
+Errors log: /data/pln-chess-cycle6-delivery/artifacts/cycle10/ui/2026-11-09_22-31-40_cycle-10-accepted-model-external-sources/server.log
+Verifying:  Cycle 10 accepted model, external sources, calibration shift, failure proofs, historical replay, adaptation comparisons, report export and mobile layout
+
+Use proofshot exec to navigate and test:
+  proofshot exec snapshot -i            # See interactive elements
+  proofshot exec click @e3              # Click an element
+  proofshot exec fill @e2 "text"        # Fill a form field
+  proofshot exec screenshot step.png    # Capture a moment
+
+When done, run: proofshot stop

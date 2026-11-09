@@ -60,7 +60,8 @@ def run(out,work,port=18780):
         diagnostic=json.loads(first['diagnostic']);assert diagnostic['calibration']['available'] and not diagnostic['calibration']['native']
         assert diagnostic['raw_native_stv'] and diagnostic['model_version']==read_json(out/'acceptance.json')['model_version']
         checks.append(dict(case='accepted-default-native-values-and-external-calibration',result=first))
-        ev("document.getElementById('c10-live').scrollIntoView();true");cmd('exec','screenshot','native-and-external-diagnostics.png')
+        ev("document.getElementById('c10-live').closest('details').scrollIntoView();true");cmd('exec','screenshot','native-and-external-diagnostics.png')
+        ev("const p=document.getElementById('c10-live');p.scrollTop=p.scrollHeight;true");cmd('exec','screenshot','empirical-calibration-and-identity.png')
         def load(section,arm='frozen'):
             return ev("(async()=>{document.getElementById('c10-section').value="+json.dumps(section)+";document.getElementById('c10-arm').value="+json.dumps(arm)+";const b=document.getElementById('c10-load');b.click();while(b.disabled)await new Promise(r=>setTimeout(r,100));const d=JSON.parse(document.getElementById('c10-detail').textContent);return {available:d.available,section:d.section,arm:d.arm,rows:document.querySelectorAll('#c10-table tbody tr').length,status:document.getElementById('c10-status').textContent,keys:Object.keys(d.data)};})()")
         ev("document.getElementById('c10-study').scrollIntoView();true")
@@ -120,7 +121,16 @@ def run(out,work,port=18780):
         mobile=ev("document.getElementById('c10-study').scrollIntoView();({width:innerWidth,height:innerHeight,scrollWidth:document.documentElement.scrollWidth})")
         write_json(proof/'mobile-layout.json',mobile);cmd('exec','screenshot','mobile-external-study.png')
         assert mobile['width']==390 and mobile['scrollWidth']<=390,mobile
-        checks.append(dict(case='mobile-external-study-layout',result=mobile));cmd('exec','snapshot','-i')
+        checks.append(dict(case='mobile-external-study-layout',result=mobile))
+        # The full accessibility tree can exceed the browser tool's CDP limit
+        # after raw proof/calibration JSON has accumulated. Keep the loaded-page
+        # functional assertions, export and screenshots above, then inspect the
+        # initial mobile controls through normal navigation to a fresh page.
+        cmd('exec','open',f'http://127.0.0.1:{port}')
+        controls=cmd('exec','snapshot','-i','-s','#c10-study')
+        assert 'Load external report' in controls and 'Export external JSON' in controls
+        checks.append(dict(case='fresh-mobile-accessibility-controls',
+            scope='Fresh page after loaded-page functionality, layout, screenshots and export checks. Full loaded-page accessibility tree is not certified.'))
     finally:
         try:
             if session:
