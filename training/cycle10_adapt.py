@@ -67,7 +67,12 @@ def revise(frozen,rows,runtime,policy='game-and-opening',name='experimental',out
             target='LocalAdmissibility',descriptor=row['descriptor'],channel=row['channel'],
             local_transition_label=row['movement_label'],global_reference_label=row['label'],
             observation_tv=TV(float(row['movement_label']),row['confidence']).json(),runtime_version=runtime.version,
-            original_fixture=row['position_fixture'],scope='Externally sourced position, offline pseudo-legality supervision; no global safety claim.')
+            original_fixture=row['position_fixture'],scope=(
+                'Synthetic contradictory-supervision control on an external position; the altered label is not an observed source fact.'
+                if row['source'].startswith('synthetic-contradictory-supervision/') else
+                'Synthetic transformed copy of an external position; original ancestry is retained and is not independent evidence.'
+                if row['source'].startswith('controlled-color-reflection/') else
+                'Externally sourced position, offline pseudo-legality supervision; no global safety claim.'))
         evidence=digest(payload);ledger.append(dict(evidence_id=evidence,payload=payload));bykey[row['channel'],row['identifier']].append((evidence,payload))
     jobs=[];states={};excluded=[]
     for (channel,identifier),observations in sorted(bykey.items()):
