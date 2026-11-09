@@ -1,0 +1,33 @@
+{
+  "argv": [
+    "/data/pln-chess-cycle10-final-clean-v2/.venv/bin/python",
+    "/data/pln-chess-cycle10-final-clean-v2/scripts/cycle10_evaluate.py",
+    "--worker",
+    "--out",
+    "/data/pln-chess-cycle6-delivery/artifacts/cycle10",
+    "--source",
+    "/data/pln-chess-cycle10-final-clean-v2",
+    "--arm",
+    "large",
+    "--checkpoint",
+    "/data/pln-chess-cycle6-delivery/artifacts/cycle10/adaptation/model/large.json",
+    "--split",
+    "external-test",
+    "--collection",
+    "lichess-broadcast-2024-01",
+    "--offset",
+    "80",
+    "--mode",
+    "operational"
+  ],
+  "cwd": "/data/pln-chess-cycle10-final-clean-v2",
+  "elapsed_seconds": 165.38759016990662,
+  "environment": {
+    "PLN_CHESS_ROOT": "/data/pln-chess-cycle10-final-clean-v2",
+    "PYTHONPATH": "/data/pln-chess-cycle10-final-clean-v2/src:/data/pln-chess-cycle10-final-clean-v2",
+    "TMPDIR": "/dev/shm"
+  },
+  "log": "logs/large-operational-external-test-lichess-broadcast-2024-01-0080.txt",
+  "returncode": 0,
+  "started_unix": 1794255786.9322917
+}

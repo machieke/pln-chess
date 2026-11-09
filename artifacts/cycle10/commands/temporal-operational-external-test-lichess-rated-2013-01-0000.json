@@ -1,0 +1,33 @@
+{
+  "argv": [
+    "/data/pln-chess-cycle10-final-clean-v2/.venv/bin/python",
+    "/data/pln-chess-cycle10-final-clean-v2/scripts/cycle10_evaluate.py",
+    "--worker",
+    "--out",
+    "/data/pln-chess-cycle6-delivery/artifacts/cycle10",
+    "--source",
+    "/data/pln-chess-cycle10-final-clean-v2",
+    "--arm",
+    "temporal",
+    "--checkpoint",
+    "/data/pln-chess-cycle10-final-clean-v2/artifacts/cycle8/model/C8-promotion-relative.json",
+    "--split",
+    "external-test",
+    "--collection",
+    "lichess-rated-2013-01",
+    "--offset",
+    "0",
+    "--mode",
+    "operational"
+  ],
+  "cwd": "/data/pln-chess-cycle10-final-clean-v2",
+  "elapsed_seconds": 213.06373143196106,
+  "environment": {
+    "PLN_CHESS_ROOT": "/data/pln-chess-cycle10-final-clean-v2",
+    "PYTHONPATH": "/data/pln-chess-cycle10-final-clean-v2/src:/data/pln-chess-cycle10-final-clean-v2",
+    "TMPDIR": "/dev/shm"
+  },
+  "log": "logs/temporal-operational-external-test-lichess-rated-2013-01-0000.txt",
+  "returncode": 0,
+  "started_unix": 1794256673.518284
+}
