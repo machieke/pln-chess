@@ -7,6 +7,7 @@ import subprocess
 import sys
 import time
 from pln_chess.common import ROOT,read_json,write_json
+from scripts.cycle9_baseline import sha
 
 
 def run(out,snapshot,wait=False):
@@ -27,8 +28,20 @@ def run(out,snapshot,wait=False):
         print(name,'passed',flush=True)
     command('baseline-metrics',['-m','evaluation.cycle10_baseline_metrics','--out',str(out)])
     env=dict(os.environ,PLN_CHESS_ROOT=str(snapshot),PYTHONPATH=f'{snapshot}/src:{snapshot}',TMPDIR='/dev/shm')
-    command('benchmark-C9-external',[str(ROOT/'evaluation/cycle10_benchmark.py'),'--out',str(out),
-        '--data',str(out/'datasets/dataset.json'),'--arm','C9-external'],cwd=snapshot,env=env)
+    benchmark=out/'performance/C9-external.json';completed=out/'commands/benchmark-C9-external.json'
+    if benchmark.exists() and completed.exists() and read_json(completed)['returncode']==0:
+        b=read_json(benchmark)
+        assert len(b['records'])==6 and all(len(r['samples'])==27 and r['full_candidate_proof_parity'] for r in b['records'])
+        assert b['source_head']==read_json(out/'baseline/reproduction-receipt.json')['starting_head']
+        assert b['production_code_hash']==read_json(out/'baseline/manifest.json')['identity']['production_code_hash']
+        assert b['dataset_hash']==read_json(out/'datasets/dataset.json')['hash']
+        assert b['driver_sha256']==sha(ROOT/'evaluation/cycle10_benchmark.py')
+        write_json(out/'commands/benchmark-C9-external-reuse.json',dict(passed=True,executed_again=False,
+            artifact='performance/C9-external.json',sha256=sha(benchmark),original_command_sha256=sha(completed),
+            scope='Reuse the completed source/data/driver-identified serial timing arm after a later checkout-layout precondition failed.'))
+    else:
+        command('benchmark-C9-external',[str(ROOT/'evaluation/cycle10_benchmark.py'),'--out',str(out),
+            '--data',str(out/'datasets/dataset.json'),'--arm','C9-external'],cwd=snapshot,env=env)
     command('frozen-evaluation',['-m','scripts.cycle10_evaluate','--out',str(out),'--source',str(snapshot),'--all-modes'])
     command('frozen-analysis',['-m','evaluation.cycle10_analysis','--out',str(out),'--calibration'])
     write_json(out/'initial-stage-complete.json',dict(passed=True,baseline=True,frozen_native_and_C9_calibration=True,

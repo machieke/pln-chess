@@ -1,5 +1,6 @@
 """Render the consolidated package from measured, source-bound study artifacts."""
 import argparse
+import os
 from pathlib import Path
 from pln_chess.common import ROOT,read_json,write_json
 from scripts.cycle9_baseline import sha
@@ -13,7 +14,7 @@ def table(headers,rows):
 
 
 def run(out,docs):
-    out=Path(out);docs=Path(docs);docs.mkdir(parents=True,exist_ok=True)
+    out=Path(out).resolve();docs=Path(docs).resolve();docs.mkdir(parents=True,exist_ok=True)
     get=lambda p:read_json(out/p)
     frozen=get('analysis/frozen-summary.json');temporal=get('analysis/temporal-summary.json')
     failures=get('analysis/frozen-failure-index.json');calibration=get('calibration/results.json')
@@ -21,10 +22,13 @@ def run(out,docs):
     dependence=get('dependence/summary.json');predictions=get('dependence/predictions.json')
     history=get('temporal/summary.json');performance=get('performance/comparison.json');verification=get('verification.json')
     baseline=get('baseline/cohort-metrics.json');baseline_receipt=get('baseline/reproduction-receipt.json')
-    data=get('datasets/dataset.json');external=frozen['external-test']['complete'];with_history=temporal['external-test']['complete']
-    def link(path,label=None):return f'[{label or path}](../../artifacts/cycle10/{path})'
+    data=get('datasets/dataset.json');secondary=get('analysis/secondary-modes.json');external=frozen['external-test']['complete'];with_history=temporal['external-test']['complete']
+    def link(path,label=None):return f'[{label or path}]({os.path.relpath(out/path,docs)})'
     def write(name,lines):
-        (docs/(name+'.md')).write_text('\n\n'.join(lines)+'\n')
+        content='\n\n'.join(lines)+'\n'
+        content=content.replace('../../artifacts/cycle10/',os.path.relpath(out,docs)+'/')
+        content=content.replace('../../src/',os.path.relpath(ROOT/'src',docs)+'/')
+        (docs/(name+'.md')).write_text(content)
     def metric_rows(summary):
         return [[key,pop,m['positions'],m['exact_positions'],pct(m['precision']),pct(m['recall']),pct(m['f1']),
             m['false_positive'],m['false_illegal'],m['self_check_false_legal'],m['unknown'],m['incomplete']]
@@ -35,6 +39,7 @@ def run(out,docs):
         f'The frozen accepted C8 model achieved **{pct(external["recall"])} legal-move recall**, **{pct(external["precision"])} precision**, and **{external["exact_positions"]}/{external["positions"]} exact legal-move sets** on the final external test. It produced {external["false_positive"]} false-legal, {external["false_illegal"]} false-illegal, {external["self_check_false_legal"]} self-check false-legal, and {external["incomplete"]} incomplete classifications. These are new finite-sample measurements. '+link('analysis/frozen-summary.json'),
         'The model checkpoint, native runtime, native formulas and FEN-only inference policy were frozen at the starting commit. All registered operational positions were evaluated before any external adaptation or calibration refit. Secondary strict and experimental evaluations use the registered first ten final-test positions per collection. Their shard receipts retain every candidate, proof and budget outcome. '+link('frozen-complete.json')+'; '+link('evaluation/','evaluation shards')+'.',
         metrics_table,
+        'The matched 30-position secondary panel contains '+str(secondary['source_games'])+' source games. Its strict, experimental and operational measurements are separately reported; it is not a second representative source sample. '+link('analysis/secondary-modes.json'),
         'Complete populations include the seeded off-board negative candidates. In-board populations remove that easy negative stratum; exact position sets are evaluated against the same full legal reference set. Unknown candidates are retained in the denominators and are not silently counted as correct negatives. '+link('analysis/frozen-summary.json'),
         'Game-cluster percentile bootstrap intervals are reported separately for every source and split (400 draws). Players, openings and engine opponents can remain correlated across games. Zero-error intervals do not establish universal zero risk. '+link('analysis/frozen-summary.json','metrics and intervals'),
         'Performance is stratified by phase, material count, opening family, tactical density, legal-move count, attacked pieces, multiple attackers and history completeness. These are descriptive associations, not independent causal effects. Per-piece and special-move candidate results are also retained. '+link('analysis/frozen-factors.json')+'; '+link('analysis/frozen-summary.json'),
@@ -103,7 +108,7 @@ def run(out,docs):
         ('03','Independent corpus and overlap','Complete','datasets/all-symmetry-audit.json'),
         ('04','Frozen external generalization','Complete; measured outcomes reported','analysis/frozen-summary.json'),
         ('05','Structural failure taxonomy','Complete census','analysis/frozen-failure-index.json'),
-        ('06','Adversarial abstentions','Complete investigation; resolution conditional on supplied history','temporal/historical-abstentions.json.xz'),
+        ('06','Adversarial abstentions','Complete investigation; unresolved outcomes retained','temporal/historical-abstentions.json.xz'),
         ('07','Special moves','Complete investigation and controls','temporal/counterfactuals.json.xz'),
         ('08','Temporal transport','Implemented and tested','temporal/game-replay.json'),
         ('09','Temporal counterfactuals','Complete','temporal/summary.json'),
@@ -125,7 +130,7 @@ def run(out,docs):
         '# Cycle 10 consolidated engineering report',
         f'Starting commit: `{verification["starting_head"]}`. Verified implementation commit: `{verification["source_head"]}`. Production source hash: `{verification["production_code_hash"]}`. Accepted model remains `{verification["model_version"]}`. All changes and commits are local; this cycle authorizes no push or deployment. '+link('verification.json'),
         package_table,
-        'The original 365 tests, 26 established suites, 48 Cycle 9 shards and 287 negative controls were reproduced from the original clean source with exact native proof parity. Original historical artifacts and configuration locks remain byte-identical. Fresh timing is reported as a new host measurement rather than claimed identical wall-clock reproduction. '+link('baseline/reproduction-receipt.json')+'; '+link('baseline/cohort-metrics.json')+'; '+link('baseline/proof-parity.json'),
+        'The original 365 tests, 26 established suites, 48 Cycle 9 shards and 287 negative controls were reproduced from unchanged original tracked source with exact native proof parity. The initial runtime symlink was reported as untracked; moving that same pinned link beneath an ignored directory restored a wholly clean checkout before frozen external inference. Original historical artifacts and configuration locks remain byte-identical. Fresh timing is reported as a new host measurement rather than claimed identical wall-clock reproduction. '+link('baseline/reproduction-receipt.json')+'; '+link('baseline/cohort-metrics.json')+'; '+link('baseline/proof-parity.json'),
         f'The independent corpus contains 1,308 external positions from 150 complete published records, with 1,020 final-test positions from 102 games, plus 112 separately labelled synthetic adversarial positions. Frozen final-test recall is {pct(external["recall"])} and exact sets are {external["exact_positions"]}/{external["positions"]}. Source and sampling limitations are explicit. [Provenance](dataset-provenance.md); [external results](external-generalization.md); [failure census](generalization-failures.md).',
         'The temporal mechanism transports supplied history without inventing unavailable predecessors or claiming complete legal-play verification. Its controlled interventions explain historical abstentions, and actual PGN prefixes test independent transfer. [Temporal evidence](temporal-evidence.md).',
         'Controlled adaptation used nested 6-game and 24-game subsets, with 16 unique relative observations per game selected before consulting labels. Learning uses native revision, exact relative descriptors and explicit source/game/opening lineage. Final-test games and opening families remain separate. No adapted model was promoted. '+link('adaptation/summary.json')+'; '+link('adaptation/comparison.json'),
@@ -134,7 +139,7 @@ def run(out,docs):
         'Any changed final-test prediction occurs outside exact training FENs and source opening families. Local descriptors may recur by design. Paired game bootstrap intervals measure adaptation deltas; unchanged or worse results remain experimental findings. '+link('adaptation/comparison.json'),
         '![Sample efficiency](../../artifacts/cycle10/analysis/figures/sample-efficiency.png)',
         '[Calibration and dependence](calibration-shift.md) distinguish empirical frequencies from raw native truth values. [Performance](performance.md) reports reference/cold/warm parity, RSS and temporal overhead. [Strategic readiness](strategic-readiness.md) is a design proposal; no strategic selector, handcoded evaluation score, native conjunction extension or upstream modification is enabled.',
-        f'The implementation passes {verification["test_count"]} automated tests, all 26 established suites, all 48 Cycle 9 comparison shards and 287/287 negative controls in a clean checkout using freshly bootstrapped dependencies. '+link('current/verified.json')+'; '+link('current/logs/tests.txt')+'; '+link('bootstrap/verified.json')+'; '+link('bootstrap/dataset-replay.json'),
+        f'The implementation passes {verification["test_count"]} automated tests, all 26 established suites, all 48 Cycle 9 comparison shards and 287/287 negative controls in a clean checkout using freshly bootstrapped dependencies. '+link('current/verified.json')+'; '+link('current/logs/tests.txt')+'; '+link(get('current/verified.json')['bootstrap_receipt'])+'; '+link('bootstrap/dataset-replay.json'),
         'The interfaces expose provenance, all evaluation arms, calibration shift, failure proofs, event replay, temporal controls, experimental comparisons and performance. The default checkpoint remains accepted C8; experimental checkpoints retain a strict default unless an explicit mode is selected. [CLI/API reproduction](reproduction.md); '+link('ui/verification.json','desktop/mobile checks')+'.',
         'Limitations: three collections from two publishing organizations; restricted archive prefixes; residual opening/player/engine correlation; sparse en-passant and promotion opportunities; externally supplied trust rather than verified original historical legality; partial positive native proofs; finite adaptation budgets; descriptive timing tails. Targets missed under FEN-only evidence are not repaired by relabelling unknown history.',
         'Recommended Cycle 11 priorities: expand licensed sources and rare history-sensitive strata; study evidence coverage for still-unseen relative descriptors; validate transfer and calibration on new locked source windows; investigate dependence beyond game IDs; design small supervised attack/defense-field experiments while retaining the composition no-go until a defensible native probabilistic contract is available.',
@@ -149,9 +154,14 @@ def run(out,docs):
         f'The original baseline reproduced exactly. Final implementation gates include **{verification["test_count"]} tests**, **26 established suites**, **48 Cycle 9 shards**, **287 negative controls**, full native proof/cache parity, clean dependency bootstrap and exact dataset replay. Benchmarks compare six realistic workloads serially and disclose limited tail precision. '+link('verification.json')+'; '+link('performance/comparison.json'),
         'Strategic work remains architectural preparation. The existing native-composition no-go is retained; no chess selector, handcoded score, production oracle or new operator was introduced. Collection coverage, residual dependence, rare special moves and incomplete positive composition remain the main limits. Cycle 11 should prioritize new locked source windows, unresolved relative descriptors, and small evidence-grounded attack/defense experiments. [Full report](engineering-report.md); [18-package matrix](package-matrix.md).'
     ])
-    manifest={str(p.relative_to(ROOT)):dict(sha256=sha(p),bytes=p.stat().st_size) for directory in (out,docs) for p in sorted(directory.rglob('*'))
-              if p.is_file() and p!=out/'manifest.json' and p.is_relative_to(ROOT)}
-    write_json(out/'manifest.json',dict(schema=10,files=manifest,scope='Artifacts and reports at rendering time; regenerate after browser verification and final report updates. Manifest excludes itself.'))
+    manifest={}
+    for directory in (out,docs):
+        for path in sorted(directory.rglob('*')):
+            if path.is_file() and path!=out/'manifest.json':
+                key=os.path.relpath(path,out)
+                manifest[key]=dict(sha256=sha(path),bytes=path.stat().st_size)
+    write_json(out/'manifest.json',dict(schema=10,base='Directory containing this manifest',files=manifest,
+        scope='Artifacts and reports at rendering time; regenerate after browser verification and final report updates. Manifest excludes itself.'))
 
 
 if __name__=='__main__':

@@ -106,6 +106,23 @@ def summarize(out,arm='frozen'):
     write_json(out/f'analysis/{arm}-verification.json',dict(passed=True,rows=len(rows),positions=len(positions),
         all_positions_accounted_for=True,nonexact_positions=len(nonexact),failure_candidates=len(failures),receipts=receipts,
         dataset_hash=data['hash'],model_versions=sorted({r['model_version'] for r in rows})))
+    if arm=='frozen':
+        secondary={};matched=set()
+        for mode in ('strict','experimental'):
+            rs=[];ps=[]
+            for path in sorted((out/'evaluation').glob('frozen-'+mode+'-*.receipt.json')):
+                receipt=read_json(path);report=read_gzip(out/receipt['artifact'])
+                rs.extend(report['rows']);ps.extend(report['positions']);matched.update(p['fixture'] for p in report['positions'])
+            assert len(ps)==30
+            secondary[mode]=dict(complete=metrics(rs,ps),in_board=metrics([r for r in rs if r['destination_exists']],ps),
+                proof_status_counts=dict(Counter(r['proof_status'] for r in rs)),
+                complete_positive_proofs=sum(r['positive_proof_complete'] for r in rs))
+        rs=[r for r in rows if r['fixture'] in matched];ps=[p for p in positions if p['fixture'] in matched]
+        secondary['matched-operational']=dict(complete=metrics(rs,ps),in_board=metrics([r for r in rs if r['destination_exists']],ps),
+            proof_status_counts=dict(Counter(r['proof_status'] for r in rs)))
+        write_json(out/'analysis/secondary-modes.json',dict(models=secondary,positions=30,source_games=len({p['source_game'] for p in ps}),
+            selection='Registered first ten final-test positions per collection; secondary mode comparison, not a second representative external sample.',
+            scope='Strict and experimental modes retain the incomplete positive composition boundary; unknown positives do not imply movement-ontology errors.'))
     return data,rows,positions
 
 

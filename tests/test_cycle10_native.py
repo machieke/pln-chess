@@ -22,13 +22,15 @@ def infer(fen,notation,history,model,runtime,options=None,session=None):
     return infer_moves(position,model,options,runtime,[move],session=session)
 
 
-def test_observed_predecessor_resolves_only_with_its_native_temporal_evidence(model,runtime):
+def test_observed_predecessor_is_recognized_without_inventing_missing_local_knowledge(model,runtime):
     history=replay(EP,['f7f5'],source='native-transport-test',model_version=model.version,runtime_version=runtime.version)
     fen=history['resulting_fen'];unknown=infer(fen,'g5f6',None,model,runtime)
     known=infer(fen,'g5f6',history,model,runtime)
     removed=infer(fen,'g5f6',history,model,runtime,Cycle8Options(mode='operational',suppress_families=('temporal',)))
     assert unknown['candidates'][0]['classification']=='unknown'
-    assert known['candidates'][0]['classification']=='supported-legal'
+    assert known['candidates'][0]['classification']=='unknown'
+    assert 'No matching pooled local hypothesis.' in known['candidates'][0]['abstention_reason']
+    assert known['candidates'][0]['temporal_evidence']['ep_truth_value']==dict(strength=1.0,confidence=.99)
     assert removed['candidates'][0]['classification']=='unknown'
     assert not known['candidates'][0]['positive_proof_complete']
     assert known['candidates'][0]['proof_trace'] and known['error'] is None
@@ -58,5 +60,7 @@ def test_returned_rook_keeps_lost_right_with_explicit_initial_trust(model,runtim
     initial='6k1/8/8/8/8/8/1N6/R3K2R w KQ - 0 1'
     history=replay(initial,['h1h2','g8f8','h2h1','f8g8'],source='observed-rook-return',initial_trust='trusted-import')
     result=infer(history['resulting_fen'],'e1g1',history,model,runtime)
-    assert result['candidates'][0]['classification']=='supported-illegal'
-    assert result['candidates'][0]['negative_proof_complete']
+    assert Position.from_fen(history['resulting_fen']).rights=='Q'
+    assert result['candidates'][0]['classification']=='unknown'
+    assert 'No matching pooled local hypothesis.' in result['candidates'][0]['abstention_reason']
+    assert not result['candidates'][0]['positive_proof_complete']

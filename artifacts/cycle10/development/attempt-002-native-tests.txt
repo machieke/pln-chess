@@ -1,0 +1,40 @@
+F..F                                                                     [100%]
+=================================== FAILURES ===================================
+__ test_observed_predecessor_resolves_only_with_its_native_temporal_evidence ___
+
+model = PromotionModel(source={'grammar': 'bounded-conditional-backoff-v7', 'hypotheses': {'c7:0050d6865beb23c99db190cb': {'co...-promotion-relative', projection_variant='C8-promotion-relative', schema=8, grammar='relative-promotion-transition-v8')
+runtime = <pln_chess.pln.runtime.Runtime object at 0x7f3df5949cd0>
+
+    def test_observed_predecessor_resolves_only_with_its_native_temporal_evidence(model,runtime):
+        history=replay(EP,['f7f5'],source='native-transport-test',model_version=model.version,runtime_version=runtime.version)
+        fen=history['resulting_fen'];unknown=infer(fen,'g5f6',None,model,runtime)
+        known=infer(fen,'g5f6',history,model,runtime)
+        removed=infer(fen,'g5f6',history,model,runtime,Cycle8Options(mode='operational',suppress_families=('temporal',)))
+        assert unknown['candidates'][0]['classification']=='unknown'
+>       assert known['candidates'][0]['classification']=='supported-legal'
+E       AssertionError: assert 'unknown' == 'supported-legal'
+E         
+E         - supported-legal
+E         + unknown
+
+tests/test_cycle10_native.py:31: AssertionError
+_______ test_returned_rook_keeps_lost_right_with_explicit_initial_trust ________
+
+model = PromotionModel(source={'grammar': 'bounded-conditional-backoff-v7', 'hypotheses': {'c7:0050d6865beb23c99db190cb': {'co...-promotion-relative', projection_variant='C8-promotion-relative', schema=8, grammar='relative-promotion-transition-v8')
+runtime = <pln_chess.pln.runtime.Runtime object at 0x7f3df5949cd0>
+
+    def test_returned_rook_keeps_lost_right_with_explicit_initial_trust(model,runtime):
+        initial='6k1/8/8/8/8/8/1N6/R3K2R w KQ - 0 1'
+        history=replay(initial,['h1h2','g8f8','h2h1','f8g8'],source='observed-rook-return',initial_trust='trusted-import')
+        result=infer(history['resulting_fen'],'e1g1',history,model,runtime)
+>       assert result['candidates'][0]['classification']=='supported-illegal'
+E       AssertionError: assert 'unknown' == 'supported-illegal'
+E         
+E         - supported-illegal
+E         + unknown
+
+tests/test_cycle10_native.py:61: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_cycle10_native.py::test_observed_predecessor_resolves_only_with_its_native_temporal_evidence
+FAILED tests/test_cycle10_native.py::test_returned_rook_keeps_lost_right_with_explicit_initial_trust
+2 failed, 2 passed in 8.72s

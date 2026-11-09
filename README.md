@@ -2,6 +2,24 @@
 
 A piece-relative chess research package using **actual native MeTTa PLN** rules. It includes a pinned runtime audit, six-piece candidate grammar, structural special-move states, append-only evidence, native revision learning, inference/proof APIs, CLI, local inspector, datasets, tests, ablations and measured reports.
 
+Cycle 10 evaluates the unchanged accepted C8 model on licensed external game
+collections, transports supplied historical events, measures calibration under
+distribution shift, and compares two experimental adaptations. Start with the
+[Cycle 10 executive summary](docs/cycle10/executive-summary.md),
+[engineering report](docs/cycle10/engineering-report.md),
+[18-package matrix](docs/cycle10/package-matrix.md), and
+[reproduction and interface guide](docs/cycle10/reproduction.md).
+The default remains C8; new adaptation checkpoints are experimental. Native
+positive composition remains incomplete, and strategic fields are design work.
+Cycle 10 delivery uses local commits only, with no push or deployment.
+
+```bash
+.venv/bin/pln-chess external-report --section summary
+.venv/bin/pln-chess external-report --section provenance
+.venv/bin/pln-chess external-report --section calibration
+.venv/bin/pln-chess serve --checkpoint artifacts/cycle10/model/C10-default.json
+```
+
 Cycle 9 retains the accepted C8 checkpoint and adds performance consolidation,
 independent game and adversarial evaluation, empirical calibration diagnostics,
 temporal provenance categories, and a formal composition decision. Start with the

@@ -8,6 +8,22 @@
       "resolution": "Use a blocked straight rook move within the grammar and independently assert reference illegality; preserve the original no-legal-play-certification requirement.",
       "resolved_by": "development/transport-tests.txt",
       "result": "1 failed, 23 passed"
+    },
+    {
+      "cause": "Supplied events were recognized but the frozen model lacked matching pooled local hypotheses for these controlled configurations.",
+      "id": "attempt-002",
+      "kind": "unverified-research-expectation",
+      "log": "development/attempt-002-native-tests.txt",
+      "resolution": "Preserve unknown classifications and native diagnostics; test transport/legacy parity and explicit observed-history scope without weakening established acceptance gates.",
+      "result": "2 failed, 2 passed"
+    },
+    {
+      "cause": "The .runtime symlink did not match the original directory-only Git ignore rule.",
+      "id": "attempt-003",
+      "kind": "checkout-layout",
+      "log": "development/attempt-003-frozen-source-check.txt",
+      "resolution": "Place the identical runtime link beneath an ignored .runtime directory; retain original source bytes, runtime identity and completed benchmark.",
+      "result": "Frozen evaluation stopped before inference"
     }
   ]
 }

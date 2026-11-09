@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/data/pln-chess-cycle6-delivery/scripts/cycle10_evaluate.py", line 103, in <module>
+    worker(a.out,a.source,a.arm,a.split,a.collection,a.offset,a.checkpoint,a.mode) if a.worker else run(a.out,a.source,a.arm,a.checkpoint,a.split,('operational','strict','experimental') if a.all_modes else ('operational',))
+                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/pln-chess-cycle6-delivery/scripts/cycle10_evaluate.py", line 57, in run
+    assert not subprocess.check_output(['git','status','--porcelain'],cwd=source,text=True),'Frozen source must be clean'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Frozen source must be clean

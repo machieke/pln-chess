@@ -60,6 +60,9 @@ def revise(frozen,rows,runtime,policy='game-and-opening',name='experimental',out
     model=copy.deepcopy(frozen);source=model.source_model();ledger=[];bykey=defaultdict(list)
     for row in rows:
         payload=dict(input=dict(fen=row['fen'],move=row['move']),source=row['source'],source_game=row['source_game'],
+            source_collection=row['source_collection'],
+            supervision_kind='synthetic-counterfactual-label' if row['source'].startswith('synthetic-contradictory-supervision/') else 'offline-reference-pseudo-legality',
+            transformed_copy=row['source'].startswith('controlled-color-reflection/'),
             dependence_group=row['dependence_group'],transformation_lineage=row.get('transformation_lineage',[]),
             target='LocalAdmissibility',descriptor=row['descriptor'],channel=row['channel'],
             local_transition_label=row['movement_label'],global_reference_label=row['label'],
@@ -143,6 +146,7 @@ def run(out):
     conflict['source']='synthetic-contradictory-supervision/'+conflict['source']
     shared_conflict=revise(frozen,chosen+[conflict],runtime,name='dependence-shared-conflict',out=out/'dependence')
     conflict['dependence_group']='independent-collection-counterexample';conflict['source_game']=conflict['dependence_group'];conflict['transformation_lineage']=[]
+    conflict['source_collection']='synthetic-cross-collection-control'
     independent_conflict=revise(frozen,chosen+[conflict],runtime,name='dependence-independent-conflict',out=out/'dependence')
     unsafe=revise(frozen,chosen+chosen,runtime,policy='unsafe-row-independent',name='dependence-unsafe',out=out/'dependence')
     game_only=revise(frozen,rows,runtime,policy='game-only',name='dependence-game-only',out=out/'dependence')

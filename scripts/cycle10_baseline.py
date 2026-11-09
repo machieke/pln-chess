@@ -19,7 +19,8 @@ def run(out, snapshot):
     if not snapshot.exists():
         subprocess.run(['git', 'clone', '--shared', str(ROOT), str(snapshot)], check=True)
         subprocess.run(['git', 'checkout', '--detach', START], cwd=snapshot, check=True)
-        (snapshot/'.runtime').symlink_to(ROOT/'.runtime', target_is_directory=True)
+        (snapshot/'.runtime').mkdir()
+        (snapshot/'.runtime/petta').symlink_to(ROOT/'.runtime/petta', target_is_directory=True)
     assert subprocess.check_output(['git','rev-parse','HEAD'],cwd=snapshot,text=True).strip()==START
     env = dict(os.environ, PLN_CHESS_ROOT=str(snapshot), PYTHONPATH=f'{snapshot}/src:{snapshot}', TMPDIR='/dev/shm')
     for key in ('C6_OUT','C7_OUT','C8_OUT','C9_OUT','C10_OUT'): env.pop(key,None)
