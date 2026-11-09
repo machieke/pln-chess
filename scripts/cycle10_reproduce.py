@@ -44,10 +44,10 @@ def run(out,checkout,snapshot,work,plot_python='python3',browser=True):
         jobs=[pool.submit(command,'current-regression',['-m','scripts.cycle10_regression','--out',str(out),'--source',str(checkout)]),
               pool.submit(command,'research-experiments',['-m','scripts.cycle10_experiments','--out',str(out),'--source',str(checkout),'--wait'])]
         for job in jobs:job.result()
-    command('application-smoke',['-m','scripts.cycle10_smoke','--out',str(out)])
-    if browser:command('browser',['-m','scripts.cycle10_ui_verify','--out',str(out),'--work',str(work)])
-    command('figures',[str(checkout/'evaluation/cycle10_plots.py'),'--out',str(out)],plot_python)
-    command('reports',['-m','evaluation.cycle10_delivery','--out',str(out),'--docs',str(out/'reports')])
+    finishing=['-m','scripts.cycle10_finish','--out',str(out),'--docs',str(out/'reports'),
+        '--browser-work',str(work),'--plot-python',plot_python]
+    if not browser:finishing.append('--skip-browser')
+    command('application-and-reports',finishing)
     assert not subprocess.check_output(['git','status','--porcelain'],cwd=checkout,text=True)
     write_json(out/'reproduction-complete.json',dict(passed=True,source_head=head,clean_checkout=True,
         exact_dataset_replay=True,mandatory_implementation_gates=True,browser_executed=browser,
