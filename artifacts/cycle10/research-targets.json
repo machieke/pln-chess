@@ -1,0 +1,77 @@
+{
+  "columns": [
+    "Area",
+    "Target",
+    "Measured",
+    "Disposition"
+  ],
+  "rows": [
+    [
+      "External collections",
+      "at least 3",
+      "3 collections / 2 publishers",
+      "Met; source dependence remains"
+    ],
+    [
+      "Final external positions",
+      "at least 1,000",
+      1020,
+      "Met"
+    ],
+    [
+      "Final source games",
+      "at least 100",
+      102,
+      "Met"
+    ],
+    [
+      "Additional synthetic adversarial positions",
+      "at least 100",
+      112,
+      "Met"
+    ],
+    [
+      "Additional adversarial exact sets",
+      "at least 95%",
+      "87.5000%",
+      "Missed"
+    ],
+    [
+      "Original adversarial exact sets, FEN only",
+      "at least 95%",
+      "112/128 (87.5%)",
+      "Missed; unchanged evidence policy"
+    ],
+    [
+      "Original special-move exact sets, FEN only",
+      "at least 95%",
+      "71/80 (88.75%)",
+      "Missed; unchanged evidence policy"
+    ],
+    [
+      "Established acceptance errors",
+      "zero new",
+      "0 new false-legal / false-illegal / self-check false-positive",
+      "Passed"
+    ],
+    [
+      "Negative evidence controls",
+      "287/287",
+      "287/287",
+      "Passed"
+    ],
+    [
+      "Cold full-position latency",
+      "no detected regression",
+      "median ratio 1.0176644, interval [0.9806220552115736, 1.0358092533703176]",
+      "No detected slowdown; not proof of equivalence"
+    ],
+    [
+      "Warm full-position latency",
+      "no detected regression",
+      "median ratio 0.99698263, interval [0.9536976485977572, 1.0528682079791492]",
+      "No detected slowdown; not proof of equivalence"
+    ]
+  ],
+  "scope": "Research targets are separate from mandatory implementation gates. Conditional history interventions do not replace original FEN-only measurements."
+}

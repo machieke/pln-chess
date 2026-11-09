@@ -1,0 +1,172 @@
+{
+  "cases": [
+    {
+      "classification": "unknown",
+      "failure_index": 0,
+      "fixture": "c10-position-00861",
+      "legacy_root_cause_label": "en-passant-history",
+      "legacy_taxonomy": [
+        "historical-uncertainty",
+        "en-passant"
+      ],
+      "move": "d5e6",
+      "native_local_derivations": [
+        {
+          "conclusion": "LocalAdmissibility",
+          "dependence_groups": [
+            "historical-ep-main"
+          ],
+          "evidence_ids": [
+            "9c950a3dc37c5c0cfc307c34e5270c31d03397a1a62fa617217ccfc65201e869"
+          ],
+          "id": "n0",
+          "matched_rule_ids": [
+            "c4:f36e90e4e32b53eb1ade12dd"
+          ],
+          "native_expression": "(Truth_ModusPonens (stv 1.0 0.99) (stv 0.5 0.05000000000000001))",
+          "operator": "Truth_ModusPonens",
+          "premises": [
+            {
+              "sensor": {
+                "derivation": "Typed relative projection; never a native conjunction.",
+                "descriptor": {
+                  "destination": "Empty",
+                  "effect": "en-passant",
+                  "ep_offset": [
+                    1,
+                    1
+                  ],
+                  "motion": [
+                    1,
+                    1
+                  ],
+                  "piece": "Pawn",
+                  "promotion": null,
+                  "ray_contents": []
+                },
+                "id": "c4:f36e90e4e32b53eb1ade12dd",
+                "provenance": "host-grounded",
+                "target": "LocalAdmissibility",
+                "tier": 4
+              },
+              "truth_value": {
+                "confidence": 0.99,
+                "strength": 1
+              }
+            },
+            {
+              "conditional": "c4:f36e90e4e32b53eb1ade12dd",
+              "truth_value": {
+                "confidence": 0.05000000000000001,
+                "strength": 0.5
+              }
+            }
+          ],
+          "provenance": "native-derived",
+          "truth_value": {
+            "confidence": 0.024750000000000005,
+            "strength": 0.5
+          }
+        },
+        {
+          "conclusion": "LocalAdmissibility",
+          "dependence_groups": [
+            "historical-ep-main"
+          ],
+          "evidence_ids": [
+            "9c950a3dc37c5c0cfc307c34e5270c31d03397a1a62fa617217ccfc65201e869"
+          ],
+          "id": "n2",
+          "matched_rule_ids": [
+            "c4:f36e90e4e32b53eb1ade12dd"
+          ],
+          "native_expression": "(Truth_Negation (n1))",
+          "operator": "Truth_Negation",
+          "premises": [
+            {
+              "node": "n1",
+              "truth_value": {
+                "confidence": 0.024750000000000005,
+                "strength": 0.5
+              }
+            }
+          ],
+          "provenance": "native-derived",
+          "truth_value": {
+            "confidence": 0.024750000000000005,
+            "strength": 0.5
+          }
+        },
+        {
+          "conclusion": "LocalAdmissibility",
+          "dependence_groups": [
+            "historical-ep-main"
+          ],
+          "evidence_ids": [
+            "9c950a3dc37c5c0cfc307c34e5270c31d03397a1a62fa617217ccfc65201e869"
+          ],
+          "id": "n3",
+          "matched_rule_ids": [
+            "c4:f36e90e4e32b53eb1ade12dd"
+          ],
+          "native_expression": "(let ($tv $e) (BestConfidenceCandidate (((n0) (positive)) ((n2) (negative)))) $tv)",
+          "operator": "BestConfidenceCandidate",
+          "premises": [
+            {
+              "node": "n0",
+              "truth_value": {
+                "confidence": 0.024750000000000005,
+                "strength": 0.5
+              }
+            },
+            {
+              "node": "n2",
+              "truth_value": {
+                "confidence": 0.024750000000000005,
+                "strength": 0.5
+              }
+            }
+          ],
+          "provenance": "native-derived",
+          "truth_value": {
+            "confidence": 0.024750000000000005,
+            "strength": 0.5
+          }
+        }
+      ],
+      "native_local_value": {
+        "confidence": 0.024750000000000005,
+        "strength": 0.5
+      },
+      "proof_id": "dcbeb265d1e5eb46a0820483dc615eaec00ee0dc3dd49b9cf475cec1757dedae",
+      "source_game": "c10-game-0e703a511a778869b5bdd6f3",
+      "supplied_prefix_events": 20,
+      "transport_id": "9d4dc20faef2b96cd56c7a2fde7c261a2281c5fe72a78c71e80f54c9f2a494b7"
+    },
+    {
+      "classification": "unknown",
+      "failure_index": 1,
+      "fixture": "c10-position-01151",
+      "legacy_root_cause_label": "en-passant-history",
+      "legacy_taxonomy": [
+        "historical-uncertainty",
+        "en-passant",
+        "insufficient-evidence",
+        "overly-specific-relational-abstraction"
+      ],
+      "move": "d5c6",
+      "native_local_derivations": [],
+      "native_local_value": {
+        "confidence": 0.0,
+        "strength": 0.5
+      },
+      "proof_id": "a37e7f6dc45621fd670ef88839f5841e1eb5ae29d9e6bc78ff9d9d479c5ef746",
+      "source_game": "c10-game-3055beb51f248d773c594724",
+      "supplied_prefix_events": 30,
+      "transport_id": "358e9e6d80cb0dc8f35a2dce704f410b2de4c516db33dcc00454969e6f700536"
+    }
+  ],
+  "scope": "All unresolved legal or erroneous candidates in the actual-history arm. Published prefixes were supplied in every case. Legacy history labels are structural heuristics, not evidence that the supplied prefix was missing. Native local derivations retain their original conditional premises and values; no reclassification or retraining is performed.",
+  "source": "analysis/temporal-failure-proofs.json.xz",
+  "source_sha256": "f7c124e3f11d8361bb66eaa054142c6523927c3ec442fef8a6a0049799140529"
+}

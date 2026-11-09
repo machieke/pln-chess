@@ -1,0 +1,13 @@
+# Cycle 10 executive summary
+
+The unchanged accepted C8 model was tested on 1,020 held-out positions from 102 published games across three collections. It achieved **99.2645% recall** and **793/1020 exact legal-move sets**, with 0 false-legal and 0 false-illegal classifications. These are finite external measurements. [analysis/frozen-summary.json](../../artifacts/cycle10/analysis/frozen-summary.json)
+
+Supplying actual PGN event prefixes to the same model yielded **99.9939% recall** and **1018/1020 exact sets**. The transport preserves source, event identity, dependence, trust and model/runtime lineage. It does not invent history from FEN flags. [analysis/temporal-summary.json](../../artifacts/cycle10/analysis/temporal-summary.json)
+
+All 25 original Cycle 9 adversarial/special abstentions were investigated, with 21 temporal and promotion demonstrations. Synthetic predecessor interventions are explicitly conditional evidence; the original FEN-only results remain unchanged. [temporal/summary.json](../../artifacts/cycle10/temporal/summary.json)
+
+The unchanged Cycle 9 calibration map was tested first; external recalibration used a disjoint 24-game validation set. Two nested experimental adaptations used native revision and dependence-aware evidence. Neither was promoted. Duplicate and transformed evidence controls test confidence inflation. [calibration/results.json](../../artifacts/cycle10/calibration/results.json); [adaptation/comparison.json](../../artifacts/cycle10/adaptation/comparison.json); [dependence/predictions.json](../../artifacts/cycle10/dependence/predictions.json)
+
+The original native classifications and proofs reproduced exactly. Final implementation gates include **399 tests**, **26 established suites**, **48 Cycle 9 shards**, **287 negative controls**, full native proof/cache parity, clean dependency bootstrap and exact dataset replay. Benchmarks compare six realistic workloads serially and disclose limited tail precision. [verification.json](../../artifacts/cycle10/verification.json); [performance/comparison.json](../../artifacts/cycle10/performance/comparison.json)
+
+Strategic work remains architectural preparation. The existing native-composition no-go is retained; no chess selector, handcoded score, production oracle or new operator was introduced. Collection coverage, residual dependence, rare special moves and incomplete positive composition remain the main limits. Cycle 11 should prioritize new locked source windows, unresolved relative descriptors, and small evidence-grounded attack/defense experiments. [Full report](engineering-report.md); [18-package matrix](package-matrix.md).

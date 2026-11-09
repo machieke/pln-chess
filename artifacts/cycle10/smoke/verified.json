@@ -1,0 +1,251 @@
+{
+  "API_CLI_native_candidates_equal": true,
+  "accepted_default_operational": true,
+  "adaptations_default_strict": true,
+  "commands": [
+    {
+      "args": [
+        "inspect",
+        "--fen",
+        "7k/8/8/8/8/8/2R5/2K5 w - - 0 1",
+        "--move",
+        "c2e2",
+        "--format",
+        "json",
+        "--checkpoint",
+        "/data/pln-chess-cycle6-delivery/artifacts/cycle10/model/C10-default.json"
+      ],
+      "expected_success": true,
+      "returncode": 0,
+      "seconds": 1.4686437891796231,
+      "stderr": "",
+      "stdout_sha256": "9726661b09ce2eb08fba8a58350edb366d3796377ad56bc7980d557d5c126997"
+    },
+    {
+      "args": [
+        "external-report",
+        "--section",
+        "summary",
+        "--output",
+        "/data/pln-chess-cycle6-delivery/artifacts/cycle10/smoke/summary-cli.json"
+      ],
+      "expected_success": true,
+      "returncode": 0,
+      "seconds": 0.08567403256893158,
+      "stderr": "",
+      "stdout_sha256": "5075f0e5b990091a44dcd30a18d58687f4287deaa20c5dae095907a3392b8184"
+    },
+    {
+      "args": [
+        "external-report",
+        "--section",
+        "provenance",
+        "--output",
+        "/data/pln-chess-cycle6-delivery/artifacts/cycle10/smoke/provenance-cli.json"
+      ],
+      "expected_success": true,
+      "returncode": 0,
+      "seconds": 0.06462145783007145,
+      "stderr": "",
+      "stdout_sha256": "2981b43b7e728c04c9119209a1487ed4b2219ef04bf821aec67df550fa538c0e"
+    },
+    {
+      "args": [
+        "external-report",
+        "--section",
+        "calibration",
+        "--output",
+        "/data/pln-chess-cycle6-delivery/artifacts/cycle10/smoke/calibration-cli.json"
+      ],
+      "expected_success": true,
+      "returncode": 0,
+      "seconds": 0.15487800724804401,
+      "stderr": "",
+      "stdout_sha256": "82524de58c49cf1e1d7137637c2c7cd61dde51c05b35e531bfdd98c93be69796"
+    },
+    {
+      "args": [
+        "external-report",
+        "--section",
+        "comparisons",
+        "--output",
+        "/data/pln-chess-cycle6-delivery/artifacts/cycle10/smoke/comparisons-cli.json"
+      ],
+      "expected_success": true,
+      "returncode": 0,
+      "seconds": 0.12243779096752405,
+      "stderr": "",
+      "stdout_sha256": "20951fd71089ca971079edad9b5678b831bd865504f95218e4b5cbc3c874cf5f"
+    },
+    {
+      "args": [
+        "external-report",
+        "--section",
+        "temporal",
+        "--output",
+        "/data/pln-chess-cycle6-delivery/artifacts/cycle10/smoke/temporal-cli.json"
+      ],
+      "expected_success": true,
+      "returncode": 0,
+      "seconds": 0.074400226585567,
+      "stderr": "",
+      "stdout_sha256": "10e53584f361776bc6d0c7856a90b8be59360ad6194c871987d238e79adf07f8"
+    },
+    {
+      "args": [
+        "external-report",
+        "--section",
+        "identity",
+        "--output",
+        "/data/pln-chess-cycle6-delivery/artifacts/cycle10/smoke/identity-cli.json"
+      ],
+      "expected_success": true,
+      "returncode": 0,
+      "seconds": 0.05268283933401108,
+      "stderr": "",
+      "stdout_sha256": "61dc79edf222c4acbe775c672945f278157a61d46c0cfc3552463d01ba5d3de3"
+    },
+    {
+      "args": [
+        "history-replay",
+        "--game-id",
+        "c10-game-00036be1ab44dbaf4c8da38f",
+        "--ply",
+        "14"
+      ],
+      "expected_success": true,
+      "returncode": 0,
+      "seconds": 0.4395816223695874,
+      "stderr": "",
+      "stdout_sha256": "99e153bc1d688e7dd44a004459fc1fbf5c31bba92e92156c27b51f9148d52758"
+    },
+    {
+      "args": [
+        "inspect",
+        "--fen",
+        "rn1qk2r/pp2bppp/2p1pn2/6B1/2BP2b1/2N1PN2/PP3PPP/R2QK2R w KQkq - 1 8",
+        "--move",
+        "d1c2",
+        "--checkpoint",
+        "/data/pln-chess-cycle6-delivery/artifacts/cycle10/model/C10-default.json",
+        "--history",
+        "/data/pln-chess-cycle6-delivery/artifacts/cycle10/smoke/versioned-history.json",
+        "--mode",
+        "operational",
+        "--format",
+        "json"
+      ],
+      "expected_success": true,
+      "returncode": 0,
+      "seconds": 1.4904820621013641,
+      "stderr": "",
+      "stdout_sha256": "c4b4903a6c3ddeec184c87e25b90381015c457198ead443a4eb0300bbbb568eb"
+    },
+    {
+      "args": [
+        "history-import-pgn",
+        "--input",
+        "/data/pln-chess-cycle6-delivery/artifacts/cycle10/smoke/published-game-export.pgn",
+        "--source",
+        "smoke-export/lichess-rated-2013-01",
+        "--output",
+        "/data/pln-chess-cycle6-delivery/artifacts/cycle10/smoke/imported-game.json"
+      ],
+      "expected_success": true,
+      "returncode": 0,
+      "seconds": 0.11504307948052883,
+      "stderr": "",
+      "stdout_sha256": "4a17e06af7d9aa176b1ed4b03c9bace01e0f5e1ff446ba93cf968aff35c53631"
+    },
+    {
+      "args": [
+        "history-replay",
+        "--input",
+        "/data/pln-chess-cycle6-delivery/artifacts/cycle10/smoke/imported-game.json",
+        "--ply",
+        "14"
+      ],
+      "expected_success": true,
+      "returncode": 0,
+      "seconds": 0.4028648743405938,
+      "stderr": "",
+      "stdout_sha256": "0bd1145c5bf6a2c6e28c93ea043ffe4397c693c3d0e14000ebfae2f45e17fb54"
+    },
+    {
+      "args": [
+        "compare-external",
+        "--fen",
+        "7k/8/8/8/8/8/2R5/2K5 w - - 0 1",
+        "--move",
+        "c2e2",
+        "--mode",
+        "operational"
+      ],
+      "expected_success": true,
+      "returncode": 0,
+      "seconds": 4.08557200524956,
+      "stderr": "",
+      "stdout_sha256": "70fb59c585fac7532e75d62e2c8762ea0aa63686d5838b23d6105d5e35210e16"
+    },
+    {
+      "args": [
+        "history-replay",
+        "--game-id",
+        "missing-game",
+        "--ply",
+        "0"
+      ],
+      "expected_success": false,
+      "returncode": 2,
+      "seconds": 0.08285518828779459,
+      "stderr": "pln-chess: Unknown recorded game identity\n",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "external_report_export_equal": true,
+  "input_native_result_unmodified": true,
+  "model_version": "1217e17552ff611bebf0efc650245b05fb71c93a8175b579b025d6273d5d781d",
+  "passed": true,
+  "presentation_native_invocations": 0,
+  "presentation_samples": [
+    {
+      "bytes": 639042,
+      "decoration_seconds": 0.021845643408596516,
+      "json_seconds": 0.0026819007471203804
+    },
+    {
+      "bytes": 639042,
+      "decoration_seconds": 0.01367397140711546,
+      "json_seconds": 0.002702588215470314
+    },
+    {
+      "bytes": 639042,
+      "decoration_seconds": 0.013965331949293613,
+      "json_seconds": 0.002773921936750412
+    },
+    {
+      "bytes": 639042,
+      "decoration_seconds": 0.013779742643237114,
+      "json_seconds": 0.002734496258199215
+    },
+    {
+      "bytes": 639042,
+      "decoration_seconds": 0.014419364742934704,
+      "json_seconds": 0.002725181169807911
+    },
+    {
+      "bytes": 639042,
+      "decoration_seconds": 0.014111170545220375,
+      "json_seconds": 0.0028021689504384995
+    },
+    {
+      "bytes": 639042,
+      "decoration_seconds": 0.014195862226188183,
+      "json_seconds": 0.0027947621420025826
+    }
+  ],
+  "production_code_hash": "543ff722a518a8fe0165e2327be5ac62357e28040a15fd3a764d369297d1febc",
+  "recorded_prefix_equal": true,
+  "scope": "Reference chess library is used only to create this offline PGN export for importer verification, never by production replay or inference.",
+  "source_PGN_import_replayed": true
+}

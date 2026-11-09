@@ -1,0 +1,1681 @@
+{
+  "baseline_reproduction": {
+    "originally_reported": {
+      "cold": {
+        "cache_hit_rate": 0.976845238095238,
+        "child_peak_rss_kib": 480268,
+        "grounded_atoms": [
+          19309,
+          19309,
+          19309,
+          19309,
+          19309,
+          19309,
+          19309
+        ],
+        "latency_seconds": {
+          "p50": 4.008285037241876,
+          "p95": 4.246188305318356,
+          "p99": 4.246188305318356
+        },
+        "n": 7,
+        "native_calls": [
+          389,
+          389,
+          389,
+          389,
+          389,
+          389,
+          389
+        ],
+        "python_peak_rss_kib": 480268,
+        "truncation_rate": 0
+      },
+      "reference": {
+        "cache_hit_rate": 0.0,
+        "child_peak_rss_kib": 480268,
+        "grounded_atoms": [
+          19309,
+          19309,
+          19309,
+          19309,
+          19309,
+          19309,
+          19309
+        ],
+        "latency_seconds": {
+          "p50": 25.958969396539032,
+          "p95": 26.05647270102054,
+          "p99": 26.05647270102054
+        },
+        "n": 7,
+        "native_calls": [
+          16800,
+          16800,
+          16800,
+          16800,
+          16800,
+          16800,
+          16800
+        ],
+        "python_peak_rss_kib": 480268,
+        "truncation_rate": 0
+      },
+      "warm": {
+        "cache_hit_rate": 1.0,
+        "child_peak_rss_kib": 480268,
+        "grounded_atoms": [
+          19309,
+          19309,
+          19309,
+          19309,
+          19309,
+          19309,
+          19309
+        ],
+        "latency_seconds": {
+          "p50": 2.747689430601895,
+          "p95": 2.7990989796817303,
+          "p99": 2.7990989796817303
+        },
+        "n": 7,
+        "native_calls": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "python_peak_rss_kib": 480268,
+        "truncation_rate": 0
+      }
+    },
+    "reproduced": {
+      "cold": {
+        "cache_hit_rate": 0.976845238095238,
+        "child_peak_rss_kib": 480548,
+        "grounded_atoms": [
+          19309,
+          19309,
+          19309,
+          19309,
+          19309,
+          19309,
+          19309
+        ],
+        "latency_seconds": {
+          "p50": 4.014301266521215,
+          "p95": 4.234735485166311,
+          "p99": 4.234735485166311
+        },
+        "n": 7,
+        "native_calls": [
+          389,
+          389,
+          389,
+          389,
+          389,
+          389,
+          389
+        ],
+        "python_peak_rss_kib": 5255184,
+        "truncation_rate": 0
+      },
+      "reference": {
+        "cache_hit_rate": 0.0,
+        "child_peak_rss_kib": 480548,
+        "grounded_atoms": [
+          19309,
+          19309,
+          19309,
+          19309,
+          19309,
+          19309,
+          19309
+        ],
+        "latency_seconds": {
+          "p50": 25.837021306157112,
+          "p95": 25.86850180476904,
+          "p99": 25.86850180476904
+        },
+        "n": 7,
+        "native_calls": [
+          16800,
+          16800,
+          16800,
+          16800,
+          16800,
+          16800,
+          16800
+        ],
+        "python_peak_rss_kib": 5255184,
+        "truncation_rate": 0
+      },
+      "warm": {
+        "cache_hit_rate": 1.0,
+        "child_peak_rss_kib": 480548,
+        "grounded_atoms": [
+          19309,
+          19309,
+          19309,
+          19309,
+          19309,
+          19309,
+          19309
+        ],
+        "latency_seconds": {
+          "p50": 2.745267730206251,
+          "p95": 2.906121978536248,
+          "p99": 2.906121978536248
+        },
+        "n": 7,
+        "native_calls": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "python_peak_rss_kib": 5255184,
+        "truncation_rate": 0
+      }
+    }
+  },
+  "checkpoint_bytes": {
+    "after": 2905103,
+    "before": 2905103
+  },
+  "checkpoint_load_seconds": {
+    "after": 0.31750129349529743,
+    "before": 0.31759687326848507
+  },
+  "interpretation": "No source changes to native arithmetic, observation construction, candidate generation or proof scheduling are permitted by this comparison. New interface/history code is measured separately. A nonsignificant difference is not proof of equal performance.",
+  "memory_scope": "Cumulative parent and separate maximum terminated-child RSS, not simultaneous combined peak.",
+  "model_version": "1217e17552ff611bebf0efc650245b05fb71c93a8175b579b025d6273d5d781d",
+  "new_samples": 324,
+  "paired_workloads": 6,
+  "passed_parity": true,
+  "quantile_limit": "Nine descriptive repetitions per mode; p95 and p99 are sample maxima, not validated population-tail estimates.",
+  "records": [
+    {
+      "fixture": "full-214",
+      "full_candidate_proof_parity": true,
+      "modes": {
+        "cold": {
+          "after": {
+            "cache_hit_rate": 0.976845238095238,
+            "child_peak_rss_kib": 479328,
+            "grounded_atoms": [
+              19309,
+              19309,
+              19309,
+              19309,
+              19309,
+              19309,
+              19309,
+              19309,
+              19309
+            ],
+            "latency_seconds": {
+              "p50": 4.117653822526336,
+              "p95": 4.315050510689616,
+              "p99": 4.315050510689616
+            },
+            "n": 9,
+            "native_calls": [
+              389,
+              389,
+              389,
+              389,
+              389,
+              389,
+              389,
+              389,
+              389
+            ],
+            "python_peak_rss_kib": 479328,
+            "timeout_rate": 0,
+            "truncation_rate": 0
+          },
+          "before": {
+            "cache_hit_rate": 0.976845238095238,
+            "child_peak_rss_kib": 479852,
+            "grounded_atoms": [
+              19309,
+              19309,
+              19309,
+              19309,
+              19309,
+              19309,
+              19309,
+              19309,
+              19309
+            ],
+            "latency_seconds": {
+              "p50": 4.046180489473045,
+              "p95": 4.233958467841148,
+              "p99": 4.233958467841148
+            },
+            "n": 9,
+            "native_calls": [
+              389,
+              389,
+              389,
+              389,
+              389,
+              389,
+              389,
+              389,
+              389
+            ],
+            "python_peak_rss_kib": 479852,
+            "timeout_rate": 0,
+            "truncation_rate": 0
+          },
+          "detectable_slowdown_at_this_sample": false,
+          "median_ratio": 1.0176643956539366,
+          "ratio_interval95": [
+            0.9806220552115736,
+            1.0358092533703176
+          ],
+          "statistical_scope": "Descriptive independent-block percentile bootstrap of nine repetitions; host drift and serial-block order are not randomized away.",
+          "upper_bound_below_ten_percent": true
+        },
+        "reference": {
+          "after": {
+            "cache_hit_rate": 0.0,
+            "child_peak_rss_kib": 479328,
+            "grounded_atoms": [
+              19309,
+              19309,
+              19309,
+              19309,
+              19309,
+              19309,
+              19309,
+              19309,
+              19309
+            ],
+            "latency_seconds": {
+              "p50": 25.861519068479538,
+              "p95": 26.02170079667121,
+              "p99": 26.02170079667121
+            },
+            "n": 9,
+            "native_calls": [
+              16800,
+              16800,
+              16800,
+              16800,
+              16800,
+              16800,
+              16800,
+              16800,
+              16800
+            ],
+            "python_peak_rss_kib": 479328,
+            "timeout_rate": 0,
+            "truncation_rate": 0
+          },
+          "before": {
+            "cache_hit_rate": 0.0,
+            "child_peak_rss_kib": 479852,
+            "grounded_atoms": [
+              19309,
+              19309,
+              19309,
+              19309,
+              19309,
+              19309,
+              19309,
+              19309,
+              19309
+            ],
+            "latency_seconds": {
+              "p50": 25.802106842398643,
+              "p95": 25.97359227295965,
+              "p99": 25.97359227295965
+            },
+            "n": 9,
+            "native_calls": [
+              16800,
+              16800,
+              16800,
+              16800,
+              16800,
+              16800,
+              16800,
+              16800,
+              16800
+            ],
+            "python_peak_rss_kib": 479852,
+            "timeout_rate": 0,
+            "truncation_rate": 0
+          },
+          "detectable_slowdown_at_this_sample": false,
+          "median_ratio": 1.0023026114279656,
+          "ratio_interval95": [
+            0.9945506228345256,
+            1.011101859618159
+          ],
+          "statistical_scope": "Descriptive independent-block percentile bootstrap of nine repetitions; host drift and serial-block order are not randomized away.",
+          "upper_bound_below_ten_percent": true
+        },
+        "warm": {
+          "after": {
+            "cache_hit_rate": 1.0,
+            "child_peak_rss_kib": 479328,
+            "grounded_atoms": [
+              19309,
+              19309,
+              19309,
+              19309,
+              19309,
+              19309,
+              19309,
+              19309,
+              19309
+            ],
+            "latency_seconds": {
+              "p50": 2.810534412972629,
+              "p95": 2.995690755546093,
+              "p99": 2.995690755546093
+            },
+            "n": 9,
+            "native_calls": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "python_peak_rss_kib": 479328,
+            "timeout_rate": 0,
+            "truncation_rate": 0
+          },
+          "before": {
+            "cache_hit_rate": 1.0,
+            "child_peak_rss_kib": 479852,
+            "grounded_atoms": [
+              19309,
+              19309,
+              19309,
+              19309,
+              19309,
+              19309,
+              19309,
+              19309,
+              19309
+            ],
+            "latency_seconds": {
+              "p50": 2.8190404875203967,
+              "p95": 2.966971560381353,
+              "p99": 2.966971560381353
+            },
+            "n": 9,
+            "native_calls": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "python_peak_rss_kib": 479852,
+            "timeout_rate": 0,
+            "truncation_rate": 0
+          },
+          "detectable_slowdown_at_this_sample": false,
+          "median_ratio": 0.9969826348413855,
+          "ratio_interval95": [
+            0.9536976485977572,
+            1.0528682079791492
+          ],
+          "statistical_scope": "Descriptive independent-block percentile bootstrap of nine repetitions; host drift and serial-block order are not randomized away.",
+          "upper_bound_below_ten_percent": true
+        }
+      }
+    },
+    {
+      "fixture": "dense-lichess-broadcast-2024-01",
+      "full_candidate_proof_parity": true,
+      "modes": {
+        "cold": {
+          "after": {
+            "cache_hit_rate": 0.9735490897775012,
+            "child_peak_rss_kib": 576932,
+            "grounded_atoms": [
+              21878,
+              21878,
+              21878,
+              21878,
+              21878,
+              21878,
+              21878,
+              21878,
+              21878
+            ],
+            "latency_seconds": {
+              "p50": 5.923456895165145,
+              "p95": 5.979863718152046,
+              "p99": 5.979863718152046
+            },
+            "n": 9,
+            "native_calls": [
+              510,
+              510,
+              510,
+              510,
+              510,
+              510,
+              510,
+              510,
+              510
+            ],
+            "python_peak_rss_kib": 576932,
+            "timeout_rate": 0,
+            "truncation_rate": 0
+          },
+          "before": {
+            "cache_hit_rate": 0.9735490897775012,
+            "child_peak_rss_kib": 577520,
+            "grounded_atoms": [
+              21878,
+              21878,
+              21878,
+              21878,
+              21878,
+              21878,
+              21878,
+              21878,
+              21878
+            ],
+            "latency_seconds": {
+              "p50": 5.900389852002263,
+              "p95": 5.995756325311959,
+              "p99": 5.995756325311959
+            },
+            "n": 9,
+            "native_calls": [
+              510,
+              510,
+              510,
+              510,
+              510,
+              510,
+              510,
+              510,
+              510
+            ],
+            "python_peak_rss_kib": 577520,
+            "timeout_rate": 0,
+            "truncation_rate": 0
+          },
+          "detectable_slowdown_at_this_sample": false,
+          "median_ratio": 1.003909410012129,
+          "ratio_interval95": [
+            0.9886509801580772,
+            1.014990133367331
+          ],
+          "statistical_scope": "Descriptive independent-block percentile bootstrap of nine repetitions; host drift and serial-block order are not randomized away.",
+          "upper_bound_below_ten_percent": true
+        },
+        "reference": {
+          "after": {
+            "cache_hit_rate": 0.0,
+            "child_peak_rss_kib": 576932,
+            "grounded_atoms": [
+              21878,
+              21878,
+              21878,
+              21878,
+              21878,
+              21878,
+              21878,
+              21878,
+              21878
+            ],
+            "latency_seconds": {
+              "p50": 30.8557848976925,
+              "p95": 31.05088168475777,
+              "p99": 31.05088168475777
+            },
+            "n": 9,
+            "native_calls": [
+              19281,
+              19281,
+              19281,
+              19281,
+              19281,
+              19281,
+              19281,
+              19281,
+              19281
+            ],
+            "python_peak_rss_kib": 576932,
+            "timeout_rate": 0,
+            "truncation_rate": 0
+          },
+          "before": {
+            "cache_hit_rate": 0.0,
+            "child_peak_rss_kib": 577520,
+            "grounded_atoms": [
+              21878,
+              21878,
+              21878,
+              21878,
+              21878,
+              21878,
+              21878,
+              21878,
+              21878
+            ],
+            "latency_seconds": {
+              "p50": 30.740584972314537,
+              "p95": 30.943791314959526,
+              "p99": 30.943791314959526
+            },
+            "n": 9,
+            "native_calls": [
+              19281,
+              19281,
+              19281,
+              19281,
+              19281,
+              19281,
+              19281,
+              19281,
+              19281
+            ],
+            "python_peak_rss_kib": 577520,
+            "timeout_rate": 0,
+            "truncation_rate": 0
+          },
+          "detectable_slowdown_at_this_sample": false,
+          "median_ratio": 1.0037474864411888,
+          "ratio_interval95": [
+            0.9985714205281013,
+            1.0095784605005063
+          ],
+          "statistical_scope": "Descriptive independent-block percentile bootstrap of nine repetitions; host drift and serial-block order are not randomized away.",
+          "upper_bound_below_ten_percent": true
+        },
+        "warm": {
+          "after": {
+            "cache_hit_rate": 1.0,
+            "child_peak_rss_kib": 576932,
+            "grounded_atoms": [
+              21878,
+              21878,
+              21878,
+              21878,
+              21878,
+              21878,
+              21878,
+              21878,
+              21878
+            ],
+            "latency_seconds": {
+              "p50": 3.88782777171582,
+              "p95": 3.9237683517858386,
+              "p99": 3.9237683517858386
+            },
+            "n": 9,
+            "native_calls": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "python_peak_rss_kib": 576932,
+            "timeout_rate": 0,
+            "truncation_rate": 0
+          },
+          "before": {
+            "cache_hit_rate": 1.0,
+            "child_peak_rss_kib": 577520,
+            "grounded_atoms": [
+              21878,
+              21878,
+              21878,
+              21878,
+              21878,
+              21878,
+              21878,
+              21878,
+              21878
+            ],
+            "latency_seconds": {
+              "p50": 3.796370661817491,
+              "p95": 3.964870151132345,
+              "p99": 3.964870151132345
+            },
+            "n": 9,
+            "native_calls": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "python_peak_rss_kib": 577520,
+            "timeout_rate": 0,
+            "truncation_rate": 0
+          },
+          "detectable_slowdown_at_this_sample": false,
+          "median_ratio": 1.0240906692326361,
+          "ratio_interval95": [
+            0.9690953247945353,
+            1.032776845240354
+          ],
+          "statistical_scope": "Descriptive independent-block percentile bootstrap of nine repetitions; host drift and serial-block order are not randomized away.",
+          "upper_bound_below_ten_percent": true
+        }
+      }
+    },
+    {
+      "fixture": "dense-lichess-rated-2013-01",
+      "full_candidate_proof_parity": true,
+      "modes": {
+        "cold": {
+          "after": {
+            "cache_hit_rate": 0.9785845167201099,
+            "child_peak_rss_kib": 576932,
+            "grounded_atoms": [
+              20051,
+              20051,
+              20051,
+              20051,
+              20051,
+              20051,
+              20051,
+              20051,
+              20051
+            ],
+            "latency_seconds": {
+              "p50": 4.1718072490766644,
+              "p95": 4.3384700268507,
+              "p99": 4.3384700268507
+            },
+            "n": 9,
+            "native_calls": [
+              374,
+              374,
+              374,
+              374,
+              374,
+              374,
+              374,
+              374,
+              374
+            ],
+            "python_peak_rss_kib": 576932,
+            "timeout_rate": 0,
+            "truncation_rate": 0
+          },
+          "before": {
+            "cache_hit_rate": 0.9785845167201099,
+            "child_peak_rss_kib": 577520,
+            "grounded_atoms": [
+              20051,
+              20051,
+              20051,
+              20051,
+              20051,
+              20051,
+              20051,
+              20051,
+              20051
+            ],
+            "latency_seconds": {
+              "p50": 4.235076614655554,
+              "p95": 4.406720581464469,
+              "p99": 4.406720581464469
+            },
+            "n": 9,
+            "native_calls": [
+              374,
+              374,
+              374,
+              374,
+              374,
+              374,
+              374,
+              374,
+              374
+            ],
+            "python_peak_rss_kib": 577520,
+            "timeout_rate": 0,
+            "truncation_rate": 0
+          },
+          "detectable_slowdown_at_this_sample": false,
+          "median_ratio": 0.985060632584557,
+          "ratio_interval95": [
+            0.963277394848983,
+            1.0433427376350253
+          ],
+          "statistical_scope": "Descriptive independent-block percentile bootstrap of nine repetitions; host drift and serial-block order are not randomized away.",
+          "upper_bound_below_ten_percent": true
+        },
+        "reference": {
+          "after": {
+            "cache_hit_rate": 0.0,
+            "child_peak_rss_kib": 576932,
+            "grounded_atoms": [
+              20051,
+              20051,
+              20051,
+              20051,
+              20051,
+              20051,
+              20051,
+              20051,
+              20051
+            ],
+            "latency_seconds": {
+              "p50": 26.71980205923319,
+              "p95": 26.75759824924171,
+              "p99": 26.75759824924171
+            },
+            "n": 9,
+            "native_calls": [
+              17464,
+              17464,
+              17464,
+              17464,
+              17464,
+              17464,
+              17464,
+              17464,
+              17464
+            ],
+            "python_peak_rss_kib": 576932,
+            "timeout_rate": 0,
+            "truncation_rate": 0
+          },
+          "before": {
+            "cache_hit_rate": 0.0,
+            "child_peak_rss_kib": 577520,
+            "grounded_atoms": [
+              20051,
+              20051,
+              20051,
+              20051,
+              20051,
+              20051,
+              20051,
+              20051,
+              20051
+            ],
+            "latency_seconds": {
+              "p50": 26.681150507181883,
+              "p95": 27.088255513459444,
+              "p99": 27.088255513459444
+            },
+            "n": 9,
+            "native_calls": [
+              17464,
+              17464,
+              17464,
+              17464,
+              17464,
+              17464,
+              17464,
+              17464,
+              17464
+            ],
+            "python_peak_rss_kib": 577520,
+            "timeout_rate": 0,
+            "truncation_rate": 0
+          },
+          "detectable_slowdown_at_this_sample": false,
+          "median_ratio": 1.0014486463783074,
+          "ratio_interval95": [
+            0.9967028879931827,
+            1.0091178066671935
+          ],
+          "statistical_scope": "Descriptive independent-block percentile bootstrap of nine repetitions; host drift and serial-block order are not randomized away.",
+          "upper_bound_below_ten_percent": true
+        },
+        "warm": {
+          "after": {
+            "cache_hit_rate": 1.0,
+            "child_peak_rss_kib": 576932,
+            "grounded_atoms": [
+              20051,
+              20051,
+              20051,
+              20051,
+              20051,
+              20051,
+              20051,
+              20051,
+              20051
+            ],
+            "latency_seconds": {
+              "p50": 2.9744376819580793,
+              "p95": 3.178472312167287,
+              "p99": 3.178472312167287
+            },
+            "n": 9,
+            "native_calls": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "python_peak_rss_kib": 576932,
+            "timeout_rate": 0,
+            "truncation_rate": 0
+          },
+          "before": {
+            "cache_hit_rate": 1.0,
+            "child_peak_rss_kib": 577520,
+            "grounded_atoms": [
+              20051,
+              20051,
+              20051,
+              20051,
+              20051,
+              20051,
+              20051,
+              20051,
+              20051
+            ],
+            "latency_seconds": {
+              "p50": 2.970040368847549,
+              "p95": 3.276077512651682,
+              "p99": 3.276077512651682
+            },
+            "n": 9,
+            "native_calls": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "python_peak_rss_kib": 577520,
+            "timeout_rate": 0,
+            "truncation_rate": 0
+          },
+          "detectable_slowdown_at_this_sample": false,
+          "median_ratio": 1.001480556680863,
+          "ratio_interval95": [
+            0.9562452756934561,
+            1.047654625700942
+          ],
+          "statistical_scope": "Descriptive independent-block percentile bootstrap of nine repetitions; host drift and serial-block order are not randomized away.",
+          "upper_bound_below_ten_percent": true
+        }
+      }
+    },
+    {
+      "fixture": "dense-tcec-season26-divisionp",
+      "full_candidate_proof_parity": true,
+      "modes": {
+        "cold": {
+          "after": {
+            "cache_hit_rate": 0.972578178558245,
+            "child_peak_rss_kib": 581468,
+            "grounded_atoms": [
+              21552,
+              21552,
+              21552,
+              21552,
+              21552,
+              21552,
+              21552,
+              21552,
+              21552
+            ],
+            "latency_seconds": {
+              "p50": 5.776075353845954,
+              "p95": 5.933650019578636,
+              "p99": 5.933650019578636
+            },
+            "n": 9,
+            "native_calls": [
+              520,
+              520,
+              520,
+              520,
+              520,
+              520,
+              520,
+              520,
+              520
+            ],
+            "python_peak_rss_kib": 581468,
+            "timeout_rate": 0,
+            "truncation_rate": 0
+          },
+          "before": {
+            "cache_hit_rate": 0.972578178558245,
+            "child_peak_rss_kib": 582416,
+            "grounded_atoms": [
+              21552,
+              21552,
+              21552,
+              21552,
+              21552,
+              21552,
+              21552,
+              21552,
+              21552
+            ],
+            "latency_seconds": {
+              "p50": 5.811671767383814,
+              "p95": 5.956541140563786,
+              "p99": 5.956541140563786
+            },
+            "n": 9,
+            "native_calls": [
+              520,
+              520,
+              520,
+              520,
+              520,
+              520,
+              520,
+              520,
+              520
+            ],
+            "python_peak_rss_kib": 582416,
+            "timeout_rate": 0,
+            "truncation_rate": 0
+          },
+          "detectable_slowdown_at_this_sample": false,
+          "median_ratio": 0.9938750130835616,
+          "ratio_interval95": [
+            0.9786273713777293,
+            1.0133963762363025
+          ],
+          "statistical_scope": "Descriptive independent-block percentile bootstrap of nine repetitions; host drift and serial-block order are not randomized away.",
+          "upper_bound_below_ten_percent": true
+        },
+        "reference": {
+          "after": {
+            "cache_hit_rate": 0.0,
+            "child_peak_rss_kib": 581468,
+            "grounded_atoms": [
+              21552,
+              21552,
+              21552,
+              21552,
+              21552,
+              21552,
+              21552,
+              21552,
+              21552
+            ],
+            "latency_seconds": {
+              "p50": 30.363393334671855,
+              "p95": 30.64314746297896,
+              "p99": 30.64314746297896
+            },
+            "n": 9,
+            "native_calls": [
+              18963,
+              18963,
+              18963,
+              18963,
+              18963,
+              18963,
+              18963,
+              18963,
+              18963
+            ],
+            "python_peak_rss_kib": 581468,
+            "timeout_rate": 0,
+            "truncation_rate": 0
+          },
+          "before": {
+            "cache_hit_rate": 0.0,
+            "child_peak_rss_kib": 582416,
+            "grounded_atoms": [
+              21552,
+              21552,
+              21552,
+              21552,
+              21552,
+              21552,
+              21552,
+              21552,
+              21552
+            ],
+            "latency_seconds": {
+              "p50": 30.26254061423242,
+              "p95": 30.54541882034391,
+              "p99": 30.54541882034391
+            },
+            "n": 9,
+            "native_calls": [
+              18963,
+              18963,
+              18963,
+              18963,
+              18963,
+              18963,
+              18963,
+              18963,
+              18963
+            ],
+            "python_peak_rss_kib": 582416,
+            "timeout_rate": 0,
+            "truncation_rate": 0
+          },
+          "detectable_slowdown_at_this_sample": false,
+          "median_ratio": 1.0033325926505987,
+          "ratio_interval95": [
+            0.9943103820215463,
+            1.007243381857841
+          ],
+          "statistical_scope": "Descriptive independent-block percentile bootstrap of nine repetitions; host drift and serial-block order are not randomized away.",
+          "upper_bound_below_ten_percent": true
+        },
+        "warm": {
+          "after": {
+            "cache_hit_rate": 1.0,
+            "child_peak_rss_kib": 581468,
+            "grounded_atoms": [
+              21552,
+              21552,
+              21552,
+              21552,
+              21552,
+              21552,
+              21552,
+              21552,
+              21552
+            ],
+            "latency_seconds": {
+              "p50": 3.893250100314617,
+              "p95": 3.978847329504788,
+              "p99": 3.978847329504788
+            },
+            "n": 9,
+            "native_calls": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "python_peak_rss_kib": 581468,
+            "timeout_rate": 0,
+            "truncation_rate": 0
+          },
+          "before": {
+            "cache_hit_rate": 1.0,
+            "child_peak_rss_kib": 582416,
+            "grounded_atoms": [
+              21552,
+              21552,
+              21552,
+              21552,
+              21552,
+              21552,
+              21552,
+              21552,
+              21552
+            ],
+            "latency_seconds": {
+              "p50": 3.806379586458206,
+              "p95": 3.919537104666233,
+              "p99": 3.919537104666233
+            },
+            "n": 9,
+            "native_calls": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "python_peak_rss_kib": 582416,
+            "timeout_rate": 0,
+            "truncation_rate": 0
+          },
+          "detectable_slowdown_at_this_sample": false,
+          "median_ratio": 1.0228223465062356,
+          "ratio_interval95": [
+            0.9743028327801093,
+            1.0469600844065534
+          ],
+          "statistical_scope": "Descriptive independent-block percentile bootstrap of nine repetitions; host drift and serial-block order are not randomized away.",
+          "upper_bound_below_ten_percent": true
+        }
+      }
+    },
+    {
+      "fixture": "external-endgame",
+      "full_candidate_proof_parity": true,
+      "modes": {
+        "cold": {
+          "after": {
+            "cache_hit_rate": 0.7031963470319634,
+            "child_peak_rss_kib": 581468,
+            "grounded_atoms": [
+              496,
+              496,
+              496,
+              496,
+              496,
+              496,
+              496,
+              496,
+              496
+            ],
+            "latency_seconds": {
+              "p50": 1.4617696078494191,
+              "p95": 1.5218752268701792,
+              "p99": 1.5218752268701792
+            },
+            "n": 9,
+            "native_calls": [
+              130,
+              130,
+              130,
+              130,
+              130,
+              130,
+              130,
+              130,
+              130
+            ],
+            "python_peak_rss_kib": 581468,
+            "timeout_rate": 0,
+            "truncation_rate": 0
+          },
+          "before": {
+            "cache_hit_rate": 0.7031963470319634,
+            "child_peak_rss_kib": 582416,
+            "grounded_atoms": [
+              496,
+              496,
+              496,
+              496,
+              496,
+              496,
+              496,
+              496,
+              496
+            ],
+            "latency_seconds": {
+              "p50": 1.4526072461158037,
+              "p95": 1.5178403984755278,
+              "p99": 1.5178403984755278
+            },
+            "n": 9,
+            "native_calls": [
+              130,
+              130,
+              130,
+              130,
+              130,
+              130,
+              130,
+              130,
+              130
+            ],
+            "python_peak_rss_kib": 582416,
+            "timeout_rate": 0,
+            "truncation_rate": 0
+          },
+          "detectable_slowdown_at_this_sample": false,
+          "median_ratio": 1.0063075285891043,
+          "ratio_interval95": [
+            0.9836812060235637,
+            1.0340448284002854
+          ],
+          "statistical_scope": "Descriptive independent-block percentile bootstrap of nine repetitions; host drift and serial-block order are not randomized away.",
+          "upper_bound_below_ten_percent": true
+        },
+        "reference": {
+          "after": {
+            "cache_hit_rate": 0.0,
+            "child_peak_rss_kib": 581468,
+            "grounded_atoms": [
+              496,
+              496,
+              496,
+              496,
+              496,
+              496,
+              496,
+              496,
+              496
+            ],
+            "latency_seconds": {
+              "p50": 1.5834314208477736,
+              "p95": 1.6498334938660264,
+              "p99": 1.6498334938660264
+            },
+            "n": 9,
+            "native_calls": [
+              438,
+              438,
+              438,
+              438,
+              438,
+              438,
+              438,
+              438,
+              438
+            ],
+            "python_peak_rss_kib": 581468,
+            "timeout_rate": 0,
+            "truncation_rate": 0
+          },
+          "before": {
+            "cache_hit_rate": 0.0,
+            "child_peak_rss_kib": 582416,
+            "grounded_atoms": [
+              496,
+              496,
+              496,
+              496,
+              496,
+              496,
+              496,
+              496,
+              496
+            ],
+            "latency_seconds": {
+              "p50": 1.586032978259027,
+              "p95": 1.6355312522500753,
+              "p99": 1.6355312522500753
+            },
+            "n": 9,
+            "native_calls": [
+              438,
+              438,
+              438,
+              438,
+              438,
+              438,
+              438,
+              438,
+              438
+            ],
+            "python_peak_rss_kib": 582416,
+            "timeout_rate": 0,
+            "truncation_rate": 0
+          },
+          "detectable_slowdown_at_this_sample": false,
+          "median_ratio": 0.9983597078705708,
+          "ratio_interval95": [
+            0.9683967447521501,
+            1.0191269670431296
+          ],
+          "statistical_scope": "Descriptive independent-block percentile bootstrap of nine repetitions; host drift and serial-block order are not randomized away.",
+          "upper_bound_below_ten_percent": true
+        },
+        "warm": {
+          "after": {
+            "cache_hit_rate": 1.0,
+            "child_peak_rss_kib": 581468,
+            "grounded_atoms": [
+              496,
+              496,
+              496,
+              496,
+              496,
+              496,
+              496,
+              496,
+              496
+            ],
+            "latency_seconds": {
+              "p50": 0.25340366270393133,
+              "p95": 0.27430703211575747,
+              "p99": 0.27430703211575747
+            },
+            "n": 9,
+            "native_calls": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "python_peak_rss_kib": 581468,
+            "timeout_rate": 0,
+            "truncation_rate": 0
+          },
+          "before": {
+            "cache_hit_rate": 1.0,
+            "child_peak_rss_kib": 582416,
+            "grounded_atoms": [
+              496,
+              496,
+              496,
+              496,
+              496,
+              496,
+              496,
+              496,
+              496
+            ],
+            "latency_seconds": {
+              "p50": 0.24426766019314528,
+              "p95": 0.2589457267895341,
+              "p99": 0.2589457267895341
+            },
+            "n": 9,
+            "native_calls": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "python_peak_rss_kib": 582416,
+            "timeout_rate": 0,
+            "truncation_rate": 0
+          },
+          "detectable_slowdown_at_this_sample": false,
+          "median_ratio": 1.0374016048770522,
+          "ratio_interval95": [
+            0.976508691395037,
+            1.0580208879431738
+          ],
+          "statistical_scope": "Descriptive independent-block percentile bootstrap of nine repetitions; host drift and serial-block order are not randomized away.",
+          "upper_bound_below_ten_percent": true
+        }
+      }
+    },
+    {
+      "fixture": "external-tactical",
+      "full_candidate_proof_parity": true,
+      "modes": {
+        "cold": {
+          "after": {
+            "cache_hit_rate": 0.8463227222832053,
+            "child_peak_rss_kib": 581468,
+            "grounded_atoms": [
+              2368,
+              2368,
+              2368,
+              2368,
+              2368,
+              2368,
+              2368,
+              2368,
+              2368
+            ],
+            "latency_seconds": {
+              "p50": 1.816099775955081,
+              "p95": 1.8839967157691717,
+              "p99": 1.8839967157691717
+            },
+            "n": 9,
+            "native_calls": [
+              280,
+              280,
+              280,
+              280,
+              280,
+              280,
+              280,
+              280,
+              280
+            ],
+            "python_peak_rss_kib": 581468,
+            "timeout_rate": 0,
+            "truncation_rate": 0
+          },
+          "before": {
+            "cache_hit_rate": 0.8463227222832053,
+            "child_peak_rss_kib": 582416,
+            "grounded_atoms": [
+              2368,
+              2368,
+              2368,
+              2368,
+              2368,
+              2368,
+              2368,
+              2368,
+              2368
+            ],
+            "latency_seconds": {
+              "p50": 1.8144895192235708,
+              "p95": 1.8390813516452909,
+              "p99": 1.8390813516452909
+            },
+            "n": 9,
+            "native_calls": [
+              280,
+              280,
+              280,
+              280,
+              280,
+              280,
+              280,
+              280,
+              280
+            ],
+            "python_peak_rss_kib": 582416,
+            "timeout_rate": 0,
+            "truncation_rate": 0
+          },
+          "detectable_slowdown_at_this_sample": false,
+          "median_ratio": 1.0008874433907997,
+          "ratio_interval95": [
+            0.974512845392193,
+            1.018163973037802
+          ],
+          "statistical_scope": "Descriptive independent-block percentile bootstrap of nine repetitions; host drift and serial-block order are not randomized away.",
+          "upper_bound_below_ten_percent": true
+        },
+        "reference": {
+          "after": {
+            "cache_hit_rate": 0.0,
+            "child_peak_rss_kib": 581468,
+            "grounded_atoms": [
+              2368,
+              2368,
+              2368,
+              2368,
+              2368,
+              2368,
+              2368,
+              2368,
+              2368
+            ],
+            "latency_seconds": {
+              "p50": 3.9166842997074127,
+              "p95": 3.999993138946593,
+              "p99": 3.999993138946593
+            },
+            "n": 9,
+            "native_calls": [
+              1822,
+              1822,
+              1822,
+              1822,
+              1822,
+              1822,
+              1822,
+              1822,
+              1822
+            ],
+            "python_peak_rss_kib": 581468,
+            "timeout_rate": 0,
+            "truncation_rate": 0
+          },
+          "before": {
+            "cache_hit_rate": 0.0,
+            "child_peak_rss_kib": 582416,
+            "grounded_atoms": [
+              2368,
+              2368,
+              2368,
+              2368,
+              2368,
+              2368,
+              2368,
+              2368,
+              2368
+            ],
+            "latency_seconds": {
+              "p50": 3.907312677241862,
+              "p95": 3.995807516388595,
+              "p99": 3.995807516388595
+            },
+            "n": 9,
+            "native_calls": [
+              1822,
+              1822,
+              1822,
+              1822,
+              1822,
+              1822,
+              1822,
+              1822,
+              1822
+            ],
+            "python_peak_rss_kib": 582416,
+            "timeout_rate": 0,
+            "truncation_rate": 0
+          },
+          "detectable_slowdown_at_this_sample": false,
+          "median_ratio": 1.0023984828550159,
+          "ratio_interval95": [
+            0.9859590924907402,
+            1.0233299834962617
+          ],
+          "statistical_scope": "Descriptive independent-block percentile bootstrap of nine repetitions; host drift and serial-block order are not randomized away.",
+          "upper_bound_below_ten_percent": true
+        },
+        "warm": {
+          "after": {
+            "cache_hit_rate": 1.0,
+            "child_peak_rss_kib": 581468,
+            "grounded_atoms": [
+              2368,
+              2368,
+              2368,
+              2368,
+              2368,
+              2368,
+              2368,
+              2368,
+              2368
+            ],
+            "latency_seconds": {
+              "p50": 0.5613296944648027,
+              "p95": 0.6033665705472231,
+              "p99": 0.6033665705472231
+            },
+            "n": 9,
+            "native_calls": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "python_peak_rss_kib": 581468,
+            "timeout_rate": 0,
+            "truncation_rate": 0
+          },
+          "before": {
+            "cache_hit_rate": 1.0,
+            "child_peak_rss_kib": 582416,
+            "grounded_atoms": [
+              2368,
+              2368,
+              2368,
+              2368,
+              2368,
+              2368,
+              2368,
+              2368,
+              2368
+            ],
+            "latency_seconds": {
+              "p50": 0.5627087028697133,
+              "p95": 0.5712244538590312,
+              "p99": 0.5712244538590312
+            },
+            "n": 9,
+            "native_calls": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "python_peak_rss_kib": 582416,
+            "timeout_rate": 0,
+            "truncation_rate": 0
+          },
+          "detectable_slowdown_at_this_sample": false,
+          "median_ratio": 0.9975493387646612,
+          "ratio_interval95": [
+            0.9842917569214762,
+            1.0465865690365455
+          ],
+          "statistical_scope": "Descriptive independent-block percentile bootstrap of nine repetitions; host drift and serial-block order are not randomized away.",
+          "upper_bound_below_ten_percent": true
+        }
+      }
+    }
+  ]
+}
