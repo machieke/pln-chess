@@ -1,0 +1,68 @@
+         8270894 function calls (6821495 primitive calls) in 5.595 seconds
+
+   Ordered by: cumulative time
+   List reduced from 165 to 60 due to restriction <60>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.010    0.010    5.617    5.617 /data/pln-chess-cycle9-baseline/src/pln_chess/cycle8/inference.py:58(infer_moves)
+        1    0.011    0.011    4.839    4.839 /data/pln-chess-cycle9-baseline/src/pln_chess/cycle7/inference.py:54(infer_moves)
+        2    0.029    0.014    4.028    2.014 /data/pln-chess-cycle9-baseline/src/pln_chess/cycle6/inference.py:60(infer_moves)
+        2    0.058    0.029    3.670    1.835 /data/pln-chess-cycle9-baseline/src/pln_chess/cycle5/inference.py:39(infer_moves)
+   126490    0.098    0.000    2.594    0.000 /data/pln-chess-cycle9-baseline/src/pln_chess/common.py:13(digest)
+   156045    0.122    0.000    2.107    0.000 /home/purplezky/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/json/__init__.py:183(dumps)
+   128671    0.044    0.000    1.978    0.000 /data/pln-chess-cycle9-baseline/src/pln_chess/common.py:10(canonical)
+   156045    0.122    0.000    1.964    0.000 /home/purplezky/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/json/encoder.py:183(encode)
+   156045    1.791    0.000    1.791    0.000 /home/purplezky/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/json/encoder.py:205(iterencode)
+        2    0.047    0.024    1.678    0.839 /data/pln-chess-cycle9-baseline/src/pln_chess/cycle4/inference.py:28(infer_moves)
+    57086    0.024    0.000    1.230    0.000 /home/purplezky/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/dataclasses.py:1308(asdict)
+900684/57086    0.498    0.000    1.187    0.000 /home/purplezky/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/dataclasses.py:1332(_asdict_inner)
+      486    0.006    0.000    1.150    0.002 /data/pln-chess-cycle9-baseline/src/pln_chess/cycle4/ontology.py:13(descriptors)
+      486    0.009    0.000    1.105    0.002 /data/pln-chess-cycle9-baseline/src/pln_chess/cycle3/descriptors.py:14(descriptors)
+      486    0.008    0.000    1.017    0.002 /data/pln-chess-cycle9-baseline/src/pln_chess/cycle2/descriptors.py:31(descriptors)
+      486    0.017    0.000    0.950    0.002 /data/pln-chess-cycle9-baseline/src/pln_chess/observations/__init__.py:36(observe)
+233177/3171    0.087    0.000    0.650    0.000 /home/purplezky/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/dataclasses.py:1382(<genexpr>)
+     4120    0.004    0.000    0.601    0.000 /data/pln-chess-cycle9-baseline/src/pln_chess/domain/__init__.py:111(id)
+    57052    0.014    0.000    0.593    0.000 /data/pln-chess-cycle9-baseline/src/pln_chess/pln/runtime.py:27(json)
+     4126    0.106    0.000    0.567    0.000 /data/pln-chess-cycle9-baseline/src/pln_chess/domain/__init__.py:96(fen)
+      240    0.002    0.000    0.518    0.002 /data/pln-chess-cycle9-baseline/src/pln_chess/cycle5/ontology.py:13(descriptors)
+   126490    0.440    0.000    0.440    0.000 {built-in method _hashlib.openssl_sha256}
+    57086    0.210    0.000    0.418    0.000 /home/purplezky/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/dataclasses.py:1278(fields)
+   269784    0.107    0.000    0.327    0.000 /data/pln-chess-cycle9-baseline/src/pln_chess/domain/__init__.py:93(at)
+ 206494/4    0.139    0.000    0.300    0.075 /home/purplezky/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/copy.py:118(deepcopy)
+   8949/4    0.027    0.000    0.300    0.075 /home/purplezky/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/copy.py:217(_deepcopy_dict)
+    13501    0.067    0.000    0.296    0.000 /data/pln-chess-cycle9-baseline/src/pln_chess/cycle4/inference.py:38(node)
+        2    0.003    0.001    0.253    0.126 /data/pln-chess-cycle9-baseline/src/pln_chess/cycle7/model.py:27(version)
+     2162    0.016    0.000    0.249    0.000 /data/pln-chess-cycle9-baseline/src/pln_chess/cycle4/inference.py:49(conditional)
+        6    0.003    0.001    0.247    0.041 /data/pln-chess-cycle9-baseline/src/pln_chess/cycle5/model.py:26(version)
+   378553    0.068    0.000    0.245    0.000 {built-in method builtins.next}
+427260/282936    0.089    0.000    0.215    0.000 /home/purplezky/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/dataclasses.py:1373(<genexpr>)
+     1925    0.022    0.000    0.199    0.000 /data/pln-chess-cycle9-baseline/src/pln_chess/cycle4/inference.py:58(chain)
+   171546    0.196    0.000    0.196    0.000 /home/purplezky/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/dataclasses.py:1293(<genexpr>)
+   367360    0.172    0.000    0.172    0.000 /data/pln-chess-cycle9-baseline/src/pln_chess/domain/__init__.py:94(<genexpr>)
+      508    0.005    0.000    0.169    0.000 /data/pln-chess-cycle9-baseline/src/pln_chess/observations/__init__.py:18(attack_observations)
+        6    0.024    0.004    0.157    0.026 /data/pln-chess-cycle9-baseline/src/pln_chess/cycle3/native.py:17(batch)
+29499/13463    0.039    0.000    0.155    0.000 /home/purplezky/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/copy.py:191(_deepcopy_list)
+    94898    0.080    0.000    0.137    0.000 /data/pln-chess-cycle9-baseline/src/pln_chess/domain/__init__.py:29(symbol)
+        2    0.001    0.000    0.126    0.063 /data/pln-chess-cycle9-baseline/src/pln_chess/cycle6/model.py:25(source_model)
+        3    0.002    0.001    0.125    0.042 /data/pln-chess-cycle9-baseline/src/pln_chess/cycle6/model.py:23(version)
+        1    0.000    0.000    0.113    0.113 /data/pln-chess-cycle9-baseline/src/pln_chess/cycle8/model.py:26(source_model)
+        4    0.001    0.000    0.094    0.023 /data/pln-chess-cycle9-baseline/src/pln_chess/cycle4/model.py:26(version)
+    39832    0.072    0.000    0.082    0.000 {built-in method builtins.sorted}
+        1    0.001    0.001    0.078    0.078 /data/pln-chess-cycle9-baseline/src/pln_chess/cycle8/model.py:22(version)
+   247866    0.052    0.000    0.072    0.000 /home/purplezky/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/dataclasses.py:1296(_is_dataclass_instance)
+     9143    0.006    0.000    0.072    0.000 /data/pln-chess-cycle9-baseline/src/pln_chess/cycle4/ontology.py:8(relation)
+        1    0.000    0.000    0.062    0.062 /data/pln-chess-cycle9-baseline/src/pln_chess/cycle7/model.py:31(source_model)
+   626369    0.061    0.000    0.061    0.000 {built-in method builtins.isinstance}
+   126490    0.056    0.000    0.056    0.000 {method 'hexdigest' of '_hashlib.HASH' objects}
+     6938    0.004    0.000    0.051    0.000 /data/pln-chess-cycle9-baseline/src/pln_chess/cycle3/descriptors.py:9(relation)
+   463875    0.051    0.000    0.051    0.000 {method 'get' of 'dict' objects}
+    13210    0.009    0.000    0.044    0.000 /data/pln-chess-cycle9-baseline/src/pln_chess/pln/runtime.py:30(from_json)
+     4899    0.003    0.000    0.040    0.000 /data/pln-chess-cycle9-baseline/src/pln_chess/cycle2/descriptors.py:6(relation)
+     4600    0.005    0.000    0.039    0.000 /data/pln-chess-cycle9-baseline/src/pln_chess/observations/ontology.py:29(from_json)
+    15928    0.007    0.000    0.033    0.000 /data/pln-chess-cycle9-baseline/src/pln_chess/pln/runtime.py:20(__post_init__)
+    25885    0.033    0.000    0.033    0.000 /data/pln-chess-cycle9-baseline/src/pln_chess/pln/runtime.py:24(metta)
+   126490    0.032    0.000    0.032    0.000 {method 'encode' of 'str' objects}
+     4587    0.003    0.000    0.032    0.000 /data/pln-chess-cycle9-baseline/src/pln_chess/domain/__init__.py:45(id)
+    24701    0.011    0.000    0.032    0.000 {built-in method builtins.all}
+
+

@@ -1,0 +1,463 @@
+[
+  {
+    "args": [
+      "exec",
+      "--session",
+      "pln-chess-cycle9-6ba311f76abc",
+      "set",
+      "viewport",
+      "1280",
+      "900"
+    ],
+    "returncode": 0,
+    "seconds": 0.35021257400512695,
+    "stderr": "",
+    "stdout_sha256": "7c8f56aecbeeb314c13c01df65278c8ff9c1d10cc764cfb6bb4fea2accaffc6f"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const end=Date.now()+5000;while((innerWidth!==1280||innerHeight!==900)&&Date.now()<end)await new Promise(r=>setTimeout(r,100));return [innerWidth,innerHeight]})()"
+    ],
+    "returncode": 0,
+    "seconds": 0.3436884880065918,
+    "stderr": "",
+    "stdout_sha256": "3341dd4cc9321dd8a39cb9eb1a2d424826d2e49a5b15bbaf70d1d4206a1dfb41"
+  },
+  {
+    "args": [
+      "exec",
+      "snapshot",
+      "-i"
+    ],
+    "returncode": 0,
+    "seconds": 0.38564419746398926,
+    "stderr": "",
+    "stdout_sha256": "ee88cea3a2ad784fe0b32bf1c390f5f03d222e49a9c1887ba38fe95e54f2a380"
+  },
+  {
+    "args": [
+      "exec",
+      "screenshot",
+      "initial.png"
+    ],
+    "returncode": 0,
+    "seconds": 0.461153507232666,
+    "stderr": "",
+    "stdout_sha256": "dc8447eada0f3039feb1d11205ae0082300d1d14c1424a04831bf24bfabab7f6"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const fields={\"model\": \"C8-default\", \"mode\": \"default\", \"fen\": \"7k/8/8/8/8/8/2R5/2K5 w - - 0 1\", \"move\": \"c2e2\"};for(const [id,value] of Object.entries(fields)){const e=document.getElementById(id);if(typeof value==='boolean')e.checked=value;else e.value=value;}document.getElementById('form').requestSubmit();while(document.getElementById('run').disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById('status').textContent,summary:document.getElementById('summary').textContent,diagnostic:document.getElementById('c9-live').textContent};})()"
+    ],
+    "returncode": 0,
+    "seconds": 1.880063533782959,
+    "stderr": "",
+    "stdout_sha256": "ac4b8ef5553e9c7d2598eb768bc0d29bb9d67f4b6f23007f46f1c5dbc79b2205"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "document.getElementById('c9-live').scrollIntoView();document.getElementById('c9-live').offsetParent!==null"
+    ],
+    "returncode": 0,
+    "seconds": 0.324892520904541,
+    "stderr": "",
+    "stdout_sha256": "a17fcf0a2f50e2d495e4f90ce263410edc183add6c62699a2facbccf60410f74"
+  },
+  {
+    "args": [
+      "exec",
+      "screenshot",
+      "native-and-empirical-diagnostics.png"
+    ],
+    "returncode": 0,
+    "seconds": 0.3921692371368408,
+    "stderr": "",
+    "stdout_sha256": "5b8c397e6b0d59eb6cd3ba5c5f592c687f7792c6c68bde400ccc566af403b1de"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "document.getElementById('c9-study').scrollIntoView();true"
+    ],
+    "returncode": 0,
+    "seconds": 0.37927937507629395,
+    "stderr": "",
+    "stdout_sha256": "a17fcf0a2f50e2d495e4f90ce263410edc183add6c62699a2facbccf60410f74"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{document.getElementById('c9-load').click();while(document.getElementById('c9-load').disabled)await new Promise(r=>setTimeout(r,100));return {rows:document.querySelectorAll('#c9-table tbody tr').length,status:document.getElementById('c9-status').textContent}})()"
+    ],
+    "returncode": 0,
+    "seconds": 0.5054409503936768,
+    "stderr": "",
+    "stdout_sha256": "32858a90a2f97a38be682abfdd51581e462ec2f6ac6cd94ce3102f296d974bdd"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "document.getElementById('c9-population').value='in_board';document.getElementById('c9-population').dispatchEvent(new Event('change'));true"
+    ],
+    "returncode": 0,
+    "seconds": 0.369753360748291,
+    "stderr": "",
+    "stdout_sha256": "a17fcf0a2f50e2d495e4f90ce263410edc183add6c62699a2facbccf60410f74"
+  },
+  {
+    "args": [
+      "exec",
+      "screenshot",
+      "cohort-comparison.png"
+    ],
+    "returncode": 0,
+    "seconds": 0.43048977851867676,
+    "stderr": "",
+    "stdout_sha256": "2af067bd00dc4fd91f88f7c7d3c1fec925fd232b947c612b7a7546185ce32cb2"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{document.getElementById('c9-failures').click();while(document.getElementById('c9-failures').disabled)await new Promise(r=>setTimeout(r,100));document.getElementById('c9-proof').click();while(document.getElementById('c9-proof').disabled)await new Promise(r=>setTimeout(r,100));return JSON.parse(document.getElementById('c9-detail').textContent)})()"
+    ],
+    "returncode": 0,
+    "seconds": 0.6422882080078125,
+    "stderr": "",
+    "stdout_sha256": "4f58d197abace2c2579517742af6fc01e567022544c29282e60383e08eed0476"
+  },
+  {
+    "args": [
+      "exec",
+      "screenshot",
+      "failure-proof.png"
+    ],
+    "returncode": 0,
+    "seconds": 0.4203062057495117,
+    "stderr": "",
+    "stdout_sha256": "470a15f595bb73fb51ccbb215558a9a6e6c145f1d9b931764a5f8092b6514443"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{document.getElementById('c9-use').click();while(document.getElementById('run').disabled)await new Promise(r=>setTimeout(r,100));return {fen:document.getElementById('fen').value,move:document.getElementById('move').value,mode:document.getElementById('mode').value,status:document.getElementById('status').textContent,summary:document.getElementById('summary').textContent}})()"
+    ],
+    "returncode": 0,
+    "seconds": 1.7322680950164795,
+    "stderr": "",
+    "stdout_sha256": "12d1fbf6851a54985c3829c4dfa161c784e5e5c980f7935c47abcb1752984c83"
+  },
+  {
+    "args": [
+      "exec",
+      "screenshot",
+      "reopened-failure-position.png"
+    ],
+    "returncode": 0,
+    "seconds": 0.41922903060913086,
+    "stderr": "",
+    "stdout_sha256": "d6b609b80a66d38572c3f77c403d8ec68556b545521d792ddb7f3ead80f55dcb"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const b=document.getElementById(\"c9-performance\");b.click();while(b.disabled)await new Promise(r=>setTimeout(r,100));const d=JSON.parse(document.getElementById('c9-detail').textContent);return {section:d.section,available:d.available,native:d.native,model_version:d.data.model_version}})()"
+    ],
+    "returncode": 0,
+    "seconds": 0.46399569511413574,
+    "stderr": "",
+    "stdout_sha256": "6baa0980e202841398a9382fd4367c036be697b8901dfc4e89dbc28599cc0640"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const b=document.getElementById(\"c9-identity\");b.click();while(b.disabled)await new Promise(r=>setTimeout(r,100));const d=JSON.parse(document.getElementById('c9-detail').textContent);return {section:d.section,available:d.available,native:d.native,model_version:d.data.model_version}})()"
+    ],
+    "returncode": 0,
+    "seconds": 0.4405848979949951,
+    "stderr": "",
+    "stdout_sha256": "6be74c270b7036e2e4754b9c4ebee9e96f0e9406c62f70141301d61e1ffdb168"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{document.getElementById('c9-calibration').click();while(document.getElementById('c9-calibration').disabled)await new Promise(r=>setTimeout(r,100));const d=JSON.parse(document.getElementById('c9-detail').textContent);return {native:d.native,fit_games:d.data.fit_games}})()"
+    ],
+    "returncode": 0,
+    "seconds": 0.6842234134674072,
+    "stderr": "",
+    "stdout_sha256": "f9d3c950f704a225866793234b286c55e5938d51460b23b6d2de47828f0d73c0"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const old=URL.createObjectURL.bind(URL);URL.createObjectURL=b=>{window.c9Blob=b;return old(b)};document.getElementById('c9-export').click();window.c9Text=await window.c9Blob.text();const bytes=new TextEncoder().encode(window.c9Text);const hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))).map(x=>x.toString(16).padStart(2,'0')).join('');return {bytes:bytes.length,characters:window.c9Text.length,sha256:hash}})()"
+    ],
+    "returncode": 0,
+    "seconds": 0.3594977855682373,
+    "stderr": "",
+    "stdout_sha256": "7113ab532292570989233a870657bac04f15eba635ad7db9245ed6372f352f44"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.c9Text.slice(0,100000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.32372069358825684,
+    "stderr": "",
+    "stdout_sha256": "32b65f050c28757a2c0b1fc813c4a4089593b34305cb1e974c6c88ffde1a819b"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.c9Text.slice(100000,200000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3492894172668457,
+    "stderr": "",
+    "stdout_sha256": "2259c319be7604d1c18f11d3d6a7b16b8f207f724b6cb1fbac3084633fe56640"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.c9Text.slice(200000,300000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3404836654663086,
+    "stderr": "",
+    "stdout_sha256": "cc78843e5a6436264c80c5f37fd8f0f197c883b330052b4744c6d9964d3e22a8"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.c9Text.slice(300000,400000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3733222484588623,
+    "stderr": "",
+    "stdout_sha256": "981a9bfbddf6a1640612143404783514934251f74702a974a2470a5af4b45127"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.c9Text.slice(400000,500000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.33394503593444824,
+    "stderr": "",
+    "stdout_sha256": "d9e51ca482be0de2bc5f0326781e9054346603252c9362dcde483b0885118d9e"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.c9Text.slice(500000,600000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.34343767166137695,
+    "stderr": "",
+    "stdout_sha256": "3cae1a98d8e9aa30b0d4cbdc93dfc04bee21af92bdb1e08dcdf4ca4ac516aeaa"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.c9Text.slice(600000,700000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3596630096435547,
+    "stderr": "",
+    "stdout_sha256": "3b5b6a0955d668e3da904f5a06e360304fdb571f12e4ff80373a7d25b3df6550"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.c9Text.slice(700000,800000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3640727996826172,
+    "stderr": "",
+    "stdout_sha256": "a40508dee4d5324b7fed5673fcd5caf4197f30bd45f5299b9bbe11af8f723c72"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.c9Text.slice(800000,900000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3608684539794922,
+    "stderr": "",
+    "stdout_sha256": "3f3fa4bf8fb7776e5fbaae44aa3c791f775ea2cddc413ff3ff87ebf99ab796fb"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.c9Text.slice(900000,1000000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.39805150032043457,
+    "stderr": "",
+    "stdout_sha256": "eea00bb01a2ff73e30ed36e157eaf9d7003692d952069e722a1c6ceee52e2e61"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.c9Text.slice(1000000,1100000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.36480069160461426,
+    "stderr": "",
+    "stdout_sha256": "0987199744ec6d3ea6bab96b99f735ad4eafb92343c26b1ebde136a4ca937c16"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const fields={\"mode\": \"strict\", \"model\": \"C8-default\", \"fen\": \"7k/8/8/8/8/8/2R5/2K5 w - - 0 1\", \"move\": \"c2e2\", \"history\": \"{}\", \"temporal-mode\": \"fen-only\", \"max-invocations\": 20000};for(const [id,value] of Object.entries(fields)){const e=document.getElementById(id);if(typeof value==='boolean')e.checked=value;else e.value=value;}document.getElementById('form').requestSubmit();while(document.getElementById('run').disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById('status').textContent,summary:document.getElementById('summary').textContent,diagnostic:document.getElementById('c9-live').textContent};})()"
+    ],
+    "returncode": 0,
+    "seconds": 1.7331271171569824,
+    "stderr": "",
+    "stdout_sha256": "2b751050b7cce314c9b0744b750f7c134e61289305f7dece9c1d2673462409c9"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const fields={\"mode\": \"operational\", \"max-invocations\": 0};for(const [id,value] of Object.entries(fields)){const e=document.getElementById(id);if(typeof value==='boolean')e.checked=value;else e.value=value;}document.getElementById('form').requestSubmit();while(document.getElementById('run').disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById('status').textContent,summary:document.getElementById('summary').textContent,diagnostic:document.getElementById('c9-live').textContent};})()"
+    ],
+    "returncode": 0,
+    "seconds": 0.9304749965667725,
+    "stderr": "",
+    "stdout_sha256": "039d6d725e22ac59ad168c762a19818f0851b33cb161efd054f9b04a3bb54638"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const fields={\"mode\": \"operational\", \"max-invocations\": 20000, \"temporal-mode\": \"trusted-metadata\", \"history\": \"{\\\"source\\\": \\\"browser-metadata\\\", \\\"confidence\\\": 0.8}\"};for(const [id,value] of Object.entries(fields)){const e=document.getElementById(id);if(typeof value==='boolean')e.checked=value;else e.value=value;}document.getElementById('form').requestSubmit();while(document.getElementById('run').disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById('status').textContent,summary:document.getElementById('summary').textContent,diagnostic:document.getElementById('c9-live').textContent};})()"
+    ],
+    "returncode": 0,
+    "seconds": 1.7464962005615234,
+    "stderr": "",
+    "stdout_sha256": "13dd478ae4aaf69e6223c7e4b507c899d7ec4727b9c7efef274f59c52d364c3d"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const fields={\"history\": \"{\"};for(const [id,value] of Object.entries(fields)){const e=document.getElementById(id);if(typeof value==='boolean')e.checked=value;else e.value=value;}document.getElementById('form').requestSubmit();while(document.getElementById('run').disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById('status').textContent,summary:document.getElementById('summary').textContent,diagnostic:document.getElementById('c9-live').textContent};})()"
+    ],
+    "returncode": 0,
+    "seconds": 0.3537635803222656,
+    "stderr": "",
+    "stdout_sha256": "eefa5272796e02d8081b196e53fd222bb4071ad3a5ed8a679936cd64aaa15f87"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const fields={\"history\": \"{}\", \"temporal-mode\": \"fen-only\"};for(const [id,value] of Object.entries(fields)){const e=document.getElementById(id);if(typeof value==='boolean')e.checked=value;else e.value=value;}document.getElementById('form').requestSubmit();while(document.getElementById('run').disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById('status').textContent,summary:document.getElementById('summary').textContent,diagnostic:document.getElementById('c9-live').textContent};})()"
+    ],
+    "returncode": 0,
+    "seconds": 1.8545372486114502,
+    "stderr": "",
+    "stdout_sha256": "a7c0e7f8a9870f3c51ab152601ccecce9b4e7526b6a3b132e2e4122eb8a763f3"
+  },
+  {
+    "args": [
+      "exec",
+      "--session",
+      "pln-chess-cycle9-6ba311f76abc",
+      "set",
+      "viewport",
+      "390",
+      "844"
+    ],
+    "returncode": 0,
+    "seconds": 0.49173474311828613,
+    "stderr": "",
+    "stdout_sha256": "7c8f56aecbeeb314c13c01df65278c8ff9c1d10cc764cfb6bb4fea2accaffc6f"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const end=Date.now()+5000;while((innerWidth!==390||innerHeight!==844)&&Date.now()<end)await new Promise(r=>setTimeout(r,100));return [innerWidth,innerHeight]})()"
+    ],
+    "returncode": 0,
+    "seconds": 5.331439971923828,
+    "stderr": "",
+    "stdout_sha256": "3341dd4cc9321dd8a39cb9eb1a2d424826d2e49a5b15bbaf70d1d4206a1dfb41"
+  },
+  {
+    "args": [
+      "exec",
+      "--session",
+      "pln-chess-cycle9-6ba311f76abc",
+      "set",
+      "viewport",
+      "390",
+      "844"
+    ],
+    "returncode": 0,
+    "seconds": 0.5241994857788086,
+    "stderr": "",
+    "stdout_sha256": "7c8f56aecbeeb314c13c01df65278c8ff9c1d10cc764cfb6bb4fea2accaffc6f"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const end=Date.now()+5000;while((innerWidth!==390||innerHeight!==844)&&Date.now()<end)await new Promise(r=>setTimeout(r,100));return [innerWidth,innerHeight]})()"
+    ],
+    "returncode": 0,
+    "seconds": 0.32727742195129395,
+    "stderr": "",
+    "stdout_sha256": "bc8e01c3311427e103149a49390e3159fea37f555b11b36e056df04b04edb1bf"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "document.getElementById('c9-study').scrollIntoView();({width:innerWidth,height:innerHeight,scrollWidth:document.documentElement.scrollWidth})"
+    ],
+    "returncode": 0,
+    "seconds": 0.33357977867126465,
+    "stderr": "",
+    "stdout_sha256": "34c92d9fed3754d144e8ee24e5dc8f89aac2041b78f630543c557b87f1081461"
+  },
+  {
+    "args": [
+      "stop"
+    ],
+    "returncode": 0,
+    "seconds": 1.5145676136016846,
+    "stderr": "",
+    "stdout_sha256": "c3b916666741adde181d8744090de14742f90df6908065ab367ee175eee82ce5"
+  }
+]

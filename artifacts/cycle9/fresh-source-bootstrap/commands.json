@@ -1,0 +1,67 @@
+[
+  {
+    "name": "clone",
+    "argv": [
+      "git",
+      "clone",
+      "--shared",
+      "/data/pln-chess-cycle6-delivery",
+      "/data/pln-chess-cycle9-bootstrap-d26228d"
+    ],
+    "cwd": "/data/pln-chess-cycle6-delivery",
+    "returncode": 0,
+    "elapsed_seconds": 2.5984315872192383,
+    "log": "fresh-source-bootstrap/clone.txt"
+  },
+  {
+    "name": "checkout",
+    "argv": [
+      "git",
+      "checkout",
+      "--detach",
+      "d26228d6064b52d8b769e3253c02793d264ebf7d"
+    ],
+    "cwd": "/data/pln-chess-cycle9-bootstrap-d26228d",
+    "returncode": 0,
+    "elapsed_seconds": 1.8899261951446533,
+    "log": "fresh-source-bootstrap/checkout.txt"
+  },
+  {
+    "name": "bootstrap",
+    "argv": [
+      "bash",
+      "scripts/bootstrap.sh",
+      "--dependencies-only"
+    ],
+    "cwd": "/data/pln-chess-cycle9-bootstrap-d26228d",
+    "returncode": 0,
+    "elapsed_seconds": 4.139894485473633,
+    "log": "fresh-source-bootstrap/bootstrap.txt"
+  },
+  {
+    "name": "dataset",
+    "argv": [
+      "/data/pln-chess-cycle9-bootstrap-d26228d/.venv/bin/python",
+      "-m",
+      "training.cycle9_data",
+      "--out",
+      "/data/pln-chess-cycle9-clean-output/fresh-source-bootstrap/regenerated"
+    ],
+    "cwd": "/data/pln-chess-cycle9-bootstrap-d26228d",
+    "returncode": 0,
+    "elapsed_seconds": 7.659640789031982,
+    "log": "fresh-source-bootstrap/dataset.txt"
+  },
+  {
+    "name": "identity",
+    "argv": [
+      "/data/pln-chess-cycle9-bootstrap-d26228d/.venv/bin/python",
+      "-c",
+      "from pln_chess.pln import Runtime; from pln_chess.cycle6.inference import production_code_hash; import json; print(json.dumps(dict(runtime=Runtime().manifest,production_code_hash=production_code_hash())))"
+    ],
+    "cwd": "/data/pln-chess-cycle9-bootstrap-d26228d",
+    "returncode": 0,
+    "elapsed_seconds": 0.10607171058654785,
+    "log": "fresh-source-bootstrap/identity.txt"
+  }
+]

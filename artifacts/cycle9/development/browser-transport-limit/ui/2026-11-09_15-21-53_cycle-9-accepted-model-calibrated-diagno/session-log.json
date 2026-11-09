@@ -1,0 +1,92 @@
+[
+  {
+    "action": "--session pln-chess-cycle9-e36d4e4189cb set viewport 1280 900",
+    "relativeTimeSec": 0.3,
+    "timestamp": "2026-11-09T15:21:57.373Z"
+  },
+  {
+    "action": "eval (async()=>{const end=Date.now()+5000;while((innerWidth!==1280||innerHeight!==900)&&Date.now()<end)await new Promise(r=>setTimeout(r,100));return [innerWidth,innerHeight]})()",
+    "relativeTimeSec": 0.7,
+    "timestamp": "2026-11-09T15:21:57.718Z"
+  },
+  {
+    "action": "snapshot -i",
+    "relativeTimeSec": 1,
+    "timestamp": "2026-11-09T15:21:58.056Z"
+  },
+  {
+    "action": "screenshot initial.png",
+    "relativeTimeSec": 1.4,
+    "timestamp": "2026-11-09T15:21:58.473Z"
+  },
+  {
+    "action": "eval (async()=>{const fields={\"model\": \"C8-default\", \"mode\": \"default\", \"fen\": \"7k/8/8/8/8/8/2R5/2K5 w - - 0 1\", \"move\": \"c2e2\"};for(const [id,value] of Object.entries(fields)){const e=document.getElementById(id);if(typeof value==='boolean')e.checked=value;else e.value=value;}document.getElementById('form').requestSubmit();while(document.getElementById('run').disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById('status').textContent,summary:document.getElementById('summary').textContent,diagnostic:document.getElementById('c9-live').textContent};})()",
+    "relativeTimeSec": 1.8,
+    "timestamp": "2026-11-09T15:21:58.892Z"
+  },
+  {
+    "action": "eval document.getElementById('c9-live').scrollIntoView();document.getElementById('c9-live').offsetParent!==null",
+    "relativeTimeSec": 3.6,
+    "timestamp": "2026-11-09T15:22:00.685Z"
+  },
+  {
+    "action": "screenshot native-and-empirical-diagnostics.png",
+    "relativeTimeSec": 4,
+    "timestamp": "2026-11-09T15:22:01.023Z"
+  },
+  {
+    "action": "eval document.getElementById('c9-study').scrollIntoView();true",
+    "relativeTimeSec": 4.4,
+    "timestamp": "2026-11-09T15:22:01.445Z"
+  },
+  {
+    "action": "eval (async()=>{document.getElementById('c9-load').click();while(document.getElementById('c9-load').disabled)await new Promise(r=>setTimeout(r,100));return {rows:document.querySelectorAll('#c9-table tbody tr').length,status:document.getElementById('c9-status').textContent}})()",
+    "relativeTimeSec": 4.8,
+    "timestamp": "2026-11-09T15:22:01.830Z"
+  },
+  {
+    "action": "eval document.getElementById('c9-population').value='in_board';document.getElementById('c9-population').dispatchEvent(new Event('change'));true",
+    "relativeTimeSec": 5.3,
+    "timestamp": "2026-11-09T15:22:02.362Z"
+  },
+  {
+    "action": "screenshot cohort-comparison.png",
+    "relativeTimeSec": 5.6,
+    "timestamp": "2026-11-09T15:22:02.698Z"
+  },
+  {
+    "action": "eval (async()=>{document.getElementById('c9-failures').click();while(document.getElementById('c9-failures').disabled)await new Promise(r=>setTimeout(r,100));document.getElementById('c9-proof').click();while(document.getElementById('c9-proof').disabled)await new Promise(r=>setTimeout(r,100));return JSON.parse(document.getElementById('c9-detail').textContent)})()",
+    "relativeTimeSec": 6.1,
+    "timestamp": "2026-11-09T15:22:03.132Z"
+  },
+  {
+    "action": "screenshot failure-proof.png",
+    "relativeTimeSec": 6.8,
+    "timestamp": "2026-11-09T15:22:03.833Z"
+  },
+  {
+    "action": "eval (async()=>{document.getElementById('c9-use').click();while(document.getElementById('run').disabled)await new Promise(r=>setTimeout(r,100));return {fen:document.getElementById('fen').value,move:document.getElementById('move').value,mode:document.getElementById('mode').value,status:document.getElementById('status').textContent,summary:document.getElementById('summary').textContent}})()",
+    "relativeTimeSec": 7.2,
+    "timestamp": "2026-11-09T15:22:04.312Z"
+  },
+  {
+    "action": "screenshot reopened-failure-position.png",
+    "relativeTimeSec": 9,
+    "timestamp": "2026-11-09T15:22:06.054Z"
+  },
+  {
+    "action": "eval (async()=>{const b=document.getElementById(\"c9-performance\");b.click();while(b.disabled)await new Promise(r=>setTimeout(r,100));const d=JSON.parse(document.getElementById('c9-detail').textContent);return {section:d.section,available:d.available,native:d.native,model_version:d.data.model_version}})()",
+    "relativeTimeSec": 9.4,
+    "timestamp": "2026-11-09T15:22:06.479Z"
+  },
+  {
+    "action": "eval (async()=>{const b=document.getElementById(\"c9-identity\");b.click();while(b.disabled)await new Promise(r=>setTimeout(r,100));const d=JSON.parse(document.getElementById('c9-detail').textContent);return {section:d.section,available:d.available,native:d.native,model_version:d.data.model_version}})()",
+    "relativeTimeSec": 9.9,
+    "timestamp": "2026-11-09T15:22:06.944Z"
+  },
+  {
+    "action": "eval (async()=>{document.getElementById('c9-calibration').click();while(document.getElementById('c9-calibration').disabled)await new Promise(r=>setTimeout(r,100));return JSON.parse(document.getElementById('c9-detail').textContent)})()",
+    "relativeTimeSec": 10.3,
+    "timestamp": "2026-11-09T15:22:07.398Z"
+  }
+]

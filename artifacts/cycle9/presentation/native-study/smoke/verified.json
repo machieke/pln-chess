@@ -1,0 +1,89 @@
+{
+  "actual_cli_commands": [
+    {
+      "args": [
+        "inspect",
+        "--fen",
+        "7k/8/8/8/8/8/2R5/2K5 w - - 0 1",
+        "--move",
+        "c2e2",
+        "--format",
+        "json",
+        "--checkpoint",
+        "/data/pln-chess-cycle9-clean-output/model/C9-default.json"
+      ],
+      "returncode": 0,
+      "seconds": 1.426422568038106,
+      "stderr": "",
+      "stdout_sha256": "ac3ba629cb75adea5ca2b48f6fc8a7110b51a8016b8684b69b2ca2c83ff25452"
+    },
+    {
+      "args": [
+        "calibration-export",
+        "--output",
+        "/data/pln-chess-cycle9-clean-output/smoke/calibration-cli.json"
+      ],
+      "returncode": 0,
+      "seconds": 0.09238524548709393,
+      "stderr": "",
+      "stdout_sha256": "c93743e5f3625870a5fcf31c2b8cf8a85cf03d2d5e13a284b695a0437bf3469a"
+    },
+    {
+      "args": [
+        "research-report",
+        "--section",
+        "identity",
+        "--output",
+        "/data/pln-chess-cycle9-clean-output/smoke/identity-cli.json"
+      ],
+      "returncode": 0,
+      "seconds": 0.07087257783859968,
+      "stderr": "",
+      "stdout_sha256": "64698cc441eded8c2a7945f2f9f17b0d9abc1b128b87b2385e14f197ee3d82e1"
+    }
+  ],
+  "empirical_export_native": false,
+  "model_version": "1217e17552ff611bebf0efc650245b05fb71c93a8175b579b025d6273d5d781d",
+  "native_input_unmodified": true,
+  "native_seconds": 0.9989076750352979,
+  "passed": true,
+  "presentation_native_invocations": 0,
+  "presentation_samples": [
+    {
+      "bytes": 639810,
+      "decorate_seconds": 0.007318833842873573,
+      "json_serialization_seconds": 0.0026606665924191475
+    },
+    {
+      "bytes": 639810,
+      "decorate_seconds": 0.006851472891867161,
+      "json_serialization_seconds": 0.002664073370397091
+    },
+    {
+      "bytes": 639810,
+      "decorate_seconds": 0.006857800297439098,
+      "json_serialization_seconds": 0.002676103264093399
+    },
+    {
+      "bytes": 639810,
+      "decorate_seconds": 0.006902928464114666,
+      "json_serialization_seconds": 0.0027015618979930878
+    },
+    {
+      "bytes": 639810,
+      "decorate_seconds": 0.0069700563326478004,
+      "json_serialization_seconds": 0.002714814618229866
+    },
+    {
+      "bytes": 639810,
+      "decorate_seconds": 0.007026161998510361,
+      "json_serialization_seconds": 0.002715654671192169
+    },
+    {
+      "bytes": 639810,
+      "decorate_seconds": 0.006818914785981178,
+      "json_serialization_seconds": 0.002648896537721157
+    }
+  ],
+  "source_hash": "ae26386448dca0d1c484188584d23b059da325a5713fadced8ef81b3d49571c9"
+}

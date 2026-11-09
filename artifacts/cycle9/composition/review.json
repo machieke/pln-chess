@@ -1,0 +1,115 @@
+{
+  "confidence_counterexample": {
+    "certificates": 20,
+    "conclusion": "Per-premise confidence is not joint validity, even with no duplicate observation IDs.",
+    "disjoint_failure_mass": "1",
+    "individual_alpha": "1/20",
+    "naive_reuse_of_single_confidence": "19/20",
+    "simultaneous_coverage": "0"
+  },
+  "interval_information_loss": [
+    {
+      "P_C": "1/2",
+      "P_J": "1/2",
+      "P_J_and_C": "1/2",
+      "name": "same",
+      "table": {
+        "000": "1/2",
+        "111": "1/2"
+      }
+    },
+    {
+      "P_C": "1/2",
+      "P_J": "1/2",
+      "P_J_and_C": "0",
+      "name": "opposite",
+      "table": {
+        "001": "1/2",
+        "110": "1/2"
+      }
+    }
+  ],
+  "native": false,
+  "new_operator_enabled": false,
+  "passed": true,
+  "prior_evidence": {
+    "C7_native_inventory": "5ba244e2bff1fd3e3305561dc4d5bbf0f4f85b2c19e3d064ee88f6836afc8631",
+    "C8_math": "7072626c94a809da08bd8b5928aea6437dd817a61686386c985d59780f664ea5",
+    "C8_proposal": "9a148a5c649040ae4a40eae59016c00f8f293ab986bed867fbf3cd06be369e0f"
+  },
+  "recommendation": {
+    "isolated_research": "B justified conditionally as a separate credal type, subject to explicit future authorization and statistical/solver contracts.",
+    "operational": "A: existing native operators",
+    "production_extension": "NO-GO",
+    "representation": "C: learned joint antecedent may be represented with existing conditionals; it does not derive a conjunction from marginal beliefs."
+  },
+  "repeat_native_experiments": false,
+  "revision_projection_counterexample": {
+    "conclusion": "Retraction requires retained original constraints and provenance; endpoint-only revision is insufficient.",
+    "initial_constraints": {
+      "P_A": "1",
+      "P_C_given_A": "1/5",
+      "P_C_given_not_A": "9/10"
+    },
+    "intersection_status": "InconsistentConstraints",
+    "original_P_C": "1/5",
+    "replacement_P_A": "0",
+    "replacement_P_C": "9/10"
+  },
+  "runtime_pln": {
+    "branch": "main",
+    "commit": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+    "repository": "https://github.com/trueagi-io/PLN",
+    "sha256": "cdfb3f18bd7b336440fc7b4409209afddf0e64c41f17dee7eefc8f02718de433",
+    "source": "vendor/pln/lib_pln.metta"
+  },
+  "schema": 9,
+  "source_defined_heads": [
+    "/safe",
+    "BestCandidate",
+    "BestConfidenceCandidate",
+    "ConcatUnique",
+    "ConfidenceRank",
+    "Consistency_ImplicationImplicantConjunction",
+    "LimitSize",
+    "PLN.Config.BeliefQueueSize",
+    "PLN.Config.MaxSteps",
+    "PLN.Config.TaskQueueSize",
+    "PLN.Derive",
+    "PLN.Query",
+    "PriorityRank",
+    "PriorityRankNeg",
+    "PushUnique",
+    "STV",
+    "StampConcat",
+    "StampDisjoint",
+    "SyllogisticRuleGuard",
+    "SymmetricModusPonensRuleGuard",
+    "TransitiveSimilarityStrength",
+    "Truth_Abduction",
+    "Truth_Deduction",
+    "Truth_Induction",
+    "Truth_ModusPonens",
+    "Truth_Negation",
+    "Truth_Revision",
+    "Truth_SymmetricModusPonens",
+    "Truth_c2w",
+    "Truth_equivalenceToImplication",
+    "Truth_evaluationImplication",
+    "Truth_inversion",
+    "Truth_or",
+    "Truth_transitiveSimilarity",
+    "Truth_w2c",
+    "and5",
+    "clamp",
+    "conditional-probability-consistency",
+    "invert",
+    "largest-intersection-probability",
+    "min5",
+    "negate",
+    "simpleDeductionStrength",
+    "smallest-intersection-probability",
+    "|-"
+  ],
+  "source_sha256": "cdfb3f18bd7b336440fc7b4409209afddf0e64c41f17dee7eefc8f02718de433"
+}

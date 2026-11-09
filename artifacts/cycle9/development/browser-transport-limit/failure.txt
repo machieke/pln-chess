@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/data/pln-chess-cycle6-delivery/scripts/cycle9_ui_verify.py", line 132, in <module>
+    a=p.parse_args();run(a.out,a.work,a.port)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/pln-chess-cycle6-delivery/scripts/cycle9_ui_verify.py", line 83, in run
+    calibration=ev("(async()=>{document.getElementById('c9-calibration').click();while(document.getElementById('c9-calibration').disabled)await new Promise(r=>setTimeout(r,100));return JSON.parse(document.getElementById('c9-detail').textContent)})()")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/pln-chess-cycle6-delivery/scripts/cycle9_ui_verify.py", line 34, in ev
+    def ev(code):return cmd('exec','eval',code,structured=True)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/pln-chess-cycle6-delivery/scripts/cycle9_ui_verify.py", line 32, in cmd
+    if p.returncode:raise RuntimeError((args,p.stderr,p.stdout[:1500]))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: (('exec', 'eval', "(async()=>{document.getElementById('c9-calibration').click();while(document.getElementById('c9-calibration').disabled)await new Promise(r=>setTimeout(r,100));return JSON.parse(document.getElementById('c9-detail').textContent)})()"), '', '{\n  "artifact": "calibration/results.json",\n  "available": true,\n  "data": {\n    "dataset_hash": "981ff3c291df7f98766f1d9b37291416911b294b3874ae4b05aa8aed182fe2d2",\n    "evaluations": {\n      "adversarial": {\n        "complete": {\n          "cluster_uncertainty": {\n            "clusters": 64,\n            "draws": 500,\n            "interval95": {\n              "calibrated_brier": [\n                0.0005800845838713385,\n                0.002591195624276866\n              ],\n              "coverage": [\n                0.9779411764705882,\n                0.9879451038575668\n              ],\n              "exact_move_set_accuracy": [\n                0.8203125,\n                0.921875\n              ],\n              "precision": [\n                1,\n                1\n              ],\n              "recall": [\n                0.988407258064516,\n                0.9953810623556582\n              ],\n              "selective_risk": [\n                0,\n                0\n              ]\n            },\n            "method": "Percentile source-game / controlled-pair bootstrap; synthetic sampling only.",\n            "warning": "Zero observed errors produce a degenerate bootstrap interval, not a universal zero-risk guarantee. Games in an opening family may remain correlated."\n          },\n          "empirical-calibrated": {\n            "bins": [\n              {\n                "bin": 0,\n                "interval95_naive_wilson": [\n                  0.0011840500021938786,\n                  0.00')

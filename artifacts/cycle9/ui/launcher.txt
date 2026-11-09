@@ -1,0 +1,22 @@
+Starting: exec /data/pln-chess-cycle6-delivery/.venv/bin/python /data/pln-chess-cycle9-browser/owned-server.py
+✓ Dev server started on :18779
+  Server logs → /data/pln-chess-cycle9-clean-output/ui/2026-11-09_15-33-45_cycle-9-accepted-model-calibrated-diagno/server.log
+Opening browser...
+✓ Browser ready
+✓ Recording started
+
+✅ ProofShot session started
+
+Server:     exec /data/pln-chess-cycle6-delivery/.venv/bin/python /data/pln-chess-cycle9-browser/owned-server.py on :18779
+Browser:    Chromium (headless)
+Recording:  /data/pln-chess-cycle9-clean-output/ui/2026-11-09_15-33-45_cycle-9-accepted-model-calibrated-diagno/session.webm
+Errors log: /data/pln-chess-cycle9-clean-output/ui/2026-11-09_15-33-45_cycle-9-accepted-model-calibrated-diagno/server.log
+Verifying:  Cycle 9 accepted model, calibrated diagnostics, failure provenance, report export, temporal categories and mobile layout
+
+Use proofshot exec to navigate and test:
+  proofshot exec snapshot -i            # See interactive elements
+  proofshot exec click @e3              # Click an element
+  proofshot exec fill @e2 "text"        # Fill a form field
+  proofshot exec screenshot step.png    # Capture a moment
+
+When done, run: proofshot stop

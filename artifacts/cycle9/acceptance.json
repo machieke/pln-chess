@@ -1,0 +1,73 @@
+{
+  "accepted_legacy_model_versions": [
+    "3b14445d136a01d77dd60e5b2dca2d49f525903a85db2283f0281dc86d74859c",
+    "801834df61c75a99c3a3e1d0a91b0fc30ba6875238ba5ea0f5731fe2fe2a1a08"
+  ],
+  "accepted_model_versions": [
+    "1217e17552ff611bebf0efc650245b05fb71c93a8175b579b025d6273d5d781d",
+    "95094b3c1ec22441023cefdd5c13914a03e135611dbe6fc22f2a326bef65c8f4"
+  ],
+  "all_required_checks_executed": true,
+  "calibration_sha256": "d37bfe29461af84cdf572529990fd9d6d4125be9ca5c36a7eea528fbca655c9c",
+  "checks": {
+    "baseline": true,
+    "cache_parity": true,
+    "clean_bootstrap": true,
+    "dataset_integrity": true,
+    "evidence_replay": true,
+    "historical_regression": true,
+    "native_boundary": true,
+    "negative_controls": true,
+    "proof_provenance": true,
+    "temporal_controls": true,
+    "tests": true
+  },
+  "default_mode": "operational",
+  "legacy_registrations": {
+    "6": "cc8685591e9b460caeb0c890395d47f14aefdccbabad90d6ad7b9b093b0ccef6",
+    "7": "e86847169c3fe8b4209c4903684c9359a21a993e1edb1e83fe556a8a3783a37a",
+    "8": "e9b7566389d8d0865a5fdc2013fe81985c15646fa05d6b1b1e83f533198a96d9"
+  },
+  "model_version": "1217e17552ff611bebf0efc650245b05fb71c93a8175b579b025d6273d5d781d",
+  "native_study_production_code_hash": "ae26386448dca0d1c484188584d23b059da325a5713fadced8ef81b3d49571c9",
+  "new_cohort_errors": {
+    "operational/adversarial": {
+      "false_illegal": 0,
+      "false_positive": 0,
+      "incomplete": 0,
+      "self_check_false_legal": 0
+    },
+    "operational/calibration": {
+      "false_illegal": 0,
+      "false_positive": 0,
+      "incomplete": 0,
+      "self_check_false_legal": 0
+    },
+    "operational/development": {
+      "false_illegal": 0,
+      "false_positive": 0,
+      "incomplete": 0,
+      "self_check_false_legal": 0
+    },
+    "operational/independent-games": {
+      "false_illegal": 0,
+      "false_positive": 0,
+      "incomplete": 0,
+      "self_check_false_legal": 0
+    },
+    "operational/special-moves": {
+      "false_illegal": 0,
+      "false_positive": 0,
+      "incomplete": 0,
+      "self_check_false_legal": 0
+    }
+  },
+  "new_learning_promoted": false,
+  "passed": true,
+  "presentation_equivalence": "presentation/source-equivalence.json",
+  "production_code_hash": "e6135204b41a977d7e69722ddf46c833c1398f99ab2bf10ccc34559cd968e5a8",
+  "registration_hash": "2a446e4566e7c72188d10dd2a548057f6f852c623f34615a6a201f4869f3553f",
+  "runtime_version": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+  "scope": "Same accepted C8 checkpoint, exact historical proofs and benchmark payloads. Expanded cohorts are finite empirical diagnostics; no new model, threshold or native operator promoted.",
+  "selected_variant": "C8-promotion-relative"
+}

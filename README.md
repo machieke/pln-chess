@@ -2,6 +2,25 @@
 
 A piece-relative chess research package using **actual native MeTTa PLN** rules. It includes a pinned runtime audit, six-piece candidate grammar, structural special-move states, append-only evidence, native revision learning, inference/proof APIs, CLI, local inspector, datasets, tests, ablations and measured reports.
 
+Cycle 9 retains the accepted C8 checkpoint and adds performance consolidation,
+independent game and adversarial evaluation, empirical calibration diagnostics,
+temporal provenance categories, and a formal composition decision. Start with the
+[executive summary](docs/cycle9/executive-summary.md),
+[engineering report](docs/cycle9/engineering-report.md),
+[14-package matrix](docs/cycle9/package-matrix.md), and
+[reproduction instructions](docs/cycle9/reproduction.md).
+Calibration remains outside native inference; supported positive classifications
+still carry partial proofs. The [architecture decision](docs/cycle9/architecture-decision.md)
+does not authorize a new production operator. Cycle 9 delivery uses local commits
+only, as required by its brief.
+
+```bash
+C9_OUT=/data/pln-chess-cycle9-output bash scripts/cycle9_reproduce.sh
+.venv/bin/pln-chess research-report --section summary
+.venv/bin/pln-chess calibration-export --output /tmp/cycle9-calibration.json
+.venv/bin/pln-chess serve --port 8765
+```
+
 Cycle 8 adds learned relative promotion transitions, destination-aware evidence,
 inspector comparisons of four checkpoints, and a separate mathematical proposal for
 native multi-premise composition. Read the [engineering report](docs/cycle8/final-report.md),

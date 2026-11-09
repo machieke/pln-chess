@@ -1,0 +1,114 @@
+{
+  "actual_export": {
+    "bytes": 1076623,
+    "characters": 1076623,
+    "sha256": "bbaad28026639fa689d0f01c9cea18b4f2bff7054cf6f4cc4776a1b8ca394815"
+  },
+  "checks": [
+    {
+      "case": "accepted-model-and-distinct-calibration",
+      "result": {
+        "diagnostic": "{\n  \"model_version\": \"1217e17552ff611bebf0efc650245b05fb71c93a8175b579b025d6273d5d781d\",\n  \"runtime_version\": \"4405956947c4b53c7ff01bd565aa3b114bc970a1\",\n  \"mode\": \"operational\",\n  \"calibrated\": {\n    \"available\": true,\n    \"native\": false,\n    \"changes_classification\": false,\n    \"estimated_legal_frequency\": 0.9996033320111067,\n    \"calibration_bin_count\": 2519,\n    \"calibration_bin_legal\": 2519,\n    \"population\": \"in-board\",\n    \"fit_games\": 20,\n    \"fit_positions\": 100,\n    \"fit_split\": \"calibration\",\n    \"dataset_hash\": \"981ff3c291df7f98766f1d9b37291416911b294b3874ae4b05aa8aed182fe2d2\",\n    \"model_version\": \"1217e17552ff611bebf0efc650245b05fb71c93a8175b579b025d6273d5d781d\",\n    \"scope\": \"Frequency estimate from separate synthetic calibration games; not a native STV or proof of legality. Distribution shift remains possible.\"\n  },\n  \"temporal_categories\": {\n    \"schema\": \"temporal-epistemics-v9\",\n    \"source_receipt_id\": \"b3728f953f20bc5b4d4ffc023752ff70001e065b8bbac082a9fa88edaaf48a17\",\n    \"source_schema\": \"history-v6.1\",\n    \"directly_observed_events\": [],\n    \"trusted_state_metadata\": [],\n    \"inferred_historical_conditions\": [],\n    \"unverified_fen_metadata\": {\n      \"rights\": \"-\",\n      \"ep\": null\n    },\n    \"status\": \"unknown\",\n    \"conflicts\": [],\n    \"scope\": \"Diagnostic provenance categories only; existing native evidence and classification are unchanged.\",\n    \"id\": \"1f59d7c3883608eee65d2403c97ca4c1f5d69176ffaeb9db8f3c6b3b7092758e\"\n  }\n}",
+        "status": "1 candidate(s) \u00b7 53 native invocations \u00b7 0.963 s \u00b7 truncated: false",
+        "summary": "supported-legaloperationallearned-conditionalstrength 0.998361confidence 0.930417native-partial / evidence-supported"
+      }
+    },
+    {
+      "case": "cohort-table",
+      "result": {
+        "rows": 9,
+        "status": "Recorded summary loaded \u00b7 52649f8b5fa8bd94ee2afe26a32f2610fdcba327c26b8b2ee2a52d31541b1344"
+      }
+    },
+    {
+      "case": "failure-native-proof-navigation",
+      "proof_hash": "93448525938bee27ceeb92e7ebcbf7ca62bccfee2f00068f0980c940bc152ff3"
+    },
+    {
+      "case": "archived-position-reinference",
+      "recorded_proof_hash": "93448525938bee27ceeb92e7ebcbf7ca62bccfee2f00068f0980c940bc152ff3",
+      "result": {
+        "fen": "r1b1kb2/1pp1n2r/3p1p2/p5p1/q3P1P1/R1NP3P/2P3K1/1NB4R w - - 0 25",
+        "mode": "experimental",
+        "move": "e4e5",
+        "status": "1 candidate(s) \u00b7 76 native invocations \u00b7 0.993 s \u00b7 truncated: false",
+        "summary": "unknownexperimentalunknownstrength 0.996732confidence 0.877762insufficient-native-proof"
+      }
+    },
+    {
+      "case": "recorded-performance",
+      "result": {
+        "available": true,
+        "model_version": "1217e17552ff611bebf0efc650245b05fb71c93a8175b579b025d6273d5d781d",
+        "native": false,
+        "section": "performance"
+      }
+    },
+    {
+      "case": "recorded-identity",
+      "result": {
+        "available": true,
+        "model_version": "1217e17552ff611bebf0efc650245b05fb71c93a8175b579b025d6273d5d781d",
+        "native": false,
+        "section": "identity"
+      }
+    },
+    {
+      "case": "actual-calibration-export",
+      "result": {
+        "bytes": 1076623,
+        "characters": 1076623,
+        "sha256": "bbaad28026639fa689d0f01c9cea18b4f2bff7054cf6f4cc4776a1b8ca394815"
+      }
+    },
+    {
+      "case": "strict-distinction",
+      "result": {
+        "diagnostic": "{\n  \"model_version\": \"1217e17552ff611bebf0efc650245b05fb71c93a8175b579b025d6273d5d781d\",\n  \"runtime_version\": \"4405956947c4b53c7ff01bd565aa3b114bc970a1\",\n  \"mode\": \"strict\",\n  \"calibrated\": {\n    \"available\": false,\n    \"native\": false,\n    \"changes_classification\": false,\n    \"reason\": \"Calibration was fit for operational diagnostics only\"\n  },\n  \"temporal_categories\": {\n    \"schema\": \"temporal-epistemics-v9\",\n    \"source_receipt_id\": \"b3728f953f20bc5b4d4ffc023752ff70001e065b8bbac082a9fa88edaaf48a17\",\n    \"source_schema\": \"history-v6.1\",\n    \"directly_observed_events\": [],\n    \"trusted_state_metadata\": [],\n    \"inferred_historical_conditions\": [],\n    \"unverified_fen_metadata\": {\n      \"rights\": \"-\",\n      \"ep\": null\n    },\n    \"status\": \"unknown\",\n    \"conflicts\": [],\n    \"scope\": \"Diagnostic provenance categories only; existing native evidence and classification are unchanged.\",\n    \"id\": \"1f59d7c3883608eee65d2403c97ca4c1f5d69176ffaeb9db8f3c6b3b7092758e\"\n  }\n}",
+        "status": "1 candidate(s) \u00b7 53 native invocations \u00b7 1.015 s \u00b7 truncated: false",
+        "summary": "unknownstrictunknownstrength 0.998361confidence 0.930417insufficient-native-proof"
+      }
+    },
+    {
+      "case": "incomplete-boundary",
+      "result": {
+        "diagnostic": "{\n  \"model_version\": \"1217e17552ff611bebf0efc650245b05fb71c93a8175b579b025d6273d5d781d\",\n  \"runtime_version\": \"4405956947c4b53c7ff01bd565aa3b114bc970a1\",\n  \"mode\": \"operational\",\n  \"calibrated\": {\n    \"available\": false,\n    \"native\": false,\n    \"changes_classification\": false,\n    \"reason\": \"Inference is incomplete\"\n  },\n  \"temporal_categories\": {\n    \"schema\": \"temporal-epistemics-v9\",\n    \"source_receipt_id\": \"b3728f953f20bc5b4d4ffc023752ff70001e065b8bbac082a9fa88edaaf48a17\",\n    \"source_schema\": \"history-v6.1\",\n    \"directly_observed_events\": [],\n    \"trusted_state_metadata\": [],\n    \"inferred_historical_conditions\": [],\n    \"unverified_fen_metadata\": {\n      \"rights\": \"-\",\n      \"ep\": null\n    },\n    \"status\": \"unknown\",\n    \"conflicts\": [],\n    \"scope\": \"Diagnostic provenance categories only; existing native evidence and classification are unchanged.\",\n    \"id\": \"1f59d7c3883608eee65d2403c97ca4c1f5d69176ffaeb9db8f3c6b3b7092758e\"\n  }\n}",
+        "status": "1 candidate(s) \u00b7 0 native invocations \u00b7 0.143 s \u00b7 truncated: true",
+        "summary": "incompleteoperationalincompletestrength 0.500000confidence 0.000000incomplete"
+      }
+    },
+    {
+      "case": "temporal-metadata-distinction",
+      "schema": "temporal-epistemics-v9"
+    },
+    {
+      "case": "invalid-input-clears-live-diagnostics",
+      "result": {
+        "diagnostic": "",
+        "status": "Error: Expected property name or '}' in JSON at position 1 (line 1 column 2)",
+        "summary": ""
+      }
+    },
+    {
+      "case": "mobile-layout",
+      "result": {
+        "height": 844,
+        "scrollWidth": 375,
+        "width": 390
+      }
+    }
+  ],
+  "errors": {
+    "console": 0,
+    "server": 0
+  },
+  "passed": true,
+  "server_cleanup": {
+    "ownership_token_matched": true,
+    "pgid": 2266239,
+    "pid": 2266239,
+    "port_closed": true
+  },
+  "session_dir": "ui/2026-11-09_15-33-45_cycle-9-accepted-model-calibrated-diagno",
+  "source_hash": "e6135204b41a977d7e69722ddf46c833c1398f99ab2bf10ccc34559cd968e5a8"
+}
