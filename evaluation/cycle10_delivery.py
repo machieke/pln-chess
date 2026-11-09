@@ -29,8 +29,13 @@ def run(out,docs):
     if docs!=originals.resolve():
         for name in ('dataset-provenance','study-protocol','strategic-readiness','architecture-decision','reproduction','work-log'):
             content=(originals/(name+'.md')).read_text()
+            for directory in ('development','ui-preview'):
+                content=content.replace('../../artifacts/cycle10/'+directory+'/',
+                    os.path.relpath(ROOT/'artifacts/cycle10'/directory,docs)+'/')
             content=content.replace('../../artifacts/cycle10/',os.path.relpath(out,docs)+'/')
             content=content.replace('../../src/',os.path.relpath(ROOT/'src',docs)+'/')
+            content=content.replace('../../configs/',os.path.relpath(ROOT/'configs',docs)+'/')
+            content=content.replace('../cycle9/',os.path.relpath(ROOT/'docs/cycle9',docs)+'/')
             (docs/(name+'.md')).write_text(content)
     get=lambda p:read_json(out/p)
     frozen=get('analysis/frozen-summary.json');temporal=get('analysis/temporal-summary.json')
