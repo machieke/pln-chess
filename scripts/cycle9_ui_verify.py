@@ -19,7 +19,9 @@ from pln_chess.cycle6.inference import production_code_hash
 def run(out,work,port=18779):
     out=Path(out).resolve();work=Path(work).resolve();work.mkdir(parents=True,exist_ok=True)
     assert read_json(out/'acceptance.json')['passed']
-    with socket.socket() as check:check.bind(('127.0.0.1',port))
+    with socket.socket() as check:
+        check.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
+        check.bind(('127.0.0.1',port))
     proof=out/'ui';proof.mkdir(exist_ok=True);(out/'ui-verification.json').unlink(missing_ok=True)
     write_json(work/'proofshot.config.json',dict(output=str(proof),viewport=dict(width=1280,height=900)))
     env=dict(os.environ,C9_OUT=str(out),TMPDIR='/dev/shm',AGENT_BROWSER_SESSION='pln-chess-cycle9-'+uuid.uuid4().hex[:12]);env.pop('C8_OUT',None)
@@ -69,13 +71,24 @@ def run(out,work,port=18779):
         assert failures['data']['proof_trace'] and failures['data']['row']['evidence_ids']
         checks.append(dict(case='failure-native-proof-navigation',proof_hash=failures['data']['row']['proof_id']))
         cmd('exec','screenshot','failure-proof.png')
-        calibration=ev("(async()=>{document.getElementById('c9-calibration').click();while(document.getElementById('c9-calibration').disabled)await new Promise(r=>setTimeout(r,100));return JSON.parse(document.getElementById('c9-detail').textContent)})()")
-        assert calibration['native'] is False and calibration['data']['fit_games']==20
+        revisited=ev("(async()=>{document.getElementById('c9-use').click();while(document.getElementById('run').disabled)await new Promise(r=>setTimeout(r,100));return {fen:document.getElementById('fen').value,move:document.getElementById('move').value,mode:document.getElementById('mode').value,status:document.getElementById('status').textContent,summary:document.getElementById('summary').textContent}})()")
+        recorded=failures['data']['row']
+        assert all(revisited[k]==recorded[k] for k in ('fen','move','mode'))
+        assert recorded['classification'] in revisited['summary'] and not revisited['status'].startswith('Error:')
+        checks.append(dict(case='archived-position-reinference',result=revisited,recorded_proof_hash=recorded['proof_id']))
+        cmd('exec','screenshot','reopened-failure-position.png')
+        for button,section in [('c9-performance','performance'),('c9-identity','identity')]:
+            loaded_report=ev("(async()=>{const b=document.getElementById("+json.dumps(button)+");b.click();while(b.disabled)await new Promise(r=>setTimeout(r,100));const d=JSON.parse(document.getElementById('c9-detail').textContent);return {section:d.section,available:d.available,native:d.native,model_version:d.data.model_version}})()")
+            assert loaded_report['section']==section and loaded_report['available'] and loaded_report['native'] is False
+            assert loaded_report['model_version']==read_json(out/'acceptance.json')['model_version']
+            checks.append(dict(case='recorded-'+section,result=loaded_report))
+        calibration=ev("(async()=>{document.getElementById('c9-calibration').click();while(document.getElementById('c9-calibration').disabled)await new Promise(r=>setTimeout(r,100));const d=JSON.parse(document.getElementById('c9-detail').textContent);return {native:d.native,fit_games:d.data.fit_games}})()")
+        assert calibration['native'] is False and calibration['fit_games']==20
         export=ev("(async()=>{const old=URL.createObjectURL.bind(URL);URL.createObjectURL=b=>{window.c9Blob=b;return old(b)};document.getElementById('c9-export').click();window.c9Text=await window.c9Blob.text();const bytes=new TextEncoder().encode(window.c9Text);const hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))).map(x=>x.toString(16).padStart(2,'0')).join('');return {bytes:bytes.length,characters:window.c9Text.length,sha256:hash}})()")
         raw=''.join(ev(f'window.c9Text.slice({i},{i+100000})') for i in range(0,export['characters'],100000)).encode()
         assert hashlib.sha256(raw).hexdigest()==export['sha256'];assert json.loads(raw)['section']=='calibration'
         (proof/'browser-calibration-export.json').write_bytes(raw);checks.append(dict(case='actual-calibration-export',result=export))
-        strict=submit(mode='strict');assert 'unknown' in strict['summary'] and not json.loads(strict['diagnostic'])['calibrated']['available']
+        strict=submit(mode='strict',model='C8-default',fen='7k/8/8/8/8/8/2R5/2K5 w - - 0 1',move='c2e2',history='{}',**{'temporal-mode':'fen-only','max-invocations':20000});assert 'unknown' in strict['summary'] and not json.loads(strict['diagnostic'])['calibrated']['available']
         checks.append(dict(case='strict-distinction',result=strict))
         incomplete=submit(mode='operational',**{'max-invocations':0});assert 'incomplete' in incomplete['summary']
         assert not json.loads(incomplete['diagnostic'])['calibrated']['available'];checks.append(dict(case='incomplete-boundary',result=incomplete))
@@ -86,8 +99,9 @@ def run(out,work,port=18779):
         checks.append(dict(case='invalid-input-clears-live-diagnostics',result=invalid))
         submit(history='{}',**{'temporal-mode':'fen-only'});viewport(390,844)
         mobile=ev("document.getElementById('c9-study').scrollIntoView();({width:innerWidth,height:innerHeight,scrollWidth:document.documentElement.scrollWidth})")
-        assert mobile['width']==390 and mobile['scrollWidth']<=390
-        cmd('exec','screenshot','mobile-study.png');checks.append(dict(case='mobile-layout',result=mobile));cmd('exec','snapshot','-i')
+        write_json(proof/'mobile-layout.json',mobile);cmd('exec','screenshot','mobile-study.png')
+        assert mobile['width']==390 and mobile['scrollWidth']<=390,mobile
+        checks.append(dict(case='mobile-layout',result=mobile));cmd('exec','snapshot','-i')
     finally:
         try:
             if session:
