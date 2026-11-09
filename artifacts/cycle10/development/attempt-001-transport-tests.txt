@@ -1,0 +1,54 @@
+.....................F..                                                 [100%]
+=================================== FAILURES ===================================
+__ test_temporal_receipt_survives_json_and_retains_nonlegal_structural_scope ___
+
+    def test_temporal_receipt_survives_json_and_retains_nonlegal_structural_scope():
+        # Structural replay can represent an illegal rook move. It must not certify it.
+>       history=replay('7k/8/8/8/8/8/2R5/2K5 w - - 0 1',['c2d3'],source='supplied-unverified-sequence')
+
+tests/test_cycle10_interfaces.py:71: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+initial_fen = '7k/8/8/8/8/8/2R5/2K5 w - - 0 1', moves = ['c2d3']
+
+    def replay(initial_fen,moves,*,source,dependence_group=None,confidence=.99,
+               initial_trust='unknown',complete=False,model_version=None,runtime_version=None,expected_fen=None):
+        if not isinstance(source,str) or not source.strip():raise ValueError('A historical evidence source is required')
+        if dependence_group is not None and (not isinstance(dependence_group,str) or not dependence_group.strip()):
+            raise ValueError('Invalid history dependence group')
+        if isinstance(confidence,bool) or not isinstance(confidence,(int,float)) or not math.isfinite(confidence) or not 0<=confidence<1:
+            raise ValueError('History confidence must be finite and in [0,1)')
+        if initial_trust not in TRUST:raise ValueError('Unknown initial history trust policy')
+        if type(complete) is not bool:raise ValueError('Complete-record flag must be boolean')
+        if not isinstance(moves,(list,tuple)) or len(moves)>4096 or any(not isinstance(m,str) for m in moves):
+            raise ValueError('History must contain at most 4096 supplied UCI events')
+        for value in (model_version,runtime_version):
+            if value is not None and (not isinstance(value,str) or not value):raise ValueError('Invalid model or runtime identity')
+        state=Position.from_fen(initial_fen);initial_fen=state.fen()
+        if initial_trust=='attested-standard-start' and initial_fen!=STANDARD_FEN:
+            raise ValueError('Standard-start attestation requires the standard initial state')
+        expected_fen=Position.from_fen(expected_fen).fen() if expected_fen is not None else None
+        dependence_group=dependence_group or source
+        supplied=dict(initial_fen=initial_fen,moves=list(moves),source=source,dependence_group=dependence_group,
+            confidence=float(confidence),initial_trust=initial_trust,complete=complete,
+            model_version=model_version,runtime_version=runtime_version,expected_fen=expected_fen)
+        events=[];propositions=[]
+        def proposition(predicate,epistemic_type,value,event_ids=()):
+            record=dict(predicate=predicate,epistemic_type=epistemic_type,value=value,source=source,
+                dependence_group=dependence_group,event_ids=list(event_ids),truth_value=None,
+                scope='Provenance relation only; no additional native PLN conclusion or computed probability.')
+            record['id']=digest(record);propositions.append(record)
+        proposition('HistoricalEvidenceSource','supplied-provenance',source)
+        proposition('HistoryConfidence','supplied-trust-policy',float(confidence))
+        proposition('InitialStateMetadata','unknown-history' if initial_trust=='unknown' else 'trusted-imported-metadata',
+            dict(fen=initial_fen,trust=initial_trust))
+        from pln_chess.api import find_move
+        for sequence,notation in enumerate(moves,1):
+            move=find_move(state,notation)
+>           if move is None:raise ValueError(f'Event {sequence} is outside the structural candidate grammar')
+E           ValueError: Event 1 is outside the structural candidate grammar
+
+src/pln_chess/cycle10/temporal.py:50: ValueError
+=========================== short test summary info ============================
+FAILED tests/test_cycle10_interfaces.py::test_temporal_receipt_survives_json_and_retains_nonlegal_structural_scope
+1 failed, 23 passed in 0.56s

@@ -165,7 +165,7 @@ def calibration(out):
                 if subset:confidence_bins.append(dict(bin=index,n=len(subset),mean_native_confidence=sum(r['truth_value']['confidence'] for r in subset)/len(subset),
                     legal_frequency=sum(r['label'] for r in subset)/len(subset),scope='Association diagnostic; confidence is not a legality probability.'))
             results[population+'/'+name]=dict(measurements=measurements,confidence_bins=confidence_bins,selective=selective(selected))
-    write_json(out/'calibration/results.json',dict(schema=10,diagnostic_only=True,changes_classification=False,
+    write_json(out/'calibration/results.json',dict(schema=10,diagnostic_only=True,changes_classification=False,fitted_unix=time.time(),
         model_version=old['model_version'],frozen_mapping=old['mappings'],external_mapping=mappings,
         fit_split='external-calibration',fit_games=len({r['source_game'] for r in calibration_rows}),fit_positions=len({r['fixture'] for r in calibration_rows}),
         dataset_hash=read_json(out/'datasets/dataset.json')['hash'],frozen_calibration_hash=digest(old),results=results,

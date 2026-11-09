@@ -19,6 +19,28 @@ def research_report(section='summary'):
     return report(section)
 
 
+def external_report(section='summary',arm='frozen'):
+    """Recorded external evaluations, source provenance and model comparisons."""
+    from pln_chess.cycle10.diagnostics import report
+    return report(section,arm)
+
+
+def replay_history(initial_fen,moves,**provenance):
+    """Replay supplied events without consulting a chess legality oracle."""
+    from pln_chess.cycle10.temporal import replay
+    return replay(initial_fen,moves,**provenance)
+
+
+def replay_recorded_game(game_id,ply=None):
+    from pln_chess.cycle10.diagnostics import recorded_history
+    return recorded_history(game_id,ply)
+
+
+def compare_external_models(position,move,mode='operational',history=None,runtime=None):
+    from pln_chess.cycle10.api import compare_external
+    return compare_external(position,move,mode,history,runtime)
+
+
 def inspect_temporal_v9(position,mode='fen-only',evidence=None):
     from pln_chess.cycle9.temporal import inspect
     return inspect(position,mode,evidence)

@@ -28,6 +28,8 @@ $('experiments').addEventListener('click',async()=>{try{const r=await fetch('/ex
 
 from pln_chess.cli.web9 import extend as extend_research_inspector
 HTML=extend_research_inspector(HTML)
+from pln_chess.cli.web10 import extend as extend_external_inspector
+HTML=extend_external_inspector(HTML)
 
 
 def inspector_infer(payload,checkpoint=None):
@@ -40,10 +42,12 @@ def inspector_infer(payload,checkpoint=None):
     cycle8_out=Path(os.environ.get('C8_OUT',ROOT/'artifacts/cycle8'))
     paths['C8-experimental']=cycle8_out/'model/C8-promotion-relative.json'
     paths['C8-default']=cycle8_out/'model/C8-default.json'
+    from pln_chess.cycle10.diagnostics import output_root
+    paths.update({'C10-'+arm:output_root()/f'adaptation/model/{arm}.json' for arm in ('small','large')})
     name=payload.get('model','default')
     if name not in paths:raise ValueError('Unknown representation selector')
     default_schema=read_json(checkpoint).get('schema') if name=='default' and isinstance(checkpoint,(str,Path)) else getattr(checkpoint,'schema',None)
-    if name in ('C8-experimental','C8-default') or (name=='default' and default_schema==8):
+    if name in ('C8-experimental','C8-default','C10-small','C10-large') or (name=='default' and default_schema==8):
         from pln_chess.cycle8.inference import Cycle8Options,default_mode
         from pln_chess.cycle8.model import PromotionModel
         from pln_chess.cycle8.api import compare_generations
@@ -51,6 +55,9 @@ def inspector_infer(payload,checkpoint=None):
         options=Cycle8Options(mode=payload.get('mode') or default_mode(selected),temporal_mode=payload.get('temporal_mode','fen-only'),temporal_evidence=payload.get('temporal_evidence'),max_native_invocations=int(payload.get('max_invocations',20000)))
         if payload.get('compare'):
             if not payload.get('move'):raise ValueError('Choose one move for comparison')
+            if name.startswith('C10-'):
+                from pln_chess.cycle10.api import compare_external
+                return compare_external(payload['fen'],payload['move'],options.mode,options=options)
             return compare_generations(payload['fen'],payload['move'],paths['C8-experimental'],options.mode,options=options)
         if payload.get('batch') is not None:
             from pln_chess.api import analyze_batch
@@ -120,6 +127,19 @@ def serve(port=8765,checkpoint=None):
         def do_GET(self):
             from urllib.parse import urlsplit,parse_qs
             url=urlsplit(self.path)
+            if url.path in ('/cycle10','/cycle10-proof','/cycle10-control','/cycle10-games','/cycle10-game'):
+                from pln_chess.cycle10.diagnostics import report,failure_proof,temporal_control,game_index,recorded_history
+                try:
+                    query=parse_qs(url.query)
+                    if url.path=='/cycle10':result=report(query.get('section',['summary'])[0],query.get('arm',['frozen'])[0])
+                    elif url.path=='/cycle10-proof':result=failure_proof(int(query.get('index',['-1'])[0]),query.get('arm',['frozen'])[0])
+                    elif url.path=='/cycle10-control':result=temporal_control(int(query.get('index',['-1'])[0]))
+                    elif url.path=='/cycle10-games':result=game_index()
+                    else:result=recorded_history(query.get('game',[''])[0],int(query['ply'][0]) if 'ply' in query else None)
+                    code=200
+                except (ValueError,FileNotFoundError) as error:result={'error':str(error)};code=400
+                payload=json.dumps(result).encode();self.send_response(code)
+                self.send_header('Content-Type','application/json');self.send_header('Content-Length',str(len(payload)));self.end_headers();self.wfile.write(payload);return
             if url.path in ('/cycle9','/cycle9-proof'):
                 from pln_chess.cycle9.diagnostics import report,failure_proof
                 try:
@@ -144,14 +164,25 @@ def serve(port=8765,checkpoint=None):
             payload=HTML.encode();self.send_response(200);self.send_header('Content-Type','text/html; charset=utf-8');self.send_header('Content-Length',str(len(payload)));self.end_headers();self.wfile.write(payload)
 
         def do_POST(self):
-            if self.path!='/infer': self.send_error(404);return
+            if self.path not in ('/infer','/cycle10-compare','/cycle10-replay'): self.send_error(404);return
             try:
                 length=int(self.headers.get('Content-Length',0))
-                if not 0<length<=16384: raise ValueError('Request body is too large or empty')
+                if not 0<length<=(65536 if self.path=='/cycle10-replay' else 16384): raise ValueError('Request body is too large or empty')
                 payload=json.loads(self.rfile.read(length))
-                result=inspector_infer(payload,checkpoint)
+                if self.path=='/cycle10-compare':
+                    from pln_chess.cycle10.api import compare_external
+                    from pln_chess.cycle8.inference import Cycle8Options
+                    options=Cycle8Options(mode=payload.get('mode','operational'),temporal_mode=payload.get('temporal_mode','fen-only'),
+                        temporal_evidence=payload.get('temporal_evidence'),max_native_invocations=int(payload.get('max_invocations',20000)))
+                    result=compare_external(payload['fen'],payload['move'],options.mode,options=options)
+                elif self.path=='/cycle10-replay':
+                    from pln_chess.cycle10.temporal import replay
+                    result=replay(**payload)
+                else:result=inspector_infer(payload,checkpoint)
                 from pln_chess.cycle9.diagnostics import decorate_inspection
                 result=decorate_inspection(result)
+                from pln_chess.cycle10.diagnostics import decorate_inspection as decorate_external
+                result=decorate_external(result)
                 code=200
             except Exception as error:
                 result={'error':str(error)};code=400

@@ -20,6 +20,11 @@ def main(argv=None):
     default_checkpoint=latest if latest.exists() else ROOT/'artifacts/model.json'
     parser=argparse.ArgumentParser(prog='pln-chess',description='Piece-relative native PLN research inspector')
     sub=parser.add_subparsers(dest='command',required=True)
+    p=sub.add_parser('external-report');p.add_argument('--section',choices=('summary','provenance','failures','calibration','comparisons','dependence','temporal','performance','identity','architecture'),default='summary')
+    p.add_argument('--arm',choices=('frozen','small','large','temporal'),default='frozen');p.add_argument('--output')
+    p=sub.add_parser('history-import-pgn');p.add_argument('--input',required=True);p.add_argument('--source',required=True);p.add_argument('--limit',type=int,default=1000);p.add_argument('--output',required=True)
+    p=sub.add_parser('history-replay');p.add_argument('--input');p.add_argument('--game-id');p.add_argument('--ply',type=int);p.add_argument('--output')
+    p=sub.add_parser('compare-external');p.add_argument('--fen',required=True);p.add_argument('--move',required=True);p.add_argument('--mode',choices=('operational','strict','experimental'),default='operational');p.add_argument('--history');p.add_argument('--output')
     p=sub.add_parser('research-report');p.add_argument('--section',choices=('summary','calibration','failures','performance','temporal','identity'),default='summary');p.add_argument('--output')
     p=sub.add_parser('calibration-export');p.add_argument('--output',required=True)
     p=sub.add_parser('temporal-inspect-v9');p.add_argument('--fen',required=True);p.add_argument('--mode',choices=('fen-only','trusted-metadata','event-backed'),default='fen-only');p.add_argument('--history')
@@ -67,7 +72,42 @@ def main(argv=None):
     p=sub.add_parser('serve'); p.add_argument('--port',type=int,default=8765); p.add_argument('--checkpoint',default=str(default_checkpoint))
     args=parser.parse_args(argv)
     try:
-        if args.command in ('research-report','calibration-export'):
+        if args.command=='external-report':
+            from pln_chess.cycle10.diagnostics import report
+            result=report(args.section,args.arm)
+            if args.output:write_json(args.output,result)
+        elif args.command=='history-import-pgn':
+            from training.cycle10_import import import_pgn
+            result=import_pgn(args.input,args.source,args.limit);write_json(args.output,result)
+            result=dict(output=args.output,games=len(result['games']),complete_games=result['complete_games'],oracle_scope=result['oracle_scope'])
+        elif args.command=='history-replay':
+            from pln_chess.cycle10.temporal import replay,replay_game
+            from pln_chess.cycle10.diagnostics import recorded_history
+            if args.input:
+                payload=read_json(args.input)
+                if 'games' in payload:
+                    games=payload['games']
+                    if args.game_id:game=next((g for g in games if g['id']==args.game_id),None)
+                    elif len(games)==1:game=games[0]
+                    else:raise ValueError('Select a game ID when the prepared file contains multiple games')
+                    if game is None:raise ValueError('Unknown prepared game ID')
+                    from pln_chess.cycle8.model import PromotionModel
+                    runtime=Runtime();model=PromotionModel.load(cycle8_out/'model/C8-promotion-relative.json',runtime)
+                    result=replay_game(game,len(game['moves']) if args.ply is None else args.ply,model.version,runtime.version)
+                else:
+                    supplied=payload['input'] if payload.get('schema')=='temporal-transport-v10' else payload
+                    if args.ply is not None:
+                        if not 0<=args.ply<=len(supplied['moves']):raise ValueError('Ply is outside the supplied history')
+                        supplied={**supplied,'moves':supplied['moves'][:args.ply],'complete':False,'expected_fen':None}
+                    result=replay(**supplied)
+            elif args.game_id:result=recorded_history(args.game_id,args.ply)
+            else:raise ValueError('Supply an event JSON file or a recorded game ID')
+            if args.output:write_json(args.output,result)
+        elif args.command=='compare-external':
+            from pln_chess.cycle10.api import compare_external
+            result=compare_external(args.fen,args.move,args.mode,read_json(args.history) if args.history else None)
+            if args.output:write_json(args.output,result)
+        elif args.command in ('research-report','calibration-export'):
             from pln_chess.cycle9.diagnostics import report
             result=report('calibration' if args.command=='calibration-export' else args.section)
             if args.output:
