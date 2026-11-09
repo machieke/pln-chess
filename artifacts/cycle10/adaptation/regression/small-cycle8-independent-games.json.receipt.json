@@ -1,0 +1,813 @@
+{
+  "artifact": "adaptation/regression/small-cycle8-independent-games.json.xz",
+  "before_metrics": {
+    "abstention_rate": 0.011840324763193522,
+    "candidates": 2956,
+    "classification_counts": {
+      "supported-illegal": 2365,
+      "supported-legal": 556,
+      "unknown": 35
+    },
+    "coverage": 0.9881596752368065,
+    "empty_terminal_exact": 0,
+    "exact_move_set_accuracy": 1.0,
+    "f1": 1.0,
+    "false_illegal": 0,
+    "false_legal_rate": 0.0,
+    "false_negative_including_abstention": 0,
+    "false_positive": 0,
+    "grounded_atoms": 245703,
+    "in_board_only": {
+      "abstention_rate": 0.0224646983311938,
+      "candidates": 1558,
+      "coverage": 0.9775353016688062,
+      "exact_move_set_accuracy": 1.0,
+      "f1": 1.0,
+      "false_illegal": 0,
+      "false_legal_rate": 0.0,
+      "false_negative_including_abstention": 0,
+      "false_positive": 0,
+      "grounded_atoms": 245703,
+      "incomplete": 0,
+      "incomplete_positions": 0,
+      "latency_seconds": {
+        "p50": 5.654547888785601,
+        "p95": 7.476869068108499,
+        "p99": 7.476869068108499
+      },
+      "native_invocations": 7321,
+      "precision": 1.0,
+      "recall": 1.0,
+      "selective_accuracy": 1.0,
+      "self_check_false_legal": 0,
+      "true_negative": 967,
+      "true_positive": 556,
+      "unknown": 35
+    },
+    "incomplete": 0,
+    "incomplete_positions": 0,
+    "latency_seconds": {
+      "p50": 5.654547888785601,
+      "p95": 7.476869068108499,
+      "p99": 7.476869068108499
+    },
+    "native_invocations": 7321,
+    "nonempty_exact": 16,
+    "per_family": {
+      "game/caro-kann": {
+        "abstention_rate": 0.01051939513477973,
+        "candidates": 1521,
+        "coverage": 0.9894806048652203,
+        "exact_move_set_accuracy": 1.0,
+        "f1": 1.0,
+        "false_illegal": 0,
+        "false_legal_rate": 0.0,
+        "false_negative_including_abstention": 0,
+        "false_positive": 0,
+        "grounded_atoms": 128532,
+        "incomplete": 0,
+        "incomplete_positions": 0,
+        "latency_seconds": {
+          "p50": 6.494874273426831,
+          "p95": 7.476869068108499,
+          "p99": 7.476869068108499
+        },
+        "native_invocations": 3757,
+        "precision": 1.0,
+        "recall": 1.0,
+        "selective_accuracy": 1.0,
+        "self_check_false_legal": 0,
+        "true_negative": 1243,
+        "true_positive": 262,
+        "unknown": 16
+      },
+      "game/scandinavian": {
+        "abstention_rate": 0.013240418118466879,
+        "candidates": 1435,
+        "coverage": 0.9867595818815331,
+        "exact_move_set_accuracy": 1.0,
+        "f1": 1.0,
+        "false_illegal": 0,
+        "false_legal_rate": 0.0,
+        "false_negative_including_abstention": 0,
+        "false_positive": 0,
+        "grounded_atoms": 117171,
+        "incomplete": 0,
+        "incomplete_positions": 0,
+        "latency_seconds": {
+          "p50": 5.53254865296185,
+          "p95": 6.949309554882348,
+          "p99": 6.949309554882348
+        },
+        "native_invocations": 3564,
+        "precision": 1.0,
+        "recall": 1.0,
+        "selective_accuracy": 1.0,
+        "self_check_false_legal": 0,
+        "true_negative": 1122,
+        "true_positive": 294,
+        "unknown": 19
+      }
+    },
+    "per_piece": {
+      "Bishop": {
+        "abstention_rate": 0.009316770186335366,
+        "candidates": 644,
+        "coverage": 0.9906832298136646,
+        "exact_move_set_accuracy": null,
+        "f1": 1.0,
+        "false_illegal": 0,
+        "false_legal_rate": 0.0,
+        "false_negative_including_abstention": 0,
+        "false_positive": 0,
+        "grounded_atoms": 0,
+        "incomplete": 0,
+        "incomplete_positions": 0,
+        "latency_seconds": {
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "native_invocations": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "selective_accuracy": 1.0,
+        "self_check_false_legal": 0,
+        "true_negative": 547,
+        "true_positive": 91,
+        "unknown": 6
+      },
+      "King": {
+        "abstention_rate": 0.025000000000000022,
+        "candidates": 160,
+        "coverage": 0.975,
+        "exact_move_set_accuracy": null,
+        "f1": 1.0,
+        "false_illegal": 0,
+        "false_legal_rate": 0.0,
+        "false_negative_including_abstention": 0,
+        "false_positive": 0,
+        "grounded_atoms": 0,
+        "incomplete": 0,
+        "incomplete_positions": 0,
+        "latency_seconds": {
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "native_invocations": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "selective_accuracy": 1.0,
+        "self_check_false_legal": 0,
+        "true_negative": 110,
+        "true_positive": 46,
+        "unknown": 4
+      },
+      "Knight": {
+        "abstention_rate": 0.019230769230769273,
+        "candidates": 208,
+        "coverage": 0.9807692307692307,
+        "exact_move_set_accuracy": null,
+        "f1": 1.0,
+        "false_illegal": 0,
+        "false_legal_rate": 0.0,
+        "false_negative_including_abstention": 0,
+        "false_positive": 0,
+        "grounded_atoms": 0,
+        "incomplete": 0,
+        "incomplete_positions": 0,
+        "latency_seconds": {
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "native_invocations": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "selective_accuracy": 1.0,
+        "self_check_false_legal": 0,
+        "true_negative": 116,
+        "true_positive": 88,
+        "unknown": 4
+      },
+      "Pawn": {
+        "abstention_rate": 0.01388888888888884,
+        "candidates": 432,
+        "coverage": 0.9861111111111112,
+        "exact_move_set_accuracy": null,
+        "f1": 1.0,
+        "false_illegal": 0,
+        "false_legal_rate": 0.0,
+        "false_negative_including_abstention": 0,
+        "false_positive": 0,
+        "grounded_atoms": 0,
+        "incomplete": 0,
+        "incomplete_positions": 0,
+        "latency_seconds": {
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "native_invocations": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "selective_accuracy": 1.0,
+        "self_check_false_legal": 0,
+        "true_negative": 315,
+        "true_positive": 111,
+        "unknown": 6
+      },
+      "Queen": {
+        "abstention_rate": 0.008928571428571397,
+        "candidates": 672,
+        "coverage": 0.9910714285714286,
+        "exact_move_set_accuracy": null,
+        "f1": 1.0,
+        "false_illegal": 0,
+        "false_legal_rate": 0.0,
+        "false_negative_including_abstention": 0,
+        "false_positive": 0,
+        "grounded_atoms": 0,
+        "incomplete": 0,
+        "incomplete_positions": 0,
+        "latency_seconds": {
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "native_invocations": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "selective_accuracy": 1.0,
+        "self_check_false_legal": 0,
+        "true_negative": 558,
+        "true_positive": 108,
+        "unknown": 6
+      },
+      "Rook": {
+        "abstention_rate": 0.010714285714285676,
+        "candidates": 840,
+        "coverage": 0.9892857142857143,
+        "exact_move_set_accuracy": null,
+        "f1": 1.0,
+        "false_illegal": 0,
+        "false_legal_rate": 0.0,
+        "false_negative_including_abstention": 0,
+        "false_positive": 0,
+        "grounded_atoms": 0,
+        "incomplete": 0,
+        "incomplete_positions": 0,
+        "latency_seconds": {
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "native_invocations": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "selective_accuracy": 1.0,
+        "self_check_false_legal": 0,
+        "true_negative": 719,
+        "true_positive": 112,
+        "unknown": 9
+      }
+    },
+    "precision": 1.0,
+    "promotion_specific": {
+      "abstention_rate": 0.03125,
+      "candidates": 32,
+      "coverage": 0.96875,
+      "exact_move_set_accuracy": null,
+      "f1": null,
+      "false_illegal": 0,
+      "false_legal_rate": 0.0,
+      "false_negative_including_abstention": 0,
+      "false_positive": 0,
+      "grounded_atoms": 0,
+      "incomplete": 0,
+      "incomplete_positions": 0,
+      "latency_seconds": {
+        "p50": null,
+        "p95": null,
+        "p99": null
+      },
+      "native_invocations": 0,
+      "precision": null,
+      "recall": null,
+      "selective_accuracy": 1.0,
+      "self_check_false_legal": 0,
+      "true_negative": 31,
+      "true_positive": 0,
+      "unknown": 1
+    },
+    "proof_coverage": {
+      "learned-conditional": 556,
+      "negative-supported": 2365,
+      "unknown": 35
+    },
+    "recall": 1.0,
+    "selective_accuracy": 1.0,
+    "self_check_false_legal": 0,
+    "true_negative": 2365,
+    "true_positive": 556,
+    "unknown": 35
+  },
+  "changes": [
+    {
+      "after": "supported-legal",
+      "after_proof_id": "4f49822e6b7b75d9b38adf8d8a7175ed7f511eec2b9bf3ee5b1b57bfa4efa8bd",
+      "after_tv": {
+        "confidence": 0.8459328358208955,
+        "strength": 0.9956521739130435
+      },
+      "before": "supported-legal",
+      "before_proof_id": "b79b17d4c5ed9677b2976204dfd9e0fea92b04d181a9063c5d53002465ce3e1e",
+      "before_tv": {
+        "confidence": 0.8221304347826088,
+        "strength": 0.9947916666666667
+      },
+      "fixture": "c8-independent-games-0249",
+      "label": true,
+      "move": "b3a5"
+    },
+    {
+      "after": "supported-legal",
+      "after_proof_id": "94020c7f52aff2570d74ae7bfa6d9e1d17b655507099a9c3a96de3179b1cf3f0",
+      "after_tv": {
+        "confidence": 0.8459328358208955,
+        "strength": 0.9956521739130435
+      },
+      "before": "supported-legal",
+      "before_proof_id": "76fce3e4c5df7191b9560b33682293222809f1fd17e084f92762fb2884c0c0cb",
+      "before_tv": {
+        "confidence": 0.8221304347826088,
+        "strength": 0.9947916666666667
+      },
+      "fixture": "c8-independent-games-0251",
+      "label": true,
+      "move": "f4g6"
+    },
+    {
+      "after": "supported-legal",
+      "after_proof_id": "6797ee6051809b652b81ec7253b2737d1d1efb81ba8c6dea6faff34efeac323b",
+      "after_tv": {
+        "confidence": 0.8459328358208955,
+        "strength": 0.9956521739130435
+      },
+      "before": "supported-legal",
+      "before_proof_id": "241e19589906a4d3952325b4cf5fb75aa233776f745e426e5fbd0b038027e985",
+      "before_tv": {
+        "confidence": 0.8221304347826088,
+        "strength": 0.9947916666666667
+      },
+      "fixture": "c8-independent-games-0251",
+      "label": true,
+      "move": "f4d5"
+    },
+    {
+      "after": "supported-legal",
+      "after_proof_id": "4444fa3343ce5ae1100c2e92e22a9de4ba1f896374946f527149200292cd7f3f",
+      "after_tv": {
+        "confidence": 0.8459328358208955,
+        "strength": 0.9956521739130435
+      },
+      "before": "supported-legal",
+      "before_proof_id": "a3b046773e0df54b183dc8d0f4da4e0d7fc920af9fb8cc67979522dcfa441e29",
+      "before_tv": {
+        "confidence": 0.8221304347826088,
+        "strength": 0.9947916666666667
+      },
+      "fixture": "c8-independent-games-0254",
+      "label": true,
+      "move": "c1d3"
+    },
+    {
+      "after": "supported-legal",
+      "after_proof_id": "c98b57315014de8499419c68bb34fd43f9340bf733e3ae5901c75c0608446a64",
+      "after_tv": {
+        "confidence": 0.8459328358208955,
+        "strength": 0.9956521739130435
+      },
+      "before": "supported-legal",
+      "before_proof_id": "85d216127abf0c5bb21fcd15dccaac929b61d29719bd3aa3ae8cf8c992551728",
+      "before_tv": {
+        "confidence": 0.8221304347826088,
+        "strength": 0.9947916666666667
+      },
+      "fixture": "c8-independent-games-0255",
+      "label": true,
+      "move": "a3b5"
+    },
+    {
+      "after": "supported-legal",
+      "after_proof_id": "d4a5aa365083eb9f2f3c851dfce52606d3aec73c45a7dcca2a6c0022a1da14b6",
+      "after_tv": {
+        "confidence": 0.8459328358208955,
+        "strength": 0.9956521739130435
+      },
+      "before": "supported-legal",
+      "before_proof_id": "24c6d52234267f1766294c2aae39231e8ef25ebce10a0055bb2aa3733de3a1f3",
+      "before_tv": {
+        "confidence": 0.8221304347826088,
+        "strength": 0.9947916666666667
+      },
+      "fixture": "c8-independent-games-0258",
+      "label": true,
+      "move": "e6f4"
+    },
+    {
+      "after": "supported-legal",
+      "after_proof_id": "113bcb66160634a1df26f1cf21f3a42304b3421f27a4d223584749e0d388bbc1",
+      "after_tv": {
+        "confidence": 0.8459328358208955,
+        "strength": 0.9956521739130435
+      },
+      "before": "supported-legal",
+      "before_proof_id": "cbf5f7ff1640d7503544e75b12eb1931c6c687c203b44fc65ee45ab622dec3a2",
+      "before_tv": {
+        "confidence": 0.8221304347826088,
+        "strength": 0.9947916666666667
+      },
+      "fixture": "c8-independent-games-0258",
+      "label": true,
+      "move": "e6c7"
+    },
+    {
+      "after": "supported-legal",
+      "after_proof_id": "502edf4f843861e41f15e17dad892a4ff2e53ea4f1f918fc46142a22148c2c25",
+      "after_tv": {
+        "confidence": 0.8459328358208955,
+        "strength": 0.9956521739130435
+      },
+      "before": "supported-legal",
+      "before_proof_id": "d55e309587ada37da51cdcf340204472ea2d73e0eb54ac2eed78d2705c8b6227",
+      "before_tv": {
+        "confidence": 0.8221304347826088,
+        "strength": 0.9947916666666667
+      },
+      "fixture": "c8-independent-games-0259",
+      "label": true,
+      "move": "e2f4"
+    },
+    {
+      "after": "supported-legal",
+      "after_proof_id": "f3e39136f18358f7d2aceaa2118d7d4ad907f3995621ce0672753159762975b2",
+      "after_tv": {
+        "confidence": 0.8459328358208955,
+        "strength": 0.9956521739130435
+      },
+      "before": "supported-legal",
+      "before_proof_id": "dc0b28cfc1ed0fac140c690cdb83027c8ac60d0cc67b2acb0078a32eae8f4e04",
+      "before_tv": {
+        "confidence": 0.8221304347826088,
+        "strength": 0.9947916666666667
+      },
+      "fixture": "c8-independent-games-0260",
+      "label": true,
+      "move": "g5f7"
+    },
+    {
+      "after": "supported-legal",
+      "after_proof_id": "b63f240dd7d08a9f6f304c000a0683c720c9adceb0802ec946980ed10d083ce8",
+      "after_tv": {
+        "confidence": 0.8459328358208955,
+        "strength": 0.9956521739130435
+      },
+      "before": "supported-legal",
+      "before_proof_id": "ce1059cd079ead9544a061965ad9a8f960418c1757ce57ffbe3fa1d8b28c2c45",
+      "before_tv": {
+        "confidence": 0.8221304347826088,
+        "strength": 0.9947916666666667
+      },
+      "fixture": "c8-independent-games-0260",
+      "label": true,
+      "move": "g5h3"
+    }
+  ],
+  "identity": {
+    "checkpoint_sha256": "c4b70471177b72dee855f2bd92936ba1b82be2d3dbf6a781b29cd61357f1d45e",
+    "dataset_sha256": "12454fcaa050a260db7d18f6c8cdaf2100be68270f0881069e084eb86978fa50",
+    "driver_sha256": "933cab470c915f866ced6a764ebc491e3d28dd606856e942157663cb437a9662",
+    "model_version": "08b71dca0659342aff140b3b147b936aaf4f96af48ddac9d63bb226514f5b318",
+    "production_code_hash": "543ff722a518a8fe0165e2327be5ac62357e28040a15fd3a764d369297d1febc"
+  },
+  "metrics": {
+    "abstention_rate": 0.011840324763193522,
+    "candidates": 2956,
+    "classification_counts": {
+      "supported-illegal": 2365,
+      "supported-legal": 556,
+      "unknown": 35
+    },
+    "coverage": 0.9881596752368065,
+    "empty_terminal_exact": 0,
+    "exact_move_set_accuracy": 1.0,
+    "f1": 1.0,
+    "false_illegal": 0,
+    "false_legal_rate": 0.0,
+    "false_negative_including_abstention": 0,
+    "false_positive": 0,
+    "grounded_atoms": 245703,
+    "in_board_only": {
+      "abstention_rate": 0.0224646983311938,
+      "candidates": 1558,
+      "coverage": 0.9775353016688062,
+      "exact_move_set_accuracy": 1.0,
+      "f1": 1.0,
+      "false_illegal": 0,
+      "false_legal_rate": 0.0,
+      "false_negative_including_abstention": 0,
+      "false_positive": 0,
+      "grounded_atoms": 245703,
+      "incomplete": 0,
+      "incomplete_positions": 0,
+      "latency_seconds": {
+        "p50": 4.995656695216894,
+        "p95": 6.258806708268821,
+        "p99": 6.258806708268821
+      },
+      "native_invocations": 7333,
+      "precision": 1.0,
+      "recall": 1.0,
+      "selective_accuracy": 1.0,
+      "self_check_false_legal": 0,
+      "true_negative": 967,
+      "true_positive": 556,
+      "unknown": 35
+    },
+    "incomplete": 0,
+    "incomplete_positions": 0,
+    "latency_seconds": {
+      "p50": 4.995656695216894,
+      "p95": 6.258806708268821,
+      "p99": 6.258806708268821
+    },
+    "native_invocations": 7333,
+    "nonempty_exact": 16,
+    "per_family": {
+      "game/caro-kann": {
+        "abstention_rate": 0.01051939513477973,
+        "candidates": 1521,
+        "coverage": 0.9894806048652203,
+        "exact_move_set_accuracy": 1.0,
+        "f1": 1.0,
+        "false_illegal": 0,
+        "false_legal_rate": 0.0,
+        "false_negative_including_abstention": 0,
+        "false_positive": 0,
+        "grounded_atoms": 128532,
+        "incomplete": 0,
+        "incomplete_positions": 0,
+        "latency_seconds": {
+          "p50": 4.982693747617304,
+          "p95": 6.258806708268821,
+          "p99": 6.258806708268821
+        },
+        "native_invocations": 3763,
+        "precision": 1.0,
+        "recall": 1.0,
+        "selective_accuracy": 1.0,
+        "self_check_false_legal": 0,
+        "true_negative": 1243,
+        "true_positive": 262,
+        "unknown": 16
+      },
+      "game/scandinavian": {
+        "abstention_rate": 0.013240418118466879,
+        "candidates": 1435,
+        "coverage": 0.9867595818815331,
+        "exact_move_set_accuracy": 1.0,
+        "f1": 1.0,
+        "false_illegal": 0,
+        "false_legal_rate": 0.0,
+        "false_negative_including_abstention": 0,
+        "false_positive": 0,
+        "grounded_atoms": 117171,
+        "incomplete": 0,
+        "incomplete_positions": 0,
+        "latency_seconds": {
+          "p50": 4.995656695216894,
+          "p95": 5.981738186441362,
+          "p99": 5.981738186441362
+        },
+        "native_invocations": 3570,
+        "precision": 1.0,
+        "recall": 1.0,
+        "selective_accuracy": 1.0,
+        "self_check_false_legal": 0,
+        "true_negative": 1122,
+        "true_positive": 294,
+        "unknown": 19
+      }
+    },
+    "per_piece": {
+      "Bishop": {
+        "abstention_rate": 0.009316770186335366,
+        "candidates": 644,
+        "coverage": 0.9906832298136646,
+        "exact_move_set_accuracy": null,
+        "f1": 1.0,
+        "false_illegal": 0,
+        "false_legal_rate": 0.0,
+        "false_negative_including_abstention": 0,
+        "false_positive": 0,
+        "grounded_atoms": 0,
+        "incomplete": 0,
+        "incomplete_positions": 0,
+        "latency_seconds": {
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "native_invocations": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "selective_accuracy": 1.0,
+        "self_check_false_legal": 0,
+        "true_negative": 547,
+        "true_positive": 91,
+        "unknown": 6
+      },
+      "King": {
+        "abstention_rate": 0.025000000000000022,
+        "candidates": 160,
+        "coverage": 0.975,
+        "exact_move_set_accuracy": null,
+        "f1": 1.0,
+        "false_illegal": 0,
+        "false_legal_rate": 0.0,
+        "false_negative_including_abstention": 0,
+        "false_positive": 0,
+        "grounded_atoms": 0,
+        "incomplete": 0,
+        "incomplete_positions": 0,
+        "latency_seconds": {
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "native_invocations": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "selective_accuracy": 1.0,
+        "self_check_false_legal": 0,
+        "true_negative": 110,
+        "true_positive": 46,
+        "unknown": 4
+      },
+      "Knight": {
+        "abstention_rate": 0.019230769230769273,
+        "candidates": 208,
+        "coverage": 0.9807692307692307,
+        "exact_move_set_accuracy": null,
+        "f1": 1.0,
+        "false_illegal": 0,
+        "false_legal_rate": 0.0,
+        "false_negative_including_abstention": 0,
+        "false_positive": 0,
+        "grounded_atoms": 0,
+        "incomplete": 0,
+        "incomplete_positions": 0,
+        "latency_seconds": {
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "native_invocations": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "selective_accuracy": 1.0,
+        "self_check_false_legal": 0,
+        "true_negative": 116,
+        "true_positive": 88,
+        "unknown": 4
+      },
+      "Pawn": {
+        "abstention_rate": 0.01388888888888884,
+        "candidates": 432,
+        "coverage": 0.9861111111111112,
+        "exact_move_set_accuracy": null,
+        "f1": 1.0,
+        "false_illegal": 0,
+        "false_legal_rate": 0.0,
+        "false_negative_including_abstention": 0,
+        "false_positive": 0,
+        "grounded_atoms": 0,
+        "incomplete": 0,
+        "incomplete_positions": 0,
+        "latency_seconds": {
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "native_invocations": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "selective_accuracy": 1.0,
+        "self_check_false_legal": 0,
+        "true_negative": 315,
+        "true_positive": 111,
+        "unknown": 6
+      },
+      "Queen": {
+        "abstention_rate": 0.008928571428571397,
+        "candidates": 672,
+        "coverage": 0.9910714285714286,
+        "exact_move_set_accuracy": null,
+        "f1": 1.0,
+        "false_illegal": 0,
+        "false_legal_rate": 0.0,
+        "false_negative_including_abstention": 0,
+        "false_positive": 0,
+        "grounded_atoms": 0,
+        "incomplete": 0,
+        "incomplete_positions": 0,
+        "latency_seconds": {
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "native_invocations": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "selective_accuracy": 1.0,
+        "self_check_false_legal": 0,
+        "true_negative": 558,
+        "true_positive": 108,
+        "unknown": 6
+      },
+      "Rook": {
+        "abstention_rate": 0.010714285714285676,
+        "candidates": 840,
+        "coverage": 0.9892857142857143,
+        "exact_move_set_accuracy": null,
+        "f1": 1.0,
+        "false_illegal": 0,
+        "false_legal_rate": 0.0,
+        "false_negative_including_abstention": 0,
+        "false_positive": 0,
+        "grounded_atoms": 0,
+        "incomplete": 0,
+        "incomplete_positions": 0,
+        "latency_seconds": {
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "native_invocations": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "selective_accuracy": 1.0,
+        "self_check_false_legal": 0,
+        "true_negative": 719,
+        "true_positive": 112,
+        "unknown": 9
+      }
+    },
+    "precision": 1.0,
+    "promotion_specific": {
+      "abstention_rate": 0.03125,
+      "candidates": 32,
+      "coverage": 0.96875,
+      "exact_move_set_accuracy": null,
+      "f1": null,
+      "false_illegal": 0,
+      "false_legal_rate": 0.0,
+      "false_negative_including_abstention": 0,
+      "false_positive": 0,
+      "grounded_atoms": 0,
+      "incomplete": 0,
+      "incomplete_positions": 0,
+      "latency_seconds": {
+        "p50": null,
+        "p95": null,
+        "p99": null
+      },
+      "native_invocations": 0,
+      "precision": null,
+      "recall": null,
+      "selective_accuracy": 1.0,
+      "self_check_false_legal": 0,
+      "true_negative": 31,
+      "true_positive": 0,
+      "unknown": 1
+    },
+    "proof_coverage": {
+      "learned-conditional": 556,
+      "negative-supported": 2365,
+      "unknown": 35
+    },
+    "recall": 1.0,
+    "selective_accuracy": 1.0,
+    "self_check_false_legal": 0,
+    "true_negative": 2365,
+    "true_positive": 556,
+    "unknown": 35
+  },
+  "native_proofs_verified": true,
+  "new_learning_promoted": false,
+  "positions": 16,
+  "rows": 2956,
+  "sha256": "dc2aeb61378dcca3ced20dce7e123eded5e0bb74cc637b604d7b3de4a65a9275"
+}
