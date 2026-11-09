@@ -83,7 +83,7 @@ def run(out,docs):
         'Each indexed proof record includes the original fixture and source game, candidate, native truth values, classification, local conditional values, hypothesis IDs, evidence IDs, dependence groups and the reconstructed native proof graph. The inspector loads records by bounded index and can reopen the candidate. '+link('analysis/frozen-failure-proofs.json.xz'),
         'Candidate-generator omissions are audited before inference against the offline reference library. Budget failures remain separate from missing knowledge and enter the failure census rather than being retried with a different decision criterion. '+link('datasets/manifest.json')+'; '+link('analysis/frozen-failure-index.json'),
         '![Failure categories](../../artifacts/cycle10/analysis/figures/failure-taxonomy.png)',
-        'The same complete census is delivered for both experimental adaptations and the actual-history evaluation. '+link('analysis/small-failure-index.json')+'; '+link('analysis/large-failure-index.json')+'; '+link('analysis/temporal-failure-index.json')
+        'The same complete census is delivered for both experimental adaptations and the actual-history evaluation. Legacy root-cause labels can retain a history term even when a published prefix was supplied; the actual-history residual assessment separately exposes that distinction and the native local conditional premises. '+link('analysis/small-failure-index.json')+'; '+link('analysis/large-failure-index.json')+'; '+link('analysis/temporal-failure-index.json')+'; '+link('temporal/actual-history-residuals.json')
     ])
     interventions=read_gzip(out/'temporal/historical-abstentions.json.xz')
     local_missing=[dict(index=i,cohort=case['cohort'],split=case['split'],fixture=case['fixture'],move=case['move'],
@@ -96,6 +96,20 @@ def run(out,docs):
         after_classification_counts=dict(Counter(case['after']['candidate']['classification'] for case in interventions)),
         source='temporal/historical-abstentions.json.xz',source_sha256=sha(out/'temporal/historical-abstentions.json.xz'),
         scope='Directly reported missing local hypotheses after evidence interventions; transported historical evidence alone does not establish a learned local conditional or a complete positive proof.'))
+    actual_history_failures=read_gzip(out/'analysis/temporal-failure-proofs.json.xz')
+    residuals=[]
+    for case in actual_history_failures:
+        row=case['row'];fixture=case['fixture']
+        assert row['temporal_transport_id']
+        residuals.append(dict(fixture=row['fixture'],move=row['move'],source_game=fixture['source_game'],
+            supplied_prefix_events=fixture['ply'],transport_id=row['temporal_transport_id'],
+            classification=row['classification'],native_local_value=row['local_truth_value'],
+            legacy_root_cause_label=row['root_cause'],legacy_taxonomy=case['categories'],
+            native_local_derivations=[node for node in case['native_proof_trace'] if node.get('conclusion')=='LocalAdmissibility'],
+            proof_id=row['proof_id'],failure_index=case['index']))
+    write_json(out/'temporal/actual-history-residuals.json',dict(cases=residuals,
+        source='analysis/temporal-failure-proofs.json.xz',source_sha256=sha(out/'analysis/temporal-failure-proofs.json.xz'),
+        scope='All unresolved legal or erroneous candidates in the actual-history arm. Published prefixes were supplied in every case. Legacy history labels are structural heuristics, not evidence that the supplied prefix was missing. Native local derivations retain their original conditional premises and values; no reclassification or retraining is performed.'))
     write('temporal-evidence',[
         '# Historical evidence transport and counterfactuals',
         f'The versioned transport replayed **{history["complete_game_replays"]} complete published game records** and produced **{history["demonstrations"]} inspectable demonstrations**. The native counterfactual error list is `{history["counterfactual_errors"]}`. Historical legality remains explicitly unverified by production replay. '+link('temporal/game-replay.json')+'; '+link('temporal/summary.json'),
@@ -108,6 +122,9 @@ def run(out,docs):
         f"After supplying history, {len(local_missing)} investigated candidates still report a missing matching pooled local hypothesis. Recognized historical evidence and adequate learned local knowledge are separate requirements; no classification was forced to meet a resolution target. "+link('temporal/root-cause-assessment.json'),
         'The demonstrations cover both castling sides, moved-and-returned kings and rooks, castling through attack and in check, fresh/stale/conflicting en-passant evidence, en-passant king exposure, and all four straight and capture promotion choices. Paired geometry is identical while evidence or eligibility differs. Each record includes the starting state, supplied events, final state, propositions, expected reference outcome, native result, lineage and relevant removal control. '+link('temporal/counterfactuals.json.xz'),
         'The original FEN-only Cycle 9 measurements remain 112/128 adversarial and 71/80 special exact sets. Conditional interventions do not retrospectively convert those original unknowns into known facts. Independent actual-history evidence is evaluated on all 1,020 final external positions. '+link('baseline/cohort-metrics.json')+'; '+link('analysis/temporal-summary.json'),
+        f'The actual-history arm retains {len(residuals)} unresolved legal or erroneous candidates. Every one has a supplied published prefix and a transport ID. A legacy label such as `en-passant-history` is a structural heuristic, not proof that events are missing. The separate residual assessment records each native LocalAdmissibility derivation and its conditional premises, so weak learned support remains distinguishable from unavailable history. '+link('temporal/actual-history-residuals.json')+'; '+link('analysis/temporal-failure-proofs.json.xz'),
+        table(['Actual-history fixture','Move','Classification','Native local value','Legacy heuristic'],
+            [[r['fixture'],r['move'],r['classification'],str(r['native_local_value']),r['legacy_root_cause_label']] for r in residuals]),
         'Replay overhead and fresh-versus-reused native cache proof equality after source, confidence and event changes are measured separately. '+link('performance/temporal.json')
     ])
     calibration_rows=[]
