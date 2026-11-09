@@ -11,6 +11,14 @@ from pln_chess.api import find_move
 from training.cycle9_data import PAIRS,translation_key
 
 
+def test_history_audit_does_not_depend_on_checkout_directory_name(tmp_path):
+    from training.cycle9_data import historical_paths
+    root=tmp_path/'cycle9-reproduction'
+    for name in ('fixtures/dataset.json','artifacts/cycle8/datasets/dataset.json','artifacts/cycle9/datasets/dataset.json'):
+        path=root/name;path.parent.mkdir(parents=True,exist_ok=True);path.write_text('{}')
+    assert {str(p.relative_to(root)) for p in historical_paths(root)}=={'fixtures/dataset.json','artifacts/cycle8/datasets/dataset.json'}
+
+
 def test_calibration_does_not_identify_confidence_with_probability():
     rows=[dict(label=True,truth_value=dict(strength=.8,confidence=.2)),
           dict(label=False,truth_value=dict(strength=.8,confidence=.99))]

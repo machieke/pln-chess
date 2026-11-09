@@ -43,13 +43,18 @@ PAIRS = [
 ]
 
 
+def historical_paths(root):
+    """Exclude this cycle by repository-relative location, not checkout name."""
+    root=Path(root)
+    paths=[root/'fixtures/dataset.json', *sorted((root/'artifacts').glob('cycle*/dataset.json')),
+           *sorted((root/'artifacts').glob('cycle*/datasets/dataset.json'))]
+    return [path for path in paths if not path.is_relative_to(root/'artifacts/cycle9')]
+
+
 def generate(out):
     out=Path(out);cfg=read_json(ROOT/'configs/cycle9.json')
     historical=set();historical_files={}
-    paths=[ROOT/'fixtures/dataset.json', *sorted((ROOT/'artifacts').glob('cycle*/dataset.json')),
-           *sorted((ROOT/'artifacts').glob('cycle*/datasets/dataset.json'))]
-    for path in paths:
-        if 'cycle9' in str(path):continue
+    for path in historical_paths(ROOT):
         data=read_json(path);historical_files[str(path.relative_to(ROOT))]=digest(data)
         for row in data.get('positions',[])+data.get('examples',[]):
             if row.get('fen'):historical.add(translation_key(row['fen']))
