@@ -44,6 +44,25 @@ def run(out,checkout,snapshot,work,plot_python='python3',browser=True):
         jobs=[pool.submit(command,'current-regression',['-m','scripts.cycle10_regression','--out',str(out),'--source',str(checkout)]),
               pool.submit(command,'research-experiments',['-m','scripts.cycle10_experiments','--out',str(out),'--source',str(checkout),'--wait'])]
         for job in jobs:job.result()
+    comparisons=[]
+    expected_root=checkout/'artifacts/cycle10'
+    expected_paths=sorted((expected_root/'evaluation').glob('*.receipt.json'))
+    actual_paths=sorted((out/'evaluation').glob('*.receipt.json'))
+    assert [p.name for p in actual_paths]==[p.name for p in expected_paths]
+    metric_keys=('true_positive','false_positive','false_illegal','self_check_false_legal','unknown','incomplete',
+                 'precision','recall','exact_move_set_accuracy')
+    for path in actual_paths:
+        actual=read_json(path);expected=read_json(expected_root/'evaluation'/path.name)
+        assert actual['identity']==expected['identity'],path.name
+        assert all(actual[k]==expected[k] for k in ('positions','rows','proof_hash','native_proofs_verified')),path.name
+        assert all(actual['metrics'][k]==expected['metrics'][k] for k in metric_keys),path.name
+        comparisons.append(dict(receipt=path.name,ordered_native_proof_hash=actual['proof_hash'],
+            rows=actual['rows'],positions=actual['positions'],native_identity_and_static_metrics_equal=True))
+    for arm in ('small','large'):
+        assert sha(out/f'adaptation/model/{arm}.json')==sha(expected_root/f'adaptation/model/{arm}.json')
+    write_json(out/'reproduction-comparison.json',dict(passed=True,shards=len(comparisons),comparisons=comparisons,
+        adapted_checkpoints_byte_identical=True,
+        scope='All external-study source/data/model/driver identities, ordered native proof hashes and static metrics match the delivered study. Timings, execution heads, timestamps and compressed report bytes are intentionally not required to match.'))
     finishing=['-m','scripts.cycle10_finish','--out',str(out),'--docs',str(out/'reports'),
         '--browser-work',str(work),'--plot-python',plot_python]
     if not browser:finishing.append('--skip-browser')
