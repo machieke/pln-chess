@@ -2,10 +2,12 @@
 import argparse
 from collections import Counter,defaultdict
 from pathlib import Path
+import time
 from pln_chess.common import ROOT,read_json,write_json,digest
 from evaluation.cycle3 import read_gzip
 from evaluation.cycle7_io import pack
 from evaluation.cycle9_analysis import metrics,fit,probability_metrics,cluster_intervals,selective,bin_index
+from scripts.cycle9_baseline import sha
 
 TAXONOMY=('movement-geometry','ray-obstruction','destination-occupancy','friendly-piece-interaction','capture-eligibility',
           'king-exposure','pins','discovered-attacks','double-check','check-resolution','promotion','castling','en-passant',
@@ -107,8 +109,32 @@ def summarize(out,arm='frozen'):
     return data,rows,positions
 
 
+def frozen_calibration(out):
+    """Finish and record the original C9 calibration test before any new fit."""
+    out=Path(out);data=read_json(out/'datasets/dataset.json')
+    path=ROOT/'artifacts/cycle9/calibration/results.json';original=read_json(path)
+    assert sha(path)==read_json(ROOT/'artifacts/cycle9/acceptance.json')['calibration_sha256']
+    rows=[];positions=0
+    for receipt in sorted((out/'evaluation').glob('frozen-operational-*.receipt.json')):
+        r=read_json(receipt);assert sha(out/r['artifact'])==r['sha256']
+        report=read_gzip(out/r['artifact']);assert report['model_version']==original['model_version']
+        positions+=len(report['positions'])
+        rows.extend(dict(label=x['label'],truth_value=x['truth_value'],destination_exists=x['destination_exists'],split=report['split']) for x in report['rows'])
+    assert positions==len(data['positions'])
+    measurements={}
+    for population in ('complete','in-board'):
+        score=lambda r:original['mappings'][population][bin_index(r['truth_value']['strength'])]['probability']
+        for split in data['counts']:
+            selected=[r for r in rows if r['split']==split and (population=='complete' or r['destination_exists'])]
+            measurements[population+'/'+split]=probability_metrics(selected,score)
+    write_json(out/'calibration/frozen-evaluation.json',dict(passed=True,calibration_refit=False,completed_unix=time.time(),
+        model_version=original['model_version'],original_calibration_sha256=sha(path),dataset_hash=data['hash'],
+        positions=positions,rows=len(rows),measurements=measurements,scope='Unchanged Cycle 9 diagnostic map evaluated before fitting external calibration or training adaptation models.'))
+
+
 def calibration(out):
     out=Path(out);assert read_json(out/'frozen-complete.json')['passed']
+    assert sha(out/'calibration/frozen-evaluation.json')==read_json(out/'frozen-complete.json')['frozen_calibration_sha256']
     stored=read_gzip(out/'analysis/frozen-rows.json.xz');rows=stored['rows'];positions=stored['positions']
     old=read_json(ROOT/'artifacts/cycle9/calibration/results.json');cfg=read_json(ROOT/'configs/cycle10.json')
     calibration_rows=[r for r in rows if r['split']=='external-calibration'];mappings={};results={}

@@ -54,6 +54,9 @@ def run(out,source,arm,checkpoint,only=None,modes=('operational',)):
     if arm=='frozen':
         assert sha(checkpoint)==sha(source/'artifacts/cycle8/model/C8-promotion-relative.json')
         assert subprocess.check_output(['git','rev-parse','HEAD'],cwd=source,text=True).strip()==read_json(ROOT/'configs/cycle10.json')['starting_head']
+        assert not subprocess.check_output(['git','status','--porcelain'],cwd=source,text=True),'Frozen source must be clean'
+        assert read_json(out/'baseline/reproduction-receipt.json')['passed'],'Complete baseline reproduction before external evaluation'
+        assert read_json(out/'datasets/all-symmetry-audit.json')['passed'],'Complete overlap checks before external evaluation'
     else:
         assert read_json(out/'frozen-complete.json')['passed'],'External adaptation requires completed frozen evaluation'
     for mode in modes:
@@ -81,8 +84,12 @@ def run(out,source,arm,checkpoint,only=None,modes=('operational',)):
     if arm=='frozen' and not only:
         receipts=[read_json(p) for p in (out/'evaluation').glob('frozen-operational-*.receipt.json')]
         assert sum(r['positions'] for r in receipts)==len(data['positions'])
+        assert all(r['identity']['production_code_hash']==read_json(out/'baseline/manifest.json')['identity']['production_code_hash'] and not r['source_status'] for r in receipts)
+        from evaluation.cycle10_analysis import frozen_calibration
+        frozen_calibration(out)
         write_json(out/'frozen-complete.json',dict(passed=True,positions=len(data['positions']),dataset_hash=data['hash'],
             model_sha256=sha(checkpoint),calibration_sha256=sha(source/'artifacts/cycle9/calibration/results.json'),
+            frozen_calibration_sha256=sha(out/'calibration/frozen-evaluation.json'),
             new_training_before_evaluation=False,source_head=read_json(ROOT/'configs/cycle10.json')['starting_head'],
             completed_unix=time.time(),receipts={r['artifact']:r['sha256'] for r in receipts}))
 

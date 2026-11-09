@@ -111,6 +111,7 @@ def revise(frozen,rows,runtime,policy='game-and-opening',name='experimental',out
 
 def run(out):
     out=Path(out);receipt=read_json(out/'frozen-complete.json');assert receipt['passed']
+    assert sha(out/'calibration/frozen-evaluation.json')==receipt['frozen_calibration_sha256']
     assert all(sha(out/p)==h for p,h in receipt['receipts'].items())
     data=read_json(out/'datasets/dataset.json');assert data['hash']==receipt['dataset_hash']
     runtime=Runtime(timeout=600);frozen=PromotionModel.load(ROOT/'artifacts/cycle8/model/C8-promotion-relative.json',runtime)
