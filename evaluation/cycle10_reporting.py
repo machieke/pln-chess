@@ -3,7 +3,29 @@ import argparse
 from collections import Counter
 from pathlib import Path
 import statistics
-from pln_chess.common import ROOT,read_json
+from pln_chess.common import ROOT,read_json,write_json
+from scripts.cycle9_baseline import sha
+
+
+def architecture(out):
+    out=Path(out)
+    write_json(out/'architecture/decision.json',dict(schema=10,production_composition_extension='no-go',
+        new_operator_enabled=False,upstream_modified=False,strategic_selector_enabled=False,handcoded_evaluation_score_enabled=False,
+        isolated_prototype_enabled=False,prior_decision='docs/cycle9/architecture-decision.md',
+        prior_decision_sha256=sha(ROOT/'docs/cycle9/architecture-decision.md'),
+        prior_composition_review_sha256=sha(ROOT/'artifacts/cycle9/composition/review.json'),
+        new_requirements=['Transport event identity, trust, dependence and state scope without creating missing historical facts.',
+                          'Measure external calibration drift separately from raw native truth values.',
+                          'Future relational fields require target-specific evidence and dependence-preserving successor comparisons.'],
+        calculus_conclusion='These requirements do not supply a joint probabilistic model or native proof certificates. No new operator is authorized.',
+        classification='Architecture recommendation grounded in existing native boundaries, not an executed new composition experiment.'))
+    write_json(out/'architecture/strategic-readiness.json',dict(schema='strategic-proposal-v10',implemented=False,
+        fields=['spatial-interaction','attack-defense','mobility','king-exposure','strategic-influence','successor-change'],
+        available=['piece-relative observation grammar','native revision','scoped conditional evidence','negative exposure chains','source/evidence lineage'],
+        missing=['general non-king defense semantics','joint uncertain-premise composition','universal positive safety proof',
+                 'validated influence targets','dependence-preserving strategic successor comparison'],
+        position_tables=False,move_selection=False,report='docs/cycle10/strategic-readiness.md',
+        report_sha256=sha(ROOT/'docs/cycle10/strategic-readiness.md')))
 
 
 def provenance(out):
@@ -37,4 +59,4 @@ def provenance(out):
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--out',required=True);provenance(p.parse_args().out)
+    p=argparse.ArgumentParser();p.add_argument('--out',required=True);a=p.parse_args();provenance(a.out);architecture(a.out)

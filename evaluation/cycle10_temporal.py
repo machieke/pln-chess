@@ -51,7 +51,9 @@ def run(out):
         ('en-passant-observed-versus-unknown',ep,epmoves,'g5f6','complete-unknown'),
         ('en-passant-stale-history',ep,epmoves+['a1b1','h8g8','b1a1','g8h8'],'g5f6','fresh-ep'),
         ('conflicting-reported-history',ep,epmoves,'g5f6','conflict'),
+        ('conflicting-castling-claims',initial,keep,'e1g1','castle-conflict'),
         ('castling-through-attack','5rk1/8/8/8/8/8/1N6/R3K2R w KQ - 0 1',[],'e1g1','complete-unknown'),
+        ('queenside-through-attack','3r2k1/8/8/8/8/8/1N6/R3K2R w KQ - 0 1',[],'e1c1','complete-unknown'),
         ('castling-in-check','4r1k1/8/8/8/8/8/1N6/R3K2R w KQ - 0 1',[],'e1g1','complete-unknown'),
         ('en-passant-exposes-king','7k/5p2/8/r5PK/8/8/8/8 b - - 0 1',epmoves,'g5f6','complete-unknown'),
     ]
@@ -71,6 +73,8 @@ def run(out):
             right_fen=right_history['resulting_fen']
         elif comparison=='conflict':
             right_history=transport(ep,[],'synthetic-demonstration/'+name+'/conflicting-source','unknown',final)
+        elif comparison=='castle-conflict':
+            right_history=transport(initial,king,'synthetic-demonstration/'+name+'/conflicting-source','trusted-import',final)
         right=query(right_fen,move,right_history)
         assert chess.Board(final).board_fen()==chess.Board(right_fen).board_fen(),name
         control=query(final,move,history,True)
