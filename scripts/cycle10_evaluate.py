@@ -16,7 +16,12 @@ def worker(out,source,arm,split,collection,offset,checkpoint,mode):
     from pln_chess.cycle8.model import PromotionModel
     from pln_chess.cycle8.inference import Cycle8Options
     from pln_chess.cycle6.inference import production_code_hash
-    from evaluation.cycle8 import evaluate
+    if arm=='temporal':
+        from evaluation.cycle10_temporal_eval import evaluate_temporal as evaluate
+        evaluator='evaluation/cycle10_temporal_eval.py'
+    else:
+        from evaluation.cycle8 import evaluate
+        evaluator='evaluation/cycle8.py'
     data=read_json(out/'datasets/dataset.json');runtime=Runtime(timeout=180)
     model=PromotionModel.load(checkpoint,runtime)
     fixtures=[f for f in data['positions'] if f['split']==split and f['source_collection']==collection]
@@ -25,9 +30,9 @@ def worker(out,source,arm,split,collection,offset,checkpoint,mode):
     name=f'{arm}-{mode}-{split}-{collection}-{offset:04}'
     target=out/f'evaluation/{name}.json.xz';receipt=out/f'evaluation/{name}.receipt.json'
     identity=dict(dataset_hash=data['hash'],model_version=model.version,checkpoint_sha256=sha(checkpoint),
-        production_code_hash=production_code_hash(),evaluator_sha256=sha(source/'evaluation/cycle8.py'),
+        production_code_hash=production_code_hash(),evaluator_sha256=sha(source/evaluator),
         driver_sha256=sha(__file__),fixtures=[p['id'] for p in fixtures],mode=mode,arm=arm,
-        historical_policy='fen-only; no historical events invented from FEN')
+        historical_policy='supplied complete PGN prefix' if arm=='temporal' else 'fen-only; no historical events invented from FEN')
     if receipt.exists():
         old=read_json(receipt)
         if old['identity']==identity and target.exists() and sha(target)==old['sha256']:

@@ -112,12 +112,18 @@ def calibration(out):
     stored=read_gzip(out/'analysis/frozen-rows.json.xz');rows=stored['rows'];positions=stored['positions']
     old=read_json(ROOT/'artifacts/cycle9/calibration/results.json');cfg=read_json(ROOT/'configs/cycle10.json')
     calibration_rows=[r for r in rows if r['split']=='external-calibration'];mappings={};results={}
+    original=defaultdict(list)
+    for split in ('independent-games','adversarial','special-moves'):
+        for path in sorted((out/'baseline/evaluation').glob('operational-'+split+'-*.json.xz')):
+            original['Cycle9-reproduced/'+split].extend({k:r[k] for k in FIELDS} for r in read_gzip(path)['rows'])
     for population in ('complete','in-board'):
         keep=lambda r:population=='complete' or r['destination_exists']
         fitrows=[r for r in calibration_rows if keep(r)];mapping=fit(fitrows);mappings[population]=mapping
         groups={split:[r for r in rows if r['split']==split and keep(r)] for split in sorted({r['split'] for r in rows})}
         for source in sorted({r['source_collection'] for r in rows if r['split']=='external-test'}):
             groups['external-test/'+source]=[r for r in rows if r['split']=='external-test' and r['source_collection']==source and keep(r)]
+        groups['external-history-sensitive-FEN-only']=[r for r in rows if r['split']=='external-test' and keep(r) and any('castl' in t or 'en-passant' in t for t in r['tags'])]
+        groups.update({name:[r for r in subset if keep(r)] for name,subset in original.items()})
         for name,selected in groups.items():
             ids={r['fixture'] for r in selected};ps=[p for p in positions if p['fixture'] in ids]
             scores={'raw-strength':lambda r:r['truth_value']['strength'],
@@ -125,6 +131,8 @@ def calibration(out):
                     'external-validation-fit':lambda r:mapping[bin_index(r['truth_value']['strength'])]['probability']}
             measurements={key:dict(**probability_metrics(selected,score),
                 cluster_interval=cluster_intervals(selected,ps,score,draws=cfg['bootstrap_replicates'])) for key,score in scores.items()}
+            for measurement in measurements.values():
+                measurement['cluster_interval']['method']='Percentile source-game / controlled-pair bootstrap; four hundred draws, residual opening/player dependence remains.'
             confidence_bins=[]
             for index in range(10):
                 subset=[r for r in selected if bin_index(r['truth_value']['confidence'])==index]
@@ -135,7 +143,7 @@ def calibration(out):
         model_version=old['model_version'],frozen_mapping=old['mappings'],external_mapping=mappings,
         fit_split='external-calibration',fit_games=len({r['source_game'] for r in calibration_rows}),fit_positions=len({r['fixture'] for r in calibration_rows}),
         dataset_hash=read_json(out/'datasets/dataset.json')['hash'],frozen_calibration_hash=digest(old),results=results,
-        historical_comparison=old.get('evaluation',old.get('results',{})),
+        historical_comparison=old.get('evaluations',{}),
         limits=['Candidate and position observations are clustered by game/pair. Repeated openings, engines and players can add residual dependence.',
                 'Calibration fitting occurs only after frozen evaluation. Final-test labels never choose bins, thresholds, hypotheses or operational promotion.',
                 'Zero-error bootstraps are not universal zero-risk claims. The external diagnostic mapping does not alter native inference.']))
