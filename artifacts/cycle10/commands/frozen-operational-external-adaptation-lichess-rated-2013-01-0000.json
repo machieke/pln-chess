@@ -1,0 +1,33 @@
+{
+  "argv": [
+    "/data/pln-chess-cycle6-delivery/.venv/bin/python",
+    "/data/pln-chess-cycle6-delivery/scripts/cycle10_evaluate.py",
+    "--worker",
+    "--out",
+    "/data/pln-chess-cycle6-delivery/artifacts/cycle10",
+    "--source",
+    "/data/pln-chess-cycle10-baseline",
+    "--arm",
+    "frozen",
+    "--checkpoint",
+    "/data/pln-chess-cycle10-baseline/artifacts/cycle8/model/C8-promotion-relative.json",
+    "--split",
+    "external-adaptation",
+    "--collection",
+    "lichess-rated-2013-01",
+    "--offset",
+    "0",
+    "--mode",
+    "operational"
+  ],
+  "cwd": "/data/pln-chess-cycle10-baseline",
+  "elapsed_seconds": 135.32341647148132,
+  "environment": {
+    "PLN_CHESS_ROOT": "/data/pln-chess-cycle10-baseline",
+    "PYTHONPATH": "/data/pln-chess-cycle10-baseline/src:/data/pln-chess-cycle10-baseline",
+    "TMPDIR": "/dev/shm"
+  },
+  "log": "logs/frozen-operational-external-adaptation-lichess-rated-2013-01-0000.txt",
+  "returncode": 0,
+  "started_unix": 1794248606.9317431
+}
