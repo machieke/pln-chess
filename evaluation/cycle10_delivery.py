@@ -91,8 +91,15 @@ def run(out,docs):
         temporal_evidence=case['after']['candidate']['temporal_evidence'])
         for i,case in enumerate(interventions)
         if 'No matching pooled local hypothesis.' in case['after']['candidate']['abstention_reason']]
+    intervention_splits={}
+    for key in sorted({case['cohort']+'/'+case['split'] for case in interventions}):
+        selected=[case for case in interventions if case['cohort']+'/'+case['split']==key]
+        intervention_splits[key]=dict(cases=len(selected),resolved=sum(case['resolved_under_supplied_evidence'] for case in selected),
+            full_position_exact=sum(case['complete_position']['exact'] for case in selected),
+            missing_local_hypothesis=sum('No matching pooled local hypothesis.' in case['after']['candidate']['abstention_reason'] for case in selected))
     write_json(out/'temporal/root-cause-assessment.json',dict(intervention_cases=len(interventions),
         missing_local_hypotheses_after_supplied_history=len(local_missing),cases=local_missing,
+        by_split=intervention_splits,
         after_classification_counts=dict(Counter(case['after']['candidate']['classification'] for case in interventions)),
         source='temporal/historical-abstentions.json.xz',source_sha256=sha(out/'temporal/historical-abstentions.json.xz'),
         scope='Directly reported missing local hypotheses after evidence interventions; transported historical evidence alone does not establish a learned local conditional or a complete positive proof.'))
@@ -117,7 +124,8 @@ def run(out,docs):
         'Event IDs bind source, sequence, predecessor, mover, before/after state and effects. They remain stable across model versions. The enclosing receipt binds model/runtime identity, initial trust and the complete supplied input; appending preserves prefix event IDs and records the parent receipt. A reported-state mismatch is a conflict, not a fabricated transition. Up to 4,096 events are retained; the legacy 512-event window explicitly reports omitted prefixes. '+link('temporal/external-replay-examples.json.xz'),
         'A standard-start PGN import explicitly attests its initial metadata. A partial SetUp game or plain FEN retains unknown prior history. A FEN en-passant flag never becomes an observed double step. Structural replay can represent an illegal proposed sequence and does not certify legal play or repetition termination. The offline PGN preparation command may validate the source with the reference library, within the preparation boundary. [Tests](../../tests/test_cycle10_temporal.py); [offline importer](../../training/cycle10_import.py).',
         'All 16 Cycle 9 adversarial and nine special-move abstentions were reproduced. Each involved castling or en-passant history, with original proof traces retained. Added attestations or reverse-constructed predecessors are labelled controlled interventions; no actual historical record was recovered for those synthetic fixtures. '+link('temporal/historical-abstentions.json.xz'),
-        table(['Cohort','Investigated candidates','Resolved under supplied evidence'],[[name,v['cases'],v['resolved']] for name,v in history['by_cohort'].items()]),
+        table(['Cohort / split','Investigated candidates','Resolved under supplied evidence','Exact full positions after intervention','Missing local hypothesis'],
+            [[name,v['cases'],v['resolved'],v['full_position_exact'],v['missing_local_hypothesis']] for name,v in intervention_splits.items()]),
         f'Across those interventions, {history["full_position_exact_after_intervention"]} complete position evaluations became exact; removing the temporal evidence channel caused {history["temporal_removal_abstentions"]} abstentions. Removing eligibility left {history["eligibility_removal_supported"]} supported-legal candidates. These are measured controls, not assumptions of success. '+link('temporal/summary.json'),
         f"After supplying history, {len(local_missing)} investigated candidates still report a missing matching pooled local hypothesis. Recognized historical evidence and adequate learned local knowledge are separate requirements; no classification was forced to meet a resolution target. "+link('temporal/root-cause-assessment.json'),
         'The demonstrations cover both castling sides, moved-and-returned kings and rooks, castling through attack and in check, fresh/stale/conflicting en-passant evidence, en-passant king exposure, and all four straight and capture promotion choices. Paired geometry is identical while evidence or eligibility differs. Each record includes the starting state, supplied events, final state, propositions, expected reference outcome, native result, lineage and relevant removal control. '+link('temporal/counterfactuals.json.xz'),
