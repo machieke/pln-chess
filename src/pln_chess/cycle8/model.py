@@ -1,4 +1,5 @@
 """Immutable C7 source plus separately replayable promotion evidence."""
+from pln_chess.common import digest_dataclass
 from dataclasses import dataclass, asdict, field
 import copy
 from pathlib import Path
@@ -20,7 +21,7 @@ class PromotionModel:
     grammar: str = GRAMMAR
 
     @property
-    def version(self): return digest(asdict(self))
+    def version(self): return digest_dataclass(self)
     @property
     def runtime_version(self): return self.source['source']['source']['runtime_version']
     def source_model(self): return BackoffModel(**copy.deepcopy(self.source))

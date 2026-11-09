@@ -20,6 +20,9 @@ def main(argv=None):
     default_checkpoint=latest if latest.exists() else ROOT/'artifacts/model.json'
     parser=argparse.ArgumentParser(prog='pln-chess',description='Piece-relative native PLN research inspector')
     sub=parser.add_subparsers(dest='command',required=True)
+    p=sub.add_parser('research-report');p.add_argument('--section',choices=('summary','calibration','failures','performance','temporal','identity'),default='summary');p.add_argument('--output')
+    p=sub.add_parser('calibration-export');p.add_argument('--output',required=True)
+    p=sub.add_parser('temporal-inspect-v9');p.add_argument('--fen',required=True);p.add_argument('--mode',choices=('fen-only','trusted-metadata','event-backed'),default='fen-only');p.add_argument('--history')
     p=sub.add_parser('migrate-model');p.add_argument('--checkpoint',default=str(ROOT/'artifacts/cycle5/model/C5-full.json'));p.add_argument('--output',required=True)
     p=sub.add_parser('composition-audit');p.add_argument('--output',default=str(ROOT/'artifacts/cycle5/native-probes/cli-audit.json'))
     p=sub.add_parser('temporal-inspect');p.add_argument('--fen',required=True);p.add_argument('--mode',choices=('fen-only','trusted-metadata','event-backed'),default='fen-only');p.add_argument('--history')
@@ -64,7 +67,15 @@ def main(argv=None):
     p=sub.add_parser('serve'); p.add_argument('--port',type=int,default=8765); p.add_argument('--checkpoint',default=str(default_checkpoint))
     args=parser.parse_args(argv)
     try:
-        if args.command=='migrate-model':
+        if args.command in ('research-report','calibration-export'):
+            from pln_chess.cycle9.diagnostics import report
+            result=report('calibration' if args.command=='calibration-export' else args.section)
+            if args.output:
+                write_json(args.output,result);result={'output':args.output,'section':result['section'],'available':result['available']}
+        elif args.command=='temporal-inspect-v9':
+            from pln_chess.cycle9.temporal import inspect
+            result=inspect(args.fen,args.mode,read_json(args.history) if args.history else None)
+        elif args.command=='migrate-model':
             from pln_chess.cycle6.model import ModeModel
             result=ModeModel.migrate(Model.load(args.checkpoint,Runtime())).export(args.output)
         elif args.command=='composition-audit':

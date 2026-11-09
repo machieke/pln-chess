@@ -1,4 +1,5 @@
 """Schema 4 evidence replay. All uncertainty arithmetic executes in native PLN."""
+from pln_chess.common import digest_dataclass
 from dataclasses import dataclass,field,asdict
 from pathlib import Path
 from pln_chess.common import digest,read_json,write_json
@@ -24,7 +25,7 @@ class FactoredModel:
     grammar:str=SCHEMA
 
     @property
-    def version(self):return digest(asdict(self))
+    def version(self):return digest_dataclass(self)
     def export(self,path):
         write_json(path,{**asdict(self),'version':self.version})
         return {'path':str(path),'version':self.version,'hypotheses':len(self.hypotheses)}

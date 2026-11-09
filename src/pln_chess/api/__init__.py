@@ -13,6 +13,17 @@ from pln_chess.pln import Runtime,TV
 from pln_chess.spatial import translate,add,color_flip
 
 
+def research_report(section='summary'):
+    """Recorded cohort, calibration and provenance diagnostics; no inference."""
+    from pln_chess.cycle9.diagnostics import report
+    return report(section)
+
+
+def inspect_temporal_v9(position,mode='fen-only',evidence=None):
+    from pln_chess.cycle9.temporal import inspect
+    return inspect(position,mode,evidence)
+
+
 def find_move(position,notation):
     return next((m for m in candidates(position) if m.notation==notation),None)
 

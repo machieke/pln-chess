@@ -1,0 +1,20 @@
+{
+  "schema": 9,
+  "starting_head": "36b5ea10395c0f41de4c03824ba6f8ee1c5dbad1",
+  "model": "C8-promotion-relative",
+  "seeds": [90101, 90203, 90307, 90409, 90511],
+  "games_per_family": 10,
+  "positions_per_game": 5,
+  "calibration_families": ["italian", "french"],
+  "development_families": ["bird", "reti"],
+  "heldout_families": ["ruy-lopez", "sicilian", "pirc", "alekhine", "kings-indian", "dutch", "slav", "nimzo", "vienna", "scotch"],
+  "game_stop": "Natural python-chess automatic termination, including fivefold repetition and 75-move draws; no ply cap accepted as a complete game.",
+  "sampling": "Five nonterminal positions spread across the completed game, excluding all historical and cross-split translated/reflected board equivalents.",
+  "training": "No new operational training. One development-only evidence reuse study; final heldout data cannot change hypotheses or thresholds.",
+  "calibration": "Fit ten-bin Laplace-smoothed strength-to-legality frequency on calibration games; evaluate once on independent heldout opening families. Diagnostic only.",
+  "benchmark_repetitions": 7,
+  "optimization": "Investigate redundant immutable model serialization without changing proof payloads or native arithmetic.",
+  "temporal": "Versioned diagnostic receipt, explicitly separate observed transitions, trusted state metadata and inferred conditions.",
+  "native_composition": "Review only; no new operator or repeated exhausted probes.",
+  "git_policy": "Local commits only. No push or external deployment."
+}

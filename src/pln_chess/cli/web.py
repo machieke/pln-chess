@@ -26,6 +26,10 @@ $('experiments').addEventListener('click',async()=>{try{const r=await fetch('/ex
 </script></html>'''
 
 
+from pln_chess.cli.web9 import extend as extend_research_inspector
+HTML=extend_research_inspector(HTML)
+
+
 def inspector_infer(payload,checkpoint=None):
     """Same application contract as the CLI; only fixed local checkpoint choices."""
     paths={'B0':ROOT/'artifacts/cycle2/baseline/historical/artifacts/model.json',
@@ -114,6 +118,18 @@ def inspector_infer(payload,checkpoint=None):
 def serve(port=8765,checkpoint=None):
     class Handler(BaseHTTPRequestHandler):
         def do_GET(self):
+            from urllib.parse import urlsplit,parse_qs
+            url=urlsplit(self.path)
+            if url.path in ('/cycle9','/cycle9-proof'):
+                from pln_chess.cycle9.diagnostics import report,failure_proof
+                try:
+                    query=parse_qs(url.query)
+                    result=report(query.get('section',['summary'])[0]) if url.path=='/cycle9' else failure_proof(int(query.get('index',['-1'])[0]))
+                    code=200
+                except (ValueError,FileNotFoundError) as error:
+                    result={'error':str(error)};code=400
+                payload=json.dumps(result).encode();self.send_response(code)
+                self.send_header('Content-Type','application/json');self.send_header('Content-Length',str(len(payload)));self.end_headers();self.wfile.write(payload);return
             if self.path=='/favicon.ico': self.send_response(204);self.end_headers();return
             if self.path=='/experiments':
                 try:
@@ -134,6 +150,8 @@ def serve(port=8765,checkpoint=None):
                 if not 0<length<=16384: raise ValueError('Request body is too large or empty')
                 payload=json.loads(self.rfile.read(length))
                 result=inspector_infer(payload,checkpoint)
+                from pln_chess.cycle9.diagnostics import decorate_inspection
+                result=decorate_inspection(result)
                 code=200
             except Exception as error:
                 result={'error':str(error)};code=400

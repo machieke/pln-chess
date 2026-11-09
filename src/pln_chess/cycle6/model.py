@@ -1,4 +1,5 @@
 """Lossless schema-5 migration: no retraining or new native mathematics."""
+from pln_chess.common import digest_dataclass
 from dataclasses import dataclass,asdict
 from pathlib import Path
 import copy
@@ -21,7 +22,7 @@ class ModeModel:
     @property
     def training_report(self):return self.source['training_report']
     @property
-    def version(self):return digest(asdict(self))
+    def version(self):return digest_dataclass(self)
     def source_model(self):return PremiseModel(**copy.deepcopy(self.source))
     def export(self,path):
         write_json(path,{**asdict(self),'version':self.version})

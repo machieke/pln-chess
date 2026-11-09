@@ -25,7 +25,7 @@ class TV:
         return f"(stv {float(self.strength)!r} {float(self.confidence)!r})"
 
     def json(self):
-        return asdict(self)
+        return {'strength': self.strength, 'confidence': self.confidence}
 
     @classmethod
     def from_json(cls, value):

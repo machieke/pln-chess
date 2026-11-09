@@ -1,4 +1,5 @@
 """Versioned optional conditionals. The frozen C6 source is preserved intact."""
+from pln_chess.common import digest_dataclass
 import copy
 from dataclasses import dataclass, asdict, field
 from pathlib import Path
@@ -25,7 +26,7 @@ class BackoffModel:
     schema:int=7
     grammar:str='bounded-conditional-backoff-v7'
     @property
-    def version(self):return digest(asdict(self))
+    def version(self):return digest_dataclass(self)
     @property
     def runtime_version(self):return self.source['source']['runtime_version']
     def source_model(self):return ModeModel(**copy.deepcopy(self.source))

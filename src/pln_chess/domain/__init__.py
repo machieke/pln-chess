@@ -1,6 +1,7 @@
 """FEN I/O and structural state changes. No legality decisions."""
 from __future__ import annotations
 from dataclasses import dataclass, replace
+from functools import cached_property
 from pln_chess.common import digest
 
 Square = tuple[int, int]
@@ -26,7 +27,10 @@ class Piece:
     owner: str
     square: Square
 
-    @property
+    def __post_init__(self):
+        object.__setattr__(self, 'square', tuple(self.square))
+
+    @cached_property
     def symbol(self):
         letter = next(k for k,v in PIECES.items() if v == self.kind)
         return letter.upper() if self.owner == "White" else letter
@@ -38,11 +42,15 @@ class Move:
     promotion: str | None = None
     effect: str = "ordinary"
 
-    @property
+    def __post_init__(self):
+        object.__setattr__(self, 'start', tuple(self.start))
+        object.__setattr__(self, 'end', tuple(self.end))
+
+    @cached_property
     def notation(self):
         return square_name(self.start)+square_name(self.end)+(self.promotion or "")
 
-    @property
+    @cached_property
     def id(self):
         return "m"+digest([self.start,self.end,self.promotion,self.effect])[:16]
 
@@ -57,6 +65,13 @@ class Position:
     unknown_squares: tuple[Square, ...] = ()
     history_known: bool = False
     rights_known: bool = True
+
+    def __post_init__(self):
+        # Keep frozen state transitively immutable before memoizing its identity.
+        object.__setattr__(self, 'pieces', tuple(self.pieces))
+        object.__setattr__(self, 'unknown_squares', tuple(tuple(s) for s in self.unknown_squares))
+        if self.ep is not None:
+            object.__setattr__(self, 'ep', tuple(self.ep))
 
     @classmethod
     def from_fen(cls, fen, **kwargs):
@@ -90,10 +105,22 @@ class Position:
         return cls(tuple(pieces),'White' if turn == 'w' else 'Black',rights,
                    None if ep=='-' else parse_square(ep),half,full,**kwargs)
 
+    @cached_property
+    def _by_square(self):
+        # Preserve the original first-piece behavior even for duplicate squares.
+        return {p.square: p for p in reversed(self.pieces)}
+
     def at(self, square):
-        return next((p for p in self.pieces if p.square == square),None)
+        try:
+            return self._by_square.get(square)
+        except TypeError:
+            return next((p for p in self.pieces if p.square == square),None)
 
     def fen(self):
+        return self._fen
+
+    @cached_property
+    def _fen(self):
         rows=[]
         for y in range(7,-1,-1):
             row=''; empty=0
@@ -108,7 +135,7 @@ class Position:
         return ' '.join(('/'.join(rows),'w' if self.turn=='White' else 'b',self.rights or '-',
                          square_name(self.ep) if self.ep else '-',str(self.halfmove),str(self.fullmove)))
 
-    @property
+    @cached_property
     def id(self):
         return 's'+digest([self.fen(),self.unknown_squares,self.history_known,self.rights_known])[:16]
 

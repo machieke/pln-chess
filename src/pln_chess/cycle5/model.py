@@ -1,4 +1,5 @@
 """Versioned premise ledger plus an immutable embedded Cycle 4 reference model."""
+from pln_chess.common import digest_dataclass
 from dataclasses import dataclass,field,asdict
 from pathlib import Path
 from pln_chess.common import digest,read_json,write_json
@@ -24,7 +25,7 @@ class PremiseModel:
     grammar:str=SCHEMA
 
     @property
-    def version(self):return digest(asdict(self))
+    def version(self):return digest_dataclass(self)
     def base_model(self):return FactoredModel(**self.base)
     def export(self,path):
         write_json(path,{**asdict(self),'version':self.version})
