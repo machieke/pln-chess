@@ -54,9 +54,10 @@ def run(out):
     assert data['counts']['synthetic-adversarial']>=100
     assert read_json(out/'datasets/all-symmetry-audit.json')['passed']
     assert read_json(out/'bootstrap/dataset-replay.json')['exact_replay']
-    bootstrap=read_json(out/'bootstrap/verified.json')
+    bootstrap=read_json(out/current['fresh_dependency_bootstrap_receipt'])
     assert all(bootstrap[k] for k in ('passed','initial_clean','fresh_venv','fresh_runtime','final_clean'))
     assert bootstrap['identity']['runtime']==rt.manifest and bootstrap['dependency_lock_sha256']==sha(ROOT/'requirements-dev.lock')
+    assert bootstrap['identity']['production_code_hash']==code
     frozen=read_json(out/'frozen-complete.json');assert frozen['passed'] and frozen['positions']==len(data['positions'])
     assert sha(out/'calibration/frozen-evaluation.json')==frozen['frozen_calibration_sha256']
     assert all(sha(out/p)==h for p,h in frozen['receipts'].items())

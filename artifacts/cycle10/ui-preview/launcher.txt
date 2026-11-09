@@ -1,0 +1,22 @@
+Starting: exec /data/pln-chess-cycle6-delivery/.venv/bin/python /data/pln-chess-cycle10-ui-preview-2/owned-server.py
+✓ Dev server started on :18781
+  Server logs → /data/pln-chess-cycle6-delivery/artifacts/cycle10/ui-preview/2026-11-09_18-05-29_cycle-10-read-only-source-provenance-and/server.log
+Opening browser...
+✓ Browser ready
+✓ Recording started
+
+✅ ProofShot session started
+
+Server:     exec /data/pln-chess-cycle6-delivery/.venv/bin/python /data/pln-chess-cycle10-ui-preview-2/owned-server.py on :18781
+Browser:    Chromium (headless)
+Recording:  /data/pln-chess-cycle6-delivery/artifacts/cycle10/ui-preview/2026-11-09_18-05-29_cycle-10-read-only-source-provenance-and/session.webm
+Errors log: /data/pln-chess-cycle6-delivery/artifacts/cycle10/ui-preview/2026-11-09_18-05-29_cycle-10-read-only-source-provenance-and/server.log
+Verifying:  Cycle 10 read-only source provenance and structural event replay, desktop/mobile; no native inference during benchmark
+
+Use proofshot exec to navigate and test:
+  proofshot exec snapshot -i            # See interactive elements
+  proofshot exec click @e3              # Click an element
+  proofshot exec fill @e2 "text"        # Fill a form field
+  proofshot exec screenshot step.png    # Capture a moment
+
+When done, run: proofshot stop

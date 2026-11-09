@@ -24,7 +24,7 @@ $('c10-export').addEventListener('click',()=>{if(!c10Current)return;const u=URL.
 
 
 def extend(html):
-    html=html.replace('</style>','.c10-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}#c10-study{overflow-wrap:anywhere}#c10-study select{min-width:0;max-width:100%}#c10-status{overflow-wrap:anywhere}@media(max-width:760px){.c10-grid{grid-template-columns:minmax(0,1fr)}}\n</style>')
+    html=html.replace('</style>','.c10-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}#c10-study{overflow-wrap:anywhere}#c10-study select{min-width:0;max-width:100%}#c10-status{overflow-wrap:anywhere}#c10-table th,#c10-table td{white-space:nowrap;padding:8px}@media(max-width:760px){.c10-grid{grid-template-columns:minmax(0,1fr)}}\n</style>')
     html=html.replace('</main>',PANEL+'</main>')
     html=html.replace('<details><summary>Runtime, budget, and raw result</summary>',LIVE+'<details><summary>Runtime, budget, and raw result</summary>')
     html=html.replace('function show(c){',"function show(c){$('c10-live').textContent=JSON.stringify({raw_native_stv:c.raw_stv,legal_move_truth_value:c.legal_move_truth_value,classification:c.classification,proof_status:c.proof_status,evidence_ids:c.evidence_ids,dependence_groups:c.dependence_groups,history_status:c.temporal_evidence&&c.temporal_evidence.status,model_version:c.model_version,runtime_version:c.runtime_version,calibration:c.external_diagnostics||{available:false}},null,2);")

@@ -1,0 +1,195 @@
+[
+  {
+    "args": [
+      "exec",
+      "--session",
+      "pln-chess-cycle10-542072fbeb90",
+      "set",
+      "viewport",
+      "1280",
+      "900"
+    ],
+    "returncode": 0,
+    "seconds": 0.3706650733947754,
+    "stderr": "",
+    "stdout_sha256": "7c8f56aecbeeb314c13c01df65278c8ff9c1d10cc764cfb6bb4fea2accaffc6f"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const end=Date.now()+5000;while((innerWidth!==1280||innerHeight!==900)&&Date.now()<end)await new Promise(r=>setTimeout(r,100));return [innerWidth,innerHeight]})()"
+    ],
+    "returncode": 0,
+    "seconds": 0.3374907970428467,
+    "stderr": "",
+    "stdout_sha256": "3341dd4cc9321dd8a39cb9eb1a2d424826d2e49a5b15bbaf70d1d4206a1dfb41"
+  },
+  {
+    "args": [
+      "exec",
+      "snapshot",
+      "-i"
+    ],
+    "returncode": 0,
+    "seconds": 0.39609861373901367,
+    "stderr": "",
+    "stdout_sha256": "7d664df673093971c255d30f9b428265f355cd51d26c871bd06232aafcbac354"
+  },
+  {
+    "args": [
+      "exec",
+      "screenshot",
+      "initial.png"
+    ],
+    "returncode": 0,
+    "seconds": 0.44388794898986816,
+    "stderr": "",
+    "stdout_sha256": "fc854419ecd377d7625b3dac8b4a0174811aea47b0319543cc0c2f85ec61b2da"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "document.getElementById('c10-study').scrollIntoView();true"
+    ],
+    "returncode": 0,
+    "seconds": 0.33980250358581543,
+    "stderr": "",
+    "stdout_sha256": "a17fcf0a2f50e2d495e4f90ce263410edc183add6c62699a2facbccf60410f74"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{document.getElementById('c10-section').value='provenance';const b=document.getElementById('c10-load');b.click();while(b.disabled)await new Promise(r=>setTimeout(r,100));const d=JSON.parse(document.getElementById('c10-detail').textContent);return {sources:d.data.sources.length,status:document.getElementById('c10-status').textContent};})()"
+    ],
+    "returncode": 0,
+    "seconds": 0.4459114074707031,
+    "stderr": "",
+    "stdout_sha256": "8bc625207150b09a33f1688128f725341587253173b3d3fbd834d29b6738a9ef"
+  },
+  {
+    "args": [
+      "exec",
+      "screenshot",
+      "desktop-source-provenance.png"
+    ],
+    "returncode": 0,
+    "seconds": 0.38335609436035156,
+    "stderr": "",
+    "stdout_sha256": "4b6907905af8975764a7f55458f0830ea25b91138286b11815de349763f10a41"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "document.getElementById('c10-games').closest('details').open=true;document.getElementById('c10-games').scrollIntoView();true"
+    ],
+    "returncode": 0,
+    "seconds": 0.33600759506225586,
+    "stderr": "",
+    "stdout_sha256": "a17fcf0a2f50e2d495e4f90ce263410edc183add6c62699a2facbccf60410f74"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const b=document.getElementById('c10-games');b.click();while(b.disabled)await new Promise(r=>setTimeout(r,100));return document.getElementById('c10-game').options.length;})()"
+    ],
+    "returncode": 0,
+    "seconds": 0.4455406665802002,
+    "stderr": "",
+    "stdout_sha256": "9a7f91a861f59c0cb27f0af9323d158fdab7740d5e3c8016a60f4b04c0fc41e0"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const b=document.getElementById('c10-replay');b.click();while(b.disabled)await new Promise(r=>setTimeout(r,100));const d=JSON.parse(document.getElementById('c10-history').textContent);return {events:d.events.length,status:d.status,legality:d.historical_legality};})()"
+    ],
+    "returncode": 0,
+    "seconds": 0.7481706142425537,
+    "stderr": "",
+    "stdout_sha256": "c5d736e6d7f9435d0076aaa4a81e54872c77a4c8be4e7f0fc870cc70fa9d7bf2"
+  },
+  {
+    "args": [
+      "exec",
+      "screenshot",
+      "desktop-event-history.png"
+    ],
+    "returncode": 0,
+    "seconds": 0.413069486618042,
+    "stderr": "",
+    "stdout_sha256": "b465d5d5e629ba253329cbf724290a46e97716f02029ac179607b601ed325eb1"
+  },
+  {
+    "args": [
+      "exec",
+      "--session",
+      "pln-chess-cycle10-542072fbeb90",
+      "set",
+      "viewport",
+      "390",
+      "844"
+    ],
+    "returncode": 0,
+    "seconds": 0.3823671340942383,
+    "stderr": "",
+    "stdout_sha256": "7c8f56aecbeeb314c13c01df65278c8ff9c1d10cc764cfb6bb4fea2accaffc6f"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const end=Date.now()+5000;while((innerWidth!==390||innerHeight!==844)&&Date.now()<end)await new Promise(r=>setTimeout(r,100));return [innerWidth,innerHeight]})()"
+    ],
+    "returncode": 0,
+    "seconds": 0.32141804695129395,
+    "stderr": "",
+    "stdout_sha256": "bc8e01c3311427e103149a49390e3159fea37f555b11b36e056df04b04edb1bf"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "document.getElementById('c10-study').scrollIntoView();({width:innerWidth,height:innerHeight,scrollWidth:document.documentElement.scrollWidth})"
+    ],
+    "returncode": 0,
+    "seconds": 0.3368046283721924,
+    "stderr": "",
+    "stdout_sha256": "3e58086f2a3f375b24952a4f9d38f71da52b1d952060abd7036042f751db6e31"
+  },
+  {
+    "args": [
+      "exec",
+      "screenshot",
+      "mobile-source-and-history.png"
+    ],
+    "returncode": 0,
+    "seconds": 0.35257887840270996,
+    "stderr": "",
+    "stdout_sha256": "f2775b6c8b446a235245af9fede7d3df2ea6340f2cf6cc91e6b97c23cc5e0eb0"
+  },
+  {
+    "args": [
+      "exec",
+      "snapshot",
+      "-i"
+    ],
+    "returncode": 0,
+    "seconds": 0.581200122833252,
+    "stderr": "",
+    "stdout_sha256": "48ad5b8c636dac0b8ee3c7b1e2c81b36291a0641ca3dd4d8490c17ada5696366"
+  },
+  {
+    "args": [
+      "stop"
+    ],
+    "returncode": 0,
+    "seconds": 1.464362621307373,
+    "stderr": "",
+    "stdout_sha256": "919481a7a49e217968c613a7a05912dc1b256dbb53b7d6212eaf64726aefb60b"
+  }
+]

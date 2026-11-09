@@ -1,0 +1,82 @@
+[
+  {
+    "action": "--session pln-chess-cycle10-30d788bd5a12 set viewport 1280 900",
+    "relativeTimeSec": 0.3,
+    "timestamp": "2026-11-09T18:05:33.566Z"
+  },
+  {
+    "action": "eval (async()=>{const end=Date.now()+5000;while((innerWidth!==1280||innerHeight!==900)&&Date.now()<end)await new Promise(r=>setTimeout(r,100));return [innerWidth,innerHeight]})()",
+    "relativeTimeSec": 0.6,
+    "timestamp": "2026-11-09T18:05:33.898Z"
+  },
+  {
+    "action": "snapshot -i",
+    "relativeTimeSec": 1,
+    "timestamp": "2026-11-09T18:05:34.259Z"
+  },
+  {
+    "action": "screenshot initial.png",
+    "relativeTimeSec": 1.4,
+    "timestamp": "2026-11-09T18:05:34.639Z"
+  },
+  {
+    "action": "eval document.getElementById('c10-study').scrollIntoView();true",
+    "relativeTimeSec": 1.8,
+    "timestamp": "2026-11-09T18:05:35.045Z"
+  },
+  {
+    "action": "eval (async()=>{document.getElementById('c10-section').value='provenance';const b=document.getElementById('c10-load');b.click();while(b.disabled)await new Promise(r=>setTimeout(r,100));const d=JSON.parse(document.getElementById('c10-detail').textContent);return {sources:d.data.sources.length,status:document.getElementById('c10-status').textContent};})()",
+    "relativeTimeSec": 2.1,
+    "timestamp": "2026-11-09T18:05:35.385Z"
+  },
+  {
+    "action": "screenshot desktop-source-provenance.png",
+    "relativeTimeSec": 2.6,
+    "timestamp": "2026-11-09T18:05:35.845Z"
+  },
+  {
+    "action": "eval document.getElementById('c10-games').closest('details').open=true;document.getElementById('c10-games').scrollIntoView();true",
+    "relativeTimeSec": 3,
+    "timestamp": "2026-11-09T18:05:36.245Z"
+  },
+  {
+    "action": "eval (async()=>{const b=document.getElementById('c10-games');b.click();while(b.disabled)await new Promise(r=>setTimeout(r,100));return document.getElementById('c10-game').options.length;})()",
+    "relativeTimeSec": 3.3,
+    "timestamp": "2026-11-09T18:05:36.565Z"
+  },
+  {
+    "action": "eval (async()=>{const b=document.getElementById('c10-replay');b.click();while(b.disabled)await new Promise(r=>setTimeout(r,100));const d=JSON.parse(document.getElementById('c10-history').textContent);return {events:d.events.length,status:d.status,legality:d.historical_legality};})()",
+    "relativeTimeSec": 3.7,
+    "timestamp": "2026-11-09T18:05:36.992Z"
+  },
+  {
+    "action": "screenshot desktop-event-history.png",
+    "relativeTimeSec": 4.5,
+    "timestamp": "2026-11-09T18:05:37.769Z"
+  },
+  {
+    "action": "--session pln-chess-cycle10-30d788bd5a12 set viewport 390 844",
+    "relativeTimeSec": 4.9,
+    "timestamp": "2026-11-09T18:05:38.167Z"
+  },
+  {
+    "action": "eval (async()=>{const end=Date.now()+5000;while((innerWidth!==390||innerHeight!==844)&&Date.now()<end)await new Promise(r=>setTimeout(r,100));return [innerWidth,innerHeight]})()",
+    "relativeTimeSec": 5.3,
+    "timestamp": "2026-11-09T18:05:38.516Z"
+  },
+  {
+    "action": "eval document.getElementById('c10-study').scrollIntoView();({width:innerWidth,height:innerHeight,scrollWidth:document.documentElement.scrollWidth})",
+    "relativeTimeSec": 5.6,
+    "timestamp": "2026-11-09T18:05:38.870Z"
+  },
+  {
+    "action": "screenshot mobile-source-and-history.png",
+    "relativeTimeSec": 5.9,
+    "timestamp": "2026-11-09T18:05:39.197Z"
+  },
+  {
+    "action": "snapshot -i",
+    "relativeTimeSec": 6.3,
+    "timestamp": "2026-11-09T18:05:39.577Z"
+  }
+]

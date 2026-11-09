@@ -62,10 +62,13 @@ def run(out,source):
     identity_code='import json;from pln_chess.pln import Runtime;from pln_chess.cycle6.inference import production_code_hash;print(json.dumps(dict(runtime=Runtime().manifest,production_code_hash=production_code_hash())))'
     import json
     identity=json.loads(subprocess.check_output([str(py),'-c',identity_code],cwd=source,env=env,text=True))
+    bootstrap='final-bootstrap/verified.json' if (out/'final-bootstrap/verified.json').exists() else 'bootstrap/verified.json'
+    assert read_json(out/bootstrap)['checkout']==str(source)
+    assert read_json(out/bootstrap)['identity']['production_code_hash']==identity['production_code_hash']
     write_json(target/'verified.json',dict(passed=True,source_head=head,initial_clean=True,final_clean=True,
         checkout=str(source),test_count=int(match[1]),historical_suites=26,cycle9_shards=48,**identity,
         dependency_lock_sha256=sha(source/'requirements-dev.lock'),
-        fresh_dependency_bootstrap_receipt='bootstrap/verified.json'))
+        fresh_dependency_bootstrap_receipt=bootstrap))
 
 
 if __name__=='__main__':
