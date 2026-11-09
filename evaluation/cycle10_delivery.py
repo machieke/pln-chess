@@ -1,9 +1,11 @@
 """Render the consolidated package from measured, source-bound study artifacts."""
 import argparse
+from collections import Counter
 import os
 from pathlib import Path
 from pln_chess.common import ROOT,read_json,write_json
 from scripts.cycle9_baseline import sha
+from evaluation.cycle3 import read_gzip
 
 
 def pct(value):return '—' if value is None else f'{100*value:.4f}%'
@@ -49,13 +51,14 @@ def run(out,docs):
     def write(name,lines):
         content='\n\n'.join(lines)+'\n'
         content=content.replace('../../artifacts/cycle10/',os.path.relpath(out,docs)+'/')
-        content=content.replace('../../src/',os.path.relpath(ROOT/'src',docs)+'/')
+        for directory in ('src','tests','training','configs'):
+            content=content.replace('../../'+directory+'/',os.path.relpath(ROOT/directory,docs)+'/')
         (docs/(name+'.md')).write_text(content)
     def metric_rows(summary):
-        return [[key,pop,m['positions'],m['exact_positions'],pct(m['precision']),pct(m['recall']),pct(m['f1']),
+        return [[key,pop,m['positions'],m['n'],m['exact_positions'],pct(m['precision']),pct(m['recall']),pct(m['f1']),pct(m['coverage']),pct(m['abstention_rate']),
             m['false_positive'],m['false_illegal'],m['self_check_false_legal'],m['unknown'],m['incomplete']]
             for key,value in summary.items() for pop in ('complete','in_board') for m in [value[pop]]]
-    metrics_table=table(['Cohort','Population','Positions','Exact','Precision','Recall','F1','False legal','False illegal','Self-check false legal','Unknown','Incomplete'],metric_rows(frozen))
+    metrics_table=table(['Cohort','Population','Positions','Candidates','Exact','Precision','Recall','F1','Coverage','Abstention rate','False legal','False illegal','Self-check false legal','Unknown','Incomplete'],metric_rows(frozen))
     write('external-generalization',[
         '# Independent external generalization',
         f'The frozen accepted C8 model achieved **{pct(external["recall"])} legal-move recall**, **{pct(external["precision"])} precision**, and **{external["exact_positions"]}/{external["positions"]} exact legal-move sets** on the final external test. It produced {external["false_positive"]} false-legal, {external["false_illegal"]} false-illegal, {external["self_check_false_legal"]} self-check false-legal, and {external["incomplete"]} incomplete classifications. These are new finite-sample measurements. '+link('analysis/frozen-summary.json'),
@@ -64,7 +67,7 @@ def run(out,docs):
         'The matched 30-position secondary panel contains '+str(secondary['source_games'])+' source games. Its strict, experimental and operational measurements are separately reported; it is not a second representative source sample. '+link('analysis/secondary-modes.json'),
         'Complete populations include the seeded off-board negative candidates. In-board populations remove that easy negative stratum; exact position sets are evaluated against the same full legal reference set. Unknown candidates are retained in the denominators and are not silently counted as correct negatives. '+link('analysis/frozen-summary.json'),
         'Game-cluster percentile bootstrap intervals are reported separately for every source and split (400 draws). Players, openings and engine opponents can remain correlated across games. Zero-error intervals do not establish universal zero risk. '+link('analysis/frozen-summary.json','metrics and intervals'),
-        'Performance is stratified by phase, material count, opening family, tactical density, legal-move count, attacked pieces, multiple attackers and history completeness. These are descriptive associations, not independent causal effects. Per-piece and special-move candidate results are also retained. '+link('analysis/frozen-factors.json')+'; '+link('analysis/frozen-summary.json'),
+        'Performance is stratified by phase, material count, opening family, tactical density, legal-move count, attacked pieces, multiple attackers and history completeness. These are descriptive associations, not independent causal effects. All 1,020 final-test positions have a published prefix available in the corpus, so that history-availability factor has one stratum. The frozen arm deliberately supplies only FEN; the separate temporal arm measures the effect of supplying the recorded prefixes. Per-piece and special-move candidate results are also retained. '+link('analysis/frozen-factors.json')+'; '+link('analysis/frozen-summary.json'),
         f'Supplying actual published game prefixes to the same frozen model yields {pct(with_history["recall"])} recall and {with_history["exact_positions"]}/{with_history["positions"]} exact sets, with {with_history["false_positive"]} false-legal and {with_history["false_illegal"]} false-illegal outcomes. This changes available evidence, not the learned checkpoint or threshold. '+link('analysis/temporal-summary.json'),
         '![External measurements](../../artifacts/cycle10/analysis/figures/external-generalization.png)',
         'The source population, license receipts, sampling restrictions and audits are described in [dataset provenance](dataset-provenance.md). No result establishes correctness outside the measured game, structural and historical distributions.'
@@ -81,6 +84,17 @@ def run(out,docs):
         '![Failure categories](../../artifacts/cycle10/analysis/figures/failure-taxonomy.png)',
         'The same complete census is delivered for both experimental adaptations and the actual-history evaluation. '+link('analysis/small-failure-index.json')+'; '+link('analysis/large-failure-index.json')+'; '+link('analysis/temporal-failure-index.json')
     ])
+    interventions=read_gzip(out/'temporal/historical-abstentions.json.xz')
+    local_missing=[dict(index=i,cohort=case['cohort'],split=case['split'],fixture=case['fixture'],move=case['move'],
+        classification=case['after']['candidate']['classification'],
+        temporal_evidence=case['after']['candidate']['temporal_evidence'])
+        for i,case in enumerate(interventions)
+        if 'No matching pooled local hypothesis.' in case['after']['candidate']['abstention_reason']]
+    write_json(out/'temporal/root-cause-assessment.json',dict(intervention_cases=len(interventions),
+        missing_local_hypotheses_after_supplied_history=len(local_missing),cases=local_missing,
+        after_classification_counts=dict(Counter(case['after']['candidate']['classification'] for case in interventions)),
+        source='temporal/historical-abstentions.json.xz',source_sha256=sha(out/'temporal/historical-abstentions.json.xz'),
+        scope='Directly reported missing local hypotheses after evidence interventions; transported historical evidence alone does not establish a learned local conditional or a complete positive proof.'))
     write('temporal-evidence',[
         '# Historical evidence transport and counterfactuals',
         f'The versioned transport replayed **{history["complete_game_replays"]} complete published game records** and produced **{history["demonstrations"]} inspectable demonstrations**. The native counterfactual error list is `{history["counterfactual_errors"]}`. Historical legality remains explicitly unverified by production replay. '+link('temporal/game-replay.json')+'; '+link('temporal/summary.json'),
@@ -90,6 +104,7 @@ def run(out,docs):
         'All 16 Cycle 9 adversarial and nine special-move abstentions were reproduced. Each involved castling or en-passant history, with original proof traces retained. Added attestations or reverse-constructed predecessors are labelled controlled interventions; no actual historical record was recovered for those synthetic fixtures. '+link('temporal/historical-abstentions.json.xz'),
         table(['Cohort','Investigated candidates','Resolved under supplied evidence'],[[name,v['cases'],v['resolved']] for name,v in history['by_cohort'].items()]),
         f'Across those interventions, {history["full_position_exact_after_intervention"]} complete position evaluations became exact; removing the temporal evidence channel caused {history["temporal_removal_abstentions"]} abstentions. Removing eligibility left {history["eligibility_removal_supported"]} supported-legal candidates. These are measured controls, not assumptions of success. '+link('temporal/summary.json'),
+        f"After supplying history, {len(local_missing)} investigated candidates still report a missing matching pooled local hypothesis. Recognized historical evidence and adequate learned local knowledge are separate requirements; no classification was forced to meet a resolution target. "+link('temporal/root-cause-assessment.json'),
         'The demonstrations cover both castling sides, moved-and-returned kings and rooks, castling through attack and in check, fresh/stale/conflicting en-passant evidence, en-passant king exposure, and all four straight and capture promotion choices. Paired geometry is identical while evidence or eligibility differs. Each record includes the starting state, supplied events, final state, propositions, expected reference outcome, native result, lineage and relevant removal control. '+link('temporal/counterfactuals.json.xz'),
         'The original FEN-only Cycle 9 measurements remain 112/128 adversarial and 71/80 special exact sets. Conditional interventions do not retrospectively convert those original unknowns into known facts. Independent actual-history evidence is evaluated on all 1,020 final external positions. '+link('baseline/cohort-metrics.json')+'; '+link('analysis/temporal-summary.json'),
         'Replay overhead and fresh-versus-reused native cache proof equality after source, confidence and event changes are measured separately. '+link('performance/temporal.json')
@@ -148,6 +163,26 @@ def run(out,docs):
         'Completion denotes delivered engineering and experiments. It does not assert that every research target was achieved. Original FEN-only uncertainty, measured external errors, adaptation regressions and timing uncertainty remain visible. [Engineering report](engineering-report.md).'])
     adaptation_table=table(['Model','Additional observations','Games','Recall','Exact sets','False legal','False illegal'],
         [[name,v['records'],v['games'],pct(v['metrics']['recall']),f"{v['metrics']['exact_positions']}/{v['metrics']['positions']}",v['metrics']['false_positive'],v['metrics']['false_illegal']] for name,v in adaptation['models'].items()])
+    synthetic=frozen['synthetic-adversarial']['complete']
+    research_targets=[
+        ['External collections','at least 3','3 collections / 2 publishers','Met; source dependence remains'],
+        ['Final external positions','at least 1,000',external['positions'],'Met'],
+        ['Final source games','at least 100',102,'Met'],
+        ['Additional synthetic adversarial positions','at least 100',synthetic['positions'],'Met'],
+        ['Additional adversarial exact sets','at least 95%',pct(synthetic['exact_move_set_accuracy']),
+         'Met' if synthetic['exact_move_set_accuracy']>=.95 else 'Missed'],
+        ['Original adversarial exact sets, FEN only','at least 95%','112/128 (87.5%)','Missed; unchanged evidence policy'],
+        ['Original special-move exact sets, FEN only','at least 95%','71/80 (88.75%)','Missed; unchanged evidence policy'],
+        ['Established acceptance errors','zero new','0 new false-legal / false-illegal / self-check false-positive','Passed'],
+        ['Negative evidence controls','287/287','287/287','Passed']]
+    full_latency=next(record for record in performance['records'] if record['fixture']=='full-214')
+    for mode in ('cold','warm'):
+        record=full_latency['modes'][mode]
+        research_targets.append([mode.title()+' full-position latency','no detected regression',
+            'median ratio '+num(record['median_ratio'])+', interval '+str(record['ratio_interval95']),
+            'Detected slowdown in this block comparison' if record['detectable_slowdown_at_this_sample'] else 'No detected slowdown; not proof of equivalence'])
+    write_json(out/'research-targets.json',dict(columns=['Area','Target','Measured','Disposition'],rows=research_targets,
+        scope='Research targets are separate from mandatory implementation gates. Conditional history interventions do not replace original FEN-only measurements.'))
     write('engineering-report',[
         '# Cycle 10 consolidated engineering report',
         f'Starting commit: `{verification["starting_head"]}`. Verified implementation commit: `{verification["source_head"]}`. Production source hash: `{verification["production_code_hash"]}`. Accepted model remains `{verification["model_version"]}`. All changes and commits are local; this cycle authorizes no push or deployment. '+link('verification.json'),
@@ -157,6 +192,7 @@ def run(out,docs):
         'The temporal mechanism transports supplied history without inventing unavailable predecessors or claiming complete legal-play verification. Its controlled interventions explain historical abstentions, and actual PGN prefixes test independent transfer. [Temporal evidence](temporal-evidence.md).',
         'Controlled adaptation used nested 6-game and 24-game subsets, with 16 unique relative observations per game selected before consulting labels. Learning uses native revision, exact relative descriptors and explicit source/game/opening lineage. Final-test games and opening families remain separate. No adapted model was promoted. '+link('adaptation/summary.json')+'; '+link('adaptation/comparison.json'),
         adaptation_table,
+        table(['Research area','Target','Measured','Disposition'],research_targets)+'\n\n'+link('research-targets.json'),
         f'Experimental historical regression comprises {adapt_regression["evaluations"]} evaluations. It records {adapt_regression["false_legal"]} false-legal, {adapt_regression["false_illegal"]} false-illegal and {adapt_regression["self_check_false_positives"]} self-check false-positive outcomes across those repeated suites. Counts include overlapping cohorts and must not be interpreted as independent error events. '+link('adaptation/regression-summary.json'),
         'Any changed final-test prediction occurs outside exact training FENs and source opening families. Local descriptors may recur by design. Paired game bootstrap intervals measure adaptation deltas; unchanged or worse results remain experimental findings. '+link('adaptation/comparison.json'),
         '![Sample efficiency](../../artifacts/cycle10/analysis/figures/sample-efficiency.png)',

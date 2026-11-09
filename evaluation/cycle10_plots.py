@@ -22,8 +22,12 @@ def run(out):
         for offset,report,label,color in [(-.18,frozen,'Frozen FEN-only','#4267ac'),(.18,temporal,'Same model + recorded history','#169b81')]:
             values=[report[n]['complete'][metric]*100 for n in names]
             axis.bar([i+offset for i in range(len(names))],values,width=.35,label=label,color=color)
+            for i,name in enumerate(names):
+                low,high=report[name]['intervals']['interval95'][metric]
+                x=i+offset;axis.vlines(x,100*low,100*high,color='#172335',linewidth=1.2)
+                axis.hlines([100*low,100*high],x-.035,x+.035,color='#172335',linewidth=1.2)
         axis.set_xticks(range(len(names)),labels,rotation=15,ha='right');axis.set_ylim(0,105);axis.set_ylabel('Percent');axis.set_title(title)
-    axes[0].legend(fontsize=8);fig.suptitle('External final test: identical accepted C8 model, different supplied evidence')
+    axes[0].legend(fontsize=8);fig.suptitle('External final test: identical accepted C8 model, different supplied evidence\n95% game-cluster bootstrap intervals; residual opening/player dependence remains',fontsize=11)
     save(fig,'external-generalization')
     calibration=read('calibration/results.json');fig,axis=plt.subplots(figsize=(10,4))
     for offset,key,label,color in [(-.25,'raw-strength','Raw strength diagnostic','#b8714c'),(0,'frozen-C9','Frozen C9 map','#4267ac'),(.25,'external-validation-fit','External validation map','#169b81')]:
@@ -46,8 +50,12 @@ def run(out):
     for metric,label,color in [('recall','Recall','#4267ac'),('exact_move_set_accuracy','Exact sets','#169b81')]:
         values=[r['external-test']['complete'][metric]*100 for r in (frozen,small,large)]
         axis.plot(x,values,'o-',label=label,color=color)
+        for at,report in zip(x,(frozen,small,large)):
+            low,high=report['external-test']['intervals']['interval95'][metric]
+            axis.vlines(at,100*low,100*high,color=color,linewidth=1.3)
+            axis.hlines([100*low,100*high],at-4,at+4,color=color,linewidth=1.3)
     axis.set_xlabel('Additional external observations (nested 6 / 24 games)');axis.set_ylabel('Percent');axis.set_ylim(0,105)
-    axis.set_title('Controlled adaptation on untouched opening-family test holdouts');axis.legend();save(fig,'sample-efficiency')
+    axis.set_title('Controlled adaptation on untouched opening-family test holdouts\n95% game-cluster bootstrap intervals',fontsize=11);axis.legend();save(fig,'sample-efficiency')
     failures=read('analysis/frozen-failure-index.json');counts=failures['categories'];fig,axis=plt.subplots(figsize=(10,6))
     ordered=sorted(counts,key=lambda k:counts[k]['candidates']);axis.barh(ordered,[counts[k]['candidates'] for k in ordered],color='#4267ac')
     axis.set_xlabel('Affected candidates (categories can overlap)');axis.set_title('Frozen failure census: structural triage, not automatic causal proof');save(fig,'failure-taxonomy')
