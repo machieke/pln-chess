@@ -21,3 +21,7 @@ Historical Cycle 9 adversarial and special-move abstentions are inspected indivi
 Timing runs are serial after other native study workers finish. Record cold/warm/reference proof equality, native calls, grounded atoms, RSS high-water marks, loading and replay overhead. Nine repetitions per new workload yield descriptive p50/p95/p99 statistics; sample maxima are not reliable tail guarantees. Historical timing is reproduced as a new measurement and compared with its original host-specific values.
 
 Acceptance requires old C8/C9 proof parity, all 287 negative controls, unchanged runtime formulas, a clean bootstrap, automated tests, source/data integrity and browser verification. No research target overrides a failed mandatory gate. The package preserves failed experiments and historical evidence. Strategic work is an ontology and experiment proposal only; no playing score, potential-field computation or move-selection engine is enabled.
+
+## Dependence prediction panel
+
+Before external predictions, the secondary dependence panel is fixed to twelve final-test games: the first four game IDs per collection, one content-hash-selected position per game. All candidates are evaluated for the frozen model and seven dependence variants. This bounded diagnostic is not used to select a model or change thresholds. Transformed controls mirror ranks and exchange piece ownership, with explicit ancestor lineage; contradictory labels are declared synthetic supervision controls.

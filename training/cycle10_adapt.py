@@ -130,8 +130,17 @@ def run(out):
     transformed=copy.deepcopy(chosen)
     for row in transformed:
         ancestor=row['dependence_group'];row['dependence_group']=ancestor+'/copy';row['transformation_lineage']=[ancestor,*row['transformation_lineage']]
+        board=chess.Board(row['fen']).mirror();move=chess.Move.from_uci(row['move'])
+        mirrored=chess.Move(chess.square_mirror(move.from_square),chess.square_mirror(move.to_square),promotion=move.promotion)
+        row['fen']=board.fen(en_passant='fen');row['move']=mirrored.uci();row['source']='controlled-color-reflection/'+row['source']
+        from pln_chess.api import find_move
+        position=Position.from_fen(row['fen']);candidate=find_move(position,row['move'])
+        descriptor=(promotion_observe(position,candidate)['descriptor'] if row['channel']=='promotion' else
+                    next(r['descriptor'] for r in descriptors(position,candidate)['relations'] if r['target']=='LocalAdmissibility'))
+        assert descriptor==row['descriptor'] and (mirrored in board.legal_moves)==row['label']
     correlated=revise(frozen,chosen+transformed,runtime,name='dependence-transformed',out=out/'dependence')
     conflict=copy.deepcopy(chosen[0]);conflict['movement_label']=not conflict['movement_label']
+    conflict['source']='synthetic-contradictory-supervision/'+conflict['source']
     shared_conflict=revise(frozen,chosen+[conflict],runtime,name='dependence-shared-conflict',out=out/'dependence')
     conflict['dependence_group']='independent-collection-counterexample';conflict['source_game']=conflict['dependence_group'];conflict['transformation_lineage']=[]
     independent_conflict=revise(frozen,chosen+[conflict],runtime,name='dependence-independent-conflict',out=out/'dependence')
