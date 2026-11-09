@@ -36,6 +36,11 @@ def categories(row,fixture):
     if fixture.get('discovered_check_opportunities'):result.append('discovered-attacks')
     if fixture.get('double_check'):result.append('double-check')
     if fixture.get('in_check'):result.append('check-resolution')
+    # Position contexts (for example pins) must not hide an explicitly missing
+    # local hypothesis. Keep availability distinct from historical provenance.
+    missing_local='No matching pooled local hypothesis.' in text or row['root_cause']=='missing-movement-prior'
+    if missing_local:
+        result.extend(('insufficient-evidence','overly-specific-relational-abstraction'))
     if not result:
         tv=row['local_truth_value']
         result.append('insufficient-evidence' if not tv or tv['confidence']<.25 else 'native-PLN-inference-limitation')

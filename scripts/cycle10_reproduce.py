@@ -53,6 +53,8 @@ def run(out,checkout,snapshot,work,plot_python='python3',browser=True):
         exact_dataset_replay=True,mandatory_implementation_gates=True,browser_executed=browser,
         source_acquisition='Reused exact delivered licensed source bytes and original acquisition receipts.',
         scope='Complete fresh native replay. Timings, timestamps and figure metadata can differ; source/data/model/proof identities and acceptance outcomes are checked. No Git push or deployment.'))
+    from evaluation.cycle10_delivery import artifact_manifest
+    artifact_manifest(out,out/'reports')
 
 
 if __name__=='__main__':

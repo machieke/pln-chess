@@ -13,8 +13,25 @@ def table(headers,rows):
         *('| '+' | '.join(str(v) for v in row)+' |' for row in rows)])
 
 
+def artifact_manifest(out,docs):
+    out=Path(out).resolve();docs=Path(docs).resolve();manifest={}
+    for directory in (out,docs):
+        for path in sorted(directory.rglob('*')):
+            if path.is_file() and path!=out/'manifest.json':
+                manifest[os.path.relpath(path,out)]=dict(sha256=sha(path),bytes=path.stat().st_size)
+    write_json(out/'manifest.json',dict(schema=10,base='Directory containing this manifest',files=manifest,
+        scope='Artifacts and reports at rendering time; regenerate after browser verification and final report updates. Manifest excludes itself.'))
+
+
 def run(out,docs):
     out=Path(out).resolve();docs=Path(docs).resolve();docs.mkdir(parents=True,exist_ok=True)
+    originals=ROOT/'docs/cycle10'
+    if docs!=originals.resolve():
+        for name in ('dataset-provenance','study-protocol','strategic-readiness','architecture-decision','reproduction','work-log'):
+            content=(originals/(name+'.md')).read_text()
+            content=content.replace('../../artifacts/cycle10/',os.path.relpath(out,docs)+'/')
+            content=content.replace('../../src/',os.path.relpath(ROOT/'src',docs)+'/')
+            (docs/(name+'.md')).write_text(content)
     get=lambda p:read_json(out/p)
     frozen=get('analysis/frozen-summary.json');temporal=get('analysis/temporal-summary.json')
     failures=get('analysis/frozen-failure-index.json');calibration=get('calibration/results.json')
@@ -139,7 +156,7 @@ def run(out,docs):
         'Any changed final-test prediction occurs outside exact training FENs and source opening families. Local descriptors may recur by design. Paired game bootstrap intervals measure adaptation deltas; unchanged or worse results remain experimental findings. '+link('adaptation/comparison.json'),
         '![Sample efficiency](../../artifacts/cycle10/analysis/figures/sample-efficiency.png)',
         '[Calibration and dependence](calibration-shift.md) distinguish empirical frequencies from raw native truth values. [Performance](performance.md) reports reference/cold/warm parity, RSS and temporal overhead. [Strategic readiness](strategic-readiness.md) is a design proposal; no strategic selector, handcoded evaluation score, native conjunction extension or upstream modification is enabled.',
-        f'The implementation passes {verification["test_count"]} automated tests, all 26 established suites, all 48 Cycle 9 comparison shards and 287/287 negative controls in a clean checkout using freshly bootstrapped dependencies. '+link('current/verified.json')+'; '+link('current/logs/tests.txt')+'; '+link(get('current/verified.json')['bootstrap_receipt'])+'; '+link('bootstrap/dataset-replay.json'),
+        f'The implementation passes {verification["test_count"]} automated tests, all 26 established suites, all 48 Cycle 9 comparison shards and 287/287 negative controls in a clean checkout using freshly bootstrapped dependencies. '+link('current/verified.json')+'; '+link('current/logs/tests.txt')+'; '+link(get('current/verified.json')['fresh_dependency_bootstrap_receipt'])+'; '+link('bootstrap/dataset-replay.json'),
         'The interfaces expose provenance, all evaluation arms, calibration shift, failure proofs, event replay, temporal controls, experimental comparisons and performance. The default checkpoint remains accepted C8; experimental checkpoints retain a strict default unless an explicit mode is selected. [CLI/API reproduction](reproduction.md); '+link('ui/verification.json','desktop/mobile checks')+'.',
         'Limitations: three collections from two publishing organizations; restricted archive prefixes; residual opening/player/engine correlation; sparse en-passant and promotion opportunities; externally supplied trust rather than verified original historical legality; partial positive native proofs; finite adaptation budgets; descriptive timing tails. Targets missed under FEN-only evidence are not repaired by relabelling unknown history.',
         'Recommended Cycle 11 priorities: expand licensed sources and rare history-sensitive strata; study evidence coverage for still-unseen relative descriptors; validate transfer and calibration on new locked source windows; investigate dependence beyond game IDs; design small supervised attack/defense-field experiments while retaining the composition no-go until a defensible native probabilistic contract is available.',
@@ -154,14 +171,7 @@ def run(out,docs):
         f'The original baseline reproduced exactly. Final implementation gates include **{verification["test_count"]} tests**, **26 established suites**, **48 Cycle 9 shards**, **287 negative controls**, full native proof/cache parity, clean dependency bootstrap and exact dataset replay. Benchmarks compare six realistic workloads serially and disclose limited tail precision. '+link('verification.json')+'; '+link('performance/comparison.json'),
         'Strategic work remains architectural preparation. The existing native-composition no-go is retained; no chess selector, handcoded score, production oracle or new operator was introduced. Collection coverage, residual dependence, rare special moves and incomplete positive composition remain the main limits. Cycle 11 should prioritize new locked source windows, unresolved relative descriptors, and small evidence-grounded attack/defense experiments. [Full report](engineering-report.md); [18-package matrix](package-matrix.md).'
     ])
-    manifest={}
-    for directory in (out,docs):
-        for path in sorted(directory.rglob('*')):
-            if path.is_file() and path!=out/'manifest.json':
-                key=os.path.relpath(path,out)
-                manifest[key]=dict(sha256=sha(path),bytes=path.stat().st_size)
-    write_json(out/'manifest.json',dict(schema=10,base='Directory containing this manifest',files=manifest,
-        scope='Artifacts and reports at rendering time; regenerate after browser verification and final report updates. Manifest excludes itself.'))
+    artifact_manifest(out,docs)
 
 
 if __name__=='__main__':
