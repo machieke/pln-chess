@@ -1,0 +1,21 @@
+{
+  "schema": 10,
+  "starting_head": "257473d2462c75f84d3975bb91d85a8c1cc269dd",
+  "accepted_model": "C8-promotion-relative",
+  "source_commit_tcec": "3dd69a40b3cf6ccc74144df7411ef4e8e2140286",
+  "games_per_source": {"external-test": 34, "external-calibration": 8, "external-adaptation": 8},
+  "positions_per_game": {"external-test": 10, "external-calibration": 6, "external-adaptation": 6},
+  "opening_partition": "SHA256 ECO three-character family, or first four-ply sequence when absent; modulo 5: 0 adaptation, 1 calibration, otherwise final test. Shared opening-family assignment across sources.",
+  "selection": "First 1000 valid complete standard game records per source, deterministic game-content hash order; retain earliest eligible games meeting preregistered split quotas. Position sampling spreads across the complete record, augmented by objectively defined special-move/endgame opportunities before any model evaluation.",
+  "leakage": "Exclude historical and cross-game whole-position translation, reflection and color-swap equivalents; audit exact FEN and four-field canonical hashes. Shared local relational features are not independent knowledge.",
+  "frozen": "Evaluate unchanged C8 checkpoint and Cycle 9 calibration on every external position before any external adaptation or calibration fitting.",
+  "adaptation": "Nested subsets of 6 then 24 external adaptation games; revise only existing relative learner hypotheses using native revision and game/opening dependence. Final test never used for tuning or promotion.",
+  "calibration": "Ten strength bins, Laplace smoothing; fit external calibration games only after frozen evaluation. 400 deterministic game-cluster bootstrap replicates.",
+  "adversarial_pairs_per_family": 7,
+  "seed": 101010,
+  "benchmark_repetitions": 9,
+  "bootstrap_replicates": 400,
+  "model_promotion": false,
+  "native_composition": "No new operator; architecture review only.",
+  "git_policy": "Local commits only; no push or deployment."
+}
