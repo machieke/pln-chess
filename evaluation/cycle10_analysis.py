@@ -187,6 +187,18 @@ def calibration(out):
                 if subset:confidence_bins.append(dict(bin=index,n=len(subset),mean_native_confidence=sum(r['truth_value']['confidence'] for r in subset)/len(subset),
                     legal_frequency=sum(r['label'] for r in subset)/len(subset),scope='Association diagnostic; confidence is not a legality probability.'))
             results[population+'/'+name]=dict(measurements=measurements,confidence_bins=confidence_bins,selective=selective(selected))
+    comparisons=[]
+    for split in ('independent-games','adversarial','special-moves'):
+        for population in ('complete','in-board'):
+            for diagnostic,original_key in (('raw-strength','raw-strength'),('frozen-C9','empirical-calibrated')):
+                actual=results[population+'/Cycle9-reproduced/'+split]['measurements'][diagnostic]
+                expected=old['evaluations'][split][population][original_key]
+                assert actual['n']==expected['n']
+                assert all(abs(actual[k]-expected[k])<1e-12 for k in ('brier','ece','log_loss'))
+                comparisons.append(dict(split=split,population=population,diagnostic=diagnostic,
+                    n=actual['n'],brier=actual['brier'],ece=actual['ece'],log_loss=actual['log_loss'],absolute_tolerance=1e-12,equal_within_tolerance=True))
+    write_json(out/'baseline/calibration-reproduction.json',dict(passed=True,computed_unix=time.time(),comparisons=comparisons,
+        scope='Numerical recomputation after implementation from the original-source native rows generated and proof-verified before production development. The unchanged C9 mapping is used; no calibration refit enters these comparisons.'))
     write_json(out/'calibration/results.json',dict(schema=10,diagnostic_only=True,changes_classification=False,fitted_unix=time.time(),
         model_version=old['model_version'],frozen_mapping=old['mappings'],external_mapping=mappings,
         fit_split='external-calibration',fit_games=len({r['source_game'] for r in calibration_rows}),fit_positions=len({r['fixture'] for r in calibration_rows}),
