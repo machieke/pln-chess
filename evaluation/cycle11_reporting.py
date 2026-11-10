@@ -211,15 +211,22 @@ Published-game subpanel:
 
 Calibration uses only the separate calibration partition to fit ten-bin Laplace diagnostic mappings. Raw and mapped Brier/log-loss/ECE, reliability bins and covered-only scores are retained. Thresholds and native classifications remain unchanged. Confidence is not plotted as a probability. {artifact('field-evaluation/calibration.json')}.
 
+![Measured relation results]({link('figures/relation-results.png')})
+
+![Held-out reliability diagnostics]({link('figures/relation-reliability.png')})
+
+Vector exports: {artifact('figures/relation-results.svg', 'relation results')}, {artifact('figures/relation-reliability.svg', 'reliability diagnostics')}.
+
 The frozen primary mobility results include {failure_audit['count']} false negatives, of which {failure_audit['castling_alias_count']} are reference king-to-rook castling aliases missed by the label adapter's two-cell castle exclusion. The post-freeze audit documents this domain mismatch without changing original labels, denominators, models or thresholds. A future independently registered ordinary-mobility panel should exclude every castling encoding before sampling. {artifact('field-evaluation/post-freeze-false-negatives.json')}. The external king-exposure subpanel has only one positive, so its positive recall is particularly weak evidence.
 
 The panel is a deliberately structured mixture, not a representative sample of chess positions. Some controlled contexts are invalid as complete game states; their local relation labels remain defined, and reference-valid-only metrics are reported separately. Group bootstrap resamples connected source/generator/declared-ancestry components, including shared openings, not individual related queries. Two controlled holdout generator groups provide weak interval resolution. Native conditional coverage and unsupported global composition are reported separately. {artifact('field-evaluation/summary.json')}.
 ''')
 
-    perf_rows = []
+    perf_rows, cost_rows = [], []
     for name, values in performance['workloads'].items():
         cold, warm, full, incremental = (values[k] for k in ('full-cold', 'full-warm', 'successor-full-cold', 'successor-incremental'))
         perf_rows.append(f"| {name} | {cold['median_seconds']:.4f} | {warm['median_seconds']:.4f} | {full['median_seconds']:.4f} | {incremental['median_seconds']:.4f} | {incremental['median_relation_cache_hits']} / {incremental['median_relation_cache_invalidations']} |")
+        cost_rows.append(f"| {name} | {full['median_native_invocations']} / {incremental['median_native_invocations']} | {full['median_grounded_atoms']} / {incremental['median_grounded_atoms']} | {incremental['median_proof_bytes']} | {incremental['maximum_python_allocations_peak_bytes']:,} |")
     write('performance.md', f'''# Field performance and exact reuse
 
 Each workload ran in a fresh worker for {performance['repetitions']} repetitions, after other native study workers finished. Full and incremental outputs have identical relation values and native proof IDs. Pure native-expression caching and exact local-relation reuse are separately counted. {artifact('performance/summary.json')}.
@@ -229,6 +236,14 @@ Cold means a fresh field/native-expression session; operating-system file caches
 | Workload | Cold field median s | Warm median s | Full successor median s | Incremental median s | Reused / invalidated relations |
 |---|---:|---:|---:|---:|---:|
 {chr(10).join(perf_rows)}
+
+| Workload | Native invocations full / incremental | Grounded atoms full / incremental | Incremental proof bytes | Maximum incremental Python allocation bytes |
+|---|---:|---:|---:|---:|
+{chr(10).join(cost_rows)}
+
+![Measured field execution times]({link('figures/field-performance.png')})
+
+{artifact('figures/field-performance.svg', 'Vector performance figure')}.
 
 The cache binds model identity, runtime manifest, inference options, observation source and complete relevant dependencies. Long rays include every participating cell; there is no fixed neighborhood radius. Source motion, promotion, target identity, capture, off-destination EP removal, unknown-cell edits and castling rook motion invalidate affected relations. An unrelated distant edit may preserve a local proof while the enclosing state certificate changes.
 
@@ -312,7 +327,7 @@ Executed stage receipts, their source hashes and any retained failed development
 
 The accepted legal learner is preserved, and the experimental field subsystem learns and explains four distinct relative relation families. Native conditional proofs are retained; before/after change propositions remain explicitly host diagnostics. Experimental models remain unpromoted. No push or deployment is included.
 
-Starting commit: `{baseline['starting_head']}`. Accepted checkpoint: `{learning.get('accepted_model_version', '1217e17552ff611bebf0efc650245b05fb71c93a8175b579b025d6273d5d781d')}`. Current source identity and final local Git state are recorded in {artifact('delivery.json')}. [Work-package matrix](package-matrix.md).
+Starting commit: `{baseline['starting_head']}`. Accepted checkpoint: `{learning.get('accepted_model_version', '1217e17552ff611bebf0efc650245b05fb71c93a8175b579b025d6273d5d781d')}`. Verified production-source identity and the Git state at package preparation are recorded in {artifact('delivery.json')}. The final delivery response records the closing commit and post-commit working-tree status. [Work-package matrix](package-matrix.md).
 
 The full accepted native replay preserves 793/1,020 exact external FEN-only sets and 1,018/1,020 history-assisted sets, with no new false-legal, false-illegal or self-check false-positive classification. The independently named local experiment recovers {legal['en_passant']['recovered_legal']}/2 known EP abstentions; its separate adversarial/holdout/external-applicability outcomes and limits are in [legal completion](legal-completion.md).
 
@@ -326,7 +341,7 @@ Mandatory implementation checks include {current['test_count']} tests, all 287 n
 
 The system learns local conditional influence under supplied geometry and occupancy abstractions. It does not learn the abstraction grammar itself, infer legal recapture from defense alone, prove universal safety from absent attacks, derive a native probabilistic field-change theorem, or choose an optimal move. Group dependence, controlled invalid whole-board contexts, limited calibration populations and finite no-error tests constrain generalization. [Ontology](potential-field-ontology.md), [strategic roadmap](strategic-roadmap.md), [reproduction](reproduction.md).
 
-Local commits at report generation (the final documentation/manifest commit follows and is listed in the delivery receipt):
+Local commits at report generation (the closing documentation/manifest commit follows and is recorded in the final delivery response):
 
 ```text
 {commits}
