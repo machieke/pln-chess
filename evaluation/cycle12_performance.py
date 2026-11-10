@@ -37,6 +37,8 @@ def worker(out,name,repetition):
     from pln_chess.cycle12.model import ConceptModel
     from pln_chess.cycle12.inference import infer_concepts, ConceptSession
     from pln_chess.cycle12.temporal import replay_fields, semantic_replay
+    from pln_chess.cycle8.model import PromotionModel
+    from pln_chess.cycle8.inference import infer_moves as legal_infer, Cycle8Options
     out=Path(out);case=case_for(name);runtime=Runtime(timeout=600)
     field_model=FieldModel.load(ROOT/'artifacts/cycle11/model/C11-field-trained.json',runtime)
     concept_model=ConceptModel.load(out/'model/C12-concept-trained.json',runtime)
@@ -83,6 +85,15 @@ def worker(out,name,repetition):
     concepts=measure('eight-concept-conditional-queries',lambda:infer_concepts(cases,concept_model,field_model,
         options=options,runtime=runtime,session=ConceptSession(runtime)))
     measurements[-1].update(concepts=len(concepts['concepts']),proof_hash=digest(concepts['concepts']),execution=concepts['execution'])
+    for label,path in [('legal-accepted-full-fen','artifacts/cycle10/model/C10-default.json'),
+                       ('legal-candidate-full-fen','artifacts/cycle11/model/C11-special-local.json')]:
+        legal_model=PromotionModel.load(ROOT/path,runtime)
+        legal=measure(label,lambda:legal_infer(position,legal_model,Cycle8Options(mode='operational',timeout_seconds=600,max_native_invocations=100000),runtime))
+        assert not legal['truncated']
+        measurements[-1].update(candidates=len(legal['candidates']),model_version=legal_model.version,
+            proof_hash=digest([c['proof_trace'] for c in legal['candidates']]),
+            classifications={status:sum(c['classification']==status for c in legal['candidates']) for status in ('supported-legal','supported-illegal','unknown','incomplete')},
+            temporal_scope='FEN-only benchmark. Complete supplied-history accuracy is separately tested in the full legal population review.')
     if name=='standard-opening':
         supplied=next(r['input'] for r in read_json(out/'datasets/sequences.json')['sequences'] if r['input']['id']=='developing-attack')
         temporal=measure('seven-state-temporal-replay',lambda:replay_fields(supplied,field_model,runtime=runtime,options=options))
