@@ -11,3 +11,18 @@
 - The all-dihedral/translation audit found no train/calibration/test full-position, group or ancestry overlap; all eight dedicated transfer configurations and positions are absent from training. New controlled contexts and special-move training have no whole-position overlap with historical datasets. External panels deliberately reuse the original Cycle 10 game partitions.
 - A worked-example generator initially used the reference library's legality-validating `push_uci` on an intentionally contradicted candidate. Its failed log is retained. It now uses structural `push` after separately recording the reference legal label; production legality behavior is unchanged.
 - Offline native-training drivers are prepared with an explicit completed-baseline guard. No production source or original tests have changed and no new field or legal-completion model has been trained yet.
+# Evaluation orchestration prepared during baseline replay
+
+Prepared separate native field-learning, held-out relation evaluation,
+transformation/removal, dependence, temporal-claim, legal-completion and
+experimental legal-regression drivers. These require the unchanged-source
+baseline receipt before inference experiments begin. The independent
+regression driver replays every original accepted cohort in a fresh checkout.
+Performance measurements run only after native regression workers finish and
+compare exact full, warm and incremental proof identities. The browser driver
+uses the ProofShot skill with an owned local server, screenshots, video,
+desktop/mobile assertions and an actual exported proof payload.
+
+No production source has changed at this stage. Experiment drivers and
+assertions describe expected contracts; their existence does not establish
+that the experiments have passed.
