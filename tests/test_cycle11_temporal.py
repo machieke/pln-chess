@@ -89,6 +89,14 @@ def test_zero_confidence_cannot_establish_native_eligibility():
     assert not replay_claims(**data)['native_available']
 
 
+def test_supplied_confidence_is_not_capped_by_empty_history_default():
+    data=supplied()
+    for record in data['claims']:record['confidence']=.999
+    result=replay_claims(**data)
+    assert result['native_available']
+    assert result['legacy_transport']['input']['confidence']==.999
+
+
 def test_fen_ep_flag_does_not_create_observed_predecessor():
     result=replay_claims('7k/8/8/5pP1/8/8/8/K7 w - f6 0 2',[],source='FEN-only')
     assert not result['native_available']

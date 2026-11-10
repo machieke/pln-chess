@@ -112,8 +112,7 @@ def replay_claims(initial_fen,claims,*,source,initial_trust='unknown',expected_f
         conflicts.append(dict(kind='reported-final-state-mismatch',reported=expected_fen,replayed=state.fen()))
     supplied_confidences=[c['confidence'] for c in canonical_claims]
     supplied_confidences.extend(m['confidence'] for m in metadata.values())
-    supplied_confidences.append(.99)
-    confidence=min(supplied_confidences)
+    confidence=min(supplied_confidences,default=.99)
     observed=all(c['epistemic_type']=='observed-event' and c['confidence']>0 for c in canonical_claims)
     native_available=bool(not gaps and not conflicts and observed and confidence>0 and
         (events or initial_trust!='unknown' or metadata))
