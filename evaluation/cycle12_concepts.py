@@ -119,6 +119,8 @@ def run(out):
         transformation_failures=[r['case']['id'] for r in transformations if not r['passed']],
         counterfactuals=len(counterfactuals),counterfactuals_distinguished=sum(r['distinguishes_registered_change'] for r in counterfactuals),
         conditional_removal_abstains=sum(r['conditional_removal_abstains'] for r in counterfactuals),
+        conditional_retractions=sum(r['before']['classification'] in ('supported','contradicted') and r['conditional_removal_abstains'] for r in counterfactuals),
+        already_unknown_before_removal=sum(r['before']['classification']=='unknown' for r in counterfactuals),
         transfers={concept:dict(attempts=sum(r['concept']==concept for r in transfers),
             successes=sum(r['concept']==concept and r['successful'] for r in transfers),
             failures=[r['case']['id'] for r in transfers if r['concept']==concept and not r['successful']]) for concept in ('Pin','Fork')},

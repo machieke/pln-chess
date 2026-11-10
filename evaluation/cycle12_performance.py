@@ -92,14 +92,14 @@ def worker(out,name,repetition):
         concept_model_version=concept_model.version,runtime_version=runtime.version,exact_proof_evidence_graph_parity=True,
         process_peak_rss_kib=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
         native_child_peak_rss_kib=resource.getrusage(resource.RUSAGE_CHILDREN).ru_maxrss,
-        timing_scope='Model/runtime construction excluded. Field observation, native inference, proof assembly, dependency graph creation and graph hashing included. Parent preparation is separately timed. No competing study workers.',
-        memory_scope='Python tracemalloc peak per condition; Linux high-water RSS per fresh worker and maximum native child. These are not total concurrent memory. Allocation tracking adds timing overhead.'))
+        timing_scope='Model/runtime construction excluded. Field observation, native inference, proof assembly, graph construction and its internal identity/validation hashing included. Additional parity digest calculations are outside the timed condition. Parent preparation is separately timed. No competing study workers.',
+        memory_scope='Python tracemalloc peak per condition; Linux high-water RSS per fresh worker and maximum native child. Worker RSS includes retained comparison outputs for parity checks, not only one inference result. These are not total concurrent memory. Allocation tracking adds timing overhead.'))
 
 
 def run(out):
     out=Path(out).resolve()
     assert read_json(out/'current/verified.json')['passed']
-    assert read_json(out/'legal/regression-summary.json')['passed'] or read_json(out/'legal/promotion-review.json')['promoted'] is False
+    assert read_json(out/'legal/regression-summary.json')['passed'] or read_json(out/'legal/promotion-decision.json')['promoted'] is False
     if subprocess.run(['pgrep','-x','swipl'],stdout=subprocess.DEVNULL).returncode==0:
         raise RuntimeError('Performance measurements require native-worker quiescence')
     repetitions=read_json(ROOT/'configs/cycle12.json')['benchmark_repetitions']

@@ -5,6 +5,7 @@ from pathlib import Path
 from pln_chess.common import digest, read_json, write_json
 from pln_chess.pln import Runtime
 from training.cycle12_learning import train
+from training.cycle12_controls import transform
 
 
 def run(out):
@@ -14,7 +15,8 @@ def run(out):
         rows.extend([r for r in data['records'] if r['split']=='train' and r['input']['concept']==concept][:4])
     transformed=[];unsafe=[]
     for record in rows:
-        row=copy.deepcopy(record);row['input']['source']='declared-identity-transform';row['id']='transform:'+digest(row)
+        row=copy.deepcopy(record);row['input']=transform(record['input'],'identity-renaming')
+        row['input']['source']='declared-identity-transform';row['id']='transform:'+digest(row)
         row['dependence_group']=record['dependence_group']+'/transform';row['transformation_lineage']=[record['dependence_group'],*record['transformation_lineage']]
         transformed.append(row)
         row=copy.deepcopy(record);row['input']['source']='deliberately-unsafe-duplicate';row['id']='unsafe:'+digest(row)
