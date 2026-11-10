@@ -98,9 +98,10 @@ def reference(case):
         board.turn = p.color
         moves = [m.uci() for m in board.generate_pseudo_legal_moves(from_mask=chess.BB_SQUARES[roles['subject']])
                  if not board.is_castling(m) and not board.is_en_passant(m)]
-        legal_exits = [m.uci() for m in board.generate_legal_moves(from_mask=chess.BB_SQUARES[roles['subject']])]
+        legal_exits = sorted(m.uci() for m in board.generate_legal_moves(from_mask=chess.BB_SQUARES[roles['subject']])) if board.is_valid() else None
         label = not moves
-        details = dict(ordinary_geometric_exits=sorted(moves), reference_legal_exits=sorted(legal_exits),
+        details = dict(ordinary_geometric_exits=sorted(moves), reference_legal_exits=legal_exits,
+                       legal_reference_applicable=board.is_valid(),
                        strategically_trapped=None, unfavorable_exits=None,
                        missing='The conditional does not establish the quality of exits or a complete safe-mobility theorem.')
     else:

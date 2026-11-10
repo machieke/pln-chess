@@ -1,0 +1,1568 @@
+{
+  "fresh_bootstrap_passed": true,
+  "fresh_cycle9_evaluation_passed": true,
+  "fresh_full_baseline_complete": false,
+  "fresh_historical_suites_passed": true,
+  "fresh_tests_passed": true,
+  "new_learning_authorized": false,
+  "passed": true,
+  "quoted_measurements": {
+    "cycle10/external-test/operational/fen": {
+      "exact": 793,
+      "false_illegal": 0,
+      "false_legal": 0,
+      "missed_legal": 240,
+      "positions": 1020,
+      "recall": 0.9926454815677381,
+      "shards": 51,
+      "true_positive": 32393
+    },
+    "cycle10/external-test/operational/history": {
+      "exact": 1018,
+      "false_illegal": 0,
+      "false_legal": 0,
+      "missed_legal": 2,
+      "positions": 1020,
+      "recall": 0.9999387123463979,
+      "shards": 51,
+      "true_positive": 32631
+    },
+    "cycle10/synthetic-adversarial/operational/fen": {
+      "exact": 98,
+      "false_illegal": 0,
+      "false_legal": 0,
+      "missed_legal": 14,
+      "positions": 112,
+      "recall": 0.9922265408106608,
+      "shards": 6,
+      "true_positive": 1787
+    },
+    "cycle9/adversarial/operational/fen": {
+      "exact": 112,
+      "false_illegal": 0,
+      "false_legal": 0,
+      "missed_legal": 16,
+      "positions": 128,
+      "recall": 0.9923334930522281,
+      "shards": 6,
+      "true_positive": 2071
+    },
+    "cycle9/special-moves/operational/fen": {
+      "exact": 71,
+      "false_illegal": 0,
+      "false_legal": 0,
+      "missed_legal": 9,
+      "positions": 80,
+      "recall": 0.9925373134328358,
+      "shards": 4,
+      "true_positive": 1197
+    }
+  },
+  "scope": "Reproduced source/model/data/runtime provenance and metric derivations from the immutable starting proof archives, plus already completed fresh bootstrap/tests/historical executions. Complete fresh external proof replay remains a separate mandatory gate.",
+  "source_clean": true,
+  "source_identity": {
+    "accepted_model": "1217e17552ff611bebf0efc650245b05fb71c93a8175b579b025d6273d5d781d",
+    "dependencies": {
+      "chess": "1.11.2",
+      "pytest": "8.3.5",
+      "setuptools": "75.8.0"
+    },
+    "production_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+    "python": "3.12.12 (main, Feb 12 2026, 00:42:14) [Clang 21.1.4 ]",
+    "runtime": {
+      "atomspace": "PeTTa native in-process MeTTa space (no Hyperon AtomSpace dependency)",
+      "petta": {
+        "branch": "main",
+        "commit": "ee5cacb6a6ecdd554a1c773aaf47e9a0f8a5af0f",
+        "files": {
+          "run.sh": "269a50bc47e8a5f614f1999161d7f5f6ea51c4615d39f12a404540071f124ff0",
+          "src/ext_points.pl": "0b5f1b115e29892ab1bf5833c022df4c2f3f1558cb04f57a8f52de5ccdad8436",
+          "src/filereader.pl": "fb677e03ffbf945f8c752aa02c8db481cebfbdd219660bee387af596e3ce7bc1",
+          "src/load_cache.pl": "619fc64d253221d06907234d2b94d8c3395b4a6facbe56b2a4bb38c84c9c0ac3",
+          "src/main.pl": "2a57276bb0cd32f29e0bd983c2640f1e9bc1646e22bfc266230d3dc13b9ecc6c",
+          "src/metta.pl": "9ee89a19768c82052606b738e7abd88971c5ac826b7cf9fc1ab770e02779337d",
+          "src/parser.pl": "69ab6dd840fcc585d916fd25a496a09dd30ca9aaacf6e55baaa67c8c020c84c1",
+          "src/spaces.pl": "553acea6a6ad210ff46cb0c883af7587295c689fcd5d768566428607417f0bb0",
+          "src/specializer.pl": "b27a2a6430914c11dc9cd0d27b9a3aa5945064607c48979b7a2a0e50bd0f5141",
+          "src/translator.pl": "cda4dcfc4f77ff0d3feb858b1502ec685fb8b1ddbd7cc555193b76ac7de12220",
+          "src/typecheck.pl": "c45a5a66001255004944731e72dc7a2b71872328027c0f23117442896767e91c",
+          "src/typecheck/abstract_domain.pl": "7fafddae3126fc3ab6f9c2380a4809d0dc5331ae1a622df3be6176167d90d8b9",
+          "src/typecheck/analysis_proofs.pl": "96687dbdd49730b355200eb8135aec8a55953daa1dc250196743951565b5350f",
+          "src/typecheck/builtin_registry.pl": "e0a65099592fa3283ff6f31e90f776366f499eb8e172102393b96bd8183d5005",
+          "src/typecheck/call_summaries.pl": "adb9383a34fd3c0cbaa6e898fd1ee41fcbe2a90327af1b96f4db29bd22c46c00",
+          "src/typecheck/clause_checks.pl": "3b072c51563542b85d8195137dfc06d60932fe25acf14c2dafdadc53367fefc3",
+          "src/typecheck/decl_store.pl": "52f5c17cf51e871a11d81f284094bdb945d3876b799f9157e5131eea3dfdd615",
+          "src/typecheck/dependency_graph.pl": "f344d62ad9e084d2b9ab7dc235094de83db87815cb7b1935c97794490abddaf1",
+          "src/typecheck/det_analysis.pl": "bc04e7791253c3e12b45c81be3f0a7fc419c310898a7b2dab89f86cb329eca9a",
+          "src/typecheck/det_proofs.pl": "1e34de0eb4fad3e79ff5b551e2f966595063db5a6cb268aac45e90448f80fd74",
+          "src/typecheck/det_validate.pl": "98738eb738f4aa76b64d1412ab5e839d151e1bef1fda1019396151a4e1d6ac58",
+          "src/typecheck/flags_arrows.pl": "454f1a1d6b47fe390fc3a8fc11297c6acc798bab6a4f5dc3f009ce79fcc844ed",
+          "src/typecheck/inference.pl": "62d0f2ae9ca97b622cec0676dd3de50016311d940e981e98d243f345579f4430",
+          "src/typecheck/ir_analyzer.pl": "02520b61ccccaba064f62f72f68162bc9b033abec64b77f6e2374e9134b1fe83",
+          "src/typecheck/oracles.pl": "c3ec9fc6e02cf78f58a7f441977fe7ceedad34a78a2a27a43fa52e809256b649",
+          "src/typecheck/relational_ir.pl": "c35f43237b3178ae81f207a79905e9aeb998f8eeac3cc9dce323c6fe62fc0037",
+          "src/typecheck/type_lang.pl": "d9cc0fbdc06002a8249c5b77fa999fb50be4b040626728b66a7e80f2b46255e0",
+          "src/typecheck/unified_checker_bridge.pl": "53ae3521a8265b9680f5434caa2384e0a3831739c53325a6bc2c737b02c2a01a",
+          "src/typecheck/unified_checker_cache.pl": "684f13666c61a1b15ecaf42443d41f15d76efa5d032225a87c873b76ca1da930",
+          "src/typecheck/value_checks.pl": "a8013f13afffd637ba9038c9cf2ef1d8cd056a135696fa676ca5fe88ada25ae6"
+        },
+        "repository": "https://github.com/trueagi-io/PeTTa"
+      },
+      "pln": {
+        "branch": "main",
+        "commit": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+        "repository": "https://github.com/trueagi-io/PLN",
+        "sha256": "cdfb3f18bd7b336440fc7b4409209afddf0e64c41f17dee7eefc8f02718de433",
+        "source": "vendor/pln/lib_pln.metta"
+      },
+      "python": "3.12.12",
+      "schema": 1,
+      "swipl": "SWI-Prolog version 10.0.1 for x86_64-linux",
+      "truth_value": "(stv strength confidence)"
+    }
+  },
+  "starting_head": "f4a9fd5536d001fa8830773012dcd578443b0b61",
+  "verified_cycle11_manifest": "9d58f936ede178aa4c80e53adc0fbe858240c674616f5e91a08f1dc71512bc36",
+  "verified_prior_native_receipts": [
+    {
+      "artifact_sha256": "64ff8b7014caa350aed839b497f7386b2cb90e9d8a90fbb30bd7bbbf0f686b14",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/experimental-independent-games-0000.receipt.json",
+      "sha256": "3e78e16f2e746d1df715daff983c9acc646795a370a4e35ceee94d3c34d7ba23",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "08cb8de416a6e031c247b75b4ea030153fae2a4f0e32c032e90c6bad31751c48",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/experimental-special-moves-0000.receipt.json",
+      "sha256": "39f517aa8300a3ce943f8a91c4b710fba9af4d5ad669f1a6a6fa68b8749ed777",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "456528804c91f8a9c553e21ce9e8210b1b92400d84036e0d03254fb67846664c",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/experimental-special-moves-0025.receipt.json",
+      "sha256": "a27895d51ca8ee9721f4d5a4e3e272bf630a6d6dcf77c9212035e388828e7614",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "6fb0c57fb68b44a7f8e5ea22dcec5e20a2871979331063984a3bc3f4b014a69e",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/experimental-special-moves-0050.receipt.json",
+      "sha256": "ad93b7894236fb820d6718352084cbb619185d2e9f0e415a52af6878becc6804",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "3bfe786184a3a2872b2a864bbd1fcc23bf12a859b296db62b29895a165f9d98a",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/experimental-special-moves-0075.receipt.json",
+      "sha256": "f93937fbee0e12aab09ca860349a61ed6d918aaebacda4b409b2e87c9261685b",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "854712814202e58b50635cb21d9eec45cea9232a93899b1ff1f1f311ee56d987",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/operational-adversarial-0000.receipt.json",
+      "sha256": "463b47af902b9aeca87ec37503d72d22068bd523639fcda9447c111fde282bc0",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "af2460c699a8e3c5ec8493736b83d5fc2fe97fe9e2bcaa6328b452e00ca4aa69",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/operational-adversarial-0025.receipt.json",
+      "sha256": "27d7361ac26547112f8dc59320255e0e37b07fb288eb0d02ac2431be535f4c53",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "8765de67376207820a54cdc7ab1048993ad7f605b326369ef1481a1a9943e4c1",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/operational-adversarial-0050.receipt.json",
+      "sha256": "03e49a333b3d68d9e305c6db05c7f60177ffcbe0e13e174e3e922e73ebd782ee",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "fa93ee10b90fed9b50c2a259b2947aa978a69d5ca30f3aaea615f9d85894501a",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/operational-adversarial-0075.receipt.json",
+      "sha256": "fb1b1f61ef6924209e6c65fcd3769deae3a5055abc36cfcda86c2235711c8327",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "ee983fcb75ebdf80755580f9fc414bee7776d18c27d73ee4b748d87ddff025e1",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/operational-adversarial-0100.receipt.json",
+      "sha256": "bd96286ec5a9ea913f76ad8f8deedf808aca6f0ac40153d9d6c8d7abe2fb4e0a",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "5429054d06646741bf6a6ead872512fabd4cf6277cd77c0ef92915caf569c88f",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/operational-adversarial-0125.receipt.json",
+      "sha256": "2f6229e12f1b484228a73c87bb21125d7723b67e587d324d59cce84c7f91308a",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "6112db024c7f8234ff0d8bbffef611634f4533ae524618c7e8f21c3500338351",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/operational-calibration-0000.receipt.json",
+      "sha256": "1234caea2076f400bb7cf16fce16373851a02afc2bb008be2a801210acee48e2",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "34d76b2eef7bb10b0f7b036a6046cd3b63bec443493c787961c88b4387c55e48",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/operational-calibration-0025.receipt.json",
+      "sha256": "f6b1e456f02e38b709f68578c4f2c73c0090e33c140ac40b3abdb4c159798f19",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "0371cb7e5dec34c1e4526aad858bf27d441df74c3d8524fc3690c6b77a6353df",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/operational-calibration-0050.receipt.json",
+      "sha256": "232972303154ba69337f5f3decb82cc7e777d45040f068645cebaff6101cd6bf",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "c23734ba00785e3bc0f330ca78dcfe60d281e8cc2a7156b88a209b1f8b1112dd",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/operational-calibration-0075.receipt.json",
+      "sha256": "91c8d9c876c66b1a31c2567e78e8a1eb26396ca5d0f85e26dee7ecceaa4317ff",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "794b784139bc2cf0befecb1eb1c71d1799bb11910bddea7610c1c51c5dfbff86",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/operational-development-0000.receipt.json",
+      "sha256": "042f2c9c2a3ab3ce37dbb2e1ca4c0f6f56b015e320a308628a273c434d6c227a",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "278826e0e9453fb8251d8790c121169dddf459ff57373a6dd4924989bc579502",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/operational-development-0025.receipt.json",
+      "sha256": "d8c2ab3ad8525ddf6ef4f1d983b2ab0012df3eb7ce3192d163233121e3933efa",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "8c5b6b41ce22ccd0604f48f2eaf6d5c9f3148059e8f2a2db986b421be6f8944f",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/operational-development-0050.receipt.json",
+      "sha256": "04307ef9dbc4faee43038bf918eac039524726e8d56659353c5b8432437f68aa",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "4d4bab8866f53af9098e658cc1a33700f8a27af09bffd1dcd2726d23e44a9983",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/operational-development-0075.receipt.json",
+      "sha256": "be3257fbf23ccabcc6b62c729e27bf0686451ff7118990795c1a24baae4e5db4",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "80bb8ee20bf835765dedc7cbadd507d20a1a9a9280690a406746c074b5dcef38",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/operational-independent-games-0000.receipt.json",
+      "sha256": "a1da0355ebfc6f9150cb4b5d65919f7fe1d574bb6f8893fa08fe390d90907b6a",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "0a9166a5388a541b5cad433fd8319a386aab06de34707d10961c4b33bcf08b8a",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/operational-independent-games-0025.receipt.json",
+      "sha256": "1eadb013e1d25a74a9e39619e3849f49bbfaf692c6e2c5e5e212ca23af2833a8",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "8a8bbada08e903d1729196b1cadb4fa794a5f32aa191b5975c94ae1f59b832f2",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/operational-independent-games-0050.receipt.json",
+      "sha256": "1c297d929de83ad377e5f6335d4310adf8aadaa66fe0e7711c3f64f72d61e84d",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "7eebfe75274f188d914288e7bc67f9314260b80b572ece19abf625f5cba8aa74",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/operational-independent-games-0075.receipt.json",
+      "sha256": "6d8b2a3d5a1d6e5bc692032e7c64407a135ad806241c74727991b78d742fcde5",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "d2dd28161fffdfbd64e265a9f8cbb5fc40ee93bbeb08712d61102180d4bbae87",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/operational-independent-games-0100.receipt.json",
+      "sha256": "5bbb7f68c7299894c92c7f041a675dba51476ac82216269c788b7d3887c69a43",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "fe88cead50b25449d003c084006cd797a0d03f43d9cbd1f947182d403c13daef",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/operational-independent-games-0125.receipt.json",
+      "sha256": "bde2522e613a3a637f9dcc050987c4ddcaacfefd7cc9fb8cb0234b2ff53f35bc",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "0e9098a1f04ee4e9406e59f9b0941eee472c48e6f6552f34d4a44646e0bae63e",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/operational-independent-games-0150.receipt.json",
+      "sha256": "cc8a65b5c6db00923d0e83d720f341cb655890971233aebcff5e67ce561a321d",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "c5249a7fc56bd2caea8a9510cc37f2944a457e5318722af8aedd28d194b361de",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/operational-independent-games-0175.receipt.json",
+      "sha256": "24eed84517b2b83aa78347917e71221b0352c30058644b2f63bf81b9d3bf77a0",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "5913e8715b96c54cb88987420d5b67f34e52f76c0b2896d3ecdd7ee61af7fa3b",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/operational-independent-games-0200.receipt.json",
+      "sha256": "3726543877a3fbda405154baa78f25e0477f248b57a12c42046c2afd668ec844",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "aada614f529bde4ea53d495d72316607e50bd8cad1b3642ed60287cf797a8f3e",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/operational-independent-games-0225.receipt.json",
+      "sha256": "d20aac5ae203a50af6f4246616b1fd47de4f247b892bfb6216997289a1476c05",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "621eadb7f06bc7c3fa949b5fb6c731b2250dfa19cf8e03e433e64a19ed8311c2",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/operational-independent-games-0250.receipt.json",
+      "sha256": "69736458cc534f280b300b2052bccf80567f7df3def38f042e1c640f39bf499f",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "00b5a7e1fd0dd0eb1917de3d7880aee98ecd774c1f6e41b3ea14b16d2e174758",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/operational-independent-games-0275.receipt.json",
+      "sha256": "7c51aaf98f3fc44836e65d06c54a547485e26695611e51059ddf5e3f7fedc5a0",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "343683b20ac9b59110249cc418a0b8da918f88516f55791dd13f7d5b638995df",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/operational-independent-games-0300.receipt.json",
+      "sha256": "a0b752ed586c7615758eabe4704b7a18cbb27f238e9e5d6351b6466e8ea42b0f",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "510ad95b6d84c213cd4dbf1eaf1026296003e1a4e9a1b6aabd1a06e6cc5b6127",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/operational-independent-games-0325.receipt.json",
+      "sha256": "7b09b91d7556584bcc42b702df3709e0782b88a5b1cbd770e668960fcff76578",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "74f8a8a209de90f0257577a322463884efa3e29b7d154f6260c778befb2094d2",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/operational-independent-games-0350.receipt.json",
+      "sha256": "33c5a6bc173f388d6bb5b2fa49c84b97a63b9d5d15b2be013ef4338ba2088217",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "149ae5dbe043ea143b48bfaff964c8ab8a9e331a438572f53d981e14bd138341",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/operational-independent-games-0375.receipt.json",
+      "sha256": "1854deb45c6c0248899dfe6c16e398c78b0aca20ab278d2a18c1ed7b3973657e",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "7ab0849b1c8c7be93b853936d58c5412c1764d72efa381ffd55fcd2abb3d5f7c",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/operational-independent-games-0400.receipt.json",
+      "sha256": "e02bf8c42fced9c9f6d3f3f2607df797eb7b651b06f01863045c5fc492854a27",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "c6d6424f8988e629782fe57fa643f208a2dc02482867a28a99112c2ab195f0ec",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/operational-independent-games-0425.receipt.json",
+      "sha256": "8547f81e35ec0dbdfe174d0aa66b83a9794dff6c2525802dcf71ee5c63e4cc7d",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "7056f2861ce0bd6a42e2d27be87ca6f512e8a8ba2189fb6dc6ec934abcffa11f",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/operational-independent-games-0450.receipt.json",
+      "sha256": "c9d4bc27578c8ddbad506bbea212718aad5f1c153abb0c9a7408035a52027744",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "20f04e9d6382fa7b3e276dcaf6b13ea70551a2fb45950ea409463fa79c09ba11",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/operational-independent-games-0475.receipt.json",
+      "sha256": "9006047433a4452ee941ef5dfc4333498f6186c96e4905f01d137a6a3758f85b",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "98ba68b102b45c1a3c7c615e863f4b4df286b6a570f8b827b1b3d717e9720903",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/operational-special-moves-0000.receipt.json",
+      "sha256": "ba2e9cad6b2e602de16a02e5206db9f910f76cbbdac90addaf475c44522fc156",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "ec5c109152cd6ede4e865bfc3e231070966c56d4904157a3a71f1920aebc7f48",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/operational-special-moves-0025.receipt.json",
+      "sha256": "1028ebaee51b3f64f958df2eb5ebd03452434970887724acfa41ba007d0731c2",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "beb898d0843df60c6e525a5df6ae016e862ab362da2203aad3e0818336a99811",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/operational-special-moves-0050.receipt.json",
+      "sha256": "554ea84d6338c8eec66b8e49bf32e94efe7b285c8685d1e6c2baff3f47aa4df8",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "44e79be2a41a2dff87999d648a43b54b246f7cb5f3e553265b697209fcc43abb",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/operational-special-moves-0075.receipt.json",
+      "sha256": "562d93bb85de446a01a190d6aafa0c7ef1394f5257580f5eeee07956c95484d4",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "5ae49571ca16a7fd6c9789e8f8a4ae2d1e876f5499543ee620369f91736540c7",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/strict-independent-games-0000.receipt.json",
+      "sha256": "c8b690fb453108023a84ea45056154e7796029e508a8949785e0f06ffe454a55",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "9a61b4497833caca68599607c1cc5789ce835db9f54734a4963e411b48a20ead",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/strict-special-moves-0000.receipt.json",
+      "sha256": "4bc07af48ada2b0c821e4ad024d6088527a5b75f88f10072cd22d9271796e512",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "d4d2a55f30670ac8e86a7eced7455c253c4101a022ff8f51e5e31fb2b699510d",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/strict-special-moves-0025.receipt.json",
+      "sha256": "1bd0acbdf97046535eb7fe401d0f83035960b8a4d94594c90c71b648d579606b",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "61841a23e849106b9459abbf702dcabe4e40b631c2a2186f56555843fb85b88c",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/strict-special-moves-0050.receipt.json",
+      "sha256": "4a2acdc0d12c9614c244f3a673443a32fa1778d2bdb4b0c02566cd623891ac16",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "cbc4e281f98f2bf672ba47725bb7dbbd774c4b91f9347b6c0f79b619d19a78c8",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/historical/evaluation/strict-special-moves-0075.receipt.json",
+      "sha256": "1e78e481102d51c12fa7763e6b7a8c94ae95d8b4d9fedc8ab2f4adee2de36c22",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "9604b2997ffd7b79ec3b2768df3d88224b6ac52d83d4e177ec12daeaf8bd3c4d",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-experimental-external-test-lichess-broadcast-2024-01-0000.receipt.json",
+      "sha256": "70565c672c9f2984e3d4656708a603d894d2af87c985cf06b2a5dbd854fa3ef3",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "add5e1df9ead55836cc9528c5175543a597140875d0c34e3718bb22f5ac27219",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-experimental-external-test-lichess-rated-2013-01-0000.receipt.json",
+      "sha256": "890745f640e5b3114df095080c7cd3738618ae46dcbc64a413b73ce120b27e68",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "853049ed1aff031d94b904944c601f5ef6fd40f3988a52435f62ff1d076e6319",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-experimental-external-test-tcec-season26-divisionp-0000.receipt.json",
+      "sha256": "513a40696e0f3bcfed651c4c6538c3465265431b8f7009a7f187b43cdde004ef",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "d7371ba37be4e8e88522a63a73f6e8a962a38f6fde00738549babe7e41c30177",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-adaptation-lichess-broadcast-2024-01-0000.receipt.json",
+      "sha256": "0387a910eae58d3e9da2f400eaa7836deebda53992c72b17354c5c2aa10598f9",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "1b5cfd951370a33fbcda8278edb79291c6e6b5e3bfc126f593892974aa924142",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-adaptation-lichess-broadcast-2024-01-0020.receipt.json",
+      "sha256": "e103525c10d3e5ac109a3ae89cd04e01c0e4d30ccc9b868a0d5e422fd123c045",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "f44cc7dcc866f0fc24a6bc605c30b33f989e988fd02e5d2b7c97cd0dc3b4c732",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-adaptation-lichess-broadcast-2024-01-0040.receipt.json",
+      "sha256": "4f03f5bbf179cc9d1ccad0904ee264ab9ea726dd9cb2f507bf2b41c9c9322ae9",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "0a55f81f5f847d5df1957dafe5a5d73fbbb38d342dcb041bde07d71ac78b1ef3",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-adaptation-lichess-rated-2013-01-0000.receipt.json",
+      "sha256": "b16a8da719a383d88d8c0a8e15041f64e608e9ab58fd377a5600e6f60cb47221",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "29113656e5229b283a8cd154ad637a38e326dac2c762612d50de4af3be99343a",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-adaptation-lichess-rated-2013-01-0020.receipt.json",
+      "sha256": "2995afb1c19666994af2c7954ffeba962190db6d5f240cba14f1a01db4711073",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "f5b5108bef89f6c405844d12771ae7398db802323c50985430110fff2946affd",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-adaptation-lichess-rated-2013-01-0040.receipt.json",
+      "sha256": "6f5f9c5603683a35951de0d32e234a12f56b9417d36d49c4faf43b21a239ebdb",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "af05c08d951e93bc356f7ab309d53896018b4dc12cc774eee825450c1a928ddc",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-adaptation-tcec-season26-divisionp-0000.receipt.json",
+      "sha256": "24cf5f658a48d72ead8a332868819b4d8097867c1dc9a010cb3469717b0df95b",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "35df0202a83e9524a0be70faf3ddb31463f97b256fac398a51cfa1728cccdb89",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-adaptation-tcec-season26-divisionp-0020.receipt.json",
+      "sha256": "6dfa09d59af29213c653f871d5699bea88a88dd743b2941f2ceeb127c0492917",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "6028ba307a3768894274a816e6fb79ee1e0e2732f4d45ba83495153f061fdb96",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-adaptation-tcec-season26-divisionp-0040.receipt.json",
+      "sha256": "dca438451754768f7b828682e829fa5ea9b23e66522a796b2cd46be316a38d6f",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "a8ce49a5440138b0863e6626e9ad09b75b86cf5b51fa1665cbcf36182969e647",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-calibration-lichess-broadcast-2024-01-0000.receipt.json",
+      "sha256": "1fd983fa802dff8075d32490ddb5d603505ad42cabaf09850be746c394f6ae57",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "92bf96f2558ce2861f1c981ff079811b1a7851c3f3a09fc5b3a8ed1a8a6abb66",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-calibration-lichess-broadcast-2024-01-0020.receipt.json",
+      "sha256": "f15a3e3aad91e204c4a69f8fecdcd861ec13cb32df4c750c16919b40a136aa95",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "6810be1bbc51eb0aa0f2155118f624c2cc52851eb75bee158200616101a0a7f3",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-calibration-lichess-broadcast-2024-01-0040.receipt.json",
+      "sha256": "fbd877ff7a988e1256e879132a19bc4ffdc449d7b922327882abc5796cb32b3c",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "7c834f55436122a13f3a699d7f9d09d59a360c98df46acc3955b81377b054edc",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-calibration-lichess-rated-2013-01-0000.receipt.json",
+      "sha256": "f614a0f827aef3a1e0e3cd04e6a2748c1dd7340856bfef3054285849153ecd49",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "43910ae78dca7cd4125c0e1958d05ccd6b7cbbcfeb3905433aeb47f0bb1cc326",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-calibration-lichess-rated-2013-01-0020.receipt.json",
+      "sha256": "5f1b42c421c9bf949689d2adf324c1ec32cd43c3d8b2b00a0a88e06f9da5f2db",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "6db0a3cd57a9c787ab89d1488e378da4a99a15b3ad92712c45f8a08e6dfb5891",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-calibration-lichess-rated-2013-01-0040.receipt.json",
+      "sha256": "c637fde4a17cc1160ce8e5a68226ff4f730d0fbfd2f41c8af79729b464d30e74",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "ab0716c05183929f42446aab8a5f0d49c04ade18da8debf01d4a8c8f0accaaa4",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-calibration-tcec-season26-divisionp-0000.receipt.json",
+      "sha256": "901bb8b96fefcc35a2abfcafb1ed02a5c0268a2bf5ef0fe17eeda24d1308cb79",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "f59aa7b1f7d660792c482e4fb9ff778277c9f1e462f5ed822a943bc73a220c52",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-calibration-tcec-season26-divisionp-0020.receipt.json",
+      "sha256": "833821f78fe93fd63418fff52983a8b68d23ebdb6a0d2dca9bd9fd077ca2db74",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "b46c481f19801402bf85a1f70f8a33283fd281d5098efb1dc98371d61f13c71a",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-calibration-tcec-season26-divisionp-0040.receipt.json",
+      "sha256": "49915617eaafc3513f2193c018b9141095a665e95760e316fd709a2c0a3c84bd",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "6bdff92e57721e7d772ed379013dd2b94ec02cf8da79ce18e67d0e21fd1b0502",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-lichess-broadcast-2024-01-0000.receipt.json",
+      "sha256": "b98532b800a2e3084f91954197650631968dd0e830cc180ca8eb49a536ab15bd",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "e4a9be744637ea9ec2ada646e92ee547660ab60fd0400bc34c61cf11ac5146e6",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-lichess-broadcast-2024-01-0020.receipt.json",
+      "sha256": "5223c4c7acbf9c574ef47a383633bccbd284c6e1252111e7b7f19e1aec5803ea",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "bcf6379970b68f9c2b643dec20dce7248c2a84713eee681d03e98702e2cae7f9",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-lichess-broadcast-2024-01-0040.receipt.json",
+      "sha256": "8df39a6c45ddfe18060551514018231d9279f20d6a7f8ddeab5f12833ae6211b",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "93852291eb51c850321441588cffa2f94c2df164f7323885f5ba083b80db8f4f",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-lichess-broadcast-2024-01-0060.receipt.json",
+      "sha256": "73dc4cf405feb3648510f28347663a4eece2adb4308813c08bf6a1e828578cfe",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "37876b4157b281d480190fa698802ff97d6e41068b3d9bf7364594fe5963fb40",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-lichess-broadcast-2024-01-0080.receipt.json",
+      "sha256": "8fa03f7076b83a1ce70ebb1644629c84acf3b2e5cd543f41f0cebefb053b1075",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "3d62f6c0a80d62ba1bee099bc2c94e9189916953ccf2851b666e715888ef0133",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-lichess-broadcast-2024-01-0100.receipt.json",
+      "sha256": "717a6219bccce5ada3177e2a10520175165988921f3d9dd6eebe92390219e9ce",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "9c128175de367b2838ea609843d5a50fdbb7ed1edb76dc059ce9a1c579c287d6",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-lichess-broadcast-2024-01-0120.receipt.json",
+      "sha256": "6d5948a2993f9acd00f3f0fc3d45a375c933bf933e080e046668c0368e17195c",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "544d2230e7bdf115a851e1e3ef942dfcec9dd574d5ce4448f7ff5b65a873abf7",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-lichess-broadcast-2024-01-0140.receipt.json",
+      "sha256": "45050b24c09960ed19b2290fc4bd73eac6cac6f5dd53d5183e2702ce08eadef5",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "6d97caa6313e03c8c4801b1c3fb5ea501108134251ab7fb081c9fe1bbbfbbfcc",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-lichess-broadcast-2024-01-0160.receipt.json",
+      "sha256": "f470b7da66f46af2c082a1f6f5eb7b65367afe2382c1a5090699a5f0829a96e9",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "4507dbe5543076bbe8762d717e36c93aef11e0872f0b1e6808c3a73b161abef8",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-lichess-broadcast-2024-01-0180.receipt.json",
+      "sha256": "66ece6dd094018b4743f7cc179dcf7c4d90eacda4f98b6474bf9bbda646f5750",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "ba60cc8c2cb492cee0ae0e4684f79b6971615d81b4ce76c0a30082efce1c3715",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-lichess-broadcast-2024-01-0200.receipt.json",
+      "sha256": "1052d02ae47c00573f66e079b662db79f0b51eff2eb0626fe90742a234760a94",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "8704bb0a4f62931fd0f813f6cb60fcfdf1fd49c4528f683e378f02472047af31",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-lichess-broadcast-2024-01-0220.receipt.json",
+      "sha256": "7db1eba685b8843fdcf7250168cdc828f18ee83b8dc444f4429bc9bb64584e43",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "454bb2aa0b901f37274442e5d4f67033ee75d437193a5b415e2755cac4f2e678",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-lichess-broadcast-2024-01-0240.receipt.json",
+      "sha256": "d060ea93c4facaa35a5328dc54b64e1138ebdb6c6ceabc774f2ce09700d54b5e",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "e291a7d3847296bd6df75dcf5b4c1adad68c1675a016cae7a7fa0540de3e06a9",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-lichess-broadcast-2024-01-0260.receipt.json",
+      "sha256": "0c607bdffcac5415a8be930118303b73dc3a70d156474f13809ea307aece8cb1",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "5bcc5a7657874800ccf52933a4f77eeb2cdad1090471091f4c5fffb2a29a688a",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-lichess-broadcast-2024-01-0280.receipt.json",
+      "sha256": "7aa600f59719f64b659f866b9bfa156049d04dbefa31f5070dbea95bcaf2737e",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "411f3b76a0f53fdd860c8fd0e02f079d5b1219a8cc6b0dd63dd4948c1be188df",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-lichess-broadcast-2024-01-0300.receipt.json",
+      "sha256": "52919bc8aa62824b9ef3c75b7cf9d34f60e58117cb56887e0b9364f78ea7c433",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "d51d6fe24650d926c7bee5320068264e1ea354133506bd7bd0ca43a7112063cd",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-lichess-broadcast-2024-01-0320.receipt.json",
+      "sha256": "6b1a4a6882acb28126b11c4df90a5c8640922910b221b718535d18516b723816",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "f197f5a75a18e26fe4a93d51a6ad6e3896d035a04de9e0f2c21128f9990a275b",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-lichess-rated-2013-01-0000.receipt.json",
+      "sha256": "1a33bd1c28d176cf39d47666d788552458683a78ae40675acb0a8c6cca04a905",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "a166dc20c0c86a78249c403d0c60d141e4165ae5475919ea14aa4ee2b5c4c840",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-lichess-rated-2013-01-0020.receipt.json",
+      "sha256": "a8ec60ee7864055e5bccade986d29b773253a72042ecb29849c847475b235efd",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "dfb41aa13ab098beaf07895f297038aeef2cc8a793c2b2cdd7aa2dea3fcd8e93",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-lichess-rated-2013-01-0040.receipt.json",
+      "sha256": "c90cd49ced912f5c38db218ae6c42207fdefb0f0989437d379e728fce25381e4",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "7278405b39c8a97103e22ccd958fc714496399ff8c58761cb234b921ee06217a",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-lichess-rated-2013-01-0060.receipt.json",
+      "sha256": "8d7dba278390bf0dacfcd8d9563878a87a4d76fb312305aafa0b0e4e46057137",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "03e956bffde8a3be4bd35d0cb80327aa1f767b5b46a762006b61d7920780847a",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-lichess-rated-2013-01-0080.receipt.json",
+      "sha256": "7645c73b7ef961ceaccc237a51808548761c33fedfa695c14486ab60eb71027e",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "4d5531ba8bdfaff00a15a8a49664bf7251fea76a5f29c4d31391fdb5e9865bd5",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-lichess-rated-2013-01-0100.receipt.json",
+      "sha256": "09954ef1028be87ade125e05122d1b2de67f27d4a34277115a2025665a958673",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "bea63d08d5edd0dbfff1f615224f9347a9b23abce0f7e34db911018ac48f9de5",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-lichess-rated-2013-01-0120.receipt.json",
+      "sha256": "0624c796cad9fb0518109ec9c5a4f2ffbae89007c09929f89a8aa79bc6953fd8",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "606f8c66229290a8d5e34a7cbce4817acacfb7ecd6f1a806a8b245207f42530b",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-lichess-rated-2013-01-0140.receipt.json",
+      "sha256": "593389751812d5676f974722a945bc5d962bf5ff45ed4b0d8d61eebac699127e",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "d4485ed1682f73732cbc70b951f78943410442f9302f95ddc741b93b5bb679ef",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-lichess-rated-2013-01-0160.receipt.json",
+      "sha256": "5909c2f2bcd5826b4d6de480b975f566db27fedf346f05a797881d49a5bd24ab",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "45cd5e68819f1b1df3e68f7c5337f9baf8c7bdedb7f92bc69ca26d9f3f0ba713",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-lichess-rated-2013-01-0180.receipt.json",
+      "sha256": "18ca69b38a59a58c5180b98b4350447e3bc7838db86226dc313945eeb39fd7a6",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "ae4a29f67d3a6ce43f8c061fcb2f4963dd600e54dc2c176604417a6928c225ca",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-lichess-rated-2013-01-0200.receipt.json",
+      "sha256": "513a63a825f713d4d351d7fbe4d9cadb285ffe36a923433426eea1bd385b0fb9",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "e5cea1fa29086df769480357f56dfe33874eb65d69399cb2f1ee4f97477e5499",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-lichess-rated-2013-01-0220.receipt.json",
+      "sha256": "e07c5c9f2cdc5af8fd47747df1d74acf26fc07f7cac510b3dc0892eae02da575",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "3734960d4fdfbe220c7aa730ed211567cc0461605f97dcd59b5493e0a6f097dc",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-lichess-rated-2013-01-0240.receipt.json",
+      "sha256": "5e186ae6f4495f1dbbcdda5251ab3705838611f85ab5472c75d855d749b86e55",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "36ec27703b8fcb31a3c325803e6a7257272bff42da08830305c793e024872eb3",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-lichess-rated-2013-01-0260.receipt.json",
+      "sha256": "6b9a952b5b8041bd4e4d0b331c788e3d4c8cc080a976d7123056544acbe433a2",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "144a68c151b9799f71efb1a00256cad9aaa8ec96c2d7857da00c172f3e2a4264",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-lichess-rated-2013-01-0280.receipt.json",
+      "sha256": "c53c92fc24a9035f18a69981843c2e8dc532791506025b0b1f8e67180c248285",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "73a17475723e4643320a55a6248240a42fbaa1e02d239d2eb983049f697290df",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-lichess-rated-2013-01-0300.receipt.json",
+      "sha256": "4f38105b15ee7a90843f51c9c7aacc098c975bf85dd705eee1cb795376b1965e",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "c34b233ddbcd9498485351090ec803e5bb474bffddc731665c91a2d202f44b1b",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-lichess-rated-2013-01-0320.receipt.json",
+      "sha256": "642920df8b9ffc352d686e275c44fd6db2282710d110ed69e128c38b40f43aea",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "b670bfaa177debd3ff5caff4e8bb1caca6337ea7c568141e6873c795ef3dc9ac",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-tcec-season26-divisionp-0000.receipt.json",
+      "sha256": "e59a478ff8dad516f3b97619a717a157622af6af568c2de649027e48df540345",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "027297a973779242f28c80b043a7af0f27d7862ea526e2a97a07361c23c2d125",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-tcec-season26-divisionp-0020.receipt.json",
+      "sha256": "080fb9e1e8dd330d7b8e97a420ad614321d885be67c5fc614e2ef23e18cd434a",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "e7f4ccd548b2f3af49763fb20fb59844c0459e7248eafac52aa0ba7c44a57054",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-tcec-season26-divisionp-0040.receipt.json",
+      "sha256": "97d42e101505325f6f7e52dff15b546b88a0a2ec6792c33f8a067b4f7e4581af",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "865773b4850f66543669c0bec0bc14987ff8bab1dace203665d70833b0d6146c",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-tcec-season26-divisionp-0060.receipt.json",
+      "sha256": "2f52e4d9aed13533bc568623cce90b886e7f8f538b62499c7f82562d4a03ddea",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "c9cf34f525b1ef1af35169df47a7990efc004ff43566576108dee20872ae6574",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-tcec-season26-divisionp-0080.receipt.json",
+      "sha256": "962604344b063e9ce179db81b1be1ef7c6c984cc76a21510f808d8ccf69979f8",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "d887f5a75823e358977da0f80ed280d8a5d73808292cd70f8bd77c216a6cde8a",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-tcec-season26-divisionp-0100.receipt.json",
+      "sha256": "7865520de2cfa9fdb27b1662124329ea003d2f8905296cfb131e34db16b5097f",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "3021b2002f7ae02f93d69d2c88a27efd63cce377dca10c3d4a5c8099e56e4ef6",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-tcec-season26-divisionp-0120.receipt.json",
+      "sha256": "daeb3ff54c23bcb163e92617ded5696edbf4ff7c906ea84e2729444cdf490899",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "cc3f0b42d13e148629b7c7632f97ee2e684755da3cf3864ef0ae8bc956f3f20c",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-tcec-season26-divisionp-0140.receipt.json",
+      "sha256": "d2ddd9e8aea8d0def91d8f7c090b301031d736c7bc3bd3e3d5a597d8cb02b781",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "0190e53b0bee22e2d29cdb3d5bc059375e497e0ddb2a761adc4faff4f12761fd",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-tcec-season26-divisionp-0160.receipt.json",
+      "sha256": "cf23af57e4e79b1f00733acf45c34c04cf42034c137160b61d7e831cee0349ac",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "718cc3807b8d1aae4218d70fc282c399ea7dd5dad5b50948a3a19250ddcc8c85",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-tcec-season26-divisionp-0180.receipt.json",
+      "sha256": "6432090a023371f798e3c5b3897b9026f1e1c9ff54da5cc5ae91ebfb241130d8",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "4712357f69b168891f29e5c70fde5b9bafc14de9a92f78cd53ac116acb814f58",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-tcec-season26-divisionp-0200.receipt.json",
+      "sha256": "d61bec8761d5699ba5e9004192aad8b86f314b01db505dc55930d972d37750c3",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "46ee606f2527eeaba90ccc4248466e7e9de37fc01207d64c73f831707b3a9ce6",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-tcec-season26-divisionp-0220.receipt.json",
+      "sha256": "eb45179e7ab8a7b8767388c89ac03fa9e9720245908be3239aa5859b74d08895",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "dedf702f708463a07b6884d71f43a512f34f37e8d3fe84f505c27f4fa7ff272b",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-tcec-season26-divisionp-0240.receipt.json",
+      "sha256": "85352c3a71a3609210a7281ed0e165106ea4e51cc4cfabbb997c702e70ce2d1d",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "3138612f777a0d07e76bc575338ee6b8c7ce9e6c849e9589e19fed8b710efd59",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-tcec-season26-divisionp-0260.receipt.json",
+      "sha256": "e67d29b1f02a2f6cd19cd0d32981f4bf59cf2d700c4332a07f2d1cc82a6ace5c",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "39dc36dcddf0609079d4ef0100919210dd3284af053675bcd83acd10e597fec3",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-tcec-season26-divisionp-0280.receipt.json",
+      "sha256": "8ca4b421c47290d989b55c4eb7bae53d7fa7a6f0212a42e0a44aadd58c6989ab",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "1e6df2a560bb0eeffeed9966c053f25be3f820854e6ea47dacbba8c5017b4f63",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-tcec-season26-divisionp-0300.receipt.json",
+      "sha256": "909933ab49053aeafe3ed93d8390cd0dbbcf4da982ff4093e860f539a556cbc2",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "a94745f98dc855060e041e2a07e48bef4a6c73d37e054b88890a77a1682a9356",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-external-test-tcec-season26-divisionp-0320.receipt.json",
+      "sha256": "528b7f238cd1a07819fd4770131bd8b310aad7fe158d4a4a67df47a34681718b",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "2b3cf42db12b35cf3bce0ce0a3a058f902bdfbdcef67c4876ab8a75bd217e685",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-synthetic-adversarial-synthetic-controlled-edit-0000.receipt.json",
+      "sha256": "8d7942616fb36014d1b13664c1115d7aaf7b2cc0df83222663d309d32f37f90a",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "478ecfe13d0d21a377690ae836bf1672e790d94fd54698bd6ea6545dfcf69b8f",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-synthetic-adversarial-synthetic-controlled-edit-0020.receipt.json",
+      "sha256": "4c3c20f8ec66ebda8f108f9854c5fd00f36c65266845934b16981abdc959ea01",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "b42f45701ae46868787556f3ccd578ad1548da4ec949b781544e7ef54e87c3eb",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-synthetic-adversarial-synthetic-controlled-edit-0040.receipt.json",
+      "sha256": "1d0f72b77891cee29bc9acf07cfc88dc802ea11a77a7791c4419a6aa4c46f7ef",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "b6182bdd715ff281a360c7dc2d5c27058eb7128476b2a03076b0b111ab778bae",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-synthetic-adversarial-synthetic-controlled-edit-0060.receipt.json",
+      "sha256": "dab8167526b084ebc0153761859287ae632662fdc800757f2ce2f1bdcd819679",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "555e03720eaf10665088027f1c8668c6dbf3c4d7f990ff188f01027eebca5cc3",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-synthetic-adversarial-synthetic-controlled-edit-0080.receipt.json",
+      "sha256": "58b52ca67daa3e1327e7fd328c6538ec6ee2da80a1f8ccee641238daeeb41c25",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "a05c6d8442dfdd34189e659316748f7157583513229654430344af3ce77ecedc",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-operational-synthetic-adversarial-synthetic-controlled-edit-0100.receipt.json",
+      "sha256": "79d3d57731bc7a64bd560f5158a6c2241aa76016ecc1cc6a719c7f2e98c3f2ce",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "b44d0629da787d42ec198a47939fdcf710cc0ebc6ccd1cc9c1792e681e93abae",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-strict-external-test-lichess-broadcast-2024-01-0000.receipt.json",
+      "sha256": "46a8e98a187525356d434c6d0e6170dd3b7f22b741cf281d5ecbb2c774720ce4",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "de39673201c2e53e96d45076a4cd71c0a390ceabbeea1f13e1a1c5aeb5984cdf",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-strict-external-test-lichess-rated-2013-01-0000.receipt.json",
+      "sha256": "635cfacc434bf0f2b44dc6a16ec24a2a37ca391774fe53b7901d43aa793944b0",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "2cf00202912faf8a23df536dd09d33f960886b7bff8108b167e83e867339f572",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/frozen-strict-external-test-tcec-season26-divisionp-0000.receipt.json",
+      "sha256": "b7046415e31caa4b36ee04e0e4f8c0f575865bc41409b29c2fa914c4550dce58",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "761149611a728c438f969ffe54020d5c624902580c1006356d5169c71c1da23e",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-lichess-broadcast-2024-01-0000.receipt.json",
+      "sha256": "ce9d72d48b78764c0467d6788f788bcbb4ca196cd872c26e22adcb0fe05ba62a",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "1695e615720000896681370746fd9d9983d3b2e5838a610b2306ab787eeda684",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-lichess-broadcast-2024-01-0020.receipt.json",
+      "sha256": "29c9a033991657a73f1cdc20857faccbd5b7bc2b7234ea8121a213a7462209e2",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "960ffc30086bf80371866c289c8d8d49174e76251f3bc585f34e1674bd2a9cf0",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-lichess-broadcast-2024-01-0040.receipt.json",
+      "sha256": "c6bd9afdc81c3af7a20916b03102dd3435e541248e82eb081b3cac7162f31bea",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "3e732fad89888713a74c3b7f5b1bbdd76ffa09aebf4308baa92418ae9c906772",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-lichess-broadcast-2024-01-0060.receipt.json",
+      "sha256": "94854e73f03bc579ee1f4d9b20de4377a6c234423a3858ac1875ebc3b878dfb5",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "fc3593e07454821a4137bcf5d05376183d31e440b6f5e8f21b1f1657642da062",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-lichess-broadcast-2024-01-0080.receipt.json",
+      "sha256": "56c84d827ff17c35ddc592224a9436b5bfb3affcf4232867d9f04bdc7d2d7eeb",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "f9bfa64ec03e51984cbe760ec1dc2bdb0005e94b8775a42701879c0b12d04e92",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-lichess-broadcast-2024-01-0100.receipt.json",
+      "sha256": "c5f70e90085314cd3c97d11cee1aed62261140bef772c77e0ef61a09e0d31a91",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "c6a9153f4cb0439a5960d45135f15c2747ff8f84c8e13b12cb325ba6e5154086",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-lichess-broadcast-2024-01-0120.receipt.json",
+      "sha256": "ada632d9653fb314c0ece53fb4b9cbff7eb887fb60f04e0a2b148eb4c118d512",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "c73583df5aa54343ffd7f8b0ad12f47b89200e96ecd3e8d04b977b9eb78cc3b6",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-lichess-broadcast-2024-01-0140.receipt.json",
+      "sha256": "d4658f3b70355617fc355a3f8856ed737f586887c87a5510cce8977fd9ebedfe",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "3cfb1d29e4b6e4acebcd8be770cb1f9c1cc59a152a8af648c6653bf574814128",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-lichess-broadcast-2024-01-0160.receipt.json",
+      "sha256": "d7135f4d95df0d2508ba4cab7c550de5658b8757bac5dc454b3286db8b0c2961",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "093db97a0acec83633a32e17138be6cabe5797fafff3b25aa4ffd26fa5c130a2",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-lichess-broadcast-2024-01-0180.receipt.json",
+      "sha256": "aca4d760804d0058323c8a0ffe5e85838501763210ebce01d9ed93ab1f691457",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "c52606b1e17fc85ef3d3bef1abff9a4f795c588cef0afa589457b5a79b3eae73",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-lichess-broadcast-2024-01-0200.receipt.json",
+      "sha256": "1f0586314f3bd6c4b2520d161f59f73dc29b86b403d422878d030f305a5d06f8",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "1581230df1b7f03eceea577201f7f78779a12757348c4faf87c16b3a1f019534",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-lichess-broadcast-2024-01-0220.receipt.json",
+      "sha256": "7fe817add4696717fec235492b96ec3d9550024ae249f2a1220ebb4fdebb44d8",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "2ba12714c769fe38a6285b59019f93a76f1aaaf755786d16530b5c21a6d9e7cc",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-lichess-broadcast-2024-01-0240.receipt.json",
+      "sha256": "7e04a923e44fb970becd6e632561ac76f31d8999708873a6e1be8cc4e4fa4ba7",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "0e09014973fa04e3863e7917a54c0a9416d9385391d6344b045764602702a57d",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-lichess-broadcast-2024-01-0260.receipt.json",
+      "sha256": "7c2bb3749cb58723963d6f2ff3c72cf8a67d62610f76b7b7de256fec8db51eb2",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "4d271e83ab1e497db7504dae15d8906fc7b273c38a1b7f694be9dd468908fb72",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-lichess-broadcast-2024-01-0280.receipt.json",
+      "sha256": "7e09627281d033d98f3d2a4fc5f7d407e651ae94943101ca25269f5e7f9c2715",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "9349b94f6d69a02d346c75ca4224cdf631250e65b6671d57b7813f7878b15166",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-lichess-broadcast-2024-01-0300.receipt.json",
+      "sha256": "853b56f28dd4e9e3b00260dc132dd511a492c8aa4499568416d7aa79744e094f",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "ad9fa89fa602b4e96b494e3b23f74aa0754e5ab51918fbc2bf448f05499bbb21",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-lichess-broadcast-2024-01-0320.receipt.json",
+      "sha256": "0cb9c12c3e16bc6abc95b4e90227f8af104518d5fa15a0bc4f849f1ce1e1f1aa",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "9ab23b0b040361ee9d2cc260708adc919884300733a475e72f6425b30145fc42",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-lichess-rated-2013-01-0000.receipt.json",
+      "sha256": "a8343743aef1cd04d0d3e7139128c2213e98c38685ebff67e4b03539f9e2d5cd",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "7b1fbc884f1de723f0125a704e234ba6c86947e571d07e51c562c4836b589f83",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-lichess-rated-2013-01-0020.receipt.json",
+      "sha256": "b0eb1e259184be2a8714b4b4afd96f9150073bdd8edc664af52490d5a623ef92",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "26d1c5c7493892929b1d9ec5db0ad4709ef7ff535b2cda2843a11178f46e0073",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-lichess-rated-2013-01-0040.receipt.json",
+      "sha256": "c3b062dfc7d1622286c1fe6db7b921ab8772806a072fda0934fa41d217326acc",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "107592d38c086d4dbc8208125e282c9e39a64a77d0d6a23a2adfd1cefe369a03",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-lichess-rated-2013-01-0060.receipt.json",
+      "sha256": "86fcc9fd241fd02d756752e9eb911cb8df6df0cb6b0e6b2ec1c09735aa3b0bb2",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "ef0fa18b1e546aea51ef4188cb1a18ed18e7505803f62908550c699f17c26689",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-lichess-rated-2013-01-0080.receipt.json",
+      "sha256": "0b496f26ac050ea66029dce74416bb13c09239c206d5c02abc11c66d3bc0a92d",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "ef19fc6ab276a965abfeefa840313fa9641de00edc3b75f38255a66e9ff44257",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-lichess-rated-2013-01-0100.receipt.json",
+      "sha256": "c810fdbde22831773ac447b84779c3187a97e36e66dc84f5d22d97bb34a62850",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "de1d21751545b25a83689f8acdf49dfb7f25d4ca3cfb1a3b340a3efd14893f02",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-lichess-rated-2013-01-0120.receipt.json",
+      "sha256": "3fb9c965aa5d9d127aa73283dee79e9f32e59b1b7857c954f875dc9564716009",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "c09edfc7c60b662617ddb98c7b342fceb9da02fce2e9972d981f003112530e5a",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-lichess-rated-2013-01-0140.receipt.json",
+      "sha256": "4223e5a130111fcff730852f23f806069b04f4b730fa35a692456313b1561ad3",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "f2efe1db9568f6712221df41778c7e16441850f7aa3eaab203f4437291472cc0",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-lichess-rated-2013-01-0160.receipt.json",
+      "sha256": "ddeca49e88e5a84e3e7a4293eab25cf1ab66a7d0c631876b7411c5af4c4f4576",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "284ab76ee3eaefe9ef9afb2941f8f961092bc1b76152e62845b2c356721cc7e7",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-lichess-rated-2013-01-0180.receipt.json",
+      "sha256": "238a3e6c5cb5898a0dc1ad8b7630b821e644ef92894301ef0500f11e16a62b6f",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "41ef5ed12c9f110ba5db0ea7f16cc132c1c085bb09b9777c94e5a229d8a2c331",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-lichess-rated-2013-01-0200.receipt.json",
+      "sha256": "09728ba86bedc6b9c9fe533189f15523412e2663268f9a91f72dea04bab688cf",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "3947bd09f7219316408195720032edcc4fbee14064e57daa61f8b7071443ef46",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-lichess-rated-2013-01-0220.receipt.json",
+      "sha256": "1edea6a725cb259478cb35020d005a73f9ee64d52bd6386dc989156b15b12dcf",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "b4cba8c6c611b0abeb5c284e8e64cfda8697d89821954da25973d9a41d3fab4c",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-lichess-rated-2013-01-0240.receipt.json",
+      "sha256": "7ee26af754eda1acd9ecd7333083c286da0d778226e9c46d09d19c928009dfa2",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "442cffdd766be2bc85a15aad476adc32767141348103e0f57388434e4ea81482",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-lichess-rated-2013-01-0260.receipt.json",
+      "sha256": "546ef24a5368c32a109def61ca7db21809fc8bb31f30c29e296aea0f6530c90b",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "8b480ec3cca3b2664412b6fcac6f2d73dec47b98c658f7aaa12a0a32c1d680c0",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-lichess-rated-2013-01-0280.receipt.json",
+      "sha256": "62f1071907fee266f5b504e333b8c539129355602ae72c2395fff3128451b68b",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "9875109a2e9710e5ed981b8807c177ed3bb1324daca0f05df88e0cc768eea972",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-lichess-rated-2013-01-0300.receipt.json",
+      "sha256": "bcb7901e6d49b0923d9a9716d273f9e558283e0689684705e209e535bb68001b",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "5b5b861b99067fa859ca31c375146453453c693d9c17a6f0173ee822303ffdb7",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-lichess-rated-2013-01-0320.receipt.json",
+      "sha256": "b26e566ce38b8f81b65e2be4c1077c7bafa0b5f055428003a54b8d2a294f603d",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "e6616b3102b046c855b461ac4e24d0cd6175bfdd60fb335f35e44f0c6b9f9351",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-tcec-season26-divisionp-0000.receipt.json",
+      "sha256": "2a76a55d85192fa9d4be89fc7649bec251b6ed7b493d2b5c0af567f1d2f59ee1",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "51716ebfa9036eb1640e62564f55609769e0c76d604542ee178089c5a7488897",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-tcec-season26-divisionp-0020.receipt.json",
+      "sha256": "0998115e4978702460a2bf37878d81f67525f71a03257499cf7fe8a7b576ffed",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "2ee68d50de2ebb893bf45a98bdb06bdd6aa2e794ee16229d6ad5a2ecb8030330",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-tcec-season26-divisionp-0040.receipt.json",
+      "sha256": "e10efc63c32a31e12727df75ad016a9f3a5b9506321c8d76df8c55d5bb4f280f",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "9ca03d047cb43baf12b01d3ba4585deeb8ff3e8af6870423c0aad9afe90063ce",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-tcec-season26-divisionp-0060.receipt.json",
+      "sha256": "4df02e0c972c7a304de9fa76efb91c973d5ef1f89bf9820eafbbdae2d1c3514f",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "b149ea37ac0de937ee48f1920dee3a779fb013b336f8cef682b32699b35146cd",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-tcec-season26-divisionp-0080.receipt.json",
+      "sha256": "f31239e7be26dd43a3e0b5d12636be16637d366acbab8860f53a4d3e5754face",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "ebfae0a2cf95019a0be2556c5efa25792d4caf8dc001c1b4455e24b6e5d00a65",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-tcec-season26-divisionp-0100.receipt.json",
+      "sha256": "a7458bb0dfefabb55b68c836072fed666280af1be6fe7950372cad507bbbeb4a",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "e2dc6a59bb9e96ce25716fd0a6d5d0c769f4f2c96280f8c2ecbdcb199f6a6482",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-tcec-season26-divisionp-0120.receipt.json",
+      "sha256": "d6bb3ae42f6214243c36bf1157868d210fb7b372435ca156ba3395bb0bfc2a79",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "55e913d7e63666db339781358ad5b7cc336314d3c2ef56f97f0ee1c4ec91736b",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-tcec-season26-divisionp-0140.receipt.json",
+      "sha256": "a854df6faf636bcc79626291e0815f657b267153ef3b0f68d4680e834f8de863",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "3ba87dc6599ca88075b8d48488b9a4dfc676355af98473eedaf8b1322023c36a",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-tcec-season26-divisionp-0160.receipt.json",
+      "sha256": "7a5ace329c3f5b00aea58e09ed4efa0847c37ce4035e41fb6fdfbc969b12a1d1",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "9588c4e13314c00bededceea572d73a87eba3e3beac903741c999639d8c407da",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-tcec-season26-divisionp-0180.receipt.json",
+      "sha256": "6465e88789ff5fdd74c918dfd4758687d0ae9af3d82914e0f85d9fc2ec01b93e",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "f657ae89dd44a37a6066b48d4d317226629a482e18ef6df0c88bf3a73c72acf4",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-tcec-season26-divisionp-0200.receipt.json",
+      "sha256": "337396679e78a26b19da2687ee9e6ed003c76b86ebf8e5dba97c5a522fd7fcaa",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "47647e5fcca9f21e85a25adca6b4e5e2c564c05725a21e06504131f79109983e",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-tcec-season26-divisionp-0220.receipt.json",
+      "sha256": "acc4edb4aaa0c8761ca03d470be6a572be445cd45331e7f30f57e291ead36041",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "81d4e17ab1f42a0c51ab8b528081745324ece6a2c1dbd61043ce742f9d2522d2",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-tcec-season26-divisionp-0240.receipt.json",
+      "sha256": "88fbb2245fd4405c6b6405669f189e87a95b24039aef64bc3ed46ccc441ba635",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "f627d2894de44a4358ac13cb242c2920008f5e889f2267d7cb1a0c950c480230",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-tcec-season26-divisionp-0260.receipt.json",
+      "sha256": "bb9a77476e2b4dd5e90e5cae0305a8f6da7ab66e3df35918d20bd711819877c1",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "c0f12ad177e01d5bb175cac268f49e6093f2b153defbd0208c5216912e4b10eb",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-tcec-season26-divisionp-0280.receipt.json",
+      "sha256": "8738654e5a4a2845f434c938dc9468c060ce627dd194ef89563193b80e789784",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "5866ee1e26fb96cc5791bf62d428e0b2083a2909eade290223f1bfa38659b058",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-tcec-season26-divisionp-0300.receipt.json",
+      "sha256": "003396bb7cd3ee6261a3f8b94ef6ff85888b2b075ab6a82baf65cf84d4d9a94c",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    },
+    {
+      "artifact_sha256": "ca4ac89e1250e13fc8c9d820d7804f5b081047cffe122f32c65e15f11db06d2b",
+      "native_proofs_previously_verified": true,
+      "path": "artifacts/cycle11/current/external/evaluation/temporal-operational-external-test-tcec-season26-divisionp-0320.receipt.json",
+      "sha256": "2df629296ae2ce599825e88fca6d1fd6a85e2e02ad0b07725469772addadcbce",
+      "source_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+      "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    }
+  ]
+}

@@ -10,8 +10,12 @@ suites, 48 Cycle 9 shards and 132 Cycle 10 shards, with complete native proof
 parity against Cycle 11's current implementation evidence. It also regenerates
 the Cycle 11 datasets and learned checkpoints, field evidence, transformations,
 transfers, temporal controls, and special-move completion experiments. Historical
-files are hashed and retained unchanged. Only orchestration, registration,
-offline data construction and experiment preparation precede this baseline.
+files are hashed and retained unchanged. Starting-source provenance and the
+derivation of the quoted measurements must be reproduced before production
+implementation. The complete native population replay can continue in its
+isolated, unchanged checkout while implementation proceeds. New concept training,
+promotion and delivery remain gated on completion of that replay. This scheduling
+clarification does not substitute archived evidence for newly executed gates.
 
 ## Independent tracks
 

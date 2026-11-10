@@ -31,6 +31,16 @@ def replay_history(initial_fen,moves,**provenance):
     return replay(initial_fen,moves,**provenance)
 
 
+def inspect_interactions(position,field_model,concept_model,**options):
+    from pln_chess.cycle12.api import inspect_interactions as inspect
+    return inspect(position,field_model,concept_model,**options)
+
+
+def replay_field_evolution(sequence,field_model,**options):
+    from pln_chess.cycle12.temporal import replay_fields
+    return replay_fields(sequence,field_model,**options)
+
+
 def inspect_fields(position,checkpoint=None,**options):
     """Experimental native influence relations, separate from legal inference."""
     from pln_chess.cycle11.api import inspect_fields as inspect

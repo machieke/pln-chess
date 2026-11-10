@@ -127,9 +127,17 @@ def serve(port=8765,checkpoint=None):
         def do_GET(self):
             from urllib.parse import urlsplit,parse_qs
             url=urlsplit(self.path)
+            if url.path=='/interactions':
+                from .web12 import HTML as interactions_html
+                payload=interactions_html.encode();self.send_response(200);self.send_header('Content-Type','text/html; charset=utf-8');self.send_header('Content-Length',str(len(payload)));self.end_headers();self.wfile.write(payload);return
+            if url.path=='/cycle12-catalog':
+                from pln_chess.cycle12.api import inspector_catalog
+                try:result=inspector_catalog();code=200
+                except (ValueError,FileNotFoundError) as error:result={'error':str(error)};code=400
+                payload=json.dumps(result).encode();self.send_response(code);self.send_header('Content-Type','application/json');self.send_header('Content-Length',str(len(payload)));self.end_headers();self.wfile.write(payload);return
             if url.path=='/fields':
                 from .web11 import HTML as fields_html
-                payload=fields_html.encode();self.send_response(200);self.send_header('Content-Type','text/html; charset=utf-8');self.send_header('Content-Length',str(len(payload)));self.end_headers();self.wfile.write(payload);return
+                payload=fields_html.replace('<body>','<body><nav style="padding:12px"><a href="/interactions">Cycle 12 · Fields through time</a></nav>',1).encode();self.send_response(200);self.send_header('Content-Type','text/html; charset=utf-8');self.send_header('Content-Length',str(len(payload)));self.end_headers();self.wfile.write(payload);return
             if url.path=='/cycle11-field-catalog':
                 from pln_chess.cycle11.api import inspector_catalog
                 try:result=inspector_catalog();code=200
@@ -172,13 +180,16 @@ def serve(port=8765,checkpoint=None):
             payload=HTML.replace('<body>','<body><nav style="padding:12px"><a href="/fields">Cycle 11 · Relative influence fields</a></nav>',1).encode();self.send_response(200);self.send_header('Content-Type','text/html; charset=utf-8');self.send_header('Content-Length',str(len(payload)));self.end_headers();self.wfile.write(payload)
 
         def do_POST(self):
-            if self.path not in ('/infer','/cycle10-compare','/cycle10-replay','/cycle11-fields','/cycle11-claims'): self.send_error(404);return
+            if self.path not in ('/infer','/cycle10-compare','/cycle10-replay','/cycle11-fields','/cycle11-claims','/cycle12-fields','/cycle12-evolution'): self.send_error(404);return
             try:
                 length=int(self.headers.get('Content-Length',0))
-                limit=2097152 if self.path in ('/cycle11-fields','/cycle11-claims') else 65536 if self.path=='/cycle10-replay' else 16384
+                limit=2097152 if self.path in ('/cycle11-fields','/cycle11-claims','/cycle12-fields','/cycle12-evolution') else 65536 if self.path=='/cycle10-replay' else 16384
                 if not 0<length<=limit: raise ValueError('Request body is too large or empty')
                 payload=json.loads(self.rfile.read(length))
-                if self.path=='/cycle11-fields':
+                if self.path in ('/cycle12-fields','/cycle12-evolution'):
+                    from pln_chess.cycle12.api import inspector_fields, inspector_evolution
+                    result=inspector_fields(payload) if self.path=='/cycle12-fields' else inspector_evolution(payload)
+                elif self.path=='/cycle11-fields':
                     from pln_chess.cycle11.api import inspector_fields
                     result=inspector_fields(payload)
                 elif self.path=='/cycle11-claims':
@@ -194,7 +205,7 @@ def serve(port=8765,checkpoint=None):
                     from pln_chess.cycle10.temporal import replay
                     result=replay(**payload)
                 else:result=inspector_infer(payload,checkpoint)
-                if self.path not in ('/cycle11-fields','/cycle11-claims'):
+                if self.path not in ('/cycle11-fields','/cycle11-claims','/cycle12-fields','/cycle12-evolution'):
                     from pln_chess.cycle9.diagnostics import decorate_inspection
                     result=decorate_inspection(result)
                     from pln_chess.cycle10.diagnostics import decorate_inspection as decorate_external

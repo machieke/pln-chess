@@ -18,8 +18,12 @@ def main(argv=None):
     if not latest.exists():latest=ROOT/'artifacts/cycle7/model/C7-default.json'
     if not latest.exists():latest=ROOT/'artifacts/cycle6/model/C6-full.json'
     default_checkpoint=latest if latest.exists() else ROOT/'artifacts/model.json'
+    from pln_chess.cycle12.acceptance import default_checkpoint as verified_default
+    default_checkpoint=verified_default(default_checkpoint)
     parser=argparse.ArgumentParser(prog='pln-chess',description='Piece-relative native PLN research inspector')
     sub=parser.add_subparsers(dest='command',required=True)
+    p=sub.add_parser('concept-inspect');p.add_argument('--input',required=True);p.add_argument('--output')
+    p=sub.add_parser('field-evolution');p.add_argument('--input',required=True);p.add_argument('--output')
     p=sub.add_parser('field-inspect');p.add_argument('--fen',required=True);p.add_argument('--field-checkpoint');p.add_argument('--piece')
     p.add_argument('--family',choices=('all','geometry','attack','defense','mobility','king-exposure'),default='all');p.add_argument('--move');p.add_argument('--history')
     p.add_argument('--legal-mode',choices=('operational','strict','experimental'),default='operational')
@@ -77,7 +81,12 @@ def main(argv=None):
     p=sub.add_parser('serve'); p.add_argument('--port',type=int,default=8765); p.add_argument('--checkpoint',default=str(default_checkpoint))
     args=parser.parse_args(argv)
     try:
-        if args.command=='field-inspect':
+        if args.command in ('concept-inspect','field-evolution'):
+            from pln_chess.cycle12.api import inspector_fields, inspector_evolution
+            supplied=read_json(args.input)
+            result=inspector_fields(supplied) if args.command=='concept-inspect' else inspector_evolution(supplied)
+            if args.output:write_json(args.output,result)
+        elif args.command=='field-inspect':
             from pln_chess.api import inspect_fields
             from pln_chess.cycle11.fields.inference import FieldOptions
             result=inspect_fields(args.fen,args.field_checkpoint,family=args.family,piece=args.piece,candidate=args.move,

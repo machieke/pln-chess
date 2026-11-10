@@ -62,7 +62,7 @@ def run(out):
         inputs_exclude_reference_labels=True,
         conditional_key_overlap='Measured after observation grammar freeze and training. Supplied pooling may intentionally share keys across different raw families.',
         independence_limit='One controlled synthetic source. Distinct raw role topology/distance families are split; these are not independent external chess studies. Equivalent transformations and counterfactual descendants never count as extra holdouts.',
-        preregistration_revision='Drafts are retained under datasets/pre-audit-registration and pre-move-grammar-audit. Before fitting, symmetric role permutations and trapping boundary topology were added to the family audit; one-cell orthogonal vacating/interposing edits use rook movers so every proposed edit belongs to the structural movement grammar. Counts, split assignments and limited-target labels did not change.')
+        preregistration_revision='Drafts are retained under datasets/pre-audit-registration, pre-move-grammar-audit and pre-reference-scope-audit. Before fitting, symmetric role permutations and trapping boundary topology were added to the family audit; one-cell orthogonal edits use rook movers in the structural grammar; full legal-exit references are withheld for deliberately incomplete local boards. Counts, split assignments and limited-target labels did not change.')
     write_json(out/'datasets/audit.json',result)
     print('Concept data audit passed',len(data['records']),len(by_family),len(symmetry),flush=True)
 
