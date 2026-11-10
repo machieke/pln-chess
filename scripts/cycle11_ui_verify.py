@@ -121,8 +121,9 @@ def run(out, work, port=18781, development=False):
         viewport(390, 844)
         evaluate('window.scrollTo(0,0);true')
         mobile = evaluate('({width:innerWidth,height:innerHeight,scrollWidth:document.documentElement.scrollWidth})')
-        assert mobile['width'] == 390 and mobile['scrollWidth'] <= 390
+        write_json(proof / 'mobile-geometry.json',dict(viewport=mobile,overflowing=evaluate('Array.from(document.querySelectorAll("body *")).filter(e=>e.getBoundingClientRect().right>innerWidth).map(e=>({tag:e.tagName,id:e.id,right:e.getBoundingClientRect().right})).slice(0,30)')))
         command('exec', 'screenshot', 'mobile-field-controls.png')
+        assert mobile['width'] == 390 and mobile['scrollWidth'] <= 390, mobile
         evaluate('document.getElementById("field-before").scrollIntoView();true')
         command('exec', 'screenshot', 'mobile-before-after.png')
         checks.append(dict(case='mobile-layout', result=mobile))
