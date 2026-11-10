@@ -1,0 +1,72 @@
+{
+  "all_listed_research_stages_executed": true,
+  "baseline_reused_by_receipt": {
+    "path": "/data/pln-chess-cycle12-baseline/artifacts/cycle11/current/verified.json",
+    "sha256": "83a63f8f0d6a691cb82e65697edeeb651933472e8178d1be5064d07c48024a0c"
+  },
+  "checkout": "/data/pln-chess-cycle12-baseline",
+  "comparisons": [
+    {
+      "byte_identical": true,
+      "path": "model/C11-field-trained.json",
+      "sha256": "fc35edacf50e9717febc0adb62b089dd43bbdeda05c605f9d79738c3a8a01137"
+    },
+    {
+      "byte_identical": true,
+      "path": "model/C11-field-empty.json",
+      "sha256": "9a19a26090f4a4c6fdd1f638057f53817c66c3c66f519175fdf9ba1cbf4b2936"
+    },
+    {
+      "byte_identical": true,
+      "path": "model/C11-special-local.json",
+      "sha256": "5c655e99f45089b6049c4819f3db42bf09f38906984a057200ce04ef10e82de8"
+    },
+    {
+      "content_identical": true,
+      "path": "datasets/field-queries.json.xz"
+    },
+    {
+      "content_identical": true,
+      "path": "datasets/legal-curriculum.json"
+    },
+    {
+      "content_identical": true,
+      "path": "datasets/worked-controls.json"
+    },
+    {
+      "content_identical": true,
+      "path": "datasets/temporal-controls.json"
+    },
+    {
+      "content_identical": true,
+      "path": "field-evaluation/rows.json.xz"
+    },
+    {
+      "content_identical": true,
+      "path": "fields/transformations.json.xz"
+    },
+    {
+      "content_identical": true,
+      "path": "fields/learning-transfers.json.xz"
+    },
+    {
+      "content_identical": true,
+      "path": "field-learning/main/native-training.json.xz"
+    },
+    {
+      "content_identical": true,
+      "path": "legal/training.json.xz"
+    },
+    {
+      "content_identical": true,
+      "path": "temporal/summary.json"
+    }
+  ],
+  "end_to_end_second_baseline_run": false,
+  "final_clean": true,
+  "initial_clean": true,
+  "passed": true,
+  "scope": "Fresh venv/runtime/source reproduction of frozen Cycle 11 data generation, native learning, held-out field inference, legal completion and temporal controls. The copied gate is explicitly bound above: it may be the already accepted starting-source receipt when research and fresh legal replay run independently. Cycle 12 baseline completion separately requires the new complete legal replay and this research receipt.",
+  "source_head": "f4a9fd5536d001fa8830773012dcd578443b0b61",
+  "worked_native_relation_and_difference_parity": 15
+}

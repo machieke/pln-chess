@@ -1,0 +1,129 @@
+{
+  "append_preserves_earlier_claims": true,
+  "cases": 27,
+  "confidence_policy": "Minimum explicitly supplied observation confidence; a conservative trust selection, not a probability combination.",
+  "conflicts": {
+    "conflicting-provenance-identifier": [
+      {
+        "claims": [
+          "4dac47e460e68c541c291cd2fb8128bd9b4c526a6bd8584a6b54fd4f946f31f1",
+          "83c01d8e1f59fe0b63d64caae51cb6fa962201451bf8d8ac6ec4d8e57b536416"
+        ],
+        "external_event_id": "publisher-event-two",
+        "kind": "source-event-identity-conflict",
+        "source": "controlled-observer"
+      }
+    ],
+    "conflicting-trusted-metadata": [
+      {
+        "claim": "24b551683329067121c8005ea2bc205489b16db6b9bd31f67bd4e5371e1d17e1",
+        "expected": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "kind": "initial-metadata-conflict",
+        "reported": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w - - 0 1"
+      }
+    ],
+    "contradictory-earlier-delivery": [
+      {
+        "claims": [
+          "082e9a4099dc717498d19a69ba2938707f51f7de3640fd75051f2c759a120da5",
+          "55fde51d72e1e078f1bbd4244647ed823a29e5c858bebabf804090f2079997d9"
+        ],
+        "kind": "different-moves-at-sequence",
+        "sequence": 2
+      },
+      {
+        "kind": "reported-final-state-mismatch",
+        "replayed": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1",
+        "reported": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3"
+      }
+    ],
+    "contradictory-later-claim": [
+      {
+        "claims": [
+          "082e9a4099dc717498d19a69ba2938707f51f7de3640fd75051f2c759a120da5",
+          "55fde51d72e1e078f1bbd4244647ed823a29e5c858bebabf804090f2079997d9"
+        ],
+        "kind": "different-moves-at-sequence",
+        "sequence": 2
+      },
+      {
+        "kind": "reported-final-state-mismatch",
+        "replayed": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1",
+        "reported": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3"
+      }
+    ],
+    "expected-final-state-conflict": [
+      {
+        "kind": "reported-final-state-mismatch",
+        "replayed": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+        "reported": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
+      }
+    ],
+    "missing-final-event": [
+      {
+        "kind": "reported-final-state-mismatch",
+        "replayed": "rnbqkbnr/pppp1ppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2",
+        "reported": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3"
+      }
+    ],
+    "missing-first-event": [
+      {
+        "kind": "reported-final-state-mismatch",
+        "replayed": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "reported": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3"
+      }
+    ],
+    "missing-middle-event": [
+      {
+        "kind": "reported-final-state-mismatch",
+        "replayed": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1",
+        "reported": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3"
+      }
+    ],
+    "published-prefix-missing-event": [
+      {
+        "kind": "reported-final-state-mismatch",
+        "replayed": "rnbqk2r/ppp1ppbp/5np1/3P4/3P4/1QN5/PP2PPPP/R1B1KBNR b KQkq - 0 5",
+        "reported": "r1bq1rk1/pp1n1pbp/6p1/3Pp3/3nP3/2N1B3/PP3PPP/R2QKBNR w KQ e6 0 11"
+      }
+    ],
+    "reported-after-state-conflict": [
+      {
+        "claim": "5e51bfe2569b94c13610b4081afd78942c698bfb20a3796322a80788a5ef3b56",
+        "field": "after_fen",
+        "kind": "reported-event-state-conflict",
+        "replayed": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq e6 0 2",
+        "reported": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "sequence": 2
+      }
+    ],
+    "reported-before-state-conflict": [
+      {
+        "claim": "b27b86453a1c0b70f3e9572b643bc486c05ac3f6f0d8f6aef40d50bd1de2b8d8",
+        "field": "before_fen",
+        "kind": "reported-event-state-conflict",
+        "replayed": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1",
+        "reported": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+        "sequence": 2
+      }
+    ]
+  },
+  "dataset_hash": "5bc86b1570ecf8b24b692677fb2f32222dc944f080e4bbddc165a1830149899c",
+  "integrity_rejections": [
+    "semantic-tamper-with-recomputed-digest",
+    "different-model",
+    "different-runtime"
+  ],
+  "limits": "Structural history is not proof of historical legal play. Conflicting and incomplete histories are withheld from native eligibility; FEN-only inference remains available.",
+  "model_version": "1217e17552ff611bebf0efc650245b05fb71c93a8175b579b025d6273d5d781d",
+  "native_available": 12,
+  "order_and_duplicate_native_proof_parity": [
+    "reverse-delivery",
+    "shuffled-delivery",
+    "identical-duplicate",
+    "all-events-duplicated"
+  ],
+  "passed": true,
+  "runtime_version": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+  "withheld": 15
+}

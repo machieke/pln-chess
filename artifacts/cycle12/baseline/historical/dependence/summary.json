@@ -1,0 +1,181 @@
+{
+  "caveats": [
+    "Duplicate raw training rows change audit ledger digests and model identity, while group-aware native beliefs remain identical.",
+    "A shared group with conflicting labels is excluded entirely; conservative information loss is explicit.",
+    "An unannotated correlated source can still be double counted. Provenance honesty is an external assumption."
+  ],
+  "checkpoint_roundtrip": true,
+  "correlated_ancestor_native_values_identical": true,
+  "deterministic_replay": true,
+  "duplicate_native_values_identical": true,
+  "ingestion": {
+    "first": {
+      "evidence_id": "1701d3b66166f9ead4316c25d9544e660e0dee765941c5537704f6e9b1d87209",
+      "sequence": 1,
+      "status": "appended"
+    },
+    "records": 1,
+    "second": {
+      "evidence_id": "1701d3b66166f9ead4316c25d9544e660e0dee765941c5537704f6e9b1d87209",
+      "sequence": 1,
+      "status": "duplicate"
+    }
+  },
+  "production_policy_changed": false,
+  "removed_hypotheses": 0,
+  "replay_version": "9aa814cb6d9ad27bc57c3d4c164cff2c4b42aa18e08510a90d602248de656f9a",
+  "reports": {
+    "base": {
+      "dataset_hash": "84544a3d0e644f5a89d6d65701d2d89e80e0bd15147b2237f85911dd656f7790",
+      "dependence_aware": true,
+      "hypotheses": 1,
+      "ledger_digest": "e9a2fc38714966957d6684fea66c15dab8fa0dcd3bfdbafb1d4c7a5334d07ade",
+      "native_revision_nodes": 8,
+      "projection_variant": "C8-promotion-relative",
+      "records": 4,
+      "retracted_groups": [],
+      "scope": "Local promotion eligibility, not a complete legality or safety theorem. No historical checkpoint is revised.",
+      "skipped_digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "skipped_records": 0
+    },
+    "correlated": {
+      "dataset_hash": "4ff92c1bb38007faa4709c9f652ffc49ae702fe8a1e1c55c6d87d4691c2904ab",
+      "dependence_aware": true,
+      "hypotheses": 1,
+      "ledger_digest": "2289dabd97f9061954213991bc9d9f145a135808dcf31397f0e64153564919b7",
+      "native_revision_nodes": 8,
+      "projection_variant": "C8-promotion-relative",
+      "records": 5,
+      "retracted_groups": [],
+      "scope": "Local promotion eligibility, not a complete legality or safety theorem. No historical checkpoint is revised.",
+      "skipped_digest": "2f702f8706d7c339f83a067bcb6ecc3eeaeaa783f98dafa16159f79eae50317c",
+      "skipped_records": 1
+    },
+    "duplicate": {
+      "dataset_hash": "e45d49bbb31dbe855683fcba7a51c7f3bc03ee3344023c2f7d19a030a5c1e607",
+      "dependence_aware": true,
+      "hypotheses": 1,
+      "ledger_digest": "5e609f8eebe8e7ada4df59bd1856d68c8672a14d55119d7e4b292119022f8e88",
+      "native_revision_nodes": 8,
+      "projection_variant": "C8-promotion-relative",
+      "records": 8,
+      "retracted_groups": [],
+      "scope": "Local promotion eligibility, not a complete legality or safety theorem. No historical checkpoint is revised.",
+      "skipped_digest": "0c38218bad140bfbba216cfb401e208abb22539914b7223ba57af0ebd162ed4f",
+      "skipped_records": 4
+    },
+    "independent-conflict": {
+      "dataset_hash": "608a3da173215083db45422778f803ddb560f1471f2089497618ece3824bd5e2",
+      "dependence_aware": true,
+      "hypotheses": 1,
+      "ledger_digest": "5af7763404a6b11f753a947eb007575b384f639d85aff7cf4faf8892b7ff7543",
+      "native_revision_nodes": 10,
+      "projection_variant": "C8-promotion-relative",
+      "records": 5,
+      "retracted_groups": [],
+      "scope": "Local promotion eligibility, not a complete legality or safety theorem. No historical checkpoint is revised.",
+      "skipped_digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "skipped_records": 0
+    },
+    "no-dependence": {
+      "dataset_hash": "e45d49bbb31dbe855683fcba7a51c7f3bc03ee3344023c2f7d19a030a5c1e607",
+      "dependence_aware": false,
+      "hypotheses": 1,
+      "ledger_digest": "5e609f8eebe8e7ada4df59bd1856d68c8672a14d55119d7e4b292119022f8e88",
+      "native_revision_nodes": 16,
+      "projection_variant": "C8-promotion-relative",
+      "records": 8,
+      "retracted_groups": [],
+      "scope": "Local promotion eligibility, not a complete legality or safety theorem. No historical checkpoint is revised.",
+      "skipped_digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "skipped_records": 0
+    },
+    "same-group-conflict": {
+      "dataset_hash": "701cd5030ed46d28d0ac80093dc80974150b94baa24919fb4d9177413b8f5314",
+      "dependence_aware": true,
+      "hypotheses": 1,
+      "ledger_digest": "8ce561faf4817b36e4ef550ee8a3d27f8601676ed1f34d9ac1f032ec0f49e9e9",
+      "native_revision_nodes": 6,
+      "projection_variant": "C8-promotion-relative",
+      "records": 5,
+      "retracted_groups": [],
+      "scope": "Local promotion eligibility, not a complete legality or safety theorem. No historical checkpoint is revised.",
+      "skipped_digest": "f87fc490617312c21cd95bc619bb01522596b129fade556e6ef01b49598f6520",
+      "skipped_records": 2
+    }
+  },
+  "values": {
+    "base": {
+      "c8:fc25738651b4e85ecf22bf30": [
+        {
+          "confidence": 0.8020833333333335,
+          "strength": 0.9935064935064936
+        },
+        {
+          "confidence": 0.8020833333333335,
+          "strength": 0.006493506493506497
+        }
+      ]
+    },
+    "correlated": {
+      "c8:fc25738651b4e85ecf22bf30": [
+        {
+          "confidence": 0.8020833333333335,
+          "strength": 0.9935064935064936
+        },
+        {
+          "confidence": 0.8020833333333335,
+          "strength": 0.006493506493506497
+        }
+      ]
+    },
+    "duplicate": {
+      "c8:fc25738651b4e85ecf22bf30": [
+        {
+          "confidence": 0.8020833333333335,
+          "strength": 0.9935064935064936
+        },
+        {
+          "confidence": 0.8020833333333335,
+          "strength": 0.006493506493506497
+        }
+      ]
+    },
+    "independent-conflict": {
+      "c8:fc25738651b4e85ecf22bf30": [
+        {
+          "confidence": 0.8347826086956522,
+          "strength": 0.7968750000000002
+        },
+        {
+          "confidence": 0.8347826086956522,
+          "strength": 0.20312499999999986
+        }
+      ]
+    },
+    "no-dependence": {
+      "c8:fc25738651b4e85ecf22bf30": [
+        {
+          "confidence": 0.8895348837209303,
+          "strength": 0.996732026143791
+        },
+        {
+          "confidence": 0.8895348837209303,
+          "strength": 0.003267973856209153
+        }
+      ]
+    },
+    "same-group-conflict": {
+      "c8:fc25738651b4e85ecf22bf30": [
+        {
+          "confidence": 0.7532467532467534,
+          "strength": 0.9913793103448276
+        },
+        {
+          "confidence": 0.7532467532467534,
+          "strength": 0.008620689655172417
+        }
+      ]
+    }
+  }
+}
