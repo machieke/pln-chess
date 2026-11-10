@@ -29,6 +29,7 @@ def run(out, docs):
     dependence = read_json(out / 'field-learning/dependence.json')
     performance = read_json(out / 'performance/summary.json')
     ui = read_json(out / 'ui/verification.json')
+    research = read_json(out / 'research-acceptance.json')
     audit = read_json(out / 'datasets/audit.json')
     unresolved = read_json(out / 'legal/unresolved-baseline-summary.json')
     sharing = read_json(out / 'field-learning/relative-sharing-summary.json')
@@ -67,7 +68,7 @@ def run(out, docs):
         ('16', 'Interactive inspector', 'Verified desktop/mobile browser workflow', 'ui/verification.json'),
         ('17', 'Incremental performance', 'Exact native proof parity and isolated timings', 'performance/summary.json'),
         ('18', 'Operational gates', 'Verified unchanged accepted model', 'current/verified.json'),
-        ('19', 'Research acceptance', 'Measured finite targets; no strategic or global-composition claim', 'research-acceptance.json'),
+        ('19', 'Research acceptance', f"{sum(research['targets'].values())}/{len(research['targets'])} targets met; original FEN adversarial improvement unmet", 'research-acceptance.json'),
         ('20', 'Consolidated delivery', 'Local source, artifacts and reports; no push', 'delivery.json'),
     ]
     matrix = '| Package | Scope | Evidence-backed status | Receipt |\n|---|---|---|---|\n'+'\n'.join(
@@ -318,6 +319,8 @@ The full accepted native replay preserves 793/1,020 exact external FEN-only sets
 {field_table()}
 
 The study records {len(controls['worked_examples'])} before/after demonstrations, {controls['transformation_passes']}/{controls['transformations']} transformation controls and {controls['successful_learning_transfers']}/{controls['transfer_attempts']} dedicated unseen-configuration transfers. All {temporal['cases']} robust-history controls pass their registered expectations. [Learning](field-learning.md), [evaluation](field-evaluation.md), [temporal evidence](temporal-robustness.md), [typed differences](field-differences.md).
+
+The proposed research target of improving original FEN-only adversarial exact-set accuracy was not met. Those three cohorts remain at 112/128, 71/80 and 98/112 exact sets. Supplied-history interventions and controlled holdouts improve separately. Implementation acceptance and completion of the engineering package do not imply every research target succeeded. {artifact('research-acceptance.json')}.
 
 Mandatory implementation checks include {current['test_count']} tests, all 287 negative controls, 26 historical suites, 180 full native comparison shards, fresh dependency bootstrap, no production oracle/new operator, exact proof/cache parity and browser verification. Exact incremental reuse is measured in [performance](performance.md). The inspector exposes separate strength/confidence, unknown/incomplete states and inspectable native proofs on desktop and mobile.
 

@@ -132,16 +132,31 @@ def research(out):
     perf = read_json(out / 'performance/summary.json')
     ui = read_json(out / 'ui/verification.json')
     fields = read_json(out / 'field-evaluation/summary.json')
+    regression = read_json(out / 'legal/regression/summary.json')
+    original = read_json(out / 'legal/unresolved-baseline-summary.json')['cohorts']
+    temporal = read_json(out / 'temporal/summary.json')
+    parity = read_json(out / 'current/proof-parity.json')['comparisons']
+    rows = read_gzip(out / 'field-evaluation/rows.json.xz')
+    transformations = read_gzip(out / 'fields/transformations.json.xz')
+    paired_cohorts = {'c9-adversarial/fen':'cycle9/adversarial',
+        'c9-special/fen':'cycle9/special-moves', 'c10-synthetic/fen':'cycle10/fen-only/synthetic-adversarial'}
     targets = dict(en_passant=legal['en_passant']['recovered_legal'] == 2,
+        original_fen_adversarial_exact_set_improvement=any(regression['cohorts'][new]['exact_positions']>original[old]['exact_positions'] for new,old in paired_cohorts.items()),
+        zero_observed_acceptance_classification_errors=all(c['metrics']['false_positive']==c['metrics']['false_illegal']==0 for c in parity),
+        robust_temporal_replay=temporal['passed'],
         four_field_families=all(f in fields['summaries']['trained']['all'] for f in ('attack','defense','mobility','king-exposure')),
         worked_examples=len(controls['worked_examples']) >= 10,
         transformation_controls=controls['transformation_passes'] >= 20,
         dedicated_learning_transfers=controls['successful_learning_transfers'] >= 5,
+        native_proofs_for_supported_relations=all(row['conditional_proof_complete'] and row['proof_id']!=digest([]) and row['evidence_ids'] for row in rows if row['classification']=='supported'),
+        unknown_preserved_when_insufficient=all(m['metrics']['unknown']==m['metrics']['relations'] for m in fields['summaries']['empty']['all'].values()) and all(row['after']['classification']=='unknown' for row in transformations if row['case']['expectation']=='unknown-required-observation'),
         exact_incremental_update=perf['all_exact_incremental_reuse'], interactive_inspector=ui['passed'])
     write_json(out / 'research-acceptance.json', dict(targets=targets, all_listed_targets_met=all(targets.values()),
         implementation_acceptance=read_json(out / 'acceptance.json')['passed'],
         complete_native_composition=False, native_change_propositions=False, strategic_competence=False,
-        experimental_model_promoted=False, interpretation='Finite registered research targets, distinct from operational acceptance and unsupported global/strategic conclusions.'))
+        experimental_model_promoted=False, unmet_targets=[key for key,value in targets.items() if not value],
+        original_fen_comparison={new:dict(before=original[old]['exact_positions'],after=regression['cohorts'][new]['exact_positions'],positions=regression['cohorts'][new]['positions']) for new,old in paired_cohorts.items()},
+        interpretation='Finite proposed research targets, distinct from implementation acceptance. Original FEN-only adversarial exact-set accuracy remains unchanged; improvements under supplied-history interventions and independent controlled holdouts are separate outcomes. Global/strategic conclusions remain unsupported.'))
 
 
 def manifest(out, docs):
