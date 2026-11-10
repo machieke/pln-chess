@@ -1,0 +1,191 @@
+"""Freeze and replay the accepted Cycle 11 source before Cycle 12 production edits.
+
+The driver is new research orchestration; every inference subprocess imports the
+unchanged starting checkout. Original reports and checkpoints are read-only.
+"""
+import argparse
+from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor
+import importlib.metadata
+import json
+import os
+from pathlib import Path
+import shutil
+import subprocess
+import sys
+import time
+
+from pln_chess.common import ROOT, digest, read_json, write_json
+from scripts.cycle9_baseline import sha
+
+START = 'f4a9fd5536d001fa8830773012dcd578443b0b61'
+PARITY_FIELDS = ('fixture', 'move', 'classification', 'truth_value', 'proof_id',
+                'rule_ids', 'evidence_ids', 'dependence_groups', 'proof_status',
+                'backoff', 'model_version', 'runtime_version', 'local_truth_value',
+                'typed_premises', 'promotion_selection')
+
+
+def compare_reports(new_path, old_path):
+    from evaluation.cycle3 import read_gzip
+    new_path, old_path = Path(new_path), Path(old_path)
+    # Native workers already reconstructed and hashed every complete proof.
+    # Bind those verification receipts to the exact bytes compared here.
+    for path in (new_path, old_path):
+        receipt = read_json(path.with_name(path.name.removesuffix('.json.xz')+'.receipt.json'))
+        assert receipt['native_proofs_verified'] and receipt['sha256'] == sha(path), str(path)
+    new, old = read_gzip(new_path), read_gzip(old_path)
+    assert [{k: r.get(k) for k in PARITY_FIELDS} for r in new['rows']] == [
+        {k: r.get(k) for k in PARITY_FIELDS} for r in old['rows']], str(new_path)
+    assert [p['predicted'] for p in new['positions']] == [p['predicted'] for p in old['positions']]
+    # Compare every ordered ground node, retaining rule/premise/evidence/TV
+    # contents, while hashing each shared DAG node only once. This avoids
+    # repeatedly serializing the same large proof prefixes across candidates.
+    new_nodes = [digest(node) for node in new['native_proof_dag']]
+    old_nodes = [digest(node) for node in old['native_proof_dag']]
+    assert len(new_nodes) == len(old_nodes) and set(new_nodes) == set(old_nodes), str(new_path)
+    for actual, expected in zip(new['rows'], old['rows']):
+        assert [new_nodes[i] for i in actual['proof_refs']] == [old_nodes[i] for i in expected['proof_refs']], str(new_path)
+    return dict(artifact=str(new_path), reference=str(old_path), sha256=sha(new_path),
+                reference_sha256=sha(old_path), rows=len(new['rows']), positions=len(new['positions']),
+                proof_hash=digest([r['proof_id'] for r in new['rows']]),
+                exact_native_proof_parity=True, metrics=new['metrics'],
+                validation='Native worker full-proof rehash receipts bound to artifact bytes; final comparison checks every ordered canonical DAG node and every static candidate/provenance field.')
+
+
+def run(out, snapshot):
+    out, snapshot = Path(out).resolve(), Path(snapshot).resolve()
+    out.mkdir(parents=True, exist_ok=True)
+    if not snapshot.exists():
+        from scripts.cycle10_bootstrap import run as bootstrap
+        bootstrap(out.parent / 'baseline-bootstrap', snapshot, START)
+    python = str(snapshot / '.venv/bin/python')
+    assert subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=snapshot, text=True).strip() == START
+    assert not subprocess.check_output(['git', 'status', '--porcelain'], cwd=snapshot, text=True)
+    env = dict(os.environ, PLN_CHESS_ROOT=str(snapshot), PYTHONPATH=f'{snapshot}/src:{snapshot}', TMPDIR='/dev/shm')
+    for key in ('C6_OUT', 'C7_OUT', 'C8_OUT', 'C9_OUT', 'C10_OUT', 'C11_OUT'):
+        env.pop(key, None)
+    probe = '''import json,sys,importlib.metadata
+from pln_chess.pln import Runtime
+from pln_chess.cycle6.inference import production_code_hash
+from pln_chess.cycle8.model import PromotionModel
+from pln_chess.common import ROOT
+r=Runtime();m=PromotionModel.load(ROOT/'artifacts/cycle10/model/C10-default.json',r)
+print(json.dumps(dict(runtime=r.manifest,production_code_hash=production_code_hash(),
+python=sys.version,accepted_model=m.version,dependencies={k:importlib.metadata.version(k) for k in ('pytest','chess','setuptools')})))'''
+    identity = json.loads(subprocess.check_output([python, '-c', probe], cwd=snapshot, env=env, text=True))
+    if not (out / 'manifest.json').exists():
+        original = read_json(snapshot / 'artifacts/cycle11/manifest.json')
+        for section, entries in original['files'].items():
+            base = snapshot / ('artifacts/cycle11' if section == 'artifacts' else 'docs/cycle11')
+            for relative, entry in entries.items():
+                assert sha(base / relative) == entry['sha256'], relative
+        tracked = subprocess.check_output(['git', 'ls-tree', '-r', '--name-only', START], cwd=snapshot, text=True).splitlines()
+        protected = {p: sha(snapshot / p) for p in tracked if p.startswith(('artifacts/', 'docs/', 'fixtures/', 'vendor/', 'configs/')) or p.endswith('.lock')}
+        write_json(out / 'manifest.json', dict(schema=12, starting_head=START, snapshot=str(snapshot),
+            snapshot_clean=True, initial_working_tree=subprocess.check_output(['git', 'status', '--short'], cwd=ROOT, text=True),
+            identity=identity, protected_files=protected, verified_cycle11_files={k:len(v) for k,v in original['files'].items()},
+            cycle11_manifest_sha256=sha(snapshot / 'artifacts/cycle11/manifest.json'),
+            accepted_checkpoint_sha256=sha(snapshot / 'artifacts/cycle10/model/C10-default.json'),
+            acceptance=read_json(snapshot / 'artifacts/cycle11/acceptance.json'),
+            configurations={str(p.relative_to(snapshot)): read_json(p) for p in (snapshot / 'configs').glob('*.json')},
+            datasets={str(p.relative_to(snapshot)): sha(p) for p in (snapshot / 'artifacts').glob('cycle*/datasets/dataset.json')},
+            dependency_locks={str(p.relative_to(snapshot)): sha(p) for p in snapshot.glob('*.lock')},
+            started_unix=time.time()))
+    else:
+        assert read_json(out / 'manifest.json')['identity'] == identity
+    for group, cycle in (('historical', 9), ('external', 10)):
+        (out / group / 'datasets').mkdir(parents=True, exist_ok=True)
+        shutil.copy2(snapshot / f'artifacts/cycle{cycle}/datasets/dataset.json', out / group / 'datasets/dataset.json')
+
+    def command(name, args):
+        receipt = out / f'commands/{name}.json'
+        argv = [python, *args]
+        if receipt.exists():
+            previous = read_json(receipt)
+            if previous['returncode'] == 0 and previous['argv'] == argv and previous['source_head'] == START:
+                print('RESUME completed command', name, flush=True)
+                return
+        log = out / f'logs/{name}.txt'
+        log.parent.mkdir(parents=True, exist_ok=True)
+        started = time.time()
+        with log.open('w') as stream:
+            result = subprocess.run(argv, cwd=snapshot, env=env, stdout=stream, stderr=subprocess.STDOUT)
+        write_json(receipt, dict(argv=argv, cwd=str(snapshot), source_head=START, started_unix=started,
+            elapsed_seconds=time.time()-started, returncode=result.returncode, log=str(log.relative_to(out)),
+            source_hash=identity['production_code_hash'], environment={k: env[k] for k in ('PLN_CHESS_ROOT', 'PYTHONPATH', 'TMPDIR')}))
+        if result.returncode:
+            raise RuntimeError(f'{name} failed: {log}')
+        print('PASSED', name, flush=True)
+
+    # No performance measurements overlap these six-worker replay groups.
+    with ThreadPoolExecutor(max_workers=2) as pool:
+        futures = [pool.submit(command, 'tests', ['-m', 'pytest', '-q']),
+                   pool.submit(command, 'negative-controls', ['-m', 'evaluation.cycle9_controls', '--out', str(out / 'historical')])]
+        for future in futures:
+            future.result()
+    with ThreadPoolExecutor(max_workers=2) as pool:
+        futures = [pool.submit(command, 'historical-suites', ['-m', 'scripts.cycle9_regression', '--out', str(out / 'historical')]),
+                   pool.submit(command, 'cycle9-evaluation', ['-m', 'scripts.cycle9_evaluate', '--out', str(out / 'historical'), '--source', str(snapshot)])]
+        for future in futures:
+            future.result()
+    external_jobs = []
+    for receipt in sorted((snapshot / 'artifacts/cycle10/evaluation').glob('*.receipt.json')):
+        old = read_json(receipt)
+        ident = old['identity']
+        if ident['arm'] not in ('frozen', 'temporal'):
+            continue
+        stem = receipt.name.removesuffix('.receipt.json')
+        # All collections/splits are recovered from the source fixture identity,
+        # avoiding ambiguous hyphen parsing in the artifact name.
+        data = read_json(out / 'external/datasets/dataset.json')
+        fixture = next(p for p in data['positions'] if p['id'] == ident['fixtures'][0])
+        selected = [p for p in data['positions'] if p['split'] == fixture['split'] and p['source_collection'] == fixture['source_collection']]
+        offset = next(i for i, p in enumerate(selected) if p['id'] == fixture['id'])
+        external_jobs.append((stem, ['-m', 'scripts.cycle10_evaluate', '--worker', '--out', str(out / 'external'),
+            '--source', str(snapshot), '--arm', ident['arm'], '--split', fixture['split'],
+            '--collection', fixture['source_collection'], '--offset', str(offset), '--mode', ident['mode'],
+            '--checkpoint', str(snapshot / 'artifacts/cycle10/model/C10-default.json')]))
+    assert len(external_jobs) == 132
+    with ThreadPoolExecutor(max_workers=6) as pool:
+        for _ in pool.map(lambda job: command(*job), external_jobs):
+            pass
+    comparison_jobs = []
+    for receipt in sorted((out / 'historical/evaluation').glob('*.receipt.json')):
+        record = read_json(receipt)
+        comparison_jobs.append((out / 'historical' / record['artifact'], snapshot / 'artifacts/cycle11/current/historical' / record['artifact']))
+    assert len(comparison_jobs) == 48
+    for receipt in sorted((out / 'external/evaluation').glob('*.receipt.json')):
+        record = read_json(receipt)
+        comparison_jobs.append((out / 'external' / record['artifact'], snapshot / 'artifacts/cycle11/current/external' / record['artifact']))
+    assert len(comparison_jobs) == 180
+    with ProcessPoolExecutor(max_workers=6) as pool:
+        comparisons = list(pool.map(compare_reports, [job[0] for job in comparison_jobs], [job[1] for job in comparison_jobs]))
+    write_json(out / 'proof-parity.json', dict(passed=True, comparisons=comparisons))
+    protected = read_json(out / 'manifest.json')['protected_files']
+    assert all(sha(ROOT / p) == h for p, h in protected.items())
+    assert not subprocess.check_output(['git', 'status', '--porcelain'], cwd=snapshot, text=True)
+    write_json(out / 'legal-reproduction-receipt.json', dict(passed=True, starting_head=START, identity=identity,
+        snapshot=str(snapshot), snapshot_clean=True, historical_suites=26, cycle9_shards=48,
+        cycle10_frozen_and_history_shards=132, exact_native_proof_parity=True, protected_files=len(protected),
+        negative_controls=read_json(out / 'historical/C8-promotion-relative-negative-regressions.json'),
+        tests=(out / 'logs/tests.txt').read_text(), completed_unix=time.time(),
+        scope='Executed unchanged-source native replay of accepted operational and secondary suites. Experimental adapted models are not the accepted baseline.'))
+    models = [snapshot / 'artifacts/cycle10/model/C10-default.json', *sorted((snapshot / 'artifacts/cycle11/model').glob('*.json'))]
+    write_json(out / 'model-identities.json', {str(p.relative_to(snapshot)): dict(sha256=sha(p), version=read_json(p).get('version')) for p in models})
+    write_json(out / 'dataset-identities.json', {str(p.relative_to(snapshot)): sha(p) for p in sorted((snapshot / 'artifacts/cycle11/datasets').glob('*')) if p.is_file()})
+    from scripts.cycle12_baseline_research import run as research
+    research(out, snapshot)
+    legal = read_json(out / 'legal-reproduction-receipt.json')
+    research_receipt = read_json(out / 'research/verified.json')
+    assert research_receipt['passed']
+    write_json(out / 'reproduction-receipt.json', {**legal, 'cycle11_research_reproduced': True,
+        'research_receipt_sha256': sha(out / 'research/verified.json'),
+        'scope': 'Fresh unchanged Cycle 11 source: all accepted legal suites, proof parity, field data and learning, legal learning and 76 holdouts, field controls, 27 temporal controls.'})
+    print('BASELINE COMPLETE', flush=True)
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--out', required=True)
+    parser.add_argument('--snapshot', required=True)
+    args = parser.parse_args()
+    run(args.out, args.snapshot)
