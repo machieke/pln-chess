@@ -1,0 +1,57 @@
+[
+  {
+    "argv": [
+      "git",
+      "clone",
+      "--shared",
+      "/data/pln-chess-cycle6-delivery",
+      "/data/pln-chess-cycle11-verified"
+    ],
+    "cwd": "/data/pln-chess-cycle6-delivery",
+    "elapsed_seconds": 7.842453241348267,
+    "log": "clone.txt",
+    "name": "clone",
+    "returncode": 0,
+    "started_unix": 1794301919.3298938
+  },
+  {
+    "argv": [
+      "git",
+      "checkout",
+      "--detach",
+      "6d7c37d2036a6602a1fe78bcb589b840c0f5b740"
+    ],
+    "cwd": "/data/pln-chess-cycle11-verified",
+    "elapsed_seconds": 0.29241466522216797,
+    "log": "checkout.txt",
+    "name": "checkout",
+    "returncode": 0,
+    "started_unix": 1794301927.1726253
+  },
+  {
+    "argv": [
+      "bash",
+      "scripts/bootstrap.sh",
+      "--dependencies-only"
+    ],
+    "cwd": "/data/pln-chess-cycle11-verified",
+    "elapsed_seconds": 2.8063480854034424,
+    "log": "bootstrap.txt",
+    "name": "bootstrap",
+    "returncode": 0,
+    "started_unix": 1794301927.7660027
+  },
+  {
+    "argv": [
+      "/data/pln-chess-cycle11-verified/.venv/bin/python",
+      "-c",
+      "import json,sys,importlib.metadata; from pln_chess.pln import Runtime; from pln_chess.cycle6.inference import production_code_hash; r=Runtime();r.verify();print(json.dumps(dict(runtime=r.manifest,production_code_hash=production_code_hash(),python=sys.version,dependencies={k:importlib.metadata.version(k) for k in (\"pytest\",\"chess\",\"setuptools\")})))"
+    ],
+    "cwd": "/data/pln-chess-cycle11-verified",
+    "elapsed_seconds": 0.1391611099243164,
+    "log": "identity.txt",
+    "name": "identity",
+    "returncode": 0,
+    "started_unix": 1794301930.5728102
+  }
+]
