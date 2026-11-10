@@ -502,7 +502,9 @@ at `{current['source_head']}` in `{current['checkout']}`. Its final source remai
 The current-source run passes {current['test_count']} tests and all the same native legal cohorts with exact proof parity.
 A separate clean research replay regenerates data, trains both concept models and reruns all concept, counterfactual,
 dependence, interaction and sequence experiments: {len(clean['comparisons'])} model/artifact comparisons pass.
-Both concept checkpoint files are byte-identical. Research equality excludes only execution and cache counters.
+Both concept checkpoint files are byte-identical. Research equality excludes execution/cache metadata and the legacy
+`legal_candidates.peak_process_rss_kib` resource measurement in trapping diagnostics. Both raw memory measurements are retained;
+their initial 40 KiB difference and the narrowed comparison correction are recorded separately. All proof and inference fields remain compared.
 The research replay reuses the already passed baseline receipt; it does not claim a second baseline execution within that replay.
 {'The complete command below was executed in this output, with its orchestration receipt retained.' if full_orchestration else 'The complete command below is supplied for future fresh replay; the delivered execution used its separately logged stages.'}
 

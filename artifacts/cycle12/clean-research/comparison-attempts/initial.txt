@@ -1,0 +1,19 @@
+FRESH CYCLE12 REPLAY concept-data
+FRESH CYCLE12 REPLAY concept-controls
+FRESH CYCLE12 REPLAY sequences
+FRESH CYCLE12 REPLAY dataset-audit
+FRESH CYCLE12 REPLAY concept-learning
+FRESH CYCLE12 REPLAY concept-evaluation
+FRESH CYCLE12 REPLAY dependence
+FRESH CYCLE12 REPLAY partial-semantics
+FRESH CYCLE12 REPLAY evolution
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/data/pln-chess-cycle6-delivery/scripts/cycle12_research_replay.py", line 68, in <module>
+    args=parser.parse_args();run(args.out,args.source)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/pln-chess-cycle6-delivery/scripts/cycle12_research_replay.py", line 56, in run
+    assert digest(semantic_replay(a))==digest(semantic_replay(b)),name
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: concepts/trapping-diagnostics.json.xz

@@ -11,6 +11,15 @@ from scripts.cycle9_baseline import sha
 from evaluation.cycle3 import read_gzip
 
 
+def comparison_value(name,value):
+    result=semantic_replay(value)
+    if name=='concepts/trapping-diagnostics.json.xz':
+        # The legacy legal API stores this runtime resource counter at the top
+        # level. Retain it in both artifacts, but not in semantic proof equality.
+        for row in result:row['legal_candidates'].pop('peak_process_rss_kib',None)
+    return result
+
+
 def run(out,source):
     out,source=Path(out).resolve(),Path(source).resolve()
     assert not subprocess.check_output(['git','status','--porcelain'],cwd=source,text=True)
@@ -53,13 +62,15 @@ def run(out,source):
     for name in paths:
         load=read_gzip if name.endswith('.xz') else read_json
         a,b=load(out/name),load(target/name)
-        assert digest(semantic_replay(a))==digest(semantic_replay(b)),name
-        comparisons.append(dict(path=name,semantic_identical=True,semantic_sha256=digest(semantic_replay(a))))
+        assert digest(comparison_value(name,a))==digest(comparison_value(name,b)),name
+        comparisons.append(dict(path=name,semantic_identical=True,semantic_sha256=digest(comparison_value(name,a))))
     assert not subprocess.check_output(['git','status','--porcelain'],cwd=source,text=True)
     write_json(target/'verified.json',dict(passed=True,source_head=head,checkout=str(source),initial_clean=True,final_clean=True,
         comparisons=comparisons,baseline_reused_by_receipt=dict(path=str(baseline),sha256=sha(baseline)),
+        comparator_sha256=sha(__file__),
+        equality_exclusions=['execution','incremental','concepts/trapping-diagnostics.json.xz/*/legal_candidates/peak_process_rss_kib'],
         end_to_end_second_baseline_run=False,all_listed_research_stages_executed=True,
-        scope='Fresh locked environment reruns Cycle 12 data generation, native learning, limited-target evaluation, counterfactuals, dependence, fields and supplied sequences. The full baseline and legal population gates have separate executed receipts. Timing and cache counters are excluded from semantic equality.'))
+        scope='Fresh locked environment reruns Cycle 12 data generation, native learning, limited-target evaluation, counterfactuals, dependence, fields and supplied sequences. The full baseline and legal population gates have separate executed receipts. Execution/cache metadata and the explicitly named legacy process-memory counter are excluded from semantic equality. Every proof, truth value, classification and evidence lineage remains compared.'))
     print('FRESH CYCLE12 RESEARCH REPRODUCTION PASSED',flush=True)
 
 
