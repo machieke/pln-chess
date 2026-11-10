@@ -1,0 +1,3210 @@
+{
+  "hash": "c0fff959f7f517c9368b2496e76871923b82085de9f217b62c9b4f98527b9dd9",
+  "oracle_scope": "Offline reference only; no production rule or strategic score.",
+  "schema": 11,
+  "selected_without_model": true,
+  "transfers": [
+    {
+      "dependence_group": "dedicated-unseen-transfer/rook-attack-six",
+      "distance": 6,
+      "fen": "7k/8/8/8/8/8/R5n1/K7 w - - 0 1",
+      "field": "attack",
+      "id": "rook-attack-six",
+      "reference_label": true,
+      "relative_displacement": [
+        6,
+        0
+      ],
+      "scope": "Long-range query withheld from sliding training; inference-time audit must verify exact displacement absence and disclose the shared pooled conditional.",
+      "source": "a2",
+      "target": "g2"
+    },
+    {
+      "dependence_group": "dedicated-unseen-transfer/bishop-attack-five",
+      "distance": 5,
+      "fen": "7k/5n2/8/8/8/8/B7/1K6 w - - 0 1",
+      "field": "attack",
+      "id": "bishop-attack-five",
+      "reference_label": true,
+      "relative_displacement": [
+        5,
+        5
+      ],
+      "scope": "Long-range query withheld from sliding training; inference-time audit must verify exact displacement absence and disclose the shared pooled conditional.",
+      "source": "a2",
+      "target": "f7"
+    },
+    {
+      "dependence_group": "dedicated-unseen-transfer/queen-mobility-seven",
+      "distance": 7,
+      "fen": "8/7k/8/8/8/8/3K4/Q7 w - - 0 1",
+      "field": "mobility",
+      "id": "queen-mobility-seven",
+      "reference_label": true,
+      "relative_displacement": [
+        0,
+        7
+      ],
+      "scope": "Long-range query withheld from sliding training; inference-time audit must verify exact displacement absence and disclose the shared pooled conditional.",
+      "source": "a1",
+      "target": "a8"
+    },
+    {
+      "dependence_group": "dedicated-unseen-transfer/rook-defense-five",
+      "distance": 5,
+      "fen": "7k/8/8/8/8/1R4B1/8/1K6 w - - 0 1",
+      "field": "defense",
+      "id": "rook-defense-five",
+      "reference_label": true,
+      "relative_displacement": [
+        5,
+        0
+      ],
+      "scope": "Long-range query withheld from sliding training; inference-time audit must verify exact displacement absence and disclose the shared pooled conditional.",
+      "source": "b3",
+      "target": "g3"
+    },
+    {
+      "dependence_group": "dedicated-unseen-transfer/bishop-defense-six",
+      "distance": 6,
+      "fen": "k7/6N1/8/8/8/8/8/B6K w - - 0 1",
+      "field": "defense",
+      "id": "bishop-defense-six",
+      "reference_label": true,
+      "relative_displacement": [
+        6,
+        6
+      ],
+      "scope": "Long-range query withheld from sliding training; inference-time audit must verify exact displacement absence and disclose the shared pooled conditional.",
+      "source": "a1",
+      "target": "g7"
+    },
+    {
+      "dependence_group": "dedicated-unseen-transfer/rook-exposure-six",
+      "distance": 6,
+      "fen": "8/8/8/8/R5k1/8/8/K7 b - - 0 1",
+      "field": "king-exposure",
+      "id": "rook-exposure-six",
+      "reference_label": true,
+      "relative_displacement": [
+        6,
+        0
+      ],
+      "scope": "Long-range query withheld from sliding training; inference-time audit must verify exact displacement absence and disclose the shared pooled conditional.",
+      "source": "a4",
+      "target": "g4"
+    },
+    {
+      "dependence_group": "dedicated-unseen-transfer/queen-exposure-five",
+      "distance": 5,
+      "fen": "8/6k1/8/8/8/8/1Q6/7K b - - 0 1",
+      "field": "king-exposure",
+      "id": "queen-exposure-five",
+      "reference_label": true,
+      "relative_displacement": [
+        5,
+        5
+      ],
+      "scope": "Long-range query withheld from sliding training; inference-time audit must verify exact displacement absence and disclose the shared pooled conditional.",
+      "source": "b2",
+      "target": "g7"
+    },
+    {
+      "dependence_group": "dedicated-unseen-transfer/bishop-mobility-six",
+      "distance": 6,
+      "fen": "8/8/7k/8/8/8/8/BK6 w - - 0 1",
+      "field": "mobility",
+      "id": "bishop-mobility-six",
+      "reference_label": true,
+      "relative_displacement": [
+        6,
+        6
+      ],
+      "scope": "Long-range query withheld from sliding training; inference-time audit must verify exact displacement absence and disclose the shared pooled conditional.",
+      "source": "a1",
+      "target": "g7"
+    }
+  ],
+  "transformations": [
+    {
+      "after_fen": "8/7k/8/8/2R4p/8/2K5/8 w - - 0 1",
+      "after_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            7,
+            6
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Rook",
+          "owner": "White",
+          "square": [
+            2,
+            3
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "Pawn",
+          "owner": "Black",
+          "square": [
+            7,
+            3
+          ]
+        },
+        {
+          "id": "p3",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            2,
+            1
+          ]
+        }
+      ],
+      "after_source": "c4",
+      "after_target": "h4",
+      "before_fen": "8/6k1/8/8/1R4p1/8/1K6/8 w - - 0 1",
+      "before_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            6,
+            6
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Rook",
+          "owner": "White",
+          "square": [
+            1,
+            3
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "Pawn",
+          "owner": "Black",
+          "square": [
+            6,
+            3
+          ]
+        },
+        {
+          "id": "p3",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            1,
+            1
+          ]
+        }
+      ],
+      "before_source": "b4",
+      "before_target": "g4",
+      "dependence_group": "transform-ancestor/rook-ray",
+      "expectation": "invariant-relative-conditional",
+      "field": "attack",
+      "id": "rook-ray/translation",
+      "operation": "translation",
+      "reference_after": true,
+      "reference_before": true,
+      "transformation_lineage": [
+        "rook-ray"
+      ]
+    },
+    {
+      "after_fen": "8/1k6/8/8/1p4R1/8/6K1/8 w - - 0 1",
+      "after_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            1,
+            6
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Rook",
+          "owner": "White",
+          "square": [
+            6,
+            3
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "Pawn",
+          "owner": "Black",
+          "square": [
+            1,
+            3
+          ]
+        },
+        {
+          "id": "p3",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            6,
+            1
+          ]
+        }
+      ],
+      "after_source": "g4",
+      "after_target": "b4",
+      "before_fen": "8/6k1/8/8/1R4p1/8/1K6/8 w - - 0 1",
+      "before_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            6,
+            6
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Rook",
+          "owner": "White",
+          "square": [
+            1,
+            3
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "Pawn",
+          "owner": "Black",
+          "square": [
+            6,
+            3
+          ]
+        },
+        {
+          "id": "p3",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            1,
+            1
+          ]
+        }
+      ],
+      "before_source": "b4",
+      "before_target": "g4",
+      "dependence_group": "transform-ancestor/rook-ray",
+      "expectation": "invariant-relative-conditional",
+      "field": "attack",
+      "id": "rook-ray/file-reflection",
+      "operation": "file-reflection",
+      "reference_after": true,
+      "reference_before": true,
+      "transformation_lineage": [
+        "rook-ray"
+      ]
+    },
+    {
+      "after_fen": "8/1k6/8/1r4P1/8/8/6K1/8 b - - 0 1",
+      "after_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            6,
+            1
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Rook",
+          "owner": "Black",
+          "square": [
+            1,
+            4
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "Pawn",
+          "owner": "White",
+          "square": [
+            6,
+            4
+          ]
+        },
+        {
+          "id": "p3",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            1,
+            6
+          ]
+        }
+      ],
+      "after_source": "b5",
+      "after_target": "g5",
+      "before_fen": "8/6k1/8/8/1R4p1/8/1K6/8 w - - 0 1",
+      "before_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            6,
+            6
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Rook",
+          "owner": "White",
+          "square": [
+            1,
+            3
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "Pawn",
+          "owner": "Black",
+          "square": [
+            6,
+            3
+          ]
+        },
+        {
+          "id": "p3",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            1,
+            1
+          ]
+        }
+      ],
+      "before_source": "b4",
+      "before_target": "g4",
+      "dependence_group": "transform-ancestor/rook-ray",
+      "expectation": "invariant-relative-conditional",
+      "field": "attack",
+      "id": "rook-ray/color-orientation",
+      "operation": "color-orientation",
+      "reference_after": true,
+      "reference_before": true,
+      "transformation_lineage": [
+        "rook-ray"
+      ]
+    },
+    {
+      "after_fen": "8/6k1/8/8/1R4p1/8/1K6/8 w - - 0 1",
+      "after_pieces": [
+        {
+          "id": "renamed-p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            6,
+            6
+          ]
+        },
+        {
+          "id": "renamed-p1",
+          "kind": "Rook",
+          "owner": "White",
+          "square": [
+            1,
+            3
+          ]
+        },
+        {
+          "id": "renamed-p2",
+          "kind": "Pawn",
+          "owner": "Black",
+          "square": [
+            6,
+            3
+          ]
+        },
+        {
+          "id": "renamed-p3",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            1,
+            1
+          ]
+        }
+      ],
+      "after_source": "b4",
+      "after_target": "g4",
+      "before_fen": "8/6k1/8/8/1R4p1/8/1K6/8 w - - 0 1",
+      "before_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            6,
+            6
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Rook",
+          "owner": "White",
+          "square": [
+            1,
+            3
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "Pawn",
+          "owner": "Black",
+          "square": [
+            6,
+            3
+          ]
+        },
+        {
+          "id": "p3",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            1,
+            1
+          ]
+        }
+      ],
+      "before_source": "b4",
+      "before_target": "g4",
+      "dependence_group": "transform-ancestor/rook-ray",
+      "expectation": "invariant-relative-conditional",
+      "field": "attack",
+      "id": "rook-ray/piece-id-renaming",
+      "operation": "piece-id-renaming",
+      "reference_after": true,
+      "reference_before": true,
+      "transformation_lineage": [
+        "rook-ray"
+      ]
+    },
+    {
+      "after_fen": "8/6k1/n7/8/1R4p1/8/1K6/8 w - - 0 1",
+      "after_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            6,
+            6
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Rook",
+          "owner": "White",
+          "square": [
+            1,
+            3
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "Pawn",
+          "owner": "Black",
+          "square": [
+            6,
+            3
+          ]
+        },
+        {
+          "id": "p3",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            1,
+            1
+          ]
+        },
+        {
+          "id": "distant-extra",
+          "kind": "Knight",
+          "owner": "Black",
+          "square": [
+            0,
+            5
+          ]
+        }
+      ],
+      "after_source": "b4",
+      "after_target": "g4",
+      "before_fen": "8/6k1/8/8/1R4p1/8/1K6/8 w - - 0 1",
+      "before_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            6,
+            6
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Rook",
+          "owner": "White",
+          "square": [
+            1,
+            3
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "Pawn",
+          "owner": "Black",
+          "square": [
+            6,
+            3
+          ]
+        },
+        {
+          "id": "p3",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            1,
+            1
+          ]
+        }
+      ],
+      "before_source": "b4",
+      "before_target": "g4",
+      "dependence_group": "transform-ancestor/rook-ray",
+      "expectation": "invariant-relative-conditional",
+      "field": "attack",
+      "id": "rook-ray/irrelevant-distant-piece",
+      "operation": "irrelevant-distant-piece",
+      "reference_after": true,
+      "reference_before": true,
+      "transformation_lineage": [
+        "rook-ray"
+      ]
+    },
+    {
+      "after_fen": "8/6k1/8/8/1RN3p1/8/1K6/8 w - - 0 1",
+      "after_source": "b4",
+      "after_target": "g4",
+      "before_fen": "8/6k1/8/8/1R4p1/8/1K6/8 w - - 0 1",
+      "before_source": "b4",
+      "before_target": "g4",
+      "dependence_group": "transform-ancestor/rook-ray",
+      "expectation": "sensitive-relative-conditional",
+      "field": "attack",
+      "id": "rook-ray/blocker-added",
+      "operation": "blocker-added",
+      "reference_after": false,
+      "reference_before": true,
+      "transformation_lineage": [
+        "rook-ray"
+      ]
+    },
+    {
+      "after_fen": "8/6k1/8/8/1R4p1/8/1K6/8 w - - 0 1",
+      "after_source": "b4",
+      "after_target": "g4",
+      "before_fen": "8/6k1/8/8/1R4p1/8/1K6/8 w - - 0 1",
+      "before_source": "b4",
+      "before_target": "g4",
+      "dependence_group": "transform-ancestor/rook-ray",
+      "expectation": "unknown-required-observation",
+      "field": "attack",
+      "id": "rook-ray/unknown-ray-cell",
+      "operation": "unknown-ray-cell",
+      "reference_after": true,
+      "reference_before": true,
+      "transformation_lineage": [
+        "rook-ray"
+      ],
+      "unknown_squares": [
+        [
+          2,
+          3
+        ]
+      ]
+    },
+    {
+      "after_fen": "8/7k/8/6p1/8/4B3/2K5/8 w - - 0 1",
+      "after_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            7,
+            6
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Pawn",
+          "owner": "Black",
+          "square": [
+            6,
+            4
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "Bishop",
+          "owner": "White",
+          "square": [
+            4,
+            2
+          ]
+        },
+        {
+          "id": "p3",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            2,
+            1
+          ]
+        }
+      ],
+      "after_source": "e3",
+      "after_target": "g5",
+      "before_fen": "8/6k1/8/5p2/8/3B4/1K6/8 w - - 0 1",
+      "before_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            6,
+            6
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Pawn",
+          "owner": "Black",
+          "square": [
+            5,
+            4
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "Bishop",
+          "owner": "White",
+          "square": [
+            3,
+            2
+          ]
+        },
+        {
+          "id": "p3",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            1,
+            1
+          ]
+        }
+      ],
+      "before_source": "d3",
+      "before_target": "f5",
+      "dependence_group": "transform-ancestor/bishop-ray",
+      "expectation": "invariant-relative-conditional",
+      "field": "attack",
+      "id": "bishop-ray/translation",
+      "operation": "translation",
+      "reference_after": true,
+      "reference_before": true,
+      "transformation_lineage": [
+        "bishop-ray"
+      ]
+    },
+    {
+      "after_fen": "8/1k6/8/2p5/8/4B3/6K1/8 w - - 0 1",
+      "after_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            1,
+            6
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Pawn",
+          "owner": "Black",
+          "square": [
+            2,
+            4
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "Bishop",
+          "owner": "White",
+          "square": [
+            4,
+            2
+          ]
+        },
+        {
+          "id": "p3",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            6,
+            1
+          ]
+        }
+      ],
+      "after_source": "e3",
+      "after_target": "c5",
+      "before_fen": "8/6k1/8/5p2/8/3B4/1K6/8 w - - 0 1",
+      "before_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            6,
+            6
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Pawn",
+          "owner": "Black",
+          "square": [
+            5,
+            4
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "Bishop",
+          "owner": "White",
+          "square": [
+            3,
+            2
+          ]
+        },
+        {
+          "id": "p3",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            1,
+            1
+          ]
+        }
+      ],
+      "before_source": "d3",
+      "before_target": "f5",
+      "dependence_group": "transform-ancestor/bishop-ray",
+      "expectation": "invariant-relative-conditional",
+      "field": "attack",
+      "id": "bishop-ray/file-reflection",
+      "operation": "file-reflection",
+      "reference_after": true,
+      "reference_before": true,
+      "transformation_lineage": [
+        "bishop-ray"
+      ]
+    },
+    {
+      "after_fen": "8/1k6/3b4/8/5P2/8/6K1/8 b - - 0 1",
+      "after_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            6,
+            1
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Pawn",
+          "owner": "White",
+          "square": [
+            5,
+            3
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "Bishop",
+          "owner": "Black",
+          "square": [
+            3,
+            5
+          ]
+        },
+        {
+          "id": "p3",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            1,
+            6
+          ]
+        }
+      ],
+      "after_source": "d6",
+      "after_target": "f4",
+      "before_fen": "8/6k1/8/5p2/8/3B4/1K6/8 w - - 0 1",
+      "before_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            6,
+            6
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Pawn",
+          "owner": "Black",
+          "square": [
+            5,
+            4
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "Bishop",
+          "owner": "White",
+          "square": [
+            3,
+            2
+          ]
+        },
+        {
+          "id": "p3",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            1,
+            1
+          ]
+        }
+      ],
+      "before_source": "d3",
+      "before_target": "f5",
+      "dependence_group": "transform-ancestor/bishop-ray",
+      "expectation": "invariant-relative-conditional",
+      "field": "attack",
+      "id": "bishop-ray/color-orientation",
+      "operation": "color-orientation",
+      "reference_after": true,
+      "reference_before": true,
+      "transformation_lineage": [
+        "bishop-ray"
+      ]
+    },
+    {
+      "after_fen": "8/6k1/8/5p2/8/3B4/1K6/8 w - - 0 1",
+      "after_pieces": [
+        {
+          "id": "renamed-p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            6,
+            6
+          ]
+        },
+        {
+          "id": "renamed-p1",
+          "kind": "Pawn",
+          "owner": "Black",
+          "square": [
+            5,
+            4
+          ]
+        },
+        {
+          "id": "renamed-p2",
+          "kind": "Bishop",
+          "owner": "White",
+          "square": [
+            3,
+            2
+          ]
+        },
+        {
+          "id": "renamed-p3",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            1,
+            1
+          ]
+        }
+      ],
+      "after_source": "d3",
+      "after_target": "f5",
+      "before_fen": "8/6k1/8/5p2/8/3B4/1K6/8 w - - 0 1",
+      "before_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            6,
+            6
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Pawn",
+          "owner": "Black",
+          "square": [
+            5,
+            4
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "Bishop",
+          "owner": "White",
+          "square": [
+            3,
+            2
+          ]
+        },
+        {
+          "id": "p3",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            1,
+            1
+          ]
+        }
+      ],
+      "before_source": "d3",
+      "before_target": "f5",
+      "dependence_group": "transform-ancestor/bishop-ray",
+      "expectation": "invariant-relative-conditional",
+      "field": "attack",
+      "id": "bishop-ray/piece-id-renaming",
+      "operation": "piece-id-renaming",
+      "reference_after": true,
+      "reference_before": true,
+      "transformation_lineage": [
+        "bishop-ray"
+      ]
+    },
+    {
+      "after_fen": "8/6k1/n7/5p2/8/3B4/1K6/8 w - - 0 1",
+      "after_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            6,
+            6
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Pawn",
+          "owner": "Black",
+          "square": [
+            5,
+            4
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "Bishop",
+          "owner": "White",
+          "square": [
+            3,
+            2
+          ]
+        },
+        {
+          "id": "p3",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            1,
+            1
+          ]
+        },
+        {
+          "id": "distant-extra",
+          "kind": "Knight",
+          "owner": "Black",
+          "square": [
+            0,
+            5
+          ]
+        }
+      ],
+      "after_source": "d3",
+      "after_target": "f5",
+      "before_fen": "8/6k1/8/5p2/8/3B4/1K6/8 w - - 0 1",
+      "before_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            6,
+            6
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Pawn",
+          "owner": "Black",
+          "square": [
+            5,
+            4
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "Bishop",
+          "owner": "White",
+          "square": [
+            3,
+            2
+          ]
+        },
+        {
+          "id": "p3",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            1,
+            1
+          ]
+        }
+      ],
+      "before_source": "d3",
+      "before_target": "f5",
+      "dependence_group": "transform-ancestor/bishop-ray",
+      "expectation": "invariant-relative-conditional",
+      "field": "attack",
+      "id": "bishop-ray/irrelevant-distant-piece",
+      "operation": "irrelevant-distant-piece",
+      "reference_after": true,
+      "reference_before": true,
+      "transformation_lineage": [
+        "bishop-ray"
+      ]
+    },
+    {
+      "after_fen": "8/6k1/8/5p2/4N3/3B4/1K6/8 w - - 0 1",
+      "after_source": "d3",
+      "after_target": "f5",
+      "before_fen": "8/6k1/8/5p2/8/3B4/1K6/8 w - - 0 1",
+      "before_source": "d3",
+      "before_target": "f5",
+      "dependence_group": "transform-ancestor/bishop-ray",
+      "expectation": "sensitive-relative-conditional",
+      "field": "attack",
+      "id": "bishop-ray/blocker-added",
+      "operation": "blocker-added",
+      "reference_after": false,
+      "reference_before": true,
+      "transformation_lineage": [
+        "bishop-ray"
+      ]
+    },
+    {
+      "after_fen": "8/6k1/8/5p2/8/3B4/1K6/8 w - - 0 1",
+      "after_source": "d3",
+      "after_target": "f5",
+      "before_fen": "8/6k1/8/5p2/8/3B4/1K6/8 w - - 0 1",
+      "before_source": "d3",
+      "before_target": "f5",
+      "dependence_group": "transform-ancestor/bishop-ray",
+      "expectation": "unknown-required-observation",
+      "field": "attack",
+      "id": "bishop-ray/unknown-ray-cell",
+      "operation": "unknown-ray-cell",
+      "reference_after": true,
+      "reference_before": true,
+      "transformation_lineage": [
+        "bishop-ray"
+      ],
+      "unknown_squares": [
+        [
+          4,
+          3
+        ]
+      ]
+    },
+    {
+      "after_fen": "8/7k/8/8/2Q3N1/8/2K5/8 w - - 0 1",
+      "after_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            7,
+            6
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Queen",
+          "owner": "White",
+          "square": [
+            2,
+            3
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "Knight",
+          "owner": "White",
+          "square": [
+            6,
+            3
+          ]
+        },
+        {
+          "id": "p3",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            2,
+            1
+          ]
+        }
+      ],
+      "after_source": "c4",
+      "after_target": "g4",
+      "before_fen": "8/6k1/8/8/1Q3N2/8/1K6/8 w - - 0 1",
+      "before_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            6,
+            6
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Queen",
+          "owner": "White",
+          "square": [
+            1,
+            3
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "Knight",
+          "owner": "White",
+          "square": [
+            5,
+            3
+          ]
+        },
+        {
+          "id": "p3",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            1,
+            1
+          ]
+        }
+      ],
+      "before_source": "b4",
+      "before_target": "f4",
+      "dependence_group": "transform-ancestor/queen-defense",
+      "expectation": "invariant-relative-conditional",
+      "field": "defense",
+      "id": "queen-defense/translation",
+      "operation": "translation",
+      "reference_after": true,
+      "reference_before": true,
+      "transformation_lineage": [
+        "queen-defense"
+      ]
+    },
+    {
+      "after_fen": "8/1k6/8/8/2N3Q1/8/6K1/8 w - - 0 1",
+      "after_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            1,
+            6
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Queen",
+          "owner": "White",
+          "square": [
+            6,
+            3
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "Knight",
+          "owner": "White",
+          "square": [
+            2,
+            3
+          ]
+        },
+        {
+          "id": "p3",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            6,
+            1
+          ]
+        }
+      ],
+      "after_source": "g4",
+      "after_target": "c4",
+      "before_fen": "8/6k1/8/8/1Q3N2/8/1K6/8 w - - 0 1",
+      "before_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            6,
+            6
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Queen",
+          "owner": "White",
+          "square": [
+            1,
+            3
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "Knight",
+          "owner": "White",
+          "square": [
+            5,
+            3
+          ]
+        },
+        {
+          "id": "p3",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            1,
+            1
+          ]
+        }
+      ],
+      "before_source": "b4",
+      "before_target": "f4",
+      "dependence_group": "transform-ancestor/queen-defense",
+      "expectation": "invariant-relative-conditional",
+      "field": "defense",
+      "id": "queen-defense/file-reflection",
+      "operation": "file-reflection",
+      "reference_after": true,
+      "reference_before": true,
+      "transformation_lineage": [
+        "queen-defense"
+      ]
+    },
+    {
+      "after_fen": "8/1k6/8/1q3n2/8/8/6K1/8 b - - 0 1",
+      "after_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            6,
+            1
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Queen",
+          "owner": "Black",
+          "square": [
+            1,
+            4
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "Knight",
+          "owner": "Black",
+          "square": [
+            5,
+            4
+          ]
+        },
+        {
+          "id": "p3",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            1,
+            6
+          ]
+        }
+      ],
+      "after_source": "b5",
+      "after_target": "f5",
+      "before_fen": "8/6k1/8/8/1Q3N2/8/1K6/8 w - - 0 1",
+      "before_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            6,
+            6
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Queen",
+          "owner": "White",
+          "square": [
+            1,
+            3
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "Knight",
+          "owner": "White",
+          "square": [
+            5,
+            3
+          ]
+        },
+        {
+          "id": "p3",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            1,
+            1
+          ]
+        }
+      ],
+      "before_source": "b4",
+      "before_target": "f4",
+      "dependence_group": "transform-ancestor/queen-defense",
+      "expectation": "invariant-relative-conditional",
+      "field": "defense",
+      "id": "queen-defense/color-orientation",
+      "operation": "color-orientation",
+      "reference_after": true,
+      "reference_before": true,
+      "transformation_lineage": [
+        "queen-defense"
+      ]
+    },
+    {
+      "after_fen": "8/6k1/8/8/1Q3N2/8/1K6/8 w - - 0 1",
+      "after_pieces": [
+        {
+          "id": "renamed-p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            6,
+            6
+          ]
+        },
+        {
+          "id": "renamed-p1",
+          "kind": "Queen",
+          "owner": "White",
+          "square": [
+            1,
+            3
+          ]
+        },
+        {
+          "id": "renamed-p2",
+          "kind": "Knight",
+          "owner": "White",
+          "square": [
+            5,
+            3
+          ]
+        },
+        {
+          "id": "renamed-p3",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            1,
+            1
+          ]
+        }
+      ],
+      "after_source": "b4",
+      "after_target": "f4",
+      "before_fen": "8/6k1/8/8/1Q3N2/8/1K6/8 w - - 0 1",
+      "before_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            6,
+            6
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Queen",
+          "owner": "White",
+          "square": [
+            1,
+            3
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "Knight",
+          "owner": "White",
+          "square": [
+            5,
+            3
+          ]
+        },
+        {
+          "id": "p3",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            1,
+            1
+          ]
+        }
+      ],
+      "before_source": "b4",
+      "before_target": "f4",
+      "dependence_group": "transform-ancestor/queen-defense",
+      "expectation": "invariant-relative-conditional",
+      "field": "defense",
+      "id": "queen-defense/piece-id-renaming",
+      "operation": "piece-id-renaming",
+      "reference_after": true,
+      "reference_before": true,
+      "transformation_lineage": [
+        "queen-defense"
+      ]
+    },
+    {
+      "after_fen": "8/6k1/n7/8/1Q3N2/8/1K6/8 w - - 0 1",
+      "after_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            6,
+            6
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Queen",
+          "owner": "White",
+          "square": [
+            1,
+            3
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "Knight",
+          "owner": "White",
+          "square": [
+            5,
+            3
+          ]
+        },
+        {
+          "id": "p3",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            1,
+            1
+          ]
+        },
+        {
+          "id": "distant-extra",
+          "kind": "Knight",
+          "owner": "Black",
+          "square": [
+            0,
+            5
+          ]
+        }
+      ],
+      "after_source": "b4",
+      "after_target": "f4",
+      "before_fen": "8/6k1/8/8/1Q3N2/8/1K6/8 w - - 0 1",
+      "before_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            6,
+            6
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Queen",
+          "owner": "White",
+          "square": [
+            1,
+            3
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "Knight",
+          "owner": "White",
+          "square": [
+            5,
+            3
+          ]
+        },
+        {
+          "id": "p3",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            1,
+            1
+          ]
+        }
+      ],
+      "before_source": "b4",
+      "before_target": "f4",
+      "dependence_group": "transform-ancestor/queen-defense",
+      "expectation": "invariant-relative-conditional",
+      "field": "defense",
+      "id": "queen-defense/irrelevant-distant-piece",
+      "operation": "irrelevant-distant-piece",
+      "reference_after": true,
+      "reference_before": true,
+      "transformation_lineage": [
+        "queen-defense"
+      ]
+    },
+    {
+      "after_fen": "8/6k1/8/8/1QN2N2/8/1K6/8 w - - 0 1",
+      "after_source": "b4",
+      "after_target": "f4",
+      "before_fen": "8/6k1/8/8/1Q3N2/8/1K6/8 w - - 0 1",
+      "before_source": "b4",
+      "before_target": "f4",
+      "dependence_group": "transform-ancestor/queen-defense",
+      "expectation": "sensitive-relative-conditional",
+      "field": "defense",
+      "id": "queen-defense/blocker-added",
+      "operation": "blocker-added",
+      "reference_after": false,
+      "reference_before": true,
+      "transformation_lineage": [
+        "queen-defense"
+      ]
+    },
+    {
+      "after_fen": "8/6k1/8/8/1Q3N2/8/1K6/8 w - - 0 1",
+      "after_source": "b4",
+      "after_target": "f4",
+      "before_fen": "8/6k1/8/8/1Q3N2/8/1K6/8 w - - 0 1",
+      "before_source": "b4",
+      "before_target": "f4",
+      "dependence_group": "transform-ancestor/queen-defense",
+      "expectation": "unknown-required-observation",
+      "field": "defense",
+      "id": "queen-defense/unknown-ray-cell",
+      "operation": "unknown-ray-cell",
+      "reference_after": true,
+      "reference_before": true,
+      "transformation_lineage": [
+        "queen-defense"
+      ],
+      "unknown_squares": [
+        [
+          2,
+          3
+        ]
+      ]
+    },
+    {
+      "after_fen": "8/7k/8/8/5p2/4P3/2K5/8 w - - 0 1",
+      "after_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            7,
+            6
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Pawn",
+          "owner": "Black",
+          "square": [
+            5,
+            3
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "Pawn",
+          "owner": "White",
+          "square": [
+            4,
+            2
+          ]
+        },
+        {
+          "id": "p3",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            2,
+            1
+          ]
+        }
+      ],
+      "after_source": "e3",
+      "after_target": "f4",
+      "before_fen": "8/6k1/8/8/4p3/3P4/1K6/8 w - - 0 1",
+      "before_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            6,
+            6
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Pawn",
+          "owner": "Black",
+          "square": [
+            4,
+            3
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "Pawn",
+          "owner": "White",
+          "square": [
+            3,
+            2
+          ]
+        },
+        {
+          "id": "p3",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            1,
+            1
+          ]
+        }
+      ],
+      "before_source": "d3",
+      "before_target": "e4",
+      "dependence_group": "transform-ancestor/pawn-direction",
+      "expectation": "invariant-relative-conditional",
+      "field": "attack",
+      "id": "pawn-direction/translation",
+      "operation": "translation",
+      "reference_after": true,
+      "reference_before": true,
+      "transformation_lineage": [
+        "pawn-direction"
+      ]
+    },
+    {
+      "after_fen": "8/1k6/8/8/3p4/4P3/6K1/8 w - - 0 1",
+      "after_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            1,
+            6
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Pawn",
+          "owner": "Black",
+          "square": [
+            3,
+            3
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "Pawn",
+          "owner": "White",
+          "square": [
+            4,
+            2
+          ]
+        },
+        {
+          "id": "p3",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            6,
+            1
+          ]
+        }
+      ],
+      "after_source": "e3",
+      "after_target": "d4",
+      "before_fen": "8/6k1/8/8/4p3/3P4/1K6/8 w - - 0 1",
+      "before_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            6,
+            6
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Pawn",
+          "owner": "Black",
+          "square": [
+            4,
+            3
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "Pawn",
+          "owner": "White",
+          "square": [
+            3,
+            2
+          ]
+        },
+        {
+          "id": "p3",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            1,
+            1
+          ]
+        }
+      ],
+      "before_source": "d3",
+      "before_target": "e4",
+      "dependence_group": "transform-ancestor/pawn-direction",
+      "expectation": "invariant-relative-conditional",
+      "field": "attack",
+      "id": "pawn-direction/file-reflection",
+      "operation": "file-reflection",
+      "reference_after": true,
+      "reference_before": true,
+      "transformation_lineage": [
+        "pawn-direction"
+      ]
+    },
+    {
+      "after_fen": "8/1k6/3p4/4P3/8/8/6K1/8 b - - 0 1",
+      "after_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            6,
+            1
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Pawn",
+          "owner": "White",
+          "square": [
+            4,
+            4
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "Pawn",
+          "owner": "Black",
+          "square": [
+            3,
+            5
+          ]
+        },
+        {
+          "id": "p3",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            1,
+            6
+          ]
+        }
+      ],
+      "after_source": "d6",
+      "after_target": "e5",
+      "before_fen": "8/6k1/8/8/4p3/3P4/1K6/8 w - - 0 1",
+      "before_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            6,
+            6
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Pawn",
+          "owner": "Black",
+          "square": [
+            4,
+            3
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "Pawn",
+          "owner": "White",
+          "square": [
+            3,
+            2
+          ]
+        },
+        {
+          "id": "p3",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            1,
+            1
+          ]
+        }
+      ],
+      "before_source": "d3",
+      "before_target": "e4",
+      "dependence_group": "transform-ancestor/pawn-direction",
+      "expectation": "invariant-relative-conditional",
+      "field": "attack",
+      "id": "pawn-direction/color-orientation",
+      "operation": "color-orientation",
+      "reference_after": true,
+      "reference_before": true,
+      "transformation_lineage": [
+        "pawn-direction"
+      ]
+    },
+    {
+      "after_fen": "8/6k1/8/8/4p3/3P4/1K6/8 w - - 0 1",
+      "after_pieces": [
+        {
+          "id": "renamed-p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            6,
+            6
+          ]
+        },
+        {
+          "id": "renamed-p1",
+          "kind": "Pawn",
+          "owner": "Black",
+          "square": [
+            4,
+            3
+          ]
+        },
+        {
+          "id": "renamed-p2",
+          "kind": "Pawn",
+          "owner": "White",
+          "square": [
+            3,
+            2
+          ]
+        },
+        {
+          "id": "renamed-p3",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            1,
+            1
+          ]
+        }
+      ],
+      "after_source": "d3",
+      "after_target": "e4",
+      "before_fen": "8/6k1/8/8/4p3/3P4/1K6/8 w - - 0 1",
+      "before_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            6,
+            6
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Pawn",
+          "owner": "Black",
+          "square": [
+            4,
+            3
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "Pawn",
+          "owner": "White",
+          "square": [
+            3,
+            2
+          ]
+        },
+        {
+          "id": "p3",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            1,
+            1
+          ]
+        }
+      ],
+      "before_source": "d3",
+      "before_target": "e4",
+      "dependence_group": "transform-ancestor/pawn-direction",
+      "expectation": "invariant-relative-conditional",
+      "field": "attack",
+      "id": "pawn-direction/piece-id-renaming",
+      "operation": "piece-id-renaming",
+      "reference_after": true,
+      "reference_before": true,
+      "transformation_lineage": [
+        "pawn-direction"
+      ]
+    },
+    {
+      "after_fen": "8/6k1/n7/8/4p3/3P4/1K6/8 w - - 0 1",
+      "after_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            6,
+            6
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Pawn",
+          "owner": "Black",
+          "square": [
+            4,
+            3
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "Pawn",
+          "owner": "White",
+          "square": [
+            3,
+            2
+          ]
+        },
+        {
+          "id": "p3",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            1,
+            1
+          ]
+        },
+        {
+          "id": "distant-extra",
+          "kind": "Knight",
+          "owner": "Black",
+          "square": [
+            0,
+            5
+          ]
+        }
+      ],
+      "after_source": "d3",
+      "after_target": "e4",
+      "before_fen": "8/6k1/8/8/4p3/3P4/1K6/8 w - - 0 1",
+      "before_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            6,
+            6
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Pawn",
+          "owner": "Black",
+          "square": [
+            4,
+            3
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "Pawn",
+          "owner": "White",
+          "square": [
+            3,
+            2
+          ]
+        },
+        {
+          "id": "p3",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            1,
+            1
+          ]
+        }
+      ],
+      "before_source": "d3",
+      "before_target": "e4",
+      "dependence_group": "transform-ancestor/pawn-direction",
+      "expectation": "invariant-relative-conditional",
+      "field": "attack",
+      "id": "pawn-direction/irrelevant-distant-piece",
+      "operation": "irrelevant-distant-piece",
+      "reference_after": true,
+      "reference_before": true,
+      "transformation_lineage": [
+        "pawn-direction"
+      ]
+    },
+    {
+      "after_fen": "8/7k/8/8/4N3/8/2K5/8 w - - 0 1",
+      "after_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            7,
+            6
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Knight",
+          "owner": "White",
+          "square": [
+            4,
+            3
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            2,
+            1
+          ]
+        }
+      ],
+      "after_source": "e4",
+      "after_target": "g5",
+      "before_fen": "8/6k1/8/8/3N4/8/1K6/8 w - - 0 1",
+      "before_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            6,
+            6
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Knight",
+          "owner": "White",
+          "square": [
+            3,
+            3
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            1,
+            1
+          ]
+        }
+      ],
+      "before_source": "d4",
+      "before_target": "f5",
+      "dependence_group": "transform-ancestor/knight-mobility",
+      "expectation": "invariant-relative-conditional",
+      "field": "mobility",
+      "id": "knight-mobility/translation",
+      "operation": "translation",
+      "reference_after": true,
+      "reference_before": true,
+      "transformation_lineage": [
+        "knight-mobility"
+      ]
+    },
+    {
+      "after_fen": "8/1k6/8/8/4N3/8/6K1/8 w - - 0 1",
+      "after_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            1,
+            6
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Knight",
+          "owner": "White",
+          "square": [
+            4,
+            3
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            6,
+            1
+          ]
+        }
+      ],
+      "after_source": "e4",
+      "after_target": "c5",
+      "before_fen": "8/6k1/8/8/3N4/8/1K6/8 w - - 0 1",
+      "before_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            6,
+            6
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Knight",
+          "owner": "White",
+          "square": [
+            3,
+            3
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            1,
+            1
+          ]
+        }
+      ],
+      "before_source": "d4",
+      "before_target": "f5",
+      "dependence_group": "transform-ancestor/knight-mobility",
+      "expectation": "invariant-relative-conditional",
+      "field": "mobility",
+      "id": "knight-mobility/file-reflection",
+      "operation": "file-reflection",
+      "reference_after": true,
+      "reference_before": true,
+      "transformation_lineage": [
+        "knight-mobility"
+      ]
+    },
+    {
+      "after_fen": "8/1k6/8/3n4/8/8/6K1/8 b - - 0 1",
+      "after_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            6,
+            1
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Knight",
+          "owner": "Black",
+          "square": [
+            3,
+            4
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            1,
+            6
+          ]
+        }
+      ],
+      "after_source": "d5",
+      "after_target": "f4",
+      "before_fen": "8/6k1/8/8/3N4/8/1K6/8 w - - 0 1",
+      "before_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            6,
+            6
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Knight",
+          "owner": "White",
+          "square": [
+            3,
+            3
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            1,
+            1
+          ]
+        }
+      ],
+      "before_source": "d4",
+      "before_target": "f5",
+      "dependence_group": "transform-ancestor/knight-mobility",
+      "expectation": "invariant-relative-conditional",
+      "field": "mobility",
+      "id": "knight-mobility/color-orientation",
+      "operation": "color-orientation",
+      "reference_after": true,
+      "reference_before": true,
+      "transformation_lineage": [
+        "knight-mobility"
+      ]
+    },
+    {
+      "after_fen": "8/6k1/8/8/3N4/8/1K6/8 w - - 0 1",
+      "after_pieces": [
+        {
+          "id": "renamed-p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            6,
+            6
+          ]
+        },
+        {
+          "id": "renamed-p1",
+          "kind": "Knight",
+          "owner": "White",
+          "square": [
+            3,
+            3
+          ]
+        },
+        {
+          "id": "renamed-p2",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            1,
+            1
+          ]
+        }
+      ],
+      "after_source": "d4",
+      "after_target": "f5",
+      "before_fen": "8/6k1/8/8/3N4/8/1K6/8 w - - 0 1",
+      "before_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            6,
+            6
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Knight",
+          "owner": "White",
+          "square": [
+            3,
+            3
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            1,
+            1
+          ]
+        }
+      ],
+      "before_source": "d4",
+      "before_target": "f5",
+      "dependence_group": "transform-ancestor/knight-mobility",
+      "expectation": "invariant-relative-conditional",
+      "field": "mobility",
+      "id": "knight-mobility/piece-id-renaming",
+      "operation": "piece-id-renaming",
+      "reference_after": true,
+      "reference_before": true,
+      "transformation_lineage": [
+        "knight-mobility"
+      ]
+    },
+    {
+      "after_fen": "8/6k1/n7/8/3N4/8/1K6/8 w - - 0 1",
+      "after_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            6,
+            6
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Knight",
+          "owner": "White",
+          "square": [
+            3,
+            3
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            1,
+            1
+          ]
+        },
+        {
+          "id": "distant-extra",
+          "kind": "Knight",
+          "owner": "Black",
+          "square": [
+            0,
+            5
+          ]
+        }
+      ],
+      "after_source": "d4",
+      "after_target": "f5",
+      "before_fen": "8/6k1/8/8/3N4/8/1K6/8 w - - 0 1",
+      "before_pieces": [
+        {
+          "id": "p0",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            6,
+            6
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "Knight",
+          "owner": "White",
+          "square": [
+            3,
+            3
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            1,
+            1
+          ]
+        }
+      ],
+      "before_source": "d4",
+      "before_target": "f5",
+      "dependence_group": "transform-ancestor/knight-mobility",
+      "expectation": "invariant-relative-conditional",
+      "field": "mobility",
+      "id": "knight-mobility/irrelevant-distant-piece",
+      "operation": "irrelevant-distant-piece",
+      "reference_after": true,
+      "reference_before": true,
+      "transformation_lineage": [
+        "knight-mobility"
+      ]
+    },
+    {
+      "after_fen": "8/8/8/8/2R4k/8/2K5/8 b - - 0 1",
+      "after_pieces": [
+        {
+          "id": "p0",
+          "kind": "Rook",
+          "owner": "White",
+          "square": [
+            2,
+            3
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            7,
+            3
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            2,
+            1
+          ]
+        }
+      ],
+      "after_source": "c4",
+      "after_target": "h4",
+      "before_fen": "8/8/8/8/1R4k1/8/1K6/8 b - - 0 1",
+      "before_pieces": [
+        {
+          "id": "p0",
+          "kind": "Rook",
+          "owner": "White",
+          "square": [
+            1,
+            3
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            6,
+            3
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            1,
+            1
+          ]
+        }
+      ],
+      "before_source": "b4",
+      "before_target": "g4",
+      "dependence_group": "transform-ancestor/king-ray",
+      "expectation": "invariant-relative-conditional",
+      "field": "king-exposure",
+      "id": "king-ray/translation",
+      "operation": "translation",
+      "reference_after": true,
+      "reference_before": true,
+      "transformation_lineage": [
+        "king-ray"
+      ]
+    },
+    {
+      "after_fen": "8/8/8/8/1k4R1/8/6K1/8 b - - 0 1",
+      "after_pieces": [
+        {
+          "id": "p0",
+          "kind": "Rook",
+          "owner": "White",
+          "square": [
+            6,
+            3
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            1,
+            3
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            6,
+            1
+          ]
+        }
+      ],
+      "after_source": "g4",
+      "after_target": "b4",
+      "before_fen": "8/8/8/8/1R4k1/8/1K6/8 b - - 0 1",
+      "before_pieces": [
+        {
+          "id": "p0",
+          "kind": "Rook",
+          "owner": "White",
+          "square": [
+            1,
+            3
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            6,
+            3
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            1,
+            1
+          ]
+        }
+      ],
+      "before_source": "b4",
+      "before_target": "g4",
+      "dependence_group": "transform-ancestor/king-ray",
+      "expectation": "invariant-relative-conditional",
+      "field": "king-exposure",
+      "id": "king-ray/file-reflection",
+      "operation": "file-reflection",
+      "reference_after": true,
+      "reference_before": true,
+      "transformation_lineage": [
+        "king-ray"
+      ]
+    },
+    {
+      "after_fen": "8/1k6/8/1r4K1/8/8/8/8 w - - 0 1",
+      "after_pieces": [
+        {
+          "id": "p0",
+          "kind": "Rook",
+          "owner": "Black",
+          "square": [
+            1,
+            4
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            6,
+            4
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            1,
+            6
+          ]
+        }
+      ],
+      "after_source": "b5",
+      "after_target": "g5",
+      "before_fen": "8/8/8/8/1R4k1/8/1K6/8 b - - 0 1",
+      "before_pieces": [
+        {
+          "id": "p0",
+          "kind": "Rook",
+          "owner": "White",
+          "square": [
+            1,
+            3
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            6,
+            3
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            1,
+            1
+          ]
+        }
+      ],
+      "before_source": "b4",
+      "before_target": "g4",
+      "dependence_group": "transform-ancestor/king-ray",
+      "expectation": "invariant-relative-conditional",
+      "field": "king-exposure",
+      "id": "king-ray/color-orientation",
+      "operation": "color-orientation",
+      "reference_after": true,
+      "reference_before": true,
+      "transformation_lineage": [
+        "king-ray"
+      ]
+    },
+    {
+      "after_fen": "8/8/8/8/1R4k1/8/1K6/8 b - - 0 1",
+      "after_pieces": [
+        {
+          "id": "renamed-p0",
+          "kind": "Rook",
+          "owner": "White",
+          "square": [
+            1,
+            3
+          ]
+        },
+        {
+          "id": "renamed-p1",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            6,
+            3
+          ]
+        },
+        {
+          "id": "renamed-p2",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            1,
+            1
+          ]
+        }
+      ],
+      "after_source": "b4",
+      "after_target": "g4",
+      "before_fen": "8/8/8/8/1R4k1/8/1K6/8 b - - 0 1",
+      "before_pieces": [
+        {
+          "id": "p0",
+          "kind": "Rook",
+          "owner": "White",
+          "square": [
+            1,
+            3
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            6,
+            3
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            1,
+            1
+          ]
+        }
+      ],
+      "before_source": "b4",
+      "before_target": "g4",
+      "dependence_group": "transform-ancestor/king-ray",
+      "expectation": "invariant-relative-conditional",
+      "field": "king-exposure",
+      "id": "king-ray/piece-id-renaming",
+      "operation": "piece-id-renaming",
+      "reference_after": true,
+      "reference_before": true,
+      "transformation_lineage": [
+        "king-ray"
+      ]
+    },
+    {
+      "after_fen": "8/8/n7/8/1R4k1/8/1K6/8 b - - 0 1",
+      "after_pieces": [
+        {
+          "id": "p0",
+          "kind": "Rook",
+          "owner": "White",
+          "square": [
+            1,
+            3
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            6,
+            3
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            1,
+            1
+          ]
+        },
+        {
+          "id": "distant-extra",
+          "kind": "Knight",
+          "owner": "Black",
+          "square": [
+            0,
+            5
+          ]
+        }
+      ],
+      "after_source": "b4",
+      "after_target": "g4",
+      "before_fen": "8/8/8/8/1R4k1/8/1K6/8 b - - 0 1",
+      "before_pieces": [
+        {
+          "id": "p0",
+          "kind": "Rook",
+          "owner": "White",
+          "square": [
+            1,
+            3
+          ]
+        },
+        {
+          "id": "p1",
+          "kind": "King",
+          "owner": "Black",
+          "square": [
+            6,
+            3
+          ]
+        },
+        {
+          "id": "p2",
+          "kind": "King",
+          "owner": "White",
+          "square": [
+            1,
+            1
+          ]
+        }
+      ],
+      "before_source": "b4",
+      "before_target": "g4",
+      "dependence_group": "transform-ancestor/king-ray",
+      "expectation": "invariant-relative-conditional",
+      "field": "king-exposure",
+      "id": "king-ray/irrelevant-distant-piece",
+      "operation": "irrelevant-distant-piece",
+      "reference_after": true,
+      "reference_before": true,
+      "transformation_lineage": [
+        "king-ray"
+      ]
+    },
+    {
+      "after_fen": "8/8/8/8/1RN3k1/8/1K6/8 b - - 0 1",
+      "after_source": "b4",
+      "after_target": "g4",
+      "before_fen": "8/8/8/8/1R4k1/8/1K6/8 b - - 0 1",
+      "before_source": "b4",
+      "before_target": "g4",
+      "dependence_group": "transform-ancestor/king-ray",
+      "expectation": "sensitive-relative-conditional",
+      "field": "king-exposure",
+      "id": "king-ray/blocker-added",
+      "operation": "blocker-added",
+      "reference_after": false,
+      "reference_before": true,
+      "transformation_lineage": [
+        "king-ray"
+      ]
+    },
+    {
+      "after_fen": "8/8/8/8/1R4k1/8/1K6/8 b - - 0 1",
+      "after_source": "b4",
+      "after_target": "g4",
+      "before_fen": "8/8/8/8/1R4k1/8/1K6/8 b - - 0 1",
+      "before_source": "b4",
+      "before_target": "g4",
+      "dependence_group": "transform-ancestor/king-ray",
+      "expectation": "unknown-required-observation",
+      "field": "king-exposure",
+      "id": "king-ray/unknown-ray-cell",
+      "operation": "unknown-ray-cell",
+      "reference_after": true,
+      "reference_before": true,
+      "transformation_lineage": [
+        "king-ray"
+      ],
+      "unknown_squares": [
+        [
+          2,
+          3
+        ]
+      ]
+    }
+  ],
+  "worked": [
+    {
+      "description": "A blocker moves off the rook ray.",
+      "fen": "7k/8/8/8/R2N3p/8/8/6K1 w - - 0 1",
+      "history_input": null,
+      "id": "rook-obstruction",
+      "move": "d4f5",
+      "reference_legal": true,
+      "reference_scope": "Offline complete-state reference; unknown observations remain unavailable to production inference.",
+      "reference_successor_fen": "7k/8/8/5N2/R6p/8/8/6K1 b - - 1 1",
+      "selected_field": "attack",
+      "selected_piece_square": "a4",
+      "unknown_squares": []
+    },
+    {
+      "description": "A pawn opens the bishop diagonal toward the opposing king.",
+      "fen": "7k/8/8/8/3P4/2B5/8/6K1 w - - 0 1",
+      "history_input": null,
+      "id": "bishop-diagonal",
+      "move": "d4d5",
+      "reference_legal": true,
+      "reference_scope": "Offline complete-state reference; unknown observations remain unavailable to production inference.",
+      "reference_successor_fen": "7k/8/8/3P4/8/2B5/8/6K1 b - - 0 1",
+      "selected_field": "attack",
+      "selected_piece_square": "c3",
+      "unknown_squares": []
+    },
+    {
+      "description": "A knight changes its directional targets.",
+      "fen": "6k1/8/8/8/3N4/8/8/1K6 w - - 0 1",
+      "history_input": null,
+      "id": "knight-relocation",
+      "move": "d4f5",
+      "reference_legal": true,
+      "reference_scope": "Offline complete-state reference; unknown observations remain unavailable to production inference.",
+      "reference_successor_fen": "6k1/8/8/5N2/8/8/8/1K6 b - - 1 1",
+      "selected_field": "attack",
+      "selected_piece_square": "d4",
+      "unknown_squares": []
+    },
+    {
+      "description": "A rook geometrically defends a pawn, but this move exposes its king.",
+      "fen": "4r1k1/8/8/8/8/8/4R1P1/4K3 w - - 0 1",
+      "history_input": null,
+      "id": "pinned-defender",
+      "move": "e2f2",
+      "reference_legal": false,
+      "reference_scope": "Offline complete-state reference; unknown observations remain unavailable to production inference.",
+      "reference_successor_fen": "4r1k1/8/8/8/8/8/5RP1/4K3 b - - 1 1",
+      "selected_field": "defense",
+      "selected_piece_square": "e2",
+      "unknown_squares": []
+    },
+    {
+      "description": "Moving the bishop reveals the rook attack.",
+      "fen": "6k1/8/8/8/8/8/6B1/1K4R1 w - - 0 1",
+      "history_input": null,
+      "id": "discovered-attack",
+      "move": "g2f3",
+      "reference_legal": true,
+      "reference_scope": "Offline complete-state reference; unknown observations remain unavailable to production inference.",
+      "reference_successor_fen": "6k1/8/8/8/8/5B2/8/1K4R1 b - - 1 1",
+      "selected_field": "attack",
+      "selected_piece_square": "g1",
+      "unknown_squares": []
+    },
+    {
+      "description": "A proposed bishop move exposes the moving side king.",
+      "fen": "4r1k1/8/8/8/8/8/4B3/4K3 w - - 0 1",
+      "history_input": null,
+      "id": "king-exposure",
+      "move": "e2d3",
+      "reference_legal": false,
+      "reference_scope": "Offline complete-state reference; unknown observations remain unavailable to production inference.",
+      "reference_successor_fen": "4r1k1/8/8/8/8/3B4/8/4K3 b - - 1 1",
+      "selected_field": "king-exposure",
+      "selected_piece_square": "e8",
+      "unknown_squares": []
+    },
+    {
+      "description": "A pawn has bishop and knight defenders; one relocates. Evidence is not automatically combined.",
+      "fen": "6k1/8/8/8/3P4/2B2N2/8/1K6 w - - 0 1",
+      "history_input": null,
+      "id": "multiple-defenders",
+      "move": "f3g5",
+      "reference_legal": true,
+      "reference_scope": "Offline complete-state reference; unknown observations remain unavailable to production inference.",
+      "reference_successor_fen": "6k1/8/8/6N1/3P4/2B5/8/1K6 b - - 1 1",
+      "selected_field": "defense",
+      "selected_piece_square": "c3",
+      "unknown_squares": []
+    },
+    {
+      "description": "An unobserved ray cell preserves uncertainty.",
+      "fen": "7k/8/8/8/R6p/8/8/6K1 w - - 0 1",
+      "history_input": null,
+      "id": "unknown-observation",
+      "move": "a4a5",
+      "reference_legal": true,
+      "reference_scope": "Offline complete-state reference; unknown observations remain unavailable to production inference.",
+      "reference_successor_fen": "7k/8/8/R7/7p/8/8/6K1 b - - 1 1",
+      "selected_field": "attack",
+      "selected_piece_square": "a4",
+      "unknown_squares": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "description": "Underpromotion changes the mover kind and its subsequent field.",
+      "fen": "7k/1P6/8/8/8/8/8/6K1 w - - 0 1",
+      "history_input": null,
+      "id": "promotion",
+      "move": "b7b8n",
+      "reference_legal": true,
+      "reference_scope": "Offline complete-state reference; unknown observations remain unavailable to production inference.",
+      "reference_successor_fen": "1N5k/8/8/8/8/8/8/6K1 b - - 0 1",
+      "selected_field": "mobility",
+      "selected_piece_square": "b7",
+      "unknown_squares": []
+    },
+    {
+      "description": "En passant removes a pawn away from the destination and opens the rook ray.",
+      "fen": "7k/8/8/R4pP1/8/8/8/6K1 w - f6 0 2",
+      "history_input": {
+        "dependence_group": "worked/en-passant",
+        "expected_fen": "7k/8/8/R4pP1/8/8/8/6K1 w - f6 0 2",
+        "initial_fen": "7k/5p2/8/R5P1/8/8/8/6K1 b - - 0 1",
+        "moves": [
+          "f7f5"
+        ],
+        "source": "controlled-worked-example/en-passant"
+      },
+      "id": "en-passant",
+      "move": "g5f6",
+      "reference_legal": true,
+      "reference_scope": "Offline complete-state reference; unknown observations remain unavailable to production inference.",
+      "reference_successor_fen": "7k/8/5P2/R7/8/8/8/6K1 b - - 0 2",
+      "selected_field": "attack",
+      "selected_piece_square": "a5",
+      "unknown_squares": []
+    },
+    {
+      "description": "Moving the front rook changes the rear rook protection and open ray.",
+      "fen": "6k1/8/8/8/1R1R4/8/8/6K1 w - - 0 1",
+      "history_input": null,
+      "id": "rook-battery",
+      "move": "d4d5",
+      "reference_legal": true,
+      "reference_scope": "Offline complete-state reference; unknown observations remain unavailable to production inference.",
+      "reference_successor_fen": "6k1/8/8/3R4/1R6/8/8/6K1 b - - 1 1",
+      "selected_field": "defense",
+      "selected_piece_square": "b4",
+      "unknown_squares": []
+    },
+    {
+      "description": "A knight leaves a square geometrically protected by a bishop.",
+      "fen": "6k1/8/8/8/3N4/2B5/8/1K6 w - - 0 1",
+      "history_input": null,
+      "id": "defended-minor",
+      "move": "d4f5",
+      "reference_legal": true,
+      "reference_scope": "Offline complete-state reference; unknown observations remain unavailable to production inference.",
+      "reference_successor_fen": "6k1/8/8/5N2/8/2B5/8/1K6 b - - 1 1",
+      "selected_field": "defense",
+      "selected_piece_square": "c3",
+      "unknown_squares": []
+    },
+    {
+      "description": "The king moves from two simultaneous attack relations; absence afterward is not a global safety theorem.",
+      "fen": "4r1k1/8/8/8/1b6/8/8/4K3 w - - 0 1",
+      "history_input": null,
+      "id": "double-check-resolution",
+      "move": "e1f1",
+      "reference_legal": true,
+      "reference_scope": "Offline complete-state reference; unknown observations remain unavailable to production inference.",
+      "reference_successor_fen": "4r1k1/8/8/8/1b6/8/8/5K2 b - - 1 1",
+      "selected_field": "king-exposure",
+      "selected_piece_square": "e8",
+      "unknown_squares": []
+    },
+    {
+      "description": "A pawn move opens the bishop protection of a knight.",
+      "fen": "6k1/7N/8/8/4P3/3B4/8/1K6 w - - 0 1",
+      "history_input": null,
+      "id": "discovered-defense",
+      "move": "e4e5",
+      "reference_legal": true,
+      "reference_scope": "Offline complete-state reference; unknown observations remain unavailable to production inference.",
+      "reference_successor_fen": "6k1/7N/8/4P3/8/3B4/8/1K6 b - - 0 1",
+      "selected_field": "defense",
+      "selected_piece_square": "d3",
+      "unknown_squares": []
+    },
+    {
+      "description": "Removing both pawns exposes the moving side king to the rook.",
+      "fen": "7k/8/8/r4pPK/8/8/8/8 w - f6 0 2",
+      "history_input": {
+        "dependence_group": "worked/en-passant-exposure",
+        "expected_fen": "7k/8/8/r4pPK/8/8/8/8 w - f6 0 2",
+        "initial_fen": "7k/5p2/8/r5PK/8/8/8/8 b - - 0 1",
+        "moves": [
+          "f7f5"
+        ],
+        "source": "controlled-worked-example/en-passant-exposure"
+      },
+      "id": "en-passant-exposure",
+      "move": "g5f6",
+      "reference_legal": false,
+      "reference_scope": "Offline complete-state reference; unknown observations remain unavailable to production inference.",
+      "reference_successor_fen": "7k/8/5P2/r6K/8/8/8/8 b - - 0 2",
+      "selected_field": "king-exposure",
+      "selected_piece_square": "a5",
+      "unknown_squares": []
+    }
+  ]
+}

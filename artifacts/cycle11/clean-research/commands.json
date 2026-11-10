@@ -1,0 +1,156 @@
+[
+  {
+    "argv": [
+      "/data/pln-chess-cycle11-verified/.venv/bin/python",
+      "-m",
+      "training.cycle11_data",
+      "--out",
+      "/data/pln-chess-cycle6-delivery/artifacts/cycle11/clean-research"
+    ],
+    "elapsed_seconds": 9.2862229347229,
+    "log": "logs/field-data.txt",
+    "returncode": 0,
+    "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740",
+    "stage": "field-data"
+  },
+  {
+    "argv": [
+      "/data/pln-chess-cycle11-verified/.venv/bin/python",
+      "-m",
+      "training.cycle11_legal_data",
+      "--out",
+      "/data/pln-chess-cycle6-delivery/artifacts/cycle11/clean-research"
+    ],
+    "elapsed_seconds": 0.7969303131103516,
+    "log": "logs/legal-data.txt",
+    "returncode": 0,
+    "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740",
+    "stage": "legal-data"
+  },
+  {
+    "argv": [
+      "/data/pln-chess-cycle11-verified/.venv/bin/python",
+      "-m",
+      "training.cycle11_examples",
+      "--out",
+      "/data/pln-chess-cycle6-delivery/artifacts/cycle11/clean-research"
+    ],
+    "elapsed_seconds": 0.19987702369689941,
+    "log": "logs/worked-data.txt",
+    "returncode": 0,
+    "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740",
+    "stage": "worked-data"
+  },
+  {
+    "argv": [
+      "/data/pln-chess-cycle11-verified/.venv/bin/python",
+      "-m",
+      "training.cycle11_temporal_data",
+      "--out",
+      "/data/pln-chess-cycle6-delivery/artifacts/cycle11/clean-research"
+    ],
+    "elapsed_seconds": 0.08053445816040039,
+    "log": "logs/temporal-data.txt",
+    "returncode": 0,
+    "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740",
+    "stage": "temporal-data"
+  },
+  {
+    "argv": [
+      "/data/pln-chess-cycle11-verified/.venv/bin/python",
+      "-m",
+      "evaluation.cycle11_data_audit",
+      "--out",
+      "/data/pln-chess-cycle6-delivery/artifacts/cycle11/clean-research"
+    ],
+    "elapsed_seconds": 5.079532623291016,
+    "log": "logs/dataset-audit.txt",
+    "returncode": 0,
+    "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740",
+    "stage": "dataset-audit"
+  },
+  {
+    "argv": [
+      "/data/pln-chess-cycle11-verified/.venv/bin/python",
+      "-m",
+      "training.cycle11_fields",
+      "--out",
+      "/data/pln-chess-cycle6-delivery/artifacts/cycle11/clean-research"
+    ],
+    "elapsed_seconds": 28.25151228904724,
+    "log": "logs/field-learning.txt",
+    "returncode": 0,
+    "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740",
+    "stage": "field-learning"
+  },
+  {
+    "argv": [
+      "/data/pln-chess-cycle11-verified/.venv/bin/python",
+      "-m",
+      "training.cycle11_legal",
+      "--out",
+      "/data/pln-chess-cycle6-delivery/artifacts/cycle11/clean-research"
+    ],
+    "elapsed_seconds": 3.8545444011688232,
+    "log": "logs/legal-learning.txt",
+    "returncode": 0,
+    "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740",
+    "stage": "legal-learning"
+  },
+  {
+    "argv": [
+      "/data/pln-chess-cycle11-verified/.venv/bin/python",
+      "-m",
+      "evaluation.cycle11_fields",
+      "--out",
+      "/data/pln-chess-cycle6-delivery/artifacts/cycle11/clean-research"
+    ],
+    "elapsed_seconds": 196.26556396484375,
+    "log": "logs/field-evaluation.txt",
+    "returncode": 0,
+    "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740",
+    "stage": "field-evaluation"
+  },
+  {
+    "argv": [
+      "/data/pln-chess-cycle11-verified/.venv/bin/python",
+      "-m",
+      "evaluation.cycle11_field_audit",
+      "--out",
+      "/data/pln-chess-cycle6-delivery/artifacts/cycle11/clean-research"
+    ],
+    "elapsed_seconds": 17.48548984527588,
+    "log": "logs/field-audit.txt",
+    "returncode": 0,
+    "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740",
+    "stage": "field-audit"
+  },
+  {
+    "argv": [
+      "/data/pln-chess-cycle11-verified/.venv/bin/python",
+      "-m",
+      "evaluation.cycle11_field_controls",
+      "--out",
+      "/data/pln-chess-cycle6-delivery/artifacts/cycle11/clean-research"
+    ],
+    "elapsed_seconds": 97.64358258247375,
+    "log": "logs/field-controls.txt",
+    "returncode": 0,
+    "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740",
+    "stage": "field-controls"
+  },
+  {
+    "argv": [
+      "/data/pln-chess-cycle11-verified/.venv/bin/python",
+      "-m",
+      "evaluation.cycle11_temporal",
+      "--out",
+      "/data/pln-chess-cycle6-delivery/artifacts/cycle11/clean-research"
+    ],
+    "elapsed_seconds": 48.72968029975891,
+    "log": "logs/temporal-controls.txt",
+    "returncode": 0,
+    "source_head": "6d7c37d2036a6602a1fe78bcb589b840c0f5b740",
+    "stage": "temporal-controls"
+  }
+]

@@ -56,6 +56,7 @@ def run(out, checkout, snapshot, work, plot_python='python3', browser=True):
         ('field-learning','training.cycle11_fields'), ('legal-learning','training.cycle11_legal'),
         ('field-evaluation','evaluation.cycle11_fields'), ('relative-sharing','evaluation.cycle11_field_audit'),
         ('field-controls','evaluation.cycle11_field_controls'),
+        ('proof-review-index','evaluation.cycle11_proof_examples'),
         ('temporal-controls','evaluation.cycle11_temporal'), ('legal-completion','evaluation.cycle11_legal'),
         ('experimental-regression','scripts.cycle11_legal_regression')):
         command(name, ['-m',module,'--out',str(out)])

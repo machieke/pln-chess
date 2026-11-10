@@ -31,6 +31,8 @@ def run(out, docs):
     ui = read_json(out / 'ui/verification.json')
     audit = read_json(out / 'datasets/audit.json')
     unresolved = read_json(out / 'legal/unresolved-baseline-summary.json')
+    sharing = read_json(out / 'field-learning/relative-sharing-summary.json')
+    failure_audit = read_json(out / 'field-evaluation/post-freeze-false-negatives.json')
     ep = read_gzip(out / 'legal/en-passant-after.json.xz')
     assert all(r['passed'] for r in (baseline, current, acceptance, temporal, dependence, performance, ui, audit))
     link = lambda path: os.path.relpath(out / path, docs)
@@ -72,7 +74,7 @@ def run(out, docs):
     write('package-matrix.md', '# Cycle 11 work-package matrix\n\n'+matrix+'\n\n“Implemented” identifies delivered engineering. It does not assert complete native composition, universal correctness, legal recapture, or strategic competence. Experimental failure counts and unsupported conclusions remain in the linked reports.')
 
     ep_table = '| Fixture / candidate | Before | After | Native local TV after | Without history |\n|---|---|---|---|---|\n'+'\n'.join(
-        f"| {r['fixture']['id']} / {r['move']} | {r['before']['candidate']['classification']} | {r['after']['candidate']['classification']} | `{r['after']['candidate'].get('local_truth_value')}` | {r['without_history']['candidate']['classification']} |" for r in ep)
+        f"| {r['fixture']['id']} / {r['move']} | {r['before']['candidate']['classification']} | {r['after']['candidate']['classification']} | `{r['after']['candidate']['local_admissibility_truth_value']}` | {r['without_history']['candidate']['classification']} |" for r in ep)
     reg_table = '| Experimental cohort | Positions | Exact sets | Recall | False legal / illegal | Incomplete |\n|---|---:|---:|---:|---:|---:|\n'+'\n'.join(
         f"| {name} | {m['positions']} | {m['exact_positions']} | {pct(m['recall'])} | {m['false_positive']} / {m['false_illegal']} | {m['incomplete']} |" for name, m in regression['cohorts'].items())
     write('legal-completion.md', f'''# Legal completion and limitations
@@ -92,6 +94,10 @@ The unresolved inventory contains {unresolved['cases']:,} unknown/incomplete can
 The experimental external panel contains {regression['selected_external_positions']}/{regression['external_population']} positions, selected before training by potential exact-key applicability. Every candidate in each selected position is reevaluated, both FEN-only and with its actual published prefix. This is not a fresh full-external evaluation of the experimental checkpoint. The unchanged accepted model receives the complete external regression. {artifact('datasets/legal-regression-panel.json', 'Panel definition')}.
 
 Synthetic predecessor/rights interventions for old adversarial fixtures remain labeled interventions, not reconstructed original histories. Geometry, destination, ray, boundary, exposure and temporal removals preserve the before/after proofs for both EP cases. Strict and experimental legality modes retain their positive-composition restrictions. Removing new learning or historical evidence is recorded separately. {artifact('legal/summary.json', 'All intervention outcomes')}; {artifact('legal/historical-interventions.json.xz')}.
+
+The experimental checkpoint recovers {legal['independent_holdouts']['recovered_legal']} previously unknown legal candidates across the 76 holdouts, with {legal['independent_holdouts']['full_position_exact_after']}/76 exact complete legal-move sets and {legal['independent_holdouts']['full_position_false_legal']} false-legal / {legal['independent_holdouts']['full_position_false_illegal']} false-illegal classifications. These independent controlled holdouts differ from the two known published development failures. Removing temporal evidence leaves {legal['temporal_removal_supported']} supported special candidates across holdouts and historical interventions.
+
+For both published EP cases, removing geometry, destination, ray, boundary or temporal premises yields unknown. Removing exposure still leaves operational support; strict and experimental modes remain unknown even with the full evidence. This reflects the inherited operational projection and its missing complete positive-composition theorem, not a native proof of universal safety.
 
 No experimental checkpoint is promoted. Remaining abstentions and errors are research outcomes. These finite panels cannot establish universal legal accuracy or a complete native positive safety proof.
 ''')
@@ -121,6 +127,8 @@ Tamper tests reject recomputed receipt hashes with false semantic contents and w
         empty = fields['summaries']['empty']['all'][family]['metrics']
         uncertainty = fields['summaries']['trained']['all'][family]['uncertainty']
         cal = calibration['families'][family]
+        domain_note = (f"The post-freeze audit identifies {failure_audit['castling_alias_count']} king-to-rook castling aliases among the {failure_audit['count']} primary false-negative rows. The offline reference accepts those aliases, while the ordinary-mobility adapter excluded only two-cell king castling moves. This is a label-domain mismatch. All original labels, errors and denominators remain in the primary results; no model, threshold or test selection was changed. {artifact('field-evaluation/post-freeze-false-negatives.json')}" if family=='mobility' else
+            'The published-game subpanel contains only one positive king-exposure relation. Its perfect positive recall therefore provides very little independent evidence of generalization.' if family=='king-exposure' else '')
         write(family+'-field.md', f'''# {title}
 
 {meaning}
@@ -128,6 +136,8 @@ Tamper tests reject recomputed receipt hashes with false semantic contents and w
 On the registered mixed test panel, precision is {pct(m['precision'])}, recall {pct(m['recall'])}, and abstention {pct(m['abstention_rate'])}, across {m['relations']:,} relations. False supported positives: {m['false_positive']}; false supported contradictions: {m['false_negative']}. Native conditional proofs: {m['complete_conditional_proofs']:,}; global composition proofs: {m['global_composition_proofs']}. {artifact('field-evaluation/summary.json')}.
 
 On the published-game subpanel alone, precision is {pct(external['precision'])}, recall {pct(external['recall'])}, and abstention {pct(external['abstention_rate'])}. The empty checkpoint abstains on {pct(empty['abstention_rate'])} of the full panel. These are relation labels, not legal-move or strategic-success labels.
+
+{domain_note}
 
 The source/target context is observed by the host. A relative learned conditional is revised through native `Truth_Revision`, then applied through native modus ponens, negation and evidence selection. Every supported result retains native expressions, returned truth values, rule IDs, evidence IDs, dependence groups and model/runtime identities. The observation is one supplied local-context premise; the graph does not claim a native conjunction proof over independently uncertain subpremises.
 
@@ -143,6 +153,8 @@ Missing required occupancy or an unlearned conditional remains unknown; executio
     write('field-differences.md', f'''# Candidate fields and typed differences
 
 {len(controls['worked_examples'])} worked examples preserve full initial/successor environments, selected candidate status, relative observations, field records, native proofs and offline reference checks. {artifact('fields/worked-examples.json.xz')}.
+
+The compact {artifact('fields/worked-proof-index.json', 'proof review index')} selects one declared relation per worked example for inspection, retaining both complete native traces and environment bindings. Its post-evaluation selection is for review only, not an accuracy estimate or model-selection step.
 
 {example_table}
 
@@ -166,6 +178,8 @@ Train/calibration/test source groups and whole-position symmetries are disjoint.
 
 Sliding training distances are 1, 2 and 4. All eight dedicated transfer queries have raw relative displacements and whole positions absent from training. {controls['successful_learning_transfers']}/{controls['transfer_attempts']} satisfy the registered empty-model → learned support → selected-hypothesis removal pattern. Shared pooled local categories are explicitly disclosed; this is transfer under a supplied representation, not autonomous discovery of a distance abstraction. {artifact('fields/learning-transfers.json.xz')}.
 
+The post-freeze sharing audit records {sharing['training_observed_keys']:,} observed pooled keys, {sharing['training_raw_relative_contexts']:,} distinct raw relative contexts and {sharing['training_conflicting_pooled_keys']} pooled keys containing conflicting training labels. For test attack relations, {sharing['counts']['test/attack']['pooled_key_observed_in_training']:,}/{sharing['counts']['test/attack']['relations']:,} share a supplied pooled category with training; {sharing['counts']['test/attack']['raw_relative_context_observed_in_training']:,} share the more detailed raw displacement/typed-ray context. Exact-key reuse and unseen-distance transfer must not be conflated. Every dedicated transfer's matched training displacements and evidence are retained. {artifact('field-learning/relative-sharing-summary.json')}; {artifact('field-learning/relative-sharing.json.xz')}.
+
 At most one representative per connected dependence/ancestry component revises each conditional. Contradictory dependent components are withheld with all records retained; independently declared contradictions revise the native channels. Duplicate and color-transform ancestry controls preserve belief values, while deliberately unannotated duplicate evidence and injected contradictions test the boundary. These are declared controls, not claims of newly acquired contradictory games. {artifact('field-learning/dependence.json')}.
 
 Checkpoint `{learning['model_version']}` remains experimental and independent of legal classification. Empty checkpoints and selected-hypothesis removal prevent the observer from supplying learned influence conclusions by itself.
@@ -185,7 +199,9 @@ Published-game subpanel:
 
 Calibration uses only the separate calibration partition to fit ten-bin Laplace diagnostic mappings. Raw and mapped Brier/log-loss/ECE, reliability bins and covered-only scores are retained. Thresholds and native classifications remain unchanged. Confidence is not plotted as a probability. {artifact('field-evaluation/calibration.json')}.
 
-The panel is a deliberately structured mixture, not a representative sample of chess positions. Some controlled contexts are invalid as complete game states; their local relation labels remain defined, and reference-valid-only metrics are reported separately. Group bootstrap resamples source/generator groups, not individual related queries. Two controlled holdout generator groups provide weak interval resolution. Native conditional coverage and unsupported global composition are reported separately. {artifact('field-evaluation/summary.json')}.
+The frozen primary mobility results include {failure_audit['count']} false negatives, of which {failure_audit['castling_alias_count']} are reference king-to-rook castling aliases missed by the label adapter's two-cell castle exclusion. The post-freeze audit documents this domain mismatch without changing original labels, denominators, models or thresholds. A future independently registered ordinary-mobility panel should exclude every castling encoding before sampling. {artifact('field-evaluation/post-freeze-false-negatives.json')}. The external king-exposure subpanel has only one positive, so its positive recall is particularly weak evidence.
+
+The panel is a deliberately structured mixture, not a representative sample of chess positions. Some controlled contexts are invalid as complete game states; their local relation labels remain defined, and reference-valid-only metrics are reported separately. Group bootstrap resamples connected source/generator/declared-ancestry components, including shared openings, not individual related queries. Two controlled holdout generator groups provide weak interval resolution. Native conditional coverage and unsupported global composition are reported separately. {artifact('field-evaluation/summary.json')}.
 ''')
 
     perf_rows = []
@@ -239,11 +255,26 @@ Verified native revision, unary conditional modus ponens, negation and evidence 
 Cycle 12 should first test independently acquired relation panels, broaden observed occupancy/temporal coverage, and investigate residual local abstentions without weakening gates. It should then define small, falsifiable consequence targets with prospective splits. A composition proposal must explain dependencies and native semantics before implementation. Strategic strength needs separate outcome-based evaluation; attack-map accuracy cannot establish it.
 ''')
 
+    fresh_research_note = (f"The new research stages also executed independently in the fresh checkout: data regeneration, native field/legal learning, held-out field evaluation, all transformations/transfers/examples and temporal controls. Model bytes, datasets, every frozen field metric/proof row and worked native relations matched exactly. {artifact('clean-research/verified.json')}. This reuses the already executed unchanged-source baseline by its receipt; it is not a second full end-to-end baseline run." if (out/'clean-research/verified.json').exists() else '')
     write('reproduction.md', f'''# Cycle 11 reproduction
 
 Starting source: `{baseline['starting_head']}`. The original accepted checkpoint, runtime locks, datasets and historical artifacts remain byte-identical. The unchanged-source baseline executes the original 399 tests, 287 negative controls, 26 historical suites, 48 Cycle 9 shards and 132 frozen/history Cycle 10 shards. {artifact('baseline/reproduction-receipt.json')}.
 
 The current implementation was bootstrapped into `{current['checkout']}` with fresh dependencies and the pinned native runtime. It passed {current['test_count']} tests and the same complete native acceptance replay; every candidate's proof, value, rule/evidence lineage and predicted set matches the original. {artifact('current/verified.json')}; {artifact('current/proof-parity.json')}.
+
+{fresh_research_note}
+
+To inspect a field with the delivered checkpoint:
+
+```bash
+.venv/bin/python -m pln_chess field-inspect \\
+  --fen '7k/8/8/8/R2N3p/8/8/6K1 w - - 0 1' \\
+  --piece a4 --family attack --move d4f5 --output /tmp/field-comparison.json
+.venv/bin/python -m pln_chess history-claims --input supplied-claims.json --output /tmp/history-receipt.json
+.venv/bin/python -m pln_chess serve --port 8765
+```
+
+The local browser route is `http://127.0.0.1:8765/fields`; the existing legal inspector remains at `/`. Public Python callers use `pln_chess.api.inspect_fields` and `replay_history_claims`. A candidate comparison returns separate legal status, before/after relations and diagnostic differences. The field checkpoint remains experimental even when the separate candidate is supported legal.
 
 The staged reproduction entry point is `scripts/cycle11_reproduce.py`. Use a new output, checkout, baseline-snapshot and browser-work directory. The driver preserves command logs, return codes and source identities; it reuses the exact bundled licensed source bytes rather than reacquiring games. Timings and capture metadata may differ. Dataset/model/native proof identities are the reproducible scientific objects.
 

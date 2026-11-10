@@ -1,0 +1,563 @@
+{
+  "counts": {
+    "calibration": {
+      "by_family": {
+        "attack": {
+          "negative": 10386,
+          "positive": 1478
+        },
+        "defense": {
+          "negative": 5523,
+          "positive": 771
+        },
+        "geometry": {
+          "negative": 8554,
+          "positive": 3310
+        },
+        "king-exposure": {
+          "negative": 1054,
+          "positive": 164
+        },
+        "mobility": {
+          "negative": 11224,
+          "positive": 554
+        }
+      },
+      "groups": 8,
+      "queries": 11864,
+      "reference_valid": 10933
+    },
+    "test": {
+      "by_family": {
+        "attack": {
+          "negative": 13734,
+          "positive": 1823
+        },
+        "defense": {
+          "negative": 7312,
+          "positive": 1042
+        },
+        "geometry": {
+          "negative": 11827,
+          "positive": 3730
+        },
+        "king-exposure": {
+          "negative": 1266,
+          "positive": 165
+        },
+        "mobility": {
+          "negative": 14830,
+          "positive": 634
+        }
+      },
+      "groups": 14,
+      "queries": 15557,
+      "reference_valid": 14632
+    },
+    "train": {
+      "by_family": {
+        "attack": {
+          "negative": 15470,
+          "positive": 2533
+        },
+        "defense": {
+          "negative": 8244,
+          "positive": 1349
+        },
+        "geometry": {
+          "negative": 13658,
+          "positive": 4345
+        },
+        "king-exposure": {
+          "negative": 1494,
+          "positive": 266
+        },
+        "mobility": {
+          "negative": 16922,
+          "positive": 921
+        }
+      },
+      "groups": 16,
+      "queries": 18003,
+      "reference_valid": 16592
+    }
+  },
+  "dataset_hash": "a87cc8418083ce7b8d8aa02fab6cd617d3893baf65992c0ca305f6a4dc47e778",
+  "external_selection": [
+    {
+      "fixture": "c10-position-00410",
+      "source": "lichess-broadcast-2024-01",
+      "source_game": "c10-game-0678618bbdc13ca3166ae374",
+      "split": "train"
+    },
+    {
+      "fixture": "c10-position-00408",
+      "source": "lichess-broadcast-2024-01",
+      "source_game": "c10-game-0678618bbdc13ca3166ae374",
+      "split": "train"
+    },
+    {
+      "fixture": "c10-position-00501",
+      "source": "lichess-broadcast-2024-01",
+      "source_game": "c10-game-07319a687597f30941ddb8b3",
+      "split": "train"
+    },
+    {
+      "fixture": "c10-position-00497",
+      "source": "lichess-broadcast-2024-01",
+      "source_game": "c10-game-07319a687597f30941ddb8b3",
+      "split": "train"
+    },
+    {
+      "fixture": "c10-position-00153",
+      "source": "lichess-broadcast-2024-01",
+      "source_game": "c10-game-0219e594ff8038cbd2a25477",
+      "split": "train"
+    },
+    {
+      "fixture": "c10-position-00151",
+      "source": "lichess-broadcast-2024-01",
+      "source_game": "c10-game-0219e594ff8038cbd2a25477",
+      "split": "train"
+    },
+    {
+      "fixture": "c10-position-00431",
+      "source": "lichess-broadcast-2024-01",
+      "source_game": "c10-game-06b5d557593dd71e27bee50a",
+      "split": "train"
+    },
+    {
+      "fixture": "c10-position-00433",
+      "source": "lichess-broadcast-2024-01",
+      "source_game": "c10-game-06b5d557593dd71e27bee50a",
+      "split": "train"
+    },
+    {
+      "fixture": "c10-position-00228",
+      "source": "lichess-broadcast-2024-01",
+      "source_game": "c10-game-03872be5198b1406fefeef41",
+      "split": "calibration"
+    },
+    {
+      "fixture": "c10-position-00231",
+      "source": "lichess-broadcast-2024-01",
+      "source_game": "c10-game-03872be5198b1406fefeef41",
+      "split": "calibration"
+    },
+    {
+      "fixture": "c10-position-00400",
+      "source": "lichess-broadcast-2024-01",
+      "source_game": "c10-game-066f4182897e819f7dbc3822",
+      "split": "calibration"
+    },
+    {
+      "fixture": "c10-position-00401",
+      "source": "lichess-broadcast-2024-01",
+      "source_game": "c10-game-066f4182897e819f7dbc3822",
+      "split": "calibration"
+    },
+    {
+      "fixture": "c10-position-00736",
+      "source": "lichess-broadcast-2024-01",
+      "source_game": "c10-game-0c10dfcdae77c74b3e1ba53c",
+      "split": "test"
+    },
+    {
+      "fixture": "c10-position-00733",
+      "source": "lichess-broadcast-2024-01",
+      "source_game": "c10-game-0c10dfcdae77c74b3e1ba53c",
+      "split": "test"
+    },
+    {
+      "fixture": "c10-position-00617",
+      "source": "lichess-broadcast-2024-01",
+      "source_game": "c10-game-09348683fd05e83c7c8dc30f",
+      "split": "test"
+    },
+    {
+      "fixture": "c10-position-00618",
+      "source": "lichess-broadcast-2024-01",
+      "source_game": "c10-game-09348683fd05e83c7c8dc30f",
+      "split": "test"
+    },
+    {
+      "fixture": "c10-position-01025",
+      "source": "lichess-broadcast-2024-01",
+      "source_game": "c10-game-120b1318635081347a67aa32",
+      "split": "test"
+    },
+    {
+      "fixture": "c10-position-01024",
+      "source": "lichess-broadcast-2024-01",
+      "source_game": "c10-game-120b1318635081347a67aa32",
+      "split": "test"
+    },
+    {
+      "fixture": "c10-position-00022",
+      "source": "lichess-broadcast-2024-01",
+      "source_game": "c10-game-0062190e7fe7ca89f9c1b56a",
+      "split": "test"
+    },
+    {
+      "fixture": "c10-position-00025",
+      "source": "lichess-broadcast-2024-01",
+      "source_game": "c10-game-0062190e7fe7ca89f9c1b56a",
+      "split": "test"
+    },
+    {
+      "fixture": "c10-position-00127",
+      "source": "lichess-rated-2013-01",
+      "source_game": "c10-game-01d36c2bbc8d2d04b7e655b0",
+      "split": "train"
+    },
+    {
+      "fixture": "c10-position-00124",
+      "source": "lichess-rated-2013-01",
+      "source_game": "c10-game-01d36c2bbc8d2d04b7e655b0",
+      "split": "train"
+    },
+    {
+      "fixture": "c10-position-00413",
+      "source": "lichess-rated-2013-01",
+      "source_game": "c10-game-067f1bdaf0c2c50b7a52e787",
+      "split": "train"
+    },
+    {
+      "fixture": "c10-position-00417",
+      "source": "lichess-rated-2013-01",
+      "source_game": "c10-game-067f1bdaf0c2c50b7a52e787",
+      "split": "train"
+    },
+    {
+      "fixture": "c10-position-00005",
+      "source": "lichess-rated-2013-01",
+      "source_game": "c10-game-00036be1ab44dbaf4c8da38f",
+      "split": "train"
+    },
+    {
+      "fixture": "c10-position-00004",
+      "source": "lichess-rated-2013-01",
+      "source_game": "c10-game-00036be1ab44dbaf4c8da38f",
+      "split": "train"
+    },
+    {
+      "fixture": "c10-position-00107",
+      "source": "lichess-rated-2013-01",
+      "source_game": "c10-game-01ae2cd4df7eee50527835dd",
+      "split": "train"
+    },
+    {
+      "fixture": "c10-position-00109",
+      "source": "lichess-rated-2013-01",
+      "source_game": "c10-game-01ae2cd4df7eee50527835dd",
+      "split": "train"
+    },
+    {
+      "fixture": "c10-position-00164",
+      "source": "lichess-rated-2013-01",
+      "source_game": "c10-game-025d1410313398a365d60a42",
+      "split": "calibration"
+    },
+    {
+      "fixture": "c10-position-00165",
+      "source": "lichess-rated-2013-01",
+      "source_game": "c10-game-025d1410313398a365d60a42",
+      "split": "calibration"
+    },
+    {
+      "fixture": "c10-position-00457",
+      "source": "lichess-rated-2013-01",
+      "source_game": "c10-game-06bc3c6e061bc405178a4477",
+      "split": "calibration"
+    },
+    {
+      "fixture": "c10-position-00459",
+      "source": "lichess-rated-2013-01",
+      "source_game": "c10-game-06bc3c6e061bc405178a4477",
+      "split": "calibration"
+    },
+    {
+      "fixture": "c10-position-00999",
+      "source": "lichess-rated-2013-01",
+      "source_game": "c10-game-11b9682d5ba66151774e3b55",
+      "split": "test"
+    },
+    {
+      "fixture": "c10-position-01004",
+      "source": "lichess-rated-2013-01",
+      "source_game": "c10-game-11b9682d5ba66151774e3b55",
+      "split": "test"
+    },
+    {
+      "fixture": "c10-position-00570",
+      "source": "lichess-rated-2013-01",
+      "source_game": "c10-game-08a5cfb4f306b1f9943b83d0",
+      "split": "test"
+    },
+    {
+      "fixture": "c10-position-00575",
+      "source": "lichess-rated-2013-01",
+      "source_game": "c10-game-08a5cfb4f306b1f9943b83d0",
+      "split": "test"
+    },
+    {
+      "fixture": "c10-position-00322",
+      "source": "lichess-rated-2013-01",
+      "source_game": "c10-game-04a189d59133194cae5c09a5",
+      "split": "test"
+    },
+    {
+      "fixture": "c10-position-00324",
+      "source": "lichess-rated-2013-01",
+      "source_game": "c10-game-04a189d59133194cae5c09a5",
+      "split": "test"
+    },
+    {
+      "fixture": "c10-position-00139",
+      "source": "lichess-rated-2013-01",
+      "source_game": "c10-game-02061ca8fcf4be45097cf44e",
+      "split": "test"
+    },
+    {
+      "fixture": "c10-position-00135",
+      "source": "lichess-rated-2013-01",
+      "source_game": "c10-game-02061ca8fcf4be45097cf44e",
+      "split": "test"
+    },
+    {
+      "fixture": "c10-position-01075",
+      "source": "tcec-season26-divisionp",
+      "source_game": "c10-game-1e04a2ed73dc9c10962271de",
+      "split": "train"
+    },
+    {
+      "fixture": "c10-position-01079",
+      "source": "tcec-season26-divisionp",
+      "source_game": "c10-game-1e04a2ed73dc9c10962271de",
+      "split": "train"
+    },
+    {
+      "fixture": "c10-position-01048",
+      "source": "tcec-season26-divisionp",
+      "source_game": "c10-game-15421d9d3b8715d41e497b49",
+      "split": "train"
+    },
+    {
+      "fixture": "c10-position-01047",
+      "source": "tcec-season26-divisionp",
+      "source_game": "c10-game-15421d9d3b8715d41e497b49",
+      "split": "train"
+    },
+    {
+      "fixture": "c10-position-01053",
+      "source": "tcec-season26-divisionp",
+      "source_game": "c10-game-1989bbe4d6b8597b4fe2d327",
+      "split": "train"
+    },
+    {
+      "fixture": "c10-position-01052",
+      "source": "tcec-season26-divisionp",
+      "source_game": "c10-game-1989bbe4d6b8597b4fe2d327",
+      "split": "train"
+    },
+    {
+      "fixture": "c10-position-01104",
+      "source": "tcec-season26-divisionp",
+      "source_game": "c10-game-205cc7939377e6ec3b33e9fc",
+      "split": "train"
+    },
+    {
+      "fixture": "c10-position-01102",
+      "source": "tcec-season26-divisionp",
+      "source_game": "c10-game-205cc7939377e6ec3b33e9fc",
+      "split": "train"
+    },
+    {
+      "fixture": "c10-position-00711",
+      "source": "tcec-season26-divisionp",
+      "source_game": "c10-game-0b9e9212e854d3047b6ce913",
+      "split": "calibration"
+    },
+    {
+      "fixture": "c10-position-00710",
+      "source": "tcec-season26-divisionp",
+      "source_game": "c10-game-0b9e9212e854d3047b6ce913",
+      "split": "calibration"
+    },
+    {
+      "fixture": "c10-position-00562",
+      "source": "tcec-season26-divisionp",
+      "source_game": "c10-game-088db088cfb026f1a8f98a03",
+      "split": "calibration"
+    },
+    {
+      "fixture": "c10-position-00565",
+      "source": "tcec-season26-divisionp",
+      "source_game": "c10-game-088db088cfb026f1a8f98a03",
+      "split": "calibration"
+    },
+    {
+      "fixture": "c10-position-01247",
+      "source": "tcec-season26-divisionp",
+      "source_game": "c10-game-4e89708a1e0a8e30d49a0580",
+      "split": "test"
+    },
+    {
+      "fixture": "c10-position-01240",
+      "source": "tcec-season26-divisionp",
+      "source_game": "c10-game-4e89708a1e0a8e30d49a0580",
+      "split": "test"
+    },
+    {
+      "fixture": "c10-position-01149",
+      "source": "tcec-season26-divisionp",
+      "source_game": "c10-game-3055beb51f248d773c594724",
+      "split": "test"
+    },
+    {
+      "fixture": "c10-position-01155",
+      "source": "tcec-season26-divisionp",
+      "source_game": "c10-game-3055beb51f248d773c594724",
+      "split": "test"
+    },
+    {
+      "fixture": "c10-position-01172",
+      "source": "tcec-season26-divisionp",
+      "source_game": "c10-game-350461f32f5e5955648586e4",
+      "split": "test"
+    },
+    {
+      "fixture": "c10-position-01174",
+      "source": "tcec-season26-divisionp",
+      "source_game": "c10-game-350461f32f5e5955648586e4",
+      "split": "test"
+    },
+    {
+      "fixture": "c10-position-01202",
+      "source": "tcec-season26-divisionp",
+      "source_game": "c10-game-4386f2697a25db5ec4c2f9db",
+      "split": "test"
+    },
+    {
+      "fixture": "c10-position-01205",
+      "source": "tcec-season26-divisionp",
+      "source_game": "c10-game-4386f2697a25db5ec4c2f9db",
+      "split": "test"
+    }
+  ],
+  "generation": {
+    "contextual_validity": "Static synthetic relations include explicitly marked non-game states; external panels are valid published states.",
+    "controlled_queries": 20100,
+    "external_games": {
+      "calibration": [
+        "c10-game-025d1410313398a365d60a42",
+        "c10-game-03872be5198b1406fefeef41",
+        "c10-game-066f4182897e819f7dbc3822",
+        "c10-game-06bc3c6e061bc405178a4477",
+        "c10-game-088db088cfb026f1a8f98a03",
+        "c10-game-0b9e9212e854d3047b6ce913"
+      ],
+      "test": [
+        "c10-game-0062190e7fe7ca89f9c1b56a",
+        "c10-game-02061ca8fcf4be45097cf44e",
+        "c10-game-04a189d59133194cae5c09a5",
+        "c10-game-08a5cfb4f306b1f9943b83d0",
+        "c10-game-09348683fd05e83c7c8dc30f",
+        "c10-game-0c10dfcdae77c74b3e1ba53c",
+        "c10-game-11b9682d5ba66151774e3b55",
+        "c10-game-120b1318635081347a67aa32",
+        "c10-game-3055beb51f248d773c594724",
+        "c10-game-350461f32f5e5955648586e4",
+        "c10-game-4386f2697a25db5ec4c2f9db",
+        "c10-game-4e89708a1e0a8e30d49a0580"
+      ],
+      "train": [
+        "c10-game-00036be1ab44dbaf4c8da38f",
+        "c10-game-01ae2cd4df7eee50527835dd",
+        "c10-game-01d36c2bbc8d2d04b7e655b0",
+        "c10-game-0219e594ff8038cbd2a25477",
+        "c10-game-0678618bbdc13ca3166ae374",
+        "c10-game-067f1bdaf0c2c50b7a52e787",
+        "c10-game-06b5d557593dd71e27bee50a",
+        "c10-game-07319a687597f30941ddb8b3",
+        "c10-game-15421d9d3b8715d41e497b49",
+        "c10-game-1989bbe4d6b8597b4fe2d327",
+        "c10-game-1e04a2ed73dc9c10962271de",
+        "c10-game-205cc7939377e6ec3b33e9fc"
+      ]
+    },
+    "external_queries": 25324,
+    "generator_groups": {
+      "calibration": [
+        "c10-game-025d1410313398a365d60a42",
+        "c10-game-03872be5198b1406fefeef41",
+        "c10-game-066f4182897e819f7dbc3822",
+        "c10-game-06bc3c6e061bc405178a4477",
+        "c10-game-088db088cfb026f1a8f98a03",
+        "c10-game-0b9e9212e854d3047b6ce913",
+        "c11-controlled-calibration-112111",
+        "c11-controlled-calibration-112112"
+      ],
+      "test": [
+        "c10-game-0062190e7fe7ca89f9c1b56a",
+        "c10-game-02061ca8fcf4be45097cf44e",
+        "c10-game-04a189d59133194cae5c09a5",
+        "c10-game-08a5cfb4f306b1f9943b83d0",
+        "c10-game-09348683fd05e83c7c8dc30f",
+        "c10-game-0c10dfcdae77c74b3e1ba53c",
+        "c10-game-11b9682d5ba66151774e3b55",
+        "c10-game-120b1318635081347a67aa32",
+        "c10-game-3055beb51f248d773c594724",
+        "c10-game-350461f32f5e5955648586e4",
+        "c10-game-4386f2697a25db5ec4c2f9db",
+        "c10-game-4e89708a1e0a8e30d49a0580",
+        "c11-controlled-test-113111",
+        "c11-controlled-test-113112"
+      ],
+      "train": [
+        "c10-game-00036be1ab44dbaf4c8da38f",
+        "c10-game-01ae2cd4df7eee50527835dd",
+        "c10-game-01d36c2bbc8d2d04b7e655b0",
+        "c10-game-0219e594ff8038cbd2a25477",
+        "c10-game-0678618bbdc13ca3166ae374",
+        "c10-game-067f1bdaf0c2c50b7a52e787",
+        "c10-game-06b5d557593dd71e27bee50a",
+        "c10-game-07319a687597f30941ddb8b3",
+        "c10-game-15421d9d3b8715d41e497b49",
+        "c10-game-1989bbe4d6b8597b4fe2d327",
+        "c10-game-1e04a2ed73dc9c10962271de",
+        "c10-game-205cc7939377e6ec3b33e9fc",
+        "c11-controlled-train-111111",
+        "c11-controlled-train-111112",
+        "c11-controlled-train-111113",
+        "c11-controlled-train-111114"
+      ]
+    },
+    "model_used_for_selection": false,
+    "rejected": {
+      "external_train_long_range_withheld": 1714,
+      "outside_structural_domain": 14172
+    },
+    "transformed_copies_counted_as_independent": false
+  },
+  "leakage": {
+    "controlled_whole_board_symmetry_duplicates_removed": true,
+    "external_partition": "Inherited disjoint Cycle 10 game and opening partitions",
+    "relative_submotifs": "Expected sharing of reusable local observations; a separate inference-time descriptor audit quantifies exact and pooled overlap.",
+    "source_group_overlap": false
+  },
+  "limits": [
+    "Synthetic queries are controlled structural contexts, not a random sample of chess games.",
+    "Generator groups are declared evidence units; independent random seeds do not certify statistical independence.",
+    "Relative geometry categories and distance pooling are supplied inductive biases.",
+    "External sample is a small deterministic panel of the existing archive windows."
+  ],
+  "schema": 11,
+  "semantics": {
+    "attack": "Occupancy-aware attack map including pins and friendly occupied endpoints",
+    "defense": "Attack-map protection of a friendly occupied endpoint; not legal recapture",
+    "geometry": "Empty-board piece attack geometry",
+    "king-exposure": "One opposing source attacks this king under current occupancy; no global safety complement",
+    "mobility": "Ordinary pseudo-legal transition, with a queen promotion witness where needed; king captures excluded; special historical transitions omitted"
+  }
+}
