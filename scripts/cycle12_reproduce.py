@@ -56,7 +56,12 @@ def run(out,checkout,baseline,work,browser=True):
         all_commands_passed=True,pushed=False,deployed=False,upstream_modified=False))
     if browser:
         command('consolidated-reports',['-m','scripts.cycle12_reports','--out',str(out),'--docs',str(out/'reports')])
-        command('artifact-manifest',['-m','evaluation.cycle12_delivery','manifest','--out',str(out),'--docs',str(out/'reports')])
+        # These final read/hash operations must not rewrite the command log after
+        # it has been hashed into the manifest.
+        subprocess.run([py,'-m','evaluation.cycle12_delivery','manifest','--out',str(out),
+                        '--docs',str(out/'reports')],cwd=checkout,env=env,check=True)
+        subprocess.run([py,'-m','scripts.cycle12_package_audit','--out',str(out),
+                        '--docs',str(out/'reports')],cwd=checkout,env=env,check=True)
     print('CYCLE12 FULL REPRODUCTION COMPLETE',flush=True)
 
 
