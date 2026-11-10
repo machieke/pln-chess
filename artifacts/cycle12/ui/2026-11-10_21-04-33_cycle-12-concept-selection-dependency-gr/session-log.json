@@ -1,0 +1,327 @@
+[
+  {
+    "action": "open http://127.0.0.1:18782/interactions",
+    "relativeTimeSec": 0.4,
+    "timestamp": "2026-11-10T21:04:37.239Z"
+  },
+  {
+    "action": "set viewport 1280 900",
+    "relativeTimeSec": 0.8,
+    "timestamp": "2026-11-10T21:04:37.630Z"
+  },
+  {
+    "action": "eval (async()=>{const end=Date.now()+5000;while((innerWidth!==1280||innerHeight!==900)&&Date.now()<end)await new Promise(r=>setTimeout(r,100));return [innerWidth,innerHeight]})()",
+    "relativeTimeSec": 1.3,
+    "timestamp": "2026-11-10T21:04:38.162Z"
+  },
+  {
+    "action": "snapshot -i",
+    "relativeTimeSec": 1.6,
+    "timestamp": "2026-11-10T21:04:38.474Z"
+  },
+  {
+    "action": "screenshot initial-interactions.png",
+    "relativeTimeSec": 2,
+    "timestamp": "2026-11-10T21:04:38.876Z"
+  },
+  {
+    "action": "eval (async()=>{const mode=\"snapshot\";if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=0;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()",
+    "relativeTimeSec": 2.4,
+    "timestamp": "2026-11-10T21:04:39.282Z"
+  },
+  {
+    "action": "screenshot before-after-interactions.png",
+    "relativeTimeSec": 5.6,
+    "timestamp": "2026-11-10T21:04:42.451Z"
+  },
+  {
+    "action": "eval (async()=>{const mode=null;if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=null;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"attack\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()",
+    "relativeTimeSec": 6,
+    "timestamp": "2026-11-10T21:04:42.864Z"
+  },
+  {
+    "action": "eval (async()=>{const mode=null;if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=null;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"defense\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()",
+    "relativeTimeSec": 8.8,
+    "timestamp": "2026-11-10T21:04:45.661Z"
+  },
+  {
+    "action": "eval (async()=>{const mode=null;if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=null;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"mobility\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()",
+    "relativeTimeSec": 11.4,
+    "timestamp": "2026-11-10T21:04:48.226Z"
+  },
+  {
+    "action": "eval (async()=>{const mode=null;if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=null;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"king-exposure\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()",
+    "relativeTimeSec": 14.2,
+    "timestamp": "2026-11-10T21:04:51.013Z"
+  },
+  {
+    "action": "eval (async()=>{const mode=\"concept\";if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=0;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"all\", \"piece\": \"\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()",
+    "relativeTimeSec": 16.4,
+    "timestamp": "2026-11-10T21:04:53.259Z"
+  },
+  {
+    "action": "eval (async()=>{const mode=\"concept\";if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=8;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"all\", \"piece\": \"\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()",
+    "relativeTimeSec": 19.3,
+    "timestamp": "2026-11-10T21:04:56.094Z"
+  },
+  {
+    "action": "eval (async()=>{const mode=\"concept\";if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=16;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"all\", \"piece\": \"\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()",
+    "relativeTimeSec": 22,
+    "timestamp": "2026-11-10T21:04:58.812Z"
+  },
+  {
+    "action": "eval (async()=>{const mode=\"concept\";if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=24;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"all\", \"piece\": \"\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()",
+    "relativeTimeSec": 26.1,
+    "timestamp": "2026-11-10T21:05:02.931Z"
+  },
+  {
+    "action": "eval (async()=>{const mode=\"concept\";if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=32;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"all\", \"piece\": \"\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()",
+    "relativeTimeSec": 29.6,
+    "timestamp": "2026-11-10T21:05:06.444Z"
+  },
+  {
+    "action": "eval (async()=>{const mode=\"concept\";if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=40;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"all\", \"piece\": \"\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()",
+    "relativeTimeSec": 32.8,
+    "timestamp": "2026-11-10T21:05:09.680Z"
+  },
+  {
+    "action": "eval (async()=>{const mode=\"concept\";if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=46;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"all\", \"piece\": \"\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()",
+    "relativeTimeSec": 37.1,
+    "timestamp": "2026-11-10T21:05:13.923Z"
+  },
+  {
+    "action": "eval (async()=>{const mode=\"concept\";if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=54;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"all\", \"piece\": \"\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()",
+    "relativeTimeSec": 39.8,
+    "timestamp": "2026-11-10T21:05:16.646Z"
+  },
+  {
+    "action": "eval document.getElementById(\"concepts\").scrollIntoView();true",
+    "relativeTimeSec": 43.8,
+    "timestamp": "2026-11-10T21:05:20.603Z"
+  },
+  {
+    "action": "screenshot partial-concept-and-gaps.png",
+    "relativeTimeSec": 44.1,
+    "timestamp": "2026-11-10T21:05:20.979Z"
+  },
+  {
+    "action": "eval document.getElementById(\"graph\").scrollIntoView();true",
+    "relativeTimeSec": 44.5,
+    "timestamp": "2026-11-10T21:05:21.385Z"
+  },
+  {
+    "action": "screenshot dependency-graph.png",
+    "relativeTimeSec": 44.9,
+    "timestamp": "2026-11-10T21:05:21.767Z"
+  },
+  {
+    "action": "eval document.querySelector(\"#graph g\").dispatchEvent(new Event(\"click\"));true",
+    "relativeTimeSec": 45.4,
+    "timestamp": "2026-11-10T21:05:22.215Z"
+  },
+  {
+    "action": "eval JSON.parse(document.getElementById(\"proof\").textContent)",
+    "relativeTimeSec": 45.7,
+    "timestamp": "2026-11-10T21:05:22.564Z"
+  },
+  {
+    "action": "eval (async()=>{const mode=\"snapshot\";if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=0;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"attack\", \"piece\": \"a4\", \"concept\": \"all\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()",
+    "relativeTimeSec": 46.1,
+    "timestamp": "2026-11-10T21:05:22.927Z"
+  },
+  {
+    "action": "eval (async()=>{const b=document.querySelector(\"#relations button[data-native=\"+JSON.stringify(\"true\")+\"]\");b.click();const d=JSON.parse(document.getElementById(\"proof\").textContent);return {proof:d.proof_id,nodes:d.proof_trace.length,rule:d.rule_id,evidence:d.evidence_ids.length};})()",
+    "relativeTimeSec": 48.9,
+    "timestamp": "2026-11-10T21:05:25.723Z"
+  },
+  {
+    "action": "eval document.getElementById(\"proof\").scrollIntoView();true",
+    "relativeTimeSec": 49.3,
+    "timestamp": "2026-11-10T21:05:26.085Z"
+  },
+  {
+    "action": "screenshot native-proof.png",
+    "relativeTimeSec": 49.6,
+    "timestamp": "2026-11-10T21:05:26.475Z"
+  },
+  {
+    "action": "eval (async()=>{const mode=null;if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=null;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"field-model\": \"empty\", \"concept-model\": \"empty\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()",
+    "relativeTimeSec": 50.1,
+    "timestamp": "2026-11-10T21:05:26.902Z"
+  },
+  {
+    "action": "eval Array.from(document.querySelectorAll(\"#relations tbody tr\")).every(r=>r.textContent.includes(\"unknown\"))",
+    "relativeTimeSec": 50.6,
+    "timestamp": "2026-11-10T21:05:27.472Z"
+  },
+  {
+    "action": "eval (async()=>{const mode=null;if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=null;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"field-model\": \"trained\", \"concept-model\": \"trained\", \"budget\": 0}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()",
+    "relativeTimeSec": 51,
+    "timestamp": "2026-11-10T21:05:27.832Z"
+  },
+  {
+    "action": "eval (async()=>{const mode=null;if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=null;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"budget\": 100000, \"unknown\": \"a4\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()",
+    "relativeTimeSec": 52,
+    "timestamp": "2026-11-10T21:05:28.811Z"
+  },
+  {
+    "action": "eval Array.from(document.querySelectorAll(\"#relations tbody tr\")).every(r=>r.textContent.includes(\"unknown\"))",
+    "relativeTimeSec": 52.9,
+    "timestamp": "2026-11-10T21:05:29.751Z"
+  },
+  {
+    "action": "eval (async()=>{const mode=\"sequence\";if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=7;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"attack\", \"unknown\": \"\", \"candidate-limit\": 4}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()",
+    "relativeTimeSec": 53.2,
+    "timestamp": "2026-11-10T21:05:30.073Z"
+  },
+  {
+    "action": "eval document.getElementById(\"step\").value=0;document.getElementById(\"step\").dispatchEvent(new Event(\"input\"));({label:document.getElementById(\"step-label\").textContent,transition:document.getElementById(\"transition\").textContent})",
+    "relativeTimeSec": 59.5,
+    "timestamp": "2026-11-10T21:05:36.374Z"
+  },
+  {
+    "action": "eval document.getElementById(\"step\").value=1;document.getElementById(\"step\").dispatchEvent(new Event(\"input\"));({label:document.getElementById(\"step-label\").textContent,transition:document.getElementById(\"transition\").textContent})",
+    "relativeTimeSec": 60,
+    "timestamp": "2026-11-10T21:05:36.798Z"
+  },
+  {
+    "action": "eval document.getElementById(\"step\").value=2;document.getElementById(\"step\").dispatchEvent(new Event(\"input\"));({label:document.getElementById(\"step-label\").textContent,transition:document.getElementById(\"transition\").textContent})",
+    "relativeTimeSec": 60.4,
+    "timestamp": "2026-11-10T21:05:37.211Z"
+  },
+  {
+    "action": "eval document.getElementById(\"step\").value=3;document.getElementById(\"step\").dispatchEvent(new Event(\"input\"));({label:document.getElementById(\"step-label\").textContent,transition:document.getElementById(\"transition\").textContent})",
+    "relativeTimeSec": 60.8,
+    "timestamp": "2026-11-10T21:05:37.623Z"
+  },
+  {
+    "action": "eval document.getElementById(\"step\").value=4;document.getElementById(\"step\").dispatchEvent(new Event(\"input\"));({label:document.getElementById(\"step-label\").textContent,transition:document.getElementById(\"transition\").textContent})",
+    "relativeTimeSec": 61.2,
+    "timestamp": "2026-11-10T21:05:38.059Z"
+  },
+  {
+    "action": "eval document.getElementById(\"step\").scrollIntoView();true",
+    "relativeTimeSec": 61.6,
+    "timestamp": "2026-11-10T21:05:38.480Z"
+  },
+  {
+    "action": "screenshot supplied-sequence-promotion.png",
+    "relativeTimeSec": 62,
+    "timestamp": "2026-11-10T21:05:38.860Z"
+  },
+  {
+    "action": "eval (async()=>{const mode=null;if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=null;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"supplied\": \"{\\\"dependence_group\\\": \\\"sequence/promotion-threat\\\", \\\"description\\\": \\\"A supplied underpromotion changes the piece kind and its influence pattern.\\\", \\\"events\\\": [{\\\"confidence\\\": 0.99, \\\"dependence_group\\\": \\\"sequence/promotion-threat\\\", \\\"id\\\": \\\"sequence-event:a2a9dc510dadc83079d1a1ba1433badc0a88c57d58af77625b2d538ff7d4de3d\\\", \\\"index\\\": 1, \\\"move\\\": \\\"b6b7\\\", \\\"observed_fen\\\": \\\"7k/1P6/8/8/8/8/8/6K1 b - - 0 1\\\", \\\"source\\\": \\\"controlled-supplied-sequence/promotion-threat\\\"}, {\\\"confidence\\\": 0.99, \\\"dependence_group\\\": \\\"sequence/promotion-threat\\\", \\\"id\\\": \\\"sequence-event:175569abda20084a9a99bc7e393b092ea452ed1316a9ef0de3c4440b9df9b205\\\", \\\"index\\\": 2, \\\"move\\\": null, \\\"observed_fen\\\": \\\"6k1/1P6/8/8/8/8/8/6K1 w - - 1 2\\\", \\\"source\\\": \\\"controlled-supplied-sequence/promotion-threat\\\"}, {\\\"confidence\\\": 0.99, \\\"dependence_group\\\": \\\"sequence/promotion-threat\\\", \\\"id\\\": \\\"sequence-event:0ecb7c238e10586c48613a854d57173d7437fd10a0033b8ded0ce0204561299a\\\", \\\"index\\\": 3, \\\"move\\\": \\\"b7b8n\\\", \\\"observed_fen\\\": \\\"1N4k1/8/8/8/8/8/8/6K1 b - - 0 2\\\", \\\"source\\\": \\\"controlled-supplied-sequence/promotion-threat\\\"}, {\\\"confidence\\\": 0.99, \\\"dependence_group\\\": \\\"sequence/promotion-threat\\\", \\\"id\\\": \\\"sequence-event:4c238c0bf4fdd877b75749c5cc18a47fc5eb3a46e778dee60e375f246be33e39\\\", \\\"index\\\": 4, \\\"move\\\": \\\"g8f7\\\", \\\"observed_fen\\\": \\\"1N6/5k2/8/8/8/8/8/6K1 w - - 1 3\\\", \\\"source\\\": \\\"controlled-supplied-sequence/promotion-threat\\\"}], \\\"id\\\": \\\"promotion-threat\\\", \\\"initial_fen\\\": \\\"7k/8/1P6/8/8/8/8/6K1 w - - 0 1\\\", \\\"scope\\\": \\\"Supplied legal moves, independently checked offline. The system did not select or plan this sequence.\\\", \\\"source\\\": \\\"controlled-supplied-sequence/promotion-threat\\\", \\\"unknown_squares\\\": []}\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()",
+    "relativeTimeSec": 62.4,
+    "timestamp": "2026-11-10T21:05:39.279Z"
+  },
+  {
+    "action": "eval document.getElementById(\"step\").value=2;document.getElementById(\"step\").dispatchEvent(new Event(\"input\"));true",
+    "relativeTimeSec": 69.4,
+    "timestamp": "2026-11-10T21:05:46.223Z"
+  },
+  {
+    "action": "eval document.getElementById(\"transition\").textContent",
+    "relativeTimeSec": 69.8,
+    "timestamp": "2026-11-10T21:05:46.678Z"
+  },
+  {
+    "action": "screenshot missing-event-gap.png",
+    "relativeTimeSec": 70.2,
+    "timestamp": "2026-11-10T21:05:47.034Z"
+  },
+  {
+    "action": "eval (async()=>{const mode=\"snapshot\";if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=0;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"attack\", \"piece\": \"a4\", \"candidate-limit\": 0, \"unknown\": \"\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()",
+    "relativeTimeSec": 70.6,
+    "timestamp": "2026-11-10T21:05:47.477Z"
+  },
+  {
+    "action": "eval (async()=>{const old=URL.createObjectURL.bind(URL);URL.createObjectURL=b=>{window.proofBlob=b;return old(b)};document.getElementById(\"export\").click();const text=await window.proofBlob.text();const bytes=new TextEncoder().encode(text);const packed=new Uint8Array(await new Response(new Blob([bytes]).stream().pipeThrough(new CompressionStream(\"gzip\"))).arrayBuffer());let binary=\"\";for(let i=0;i<packed.length;i+=32768)binary+=String.fromCharCode(...packed.subarray(i,i+32768));return {bytes:bytes.length,sha256:Array.from(new Uint8Array(await crypto.subtle.digest(\"SHA-256\",bytes))).map(x=>x.toString(16).padStart(2,\"0\")).join(\"\"),base64:btoa(binary),matchesServerResult:text===JSON.stringify(result,null,2)};})()",
+    "relativeTimeSec": 72.5,
+    "timestamp": "2026-11-10T21:05:49.317Z"
+  },
+  {
+    "action": "set viewport 390 844",
+    "relativeTimeSec": 73.3,
+    "timestamp": "2026-11-10T21:05:50.088Z"
+  },
+  {
+    "action": "eval (async()=>{const end=Date.now()+5000;while((innerWidth!==390||innerHeight!==844)&&Date.now()<end)await new Promise(r=>setTimeout(r,100));return [innerWidth,innerHeight]})()",
+    "relativeTimeSec": 73.8,
+    "timestamp": "2026-11-10T21:05:50.631Z"
+  },
+  {
+    "action": "set viewport 390 844",
+    "relativeTimeSec": 79.2,
+    "timestamp": "2026-11-10T21:05:56.004Z"
+  },
+  {
+    "action": "eval (async()=>{const end=Date.now()+5000;while((innerWidth!==390||innerHeight!==844)&&Date.now()<end)await new Promise(r=>setTimeout(r,100));return [innerWidth,innerHeight]})()",
+    "relativeTimeSec": 79.7,
+    "timestamp": "2026-11-10T21:05:56.567Z"
+  },
+  {
+    "action": "eval window.scrollTo(0,0);true",
+    "relativeTimeSec": 80.1,
+    "timestamp": "2026-11-10T21:05:56.929Z"
+  },
+  {
+    "action": "eval ({width:innerWidth,height:innerHeight,scrollWidth:document.documentElement.scrollWidth})",
+    "relativeTimeSec": 80.4,
+    "timestamp": "2026-11-10T21:05:57.272Z"
+  },
+  {
+    "action": "screenshot mobile-controls.png",
+    "relativeTimeSec": 80.8,
+    "timestamp": "2026-11-10T21:05:57.631Z"
+  },
+  {
+    "action": "eval document.getElementById(\"before\").scrollIntoView();true",
+    "relativeTimeSec": 81.2,
+    "timestamp": "2026-11-10T21:05:58.035Z"
+  },
+  {
+    "action": "screenshot mobile-boards.png",
+    "relativeTimeSec": 81.5,
+    "timestamp": "2026-11-10T21:05:58.378Z"
+  },
+  {
+    "action": "eval document.getElementById(\"graph\").scrollIntoView();true",
+    "relativeTimeSec": 81.9,
+    "timestamp": "2026-11-10T21:05:58.780Z"
+  },
+  {
+    "action": "screenshot mobile-graph.png",
+    "relativeTimeSec": 82.3,
+    "timestamp": "2026-11-10T21:05:59.140Z"
+  },
+  {
+    "action": "eval (()=>{const g=document.getElementById(\"graph\");g.scrollLeft=g.scrollWidth;return {left:g.scrollLeft,width:g.clientWidth,total:g.scrollWidth}})()",
+    "relativeTimeSec": 82.7,
+    "timestamp": "2026-11-10T21:05:59.520Z"
+  },
+  {
+    "action": "screenshot mobile-graph-targets.png",
+    "relativeTimeSec": 83,
+    "timestamp": "2026-11-10T21:05:59.850Z"
+  },
+  {
+    "action": "open http://127.0.0.1:18782/fields",
+    "relativeTimeSec": 83.4,
+    "timestamp": "2026-11-10T21:06:00.271Z"
+  },
+  {
+    "action": "snapshot -i",
+    "relativeTimeSec": 83.9,
+    "timestamp": "2026-11-10T21:06:00.700Z"
+  },
+  {
+    "action": "open http://127.0.0.1:18782",
+    "relativeTimeSec": 84.3,
+    "timestamp": "2026-11-10T21:06:01.135Z"
+  },
+  {
+    "action": "snapshot -i -s #form",
+    "relativeTimeSec": 84.7,
+    "timestamp": "2026-11-10T21:06:01.579Z"
+  }
+]
