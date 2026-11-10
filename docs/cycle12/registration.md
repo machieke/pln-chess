@@ -4,6 +4,14 @@ Starting source: `f4a9fd5536d001fa8830773012dcd578443b0b61`.
 The supplied Cycle 12 brief and `configs/cycle12.json` govern this cycle.
 Registration precedes new inference implementation and new concept training.
 
+Before the first concept fit, an additional reference-scope audit found that
+the offline engine can list nominally legal edits on deliberately incomplete
+motif boards. Those edit-legality fields are now `null` when `board.is_valid()`
+is false, matching the earlier treatment of legal-exit references. The previous
+dataset is retained in `datasets/pre-edit-legality-scope-audit`. Every input,
+limited concept label, split and structural family is unchanged. This amendment
+changes diagnostic provenance only; no trained or held-out prediction informed it.
+
 The baseline runs in a fresh checkout and environment at the starting commit.
 It reproduces the 463-test suite, 287 negative controls, 26 historical legal
 suites, 48 Cycle 9 shards and 132 Cycle 10 shards, with complete native proof

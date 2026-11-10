@@ -54,7 +54,7 @@ def reference(case):
     legal = None
     if case['move']:
         move = chess.Move.from_uci(case['move'])
-        legal = move in board.legal_moves
+        legal = move in board.legal_moves if board.is_valid() else None
         after.push(move)
     details = {}
     if concept == 'Pin':

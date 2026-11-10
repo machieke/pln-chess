@@ -18,6 +18,8 @@ def run(out):
         assert row['input']['concept'] in data['targets']
         assert not any(k in row['input'] for k in ('label','reference','expected','proof','score'))
         assert reference(row['input'])==row['reference'],row['id']
+        if not row['reference']['board_valid']:
+            assert row['reference']['details'].get('supplied_edit_reference_legal') is None
         if row['input']['move']:
             assert find_move(Position.from_fen(row['input']['fen']),row['input']['move']) is not None,row['id']
         by_family[row['structural_family']].add(row['split'])
@@ -62,7 +64,7 @@ def run(out):
         inputs_exclude_reference_labels=True,
         conditional_key_overlap='Measured after observation grammar freeze and training. Supplied pooling may intentionally share keys across different raw families.',
         independence_limit='One controlled synthetic source. Distinct raw role topology/distance families are split; these are not independent external chess studies. Equivalent transformations and counterfactual descendants never count as extra holdouts.',
-        preregistration_revision='Drafts are retained under datasets/pre-audit-registration, pre-move-grammar-audit and pre-reference-scope-audit. Before fitting, symmetric role permutations and trapping boundary topology were added to the family audit; one-cell orthogonal edits use rook movers in the structural grammar; full legal-exit references are withheld for deliberately incomplete local boards. Counts, split assignments and limited-target labels did not change.')
+        preregistration_revision='Drafts are retained under datasets/pre-audit-registration, pre-move-grammar-audit, pre-reference-scope-audit and pre-edit-legality-scope-audit. Before fitting, symmetric role permutations and trapping boundary topology were added to the family audit; one-cell orthogonal edits use rook movers in the structural grammar; legal-exit and supplied-edit legality references are withheld for deliberately incomplete local boards. Counts, split assignments and limited-target labels did not change.')
     write_json(out/'datasets/audit.json',result)
     print('Concept data audit passed',len(data['records']),len(by_family),len(symmetry),flush=True)
 
