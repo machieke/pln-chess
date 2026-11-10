@@ -6,6 +6,7 @@ until that replay has passed. Production field modules are a separate layer.
 import argparse
 from collections import defaultdict
 from dataclasses import asdict
+import lzma
 from pathlib import Path
 
 from pln_chess.common import ROOT, digest, read_json, write_json
@@ -77,7 +78,11 @@ def train_queries(queries, runtime, out, *, dataset_hash, variant='C11-field-tra
             observation_tv=TV(float(query['labels']['attack']), query['observation_confidence']).json(),
             runtime_version=runtime.version, model_version=GRAMMAR, input=query,
             scope='Offline reference labels for distinct local relation targets; no legal-move or strategic supervision.'))
-    ledger = Ledger(out / 'ledger.jsonl')
+    ledger_path = out / 'ledger.jsonl'
+    archived_ledger = out / 'ledger.jsonl.xz'
+    if archived_ledger.exists() and not ledger_path.exists():
+        ledger_path.write_bytes(lzma.decompress(archived_ledger.read_bytes()))
+    ledger = Ledger(ledger_path)
     ledger.append_many(payloads)
     records = ledger.records()
     expected = {digest(p) for p in payloads}
@@ -146,6 +151,13 @@ def train_queries(queries, runtime, out, *, dataset_hash, variant='C11-field-tra
     pack(out / 'native-training.json.xz', dict(traces=[{**t, 'truth_value': values[t['id']].json()} for t in traces],
         excluded=excluded, model_version=model.version, training_report=model.training_report,
         ledger_evidence_ids=sorted(expected), dataset_hash=dataset_hash))
+    # Preserve the complete ledger byte-for-byte while keeping large proof-rich
+    # records practical to archive. A resumed run restores these exact bytes.
+    raw = ledger_path.read_bytes()
+    compressed = lzma.compress(raw, preset=1)
+    assert lzma.decompress(compressed) == raw
+    archived_ledger.write_bytes(compressed)
+    ledger_path.unlink()
     return model
 
 

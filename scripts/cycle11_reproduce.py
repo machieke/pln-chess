@@ -54,7 +54,8 @@ def run(out, checkout, snapshot, work, plot_python='python3', browser=True):
     shutil.copy2(checkout/'artifacts/cycle11/datasets/ATTRIBUTION.txt', out/'datasets/ATTRIBUTION.txt')
     for name, module in (
         ('field-learning','training.cycle11_fields'), ('legal-learning','training.cycle11_legal'),
-        ('field-evaluation','evaluation.cycle11_fields'), ('field-controls','evaluation.cycle11_field_controls'),
+        ('field-evaluation','evaluation.cycle11_fields'), ('relative-sharing','evaluation.cycle11_field_audit'),
+        ('field-controls','evaluation.cycle11_field_controls'),
         ('temporal-controls','evaluation.cycle11_temporal'), ('legal-completion','evaluation.cycle11_legal'),
         ('experimental-regression','scripts.cycle11_legal_regression')):
         command(name, ['-m',module,'--out',str(out)])

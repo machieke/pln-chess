@@ -11,7 +11,8 @@
 - The all-dihedral/translation audit found no train/calibration/test full-position, group or ancestry overlap; all eight dedicated transfer configurations and positions are absent from training. New controlled contexts and special-move training have no whole-position overlap with historical datasets. External panels deliberately reuse the original Cycle 10 game partitions.
 - A worked-example generator initially used the reference library's legality-validating `push_uci` on an intentionally contradicted candidate. Its failed log is retained. It now uses structural `push` after separately recording the reference legal label; production legality behavior is unchanged.
 - Offline native-training drivers are prepared with an explicit completed-baseline guard. No production source or original tests have changed and no new field or legal-completion model has been trained yet.
-# Evaluation orchestration prepared during baseline replay
+
+## Evaluation orchestration prepared during baseline replay
 
 Prepared separate native field-learning, held-out relation evaluation,
 transformation/removal, dependence, temporal-claim, legal-completion and
@@ -26,3 +27,23 @@ desktop/mobile assertions and an actual exported proof payload.
 No production source has changed at this stage. Experiment drivers and
 assertions describe expected contracts; their existence does not establish
 that the experiments have passed.
+
+## Contract tests and trace-storage preparation
+
+Added executable specifications for native learned/empty field behavior,
+typed domains, unknown observations, model/provenance edits, long-ray blockers,
+special structural effects, cache mutation, disabled caches and zero budgets.
+Separate claim tests cover ordering, duplication, missing events, conflicting
+metadata, late contradictions and receipt/model/runtime tampering. API tests
+require the accepted legal learner to remain independent of field imports.
+These tests have passed syntax compilation; execution waits for the production
+modules after the baseline receipt. They are not counted as passing tests yet.
+
+The field ledger driver now stores an exact lossless XZ copy of its complete
+JSONL evidence bytes and restores that copy before a resumed run. A post-freeze
+audit will quantify raw relative-context versus pooled-key sharing. The
+experimental legal regression panel was selected without model predictions:
+128 C9 adversarial, 80 C9 special, 112 C10 synthetic and 28 applicable external
+test positions. Every candidate in those 28 positions is scheduled under both
+FEN-only and actual-history conditions. The full accepted-model regression
+remains separate and exhaustive over its registered cohorts.

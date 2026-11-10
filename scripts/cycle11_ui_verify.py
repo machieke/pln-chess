@@ -95,8 +95,8 @@ def run(out, work, port=18781):
             result = submit(**{'field-family': family})
             checks.append(dict(case='family-'+family, result=result))
         submit('rook-obstruction', **{'field-family':'attack'})
-        inspected = evaluate('(async()=>{const b=document.querySelector("#field-relations button");b.click();const p=document.getElementById("field-proof");const d=JSON.parse(p.textContent);return {proof:d.proof_id,nodes:d.proof_trace.length,rule:d.rule_id,evidence:d.evidence_ids.length,classification:d.classification};})()')
-        assert inspected['proof'] and inspected['rule']
+        inspected = evaluate('(async()=>{const b=document.querySelector("#field-relations button[data-native="+JSON.stringify("true")+"]");b.click();const p=document.getElementById("field-proof");const d=JSON.parse(p.textContent);return {proof:d.proof_id,nodes:d.proof_trace.length,rule:d.rule_id,evidence:d.evidence_ids.length,classification:d.classification};})()')
+        assert inspected['proof'] and inspected['rule'] and inspected['nodes'] > 0 and inspected['evidence'] > 0
         checks.append(dict(case='native-proof-inspection', result=inspected))
         evaluate('document.getElementById("field-proof").scrollIntoView();true')
         command('exec', 'screenshot', 'native-field-proof.png')
