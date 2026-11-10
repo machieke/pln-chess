@@ -41,3 +41,17 @@ The existing native operator boundary remains unchanged: revision for learned
 evidence, unary modus ponens, negation and the existing candidate selector. No
 conjunction introduction, independent-support aggregation, strategic evaluation
 score or move-selection rule is authorized by this ontology.
+<!-- cycle12-measured-evidence -->
+
+## Executed ontology audit
+
+The implementation exposes all eight typed concept families and ten interaction labels. Ontology labels do not add native operators.
+The grammar is `relative-role-packets-v12` and has 61 learned relative packet descriptors.
+The boundary audit reports no production reference-engine imports, no Cycle 12 host truth-value arithmetic and no new native operators.
+Only Truth_Revision, Truth_ModusPonens, Truth_Negation and BestConfidenceCandidate are authorized here.
+
+40 distinct field/concept proof traces and 326
+logical training nodes were re-executed against the pinned native runtime with exact truth-value equality.
+Absolute coordinates remain I/O/observation bindings; native rule descriptors are relative.
+
+Evidence: [ontology/manifest.json](../../artifacts/cycle12/ontology/manifest.json), [architecture/boundary.json](../../artifacts/cycle12/architecture/boundary.json).

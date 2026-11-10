@@ -46,3 +46,24 @@ board projection. Graph parity is checked separately. Performance reports
 distinguish host work avoided, native operations executed, pure native-math
 cache reuse, proof volume and memory. No speed claim is accepted without exact
 semantic and proof parity for the measured workload.
+<!-- cycle12-measured-evidence -->
+
+## Measured propagation and parity
+
+All 17 successor demonstrations and 62 sequence states match full recomputation.
+The comparison includes every relation field, native node, proof ID, model version, evidence ID, dependence group, projection and graph.
+Across these panels the scheduler reuses 42,247 relation records and schedules 28,381.
+These counts include initial full builds and do not imply an equal wall-clock speedup.
+
+Changed occupancy/identity/kind/owner, unknown cells and en-passant metadata invalidate affected source, destination and ray observations.
+Promotion, capture, castling and en passant are covered. Budgets too small for the logical population use the full planner's explicit
+incomplete behavior. Source/model/runtime/options changes rebind or invalidate the cache. Reused results are copied with current state bindings.
+Concept candidates are reobserved and queried from changed states; packet proof caching is scoped separately.
+
+Graph nodes distinguish native-supported and budget-incomplete results even when they share a semantic observation. A development
+duplicate-query collision was retained and fixed by including result/proof status in graph identity. No truth-value computation changed.
+Native edges index actual conditional conclusions and values; host scheduling, explanation and comparison edges have no TV.
+Graph topology cannot create independent evidence or propagate a probability.
+
+Evidence: [incremental/parity.json](../../artifacts/cycle12/incremental/parity.json), [performance/summary.json](../../artifacts/cycle12/performance/summary.json),
+[preliminary-tests/duplicate-budget-graph.json](../../artifacts/cycle12/preliminary-tests/duplicate-budget-graph.json).

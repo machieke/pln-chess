@@ -84,3 +84,41 @@ the evaluation reports that overlap separately. Precision and recall apply to
 the limited targets in the table, not to complete strategic concepts or playing
 strength. Numerical results and preserved failures will be bound to the final
 evaluation artifacts.
+<!-- cycle12-measured-evidence -->
+
+## Measured limited-target results
+
+| Family | Limited target | N | TP | TN | FP | FN | Abstain | Precision | Recall incl. abstention | F1 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| DiscoveredAttack | NewAttackAfterSuppliedEdit | 48 | 24 | 24 | 0 | 0 | 0 | 100.0000% | 100.0000% | 100.0000% |
+| DiscoveredDefense | NewDefenseAfterSuppliedEdit | 48 | 24 | 24 | 0 | 0 | 0 | 100.0000% | 100.0000% | 100.0000% |
+| Fork | PotentialMultipleTargetAttack | 24 | 7 | 14 | 0 | 0 | 3 | 100.0000% | 87.5000% | 93.3333% |
+| MultipleAttackers | MultipleLocalAttackSources | 12 | 6 | 6 | 0 | 0 | 0 | 100.0000% | 100.0000% | 100.0000% |
+| OverloadedDefender | CompetingDefenseObligations | 12 | 6 | 6 | 0 | 0 | 0 | 100.0000% | 100.0000% | 100.0000% |
+| Pin | PotentialPinAlignment | 144 | 48 | 96 | 0 | 0 | 0 | 100.0000% | 100.0000% | 100.0000% |
+| ThreatRemoval | ThreatAbsentAfterSuppliedEdit | 12 | 6 | 6 | 0 | 0 | 0 | 100.0000% | 100.0000% | 100.0000% |
+| TrappedPiece | NoOrdinaryGeometricExit | 6 | 3 | 3 | 0 | 0 | 0 | 100.0000% | 100.0000% | 100.0000% |
+
+| Family | False-positive rate | Supported false-negative rate | Positive misses incl. abstention | Abstention rate | Native conditional proofs | Complete joint proofs |
+|---|---|---|---|---|---|---|
+| DiscoveredAttack | 0.0000% | 0.0000% | 0.0000% | 0.0000% | 48 | 0 |
+| DiscoveredDefense | 0.0000% | 0.0000% | 0.0000% | 0.0000% | 48 | 0 |
+| Fork | 0.0000% | 0.0000% | 12.5000% | 12.5000% | 21 | 0 |
+| MultipleAttackers | 0.0000% | 0.0000% | 0.0000% | 0.0000% | 12 | 0 |
+| OverloadedDefender | 0.0000% | 0.0000% | 0.0000% | 0.0000% | 12 | 0 |
+| Pin | 0.0000% | 0.0000% | 0.0000% | 0.0000% | 144 | 0 |
+| ThreatRemoval | 0.0000% | 0.0000% | 0.0000% | 0.0000% | 12 | 0 |
+| TrappedPiece | 0.0000% | 0.0000% | 0.0000% | 0.0000% | 6 | 0 |
+
+The test panel contains 306 examples in 125 held-out raw structural families. It produces 303 classified answers,
+124/125 supported positive targets and three fork abstentions, with zero false positives or supported false negatives.
+Precision is conditional on a positive classification; recall includes abstained positives. Zero supported FN is not perfect recall.
+The calibration partition is separate and does not tune thresholds. Its pawn fork family also abstains.
+
+Every concept remains experimental. Native operators derive a limited conditional from an explicitly host-observed `ObservedStructuralRolePacket`. Component field proofs are separate; their uncertain truth values are not conjoined into that packet. Complete joint concept proofs, native temporal implications, strategic overload theorems and strategic trapping theorems all remain zero. No move score, search, ranking, material-value table or move selection is implemented.
+
+364/370 calibration/test
+examples share a supplied pooled conditional key with training. Raw family overlap is zero. This measures transfer through a
+declared relative abstraction, not invention of the abstraction, arbitrary conjunction or external tactical generalization.
+
+Evidence: [concepts/summary.json](../../artifacts/cycle12/concepts/summary.json), [concepts/rows.json.xz](../../artifacts/cycle12/concepts/rows.json.xz), [datasets/audit.json](../../artifacts/cycle12/datasets/audit.json).
