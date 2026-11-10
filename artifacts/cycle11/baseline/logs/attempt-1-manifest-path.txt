@@ -1,0 +1,18 @@
+Cloning into '/data/pln-chess-cycle11-baseline'...
+done.
+HEAD is now at fe9e28e Complete Cycle 10 research, verified inspector and consolidated delivery
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/data/pln-chess-cycle6-delivery/scripts/cycle11_baseline.py", line 163, in <module>
+    run(args.out, args.snapshot)
+  File "/data/pln-chess-cycle6-delivery/scripts/cycle11_baseline.py", line 65, in run
+    assert sha(snapshot / relative) == entry['sha256'], relative
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/pln-chess-cycle6-delivery/scripts/cycle9_baseline.py", line 18, in sha
+    with Path(path).open('rb') as stream:
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/purplezky/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/pln-chess-cycle11-baseline/../../docs/cycle10/architecture-decision.md'
