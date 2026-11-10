@@ -55,6 +55,7 @@ def run(out):
         temporal_states=len(replay['states']),temporal_checks=temporal_checks,
         temporal_semantic_hash=expected,reference_artifact=str(target.relative_to(out)),
         reference_sha256=sha(target),
+        memory_scope_note='The legacy raw native_child_peak_rss_kib keys record getrusage(RUSAGE_CHILDREN).ru_maxrss across all terminated child commands. They may include inherited launch memory and do not isolate the native runtime working set. Raw values and timed worker files are preserved unchanged.',
         scope='Checks completeness of timed field, concept and legal results, then compares every timed temporal hash with an independent native replay. The reference and failed checks are retained. This extra replay is outside performance timings.'))
     assert passed,temporal_checks
     print('All 42 benchmark workers are complete; all 7 temporal hashes match the fresh complete native replay.',flush=True)

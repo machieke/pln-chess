@@ -470,8 +470,10 @@ seven-state native replay performed after timing finishes; that extra replay is 
 
 {table(['Workload','Full successor median s','Dependency successor median s','Full / incremental'],speed_rows)}
 {table(['Workload','Condition','Median s','Empirical p95 s','Native operators median','Python peak MiB max'],perf_rows)}
-Maximum fresh-worker high-water RSS is {performance['max_process_peak_rss_kib']/1024:.2f} MiB; maximum native-child high-water RSS is
+Maximum fresh-worker high-water RSS is {performance['max_process_peak_rss_kib']/1024:.2f} MiB; the terminated-child high-water RSS statistic is
 {performance['max_native_child_peak_rss_kib']/1024:.2f} MiB. These are separate process maxima, not total concurrent memory.
+The retained raw key `max_native_child_peak_rss_kib` comes from `getrusage(RUSAGE_CHILDREN).ru_maxrss`: it covers all
+terminated child commands and may include inherited memory around process launch. It is not an isolated native runtime working-set measurement.
 Worker RSS includes retained comparison outputs. Per-condition Python peaks use tracemalloc, whose allocation tracking adds overhead.
 Hardware: {performance['hardware']['cpu_model']}; {performance['hardware']['logical_cpus']} logical CPUs,
 {performance['hardware']['affinity_cpus']} available in process affinity, cgroup CPU quota/period `{performance['hardware']['cgroup_cpu_max']}`;
