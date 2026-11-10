@@ -42,6 +42,7 @@ def run(out,checkout,baseline,work,browser=True):
     command('accepted-default-tests',['-m','scripts.cycle12_final_checks','--out',str(out)])
     command('new-cli-contracts',['-m','scripts.cycle12_cli_verify','--out',str(out)])
     command('performance',['-m','evaluation.cycle12_performance','--out',str(out)])
+    command('performance-completeness',['-m','scripts.cycle12_performance_verify','--out',str(out)])
     if browser:command('browser',['-m','scripts.cycle12_ui_verify','--out',str(out),'--work',str(work)])
     else:write_json(out/'browser-not-executed.json',dict(executed=False,reason='Explicit --skip-browser option; complete delivery is not claimed.'))
     comparisons=[]

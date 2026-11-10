@@ -1,4 +1,4 @@
-"""Render the consolidated Cycle 12 reports from completed, executed evidence."""
+"""Complete the final benchmark audit, then render reports from executed evidence."""
 import argparse
 from collections import defaultdict
 from pathlib import Path
@@ -31,6 +31,10 @@ def percent(value):
 def run(out, docs):
     out, docs = Path(out).resolve(), Path(docs).resolve()
     docs.mkdir(parents=True, exist_ok=True)
+    if not (out/'performance/semantic-verification.json').exists():
+        print('Execute the final benchmark completeness audit outside measured timings before rendering reports.',flush=True)
+        from scripts.cycle12_performance_verify import run as verify_performance
+        verify_performance(out)
     def load(name):
         return read_gzip(out/name) if name.endswith('.xz') else read_json(out/name)
     def evidence(name, label=None):
@@ -54,12 +58,14 @@ def run(out, docs):
     accepted=load('acceptance.json'); legal=load('legal/promotion-decision.json')
     boundary=load('architecture/boundary.json'); tests=load('final-tests/verified.json')
     performance=load('performance/summary.json'); ui=load('ui/verification.json')
+    performance_semantics=load('performance/semantic-verification.json')
     cli=load('cli-smoke/verified.json')
-    for receipt in (baseline,current,clean,accepted,boundary,tests,performance,ui,cli):
+    for receipt in (baseline,current,clean,accepted,boundary,tests,performance,performance_semantics,ui,cli):
         assert receipt['passed']
     assert current['identity']['production_code_hash']==accepted['production_code_hash']==boundary['production_code_hash']==production_code_hash()
     assert ui['source_hash']==tests['production_code_hash']==production_code_hash()
     assert cli['production_code_hash']==performance['production_code_hash']==production_code_hash()
+    assert performance_semantics['production_code_hash']==production_code_hash()
     assert not ui['development_only'] and all(v==0 for v in ui['errors'].values())
     concepts=load('concepts/summary.json'); controls=load('concepts/controls-summary.json')
     interactions=load('interactions/summary.json'); temporal=load('temporal/summary.json')
@@ -456,8 +462,11 @@ Evidence: {evidence('incremental/parity.json')}, {evidence('performance/summary.
 Six workloads run in {performance['repetitions']} fresh worker processes each, sequentially after the native study workers stop.
 Every field comparison first requires exact native proof, evidence and dependency graph parity.
 The workloads cover rook obstruction, promotion, en passant, en-passant exposure, the 32-piece starting position and a 21-piece published middlegame.
-The opening also measures a seven-state observed temporal replay. Concept work measures eight explicit conditional queries.
+The opening also measures a seven-state observed temporal replay with the frozen field model and no concept checkpoint.
+Concept work separately measures eight explicit conditional queries from controlled fixtures.
 Legal work separately times the old accepted and frozen candidate models over full FEN candidate sets.
+An additional completeness audit checks all 42 workers. All seven timed temporal hashes match a fresh, complete
+seven-state native replay performed after timing finishes; that extra replay is excluded from benchmark durations.
 
 {table(['Workload','Full successor median s','Dependency successor median s','Full / incremental'],speed_rows)}
 {table(['Workload','Condition','Median s','Empirical p95 s','Native operators median','Python peak MiB max'],perf_rows)}
@@ -477,7 +486,8 @@ Full worker records retain execution counters, reuse/schedule counts, proof hash
 
 {performance['limitations']}
 
-Evidence: {evidence('performance/summary.json')}, {evidence('performance/workers')}, {evidence('performance/commands')}.
+Evidence: {evidence('performance/summary.json')}, {evidence('performance/semantic-verification.json')},
+{evidence('performance/workers')}, {evidence('performance/commands')}.
 ''')
 
     packages=[
@@ -645,7 +655,8 @@ All required reports are linked in [package-matrix.md](package-matrix.md). The m
         complete_joint_concept_theorems=0,cycle13_recommendation='A: Continue relational concept learning',
         pushed=False,deployed=False,upstream_modified=False,new_native_operators=False,
         evidence={p:sha(out/p) for p in ['acceptance.json','current/verified.json','clean-research/verified.json',
-            'final-tests/verified.json','ui/verification.json','performance/summary.json','architecture/boundary.json','package-matrix.json','cli-smoke/verified.json']}))
+            'final-tests/verified.json','ui/verification.json','performance/summary.json','performance/semantic-verification.json',
+            'architecture/boundary.json','package-matrix.json','cli-smoke/verified.json']}))
     print('Cycle 12: 17 reports and complete delivery receipt generated',flush=True)
 
 

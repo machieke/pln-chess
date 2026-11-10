@@ -36,7 +36,7 @@ def run(out, docs, require_visual_review=False):
         assert sha(out/name) == expected, name
     for name in ('acceptance.json', 'baseline/reproduction-receipt.json', 'current/verified.json',
                  'clean-research/verified.json', 'final-tests/verified.json', 'architecture/boundary.json',
-                 'cli-smoke/verified.json', 'performance/summary.json', 'ui/verification.json'):
+                 'cli-smoke/verified.json', 'performance/summary.json', 'performance/semantic-verification.json', 'ui/verification.json'):
         assert read_json(out/name)['passed'], name
     legal = read_json(out/'legal/promotion-decision.json')
     default = read_json(out/'model/C12-default.json')
@@ -52,6 +52,11 @@ def run(out, docs, require_visual_review=False):
     workers = list((out/'performance/workers').glob('*.json'))
     assert len(workers) == 42 and performance['repetitions'] == 7
     assert all(read_json(p)['exact_proof_evidence_graph_parity'] for p in workers)
+    semantics = read_json(out/'performance/semantic-verification.json')
+    assert semantics['production_code_hash'] == code_hash and all(semantics['temporal_checks'].values())
+    assert len(semantics['workers']) == 42
+    assert all(sha(out/r['worker']) == r['sha256'] for r in semantics['workers'])
+    assert sha(out/semantics['reference_artifact']) == semantics['reference_sha256']
     ui = read_json(out/'ui/verification.json')
     assert not ui['development_only'] and ui['source_hash'] == code_hash
     assert all(n == 0 for n in ui['errors'].values())
