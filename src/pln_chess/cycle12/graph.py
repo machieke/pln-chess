@@ -16,7 +16,7 @@ def _relation_node(snapshot,record):
     # A proposition can have distinct source observations or checkpoint proofs.
     # They must coexist instead of overwriting one another's provenance.
     return 'field:'+digest([snapshot,record['relation_id'],record['observation_id'],record['model_version'],
-        record['runtime_version'],record['proof_id'],record['raw_stv']])
+        record['runtime_version'],record['proof_id'],record['raw_stv'],record['classification'],record['gaps']])
 
 
 def compare_fields(before,after,*,include_persistence=True):
@@ -146,12 +146,14 @@ def build_graph(field,concepts=None,*,before=None,move=None):
         packet=node(observation['id'],kind='host-structural-role-packet',descriptor=observation['descriptor'],roles=observation['roles'],
             complete=observation['complete'],source=observation['source'],truth_value=None,
             scope='Host grouping of observations; no native conjunction of field TVs.')
-        conditional=node('concept-conditional:'+digest([observation['id'],concept['model_version']]),kind='limited-concept-conditional',
+        conditional=node('concept-conditional:'+digest([observation['id'],concept['model_version'],concept['proof_id'],
+            concept['raw_stv'],concept['classification']]),kind='limited-concept-conditional',
             predicate=concept['target'],truth_value=concept['raw_stv'],truth_value_origin=concept['truth_value_origin'],
             classification=concept['classification'],rule_id=concept['rule_id'],model_version=concept['model_version'],
             runtime_version=concept['runtime_version'],proof_id=concept['proof_id'],evidence_ids=concept['evidence_ids'],
             dependence_groups=concept['dependence_groups'])
-        candidate=node('concept-candidate:'+digest([concept['case_id'],observation['id'],concept['model_version']]),
+        candidate=node('concept-candidate:'+digest([concept['case_id'],observation['id'],concept['model_version'],
+            concept['proof_id'],concept['classification']]),
             kind='partial-concept-candidate',concept=concept['concept'],case_id=concept['case_id'],
             truth_value=None,joint_proof_complete=False,status=concept['concept_status'],missing_capabilities=concept['missing_capabilities'])
         edge(conditional,candidate,'InterpretsConditional','host-projection',evidence_ids=concept['evidence_ids'],

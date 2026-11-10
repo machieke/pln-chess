@@ -79,6 +79,20 @@ def test_zero_sensor_confidence_is_not_a_certain_packet(concept_cases,concept_mo
     assert row['classification']=='unknown' and not row['proof_trace']
 
 
+def test_duplicate_queries_keep_complete_and_budget_limited_graph_records(concept_cases,concept_models,runtime):
+    from pln_chess.cycle12.graph import build_graph, validate_graph
+    from pln_chess.cycle11.fields.inference import build_field
+    case=concept_cases['Pin'];models=concept_models
+    full=infer_concepts([case,case],*models,runtime=runtime)
+    limited=infer_concepts([case,case],*models,runtime=runtime,
+        options=FieldOptions(max_native_invocations=full['execution']['logical_native_nodes']-4))
+    assert [c['classification'] for c in limited['concepts']]==['supported','incomplete']
+    graph=build_graph(build_field(case['fen'],models[1],runtime=runtime),limited['concepts'])
+    assert validate_graph(graph)
+    conditionals=[n for n in graph['nodes'] if n['kind']=='limited-concept-conditional']
+    assert len(conditionals)==2 and {c['classification'] for c in conditionals}=={'supported','incomplete'}
+
+
 def test_cache_rebinds_model_source_and_returned_mutation(concept_cases,concept_models,runtime):
     case=concept_cases['Pin'];session=ConceptSession(runtime)
     original=query(case,concept_models,runtime,session)

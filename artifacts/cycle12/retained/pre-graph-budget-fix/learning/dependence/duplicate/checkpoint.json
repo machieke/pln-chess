@@ -1,0 +1,1612 @@
+{
+  "grammar": "relative-role-packets-v12",
+  "hypotheses": {
+    "concept-rule:005c3bf9b0f211de61ebf48f8fe89ac9fa41713e298074adbefad042e2b15af4": {
+      "concept": "Pin",
+      "contradicting_evidence": [
+        "641edc2fcab02d2d9557fa9829ee5eb0399f3b7e0a49c6fa0ab78b9182cf1fec"
+      ],
+      "dependence_groups": [
+        "motif:21817c83a5db72f62cefcac3bc11bf705d4638b098852834ba350ad4295f4f17"
+      ],
+      "descriptor": {
+        "components": [
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "empty",
+                "kind": "empty"
+              },
+              "intermediate_occupancy": "empty",
+              "motion": "orthogonal",
+              "piece": "Rook"
+            },
+            "family": "attack",
+            "source_role": "attacker",
+            "stage": "counterfactual",
+            "target_role": "target"
+          },
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "empty",
+                "kind": "empty"
+              },
+              "intermediate_occupancy": "occupied",
+              "motion": "orthogonal",
+              "piece": "Rook"
+            },
+            "family": "attack",
+            "source_role": "attacker",
+            "stage": "before",
+            "target_role": "target"
+          },
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "opponent",
+                "kind": "other"
+              },
+              "intermediate_occupancy": "empty",
+              "motion": "orthogonal",
+              "piece": "Rook"
+            },
+            "family": "attack",
+            "source_role": "attacker",
+            "stage": "before",
+            "target_role": "intervening"
+          }
+        ],
+        "roles": {
+          "attacker": {
+            "allegiance": "friendly",
+            "kind": "Rook"
+          },
+          "intervening": {
+            "allegiance": "opponent",
+            "kind": "Piece"
+          },
+          "target": {
+            "allegiance": "empty",
+            "kind": "Absent"
+          }
+        },
+        "topology": {
+          "direction_relation": "same",
+          "distance_order": "inner"
+        }
+      },
+      "evidence_ids": [
+        "641edc2fcab02d2d9557fa9829ee5eb0399f3b7e0a49c6fa0ab78b9182cf1fec"
+      ],
+      "id": "concept-rule:005c3bf9b0f211de61ebf48f8fe89ac9fa41713e298074adbefad042e2b15af4",
+      "negative": {
+        "confidence": 0.5128205128205129,
+        "strength": 0.9750000000000001
+      },
+      "origin": "learned-native-conditional-on-host-supplied-structural-packet",
+      "positive": {
+        "confidence": 0.5128205128205129,
+        "strength": 0.025000000000000005
+      },
+      "supporting_evidence": [],
+      "target": "PotentialPinAlignment"
+    },
+    "concept-rule:19a898cad9cf1bc181d1fc83bc7f59055e09ec7acff67036b7bb5a3f30a0ba90": {
+      "concept": "MultipleAttackers",
+      "contradicting_evidence": [],
+      "dependence_groups": [
+        "motif:2d984123d6e404821bdd5b2314afd17915ed0b9df545427c6ac33c176b2bbf4f",
+        "motif:e55ab08a3a8d0fcbaf9d35ed87ba90261bc98f6763b10fb8a4a7413e15b8e78b"
+      ],
+      "descriptor": {
+        "components": [
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "opponent",
+                "kind": "other"
+              },
+              "intermediate_occupancy": "empty",
+              "motion": "orthogonal",
+              "piece": "Queen"
+            },
+            "family": "attack",
+            "source_role": "attacker_b",
+            "stage": "before",
+            "target_role": "target"
+          },
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "opponent",
+                "kind": "other"
+              },
+              "intermediate_occupancy": "empty",
+              "motion": "orthogonal",
+              "piece": "Rook"
+            },
+            "family": "attack",
+            "source_role": "attacker_a",
+            "stage": "before",
+            "target_role": "target"
+          }
+        ],
+        "roles": {
+          "attacker_a": {
+            "allegiance": "friendly",
+            "kind": "Rook"
+          },
+          "attacker_b": {
+            "allegiance": "friendly",
+            "kind": "Piece"
+          },
+          "target": {
+            "allegiance": "opponent",
+            "kind": "Piece"
+          }
+        },
+        "topology": {}
+      },
+      "evidence_ids": [
+        "ee70090134275bab1eb49151195d66ff621d49106f09e2ba9ddbeff7415ab947",
+        "da1dacfd6584619007e2d310b706d2b12742a96c1a47c9bec65437ad203ce76d"
+      ],
+      "id": "concept-rule:19a898cad9cf1bc181d1fc83bc7f59055e09ec7acff67036b7bb5a3f30a0ba90",
+      "negative": {
+        "confidence": 0.6724137931034483,
+        "strength": 0.012820512820512825
+      },
+      "origin": "learned-native-conditional-on-host-supplied-structural-packet",
+      "positive": {
+        "confidence": 0.6724137931034483,
+        "strength": 0.9871794871794872
+      },
+      "supporting_evidence": [
+        "ee70090134275bab1eb49151195d66ff621d49106f09e2ba9ddbeff7415ab947",
+        "da1dacfd6584619007e2d310b706d2b12742a96c1a47c9bec65437ad203ce76d"
+      ],
+      "target": "MultipleLocalAttackSources"
+    },
+    "concept-rule:1a61abfca089b4e40e0a31f05fb6610b8f0ca1dcef7153f0c1f92ffe401c8e54": {
+      "concept": "TrappedPiece",
+      "contradicting_evidence": [],
+      "dependence_groups": [
+        "motif:02b2207823777721b4807812a8a37e1df0a1a56aeef79a7d4611394e465bda64",
+        "motif:fc9d3af71fecb9ddd02f075fc84a166f4b2d0d2b03308168f007e8a7f7d89aaa"
+      ],
+      "descriptor": {
+        "components": [
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "friendly",
+                "kind": "other"
+              },
+              "intermediate_occupancy": "empty",
+              "motion": [
+                1,
+                2
+              ],
+              "piece": "Knight"
+            },
+            "family": "mobility",
+            "source_role": "subject",
+            "stage": "before",
+            "target_role": "ordinary-destination"
+          }
+        ],
+        "roles": {
+          "subject": {
+            "allegiance": "friendly",
+            "kind": "Knight"
+          }
+        },
+        "topology": {}
+      },
+      "evidence_ids": [
+        "291f5fbd3df2c6fe2d5f13d0bf3bd754e28611cdba4b18f95bbcc463bcee8a1b",
+        "4900a8914aaebbd47fd302bca2348d721749be71acc419a42a69ac39cdaa803e"
+      ],
+      "id": "concept-rule:1a61abfca089b4e40e0a31f05fb6610b8f0ca1dcef7153f0c1f92ffe401c8e54",
+      "negative": {
+        "confidence": 0.6724137931034483,
+        "strength": 0.012820512820512825
+      },
+      "origin": "learned-native-conditional-on-host-supplied-structural-packet",
+      "positive": {
+        "confidence": 0.6724137931034483,
+        "strength": 0.9871794871794872
+      },
+      "supporting_evidence": [
+        "291f5fbd3df2c6fe2d5f13d0bf3bd754e28611cdba4b18f95bbcc463bcee8a1b",
+        "4900a8914aaebbd47fd302bca2348d721749be71acc419a42a69ac39cdaa803e"
+      ],
+      "target": "NoOrdinaryGeometricExit"
+    },
+    "concept-rule:218df12d26a28305adc909240d03b50dc465ba2508510005a7e3457cd67f2350": {
+      "concept": "Fork",
+      "contradicting_evidence": [
+        "aeaa522d6cbfc5875de606c11bd2e45b821344d0f0830580ad526806e38f85a2"
+      ],
+      "dependence_groups": [
+        "motif:66abd5f4f86663f343dd1b019dc994df1168c545e116f4aa841a06f8ea2a16ff"
+      ],
+      "descriptor": {
+        "components": [
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "empty",
+                "kind": "empty"
+              },
+              "intermediate_occupancy": "empty",
+              "motion": [
+                1,
+                2
+              ],
+              "piece": "Knight"
+            },
+            "family": "attack",
+            "source_role": "attacker",
+            "stage": "before",
+            "target_role": "target_b"
+          },
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "opponent",
+                "kind": "other"
+              },
+              "intermediate_occupancy": "empty",
+              "motion": [
+                1,
+                2
+              ],
+              "piece": "Knight"
+            },
+            "family": "attack",
+            "source_role": "attacker",
+            "stage": "before",
+            "target_role": "target_a"
+          }
+        ],
+        "roles": {
+          "attacker": {
+            "allegiance": "friendly",
+            "kind": "Knight"
+          },
+          "target_a": {
+            "allegiance": "opponent",
+            "kind": "Piece"
+          },
+          "target_b": {
+            "allegiance": "empty",
+            "kind": "Absent"
+          }
+        },
+        "topology": {}
+      },
+      "evidence_ids": [
+        "aeaa522d6cbfc5875de606c11bd2e45b821344d0f0830580ad526806e38f85a2"
+      ],
+      "id": "concept-rule:218df12d26a28305adc909240d03b50dc465ba2508510005a7e3457cd67f2350",
+      "negative": {
+        "confidence": 0.5128205128205129,
+        "strength": 0.9750000000000001
+      },
+      "origin": "learned-native-conditional-on-host-supplied-structural-packet",
+      "positive": {
+        "confidence": 0.5128205128205129,
+        "strength": 0.025000000000000005
+      },
+      "supporting_evidence": [],
+      "target": "PotentialMultipleTargetAttack"
+    },
+    "concept-rule:3b44b361e22867d6861606ac816ab6d1385f72c746c87718b13306bc2e64c540": {
+      "concept": "DiscoveredDefense",
+      "contradicting_evidence": [
+        "e9cdac27679aef1c8534c20b79378860a5d89ccb94be482f4eb9da71ed309da7"
+      ],
+      "dependence_groups": [
+        "motif:2096a74a1b4cfbd943352608f5c3096dc2da9d773d1f4efb164b308776820c34"
+      ],
+      "descriptor": {
+        "components": [
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "friendly",
+                "kind": "other"
+              },
+              "intermediate_occupancy": "occupied",
+              "motion": "orthogonal",
+              "piece": "Rook"
+            },
+            "family": "defense",
+            "source_role": "attacker",
+            "stage": "after",
+            "target_role": "target"
+          },
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "friendly",
+                "kind": "other"
+              },
+              "intermediate_occupancy": "occupied",
+              "motion": "orthogonal",
+              "piece": "Rook"
+            },
+            "family": "defense",
+            "source_role": "attacker",
+            "stage": "before",
+            "target_role": "target"
+          }
+        ],
+        "roles": {
+          "attacker": {
+            "allegiance": "friendly",
+            "kind": "Rook"
+          },
+          "mover": {
+            "allegiance": "friendly",
+            "kind": "Piece"
+          },
+          "target": {
+            "allegiance": "friendly",
+            "kind": "Piece"
+          }
+        },
+        "topology": {}
+      },
+      "evidence_ids": [
+        "e9cdac27679aef1c8534c20b79378860a5d89ccb94be482f4eb9da71ed309da7"
+      ],
+      "id": "concept-rule:3b44b361e22867d6861606ac816ab6d1385f72c746c87718b13306bc2e64c540",
+      "negative": {
+        "confidence": 0.5128205128205129,
+        "strength": 0.9750000000000001
+      },
+      "origin": "learned-native-conditional-on-host-supplied-structural-packet",
+      "positive": {
+        "confidence": 0.5128205128205129,
+        "strength": 0.025000000000000005
+      },
+      "supporting_evidence": [],
+      "target": "NewDefenseAfterSuppliedEdit"
+    },
+    "concept-rule:42e52a75a235b2f255f148a3c8594de1ef01099c5d68c86d53e28000e68d7c34": {
+      "concept": "OverloadedDefender",
+      "contradicting_evidence": [],
+      "dependence_groups": [
+        "motif:06d08945428b6fc9d4a9661858c321ef40b15a49c812c70fcda6ceb30e4df2e5",
+        "motif:cd3447748f143ffb460853cae65e064df53d4ada2c76ec20e9a5353967b41ad1"
+      ],
+      "descriptor": {
+        "components": [
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "friendly",
+                "kind": "other"
+              },
+              "intermediate_occupancy": "empty",
+              "motion": "orthogonal",
+              "piece": "Queen"
+            },
+            "family": "defense",
+            "source_role": "defender",
+            "stage": "before",
+            "target_role": "ward_a"
+          },
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "friendly",
+                "kind": "other"
+              },
+              "intermediate_occupancy": "empty",
+              "motion": "orthogonal",
+              "piece": "Queen"
+            },
+            "family": "defense",
+            "source_role": "defender",
+            "stage": "before",
+            "target_role": "ward_b"
+          },
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "opponent",
+                "kind": "other"
+              },
+              "intermediate_occupancy": "empty",
+              "motion": "orthogonal",
+              "piece": "Queen"
+            },
+            "family": "attack",
+            "source_role": "enemy_b",
+            "stage": "before",
+            "target_role": "ward_b"
+          },
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "opponent",
+                "kind": "other"
+              },
+              "intermediate_occupancy": "empty",
+              "motion": "orthogonal",
+              "piece": "Rook"
+            },
+            "family": "attack",
+            "source_role": "enemy_a",
+            "stage": "before",
+            "target_role": "ward_a"
+          }
+        ],
+        "roles": {
+          "defender": {
+            "allegiance": "friendly",
+            "kind": "Queen"
+          },
+          "enemy_a": {
+            "allegiance": "opponent",
+            "kind": "Piece"
+          },
+          "enemy_b": {
+            "allegiance": "opponent",
+            "kind": "Piece"
+          },
+          "ward_a": {
+            "allegiance": "friendly",
+            "kind": "Piece"
+          },
+          "ward_b": {
+            "allegiance": "friendly",
+            "kind": "Piece"
+          }
+        },
+        "topology": {}
+      },
+      "evidence_ids": [
+        "335dec95af2dc6365b9c7c27f8081d419b77e1a984a3b50cd8fad8e4a8fa33b3",
+        "ce899c01db868bf5d6487f3ae088fd1002e5444b68669c63b643fdce94ae8a52"
+      ],
+      "id": "concept-rule:42e52a75a235b2f255f148a3c8594de1ef01099c5d68c86d53e28000e68d7c34",
+      "negative": {
+        "confidence": 0.6724137931034483,
+        "strength": 0.012820512820512825
+      },
+      "origin": "learned-native-conditional-on-host-supplied-structural-packet",
+      "positive": {
+        "confidence": 0.6724137931034483,
+        "strength": 0.9871794871794872
+      },
+      "supporting_evidence": [
+        "335dec95af2dc6365b9c7c27f8081d419b77e1a984a3b50cd8fad8e4a8fa33b3",
+        "ce899c01db868bf5d6487f3ae088fd1002e5444b68669c63b643fdce94ae8a52"
+      ],
+      "target": "CompetingDefenseObligations"
+    },
+    "concept-rule:4b573f225e11d82fc0f2556d936323e4dbbc36bd8c4e4f746d003b025e875174": {
+      "concept": "ThreatRemoval",
+      "contradicting_evidence": [],
+      "dependence_groups": [
+        "motif:9d2da9b2ae95f65fa1dc0af7f96d6b7998d6902a8a42080a22f526a113f0f3ab",
+        "motif:e0ad07cb73b3a60b632d71e08b1b6a717de799123858da39612829575842d13c"
+      ],
+      "descriptor": {
+        "components": [
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "opponent",
+                "kind": "other"
+              },
+              "intermediate_occupancy": "empty",
+              "motion": "orthogonal",
+              "piece": "Rook"
+            },
+            "family": "attack",
+            "source_role": "attacker",
+            "stage": "before",
+            "target_role": "target"
+          },
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "opponent",
+                "kind": "other"
+              },
+              "intermediate_occupancy": "occupied",
+              "motion": "orthogonal",
+              "piece": "Rook"
+            },
+            "family": "attack",
+            "source_role": "attacker",
+            "stage": "after",
+            "target_role": "target"
+          }
+        ],
+        "roles": {
+          "attacker": {
+            "allegiance": "friendly",
+            "kind": "Rook"
+          },
+          "mover": {
+            "allegiance": "opponent",
+            "kind": "Piece"
+          },
+          "target": {
+            "allegiance": "opponent",
+            "kind": "Piece"
+          }
+        },
+        "topology": {}
+      },
+      "evidence_ids": [
+        "f021385c641ac68fb207c59d5eee4229f49ca2a9323702060173adb987e88888",
+        "ac5f0c00665093aa167ea865edef380771ce830712cdff4b52b56a9c2642a28b"
+      ],
+      "id": "concept-rule:4b573f225e11d82fc0f2556d936323e4dbbc36bd8c4e4f746d003b025e875174",
+      "negative": {
+        "confidence": 0.6724137931034483,
+        "strength": 0.012820512820512825
+      },
+      "origin": "learned-native-conditional-on-host-supplied-structural-packet",
+      "positive": {
+        "confidence": 0.6724137931034483,
+        "strength": 0.9871794871794872
+      },
+      "supporting_evidence": [
+        "f021385c641ac68fb207c59d5eee4229f49ca2a9323702060173adb987e88888",
+        "ac5f0c00665093aa167ea865edef380771ce830712cdff4b52b56a9c2642a28b"
+      ],
+      "target": "ThreatAbsentAfterSuppliedEdit"
+    },
+    "concept-rule:88ba16833a28c8928c8dba476dddd9fb29f83b831ab46752cf8ef228bf2fe941": {
+      "concept": "DiscoveredAttack",
+      "contradicting_evidence": [
+        "de3b2034fd064eb3d2241f0e1d9432ec1b501d6e72ed8b4eade060f1c70e6a8e"
+      ],
+      "dependence_groups": [
+        "motif:8e532d2e286ee9254a19be8a66b0cd2a004c3ccb79e58c67a9b7c9a3ba68d976"
+      ],
+      "descriptor": {
+        "components": [
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "opponent",
+                "kind": "other"
+              },
+              "intermediate_occupancy": "occupied",
+              "motion": "orthogonal",
+              "piece": "Rook"
+            },
+            "family": "attack",
+            "source_role": "attacker",
+            "stage": "after",
+            "target_role": "target"
+          },
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "opponent",
+                "kind": "other"
+              },
+              "intermediate_occupancy": "occupied",
+              "motion": "orthogonal",
+              "piece": "Rook"
+            },
+            "family": "attack",
+            "source_role": "attacker",
+            "stage": "before",
+            "target_role": "target"
+          }
+        ],
+        "roles": {
+          "attacker": {
+            "allegiance": "friendly",
+            "kind": "Rook"
+          },
+          "mover": {
+            "allegiance": "friendly",
+            "kind": "Piece"
+          },
+          "target": {
+            "allegiance": "opponent",
+            "kind": "Piece"
+          }
+        },
+        "topology": {}
+      },
+      "evidence_ids": [
+        "de3b2034fd064eb3d2241f0e1d9432ec1b501d6e72ed8b4eade060f1c70e6a8e"
+      ],
+      "id": "concept-rule:88ba16833a28c8928c8dba476dddd9fb29f83b831ab46752cf8ef228bf2fe941",
+      "negative": {
+        "confidence": 0.5128205128205129,
+        "strength": 0.9750000000000001
+      },
+      "origin": "learned-native-conditional-on-host-supplied-structural-packet",
+      "positive": {
+        "confidence": 0.5128205128205129,
+        "strength": 0.025000000000000005
+      },
+      "supporting_evidence": [],
+      "target": "NewAttackAfterSuppliedEdit"
+    },
+    "concept-rule:90b9d358da385322d2f56b94efc2c9008628f7651fef588eba86c36fb241ca85": {
+      "concept": "ThreatRemoval",
+      "contradicting_evidence": [
+        "4e6e84de24d2614d2bd2e8340458be8129a15e9dd7ed9685ec6a1df7f84190ed",
+        "59230b384a7312e5c00e58bd0a97da29f4a8fef2334a1f9099d7f0f1e407067e"
+      ],
+      "dependence_groups": [
+        "motif:9d2da9b2ae95f65fa1dc0af7f96d6b7998d6902a8a42080a22f526a113f0f3ab",
+        "motif:e0ad07cb73b3a60b632d71e08b1b6a717de799123858da39612829575842d13c"
+      ],
+      "descriptor": {
+        "components": [
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "opponent",
+                "kind": "other"
+              },
+              "intermediate_occupancy": "empty",
+              "motion": "orthogonal",
+              "piece": "Rook"
+            },
+            "family": "attack",
+            "source_role": "attacker",
+            "stage": "after",
+            "target_role": "target"
+          },
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "opponent",
+                "kind": "other"
+              },
+              "intermediate_occupancy": "empty",
+              "motion": "orthogonal",
+              "piece": "Rook"
+            },
+            "family": "attack",
+            "source_role": "attacker",
+            "stage": "before",
+            "target_role": "target"
+          }
+        ],
+        "roles": {
+          "attacker": {
+            "allegiance": "friendly",
+            "kind": "Rook"
+          },
+          "mover": {
+            "allegiance": "opponent",
+            "kind": "Piece"
+          },
+          "target": {
+            "allegiance": "opponent",
+            "kind": "Piece"
+          }
+        },
+        "topology": {}
+      },
+      "evidence_ids": [
+        "4e6e84de24d2614d2bd2e8340458be8129a15e9dd7ed9685ec6a1df7f84190ed",
+        "59230b384a7312e5c00e58bd0a97da29f4a8fef2334a1f9099d7f0f1e407067e"
+      ],
+      "id": "concept-rule:90b9d358da385322d2f56b94efc2c9008628f7651fef588eba86c36fb241ca85",
+      "negative": {
+        "confidence": 0.6724137931034483,
+        "strength": 0.9871794871794872
+      },
+      "origin": "learned-native-conditional-on-host-supplied-structural-packet",
+      "positive": {
+        "confidence": 0.6724137931034483,
+        "strength": 0.012820512820512825
+      },
+      "supporting_evidence": [],
+      "target": "ThreatAbsentAfterSuppliedEdit"
+    },
+    "concept-rule:98fb4ff8596db281454b245e82d0e1500ac145ce7709e199247554aeece8d27b": {
+      "concept": "Pin",
+      "contradicting_evidence": [],
+      "dependence_groups": [
+        "motif:21817c83a5db72f62cefcac3bc11bf705d4638b098852834ba350ad4295f4f17"
+      ],
+      "descriptor": {
+        "components": [
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "opponent",
+                "kind": "King"
+              },
+              "intermediate_occupancy": "empty",
+              "motion": "orthogonal",
+              "piece": "Rook"
+            },
+            "family": "attack",
+            "source_role": "attacker",
+            "stage": "counterfactual",
+            "target_role": "target"
+          },
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "opponent",
+                "kind": "King"
+              },
+              "intermediate_occupancy": "empty",
+              "motion": "orthogonal",
+              "piece": "Rook"
+            },
+            "family": "king-exposure",
+            "source_role": "attacker",
+            "stage": "counterfactual",
+            "target_role": "target"
+          },
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "opponent",
+                "kind": "King"
+              },
+              "intermediate_occupancy": "occupied",
+              "motion": "orthogonal",
+              "piece": "Rook"
+            },
+            "family": "attack",
+            "source_role": "attacker",
+            "stage": "before",
+            "target_role": "target"
+          },
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "opponent",
+                "kind": "other"
+              },
+              "intermediate_occupancy": "empty",
+              "motion": "orthogonal",
+              "piece": "Rook"
+            },
+            "family": "attack",
+            "source_role": "attacker",
+            "stage": "before",
+            "target_role": "intervening"
+          }
+        ],
+        "roles": {
+          "attacker": {
+            "allegiance": "friendly",
+            "kind": "Rook"
+          },
+          "intervening": {
+            "allegiance": "opponent",
+            "kind": "Piece"
+          },
+          "target": {
+            "allegiance": "opponent",
+            "kind": "King"
+          }
+        },
+        "topology": {
+          "direction_relation": "same",
+          "distance_order": "inner"
+        }
+      },
+      "evidence_ids": [
+        "980fd22778497cff044147317fcc38594a2c252364e88c22c5bc2caa9c11f1b9"
+      ],
+      "id": "concept-rule:98fb4ff8596db281454b245e82d0e1500ac145ce7709e199247554aeece8d27b",
+      "negative": {
+        "confidence": 0.5128205128205129,
+        "strength": 0.025000000000000005
+      },
+      "origin": "learned-native-conditional-on-host-supplied-structural-packet",
+      "positive": {
+        "confidence": 0.5128205128205129,
+        "strength": 0.9750000000000001
+      },
+      "supporting_evidence": [
+        "980fd22778497cff044147317fcc38594a2c252364e88c22c5bc2caa9c11f1b9"
+      ],
+      "target": "PotentialPinAlignment"
+    },
+    "concept-rule:ad24c8b9108408e30f5cb301dda76983d636b2868f24228d1b3595df85f8ade2": {
+      "concept": "DiscoveredAttack",
+      "contradicting_evidence": [],
+      "dependence_groups": [
+        "motif:6004a47e9977ce0f1990e21917c2ad5383ddefb82bb71571e62c649264003df2",
+        "motif:8e532d2e286ee9254a19be8a66b0cd2a004c3ccb79e58c67a9b7c9a3ba68d976",
+        "motif:e24faa9dfd9ccbc0db21557384b8fa6ae0213eae9db7c69d31cb4b16006a05a3"
+      ],
+      "descriptor": {
+        "components": [
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "opponent",
+                "kind": "other"
+              },
+              "intermediate_occupancy": "empty",
+              "motion": "orthogonal",
+              "piece": "Rook"
+            },
+            "family": "attack",
+            "source_role": "attacker",
+            "stage": "after",
+            "target_role": "target"
+          },
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "opponent",
+                "kind": "other"
+              },
+              "intermediate_occupancy": "occupied",
+              "motion": "orthogonal",
+              "piece": "Rook"
+            },
+            "family": "attack",
+            "source_role": "attacker",
+            "stage": "before",
+            "target_role": "target"
+          }
+        ],
+        "roles": {
+          "attacker": {
+            "allegiance": "friendly",
+            "kind": "Rook"
+          },
+          "mover": {
+            "allegiance": "friendly",
+            "kind": "Piece"
+          },
+          "target": {
+            "allegiance": "opponent",
+            "kind": "Piece"
+          }
+        },
+        "topology": {}
+      },
+      "evidence_ids": [
+        "39632afc4da6109c86014fa52f209ff07bae2f64aa207dca21e33f1f44feb104",
+        "588b4acc65e9f86ab1f393ab3042f32a31974bd0c7e4b0d22874bc1bbe12dff5",
+        "c1e48606668ec8aa014a9821c208c9232173d22131a0e86e692bdcb88305b1d4"
+      ],
+      "id": "concept-rule:ad24c8b9108408e30f5cb301dda76983d636b2868f24228d1b3595df85f8ade2",
+      "negative": {
+        "confidence": 0.7532467532467534,
+        "strength": 0.008620689655172417
+      },
+      "origin": "learned-native-conditional-on-host-supplied-structural-packet",
+      "positive": {
+        "confidence": 0.7532467532467534,
+        "strength": 0.9913793103448276
+      },
+      "supporting_evidence": [
+        "39632afc4da6109c86014fa52f209ff07bae2f64aa207dca21e33f1f44feb104",
+        "588b4acc65e9f86ab1f393ab3042f32a31974bd0c7e4b0d22874bc1bbe12dff5",
+        "c1e48606668ec8aa014a9821c208c9232173d22131a0e86e692bdcb88305b1d4"
+      ],
+      "target": "NewAttackAfterSuppliedEdit"
+    },
+    "concept-rule:c0baeae91d7071b8c380ac2f7e915d9fe3eeec0d98052cbb77c7a450135b13f5": {
+      "concept": "MultipleAttackers",
+      "contradicting_evidence": [
+        "42bf75e1b17d0ec30eceffb8f46031c4bb1fb9a279205c1b9ffcaa29f3defec0",
+        "1c9b25efbc2ce6dee920f53ed7b224ba5f7eefef5431c35eb2caaaa3fbf8d589"
+      ],
+      "dependence_groups": [
+        "motif:2d984123d6e404821bdd5b2314afd17915ed0b9df545427c6ac33c176b2bbf4f",
+        "motif:e55ab08a3a8d0fcbaf9d35ed87ba90261bc98f6763b10fb8a4a7413e15b8e78b"
+      ],
+      "descriptor": {
+        "components": [
+          {
+            "descriptor": null,
+            "family": "attack",
+            "source_role": "attacker_b",
+            "stage": "before",
+            "target_role": "target"
+          },
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "opponent",
+                "kind": "other"
+              },
+              "intermediate_occupancy": "empty",
+              "motion": "orthogonal",
+              "piece": "Rook"
+            },
+            "family": "attack",
+            "source_role": "attacker_a",
+            "stage": "before",
+            "target_role": "target"
+          }
+        ],
+        "roles": {
+          "attacker_a": {
+            "allegiance": "friendly",
+            "kind": "Rook"
+          },
+          "attacker_b": {
+            "allegiance": "empty",
+            "kind": "Absent"
+          },
+          "target": {
+            "allegiance": "opponent",
+            "kind": "Piece"
+          }
+        },
+        "topology": {}
+      },
+      "evidence_ids": [
+        "42bf75e1b17d0ec30eceffb8f46031c4bb1fb9a279205c1b9ffcaa29f3defec0",
+        "1c9b25efbc2ce6dee920f53ed7b224ba5f7eefef5431c35eb2caaaa3fbf8d589"
+      ],
+      "id": "concept-rule:c0baeae91d7071b8c380ac2f7e915d9fe3eeec0d98052cbb77c7a450135b13f5",
+      "negative": {
+        "confidence": 0.6724137931034483,
+        "strength": 0.9871794871794872
+      },
+      "origin": "learned-native-conditional-on-host-supplied-structural-packet",
+      "positive": {
+        "confidence": 0.6724137931034483,
+        "strength": 0.012820512820512825
+      },
+      "supporting_evidence": [],
+      "target": "MultipleLocalAttackSources"
+    },
+    "concept-rule:c9194fd77f9723ef3be677e2b0f4463dff24d6e3d3987ceb4c6478c186d57e23": {
+      "concept": "Fork",
+      "contradicting_evidence": [],
+      "dependence_groups": [
+        "motif:1bf2fad07f38cc8ed8b341420aa7edef00a86dae4429832524030b111a8e33ac",
+        "motif:66abd5f4f86663f343dd1b019dc994df1168c545e116f4aa841a06f8ea2a16ff"
+      ],
+      "descriptor": {
+        "components": [
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "opponent",
+                "kind": "other"
+              },
+              "intermediate_occupancy": "empty",
+              "motion": [
+                1,
+                2
+              ],
+              "piece": "Knight"
+            },
+            "family": "attack",
+            "source_role": "attacker",
+            "stage": "before",
+            "target_role": "target_a"
+          },
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "opponent",
+                "kind": "other"
+              },
+              "intermediate_occupancy": "empty",
+              "motion": [
+                1,
+                2
+              ],
+              "piece": "Knight"
+            },
+            "family": "attack",
+            "source_role": "attacker",
+            "stage": "before",
+            "target_role": "target_b"
+          }
+        ],
+        "roles": {
+          "attacker": {
+            "allegiance": "friendly",
+            "kind": "Knight"
+          },
+          "target_a": {
+            "allegiance": "opponent",
+            "kind": "Piece"
+          },
+          "target_b": {
+            "allegiance": "opponent",
+            "kind": "Piece"
+          }
+        },
+        "topology": {}
+      },
+      "evidence_ids": [
+        "96d9e2f69577e9dade4d9d509dde7ff396b1d3eb11884835761f693432a9cee4",
+        "e2a26eccc6d5f2a1a4f46f4900929d63381d9f302510de0640c82d57f54c876c"
+      ],
+      "id": "concept-rule:c9194fd77f9723ef3be677e2b0f4463dff24d6e3d3987ceb4c6478c186d57e23",
+      "negative": {
+        "confidence": 0.6724137931034483,
+        "strength": 0.012820512820512825
+      },
+      "origin": "learned-native-conditional-on-host-supplied-structural-packet",
+      "positive": {
+        "confidence": 0.6724137931034483,
+        "strength": 0.9871794871794872
+      },
+      "supporting_evidence": [
+        "96d9e2f69577e9dade4d9d509dde7ff396b1d3eb11884835761f693432a9cee4",
+        "e2a26eccc6d5f2a1a4f46f4900929d63381d9f302510de0640c82d57f54c876c"
+      ],
+      "target": "PotentialMultipleTargetAttack"
+    },
+    "concept-rule:d5bbd46c2244a959c8e358189ade2a4ef0a0564f3c2efd79c7de2d5205f44088": {
+      "concept": "Pin",
+      "contradicting_evidence": [],
+      "dependence_groups": [
+        "motif:74c4e0e01d2827f06956bba37512e00f72c5114c0289176f7a9c425d21a93891"
+      ],
+      "descriptor": {
+        "components": [
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "opponent",
+                "kind": "other"
+              },
+              "intermediate_occupancy": "empty",
+              "motion": "orthogonal",
+              "piece": "Rook"
+            },
+            "family": "attack",
+            "source_role": "attacker",
+            "stage": "before",
+            "target_role": "intervening"
+          },
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "opponent",
+                "kind": "other"
+              },
+              "intermediate_occupancy": "empty",
+              "motion": "orthogonal",
+              "piece": "Rook"
+            },
+            "family": "attack",
+            "source_role": "attacker",
+            "stage": "counterfactual",
+            "target_role": "target"
+          },
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "opponent",
+                "kind": "other"
+              },
+              "intermediate_occupancy": "occupied",
+              "motion": "orthogonal",
+              "piece": "Rook"
+            },
+            "family": "attack",
+            "source_role": "attacker",
+            "stage": "before",
+            "target_role": "target"
+          }
+        ],
+        "roles": {
+          "attacker": {
+            "allegiance": "friendly",
+            "kind": "Rook"
+          },
+          "intervening": {
+            "allegiance": "opponent",
+            "kind": "Piece"
+          },
+          "target": {
+            "allegiance": "opponent",
+            "kind": "Piece"
+          }
+        },
+        "topology": {
+          "direction_relation": "same",
+          "distance_order": "inner"
+        }
+      },
+      "evidence_ids": [
+        "cb30baa7d5047a5b455256252bad28fe1f8c4689e0a17eecc0a55a762f125a1e"
+      ],
+      "id": "concept-rule:d5bbd46c2244a959c8e358189ade2a4ef0a0564f3c2efd79c7de2d5205f44088",
+      "negative": {
+        "confidence": 0.5128205128205129,
+        "strength": 0.025000000000000005
+      },
+      "origin": "learned-native-conditional-on-host-supplied-structural-packet",
+      "positive": {
+        "confidence": 0.5128205128205129,
+        "strength": 0.9750000000000001
+      },
+      "supporting_evidence": [
+        "cb30baa7d5047a5b455256252bad28fe1f8c4689e0a17eecc0a55a762f125a1e"
+      ],
+      "target": "PotentialPinAlignment"
+    },
+    "concept-rule:dcf86db2713cf72327ae5a206fb1c4d752a53bcc552d01e800f68161bc59c961": {
+      "concept": "TrappedPiece",
+      "contradicting_evidence": [
+        "7bb9c305df4d246855b08f54c8749db3f0d9bc52038ff324c576443e33ed5112",
+        "79c5b39b1ebf2854c709e77b6f31a98c6e9f0acc134c5b0684f57d5d50a3a438"
+      ],
+      "dependence_groups": [
+        "motif:02b2207823777721b4807812a8a37e1df0a1a56aeef79a7d4611394e465bda64",
+        "motif:fc9d3af71fecb9ddd02f075fc84a166f4b2d0d2b03308168f007e8a7f7d89aaa"
+      ],
+      "descriptor": {
+        "components": [
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "empty",
+                "kind": "empty"
+              },
+              "intermediate_occupancy": "empty",
+              "motion": [
+                1,
+                2
+              ],
+              "piece": "Knight"
+            },
+            "family": "mobility",
+            "source_role": "subject",
+            "stage": "before",
+            "target_role": "ordinary-destination"
+          },
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "friendly",
+                "kind": "other"
+              },
+              "intermediate_occupancy": "empty",
+              "motion": [
+                1,
+                2
+              ],
+              "piece": "Knight"
+            },
+            "family": "mobility",
+            "source_role": "subject",
+            "stage": "before",
+            "target_role": "ordinary-destination"
+          }
+        ],
+        "roles": {
+          "subject": {
+            "allegiance": "friendly",
+            "kind": "Knight"
+          }
+        },
+        "topology": {}
+      },
+      "evidence_ids": [
+        "7bb9c305df4d246855b08f54c8749db3f0d9bc52038ff324c576443e33ed5112",
+        "79c5b39b1ebf2854c709e77b6f31a98c6e9f0acc134c5b0684f57d5d50a3a438"
+      ],
+      "id": "concept-rule:dcf86db2713cf72327ae5a206fb1c4d752a53bcc552d01e800f68161bc59c961",
+      "negative": {
+        "confidence": 0.6724137931034483,
+        "strength": 0.9871794871794872
+      },
+      "origin": "learned-native-conditional-on-host-supplied-structural-packet",
+      "positive": {
+        "confidence": 0.6724137931034483,
+        "strength": 0.012820512820512825
+      },
+      "supporting_evidence": [],
+      "target": "NoOrdinaryGeometricExit"
+    },
+    "concept-rule:dda4751980d19a6560e67ae87fcfc2fdf0a6c80477b449f1caad6750b8bb0e78": {
+      "concept": "Pin",
+      "contradicting_evidence": [
+        "744eeec6b5d39981d750bfcca646b8cdf5f5a67eea41fa78360591afbc33481a"
+      ],
+      "dependence_groups": [
+        "motif:21817c83a5db72f62cefcac3bc11bf705d4638b098852834ba350ad4295f4f17"
+      ],
+      "descriptor": {
+        "components": [
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "friendly",
+                "kind": "other"
+              },
+              "intermediate_occupancy": "empty",
+              "motion": "orthogonal",
+              "piece": "Rook"
+            },
+            "family": "attack",
+            "source_role": "attacker",
+            "stage": "before",
+            "target_role": "intervening"
+          },
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "opponent",
+                "kind": "King"
+              },
+              "intermediate_occupancy": "empty",
+              "motion": "orthogonal",
+              "piece": "Rook"
+            },
+            "family": "attack",
+            "source_role": "attacker",
+            "stage": "counterfactual",
+            "target_role": "target"
+          },
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "opponent",
+                "kind": "King"
+              },
+              "intermediate_occupancy": "empty",
+              "motion": "orthogonal",
+              "piece": "Rook"
+            },
+            "family": "king-exposure",
+            "source_role": "attacker",
+            "stage": "counterfactual",
+            "target_role": "target"
+          },
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "opponent",
+                "kind": "King"
+              },
+              "intermediate_occupancy": "occupied",
+              "motion": "orthogonal",
+              "piece": "Rook"
+            },
+            "family": "attack",
+            "source_role": "attacker",
+            "stage": "before",
+            "target_role": "target"
+          }
+        ],
+        "roles": {
+          "attacker": {
+            "allegiance": "friendly",
+            "kind": "Rook"
+          },
+          "intervening": {
+            "allegiance": "friendly",
+            "kind": "Piece"
+          },
+          "target": {
+            "allegiance": "opponent",
+            "kind": "King"
+          }
+        },
+        "topology": {
+          "direction_relation": "same",
+          "distance_order": "inner"
+        }
+      },
+      "evidence_ids": [
+        "744eeec6b5d39981d750bfcca646b8cdf5f5a67eea41fa78360591afbc33481a"
+      ],
+      "id": "concept-rule:dda4751980d19a6560e67ae87fcfc2fdf0a6c80477b449f1caad6750b8bb0e78",
+      "negative": {
+        "confidence": 0.5128205128205129,
+        "strength": 0.9750000000000001
+      },
+      "origin": "learned-native-conditional-on-host-supplied-structural-packet",
+      "positive": {
+        "confidence": 0.5128205128205129,
+        "strength": 0.025000000000000005
+      },
+      "supporting_evidence": [],
+      "target": "PotentialPinAlignment"
+    },
+    "concept-rule:f0d82916fe316b66e7e69132de565ed3a75959428567e7d353ec1653c08b9607": {
+      "concept": "OverloadedDefender",
+      "contradicting_evidence": [
+        "62466e8d2482885815a26ce37b25608aa60ad41319b94f1c2c8cd46f35ee3efa",
+        "67d83065be6560bad3ce3dd3ab9e17af4e3945380d73244ae33a6810aff44016"
+      ],
+      "dependence_groups": [
+        "motif:06d08945428b6fc9d4a9661858c321ef40b15a49c812c70fcda6ceb30e4df2e5",
+        "motif:cd3447748f143ffb460853cae65e064df53d4ada2c76ec20e9a5353967b41ad1"
+      ],
+      "descriptor": {
+        "components": [
+          {
+            "descriptor": null,
+            "family": "attack",
+            "source_role": "enemy_b",
+            "stage": "before",
+            "target_role": "ward_b"
+          },
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "friendly",
+                "kind": "other"
+              },
+              "intermediate_occupancy": "empty",
+              "motion": "orthogonal",
+              "piece": "Queen"
+            },
+            "family": "defense",
+            "source_role": "defender",
+            "stage": "before",
+            "target_role": "ward_a"
+          },
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "friendly",
+                "kind": "other"
+              },
+              "intermediate_occupancy": "empty",
+              "motion": "orthogonal",
+              "piece": "Queen"
+            },
+            "family": "defense",
+            "source_role": "defender",
+            "stage": "before",
+            "target_role": "ward_b"
+          },
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "opponent",
+                "kind": "other"
+              },
+              "intermediate_occupancy": "empty",
+              "motion": "orthogonal",
+              "piece": "Rook"
+            },
+            "family": "attack",
+            "source_role": "enemy_a",
+            "stage": "before",
+            "target_role": "ward_a"
+          }
+        ],
+        "roles": {
+          "defender": {
+            "allegiance": "friendly",
+            "kind": "Queen"
+          },
+          "enemy_a": {
+            "allegiance": "opponent",
+            "kind": "Piece"
+          },
+          "enemy_b": {
+            "allegiance": "empty",
+            "kind": "Absent"
+          },
+          "ward_a": {
+            "allegiance": "friendly",
+            "kind": "Piece"
+          },
+          "ward_b": {
+            "allegiance": "friendly",
+            "kind": "Piece"
+          }
+        },
+        "topology": {}
+      },
+      "evidence_ids": [
+        "62466e8d2482885815a26ce37b25608aa60ad41319b94f1c2c8cd46f35ee3efa",
+        "67d83065be6560bad3ce3dd3ab9e17af4e3945380d73244ae33a6810aff44016"
+      ],
+      "id": "concept-rule:f0d82916fe316b66e7e69132de565ed3a75959428567e7d353ec1653c08b9607",
+      "negative": {
+        "confidence": 0.6724137931034483,
+        "strength": 0.9871794871794872
+      },
+      "origin": "learned-native-conditional-on-host-supplied-structural-packet",
+      "positive": {
+        "confidence": 0.6724137931034483,
+        "strength": 0.012820512820512825
+      },
+      "supporting_evidence": [],
+      "target": "CompetingDefenseObligations"
+    },
+    "concept-rule:f3b8dfa80e7e1433337dcc4899e2122a89df398874fa6ea9bdbd358af5378ae8": {
+      "concept": "Fork",
+      "contradicting_evidence": [
+        "4f42dfd7fd155f6465335603570e8eb9698ae79be7233dfe38ea166234e7d436"
+      ],
+      "dependence_groups": [
+        "motif:66abd5f4f86663f343dd1b019dc994df1168c545e116f4aa841a06f8ea2a16ff"
+      ],
+      "descriptor": {
+        "components": [
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "friendly",
+                "kind": "other"
+              },
+              "intermediate_occupancy": "empty",
+              "motion": [
+                1,
+                2
+              ],
+              "piece": "Knight"
+            },
+            "family": "attack",
+            "source_role": "attacker",
+            "stage": "before",
+            "target_role": "target_b"
+          },
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "opponent",
+                "kind": "other"
+              },
+              "intermediate_occupancy": "empty",
+              "motion": [
+                1,
+                2
+              ],
+              "piece": "Knight"
+            },
+            "family": "attack",
+            "source_role": "attacker",
+            "stage": "before",
+            "target_role": "target_a"
+          }
+        ],
+        "roles": {
+          "attacker": {
+            "allegiance": "friendly",
+            "kind": "Knight"
+          },
+          "target_a": {
+            "allegiance": "opponent",
+            "kind": "Piece"
+          },
+          "target_b": {
+            "allegiance": "friendly",
+            "kind": "Piece"
+          }
+        },
+        "topology": {}
+      },
+      "evidence_ids": [
+        "4f42dfd7fd155f6465335603570e8eb9698ae79be7233dfe38ea166234e7d436"
+      ],
+      "id": "concept-rule:f3b8dfa80e7e1433337dcc4899e2122a89df398874fa6ea9bdbd358af5378ae8",
+      "negative": {
+        "confidence": 0.5128205128205129,
+        "strength": 0.9750000000000001
+      },
+      "origin": "learned-native-conditional-on-host-supplied-structural-packet",
+      "positive": {
+        "confidence": 0.5128205128205129,
+        "strength": 0.025000000000000005
+      },
+      "supporting_evidence": [],
+      "target": "PotentialMultipleTargetAttack"
+    },
+    "concept-rule:f98f3453be4237caddd8fa50b178a4e10a88bed565e48f2daf6361acac1c89e8": {
+      "concept": "DiscoveredDefense",
+      "contradicting_evidence": [],
+      "dependence_groups": [
+        "motif:2096a74a1b4cfbd943352608f5c3096dc2da9d773d1f4efb164b308776820c34",
+        "motif:37e20c7c4d24642414cea9164600e121ed0d481fe704b6045657be113038a795",
+        "motif:4e94339c8b6f8e25e70b19d4ee5ca27a2862b4c98a89fc7392278684912a819c"
+      ],
+      "descriptor": {
+        "components": [
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "friendly",
+                "kind": "other"
+              },
+              "intermediate_occupancy": "empty",
+              "motion": "orthogonal",
+              "piece": "Rook"
+            },
+            "family": "defense",
+            "source_role": "attacker",
+            "stage": "after",
+            "target_role": "target"
+          },
+          {
+            "descriptor": {
+              "destination": {
+                "allegiance": "friendly",
+                "kind": "other"
+              },
+              "intermediate_occupancy": "occupied",
+              "motion": "orthogonal",
+              "piece": "Rook"
+            },
+            "family": "defense",
+            "source_role": "attacker",
+            "stage": "before",
+            "target_role": "target"
+          }
+        ],
+        "roles": {
+          "attacker": {
+            "allegiance": "friendly",
+            "kind": "Rook"
+          },
+          "mover": {
+            "allegiance": "friendly",
+            "kind": "Piece"
+          },
+          "target": {
+            "allegiance": "friendly",
+            "kind": "Piece"
+          }
+        },
+        "topology": {}
+      },
+      "evidence_ids": [
+        "6a3720e7ffbd3f85379c3b7e96715ade1e3917615924b99b9c857f7f84a16237",
+        "a388412d43f87951fc311149f56cb513f3efd4eed4d87ccc4ac26ce082292a43",
+        "0e308c3349303b72f09c75f67c30fc6c928ed5fa2e0b530cfa11da7317916f16"
+      ],
+      "id": "concept-rule:f98f3453be4237caddd8fa50b178a4e10a88bed565e48f2daf6361acac1c89e8",
+      "negative": {
+        "confidence": 0.7532467532467534,
+        "strength": 0.008620689655172417
+      },
+      "origin": "learned-native-conditional-on-host-supplied-structural-packet",
+      "positive": {
+        "confidence": 0.7532467532467534,
+        "strength": 0.9913793103448276
+      },
+      "supporting_evidence": [
+        "6a3720e7ffbd3f85379c3b7e96715ade1e3917615924b99b9c857f7f84a16237",
+        "a388412d43f87951fc311149f56cb513f3efd4eed4d87ccc4ac26ce082292a43",
+        "0e308c3349303b72f09c75f67c30fc6c928ed5fa2e0b530cfa11da7317916f16"
+      ],
+      "target": "NewDefenseAfterSuppliedEdit"
+    }
+  },
+  "ledger_digest": "0c6ec1cb12d55dcb87e0b684d9bd63e711fa5971d09304863caa4ed477ec9173",
+  "runtime_version": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+  "schema": "relative-concept-model-v12",
+  "training_report": {
+    "complete_native_concept_theorems": 0,
+    "dataset_hash": "8a4c02d3d87fcbac9780019be3f50ca35046c540b71b34154eefb7e1582899d7",
+    "excluded_components": 0,
+    "executed_native_operators": 6,
+    "heldout_labels_used": false,
+    "hypotheses": 19,
+    "native_cache_hits": 58,
+    "native_revision_nodes": 64,
+    "neutral_prior": {
+      "confidence": 0.05,
+      "strength": 0.5
+    },
+    "scope": "Learned conditionals on observed composite packets. No conjunction rule, strategic score, overload proof or safe-mobility theorem is learned.",
+    "seeded_structure": "Typed role packets and local relative observation pooling; no positive strategic rule is supplied.",
+    "training_examples": 64,
+    "unique_evidence": 32
+  },
+  "variant": "C12-dependence-duplicate",
+  "version": "832473787a5d2cb93ddc4a99befe1db8a39326ea63ec3a144269a2761e505126"
+}

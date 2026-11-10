@@ -1,5 +1,7 @@
 """ProofShot browser workflow for the independent relational field inspector."""
 import argparse
+import base64
+import gzip
 import hashlib
 import json
 import os
@@ -29,9 +31,25 @@ def run(out, work, port=18782, development=False):
     proof.mkdir(exist_ok=True)
     write_json(work / 'proofshot.config.json', dict(output=str(proof), viewport=dict(width=1280, height=900)))
     env = dict(os.environ, C12_OUT=str(out), TMPDIR='/dev/shm', AGENT_BROWSER_SESSION='pln-chess-cycle12-'+uuid.uuid4().hex[:12])
+    write_json(work/'browser-session.json',dict(session=env['AGENT_BROWSER_SESSION']))
     for key in ('C6_OUT', 'C7_OUT', 'C8_OUT', 'C9_OUT', 'C10_OUT', 'C11_OUT'):
         env.pop(key, None)
     commands, checks = [], []
+    def interrupted(signum, frame):
+        raise KeyboardInterrupt('Browser verification interrupted by signal '+str(signum))
+    signal.signal(signal.SIGTERM,interrupted)
+
+    def owned_browser_pids():
+        result=[]
+        for line in subprocess.check_output(['ps','-eo','pid,args'],text=True).splitlines():
+            parts=line.strip().split(None,1)
+            if len(parts)!=2 or not parts[0].isdigit() or 'agent-browser-linux-x64' not in parts[1]:continue
+            pid=int(parts[0])
+            try:
+                environment=Path(f'/proc/{pid}/environ').read_bytes().split(b'\0')
+                if ('AGENT_BROWSER_SESSION='+env['AGENT_BROWSER_SESSION']).encode() in environment:result.append(pid)
+            except (PermissionError,FileNotFoundError):pass
+        return result
 
     def command(*args, structured=False):
         started = time.time()
@@ -48,7 +66,7 @@ def run(out, work, port=18782, development=False):
 
     def viewport(width, height):
         for _ in range(3):
-            command('exec', '--session', env['AGENT_BROWSER_SESSION'], 'set', 'viewport', str(width), str(height))
+            command('exec', 'set', 'viewport', str(width), str(height))
             actual = evaluate(f'(async()=>{{const end=Date.now()+5000;while((innerWidth!=={width}||innerHeight!=={height})&&Date.now()<end)await new Promise(r=>setTimeout(r,100));return [innerWidth,innerHeight]}})()')
             if actual == [width, height]:
                 return
@@ -64,7 +82,8 @@ def run(out, work, port=18782, development=False):
         assert not result['status'].startswith('Error:'), result
         return result
 
-    argv = [sys.executable, '-m', 'pln_chess', 'serve', '--checkpoint', str(ROOT / 'artifacts/cycle10/model/C10-default.json'), '--port', str(port)]
+    checkpoint=ROOT/'artifacts/cycle10/model/C10-default.json' if development else out/'model/C12-default.json'
+    argv = [sys.executable, '-m', 'pln_chess', 'serve', '--checkpoint', str(checkpoint), '--port', str(port)]
     token = uuid.uuid4().hex
     owner = work / 'owned-server.json'
     wrapper = work / 'owned-server.py'
@@ -74,6 +93,7 @@ def run(out, work, port=18782, development=False):
         '--port', str(port), '--description', 'Cycle 12 concept selection, dependency graph, supplied sequence steps, gaps, native proofs, exports and desktop/mobile layouts'],
         cwd=work, env=env, stdout=stream, stderr=subprocess.STDOUT, start_new_session=True)
     session, errors, cleanup, export = None, {}, {}, None
+    browser_pids=[]
     try:
         end = time.time()+60
         while not (proof / '.session.json').exists():
@@ -81,6 +101,7 @@ def run(out, work, port=18782, development=False):
                 raise RuntimeError('ProofShot startup failed')
             time.sleep(.2)
         session = read_json(proof / '.session.json')
+        browser_pids=owned_browser_pids()
         command('exec', 'open', f'http://127.0.0.1:{port}/interactions')
         viewport(1280, 900)
         snapshot = command('exec', 'snapshot', '-i')
@@ -139,8 +160,9 @@ def run(out, work, port=18782, development=False):
         command('exec','screenshot','missing-event-gap.png')
         # Capture a compact actual native package through the browser export event.
         submit('snapshot',0,**{'family':'attack','piece':'a4','candidate-limit':0,'unknown':''})
-        export=evaluate('(async()=>{const old=URL.createObjectURL.bind(URL);URL.createObjectURL=b=>{window.proofBlob=b;return old(b)};document.getElementById("export").click();window.proofText=await window.proofBlob.text();const bytes=new TextEncoder().encode(window.proofText);const hash=Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256",bytes))).map(x=>x.toString(16).padStart(2,"0")).join("");return {bytes:bytes.length,characters:window.proofText.length,sha256:hash};})()')
-        raw=''.join(evaluate(f'window.proofText.slice({i},{i+100000})') for i in range(0,export['characters'],100000)).encode()
+        export=evaluate('(async()=>{const old=URL.createObjectURL.bind(URL);URL.createObjectURL=b=>{window.proofBlob=b;return old(b)};document.getElementById("export").click();const text=await window.proofBlob.text();const bytes=new TextEncoder().encode(text);const packed=new Uint8Array(await new Response(new Blob([bytes]).stream().pipeThrough(new CompressionStream("gzip"))).arrayBuffer());let binary="";for(let i=0;i<packed.length;i+=32768)binary+=String.fromCharCode(...packed.subarray(i,i+32768));return {bytes:bytes.length,sha256:Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256",bytes))).map(x=>x.toString(16).padStart(2,"0")).join(""),base64:btoa(binary),matchesServerResult:text===JSON.stringify(result,null,2)};})()')
+        raw=gzip.decompress(base64.b64decode(export.pop('base64')))
+        assert export['matchesServerResult']
         assert hashlib.sha256(raw).hexdigest()==export['sha256'];decoded=json.loads(raw)
         assert decoded['before']['relations'] and decoded['after']['relations'] and decoded['graph']['proofs']
         assert all(c['truth_value'] is None for c in decoded['changes'])
@@ -168,6 +190,13 @@ def run(out, work, port=18782, development=False):
                     match = re.search(kind+r' errors:\s+(\d+)', stopped)
                     errors[kind.lower()] = int(match[1]) if match else None
         finally:
+            # A failed browser close may leave the owned recorder daemon alive.
+            # Verify the unique session nonce again before stopping its group.
+            for pid in browser_pids:
+                if pid in owned_browser_pids():
+                    try:
+                        if os.getpgid(pid)==pid:os.killpg(pid,signal.SIGTERM)
+                    except ProcessLookupError:pass
             if owner.exists():
                 owned = read_json(owner)
                 assert owned['token'] == token
@@ -193,6 +222,9 @@ def run(out, work, port=18782, development=False):
         assert time.time() < end, 'Owned verification server remained listening'
         time.sleep(.1)
     cleanup['port_closed'] = True
+    cleanup['owned_browser_pids']=browser_pids
+    cleanup['remaining_owned_browser_pids']=owned_browser_pids()
+    assert not cleanup['remaining_owned_browser_pids'],cleanup
     assert errors == dict(console=0, server=0), errors
     write_json(proof / 'verification.json', dict(passed=True, development_only=development, source_hash=production_code_hash(), checks=checks,
         errors=errors, actual_export=export, server_cleanup=cleanup,

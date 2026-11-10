@@ -1,0 +1,429 @@
+{
+  "change_predicates": {
+    "ChangesInfluence": 2708,
+    "OpensAttack": 119,
+    "PersistsAcrossMove": 6584,
+    "RemovesDefense": 14
+  },
+  "count": 17,
+  "endpoint_field_metrics": {
+    "attack": {
+      "abstention_rate": 0.04089506172839506,
+      "complete_conditional_proofs": 8701,
+      "coverage": 0.9591049382716049,
+      "f1_including_abstention": 0.9972390944229708,
+      "false_negative": 0,
+      "false_negative_rate_supported_only": 0.0,
+      "false_positive": 0,
+      "false_positive_rate": 0.0,
+      "global_composition_proofs": 0,
+      "incomplete": 0,
+      "negative_recall": 0.9551690347868692,
+      "negatives": 8164,
+      "positives": 908,
+      "precision": 1.0,
+      "recall": 0.9944933920704846,
+      "relations": 9072,
+      "supported_accuracy": 1.0,
+      "true_negative": 7798,
+      "true_positive": 903,
+      "unknown": 371
+    },
+    "defense": {
+      "abstention_rate": 0.06422018348623854,
+      "complete_conditional_proofs": 204,
+      "coverage": 0.9357798165137615,
+      "f1_including_abstention": 1.0,
+      "false_negative": 0,
+      "false_negative_rate_supported_only": 0.0,
+      "false_positive": 0,
+      "false_positive_rate": 0.0,
+      "global_composition_proofs": 0,
+      "incomplete": 0,
+      "negative_recall": 0.9226519337016574,
+      "negatives": 181,
+      "positives": 37,
+      "precision": 1.0,
+      "recall": 1.0,
+      "relations": 218,
+      "supported_accuracy": 1.0,
+      "true_negative": 167,
+      "true_positive": 37,
+      "unknown": 14
+    },
+    "king-exposure": {
+      "abstention_rate": 0.4375,
+      "complete_conditional_proofs": 81,
+      "coverage": 0.5625,
+      "f1_including_abstention": 1.0,
+      "false_negative": 0,
+      "false_negative_rate_supported_only": 0.0,
+      "false_positive": 0,
+      "false_positive_rate": 0.0,
+      "global_composition_proofs": 0,
+      "incomplete": 0,
+      "negative_recall": 0.5367647058823529,
+      "negatives": 136,
+      "positives": 8,
+      "precision": 1.0,
+      "recall": 1.0,
+      "relations": 144,
+      "supported_accuracy": 1.0,
+      "true_negative": 73,
+      "true_positive": 8,
+      "unknown": 63
+    },
+    "mobility": {
+      "abstention_rate": 0.02358036573628489,
+      "complete_conditional_proofs": 6087,
+      "coverage": 0.9764196342637151,
+      "f1_including_abstention": 0.997043169722058,
+      "false_negative": 0,
+      "false_negative_rate_supported_only": 0.0,
+      "false_positive": 0,
+      "false_positive_rate": 0.0,
+      "global_composition_proofs": 0,
+      "incomplete": 0,
+      "negative_recall": 0.973635350909766,
+      "negatives": 5386,
+      "positives": 848,
+      "precision": 1.0,
+      "recall": 0.9941037735849056,
+      "relations": 6234,
+      "supported_accuracy": 1.0,
+      "true_negative": 5244,
+      "true_positive": 843,
+      "unknown": 147
+    }
+  },
+  "failures": [],
+  "incremental_full_exact": true,
+  "scope": "Development examples. Endpoint field metrics do not measure native temporal implication or strategic accuracy.",
+  "worked": [
+    {
+      "artifact": "interactions/rook-obstruction.json.xz",
+      "changes": 645,
+      "concepts": 8,
+      "id": "rook-obstruction",
+      "incremental": {
+        "changed_cells": [
+          "d4",
+          "f5"
+        ],
+        "host_scheduling_only": true,
+        "metadata_invalidations": 0,
+        "path": "dependency-scheduled",
+        "reused_relations": 488,
+        "scheduled_relations": 155,
+        "scope": "Dependency indexes choose work. Native conditional inference and truth values are unchanged."
+      },
+      "relations": 1110
+    },
+    {
+      "artifact": "interactions/bishop-diagonal.json.xz",
+      "changes": 516,
+      "concepts": 7,
+      "id": "bishop-diagonal",
+      "incremental": {
+        "changed_cells": [
+          "d4",
+          "d5"
+        ],
+        "host_scheduling_only": true,
+        "metadata_invalidations": 0,
+        "path": "dependency-scheduled",
+        "reused_relations": 362,
+        "scheduled_relations": 152,
+        "scope": "Dependency indexes choose work. Native conditional inference and truth values are unchanged."
+      },
+      "relations": 852
+    },
+    {
+      "artifact": "interactions/knight-relocation.json.xz",
+      "changes": 385,
+      "concepts": 3,
+      "id": "knight-relocation",
+      "incremental": {
+        "changed_cells": [
+          "d4",
+          "f5"
+        ],
+        "host_scheduling_only": true,
+        "metadata_invalidations": 0,
+        "path": "dependency-scheduled",
+        "reused_relations": 246,
+        "scheduled_relations": 137,
+        "scope": "Dependency indexes choose work. Native conditional inference and truth values are unchanged."
+      },
+      "relations": 606
+    },
+    {
+      "artifact": "interactions/pinned-defender.json.xz",
+      "changes": 645,
+      "concepts": 16,
+      "id": "pinned-defender",
+      "incremental": {
+        "changed_cells": [
+          "e2",
+          "f2"
+        ],
+        "host_scheduling_only": true,
+        "metadata_invalidations": 0,
+        "path": "dependency-scheduled",
+        "reused_relations": 493,
+        "scheduled_relations": 150,
+        "scope": "Dependency indexes choose work. Native conditional inference and truth values are unchanged."
+      },
+      "relations": 1124
+    },
+    {
+      "artifact": "interactions/discovered-attack.json.xz",
+      "changes": 516,
+      "concepts": 8,
+      "id": "discovered-attack",
+      "incremental": {
+        "changed_cells": [
+          "f3",
+          "g2"
+        ],
+        "host_scheduling_only": true,
+        "metadata_invalidations": 0,
+        "path": "dependency-scheduled",
+        "reused_relations": 358,
+        "scheduled_relations": 156,
+        "scope": "Dependency indexes choose work. Native conditional inference and truth values are unchanged."
+      },
+      "relations": 868
+    },
+    {
+      "artifact": "interactions/king-exposure.json.xz",
+      "changes": 514,
+      "concepts": 13,
+      "id": "king-exposure",
+      "incremental": {
+        "changed_cells": [
+          "d3",
+          "e2"
+        ],
+        "host_scheduling_only": true,
+        "metadata_invalidations": 0,
+        "path": "dependency-scheduled",
+        "reused_relations": 368,
+        "scheduled_relations": 144,
+        "scope": "Dependency indexes choose work. Native conditional inference and truth values are unchanged."
+      },
+      "relations": 864
+    },
+    {
+      "artifact": "interactions/multiple-defenders.json.xz",
+      "changes": 649,
+      "concepts": 7,
+      "id": "multiple-defenders",
+      "incremental": {
+        "changed_cells": [
+          "f3",
+          "g5"
+        ],
+        "host_scheduling_only": true,
+        "metadata_invalidations": 0,
+        "path": "dependency-scheduled",
+        "reused_relations": 494,
+        "scheduled_relations": 153,
+        "scope": "Dependency indexes choose work. Native conditional inference and truth values are unchanged."
+      },
+      "relations": 1134
+    },
+    {
+      "artifact": "interactions/unknown-observation.json.xz",
+      "changes": 522,
+      "concepts": 6,
+      "id": "unknown-observation",
+      "incremental": {
+        "changed_cells": [
+          "a4",
+          "a5"
+        ],
+        "host_scheduling_only": true,
+        "metadata_invalidations": 0,
+        "path": "dependency-scheduled",
+        "reused_relations": 377,
+        "scheduled_relations": 143,
+        "scope": "Dependency indexes choose work. Native conditional inference and truth values are unchanged."
+      },
+      "relations": 848
+    },
+    {
+      "artifact": "interactions/promotion.json.xz",
+      "changes": 385,
+      "concepts": 3,
+      "id": "promotion",
+      "incremental": {
+        "changed_cells": [
+          "b7",
+          "b8"
+        ],
+        "host_scheduling_only": true,
+        "metadata_invalidations": 0,
+        "path": "dependency-scheduled",
+        "reused_relations": 246,
+        "scheduled_relations": 137,
+        "scope": "Dependency indexes choose work. Native conditional inference and truth values are unchanged."
+      },
+      "relations": 590
+    },
+    {
+      "artifact": "interactions/en-passant.json.xz",
+      "changes": 645,
+      "concepts": 8,
+      "id": "en-passant",
+      "incremental": {
+        "changed_cells": [
+          "f5",
+          "f6",
+          "g5"
+        ],
+        "host_scheduling_only": true,
+        "metadata_invalidations": 251,
+        "path": "dependency-scheduled",
+        "reused_relations": 184,
+        "scheduled_relations": 330,
+        "scope": "Dependency indexes choose work. Native conditional inference and truth values are unchanged."
+      },
+      "relations": 980
+    },
+    {
+      "artifact": "interactions/rook-battery.json.xz",
+      "changes": 516,
+      "concepts": 6,
+      "id": "rook-battery",
+      "incremental": {
+        "changed_cells": [
+          "d4",
+          "d5"
+        ],
+        "host_scheduling_only": true,
+        "metadata_invalidations": 0,
+        "path": "dependency-scheduled",
+        "reused_relations": 363,
+        "scheduled_relations": 151,
+        "scope": "Dependency indexes choose work. Native conditional inference and truth values are unchanged."
+      },
+      "relations": 868
+    },
+    {
+      "artifact": "interactions/defended-minor.json.xz",
+      "changes": 516,
+      "concepts": 5,
+      "id": "defended-minor",
+      "incremental": {
+        "changed_cells": [
+          "d4",
+          "f5"
+        ],
+        "host_scheduling_only": true,
+        "metadata_invalidations": 0,
+        "path": "dependency-scheduled",
+        "reused_relations": 363,
+        "scheduled_relations": 151,
+        "scope": "Dependency indexes choose work. Native conditional inference and truth values are unchanged."
+      },
+      "relations": 868
+    },
+    {
+      "artifact": "interactions/double-check-resolution.json.xz",
+      "changes": 516,
+      "concepts": 11,
+      "id": "double-check-resolution",
+      "incremental": {
+        "changed_cells": [
+          "e1",
+          "f1"
+        ],
+        "host_scheduling_only": true,
+        "metadata_invalidations": 0,
+        "path": "dependency-scheduled",
+        "reused_relations": 372,
+        "scheduled_relations": 142,
+        "scope": "Dependency indexes choose work. Native conditional inference and truth values are unchanged."
+      },
+      "relations": 868
+    },
+    {
+      "artifact": "interactions/discovered-defense.json.xz",
+      "changes": 649,
+      "concepts": 10,
+      "id": "discovered-defense",
+      "incremental": {
+        "changed_cells": [
+          "e4",
+          "e5"
+        ],
+        "host_scheduling_only": true,
+        "metadata_invalidations": 0,
+        "path": "dependency-scheduled",
+        "reused_relations": 491,
+        "scheduled_relations": 156,
+        "scope": "Dependency indexes choose work. Native conditional inference and truth values are unchanged."
+      },
+      "relations": 1134
+    },
+    {
+      "artifact": "interactions/en-passant-exposure.json.xz",
+      "changes": 645,
+      "concepts": 15,
+      "id": "en-passant-exposure",
+      "incremental": {
+        "changed_cells": [
+          "f5",
+          "f6",
+          "g5"
+        ],
+        "host_scheduling_only": true,
+        "metadata_invalidations": 251,
+        "path": "dependency-scheduled",
+        "reused_relations": 183,
+        "scheduled_relations": 329,
+        "scope": "Dependency indexes choose work. Native conditional inference and truth values are unchanged."
+      },
+      "relations": 962
+    },
+    {
+      "artifact": "interactions/knight-opens-rook-file.json.xz",
+      "changes": 516,
+      "concepts": 8,
+      "id": "knight-opens-rook-file",
+      "incremental": {
+        "changed_cells": [
+          "f4",
+          "g2"
+        ],
+        "host_scheduling_only": true,
+        "metadata_invalidations": 0,
+        "path": "dependency-scheduled",
+        "reused_relations": 358,
+        "scheduled_relations": 156,
+        "scope": "Dependency indexes choose work. Native conditional inference and truth values are unchanged."
+      },
+      "relations": 868
+    },
+    {
+      "artifact": "interactions/pawn-opens-bishop-attack.json.xz",
+      "changes": 645,
+      "concepts": 10,
+      "id": "pawn-opens-bishop-attack",
+      "incremental": {
+        "changed_cells": [
+          "e4",
+          "e5"
+        ],
+        "host_scheduling_only": true,
+        "metadata_invalidations": 0,
+        "path": "dependency-scheduled",
+        "reused_relations": 483,
+        "scheduled_relations": 160,
+        "scope": "Dependency indexes choose work. Native conditional inference and truth values are unchanged."
+      },
+      "relations": 1124
+    }
+  ]
+}

@@ -1,0 +1,1293 @@
+[
+  {
+    "args": [
+      "exec",
+      "open",
+      "http://127.0.0.1:18782/interactions"
+    ],
+    "returncode": 0,
+    "seconds": 0.7251172065734863,
+    "stderr": "",
+    "stdout_sha256": "7505b8b04b783115401cf1a526c7f07268e91aed914fcf21f59b6c272d428afc"
+  },
+  {
+    "args": [
+      "exec",
+      "--session",
+      "pln-chess-cycle12-d245f2ac5b76",
+      "set",
+      "viewport",
+      "1280",
+      "900"
+    ],
+    "returncode": 0,
+    "seconds": 0.6138534545898438,
+    "stderr": "",
+    "stdout_sha256": "7c8f56aecbeeb314c13c01df65278c8ff9c1d10cc764cfb6bb4fea2accaffc6f"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const end=Date.now()+5000;while((innerWidth!==1280||innerHeight!==900)&&Date.now()<end)await new Promise(r=>setTimeout(r,100));return [innerWidth,innerHeight]})()"
+    ],
+    "returncode": 0,
+    "seconds": 0.4971933364868164,
+    "stderr": "",
+    "stdout_sha256": "3341dd4cc9321dd8a39cb9eb1a2d424826d2e49a5b15bbaf70d1d4206a1dfb41"
+  },
+  {
+    "args": [
+      "exec",
+      "snapshot",
+      "-i"
+    ],
+    "returncode": 0,
+    "seconds": 0.6799609661102295,
+    "stderr": "",
+    "stdout_sha256": "910c5ea67eae73a2bf2d0b33eaf1b5a7c88277768341d89cb8ac949c65579863"
+  },
+  {
+    "args": [
+      "exec",
+      "screenshot",
+      "initial-interactions.png"
+    ],
+    "returncode": 0,
+    "seconds": 0.6102960109710693,
+    "stderr": "",
+    "stdout_sha256": "4b0b0162e957474a62dc75c5ed140230ea330e585233cad8f797354d6adc7f69"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const mode=\"snapshot\";if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=0;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 5.401174306869507,
+    "stderr": "",
+    "stdout_sha256": "d62fd17d72711fb2948739815e05bc2c4eaad7e460fece59644bc7da9773a37a"
+  },
+  {
+    "args": [
+      "exec",
+      "screenshot",
+      "before-after-interactions.png"
+    ],
+    "returncode": 0,
+    "seconds": 0.4647367000579834,
+    "stderr": "",
+    "stdout_sha256": "63643abf34ae2bb93ce6d3a6e9903cfcc8123d3c5c19742ec8861e0dfe9d4654"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const mode=null;if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=null;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"attack\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 4.000186443328857,
+    "stderr": "",
+    "stdout_sha256": "961e47fe2b1f9ff745f7858edb55458ad70f15cfc9cd71d44555dea78300295c"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const mode=null;if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=null;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"defense\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 3.3973028659820557,
+    "stderr": "",
+    "stdout_sha256": "4b5971306b6ef6827dd1d72362146a5744612d7d127795bb2e893d4156cfd03c"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const mode=null;if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=null;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"mobility\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 3.4502017498016357,
+    "stderr": "",
+    "stdout_sha256": "961e47fe2b1f9ff745f7858edb55458ad70f15cfc9cd71d44555dea78300295c"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const mode=null;if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=null;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"king-exposure\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 2.6483356952667236,
+    "stderr": "",
+    "stdout_sha256": "aa7db9d7295c5ac62e38bb7346969a56413decd9d95d1107bd6299be8986872c"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const mode=\"concept\";if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=0;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"all\", \"piece\": \"\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 3.1695637702941895,
+    "stderr": "",
+    "stdout_sha256": "1578abe300a6427a424625a3c1eada1fbd897df6dedf7bbba0c2b5b61dd2d4c8"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const mode=\"concept\";if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=8;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"all\", \"piece\": \"\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 3.0822160243988037,
+    "stderr": "",
+    "stdout_sha256": "1578abe300a6427a424625a3c1eada1fbd897df6dedf7bbba0c2b5b61dd2d4c8"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const mode=\"concept\";if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=16;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"all\", \"piece\": \"\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 4.911048889160156,
+    "stderr": "",
+    "stdout_sha256": "27d3479f41704acf50f78043a981b6804f3f2a4ffacd43a239f5b560de25ad89"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const mode=\"concept\";if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=24;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"all\", \"piece\": \"\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 3.7557830810546875,
+    "stderr": "",
+    "stdout_sha256": "27d3479f41704acf50f78043a981b6804f3f2a4ffacd43a239f5b560de25ad89"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const mode=\"concept\";if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=32;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"all\", \"piece\": \"\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 3.5472939014434814,
+    "stderr": "",
+    "stdout_sha256": "1578abe300a6427a424625a3c1eada1fbd897df6dedf7bbba0c2b5b61dd2d4c8"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const mode=\"concept\";if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=40;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"all\", \"piece\": \"\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 4.655236482620239,
+    "stderr": "",
+    "stdout_sha256": "1578abe300a6427a424625a3c1eada1fbd897df6dedf7bbba0c2b5b61dd2d4c8"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const mode=\"concept\";if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=46;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"all\", \"piece\": \"\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 2.8146026134490967,
+    "stderr": "",
+    "stdout_sha256": "1578abe300a6427a424625a3c1eada1fbd897df6dedf7bbba0c2b5b61dd2d4c8"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const mode=\"concept\";if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=54;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"all\", \"piece\": \"\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 4.1715147495269775,
+    "stderr": "",
+    "stdout_sha256": "7aead43305c49a2d0254c13c4942959df88f095d41e3153d88ee214433ddc7b4"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "document.getElementById(\"concepts\").scrollIntoView();true"
+    ],
+    "returncode": 0,
+    "seconds": 0.3391234874725342,
+    "stderr": "",
+    "stdout_sha256": "a17fcf0a2f50e2d495e4f90ce263410edc183add6c62699a2facbccf60410f74"
+  },
+  {
+    "args": [
+      "exec",
+      "screenshot",
+      "partial-concept-and-gaps.png"
+    ],
+    "returncode": 0,
+    "seconds": 0.40438055992126465,
+    "stderr": "",
+    "stdout_sha256": "9691561358032ed82c1c67106ebb5a881c0159fd78975d12b46d81bf54f157ed"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "document.getElementById(\"graph\").scrollIntoView();true"
+    ],
+    "returncode": 0,
+    "seconds": 0.3235640525817871,
+    "stderr": "",
+    "stdout_sha256": "a17fcf0a2f50e2d495e4f90ce263410edc183add6c62699a2facbccf60410f74"
+  },
+  {
+    "args": [
+      "exec",
+      "screenshot",
+      "dependency-graph.png"
+    ],
+    "returncode": 0,
+    "seconds": 0.4497034549713135,
+    "stderr": "",
+    "stdout_sha256": "0b87ef182f8a7660ca2dd2626617d3a19ebaf959b3ae3d3320537eab7b7861a3"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "document.querySelector(\"#graph g\").dispatchEvent(new Event(\"click\"));true"
+    ],
+    "returncode": 0,
+    "seconds": 0.368450403213501,
+    "stderr": "",
+    "stdout_sha256": "a17fcf0a2f50e2d495e4f90ce263410edc183add6c62699a2facbccf60410f74"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "JSON.parse(document.getElementById(\"proof\").textContent)"
+    ],
+    "returncode": 0,
+    "seconds": 0.35799241065979004,
+    "stderr": "",
+    "stdout_sha256": "300b5839170421ec5fa87024f33e9527d1c5f300ff8c46c1ebbe449029867ef5"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const mode=\"snapshot\";if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=0;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"attack\", \"piece\": \"a4\", \"concept\": \"all\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 2.998392343521118,
+    "stderr": "",
+    "stdout_sha256": "961e47fe2b1f9ff745f7858edb55458ad70f15cfc9cd71d44555dea78300295c"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const b=document.querySelector(\"#relations button[data-native=\"+JSON.stringify(\"true\")+\"]\");b.click();const d=JSON.parse(document.getElementById(\"proof\").textContent);return {proof:d.proof_id,nodes:d.proof_trace.length,rule:d.rule_id,evidence:d.evidence_ids.length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 0.3515024185180664,
+    "stderr": "",
+    "stdout_sha256": "4da6e0ad74501c9591891422cdd2235e5820f2b35904763f2820694ef739df86"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "document.getElementById(\"proof\").scrollIntoView();true"
+    ],
+    "returncode": 0,
+    "seconds": 0.3480401039123535,
+    "stderr": "",
+    "stdout_sha256": "a17fcf0a2f50e2d495e4f90ce263410edc183add6c62699a2facbccf60410f74"
+  },
+  {
+    "args": [
+      "exec",
+      "screenshot",
+      "native-proof.png"
+    ],
+    "returncode": 0,
+    "seconds": 0.4297647476196289,
+    "stderr": "",
+    "stdout_sha256": "ef327ec464bde125cc07e52c12e809ce47e2055288c6bde2a6d36b09adf1e048"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const mode=null;if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=null;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"field-model\": \"empty\", \"concept-model\": \"empty\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 0.5716466903686523,
+    "stderr": "",
+    "stdout_sha256": "961e47fe2b1f9ff745f7858edb55458ad70f15cfc9cd71d44555dea78300295c"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "Array.from(document.querySelectorAll(\"#relations tbody tr\")).every(r=>r.textContent.includes(\"unknown\"))"
+    ],
+    "returncode": 0,
+    "seconds": 0.3390340805053711,
+    "stderr": "",
+    "stdout_sha256": "a17fcf0a2f50e2d495e4f90ce263410edc183add6c62699a2facbccf60410f74"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const mode=null;if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=null;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"field-model\": \"trained\", \"concept-model\": \"trained\", \"budget\": 0}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 1.035792589187622,
+    "stderr": "",
+    "stdout_sha256": "fd4772e5d3e8888bfbc8f0e39701bae94f1e895be0bade7769c933727f106404"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const mode=null;if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=null;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"budget\": 100000, \"unknown\": \"a4\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 1.0537612438201904,
+    "stderr": "",
+    "stdout_sha256": "961e47fe2b1f9ff745f7858edb55458ad70f15cfc9cd71d44555dea78300295c"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "Array.from(document.querySelectorAll(\"#relations tbody tr\")).every(r=>r.textContent.includes(\"unknown\"))"
+    ],
+    "returncode": 0,
+    "seconds": 0.3251008987426758,
+    "stderr": "",
+    "stdout_sha256": "a17fcf0a2f50e2d495e4f90ce263410edc183add6c62699a2facbccf60410f74"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const mode=\"sequence\";if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=7;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"attack\", \"unknown\": \"\", \"candidate-limit\": 4}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 6.815855979919434,
+    "stderr": "",
+    "stdout_sha256": "d440f6c4ac79ead709a37ef39b447076938f56c646daf6646b1ae15e4dd55552"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "document.getElementById(\"step\").value=0;document.getElementById(\"step\").dispatchEvent(new Event(\"input\"));({label:document.getElementById(\"step-label\").textContent,transition:document.getElementById(\"transition\").textContent})"
+    ],
+    "returncode": 0,
+    "seconds": 0.42755794525146484,
+    "stderr": "",
+    "stdout_sha256": "7c0e50ca26c0da5d3f9099fd6fe591b5690bc1ba051284340f8b79dc7b371017"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "document.getElementById(\"step\").value=1;document.getElementById(\"step\").dispatchEvent(new Event(\"input\"));({label:document.getElementById(\"step-label\").textContent,transition:document.getElementById(\"transition\").textContent})"
+    ],
+    "returncode": 0,
+    "seconds": 0.4743654727935791,
+    "stderr": "",
+    "stdout_sha256": "bb8759c3fb19f4049a34cbf75b26e7e264a16a9baf0f9069baad10e304790107"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "document.getElementById(\"step\").value=2;document.getElementById(\"step\").dispatchEvent(new Event(\"input\"));({label:document.getElementById(\"step-label\").textContent,transition:document.getElementById(\"transition\").textContent})"
+    ],
+    "returncode": 0,
+    "seconds": 0.4347035884857178,
+    "stderr": "",
+    "stdout_sha256": "7be95a89d615b0a846ba8a803965f085f6e7a17faf96e075b6058db047cd04dd"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "document.getElementById(\"step\").value=3;document.getElementById(\"step\").dispatchEvent(new Event(\"input\"));({label:document.getElementById(\"step-label\").textContent,transition:document.getElementById(\"transition\").textContent})"
+    ],
+    "returncode": 0,
+    "seconds": 0.3945162296295166,
+    "stderr": "",
+    "stdout_sha256": "3c68d84bd3689077ff43c40db512ab67685bb976cf099a9c212fd3cd8e88927e"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "document.getElementById(\"step\").value=4;document.getElementById(\"step\").dispatchEvent(new Event(\"input\"));({label:document.getElementById(\"step-label\").textContent,transition:document.getElementById(\"transition\").textContent})"
+    ],
+    "returncode": 0,
+    "seconds": 0.45870089530944824,
+    "stderr": "",
+    "stdout_sha256": "0ef7e87137f33c343c6ad949cc35884d04b578a9c34ea7ac2a22746dcef65d61"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "document.getElementById(\"step\").scrollIntoView();true"
+    ],
+    "returncode": 0,
+    "seconds": 0.34113550186157227,
+    "stderr": "",
+    "stdout_sha256": "a17fcf0a2f50e2d495e4f90ce263410edc183add6c62699a2facbccf60410f74"
+  },
+  {
+    "args": [
+      "exec",
+      "screenshot",
+      "supplied-sequence-promotion.png"
+    ],
+    "returncode": 0,
+    "seconds": 0.40588831901550293,
+    "stderr": "",
+    "stdout_sha256": "0630d276d9c684c775c79e6af84119ba79e3b5cb6ec8c9aae27f00ca254d989b"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const mode=null;if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=null;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"supplied\": \"{\\\"dependence_group\\\": \\\"sequence/promotion-threat\\\", \\\"description\\\": \\\"A supplied underpromotion changes the piece kind and its influence pattern.\\\", \\\"events\\\": [{\\\"confidence\\\": 0.99, \\\"dependence_group\\\": \\\"sequence/promotion-threat\\\", \\\"id\\\": \\\"sequence-event:a2a9dc510dadc83079d1a1ba1433badc0a88c57d58af77625b2d538ff7d4de3d\\\", \\\"index\\\": 1, \\\"move\\\": \\\"b6b7\\\", \\\"observed_fen\\\": \\\"7k/1P6/8/8/8/8/8/6K1 b - - 0 1\\\", \\\"source\\\": \\\"controlled-supplied-sequence/promotion-threat\\\"}, {\\\"confidence\\\": 0.99, \\\"dependence_group\\\": \\\"sequence/promotion-threat\\\", \\\"id\\\": \\\"sequence-event:175569abda20084a9a99bc7e393b092ea452ed1316a9ef0de3c4440b9df9b205\\\", \\\"index\\\": 2, \\\"move\\\": null, \\\"observed_fen\\\": \\\"6k1/1P6/8/8/8/8/8/6K1 w - - 1 2\\\", \\\"source\\\": \\\"controlled-supplied-sequence/promotion-threat\\\"}, {\\\"confidence\\\": 0.99, \\\"dependence_group\\\": \\\"sequence/promotion-threat\\\", \\\"id\\\": \\\"sequence-event:0ecb7c238e10586c48613a854d57173d7437fd10a0033b8ded0ce0204561299a\\\", \\\"index\\\": 3, \\\"move\\\": \\\"b7b8n\\\", \\\"observed_fen\\\": \\\"1N4k1/8/8/8/8/8/8/6K1 b - - 0 2\\\", \\\"source\\\": \\\"controlled-supplied-sequence/promotion-threat\\\"}, {\\\"confidence\\\": 0.99, \\\"dependence_group\\\": \\\"sequence/promotion-threat\\\", \\\"id\\\": \\\"sequence-event:4c238c0bf4fdd877b75749c5cc18a47fc5eb3a46e778dee60e375f246be33e39\\\", \\\"index\\\": 4, \\\"move\\\": \\\"g8f7\\\", \\\"observed_fen\\\": \\\"1N6/5k2/8/8/8/8/8/6K1 w - - 1 3\\\", \\\"source\\\": \\\"controlled-supplied-sequence/promotion-threat\\\"}], \\\"id\\\": \\\"promotion-threat\\\", \\\"initial_fen\\\": \\\"7k/8/1P6/8/8/8/8/6K1 w - - 0 1\\\", \\\"scope\\\": \\\"Supplied legal moves, independently checked offline. The system did not select or plan this sequence.\\\", \\\"source\\\": \\\"controlled-supplied-sequence/promotion-threat\\\", \\\"unknown_squares\\\": []}\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 7.552743673324585,
+    "stderr": "",
+    "stdout_sha256": "7fec02bc140bce5d3d8bac7628883a7d16af0a94a81f7eb53af53dc482025aba"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "document.getElementById(\"step\").value=2;document.getElementById(\"step\").dispatchEvent(new Event(\"input\"));true"
+    ],
+    "returncode": 0,
+    "seconds": 0.42803049087524414,
+    "stderr": "",
+    "stdout_sha256": "a17fcf0a2f50e2d495e4f90ce263410edc183add6c62699a2facbccf60410f74"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "document.getElementById(\"transition\").textContent"
+    ],
+    "returncode": 0,
+    "seconds": 0.3053157329559326,
+    "stderr": "",
+    "stdout_sha256": "e57b280717c87ff20a5c0720570f221bc5e217ce819dbc4826a8aec0dca69cab"
+  },
+  {
+    "args": [
+      "exec",
+      "screenshot",
+      "missing-event-gap.png"
+    ],
+    "returncode": 0,
+    "seconds": 0.380889892578125,
+    "stderr": "",
+    "stdout_sha256": "332373a0da663184bb69bb1c257fc3c4728ce690cdf3f9cc2bccd271d13b3bee"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const mode=\"snapshot\";if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=0;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"attack\", \"piece\": \"a4\", \"candidate-limit\": 0, \"unknown\": \"\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 1.9657182693481445,
+    "stderr": "",
+    "stdout_sha256": "c3f77752dd6e1dbd8834332c3e8e20b9c4ee7e78d6845fd9f96f0aaa5cfe872d"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const old=URL.createObjectURL.bind(URL);URL.createObjectURL=b=>{window.proofBlob=b;return old(b)};document.getElementById(\"export\").click();window.proofText=await window.proofBlob.text();const bytes=new TextEncoder().encode(window.proofText);const hash=Array.from(new Uint8Array(await crypto.subtle.digest(\"SHA-256\",bytes))).map(x=>x.toString(16).padStart(2,\"0\")).join(\"\");return {bytes:bytes.length,characters:window.proofText.length,sha256:hash};})()"
+    ],
+    "returncode": 0,
+    "seconds": 0.4918701648712158,
+    "stderr": "",
+    "stdout_sha256": "6768a4b7c46af4bbeec881a73ba9416b8f8f083e2aa074f63ac7cb2563b56213"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(0,100000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3357412815093994,
+    "stderr": "",
+    "stdout_sha256": "edbd032520025bae397c9be5960a90a15858ec84ce8b83ccba5239c8167b6e89"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(100000,200000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.32146239280700684,
+    "stderr": "",
+    "stdout_sha256": "e0ab6ceb90ea932133a9ace17f0f6c648bcb4c0131a9d260b3c446859c245d65"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(200000,300000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3547062873840332,
+    "stderr": "",
+    "stdout_sha256": "b9078efaa729a7abc83f45c6a4dc9a7d0237bbcf9bf201564b5aac60223a452c"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(300000,400000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.34149646759033203,
+    "stderr": "",
+    "stdout_sha256": "dcb10837cabc7a3b6460971291965dbd6919a29166cb1979ae2df9e3e6266ac3"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(400000,500000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.36112499237060547,
+    "stderr": "",
+    "stdout_sha256": "2ffc55b7ea8fe906a96f22bc05a9e71bece0f04cacb8e0c900fb324b93b876aa"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(500000,600000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3436298370361328,
+    "stderr": "",
+    "stdout_sha256": "47ff0a676bfeab3f59fc4cdc0588575be5b47c996c46da0b1247887f562c6edb"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(600000,700000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3602123260498047,
+    "stderr": "",
+    "stdout_sha256": "d8bf70ab6d7a5dfe6b86974de6c4d706935d9d681cb8b29c51f0c2efb413cf50"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(700000,800000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.39914822578430176,
+    "stderr": "",
+    "stdout_sha256": "4ef46352aa1750bf43deb56e3e8d4ef9fa2359f1d6704d04162efb82139c75f9"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(800000,900000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.33300089836120605,
+    "stderr": "",
+    "stdout_sha256": "d32c331eb360dc57181ed3ca5f810debf4a32892b172bfb5a8e08b3ff2655138"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(900000,1000000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.370410680770874,
+    "stderr": "",
+    "stdout_sha256": "af275b0b5cf8a4f13feb14dbbe68eec1525c2122520515e7580d12a9debe18bd"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(1000000,1100000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.34333109855651855,
+    "stderr": "",
+    "stdout_sha256": "097653995f94f208ad3c7008d38415d5126adee1372e59a60934cc1b1a2ddeed"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(1100000,1200000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3332839012145996,
+    "stderr": "",
+    "stdout_sha256": "c228203c5052e65cb0b2ab9cba3fa7d54aaa4a47469fa635f6c66cad61793273"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(1200000,1300000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3924081325531006,
+    "stderr": "",
+    "stdout_sha256": "6a662b5d154ab2156f06cc0597f864e727f285f99000b500aad6c7368de9ff3f"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(1300000,1400000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3506448268890381,
+    "stderr": "",
+    "stdout_sha256": "fcbbc3998c390e27697cb7d9e3f933b330f52e4ad013337d706e68abb5927ab1"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(1400000,1500000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3468155860900879,
+    "stderr": "",
+    "stdout_sha256": "aa32815b09fe74dd5143cde105abfd0732d3ef4ac6a2a1f71f2898b1f9c0a237"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(1500000,1600000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3285844326019287,
+    "stderr": "",
+    "stdout_sha256": "30f9533fb4e82fdee4fcd52ac93a58c2049d8f1124b055038af16e77fd02cc8f"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(1600000,1700000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3310668468475342,
+    "stderr": "",
+    "stdout_sha256": "0fb08e095e43b695e15cae169064add6e7e8fc7c8fb8a9d20abc0ef85a14f6fb"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(1700000,1800000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3191413879394531,
+    "stderr": "",
+    "stdout_sha256": "6a36addca8df7b18130eea39ea55eefc415bd6c04d033a79d6d4193662566d37"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(1800000,1900000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.33930444717407227,
+    "stderr": "",
+    "stdout_sha256": "161636ccaa2e425b6f43d7fa13d9fe0d4156083695f3fac0110f95fabe516a1b"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(1900000,2000000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3449275493621826,
+    "stderr": "",
+    "stdout_sha256": "c7eed14af20b7652aba944b70d8457ca7a1c506144dc303bfb296aa995617840"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(2000000,2100000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.34029603004455566,
+    "stderr": "",
+    "stdout_sha256": "1a31d192f7362bbf3fc67fcc973a174e7465803dbfcd2cc902bf4b7bd2371047"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(2100000,2200000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.34263134002685547,
+    "stderr": "",
+    "stdout_sha256": "fb865913d2aef82d3a2e83101f59b187750bd2d2481be8c379a234c1055f51bd"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(2200000,2300000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.35802412033081055,
+    "stderr": "",
+    "stdout_sha256": "5705cc9e3b60ccc1d85146d6971a253062fb8265db318ecd2b40e87bf7c47e9a"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(2300000,2400000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3480503559112549,
+    "stderr": "",
+    "stdout_sha256": "403322b587a7064b9f8b93433cdecfe714bc032c96a0dc3096bb951db162a3ea"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(2400000,2500000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.35717320442199707,
+    "stderr": "",
+    "stdout_sha256": "84675d51b07e6be283b0e3259cde5149116db72eab91705d013286f88d056f4e"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(2500000,2600000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3397653102874756,
+    "stderr": "",
+    "stdout_sha256": "d1f6e33b06c5decb314bdab3c7065fc73f1f2fdf435e9bf596fc47872c776b3b"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(2600000,2700000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.34815216064453125,
+    "stderr": "",
+    "stdout_sha256": "491618bc25a1bf26d7e8c3484278783f4fe582f503f1ca6c5fb06285b0b52a76"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(2700000,2800000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.34096550941467285,
+    "stderr": "",
+    "stdout_sha256": "0fa366880e212b3b5a2e63b246eb8fb2bc233ec2955c294c8afab5425f8a57d8"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(2800000,2900000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3506441116333008,
+    "stderr": "",
+    "stdout_sha256": "89ec5e91e9f90f057569ac8c2ba9ec952ad9998c772fe3a9351cc060c678fdb2"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(2900000,3000000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.38745760917663574,
+    "stderr": "",
+    "stdout_sha256": "040bd7245ee3f872ec210535e8db0f3f05f35bf56a73e0c5be43997e5c79e816"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(3000000,3100000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3869767189025879,
+    "stderr": "",
+    "stdout_sha256": "9035da1d6b2377c8205fd26db1ccbf08449e145e016dd36d8c95c29db02b56d5"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(3100000,3200000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.32634687423706055,
+    "stderr": "",
+    "stdout_sha256": "a46d47fba52ec62d2a25eaf6f9fac4c4d1ea5401b3fa004d59cc5b04f34c52fa"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(3200000,3300000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.32123422622680664,
+    "stderr": "",
+    "stdout_sha256": "69bcf7fd963906d53e10eb5e69ae5de9a983a60bbec01844e4a0e1789b335de2"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(3300000,3400000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.36385226249694824,
+    "stderr": "",
+    "stdout_sha256": "67c75f71317dac417dba957c046bb5b7f9d2d0a99b581f10cdc35995cd7892fd"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(3400000,3500000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3394203186035156,
+    "stderr": "",
+    "stdout_sha256": "2c869165702850583993114ba88ac9ebd93959242a5241ef1a990f567fa35492"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(3500000,3600000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.36285972595214844,
+    "stderr": "",
+    "stdout_sha256": "f242e6ddfd814630f3891e841c033c494a713ab4382e5e6abf0ffe6511632b93"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(3600000,3700000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.33289265632629395,
+    "stderr": "",
+    "stdout_sha256": "ee8862de68c6f6632da0c8110d999311ebb84f0068720f762ca1f0bf6ca2a11e"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(3700000,3800000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.33318424224853516,
+    "stderr": "",
+    "stdout_sha256": "2075a76d4d79a858af7364c76acd83508c66740e3f49971689b361917b602401"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(3800000,3900000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.32094383239746094,
+    "stderr": "",
+    "stdout_sha256": "46e9e044f41b929c613c09aadeaffc18319d1243f8be2aec39ef14654ce6d2c9"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(3900000,4000000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3746910095214844,
+    "stderr": "",
+    "stdout_sha256": "24e0ca5bb47d0011e73f93c7c6ac006a86b21d344e05e11ecb3e9f5271762978"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(4000000,4100000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3376147747039795,
+    "stderr": "",
+    "stdout_sha256": "f9d7d9f6e90a5e29f3d907ef1a496ccafdc83dd470bc9c4e6b4b092b6d0a337c"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(4100000,4200000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.32396674156188965,
+    "stderr": "",
+    "stdout_sha256": "57b3a22d612792e9e448252a3c4f6884203bd797d0deb54ffa502bc312eccb1f"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(4200000,4300000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.33716678619384766,
+    "stderr": "",
+    "stdout_sha256": "1a877b9b8b03efec40328962d818828dfccf4fe547dedbfbc13a3bc247249c62"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(4300000,4400000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.34049320220947266,
+    "stderr": "",
+    "stdout_sha256": "cf02ec5857fcedae14213a022a7a99e10230374402264d34402bfdc7098fdd24"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(4400000,4500000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.32598376274108887,
+    "stderr": "",
+    "stdout_sha256": "84152c4c8671499b58f8861568724b10d210e2f64a1f863902d263451068b67c"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(4500000,4600000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3449409008026123,
+    "stderr": "",
+    "stdout_sha256": "3fd3c0f95e168ee871c08640c49e9ad9b40dfa20a8b17f374374651b2467e846"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(4600000,4700000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3747067451477051,
+    "stderr": "",
+    "stdout_sha256": "02d42d12e66d9a8f02995b14d78dd74ee966e9ea724a3c3ee3347d74db4f560e"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(4700000,4800000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3393092155456543,
+    "stderr": "",
+    "stdout_sha256": "134295ce8e635118c883c263b53ab7a0d2d9e9681944b77f144266ce27c96eea"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(4800000,4900000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3594515323638916,
+    "stderr": "",
+    "stdout_sha256": "846f9ebdd60238bce453c1a9fdc1c7fdbf17f3ff87cbbc4c1ca2b80da1bcfdea"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(4900000,5000000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3325538635253906,
+    "stderr": "",
+    "stdout_sha256": "040c164d294051e48ecde019403ffdc9e726a3e93621a907527f83cf4f913ba4"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(5000000,5100000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.36673498153686523,
+    "stderr": "",
+    "stdout_sha256": "f7a5cccc7a3969fcfd8ced5795f96d38abe45b4be23e4404edac0f95aa736341"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(5100000,5200000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3270299434661865,
+    "stderr": "",
+    "stdout_sha256": "0480840c706d9ae31545b2a60bfe63ebe2354ef2ab314bde641c13af0e82adeb"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(5200000,5300000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3395054340362549,
+    "stderr": "",
+    "stdout_sha256": "5cc57738c0a21555a89e128a1a57dd5838a2db799d2947d00c28f92f78c09cb5"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(5300000,5400000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3233640193939209,
+    "stderr": "",
+    "stdout_sha256": "3af07ed8c310f9be7ea5da2a648e87e4a31f13d042c9c3521596cd93b2921152"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(5400000,5500000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.39016127586364746,
+    "stderr": "",
+    "stdout_sha256": "932014e9c59432f763a75eb831d0fb6c6c45194b42d77266b79efe49eca56325"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(5500000,5600000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.32857704162597656,
+    "stderr": "",
+    "stdout_sha256": "9a3de5906b01923329a7131089d6ba407a8d90bdb35e5282476943d8579f97bc"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(5600000,5700000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3277921676635742,
+    "stderr": "",
+    "stdout_sha256": "b8b7716588ae644867db26fa1560ea2b851de244c01efc5ba1a95b836f7abf53"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(5700000,5800000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3430013656616211,
+    "stderr": "",
+    "stdout_sha256": "f3b62284e95c9f6a23287ffd64db252852899e92e43b9c610c29eabe3cecccd9"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(5800000,5900000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.32880544662475586,
+    "stderr": "",
+    "stdout_sha256": "ad32fcec821a934a69df69223190f40b42c4bfd4da34839a5587493c0bcd8b5e"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(5900000,6000000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3514983654022217,
+    "stderr": "",
+    "stdout_sha256": "6ed6b43bafbedc651773fb1bfabb6609c97243e0c1d2e21eef9eb4ad742b4c7c"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(6000000,6100000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3559386730194092,
+    "stderr": "",
+    "stdout_sha256": "fcc0f2306e2ed61754fe009f9f8eb976f129de042ff0a0877599e8de8af5b557"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(6100000,6200000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3250308036804199,
+    "stderr": "",
+    "stdout_sha256": "eb64af93b6eced0b02ae9c6908df320e3ddc40a0dab539f4bd3e303637426a4b"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(6200000,6300000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.33457231521606445,
+    "stderr": "",
+    "stdout_sha256": "b9b130a29e79462eb4aaabd0a82e0f48d999d3b29bd608b15ffcf6cf46dd49bc"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(6300000,6400000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.34943294525146484,
+    "stderr": "",
+    "stdout_sha256": "f00a3aedc0963bf7144fac91be2d94deab0204c03cb588c1bcf8800c3a1aa6ad"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(6400000,6500000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3399655818939209,
+    "stderr": "",
+    "stdout_sha256": "caaf02e8b9d063f94c0717f784a271e478329631cfcbc49b1b1495e34e637488"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(6500000,6600000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.33092379570007324,
+    "stderr": "",
+    "stdout_sha256": "bd122864410321b513cf7ee88ad61edc273f9fd227800feeab1785a405fd3e13"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(6600000,6700000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.37600064277648926,
+    "stderr": "",
+    "stdout_sha256": "c7df6072151c601dad9f4c3d3a8e0e3db71f62506eea76d3085dc12d9cd2a51b"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(6700000,6800000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.34712767601013184,
+    "stderr": "",
+    "stdout_sha256": "0368e2c1a5e98820bc64dc626d0371a94ca8033d197a70529c0e54d962c62d04"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.proofText.slice(6800000,6900000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3430013656616211,
+    "stderr": "",
+    "stdout_sha256": "501a59a86099e74ba805e1de82ec42ec6f4ee68b3ee19324cec0f90dbecc0c5a"
+  }
+]

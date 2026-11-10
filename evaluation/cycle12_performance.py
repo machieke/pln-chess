@@ -101,6 +101,7 @@ def worker(out,name,repetition):
     write_json(out/f'performance/workers/{name}-{repetition}.json',dict(workload=name,repetition=repetition,
         case=case,pieces=len(position.pieces),measurements=measurements,field_model_version=field_model.version,
         concept_model_version=concept_model.version,runtime_version=runtime.version,exact_proof_evidence_graph_parity=True,
+        cold_cache_scope='Fresh inference/session caches within each new worker; operating-system and filesystem caches are not flushed.',
         process_peak_rss_kib=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
         native_child_peak_rss_kib=resource.getrusage(resource.RUSAGE_CHILDREN).ru_maxrss,
         timing_scope='Model/runtime construction excluded. Field observation, native inference, proof assembly, graph construction and its internal identity/validation hashing included. Additional parity digest calculations are outside the timed condition. Parent preparation is separately timed. No competing study workers.',

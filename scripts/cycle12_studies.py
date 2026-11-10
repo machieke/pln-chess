@@ -31,10 +31,13 @@ def run(out,wait=False):
             print('RESUME STUDY',name,flush=True);continue
         started=time.time()
         with log.open('w') as stream:result=subprocess.run(argv,cwd=ROOT,env=env,stdout=stream,stderr=subprocess.STDOUT)
+        unchanged=source_hash==production_code_hash()
         write_json(path,dict(argv=argv,returncode=result.returncode,production_code_hash=source_hash,
+            production_unchanged_during_stage=unchanged,
             source_head=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
             started_unix=started,elapsed_seconds=time.time()-started,log=str(log.relative_to(out))))
         if result.returncode:raise RuntimeError(str(log))
+        if not unchanged:raise RuntimeError('Production source changed during stage; retain outputs but do not accept this execution')
         print('CYCLE12 STUDY PASSED',name,flush=True)
 
 

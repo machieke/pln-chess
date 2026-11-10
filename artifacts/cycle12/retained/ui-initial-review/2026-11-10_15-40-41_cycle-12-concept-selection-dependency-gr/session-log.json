@@ -1,0 +1,647 @@
+[
+  {
+    "action": "open http://127.0.0.1:18782/interactions",
+    "relativeTimeSec": 0.5,
+    "timestamp": "2026-11-10T15:40:46.429Z"
+  },
+  {
+    "action": "--session pln-chess-cycle12-d245f2ac5b76 set viewport 1280 900",
+    "relativeTimeSec": 1.2,
+    "timestamp": "2026-11-10T15:40:47.130Z"
+  },
+  {
+    "action": "eval (async()=>{const end=Date.now()+5000;while((innerWidth!==1280||innerHeight!==900)&&Date.now()<end)await new Promise(r=>setTimeout(r,100));return [innerWidth,innerHeight]})()",
+    "relativeTimeSec": 1.7,
+    "timestamp": "2026-11-10T15:40:47.691Z"
+  },
+  {
+    "action": "snapshot -i",
+    "relativeTimeSec": 2.3,
+    "timestamp": "2026-11-10T15:40:48.268Z"
+  },
+  {
+    "action": "screenshot initial-interactions.png",
+    "relativeTimeSec": 3,
+    "timestamp": "2026-11-10T15:40:48.917Z"
+  },
+  {
+    "action": "eval (async()=>{const mode=\"snapshot\";if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=0;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()",
+    "relativeTimeSec": 3.5,
+    "timestamp": "2026-11-10T15:40:49.463Z"
+  },
+  {
+    "action": "screenshot before-after-interactions.png",
+    "relativeTimeSec": 8.8,
+    "timestamp": "2026-11-10T15:40:54.787Z"
+  },
+  {
+    "action": "eval (async()=>{const mode=null;if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=null;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"attack\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()",
+    "relativeTimeSec": 9.3,
+    "timestamp": "2026-11-10T15:40:55.287Z"
+  },
+  {
+    "action": "eval (async()=>{const mode=null;if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=null;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"defense\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()",
+    "relativeTimeSec": 13.3,
+    "timestamp": "2026-11-10T15:40:59.261Z"
+  },
+  {
+    "action": "eval (async()=>{const mode=null;if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=null;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"mobility\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()",
+    "relativeTimeSec": 16.7,
+    "timestamp": "2026-11-10T15:41:02.668Z"
+  },
+  {
+    "action": "eval (async()=>{const mode=null;if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=null;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"king-exposure\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()",
+    "relativeTimeSec": 20.1,
+    "timestamp": "2026-11-10T15:41:06.092Z"
+  },
+  {
+    "action": "eval (async()=>{const mode=\"concept\";if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=0;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"all\", \"piece\": \"\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()",
+    "relativeTimeSec": 22.9,
+    "timestamp": "2026-11-10T15:41:08.809Z"
+  },
+  {
+    "action": "eval (async()=>{const mode=\"concept\";if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=8;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"all\", \"piece\": \"\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()",
+    "relativeTimeSec": 26,
+    "timestamp": "2026-11-10T15:41:11.981Z"
+  },
+  {
+    "action": "eval (async()=>{const mode=\"concept\";if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=16;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"all\", \"piece\": \"\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()",
+    "relativeTimeSec": 29.1,
+    "timestamp": "2026-11-10T15:41:15.078Z"
+  },
+  {
+    "action": "eval (async()=>{const mode=\"concept\";if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=24;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"all\", \"piece\": \"\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()",
+    "relativeTimeSec": 34,
+    "timestamp": "2026-11-10T15:41:19.978Z"
+  },
+  {
+    "action": "eval (async()=>{const mode=\"concept\";if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=32;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"all\", \"piece\": \"\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()",
+    "relativeTimeSec": 37.8,
+    "timestamp": "2026-11-10T15:41:23.741Z"
+  },
+  {
+    "action": "eval (async()=>{const mode=\"concept\";if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=40;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"all\", \"piece\": \"\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()",
+    "relativeTimeSec": 41.3,
+    "timestamp": "2026-11-10T15:41:27.290Z"
+  },
+  {
+    "action": "eval (async()=>{const mode=\"concept\";if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=46;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"all\", \"piece\": \"\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()",
+    "relativeTimeSec": 46,
+    "timestamp": "2026-11-10T15:41:31.946Z"
+  },
+  {
+    "action": "eval (async()=>{const mode=\"concept\";if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=54;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"all\", \"piece\": \"\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()",
+    "relativeTimeSec": 48.8,
+    "timestamp": "2026-11-10T15:41:34.743Z"
+  },
+  {
+    "action": "eval document.getElementById(\"concepts\").scrollIntoView();true",
+    "relativeTimeSec": 53,
+    "timestamp": "2026-11-10T15:41:38.930Z"
+  },
+  {
+    "action": "screenshot partial-concept-and-gaps.png",
+    "relativeTimeSec": 53.3,
+    "timestamp": "2026-11-10T15:41:39.278Z"
+  },
+  {
+    "action": "eval document.getElementById(\"graph\").scrollIntoView();true",
+    "relativeTimeSec": 53.7,
+    "timestamp": "2026-11-10T15:41:39.670Z"
+  },
+  {
+    "action": "screenshot dependency-graph.png",
+    "relativeTimeSec": 54.1,
+    "timestamp": "2026-11-10T15:41:40.054Z"
+  },
+  {
+    "action": "eval document.querySelector(\"#graph g\").dispatchEvent(new Event(\"click\"));true",
+    "relativeTimeSec": 54.5,
+    "timestamp": "2026-11-10T15:41:40.459Z"
+  },
+  {
+    "action": "eval JSON.parse(document.getElementById(\"proof\").textContent)",
+    "relativeTimeSec": 54.9,
+    "timestamp": "2026-11-10T15:41:40.833Z"
+  },
+  {
+    "action": "eval (async()=>{const mode=\"snapshot\";if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=0;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"attack\", \"piece\": \"a4\", \"concept\": \"all\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()",
+    "relativeTimeSec": 55.2,
+    "timestamp": "2026-11-10T15:41:41.186Z"
+  },
+  {
+    "action": "eval (async()=>{const b=document.querySelector(\"#relations button[data-native=\"+JSON.stringify(\"true\")+\"]\");b.click();const d=JSON.parse(document.getElementById(\"proof\").textContent);return {proof:d.proof_id,nodes:d.proof_trace.length,rule:d.rule_id,evidence:d.evidence_ids.length};})()",
+    "relativeTimeSec": 58.2,
+    "timestamp": "2026-11-10T15:41:44.168Z"
+  },
+  {
+    "action": "eval document.getElementById(\"proof\").scrollIntoView();true",
+    "relativeTimeSec": 58.6,
+    "timestamp": "2026-11-10T15:41:44.550Z"
+  },
+  {
+    "action": "screenshot native-proof.png",
+    "relativeTimeSec": 58.9,
+    "timestamp": "2026-11-10T15:41:44.897Z"
+  },
+  {
+    "action": "eval (async()=>{const mode=null;if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=null;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"field-model\": \"empty\", \"concept-model\": \"empty\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()",
+    "relativeTimeSec": 59.4,
+    "timestamp": "2026-11-10T15:41:45.314Z"
+  },
+  {
+    "action": "eval Array.from(document.querySelectorAll(\"#relations tbody tr\")).every(r=>r.textContent.includes(\"unknown\"))",
+    "relativeTimeSec": 59.9,
+    "timestamp": "2026-11-10T15:41:45.884Z"
+  },
+  {
+    "action": "eval (async()=>{const mode=null;if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=null;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"field-model\": \"trained\", \"concept-model\": \"trained\", \"budget\": 0}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()",
+    "relativeTimeSec": 60.2,
+    "timestamp": "2026-11-10T15:41:46.202Z"
+  },
+  {
+    "action": "eval (async()=>{const mode=null;if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=null;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"budget\": 100000, \"unknown\": \"a4\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()",
+    "relativeTimeSec": 61.3,
+    "timestamp": "2026-11-10T15:41:47.276Z"
+  },
+  {
+    "action": "eval Array.from(document.querySelectorAll(\"#relations tbody tr\")).every(r=>r.textContent.includes(\"unknown\"))",
+    "relativeTimeSec": 62.3,
+    "timestamp": "2026-11-10T15:41:48.306Z"
+  },
+  {
+    "action": "eval (async()=>{const mode=\"sequence\";if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=7;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"attack\", \"unknown\": \"\", \"candidate-limit\": 4}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()",
+    "relativeTimeSec": 62.7,
+    "timestamp": "2026-11-10T15:41:48.651Z"
+  },
+  {
+    "action": "eval document.getElementById(\"step\").value=0;document.getElementById(\"step\").dispatchEvent(new Event(\"input\"));({label:document.getElementById(\"step-label\").textContent,transition:document.getElementById(\"transition\").textContent})",
+    "relativeTimeSec": 69.5,
+    "timestamp": "2026-11-10T15:41:55.466Z"
+  },
+  {
+    "action": "eval document.getElementById(\"step\").value=1;document.getElementById(\"step\").dispatchEvent(new Event(\"input\"));({label:document.getElementById(\"step-label\").textContent,transition:document.getElementById(\"transition\").textContent})",
+    "relativeTimeSec": 69.9,
+    "timestamp": "2026-11-10T15:41:55.889Z"
+  },
+  {
+    "action": "eval document.getElementById(\"step\").value=2;document.getElementById(\"step\").dispatchEvent(new Event(\"input\"));({label:document.getElementById(\"step-label\").textContent,transition:document.getElementById(\"transition\").textContent})",
+    "relativeTimeSec": 70.4,
+    "timestamp": "2026-11-10T15:41:56.356Z"
+  },
+  {
+    "action": "eval document.getElementById(\"step\").value=3;document.getElementById(\"step\").dispatchEvent(new Event(\"input\"));({label:document.getElementById(\"step-label\").textContent,transition:document.getElementById(\"transition\").textContent})",
+    "relativeTimeSec": 70.8,
+    "timestamp": "2026-11-10T15:41:56.790Z"
+  },
+  {
+    "action": "eval document.getElementById(\"step\").value=4;document.getElementById(\"step\").dispatchEvent(new Event(\"input\"));({label:document.getElementById(\"step-label\").textContent,transition:document.getElementById(\"transition\").textContent})",
+    "relativeTimeSec": 71.2,
+    "timestamp": "2026-11-10T15:41:57.198Z"
+  },
+  {
+    "action": "eval document.getElementById(\"step\").scrollIntoView();true",
+    "relativeTimeSec": 71.7,
+    "timestamp": "2026-11-10T15:41:57.662Z"
+  },
+  {
+    "action": "screenshot supplied-sequence-promotion.png",
+    "relativeTimeSec": 72,
+    "timestamp": "2026-11-10T15:41:57.992Z"
+  },
+  {
+    "action": "eval (async()=>{const mode=null;if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=null;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"supplied\": \"{\\\"dependence_group\\\": \\\"sequence/promotion-threat\\\", \\\"description\\\": \\\"A supplied underpromotion changes the piece kind and its influence pattern.\\\", \\\"events\\\": [{\\\"confidence\\\": 0.99, \\\"dependence_group\\\": \\\"sequence/promotion-threat\\\", \\\"id\\\": \\\"sequence-event:a2a9dc510dadc83079d1a1ba1433badc0a88c57d58af77625b2d538ff7d4de3d\\\", \\\"index\\\": 1, \\\"move\\\": \\\"b6b7\\\", \\\"observed_fen\\\": \\\"7k/1P6/8/8/8/8/8/6K1 b - - 0 1\\\", \\\"source\\\": \\\"controlled-supplied-sequence/promotion-threat\\\"}, {\\\"confidence\\\": 0.99, \\\"dependence_group\\\": \\\"sequence/promotion-threat\\\", \\\"id\\\": \\\"sequence-event:175569abda20084a9a99bc7e393b092ea452ed1316a9ef0de3c4440b9df9b205\\\", \\\"index\\\": 2, \\\"move\\\": null, \\\"observed_fen\\\": \\\"6k1/1P6/8/8/8/8/8/6K1 w - - 1 2\\\", \\\"source\\\": \\\"controlled-supplied-sequence/promotion-threat\\\"}, {\\\"confidence\\\": 0.99, \\\"dependence_group\\\": \\\"sequence/promotion-threat\\\", \\\"id\\\": \\\"sequence-event:0ecb7c238e10586c48613a854d57173d7437fd10a0033b8ded0ce0204561299a\\\", \\\"index\\\": 3, \\\"move\\\": \\\"b7b8n\\\", \\\"observed_fen\\\": \\\"1N4k1/8/8/8/8/8/8/6K1 b - - 0 2\\\", \\\"source\\\": \\\"controlled-supplied-sequence/promotion-threat\\\"}, {\\\"confidence\\\": 0.99, \\\"dependence_group\\\": \\\"sequence/promotion-threat\\\", \\\"id\\\": \\\"sequence-event:4c238c0bf4fdd877b75749c5cc18a47fc5eb3a46e778dee60e375f246be33e39\\\", \\\"index\\\": 4, \\\"move\\\": \\\"g8f7\\\", \\\"observed_fen\\\": \\\"1N6/5k2/8/8/8/8/8/6K1 w - - 1 3\\\", \\\"source\\\": \\\"controlled-supplied-sequence/promotion-threat\\\"}], \\\"id\\\": \\\"promotion-threat\\\", \\\"initial_fen\\\": \\\"7k/8/1P6/8/8/8/8/6K1 w - - 0 1\\\", \\\"scope\\\": \\\"Supplied legal moves, independently checked offline. The system did not select or plan this sequence.\\\", \\\"source\\\": \\\"controlled-supplied-sequence/promotion-threat\\\", \\\"unknown_squares\\\": []}\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()",
+    "relativeTimeSec": 72.4,
+    "timestamp": "2026-11-10T15:41:58.406Z"
+  },
+  {
+    "action": "eval document.getElementById(\"step\").value=2;document.getElementById(\"step\").dispatchEvent(new Event(\"input\"));true",
+    "relativeTimeSec": 80,
+    "timestamp": "2026-11-10T15:42:05.959Z"
+  },
+  {
+    "action": "eval document.getElementById(\"transition\").textContent",
+    "relativeTimeSec": 80.4,
+    "timestamp": "2026-11-10T15:42:06.377Z"
+  },
+  {
+    "action": "screenshot missing-event-gap.png",
+    "relativeTimeSec": 80.7,
+    "timestamp": "2026-11-10T15:42:06.681Z"
+  },
+  {
+    "action": "eval (async()=>{const mode=\"snapshot\";if(mode){const e=document.getElementById(\"view-mode\");e.value=mode;e.dispatchEvent(new Event(\"change\"));}const example=0;if(example!==null){const e=document.getElementById(\"example\");e.value=String(example);e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"family\": \"attack\", \"piece\": \"a4\", \"candidate-limit\": 0, \"unknown\": \"\"}))document.getElementById(id).value=value;document.getElementById(\"inspect-form\").requestSubmit();while(document.getElementById(\"run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"status\").textContent,transition:document.getElementById(\"transition\").textContent,rows:document.querySelectorAll(\"#relations tbody tr\").length,before:document.querySelectorAll(\"#before .cell\").length,after:document.querySelectorAll(\"#after .cell\").length,concepts:document.querySelectorAll(\".concept-card\").length,edges:document.querySelectorAll(\"#graph g\").length};})()",
+    "relativeTimeSec": 81.1,
+    "timestamp": "2026-11-10T15:42:07.083Z"
+  },
+  {
+    "action": "eval (async()=>{const old=URL.createObjectURL.bind(URL);URL.createObjectURL=b=>{window.proofBlob=b;return old(b)};document.getElementById(\"export\").click();window.proofText=await window.proofBlob.text();const bytes=new TextEncoder().encode(window.proofText);const hash=Array.from(new Uint8Array(await crypto.subtle.digest(\"SHA-256\",bytes))).map(x=>x.toString(16).padStart(2,\"0\")).join(\"\");return {bytes:bytes.length,characters:window.proofText.length,sha256:hash};})()",
+    "relativeTimeSec": 83.1,
+    "timestamp": "2026-11-10T15:42:09.052Z"
+  },
+  {
+    "action": "eval window.proofText.slice(0,100000)",
+    "relativeTimeSec": 83.6,
+    "timestamp": "2026-11-10T15:42:09.531Z"
+  },
+  {
+    "action": "eval window.proofText.slice(100000,200000)",
+    "relativeTimeSec": 83.9,
+    "timestamp": "2026-11-10T15:42:09.862Z"
+  },
+  {
+    "action": "eval window.proofText.slice(200000,300000)",
+    "relativeTimeSec": 84.2,
+    "timestamp": "2026-11-10T15:42:10.202Z"
+  },
+  {
+    "action": "eval window.proofText.slice(300000,400000)",
+    "relativeTimeSec": 84.6,
+    "timestamp": "2026-11-10T15:42:10.560Z"
+  },
+  {
+    "action": "eval window.proofText.slice(400000,500000)",
+    "relativeTimeSec": 84.9,
+    "timestamp": "2026-11-10T15:42:10.890Z"
+  },
+  {
+    "action": "eval window.proofText.slice(500000,600000)",
+    "relativeTimeSec": 85.3,
+    "timestamp": "2026-11-10T15:42:11.270Z"
+  },
+  {
+    "action": "eval window.proofText.slice(600000,700000)",
+    "relativeTimeSec": 85.7,
+    "timestamp": "2026-11-10T15:42:11.625Z"
+  },
+  {
+    "action": "eval window.proofText.slice(700000,800000)",
+    "relativeTimeSec": 86,
+    "timestamp": "2026-11-10T15:42:12.001Z"
+  },
+  {
+    "action": "eval window.proofText.slice(800000,900000)",
+    "relativeTimeSec": 86.4,
+    "timestamp": "2026-11-10T15:42:12.360Z"
+  },
+  {
+    "action": "eval window.proofText.slice(900000,1000000)",
+    "relativeTimeSec": 86.8,
+    "timestamp": "2026-11-10T15:42:12.734Z"
+  },
+  {
+    "action": "eval window.proofText.slice(1000000,1100000)",
+    "relativeTimeSec": 87.1,
+    "timestamp": "2026-11-10T15:42:13.093Z"
+  },
+  {
+    "action": "eval window.proofText.slice(1100000,1200000)",
+    "relativeTimeSec": 87.5,
+    "timestamp": "2026-11-10T15:42:13.429Z"
+  },
+  {
+    "action": "eval window.proofText.slice(1200000,1300000)",
+    "relativeTimeSec": 87.8,
+    "timestamp": "2026-11-10T15:42:13.790Z"
+  },
+  {
+    "action": "eval window.proofText.slice(1300000,1400000)",
+    "relativeTimeSec": 88.2,
+    "timestamp": "2026-11-10T15:42:14.172Z"
+  },
+  {
+    "action": "eval window.proofText.slice(1400000,1500000)",
+    "relativeTimeSec": 88.6,
+    "timestamp": "2026-11-10T15:42:14.522Z"
+  },
+  {
+    "action": "eval window.proofText.slice(1500000,1600000)",
+    "relativeTimeSec": 88.9,
+    "timestamp": "2026-11-10T15:42:14.863Z"
+  },
+  {
+    "action": "eval window.proofText.slice(1600000,1700000)",
+    "relativeTimeSec": 89.2,
+    "timestamp": "2026-11-10T15:42:15.189Z"
+  },
+  {
+    "action": "eval window.proofText.slice(1700000,1800000)",
+    "relativeTimeSec": 89.6,
+    "timestamp": "2026-11-10T15:42:15.516Z"
+  },
+  {
+    "action": "eval window.proofText.slice(1800000,1900000)",
+    "relativeTimeSec": 89.9,
+    "timestamp": "2026-11-10T15:42:15.852Z"
+  },
+  {
+    "action": "eval window.proofText.slice(1900000,2000000)",
+    "relativeTimeSec": 90.2,
+    "timestamp": "2026-11-10T15:42:16.197Z"
+  },
+  {
+    "action": "eval window.proofText.slice(2000000,2100000)",
+    "relativeTimeSec": 90.6,
+    "timestamp": "2026-11-10T15:42:16.540Z"
+  },
+  {
+    "action": "eval window.proofText.slice(2100000,2200000)",
+    "relativeTimeSec": 90.9,
+    "timestamp": "2026-11-10T15:42:16.882Z"
+  },
+  {
+    "action": "eval window.proofText.slice(2200000,2300000)",
+    "relativeTimeSec": 91.3,
+    "timestamp": "2026-11-10T15:42:17.241Z"
+  },
+  {
+    "action": "eval window.proofText.slice(2300000,2400000)",
+    "relativeTimeSec": 91.6,
+    "timestamp": "2026-11-10T15:42:17.602Z"
+  },
+  {
+    "action": "eval window.proofText.slice(2400000,2500000)",
+    "relativeTimeSec": 92,
+    "timestamp": "2026-11-10T15:42:17.960Z"
+  },
+  {
+    "action": "eval window.proofText.slice(2500000,2600000)",
+    "relativeTimeSec": 92.3,
+    "timestamp": "2026-11-10T15:42:18.302Z"
+  },
+  {
+    "action": "eval window.proofText.slice(2600000,2700000)",
+    "relativeTimeSec": 92.7,
+    "timestamp": "2026-11-10T15:42:18.647Z"
+  },
+  {
+    "action": "eval window.proofText.slice(2700000,2800000)",
+    "relativeTimeSec": 93,
+    "timestamp": "2026-11-10T15:42:18.990Z"
+  },
+  {
+    "action": "eval window.proofText.slice(2800000,2900000)",
+    "relativeTimeSec": 93.4,
+    "timestamp": "2026-11-10T15:42:19.331Z"
+  },
+  {
+    "action": "eval window.proofText.slice(2900000,3000000)",
+    "relativeTimeSec": 93.7,
+    "timestamp": "2026-11-10T15:42:19.693Z"
+  },
+  {
+    "action": "eval window.proofText.slice(3000000,3100000)",
+    "relativeTimeSec": 94.1,
+    "timestamp": "2026-11-10T15:42:20.077Z"
+  },
+  {
+    "action": "eval window.proofText.slice(3100000,3200000)",
+    "relativeTimeSec": 94.5,
+    "timestamp": "2026-11-10T15:42:20.461Z"
+  },
+  {
+    "action": "eval window.proofText.slice(3200000,3300000)",
+    "relativeTimeSec": 94.8,
+    "timestamp": "2026-11-10T15:42:20.768Z"
+  },
+  {
+    "action": "eval window.proofText.slice(3300000,3400000)",
+    "relativeTimeSec": 95.2,
+    "timestamp": "2026-11-10T15:42:21.148Z"
+  },
+  {
+    "action": "eval window.proofText.slice(3400000,3500000)",
+    "relativeTimeSec": 95.5,
+    "timestamp": "2026-11-10T15:42:21.492Z"
+  },
+  {
+    "action": "eval window.proofText.slice(3500000,3600000)",
+    "relativeTimeSec": 95.9,
+    "timestamp": "2026-11-10T15:42:21.852Z"
+  },
+  {
+    "action": "eval window.proofText.slice(3600000,3700000)",
+    "relativeTimeSec": 96.2,
+    "timestamp": "2026-11-10T15:42:22.192Z"
+  },
+  {
+    "action": "eval window.proofText.slice(3700000,3800000)",
+    "relativeTimeSec": 96.6,
+    "timestamp": "2026-11-10T15:42:22.531Z"
+  },
+  {
+    "action": "eval window.proofText.slice(3800000,3900000)",
+    "relativeTimeSec": 96.9,
+    "timestamp": "2026-11-10T15:42:22.845Z"
+  },
+  {
+    "action": "eval window.proofText.slice(3900000,4000000)",
+    "relativeTimeSec": 97.2,
+    "timestamp": "2026-11-10T15:42:23.206Z"
+  },
+  {
+    "action": "eval window.proofText.slice(4000000,4100000)",
+    "relativeTimeSec": 97.6,
+    "timestamp": "2026-11-10T15:42:23.568Z"
+  },
+  {
+    "action": "eval window.proofText.slice(4100000,4200000)",
+    "relativeTimeSec": 97.9,
+    "timestamp": "2026-11-10T15:42:23.886Z"
+  },
+  {
+    "action": "eval window.proofText.slice(4200000,4300000)",
+    "relativeTimeSec": 98.3,
+    "timestamp": "2026-11-10T15:42:24.228Z"
+  },
+  {
+    "action": "eval window.proofText.slice(4300000,4400000)",
+    "relativeTimeSec": 98.6,
+    "timestamp": "2026-11-10T15:42:24.566Z"
+  },
+  {
+    "action": "eval window.proofText.slice(4400000,4500000)",
+    "relativeTimeSec": 98.9,
+    "timestamp": "2026-11-10T15:42:24.904Z"
+  },
+  {
+    "action": "eval window.proofText.slice(4500000,4600000)",
+    "relativeTimeSec": 99.3,
+    "timestamp": "2026-11-10T15:42:25.259Z"
+  },
+  {
+    "action": "eval window.proofText.slice(4600000,4700000)",
+    "relativeTimeSec": 99.7,
+    "timestamp": "2026-11-10T15:42:25.607Z"
+  },
+  {
+    "action": "eval window.proofText.slice(4700000,4800000)",
+    "relativeTimeSec": 100,
+    "timestamp": "2026-11-10T15:42:25.958Z"
+  },
+  {
+    "action": "eval window.proofText.slice(4800000,4900000)",
+    "relativeTimeSec": 100.3,
+    "timestamp": "2026-11-10T15:42:26.303Z"
+  },
+  {
+    "action": "eval window.proofText.slice(4900000,5000000)",
+    "relativeTimeSec": 100.7,
+    "timestamp": "2026-11-10T15:42:26.663Z"
+  },
+  {
+    "action": "eval window.proofText.slice(5000000,5100000)",
+    "relativeTimeSec": 101.1,
+    "timestamp": "2026-11-10T15:42:27.019Z"
+  },
+  {
+    "action": "eval window.proofText.slice(5100000,5200000)",
+    "relativeTimeSec": 101.4,
+    "timestamp": "2026-11-10T15:42:27.358Z"
+  },
+  {
+    "action": "eval window.proofText.slice(5200000,5300000)",
+    "relativeTimeSec": 101.7,
+    "timestamp": "2026-11-10T15:42:27.702Z"
+  },
+  {
+    "action": "eval window.proofText.slice(5300000,5400000)",
+    "relativeTimeSec": 102.1,
+    "timestamp": "2026-11-10T15:42:28.044Z"
+  },
+  {
+    "action": "eval window.proofText.slice(5400000,5500000)",
+    "relativeTimeSec": 102.4,
+    "timestamp": "2026-11-10T15:42:28.382Z"
+  },
+  {
+    "action": "eval window.proofText.slice(5500000,5600000)",
+    "relativeTimeSec": 102.8,
+    "timestamp": "2026-11-10T15:42:28.766Z"
+  },
+  {
+    "action": "eval window.proofText.slice(5600000,5700000)",
+    "relativeTimeSec": 103.1,
+    "timestamp": "2026-11-10T15:42:29.079Z"
+  },
+  {
+    "action": "eval window.proofText.slice(5700000,5800000)",
+    "relativeTimeSec": 103.5,
+    "timestamp": "2026-11-10T15:42:29.428Z"
+  },
+  {
+    "action": "eval window.proofText.slice(5800000,5900000)",
+    "relativeTimeSec": 103.8,
+    "timestamp": "2026-11-10T15:42:29.763Z"
+  },
+  {
+    "action": "eval window.proofText.slice(5900000,6000000)",
+    "relativeTimeSec": 104.1,
+    "timestamp": "2026-11-10T15:42:30.106Z"
+  },
+  {
+    "action": "eval window.proofText.slice(6000000,6100000)",
+    "relativeTimeSec": 104.5,
+    "timestamp": "2026-11-10T15:42:30.472Z"
+  },
+  {
+    "action": "eval window.proofText.slice(6100000,6200000)",
+    "relativeTimeSec": 104.8,
+    "timestamp": "2026-11-10T15:42:30.806Z"
+  },
+  {
+    "action": "eval window.proofText.slice(6200000,6300000)",
+    "relativeTimeSec": 105.2,
+    "timestamp": "2026-11-10T15:42:31.143Z"
+  },
+  {
+    "action": "eval window.proofText.slice(6300000,6400000)",
+    "relativeTimeSec": 105.5,
+    "timestamp": "2026-11-10T15:42:31.494Z"
+  },
+  {
+    "action": "eval window.proofText.slice(6400000,6500000)",
+    "relativeTimeSec": 105.9,
+    "timestamp": "2026-11-10T15:42:31.832Z"
+  },
+  {
+    "action": "eval window.proofText.slice(6500000,6600000)",
+    "relativeTimeSec": 106.2,
+    "timestamp": "2026-11-10T15:42:32.168Z"
+  },
+  {
+    "action": "eval window.proofText.slice(6600000,6700000)",
+    "relativeTimeSec": 106.6,
+    "timestamp": "2026-11-10T15:42:32.542Z"
+  },
+  {
+    "action": "eval window.proofText.slice(6700000,6800000)",
+    "relativeTimeSec": 106.9,
+    "timestamp": "2026-11-10T15:42:32.894Z"
+  },
+  {
+    "action": "eval window.proofText.slice(6800000,6900000)",
+    "relativeTimeSec": 107.3,
+    "timestamp": "2026-11-10T15:42:33.253Z"
+  },
+  {
+    "action": "eval window.proofText.slice(6900000,7000000)",
+    "relativeTimeSec": 107.6,
+    "timestamp": "2026-11-10T15:42:33.571Z"
+  },
+  {
+    "action": "--session pln-chess-cycle12-d245f2ac5b76 set viewport 390 844",
+    "relativeTimeSec": 306.9,
+    "timestamp": "2026-11-10T15:45:52.821Z"
+  },
+  {
+    "action": "eval window.scrollTo(0,0);true",
+    "relativeTimeSec": 307.3,
+    "timestamp": "2026-11-10T15:45:53.214Z"
+  },
+  {
+    "action": "screenshot mobile-controls-initial-review.png",
+    "relativeTimeSec": 307.6,
+    "timestamp": "2026-11-10T15:45:53.554Z"
+  },
+  {
+    "action": "eval document.getElementById(\"graph\").scrollIntoView();true",
+    "relativeTimeSec": 308,
+    "timestamp": "2026-11-10T15:45:53.944Z"
+  },
+  {
+    "action": "screenshot mobile-graph-initial-review.png",
+    "relativeTimeSec": 308.3,
+    "timestamp": "2026-11-10T15:45:54.279Z"
+  },
+  {
+    "action": "set viewport 390 844",
+    "relativeTimeSec": 403.3,
+    "timestamp": "2026-11-10T15:47:29.217Z"
+  },
+  {
+    "action": "eval ({width:innerWidth,height:innerHeight})",
+    "relativeTimeSec": 403.8,
+    "timestamp": "2026-11-10T15:47:29.767Z"
+  },
+  {
+    "action": "eval window.scrollTo(0,0);true",
+    "relativeTimeSec": 424.7,
+    "timestamp": "2026-11-10T15:47:50.653Z"
+  },
+  {
+    "action": "screenshot mobile-actual-390.png",
+    "relativeTimeSec": 425,
+    "timestamp": "2026-11-10T15:47:50.996Z"
+  },
+  {
+    "action": "eval ({width:innerWidth,height:innerHeight,scrollWidth:document.documentElement.scrollWidth})",
+    "relativeTimeSec": 425.4,
+    "timestamp": "2026-11-10T15:47:51.385Z"
+  },
+  {
+    "action": "eval (async()=>{const text=await window.proofBlob.text();const bytes=new TextEncoder().encode(text);const packed=new Uint8Array(await new Response(new Blob([bytes]).stream().pipeThrough(new CompressionStream(\"gzip\"))).arrayBuffer());let binary=\"\";for(let i=0;i<packed.length;i+=32768)binary+=String.fromCharCode(...packed.subarray(i,i+32768));return {bytes:bytes.length,sha256:Array.from(new Uint8Array(await crypto.subtle.digest(\"SHA-256\",bytes))).map(x=>x.toString(16).padStart(2,\"0\")).join(\"\"),base64:btoa(binary),matchesServerResult:text===JSON.stringify(result,null,2)};})()",
+    "relativeTimeSec": 464.5,
+    "timestamp": "2026-11-10T15:48:30.447Z"
+  }
+]
