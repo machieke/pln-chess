@@ -1,0 +1,232 @@
+{
+  "complete_workers": 42,
+  "driver_sha256": "fbc79292452a67cfcba9f766689a49e423608baeb531a03b1eaa9c5d9ea4489b",
+  "memory_scope_note": "The legacy raw native_child_peak_rss_kib keys record getrusage(RUSAGE_CHILDREN).ru_maxrss across all terminated child commands. They may include inherited launch memory and do not isolate the native runtime working set. Raw values and timed worker files are preserved unchanged.",
+  "passed": true,
+  "production_code_hash": "76b645e833a27c711d1b6ee503ff7382cbffc44b431669c38dcabd7acd1dc359",
+  "reference_artifact": "performance/complete-temporal-reference.json.xz",
+  "reference_sha256": "d2bcdf6655537ce55f9c038486d4fbb472cf7c2125a66a64fb82327ea079be73",
+  "scope": "Checks completeness of timed field, concept and legal results, then compares every timed temporal hash with an independent native replay. The reference and failed checks are retained. This extra replay is outside performance timings.",
+  "temporal_checks": {
+    "all_fields_complete": true,
+    "complete_execution": true,
+    "complete_history": true,
+    "every_timed_hash_matches": true,
+    "seven_states": true
+  },
+  "temporal_repetitions": 7,
+  "temporal_semantic_hash": "19a28f061d6a1248b8ac4db6559eac29414ca527e3de35d943a84f0d34901d8c",
+  "temporal_states": 7,
+  "workers": [
+    {
+      "complete": true,
+      "sha256": "f11714cf89a3741bf4c3c32c1a6fe5a4843af8b9ce9cb523f1e3da307b9531c1",
+      "worker": "performance/workers/rook-obstruction-0.json"
+    },
+    {
+      "complete": true,
+      "sha256": "fdac845eb009e7431c05ad39f0a7626fb80d7f5a505de4416f3e7de142843a74",
+      "worker": "performance/workers/rook-obstruction-1.json"
+    },
+    {
+      "complete": true,
+      "sha256": "5cb921f293de63e4c725e41868ebb063f395457db8a0286ade816bbe64828004",
+      "worker": "performance/workers/rook-obstruction-2.json"
+    },
+    {
+      "complete": true,
+      "sha256": "a413626bf6d4e93db4ae92adbd1eed734a6b3817903217134505d6090b6790ab",
+      "worker": "performance/workers/rook-obstruction-3.json"
+    },
+    {
+      "complete": true,
+      "sha256": "5378fcc510c81a1e280a83b2b0591e2400f5a84d30f14ac7afa5938008ef0d1c",
+      "worker": "performance/workers/rook-obstruction-4.json"
+    },
+    {
+      "complete": true,
+      "sha256": "5485abadbc47163ca7f653de90be22354680f8db0922b501c3c301720e77d69a",
+      "worker": "performance/workers/rook-obstruction-5.json"
+    },
+    {
+      "complete": true,
+      "sha256": "296b8612960af5febcf6498fba54eae44af68cfd2aae2d6c0d968ea047f5cac0",
+      "worker": "performance/workers/rook-obstruction-6.json"
+    },
+    {
+      "complete": true,
+      "sha256": "1e11a5d4ac919e121975c264ccc59a2d3f3166684ebc64c118f44477a7e7c800",
+      "worker": "performance/workers/promotion-0.json"
+    },
+    {
+      "complete": true,
+      "sha256": "9590bd36b8d9702d6fb17f7d88bb02bd617f9e318575f326c28d938a6eb969b6",
+      "worker": "performance/workers/promotion-1.json"
+    },
+    {
+      "complete": true,
+      "sha256": "f760a51125dd8482fdd62641a9fc252b23d0530cd62f6efc5b13a0e9373993d6",
+      "worker": "performance/workers/promotion-2.json"
+    },
+    {
+      "complete": true,
+      "sha256": "e25323a2c2248e8321a58de7c9bb940af03fa23cf48d577451eaf6cc615aca40",
+      "worker": "performance/workers/promotion-3.json"
+    },
+    {
+      "complete": true,
+      "sha256": "469cacc229afacf1bd963b6c7d38f1fc75220fc607a6de859ec77747199762b5",
+      "worker": "performance/workers/promotion-4.json"
+    },
+    {
+      "complete": true,
+      "sha256": "dbb7cf7c2c4070831c2ead41c7f54e0e23aa6b8fc29947bd7822bc5fdde5d94a",
+      "worker": "performance/workers/promotion-5.json"
+    },
+    {
+      "complete": true,
+      "sha256": "2796ab6126406ca96b2b7a747236ec82a82365c00f1e9b02acce50f0a89dba17",
+      "worker": "performance/workers/promotion-6.json"
+    },
+    {
+      "complete": true,
+      "sha256": "c43dc28e7f1cd06b0aea1ba38eadf896931af40791c495a98f6513c889848605",
+      "worker": "performance/workers/en-passant-0.json"
+    },
+    {
+      "complete": true,
+      "sha256": "76bff42fb78afe5daa6c11e50fb472b6e45e7a355f9cb620d7a36661b18f19cd",
+      "worker": "performance/workers/en-passant-1.json"
+    },
+    {
+      "complete": true,
+      "sha256": "585ce04e5cd7f8d97572a4312e8b4a249758572f997e5a7a163b6711f4c7ce08",
+      "worker": "performance/workers/en-passant-2.json"
+    },
+    {
+      "complete": true,
+      "sha256": "b6ebc6e2bd7c87db520c3dcd9219570fc389cb26c7cbbb22fb4fd868b9bd4f1a",
+      "worker": "performance/workers/en-passant-3.json"
+    },
+    {
+      "complete": true,
+      "sha256": "84790a3ed7eaaf198d2fa847cbddef1c8650a9d79fdab4398e496ebcfff784dd",
+      "worker": "performance/workers/en-passant-4.json"
+    },
+    {
+      "complete": true,
+      "sha256": "6bb7976224079c1119b5096bca2fb918017005ea9ec20a2ce13d6a0e7ec9af55",
+      "worker": "performance/workers/en-passant-5.json"
+    },
+    {
+      "complete": true,
+      "sha256": "15339f40aff9a27c59aedfbd40a0fb4f7f00efe5e3b311da02766a26c37021b1",
+      "worker": "performance/workers/en-passant-6.json"
+    },
+    {
+      "complete": true,
+      "sha256": "35cf3b02abf76bd7edc4a9ee1f9c2a722e711223dd4c7f839813ea44fe476dce",
+      "worker": "performance/workers/en-passant-exposure-0.json"
+    },
+    {
+      "complete": true,
+      "sha256": "4d7e1929a4fc596d988cdd474068ae2bb2960f931ecf6986ee03d06a977fa396",
+      "worker": "performance/workers/en-passant-exposure-1.json"
+    },
+    {
+      "complete": true,
+      "sha256": "e8f3b3daee5e952e139b4abda28fe8b9bf416aae521a5ec284d1778dc30e22a8",
+      "worker": "performance/workers/en-passant-exposure-2.json"
+    },
+    {
+      "complete": true,
+      "sha256": "78077f6b8f673c0c46836f4584b927d5d324da3890d784e08dcdde9d68f43de5",
+      "worker": "performance/workers/en-passant-exposure-3.json"
+    },
+    {
+      "complete": true,
+      "sha256": "b0e1e04f010e2f338e8c19811e5f62d380104f61287ace7291e2f1a591170ed7",
+      "worker": "performance/workers/en-passant-exposure-4.json"
+    },
+    {
+      "complete": true,
+      "sha256": "7cb98a77b03a98a6306c4a577610d27acfa12cebf9aff683a8121d7eca4acf16",
+      "worker": "performance/workers/en-passant-exposure-5.json"
+    },
+    {
+      "complete": true,
+      "sha256": "4a313a19fed4998b6716fd21d4c3bcdf9c3decc90001f336218390876b1e5529",
+      "worker": "performance/workers/en-passant-exposure-6.json"
+    },
+    {
+      "complete": true,
+      "sha256": "a8ab1b50675a316c20b1f1526f5bf48c710dd78dcb118615548a03c1e5d4417b",
+      "worker": "performance/workers/standard-opening-0.json"
+    },
+    {
+      "complete": true,
+      "sha256": "6921d44956b334114f410c0f84946fb6b6395d17ed7477fdc7b0313f2cb20ad8",
+      "worker": "performance/workers/standard-opening-1.json"
+    },
+    {
+      "complete": true,
+      "sha256": "2e5e0b8bd17e8adbf519f880c33a6849e6b0cd1bca6b307948d64c1128c2f8f4",
+      "worker": "performance/workers/standard-opening-2.json"
+    },
+    {
+      "complete": true,
+      "sha256": "aa90f28d52e4845c35c2835017616cc7d44a31ef4256b29532ef501fcc8e84bd",
+      "worker": "performance/workers/standard-opening-3.json"
+    },
+    {
+      "complete": true,
+      "sha256": "2f083749cb005b9e4fbe6c0b798e41c9e4e4e6818a9f9e20a73d8c8d892b5506",
+      "worker": "performance/workers/standard-opening-4.json"
+    },
+    {
+      "complete": true,
+      "sha256": "cee05bb799fc70df0712ca17c3c90747fcdebdb986bce1dc306a6a96740070ca",
+      "worker": "performance/workers/standard-opening-5.json"
+    },
+    {
+      "complete": true,
+      "sha256": "8ad84086525a01e89d67e1eca2d41942be6ed53ba70a08da89c4ef0c9654fec2",
+      "worker": "performance/workers/standard-opening-6.json"
+    },
+    {
+      "complete": true,
+      "sha256": "1fb6909426a7821af168d3a306104cddd5fb4f75ae16b5c3343f1c885f5aded2",
+      "worker": "performance/workers/published-midgame-0.json"
+    },
+    {
+      "complete": true,
+      "sha256": "ce61486de498888eb8cee2b3bfce6381bbc5896c0e53df3b43d9bc59c967d00e",
+      "worker": "performance/workers/published-midgame-1.json"
+    },
+    {
+      "complete": true,
+      "sha256": "6061130c399d3bfd6ed4ffe4de48a447641a8ab7c54e1ad6158773499af71a35",
+      "worker": "performance/workers/published-midgame-2.json"
+    },
+    {
+      "complete": true,
+      "sha256": "afdff23ff4e202c1e8a0e931154c5bb75847f0250b46ff35e193f834ad148e58",
+      "worker": "performance/workers/published-midgame-3.json"
+    },
+    {
+      "complete": true,
+      "sha256": "29df0df32bce8cdd7c2da8a0b3109c6e8af5947364077b79ef6782383ddb34da",
+      "worker": "performance/workers/published-midgame-4.json"
+    },
+    {
+      "complete": true,
+      "sha256": "b3bcf9ba70ba4a1b35a03eee974a85069ff6bf346e0a6231e99b57b8f1f1ad39",
+      "worker": "performance/workers/published-midgame-5.json"
+    },
+    {
+      "complete": true,
+      "sha256": "cf04bd759bce1ef1b621cb6f1ad9611450b5c180fcf778210c5cd39d59bcf564",
+      "worker": "performance/workers/published-midgame-6.json"
+    }
+  ]
+}
