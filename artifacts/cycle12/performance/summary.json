@@ -1,0 +1,475 @@
+{
+  "driver_sha256": "653014317d3d9c0bc71de0cc5e606d302b758ff5bb8dd9d4bef61deb1c47df6e",
+  "exact_proof_evidence_graph_parity": true,
+  "hardware": {
+    "affinity_cpus": 8,
+    "cgroup_cpu_max": null,
+    "cpu_model": "Intel(R) Xeon(R) W-2225 CPU @ 4.10GHz",
+    "logical_cpus": 8,
+    "machine": "x86_64",
+    "mem_total": "MemTotal:       82091776 kB",
+    "release": "5.4.0-216-generic",
+    "system": "Linux"
+  },
+  "limitations": "Seven repetitions have weak tail resolution. Tracemalloc adds overhead; reported p95 is the empirical maximum. Legal accuracy is measured in separate complete replay cohorts. No strategic search or ranking is benchmarked.",
+  "max_native_child_peak_rss_kib": 2100448,
+  "max_process_peak_rss_kib": 6371956,
+  "passed": true,
+  "production_code_hash": "76b645e833a27c711d1b6ee503ff7382cbffc44b431669c38dcabd7acd1dc359",
+  "repetitions": 7,
+  "workloads": {
+    "en-passant": {
+      "dependency-parent-preparation": {
+        "empirical_p95_seconds": 5.539129873737693,
+        "maximum_python_peak_bytes": 53082824,
+        "maximum_seconds": 5.539129873737693,
+        "median_native_invocations": 74,
+        "median_seconds": 5.386107089929283,
+        "minimum_seconds": 5.3626060569658875,
+        "repetitions": 7
+      },
+      "eight-concept-conditional-queries": {
+        "empirical_p95_seconds": 2.5648075873032212,
+        "maximum_python_peak_bytes": 7735819,
+        "maximum_seconds": 2.5648075873032212,
+        "median_native_invocations": 32,
+        "median_seconds": 2.5144814271479845,
+        "minimum_seconds": 2.4742393558844924,
+        "repetitions": 7
+      },
+      "full-cold": {
+        "empirical_p95_seconds": 4.333518226630986,
+        "maximum_python_peak_bytes": 46277585,
+        "maximum_seconds": 4.333518226630986,
+        "median_native_invocations": 74,
+        "median_seconds": 4.247276755049825,
+        "minimum_seconds": 4.217341807670891,
+        "repetitions": 7
+      },
+      "full-warm-existing-cache": {
+        "empirical_p95_seconds": 3.6053558867424726,
+        "maximum_python_peak_bytes": 38856055,
+        "maximum_seconds": 3.6053558867424726,
+        "median_native_invocations": 0,
+        "median_seconds": 3.5047089094296098,
+        "minimum_seconds": 3.479126342572272,
+        "repetitions": 7
+      },
+      "legal-accepted-full-fen": {
+        "empirical_p95_seconds": 3.8789235381409526,
+        "maximum_python_peak_bytes": 13005329,
+        "maximum_seconds": 3.8789235381409526,
+        "median_native_invocations": 231,
+        "median_seconds": 3.785958379507065,
+        "minimum_seconds": 3.731996923685074,
+        "repetitions": 7
+      },
+      "legal-candidate-full-fen": {
+        "empirical_p95_seconds": 4.249904830940068,
+        "maximum_python_peak_bytes": 13125968,
+        "maximum_seconds": 4.249904830940068,
+        "median_native_invocations": 231,
+        "median_seconds": 4.198722131550312,
+        "minimum_seconds": 4.148841401562095,
+        "repetitions": 7
+      },
+      "successor-dependency-reuse": {
+        "empirical_p95_seconds": 3.5500492164865136,
+        "maximum_python_peak_bytes": 34932974,
+        "maximum_seconds": 3.5500492164865136,
+        "median_native_invocations": 0,
+        "median_seconds": 3.434163795784116,
+        "minimum_seconds": 3.416814399883151,
+        "repetitions": 7
+      },
+      "successor-full-cold": {
+        "empirical_p95_seconds": 3.8470086799934506,
+        "maximum_python_peak_bytes": 36062679,
+        "maximum_seconds": 3.8470086799934506,
+        "median_native_invocations": 72,
+        "median_seconds": 3.752841653302312,
+        "minimum_seconds": 3.6865648878738284,
+        "repetitions": 7
+      }
+    },
+    "en-passant-exposure": {
+      "dependency-parent-preparation": {
+        "empirical_p95_seconds": 5.533344835974276,
+        "maximum_python_peak_bytes": 53506325,
+        "maximum_seconds": 5.533344835974276,
+        "median_native_invocations": 72,
+        "median_seconds": 5.436353879980743,
+        "minimum_seconds": 5.407621971331537,
+        "repetitions": 7
+      },
+      "eight-concept-conditional-queries": {
+        "empirical_p95_seconds": 2.545518455095589,
+        "maximum_python_peak_bytes": 7735699,
+        "maximum_seconds": 2.545518455095589,
+        "median_native_invocations": 32,
+        "median_seconds": 2.5222290214151144,
+        "minimum_seconds": 2.431429648771882,
+        "repetitions": 7
+      },
+      "full-cold": {
+        "empirical_p95_seconds": 4.332223281264305,
+        "maximum_python_peak_bytes": 46657726,
+        "maximum_seconds": 4.332223281264305,
+        "median_native_invocations": 72,
+        "median_seconds": 4.282120977528393,
+        "minimum_seconds": 4.250441314652562,
+        "repetitions": 7
+      },
+      "full-warm-existing-cache": {
+        "empirical_p95_seconds": 3.5519794085994363,
+        "maximum_python_peak_bytes": 39193011,
+        "maximum_seconds": 3.5519794085994363,
+        "median_native_invocations": 0,
+        "median_seconds": 3.5333172865211964,
+        "minimum_seconds": 3.5079594245180488,
+        "repetitions": 7
+      },
+      "legal-accepted-full-fen": {
+        "empirical_p95_seconds": 2.7449794989079237,
+        "maximum_python_peak_bytes": 8832335,
+        "maximum_seconds": 2.7449794989079237,
+        "median_native_invocations": 231,
+        "median_seconds": 2.6991298580542207,
+        "minimum_seconds": 2.650914577767253,
+        "repetitions": 7
+      },
+      "legal-candidate-full-fen": {
+        "empirical_p95_seconds": 3.1769274501129985,
+        "maximum_python_peak_bytes": 8971565,
+        "maximum_seconds": 3.1769274501129985,
+        "median_native_invocations": 231,
+        "median_seconds": 3.1191171566024423,
+        "minimum_seconds": 3.09227239433676,
+        "repetitions": 7
+      },
+      "successor-dependency-reuse": {
+        "empirical_p95_seconds": 3.8986019417643547,
+        "maximum_python_peak_bytes": 34952659,
+        "maximum_seconds": 3.8986019417643547,
+        "median_native_invocations": 2,
+        "median_seconds": 3.83758151717484,
+        "minimum_seconds": 3.7924206042662263,
+        "repetitions": 7
+      },
+      "successor-full-cold": {
+        "empirical_p95_seconds": 3.771531017497182,
+        "maximum_python_peak_bytes": 36098220,
+        "maximum_seconds": 3.771531017497182,
+        "median_native_invocations": 74,
+        "median_seconds": 3.7579649919644,
+        "minimum_seconds": 3.719411900267005,
+        "repetitions": 7
+      }
+    },
+    "promotion": {
+      "dependency-parent-preparation": {
+        "empirical_p95_seconds": 3.112260077148676,
+        "maximum_python_peak_bytes": 27465365,
+        "maximum_seconds": 3.112260077148676,
+        "median_native_invocations": 70,
+        "median_seconds": 3.056523042730987,
+        "minimum_seconds": 3.006593205034733,
+        "repetitions": 7
+      },
+      "eight-concept-conditional-queries": {
+        "empirical_p95_seconds": 2.4377738693729043,
+        "maximum_python_peak_bytes": 7669307,
+        "maximum_seconds": 2.4377738693729043,
+        "median_native_invocations": 32,
+        "median_seconds": 2.4180944683030248,
+        "minimum_seconds": 2.3611691994592547,
+        "repetitions": 7
+      },
+      "full-cold": {
+        "empirical_p95_seconds": 2.6149593703448772,
+        "maximum_python_peak_bytes": 23767945,
+        "maximum_seconds": 2.6149593703448772,
+        "median_native_invocations": 70,
+        "median_seconds": 2.571004755795002,
+        "minimum_seconds": 2.5610388834029436,
+        "repetitions": 7
+      },
+      "full-warm-existing-cache": {
+        "empirical_p95_seconds": 1.9321131436154246,
+        "maximum_python_peak_bytes": 19900560,
+        "maximum_seconds": 1.9321131436154246,
+        "median_native_invocations": 0,
+        "median_seconds": 1.8965385295450687,
+        "minimum_seconds": 1.8902219478040934,
+        "repetitions": 7
+      },
+      "legal-accepted-full-fen": {
+        "empirical_p95_seconds": 2.835388071835041,
+        "maximum_python_peak_bytes": 9518944,
+        "maximum_seconds": 2.835388071835041,
+        "median_native_invocations": 150,
+        "median_seconds": 2.819814430549741,
+        "minimum_seconds": 2.7926292354241014,
+        "repetitions": 7
+      },
+      "legal-candidate-full-fen": {
+        "empirical_p95_seconds": 2.920674097724259,
+        "maximum_python_peak_bytes": 9563931,
+        "maximum_seconds": 2.920674097724259,
+        "median_native_invocations": 150,
+        "median_seconds": 2.8809068566188216,
+        "minimum_seconds": 2.8382452791556716,
+        "repetitions": 7
+      },
+      "successor-dependency-reuse": {
+        "empirical_p95_seconds": 2.7085139201954007,
+        "maximum_python_peak_bytes": 23443228,
+        "maximum_seconds": 2.7085139201954007,
+        "median_native_invocations": 2,
+        "median_seconds": 2.686774696223438,
+        "minimum_seconds": 2.6459232745692134,
+        "repetitions": 7
+      },
+      "successor-full-cold": {
+        "empirical_p95_seconds": 2.831961354240775,
+        "maximum_python_peak_bytes": 25051660,
+        "maximum_seconds": 2.831961354240775,
+        "median_native_invocations": 66,
+        "median_seconds": 2.8159023048356175,
+        "minimum_seconds": 2.778057781048119,
+        "repetitions": 7
+      }
+    },
+    "published-midgame": {
+      "dependency-parent-preparation": {
+        "empirical_p95_seconds": 23.52752602752298,
+        "maximum_python_peak_bytes": 252521793,
+        "maximum_seconds": 23.52752602752298,
+        "median_native_invocations": 80,
+        "median_seconds": 22.940507005900145,
+        "minimum_seconds": 22.79728876799345,
+        "repetitions": 7
+      },
+      "eight-concept-conditional-queries": {
+        "empirical_p95_seconds": 2.4712244644761086,
+        "maximum_python_peak_bytes": 7671331,
+        "maximum_seconds": 2.4712244644761086,
+        "median_native_invocations": 32,
+        "median_seconds": 2.4172511333599687,
+        "minimum_seconds": 2.377100368961692,
+        "repetitions": 7
+      },
+      "full-cold": {
+        "empirical_p95_seconds": 19.649974085390568,
+        "maximum_python_peak_bytes": 220278502,
+        "maximum_seconds": 19.649974085390568,
+        "median_native_invocations": 80,
+        "median_seconds": 19.2194259846583,
+        "minimum_seconds": 19.021579356864095,
+        "repetitions": 7
+      },
+      "full-warm-existing-cache": {
+        "empirical_p95_seconds": 16.779545734636486,
+        "maximum_python_peak_bytes": 185990979,
+        "maximum_seconds": 16.779545734636486,
+        "median_native_invocations": 0,
+        "median_seconds": 16.364002547226846,
+        "minimum_seconds": 16.18649172410369,
+        "repetitions": 7
+      },
+      "legal-accepted-full-fen": {
+        "empirical_p95_seconds": 13.599984023720026,
+        "maximum_python_peak_bytes": 40725012,
+        "maximum_seconds": 13.599984023720026,
+        "median_native_invocations": 456,
+        "median_seconds": 13.253011493943632,
+        "minimum_seconds": 13.141908404417336,
+        "repetitions": 7
+      },
+      "legal-candidate-full-fen": {
+        "empirical_p95_seconds": 13.615106927230954,
+        "maximum_python_peak_bytes": 40736799,
+        "maximum_seconds": 13.615106927230954,
+        "median_native_invocations": 456,
+        "median_seconds": 13.361005840823054,
+        "minimum_seconds": 13.227410798892379,
+        "repetitions": 7
+      },
+      "successor-dependency-reuse": {
+        "empirical_p95_seconds": 15.618052039295435,
+        "maximum_python_peak_bytes": 191497345,
+        "maximum_seconds": 15.618052039295435,
+        "median_native_invocations": 0,
+        "median_seconds": 15.158668532036245,
+        "minimum_seconds": 15.045216873288155,
+        "repetitions": 7
+      },
+      "successor-full-cold": {
+        "empirical_p95_seconds": 20.267624266445637,
+        "maximum_python_peak_bytes": 220081824,
+        "maximum_seconds": 20.267624266445637,
+        "median_native_invocations": 80,
+        "median_seconds": 19.690399535000324,
+        "minimum_seconds": 19.567237563431263,
+        "repetitions": 7
+      }
+    },
+    "rook-obstruction": {
+      "dependency-parent-preparation": {
+        "empirical_p95_seconds": 5.423852506093681,
+        "maximum_python_peak_bytes": 52796745,
+        "maximum_seconds": 5.423852506093681,
+        "median_native_invocations": 72,
+        "median_seconds": 5.362531100399792,
+        "minimum_seconds": 5.331721833907068,
+        "repetitions": 7
+      },
+      "eight-concept-conditional-queries": {
+        "empirical_p95_seconds": 2.5524889044463634,
+        "maximum_python_peak_bytes": 7735979,
+        "maximum_seconds": 2.5524889044463634,
+        "median_native_invocations": 32,
+        "median_seconds": 2.527812898159027,
+        "minimum_seconds": 2.4476862866431475,
+        "repetitions": 7
+      },
+      "full-cold": {
+        "empirical_p95_seconds": 4.327222993597388,
+        "maximum_python_peak_bytes": 46018129,
+        "maximum_seconds": 4.327222993597388,
+        "median_native_invocations": 72,
+        "median_seconds": 4.270950846374035,
+        "minimum_seconds": 4.218677165918052,
+        "repetitions": 7
+      },
+      "full-warm-existing-cache": {
+        "empirical_p95_seconds": 3.5033235028386116,
+        "maximum_python_peak_bytes": 38619611,
+        "maximum_seconds": 3.5033235028386116,
+        "median_native_invocations": 0,
+        "median_seconds": 3.488778197206557,
+        "minimum_seconds": 3.4608090622350574,
+        "repetitions": 7
+      },
+      "legal-accepted-full-fen": {
+        "empirical_p95_seconds": 4.017757927067578,
+        "maximum_python_peak_bytes": 13713188,
+        "maximum_seconds": 4.017757927067578,
+        "median_native_invocations": 225,
+        "median_seconds": 3.999971847049892,
+        "minimum_seconds": 3.963349759578705,
+        "repetitions": 7
+      },
+      "legal-candidate-full-fen": {
+        "empirical_p95_seconds": 3.8133020624518394,
+        "maximum_python_peak_bytes": 13702772,
+        "maximum_seconds": 3.8133020624518394,
+        "median_native_invocations": 225,
+        "median_seconds": 3.7595993103459477,
+        "minimum_seconds": 3.718119486235082,
+        "repetitions": 7
+      },
+      "successor-dependency-reuse": {
+        "empirical_p95_seconds": 4.31965075340122,
+        "maximum_python_peak_bytes": 41674654,
+        "maximum_seconds": 4.31965075340122,
+        "median_native_invocations": 2,
+        "median_seconds": 4.260884625837207,
+        "minimum_seconds": 4.206725088879466,
+        "repetitions": 7
+      },
+      "successor-full-cold": {
+        "empirical_p95_seconds": 4.628850568085909,
+        "maximum_python_peak_bytes": 45939887,
+        "maximum_seconds": 4.628850568085909,
+        "median_native_invocations": 74,
+        "median_seconds": 4.572476763278246,
+        "minimum_seconds": 4.527675488963723,
+        "repetitions": 7
+      }
+    },
+    "standard-opening": {
+      "dependency-parent-preparation": {
+        "empirical_p95_seconds": 37.38989827502519,
+        "maximum_python_peak_bytes": 409127661,
+        "maximum_seconds": 37.38989827502519,
+        "median_native_invocations": 74,
+        "median_seconds": 37.05911187827587,
+        "minimum_seconds": 36.799883087165654,
+        "repetitions": 7
+      },
+      "eight-concept-conditional-queries": {
+        "empirical_p95_seconds": 2.4678807044401765,
+        "maximum_python_peak_bytes": 7668563,
+        "maximum_seconds": 2.4678807044401765,
+        "median_native_invocations": 32,
+        "median_seconds": 2.397231178358197,
+        "minimum_seconds": 2.383979800157249,
+        "repetitions": 7
+      },
+      "full-cold": {
+        "empirical_p95_seconds": 31.052633691579103,
+        "maximum_python_peak_bytes": 357413739,
+        "maximum_seconds": 31.052633691579103,
+        "median_native_invocations": 74,
+        "median_seconds": 30.86144091375172,
+        "minimum_seconds": 30.63386062439531,
+        "repetitions": 7
+      },
+      "full-warm-existing-cache": {
+        "empirical_p95_seconds": 26.692663515917957,
+        "maximum_python_peak_bytes": 302354356,
+        "maximum_seconds": 26.692663515917957,
+        "median_native_invocations": 0,
+        "median_seconds": 26.486106510274112,
+        "minimum_seconds": 26.342203475534916,
+        "repetitions": 7
+      },
+      "legal-accepted-full-fen": {
+        "empirical_p95_seconds": 17.834436347708106,
+        "maximum_python_peak_bytes": 62983292,
+        "maximum_seconds": 17.834436347708106,
+        "median_native_invocations": 363,
+        "median_seconds": 17.67460720613599,
+        "minimum_seconds": 17.58344535343349,
+        "repetitions": 7
+      },
+      "legal-candidate-full-fen": {
+        "empirical_p95_seconds": 16.097136741504073,
+        "maximum_python_peak_bytes": 63024020,
+        "maximum_seconds": 16.097136741504073,
+        "median_native_invocations": 363,
+        "median_seconds": 16.012562156654894,
+        "minimum_seconds": 15.875199420377612,
+        "repetitions": 7
+      },
+      "seven-state-temporal-replay": {
+        "empirical_p95_seconds": 202.9026255942881,
+        "maximum_python_peak_bytes": 1186472838,
+        "maximum_seconds": 202.9026255942881,
+        "median_native_invocations": 80,
+        "median_seconds": 202.03325925860554,
+        "minimum_seconds": 201.11710946634412,
+        "repetitions": 7
+      },
+      "successor-dependency-reuse": {
+        "empirical_p95_seconds": 26.834994204342365,
+        "maximum_python_peak_bytes": 329563699,
+        "maximum_seconds": 26.834994204342365,
+        "median_native_invocations": 4,
+        "median_seconds": 26.787572455592453,
+        "minimum_seconds": 26.69706958718598,
+        "repetitions": 7
+      },
+      "successor-full-cold": {
+        "empirical_p95_seconds": 31.771080591715872,
+        "maximum_python_peak_bytes": 356973446,
+        "maximum_seconds": 31.771080591715872,
+        "median_native_invocations": 78,
+        "median_seconds": 31.58194380439818,
+        "minimum_seconds": 31.388467232696712,
+        "repetitions": 7
+      }
+    }
+  }
+}
