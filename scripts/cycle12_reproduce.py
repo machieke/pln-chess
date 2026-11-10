@@ -39,7 +39,8 @@ def run(out,checkout,baseline,work,browser=True):
     command('native-boundary',['-m','evaluation.cycle12_delivery','boundary','--out',str(out)])
     command('fresh-research-replay',['-m','scripts.cycle12_research_replay','--out',str(out),'--source',str(checkout)])
     command('legal-promotion',['-m','evaluation.cycle12_delivery','acceptance','--out',str(out)])
-    command('accepted-default-tests',['-m','pytest','-q'])
+    command('accepted-default-tests',['-m','scripts.cycle12_final_checks','--out',str(out)])
+    command('new-cli-contracts',['-m','scripts.cycle12_cli_verify','--out',str(out)])
     command('performance',['-m','evaluation.cycle12_performance','--out',str(out)])
     if browser:command('browser',['-m','scripts.cycle12_ui_verify','--out',str(out),'--work',str(work)])
     else:write_json(out/'browser-not-executed.json',dict(executed=False,reason='Explicit --skip-browser option; complete delivery is not claimed.'))
@@ -50,9 +51,12 @@ def run(out,checkout,baseline,work,browser=True):
     assert not subprocess.check_output(['git','status','--porcelain'],cwd=checkout,text=True)
     write_json(out/'reproduction-comparison.json',dict(passed=True,models=comparisons,
         native_research='clean-research/verified.json',native_legal='current/proof-parity.json'))
-    write_json(out/'delivery.json',dict(source_head=head,starting_head=read_json(checkout/'configs/cycle12.json')['starting_head'],
+    write_json(out/'reproduction-execution.json',dict(source_head=head,starting_head=read_json(checkout/'configs/cycle12.json')['starting_head'],
         clean_checkout=True,end_to_end_reproduction_executed=True,browser_executed=browser,complete_delivery=browser,
         all_commands_passed=True,pushed=False,deployed=False,upstream_modified=False))
+    if browser:
+        command('consolidated-reports',['-m','scripts.cycle12_reports','--out',str(out),'--docs',str(out/'reports')])
+        command('artifact-manifest',['-m','evaluation.cycle12_delivery','manifest','--out',str(out),'--docs',str(out/'reports')])
     print('CYCLE12 FULL REPRODUCTION COMPLETE',flush=True)
 
 

@@ -2,6 +2,28 @@
 
 A piece-relative chess research package using **actual native MeTTa PLN** rules. It includes a pinned runtime audit, six-piece candidate grammar, structural special-move states, append-only evidence, native revision learning, inference/proof APIs, CLI, local inspector, datasets, tests, ablations and measured reports.
 
+Cycle 12 adds eight typed experimental concept families, native conditional
+proofs, dependency graphs, exact incremental fields, and replay of supplied
+multi-move sequences. Start with the
+[Cycle 12 engineering report](docs/cycle12/engineering-report.md),
+[20-package matrix](docs/cycle12/package-matrix.md),
+[legal promotion review](docs/cycle12/legal-promotion-review.md), and
+[reproduction and interface guide](docs/cycle12/reproduction.md).
+The legal default is gated by a source-bound acceptance receipt. Strategic
+models remain experimental: structural packets and separate influence proofs
+do not establish complete native pin, fork, overload or trapping theorems.
+No strategic move selection or new native inference operator is introduced.
+
+```bash
+.venv/bin/python -m pln_chess serve --port 8765
+.venv/bin/python -m pln_chess concept-inspect --input artifacts/cycle12/examples/concept-payload.json --output /tmp/pln-concept-proof.json
+.venv/bin/python -m pln_chess field-evolution --input artifacts/cycle12/examples/sequence-payload.json --output /tmp/pln-sequence-proof.json
+```
+
+Open `http://127.0.0.1:8765/interactions` for concept, dependency and temporal
+inspection. `/fields` and `/` retain the earlier field and legal inspectors.
+Cycle 12's brief authorizes local commits only; no push or deployment is included.
+
 Cycle 11 adds experimental learned attack, defense, ordinary mobility and
 king-exposure relations, candidate successor fields, typed before/after
 comparisons, and robust historical claim replay. Start with the
@@ -9,7 +31,7 @@ comparisons, and robust historical claim replay. Start with the
 [20-package matrix](docs/cycle11/package-matrix.md),
 [relative ontology](docs/cycle11/potential-field-ontology.md), and
 [reproduction and interface guide](docs/cycle11/reproduction.md).
-The accepted C8 legal checkpoint remains unchanged. The isolated legal
+Cycle 11 retained the accepted C8 legal checkpoint. Its isolated legal
 experiment recovers both outstanding en-passant cases; original FEN-only
 adversarial exact-set accuracy remains unchanged. Field conditionals have
 native proofs, while field changes remain host diagnostics. No strategic
@@ -24,8 +46,8 @@ score, move selector or new native operator is introduced.
 ```
 
 Open `http://127.0.0.1:8765/fields` for the experimental inspector; the legal
-inspector remains at `/`. Field and special-local checkpoints are experimental
-and unpromoted. Cycle 11 delivery includes local commits only, with no push or
+inspector remains at `/`. Field and special-local checkpoints were experimental
+and unpromoted in Cycle 11. Cycle 11 delivery includes local commits only, with no push or
 deployment.
 
 Cycle 10 evaluates the unchanged accepted C8 model on licensed external game

@@ -1,0 +1,177 @@
+{
+  "absolute_board_keys": false,
+  "complete_joint_concept_theorems": 0,
+  "concept_model_version": "b476a14b9c7b7cab77b1c547d1c70c0fdf623096df3ef45135835ee649222b08",
+  "concepts": {
+    "DiscoveredAttack": {
+      "gaps": [
+        "Before/after comparison is not a native temporal implication.",
+        "The supplied edit is not certified legal by this concept."
+      ],
+      "roles": [
+        "attacker",
+        "mover",
+        "target"
+      ],
+      "target": "NewAttackAfterSuppliedEdit"
+    },
+    "DiscoveredDefense": {
+      "gaps": [
+        "A defense field does not establish a legal recapture.",
+        "The before/after relation has no native change theorem."
+      ],
+      "roles": [
+        "attacker",
+        "mover",
+        "target"
+      ],
+      "target": "NewDefenseAfterSuppliedEdit"
+    },
+    "Fork": {
+      "gaps": [
+        "The two independently inferred influences have no native conjunction proof.",
+        "Target value and forced gain are unassessed."
+      ],
+      "roles": [
+        "attacker",
+        "target_a",
+        "target_b"
+      ],
+      "target": "PotentialMultipleTargetAttack"
+    },
+    "MultipleAttackers": {
+      "gaps": [
+        "Two sources need not be independent evidence.",
+        "No combined attack strength or joint theorem is inferred."
+      ],
+      "roles": [
+        "attacker_a",
+        "attacker_b",
+        "target"
+      ],
+      "target": "MultipleLocalAttackSources"
+    },
+    "OverloadedDefender": {
+      "gaps": [
+        "Multiple obligations do not prove overload.",
+        "No quantified proof excludes every response that could meet both obligations."
+      ],
+      "roles": [
+        "defender",
+        "ward_a",
+        "ward_b",
+        "enemy_a",
+        "enemy_b"
+      ],
+      "target": "CompetingDefenseObligations"
+    },
+    "Pin": {
+      "gaps": [
+        "Universal legal movement restriction is unproved.",
+        "Relative pin targets have no assigned strategic value."
+      ],
+      "roles": [
+        "attacker",
+        "intervening",
+        "target"
+      ],
+      "target": "PotentialPinAlignment"
+    },
+    "ThreatRemoval": {
+      "gaps": [
+        "Removal of one local threat does not establish safety from other threats.",
+        "The change is not a native temporal implication."
+      ],
+      "roles": [
+        "attacker",
+        "mover",
+        "target"
+      ],
+      "target": "ThreatAbsentAfterSuppliedEdit"
+    },
+    "TrappedPiece": {
+      "gaps": [
+        "Ordinary local mobility is separate from safe legal mobility.",
+        "Unknown exits are not zero exits.",
+        "Exit quality and strategic trapping are unassessed."
+      ],
+      "roles": [
+        "subject"
+      ],
+      "target": "NoOrdinaryGeometricExit"
+    }
+  },
+  "field_model_version": "d38e6c3c26e8d1f2e38a62d288394cb920038649041ec8d2cc5f9eb9d0a314f3",
+  "grammar": "relative-role-packets-v12",
+  "host_graph_propagates_truth": false,
+  "interactions": {
+    "ChangesInfluence": [
+      "change",
+      "before-proposition",
+      "after-proposition",
+      "states"
+    ],
+    "ContradictsInfluence": [
+      "negative-evidence",
+      "proposition",
+      "state"
+    ],
+    "Exposes": [
+      "attacker",
+      "king",
+      "state"
+    ],
+    "Influences": [
+      "piece",
+      "target",
+      "state"
+    ],
+    "Obstructs": [
+      "occupant",
+      "relative-ray",
+      "state"
+    ],
+    "OpensAttack": [
+      "change",
+      "before-attack",
+      "after-attack",
+      "states"
+    ],
+    "PersistsAcrossMove": [
+      "before-proposition",
+      "after-proposition",
+      "move"
+    ],
+    "RemovesDefense": [
+      "change",
+      "before-defense",
+      "after-domain",
+      "states"
+    ],
+    "RestrictsMobility": [
+      "mobility-proposition",
+      "destination",
+      "state"
+    ],
+    "Supports": [
+      "piece",
+      "friendly-entity",
+      "state"
+    ]
+  },
+  "native_temporal_theorems": 0,
+  "production_code_hash": "76b645e833a27c711d1b6ee503ff7382cbffc44b431669c38dcabd7acd1dc359",
+  "relative_descriptors": 61,
+  "source_files": {
+    "src/pln_chess/cycle12/__init__.py": "050981d7af135e42212dab56cba8ebd5c95f165a04c240c39e878cff00fd4d5b",
+    "src/pln_chess/cycle12/acceptance.py": "30174ee6eab7ce62000dbdcb88ac3f860d3aa8d016572d16767087f3aae419a9",
+    "src/pln_chess/cycle12/api.py": "55300ca551e8a709309dd4ccfd1a6608e9912950320f3ef129391546ec6626df",
+    "src/pln_chess/cycle12/candidates.py": "a941d7edc86544367c0822f85d5644b6e5fe97ed86011633a3b1690c8a0179ef",
+    "src/pln_chess/cycle12/graph.py": "8eb017bb59106259ded14692e52cc074f9787b2c67ca555e545c2b09d31ae6cf",
+    "src/pln_chess/cycle12/incremental.py": "24a60f320c66062e7c3dcf6b69688f3067c110c0d8c385067ed5d6d5b44fcd8a",
+    "src/pln_chess/cycle12/inference.py": "e2417b555586714a740dbc30df99f05b1555413dc93cfd21fcda19f5a9b2edf7",
+    "src/pln_chess/cycle12/model.py": "b0e5e92769e0bd6215ffe2cd25cfc344db5dde6a6afd3963b2a52e4b86e9e5d4",
+    "src/pln_chess/cycle12/ontology.py": "a2068cdad03e24d9276165b6fa55449b8184fde79e8c5b7e47c309ca6f203d4e",
+    "src/pln_chess/cycle12/temporal.py": "ce7498e1e07c53685d790c4e2b30d8e57f5bb7e0aa1a29651f9afa529aea1847"
+  }
+}

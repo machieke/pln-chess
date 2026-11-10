@@ -2,6 +2,7 @@
 import argparse
 import os
 from pathlib import Path
+import platform
 import resource
 import statistics
 import subprocess
@@ -11,6 +12,8 @@ import tracemalloc
 
 from pln_chess.common import ROOT, digest, read_json, write_json
 from pln_chess.domain import Position
+from pln_chess.cycle6.inference import production_code_hash
+from scripts.cycle9_baseline import sha
 
 WORKLOADS=('rook-obstruction','promotion','en-passant','en-passant-exposure','standard-opening','published-midgame')
 
@@ -39,7 +42,7 @@ def worker(out,name,repetition):
     from pln_chess.cycle12.temporal import replay_fields, semantic_replay
     from pln_chess.cycle8.model import PromotionModel
     from pln_chess.cycle8.inference import infer_moves as legal_infer, Cycle8Options
-    out=Path(out);case=case_for(name);runtime=Runtime(timeout=600)
+    out=Path(out);case=case_for(name);runtime=Runtime(timeout=600);code_hash=production_code_hash()
     field_model=FieldModel.load(ROOT/'artifacts/cycle11/model/C11-field-trained.json',runtime)
     concept_model=ConceptModel.load(out/'model/C12-concept-trained.json',runtime)
     position=Position.from_fen(case['fen'],unknown_squares=case['unknown_squares'])
@@ -98,7 +101,9 @@ def worker(out,name,repetition):
         supplied=next(r['input'] for r in read_json(out/'datasets/sequences.json')['sequences'] if r['input']['id']=='developing-attack')
         temporal=measure('seven-state-temporal-replay',lambda:replay_fields(supplied,field_model,runtime=runtime,options=options))
         measurements[-1].update(states=len(temporal['states']),semantic_hash=digest(semantic_replay(temporal)))
+    assert production_code_hash()==code_hash
     write_json(out/f'performance/workers/{name}-{repetition}.json',dict(workload=name,repetition=repetition,
+        production_code_hash=code_hash,driver_sha256=sha(__file__),
         case=case,pieces=len(position.pieces),measurements=measurements,field_model_version=field_model.version,
         concept_model_version=concept_model.version,runtime_version=runtime.version,exact_proof_evidence_graph_parity=True,
         cold_cache_scope='Fresh inference/session caches within each new worker; operating-system and filesystem caches are not flushed.',
@@ -111,6 +116,8 @@ def worker(out,name,repetition):
 def run(out):
     out=Path(out).resolve()
     assert read_json(out/'current/verified.json')['passed']
+    code_hash=production_code_hash()
+    assert read_json(out/'current/verified.json')['identity']['production_code_hash']==code_hash
     assert read_json(out/'legal/regression-summary.json')['passed'] or read_json(out/'legal/promotion-decision.json')['promoted'] is False
     if subprocess.run(['pgrep','-x','swipl'],stdout=subprocess.DEVNULL).returncode==0:
         raise RuntimeError('Performance measurements require native-worker quiescence')
@@ -125,6 +132,13 @@ def run(out):
             if result.returncode:raise RuntimeError(str(log))
             print('DEPENDENCY BENCHMARK',name,repetition+1,'/',repetitions,flush=True)
     rows=[read_json(out/f'performance/workers/{name}-{i}.json') for name in WORKLOADS for i in range(repetitions)]
+    assert all(r['production_code_hash']==code_hash and r['driver_sha256']==sha(__file__) for r in rows)
+    cpu_info=Path('/proc/cpuinfo').read_text()
+    hardware=dict(system=platform.system(),release=platform.release(),machine=platform.machine(),
+        logical_cpus=os.cpu_count(),affinity_cpus=len(os.sched_getaffinity(0)),
+        cpu_model=next((s.split(':',1)[1].strip() for s in cpu_info.splitlines() if s.startswith('model name')),'unknown'),
+        cgroup_cpu_max=Path('/sys/fs/cgroup/cpu.max').read_text().strip() if Path('/sys/fs/cgroup/cpu.max').exists() else None,
+        mem_total=next(s for s in Path('/proc/meminfo').read_text().splitlines() if s.startswith('MemTotal:')))
     summary={}
     for name in WORKLOADS:
         summary[name]={}
@@ -137,6 +151,7 @@ def run(out):
                 median_native_invocations=statistics.median(m['native_invocations'] for m in records),
                 maximum_python_peak_bytes=max(m['python_peak_bytes'] for m in records))
     write_json(out/'performance/summary.json',dict(passed=True,repetitions=repetitions,workloads=summary,
+        production_code_hash=code_hash,driver_sha256=sha(__file__),hardware=hardware,
         exact_proof_evidence_graph_parity=all(r['exact_proof_evidence_graph_parity'] for r in rows),
         max_process_peak_rss_kib=max(r['process_peak_rss_kib'] for r in rows),
         max_native_child_peak_rss_kib=max(r['native_child_peak_rss_kib'] for r in rows),
