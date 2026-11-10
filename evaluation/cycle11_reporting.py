@@ -177,6 +177,10 @@ The comparison is a typed collection. Each changed relation retains its before/a
 All change propositions are labeled `host-diagnostic` and carry `change_truth_value: null`. Native proofs establish the separately scoped before/after conditionals, not a native probabilistic theorem for their difference. No strengths are added or multiplied, and no aggregate strategic score or move ranking is produced.
 
 The inspector exposes piece/family/candidate selection, before/after board projections, relative relation rows, proof inspection and export. The board is a display coordinate system only. {artifact('ui/verification.json', 'Desktop/mobile browser evidence')}.
+
+{artifact(ui['session_dir']+'/SUMMARY.md', 'Recorded browser workflow, video and screenshots')}; {artifact(ui['session_dir']+'/mobile-before-after.png', 'mobile comparison')}.
+
+![Rook obstruction before and after]({link(ui['session_dir']+'/rook-obstruction.png')})
 ''')
 
     lr = learning['training_report']

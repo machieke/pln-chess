@@ -2,6 +2,32 @@
 
 A piece-relative chess research package using **actual native MeTTa PLN** rules. It includes a pinned runtime audit, six-piece candidate grammar, structural special-move states, append-only evidence, native revision learning, inference/proof APIs, CLI, local inspector, datasets, tests, ablations and measured reports.
 
+Cycle 11 adds experimental learned attack, defense, ordinary mobility and
+king-exposure relations, candidate successor fields, typed before/after
+comparisons, and robust historical claim replay. Start with the
+[engineering report](docs/cycle11/engineering-report.md),
+[20-package matrix](docs/cycle11/package-matrix.md),
+[relative ontology](docs/cycle11/potential-field-ontology.md), and
+[reproduction and interface guide](docs/cycle11/reproduction.md).
+The accepted C8 legal checkpoint remains unchanged. The isolated legal
+experiment recovers both outstanding en-passant cases; original FEN-only
+adversarial exact-set accuracy remains unchanged. Field conditionals have
+native proofs, while field changes remain host diagnostics. No strategic
+score, move selector or new native operator is introduced.
+
+```bash
+.venv/bin/python -m pln_chess field-inspect \
+  --fen '7k/8/8/8/R2N3p/8/8/6K1 w - - 0 1' \
+  --piece a4 --family attack --move d4f5 --output /tmp/field-comparison.json
+.venv/bin/python -m pln_chess history-claims --input supplied-claims.json --output /tmp/history-receipt.json
+.venv/bin/python -m pln_chess serve --port 8765
+```
+
+Open `http://127.0.0.1:8765/fields` for the experimental inspector; the legal
+inspector remains at `/`. Field and special-local checkpoints are experimental
+and unpromoted. Cycle 11 delivery includes local commits only, with no push or
+deployment.
+
 Cycle 10 evaluates the unchanged accepted C8 model on licensed external game
 collections, transports supplied historical events, measures calibration under
 distribution shift, and compares two experimental adaptations. Start with the
@@ -10,7 +36,7 @@ distribution shift, and compares two experimental adaptations. Start with the
 [18-package matrix](docs/cycle10/package-matrix.md), and
 [reproduction and interface guide](docs/cycle10/reproduction.md).
 The default remains C8; new adaptation checkpoints are experimental. Native
-positive composition remains incomplete, and strategic fields are design work.
+positive composition remains incomplete; strategic fields were design work in Cycle 10.
 Cycle 10 delivery uses local commits only, with no push or deployment.
 
 ```bash
