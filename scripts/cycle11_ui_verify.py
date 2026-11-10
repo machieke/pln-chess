@@ -17,14 +17,15 @@ from pln_chess.common import ROOT, read_json, write_json
 from pln_chess.cycle6.inference import production_code_hash
 
 
-def run(out, work, port=18781):
+def run(out, work, port=18781, development=False):
     out, work = Path(out).resolve(), Path(work).resolve()
     work.mkdir(parents=True, exist_ok=True)
-    assert read_json(out / 'acceptance.json')['passed']
+    if not development:
+        assert read_json(out / 'acceptance.json')['passed']
     with socket.socket() as probe:
         probe.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         probe.bind(('127.0.0.1', port))
-    proof = out / 'ui'
+    proof = out / ('ui-development' if development else 'ui')
     proof.mkdir(exist_ok=True)
     write_json(work / 'proofshot.config.json', dict(output=str(proof), viewport=dict(width=1280, height=900)))
     env = dict(os.environ, C11_OUT=str(out), TMPDIR='/dev/shm', AGENT_BROWSER_SESSION='pln-chess-cycle11-'+uuid.uuid4().hex[:12])
@@ -89,7 +90,9 @@ def run(out, work, port=18781):
             assert result['rows'] > 0 and result['before'] == result['after'] == 64
             checks.append(dict(case=case['id'], result=result))
             if case['id'] in ('rook-obstruction', 'pinned-defender', 'unknown-observation', 'promotion', 'en-passant-exposure'):
+                evaluate('document.getElementById("field-before").closest("section").scrollIntoView();true')
                 command('exec', 'screenshot', case['id']+'.png')
+                evaluate('window.scrollTo(0,0);true')
         submit('rook-obstruction')
         for family in ('attack', 'defense', 'mobility', 'king-exposure'):
             result = submit(**{'field-family': family})
@@ -162,7 +165,7 @@ def run(out, work, port=18781):
         time.sleep(.1)
     cleanup['port_closed'] = True
     assert errors == dict(console=0, server=0), errors
-    write_json(proof / 'verification.json', dict(passed=True, source_hash=production_code_hash(), checks=checks,
+    write_json(proof / 'verification.json', dict(passed=True, development_only=development, source_hash=production_code_hash(), checks=checks,
         errors=errors, actual_export=export, server_cleanup=cleanup,
         session_dir=str(Path(session['sessionDir']).relative_to(out))))
 
@@ -172,5 +175,6 @@ if __name__ == '__main__':
     parser.add_argument('--out', required=True)
     parser.add_argument('--work', required=True)
     parser.add_argument('--port', type=int, default=18781)
+    parser.add_argument('--development', action='store_true')
     args = parser.parse_args()
-    run(args.out, args.work, args.port)
+    run(args.out, args.work, args.port, args.development)

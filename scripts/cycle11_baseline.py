@@ -4,7 +4,7 @@ The driver is new research orchestration; every inference subprocess imports the
 unchanged starting checkout. Original reports and checkpoints are read-only.
 """
 import argparse
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor
 import importlib.metadata
 import json
 import os
@@ -26,15 +26,29 @@ PARITY_FIELDS = ('fixture', 'move', 'classification', 'truth_value', 'proof_id',
 
 def compare_reports(new_path, old_path):
     from evaluation.cycle3 import read_gzip
+    new_path, old_path = Path(new_path), Path(old_path)
+    # Native workers already reconstructed and hashed every complete proof.
+    # Bind those verification receipts to the exact bytes compared here.
+    for path in (new_path, old_path):
+        receipt = read_json(path.with_name(path.name.removesuffix('.json.xz')+'.receipt.json'))
+        assert receipt['native_proofs_verified'] and receipt['sha256'] == sha(path), str(path)
     new, old = read_gzip(new_path), read_gzip(old_path)
     assert [{k: r.get(k) for k in PARITY_FIELDS} for r in new['rows']] == [
         {k: r.get(k) for k in PARITY_FIELDS} for r in old['rows']], str(new_path)
     assert [p['predicted'] for p in new['positions']] == [p['predicted'] for p in old['positions']]
-    assert all(digest([new['native_proof_dag'][i] for i in r['proof_refs']]) == r['proof_id'] for r in new['rows'])
+    # Compare every ordered ground node, retaining rule/premise/evidence/TV
+    # contents, while hashing each shared DAG node only once. This avoids
+    # repeatedly serializing the same large proof prefixes across candidates.
+    new_nodes = [digest(node) for node in new['native_proof_dag']]
+    old_nodes = [digest(node) for node in old['native_proof_dag']]
+    assert len(new_nodes) == len(old_nodes) and set(new_nodes) == set(old_nodes), str(new_path)
+    for actual, expected in zip(new['rows'], old['rows']):
+        assert [new_nodes[i] for i in actual['proof_refs']] == [old_nodes[i] for i in expected['proof_refs']], str(new_path)
     return dict(artifact=str(new_path), reference=str(old_path), sha256=sha(new_path),
                 reference_sha256=sha(old_path), rows=len(new['rows']), positions=len(new['positions']),
                 proof_hash=digest([r['proof_id'] for r in new['rows']]),
-                exact_native_proof_parity=True, metrics=new['metrics'])
+                exact_native_proof_parity=True, metrics=new['metrics'],
+                validation='Native worker full-proof rehash receipts bound to artifact bytes; final comparison checks every ordered canonical DAG node and every static candidate/provenance field.')
 
 
 def run(out, snapshot):
@@ -133,15 +147,17 @@ python=sys.version,accepted_model=m.version,dependencies={k:importlib.metadata.v
     with ThreadPoolExecutor(max_workers=6) as pool:
         for _ in pool.map(lambda job: command(*job), external_jobs):
             pass
-    comparisons = []
+    comparison_jobs = []
     for receipt in sorted((out / 'historical/evaluation').glob('*.receipt.json')):
         record = read_json(receipt)
-        comparisons.append(compare_reports(out / 'historical' / record['artifact'], snapshot / 'artifacts/cycle9' / record['artifact']))
-    assert len(comparisons) == 48
+        comparison_jobs.append((out / 'historical' / record['artifact'], snapshot / 'artifacts/cycle9' / record['artifact']))
+    assert len(comparison_jobs) == 48
     for receipt in sorted((out / 'external/evaluation').glob('*.receipt.json')):
         record = read_json(receipt)
-        comparisons.append(compare_reports(out / 'external' / record['artifact'], snapshot / 'artifacts/cycle10' / record['artifact']))
-    assert len(comparisons) == 180
+        comparison_jobs.append((out / 'external' / record['artifact'], snapshot / 'artifacts/cycle10' / record['artifact']))
+    assert len(comparison_jobs) == 180
+    with ProcessPoolExecutor(max_workers=6) as pool:
+        comparisons = list(pool.map(compare_reports, [job[0] for job in comparison_jobs], [job[1] for job in comparison_jobs]))
     write_json(out / 'proof-parity.json', dict(passed=True, comparisons=comparisons))
     protected = read_json(out / 'manifest.json')['protected_files']
     assert all(sha(ROOT / p) == h for p, h in protected.items())

@@ -25,6 +25,10 @@ def generate(out):
             raise ValueError('Special-move train/holdout whole-position symmetry collision')
         seen[split].add(symmetry_key(board.fen()))
         fen = board.fen(en_passant='fen')
+        history_check = chess.Board(initial or fen)
+        for event in moves:
+            history_check.push(chess.Move.from_uci(event))
+        assert history_check.fen(en_passant='fen') == fen, (family, 'history metadata/counter mismatch')
         position = Position.from_fen(fen)
         move = find_move(position, notation)
         assert move is not None
@@ -79,6 +83,10 @@ def generate(out):
                 add(board, capture.uci(), split, group, 'en-passant', before.fen(en_passant='fen'), [advance.uci()])
                 flipped = board.mirror()
                 flipped_before = before.mirror()
+                # Mirroring changes which side advances the fullmove counter.
+                # Preserve the registered final state and align only the
+                # mirrored initial counter with its supplied one-event prefix.
+                flipped_before.fullmove_number = flipped.fullmove_number - int(flipped_before.turn == chess.BLACK)
                 mirror_move = lambda move: chess.Move(chess.square_mirror(move.from_square), chess.square_mirror(move.to_square), promotion=move.promotion)
                 add(flipped, mirror_move(capture).uci(), split, group, 'en-passant-color-transform',
                     flipped_before.fen(en_passant='fen'), [mirror_move(advance).uci()], lineage=[group])

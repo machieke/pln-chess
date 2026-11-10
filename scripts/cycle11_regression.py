@@ -1,6 +1,6 @@
 """Execute mandatory legality gates in a fresh, clean Cycle 11 checkout."""
 import argparse
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor
 import json
 import os
 from pathlib import Path
@@ -77,14 +77,16 @@ def run(out, source):
     with ThreadPoolExecutor(max_workers=6) as pool:
         for _ in pool.map(lambda job: command(*job), external_jobs):
             pass
-    comparisons = []
+    comparison_jobs = []
     for group, count in (('historical', 48), ('external', 132)):
         paths = sorted((target / group / 'evaluation').glob('*.receipt.json'))
         assert len(paths) == count
         for path in paths:
             receipt = read_json(path)
             assert receipt['native_proofs_verified']
-            comparisons.append(compare_reports(target / group / receipt['artifact'], out / 'baseline' / group / receipt['artifact']))
+            comparison_jobs.append((target / group / receipt['artifact'], out / 'baseline' / group / receipt['artifact']))
+    with ProcessPoolExecutor(max_workers=6) as pool:
+        comparisons = list(pool.map(compare_reports, [job[0] for job in comparison_jobs], [job[1] for job in comparison_jobs]))
     negatives = read_json(target / 'historical/C8-promotion-relative-negative-regressions.json')
     assert negatives['cases'] == negatives['intact_negative'] == negatives['removed_unknown'] == 287
     assert not negatives['failures']

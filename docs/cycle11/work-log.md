@@ -47,3 +47,13 @@ experimental legal regression panel was selected without model predictions:
 test positions. Every candidate in those 28 positions is scheduled under both
 FEN-only and actual-history conditions. The full accepted-model regression
 remains separate and exhaustive over its registered cohorts.
+
+## Baseline completed and implementation opened
+
+The unchanged-source receipt passed at `fe9e28edc03184fee02ec535399768fd9d5883fa`: 399 tests, 287 negative controls, 26 historical suites, 48 Cycle 9 and 132 Cycle 10 shards, all 180 exact native proof comparisons, and 4,586 protected historical files unchanged. Production implementation began only after this receipt. Final comparison hashes each already native-verified DAG node once and checks every ordered row reference; redundant sequential rehash attempts and their logs remain archived.
+
+Before legal learning, structural replay exposed 20 color-reflected curriculum histories with an initial fullmove-counter mismatch. The original files and failed pre-training validation are retained under `development/pre-training-history-counter-fix/`. The correction changes only the mirrored initial counter. All positions, labels, splits and relative hypotheses remain fixed; all corrected histories now replay exactly. No native learning preceded the correction.
+
+Implemented independent field ontology, model validation, native conditional inference, dependency-bound cache reuse, hypothetical successor comparison, robust claim transport, public API/CLI and browser inspector. Field model `d38e6c3c26e8d1f2e38a62d288394cb920038649041ec8d2cc5f9eb9d0a314f3` learned 1,764 conditionals from 18,003 training queries, with 23,590 logical native revision nodes. Pure arithmetic reuse executed 32 distinct operators; each revision and evidence dependency remains in its trace. The eight public interface tests and 55 initial field/temporal tests passed.
+
+All 38 registered transformations, eight dedicated unseen-displacement transfers, 15 before/after examples, and five dependence checks passed. All 27 temporal controls passed; 12 supply eligible observations and 15 withhold them. Frozen field evaluation retains nine mobility false negatives. Post-freeze diagnosis identifies king-to-rook castling aliases accepted by the offline reference API but missed by the ordinary-mobility label adapter's two-cell castle exclusion. These errors, original labels and denominators are preserved; neither model nor thresholds are retuned. The native boundary audit passed after rewriting list concatenation in the conservative confidence selector to avoid the AST audit's arithmetic false positive; no numerical policy changed.

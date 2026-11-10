@@ -69,6 +69,14 @@ def test_candidate_status_and_native_fields_remain_separate(runtime):
     assert all(change['change_truth_value'] is None for change in result['differences'])
 
 
+def test_unknown_source_does_not_become_observed_after_hypothetical_move(runtime):
+    position=Position.from_fen('7k/8/8/8/R6p/8/8/6K1 w - - 0 1',unknown_squares=[(0,3)])
+    result=inspect_fields(position,FieldModel(runtime.version),family='attack',piece='a4',candidate='a4a5',
+        runtime=runtime,options=FieldOptions(timeout_seconds=180))
+    assert [0,4] in result['after']['unknown_squares']
+    assert all(row['classification']=='unknown' for row in result['after']['relations'])
+
+
 def test_v11_receipt_uses_existing_public_legal_contract(runtime):
     from pln_chess.cycle8.model import PromotionModel
     model=PromotionModel.load(ROOT/'artifacts/cycle10/model/C10-default.json',runtime)

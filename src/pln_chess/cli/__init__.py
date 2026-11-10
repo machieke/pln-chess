@@ -20,6 +20,11 @@ def main(argv=None):
     default_checkpoint=latest if latest.exists() else ROOT/'artifacts/model.json'
     parser=argparse.ArgumentParser(prog='pln-chess',description='Piece-relative native PLN research inspector')
     sub=parser.add_subparsers(dest='command',required=True)
+    p=sub.add_parser('field-inspect');p.add_argument('--fen',required=True);p.add_argument('--field-checkpoint');p.add_argument('--piece')
+    p.add_argument('--family',choices=('all','geometry','attack','defense','mobility','king-exposure'),default='all');p.add_argument('--move');p.add_argument('--history')
+    p.add_argument('--legal-mode',choices=('operational','strict','experimental'),default='operational')
+    p.add_argument('--max-invocations',type=int,default=100000);p.add_argument('--timeout',type=float,default=180);p.add_argument('--output')
+    p=sub.add_parser('history-claims');p.add_argument('--input',required=True);p.add_argument('--output')
     p=sub.add_parser('external-report');p.add_argument('--section',choices=('summary','provenance','failures','calibration','comparisons','dependence','temporal','performance','identity','architecture'),default='summary')
     p.add_argument('--arm',choices=('frozen','small','large','temporal'),default='frozen');p.add_argument('--output')
     p=sub.add_parser('history-import-pgn');p.add_argument('--input',required=True);p.add_argument('--source',required=True);p.add_argument('--limit',type=int,default=1000);p.add_argument('--output',required=True)
@@ -72,7 +77,19 @@ def main(argv=None):
     p=sub.add_parser('serve'); p.add_argument('--port',type=int,default=8765); p.add_argument('--checkpoint',default=str(default_checkpoint))
     args=parser.parse_args(argv)
     try:
-        if args.command=='external-report':
+        if args.command=='field-inspect':
+            from pln_chess.api import inspect_fields
+            from pln_chess.cycle11.fields.inference import FieldOptions
+            result=inspect_fields(args.fen,args.field_checkpoint,family=args.family,piece=args.piece,candidate=args.move,
+                history=read_json(args.history) if args.history else None,legal_mode=args.legal_mode,
+                options=FieldOptions(max_native_invocations=args.max_invocations,timeout_seconds=args.timeout))
+            if args.output:write_json(args.output,result)
+        elif args.command=='history-claims':
+            from pln_chess.api import replay_history_claims
+            supplied=read_json(args.input)
+            result=replay_history_claims(**(supplied['input'] if supplied.get('schema')=='temporal-transport-v11' else supplied))
+            if args.output:write_json(args.output,result)
+        elif args.command=='external-report':
             from pln_chess.cycle10.diagnostics import report
             result=report(args.section,args.arm)
             if args.output:write_json(args.output,result)

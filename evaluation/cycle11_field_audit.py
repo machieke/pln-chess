@@ -1,5 +1,6 @@
 """Describe exact relative-context sharing after the field model is frozen."""
 import argparse
+import chess
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -80,6 +81,28 @@ def run(out):
         training_conflicting_pooled_keys=len(conflicts),dedicated_transfers=len(dedicated),all_dedicated_displacements_unseen=True,
         model_or_thresholds_changed=False,
         scope='Post-freeze descriptive audit. Shared relative categories are the intended supplied abstraction; unseen raw distances do not establish independently learned shape pooling. Full-board/ancestry independence is checked separately.'))
+    # Preserve the registered primary labels/results. The reference API accepts
+    # king-to-rook castling aliases, beyond the two-cell castle excluded by the
+    # original ordinary-mobility label adapter. Describe that mismatch after
+    # freezing; do not tune the model or rewrite the original denominator.
+    queries={row['id']:row for row in data['queries']}
+    rows=read_gzip(out/'field-evaluation/rows.json.xz')
+    errors=[]
+    for row in rows:
+        if row['arm']!='trained' or row['split']!='test' or not row['label'] or row['classification']!='contradicted':
+            continue
+        query=queries[row['query']]
+        board=chess.Board(query['fen'])
+        source,target=chess.parse_square(query['piece_square']),chess.parse_square(query['target_square'])
+        piece=board.piece_at(source)
+        board.turn=piece.color
+        move=chess.Move(source,target)
+        errors.append(dict(result=row,query=query,hypothesis=model.hypotheses[row['rule_id']],
+            reference_castling_alias=board.is_castling(move),reference_pseudo_legal=board.is_pseudo_legal(move)))
+    write_json(out/'field-evaluation/post-freeze-false-negatives.json',dict(errors=errors,count=len(errors),
+        castling_alias_count=sum(e['reference_castling_alias'] for e in errors),model_changed=False,threshold_changed=False,
+        frozen_primary_labels_changed=False,ordinary_mobility_label_adapter_gap='King-to-rook castling aliases were not excluded by the two-cell castle filter.',
+        scope='Descriptive held-out failure audit only. All nine primary mobility false negatives remain in the registered metrics; no retraining, label replacement or performance claim based on post-hoc exclusions.'))
 
 
 if __name__ == '__main__':

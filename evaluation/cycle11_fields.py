@@ -55,9 +55,22 @@ def scores(rows, mapping=None):
 
 
 def bootstrap(rows, seed, repetitions=400):
+    parent = {}
+    def root(name):
+        parent.setdefault(name,name)
+        while parent[name] != name:
+            parent[name] = parent[parent[name]]
+            name = parent[name]
+        return name
+    for row in rows:
+        ancestry = sorted(set([row['dependence_group'], *row['transformation_lineage']]))
+        root(ancestry[0])
+        for item in ancestry[1:]:
+            a,b = root(ancestry[0]),root(item)
+            parent[max(a,b)] = min(a,b)
     groups = defaultdict(list)
     for row in rows:
-        groups[row['dependence_group']].append(row)
+        groups[root(row['dependence_group'])].append(row)
     names = sorted(groups)
     if not names:
         return None
@@ -85,7 +98,7 @@ def bootstrap(rows, seed, repetitions=400):
         samples.sort()
         intervals[name] = [samples[int(.025*(len(samples)-1))], samples[int(.975*(len(samples)-1))]]
     return dict(groups=len(names), replicates=repetitions, percentile_95=intervals,
-        limitations='Source/generator-group bootstrap. Two controlled generator groups provide weak uncertainty resolution; source games can share residual dependencies. Zero-error intervals do not certify universal correctness.')
+        limitations='Connected source/generator/declared-ancestry cluster bootstrap, including shared openings. Two controlled generator groups provide weak uncertainty resolution; unreported dependencies can remain. Zero-error intervals do not certify universal correctness.')
 
 
 def run(out):

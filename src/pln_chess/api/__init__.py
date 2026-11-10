@@ -31,6 +31,17 @@ def replay_history(initial_fen,moves,**provenance):
     return replay(initial_fen,moves,**provenance)
 
 
+def inspect_fields(position,checkpoint=None,**options):
+    """Experimental native influence relations, separate from legal inference."""
+    from pln_chess.cycle11.api import inspect_fields as inspect
+    return inspect(position,checkpoint,**options)
+
+
+def replay_history_claims(initial_fen,claims,**provenance):
+    from pln_chess.cycle11.temporal import replay_claims
+    return replay_claims(initial_fen,claims,**provenance)
+
+
 def replay_recorded_game(game_id,ply=None):
     from pln_chess.cycle10.diagnostics import recorded_history
     return recorded_history(game_id,ply)
@@ -59,7 +70,11 @@ def explain_move(position,move,checkpoint=None,options=None,runtime=None,tempora
         from dataclasses import asdict,replace
         from pln_chess.cycle8.inference import Cycle8Options
         options=options if isinstance(options,Cycle8Options) else Cycle8Options(**(asdict(options) if options else {}))
-        if isinstance(temporal_evidence,dict) and temporal_evidence.get('schema')=='temporal-transport-v10':
+        if isinstance(temporal_evidence,dict) and temporal_evidence.get('schema')=='temporal-transport-v11':
+            from pln_chess.cycle11.temporal import native_options
+            options=native_options(temporal_evidence,options,model_version=checkpoint.version,runtime_version=checkpoint.runtime_version)
+            receipt=temporal_evidence
+        elif isinstance(temporal_evidence,dict) and temporal_evidence.get('schema')=='temporal-transport-v10':
             from pln_chess.cycle10.temporal import native_options
             if temporal_evidence.get('model_version') not in (None,checkpoint.version):raise ValueError('Temporal receipt belongs to a different model')
             if temporal_evidence.get('runtime_version') not in (None,checkpoint.runtime_version):raise ValueError('Temporal receipt belongs to a different runtime')
@@ -96,7 +111,7 @@ def explain_move(position,move,checkpoint=None,options=None,runtime=None,tempora
     candidate=find_move(position,move) if isinstance(move,str) else move
     if candidate is None: raise ValueError('Move is outside the seeded candidate grammar')
     result=infer_moves(position,checkpoint,options,runtime,[candidate])
-    extra={('temporal_transport' if receipt.get('schema')=='temporal-transport-v10' else 'temporal_evidence'):receipt} if receipt else {}
+    extra={('temporal_transport' if receipt.get('schema') in ('temporal-transport-v10','temporal-transport-v11') else 'temporal_evidence'):receipt} if receipt else {}
     return {k:v for k,v in result.items() if k!='candidates'} | {'candidate':result['candidates'][0]} | extra
 
 

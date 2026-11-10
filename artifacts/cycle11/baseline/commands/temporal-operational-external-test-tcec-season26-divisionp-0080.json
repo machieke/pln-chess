@@ -1,0 +1,36 @@
+{
+  "argv": [
+    "/data/pln-chess-cycle6-delivery/.venv/bin/python",
+    "-m",
+    "scripts.cycle10_evaluate",
+    "--worker",
+    "--out",
+    "/data/pln-chess-cycle6-delivery/artifacts/cycle11/baseline/external",
+    "--source",
+    "/data/pln-chess-cycle11-baseline",
+    "--arm",
+    "temporal",
+    "--split",
+    "external-test",
+    "--collection",
+    "tcec-season26-divisionp",
+    "--offset",
+    "80",
+    "--mode",
+    "operational",
+    "--checkpoint",
+    "/data/pln-chess-cycle11-baseline/artifacts/cycle10/model/C10-default.json"
+  ],
+  "cwd": "/data/pln-chess-cycle11-baseline",
+  "elapsed_seconds": 162.6550874710083,
+  "environment": {
+    "PLN_CHESS_ROOT": "/data/pln-chess-cycle11-baseline",
+    "PYTHONPATH": "/data/pln-chess-cycle11-baseline/src:/data/pln-chess-cycle11-baseline",
+    "TMPDIR": "/dev/shm"
+  },
+  "log": "logs/temporal-operational-external-test-tcec-season26-divisionp-0080.txt",
+  "returncode": 0,
+  "source_hash": "543ff722a518a8fe0165e2327be5ac62357e28040a15fd3a764d369297d1febc",
+  "source_head": "fe9e28edc03184fee02ec535399768fd9d5883fa",
+  "started_unix": 1794297979.1259568
+}
