@@ -80,7 +80,8 @@ def run(out, docs):
 
     panel=load('legal/panel.json'); cohorts=defaultdict(list)
     for job in panel['jobs']:
-        cohorts[job['cohort']].append(load('legal/evaluation/'+job['id']+'.receipt.json'))
+        cohort=job['cohort']+('/'+job['mode'] if job['cohort'].startswith('historical/') else '')
+        cohorts[cohort].append(load('legal/evaluation/'+job['id']+'.receipt.json'))
     def aggregate(rows, key):
         totals={k:sum(r[key][k] for r in rows) for k in ('candidates','true_positive','true_negative','false_positive',
             'false_illegal','false_negative_including_abstention','unknown','incomplete','self_check_false_legal')}
@@ -260,7 +261,7 @@ Counterfactual removal of a ward/threat changes the limited packet; removing its
 Evidence: {evidence('concepts/overload-consequences.json.xz')}, {evidence('concepts/partial-semantics-summary.json')},
 {evidence('concepts/counterfactuals.json.xz')}.
 ''')
-    trap_table=table(['Case','No-ordinary-exit conditional','Reference legal exits','Supported legal exits','Unknown legal exits'],
+    trap_table=table(['Case','No-ordinary-exit conditional','Reference legal exits','Supported legal exits','Unknown candidate moves'],
         [[r['id'],r['conditional'],r['reference_legal_exits'],r['supported_legal_exits'],r['unknown_legal_exits']] for r in partial['trapping']])
     page('trapped-pieces','Restricted and uncertain mobility',f'''
 The `NoOrdinaryGeometricExit` target classifies six held-out controlled records correctly: three positive and three negative.
@@ -272,6 +273,7 @@ Three additional valid-board diagnostics separate geometric and legal evidence:
 {trap_table}
 The knight on a8 has its ordinary exits obstructed in the positive case; opening b6 produces a separately supported legal exit.
 With b6 unknown, the conditional abstains and legal candidates remain unknown. Unknown mobility is never converted to zero mobility.
+The unknown list retains the legal learner's seeded proposals, including off-board coordinate proposals; it is not a list of established exits.
 Legal exits come from the unchanged operational learner; evaluation-only reference exits are stored separately and are null for
 unknown observations or deliberately incomplete local boards.
 
@@ -323,6 +325,8 @@ Each logical evidence update still has its own source/evidence identity and reta
 The seed is {config['seed']}; observed packet confidence is {config['sensor_confidence']}; training observation confidence is
 {config['training_observation_confidence']}. Fixed thresholds are strength ≥0.8 / ≤0.2 with confidence ≥0.25.
 No held-out labels tune the thresholds or descriptor grammar.
+Raw native strength and confidence are separate quantities; neither is presented as an empirically calibrated strategic probability.
+The calibration partition evaluates the fixed thresholds. No strategic probability calibrator is fitted in this cycle.
 
 {concept_table}
 {limits}
@@ -540,6 +544,7 @@ in {evidence('cli-smoke/verified.json')}; the reproduction runner regenerates th
 
 Final browser verification uses ProofShot with an owned local server, actual browser interaction, screenshots/video,
 zero console/server errors and a captured export whose bytes match the server result. The owned server and recorder are stopped.
+On phones the compact graph scrolls horizontally inside its panel; selecting an edge opens its full record in the proof pane.
 The initial interrupted/low-contrast development capture is retained, followed by the corrected passing development and final captures.
 Historical artifacts are immutable: all {baseline['protected_files']} protected files retain their starting hashes.
 

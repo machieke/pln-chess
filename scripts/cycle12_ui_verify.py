@@ -176,6 +176,10 @@ def run(out, work, port=18782, development=False):
         command('exec','screenshot','mobile-controls.png')
         evaluate('document.getElementById("before").scrollIntoView();true');command('exec','screenshot','mobile-boards.png')
         evaluate('document.getElementById("graph").scrollIntoView();true');command('exec','screenshot','mobile-graph.png')
+        pan=evaluate('(()=>{const g=document.getElementById("graph");g.scrollLeft=g.scrollWidth;return {left:g.scrollLeft,width:g.clientWidth,total:g.scrollWidth}})()')
+        assert pan['left']>0 and pan['total']>pan['width'],pan
+        command('exec','screenshot','mobile-graph-targets.png')
+        checks.append(dict(case='mobile-graph-contained-pan',result=pan))
         checks.append(dict(case='mobile-layout',result=mobile))
         command('exec','open',f'http://127.0.0.1:{port}/fields')
         assert 'Build fields' in command('exec','snapshot','-i');checks.append(dict(case='cycle11-inspector-preserved'))

@@ -46,8 +46,8 @@ def run(out):
     raw=subprocess.check_output(argv,cwd=ROOT,env=dict(os.environ,TMPDIR='/dev/shm'),text=True)
     inspected=json.loads(raw)
     assert inspected['candidate']['classification']=='supported-legal'
-    # Both wrappers and candidate records have been preserved across generations;
-    # the top-level checkpoint identity is checked independently above.
+    assert inspected['model_version']==model.version and not inspected['truncated']
+    assert inspected['candidate']['model_version']==model.version
     write_json(target/'cli-default-inspection.json',inspected)
     assert code==production_code_hash()
     write_json(target/'verified.json',dict(passed=True,test_count=int(count[1]),**record,
