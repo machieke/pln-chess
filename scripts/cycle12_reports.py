@@ -10,6 +10,11 @@ from pln_chess.cycle6.inference import production_code_hash
 from evaluation.cycle3 import read_gzip
 from scripts.cycle9_baseline import sha
 
+REQUIRED_REPORTS=['engineering-report','package-matrix','legal-promotion-review','field-interaction-ontology',
+    'dependency-graph','field-interactions','strategic-concepts','pins','forks','discovered-attacks',
+    'overloaded-defenders','trapped-pieces','temporal-evolution','concept-learning','counterfactuals',
+    'performance','reproduction']
+
 
 def table(headers, rows):
     def cell(value):
@@ -77,6 +82,11 @@ def run(out, docs):
         concept_rows.append([name,concepts['conditional_target_names'][name],m['n'],m['tp'],m['tn'],m['fp'],m['fn'],
                              m['abstention'],percent(m['precision']),percent(m['recall_including_abstention']),percent(m['f1'])])
     concept_table=table(['Family','Limited target','N','TP','TN','FP','FN','Abstain','Precision','Recall incl. abstention','F1'],concept_rows)
+    concept_rates=table(['Family','False-positive rate','Supported false-negative rate','Positive misses incl. abstention','Abstention rate','Native conditional proofs','Complete joint proofs'],
+        [[name,percent(m['false_positive_rate']),percent(m['false_negative_rate_supported_only']),
+          percent(m['missed_positive_rate_including_abstention']),percent(m['abstention_rate']),
+          m['native_conditional_proofs'],m['complete_joint_concept_proofs']]
+         for name,m in concepts['metrics']['test'].items()])
 
     panel=load('legal/panel.json'); cohorts=defaultdict(list)
     for job in panel['jobs']:
@@ -91,6 +101,10 @@ def run(out, docs):
         totals.update(precision=tp/(tp+fp) if tp+fp else None,recall=tp/(tp+miss) if tp+miss else None,
             f1=2*tp/(2*tp+fp+miss) if 2*tp+fp+miss else None,
             abstention_rate=(totals['unknown']+totals['incomplete'])/totals['candidates'])
+        positives=tp+miss;negatives=totals['candidates']-positives
+        totals.update(false_positive_rate=fp/negatives if negatives else None,
+            false_negative_rate_supported_only=totals['false_illegal']/positives if positives else None,
+            missed_positive_rate_including_abstention=miss/positives if positives else None)
         return totals
     legal_metrics={name:dict(before=aggregate(rows,'before_metrics'),candidate=aggregate(rows,'metrics')) for name,rows in cohorts.items()}
     write_json(out/'legal/cohort-comparison.json',legal_metrics)
@@ -110,6 +124,11 @@ def run(out, docs):
           percent(legal_metrics[key]['candidate']['f1']),percent(legal_metrics[key]['candidate']['abstention_rate']),
           legal_metrics[key]['candidate']['incomplete'],legal_metrics[key]['candidate']['false_negative_including_abstention']]
          for name,key in selected])
+    legal_rates=table(['Candidate cohort','False-positive rate','Supported false-negative rate','Positive miss rate incl. abstention'],
+        [[name,percent(legal_metrics[key]['candidate']['false_positive_rate']),
+          percent(legal_metrics[key]['candidate']['false_negative_rate_supported_only']),
+          percent(legal_metrics[key]['candidate']['missed_positive_rate_including_abstention'])]
+         for name,key in selected])
     decision='Promoted the unchanged Cycle 11 special-local legal checkpoint.' if legal['promoted'] else 'Retained the previous legal default; the candidate remains experimental.'
     page('legal-promotion-review','En-passant promotion review',f'''
 {decision} The decision follows the complete population review, not selection by an en-passant descriptor.
@@ -118,6 +137,9 @@ Field and concept checkpoints are excluded from the legal default allowlist.
 
 {legal_table}
 {legal_diagnostics}
+{legal_rates}
+False-positive rates use all reference-negative candidates; supported false-negative rates count false-illegal
+answers over all reference-positive candidates. Positive miss rates additionally count unknown/incomplete positives.
 All 206 review jobs cover 26 historical suites, 48 Cycle 9 shards and 132 Cycle 10 shards, including every
 one of the 1,020 external test positions in both operational FEN-only and history-assisted conditions.
 The summary records {legal['full_regression']['rows']:,} candidate rows (overlapping cohorts/modes are not independent samples),
@@ -150,6 +172,11 @@ Evidence: {evidence('legal/promotion-decision.json')}, {evidence('legal/cohort-c
             field_rows.append([phase,family,m['relations'],percent(m['precision']),percent(m['recall']),
                 percent(m['f1_including_abstention']),m['unknown'],m['incomplete'],m['false_positive'],m['false_negative'],m['complete_conditional_proofs']])
     field_table=table(['Panel','Field','Relations','Precision','Recall','F1','Unknown','Incomplete','FP','FN','Conditional proofs'],field_rows)
+    field_rates=table(['Panel','Field','False-positive rate','Supported false-negative rate','Positive misses incl. abstention','Abstention rate'],
+        [[phase,family,percent(m['false_positive_rate']),percent(m['false_negative_rate_supported_only']),
+          percent(1-m['recall']) if m['recall'] is not None else 'n/a',percent(m['abstention_rate'])]
+         for phase,data in [('Interactions',interactions),('Sequence endpoints',temporal)]
+         for family,m in data['endpoint_field_metrics'].items()])
     worked_table=table(['Demonstration','Reference relations','Host comparisons','Partial candidates','Proof package'],
         [[r['id'],r['relations'],r['changes'],r['concepts'],evidence(r['artifact'],'open')] for r in interactions['worked']])
     page('field-interactions','Relational field interactions',f'''
@@ -160,6 +187,7 @@ successor, relative observations, endpoint native proofs, evidence IDs, unknown 
 
 {worked_table}
 {field_table}
+{field_rates}
 These are development demonstrations. The repeated endpoint records are neither independent holdouts nor tactical playing-strength tests.
 Reference labels come only from evaluation. Attack, defense, ordinary geometric mobility and king-exposure have distinct local meanings;
 supported mobility does not certify global move safety. Unknowns are retained in recall and coverage accounting.
@@ -179,6 +207,7 @@ Evidence: {evidence('interactions/summary.json')}, {evidence('interactions/trans
     append('strategic-concepts',f'''## Measured limited-target results
 
 {concept_table}
+{concept_rates}
 The test panel contains 306 examples in 125 held-out raw structural families. It produces 303 classified answers,
 124/125 supported positive targets and three fork abstentions, with zero false positives or supported false negatives.
 Precision is conditional on a positive classification; recall includes abstained positives. Zero supported FN is not perfect recall.
@@ -304,6 +333,7 @@ leaves the state unknown; a conflicting successor is retained as a conflict; zer
 No transition inference or field delta is asserted across a history gap. Structural replay does not certify legal historical play.
 
 {field_table}
+{field_rates}
 Endpoint precision/recall is against offline field references, not prediction of future events or strategic sequence quality.
 The full field records, native expressions, event receipts and graphs match on repeat after excluding only execution/cache counters.
 Native temporal theorems remain zero.
@@ -329,6 +359,7 @@ Raw native strength and confidence are separate quantities; neither is presented
 The calibration partition evaluates the fixed thresholds. No strategic probability calibrator is fitted in this cycle.
 
 {concept_table}
+{concept_rates}
 {limits}
 
 The grammar supplies roles, local relative geometry, a movement candidate vocabulary, symmetry normalization, role-kind coarsening
@@ -481,7 +512,7 @@ The brief's numerical demonstration minima are met: 17 interactions, 38 field co
 125 held-out raw families and 12 sequences. Independent concept holdouts are independent canonical raw families within one
 synthetic source; broader external-source independence remains untested. Overload, trapping and multi-premise strategic
 interpretations remain partial. The legal decision is conditioned on the executed full population review.
-''')
+'''+ '\nRequired reports: '+', '.join(f'[{name}]({name}.md)' for name in REQUIRED_REPORTS)+'.\n')
 
     commits=subprocess.check_output(['git','log','--reverse','--format=%h %s',config['starting_head']+'..HEAD'],cwd=ROOT,text=True).strip()
     provenance=f'''Starting commit: `{config['starting_head']}`. Validated production freeze: `{current['source_head']}`.
@@ -602,9 +633,7 @@ Option C is not supported by new operator evidence, and strategic move selection
 All required reports are linked in [package-matrix.md](package-matrix.md). The machine-readable
 {evidence('delivery.json','delivery receipt')} and {evidence('manifest.json','artifact manifest')} bind final checks and files.
 ''')
-    required=['engineering-report','package-matrix','legal-promotion-review','field-interaction-ontology','dependency-graph',
-        'field-interactions','strategic-concepts','pins','forks','discovered-attacks','overloaded-defenders','trapped-pieces',
-        'temporal-evolution','concept-learning','counterfactuals','performance','reproduction']
+    required=REQUIRED_REPORTS
     assert all((docs/(name+'.md')).exists() for name in required)
     write_json(out/'delivery.json',dict(passed=True,complete_delivery=True,starting_head=config['starting_head'],
         validated_source_head=current['source_head'],production_code_hash=production_code_hash(),
