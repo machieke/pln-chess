@@ -1,0 +1,138 @@
+{
+  "comparisons": [
+    {
+      "ancestry_overlap": [],
+      "left": "train",
+      "right": "calibration",
+      "shared_raw_relative_configurations": 321,
+      "source_group_overlap": [],
+      "whole_board_overlap": []
+    },
+    {
+      "ancestry_overlap": [],
+      "left": "train",
+      "right": "test",
+      "shared_raw_relative_configurations": 341,
+      "source_group_overlap": [],
+      "whole_board_overlap": []
+    },
+    {
+      "ancestry_overlap": [],
+      "left": "calibration",
+      "right": "test",
+      "shared_raw_relative_configurations": 474,
+      "source_group_overlap": [],
+      "whole_board_overlap": []
+    }
+  ],
+  "controlled_historical_overlaps": {
+    "calibration": [],
+    "test": [],
+    "train": []
+  },
+  "dedicated_transfers": [
+    {
+      "id": "rook-attack-six",
+      "present_in_training": false,
+      "raw_relative_configuration": [
+        "Rook",
+        6,
+        0
+      ],
+      "whole_position_in_training": false
+    },
+    {
+      "id": "bishop-attack-five",
+      "present_in_training": false,
+      "raw_relative_configuration": [
+        "Bishop",
+        5,
+        5
+      ],
+      "whole_position_in_training": false
+    },
+    {
+      "id": "queen-mobility-seven",
+      "present_in_training": false,
+      "raw_relative_configuration": [
+        "Queen",
+        0,
+        7
+      ],
+      "whole_position_in_training": false
+    },
+    {
+      "id": "rook-defense-five",
+      "present_in_training": false,
+      "raw_relative_configuration": [
+        "Rook",
+        5,
+        0
+      ],
+      "whole_position_in_training": false
+    },
+    {
+      "id": "bishop-defense-six",
+      "present_in_training": false,
+      "raw_relative_configuration": [
+        "Bishop",
+        6,
+        6
+      ],
+      "whole_position_in_training": false
+    },
+    {
+      "id": "rook-exposure-six",
+      "present_in_training": false,
+      "raw_relative_configuration": [
+        "Rook",
+        6,
+        0
+      ],
+      "whole_position_in_training": false
+    },
+    {
+      "id": "queen-exposure-five",
+      "present_in_training": false,
+      "raw_relative_configuration": [
+        "Queen",
+        5,
+        5
+      ],
+      "whole_position_in_training": false
+    },
+    {
+      "id": "bishop-mobility-six",
+      "present_in_training": false,
+      "raw_relative_configuration": [
+        "Bishop",
+        6,
+        6
+      ],
+      "whole_position_in_training": false
+    }
+  ],
+  "field_dataset_hash": "a87cc8418083ce7b8d8aa02fab6cd617d3893baf65992c0ca305f6a4dc47e778",
+  "field_queries": 45424,
+  "historical_dataset_hashes": {
+    "artifacts/cycle10/datasets/dataset.json": "b38f3b29b626fa821a755e049148b6c0f6bb903e858522d912742ba4e5f8faf3",
+    "artifacts/cycle2/dataset.json": "84c640fefe5b07c8f1a67713685c4de2d6615c31362f2af0c5ce116bea6f1baf",
+    "artifacts/cycle3/dataset.json": "05652ce82b3cecc79ba1e5358fdb65c9ea1e0d8a5dd09dd1e8382df1abf48957",
+    "artifacts/cycle4/datasets/dataset.json": "6beba31bac1b73accefecfb7a79cb8ab01f21db212ff0fb02da1953181ea6ed3",
+    "artifacts/cycle5/datasets/dataset.json": "3c38d8644579b07d808ff1332a75922e535adafdb824a4813e21f4d63baa51a2",
+    "artifacts/cycle6/datasets/dataset.json": "94ea026ca966c2427c11dbf80b46e077b224d948ba7a1e47eb7c3a8c8751a9c4",
+    "artifacts/cycle7/datasets/dataset.json": "1f77617ee48db314f7e19c3426a83faf8dd7eff938d83f7afb4b84e05f6209dd",
+    "artifacts/cycle8/datasets/dataset.json": "12454fcaa050a260db7d18f6c8cdaf2100be68270f0881069e084eb86978fa50",
+    "artifacts/cycle9/datasets/dataset.json": "326ffb8ea09aeab43acdf48d7e0b2c57977f6743d29ddfe978f39eb682472e61",
+    "fixtures/dataset.json": "f802db0036a37e8054b0c6c1e8f64d65604db42f9f78a150f2555bfc56375bab"
+  },
+  "intentional_reuse": "External field panels reuse registered Cycle 10 adaptation/calibration/test games in their original partitions. Those are new relation tasks on a previously observed corpus, not newly acquired games.",
+  "legal_dataset_hash": "57e38cbd97ae73799996fd8f4f4b5aebd87f295c106b425ae7ffc274c20cb7ed",
+  "legal_train_holdout_overlap": [],
+  "legal_training_historical_overlaps": [],
+  "method": "All eight planar symmetries, owner swaps and translation-normalized piece configurations; conservative even where a transform is not a chess symmetry.",
+  "passed": true,
+  "relative_transfer": "Dedicated long-range configurations are absent as raw displacements in all field training. Shared pooled conditionals will be measured after ontology implementation; their pooling is a supplied assumption.",
+  "unique_full_fens": 20160,
+  "worked_controls_hash": "c0fff959f7f517c9368b2496e76871923b82085de9f217b62c9b4f98527b9dd9"
+}

@@ -1,0 +1,687 @@
+[
+  {
+    "action": "open http://127.0.0.1:18781/fields",
+    "relativeTimeSec": 0.3,
+    "timestamp": "2026-11-10T11:45:48.385Z"
+  },
+  {
+    "action": "--session pln-chess-cycle11-4743ce41399e set viewport 1280 900",
+    "relativeTimeSec": 0.7,
+    "timestamp": "2026-11-10T11:45:48.849Z"
+  },
+  {
+    "action": "eval (async()=>{const end=Date.now()+5000;while((innerWidth!==1280||innerHeight!==900)&&Date.now()<end)await new Promise(r=>setTimeout(r,100));return [innerWidth,innerHeight]})()",
+    "relativeTimeSec": 1.1,
+    "timestamp": "2026-11-10T11:45:49.193Z"
+  },
+  {
+    "action": "snapshot -i",
+    "relativeTimeSec": 1.4,
+    "timestamp": "2026-11-10T11:45:49.540Z"
+  },
+  {
+    "action": "screenshot initial-fields.png",
+    "relativeTimeSec": 1.8,
+    "timestamp": "2026-11-10T11:45:49.952Z"
+  },
+  {
+    "action": "eval (async()=>{const example=\"rook-obstruction\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 2.3,
+    "timestamp": "2026-11-10T11:45:50.418Z"
+  },
+  {
+    "action": "eval document.getElementById(\"field-before\").closest(\"section\").scrollIntoView();true",
+    "relativeTimeSec": 5.3,
+    "timestamp": "2026-11-10T11:45:53.440Z"
+  },
+  {
+    "action": "screenshot rook-obstruction.png",
+    "relativeTimeSec": 5.7,
+    "timestamp": "2026-11-10T11:45:53.781Z"
+  },
+  {
+    "action": "eval window.scrollTo(0,0);true",
+    "relativeTimeSec": 6.1,
+    "timestamp": "2026-11-10T11:45:54.197Z"
+  },
+  {
+    "action": "eval (async()=>{const example=\"bishop-diagonal\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 6.4,
+    "timestamp": "2026-11-10T11:45:54.544Z"
+  },
+  {
+    "action": "eval (async()=>{const example=\"knight-relocation\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 9.3,
+    "timestamp": "2026-11-10T11:45:57.432Z"
+  },
+  {
+    "action": "eval (async()=>{const example=\"pinned-defender\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 12.3,
+    "timestamp": "2026-11-10T11:46:00.451Z"
+  },
+  {
+    "action": "eval document.getElementById(\"field-before\").closest(\"section\").scrollIntoView();true",
+    "relativeTimeSec": 15.8,
+    "timestamp": "2026-11-10T11:46:03.897Z"
+  },
+  {
+    "action": "screenshot pinned-defender.png",
+    "relativeTimeSec": 16.1,
+    "timestamp": "2026-11-10T11:46:04.238Z"
+  },
+  {
+    "action": "eval window.scrollTo(0,0);true",
+    "relativeTimeSec": 16.5,
+    "timestamp": "2026-11-10T11:46:04.637Z"
+  },
+  {
+    "action": "eval (async()=>{const example=\"discovered-attack\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 16.9,
+    "timestamp": "2026-11-10T11:46:04.968Z"
+  },
+  {
+    "action": "eval (async()=>{const example=\"king-exposure\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 19.8,
+    "timestamp": "2026-11-10T11:46:07.946Z"
+  },
+  {
+    "action": "eval (async()=>{const example=\"multiple-defenders\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 23.2,
+    "timestamp": "2026-11-10T11:46:11.306Z"
+  },
+  {
+    "action": "eval (async()=>{const example=\"unknown-observation\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 25.8,
+    "timestamp": "2026-11-10T11:46:13.936Z"
+  },
+  {
+    "action": "eval document.getElementById(\"field-before\").closest(\"section\").scrollIntoView();true",
+    "relativeTimeSec": 27.9,
+    "timestamp": "2026-11-10T11:46:16.065Z"
+  },
+  {
+    "action": "screenshot unknown-observation.png",
+    "relativeTimeSec": 28.3,
+    "timestamp": "2026-11-10T11:46:16.448Z"
+  },
+  {
+    "action": "eval window.scrollTo(0,0);true",
+    "relativeTimeSec": 28.7,
+    "timestamp": "2026-11-10T11:46:16.853Z"
+  },
+  {
+    "action": "eval (async()=>{const example=\"promotion\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 29.1,
+    "timestamp": "2026-11-10T11:46:17.209Z"
+  },
+  {
+    "action": "eval document.getElementById(\"field-before\").closest(\"section\").scrollIntoView();true",
+    "relativeTimeSec": 32,
+    "timestamp": "2026-11-10T11:46:20.163Z"
+  },
+  {
+    "action": "screenshot promotion.png",
+    "relativeTimeSec": 32.4,
+    "timestamp": "2026-11-10T11:46:20.511Z"
+  },
+  {
+    "action": "eval window.scrollTo(0,0);true",
+    "relativeTimeSec": 32.8,
+    "timestamp": "2026-11-10T11:46:20.909Z"
+  },
+  {
+    "action": "eval (async()=>{const example=\"en-passant\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 33.1,
+    "timestamp": "2026-11-10T11:46:21.235Z"
+  },
+  {
+    "action": "eval (async()=>{const example=\"rook-battery\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 35.7,
+    "timestamp": "2026-11-10T11:46:23.844Z"
+  },
+  {
+    "action": "eval (async()=>{const example=\"defended-minor\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 38.3,
+    "timestamp": "2026-11-10T11:46:26.423Z"
+  },
+  {
+    "action": "eval (async()=>{const example=\"double-check-resolution\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 40.8,
+    "timestamp": "2026-11-10T11:46:28.893Z"
+  },
+  {
+    "action": "eval (async()=>{const example=\"discovered-defense\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 43.7,
+    "timestamp": "2026-11-10T11:46:31.825Z"
+  },
+  {
+    "action": "eval (async()=>{const example=\"en-passant-exposure\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 46.3,
+    "timestamp": "2026-11-10T11:46:34.457Z"
+  },
+  {
+    "action": "eval document.getElementById(\"field-before\").closest(\"section\").scrollIntoView();true",
+    "relativeTimeSec": 49.8,
+    "timestamp": "2026-11-10T11:46:37.877Z"
+  },
+  {
+    "action": "screenshot en-passant-exposure.png",
+    "relativeTimeSec": 50.1,
+    "timestamp": "2026-11-10T11:46:38.232Z"
+  },
+  {
+    "action": "eval window.scrollTo(0,0);true",
+    "relativeTimeSec": 50.5,
+    "timestamp": "2026-11-10T11:46:38.647Z"
+  },
+  {
+    "action": "eval (async()=>{const example=\"rook-obstruction\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 50.8,
+    "timestamp": "2026-11-10T11:46:38.957Z"
+  },
+  {
+    "action": "eval (async()=>{const example=null;if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"field-family\": \"attack\"})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 53.8,
+    "timestamp": "2026-11-10T11:46:41.944Z"
+  },
+  {
+    "action": "eval (async()=>{const example=null;if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"field-family\": \"defense\"})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 56.6,
+    "timestamp": "2026-11-10T11:46:44.753Z"
+  },
+  {
+    "action": "eval (async()=>{const example=null;if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"field-family\": \"mobility\"})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 59.4,
+    "timestamp": "2026-11-10T11:46:47.493Z"
+  },
+  {
+    "action": "eval (async()=>{const example=null;if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"field-family\": \"king-exposure\"})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 62.3,
+    "timestamp": "2026-11-10T11:46:50.375Z"
+  },
+  {
+    "action": "eval (async()=>{const example=\"rook-obstruction\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"field-family\": \"attack\"})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 64.6,
+    "timestamp": "2026-11-10T11:46:52.751Z"
+  },
+  {
+    "action": "eval (async()=>{const b=document.querySelector(\"#field-relations button[data-native=\"+JSON.stringify(\"true\")+\"]\");b.click();const p=document.getElementById(\"field-proof\");const d=JSON.parse(p.textContent);return {proof:d.proof_id,nodes:d.proof_trace.length,rule:d.rule_id,evidence:d.evidence_ids.length,classification:d.classification};})()",
+    "relativeTimeSec": 67.4,
+    "timestamp": "2026-11-10T11:46:55.538Z"
+  },
+  {
+    "action": "eval document.getElementById(\"field-proof\").scrollIntoView();true",
+    "relativeTimeSec": 67.8,
+    "timestamp": "2026-11-10T11:46:55.881Z"
+  },
+  {
+    "action": "screenshot native-field-proof.png",
+    "relativeTimeSec": 68.1,
+    "timestamp": "2026-11-10T11:46:56.253Z"
+  },
+  {
+    "action": "eval (async()=>{const example=\"rook-obstruction\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"field-model\": \"empty\"})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 68.6,
+    "timestamp": "2026-11-10T11:46:56.695Z"
+  },
+  {
+    "action": "eval Array.from(document.querySelectorAll(\"#field-relations tbody tr\")).every(r=>r.textContent.includes(\"unknown\"))",
+    "relativeTimeSec": 70.4,
+    "timestamp": "2026-11-10T11:46:58.477Z"
+  },
+  {
+    "action": "eval (async()=>{const example=null;if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"field-model\": \"trained\", \"field-budget\": 0})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 70.7,
+    "timestamp": "2026-11-10T11:46:58.807Z"
+  },
+  {
+    "action": "eval document.getElementById(\"field-relations\").textContent",
+    "relativeTimeSec": 71.9,
+    "timestamp": "2026-11-10T11:46:59.977Z"
+  },
+  {
+    "action": "eval (async()=>{const example=\"en-passant\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"field-budget\": 100000})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 72.2,
+    "timestamp": "2026-11-10T11:47:00.345Z"
+  },
+  {
+    "action": "eval (async()=>{const old=URL.createObjectURL.bind(URL);URL.createObjectURL=b=>{window.fieldBlob=b;return old(b)};document.getElementById(\"field-export\").click();window.fieldText=await window.fieldBlob.text();const bytes=new TextEncoder().encode(window.fieldText);const hash=Array.from(new Uint8Array(await crypto.subtle.digest(\"SHA-256\",bytes))).map(x=>x.toString(16).padStart(2,\"0\")).join(\"\");return {bytes:bytes.length,characters:window.fieldText.length,sha256:hash};})()",
+    "relativeTimeSec": 74.8,
+    "timestamp": "2026-11-10T11:47:02.948Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(0,100000)",
+    "relativeTimeSec": 75.3,
+    "timestamp": "2026-11-10T11:47:03.421Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(100000,200000)",
+    "relativeTimeSec": 75.7,
+    "timestamp": "2026-11-10T11:47:03.780Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(200000,300000)",
+    "relativeTimeSec": 76,
+    "timestamp": "2026-11-10T11:47:04.112Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(300000,400000)",
+    "relativeTimeSec": 76.4,
+    "timestamp": "2026-11-10T11:47:04.494Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(400000,500000)",
+    "relativeTimeSec": 76.8,
+    "timestamp": "2026-11-10T11:47:04.868Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(500000,600000)",
+    "relativeTimeSec": 77.1,
+    "timestamp": "2026-11-10T11:47:05.240Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(600000,700000)",
+    "relativeTimeSec": 77.5,
+    "timestamp": "2026-11-10T11:47:05.602Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(700000,800000)",
+    "relativeTimeSec": 77.9,
+    "timestamp": "2026-11-10T11:47:05.970Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(800000,900000)",
+    "relativeTimeSec": 78.2,
+    "timestamp": "2026-11-10T11:47:06.323Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(900000,1000000)",
+    "relativeTimeSec": 78.6,
+    "timestamp": "2026-11-10T11:47:06.677Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(1000000,1100000)",
+    "relativeTimeSec": 78.9,
+    "timestamp": "2026-11-10T11:47:07.061Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(1100000,1200000)",
+    "relativeTimeSec": 79.3,
+    "timestamp": "2026-11-10T11:47:07.435Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(1200000,1300000)",
+    "relativeTimeSec": 79.7,
+    "timestamp": "2026-11-10T11:47:07.798Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(1300000,1400000)",
+    "relativeTimeSec": 80.1,
+    "timestamp": "2026-11-10T11:47:08.202Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(1400000,1500000)",
+    "relativeTimeSec": 80.5,
+    "timestamp": "2026-11-10T11:47:08.581Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(1500000,1600000)",
+    "relativeTimeSec": 80.8,
+    "timestamp": "2026-11-10T11:47:08.964Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(1600000,1700000)",
+    "relativeTimeSec": 81.2,
+    "timestamp": "2026-11-10T11:47:09.334Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(1700000,1800000)",
+    "relativeTimeSec": 81.6,
+    "timestamp": "2026-11-10T11:47:09.690Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(1800000,1900000)",
+    "relativeTimeSec": 81.9,
+    "timestamp": "2026-11-10T11:47:10.033Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(1900000,2000000)",
+    "relativeTimeSec": 82.3,
+    "timestamp": "2026-11-10T11:47:10.432Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(2000000,2100000)",
+    "relativeTimeSec": 82.7,
+    "timestamp": "2026-11-10T11:47:10.776Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(2100000,2200000)",
+    "relativeTimeSec": 83,
+    "timestamp": "2026-11-10T11:47:11.076Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(2200000,2300000)",
+    "relativeTimeSec": 83.3,
+    "timestamp": "2026-11-10T11:47:11.441Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(2300000,2400000)",
+    "relativeTimeSec": 83.7,
+    "timestamp": "2026-11-10T11:47:11.825Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(2400000,2500000)",
+    "relativeTimeSec": 84.1,
+    "timestamp": "2026-11-10T11:47:12.179Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(2500000,2600000)",
+    "relativeTimeSec": 84.4,
+    "timestamp": "2026-11-10T11:47:12.553Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(2600000,2700000)",
+    "relativeTimeSec": 84.8,
+    "timestamp": "2026-11-10T11:47:12.905Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(2700000,2800000)",
+    "relativeTimeSec": 85.1,
+    "timestamp": "2026-11-10T11:47:13.244Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(2800000,2900000)",
+    "relativeTimeSec": 85.5,
+    "timestamp": "2026-11-10T11:47:13.640Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(2900000,3000000)",
+    "relativeTimeSec": 85.9,
+    "timestamp": "2026-11-10T11:47:13.993Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(3000000,3100000)",
+    "relativeTimeSec": 86.3,
+    "timestamp": "2026-11-10T11:47:14.387Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(3100000,3200000)",
+    "relativeTimeSec": 86.6,
+    "timestamp": "2026-11-10T11:47:14.757Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(3200000,3300000)",
+    "relativeTimeSec": 87,
+    "timestamp": "2026-11-10T11:47:15.117Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(3300000,3400000)",
+    "relativeTimeSec": 87.4,
+    "timestamp": "2026-11-10T11:47:15.490Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(3400000,3500000)",
+    "relativeTimeSec": 87.7,
+    "timestamp": "2026-11-10T11:47:15.865Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(3500000,3600000)",
+    "relativeTimeSec": 88.1,
+    "timestamp": "2026-11-10T11:47:16.228Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(3600000,3700000)",
+    "relativeTimeSec": 88.5,
+    "timestamp": "2026-11-10T11:47:16.573Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(3700000,3800000)",
+    "relativeTimeSec": 88.8,
+    "timestamp": "2026-11-10T11:47:16.960Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(3800000,3900000)",
+    "relativeTimeSec": 89.2,
+    "timestamp": "2026-11-10T11:47:17.317Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(3900000,4000000)",
+    "relativeTimeSec": 89.5,
+    "timestamp": "2026-11-10T11:47:17.651Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(4000000,4100000)",
+    "relativeTimeSec": 89.9,
+    "timestamp": "2026-11-10T11:47:18.028Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(4100000,4200000)",
+    "relativeTimeSec": 90.3,
+    "timestamp": "2026-11-10T11:47:18.385Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(4200000,4300000)",
+    "relativeTimeSec": 90.7,
+    "timestamp": "2026-11-10T11:47:18.780Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(4300000,4400000)",
+    "relativeTimeSec": 91,
+    "timestamp": "2026-11-10T11:47:19.162Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(4400000,4500000)",
+    "relativeTimeSec": 91.4,
+    "timestamp": "2026-11-10T11:47:19.531Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(4500000,4600000)",
+    "relativeTimeSec": 91.8,
+    "timestamp": "2026-11-10T11:47:19.888Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(4600000,4700000)",
+    "relativeTimeSec": 92.1,
+    "timestamp": "2026-11-10T11:47:20.253Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(4700000,4800000)",
+    "relativeTimeSec": 92.5,
+    "timestamp": "2026-11-10T11:47:20.620Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(4800000,4900000)",
+    "relativeTimeSec": 92.9,
+    "timestamp": "2026-11-10T11:47:21.014Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(4900000,5000000)",
+    "relativeTimeSec": 93.3,
+    "timestamp": "2026-11-10T11:47:21.384Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(5000000,5100000)",
+    "relativeTimeSec": 93.7,
+    "timestamp": "2026-11-10T11:47:21.771Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(5100000,5200000)",
+    "relativeTimeSec": 94,
+    "timestamp": "2026-11-10T11:47:22.146Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(5200000,5300000)",
+    "relativeTimeSec": 94.4,
+    "timestamp": "2026-11-10T11:47:22.508Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(5300000,5400000)",
+    "relativeTimeSec": 94.7,
+    "timestamp": "2026-11-10T11:47:22.849Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(5400000,5500000)",
+    "relativeTimeSec": 95.1,
+    "timestamp": "2026-11-10T11:47:23.190Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(5500000,5600000)",
+    "relativeTimeSec": 95.5,
+    "timestamp": "2026-11-10T11:47:23.588Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(5600000,5700000)",
+    "relativeTimeSec": 95.9,
+    "timestamp": "2026-11-10T11:47:23.975Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(5700000,5800000)",
+    "relativeTimeSec": 96.2,
+    "timestamp": "2026-11-10T11:47:24.365Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(5800000,5900000)",
+    "relativeTimeSec": 96.6,
+    "timestamp": "2026-11-10T11:47:24.760Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(5900000,6000000)",
+    "relativeTimeSec": 97,
+    "timestamp": "2026-11-10T11:47:25.121Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(6000000,6100000)",
+    "relativeTimeSec": 97.4,
+    "timestamp": "2026-11-10T11:47:25.474Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(6100000,6200000)",
+    "relativeTimeSec": 97.7,
+    "timestamp": "2026-11-10T11:47:25.850Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(6200000,6300000)",
+    "relativeTimeSec": 98.1,
+    "timestamp": "2026-11-10T11:47:26.196Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(6300000,6400000)",
+    "relativeTimeSec": 98.5,
+    "timestamp": "2026-11-10T11:47:26.585Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(6400000,6500000)",
+    "relativeTimeSec": 98.9,
+    "timestamp": "2026-11-10T11:47:26.980Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(6500000,6600000)",
+    "relativeTimeSec": 99.2,
+    "timestamp": "2026-11-10T11:47:27.346Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(6600000,6700000)",
+    "relativeTimeSec": 99.6,
+    "timestamp": "2026-11-10T11:47:27.697Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(6700000,6800000)",
+    "relativeTimeSec": 99.9,
+    "timestamp": "2026-11-10T11:47:28.030Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(6800000,6900000)",
+    "relativeTimeSec": 100.3,
+    "timestamp": "2026-11-10T11:47:28.402Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(6900000,7000000)",
+    "relativeTimeSec": 100.6,
+    "timestamp": "2026-11-10T11:47:28.760Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(7000000,7100000)",
+    "relativeTimeSec": 101,
+    "timestamp": "2026-11-10T11:47:29.140Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(7100000,7200000)",
+    "relativeTimeSec": 101.4,
+    "timestamp": "2026-11-10T11:47:29.497Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(7200000,7300000)",
+    "relativeTimeSec": 101.7,
+    "timestamp": "2026-11-10T11:47:29.856Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(7300000,7400000)",
+    "relativeTimeSec": 102.1,
+    "timestamp": "2026-11-10T11:47:30.231Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(7400000,7500000)",
+    "relativeTimeSec": 102.5,
+    "timestamp": "2026-11-10T11:47:30.603Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(7500000,7600000)",
+    "relativeTimeSec": 102.9,
+    "timestamp": "2026-11-10T11:47:31.003Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(7600000,7700000)",
+    "relativeTimeSec": 103.3,
+    "timestamp": "2026-11-10T11:47:31.386Z"
+  },
+  {
+    "action": "--session pln-chess-cycle11-4743ce41399e set viewport 390 844",
+    "relativeTimeSec": 103.7,
+    "timestamp": "2026-11-10T11:47:31.833Z"
+  },
+  {
+    "action": "eval (async()=>{const end=Date.now()+5000;while((innerWidth!==390||innerHeight!==844)&&Date.now()<end)await new Promise(r=>setTimeout(r,100));return [innerWidth,innerHeight]})()",
+    "relativeTimeSec": 104.2,
+    "timestamp": "2026-11-10T11:47:32.267Z"
+  },
+  {
+    "action": "eval window.scrollTo(0,0);true",
+    "relativeTimeSec": 104.5,
+    "timestamp": "2026-11-10T11:47:32.652Z"
+  },
+  {
+    "action": "eval ({width:innerWidth,height:innerHeight,scrollWidth:document.documentElement.scrollWidth})",
+    "relativeTimeSec": 104.9,
+    "timestamp": "2026-11-10T11:47:33.028Z"
+  },
+  {
+    "action": "eval Array.from(document.querySelectorAll(\"body *\")).filter(e=>e.getBoundingClientRect().right>innerWidth).map(e=>({tag:e.tagName,id:e.id,right:e.getBoundingClientRect().right})).slice(0,30)",
+    "relativeTimeSec": 105.3,
+    "timestamp": "2026-11-10T11:47:33.405Z"
+  },
+  {
+    "action": "screenshot mobile-field-controls.png",
+    "relativeTimeSec": 105.7,
+    "timestamp": "2026-11-10T11:47:33.781Z"
+  },
+  {
+    "action": "eval document.getElementById(\"field-before\").scrollIntoView();true",
+    "relativeTimeSec": 106.1,
+    "timestamp": "2026-11-10T11:47:34.202Z"
+  },
+  {
+    "action": "screenshot mobile-before-after.png",
+    "relativeTimeSec": 106.4,
+    "timestamp": "2026-11-10T11:47:34.535Z"
+  },
+  {
+    "action": "open http://127.0.0.1:18781",
+    "relativeTimeSec": 106.9,
+    "timestamp": "2026-11-10T11:47:34.987Z"
+  },
+  {
+    "action": "snapshot -i -s #form",
+    "relativeTimeSec": 107.3,
+    "timestamp": "2026-11-10T11:47:35.405Z"
+  }
+]

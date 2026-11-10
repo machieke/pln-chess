@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/data/pln-chess-cycle6-delivery/training/cycle11_legal.py", line 123, in <module>
+    run(parser.parse_args().out)
+  File "/data/pln-chess-cycle6-delivery/training/cycle11_legal.py", line 34, in run
+    assert not history['conflicts'] and history['resulting_fen'] == row['fen']
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

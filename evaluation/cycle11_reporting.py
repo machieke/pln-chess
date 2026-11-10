@@ -235,6 +235,8 @@ The panel is a deliberately structured mixture, not a representative sample of c
 
 Each workload ran in a fresh worker for {performance['repetitions']} repetitions, after other native study workers finished. Full and incremental outputs have identical relation values and native proof IDs. Pure native-expression caching and exact local-relation reuse are separately counted. {artifact('performance/summary.json')}.
 
+{artifact('performance/environment.json', 'Recorded host and runtime environment') if (out/'performance/environment.json').exists() else 'Host timings are environment-specific'}. Native study workers were quiescent before measurements; this does not imply exclusive use of the machine by the operating system or unrelated services.
+
 Cold means a fresh field/native-expression session; operating-system file caches are not flushed. Warm means an identical request using the same field session. Neither label includes interpreter or model-loading startup.
 
 | Workload | Cold field median s | Warm median s | Full successor median s | Incremental median s | Reused / invalidated relations |

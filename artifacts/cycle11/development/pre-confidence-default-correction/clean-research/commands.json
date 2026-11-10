@@ -1,0 +1,100 @@
+[
+  {
+    "argv": [
+      "/data/pln-chess-cycle11-final/.venv/bin/python",
+      "-m",
+      "training.cycle11_data",
+      "--out",
+      "/data/pln-chess-cycle6-delivery/artifacts/cycle11/clean-research"
+    ],
+    "elapsed_seconds": 9.0342116355896,
+    "log": "logs/field-data.txt",
+    "returncode": 0,
+    "source_head": "6fa36ef61401746e6099521b1b47d169c0afdb5b",
+    "stage": "field-data"
+  },
+  {
+    "argv": [
+      "/data/pln-chess-cycle11-final/.venv/bin/python",
+      "-m",
+      "training.cycle11_legal_data",
+      "--out",
+      "/data/pln-chess-cycle6-delivery/artifacts/cycle11/clean-research"
+    ],
+    "elapsed_seconds": 0.9113702774047852,
+    "log": "logs/legal-data.txt",
+    "returncode": 0,
+    "source_head": "6fa36ef61401746e6099521b1b47d169c0afdb5b",
+    "stage": "legal-data"
+  },
+  {
+    "argv": [
+      "/data/pln-chess-cycle11-final/.venv/bin/python",
+      "-m",
+      "training.cycle11_examples",
+      "--out",
+      "/data/pln-chess-cycle6-delivery/artifacts/cycle11/clean-research"
+    ],
+    "elapsed_seconds": 0.1897718906402588,
+    "log": "logs/worked-data.txt",
+    "returncode": 0,
+    "source_head": "6fa36ef61401746e6099521b1b47d169c0afdb5b",
+    "stage": "worked-data"
+  },
+  {
+    "argv": [
+      "/data/pln-chess-cycle11-final/.venv/bin/python",
+      "-m",
+      "training.cycle11_temporal_data",
+      "--out",
+      "/data/pln-chess-cycle6-delivery/artifacts/cycle11/clean-research"
+    ],
+    "elapsed_seconds": 0.11172914505004883,
+    "log": "logs/temporal-data.txt",
+    "returncode": 0,
+    "source_head": "6fa36ef61401746e6099521b1b47d169c0afdb5b",
+    "stage": "temporal-data"
+  },
+  {
+    "argv": [
+      "/data/pln-chess-cycle11-final/.venv/bin/python",
+      "-m",
+      "evaluation.cycle11_data_audit",
+      "--out",
+      "/data/pln-chess-cycle6-delivery/artifacts/cycle11/clean-research"
+    ],
+    "elapsed_seconds": 5.759499549865723,
+    "log": "logs/dataset-audit.txt",
+    "returncode": 0,
+    "source_head": "6fa36ef61401746e6099521b1b47d169c0afdb5b",
+    "stage": "dataset-audit"
+  },
+  {
+    "argv": [
+      "/data/pln-chess-cycle11-final/.venv/bin/python",
+      "-m",
+      "training.cycle11_fields",
+      "--out",
+      "/data/pln-chess-cycle6-delivery/artifacts/cycle11/clean-research"
+    ],
+    "elapsed_seconds": 28.18554711341858,
+    "log": "logs/field-learning.txt",
+    "returncode": 0,
+    "source_head": "6fa36ef61401746e6099521b1b47d169c0afdb5b",
+    "stage": "field-learning"
+  },
+  {
+    "argv": [
+      "/data/pln-chess-cycle11-final/.venv/bin/python",
+      "-m",
+      "training.cycle11_legal",
+      "--out",
+      "/data/pln-chess-cycle6-delivery/artifacts/cycle11/clean-research"
+    ],
+    "elapsed_seconds": 3.3600378036499023,
+    "log": "logs/legal-learning.txt",
+    "returncode": 0,
+    "source_head": "6fa36ef61401746e6099521b1b47d169c0afdb5b",
+    "stage": "legal-learning"
+  }
+]

@@ -1,0 +1,1554 @@
+[
+  {
+    "args": [
+      "exec",
+      "open",
+      "http://127.0.0.1:18781/fields"
+    ],
+    "returncode": 0,
+    "seconds": 0.43871426582336426,
+    "stderr": "",
+    "stdout_sha256": "78ccea483f0adb3c0d2fc53d2182ebebc0e4ec6942bb55772098acf122dd2ab4"
+  },
+  {
+    "args": [
+      "exec",
+      "--session",
+      "pln-chess-cycle11-5b193baa3ae2",
+      "set",
+      "viewport",
+      "1280",
+      "900"
+    ],
+    "returncode": 0,
+    "seconds": 0.35576796531677246,
+    "stderr": "",
+    "stdout_sha256": "7c8f56aecbeeb314c13c01df65278c8ff9c1d10cc764cfb6bb4fea2accaffc6f"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const end=Date.now()+5000;while((innerWidth!==1280||innerHeight!==900)&&Date.now()<end)await new Promise(r=>setTimeout(r,100));return [innerWidth,innerHeight]})()"
+    ],
+    "returncode": 0,
+    "seconds": 0.4111948013305664,
+    "stderr": "",
+    "stdout_sha256": "3341dd4cc9321dd8a39cb9eb1a2d424826d2e49a5b15bbaf70d1d4206a1dfb41"
+  },
+  {
+    "args": [
+      "exec",
+      "snapshot",
+      "-i"
+    ],
+    "returncode": 0,
+    "seconds": 0.4230830669403076,
+    "stderr": "",
+    "stdout_sha256": "e513eb2c5e303e5699604a98f5f44d6e21d718b5d00b02f7b5a269f6c32fbc4d"
+  },
+  {
+    "args": [
+      "exec",
+      "screenshot",
+      "initial-fields.png"
+    ],
+    "returncode": 0,
+    "seconds": 0.4133780002593994,
+    "stderr": "",
+    "stdout_sha256": "dda6cc854c8d0e62dcb0fac685a247f3f9f785774d291fb935d8022e9ecf66cb"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const example=\"rook-obstruction\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 3.3200814723968506,
+    "stderr": "",
+    "stdout_sha256": "5bda7adae0abfff522bcb1aefdcba2d3fa3d024c1d202fbd67f08cc512d983fb"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "document.getElementById(\"field-before\").closest(\"section\").scrollIntoView();true"
+    ],
+    "returncode": 0,
+    "seconds": 0.32886362075805664,
+    "stderr": "",
+    "stdout_sha256": "a17fcf0a2f50e2d495e4f90ce263410edc183add6c62699a2facbccf60410f74"
+  },
+  {
+    "args": [
+      "exec",
+      "screenshot",
+      "rook-obstruction.png"
+    ],
+    "returncode": 0,
+    "seconds": 0.4271664619445801,
+    "stderr": "",
+    "stdout_sha256": "162c8e26397b4e6270c4b3547651ea1b68d95e353fe987cc6fccc44b4b3241af"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.scrollTo(0,0);true"
+    ],
+    "returncode": 0,
+    "seconds": 0.3198280334472656,
+    "stderr": "",
+    "stdout_sha256": "a17fcf0a2f50e2d495e4f90ce263410edc183add6c62699a2facbccf60410f74"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const example=\"bishop-diagonal\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 3.0423123836517334,
+    "stderr": "",
+    "stdout_sha256": "f7621ea56d9b65849f27ab26368e4d6f2c2515fec91189c599a467f24281a5c3"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const example=\"knight-relocation\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 3.273803472518921,
+    "stderr": "",
+    "stdout_sha256": "744ccf94d26ec974f999db87ce6ed1cd367ca9f5990a613960cb033ca93b0630"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const example=\"pinned-defender\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 3.600531816482544,
+    "stderr": "",
+    "stdout_sha256": "4dd783b2b8260ca8e3f740029013cdb6ce2a98a15fb678e2c8059db121f27cfe"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "document.getElementById(\"field-before\").closest(\"section\").scrollIntoView();true"
+    ],
+    "returncode": 0,
+    "seconds": 0.3231649398803711,
+    "stderr": "",
+    "stdout_sha256": "a17fcf0a2f50e2d495e4f90ce263410edc183add6c62699a2facbccf60410f74"
+  },
+  {
+    "args": [
+      "exec",
+      "screenshot",
+      "pinned-defender.png"
+    ],
+    "returncode": 0,
+    "seconds": 0.4044220447540283,
+    "stderr": "",
+    "stdout_sha256": "0594a522b59130ea373a8d12d58bafdf207ab808ba964495ac2a6f3862b8666d"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.scrollTo(0,0);true"
+    ],
+    "returncode": 0,
+    "seconds": 0.3366427421569824,
+    "stderr": "",
+    "stdout_sha256": "a17fcf0a2f50e2d495e4f90ce263410edc183add6c62699a2facbccf60410f74"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const example=\"discovered-attack\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 3.246734380722046,
+    "stderr": "",
+    "stdout_sha256": "93ed8cd965182116a40ffa4644ac5ed5e55d176e9a92b73095421ece454c41fe"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const example=\"king-exposure\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 3.7742538452148438,
+    "stderr": "",
+    "stdout_sha256": "842cdd0ec21dd2f2c6b7059b00b8bfed598d3a95e4bbcbe1bbcdf86760f20c2b"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const example=\"multiple-defenders\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 2.72747540473938,
+    "stderr": "",
+    "stdout_sha256": "76631e140c09307da4174abb1a4e286516537d79ec85bb2c71e82c58a3aa59f5"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const example=\"unknown-observation\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 2.398143768310547,
+    "stderr": "",
+    "stdout_sha256": "34eba92410b30c77141534a1d021b31ec1c0f64b59af3b1876c10fadd7398b8e"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "document.getElementById(\"field-before\").closest(\"section\").scrollIntoView();true"
+    ],
+    "returncode": 0,
+    "seconds": 0.33379435539245605,
+    "stderr": "",
+    "stdout_sha256": "a17fcf0a2f50e2d495e4f90ce263410edc183add6c62699a2facbccf60410f74"
+  },
+  {
+    "args": [
+      "exec",
+      "screenshot",
+      "unknown-observation.png"
+    ],
+    "returncode": 0,
+    "seconds": 0.4143829345703125,
+    "stderr": "",
+    "stdout_sha256": "3049e85d10609d02e14dcda69f1258da4334e95c8cdc5ecb55c0f981b595057a"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.scrollTo(0,0);true"
+    ],
+    "returncode": 0,
+    "seconds": 0.34920334815979004,
+    "stderr": "",
+    "stdout_sha256": "a17fcf0a2f50e2d495e4f90ce263410edc183add6c62699a2facbccf60410f74"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const example=\"promotion\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 3.092736005783081,
+    "stderr": "",
+    "stdout_sha256": "33592703e2387dca3ab4e923a9197e3a3969e02fc21592642c9a9644683bc5ba"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "document.getElementById(\"field-before\").closest(\"section\").scrollIntoView();true"
+    ],
+    "returncode": 0,
+    "seconds": 0.3245406150817871,
+    "stderr": "",
+    "stdout_sha256": "a17fcf0a2f50e2d495e4f90ce263410edc183add6c62699a2facbccf60410f74"
+  },
+  {
+    "args": [
+      "exec",
+      "screenshot",
+      "promotion.png"
+    ],
+    "returncode": 0,
+    "seconds": 0.40036916732788086,
+    "stderr": "",
+    "stdout_sha256": "d3e2e70081e4e4e05237d19054ec70a63f84386620a5d1facc3a6edea42b1e3b"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.scrollTo(0,0);true"
+    ],
+    "returncode": 0,
+    "seconds": 0.3284265995025635,
+    "stderr": "",
+    "stdout_sha256": "a17fcf0a2f50e2d495e4f90ce263410edc183add6c62699a2facbccf60410f74"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const example=\"en-passant\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 2.6852595806121826,
+    "stderr": "",
+    "stdout_sha256": "b431c7df54ecab8fa130df4717b7fc97c06750f94fb5342d56255489ee8e039d"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const example=\"rook-battery\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 2.81998348236084,
+    "stderr": "",
+    "stdout_sha256": "f7621ea56d9b65849f27ab26368e4d6f2c2515fec91189c599a467f24281a5c3"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const example=\"defended-minor\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 2.8432137966156006,
+    "stderr": "",
+    "stdout_sha256": "5bda7adae0abfff522bcb1aefdcba2d3fa3d024c1d202fbd67f08cc512d983fb"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const example=\"double-check-resolution\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 3.4137845039367676,
+    "stderr": "",
+    "stdout_sha256": "d6261ee9044364a3314bc68432f773c97a5eb690f266ed0bde1d244d72868e3b"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const example=\"discovered-defense\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 2.7083232402801514,
+    "stderr": "",
+    "stdout_sha256": "51e24856ea5f77188d9bb0e299b981b0edf51f83ce6b06c0d37dd1b47b5c59df"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const example=\"en-passant-exposure\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 3.891092300415039,
+    "stderr": "",
+    "stdout_sha256": "6e9e434ca5afadd45f9f8929981ae992b111b306bacd2bdc786293cdf97e4907"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "document.getElementById(\"field-before\").closest(\"section\").scrollIntoView();true"
+    ],
+    "returncode": 0,
+    "seconds": 0.30161356925964355,
+    "stderr": "",
+    "stdout_sha256": "a17fcf0a2f50e2d495e4f90ce263410edc183add6c62699a2facbccf60410f74"
+  },
+  {
+    "args": [
+      "exec",
+      "screenshot",
+      "en-passant-exposure.png"
+    ],
+    "returncode": 0,
+    "seconds": 0.3686189651489258,
+    "stderr": "",
+    "stdout_sha256": "812f036c8382b91a0af98c6b9035cbbaf0e3bed9c8a9336bfaf76c0c1fd61486"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.scrollTo(0,0);true"
+    ],
+    "returncode": 0,
+    "seconds": 0.35389280319213867,
+    "stderr": "",
+    "stdout_sha256": "a17fcf0a2f50e2d495e4f90ce263410edc183add6c62699a2facbccf60410f74"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const example=\"rook-obstruction\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 3.2069289684295654,
+    "stderr": "",
+    "stdout_sha256": "5bda7adae0abfff522bcb1aefdcba2d3fa3d024c1d202fbd67f08cc512d983fb"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const example=null;if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"field-family\": \"attack\"})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 3.0923264026641846,
+    "stderr": "",
+    "stdout_sha256": "33a434155ee1e71c8cbb3c92ee8ae5a3814cd2b06d4897fdb46e13df42681e98"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const example=null;if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"field-family\": \"defense\"})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 3.0199339389801025,
+    "stderr": "",
+    "stdout_sha256": "0e0d5332c0216f8086084b6ace66f2bcfc2dcd54d3d45d0b44749bf5b6e3819e"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const example=null;if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"field-family\": \"mobility\"})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 3.152196168899536,
+    "stderr": "",
+    "stdout_sha256": "33a434155ee1e71c8cbb3c92ee8ae5a3814cd2b06d4897fdb46e13df42681e98"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const example=null;if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"field-family\": \"king-exposure\"})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 2.6411659717559814,
+    "stderr": "",
+    "stdout_sha256": "906cfb6972c6b1ef44cc83ff56065411722e9d6389ea83da242640dfec8ea998"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const example=\"rook-obstruction\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"field-family\": \"attack\"})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 3.066127300262451,
+    "stderr": "",
+    "stdout_sha256": "33a434155ee1e71c8cbb3c92ee8ae5a3814cd2b06d4897fdb46e13df42681e98"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const b=document.querySelector(\"#field-relations button[data-native=\"+JSON.stringify(\"true\")+\"]\");b.click();const p=document.getElementById(\"field-proof\");const d=JSON.parse(p.textContent);return {proof:d.proof_id,nodes:d.proof_trace.length,rule:d.rule_id,evidence:d.evidence_ids.length,classification:d.classification};})()"
+    ],
+    "returncode": 0,
+    "seconds": 0.36814427375793457,
+    "stderr": "",
+    "stdout_sha256": "ff19b246e2ec6dd742a2999e90e197592f89ad177df263e0072ef9dc46b1740b"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "document.getElementById(\"field-proof\").scrollIntoView();true"
+    ],
+    "returncode": 0,
+    "seconds": 0.34195971488952637,
+    "stderr": "",
+    "stdout_sha256": "a17fcf0a2f50e2d495e4f90ce263410edc183add6c62699a2facbccf60410f74"
+  },
+  {
+    "args": [
+      "exec",
+      "screenshot",
+      "native-field-proof.png"
+    ],
+    "returncode": 0,
+    "seconds": 0.41474127769470215,
+    "stderr": "",
+    "stdout_sha256": "4d8af5951f0064cc6512713ddc6bf7db406a7bb261d25c345bd7e419b9f58cbe"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const example=\"rook-obstruction\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"field-model\": \"empty\"})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 1.8568222522735596,
+    "stderr": "",
+    "stdout_sha256": "5bda7adae0abfff522bcb1aefdcba2d3fa3d024c1d202fbd67f08cc512d983fb"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "Array.from(document.querySelectorAll(\"#field-relations tbody tr\")).every(r=>r.textContent.includes(\"unknown\"))"
+    ],
+    "returncode": 0,
+    "seconds": 0.3409390449523926,
+    "stderr": "",
+    "stdout_sha256": "a17fcf0a2f50e2d495e4f90ce263410edc183add6c62699a2facbccf60410f74"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const example=null;if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"field-model\": \"trained\", \"field-budget\": 0})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 1.3099653720855713,
+    "stderr": "",
+    "stdout_sha256": "dcfeb38aa632fd44ec8f63113b342462fa2c478b23f3a19970286cce722ece4f"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "document.getElementById(\"field-relations\").textContent"
+    ],
+    "returncode": 0,
+    "seconds": 0.3636972904205322,
+    "stderr": "",
+    "stdout_sha256": "31edb30d9f8023c3b1a26edbda83cda8052ef4b220d52d01eee436379b151aa8"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const example=\"en-passant\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"field-budget\": 100000})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()"
+    ],
+    "returncode": 0,
+    "seconds": 2.816542625427246,
+    "stderr": "",
+    "stdout_sha256": "b431c7df54ecab8fa130df4717b7fc97c06750f94fb5342d56255489ee8e039d"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const old=URL.createObjectURL.bind(URL);URL.createObjectURL=b=>{window.fieldBlob=b;return old(b)};document.getElementById(\"field-export\").click();window.fieldText=await window.fieldBlob.text();const bytes=new TextEncoder().encode(window.fieldText);const hash=Array.from(new Uint8Array(await crypto.subtle.digest(\"SHA-256\",bytes))).map(x=>x.toString(16).padStart(2,\"0\")).join(\"\");return {bytes:bytes.length,characters:window.fieldText.length,sha256:hash};})()"
+    ],
+    "returncode": 0,
+    "seconds": 0.46268153190612793,
+    "stderr": "",
+    "stdout_sha256": "7145f1a87522630c8aac9b77ffac46f2990a3e8435256cff80a81923d98da695"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(0,100000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.36249756813049316,
+    "stderr": "",
+    "stdout_sha256": "1fc714faac582f4e8c9dfb966569ff010f52b5a582def2f567ece2daf7b527dd"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(100000,200000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3288564682006836,
+    "stderr": "",
+    "stdout_sha256": "efcdbae2f89fa5ff772a52dc58b525d67a47040950afdb38fb60c8a941190cbe"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(200000,300000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3399851322174072,
+    "stderr": "",
+    "stdout_sha256": "ef2b098bfdd6d526ab946d9ab0c6d41cde07f9c9c4422ca2a4eb44f237ef2109"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(300000,400000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.34038662910461426,
+    "stderr": "",
+    "stdout_sha256": "843f98b06d3d5ff2aa546a6cfff480256a6a72fab09a728d2b465746e4bbdef0"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(400000,500000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3553433418273926,
+    "stderr": "",
+    "stdout_sha256": "a9a14afc7626e14278c8072ec5aa19134a3d5cbdaa8bbcebdbade797884e748b"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(500000,600000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3289773464202881,
+    "stderr": "",
+    "stdout_sha256": "bd45b30977c2e6e6faa6101152388806a77fe412260ba0a34e01214c3813bf5a"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(600000,700000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3639230728149414,
+    "stderr": "",
+    "stdout_sha256": "b3f2f6e685e6625e1844c468403685ab573651e6b6d405508ed0da7e0ea3258e"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(700000,800000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.38704895973205566,
+    "stderr": "",
+    "stdout_sha256": "df3935f8aa5e1753189feb8e5aa1b910fb7562852f44b21b47febe32a71b5471"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(800000,900000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.33740711212158203,
+    "stderr": "",
+    "stdout_sha256": "782bfa862b2ee3f34ef5809cb559e79af57f6a79fd6262f4011f0ebc82f1a64c"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(900000,1000000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.33125901222229004,
+    "stderr": "",
+    "stdout_sha256": "e44da4246ca202b18eb1c85d32f927923b03bfbd92a0765638d27992f436e6db"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(1000000,1100000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.344912052154541,
+    "stderr": "",
+    "stdout_sha256": "1dfa9beeca12cc6765105c043911b302827f03273d0a143022cea18d3be7afa5"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(1100000,1200000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.34504055976867676,
+    "stderr": "",
+    "stdout_sha256": "937074a51fd337aad53b65b71f3e62fbd69fb42cb313b8fa9ad4ae39cc9c377f"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(1200000,1300000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3337883949279785,
+    "stderr": "",
+    "stdout_sha256": "31c8b9ae1b3be6ecd8b39afb725393e8c9ddd70e851fdb139b6483fdb989f5cb"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(1300000,1400000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3425867557525635,
+    "stderr": "",
+    "stdout_sha256": "dfd008fef73043f728e348b709284c55d0759641135905a423a6ed361aeee24b"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(1400000,1500000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.30080699920654297,
+    "stderr": "",
+    "stdout_sha256": "0d5f05cb06612b4a5fd81d4cb4b0f44a3bd0627ce648d6a76c676f1232e34de0"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(1500000,1600000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.344815731048584,
+    "stderr": "",
+    "stdout_sha256": "02e3385a6ca24ccff06ddb7ac025ca2557d343df1293ea536c8caf9265337b7f"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(1600000,1700000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.31197571754455566,
+    "stderr": "",
+    "stdout_sha256": "7f7dc04415648f09b99091dd84931f250bf4889942c1d1ce32136d096339bd0c"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(1700000,1800000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.33114147186279297,
+    "stderr": "",
+    "stdout_sha256": "16b8080454073d2de532510b2a586e03c4c0e8c55bf8fb3d81143a2c2ea9b747"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(1800000,1900000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3577229976654053,
+    "stderr": "",
+    "stdout_sha256": "f58e882824c092112caeacfcf10b91f8c32e9a29592fe0f51410811cd5c1dd7a"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(1900000,2000000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.33934640884399414,
+    "stderr": "",
+    "stdout_sha256": "3c1e2626f0cd95dc848cb2a15a53331d2939684e043d1887cf58aca4387be8c4"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(2000000,2100000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3186075687408447,
+    "stderr": "",
+    "stdout_sha256": "5f91c0e5039cdbd9b8e671ab0a73ef5ed0e30ab09bf7b914e1c26ac9a85ef7f1"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(2100000,2200000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.34272241592407227,
+    "stderr": "",
+    "stdout_sha256": "2b2d8d2b45b9677270239cee428b03315c759bed91c1c6bf4b6a0bde5567d1a3"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(2200000,2300000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.37441062927246094,
+    "stderr": "",
+    "stdout_sha256": "893850eb0016afed7641d17067daa9e1626c4d017b43aafa3e7ff77ce36eea29"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(2300000,2400000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3353898525238037,
+    "stderr": "",
+    "stdout_sha256": "2c8f4ff6c81404bdeb98133c78693171fb0c74cf9d26adf2fdb6b3f5c2ba9c51"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(2400000,2500000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3404381275177002,
+    "stderr": "",
+    "stdout_sha256": "03ca47f0f106a0679a06e727ac5400c9655617686ae79995df7d69208890689d"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(2500000,2600000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.35159969329833984,
+    "stderr": "",
+    "stdout_sha256": "4fc2db25fdf1eb2fb44624c2e4b9bb6f1fd9763e4600151ba24eb2a070af3699"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(2600000,2700000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.37642836570739746,
+    "stderr": "",
+    "stdout_sha256": "ffdbe316e3e1c7999da1a0e5331df7855c8c73888e263192c5f8a678930e7d42"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(2700000,2800000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3480038642883301,
+    "stderr": "",
+    "stdout_sha256": "858d273e5692ee0163d31e03f0121a112099a01a9408cf97f98b9cf442d4ca75"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(2800000,2900000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3473949432373047,
+    "stderr": "",
+    "stdout_sha256": "5f1b8369d0b699f6a934dd6a8fa8072ae8d0cb4dbcdc142e9778ebaff574ef42"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(2900000,3000000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.34252500534057617,
+    "stderr": "",
+    "stdout_sha256": "41dd3b7557fa18b54b7bc6e9af5b1164afc4179e0dc82bb22e341694a4e29f93"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(3000000,3100000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3607521057128906,
+    "stderr": "",
+    "stdout_sha256": "bb9e8b10cc5c4fe09d17fee9870ea62d80e631bfa19692c33011132489b9dfc8"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(3100000,3200000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.33263492584228516,
+    "stderr": "",
+    "stdout_sha256": "07320d044c1bee27dd7d20e983cae55ed711076503a2faac449eb409df55084f"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(3200000,3300000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3739774227142334,
+    "stderr": "",
+    "stdout_sha256": "1cd3b00d118320db0f39bbb99ab1aa849d0134d293f2c10f5fc156ab830c7626"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(3300000,3400000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3225126266479492,
+    "stderr": "",
+    "stdout_sha256": "24fea4a47058ee23935a49d51bd5582ed2e2071ecf1a0f3e0a45923e2a5d3e29"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(3400000,3500000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.35149598121643066,
+    "stderr": "",
+    "stdout_sha256": "b6eda766bdbc2943e62f44473f511ee38a9fdb8946f39d65102d87139b361845"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(3500000,3600000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3549976348876953,
+    "stderr": "",
+    "stdout_sha256": "7bdaf0804ee0b91674cb07d8cd0f3359bbeaa3427773bfcae5836add69b5e049"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(3600000,3700000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3453528881072998,
+    "stderr": "",
+    "stdout_sha256": "bd2e430255e6d2d456ca10cb12016e364010a89639706d29bb0e737adfe9bd30"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(3700000,3800000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3433208465576172,
+    "stderr": "",
+    "stdout_sha256": "97c927339cd738acef1d4f1ee35dc85ff2498265ca342e18cf13c8bf369e40a2"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(3800000,3900000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.35187649726867676,
+    "stderr": "",
+    "stdout_sha256": "1f1862d741e19ff77a3eb610930d9fb1b6b5360039ce187f30a189fe47a65b17"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(3900000,4000000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.38399481773376465,
+    "stderr": "",
+    "stdout_sha256": "051d01d0520a60fac58ba128a639af0479b366849033d01ebd361caccc60deb1"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(4000000,4100000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.33589816093444824,
+    "stderr": "",
+    "stdout_sha256": "4ddeeed1f2b7c823629807af321f0953641b2591ef45a596ebdf872ed9c04773"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(4100000,4200000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.35344743728637695,
+    "stderr": "",
+    "stdout_sha256": "d6382468844b4639c089de7c5f3f3f9331d7e00852daaaa4440d4fbc8c56d66c"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(4200000,4300000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.36374902725219727,
+    "stderr": "",
+    "stdout_sha256": "0b179eec27198fcb321897d0630262e619b1ab5c53c4c684f1807ec220175292"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(4300000,4400000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.33661937713623047,
+    "stderr": "",
+    "stdout_sha256": "4554ab3f0d194e1f8a773bf2ae96412d4c96b0553eb09fe5202b3e425288bdd4"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(4400000,4500000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.39512014389038086,
+    "stderr": "",
+    "stdout_sha256": "adcbf7da94749b6adf0f73350b0d960005a717331b109e29899afd0c1f3a1a5d"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(4500000,4600000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3501873016357422,
+    "stderr": "",
+    "stdout_sha256": "711798476aa35cd646ed15b02125f33def27ba458b4d20a639f7cac991770426"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(4600000,4700000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3507416248321533,
+    "stderr": "",
+    "stdout_sha256": "6c5e4145c5faec7f35b55b55a331a7a42b1f13242f1054ecabd43b74e6ad1f45"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(4700000,4800000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3461930751800537,
+    "stderr": "",
+    "stdout_sha256": "e12c224a9165864149d3edb3f056d5bc68f393c7957310030ba34beba7dd45ee"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(4800000,4900000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.353360652923584,
+    "stderr": "",
+    "stdout_sha256": "c0353700299e89838c4e60dae16e5ab0fc720955a91a43ee3d070d729a5f7f20"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(4900000,5000000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3249013423919678,
+    "stderr": "",
+    "stdout_sha256": "df8a00fb376803552c2b1181a69585cc2c4ad2cdfa97775ffb2ee5ac5ee0963d"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(5000000,5100000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3632943630218506,
+    "stderr": "",
+    "stdout_sha256": "01b026542bc34b4dfa3384be35046d22c82bf8c122561760be74d03d4f439339"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(5100000,5200000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.38888978958129883,
+    "stderr": "",
+    "stdout_sha256": "832474ed054413d18f42b85a651d80711f07bda806cc72192dba86b9a30b73fa"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(5200000,5300000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3551962375640869,
+    "stderr": "",
+    "stdout_sha256": "8e46f0421fd893550835a9378463ad148ef466e6725c6afb7d01c50ad1b0bf7e"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(5300000,5400000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.36184048652648926,
+    "stderr": "",
+    "stdout_sha256": "61366b46b29cd61fe111c5be8bc567f0ad6ae6596507931b7b8225fa3ab8ec19"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(5400000,5500000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.33991527557373047,
+    "stderr": "",
+    "stdout_sha256": "31247ec098037b17e0924d3096917467818068d073fe84cc48abe169a5a128be"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(5500000,5600000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.33967161178588867,
+    "stderr": "",
+    "stdout_sha256": "ccef368259a9a566effe5bac1f3126590311da2450db789cda7340f5d0206efb"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(5600000,5700000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3543710708618164,
+    "stderr": "",
+    "stdout_sha256": "fe28defc2b2aea7e49ee26959fa9610e2ef8224f9e934685040c181faa769b87"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(5700000,5800000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.32589125633239746,
+    "stderr": "",
+    "stdout_sha256": "3bd4a6b6359d88fb37336075ecde3253f6c3c382dc36fc08e87c9e2fd495b1a4"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(5800000,5900000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3582947254180908,
+    "stderr": "",
+    "stdout_sha256": "beb7da06520fb26d3c627352ad4004842dc1b7615e16c57fe3a6a62149cf93bf"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(5900000,6000000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3685169219970703,
+    "stderr": "",
+    "stdout_sha256": "0b4feee1e9dbd747c74e3e11f95d516e75cccc19f11dab217e855e2d2f13a55c"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(6000000,6100000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3614833354949951,
+    "stderr": "",
+    "stdout_sha256": "ca59a25f5c8247f46253087ff4fad6ef5abb1733516be7eacda2dc60e7410897"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(6100000,6200000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.36394286155700684,
+    "stderr": "",
+    "stdout_sha256": "48f84d37eda33fd172b73a89923e4dbe5f1048ca1ca523a077adcf7ad6ffd194"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(6200000,6300000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.34348273277282715,
+    "stderr": "",
+    "stdout_sha256": "ba95dc13aaa69fe27543a849e5e23f07e87fc4a0588c1158ab8b35d938ffaed5"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(6300000,6400000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.31564784049987793,
+    "stderr": "",
+    "stdout_sha256": "601207019e500069b655d5d2bed84e7c4fa10aa564eae65a818f916665017cb5"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(6400000,6500000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3066680431365967,
+    "stderr": "",
+    "stdout_sha256": "b94a8a4425ac36a47386ef40137376bb59d61579aa3ed804ca9d056d3a5449c3"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(6500000,6600000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.35938525199890137,
+    "stderr": "",
+    "stdout_sha256": "b7fe8b5bbf804243f9da8bf7005708b556387c55614b343812673d1720eee327"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(6600000,6700000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.32317447662353516,
+    "stderr": "",
+    "stdout_sha256": "8cdd0053a9bcbb82b5c50e73fb52827c1e6512329d30015af3b1aeccdd0e7981"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(6700000,6800000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3369147777557373,
+    "stderr": "",
+    "stdout_sha256": "caebbdcdae25dfc972dc4d58fd23589e9fce6bcd3c1ea1338d782a9c82154bc6"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(6800000,6900000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3318612575531006,
+    "stderr": "",
+    "stdout_sha256": "08b98f62e14914deb0020bd296332dc9ec778f9e73d6454c847ada3903bb8433"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(6900000,7000000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.339235782623291,
+    "stderr": "",
+    "stdout_sha256": "54ed21eae8757010673880a26e8535136190b0f5134050e2383fd1f465da0658"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(7000000,7100000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.36097288131713867,
+    "stderr": "",
+    "stdout_sha256": "18634424c4be91c4439d9da8975c9645d6dbe8d224cac3778960179d6774a0b6"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(7100000,7200000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3398568630218506,
+    "stderr": "",
+    "stdout_sha256": "1187726385294359785accaefb9642a00c129986c1a98c0481da0aea7ad5bd1e"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(7200000,7300000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.35736870765686035,
+    "stderr": "",
+    "stdout_sha256": "eed6da1c04502f304c761e839bde1a0ae1b2449313ab642de3eee5e825085aed"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(7300000,7400000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3510317802429199,
+    "stderr": "",
+    "stdout_sha256": "be2bf38d8f33027d9df4eb022bd8b57d35fc711c48f131ad4f7150d955469bd7"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(7400000,7500000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.35422778129577637,
+    "stderr": "",
+    "stdout_sha256": "b684d5a9e9659449e80285267b8024de02b80729cd3b906ecf6939e72c7bde95"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(7500000,7600000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3691723346710205,
+    "stderr": "",
+    "stdout_sha256": "f36df1cc753be57bbac1a541cedf93a58d7aaf58d20588cd4e0fe42946345d34"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.fieldText.slice(7600000,7700000)"
+    ],
+    "returncode": 0,
+    "seconds": 0.34222841262817383,
+    "stderr": "",
+    "stdout_sha256": "aa0d4060aba7584b9b8db044dcaf724c9f67952ed3317ae38be32c91ff6e7fa9"
+  },
+  {
+    "args": [
+      "exec",
+      "--session",
+      "pln-chess-cycle11-5b193baa3ae2",
+      "set",
+      "viewport",
+      "390",
+      "844"
+    ],
+    "returncode": 0,
+    "seconds": 0.4173004627227783,
+    "stderr": "",
+    "stdout_sha256": "7c8f56aecbeeb314c13c01df65278c8ff9c1d10cc764cfb6bb4fea2accaffc6f"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const end=Date.now()+5000;while((innerWidth!==390||innerHeight!==844)&&Date.now()<end)await new Promise(r=>setTimeout(r,100));return [innerWidth,innerHeight]})()"
+    ],
+    "returncode": 0,
+    "seconds": 5.34123420715332,
+    "stderr": "",
+    "stdout_sha256": "3341dd4cc9321dd8a39cb9eb1a2d424826d2e49a5b15bbaf70d1d4206a1dfb41"
+  },
+  {
+    "args": [
+      "exec",
+      "--session",
+      "pln-chess-cycle11-5b193baa3ae2",
+      "set",
+      "viewport",
+      "390",
+      "844"
+    ],
+    "returncode": 0,
+    "seconds": 0.3836383819580078,
+    "stderr": "",
+    "stdout_sha256": "7c8f56aecbeeb314c13c01df65278c8ff9c1d10cc764cfb6bb4fea2accaffc6f"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "(async()=>{const end=Date.now()+5000;while((innerWidth!==390||innerHeight!==844)&&Date.now()<end)await new Promise(r=>setTimeout(r,100));return [innerWidth,innerHeight]})()"
+    ],
+    "returncode": 0,
+    "seconds": 0.35596585273742676,
+    "stderr": "",
+    "stdout_sha256": "bc8e01c3311427e103149a49390e3159fea37f555b11b36e056df04b04edb1bf"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "window.scrollTo(0,0);true"
+    ],
+    "returncode": 0,
+    "seconds": 0.3552684783935547,
+    "stderr": "",
+    "stdout_sha256": "a17fcf0a2f50e2d495e4f90ce263410edc183add6c62699a2facbccf60410f74"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "({width:innerWidth,height:innerHeight,scrollWidth:document.documentElement.scrollWidth})"
+    ],
+    "returncode": 0,
+    "seconds": 0.3959181308746338,
+    "stderr": "",
+    "stdout_sha256": "3e58086f2a3f375b24952a4f9d38f71da52b1d952060abd7036042f751db6e31"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "Array.from(document.querySelectorAll(\"body *\")).filter(e=>e.getBoundingClientRect().right>innerWidth).map(e=>({tag:e.tagName,id:e.id,right:e.getBoundingClientRect().right})).slice(0,30)"
+    ],
+    "returncode": 0,
+    "seconds": 0.3563213348388672,
+    "stderr": "",
+    "stdout_sha256": "88c4e40cc56d90f09f79ffbea8d5a93d2a86a49638f12ad95a1eb07186c9dbcf"
+  },
+  {
+    "args": [
+      "exec",
+      "screenshot",
+      "mobile-field-controls.png"
+    ],
+    "returncode": 0,
+    "seconds": 0.32338452339172363,
+    "stderr": "",
+    "stdout_sha256": "48348da276fccd16461e776f6bd5c9f97fd616abdd4df62b6f7d7bb680340745"
+  },
+  {
+    "args": [
+      "exec",
+      "eval",
+      "document.getElementById(\"field-before\").scrollIntoView();true"
+    ],
+    "returncode": 0,
+    "seconds": 0.34332966804504395,
+    "stderr": "",
+    "stdout_sha256": "a17fcf0a2f50e2d495e4f90ce263410edc183add6c62699a2facbccf60410f74"
+  },
+  {
+    "args": [
+      "exec",
+      "screenshot",
+      "mobile-before-after.png"
+    ],
+    "returncode": 0,
+    "seconds": 0.3896956443786621,
+    "stderr": "",
+    "stdout_sha256": "c5fc1fefa3794eb9262f0b87c2e66fdef6d6539e29e8991aa19f1c560a136386"
+  },
+  {
+    "args": [
+      "exec",
+      "open",
+      "http://127.0.0.1:18781"
+    ],
+    "returncode": 0,
+    "seconds": 0.39510536193847656,
+    "stderr": "",
+    "stdout_sha256": "f9220949a52c84b34340406581e6b1f1e2169d9962a28321df9ca712c56d24de"
+  },
+  {
+    "args": [
+      "exec",
+      "snapshot",
+      "-i",
+      "-s",
+      "#form"
+    ],
+    "returncode": 0,
+    "seconds": 0.4051554203033447,
+    "stderr": "",
+    "stdout_sha256": "8d6518a90be04fd106a5c1bfa74df8b7a1195f187571f990bead3d7f9a2d7462"
+  },
+  {
+    "args": [
+      "stop"
+    ],
+    "returncode": 0,
+    "seconds": 1.3693766593933105,
+    "stderr": "",
+    "stdout_sha256": "4ecda9aa9dc25fce9f2178f40bb49e63edfba336cf35ddd04ded60c8ff164695"
+  }
+]

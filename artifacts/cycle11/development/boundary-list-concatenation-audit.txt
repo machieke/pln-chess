@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/data/pln-chess-cycle6-delivery/evaluation/cycle11_delivery.py", line 171, in <module>
+    globals()[args.action](args.out)
+  File "/data/pln-chess-cycle6-delivery/evaluation/cycle11_delivery.py", line 45, in boundary
+    assert not imports and not arithmetic, (imports, arithmetic)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ([], [{'path': 'src/pln_chess/cycle11/temporal.py', 'line': 113, 'expression': "[c['confidence'] for c in canonical_claims] + [m['confidence'] for m in metadata.values()] + [0.99]"}, {'path': 'src/pln_chess/cycle11/temporal.py', 'line': 113, 'expression': "[c['confidence'] for c in canonical_claims] + [m['confidence'] for m in metadata.values()]"}])

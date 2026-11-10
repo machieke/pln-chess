@@ -1,0 +1,627 @@
+[
+  {
+    "action": "open http://127.0.0.1:18781/fields",
+    "relativeTimeSec": 0.3,
+    "timestamp": "2026-11-10T09:03:14.558Z"
+  },
+  {
+    "action": "--session pln-chess-cycle11-120807d36b52 set viewport 1280 900",
+    "relativeTimeSec": 0.8,
+    "timestamp": "2026-11-10T09:03:14.983Z"
+  },
+  {
+    "action": "eval (async()=>{const end=Date.now()+5000;while((innerWidth!==1280||innerHeight!==900)&&Date.now()<end)await new Promise(r=>setTimeout(r,100));return [innerWidth,innerHeight]})()",
+    "relativeTimeSec": 1.1,
+    "timestamp": "2026-11-10T09:03:15.335Z"
+  },
+  {
+    "action": "snapshot -i",
+    "relativeTimeSec": 1.5,
+    "timestamp": "2026-11-10T09:03:15.703Z"
+  },
+  {
+    "action": "screenshot initial-fields.png",
+    "relativeTimeSec": 1.9,
+    "timestamp": "2026-11-10T09:03:16.110Z"
+  },
+  {
+    "action": "eval (async()=>{const example=\"rook-obstruction\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 2.4,
+    "timestamp": "2026-11-10T09:03:16.576Z"
+  },
+  {
+    "action": "screenshot rook-obstruction.png",
+    "relativeTimeSec": 5.7,
+    "timestamp": "2026-11-10T09:03:19.898Z"
+  },
+  {
+    "action": "eval (async()=>{const example=\"bishop-diagonal\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 6.1,
+    "timestamp": "2026-11-10T09:03:20.300Z"
+  },
+  {
+    "action": "eval (async()=>{const example=\"knight-relocation\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 9.4,
+    "timestamp": "2026-11-10T09:03:23.662Z"
+  },
+  {
+    "action": "eval (async()=>{const example=\"pinned-defender\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 13.2,
+    "timestamp": "2026-11-10T09:03:27.396Z"
+  },
+  {
+    "action": "screenshot pinned-defender.png",
+    "relativeTimeSec": 17.2,
+    "timestamp": "2026-11-10T09:03:31.460Z"
+  },
+  {
+    "action": "eval (async()=>{const example=\"discovered-attack\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 17.7,
+    "timestamp": "2026-11-10T09:03:31.911Z"
+  },
+  {
+    "action": "eval (async()=>{const example=\"king-exposure\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 20.9,
+    "timestamp": "2026-11-10T09:03:35.099Z"
+  },
+  {
+    "action": "eval (async()=>{const example=\"multiple-defenders\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 24.6,
+    "timestamp": "2026-11-10T09:03:38.794Z"
+  },
+  {
+    "action": "eval (async()=>{const example=\"unknown-observation\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 27.4,
+    "timestamp": "2026-11-10T09:03:41.583Z"
+  },
+  {
+    "action": "screenshot unknown-observation.png",
+    "relativeTimeSec": 29.6,
+    "timestamp": "2026-11-10T09:03:43.873Z"
+  },
+  {
+    "action": "eval (async()=>{const example=\"promotion\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 30,
+    "timestamp": "2026-11-10T09:03:44.271Z"
+  },
+  {
+    "action": "screenshot promotion.png",
+    "relativeTimeSec": 33.3,
+    "timestamp": "2026-11-10T09:03:47.574Z"
+  },
+  {
+    "action": "eval (async()=>{const example=\"en-passant\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 33.8,
+    "timestamp": "2026-11-10T09:03:47.987Z"
+  },
+  {
+    "action": "eval (async()=>{const example=\"rook-battery\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 36.7,
+    "timestamp": "2026-11-10T09:03:50.945Z"
+  },
+  {
+    "action": "eval (async()=>{const example=\"defended-minor\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 39.7,
+    "timestamp": "2026-11-10T09:03:53.913Z"
+  },
+  {
+    "action": "eval (async()=>{const example=\"double-check-resolution\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 42.7,
+    "timestamp": "2026-11-10T09:03:56.902Z"
+  },
+  {
+    "action": "eval (async()=>{const example=\"discovered-defense\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 46.1,
+    "timestamp": "2026-11-10T09:04:00.293Z"
+  },
+  {
+    "action": "eval (async()=>{const example=\"en-passant-exposure\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 48.8,
+    "timestamp": "2026-11-10T09:04:03.044Z"
+  },
+  {
+    "action": "screenshot en-passant-exposure.png",
+    "relativeTimeSec": 52.5,
+    "timestamp": "2026-11-10T09:04:06.696Z"
+  },
+  {
+    "action": "eval (async()=>{const example=\"rook-obstruction\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 52.9,
+    "timestamp": "2026-11-10T09:04:07.085Z"
+  },
+  {
+    "action": "eval (async()=>{const example=null;if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"field-family\": \"attack\"})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 56,
+    "timestamp": "2026-11-10T09:04:10.274Z"
+  },
+  {
+    "action": "eval (async()=>{const example=null;if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"field-family\": \"defense\"})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 59.7,
+    "timestamp": "2026-11-10T09:04:13.949Z"
+  },
+  {
+    "action": "eval (async()=>{const example=null;if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"field-family\": \"mobility\"})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 62.7,
+    "timestamp": "2026-11-10T09:04:16.899Z"
+  },
+  {
+    "action": "eval (async()=>{const example=null;if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"field-family\": \"king-exposure\"})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 65.8,
+    "timestamp": "2026-11-10T09:04:20.006Z"
+  },
+  {
+    "action": "eval (async()=>{const example=\"rook-obstruction\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"field-family\": \"attack\"})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 68.4,
+    "timestamp": "2026-11-10T09:04:22.652Z"
+  },
+  {
+    "action": "eval (async()=>{const b=document.querySelector(\"#field-relations button[data-native=\"+JSON.stringify(\"true\")+\"]\");b.click();const p=document.getElementById(\"field-proof\");const d=JSON.parse(p.textContent);return {proof:d.proof_id,nodes:d.proof_trace.length,rule:d.rule_id,evidence:d.evidence_ids.length,classification:d.classification};})()",
+    "relativeTimeSec": 71.6,
+    "timestamp": "2026-11-10T09:04:25.805Z"
+  },
+  {
+    "action": "eval document.getElementById(\"field-proof\").scrollIntoView();true",
+    "relativeTimeSec": 72,
+    "timestamp": "2026-11-10T09:04:26.197Z"
+  },
+  {
+    "action": "screenshot native-field-proof.png",
+    "relativeTimeSec": 72.3,
+    "timestamp": "2026-11-10T09:04:26.545Z"
+  },
+  {
+    "action": "eval (async()=>{const example=\"rook-obstruction\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"field-model\": \"empty\"})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 72.7,
+    "timestamp": "2026-11-10T09:04:26.912Z"
+  },
+  {
+    "action": "eval Array.from(document.querySelectorAll(\"#field-relations tbody tr\")).every(r=>r.textContent.includes(\"unknown\"))",
+    "relativeTimeSec": 74.8,
+    "timestamp": "2026-11-10T09:04:29.049Z"
+  },
+  {
+    "action": "eval (async()=>{const example=null;if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"field-model\": \"trained\", \"field-budget\": 0})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 75.2,
+    "timestamp": "2026-11-10T09:04:29.466Z"
+  },
+  {
+    "action": "eval document.getElementById(\"field-relations\").textContent",
+    "relativeTimeSec": 76.5,
+    "timestamp": "2026-11-10T09:04:30.691Z"
+  },
+  {
+    "action": "eval (async()=>{const example=\"en-passant\";if(example){const e=document.getElementById(\"field-example\");e.value=example;e.dispatchEvent(new Event(\"change\"));}for(const [id,value] of Object.entries({\"field-budget\": 100000})){document.getElementById(id).value=value;}document.getElementById(\"field-form\").requestSubmit();while(document.getElementById(\"field-run\").disabled)await new Promise(r=>setTimeout(r,100));return {status:document.getElementById(\"field-status\").textContent,candidate:document.getElementById(\"field-candidate-status\").textContent,rows:document.querySelectorAll(\"#field-relations tbody tr\").length,before:document.querySelectorAll(\"#field-before .cell\").length,after:document.querySelectorAll(\"#field-after .cell\").length};})()",
+    "relativeTimeSec": 76.8,
+    "timestamp": "2026-11-10T09:04:31.038Z"
+  },
+  {
+    "action": "eval (async()=>{const old=URL.createObjectURL.bind(URL);URL.createObjectURL=b=>{window.fieldBlob=b;return old(b)};document.getElementById(\"field-export\").click();window.fieldText=await window.fieldBlob.text();const bytes=new TextEncoder().encode(window.fieldText);const hash=Array.from(new Uint8Array(await crypto.subtle.digest(\"SHA-256\",bytes))).map(x=>x.toString(16).padStart(2,\"0\")).join(\"\");return {bytes:bytes.length,characters:window.fieldText.length,sha256:hash};})()",
+    "relativeTimeSec": 79.6,
+    "timestamp": "2026-11-10T09:04:33.868Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(0,100000)",
+    "relativeTimeSec": 80.1,
+    "timestamp": "2026-11-10T09:04:34.316Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(100000,200000)",
+    "relativeTimeSec": 80.4,
+    "timestamp": "2026-11-10T09:04:34.671Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(200000,300000)",
+    "relativeTimeSec": 80.8,
+    "timestamp": "2026-11-10T09:04:35.030Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(300000,400000)",
+    "relativeTimeSec": 81.2,
+    "timestamp": "2026-11-10T09:04:35.394Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(400000,500000)",
+    "relativeTimeSec": 81.5,
+    "timestamp": "2026-11-10T09:04:35.759Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(500000,600000)",
+    "relativeTimeSec": 81.9,
+    "timestamp": "2026-11-10T09:04:36.129Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(600000,700000)",
+    "relativeTimeSec": 82.2,
+    "timestamp": "2026-11-10T09:04:36.458Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(700000,800000)",
+    "relativeTimeSec": 82.6,
+    "timestamp": "2026-11-10T09:04:36.784Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(800000,900000)",
+    "relativeTimeSec": 82.9,
+    "timestamp": "2026-11-10T09:04:37.160Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(900000,1000000)",
+    "relativeTimeSec": 83.3,
+    "timestamp": "2026-11-10T09:04:37.523Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(1000000,1100000)",
+    "relativeTimeSec": 83.6,
+    "timestamp": "2026-11-10T09:04:37.844Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(1100000,1200000)",
+    "relativeTimeSec": 84,
+    "timestamp": "2026-11-10T09:04:38.180Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(1200000,1300000)",
+    "relativeTimeSec": 84.3,
+    "timestamp": "2026-11-10T09:04:38.561Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(1300000,1400000)",
+    "relativeTimeSec": 84.7,
+    "timestamp": "2026-11-10T09:04:38.877Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(1400000,1500000)",
+    "relativeTimeSec": 85,
+    "timestamp": "2026-11-10T09:04:39.264Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(1500000,1600000)",
+    "relativeTimeSec": 85.4,
+    "timestamp": "2026-11-10T09:04:39.613Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(1600000,1700000)",
+    "relativeTimeSec": 85.8,
+    "timestamp": "2026-11-10T09:04:39.983Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(1700000,1800000)",
+    "relativeTimeSec": 86.1,
+    "timestamp": "2026-11-10T09:04:40.362Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(1800000,1900000)",
+    "relativeTimeSec": 86.5,
+    "timestamp": "2026-11-10T09:04:40.737Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(1900000,2000000)",
+    "relativeTimeSec": 86.9,
+    "timestamp": "2026-11-10T09:04:41.138Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(2000000,2100000)",
+    "relativeTimeSec": 87.2,
+    "timestamp": "2026-11-10T09:04:41.466Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(2100000,2200000)",
+    "relativeTimeSec": 87.6,
+    "timestamp": "2026-11-10T09:04:41.841Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(2200000,2300000)",
+    "relativeTimeSec": 88,
+    "timestamp": "2026-11-10T09:04:42.238Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(2300000,2400000)",
+    "relativeTimeSec": 88.4,
+    "timestamp": "2026-11-10T09:04:42.603Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(2400000,2500000)",
+    "relativeTimeSec": 88.7,
+    "timestamp": "2026-11-10T09:04:42.948Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(2500000,2600000)",
+    "relativeTimeSec": 89.1,
+    "timestamp": "2026-11-10T09:04:43.315Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(2600000,2700000)",
+    "relativeTimeSec": 89.4,
+    "timestamp": "2026-11-10T09:04:43.651Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(2700000,2800000)",
+    "relativeTimeSec": 89.8,
+    "timestamp": "2026-11-10T09:04:43.992Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(2800000,2900000)",
+    "relativeTimeSec": 90.1,
+    "timestamp": "2026-11-10T09:04:44.363Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(2900000,3000000)",
+    "relativeTimeSec": 90.5,
+    "timestamp": "2026-11-10T09:04:44.721Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(3000000,3100000)",
+    "relativeTimeSec": 90.9,
+    "timestamp": "2026-11-10T09:04:45.087Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(3100000,3200000)",
+    "relativeTimeSec": 91.2,
+    "timestamp": "2026-11-10T09:04:45.442Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(3200000,3300000)",
+    "relativeTimeSec": 91.6,
+    "timestamp": "2026-11-10T09:04:45.841Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(3300000,3400000)",
+    "relativeTimeSec": 92,
+    "timestamp": "2026-11-10T09:04:46.187Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(3400000,3500000)",
+    "relativeTimeSec": 92.3,
+    "timestamp": "2026-11-10T09:04:46.542Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(3500000,3600000)",
+    "relativeTimeSec": 92.7,
+    "timestamp": "2026-11-10T09:04:46.878Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(3600000,3700000)",
+    "relativeTimeSec": 93,
+    "timestamp": "2026-11-10T09:04:47.230Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(3700000,3800000)",
+    "relativeTimeSec": 93.4,
+    "timestamp": "2026-11-10T09:04:47.588Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(3800000,3900000)",
+    "relativeTimeSec": 93.7,
+    "timestamp": "2026-11-10T09:04:47.970Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(3900000,4000000)",
+    "relativeTimeSec": 94.1,
+    "timestamp": "2026-11-10T09:04:48.311Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(4000000,4100000)",
+    "relativeTimeSec": 94.5,
+    "timestamp": "2026-11-10T09:04:48.703Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(4100000,4200000)",
+    "relativeTimeSec": 94.8,
+    "timestamp": "2026-11-10T09:04:49.040Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(4200000,4300000)",
+    "relativeTimeSec": 95.2,
+    "timestamp": "2026-11-10T09:04:49.409Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(4300000,4400000)",
+    "relativeTimeSec": 95.5,
+    "timestamp": "2026-11-10T09:04:49.771Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(4400000,4500000)",
+    "relativeTimeSec": 95.9,
+    "timestamp": "2026-11-10T09:04:50.131Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(4500000,4600000)",
+    "relativeTimeSec": 96.3,
+    "timestamp": "2026-11-10T09:04:50.491Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(4600000,4700000)",
+    "relativeTimeSec": 96.6,
+    "timestamp": "2026-11-10T09:04:50.843Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(4700000,4800000)",
+    "relativeTimeSec": 97,
+    "timestamp": "2026-11-10T09:04:51.247Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(4800000,4900000)",
+    "relativeTimeSec": 97.4,
+    "timestamp": "2026-11-10T09:04:51.619Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(4900000,5000000)",
+    "relativeTimeSec": 97.7,
+    "timestamp": "2026-11-10T09:04:51.947Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(5000000,5100000)",
+    "relativeTimeSec": 98,
+    "timestamp": "2026-11-10T09:04:52.274Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(5100000,5200000)",
+    "relativeTimeSec": 98.4,
+    "timestamp": "2026-11-10T09:04:52.634Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(5200000,5300000)",
+    "relativeTimeSec": 98.8,
+    "timestamp": "2026-11-10T09:04:52.995Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(5300000,5400000)",
+    "relativeTimeSec": 99.1,
+    "timestamp": "2026-11-10T09:04:53.349Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(5400000,5500000)",
+    "relativeTimeSec": 99.5,
+    "timestamp": "2026-11-10T09:04:53.683Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(5500000,5600000)",
+    "relativeTimeSec": 99.8,
+    "timestamp": "2026-11-10T09:04:54.052Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(5600000,5700000)",
+    "relativeTimeSec": 100.2,
+    "timestamp": "2026-11-10T09:04:54.400Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(5700000,5800000)",
+    "relativeTimeSec": 100.5,
+    "timestamp": "2026-11-10T09:04:54.756Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(5800000,5900000)",
+    "relativeTimeSec": 100.9,
+    "timestamp": "2026-11-10T09:04:55.116Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(5900000,6000000)",
+    "relativeTimeSec": 101.3,
+    "timestamp": "2026-11-10T09:04:55.492Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(6000000,6100000)",
+    "relativeTimeSec": 101.6,
+    "timestamp": "2026-11-10T09:04:55.850Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(6100000,6200000)",
+    "relativeTimeSec": 102,
+    "timestamp": "2026-11-10T09:04:56.199Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(6200000,6300000)",
+    "relativeTimeSec": 102.3,
+    "timestamp": "2026-11-10T09:04:56.526Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(6300000,6400000)",
+    "relativeTimeSec": 102.6,
+    "timestamp": "2026-11-10T09:04:56.870Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(6400000,6500000)",
+    "relativeTimeSec": 103,
+    "timestamp": "2026-11-10T09:04:57.225Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(6500000,6600000)",
+    "relativeTimeSec": 103.3,
+    "timestamp": "2026-11-10T09:04:57.561Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(6600000,6700000)",
+    "relativeTimeSec": 103.7,
+    "timestamp": "2026-11-10T09:04:57.904Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(6700000,6800000)",
+    "relativeTimeSec": 104.1,
+    "timestamp": "2026-11-10T09:04:58.279Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(6800000,6900000)",
+    "relativeTimeSec": 104.4,
+    "timestamp": "2026-11-10T09:04:58.634Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(6900000,7000000)",
+    "relativeTimeSec": 104.7,
+    "timestamp": "2026-11-10T09:04:58.961Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(7000000,7100000)",
+    "relativeTimeSec": 105.1,
+    "timestamp": "2026-11-10T09:04:59.308Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(7100000,7200000)",
+    "relativeTimeSec": 105.4,
+    "timestamp": "2026-11-10T09:04:59.650Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(7200000,7300000)",
+    "relativeTimeSec": 105.8,
+    "timestamp": "2026-11-10T09:05:00.014Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(7300000,7400000)",
+    "relativeTimeSec": 106.1,
+    "timestamp": "2026-11-10T09:05:00.351Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(7400000,7500000)",
+    "relativeTimeSec": 106.5,
+    "timestamp": "2026-11-10T09:05:00.696Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(7500000,7600000)",
+    "relativeTimeSec": 106.9,
+    "timestamp": "2026-11-10T09:05:01.092Z"
+  },
+  {
+    "action": "eval window.fieldText.slice(7600000,7700000)",
+    "relativeTimeSec": 107.2,
+    "timestamp": "2026-11-10T09:05:01.452Z"
+  },
+  {
+    "action": "--session pln-chess-cycle11-120807d36b52 set viewport 390 844",
+    "relativeTimeSec": 107.6,
+    "timestamp": "2026-11-10T09:05:01.871Z"
+  },
+  {
+    "action": "eval (async()=>{const end=Date.now()+5000;while((innerWidth!==390||innerHeight!==844)&&Date.now()<end)await new Promise(r=>setTimeout(r,100));return [innerWidth,innerHeight]})()",
+    "relativeTimeSec": 108.1,
+    "timestamp": "2026-11-10T09:05:02.280Z"
+  },
+  {
+    "action": "--session pln-chess-cycle11-120807d36b52 set viewport 390 844",
+    "relativeTimeSec": 113.4,
+    "timestamp": "2026-11-10T09:05:07.660Z"
+  },
+  {
+    "action": "eval (async()=>{const end=Date.now()+5000;while((innerWidth!==390||innerHeight!==844)&&Date.now()<end)await new Promise(r=>setTimeout(r,100));return [innerWidth,innerHeight]})()",
+    "relativeTimeSec": 113.8,
+    "timestamp": "2026-11-10T09:05:08.041Z"
+  },
+  {
+    "action": "--session pln-chess-cycle11-120807d36b52 set viewport 390 844",
+    "relativeTimeSec": 119.2,
+    "timestamp": "2026-11-10T09:05:13.417Z"
+  },
+  {
+    "action": "eval (async()=>{const end=Date.now()+5000;while((innerWidth!==390||innerHeight!==844)&&Date.now()<end)await new Promise(r=>setTimeout(r,100));return [innerWidth,innerHeight]})()",
+    "relativeTimeSec": 119.6,
+    "timestamp": "2026-11-10T09:05:13.849Z"
+  },
+  {
+    "action": "eval window.scrollTo(0,0);true",
+    "relativeTimeSec": 120,
+    "timestamp": "2026-11-10T09:05:14.205Z"
+  },
+  {
+    "action": "eval ({width:innerWidth,height:innerHeight,scrollWidth:document.documentElement.scrollWidth})",
+    "relativeTimeSec": 120.3,
+    "timestamp": "2026-11-10T09:05:14.534Z"
+  }
+]

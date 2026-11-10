@@ -1,0 +1,272 @@
+{
+  "canonical_claims": [
+    {
+      "confidence": 0.999,
+      "dependence_group": "cli-verification",
+      "epistemic_type": "observed-event",
+      "id": "79eea31c0a2414003af28d514df365e94e4bc608f3510cb3a2e9705b09b6fd23",
+      "move": "f7f5",
+      "sequence": 1,
+      "source": "cli-verification"
+    }
+  ],
+  "confidence_policy": "Minimum supplied confidence is a conservative trust selection, not probability fusion.",
+  "conflicts": [],
+  "events": [
+    {
+      "after_fen": "7k/8/8/5pP1/8/8/8/K7 w - f6 0 2",
+      "before_fen": "7k/5p2/8/6P1/8/8/8/K7 b - - 0 1",
+      "claim_ids": [
+        "79eea31c0a2414003af28d514df365e94e4bc608f3510cb3a2e9705b09b6fd23"
+      ],
+      "historical_legality": "unverified",
+      "id": "c675cef18bfb7a2bd7db0093720525666e167d2f569f0c9483c666d48a3580d7",
+      "move": "f7f5",
+      "sequence": 1
+    }
+  ],
+  "gaps": [],
+  "historical_legality": "unverified",
+  "id": "7a15b301493089ce56d281f0b92f792a36564e18847910531ba7862bb0c69ccb",
+  "input": {
+    "claims": [
+      {
+        "confidence": 0.999,
+        "dependence_group": "cli-verification",
+        "epistemic_type": "observed-event",
+        "move": "f7f5",
+        "sequence": 1,
+        "source": "cli-verification"
+      }
+    ],
+    "complete": false,
+    "expected_events": null,
+    "expected_fen": null,
+    "initial_fen": "7k/5p2/8/6P1/8/8/8/K7 b - - 0 1",
+    "initial_trust": "unknown",
+    "metadata_claims": [],
+    "model_version": null,
+    "runtime_version": null,
+    "source": "cli-verification"
+  },
+  "legacy_transport": {
+    "conflicts": [],
+    "events": [
+      {
+        "after": "7k/8/8/5pP1/8/8/8/K7 w - f6 0 2",
+        "after_state_id": "sc4962e9bbe8fef55",
+        "before": "7k/5p2/8/6P1/8/8/8/K7 b - - 0 1",
+        "before_state_id": "s657b04e423a900c0",
+        "dependence_group": "claim-components:be46dddde448b9163d1e3bd2597452e15459df47369b3ca561532cb0e6a42806",
+        "effects": {
+          "added_or_changed": [
+            {
+              "piece": [
+                "Pawn",
+                "Black"
+              ],
+              "square": [
+                5,
+                4
+              ]
+            }
+          ],
+          "ep_after": [
+            5,
+            5
+          ],
+          "ep_before": null,
+          "removed_or_changed": [
+            {
+              "piece": [
+                "Pawn",
+                "Black"
+              ],
+              "square": [
+                5,
+                6
+              ]
+            }
+          ],
+          "rights_after": "-",
+          "rights_before": "-"
+        },
+        "historical_legality": "unverified",
+        "id": "94fa2bc28c4fcb9898a9478edc9c915c60adb49d3a68fb95a76aadea4e6b3903",
+        "move": "f7f5",
+        "mover": {
+          "entity_id": "p1",
+          "from_square": [
+            5,
+            6
+          ],
+          "kind": "Pawn",
+          "owner": "Black",
+          "to_square": [
+            5,
+            4
+          ]
+        },
+        "observation_confidence": 0.999,
+        "previous_event_id": null,
+        "schema": "observed-transition-v10",
+        "sequence": 1,
+        "source": "cli-verification#claims-e931504fd44acf3afba79c252312afdfef5c92c6c1c875fffdc1804548d65668"
+      }
+    ],
+    "historical_legality": "unverified",
+    "id": "2f60a1bebfc04c710c66f0768487522e816a87237be4b0f8b232cd53bf028641",
+    "input": {
+      "complete": false,
+      "confidence": 0.999,
+      "dependence_group": "claim-components:be46dddde448b9163d1e3bd2597452e15459df47369b3ca561532cb0e6a42806",
+      "expected_fen": null,
+      "initial_fen": "7k/5p2/8/6P1/8/8/8/K7 b - - 0 1",
+      "initial_trust": "unknown",
+      "model_version": null,
+      "moves": [
+        "f7f5"
+      ],
+      "runtime_version": null,
+      "source": "cli-verification#claims-e931504fd44acf3afba79c252312afdfef5c92c6c1c875fffdc1804548d65668"
+    },
+    "legacy_evidence": {
+      "castling_history_attested": false,
+      "confidence": 0.999,
+      "initial_fen": "7k/5p2/8/6P1/8/8/8/K7 b - - 0 1",
+      "moves": [
+        "f7f5"
+      ],
+      "source": "cli-verification#claims-e931504fd44acf3afba79c252312afdfef5c92c6c1c875fffdc1804548d65668#transport-input-60157105ff61797746dee15531b94fee41e334b6f01584762847bc2f8d28f6da"
+    },
+    "legacy_window": {
+      "omitted_prefix_events": 0,
+      "retained_events": 1,
+      "scope": "Full events remain in this receipt; only the native legacy transport window is bounded."
+    },
+    "model_version": null,
+    "propositions": [
+      {
+        "dependence_group": "claim-components:be46dddde448b9163d1e3bd2597452e15459df47369b3ca561532cb0e6a42806",
+        "epistemic_type": "supplied-provenance",
+        "event_ids": [],
+        "id": "1d64520bbfae946b486801bae31fc47c85faf54471d3a5747afadef6652077c8",
+        "predicate": "HistoricalEvidenceSource",
+        "scope": "Provenance relation only; no additional native PLN conclusion or computed probability.",
+        "source": "cli-verification#claims-e931504fd44acf3afba79c252312afdfef5c92c6c1c875fffdc1804548d65668",
+        "truth_value": null,
+        "value": "cli-verification#claims-e931504fd44acf3afba79c252312afdfef5c92c6c1c875fffdc1804548d65668"
+      },
+      {
+        "dependence_group": "claim-components:be46dddde448b9163d1e3bd2597452e15459df47369b3ca561532cb0e6a42806",
+        "epistemic_type": "supplied-trust-policy",
+        "event_ids": [],
+        "id": "ccb0515d87ace4371cab2aae943230a44ccea3607960a1734cd670765417eb6a",
+        "predicate": "HistoryConfidence",
+        "scope": "Provenance relation only; no additional native PLN conclusion or computed probability.",
+        "source": "cli-verification#claims-e931504fd44acf3afba79c252312afdfef5c92c6c1c875fffdc1804548d65668",
+        "truth_value": null,
+        "value": 0.999
+      },
+      {
+        "dependence_group": "claim-components:be46dddde448b9163d1e3bd2597452e15459df47369b3ca561532cb0e6a42806",
+        "epistemic_type": "unknown-history",
+        "event_ids": [],
+        "id": "97a0d1a8afb4c665d4ecbd273b949a6d8f325c5b7f8ba49f8041230bc93dcc69",
+        "predicate": "InitialStateMetadata",
+        "scope": "Provenance relation only; no additional native PLN conclusion or computed probability.",
+        "source": "cli-verification#claims-e931504fd44acf3afba79c252312afdfef5c92c6c1c875fffdc1804548d65668",
+        "truth_value": null,
+        "value": {
+          "fen": "7k/5p2/8/6P1/8/8/8/K7 b - - 0 1",
+          "trust": "unknown"
+        }
+      },
+      {
+        "dependence_group": "claim-components:be46dddde448b9163d1e3bd2597452e15459df47369b3ca561532cb0e6a42806",
+        "epistemic_type": "observed-event",
+        "event_ids": [
+          "94fa2bc28c4fcb9898a9478edc9c915c60adb49d3a68fb95a76aadea4e6b3903"
+        ],
+        "id": "b672b0475ebcd0a0d10bba8ae5129f9feba7d7136425a08747b3fa555102c1ad",
+        "predicate": "ObservedMove",
+        "scope": "Provenance relation only; no additional native PLN conclusion or computed probability.",
+        "source": "cli-verification#claims-e931504fd44acf3afba79c252312afdfef5c92c6c1c875fffdc1804548d65668",
+        "truth_value": null,
+        "value": {
+          "after": "sc4962e9bbe8fef55",
+          "before": "s657b04e423a900c0",
+          "move": "f7f5",
+          "sequence": 1
+        }
+      },
+      {
+        "dependence_group": "claim-components:be46dddde448b9163d1e3bd2597452e15459df47369b3ca561532cb0e6a42806",
+        "epistemic_type": "inferred-structural-relation",
+        "event_ids": [
+          "94fa2bc28c4fcb9898a9478edc9c915c60adb49d3a68fb95a76aadea4e6b3903"
+        ],
+        "id": "87568a1ef6b114f1dcc901d0ead5e39b33a2f7505ca612f758506c1a2b471fb8",
+        "predicate": "PreviouslyMoved",
+        "scope": "Provenance relation only; no additional native PLN conclusion or computed probability.",
+        "source": "cli-verification#claims-e931504fd44acf3afba79c252312afdfef5c92c6c1c875fffdc1804548d65668",
+        "truth_value": null,
+        "value": {
+          "entity_id": "p1",
+          "kind": "Pawn",
+          "owner": "Black"
+        }
+      },
+      {
+        "dependence_group": "claim-components:be46dddde448b9163d1e3bd2597452e15459df47369b3ca561532cb0e6a42806",
+        "epistemic_type": "inferred-structural-relation",
+        "event_ids": [
+          "94fa2bc28c4fcb9898a9478edc9c915c60adb49d3a68fb95a76aadea4e6b3903"
+        ],
+        "id": "6f0b4f3917032319ff0f5e10b5c0191d23783cab0f999c2ee8dd05b7515cd7bf",
+        "predicate": "LastMoveDoublePawnAdvance",
+        "scope": "Provenance relation only; no additional native PLN conclusion or computed probability.",
+        "source": "cli-verification#claims-e931504fd44acf3afba79c252312afdfef5c92c6c1c875fffdc1804548d65668",
+        "truth_value": null,
+        "value": {
+          "event_id": "94fa2bc28c4fcb9898a9478edc9c915c60adb49d3a68fb95a76aadea4e6b3903",
+          "owner": "Black",
+          "target": [
+            5,
+            5
+          ]
+        }
+      },
+      {
+        "dependence_group": "claim-components:be46dddde448b9163d1e3bd2597452e15459df47369b3ca561532cb0e6a42806",
+        "epistemic_type": "unknown-history",
+        "event_ids": [
+          "94fa2bc28c4fcb9898a9478edc9c915c60adb49d3a68fb95a76aadea4e6b3903"
+        ],
+        "id": "38740e1fbd9ed05a48a1d8fa02ef812c38002388a1b1482f2aabf04ded0b4c4b",
+        "predicate": "RetainedCastlingRight",
+        "scope": "Provenance relation only; no additional native PLN conclusion or computed probability.",
+        "source": "cli-verification#claims-e931504fd44acf3afba79c252312afdfef5c92c6c1c875fffdc1804548d65668",
+        "truth_value": null,
+        "value": {
+          "initial_metadata_attested": false,
+          "reported_rights": "-",
+          "supported_scope": "FEN flags do not establish unmoved history"
+        }
+      }
+    ],
+    "resulting_fen": "7k/8/8/5pP1/8/8/8/K7 w - f6 0 2",
+    "runtime_version": null,
+    "schema": "temporal-transport-v10",
+    "scope": "Supplied observations and explicit initial trust, not verified historical legality, empirical calibration, or a complete positive legality proof.",
+    "status": "structurally-consistent"
+  },
+  "model_version": null,
+  "native_available": true,
+  "resulting_fen": "7k/8/8/5pP1/8/8/8/K7 w - f6 0 2",
+  "runtime_version": null,
+  "schema": "temporal-transport-v11",
+  "scope": "Claims are structurally replayed. No native conclusion of historical legality, conjunction or global positive safety is introduced.",
+  "semantic_id": "e931504fd44acf3afba79c252312afdfef5c92c6c1c875fffdc1804548d65668",
+  "status": "observed"
+}

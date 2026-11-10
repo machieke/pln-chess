@@ -1,0 +1,105 @@
+[
+  {
+    "argv": [
+      "/data/pln-chess-cycle11-verified/.venv/bin/python",
+      "-m",
+      "evaluation.cycle11_delivery",
+      "acceptance",
+      "--out",
+      "/data/pln-chess-cycle6-delivery/artifacts/cycle11"
+    ],
+    "cwd": "/data/pln-chess-cycle11-verified",
+    "elapsed_seconds": 0.5390512943267822,
+    "log": "final-validation/acceptance.txt",
+    "production_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+    "research_criteria_sha256": null,
+    "returncode": 0,
+    "stage": "acceptance",
+    "started_unix": 1794309320.0500417
+  },
+  {
+    "argv": [
+      "/data/pln-chess-cycle11-verified/.venv/bin/python",
+      "-m",
+      "pytest",
+      "-q"
+    ],
+    "cwd": "/data/pln-chess-cycle11-verified",
+    "elapsed_seconds": 318.3952913284302,
+    "log": "final-validation/accepted-default-tests.txt",
+    "production_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+    "research_criteria_sha256": null,
+    "returncode": 0,
+    "stage": "accepted-default-tests",
+    "started_unix": 1794309320.589496
+  },
+  {
+    "argv": [
+      "/data/pln-chess-cycle11-verified/.venv/bin/python",
+      "-m",
+      "evaluation.cycle11_performance",
+      "--out",
+      "/data/pln-chess-cycle6-delivery/artifacts/cycle11"
+    ],
+    "cwd": "/data/pln-chess-cycle11-verified",
+    "elapsed_seconds": 1505.142632484436,
+    "log": "final-validation/performance.txt",
+    "production_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+    "research_criteria_sha256": null,
+    "returncode": 0,
+    "stage": "performance",
+    "started_unix": 1794309638.9854014
+  },
+  {
+    "argv": [
+      "/data/pln-chess-cycle11-verified/.venv/bin/python",
+      "-m",
+      "scripts.cycle11_ui_verify",
+      "--out",
+      "/data/pln-chess-cycle6-delivery/artifacts/cycle11",
+      "--work",
+      "/data/pln-chess-cycle11-browser-final"
+    ],
+    "cwd": "/data/pln-chess-cycle11-verified",
+    "elapsed_seconds": 113.21875071525574,
+    "log": "final-validation/browser.txt",
+    "production_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+    "research_criteria_sha256": null,
+    "returncode": 0,
+    "stage": "browser",
+    "started_unix": 1794311144.1286576
+  },
+  {
+    "argv": [
+      "/data/pln-chess-cycle11-verified/.venv/bin/python",
+      "/data/pln-chess-cycle6-delivery/evaluation/cycle11_delivery.py",
+      "research",
+      "--out",
+      "/data/pln-chess-cycle6-delivery/artifacts/cycle11"
+    ],
+    "cwd": "/data/pln-chess-cycle11-verified",
+    "elapsed_seconds": 1.664283037185669,
+    "log": "final-validation/research-acceptance.txt",
+    "production_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+    "research_criteria_sha256": "302e6ae3848a20bc53218e13aeea91066cf0f1ffd3a3656a2843d346e6f80897",
+    "returncode": 0,
+    "stage": "research-acceptance",
+    "started_unix": 1794311257.347964
+  },
+  {
+    "argv": [
+      "python3",
+      "/data/pln-chess-cycle11-verified/evaluation/cycle11_plots.py",
+      "--out",
+      "/data/pln-chess-cycle6-delivery/artifacts/cycle11"
+    ],
+    "cwd": "/data/pln-chess-cycle11-verified",
+    "elapsed_seconds": 2.388331413269043,
+    "log": "final-validation/plots.txt",
+    "production_code_hash": "7ec087e918a319491c24aa5a657aa2dfa44ba42c8a403b43b2177e19ddcb1c61",
+    "research_criteria_sha256": null,
+    "returncode": 0,
+    "stage": "plots",
+    "started_unix": 1794311259.012919
+  }
+]
