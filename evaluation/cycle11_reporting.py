@@ -33,6 +33,7 @@ def run(out, docs):
     unresolved = read_json(out / 'legal/unresolved-baseline-summary.json')
     sharing = read_json(out / 'field-learning/relative-sharing-summary.json')
     failure_audit = read_json(out / 'field-evaluation/post-freeze-false-negatives.json')
+    proof_examples = read_json(out / 'fields/worked-proof-index.json')['examples']
     ep = read_gzip(out / 'legal/en-passant-after.json.xz')
     assert all(r['passed'] for r in (baseline, current, acceptance, temporal, dependence, performance, ui, audit))
     link = lambda path: os.path.relpath(out / path, docs)
@@ -129,6 +130,10 @@ Tamper tests reject recomputed receipt hashes with false semantic contents and w
         cal = calibration['families'][family]
         domain_note = (f"The post-freeze audit identifies {failure_audit['castling_alias_count']} king-to-rook castling aliases among the {failure_audit['count']} primary false-negative rows. The offline reference accepts those aliases, while the ordinary-mobility adapter excluded only two-cell king castling moves. This is a label-domain mismatch. All original labels, errors and denominators remain in the primary results; no model, threshold or test selection was changed. {artifact('field-evaluation/post-freeze-false-negatives.json')}" if family=='mobility' else
             'The published-game subpanel contains only one positive king-exposure relation. Its perfect positive recall therefore provides very little independent evidence of generalization.' if family=='king-exposure' else '')
+        sample=next(e for e in proof_examples if e['family']==family and e['after'] and e['after']['proof_trace'])
+        relation=sample['after']
+        trace_table='| Native operator | Returned truth value |\n|---|---|\n'+'\n'.join(
+            f"| `{node['operator']}` | `{node['truth_value']}` |" for node in relation['proof_trace'])
         write(family+'-field.md', f'''# {title}
 
 {meaning}
@@ -140,6 +145,12 @@ On the published-game subpanel alone, precision is {pct(external['precision'])},
 {domain_note}
 
 The source/target context is observed by the host. A relative learned conditional is revised through native `Truth_Revision`, then applied through native modus ponens, negation and evidence selection. Every supported result retains native expressions, returned truth values, rule IDs, evidence IDs, dependence groups and model/runtime identities. The observation is one supplied local-context premise; the graph does not claim a native conjunction proof over independently uncertain subpremises.
+
+For the `{sample['example']}` demonstration, the hypothetical after-state relation `{relation['source_square']} → {relation['target_square']}` is `{relation['classification']}` under rule `{relation['rule_id']}`. Its complete trace identity is `{relation['proof_id']}`. The first two nodes apply the positive and negative learned channels; negation reverses the negative conclusion, and evidence selection returns the chosen native result.
+
+{trace_table}
+
+The exact expressions, premise values, source observation and evidence IDs are retained in {artifact('fields/worked-proof-index.json', 'the proof index')}. This example is selected for review and adds no statistical evidence.
 
 Worked coverage includes: {examples}. Before/after values and native proofs are retained even when the proposed candidate is unknown or contradicted by the accepted legality learner. {artifact('fields/worked-examples.json.xz')}.
 
@@ -212,15 +223,19 @@ The panel is a deliberately structured mixture, not a representative sample of c
 
 Each workload ran in a fresh worker for {performance['repetitions']} repetitions, after other native study workers finished. Full and incremental outputs have identical relation values and native proof IDs. Pure native-expression caching and exact local-relation reuse are separately counted. {artifact('performance/summary.json')}.
 
+Cold means a fresh field/native-expression session; operating-system file caches are not flushed. Warm means an identical request using the same field session. Neither label includes interpreter or model-loading startup.
+
 | Workload | Cold field median s | Warm median s | Full successor median s | Incremental median s | Reused / invalidated relations |
 |---|---:|---:|---:|---:|---:|
 {chr(10).join(perf_rows)}
 
 The cache binds model identity, runtime manifest, inference options, observation source and complete relevant dependencies. Long rays include every participating cell; there is no fixed neighborhood radius. Source motion, promotion, target identity, capture, off-destination EP removal, unknown-cell edits and castling rook motion invalidate affected relations. An unrelated distant edit may preserve a local proof while the enclosing state certificate changes.
 
+The current implementation recomputes observation fingerprints for the requested relations and returns complete proof records even on a warm request. Reuse saves native calculation and proof construction; it does not eliminate observation scanning, copying or serialization. Speedup is therefore measured separately from cache-hit counts and is not guaranteed for every workload.
+
 The raw measurements include single-candidate full/incremental updates, three successive alternatives sharing a parent cache, native operator counts, grounded atoms, proof bytes, hits/invalidations and Python allocation peaks. Maximum fresh-worker RSS: {performance['max_process_peak_rss_kib']:,} KiB. Maximum child-process high-water RSS: {performance['max_native_child_peak_rss_kib']:,} KiB. These are not summed concurrent memory. {artifact('performance/measurements.json.xz')}.
 
-Model/runtime initialization is excluded from per-condition timing. Observation, grounding, native execution, proof assembly and proof-size accounting are included. `tracemalloc` adds overhead. Nine repetitions give weak p95 resolution; minima/maxima and all individual samples are retained. Cache reuse is an exact engineering optimization, not a probabilistic inference or strategic search result.
+Model/runtime initialization, the structural successor edit and separate candidate legality inference are excluded from per-condition field timing. Observation, grounding, native execution, proof assembly and proof-size accounting are included. The multiple-candidate conditions measure field construction for three structural alternatives; they do not time move search or selection. `tracemalloc` adds overhead. Nine repetitions give weak p95 resolution; minima/maxima and all individual samples are retained. Cache reuse is an exact engineering optimization, not a probabilistic inference or strategic search result.
 ''')
 
     write('strategic-roadmap.md', '''# Strategic architecture roadmap
