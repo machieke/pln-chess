@@ -1,0 +1,87 @@
+{
+  "accepted_checkpoint_modified": false,
+  "cases": [
+    {
+      "cause": "Weak existing local conditional with zero-confidence inherited observation",
+      "complete_game_events": 41,
+      "fixture": "c10-position-00861",
+      "inherited_observation_tvs": [
+        {
+          "confidence": 0,
+          "strength": 1.0
+        }
+      ],
+      "local_conditional": {
+        "contradicting_evidence": [],
+        "dependence_groups": [
+          "historical-ep-main"
+        ],
+        "descriptor": {
+          "destination": "Empty",
+          "effect": "en-passant",
+          "ep_offset": [
+            1,
+            1
+          ],
+          "motion": [
+            1,
+            1
+          ],
+          "piece": "Pawn",
+          "promotion": null,
+          "ray_contents": []
+        },
+        "evidence_ids": [
+          "9c950a3dc37c5c0cfc307c34e5270c31d03397a1a62fa617217ccfc65201e869"
+        ],
+        "id": "c7:dcad119e94ee7f742abac160",
+        "level": 0,
+        "negative": {
+          "confidence": 0.05000000000000001,
+          "strength": 0.5
+        },
+        "new_training": false,
+        "origin": "native-revision-of-host-joint-observations",
+        "positive": {
+          "confidence": 0.05000000000000001,
+          "strength": 0.5
+        },
+        "supporting_evidence": [
+          "9c950a3dc37c5c0cfc307c34e5270c31d03397a1a62fa617217ccfc65201e869"
+        ],
+        "target": "LocalAdmissibility",
+        "tier": 4
+      },
+      "local_truth_value": {
+        "confidence": 0.024750000000000005,
+        "strength": 0.5
+      },
+      "move": "d5e6",
+      "prefix_events": 20,
+      "source_game": "c10-game-0e703a511a778869b5bdd6f3",
+      "temporal_eligibility": {
+        "confidence": 0.99,
+        "strength": 1.0
+      }
+    },
+    {
+      "cause": "Missing signed relative en-passant local conditional",
+      "complete_game_events": 161,
+      "fixture": "c10-position-01151",
+      "inherited_observation_tvs": [],
+      "local_conditional": null,
+      "local_truth_value": {
+        "confidence": 0.0,
+        "strength": 0.5
+      },
+      "move": "d5c6",
+      "prefix_events": 30,
+      "source_game": "c10-game-3055beb51f248d773c594724",
+      "temporal_eligibility": {
+        "confidence": 0.99,
+        "strength": 1.0
+      }
+    }
+  ],
+  "checkpoint": "1217e17552ff611bebf0efc650245b05fb71c93a8175b579b025d6273d5d781d"
+}

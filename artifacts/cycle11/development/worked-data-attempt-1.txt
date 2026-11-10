@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/data/pln-chess-cycle6-delivery/training/cycle11_examples.py", line 139, in <module>
+    generate(parser.parse_args().out)
+  File "/data/pln-chess-cycle6-delivery/training/cycle11_examples.py", line 65, in generate
+    board.push_uci(notation)
+  File "/data/pln-chess-cycle6-delivery/.venv/lib/python3.12/site-packages/chess/__init__.py", line 3284, in push_uci
+    move = self.parse_uci(uci)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/data/pln-chess-cycle6-delivery/.venv/lib/python3.12/site-packages/chess/__init__.py", line 3267, in parse_uci
+    raise IllegalMoveError(f"illegal uci: {uci!r} in {self.fen()}")
+chess.IllegalMoveError: illegal uci: 'e2f2' in 4r1k1/8/8/8/8/8/4R1P1/4K3 w - - 0 1

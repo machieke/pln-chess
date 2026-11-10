@@ -1,0 +1,1397 @@
+{
+  "cases": [
+    {
+      "expectation": "Exact ordered structural replay",
+      "expected_native_available": true,
+      "id": "complete-observations",
+      "input": {
+        "claims": [
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "e2e4",
+            "sequence": 1,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "e7e5",
+            "sequence": 2,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "g1f3",
+            "sequence": 3,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "b8c6",
+            "sequence": 4,
+            "source": "controlled-observer"
+          }
+        ],
+        "complete": true,
+        "expected_events": 4,
+        "expected_fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+        "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "initial_trust": "attested-standard-start",
+        "source": "cycle11-control"
+      }
+    },
+    {
+      "expectation": "Same semantic replay, explicitly different delivery order",
+      "expected_native_available": true,
+      "id": "reverse-delivery",
+      "input": {
+        "claims": [
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "b8c6",
+            "sequence": 4,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "g1f3",
+            "sequence": 3,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "e7e5",
+            "sequence": 2,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "e2e4",
+            "sequence": 1,
+            "source": "controlled-observer"
+          }
+        ],
+        "complete": true,
+        "expected_events": 4,
+        "expected_fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+        "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "initial_trust": "attested-standard-start",
+        "source": "cycle11-control"
+      }
+    },
+    {
+      "expectation": "Same semantic replay",
+      "expected_native_available": true,
+      "id": "shuffled-delivery",
+      "input": {
+        "claims": [
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "g1f3",
+            "sequence": 3,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "e2e4",
+            "sequence": 1,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "b8c6",
+            "sequence": 4,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "e7e5",
+            "sequence": 2,
+            "source": "controlled-observer"
+          }
+        ],
+        "complete": true,
+        "expected_events": 4,
+        "expected_fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+        "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "initial_trust": "attested-standard-start",
+        "source": "cycle11-control"
+      }
+    },
+    {
+      "expectation": "Duplicate retained in delivery audit, counted once",
+      "expected_native_available": true,
+      "id": "identical-duplicate",
+      "input": {
+        "claims": [
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "e2e4",
+            "sequence": 1,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "e7e5",
+            "sequence": 2,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "g1f3",
+            "sequence": 3,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "b8c6",
+            "sequence": 4,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "e7e5",
+            "sequence": 2,
+            "source": "controlled-observer"
+          }
+        ],
+        "complete": true,
+        "expected_events": 4,
+        "expected_fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+        "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "initial_trust": "attested-standard-start",
+        "source": "cycle11-control"
+      }
+    },
+    {
+      "expectation": "No independent evidence increase",
+      "expected_native_available": true,
+      "id": "all-events-duplicated",
+      "input": {
+        "claims": [
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "e2e4",
+            "sequence": 1,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "e7e5",
+            "sequence": 2,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "g1f3",
+            "sequence": 3,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "b8c6",
+            "sequence": 4,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "e2e4",
+            "sequence": 1,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "e7e5",
+            "sequence": 2,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "g1f3",
+            "sequence": 3,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "b8c6",
+            "sequence": 4,
+            "source": "controlled-observer"
+          }
+        ],
+        "complete": true,
+        "expected_events": 4,
+        "expected_fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+        "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "initial_trust": "attested-standard-start",
+        "source": "cycle11-control"
+      }
+    },
+    {
+      "expectation": "Missing sequence 1 is explicit; no fabricated predecessor",
+      "expected_native_available": false,
+      "id": "missing-first-event",
+      "input": {
+        "claims": [
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "e7e5",
+            "sequence": 2,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "g1f3",
+            "sequence": 3,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "b8c6",
+            "sequence": 4,
+            "source": "controlled-observer"
+          }
+        ],
+        "complete": true,
+        "expected_events": 4,
+        "expected_fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+        "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "initial_trust": "attested-standard-start",
+        "source": "cycle11-control"
+      }
+    },
+    {
+      "expectation": "Stop trusted contiguous replay at the gap",
+      "expected_native_available": false,
+      "id": "missing-middle-event",
+      "input": {
+        "claims": [
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "e2e4",
+            "sequence": 1,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "g1f3",
+            "sequence": 3,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "b8c6",
+            "sequence": 4,
+            "source": "controlled-observer"
+          }
+        ],
+        "complete": true,
+        "expected_events": 4,
+        "expected_fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+        "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "initial_trust": "attested-standard-start",
+        "source": "cycle11-control"
+      }
+    },
+    {
+      "expectation": "Expected event count prevents silently accepting a truncated delivery",
+      "expected_native_available": false,
+      "id": "missing-final-event",
+      "input": {
+        "claims": [
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "e2e4",
+            "sequence": 1,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "e7e5",
+            "sequence": 2,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "g1f3",
+            "sequence": 3,
+            "source": "controlled-observer"
+          }
+        ],
+        "complete": true,
+        "expected_events": 4,
+        "expected_fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+        "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "initial_trust": "attested-standard-start",
+        "source": "cycle11-control"
+      }
+    },
+    {
+      "expectation": "Earlier evidence and later contradiction both remain",
+      "expected_native_available": false,
+      "id": "contradictory-later-claim",
+      "input": {
+        "claims": [
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "e2e4",
+            "sequence": 1,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "e7e5",
+            "sequence": 2,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "g1f3",
+            "sequence": 3,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "b8c6",
+            "sequence": 4,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "d7d5",
+            "sequence": 2,
+            "source": "second-observer"
+          }
+        ],
+        "complete": true,
+        "expected_events": 4,
+        "expected_fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+        "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "initial_trust": "attested-standard-start",
+        "source": "cycle11-control"
+      }
+    },
+    {
+      "expectation": "Conflict outcome is independent of arrival order",
+      "expected_native_available": false,
+      "id": "contradictory-earlier-delivery",
+      "input": {
+        "claims": [
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "d7d5",
+            "sequence": 2,
+            "source": "second-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "e2e4",
+            "sequence": 1,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "e7e5",
+            "sequence": 2,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "g1f3",
+            "sequence": 3,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "b8c6",
+            "sequence": 4,
+            "source": "controlled-observer"
+          }
+        ],
+        "complete": true,
+        "expected_events": 4,
+        "expected_fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+        "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "initial_trust": "attested-standard-start",
+        "source": "cycle11-control"
+      }
+    },
+    {
+      "expectation": "A conflicting event state claim is not ignored",
+      "expected_native_available": false,
+      "id": "reported-before-state-conflict",
+      "input": {
+        "claims": [
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "e2e4",
+            "sequence": 1,
+            "source": "controlled-observer"
+          },
+          {
+            "before_fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "e7e5",
+            "sequence": 2,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "g1f3",
+            "sequence": 3,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "b8c6",
+            "sequence": 4,
+            "source": "controlled-observer"
+          }
+        ],
+        "complete": true,
+        "expected_events": 4,
+        "expected_fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+        "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "initial_trust": "attested-standard-start",
+        "source": "cycle11-control"
+      }
+    },
+    {
+      "expectation": "Structural consequence conflicts with supplied after-state",
+      "expected_native_available": false,
+      "id": "reported-after-state-conflict",
+      "input": {
+        "claims": [
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "e2e4",
+            "sequence": 1,
+            "source": "controlled-observer"
+          },
+          {
+            "after_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "e7e5",
+            "sequence": 2,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "g1f3",
+            "sequence": 3,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "b8c6",
+            "sequence": 4,
+            "source": "controlled-observer"
+          }
+        ],
+        "complete": true,
+        "expected_events": 4,
+        "expected_fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+        "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "initial_trust": "attested-standard-start",
+        "source": "cycle11-control"
+      }
+    },
+    {
+      "expectation": "Conflicting final state is explicit",
+      "expected_native_available": false,
+      "id": "expected-final-state-conflict",
+      "input": {
+        "claims": [
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "e2e4",
+            "sequence": 1,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "e7e5",
+            "sequence": 2,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "g1f3",
+            "sequence": 3,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "b8c6",
+            "sequence": 4,
+            "source": "controlled-observer"
+          }
+        ],
+        "complete": true,
+        "expected_events": 4,
+        "expected_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "initial_trust": "attested-standard-start",
+        "source": "cycle11-control"
+      }
+    },
+    {
+      "expectation": "Conflicting imported FEN rights do not erase the initial claim",
+      "expected_native_available": false,
+      "id": "conflicting-trusted-metadata",
+      "input": {
+        "claims": [
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "e2e4",
+            "sequence": 1,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "e7e5",
+            "sequence": 2,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "g1f3",
+            "sequence": 3,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "b8c6",
+            "sequence": 4,
+            "source": "controlled-observer"
+          }
+        ],
+        "complete": true,
+        "expected_events": 4,
+        "expected_fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+        "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "initial_trust": "attested-standard-start",
+        "metadata_claims": [
+          {
+            "confidence": 0.99,
+            "dependence_group": "metadata-source",
+            "epistemic_type": "trusted-metadata",
+            "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w - - 0 1",
+            "source": "conflicting-import"
+          }
+        ],
+        "source": "cycle11-control"
+      }
+    },
+    {
+      "expectation": "Matching metadata is retained without extra probability weight",
+      "expected_native_available": true,
+      "id": "matching-trusted-metadata",
+      "input": {
+        "claims": [
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "e2e4",
+            "sequence": 1,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "e7e5",
+            "sequence": 2,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "g1f3",
+            "sequence": 3,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "b8c6",
+            "sequence": 4,
+            "source": "controlled-observer"
+          }
+        ],
+        "complete": true,
+        "expected_events": 4,
+        "expected_fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+        "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "initial_trust": "attested-standard-start",
+        "metadata_claims": [
+          {
+            "confidence": 0.99,
+            "dependence_group": "metadata-source",
+            "epistemic_type": "trusted-metadata",
+            "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+            "source": "conflicting-import"
+          }
+        ],
+        "source": "cycle11-control"
+      }
+    },
+    {
+      "expectation": "Inferred structural history is not promoted to direct observations",
+      "expected_native_available": false,
+      "id": "inferred-history-only",
+      "input": {
+        "claims": [
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "inferred-history",
+            "move": "e2e4",
+            "sequence": 1,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "inferred-history",
+            "move": "e7e5",
+            "sequence": 2,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "inferred-history",
+            "move": "g1f3",
+            "sequence": 3,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "inferred-history",
+            "move": "b8c6",
+            "sequence": 4,
+            "source": "controlled-observer"
+          }
+        ],
+        "complete": true,
+        "expected_events": 4,
+        "expected_fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+        "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "initial_trust": "attested-standard-start",
+        "source": "cycle11-control"
+      }
+    },
+    {
+      "expectation": "An unknown event cannot establish a trusted history",
+      "expected_native_available": false,
+      "id": "unknown-final-event",
+      "input": {
+        "claims": [
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "e2e4",
+            "sequence": 1,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "e7e5",
+            "sequence": 2,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "g1f3",
+            "sequence": 3,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "unknown-history",
+            "move": "b8c6",
+            "sequence": 4,
+            "source": "controlled-observer"
+          }
+        ],
+        "complete": true,
+        "expected_events": 4,
+        "expected_fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+        "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "initial_trust": "attested-standard-start",
+        "source": "cycle11-control"
+      }
+    },
+    {
+      "expectation": "The exported legacy trust policy cannot exceed the weakest supplied confidence",
+      "expected_confidence": 0.4,
+      "expected_native_available": true,
+      "id": "lower-confidence-event",
+      "input": {
+        "claims": [
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "e2e4",
+            "sequence": 1,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "e7e5",
+            "sequence": 2,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "g1f3",
+            "sequence": 3,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.4,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "b8c6",
+            "sequence": 4,
+            "source": "controlled-observer"
+          }
+        ],
+        "complete": true,
+        "expected_events": 4,
+        "expected_fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+        "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "initial_trust": "attested-standard-start",
+        "source": "cycle11-control"
+      }
+    },
+    {
+      "expectation": "Zero-confidence observation does not establish eligibility",
+      "expected_native_available": false,
+      "id": "zero-confidence-event",
+      "input": {
+        "claims": [
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "e2e4",
+            "sequence": 1,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "e7e5",
+            "sequence": 2,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "g1f3",
+            "sequence": 3,
+            "source": "controlled-observer"
+          },
+          {
+            "confidence": 0.0,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "b8c6",
+            "sequence": 4,
+            "source": "controlled-observer"
+          }
+        ],
+        "complete": true,
+        "expected_events": 4,
+        "expected_fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+        "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "initial_trust": "attested-standard-start",
+        "source": "cycle11-control"
+      }
+    },
+    {
+      "candidate": "g5f6",
+      "expectation": "Fresh local EP predecessor is observed; earlier castling history stays unknown",
+      "expected_native_available": true,
+      "id": "partial-pgn-observed-predecessor",
+      "input": {
+        "claims": [
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "f7f5",
+            "sequence": 1,
+            "source": "partial-PGN"
+          }
+        ],
+        "complete": false,
+        "expected_events": 1,
+        "expected_fen": "7k/8/8/5pP1/8/8/8/K7 w - f6 0 2",
+        "initial_fen": "7k/5p2/8/6P1/8/8/8/K7 b - - 0 1",
+        "initial_trust": "unknown",
+        "source": "partial-PGN"
+      }
+    },
+    {
+      "candidate": "g5f6",
+      "expectation": "FEN EP metadata alone is not an observed predecessor",
+      "expected_native_available": false,
+      "id": "fen-only-metadata",
+      "input": {
+        "claims": [],
+        "complete": false,
+        "initial_fen": "7k/8/8/5pP1/8/8/8/K7 w - f6 0 2",
+        "initial_trust": "unknown",
+        "source": "FEN-import"
+      }
+    },
+    {
+      "candidate": "e1g1",
+      "expectation": "Explicit imported rights trust is preserved; no observed EP event is invented",
+      "expected_native_available": true,
+      "id": "trusted-fen-metadata",
+      "input": {
+        "claims": [],
+        "complete": false,
+        "initial_fen": "6k1/8/8/8/8/8/1N6/R3K2R w KQ - 0 1",
+        "initial_trust": "trusted-import",
+        "source": "trusted-import"
+      }
+    },
+    {
+      "candidate": "e1g1",
+      "expectation": "Returning the rook does not restore its lost castling right",
+      "expected_native_available": true,
+      "id": "rook-return-retains-lost-right",
+      "input": {
+        "claims": [
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "h1h2",
+            "sequence": 1,
+            "source": "rook-return"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "g8f8",
+            "sequence": 2,
+            "source": "rook-return"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "h2h1",
+            "sequence": 3,
+            "source": "rook-return"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "controlled-history",
+            "epistemic_type": "observed-event",
+            "move": "f8g8",
+            "sequence": 4,
+            "source": "rook-return"
+          }
+        ],
+        "expected_events": 4,
+        "expected_fen": "6k1/8/8/8/8/8/1N6/R3K2R w Q - 4 3",
+        "initial_fen": "6k1/8/8/8/8/8/1N6/R3K2R w KQ - 0 1",
+        "initial_trust": "trusted-import",
+        "source": "rook-return"
+      }
+    },
+    {
+      "candidate": "d5e6",
+      "expectation": "Actual published prefix reproduces the original en-passant state",
+      "expected_native_available": true,
+      "id": "published-prefix",
+      "input": {
+        "claims": [
+          {
+            "confidence": 0.99,
+            "dependence_group": "c10-game-0e703a511a778869b5bdd6f3",
+            "epistemic_type": "observed-event",
+            "move": "d2d4",
+            "sequence": 1,
+            "source": "lichess-rated-2013-01"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "c10-game-0e703a511a778869b5bdd6f3",
+            "epistemic_type": "observed-event",
+            "move": "g8f6",
+            "sequence": 2,
+            "source": "lichess-rated-2013-01"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "c10-game-0e703a511a778869b5bdd6f3",
+            "epistemic_type": "observed-event",
+            "move": "c2c4",
+            "sequence": 3,
+            "source": "lichess-rated-2013-01"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "c10-game-0e703a511a778869b5bdd6f3",
+            "epistemic_type": "observed-event",
+            "move": "g7g6",
+            "sequence": 4,
+            "source": "lichess-rated-2013-01"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "c10-game-0e703a511a778869b5bdd6f3",
+            "epistemic_type": "observed-event",
+            "move": "b1c3",
+            "sequence": 5,
+            "source": "lichess-rated-2013-01"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "c10-game-0e703a511a778869b5bdd6f3",
+            "epistemic_type": "observed-event",
+            "move": "d7d5",
+            "sequence": 6,
+            "source": "lichess-rated-2013-01"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "c10-game-0e703a511a778869b5bdd6f3",
+            "epistemic_type": "observed-event",
+            "move": "d1b3",
+            "sequence": 7,
+            "source": "lichess-rated-2013-01"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "c10-game-0e703a511a778869b5bdd6f3",
+            "epistemic_type": "observed-event",
+            "move": "f8g7",
+            "sequence": 8,
+            "source": "lichess-rated-2013-01"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "c10-game-0e703a511a778869b5bdd6f3",
+            "epistemic_type": "observed-event",
+            "move": "c4d5",
+            "sequence": 9,
+            "source": "lichess-rated-2013-01"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "c10-game-0e703a511a778869b5bdd6f3",
+            "epistemic_type": "observed-event",
+            "move": "e8g8",
+            "sequence": 10,
+            "source": "lichess-rated-2013-01"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "c10-game-0e703a511a778869b5bdd6f3",
+            "epistemic_type": "observed-event",
+            "move": "e2e4",
+            "sequence": 11,
+            "source": "lichess-rated-2013-01"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "c10-game-0e703a511a778869b5bdd6f3",
+            "epistemic_type": "observed-event",
+            "move": "c7c6",
+            "sequence": 12,
+            "source": "lichess-rated-2013-01"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "c10-game-0e703a511a778869b5bdd6f3",
+            "epistemic_type": "observed-event",
+            "move": "d5c6",
+            "sequence": 13,
+            "source": "lichess-rated-2013-01"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "c10-game-0e703a511a778869b5bdd6f3",
+            "epistemic_type": "observed-event",
+            "move": "b8c6",
+            "sequence": 14,
+            "source": "lichess-rated-2013-01"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "c10-game-0e703a511a778869b5bdd6f3",
+            "epistemic_type": "observed-event",
+            "move": "d4d5",
+            "sequence": 15,
+            "source": "lichess-rated-2013-01"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "c10-game-0e703a511a778869b5bdd6f3",
+            "epistemic_type": "observed-event",
+            "move": "c6d4",
+            "sequence": 16,
+            "source": "lichess-rated-2013-01"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "c10-game-0e703a511a778869b5bdd6f3",
+            "epistemic_type": "observed-event",
+            "move": "b3d1",
+            "sequence": 17,
+            "source": "lichess-rated-2013-01"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "c10-game-0e703a511a778869b5bdd6f3",
+            "epistemic_type": "observed-event",
+            "move": "f6d7",
+            "sequence": 18,
+            "source": "lichess-rated-2013-01"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "c10-game-0e703a511a778869b5bdd6f3",
+            "epistemic_type": "observed-event",
+            "move": "c1e3",
+            "sequence": 19,
+            "source": "lichess-rated-2013-01"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "c10-game-0e703a511a778869b5bdd6f3",
+            "epistemic_type": "observed-event",
+            "move": "e7e5",
+            "sequence": 20,
+            "source": "lichess-rated-2013-01"
+          }
+        ],
+        "complete": false,
+        "expected_events": 20,
+        "expected_fen": "r1bq1rk1/pp1n1pbp/6p1/3Pp3/3nP3/2N1B3/PP3PPP/R2QKBNR w KQ e6 0 11",
+        "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "initial_trust": "attested-standard-start",
+        "source": "lichess-rated-2013-01/c10-game-0e703a511a778869b5bdd6f3"
+      },
+      "source_game": "c10-game-0e703a511a778869b5bdd6f3"
+    },
+    {
+      "candidate": "d5e6",
+      "expectation": "A missing published event is surfaced even when final FEN metadata is supplied",
+      "expected_native_available": false,
+      "id": "published-prefix-missing-event",
+      "input": {
+        "claims": [
+          {
+            "confidence": 0.99,
+            "dependence_group": "c10-game-0e703a511a778869b5bdd6f3",
+            "epistemic_type": "observed-event",
+            "move": "d2d4",
+            "sequence": 1,
+            "source": "lichess-rated-2013-01"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "c10-game-0e703a511a778869b5bdd6f3",
+            "epistemic_type": "observed-event",
+            "move": "g8f6",
+            "sequence": 2,
+            "source": "lichess-rated-2013-01"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "c10-game-0e703a511a778869b5bdd6f3",
+            "epistemic_type": "observed-event",
+            "move": "c2c4",
+            "sequence": 3,
+            "source": "lichess-rated-2013-01"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "c10-game-0e703a511a778869b5bdd6f3",
+            "epistemic_type": "observed-event",
+            "move": "g7g6",
+            "sequence": 4,
+            "source": "lichess-rated-2013-01"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "c10-game-0e703a511a778869b5bdd6f3",
+            "epistemic_type": "observed-event",
+            "move": "b1c3",
+            "sequence": 5,
+            "source": "lichess-rated-2013-01"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "c10-game-0e703a511a778869b5bdd6f3",
+            "epistemic_type": "observed-event",
+            "move": "d7d5",
+            "sequence": 6,
+            "source": "lichess-rated-2013-01"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "c10-game-0e703a511a778869b5bdd6f3",
+            "epistemic_type": "observed-event",
+            "move": "d1b3",
+            "sequence": 7,
+            "source": "lichess-rated-2013-01"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "c10-game-0e703a511a778869b5bdd6f3",
+            "epistemic_type": "observed-event",
+            "move": "f8g7",
+            "sequence": 8,
+            "source": "lichess-rated-2013-01"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "c10-game-0e703a511a778869b5bdd6f3",
+            "epistemic_type": "observed-event",
+            "move": "c4d5",
+            "sequence": 9,
+            "source": "lichess-rated-2013-01"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "c10-game-0e703a511a778869b5bdd6f3",
+            "epistemic_type": "observed-event",
+            "move": "e2e4",
+            "sequence": 11,
+            "source": "lichess-rated-2013-01"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "c10-game-0e703a511a778869b5bdd6f3",
+            "epistemic_type": "observed-event",
+            "move": "c7c6",
+            "sequence": 12,
+            "source": "lichess-rated-2013-01"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "c10-game-0e703a511a778869b5bdd6f3",
+            "epistemic_type": "observed-event",
+            "move": "d5c6",
+            "sequence": 13,
+            "source": "lichess-rated-2013-01"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "c10-game-0e703a511a778869b5bdd6f3",
+            "epistemic_type": "observed-event",
+            "move": "b8c6",
+            "sequence": 14,
+            "source": "lichess-rated-2013-01"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "c10-game-0e703a511a778869b5bdd6f3",
+            "epistemic_type": "observed-event",
+            "move": "d4d5",
+            "sequence": 15,
+            "source": "lichess-rated-2013-01"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "c10-game-0e703a511a778869b5bdd6f3",
+            "epistemic_type": "observed-event",
+            "move": "c6d4",
+            "sequence": 16,
+            "source": "lichess-rated-2013-01"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "c10-game-0e703a511a778869b5bdd6f3",
+            "epistemic_type": "observed-event",
+            "move": "b3d1",
+            "sequence": 17,
+            "source": "lichess-rated-2013-01"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "c10-game-0e703a511a778869b5bdd6f3",
+            "epistemic_type": "observed-event",
+            "move": "f6d7",
+            "sequence": 18,
+            "source": "lichess-rated-2013-01"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "c10-game-0e703a511a778869b5bdd6f3",
+            "epistemic_type": "observed-event",
+            "move": "c1e3",
+            "sequence": 19,
+            "source": "lichess-rated-2013-01"
+          },
+          {
+            "confidence": 0.99,
+            "dependence_group": "c10-game-0e703a511a778869b5bdd6f3",
+            "epistemic_type": "observed-event",
+            "move": "e7e5",
+            "sequence": 20,
+            "source": "lichess-rated-2013-01"
+          }
+        ],
+        "complete": false,
+        "expected_events": 20,
+        "expected_fen": "r1bq1rk1/pp1n1pbp/6p1/3Pp3/3nP3/2N1B3/PP3PPP/R2QKBNR w KQ e6 0 11",
+        "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "initial_trust": "attested-standard-start",
+        "source": "lichess-rated-2013-01/c10-game-0e703a511a778869b5bdd6f3"
+      },
+      "source_game": "c10-game-0e703a511a778869b5bdd6f3"
+    }
+  ],
+  "chosen_before_inference": true,
+  "hash": "c5540f5ab85a419e04aff2ce0aee040a697449c8a387044ab8cf390bc9994564",
+  "schema": "temporal-claim-controls-v11",
+  "scope": "Declared claim perturbations; complete source history remains preserved and no contradictory claim is silently replaced."
+}
