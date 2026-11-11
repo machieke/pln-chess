@@ -27,8 +27,9 @@ def normalized(value):
     return value
 
 
-def run(out,checkout,commit,workers=4):
-    out=Path(out).resolve();checkout=Path(checkout).resolve();target=out/'clean-research';runout=target/'run'
+def run(out,checkout,commit,workers=4,generation=None):
+    out=Path(out).resolve();checkout=Path(checkout).resolve()
+    target=Path(generation).resolve() if generation else out/'clean-research';runout=target/'run'
     if not (target/'bootstrap/verified.json').exists():bootstrap(target/'bootstrap',checkout,commit)
     boot=read_json(target/'bootstrap/verified.json');assert boot['initial_source_head']==commit
     assert not subprocess.check_output(['git','status','--porcelain'],cwd=checkout,text=True)
@@ -69,7 +70,7 @@ def run(out,checkout,commit,workers=4):
         with log.open('w') as stream:
             result=subprocess.run(argv,cwd=checkout,env=env,stdout=stream,stderr=subprocess.STDOUT)
         write_json(path,dict(identity=identity,returncode=result.returncode,started_unix=started,
-            elapsed_seconds=time.time()-started,log=str(log.relative_to(out))))
+            elapsed_seconds=time.time()-started,log=str(log)))
         if result.returncode:raise RuntimeError(str(log))
 
     command('reference-bootstrap','scripts.cycle13_reference_bootstrap',
@@ -102,8 +103,8 @@ def run(out,checkout,commit,workers=4):
     print('CLEAN RESEARCH REGENERATION COMPLETE; SEMANTIC COMPARISON STILL REQUIRED',flush=True)
 
 
-def compare(out):
-    out=Path(out).resolve();target=out/'clean-research';runout=target/'run'
+def compare(out,generation=None):
+    out=Path(out).resolve();target=Path(generation).resolve() if generation else out/'clean-research';runout=target/'run'
     gate=read_json(target/'regeneration.json');assert gate['passed']
     rows=[]
     def check(relative,kind='canonical'):
@@ -162,6 +163,7 @@ def compare(out):
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('action',choices=('run','compare'))
     parser.add_argument('--out',default='artifacts/cycle13');parser.add_argument('--checkout');parser.add_argument('--commit')
+    parser.add_argument('--generation',help='New independent replay directory; defaults to OUT/clean-research')
     parser.add_argument('--workers',type=int,default=4);args=parser.parse_args()
-    if args.action=='run':run(args.out,args.checkout,args.commit,args.workers)
-    else:compare(args.out)
+    if args.action=='run':run(args.out,args.checkout,args.commit,args.workers,args.generation)
+    else:compare(args.out,args.generation)
