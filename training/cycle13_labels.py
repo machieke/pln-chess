@@ -1,6 +1,7 @@
 """Pinned reference-engine supervision, isolated from production inference."""
 import argparse
 from collections import Counter
+import copy
 import json
 from pathlib import Path
 import time
@@ -46,6 +47,16 @@ def label(evaluations,config):
     return 'unknown','Budgets disagree, margin is intermediate, or mate distinction remains unresolved.'
 
 
+def semantic_record(record):
+    """Timing is retained in raw evidence but cannot change a label identity."""
+    result=copy.deepcopy(record);result.pop('evidence_id',None)
+    for evaluation in result['evaluations']:
+        evaluation.pop('elapsed_seconds',None)
+        for candidate in evaluation['candidates']:candidate.pop('engine_seconds',None)
+    result['evidence_id']='reference-preference:'+digest(result)
+    return result
+
+
 def run(out,binary=None):
     out=Path(out).resolve()
     # Preparing this driver is allowed during baseline replay; fitting or
@@ -54,7 +65,8 @@ def run(out,binary=None):
     config=read_json(ROOT/'configs/cycle13.json')['reference_engine']
     reference=read_json(out/'sources/stockfish-source.json')
     binary=Path(binary or ROOT/reference['binary_path']).resolve()
-    assert sha(binary)==reference['binary_sha256'],'Unregistered reference binary'
+    binary_hash=sha(binary)
+    assert binary_hash==reference['binary_sha256'],'Unregistered reference binary'
     data=read_json(out/'datasets/source-pairs.json');expected=data.pop('hash');assert digest(data)==expected
     records=[]
     engine=chess.engine.SimpleEngine.popen_uci(str(binary),timeout=120)
@@ -62,7 +74,7 @@ def run(out,binary=None):
         engine.configure({'Threads':config['threads'],'Hash':config['hash_mib'],'UCI_ShowWDL':True})
         for row in data['records']:
             path=out/'labels'/f"{row['id']}.json"
-            identity=dict(source_hash=expected,row_hash=digest(row),reference_binary_sha256=sha(binary),
+            identity=dict(source_hash=expected,row_hash=digest(row),reference_binary_sha256=binary_hash,
                 config=config,driver_sha256=sha(__file__))
             if path.exists():
                 record=read_json(path);assert record['identity']==identity,'Use a new label generation directory'
@@ -95,13 +107,14 @@ def run(out,binary=None):
                 source='Stockfish 18 fixed-node two-root comparisons',source_game=row['source_game'],
                 dependence_group=row['dependence_group'],split=row['split'],temporal_context=row['history'],
                 probability_of_correctness=None,reference_selection_only=True)
-            record['evidence_id']='reference-preference:'+digest(record)
+            record['evidence_id']=semantic_record(record)['evidence_id']
             write_json(path,record);records.append(record)
             print('REFERENCE',row['id'],verdict,flush=True)
     finally:engine.quit()
-    payload=dict(schema='c13-offline-preference-labels-v1',source_hash=expected,records=records,
+    payload=dict(schema='c13-offline-preference-labels-v1',source_hash=expected,records=[semantic_record(r) for r in records],
         counts=dict(Counter(r['label'] for r in records)),reference_manifest_sha256=sha(out/'sources/stockfish-source.json'),
-        no_production_reference_dependency=True)
+        no_production_reference_dependency=True,
+        timing_scope='Raw per-pair label files retain timing; semantic dataset/evidence identities exclude elapsed_seconds and engine_seconds only.')
     payload['hash']=digest(payload)
     write_json(out/'datasets/reference-labels.json',payload)
     print('REFERENCE LABELS COMPLETE',payload['counts'],flush=True)
