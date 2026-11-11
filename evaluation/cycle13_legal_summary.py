@@ -20,7 +20,8 @@ def run(directory):
         grouped[job['cohort'], job['mode']].append(comparison)
     groups = []
     for (cohort, mode), rows in sorted(grouped.items()):
-        exact = sum(r['metrics']['empty_terminal_exact'] + r['metrics']['nonempty_exact'] for r in rows)
+        exact = sum(r['metrics']['exact_positions'] if 'exact_positions' in r['metrics'] else
+            r['metrics']['empty_terminal_exact'] + r['metrics']['nonempty_exact'] for r in rows)
         groups.append(dict(cohort=cohort, mode=mode, positions=sum(r['positions'] for r in rows),
             exact_legal_move_sets=exact, candidate_rows=sum(r['rows'] for r in rows),
             **{key:sum(r['metrics'][key] for r in rows) for key in
