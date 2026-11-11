@@ -114,8 +114,12 @@ def train(records, runtime, out, *, dataset_hash, abstraction='relational', depe
         heldout_labels_used=False, neutral_prior=PRIOR.json(), observation_confidence=.5,
         label_counts=dict(Counter(r['label'] for r in records)), native_joint_strategic_theorems=0,
         scope='Three independent conditional channels, not normalized probabilities or a move-selection utility.')
-    model.export(out / 'checkpoint.json')
-    assert PreferenceModel.load(out / 'checkpoint.json', runtime).version == model.version
+    checkpoint = out / 'checkpoint.json'
+    if checkpoint.exists():
+        assert PreferenceModel.load(checkpoint, runtime).version == model.version, 'Retain the previous model and use a new generation directory'
+    else:
+        model.export(checkpoint)
+    assert PreferenceModel.load(checkpoint, runtime).version == model.version
     pack(out / 'native-training.json.xz', dict(model_version=model.version, dataset_hash=dataset_hash,
         traces=[{**node, 'truth_value': values[node['id']].json()} for node in traces], excluded=excluded,
         training_report=model.training_report))

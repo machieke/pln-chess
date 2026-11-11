@@ -95,8 +95,12 @@ def run(out):
         native_cache_hits=session.hits, excluded_components=len(excluded), heldout_labels_used=False,
         field_model_version=field.version, starting_concept_model_version=concept.version,
         scope='Learned piece-independent conditionals on supplied occupancy/allegiance and separately inferred attack states; no conjunction or hardcoded fork verdict.')
-    model.export(out / 'model/C13-fork-role.json')
-    assert ForkModel.load(out / 'model/C13-fork-role.json', runtime).version == model.version
+    checkpoint = out / 'model/C13-fork-role.json'
+    if checkpoint.exists():
+        assert ForkModel.load(checkpoint, runtime).version == model.version, 'Retain the previous fork study before changing its checkpoint'
+    else:
+        model.export(checkpoint)
+    assert ForkModel.load(checkpoint, runtime).version == model.version
     pack(out / 'forks/training-observations.json.xz', observed)
     pack(out / 'forks/ledger.json.xz', ledger)
     pack(out / 'forks/native-training.json.xz', dict(model_version=model.version,
