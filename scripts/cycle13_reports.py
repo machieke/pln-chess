@@ -159,6 +159,8 @@ Evidence: {link('performance/summary.json')}, {link('performance/workloads.json'
 
 Starting reproduction passed 534 tests, 206 legal shards and 584,112 ordered candidate proofs. The current fresh checkout passes {current['test_count']} tests, every shard, 287 negative controls, 27 history controls, two recoveries and 76 holdouts with exact native proof parity. The final post-acceptance test run passes {checks['tests']} tests. The accepted legal checkpoint remains byte-identical to Cycle 12.
 
+The final full suite is partitioned by complete modules across {checks['test_processes']} isolated pytest processes, each with its own temporary and cache directories. Collection identities, command logs and JUnit reports verify that every collected item executes exactly once, with no failures, errors or skips.
+
 A second fresh checkout regenerated all 340 pair labels, 120 endpoint labels, 400 complete native feature artifacts, fork learning, all preference fits, ablations, controls and concept results. {clean['compared_artifacts']} artifacts compare exactly under the documented semantics; model checkpoints are byte-identical. The pinned offline reference engine rebuilt to the exact registered executable hash. The source checkout remained clean.
 
 Execution counters and incremental flags, and wall-clock timestamps on ledger records, are the only exclusions from research semantic comparison. Raw telemetry remains archived. No ordered native expression, premise, truth value, graph, label, rule or evidence identity is excluded. Bootstrap pins Python dependencies, native runtime and PLN source; no upstream source was edited.
