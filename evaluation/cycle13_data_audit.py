@@ -35,6 +35,12 @@ def run(out,require_labels=False):
     concepts=read_json(out/'datasets/external-concepts.json');value=concepts.pop('hash');assert digest(concepts)==value
     games={normalized_game(r) for r in rows};external={r['source_game'] for r in concepts['records']}
     assert not games&external and len(external)==len(concepts['records'])
+    from training.cycle12_data import canonical_motif
+    old=read_json(ROOT/'artifacts/cycle12/datasets/concepts.json')['records']
+    learned={digest(canonical_motif(r['input'])) for r in old if r['split']=='train'}
+    learned.update(r['structural_family'].split(':',1)[1] for r in old if r['split']=='train')
+    external_motifs={digest(canonical_motif(r['input'])) for r in concepts['records']}
+    assert len(external_motifs)==len(concepts['records']) and not external_motifs&learned
     concept_groups={r['dependence_group'] for r in concepts['records']}
     assert all(c['dependence_group'] in concept_groups and c['independent_example'] is False for c in concepts['controls'])
     labels=None;label_path=out/'datasets/reference-labels.json'
@@ -55,7 +61,8 @@ def run(out,require_labels=False):
             assert record['split']==row['split'] and record['dependence_group']==row['dependence_group']
     receipt=dict(passed=True,source_pairs=len(rows),source_hash=expected,partition_audit=partitions,
         external_concept_cases=len(concepts['records']),external_concept_controls=len(concepts['controls']),
-        external_concept_games_disjoint=True,source_history_and_candidate_legal_replay_verified=True,
+        external_concept_games_disjoint=True,external_concept_raw_motifs_disjoint_from_training=True,
+        external_concept_raw_families=len(external_motifs),source_history_and_candidate_legal_replay_verified=True,
         labels_verified=len(labels['records']) if labels else 0,teacher_labels_required=require_labels,
         raw_labels_are_not_production_inference=True,driver_sha256=sha(__file__),
         scope='Offline reference integrity and conservative ancestry partition checks; no strategic correctness or native preference claim.')
