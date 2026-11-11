@@ -86,7 +86,8 @@ def run(out, binary=None):
                 identifier = plan['id'] + f'-ply{horizon}'
                 path = out / 'temporal-labels' / (identifier + '.json')
                 identity = dict(plan_hash=digest(plan), source_hash=data['hash'], reference_binary_sha256=binary_hash,
-                    config=config, horizon=horizon, driver_sha256=sha(__file__))
+                    config=config, horizon=horizon, driver_sha256=sha(__file__),
+                    label_policy_sha256=sha(ROOT / 'training/cycle13_labels.py'))
                 if path.exists():
                     record = read_json(path)
                     assert record['identity'] == identity, 'Use a new temporal label output directory'
