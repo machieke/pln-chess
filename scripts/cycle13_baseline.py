@@ -18,7 +18,9 @@ from scripts.cycle9_baseline import sha
 START = 'b000898a0a1f46e556f161982f2c0e6d3944c322'
 
 
-def run(out, source):
+def run(out, source, workers=6):
+    if type(workers) is not int or not 1 <= workers <= 8:
+        raise ValueError('Choose one through eight isolated legal replay workers')
     out, source = Path(out).resolve(), Path(source).resolve()
     out.mkdir(parents=True, exist_ok=True)
     if not source.exists():
@@ -97,7 +99,7 @@ dependencies={k:importlib.metadata.version(k) for k in ('pytest','chess','setupt
     write_json(out/'legal/panel.json',population)
 
     def legal():
-        with ThreadPoolExecutor(max_workers=4) as pool:
+        with ThreadPoolExecutor(max_workers=workers) as pool:
             jobs=[pool.submit(command,'legal-'+job['id'],['-m','scripts.cycle12_legal_review',
                 '--out',str(out),'--source',str(source),'--worker',job['id']]) for job in population['jobs']]
             for job in jobs:job.result()
@@ -162,4 +164,5 @@ dependencies={k:importlib.metadata.version(k) for k in ('pytest','chess','setupt
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--out',required=True);parser.add_argument('--source',required=True)
-    args=parser.parse_args();run(args.out,args.source)
+    parser.add_argument('--workers',type=int,default=6)
+    args=parser.parse_args();run(args.out,args.source,args.workers)
