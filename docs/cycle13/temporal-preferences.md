@@ -1,13 +1,19 @@
-# Temporal preference study
+# Immediate and continuation-conditioned preferences
 
-Status: pre-fit registration. No temporal result is claimed until native inference and the independent endpoint-label replay are complete.
+The 60 fixed plans provide 120 two-/three-ply endpoint comparisons, split into 36 training, 12 calibration and 12 test source games. The temporal fit joins immediate and training continuation observations while preserving shared ancestry and distinct horizons. The held-out source games never update it. Endpoint labels use the original actor's perspective, including explicit mate outcomes.
 
-The study compares immediate consequences with two- and three-ply consequences for 60 registered pairs. It uses one explicitly supplied reference PV per candidate, selected without PLN predictions. The branch-selection source, original game, original actor, complete supplied history, endpoint state and unexamined-response gap accompany every example. All supplied branches are hypothetical observations, not automatic move selection.
+| Panel | Continued answers | Continued accuracy | Immediate answers | Immediate accuracy | Both answered | Reversals | Reference changes |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 2-calibration | 2 | 0.500 | 4 | 0.500 | 1 | 0 | 3 |
+| 2-test | 2 | 0.000 | 2 | 0.500 | 0 | 0 | 5 |
+| 2-train | 18 | 1.000 | 13 | 1.000 | 12 | 0 | 12 |
+| 3-calibration | 4 | 0.250 | 4 | 0.750 | 4 | 2 | 3 |
+| 3-test | 1 | 1.000 | 2 | 1.000 | 2 | 0 | 6 |
+| 3-train | 18 | 1.000 | 15 | 1.000 | 15 | 0 | 13 |
 
-Each state requires separate legal beliefs, field records, bounded concept candidates and native proof provenance. Host comparisons report attack creation/removal, defense changes, mobility, king exposure and concept persistence/disappearance. They do not synthesize a native temporal truth value or a handcoded rollout score.
 
-Separate offline endpoint comparisons at the two registered node budgets provide continued preference evidence. The endpoint score perspective stays with the original actor even after an odd number of moves. Source history is replayed before the hypothetical moves so that the reference has the registered history rather than only an isolated FEN. Immediate and continuation labels may differ; the study retains both and reports stability, reversals, abstentions and unknown supervision.
+The no-continuation arm uses the original immediate belief against the same endpoint labels. The continuation arm changes observations and training evidence together, so an observed difference does not isolate a causal effect of temporal information. Equal statuses may simply mean equal abstention. Unexamined responses are unknown, and local relational improvements do not guarantee an outcome.
 
-Training, calibration and test partitions inherit original source ancestry. Two and three plies from one game are dependent evidence. A temporal model must identify the horizon and supplied continuation context; it cannot treat those records as unrelated independent outcomes. The no-temporal ablation uses the immediate conditional in the same evaluation cohort and is reported separately from a continuation-conditioned model.
+There are 0 native joint temporal theorems. The branch and endpoint explanations are complete for their supplied bounded workload, not exhaustive chess futures.
 
-An omitted response remains unknown. Missing moves, a structurally unavailable successor, unequal branch depths, native failure and budget exhaustion must be explicit. No experiment establishes exhaustive response coverage, minimax optimality, tactical safety, game outcome or a complete native strategic theorem.
+Evidence: [temporal/summary.json](../../artifacts/cycle13/temporal/summary.json), [temporal/preferences.json.xz](../../artifacts/cycle13/temporal/preferences.json.xz), [ablations/temporal.json](../../artifacts/cycle13/ablations/temporal.json).
