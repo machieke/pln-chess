@@ -1,0 +1,153 @@
+{
+  "dependence_group": "c13-ancestry:0bf9129e00d09631c4477e9650ce63ada60651d55e050af19adddc5c8b627576",
+  "evaluations": [
+    {
+      "candidates": [
+        {
+          "depth": 10,
+          "engine_seconds": 0.084,
+          "lowerbound": false,
+          "move": "f5e4",
+          "nodes": 20013,
+          "pv": [
+            "f5e4",
+            "f7e6",
+            "d5e5",
+            "e6g4",
+            "e3f4",
+            "g4f4"
+          ],
+          "scope": "Offline reference-engine output, not a native PLN conclusion.",
+          "score": {
+            "cp": null,
+            "mate": -3,
+            "mate_outcome": "loss"
+          },
+          "seldepth": 13,
+          "upperbound": false,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        {
+          "depth": 11,
+          "engine_seconds": 0.083,
+          "lowerbound": false,
+          "move": "f5g4",
+          "nodes": 20013,
+          "pv": [
+            "f5g4",
+            "d1d5"
+          ],
+          "scope": "Offline reference-engine output, not a native PLN conclusion.",
+          "score": {
+            "cp": 97,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 22,
+          "upperbound": true,
+          "wdl": [
+            457,
+            543,
+            0
+          ]
+        }
+      ],
+      "elapsed_seconds": 0.11496362090110779,
+      "node_budget": 20000
+    },
+    {
+      "candidates": [
+        {
+          "depth": 17,
+          "engine_seconds": 0.277,
+          "lowerbound": false,
+          "move": "f5e4",
+          "nodes": 80064,
+          "pv": [
+            "f5e4",
+            "f7e6",
+            "d5e5",
+            "e6g4",
+            "e3f4",
+            "g4f4"
+          ],
+          "scope": "Offline reference-engine output, not a native PLN conclusion.",
+          "score": {
+            "cp": null,
+            "mate": -3,
+            "mate_outcome": "loss"
+          },
+          "seldepth": 18,
+          "upperbound": false,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        {
+          "depth": 17,
+          "engine_seconds": 0.264,
+          "lowerbound": true,
+          "move": "f5g4",
+          "nodes": 80064,
+          "pv": [
+            "f5g4"
+          ],
+          "scope": "Offline reference-engine output, not a native PLN conclusion.",
+          "score": {
+            "cp": 194,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 25,
+          "upperbound": false,
+          "wdl": [
+            998,
+            2,
+            0
+          ]
+        }
+      ],
+      "elapsed_seconds": 0.3068085312843323,
+      "node_budget": 80000
+    }
+  ],
+  "evidence_id": "reference-preference:e32681dd7c106edff54c963eddf75cb6b466b42041fd764cd4397732576f310c",
+  "id": "c13-puzzle-02xoa",
+  "identity": {
+    "config": {
+      "ambiguous_margin_cp": 20,
+      "hash_mib": 32,
+      "node_budgets": [
+        20000,
+        80000
+      ],
+      "preference_margin_cp": 80,
+      "release": "sf_18",
+      "threads": 1
+    },
+    "driver_sha256": "3cb14950417a460a5f1dc149795455fe8b0db63e5c688bb51f173c836ebf7690",
+    "reference_binary_sha256": "76ea026f6840620e542c263d166ab1711d2657bed5edbbc35f0334e78e52f520",
+    "row_hash": "01ac126bbe162c1cc2a85fb1271bc9c7c5759fa63d7b95b84d1bce09542ba8a2",
+    "source_hash": "66b12a19f465bec9313575475d5ee9a0f315923b75837579b74c9003937c4371"
+  },
+  "label": "unknown",
+  "probability_of_correctness": null,
+  "reason": "Unresolved score bound.",
+  "reference_selection_only": true,
+  "source": "Stockfish 18 fixed-node two-root comparisons",
+  "source_game": "https://lichess.org/game/LtneVdvK",
+  "split": "train",
+  "temporal_context": {
+    "initial_fen": "8/1p4Q1/p1p5/P2r1k1P/1P6/4qpP1/2K5/3R4 w - - 4 62",
+    "moves": [
+      "g7f7"
+    ],
+    "source": "https://lichess.org/game/LtneVdvK#123"
+  }
+}

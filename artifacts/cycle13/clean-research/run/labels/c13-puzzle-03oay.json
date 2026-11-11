@@ -1,0 +1,158 @@
+{
+  "dependence_group": "c13-ancestry:fc4fb300a1f0d79c08cb9084b7014d5a4fbcac9e0348910bc7f5d2bd37b93aad",
+  "evaluations": [
+    {
+      "candidates": [
+        {
+          "depth": 11,
+          "engine_seconds": 0.081,
+          "lowerbound": true,
+          "move": "h7g8",
+          "nodes": 20027,
+          "pv": [
+            "h7g8"
+          ],
+          "scope": "Offline reference-engine output, not a native PLN conclusion.",
+          "score": {
+            "cp": -190,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 22,
+          "upperbound": false,
+          "wdl": [
+            0,
+            3,
+            997
+          ]
+        },
+        {
+          "depth": 11,
+          "engine_seconds": 0.081,
+          "lowerbound": false,
+          "move": "f7f5",
+          "nodes": 20027,
+          "pv": [
+            "f7f5",
+            "e4e7",
+            "h7g8",
+            "e7e5"
+          ],
+          "scope": "Offline reference-engine output, not a native PLN conclusion.",
+          "score": {
+            "cp": 106,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 15,
+          "upperbound": false,
+          "wdl": [
+            600,
+            400,
+            0
+          ]
+        }
+      ],
+      "elapsed_seconds": 0.10608125571161509,
+      "node_budget": 20000
+    },
+    {
+      "candidates": [
+        {
+          "depth": 13,
+          "engine_seconds": 0.393,
+          "lowerbound": false,
+          "move": "h7g8",
+          "nodes": 80054,
+          "pv": [
+            "h7g8",
+            "h5e5"
+          ],
+          "scope": "Offline reference-engine output, not a native PLN conclusion.",
+          "score": {
+            "cp": -216,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 26,
+          "upperbound": true,
+          "wdl": [
+            0,
+            1,
+            999
+          ]
+        },
+        {
+          "depth": 13,
+          "engine_seconds": 0.393,
+          "lowerbound": false,
+          "move": "f7f5",
+          "nodes": 80054,
+          "pv": [
+            "f7f5",
+            "e4e7",
+            "h7g8",
+            "e7b4",
+            "b6g6",
+            "b4b5",
+            "g6h5",
+            "b5c4",
+            "h5f7",
+            "c4d3",
+            "f5f4",
+            "g3f4",
+            "f7f6"
+          ],
+          "scope": "Offline reference-engine output, not a native PLN conclusion.",
+          "score": {
+            "cp": 187,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 18,
+          "upperbound": false,
+          "wdl": [
+            996,
+            4,
+            0
+          ]
+        }
+      ],
+      "elapsed_seconds": 0.4222529325634241,
+      "node_budget": 80000
+    }
+  ],
+  "evidence_id": "reference-preference:8782aa3f91425aa42472885588f541f3fd8305bdcfdd7facb9d1bd1f26e45125",
+  "id": "c13-puzzle-03oay",
+  "identity": {
+    "config": {
+      "ambiguous_margin_cp": 20,
+      "hash_mib": 32,
+      "node_budgets": [
+        20000,
+        80000
+      ],
+      "preference_margin_cp": 80,
+      "release": "sf_18",
+      "threads": 1
+    },
+    "driver_sha256": "3cb14950417a460a5f1dc149795455fe8b0db63e5c688bb51f173c836ebf7690",
+    "reference_binary_sha256": "76ea026f6840620e542c263d166ab1711d2657bed5edbbc35f0334e78e52f520",
+    "row_hash": "cb876cc49004a5db3f99fc6ad6be27057b813cfc903730778fa6d9cf15946536",
+    "source_hash": "66b12a19f465bec9313575475d5ee9a0f315923b75837579b74c9003937c4371"
+  },
+  "label": "unknown",
+  "probability_of_correctness": null,
+  "reason": "Unresolved score bound.",
+  "reference_selection_only": true,
+  "source": "Stockfish 18 fixed-node two-root comparisons",
+  "source_game": "https://lichess.org/game/s6EJBdLw",
+  "split": "test",
+  "temporal_context": {
+    "initial_fen": "2b2r2/5p1k/1q5p/1p5R/2p2QpP/3p2P1/PP4PK/3R4 w - - 4 27",
+    "moves": [
+      "f4e4"
+    ],
+    "source": "https://lichess.org/game/s6EJBdLw#53"
+  }
+}

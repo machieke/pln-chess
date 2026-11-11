@@ -1,0 +1,157 @@
+{
+  "dependence_group": "c13-ancestry:faee5beca94743172a43c98989b322ead554d48aa833d8177f5ce6aed5c6bf18",
+  "evaluations": [
+    {
+      "candidates": [
+        {
+          "depth": 12,
+          "engine_seconds": 0.08,
+          "lowerbound": false,
+          "move": "h7h8q",
+          "nodes": 20010,
+          "pv": [
+            "h7h8q",
+            "h2h8"
+          ],
+          "scope": "Offline reference-engine output, not a native PLN conclusion.",
+          "score": {
+            "cp": 123,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 21,
+          "upperbound": true,
+          "wdl": [
+            817,
+            183,
+            0
+          ]
+        },
+        {
+          "depth": 11,
+          "engine_seconds": 0.08,
+          "lowerbound": false,
+          "move": "a8a2",
+          "nodes": 20010,
+          "pv": [
+            "a8a2",
+            "h2h7",
+            "a2f2",
+            "h7h1",
+            "c1d2",
+            "c6d5",
+            "d2c3",
+            "d5e4",
+            "c3d2",
+            "h1g1"
+          ],
+          "scope": "Offline reference-engine output, not a native PLN conclusion.",
+          "score": {
+            "cp": -479,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 15,
+          "upperbound": false,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        }
+      ],
+      "elapsed_seconds": 0.12327795196324587,
+      "node_budget": 20000
+    },
+    {
+      "candidates": [
+        {
+          "depth": 13,
+          "engine_seconds": 0.207,
+          "lowerbound": true,
+          "move": "h7h8q",
+          "nodes": 80041,
+          "pv": [
+            "h7h8q"
+          ],
+          "scope": "Offline reference-engine output, not a native PLN conclusion.",
+          "score": {
+            "cp": 204,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 23,
+          "upperbound": false,
+          "wdl": [
+            999,
+            1,
+            0
+          ]
+        },
+        {
+          "depth": 13,
+          "engine_seconds": 0.217,
+          "lowerbound": false,
+          "move": "a8a2",
+          "nodes": 80041,
+          "pv": [
+            "a8a2",
+            "h2h1",
+            "c1b2",
+            "h1h7",
+            "a2a6",
+            "c6d5"
+          ],
+          "scope": "Offline reference-engine output, not a native PLN conclusion.",
+          "score": {
+            "cp": -535,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 14,
+          "upperbound": false,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        }
+      ],
+      "elapsed_seconds": 0.2551289480179548,
+      "node_budget": 80000
+    }
+  ],
+  "evidence_id": "reference-preference:80354422b5603a1d554ba8274c49196f27508a7e405c26a4978d2971f25ddc08",
+  "id": "c13-puzzle-0BPEg",
+  "identity": {
+    "config": {
+      "ambiguous_margin_cp": 20,
+      "hash_mib": 32,
+      "node_budgets": [
+        20000,
+        80000
+      ],
+      "preference_margin_cp": 80,
+      "release": "sf_18",
+      "threads": 1
+    },
+    "driver_sha256": "3cb14950417a460a5f1dc149795455fe8b0db63e5c688bb51f173c836ebf7690",
+    "reference_binary_sha256": "76ea026f6840620e542c263d166ab1711d2657bed5edbbc35f0334e78e52f520",
+    "row_hash": "c4da8af188da890a2edd092d68388805797e31baa98fd39f5f2aca102697c988",
+    "source_hash": "66b12a19f465bec9313575475d5ee9a0f315923b75837579b74c9003937c4371"
+  },
+  "label": "unknown",
+  "probability_of_correctness": null,
+  "reason": "Unresolved score bound.",
+  "reference_selection_only": true,
+  "source": "Stockfish 18 fixed-node two-root comparisons",
+  "source_game": "https://lichess.org/game/9O1AClep",
+  "split": "train",
+  "temporal_context": {
+    "initial_fen": "R7/3k3P/3p4/2p2p2/8/3p4/7r/2K5 b - - 2 44",
+    "moves": [
+      "d7c6"
+    ],
+    "source": "https://lichess.org/game/9O1AClep/black#88"
+  }
+}

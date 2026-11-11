@@ -1,0 +1,334 @@
+{
+  "additional_independent_observations": 0,
+  "causal_scope": "Confidence inflation caused by counting repeated inputs in this controlled replay; no claim of causal strategic importance.",
+  "native_confidence_inflation_rules": 44,
+  "paired_control": "Same repeated deliveries; only dependence grouping changes.",
+  "results": {
+    "dependent-conflict": {
+      "metrics": {
+        "abstention_rate": 0.6,
+        "accuracy_including_abstention": 0.3333333333333333,
+        "complete_joint_strategic_proofs": 0,
+        "conditional_proof_coverage": 0.5892857142857143,
+        "confusion": {
+          "A": {
+            "false_positive": 0,
+            "missed_including_abstention": 6,
+            "true_positive": 4
+          },
+          "B": {
+            "false_positive": 1,
+            "missed_including_abstention": 4,
+            "true_positive": 1
+          }
+        },
+        "contradiction_rate": 0.0,
+        "contradictions": 0,
+        "correct_directional_answers": 5,
+        "correctly_supported_no_preference": 0,
+        "directional_abstentions": 9,
+        "directional_answers": 6,
+        "directional_answers_without_resolved_reference": 15,
+        "directional_coverage": 0.4,
+        "directional_examples": 15,
+        "examples": 56,
+        "incomplete": 0,
+        "incomplete_rate": 0.0,
+        "independent_groups": 56,
+        "interpretation": "Accuracy concerns answered, directionally labeled pairs; unknown teacher labels are excluded, and abstention-inclusive accuracy is separate. No-demonstrated preference is not a forced direction.",
+        "label_counts": {
+          "A": 10,
+          "B": 5,
+          "unknown": 41
+        },
+        "native_conditional_proofs": 33,
+        "no_demonstrated_examples": 0,
+        "pairwise_accuracy": 0.8333333333333334,
+        "precision": {
+          "A": 1.0,
+          "B": 0.5
+        },
+        "recall_including_abstention": {
+          "A": 0.4,
+          "B": 0.2
+        },
+        "unknown_label_examples": 41,
+        "unsupported_direction_on_ambiguous": 0
+      },
+      "model_version": "1cf3734e21aada2d927c75aa7101ef3cfbbec15689883798ad82e37301e1a5d6",
+      "training_report": {
+        "dataset_hash": "898f4507ef15bb4cab76b2c469d5b921f82238f65b2d0bd43b9e0ff28aa66228",
+        "dependence_handling": true,
+        "excluded_observations": {
+          "contradictory-dependent-component": 1,
+          "direction-collapses-under-relative-abstraction": 1,
+          "unresolved-reference-label": 152
+        },
+        "executed_native_operators": 17,
+        "heldout_labels_used": false,
+        "hypotheses": 44,
+        "label_counts": {
+          "A": 22,
+          "B": 48,
+          "no-demonstrated-preference": 1,
+          "unknown": 152
+        },
+        "native_cache_hits": 187,
+        "native_joint_strategic_theorems": 0,
+        "native_revision_nodes": 204,
+        "neutral_prior": {
+          "confidence": 0.05,
+          "strength": 0.5
+        },
+        "observation_confidence": 0.5,
+        "scope": "Three independent conditional channels, not normalized probabilities or a move-selection utility.",
+        "training_examples": 223,
+        "unique_evidence": 223
+      }
+    },
+    "ordinary": {
+      "metrics": {
+        "abstention_rate": 0.6,
+        "accuracy_including_abstention": 0.3333333333333333,
+        "complete_joint_strategic_proofs": 0,
+        "conditional_proof_coverage": 0.5892857142857143,
+        "confusion": {
+          "A": {
+            "false_positive": 0,
+            "missed_including_abstention": 6,
+            "true_positive": 4
+          },
+          "B": {
+            "false_positive": 1,
+            "missed_including_abstention": 4,
+            "true_positive": 1
+          }
+        },
+        "contradiction_rate": 0.0,
+        "contradictions": 0,
+        "correct_directional_answers": 5,
+        "correctly_supported_no_preference": 0,
+        "directional_abstentions": 9,
+        "directional_answers": 6,
+        "directional_answers_without_resolved_reference": 15,
+        "directional_coverage": 0.4,
+        "directional_examples": 15,
+        "examples": 56,
+        "incomplete": 0,
+        "incomplete_rate": 0.0,
+        "independent_groups": 56,
+        "interpretation": "Accuracy concerns answered, directionally labeled pairs; unknown teacher labels are excluded, and abstention-inclusive accuracy is separate. No-demonstrated preference is not a forced direction.",
+        "label_counts": {
+          "A": 10,
+          "B": 5,
+          "unknown": 41
+        },
+        "native_conditional_proofs": 33,
+        "no_demonstrated_examples": 0,
+        "pairwise_accuracy": 0.8333333333333334,
+        "precision": {
+          "A": 1.0,
+          "B": 0.5
+        },
+        "recall_including_abstention": {
+          "A": 0.4,
+          "B": 0.2
+        },
+        "unknown_label_examples": 41,
+        "unsupported_direction_on_ambiguous": 0
+      },
+      "model_version": "658db2b50b90fe26f4bb27396a88b0ceb662e13e948d4f9cda57b1f3c390e13c",
+      "training_report": {
+        "dataset_hash": "53e15d1c267b3bc8c014dfb47212360612873bb8de7f19e8d98d5b0cd3ae81d7",
+        "dependence_handling": true,
+        "excluded_observations": {
+          "direction-collapses-under-relative-abstraction": 1,
+          "unresolved-reference-label": 152
+        },
+        "executed_native_operators": 17,
+        "heldout_labels_used": false,
+        "hypotheses": 44,
+        "label_counts": {
+          "A": 22,
+          "B": 47,
+          "no-demonstrated-preference": 1,
+          "unknown": 152
+        },
+        "native_cache_hits": 190,
+        "native_joint_strategic_theorems": 0,
+        "native_revision_nodes": 207,
+        "neutral_prior": {
+          "confidence": 0.05,
+          "strength": 0.5
+        },
+        "observation_confidence": 0.5,
+        "scope": "Three independent conditional channels, not normalized probabilities or a move-selection utility.",
+        "training_examples": 222,
+        "unique_evidence": 222
+      }
+    },
+    "replicated-handled": {
+      "metrics": {
+        "abstention_rate": 0.6,
+        "accuracy_including_abstention": 0.3333333333333333,
+        "complete_joint_strategic_proofs": 0,
+        "conditional_proof_coverage": 0.5892857142857143,
+        "confusion": {
+          "A": {
+            "false_positive": 0,
+            "missed_including_abstention": 6,
+            "true_positive": 4
+          },
+          "B": {
+            "false_positive": 1,
+            "missed_including_abstention": 4,
+            "true_positive": 1
+          }
+        },
+        "contradiction_rate": 0.0,
+        "contradictions": 0,
+        "correct_directional_answers": 5,
+        "correctly_supported_no_preference": 0,
+        "directional_abstentions": 9,
+        "directional_answers": 6,
+        "directional_answers_without_resolved_reference": 15,
+        "directional_coverage": 0.4,
+        "directional_examples": 15,
+        "examples": 56,
+        "incomplete": 0,
+        "incomplete_rate": 0.0,
+        "independent_groups": 56,
+        "interpretation": "Accuracy concerns answered, directionally labeled pairs; unknown teacher labels are excluded, and abstention-inclusive accuracy is separate. No-demonstrated preference is not a forced direction.",
+        "label_counts": {
+          "A": 10,
+          "B": 5,
+          "unknown": 41
+        },
+        "native_conditional_proofs": 33,
+        "no_demonstrated_examples": 0,
+        "pairwise_accuracy": 0.8333333333333334,
+        "precision": {
+          "A": 1.0,
+          "B": 0.5
+        },
+        "recall_including_abstention": {
+          "A": 0.4,
+          "B": 0.2
+        },
+        "unknown_label_examples": 41,
+        "unsupported_direction_on_ambiguous": 0
+      },
+      "model_version": "84db7e89081f95ca952a5236a71998bfd24d47da3f90965a8c46fde28bb1e373",
+      "training_report": {
+        "dataset_hash": "64d2ead93c5e8f38b23ef6d22095ac99cefaee8c40a3eab01e09c65183a062ce",
+        "dependence_handling": true,
+        "excluded_observations": {
+          "direction-collapses-under-relative-abstraction": 3,
+          "shared-ancestry": 69,
+          "unresolved-reference-label": 456
+        },
+        "executed_native_operators": 17,
+        "heldout_labels_used": false,
+        "hypotheses": 44,
+        "label_counts": {
+          "A": 66,
+          "B": 141,
+          "no-demonstrated-preference": 3,
+          "unknown": 456
+        },
+        "native_cache_hits": 190,
+        "native_joint_strategic_theorems": 0,
+        "native_revision_nodes": 207,
+        "neutral_prior": {
+          "confidence": 0.05,
+          "strength": 0.5
+        },
+        "observation_confidence": 0.5,
+        "scope": "Three independent conditional channels, not normalized probabilities or a move-selection utility.",
+        "training_examples": 666,
+        "unique_evidence": 666
+      }
+    },
+    "replicated-naive": {
+      "metrics": {
+        "abstention_rate": 0.6,
+        "accuracy_including_abstention": 0.3333333333333333,
+        "complete_joint_strategic_proofs": 0,
+        "conditional_proof_coverage": 0.5892857142857143,
+        "confusion": {
+          "A": {
+            "false_positive": 0,
+            "missed_including_abstention": 6,
+            "true_positive": 4
+          },
+          "B": {
+            "false_positive": 1,
+            "missed_including_abstention": 4,
+            "true_positive": 1
+          }
+        },
+        "contradiction_rate": 0.0,
+        "contradictions": 0,
+        "correct_directional_answers": 5,
+        "correctly_supported_no_preference": 0,
+        "directional_abstentions": 9,
+        "directional_answers": 6,
+        "directional_answers_without_resolved_reference": 15,
+        "directional_coverage": 0.4,
+        "directional_examples": 15,
+        "examples": 56,
+        "incomplete": 0,
+        "incomplete_rate": 0.0,
+        "independent_groups": 56,
+        "interpretation": "Accuracy concerns answered, directionally labeled pairs; unknown teacher labels are excluded, and abstention-inclusive accuracy is separate. No-demonstrated preference is not a forced direction.",
+        "label_counts": {
+          "A": 10,
+          "B": 5,
+          "unknown": 41
+        },
+        "native_conditional_proofs": 33,
+        "no_demonstrated_examples": 0,
+        "pairwise_accuracy": 0.8333333333333334,
+        "precision": {
+          "A": 1.0,
+          "B": 0.5
+        },
+        "recall_including_abstention": {
+          "A": 0.4,
+          "B": 0.2
+        },
+        "unknown_label_examples": 41,
+        "unsupported_direction_on_ambiguous": 0
+      },
+      "model_version": "f74c260194dbb3c7e8e381950bca4ba4ac7850e5d79a2ad332acc1990069f222",
+      "training_report": {
+        "dataset_hash": "64d2ead93c5e8f38b23ef6d22095ac99cefaee8c40a3eab01e09c65183a062ce",
+        "dependence_handling": false,
+        "excluded_observations": {
+          "direction-collapses-under-relative-abstraction": 3,
+          "unresolved-reference-label": 456
+        },
+        "executed_native_operators": 111,
+        "heldout_labels_used": false,
+        "hypotheses": 44,
+        "label_counts": {
+          "A": 66,
+          "B": 141,
+          "no-demonstrated-preference": 3,
+          "unknown": 456
+        },
+        "native_cache_hits": 510,
+        "native_joint_strategic_theorems": 0,
+        "native_revision_nodes": 621,
+        "neutral_prior": {
+          "confidence": 0.05,
+          "strength": 0.5
+        },
+        "observation_confidence": 0.5,
+        "scope": "Three independent conditional channels, not normalized probabilities or a move-selection utility.",
+        "training_examples": 666,
+        "unique_evidence": 666
+      }
+    }
+  }
+}

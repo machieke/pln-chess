@@ -1,0 +1,683 @@
+{
+  "bootstrap": {
+    "calibration": {
+      "groups": 62,
+      "intervals": {
+        "accuracy_including_abstention": {
+          "lower": 0.12,
+          "upper": 0.45,
+          "valid_replicates": 1000
+        },
+        "contradiction_rate": {
+          "lower": 0.0,
+          "upper": 0.0,
+          "valid_replicates": 1000
+        },
+        "directional_coverage": {
+          "lower": 0.2857142857142857,
+          "upper": 0.6666666666666666,
+          "valid_replicates": 1000
+        },
+        "pairwise_accuracy": {
+          "lower": 0.2857142857142857,
+          "upper": 0.8666666666666667,
+          "valid_replicates": 1000
+        }
+      },
+      "limitations": "Small panels and selected tactical sources limit generalization; intervals do not capture teacher-label or source-selection uncertainty.",
+      "method": "Percentile 95% cluster bootstrap over connected ancestry components; all correlated rows travel together.",
+      "repetitions": 1000,
+      "seed": 131313
+    },
+    "test": {
+      "groups": 56,
+      "intervals": {
+        "accuracy_including_abstention": {
+          "lower": 0.1111111111111111,
+          "upper": 0.5833333333333334,
+          "valid_replicates": 1000
+        },
+        "contradiction_rate": {
+          "lower": 0.0,
+          "upper": 0.0,
+          "valid_replicates": 1000
+        },
+        "directional_coverage": {
+          "lower": 0.14285714285714285,
+          "upper": 0.6470588235294118,
+          "valid_replicates": 1000
+        },
+        "pairwise_accuracy": {
+          "lower": 0.5,
+          "upper": 1.0,
+          "valid_replicates": 998
+        }
+      },
+      "limitations": "Small panels and selected tactical sources limit generalization; intervals do not capture teacher-label or source-selection uncertainty.",
+      "method": "Percentile 95% cluster bootstrap over connected ancestry components; all correlated rows travel together.",
+      "repetitions": 1000,
+      "seed": 131313
+    },
+    "test-ambiguous": {
+      "groups": 0,
+      "intervals": {},
+      "repetitions": 1000
+    },
+    "test-external-tactical": {
+      "groups": 36,
+      "intervals": {
+        "accuracy_including_abstention": {
+          "lower": 0.06666666666666667,
+          "upper": 0.5833333333333334,
+          "valid_replicates": 1000
+        },
+        "contradiction_rate": {
+          "lower": 0.0,
+          "upper": 0.0,
+          "valid_replicates": 1000
+        },
+        "directional_coverage": {
+          "lower": 0.125,
+          "upper": 0.6666666666666666,
+          "valid_replicates": 1000
+        },
+        "pairwise_accuracy": {
+          "lower": 0.3333333333333333,
+          "upper": 1.0,
+          "valid_replicates": 997
+        }
+      },
+      "limitations": "Small panels and selected tactical sources limit generalization; intervals do not capture teacher-label or source-selection uncertainty.",
+      "method": "Percentile 95% cluster bootstrap over connected ancestry components; all correlated rows travel together.",
+      "repetitions": 1000,
+      "seed": 131313
+    },
+    "test-independent-games": {
+      "groups": 20,
+      "intervals": {
+        "accuracy_including_abstention": {
+          "lower": 0.0,
+          "upper": 1.0,
+          "valid_replicates": 888
+        },
+        "contradiction_rate": {
+          "lower": 0.0,
+          "upper": 0.0,
+          "valid_replicates": 1000
+        },
+        "directional_coverage": {
+          "lower": 0.0,
+          "upper": 1.0,
+          "valid_replicates": 888
+        },
+        "pairwise_accuracy": {
+          "lower": 1.0,
+          "upper": 1.0,
+          "valid_replicates": 634
+        }
+      },
+      "limitations": "Small panels and selected tactical sources limit generalization; intervals do not capture teacher-label or source-selection uncertainty.",
+      "method": "Percentile 95% cluster bootstrap over connected ancestry components; all correlated rows travel together.",
+      "repetitions": 1000,
+      "seed": 131313
+    },
+    "test-promotion": {
+      "groups": 3,
+      "intervals": {
+        "accuracy_including_abstention": {
+          "lower": 1.0,
+          "upper": 1.0,
+          "valid_replicates": 720
+        },
+        "contradiction_rate": {
+          "lower": 0.0,
+          "upper": 0.0,
+          "valid_replicates": 1000
+        },
+        "directional_coverage": {
+          "lower": 1.0,
+          "upper": 1.0,
+          "valid_replicates": 720
+        },
+        "pairwise_accuracy": {
+          "lower": 1.0,
+          "upper": 1.0,
+          "valid_replicates": 720
+        }
+      },
+      "limitations": "Small panels and selected tactical sources limit generalization; intervals do not capture teacher-label or source-selection uncertainty.",
+      "method": "Percentile 95% cluster bootstrap over connected ancestry components; all correlated rows travel together.",
+      "repetitions": 1000,
+      "seed": 131313
+    },
+    "test-quiet": {
+      "groups": 25,
+      "intervals": {
+        "accuracy_including_abstention": {
+          "lower": 0.0,
+          "upper": 1.0,
+          "valid_replicates": 989
+        },
+        "contradiction_rate": {
+          "lower": 0.0,
+          "upper": 0.0,
+          "valid_replicates": 1000
+        },
+        "directional_coverage": {
+          "lower": 0.0,
+          "upper": 1.0,
+          "valid_replicates": 989
+        },
+        "pairwise_accuracy": {
+          "lower": 1.0,
+          "upper": 1.0,
+          "valid_replicates": 878
+        }
+      },
+      "limitations": "Small panels and selected tactical sources limit generalization; intervals do not capture teacher-label or source-selection uncertainty.",
+      "method": "Percentile 95% cluster bootstrap over connected ancestry components; all correlated rows travel together.",
+      "repetitions": 1000,
+      "seed": 131313
+    },
+    "test-unknown-reference": {
+      "groups": 41,
+      "intervals": {
+        "contradiction_rate": {
+          "lower": 0.0,
+          "upper": 0.0,
+          "valid_replicates": 1000
+        }
+      },
+      "limitations": "Small panels and selected tactical sources limit generalization; intervals do not capture teacher-label or source-selection uncertainty.",
+      "method": "Percentile 95% cluster bootstrap over connected ancestry components; all correlated rows travel together.",
+      "repetitions": 1000,
+      "seed": 131313
+    }
+  },
+  "cohorts": {
+    "external-tactical": 192,
+    "independent-games": 148
+  },
+  "dataset_hash": "302007ea4d7a00cb70e1a8d00b0243a03e364e68e659aa67c7bb61e3f3f64f57",
+  "heldout_threshold_tuning": false,
+  "hypotheses": 44,
+  "independent_groups": 340,
+  "model_version": "658db2b50b90fe26f4bb27396a88b0ceb662e13e948d4f9cda57b1f3c390e13c",
+  "native_training": {
+    "dataset_hash": "53e15d1c267b3bc8c014dfb47212360612873bb8de7f19e8d98d5b0cd3ae81d7",
+    "dependence_handling": true,
+    "excluded_observations": {
+      "direction-collapses-under-relative-abstraction": 1,
+      "unresolved-reference-label": 152
+    },
+    "executed_native_operators": 17,
+    "heldout_labels_used": false,
+    "hypotheses": 44,
+    "label_counts": {
+      "A": 22,
+      "B": 47,
+      "no-demonstrated-preference": 1,
+      "unknown": 152
+    },
+    "native_cache_hits": 190,
+    "native_joint_strategic_theorems": 0,
+    "native_revision_nodes": 207,
+    "neutral_prior": {
+      "confidence": 0.05,
+      "strength": 0.5
+    },
+    "observation_confidence": 0.5,
+    "scope": "Three independent conditional channels, not normalized probabilities or a move-selection utility.",
+    "training_examples": 222,
+    "unique_evidence": 222
+  },
+  "panels": {
+    "calibration": {
+      "abstention_rate": 0.52,
+      "accuracy_including_abstention": 0.28,
+      "complete_joint_strategic_proofs": 0,
+      "conditional_proof_coverage": 0.6290322580645161,
+      "confusion": {
+        "A": {
+          "false_positive": 3,
+          "missed_including_abstention": 9,
+          "true_positive": 6
+        },
+        "B": {
+          "false_positive": 2,
+          "missed_including_abstention": 9,
+          "true_positive": 1
+        }
+      },
+      "contradiction_rate": 0.0,
+      "contradictions": 0,
+      "correct_directional_answers": 7,
+      "correctly_supported_no_preference": 0,
+      "directional_abstentions": 13,
+      "directional_answers": 12,
+      "directional_answers_without_resolved_reference": 13,
+      "directional_coverage": 0.48,
+      "directional_examples": 25,
+      "examples": 62,
+      "incomplete": 0,
+      "incomplete_rate": 0.0,
+      "independent_groups": 62,
+      "interpretation": "Accuracy concerns answered, directionally labeled pairs; unknown teacher labels are excluded, and abstention-inclusive accuracy is separate. No-demonstrated preference is not a forced direction.",
+      "label_counts": {
+        "A": 15,
+        "B": 10,
+        "unknown": 37
+      },
+      "native_conditional_proofs": 39,
+      "no_demonstrated_examples": 0,
+      "pairwise_accuracy": 0.5833333333333334,
+      "precision": {
+        "A": 0.6666666666666666,
+        "B": 0.3333333333333333
+      },
+      "recall_including_abstention": {
+        "A": 0.4,
+        "B": 0.1
+      },
+      "unknown_label_examples": 37,
+      "unsupported_direction_on_ambiguous": 0
+    },
+    "test": {
+      "abstention_rate": 0.6,
+      "accuracy_including_abstention": 0.3333333333333333,
+      "complete_joint_strategic_proofs": 0,
+      "conditional_proof_coverage": 0.5892857142857143,
+      "confusion": {
+        "A": {
+          "false_positive": 0,
+          "missed_including_abstention": 6,
+          "true_positive": 4
+        },
+        "B": {
+          "false_positive": 1,
+          "missed_including_abstention": 4,
+          "true_positive": 1
+        }
+      },
+      "contradiction_rate": 0.0,
+      "contradictions": 0,
+      "correct_directional_answers": 5,
+      "correctly_supported_no_preference": 0,
+      "directional_abstentions": 9,
+      "directional_answers": 6,
+      "directional_answers_without_resolved_reference": 15,
+      "directional_coverage": 0.4,
+      "directional_examples": 15,
+      "examples": 56,
+      "incomplete": 0,
+      "incomplete_rate": 0.0,
+      "independent_groups": 56,
+      "interpretation": "Accuracy concerns answered, directionally labeled pairs; unknown teacher labels are excluded, and abstention-inclusive accuracy is separate. No-demonstrated preference is not a forced direction.",
+      "label_counts": {
+        "A": 10,
+        "B": 5,
+        "unknown": 41
+      },
+      "native_conditional_proofs": 33,
+      "no_demonstrated_examples": 0,
+      "pairwise_accuracy": 0.8333333333333334,
+      "precision": {
+        "A": 1.0,
+        "B": 0.5
+      },
+      "recall_including_abstention": {
+        "A": 0.4,
+        "B": 0.2
+      },
+      "unknown_label_examples": 41,
+      "unsupported_direction_on_ambiguous": 0
+    },
+    "test-ambiguous": {
+      "abstention_rate": null,
+      "accuracy_including_abstention": null,
+      "complete_joint_strategic_proofs": 0,
+      "conditional_proof_coverage": null,
+      "confusion": {
+        "A": {
+          "false_positive": 0,
+          "missed_including_abstention": 0,
+          "true_positive": 0
+        },
+        "B": {
+          "false_positive": 0,
+          "missed_including_abstention": 0,
+          "true_positive": 0
+        }
+      },
+      "contradiction_rate": null,
+      "contradictions": 0,
+      "correct_directional_answers": 0,
+      "correctly_supported_no_preference": 0,
+      "directional_abstentions": 0,
+      "directional_answers": 0,
+      "directional_answers_without_resolved_reference": 0,
+      "directional_coverage": null,
+      "directional_examples": 0,
+      "examples": 0,
+      "incomplete": 0,
+      "incomplete_rate": null,
+      "independent_groups": 0,
+      "interpretation": "Accuracy concerns answered, directionally labeled pairs; unknown teacher labels are excluded, and abstention-inclusive accuracy is separate. No-demonstrated preference is not a forced direction.",
+      "label_counts": {},
+      "native_conditional_proofs": 0,
+      "no_demonstrated_examples": 0,
+      "pairwise_accuracy": null,
+      "precision": {
+        "A": null,
+        "B": null
+      },
+      "recall_including_abstention": {
+        "A": null,
+        "B": null
+      },
+      "unknown_label_examples": 0,
+      "unsupported_direction_on_ambiguous": 0
+    },
+    "test-external-tactical": {
+      "abstention_rate": 0.6153846153846154,
+      "accuracy_including_abstention": 0.3076923076923077,
+      "complete_joint_strategic_proofs": 0,
+      "conditional_proof_coverage": 0.5277777777777778,
+      "confusion": {
+        "A": {
+          "false_positive": 0,
+          "missed_including_abstention": 5,
+          "true_positive": 3
+        },
+        "B": {
+          "false_positive": 1,
+          "missed_including_abstention": 4,
+          "true_positive": 1
+        }
+      },
+      "contradiction_rate": 0.0,
+      "contradictions": 0,
+      "correct_directional_answers": 4,
+      "correctly_supported_no_preference": 0,
+      "directional_abstentions": 8,
+      "directional_answers": 5,
+      "directional_answers_without_resolved_reference": 6,
+      "directional_coverage": 0.38461538461538464,
+      "directional_examples": 13,
+      "examples": 36,
+      "incomplete": 0,
+      "incomplete_rate": 0.0,
+      "independent_groups": 36,
+      "interpretation": "Accuracy concerns answered, directionally labeled pairs; unknown teacher labels are excluded, and abstention-inclusive accuracy is separate. No-demonstrated preference is not a forced direction.",
+      "label_counts": {
+        "A": 8,
+        "B": 5,
+        "unknown": 23
+      },
+      "native_conditional_proofs": 19,
+      "no_demonstrated_examples": 0,
+      "pairwise_accuracy": 0.8,
+      "precision": {
+        "A": 1.0,
+        "B": 0.5
+      },
+      "recall_including_abstention": {
+        "A": 0.375,
+        "B": 0.2
+      },
+      "unknown_label_examples": 23,
+      "unsupported_direction_on_ambiguous": 0
+    },
+    "test-independent-games": {
+      "abstention_rate": 0.5,
+      "accuracy_including_abstention": 0.5,
+      "complete_joint_strategic_proofs": 0,
+      "conditional_proof_coverage": 0.7,
+      "confusion": {
+        "A": {
+          "false_positive": 0,
+          "missed_including_abstention": 1,
+          "true_positive": 1
+        },
+        "B": {
+          "false_positive": 0,
+          "missed_including_abstention": 0,
+          "true_positive": 0
+        }
+      },
+      "contradiction_rate": 0.0,
+      "contradictions": 0,
+      "correct_directional_answers": 1,
+      "correctly_supported_no_preference": 0,
+      "directional_abstentions": 1,
+      "directional_answers": 1,
+      "directional_answers_without_resolved_reference": 9,
+      "directional_coverage": 0.5,
+      "directional_examples": 2,
+      "examples": 20,
+      "incomplete": 0,
+      "incomplete_rate": 0.0,
+      "independent_groups": 20,
+      "interpretation": "Accuracy concerns answered, directionally labeled pairs; unknown teacher labels are excluded, and abstention-inclusive accuracy is separate. No-demonstrated preference is not a forced direction.",
+      "label_counts": {
+        "A": 2,
+        "unknown": 18
+      },
+      "native_conditional_proofs": 14,
+      "no_demonstrated_examples": 0,
+      "pairwise_accuracy": 1.0,
+      "precision": {
+        "A": 1.0,
+        "B": null
+      },
+      "recall_including_abstention": {
+        "A": 0.5,
+        "B": null
+      },
+      "unknown_label_examples": 18,
+      "unsupported_direction_on_ambiguous": 0
+    },
+    "test-promotion": {
+      "abstention_rate": 0.0,
+      "accuracy_including_abstention": 1.0,
+      "complete_joint_strategic_proofs": 0,
+      "conditional_proof_coverage": 0.3333333333333333,
+      "confusion": {
+        "A": {
+          "false_positive": 0,
+          "missed_including_abstention": 0,
+          "true_positive": 0
+        },
+        "B": {
+          "false_positive": 0,
+          "missed_including_abstention": 0,
+          "true_positive": 1
+        }
+      },
+      "contradiction_rate": 0.0,
+      "contradictions": 0,
+      "correct_directional_answers": 1,
+      "correctly_supported_no_preference": 0,
+      "directional_abstentions": 0,
+      "directional_answers": 1,
+      "directional_answers_without_resolved_reference": 0,
+      "directional_coverage": 1.0,
+      "directional_examples": 1,
+      "examples": 3,
+      "incomplete": 0,
+      "incomplete_rate": 0.0,
+      "independent_groups": 3,
+      "interpretation": "Accuracy concerns answered, directionally labeled pairs; unknown teacher labels are excluded, and abstention-inclusive accuracy is separate. No-demonstrated preference is not a forced direction.",
+      "label_counts": {
+        "B": 1,
+        "unknown": 2
+      },
+      "native_conditional_proofs": 1,
+      "no_demonstrated_examples": 0,
+      "pairwise_accuracy": 1.0,
+      "precision": {
+        "A": null,
+        "B": 1.0
+      },
+      "recall_including_abstention": {
+        "A": null,
+        "B": 1.0
+      },
+      "unknown_label_examples": 2,
+      "unsupported_direction_on_ambiguous": 0
+    },
+    "test-quiet": {
+      "abstention_rate": 0.5,
+      "accuracy_including_abstention": 0.5,
+      "complete_joint_strategic_proofs": 0,
+      "conditional_proof_coverage": 0.64,
+      "confusion": {
+        "A": {
+          "false_positive": 0,
+          "missed_including_abstention": 1,
+          "true_positive": 2
+        },
+        "B": {
+          "false_positive": 0,
+          "missed_including_abstention": 1,
+          "true_positive": 0
+        }
+      },
+      "contradiction_rate": 0.0,
+      "contradictions": 0,
+      "correct_directional_answers": 2,
+      "correctly_supported_no_preference": 0,
+      "directional_abstentions": 2,
+      "directional_answers": 2,
+      "directional_answers_without_resolved_reference": 9,
+      "directional_coverage": 0.5,
+      "directional_examples": 4,
+      "examples": 25,
+      "incomplete": 0,
+      "incomplete_rate": 0.0,
+      "independent_groups": 25,
+      "interpretation": "Accuracy concerns answered, directionally labeled pairs; unknown teacher labels are excluded, and abstention-inclusive accuracy is separate. No-demonstrated preference is not a forced direction.",
+      "label_counts": {
+        "A": 3,
+        "B": 1,
+        "unknown": 21
+      },
+      "native_conditional_proofs": 16,
+      "no_demonstrated_examples": 0,
+      "pairwise_accuracy": 1.0,
+      "precision": {
+        "A": 1.0,
+        "B": null
+      },
+      "recall_including_abstention": {
+        "A": 0.6666666666666666,
+        "B": 0.0
+      },
+      "unknown_label_examples": 21,
+      "unsupported_direction_on_ambiguous": 0
+    },
+    "test-unknown-reference": {
+      "abstention_rate": null,
+      "accuracy_including_abstention": null,
+      "complete_joint_strategic_proofs": 0,
+      "conditional_proof_coverage": 0.5853658536585366,
+      "confusion": {
+        "A": {
+          "false_positive": 0,
+          "missed_including_abstention": 0,
+          "true_positive": 0
+        },
+        "B": {
+          "false_positive": 0,
+          "missed_including_abstention": 0,
+          "true_positive": 0
+        }
+      },
+      "contradiction_rate": 0.0,
+      "contradictions": 0,
+      "correct_directional_answers": 0,
+      "correctly_supported_no_preference": 0,
+      "directional_abstentions": 0,
+      "directional_answers": 0,
+      "directional_answers_without_resolved_reference": 15,
+      "directional_coverage": null,
+      "directional_examples": 0,
+      "examples": 41,
+      "incomplete": 0,
+      "incomplete_rate": 0.0,
+      "independent_groups": 41,
+      "interpretation": "Accuracy concerns answered, directionally labeled pairs; unknown teacher labels are excluded, and abstention-inclusive accuracy is separate. No-demonstrated preference is not a forced direction.",
+      "label_counts": {
+        "unknown": 41
+      },
+      "native_conditional_proofs": 24,
+      "no_demonstrated_examples": 0,
+      "pairwise_accuracy": null,
+      "precision": {
+        "A": null,
+        "B": null
+      },
+      "recall_including_abstention": {
+        "A": null,
+        "B": null
+      },
+      "unknown_label_examples": 41,
+      "unsupported_direction_on_ambiguous": 0
+    },
+    "train": {
+      "abstention_rate": 0.34782608695652173,
+      "accuracy_including_abstention": 0.6521739130434783,
+      "complete_joint_strategic_proofs": 0,
+      "conditional_proof_coverage": 0.7747747747747747,
+      "confusion": {
+        "A": {
+          "false_positive": 0,
+          "missed_including_abstention": 9,
+          "true_positive": 13
+        },
+        "B": {
+          "false_positive": 0,
+          "missed_including_abstention": 15,
+          "true_positive": 32
+        }
+      },
+      "contradiction_rate": 0.0,
+      "contradictions": 0,
+      "correct_directional_answers": 45,
+      "correctly_supported_no_preference": 0,
+      "directional_abstentions": 24,
+      "directional_answers": 45,
+      "directional_answers_without_resolved_reference": 62,
+      "directional_coverage": 0.6521739130434783,
+      "directional_examples": 69,
+      "examples": 222,
+      "incomplete": 0,
+      "incomplete_rate": 0.0,
+      "independent_groups": 222,
+      "interpretation": "Accuracy concerns answered, directionally labeled pairs; unknown teacher labels are excluded, and abstention-inclusive accuracy is separate. No-demonstrated preference is not a forced direction.",
+      "label_counts": {
+        "A": 22,
+        "B": 47,
+        "no-demonstrated-preference": 1,
+        "unknown": 152
+      },
+      "native_conditional_proofs": 172,
+      "no_demonstrated_examples": 1,
+      "pairwise_accuracy": 1.0,
+      "precision": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "recall_including_abstention": {
+        "A": 0.5909090909090909,
+        "B": 0.6808510638297872
+      },
+      "unknown_label_examples": 152,
+      "unsupported_direction_on_ambiguous": 0
+    }
+  },
+  "passed": true,
+  "source_pairs": 340,
+  "strategic_strength_claimed": false,
+  "training_dataset_hash": "53e15d1c267b3bc8c014dfb47212360612873bb8de7f19e8d98d5b0cd3ae81d7"
+}

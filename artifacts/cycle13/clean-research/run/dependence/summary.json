@@ -1,0 +1,605 @@
+{
+  "contradictory_dependent_components_withheld": [
+    {
+      "dependence_groups": [
+        "c13-ancestry:024432bccb45f4c9f8f4060445daa097b4dd418f0625f090d631bc11bb49726f"
+      ],
+      "evidence_ids": [
+        "preference-evidence:1a467e32a64c9da1cda8ed1fb13f891e866409fcae92a0aa543e6a6d0fb467e1",
+        "preference-evidence:eb4b71385cac4c69e7b76a5d76d7b6933c8585ff073a02c9ac3683e90a605969"
+      ],
+      "reason": "contradictory-dependent-component",
+      "rule_id": "preference-rule:74f0e2bf5e8c9a14bec5f49a69b4812dd4bb7bc14697277c47fe64ebc96eb77b"
+    }
+  ],
+  "controlled_copies_are_not_independent": true,
+  "delivered_records": 666,
+  "duplicate_append_byte_identical": true,
+  "fixed_test_results": {
+    "dependent-conflict": {
+      "metrics": {
+        "abstention_rate": 0.6,
+        "accuracy_including_abstention": 0.3333333333333333,
+        "complete_joint_strategic_proofs": 0,
+        "conditional_proof_coverage": 0.5892857142857143,
+        "confusion": {
+          "A": {
+            "false_positive": 0,
+            "missed_including_abstention": 6,
+            "true_positive": 4
+          },
+          "B": {
+            "false_positive": 1,
+            "missed_including_abstention": 4,
+            "true_positive": 1
+          }
+        },
+        "contradiction_rate": 0.0,
+        "contradictions": 0,
+        "correct_directional_answers": 5,
+        "correctly_supported_no_preference": 0,
+        "directional_abstentions": 9,
+        "directional_answers": 6,
+        "directional_answers_without_resolved_reference": 15,
+        "directional_coverage": 0.4,
+        "directional_examples": 15,
+        "examples": 56,
+        "incomplete": 0,
+        "incomplete_rate": 0.0,
+        "independent_groups": 56,
+        "interpretation": "Accuracy concerns answered, directionally labeled pairs; unknown teacher labels are excluded, and abstention-inclusive accuracy is separate. No-demonstrated preference is not a forced direction.",
+        "label_counts": {
+          "A": 10,
+          "B": 5,
+          "unknown": 41
+        },
+        "native_conditional_proofs": 33,
+        "no_demonstrated_examples": 0,
+        "pairwise_accuracy": 0.8333333333333334,
+        "precision": {
+          "A": 1.0,
+          "B": 0.5
+        },
+        "recall_including_abstention": {
+          "A": 0.4,
+          "B": 0.2
+        },
+        "unknown_label_examples": 41,
+        "unsupported_direction_on_ambiguous": 0
+      },
+      "model_version": "1cf3734e21aada2d927c75aa7101ef3cfbbec15689883798ad82e37301e1a5d6",
+      "training_report": {
+        "dataset_hash": "898f4507ef15bb4cab76b2c469d5b921f82238f65b2d0bd43b9e0ff28aa66228",
+        "dependence_handling": true,
+        "excluded_observations": {
+          "contradictory-dependent-component": 1,
+          "direction-collapses-under-relative-abstraction": 1,
+          "unresolved-reference-label": 152
+        },
+        "executed_native_operators": 17,
+        "heldout_labels_used": false,
+        "hypotheses": 44,
+        "label_counts": {
+          "A": 22,
+          "B": 48,
+          "no-demonstrated-preference": 1,
+          "unknown": 152
+        },
+        "native_cache_hits": 187,
+        "native_joint_strategic_theorems": 0,
+        "native_revision_nodes": 204,
+        "neutral_prior": {
+          "confidence": 0.05,
+          "strength": 0.5
+        },
+        "observation_confidence": 0.5,
+        "scope": "Three independent conditional channels, not normalized probabilities or a move-selection utility.",
+        "training_examples": 223,
+        "unique_evidence": 223
+      }
+    },
+    "ordinary": {
+      "metrics": {
+        "abstention_rate": 0.6,
+        "accuracy_including_abstention": 0.3333333333333333,
+        "complete_joint_strategic_proofs": 0,
+        "conditional_proof_coverage": 0.5892857142857143,
+        "confusion": {
+          "A": {
+            "false_positive": 0,
+            "missed_including_abstention": 6,
+            "true_positive": 4
+          },
+          "B": {
+            "false_positive": 1,
+            "missed_including_abstention": 4,
+            "true_positive": 1
+          }
+        },
+        "contradiction_rate": 0.0,
+        "contradictions": 0,
+        "correct_directional_answers": 5,
+        "correctly_supported_no_preference": 0,
+        "directional_abstentions": 9,
+        "directional_answers": 6,
+        "directional_answers_without_resolved_reference": 15,
+        "directional_coverage": 0.4,
+        "directional_examples": 15,
+        "examples": 56,
+        "incomplete": 0,
+        "incomplete_rate": 0.0,
+        "independent_groups": 56,
+        "interpretation": "Accuracy concerns answered, directionally labeled pairs; unknown teacher labels are excluded, and abstention-inclusive accuracy is separate. No-demonstrated preference is not a forced direction.",
+        "label_counts": {
+          "A": 10,
+          "B": 5,
+          "unknown": 41
+        },
+        "native_conditional_proofs": 33,
+        "no_demonstrated_examples": 0,
+        "pairwise_accuracy": 0.8333333333333334,
+        "precision": {
+          "A": 1.0,
+          "B": 0.5
+        },
+        "recall_including_abstention": {
+          "A": 0.4,
+          "B": 0.2
+        },
+        "unknown_label_examples": 41,
+        "unsupported_direction_on_ambiguous": 0
+      },
+      "model_version": "658db2b50b90fe26f4bb27396a88b0ceb662e13e948d4f9cda57b1f3c390e13c",
+      "training_report": {
+        "dataset_hash": "53e15d1c267b3bc8c014dfb47212360612873bb8de7f19e8d98d5b0cd3ae81d7",
+        "dependence_handling": true,
+        "excluded_observations": {
+          "direction-collapses-under-relative-abstraction": 1,
+          "unresolved-reference-label": 152
+        },
+        "executed_native_operators": 17,
+        "heldout_labels_used": false,
+        "hypotheses": 44,
+        "label_counts": {
+          "A": 22,
+          "B": 47,
+          "no-demonstrated-preference": 1,
+          "unknown": 152
+        },
+        "native_cache_hits": 190,
+        "native_joint_strategic_theorems": 0,
+        "native_revision_nodes": 207,
+        "neutral_prior": {
+          "confidence": 0.05,
+          "strength": 0.5
+        },
+        "observation_confidence": 0.5,
+        "scope": "Three independent conditional channels, not normalized probabilities or a move-selection utility.",
+        "training_examples": 222,
+        "unique_evidence": 222
+      }
+    },
+    "replicated-handled": {
+      "metrics": {
+        "abstention_rate": 0.6,
+        "accuracy_including_abstention": 0.3333333333333333,
+        "complete_joint_strategic_proofs": 0,
+        "conditional_proof_coverage": 0.5892857142857143,
+        "confusion": {
+          "A": {
+            "false_positive": 0,
+            "missed_including_abstention": 6,
+            "true_positive": 4
+          },
+          "B": {
+            "false_positive": 1,
+            "missed_including_abstention": 4,
+            "true_positive": 1
+          }
+        },
+        "contradiction_rate": 0.0,
+        "contradictions": 0,
+        "correct_directional_answers": 5,
+        "correctly_supported_no_preference": 0,
+        "directional_abstentions": 9,
+        "directional_answers": 6,
+        "directional_answers_without_resolved_reference": 15,
+        "directional_coverage": 0.4,
+        "directional_examples": 15,
+        "examples": 56,
+        "incomplete": 0,
+        "incomplete_rate": 0.0,
+        "independent_groups": 56,
+        "interpretation": "Accuracy concerns answered, directionally labeled pairs; unknown teacher labels are excluded, and abstention-inclusive accuracy is separate. No-demonstrated preference is not a forced direction.",
+        "label_counts": {
+          "A": 10,
+          "B": 5,
+          "unknown": 41
+        },
+        "native_conditional_proofs": 33,
+        "no_demonstrated_examples": 0,
+        "pairwise_accuracy": 0.8333333333333334,
+        "precision": {
+          "A": 1.0,
+          "B": 0.5
+        },
+        "recall_including_abstention": {
+          "A": 0.4,
+          "B": 0.2
+        },
+        "unknown_label_examples": 41,
+        "unsupported_direction_on_ambiguous": 0
+      },
+      "model_version": "84db7e89081f95ca952a5236a71998bfd24d47da3f90965a8c46fde28bb1e373",
+      "training_report": {
+        "dataset_hash": "64d2ead93c5e8f38b23ef6d22095ac99cefaee8c40a3eab01e09c65183a062ce",
+        "dependence_handling": true,
+        "excluded_observations": {
+          "direction-collapses-under-relative-abstraction": 3,
+          "shared-ancestry": 69,
+          "unresolved-reference-label": 456
+        },
+        "executed_native_operators": 17,
+        "heldout_labels_used": false,
+        "hypotheses": 44,
+        "label_counts": {
+          "A": 66,
+          "B": 141,
+          "no-demonstrated-preference": 3,
+          "unknown": 456
+        },
+        "native_cache_hits": 190,
+        "native_joint_strategic_theorems": 0,
+        "native_revision_nodes": 207,
+        "neutral_prior": {
+          "confidence": 0.05,
+          "strength": 0.5
+        },
+        "observation_confidence": 0.5,
+        "scope": "Three independent conditional channels, not normalized probabilities or a move-selection utility.",
+        "training_examples": 666,
+        "unique_evidence": 666
+      }
+    },
+    "replicated-naive": {
+      "metrics": {
+        "abstention_rate": 0.6,
+        "accuracy_including_abstention": 0.3333333333333333,
+        "complete_joint_strategic_proofs": 0,
+        "conditional_proof_coverage": 0.5892857142857143,
+        "confusion": {
+          "A": {
+            "false_positive": 0,
+            "missed_including_abstention": 6,
+            "true_positive": 4
+          },
+          "B": {
+            "false_positive": 1,
+            "missed_including_abstention": 4,
+            "true_positive": 1
+          }
+        },
+        "contradiction_rate": 0.0,
+        "contradictions": 0,
+        "correct_directional_answers": 5,
+        "correctly_supported_no_preference": 0,
+        "directional_abstentions": 9,
+        "directional_answers": 6,
+        "directional_answers_without_resolved_reference": 15,
+        "directional_coverage": 0.4,
+        "directional_examples": 15,
+        "examples": 56,
+        "incomplete": 0,
+        "incomplete_rate": 0.0,
+        "independent_groups": 56,
+        "interpretation": "Accuracy concerns answered, directionally labeled pairs; unknown teacher labels are excluded, and abstention-inclusive accuracy is separate. No-demonstrated preference is not a forced direction.",
+        "label_counts": {
+          "A": 10,
+          "B": 5,
+          "unknown": 41
+        },
+        "native_conditional_proofs": 33,
+        "no_demonstrated_examples": 0,
+        "pairwise_accuracy": 0.8333333333333334,
+        "precision": {
+          "A": 1.0,
+          "B": 0.5
+        },
+        "recall_including_abstention": {
+          "A": 0.4,
+          "B": 0.2
+        },
+        "unknown_label_examples": 41,
+        "unsupported_direction_on_ambiguous": 0
+      },
+      "model_version": "f74c260194dbb3c7e8e381950bca4ba4ac7850e5d79a2ad332acc1990069f222",
+      "training_report": {
+        "dataset_hash": "64d2ead93c5e8f38b23ef6d22095ac99cefaee8c40a3eab01e09c65183a062ce",
+        "dependence_handling": false,
+        "excluded_observations": {
+          "direction-collapses-under-relative-abstraction": 3,
+          "unresolved-reference-label": 456
+        },
+        "executed_native_operators": 111,
+        "heldout_labels_used": false,
+        "hypotheses": 44,
+        "label_counts": {
+          "A": 66,
+          "B": 141,
+          "no-demonstrated-preference": 3,
+          "unknown": 456
+        },
+        "native_cache_hits": 510,
+        "native_joint_strategic_theorems": 0,
+        "native_revision_nodes": 621,
+        "neutral_prior": {
+          "confidence": 0.05,
+          "strength": 0.5
+        },
+        "observation_confidence": 0.5,
+        "scope": "Three independent conditional channels, not normalized probabilities or a move-selection utility.",
+        "training_examples": 666,
+        "unique_evidence": 666
+      }
+    }
+  },
+  "handled_native_tvs_identical": true,
+  "independent_source_groups": 222,
+  "native_confidence_increased_without_dependence": 44,
+  "observed_independent_opposing_evidence": [
+    {
+      "channels": {
+        "first": {
+          "confidence": 0.7532467532467534,
+          "strength": 0.6637931034482759
+        },
+        "no-demonstrated-preference": {
+          "confidence": 0.7532467532467534,
+          "strength": 0.008620689655172417
+        },
+        "second": {
+          "confidence": 0.7532467532467534,
+          "strength": 0.3362068965517241
+        }
+      },
+      "dependence_groups": [
+        "c13-ancestry:02249e0469bf380c126802b5b7f4d273c4c62ad34c3542e1ce918cf163e405d9",
+        "c13-ancestry:11e49ec08eaa193945baedabdfaa3a1ebeffc61a2756fd585fb0ed8a4a533842",
+        "c13-ancestry:e72aa9710e0b15a97f85e0fabe14b0935fb18917e110fc8049f684c748b7d44f"
+      ],
+      "rule_id": "preference-rule:2f7ded36dcd7233242387c09c8b767e229725d9429362aaf1c2a57657066cd4a",
+      "supporting_evidence": {
+        "first": [
+          "preference-evidence:62315b213df9ea1ad38f2036bae8adfc2072e32e286829286192237816dfacf9",
+          "preference-evidence:3553b7b38af6b9985bc32079bf9223bb7cb68f196cb182a16af7c93c005d57b5"
+        ],
+        "no-demonstrated-preference": [],
+        "second": [
+          "preference-evidence:ffc61e38eca571f9cdc32689b9c80b020dfa881e3a681b1babb17a3515c4201e"
+        ]
+      }
+    },
+    {
+      "channels": {
+        "first": {
+          "confidence": 0.6724137931034483,
+          "strength": 0.4999999999999999
+        },
+        "no-demonstrated-preference": {
+          "confidence": 0.6724137931034483,
+          "strength": 0.012820512820512825
+        },
+        "second": {
+          "confidence": 0.6724137931034483,
+          "strength": 0.5000000000000001
+        }
+      },
+      "dependence_groups": [
+        "c13-ancestry:dc5e818ebf5b6be5e8622e283a588acf6a8f482d3203ef5d6474cb023491d993",
+        "c13-ancestry:f907f814a81939c30ec7feda8074030ba4f0e404aecde7f5a03ea369ea3d2001"
+      ],
+      "rule_id": "preference-rule:324b6e73c71cf4c37dcbd129d06d2b7b73ea990b8abb915c9aed48af84466ff9",
+      "supporting_evidence": {
+        "first": [
+          "preference-evidence:b3ddcdc3f8cc8f0a07e7664fc473c48be084d597ae1da56bacbdcd55ec4517b0"
+        ],
+        "no-demonstrated-preference": [],
+        "second": [
+          "preference-evidence:729b86a6b2898532a456c7c1fda0401e50de10606b72b5285e103b41a8dfb285"
+        ]
+      }
+    },
+    {
+      "channels": {
+        "first": {
+          "confidence": 0.7532467532467534,
+          "strength": 0.6637931034482758
+        },
+        "no-demonstrated-preference": {
+          "confidence": 0.7532467532467534,
+          "strength": 0.008620689655172417
+        },
+        "second": {
+          "confidence": 0.7532467532467534,
+          "strength": 0.3362068965517242
+        }
+      },
+      "dependence_groups": [
+        "c13-ancestry:717e270b7e42392d2c9c88a4eae60ca947310583472c187c5a55bc4a110222a9",
+        "c13-ancestry:8f43a44b0798a2cd5992b1259e4368d435c01b93fd0e7b4046ef6e066368cb48",
+        "c13-ancestry:f651c247f56cad9eb15558a26584571b4aada1cc18e993c001bccc1cfbbc3da5"
+      ],
+      "rule_id": "preference-rule:5ec1a1416ada821bf5ec21c0cf63d28af01197239a0356eceb85a0139173c28f",
+      "supporting_evidence": {
+        "first": [
+          "preference-evidence:caf19317ee83eb5412c63bc8229a1226a1ad930452b7a6b5e5a0a4138440ac21",
+          "preference-evidence:6af2006633655317af54b949ba3d3ff1de950d57bc9fb7b64f1ed3895e0a9629"
+        ],
+        "no-demonstrated-preference": [],
+        "second": [
+          "preference-evidence:6eea85dae134fe76f9c2bc5ba7518b36eff1f51f4e0bae0c2acedc7fd948d1d2"
+        ]
+      }
+    },
+    {
+      "channels": {
+        "first": {
+          "confidence": 0.6724137931034483,
+          "strength": 0.4999999999999999
+        },
+        "no-demonstrated-preference": {
+          "confidence": 0.6724137931034483,
+          "strength": 0.012820512820512825
+        },
+        "second": {
+          "confidence": 0.6724137931034483,
+          "strength": 0.5000000000000001
+        }
+      },
+      "dependence_groups": [
+        "c13-ancestry:024432bccb45f4c9f8f4060445daa097b4dd418f0625f090d631bc11bb49726f",
+        "c13-ancestry:071bf5749eb8e6be30b07b35bd5e8873d563e49527cfd457cbeadafb9c7008d1"
+      ],
+      "rule_id": "preference-rule:74f0e2bf5e8c9a14bec5f49a69b4812dd4bb7bc14697277c47fe64ebc96eb77b",
+      "supporting_evidence": {
+        "first": [
+          "preference-evidence:5f9e2569abfb420972d2b92c857fe72e6066e131d61f32b363429adbb2ade934"
+        ],
+        "no-demonstrated-preference": [],
+        "second": [
+          "preference-evidence:5e33b5a219df5e28d880f949170f48f6d127aa869de6c0299f2d8686176b40be"
+        ]
+      }
+    },
+    {
+      "channels": {
+        "first": {
+          "confidence": 0.7532467532467534,
+          "strength": 0.6637931034482759
+        },
+        "no-demonstrated-preference": {
+          "confidence": 0.7532467532467534,
+          "strength": 0.008620689655172417
+        },
+        "second": {
+          "confidence": 0.7532467532467534,
+          "strength": 0.33620689655172414
+        }
+      },
+      "dependence_groups": [
+        "c13-ancestry:395110e7425d369884aff754b2c7eec863dee0d1c79e64eb79608e5c6d174629",
+        "c13-ancestry:ae26367ba3c54f69c1dcb80728b90ac946a2ff04ab435aa130b61766639e0bd8",
+        "c13-ancestry:f46c96571b5f0bba41b7750f4a89344d8e5326d6ea9e605702a44cd5c2c0c5da"
+      ],
+      "rule_id": "preference-rule:7901a64ea5c4f9e1c82f66d8646586e192b9e6b170b84e374049dfe8ee380c76",
+      "supporting_evidence": {
+        "first": [
+          "preference-evidence:7deac6bf41ecd1ef062a4d0f5d6774bc7732977a809dccd6c1b590b11ee08949",
+          "preference-evidence:84093b001073e4ead98373ec478a3315caebe2601e4e9cf6430df25906a3e9d0"
+        ],
+        "no-demonstrated-preference": [],
+        "second": [
+          "preference-evidence:2e3b4878346331a1d9f6175934d3a935cfaa20d91796fd1d666891ca5df77b8b"
+        ]
+      }
+    },
+    {
+      "channels": {
+        "first": {
+          "confidence": 0.8020833333333335,
+          "strength": 0.7467532467532467
+        },
+        "no-demonstrated-preference": {
+          "confidence": 0.8020833333333335,
+          "strength": 0.006493506493506497
+        },
+        "second": {
+          "confidence": 0.8020833333333335,
+          "strength": 0.2532467532467533
+        }
+      },
+      "dependence_groups": [
+        "c13-ancestry:23cee7e038e95187fcf3f075b0be25a2e83b61ba84993fd028c2546d3522200c",
+        "c13-ancestry:502cddf0df6ef47bfb08401bcf8da314081f651cb8cf9ad41911a9db60a639c4",
+        "c13-ancestry:a8e79769ae77e8f34152ca858f014f3430da766ec955bd33ab7707738c730557",
+        "c13-ancestry:e45eeb667f75c3d03a034925f14c1f5ff199af1de367bc5ad0684b924cba3781"
+      ],
+      "rule_id": "preference-rule:a9a636a6be7aed9627296beda0eaf04e35868fde4693e1db6ee81403443a0e5c",
+      "supporting_evidence": {
+        "first": [
+          "preference-evidence:a0a0bb0c424224408b99fa6c48af6f2181425acdb49548882058fd05efdbbe12",
+          "preference-evidence:1b8790c58f5fc6f5f0c07e1c0fd8bb0f77f03ec55c1418c4e8fe8cbc929bd6c9",
+          "preference-evidence:86c84a7a3228ee38f83bd60c2008a91a3034bfb1e65f9c6c0a89102251caf9c2"
+        ],
+        "no-demonstrated-preference": [],
+        "second": [
+          "preference-evidence:a80033b46eec66dbcb261bc34ee4cbbd26d94d36ced7b45d9c3fc778dc645019"
+        ]
+      }
+    },
+    {
+      "channels": {
+        "first": {
+          "confidence": 0.6724137931034483,
+          "strength": 0.5000000000000001
+        },
+        "no-demonstrated-preference": {
+          "confidence": 0.6724137931034483,
+          "strength": 0.012820512820512825
+        },
+        "second": {
+          "confidence": 0.6724137931034483,
+          "strength": 0.4999999999999999
+        }
+      },
+      "dependence_groups": [
+        "c13-ancestry:b9e38243c50591b419461dbc1a441fe34741f63bff4c91046a17d8f93119a6b0",
+        "c13-ancestry:c3730de606e47368222db39026c19680fc44013cbea2e640d6596ff30dbe8658"
+      ],
+      "rule_id": "preference-rule:bcf2591b164d6fe89517e63c42f3640c89c5255561d317012d4adba3e65551a1",
+      "supporting_evidence": {
+        "first": [
+          "preference-evidence:7562abf3824d325caf0385d8d8b1c8069b70e4bc84eedeca8293e8e770b74e98"
+        ],
+        "no-demonstrated-preference": [],
+        "second": [
+          "preference-evidence:054a1e105f7235c50f25fffdc780ad8832355754ecce9ffb8bf312468e552190"
+        ]
+      }
+    },
+    {
+      "channels": {
+        "first": {
+          "confidence": 0.6724137931034483,
+          "strength": 0.5000000000000001
+        },
+        "no-demonstrated-preference": {
+          "confidence": 0.6724137931034483,
+          "strength": 0.012820512820512825
+        },
+        "second": {
+          "confidence": 0.6724137931034483,
+          "strength": 0.4999999999999999
+        }
+      },
+      "dependence_groups": [
+        "c13-ancestry:0beec32b223313d1e0f66788435c5e7ce0d22c4344816ddba792ccb7f9811172",
+        "c13-ancestry:94d0530d41f2f5762d9e6bc8beda73c719ca8e2ffdebe459e537ee4897308779"
+      ],
+      "rule_id": "preference-rule:f360472ede1f690b6d6f2f90b86407e8d5656d225f1056a50710a6f294b10781",
+      "supporting_evidence": {
+        "first": [
+          "preference-evidence:580efad9169f82f4c389bb67d4df3e8a26884e10ecca06ebd6c9d7e87f8888ae"
+        ],
+        "no-demonstrated-preference": [],
+        "second": [
+          "preference-evidence:50890248ad434827e34ae60523041860ea195ba24d27c23d50542376d1c2ac1c"
+        ]
+      }
+    }
+  ],
+  "original_training_pairs": 222,
+  "passed": true,
+  "scope": "Controlled delivery and ancestry interventions, separate from independent empirical sample counts. Native operators compute every revised TV.",
+  "total_hypotheses": 44
+}

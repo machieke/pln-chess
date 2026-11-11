@@ -1,0 +1,243 @@
+{
+  "dependence_group": "c13-ancestry:3a81d2e657fff7ed813099db17403ec113b3779e5c869feea1ae1d9235b1167f",
+  "evaluations": [
+    {
+      "candidates": [
+        {
+          "channel": "A",
+          "depth": 14,
+          "engine_seconds": 0.035,
+          "fen": "7r/kp1b2p1/1p3nB1/pP1p3p/P4r2/7P/5PP1/3R1RK1 w - - 0 32",
+          "lowerbound": false,
+          "nodes": 20017,
+          "pv": [
+            "d1a1",
+            "f4c4",
+            "g6d3",
+            "c4c8",
+            "a1e1",
+            "h8e8",
+            "e1e8",
+            "c8e8"
+          ],
+          "scope": "Offline endpoint reference, original actor perspective; no production utility or native conclusion.",
+          "score": {
+            "cp": -486,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 16,
+          "upperbound": false,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        {
+          "channel": "B",
+          "depth": 10,
+          "engine_seconds": 0.103,
+          "fen": "7r/kp1b2p1/1p3nB1/pP1pB2p/P2r4/7P/5PP1/5RK1 w - - 0 32",
+          "lowerbound": false,
+          "nodes": 20019,
+          "pv": [
+            "e5d4",
+            "h8c8"
+          ],
+          "scope": "Offline endpoint reference, original actor perspective; no production utility or native conclusion.",
+          "score": {
+            "cp": 67,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 23,
+          "upperbound": true,
+          "wdl": [
+            106,
+            894,
+            0
+          ]
+        }
+      ],
+      "elapsed_seconds": 0.19672483392059803,
+      "node_budget": 20000
+    },
+    {
+      "candidates": [
+        {
+          "channel": "A",
+          "depth": 16,
+          "engine_seconds": 0.259,
+          "fen": "7r/kp1b2p1/1p3nB1/pP1p3p/P4r2/7P/5PP1/3R1RK1 w - - 0 32",
+          "lowerbound": false,
+          "nodes": 80046,
+          "pv": [
+            "d1a1",
+            "h8c8",
+            "f1e1",
+            "f6e4",
+            "a1d1",
+            "d7e6",
+            "d1c1",
+            "f4f8",
+            "c1c8",
+            "e6c8",
+            "g6e4",
+            "d5e4"
+          ],
+          "scope": "Offline endpoint reference, original actor perspective; no production utility or native conclusion.",
+          "score": {
+            "cp": -482,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 18,
+          "upperbound": false,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        {
+          "channel": "B",
+          "depth": 13,
+          "engine_seconds": 0.275,
+          "fen": "7r/kp1b2p1/1p3nB1/pP1pB2p/P2r4/7P/5PP1/5RK1 w - - 0 32",
+          "lowerbound": false,
+          "nodes": 80006,
+          "pv": [
+            "e5d4",
+            "h8c8"
+          ],
+          "scope": "Offline endpoint reference, original actor perspective; no production utility or native conclusion.",
+          "score": {
+            "cp": 55,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 29,
+          "upperbound": true,
+          "wdl": [
+            52,
+            948,
+            0
+          ]
+        }
+      ],
+      "elapsed_seconds": 0.5999287376180291,
+      "node_budget": 80000
+    }
+  ],
+  "evidence_id": "reference-preference:7a6a50077c9396694c67273e5ff74e3a7f223f947a4db25516bc9c0906321b62",
+  "horizon": 2,
+  "id": "c13-c10-game-1eabf7bc587244721ac62fce-ply2",
+  "identity": {
+    "config": {
+      "ambiguous_margin_cp": 20,
+      "hash_mib": 32,
+      "node_budgets": [
+        20000,
+        80000
+      ],
+      "preference_margin_cp": 80,
+      "release": "sf_18",
+      "threads": 1
+    },
+    "driver_sha256": "e07bd9bc04d5c6de6d9fad61d0a238557bd509776dd0dd51c51bacf826de4966",
+    "horizon": 2,
+    "label_policy_sha256": "3cb14950417a460a5f1dc149795455fe8b0db63e5c688bb51f173c836ebf7690",
+    "plan_hash": "ab296732855102c1599aceae9ba4cf3de1cf411f3168bc17c0d24b939a8e5296",
+    "reference_binary_sha256": "76ea026f6840620e542c263d166ab1711d2657bed5edbbc35f0334e78e52f520",
+    "source_hash": "546d2db64e6bdcd08a96cd04b5cc14668144692759d9819f24c4613b87d94c58"
+  },
+  "label": "unknown",
+  "original_actor": "white",
+  "plan_id": "c13-c10-game-1eabf7bc587244721ac62fce",
+  "probability_of_correctness": null,
+  "reason": "Unresolved score bound.",
+  "reference_selection_only": true,
+  "source": "Separate fixed-node endpoint evaluations after the explicitly supplied branch.",
+  "source_game": "tcec-season26-divisionp:1eabf7bc587244721ac62fced5ea262c3569993405ec41e92b7caef8d646232e",
+  "split": "train",
+  "temporal_context": {
+    "branches": {
+      "A": [
+        "e5f4",
+        "c4f4"
+      ],
+      "B": [
+        "d1d4",
+        "c4d4"
+      ]
+    },
+    "history": {
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "moves": [
+        "e2e4",
+        "e7e5",
+        "g1f3",
+        "b8c6",
+        "f1c4",
+        "f8c5",
+        "b2b4",
+        "c5b6",
+        "a2a4",
+        "a7a5",
+        "b4b5",
+        "c6d4",
+        "f3d4",
+        "b6d4",
+        "c2c3",
+        "d4b6",
+        "d2d4",
+        "e5d4",
+        "e1g1",
+        "d7d6",
+        "c3d4",
+        "g8f6",
+        "c4b3",
+        "c8e6",
+        "b3c2",
+        "d8e7",
+        "d1d3",
+        "e8c8",
+        "d4d5",
+        "e6d7",
+        "b1d2",
+        "h8e8",
+        "c1a3",
+        "c8b8",
+        "d3b3",
+        "d8c8",
+        "d2c4",
+        "b8a7",
+        "a1c1",
+        "h7h5",
+        "e4e5",
+        "f6g4",
+        "c4b6",
+        "c7b6",
+        "a3d6",
+        "e7h4",
+        "e5e6",
+        "f7e6",
+        "b3g3",
+        "h4g3",
+        "d6g3",
+        "e6d5",
+        "c2g6",
+        "e8h8",
+        "h2h3",
+        "g4f6",
+        "g3e5",
+        "c8c5",
+        "c1d1",
+        "c5c4"
+      ],
+      "source": "https://tcec-chess.com"
+    }
+  },
+  "unexamined_responses": "All responses outside these supplied lines remain unexamined; no exhaustive-response claim."
+}

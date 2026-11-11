@@ -1,0 +1,154 @@
+{
+  "dependence_group": "c13-ancestry:02c22e7f3981fe471d8b8dbc06c87f82e38673e24bca650f60697ea1c0f30427",
+  "evaluations": [
+    {
+      "candidates": [
+        {
+          "channel": "A",
+          "depth": 245,
+          "engine_seconds": 0.015,
+          "fen": "4r3/1R4Pk/8/3p4/2nq3P/8/Pp6/1K5R b - - 1 39",
+          "lowerbound": false,
+          "nodes": 10053,
+          "pv": [
+            "c4a3"
+          ],
+          "scope": "Offline endpoint reference, original actor perspective; no production utility or native conclusion.",
+          "score": {
+            "cp": null,
+            "mate": -1,
+            "mate_outcome": "loss"
+          },
+          "seldepth": 2,
+          "upperbound": false,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        {
+          "channel": "B",
+          "depth": 0,
+          "engine_seconds": null,
+          "fen": "4r3/1R6/7k/3p2Q1/2nq3P/p7/PP6/K3R3 b - - 2 39",
+          "lowerbound": false,
+          "nodes": null,
+          "pv": [],
+          "scope": "Offline endpoint reference, original actor perspective; no production utility or native conclusion.",
+          "score": {
+            "cp": null,
+            "mate": 0,
+            "mate_outcome": "win"
+          },
+          "seldepth": null,
+          "upperbound": false,
+          "wdl": null
+        }
+      ],
+      "elapsed_seconds": 0.05434313789010048,
+      "node_budget": 20000
+    },
+    {
+      "candidates": [
+        {
+          "channel": "A",
+          "depth": 245,
+          "engine_seconds": 0.02,
+          "fen": "4r3/1R4Pk/8/3p4/2nq3P/8/Pp6/1K5R b - - 1 39",
+          "lowerbound": false,
+          "nodes": 10053,
+          "pv": [
+            "c4a3"
+          ],
+          "scope": "Offline endpoint reference, original actor perspective; no production utility or native conclusion.",
+          "score": {
+            "cp": null,
+            "mate": -1,
+            "mate_outcome": "loss"
+          },
+          "seldepth": 2,
+          "upperbound": false,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        {
+          "channel": "B",
+          "depth": 0,
+          "engine_seconds": null,
+          "fen": "4r3/1R6/7k/3p2Q1/2nq3P/p7/PP6/K3R3 b - - 2 39",
+          "lowerbound": false,
+          "nodes": null,
+          "pv": [],
+          "scope": "Offline endpoint reference, original actor perspective; no production utility or native conclusion.",
+          "score": {
+            "cp": null,
+            "mate": 0,
+            "mate_outcome": "win"
+          },
+          "seldepth": null,
+          "upperbound": false,
+          "wdl": null
+        }
+      ],
+      "elapsed_seconds": 0.05490134842693806,
+      "node_budget": 80000
+    }
+  ],
+  "evidence_id": "reference-preference:6c19d3ec069fef3cbde75d01ae48adbffa82c176fcecb136f1da0ffb95c8c9de",
+  "horizon": 3,
+  "id": "c13-puzzle-06IxM-ply3",
+  "identity": {
+    "config": {
+      "ambiguous_margin_cp": 20,
+      "hash_mib": 32,
+      "node_budgets": [
+        20000,
+        80000
+      ],
+      "preference_margin_cp": 80,
+      "release": "sf_18",
+      "threads": 1
+    },
+    "driver_sha256": "e07bd9bc04d5c6de6d9fad61d0a238557bd509776dd0dd51c51bacf826de4966",
+    "horizon": 3,
+    "label_policy_sha256": "3cb14950417a460a5f1dc149795455fe8b0db63e5c688bb51f173c836ebf7690",
+    "plan_hash": "56a4a166810210cd613bc8d168de83e6cc04601312a28bba643e45b8e0d7118f",
+    "reference_binary_sha256": "76ea026f6840620e542c263d166ab1711d2657bed5edbbc35f0334e78e52f520",
+    "source_hash": "546d2db64e6bdcd08a96cd04b5cc14668144692759d9819f24c4613b87d94c58"
+  },
+  "label": "B",
+  "original_actor": "white",
+  "plan_id": "c13-puzzle-06IxM",
+  "probability_of_correctness": null,
+  "reason": "Same directional margin at both registered node budgets.",
+  "reference_selection_only": true,
+  "source": "Separate fixed-node endpoint evaluations after the explicitly supplied branch.",
+  "source_game": "https://lichess.org/game/3iG6g26A",
+  "split": "train",
+  "temporal_context": {
+    "branches": {
+      "A": [
+        "e1h1",
+        "a3b2",
+        "a1b1"
+      ],
+      "B": [
+        "g7g8q",
+        "h7h6",
+        "g8g5"
+      ]
+    },
+    "history": {
+      "initial_fen": "4r2k/1R4P1/8/3p4/2nq3P/p7/PP6/K3R3 b - - 0 37",
+      "moves": [
+        "h8h7"
+      ],
+      "source": "https://lichess.org/game/3iG6g26A/black#74"
+    }
+  },
+  "unexamined_responses": "All responses outside these supplied lines remain unexamined; no exhaustive-response claim."
+}

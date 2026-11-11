@@ -1,0 +1,192 @@
+{
+  "dependence_group": "c13-ancestry:67c69efb9a05fdce4ae6f3066940d7eca32a28ad68467cf73e4080d61f52c371",
+  "evaluations": [
+    {
+      "candidates": [
+        {
+          "depth": 12,
+          "engine_seconds": 0.056,
+          "lowerbound": false,
+          "move": "e7f6",
+          "nodes": 20015,
+          "pv": [
+            "e7f6",
+            "a1e1"
+          ],
+          "scope": "Offline reference-engine output, not a native PLN conclusion.",
+          "score": {
+            "cp": -37,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 20,
+          "upperbound": true,
+          "wdl": [
+            1,
+            967,
+            32
+          ]
+        },
+        {
+          "depth": 11,
+          "engine_seconds": 0.057,
+          "lowerbound": false,
+          "move": "f8e8",
+          "nodes": 20015,
+          "pv": [
+            "f8e8",
+            "d2c3",
+            "a8b8",
+            "a2a3",
+            "b7a8",
+            "f1e1",
+            "e7f8",
+            "e1e8",
+            "c8e8",
+            "a5c6",
+            "a8c6",
+            "a1e1",
+            "e8d8",
+            "d5c6",
+            "d8g5",
+            "e1e3"
+          ],
+          "scope": "Offline reference-engine output, not a native PLN conclusion.",
+          "score": {
+            "cp": -64,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 17,
+          "upperbound": false,
+          "wdl": [
+            0,
+            875,
+            125
+          ]
+        }
+      ],
+      "elapsed_seconds": 0.07243665214627981,
+      "node_budget": 20000
+    },
+    {
+      "candidates": [
+        {
+          "depth": 14,
+          "engine_seconds": 0.401,
+          "lowerbound": true,
+          "move": "e7f6",
+          "nodes": 80081,
+          "pv": [
+            "e7f6"
+          ],
+          "scope": "Offline reference-engine output, not a native PLN conclusion.",
+          "score": {
+            "cp": -42,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 25,
+          "upperbound": false,
+          "wdl": [
+            0,
+            957,
+            43
+          ]
+        },
+        {
+          "depth": 13,
+          "engine_seconds": 0.402,
+          "lowerbound": false,
+          "move": "f8e8",
+          "nodes": 80081,
+          "pv": [
+            "f8e8",
+            "f1e1",
+            "a8b8",
+            "d2c3",
+            "b7a8",
+            "a2a3",
+            "e7g5"
+          ],
+          "scope": "Offline reference-engine output, not a native PLN conclusion.",
+          "score": {
+            "cp": -75,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 23,
+          "upperbound": false,
+          "wdl": [
+            0,
+            790,
+            210
+          ]
+        }
+      ],
+      "elapsed_seconds": 0.41638390626758337,
+      "node_budget": 80000
+    }
+  ],
+  "evidence_id": "reference-preference:b51291276283b72b74911b0b2e7adcafbc4b27506d88725bfaacbc6000355931",
+  "id": "c13-c10-game-01208cf3579e90e23c22d3e0",
+  "identity": {
+    "config": {
+      "ambiguous_margin_cp": 20,
+      "hash_mib": 32,
+      "node_budgets": [
+        20000,
+        80000
+      ],
+      "preference_margin_cp": 80,
+      "release": "sf_18",
+      "threads": 1
+    },
+    "driver_sha256": "3cb14950417a460a5f1dc149795455fe8b0db63e5c688bb51f173c836ebf7690",
+    "reference_binary_sha256": "76ea026f6840620e542c263d166ab1711d2657bed5edbbc35f0334e78e52f520",
+    "row_hash": "960826cdb143efaa1b54a1913fcad2b92f0cd0dda8845457310c697b8d605b4a",
+    "source_hash": "66b12a19f465bec9313575475d5ee9a0f315923b75837579b74c9003937c4371"
+  },
+  "label": "unknown",
+  "probability_of_correctness": null,
+  "reason": "Unresolved score bound.",
+  "reference_selection_only": true,
+  "source": "Stockfish 18 fixed-node two-root comparisons",
+  "source_game": "lichess-broadcast-2024-01:01208cf3579e90e23c22d3e0b51e508e787871daca4b01386d13d2c0d94f24b1",
+  "split": "train",
+  "temporal_context": {
+    "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    "moves": [
+      "e2e4",
+      "e7e5",
+      "g1f3",
+      "b8c6",
+      "f1b5",
+      "a7a6",
+      "b5a4",
+      "b7b5",
+      "a4b3",
+      "c6a5",
+      "e1g1",
+      "d7d6",
+      "d2d4",
+      "e5d4",
+      "f3d4",
+      "c8b7",
+      "c1d2",
+      "a5b3",
+      "d4b3",
+      "g8f6",
+      "b3a5",
+      "d8c8",
+      "b1c3",
+      "f8e7",
+      "d1f3",
+      "e8g8",
+      "c3d5",
+      "f6d5",
+      "e4d5"
+    ],
+    "source": "Horntye Sports Complex, Hastings, United Kingdom"
+  }
+}

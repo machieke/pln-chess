@@ -1,0 +1,191 @@
+{
+  "dependence_group": "c13-ancestry:cfb5790026b8bcc4985b91a50712dcdde1b8a134f6b55f983a99adcea3b8f9ea",
+  "evaluations": [
+    {
+      "candidates": [
+        {
+          "depth": 9,
+          "engine_seconds": 0.158,
+          "lowerbound": false,
+          "move": "g2g4",
+          "nodes": 20011,
+          "pv": [
+            "g2g4",
+            "h5g4",
+            "f3g4",
+            "c8e6",
+            "e3d4",
+            "c6d4",
+            "d1d4",
+            "g7g8"
+          ],
+          "scope": "Offline reference-engine output, not a native PLN conclusion.",
+          "score": {
+            "cp": -96,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 12,
+          "upperbound": false,
+          "wdl": [
+            0,
+            557,
+            443
+          ]
+        },
+        {
+          "depth": 10,
+          "engine_seconds": 0.158,
+          "lowerbound": false,
+          "move": "d1a1",
+          "nodes": 20011,
+          "pv": [
+            "d1a1",
+            "f7f6"
+          ],
+          "scope": "Offline reference-engine output, not a native PLN conclusion.",
+          "score": {
+            "cp": 44,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 20,
+          "upperbound": true,
+          "wdl": [
+            45,
+            955,
+            0
+          ]
+        }
+      ],
+      "elapsed_seconds": 0.19817529805004597,
+      "node_budget": 20000
+    },
+    {
+      "candidates": [
+        {
+          "depth": 12,
+          "engine_seconds": 0.455,
+          "lowerbound": false,
+          "move": "g2g4",
+          "nodes": 80034,
+          "pv": [
+            "g2g4",
+            "h5g4",
+            "f3g4",
+            "c8e6",
+            "e3d4",
+            "c6d4",
+            "d1d4",
+            "g7g8",
+            "d5e6",
+            "f7e6",
+            "f2g3",
+            "a8c8"
+          ],
+          "scope": "Offline reference-engine output, not a native PLN conclusion.",
+          "score": {
+            "cp": -108,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 18,
+          "upperbound": false,
+          "wdl": [
+            0,
+            389,
+            611
+          ]
+        },
+        {
+          "depth": 13,
+          "engine_seconds": 0.454,
+          "lowerbound": false,
+          "move": "d1a1",
+          "nodes": 80034,
+          "pv": [
+            "d1a1",
+            "f7f6"
+          ],
+          "scope": "Offline reference-engine output, not a native PLN conclusion.",
+          "score": {
+            "cp": 38,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 17,
+          "upperbound": true,
+          "wdl": [
+            33,
+            966,
+            1
+          ]
+        }
+      ],
+      "elapsed_seconds": 0.5070710824802518,
+      "node_budget": 80000
+    }
+  ],
+  "evidence_id": "reference-preference:6beff391a9a3162ca0d21cd07651faa27a04e44262df5b047780d40961c09801",
+  "id": "c13-c10-game-07319a687597f30941ddb8b3",
+  "identity": {
+    "config": {
+      "ambiguous_margin_cp": 20,
+      "hash_mib": 32,
+      "node_budgets": [
+        20000,
+        80000
+      ],
+      "preference_margin_cp": 80,
+      "release": "sf_18",
+      "threads": 1
+    },
+    "driver_sha256": "3cb14950417a460a5f1dc149795455fe8b0db63e5c688bb51f173c836ebf7690",
+    "reference_binary_sha256": "76ea026f6840620e542c263d166ab1711d2657bed5edbbc35f0334e78e52f520",
+    "row_hash": "af904b5f6c5e89e51bbeb6bf700c7ed036a0f50c1dfb6b50d24bb306eff7b649",
+    "source_hash": "66b12a19f465bec9313575475d5ee9a0f315923b75837579b74c9003937c4371"
+  },
+  "label": "unknown",
+  "probability_of_correctness": null,
+  "reason": "Unresolved score bound.",
+  "reference_selection_only": true,
+  "source": "Stockfish 18 fixed-node two-root comparisons",
+  "source_game": "lichess-broadcast-2024-01:07319a687597f30941ddb8b3bb27d0a355d37ede1f447e2965708c4bf8085a3f",
+  "split": "train",
+  "temporal_context": {
+    "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    "moves": [
+      "e2e4",
+      "c7c5",
+      "b1c3",
+      "b8c6",
+      "g1f3",
+      "g7g6",
+      "d2d4",
+      "c5d4",
+      "f3d4",
+      "f8g7",
+      "c1e3",
+      "g8f6",
+      "f1c4",
+      "d7d6",
+      "f2f3",
+      "d8b6",
+      "d4f5",
+      "b6b2",
+      "f5g7",
+      "e8f8",
+      "c3d5",
+      "f6d5",
+      "c4d5",
+      "f8g7",
+      "a1b1",
+      "b2c3",
+      "e1f2",
+      "h7h5",
+      "b1b3",
+      "c3a5"
+    ],
+    "source": "Horntye Sports Complex, Hastings, United Kingdom"
+  }
+}

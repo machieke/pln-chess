@@ -1,0 +1,242 @@
+{
+  "dependence_group": "c13-ancestry:a13a0a9ca086df08e768198288ef1352c679c7eb838c23ee4bea831751c23ada",
+  "evaluations": [
+    {
+      "candidates": [
+        {
+          "channel": "A",
+          "depth": 15,
+          "engine_seconds": 0.058,
+          "fen": "2B1k1n1/2q1bp2/4p3/3b4/1p4P1/1N3P2/PPP2Q2/1K6 b - - 0 31",
+          "lowerbound": false,
+          "nodes": 20001,
+          "pv": [
+            "c7c8",
+            "f2d4",
+            "e8f8",
+            "g4g5",
+            "e7g5",
+            "b3c5",
+            "g5f6",
+            "d4b4",
+            "c8d8",
+            "b4b8"
+          ],
+          "scope": "Offline endpoint reference, original actor perspective; no production utility or native conclusion.",
+          "score": {
+            "cp": -512,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 20,
+          "upperbound": false,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        {
+          "channel": "B",
+          "depth": 12,
+          "engine_seconds": 0.101,
+          "fen": "2q1k1nR/4bp2/2b1p3/3p4/1p4P1/1N3P2/PPP2Q2/1K6 b - - 1 31",
+          "lowerbound": true,
+          "nodes": 20005,
+          "pv": [
+            "e8f8"
+          ],
+          "scope": "Offline endpoint reference, original actor perspective; no production utility or native conclusion.",
+          "score": {
+            "cp": 74,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 23,
+          "upperbound": false,
+          "wdl": [
+            159,
+            841,
+            0
+          ]
+        }
+      ],
+      "elapsed_seconds": 0.20472592301666737,
+      "node_budget": 20000
+    },
+    {
+      "candidates": [
+        {
+          "channel": "A",
+          "depth": 16,
+          "engine_seconds": 0.209,
+          "fen": "2B1k1n1/2q1bp2/4p3/3b4/1p4P1/1N3P2/PPP2Q2/1K6 b - - 0 31",
+          "lowerbound": false,
+          "nodes": 80047,
+          "pv": [
+            "c7c8",
+            "g4g5",
+            "e8f8",
+            "f2h4",
+            "c8c4",
+            "h4g3",
+            "c4f1",
+            "b3c1",
+            "f1f3",
+            "g3b8",
+            "f8g7"
+          ],
+          "scope": "Offline endpoint reference, original actor perspective; no production utility or native conclusion.",
+          "score": {
+            "cp": -492,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 19,
+          "upperbound": false,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        {
+          "channel": "B",
+          "depth": 14,
+          "engine_seconds": 0.508,
+          "fen": "2q1k1nR/4bp2/2b1p3/3p4/1p4P1/1N3P2/PPP2Q2/1K6 b - - 1 31",
+          "lowerbound": true,
+          "nodes": 80024,
+          "pv": [
+            "e8f8"
+          ],
+          "scope": "Offline endpoint reference, original actor perspective; no production utility or native conclusion.",
+          "score": {
+            "cp": 70,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 37,
+          "upperbound": false,
+          "wdl": [
+            123,
+            877,
+            0
+          ]
+        }
+      ],
+      "elapsed_seconds": 0.7880847547203302,
+      "node_budget": 80000
+    }
+  ],
+  "evidence_id": "reference-preference:876f248ee4875fdf26286d3a314ef8463ac3607573ca83a61278e69ecee6fc73",
+  "horizon": 3,
+  "id": "c13-c10-game-5783b9e35743826dc71f0988-ply3",
+  "identity": {
+    "config": {
+      "ambiguous_margin_cp": 20,
+      "hash_mib": 32,
+      "node_budgets": [
+        20000,
+        80000
+      ],
+      "preference_margin_cp": 80,
+      "release": "sf_18",
+      "threads": 1
+    },
+    "driver_sha256": "e07bd9bc04d5c6de6d9fad61d0a238557bd509776dd0dd51c51bacf826de4966",
+    "horizon": 3,
+    "label_policy_sha256": "3cb14950417a460a5f1dc149795455fe8b0db63e5c688bb51f173c836ebf7690",
+    "plan_hash": "0d6b4c68c482ca3729e1b9cdb9820a8d2aa81df5b7bd1e1b2227413c35ad9ebf",
+    "reference_binary_sha256": "76ea026f6840620e542c263d166ab1711d2657bed5edbbc35f0334e78e52f520",
+    "source_hash": "546d2db64e6bdcd08a96cd04b5cc14668144692759d9819f24c4613b87d94c58"
+  },
+  "label": "unknown",
+  "original_actor": "white",
+  "plan_id": "c13-c10-game-5783b9e35743826dc71f0988",
+  "probability_of_correctness": null,
+  "reason": "Unresolved score bound.",
+  "reference_selection_only": true,
+  "source": "Separate fixed-node endpoint evaluations after the explicitly supplied branch.",
+  "source_game": "tcec-season26-divisionp:5783b9e35743826dc71f0988a9e34aa209d9a92858a8c630bac65b2c10442d3f",
+  "split": "train",
+  "temporal_context": {
+    "branches": {
+      "A": [
+        "h5d5",
+        "c6d5",
+        "a6c8"
+      ],
+      "B": [
+        "a6c8",
+        "c7c8",
+        "h5h8"
+      ]
+    },
+    "history": {
+      "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "moves": [
+        "e2e4",
+        "c7c5",
+        "g1f3",
+        "d7d6",
+        "d2d4",
+        "c5d4",
+        "f3d4",
+        "g8f6",
+        "b1c3",
+        "a7a6",
+        "f2f3",
+        "d8b6",
+        "g2g4",
+        "h7h6",
+        "d4b3",
+        "e7e6",
+        "d1e2",
+        "b8c6",
+        "c1e3",
+        "b6c7",
+        "e1c1",
+        "b7b5",
+        "e2f2",
+        "a8b8",
+        "h1g1",
+        "b5b4",
+        "c3a4",
+        "c6e5",
+        "c1b1",
+        "f8e7",
+        "h2h4",
+        "g7g5",
+        "a4b6",
+        "c8b7",
+        "h4g5",
+        "h6g5",
+        "f1e2",
+        "b7c6",
+        "d1c1",
+        "d6d5",
+        "g1h1",
+        "h8h1",
+        "c1h1",
+        "e5g6",
+        "e4e5",
+        "c7e5",
+        "e2d3",
+        "g6h4",
+        "e3g5",
+        "e5g5",
+        "h1h4",
+        "f6g8",
+        "h4h5",
+        "g5f4",
+        "d3a6",
+        "f4c7",
+        "b6c8",
+        "b8c8"
+      ],
+      "source": "https://tcec-chess.com"
+    }
+  },
+  "unexamined_responses": "All responses outside these supplied lines remain unexamined; no exhaustive-response claim."
+}
