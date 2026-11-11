@@ -6,7 +6,7 @@ The missing rules were tied to attacker kind and component movement geometry. Cy
 
 The original concept result and native proof remain available as `starting_conditional`. The generic fork conditional is evaluated independently, and only fills an original unknown classification. All 370 starting held-out native proofs remain canonically identical. This fallback policy preserves established answers; independent evaluation of the generic model avoids mistaking that policy for evidence of transfer.
 
-On 48 independent generic-fork and counterfactual evaluations, the generic model gives 20 true positives, 24 true negatives, four abstentions and no wrong classified answers. Across the complete external concept panel, all 312 color, reflection, identity, target-removal, friendly-target and unknown-target controls pass. Transformed cases inherit their source ancestry and are not counted as independent games.
+In a separate 48-case evaluation of generic forks and counterfactuals, the generic model gives 20 true positives, 24 true negatives, four abstentions and no wrong classified answers. Across the complete external concept panel, all 312 color, reflection, identity, target-removal, friendly-target and unknown-target controls pass. Transformed cases inherit their source ancestry and are not counted as independent games.
 
 These are learned conditional conclusions on supplied role observations. The separately inferred attacks do not form a verified native conjunction. There are zero complete joint fork or strategic theorems.
 

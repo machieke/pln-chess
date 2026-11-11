@@ -1,6 +1,7 @@
 """Isolated five-repetition comparison workloads with full native-proof parity."""
 import argparse
 from dataclasses import asdict
+import lzma
 import os
 from pathlib import Path
 import resource
@@ -80,6 +81,8 @@ def worker(out, name, arm, repetition):
         semantic = digest(semantic_replay(results))
         target = out/'performance/raw'/f'{name}-{arm}-{repetition}-{temperature}.json.xz'
         pack(target, results)
+        with lzma.open(target,'rb') as stream:
+            complete_bytes=sum(len(block) for block in iter(lambda:stream.read(1024*1024),b''))
         executions = [result['execution'] for result in results]
         rows.append(dict(workload=name, arm=arm, repetition=repetition, temperature=temperature,
             elapsed_seconds=elapsed, native_invocations=runtime.invocations-before_calls,
@@ -89,6 +92,7 @@ def worker(out, name, arm, repetition):
             grounded_atoms=sum(e.get('grounded_atoms', 0) for e in executions),
             cache_hits=sum(e.get('cache_hits', 0) for e in executions),
             proof_bytes=sum(e.get('proof_bytes', 0) for e in executions),
+            complete_json_bytes=complete_bytes,compressed_archive_bytes=target.stat().st_size,
             logical_native_nodes=sum(e.get('logical_native_nodes', 0) for e in executions),
             truncated=any(e['truncated'] for e in executions),
             errors=[e.get('error') for e in executions if e.get('error')],
@@ -99,7 +103,7 @@ def worker(out, name, arm, repetition):
     receipt = dict(passed=True, workload=name, arm=arm, repetition=repetition, rows=rows,
         production_code_hash=production_code_hash(), runtime=runtime.manifest,
         model_versions={key:model.version for key,model in models.items()}, options=asdict(options),
-        memory_scope='Fresh worker per workload/arm/repetition; warm RSS includes retained cold output and caches. Child maximum RSS is not an aggregate working-set estimate.',
+        memory_scope='Fresh worker per workload/arm/repetition. Parent peak includes API construction, semantic validation and archive serialization; warm RSS retains the cold output/caches and the previous peak. Child maximum RSS is not an aggregate working-set estimate.',
         cache_intervention='Both arms retain pure native math memoization. Full clears dependency-bound relation records before every state; incremental retains them. Query domains are reconstructed in both arms.')
     write_json(out/'performance/receipts'/f'{name}-{arm}-{repetition}.json', receipt)
 
@@ -148,7 +152,8 @@ def run(out):
                 summaries.append(dict(workload=name, arm=arm, temperature=temperature, repetitions=len(rows),
                     medians={key:statistics.median(row[key] for row in rows) for key in
                         ('elapsed_seconds','native_invocations','interpreter_process_launches','grounded_atoms',
-                         'cache_hits','proof_bytes','logical_native_nodes','peak_process_rss_kib','peak_child_rss_kib')},
+                         'cache_hits','proof_bytes','complete_json_bytes','compressed_archive_bytes',
+                         'logical_native_nodes','peak_process_rss_kib','peak_child_rss_kib')},
                     runtime_min=min(row['elapsed_seconds'] for row in rows), runtime_max=max(row['elapsed_seconds'] for row in rows),
                     truncation_rate=sum(row['truncated'] for row in rows)/len(rows),
                     timeout_count=sum('timeout' in str(row['errors']).lower() for row in rows)))
