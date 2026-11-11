@@ -29,6 +29,8 @@ Profiles may count separately supported records and compare those counts categor
 
 Cache keys bind actual dependencies, all relevant model/runtime identities and options. Full recomputation and incremental reuse produce the same semantic results and complete proofs. A returned object cannot mutate cached evidence. A logical proof-node budget still applies on a cache hit. Budgets must say whether they apply to each stage or the whole request; global deadline exhaustion makes the result incomplete.
 
+The controlled full/incremental comparison should keep pure native-math memoization the same in both arms, while full recomputation clears relation records before rebuilding a state and incremental inference retains dependency-bound records. If an additional arm disables every cache, label that intervention separately. Report that the sparse query domain and observations are reconstructed even when unchanged local proof records are reused; do not claim a new spatial query scheduler. Native operator evaluations and interpreter process launches are distinct counts.
+
 Execution counters, elapsed time, cache information and memory measurements belong under explicit `execution` fields. The pre-existing trapped-piece diagnostic's process RSS value is moved into an execution subrecord in new wrappers. Native proofs, observation identities, source lineage, gaps, classification, unknown state and truncation consequences remain semantic. This allows exact replay without silently removing scientific claims.
 
 ## Source freeze and reproduction
