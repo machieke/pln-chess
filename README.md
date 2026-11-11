@@ -2,6 +2,24 @@
 
 A piece-relative chess research package using **actual native MeTTa PLN** rules. It includes a pinned runtime audit, six-piece candidate grammar, structural special-move states, append-only evidence, native revision learning, inference/proof APIs, CLI, local inspector, datasets, tests, ablations and measured reports.
 
+Cycle 13 adds experimental native preference learning, candidate move comparison,
+and supplied two- and three-ply continuation inspection. Read the
+[Cycle 13 engineering report](docs/cycle13/engineering-report.md),
+[20-package matrix](docs/cycle13/package-matrix.md), and
+[reproduction guide](docs/cycle13/reproduction.md).
+Open `/preferences` on the local inspector to compare candidates, inspect evidence
+and separate legality beliefs, or export the complete native proof package.
+Preference models remain experimental; the accepted Cycle 12 legal checkpoint
+is preserved. These are conditional preferences over observed relative changes,
+with explicit abstention and unexamined responses. Automatic move selection is
+not implemented. The Cycle 13 brief authorizes local commits only.
+
+```bash
+.venv/bin/pln-chess serve --port 8765
+.venv/bin/pln-chess compare-moves --input artifacts/cycle13/cli-smoke/compare-moves-input.json --output /tmp/pln-preference.json
+.venv/bin/pln-chess preference-continuations --input artifacts/cycle13/cli-smoke/preference-continuations-input.json --output /tmp/pln-continuations.json
+```
+
 Cycle 12 adds eight typed experimental concept families, native conditional
 proofs, dependency graphs, exact incremental fields, and replay of supplied
 multi-move sequences. Start with the

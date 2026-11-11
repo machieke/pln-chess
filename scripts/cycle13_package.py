@@ -29,7 +29,7 @@ def run(out):
     files.update(p for p in (ROOT/'src/pln_chess').rglob('*.py'))
     for folder in ('training','evaluation','scripts','tests'):
         files.update(p for p in (ROOT/folder).glob('*cycle13*') if p.is_file())
-    files.update(ROOT/path for path in ('configs/cycle13.json','requirements-dev.lock','configs/runtime-lock.json','vendor/pln/lib_pln.metta'))
+    files.update(ROOT/path for path in ('README.md','proofshot.config.json','configs/cycle13.json','requirements-dev.lock','configs/runtime-lock.json','vendor/pln/lib_pln.metta'))
     entries={str(path.relative_to(ROOT)):dict(sha256=sha(path),bytes=path.stat().st_size) for path in sorted(files)}
     write_json(out/'artifact-manifest.json',dict(schema='cycle13-delivery-inventory-v1',files=entries,
         file_count=len(entries),bytes=sum(row['bytes'] for row in entries.values()),

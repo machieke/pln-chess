@@ -1,0 +1,845 @@
+{
+  "fixed_test_partition": true,
+  "limitations": "Two curated source pools; this does not quantify arbitrary deployment shift.",
+  "scope": "Source-only training evaluated both within source and on the other held-out source family. The mixed-source primary test strata alone are not an unseen-source experiment.",
+  "source_holdout_in_training": true,
+  "studies": {
+    "external-tactical": {
+      "model_version": "63a55a641424aff236b4d93025e47fad0d1c6f229430163c296602397dc2a34a",
+      "test_sources": {
+        "external-tactical": {
+          "calibration": {
+            "brier_score": 0.2357749571413787,
+            "calibration_changes_inference": false,
+            "directional_examples": 13,
+            "expected_calibration_error": 0.17877133918247978,
+            "interpretation": "Diagnostic comparison of raw A-channel strength with held-out directional labels. Channels are not normalized; confidence is shown only as an evidence/selection parameter. Unknown and no-demonstrated labels are excluded from this binary diagnostic.",
+            "raw_confidence_is_probability": false,
+            "reliability": [
+              {
+                "empirical_A_frequency": 0.5,
+                "lower": 0.0,
+                "mean_raw_confidence": 0.012692307692307697,
+                "mean_raw_strength": 0.025000000000000005,
+                "n": 2,
+                "upper": 0.1
+              },
+              {
+                "empirical_A_frequency": null,
+                "lower": 0.1,
+                "mean_raw_confidence": null,
+                "mean_raw_strength": null,
+                "n": 0,
+                "upper": 0.2
+              },
+              {
+                "empirical_A_frequency": null,
+                "lower": 0.2,
+                "mean_raw_confidence": null,
+                "mean_raw_strength": null,
+                "n": 0,
+                "upper": 0.3
+              },
+              {
+                "empirical_A_frequency": null,
+                "lower": 0.3,
+                "mean_raw_confidence": null,
+                "mean_raw_strength": null,
+                "n": 0,
+                "upper": 0.4
+              },
+              {
+                "empirical_A_frequency": 1,
+                "lower": 0.4,
+                "mean_raw_confidence": 0.33284482758620687,
+                "mean_raw_strength": 0.4999999999999999,
+                "n": 1,
+                "upper": 0.5
+              },
+              {
+                "empirical_A_frequency": 0.42857142857142855,
+                "lower": 0.5,
+                "mean_raw_confidence": 0.047549261083743855,
+                "mean_raw_strength": 0.5,
+                "n": 7,
+                "upper": 0.6
+              },
+              {
+                "empirical_A_frequency": 1,
+                "lower": 0.6,
+                "mean_raw_confidence": 0.49500000000000005,
+                "mean_raw_strength": 0.6637931034482758,
+                "n": 1,
+                "upper": 0.7
+              },
+              {
+                "empirical_A_frequency": null,
+                "lower": 0.7,
+                "mean_raw_confidence": null,
+                "mean_raw_strength": null,
+                "n": 0,
+                "upper": 0.8
+              },
+              {
+                "empirical_A_frequency": null,
+                "lower": 0.8,
+                "mean_raw_confidence": null,
+                "mean_raw_strength": null,
+                "n": 0,
+                "upper": 0.9
+              },
+              {
+                "empirical_A_frequency": 1,
+                "lower": 0.9,
+                "mean_raw_confidence": 0.5760775862068966,
+                "mean_raw_strength": 0.9810897435897437,
+                "n": 2,
+                "upper": 1.0
+              }
+            ],
+            "selective_risk": [
+              {
+                "accuracy": 0.75,
+                "coverage": 0.3076923076923077,
+                "min_confidence": 0,
+                "n": 4,
+                "risk": 0.25
+              },
+              {
+                "accuracy": 0.75,
+                "coverage": 0.3076923076923077,
+                "min_confidence": 0.25,
+                "n": 4,
+                "risk": 0.25
+              },
+              {
+                "accuracy": 1.0,
+                "coverage": 0.07692307692307693,
+                "min_confidence": 0.5,
+                "n": 1,
+                "risk": 0.0
+              },
+              {
+                "accuracy": null,
+                "coverage": 0.0,
+                "min_confidence": 0.75,
+                "n": 0,
+                "risk": null
+              },
+              {
+                "accuracy": null,
+                "coverage": 0.0,
+                "min_confidence": 0.9,
+                "n": 0,
+                "risk": null
+              }
+            ]
+          },
+          "metrics": {
+            "abstention_rate": 0.6923076923076923,
+            "accuracy_including_abstention": 0.23076923076923078,
+            "complete_joint_strategic_proofs": 0,
+            "conditional_proof_coverage": 0.4722222222222222,
+            "confusion": {
+              "A": {
+                "false_positive": 0,
+                "missed_including_abstention": 6,
+                "true_positive": 2
+              },
+              "B": {
+                "false_positive": 1,
+                "missed_including_abstention": 4,
+                "true_positive": 1
+              }
+            },
+            "contradiction_rate": 0.0,
+            "contradictions": 0,
+            "correct_directional_answers": 3,
+            "correctly_supported_no_preference": 0,
+            "directional_abstentions": 9,
+            "directional_answers": 4,
+            "directional_answers_without_resolved_reference": 8,
+            "directional_coverage": 0.3076923076923077,
+            "directional_examples": 13,
+            "examples": 36,
+            "incomplete": 0,
+            "incomplete_rate": 0.0,
+            "independent_groups": 36,
+            "interpretation": "Accuracy concerns answered, directionally labeled pairs; unknown teacher labels are excluded, and abstention-inclusive accuracy is separate. No-demonstrated preference is not a forced direction.",
+            "label_counts": {
+              "A": 8,
+              "B": 5,
+              "unknown": 23
+            },
+            "native_conditional_proofs": 17,
+            "no_demonstrated_examples": 0,
+            "pairwise_accuracy": 0.75,
+            "precision": {
+              "A": 1.0,
+              "B": 0.5
+            },
+            "recall_including_abstention": {
+              "A": 0.25,
+              "B": 0.2
+            },
+            "unknown_label_examples": 23,
+            "unsupported_direction_on_ambiguous": 0
+          },
+          "uncertainty": {
+            "groups": 36,
+            "intervals": {
+              "accuracy_including_abstention": {
+                "lower": 0.0,
+                "upper": 0.5,
+                "valid_replicates": 1000
+              },
+              "contradiction_rate": {
+                "lower": 0.0,
+                "upper": 0.0,
+                "valid_replicates": 1000
+              },
+              "directional_coverage": {
+                "lower": 0.07142857142857142,
+                "upper": 0.5833333333333334,
+                "valid_replicates": 1000
+              },
+              "pairwise_accuracy": {
+                "lower": 0.0,
+                "upper": 1.0,
+                "valid_replicates": 985
+              }
+            },
+            "limitations": "Small panels and selected tactical sources limit generalization; intervals do not capture teacher-label or source-selection uncertainty.",
+            "method": "Percentile 95% cluster bootstrap over connected ancestry components; all correlated rows travel together.",
+            "repetitions": 1000,
+            "seed": 131313
+          }
+        },
+        "independent-games": {
+          "calibration": {
+            "brier_score": 0.1253125,
+            "calibration_changes_inference": false,
+            "directional_examples": 2,
+            "expected_calibration_error": 0.26249999999999996,
+            "interpretation": "Diagnostic comparison of raw A-channel strength with held-out directional labels. Channels are not normalized; confidence is shown only as an evidence/selection parameter. Unknown and no-demonstrated labels are excluded from this binary diagnostic.",
+            "raw_confidence_is_probability": false,
+            "reliability": [
+              {
+                "empirical_A_frequency": null,
+                "lower": 0.0,
+                "mean_raw_confidence": null,
+                "mean_raw_strength": null,
+                "n": 0,
+                "upper": 0.1
+              },
+              {
+                "empirical_A_frequency": null,
+                "lower": 0.1,
+                "mean_raw_confidence": null,
+                "mean_raw_strength": null,
+                "n": 0,
+                "upper": 0.2
+              },
+              {
+                "empirical_A_frequency": null,
+                "lower": 0.2,
+                "mean_raw_confidence": null,
+                "mean_raw_strength": null,
+                "n": 0,
+                "upper": 0.3
+              },
+              {
+                "empirical_A_frequency": null,
+                "lower": 0.3,
+                "mean_raw_confidence": null,
+                "mean_raw_strength": null,
+                "n": 0,
+                "upper": 0.4
+              },
+              {
+                "empirical_A_frequency": null,
+                "lower": 0.4,
+                "mean_raw_confidence": null,
+                "mean_raw_strength": null,
+                "n": 0,
+                "upper": 0.5
+              },
+              {
+                "empirical_A_frequency": 1,
+                "lower": 0.5,
+                "mean_raw_confidence": 0.0,
+                "mean_raw_strength": 0.5,
+                "n": 1,
+                "upper": 0.6
+              },
+              {
+                "empirical_A_frequency": null,
+                "lower": 0.6,
+                "mean_raw_confidence": null,
+                "mean_raw_strength": null,
+                "n": 0,
+                "upper": 0.7
+              },
+              {
+                "empirical_A_frequency": null,
+                "lower": 0.7,
+                "mean_raw_confidence": null,
+                "mean_raw_strength": null,
+                "n": 0,
+                "upper": 0.8
+              },
+              {
+                "empirical_A_frequency": null,
+                "lower": 0.8,
+                "mean_raw_confidence": null,
+                "mean_raw_strength": null,
+                "n": 0,
+                "upper": 0.9
+              },
+              {
+                "empirical_A_frequency": 1,
+                "lower": 0.9,
+                "mean_raw_confidence": 0.4950000000000001,
+                "mean_raw_strength": 0.9750000000000001,
+                "n": 1,
+                "upper": 1.0
+              }
+            ],
+            "selective_risk": [
+              {
+                "accuracy": 1.0,
+                "coverage": 0.5,
+                "min_confidence": 0,
+                "n": 1,
+                "risk": 0.0
+              },
+              {
+                "accuracy": 1.0,
+                "coverage": 0.5,
+                "min_confidence": 0.25,
+                "n": 1,
+                "risk": 0.0
+              },
+              {
+                "accuracy": null,
+                "coverage": 0.0,
+                "min_confidence": 0.5,
+                "n": 0,
+                "risk": null
+              },
+              {
+                "accuracy": null,
+                "coverage": 0.0,
+                "min_confidence": 0.75,
+                "n": 0,
+                "risk": null
+              },
+              {
+                "accuracy": null,
+                "coverage": 0.0,
+                "min_confidence": 0.9,
+                "n": 0,
+                "risk": null
+              }
+            ]
+          },
+          "metrics": {
+            "abstention_rate": 0.5,
+            "accuracy_including_abstention": 0.5,
+            "complete_joint_strategic_proofs": 0,
+            "conditional_proof_coverage": 0.7,
+            "confusion": {
+              "A": {
+                "false_positive": 0,
+                "missed_including_abstention": 1,
+                "true_positive": 1
+              },
+              "B": {
+                "false_positive": 0,
+                "missed_including_abstention": 0,
+                "true_positive": 0
+              }
+            },
+            "contradiction_rate": 0.0,
+            "contradictions": 0,
+            "correct_directional_answers": 1,
+            "correctly_supported_no_preference": 0,
+            "directional_abstentions": 1,
+            "directional_answers": 1,
+            "directional_answers_without_resolved_reference": 13,
+            "directional_coverage": 0.5,
+            "directional_examples": 2,
+            "examples": 20,
+            "incomplete": 0,
+            "incomplete_rate": 0.0,
+            "independent_groups": 20,
+            "interpretation": "Accuracy concerns answered, directionally labeled pairs; unknown teacher labels are excluded, and abstention-inclusive accuracy is separate. No-demonstrated preference is not a forced direction.",
+            "label_counts": {
+              "A": 2,
+              "unknown": 18
+            },
+            "native_conditional_proofs": 14,
+            "no_demonstrated_examples": 0,
+            "pairwise_accuracy": 1.0,
+            "precision": {
+              "A": 1.0,
+              "B": null
+            },
+            "recall_including_abstention": {
+              "A": 0.5,
+              "B": null
+            },
+            "unknown_label_examples": 18,
+            "unsupported_direction_on_ambiguous": 0
+          },
+          "uncertainty": {
+            "groups": 20,
+            "intervals": {
+              "accuracy_including_abstention": {
+                "lower": 0.0,
+                "upper": 1.0,
+                "valid_replicates": 888
+              },
+              "contradiction_rate": {
+                "lower": 0.0,
+                "upper": 0.0,
+                "valid_replicates": 1000
+              },
+              "directional_coverage": {
+                "lower": 0.0,
+                "upper": 1.0,
+                "valid_replicates": 888
+              },
+              "pairwise_accuracy": {
+                "lower": 1.0,
+                "upper": 1.0,
+                "valid_replicates": 634
+              }
+            },
+            "limitations": "Small panels and selected tactical sources limit generalization; intervals do not capture teacher-label or source-selection uncertainty.",
+            "method": "Percentile 95% cluster bootstrap over connected ancestry components; all correlated rows travel together.",
+            "repetitions": 1000,
+            "seed": 131313
+          }
+        }
+      },
+      "training_pairs": 123
+    },
+    "independent-games": {
+      "model_version": "af6c02aae5534d1378dfb31ba5ed50491830ca7eaf35f8ba5eaf57c7e4019500",
+      "test_sources": {
+        "external-tactical": {
+          "calibration": {
+            "brier_score": 0.23081730769230768,
+            "calibration_changes_inference": false,
+            "directional_examples": 13,
+            "expected_calibration_error": 0.07884615384615387,
+            "interpretation": "Diagnostic comparison of raw A-channel strength with held-out directional labels. Channels are not normalized; confidence is shown only as an evidence/selection parameter. Unknown and no-demonstrated labels are excluded from this binary diagnostic.",
+            "raw_confidence_is_probability": false,
+            "reliability": [
+              {
+                "empirical_A_frequency": null,
+                "lower": 0.0,
+                "mean_raw_confidence": null,
+                "mean_raw_strength": null,
+                "n": 0,
+                "upper": 0.1
+              },
+              {
+                "empirical_A_frequency": null,
+                "lower": 0.1,
+                "mean_raw_confidence": null,
+                "mean_raw_strength": null,
+                "n": 0,
+                "upper": 0.2
+              },
+              {
+                "empirical_A_frequency": null,
+                "lower": 0.2,
+                "mean_raw_confidence": null,
+                "mean_raw_strength": null,
+                "n": 0,
+                "upper": 0.3
+              },
+              {
+                "empirical_A_frequency": null,
+                "lower": 0.3,
+                "mean_raw_confidence": null,
+                "mean_raw_strength": null,
+                "n": 0,
+                "upper": 0.4
+              },
+              {
+                "empirical_A_frequency": null,
+                "lower": 0.4,
+                "mean_raw_confidence": null,
+                "mean_raw_strength": null,
+                "n": 0,
+                "upper": 0.5
+              },
+              {
+                "empirical_A_frequency": 0.5833333333333334,
+                "lower": 0.5,
+                "mean_raw_confidence": 0.0,
+                "mean_raw_strength": 0.5,
+                "n": 12,
+                "upper": 0.6
+              },
+              {
+                "empirical_A_frequency": null,
+                "lower": 0.6,
+                "mean_raw_confidence": null,
+                "mean_raw_strength": null,
+                "n": 0,
+                "upper": 0.7
+              },
+              {
+                "empirical_A_frequency": null,
+                "lower": 0.7,
+                "mean_raw_confidence": null,
+                "mean_raw_strength": null,
+                "n": 0,
+                "upper": 0.8
+              },
+              {
+                "empirical_A_frequency": null,
+                "lower": 0.8,
+                "mean_raw_confidence": null,
+                "mean_raw_strength": null,
+                "n": 0,
+                "upper": 0.9
+              },
+              {
+                "empirical_A_frequency": 1,
+                "lower": 0.9,
+                "mean_raw_confidence": 0.4950000000000001,
+                "mean_raw_strength": 0.9750000000000001,
+                "n": 1,
+                "upper": 1.0
+              }
+            ],
+            "selective_risk": [
+              {
+                "accuracy": 1.0,
+                "coverage": 0.07692307692307693,
+                "min_confidence": 0,
+                "n": 1,
+                "risk": 0.0
+              },
+              {
+                "accuracy": 1.0,
+                "coverage": 0.07692307692307693,
+                "min_confidence": 0.25,
+                "n": 1,
+                "risk": 0.0
+              },
+              {
+                "accuracy": null,
+                "coverage": 0.0,
+                "min_confidence": 0.5,
+                "n": 0,
+                "risk": null
+              },
+              {
+                "accuracy": null,
+                "coverage": 0.0,
+                "min_confidence": 0.75,
+                "n": 0,
+                "risk": null
+              },
+              {
+                "accuracy": null,
+                "coverage": 0.0,
+                "min_confidence": 0.9,
+                "n": 0,
+                "risk": null
+              }
+            ]
+          },
+          "metrics": {
+            "abstention_rate": 0.9230769230769231,
+            "accuracy_including_abstention": 0.07692307692307693,
+            "complete_joint_strategic_proofs": 0,
+            "conditional_proof_coverage": 0.1388888888888889,
+            "confusion": {
+              "A": {
+                "false_positive": 0,
+                "missed_including_abstention": 7,
+                "true_positive": 1
+              },
+              "B": {
+                "false_positive": 0,
+                "missed_including_abstention": 5,
+                "true_positive": 0
+              }
+            },
+            "contradiction_rate": 0.0,
+            "contradictions": 0,
+            "correct_directional_answers": 1,
+            "correctly_supported_no_preference": 0,
+            "directional_abstentions": 12,
+            "directional_answers": 1,
+            "directional_answers_without_resolved_reference": 2,
+            "directional_coverage": 0.07692307692307693,
+            "directional_examples": 13,
+            "examples": 36,
+            "incomplete": 0,
+            "incomplete_rate": 0.0,
+            "independent_groups": 36,
+            "interpretation": "Accuracy concerns answered, directionally labeled pairs; unknown teacher labels are excluded, and abstention-inclusive accuracy is separate. No-demonstrated preference is not a forced direction.",
+            "label_counts": {
+              "A": 8,
+              "B": 5,
+              "unknown": 23
+            },
+            "native_conditional_proofs": 5,
+            "no_demonstrated_examples": 0,
+            "pairwise_accuracy": 1.0,
+            "precision": {
+              "A": 1.0,
+              "B": null
+            },
+            "recall_including_abstention": {
+              "A": 0.125,
+              "B": 0.0
+            },
+            "unknown_label_examples": 23,
+            "unsupported_direction_on_ambiguous": 0
+          },
+          "uncertainty": {
+            "groups": 36,
+            "intervals": {
+              "accuracy_including_abstention": {
+                "lower": 0.0,
+                "upper": 0.25,
+                "valid_replicates": 1000
+              },
+              "contradiction_rate": {
+                "lower": 0.0,
+                "upper": 0.0,
+                "valid_replicates": 1000
+              },
+              "directional_coverage": {
+                "lower": 0.0,
+                "upper": 0.25,
+                "valid_replicates": 1000
+              },
+              "pairwise_accuracy": {
+                "lower": 1.0,
+                "upper": 1.0,
+                "valid_replicates": 633
+              }
+            },
+            "limitations": "Small panels and selected tactical sources limit generalization; intervals do not capture teacher-label or source-selection uncertainty.",
+            "method": "Percentile 95% cluster bootstrap over connected ancestry components; all correlated rows travel together.",
+            "repetitions": 1000,
+            "seed": 131313
+          }
+        },
+        "independent-games": {
+          "calibration": {
+            "brier_score": 0.25,
+            "calibration_changes_inference": false,
+            "directional_examples": 2,
+            "expected_calibration_error": 0.5,
+            "interpretation": "Diagnostic comparison of raw A-channel strength with held-out directional labels. Channels are not normalized; confidence is shown only as an evidence/selection parameter. Unknown and no-demonstrated labels are excluded from this binary diagnostic.",
+            "raw_confidence_is_probability": false,
+            "reliability": [
+              {
+                "empirical_A_frequency": null,
+                "lower": 0.0,
+                "mean_raw_confidence": null,
+                "mean_raw_strength": null,
+                "n": 0,
+                "upper": 0.1
+              },
+              {
+                "empirical_A_frequency": null,
+                "lower": 0.1,
+                "mean_raw_confidence": null,
+                "mean_raw_strength": null,
+                "n": 0,
+                "upper": 0.2
+              },
+              {
+                "empirical_A_frequency": null,
+                "lower": 0.2,
+                "mean_raw_confidence": null,
+                "mean_raw_strength": null,
+                "n": 0,
+                "upper": 0.3
+              },
+              {
+                "empirical_A_frequency": null,
+                "lower": 0.3,
+                "mean_raw_confidence": null,
+                "mean_raw_strength": null,
+                "n": 0,
+                "upper": 0.4
+              },
+              {
+                "empirical_A_frequency": null,
+                "lower": 0.4,
+                "mean_raw_confidence": null,
+                "mean_raw_strength": null,
+                "n": 0,
+                "upper": 0.5
+              },
+              {
+                "empirical_A_frequency": 1,
+                "lower": 0.5,
+                "mean_raw_confidence": 0.0,
+                "mean_raw_strength": 0.5,
+                "n": 2,
+                "upper": 0.6
+              },
+              {
+                "empirical_A_frequency": null,
+                "lower": 0.6,
+                "mean_raw_confidence": null,
+                "mean_raw_strength": null,
+                "n": 0,
+                "upper": 0.7
+              },
+              {
+                "empirical_A_frequency": null,
+                "lower": 0.7,
+                "mean_raw_confidence": null,
+                "mean_raw_strength": null,
+                "n": 0,
+                "upper": 0.8
+              },
+              {
+                "empirical_A_frequency": null,
+                "lower": 0.8,
+                "mean_raw_confidence": null,
+                "mean_raw_strength": null,
+                "n": 0,
+                "upper": 0.9
+              },
+              {
+                "empirical_A_frequency": null,
+                "lower": 0.9,
+                "mean_raw_confidence": null,
+                "mean_raw_strength": null,
+                "n": 0,
+                "upper": 1.0
+              }
+            ],
+            "selective_risk": [
+              {
+                "accuracy": null,
+                "coverage": 0.0,
+                "min_confidence": 0,
+                "n": 0,
+                "risk": null
+              },
+              {
+                "accuracy": null,
+                "coverage": 0.0,
+                "min_confidence": 0.25,
+                "n": 0,
+                "risk": null
+              },
+              {
+                "accuracy": null,
+                "coverage": 0.0,
+                "min_confidence": 0.5,
+                "n": 0,
+                "risk": null
+              },
+              {
+                "accuracy": null,
+                "coverage": 0.0,
+                "min_confidence": 0.75,
+                "n": 0,
+                "risk": null
+              },
+              {
+                "accuracy": null,
+                "coverage": 0.0,
+                "min_confidence": 0.9,
+                "n": 0,
+                "risk": null
+              }
+            ]
+          },
+          "metrics": {
+            "abstention_rate": 1.0,
+            "accuracy_including_abstention": 0.0,
+            "complete_joint_strategic_proofs": 0,
+            "conditional_proof_coverage": 0.3,
+            "confusion": {
+              "A": {
+                "false_positive": 0,
+                "missed_including_abstention": 2,
+                "true_positive": 0
+              },
+              "B": {
+                "false_positive": 0,
+                "missed_including_abstention": 0,
+                "true_positive": 0
+              }
+            },
+            "contradiction_rate": 0.0,
+            "contradictions": 0,
+            "correct_directional_answers": 0,
+            "correctly_supported_no_preference": 0,
+            "directional_abstentions": 2,
+            "directional_answers": 0,
+            "directional_answers_without_resolved_reference": 3,
+            "directional_coverage": 0.0,
+            "directional_examples": 2,
+            "examples": 20,
+            "incomplete": 0,
+            "incomplete_rate": 0.0,
+            "independent_groups": 20,
+            "interpretation": "Accuracy concerns answered, directionally labeled pairs; unknown teacher labels are excluded, and abstention-inclusive accuracy is separate. No-demonstrated preference is not a forced direction.",
+            "label_counts": {
+              "A": 2,
+              "unknown": 18
+            },
+            "native_conditional_proofs": 6,
+            "no_demonstrated_examples": 0,
+            "pairwise_accuracy": null,
+            "precision": {
+              "A": null,
+              "B": null
+            },
+            "recall_including_abstention": {
+              "A": 0.0,
+              "B": null
+            },
+            "unknown_label_examples": 18,
+            "unsupported_direction_on_ambiguous": 0
+          },
+          "uncertainty": {
+            "groups": 20,
+            "intervals": {
+              "accuracy_including_abstention": {
+                "lower": 0.0,
+                "upper": 0.0,
+                "valid_replicates": 888
+              },
+              "contradiction_rate": {
+                "lower": 0.0,
+                "upper": 0.0,
+                "valid_replicates": 1000
+              },
+              "directional_coverage": {
+                "lower": 0.0,
+                "upper": 0.0,
+                "valid_replicates": 888
+              }
+            },
+            "limitations": "Small panels and selected tactical sources limit generalization; intervals do not capture teacher-label or source-selection uncertainty.",
+            "method": "Percentile 95% cluster bootstrap over connected ancestry components; all correlated rows travel together.",
+            "repetitions": 1000,
+            "seed": 131313
+          }
+        }
+      },
+      "training_pairs": 99
+    }
+  }
+}

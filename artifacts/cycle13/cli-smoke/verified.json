@@ -1,0 +1,63 @@
+{
+  "api_migration_required": false,
+  "commands": [
+    {
+      "argv": [
+        "/data/pln-chess-cycle6-delivery/.venv/bin/pln-chess",
+        "compare-moves",
+        "--input",
+        "/data/pln-chess-cycle6-delivery/artifacts/cycle13/cli-smoke/compare-moves-input.json",
+        "--output",
+        "/data/pln-chess-cycle6-delivery/artifacts/cycle13/cli-smoke/compare-moves-output.json"
+      ],
+      "artifact": "cli-smoke/compare-moves-output.json.xz",
+      "command": "compare-moves",
+      "complete_json_sha256": "a1d0959b9eea22fa568d99ff07f3919bf8b84344b5809ab272986fac11298c1e",
+      "elapsed_seconds": 32.10252022743225,
+      "production_code_hash": "7ac9cac3ef48d9c48c48681d03cd56a472b12d3cbc861865afc9df3d3dbdec8b",
+      "sha256": "da80f80b2bc82f64f6a4d71b867ea0a4fbdd0fe38e252e94919769f6cf7b90af",
+      "trained_model": {
+        "requested": "relational",
+        "status": "Learned experimental conditionals",
+        "trained": true,
+        "version": "658db2b50b90fe26f4bb27396a88b0ceb662e13e948d4f9cda57b1f3c390e13c"
+      },
+      "validation": {
+        "all_valid": true,
+        "graphs": 3,
+        "proof_ids": 508
+      }
+    },
+    {
+      "argv": [
+        "/data/pln-chess-cycle6-delivery/.venv/bin/pln-chess",
+        "preference-continuations",
+        "--input",
+        "/data/pln-chess-cycle6-delivery/artifacts/cycle13/cli-smoke/preference-continuations-input.json",
+        "--output",
+        "/data/pln-chess-cycle6-delivery/artifacts/cycle13/cli-smoke/preference-continuations-output.json"
+      ],
+      "artifact": "cli-smoke/preference-continuations-output.json.xz",
+      "command": "preference-continuations",
+      "complete_json_sha256": "e132f07debaaf98bbe9929f58b6919d378112ce9539273dcae0ee3f58d74a895",
+      "elapsed_seconds": 77.81742310523987,
+      "production_code_hash": "7ac9cac3ef48d9c48c48681d03cd56a472b12d3cbc861865afc9df3d3dbdec8b",
+      "sha256": "18a79957849e8759f062cccb979646843239b615bf3b515581e21ef9033ca65c",
+      "trained_model": {
+        "requested": "temporal",
+        "status": "Learned experimental conditionals",
+        "trained": true,
+        "version": "3c509c2eca4dcc6cd974e24cc6e6f82372d5a997cd8dd4834206b8d6b6befc4a"
+      },
+      "validation": {
+        "all_valid": true,
+        "graphs": 10,
+        "proof_ids": 662
+      }
+    }
+  ],
+  "existing_api_tests": "current/logs/tests.txt",
+  "passed": true,
+  "production_code_hash": "7ac9cac3ef48d9c48c48681d03cd56a472b12d3cbc861865afc9df3d3dbdec8b",
+  "scope": "Installed pair and continuation CLI commands with trained isolated checkpoints and complete JSON proof validation."
+}
