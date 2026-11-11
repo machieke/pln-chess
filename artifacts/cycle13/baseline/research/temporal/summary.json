@@ -1,0 +1,252 @@
+{
+  "all_replays_exact": true,
+  "endpoint_field_metrics": {
+    "attack": {
+      "abstention_rate": 0.02885051456480028,
+      "complete_conditional_proofs": 27838,
+      "coverage": 0.9711494854351997,
+      "f1_including_abstention": 1.0,
+      "false_negative": 0,
+      "false_negative_rate_supported_only": 0.0,
+      "false_positive": 0,
+      "false_positive_rate": 0.0,
+      "global_composition_proofs": 0,
+      "incomplete": 0,
+      "negative_recall": 0.9687606240320327,
+      "negatives": 26473,
+      "positives": 2192,
+      "precision": 1.0,
+      "recall": 1.0,
+      "relations": 28665,
+      "supported_accuracy": 1.0,
+      "true_negative": 25646,
+      "true_positive": 2192,
+      "unknown": 827
+    },
+    "defense": {
+      "abstention_rate": 0.011314655172413793,
+      "complete_conditional_proofs": 3670,
+      "coverage": 0.9886853448275862,
+      "f1_including_abstention": 1.0,
+      "false_negative": 0,
+      "false_negative_rate_supported_only": 0.0,
+      "false_positive": 0,
+      "false_positive_rate": 0.0,
+      "global_composition_proofs": 0,
+      "incomplete": 0,
+      "negative_recall": 0.9876325088339223,
+      "negatives": 3396,
+      "positives": 316,
+      "precision": 1.0,
+      "recall": 1.0,
+      "relations": 3712,
+      "supported_accuracy": 1.0,
+      "true_negative": 3354,
+      "true_positive": 316,
+      "unknown": 42
+    },
+    "king-exposure": {
+      "abstention_rate": 0.1934065934065934,
+      "complete_conditional_proofs": 367,
+      "coverage": 0.8065934065934066,
+      "f1_including_abstention": 1.0,
+      "false_negative": 0,
+      "false_negative_rate_supported_only": 0.0,
+      "false_positive": 0,
+      "false_positive_rate": 0.0,
+      "global_composition_proofs": 0,
+      "incomplete": 0,
+      "negative_recall": 0.8040089086859689,
+      "negatives": 449,
+      "positives": 6,
+      "precision": 1.0,
+      "recall": 1.0,
+      "relations": 455,
+      "supported_accuracy": 1.0,
+      "true_negative": 361,
+      "true_positive": 6,
+      "unknown": 88
+    },
+    "mobility": {
+      "abstention_rate": 0.017993316768057578,
+      "complete_conditional_proofs": 22922,
+      "coverage": 0.9820066832319424,
+      "f1_including_abstention": 1.0,
+      "false_negative": 0,
+      "false_negative_rate_supported_only": 0.0,
+      "false_positive": 0,
+      "false_positive_rate": 0.0,
+      "global_composition_proofs": 0,
+      "incomplete": 0,
+      "negative_recall": 0.9804605722260991,
+      "negatives": 21495,
+      "positives": 1847,
+      "precision": 1.0,
+      "recall": 1.0,
+      "relations": 23342,
+      "supported_accuracy": 1.0,
+      "true_negative": 21075,
+      "true_positive": 1847,
+      "unknown": 420
+    }
+  },
+  "failures": [],
+  "gap_controls": [
+    {
+      "id": "missing-event-observed-state",
+      "passed": true
+    },
+    {
+      "id": "missing-event-unknown-state",
+      "passed": true
+    },
+    {
+      "id": "conflicting-successor",
+      "passed": true
+    },
+    {
+      "id": "zero-confidence",
+      "passed": true
+    }
+  ],
+  "native_temporal_theorems": 0,
+  "planned_moves": false,
+  "scope": "Metrics evaluate separately inferred endpoint fields along fixed observed sequences, not forecasting, search, or strategic sequence selection.",
+  "sequence_count": 12,
+  "sequences": [
+    {
+      "artifact": "temporal/developing-attack.json.xz",
+      "complete_history": true,
+      "deterministic_replay": true,
+      "events": 6,
+      "id": "developing-attack",
+      "native_temporal_theorems": 0,
+      "partial_concept_records": 156,
+      "semantic_hash": "f4aa4aa3009a598393da29a61165585bbb3a17bc88b95160049b1706af0f0796",
+      "states": 7
+    },
+    {
+      "artifact": "temporal/discovered-attack-preparation.json.xz",
+      "complete_history": true,
+      "deterministic_replay": true,
+      "events": 4,
+      "id": "discovered-attack-preparation",
+      "native_temporal_theorems": 0,
+      "partial_concept_records": 32,
+      "semantic_hash": "85dcb9afb03d3dc3a305e293497d0104c911c9025096d1bfd6ba47b1009c871d",
+      "states": 5
+    },
+    {
+      "artifact": "temporal/defender-removal.json.xz",
+      "complete_history": true,
+      "deterministic_replay": true,
+      "events": 4,
+      "id": "defender-removal",
+      "native_temporal_theorems": 0,
+      "partial_concept_records": 44,
+      "semantic_hash": "38b059d469a3cb9e3fa04702030eb313fc1f9e705ca6a08fa21ccf8f2cb8d548",
+      "states": 5
+    },
+    {
+      "artifact": "temporal/pin-formation-release.json.xz",
+      "complete_history": true,
+      "deterministic_replay": true,
+      "events": 4,
+      "id": "pin-formation-release",
+      "native_temporal_theorems": 0,
+      "partial_concept_records": 32,
+      "semantic_hash": "3248ed8469cf1b5587e1a865a13465dd8bf70ab3945d81865a00bf1ea1b75eda",
+      "states": 5
+    },
+    {
+      "artifact": "temporal/knight-fork-creation.json.xz",
+      "complete_history": true,
+      "deterministic_replay": true,
+      "events": 4,
+      "id": "knight-fork-creation",
+      "native_temporal_theorems": 0,
+      "partial_concept_records": 32,
+      "semantic_hash": "bacabc5e1c98e2266eda3f92844c6d180c5a90d4c83db856876a03f944359642",
+      "states": 5
+    },
+    {
+      "artifact": "temporal/pawn-fork-escape.json.xz",
+      "complete_history": true,
+      "deterministic_replay": true,
+      "events": 4,
+      "id": "pawn-fork-escape",
+      "native_temporal_theorems": 0,
+      "partial_concept_records": 36,
+      "semantic_hash": "6513a380f122f9cf4f12a81cc9b22a9677cc795d7974fffe6a333d50637097b8",
+      "states": 5
+    },
+    {
+      "artifact": "temporal/mobility-restriction.json.xz",
+      "complete_history": true,
+      "deterministic_replay": true,
+      "events": 4,
+      "id": "mobility-restriction",
+      "native_temporal_theorems": 0,
+      "partial_concept_records": 31,
+      "semantic_hash": "fff83263e5e523ae1574e85fe55006e71c89902167363c3d1a7aade7258bf880",
+      "states": 5
+    },
+    {
+      "artifact": "temporal/promotion-threat.json.xz",
+      "complete_history": true,
+      "deterministic_replay": true,
+      "events": 4,
+      "id": "promotion-threat",
+      "native_temporal_theorems": 0,
+      "partial_concept_records": 15,
+      "semantic_hash": "2fa8cbc832ecf0a2401994860c712235bc7938cfcece5cd82ee7775b46f524f3",
+      "states": 5
+    },
+    {
+      "artifact": "temporal/king-exposure.json.xz",
+      "complete_history": true,
+      "deterministic_replay": true,
+      "events": 4,
+      "id": "king-exposure",
+      "native_temporal_theorems": 0,
+      "partial_concept_records": 34,
+      "semantic_hash": "a0dde10550f66c4e9b0e297961930120034313940eb5b90a2768ee4d402e3410",
+      "states": 5
+    },
+    {
+      "artifact": "temporal/discovered-defense.json.xz",
+      "complete_history": true,
+      "deterministic_replay": true,
+      "events": 4,
+      "id": "discovered-defense",
+      "native_temporal_theorems": 0,
+      "partial_concept_records": 42,
+      "semantic_hash": "c50788b814b79668792a0c10858aa9f2e14e003b52f062734cedae652df011e3",
+      "states": 5
+    },
+    {
+      "artifact": "temporal/en-passant-ray.json.xz",
+      "complete_history": true,
+      "deterministic_replay": true,
+      "events": 4,
+      "id": "en-passant-ray",
+      "native_temporal_theorems": 0,
+      "partial_concept_records": 26,
+      "semantic_hash": "8e86c5eea3d4eb150116216e9b948bfb277c8fbf7f1766698b78acf51702ea50",
+      "states": 5
+    },
+    {
+      "artifact": "temporal/captured-blocker-queen-ray.json.xz",
+      "complete_history": true,
+      "deterministic_replay": true,
+      "events": 4,
+      "id": "captured-blocker-queen-ray",
+      "native_temporal_theorems": 0,
+      "partial_concept_records": 54,
+      "semantic_hash": "9b1d19d22c5183f96eba371831141a20993585763d72ac51dfdd683e87e2856f",
+      "states": 5
+    }
+  ],
+  "states": 62,
+  "supplied_moves": 50
+}
