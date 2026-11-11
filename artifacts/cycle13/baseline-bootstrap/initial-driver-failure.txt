@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/data/pln-chess-cycle6-delivery/scripts/cycle13_baseline.py", line 165, in <module>
+    args=parser.parse_args();run(args.out,args.source)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/pln-chess-cycle6-delivery/scripts/cycle13_baseline.py", line 48, in run
+    for section, entries in original['files'].items():
+                            ~~~~~~~~^^^^^^^^^
+KeyError: 'files'
