@@ -31,7 +31,7 @@ Cache keys bind actual dependencies, all relevant model/runtime identities and o
 
 The controlled full/incremental comparison should keep pure native-math memoization the same in both arms, while full recomputation clears relation records before rebuilding a state and incremental inference retains dependency-bound records. If an additional arm disables every cache, label that intervention separately. Report that the sparse query domain and observations are reconstructed even when unchanged local proof records are reused; do not claim a new spatial query scheduler. Native operator evaluations and interpreter process launches are distinct counts.
 
-Execution counters, elapsed time, cache information and memory measurements belong under explicit `execution` fields. The pre-existing trapped-piece diagnostic's process RSS value is moved into an execution subrecord in new wrappers. Native proofs, observation identities, source lineage, gaps, classification, unknown state and truncation consequences remain semantic. This allows exact replay without silently removing scientific claims.
+Execution counters, elapsed time, cache information and memory measurements belong under explicit `execution` fields. In particular, wrap the legal API's top-level process RSS and timing counters there. The historical Cycle 12 trapped-piece RSS exclusion belongs only to its separate evaluation artifact; ordinary concept inference does not contain that diagnostic. Native proofs, observation identities, source lineage, gaps, classification, unknown state and truncation consequences remain semantic. This allows exact replay without silently removing scientific claims.
 
 ## Source freeze and reproduction
 
