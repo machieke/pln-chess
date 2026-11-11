@@ -1,7 +1,9 @@
 """Scientific label-policy controls; no production reference-engine imports."""
 from copy import deepcopy
 
-from training.cycle13_labels import label, order, semantic_record
+import chess.engine
+
+from training.cycle13_labels import label, order, semantic_record, score_value
 
 
 POLICY = dict(preference_margin_cp=80, ambiguous_margin_cp=20)
@@ -47,3 +49,13 @@ def test_timing_cannot_change_reference_evidence_identity():
     changed['evaluations'][1]['candidates'][0]['score']['cp'] = 121
     assert semantic_record(changed)['evidence_id'] != first['evidence_id']
     assert 'evidence_id' not in raw
+
+
+def test_terminal_mate_zero_preserves_winner_in_endpoint_labels():
+    won=score_value(chess.engine.MateGiven)
+    lost=score_value(chess.engine.Mate(0))
+    positive=score_value(chess.engine.Cp(10000))
+    assert won['mate']==lost['mate']==0
+    assert won['mate_outcome']=='win' and lost['mate_outcome']=='loss'
+    assert order(won,positive,80)==1 and order(positive,lost,80)==1
+    assert order(won,lost,80)==1 and order(lost,won,80)==-1

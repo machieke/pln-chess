@@ -14,7 +14,10 @@ from scripts.cycle9_baseline import sha
 
 
 def score_value(score):
-    return dict(cp=score.score(),mate=score.mate())
+    # MateGiven and already-mated Mate(0) both expose mate()==0. Preserve
+    # their opposite outcomes before discarding the reference score object.
+    outcome=('win' if score>chess.engine.Cp(0) else 'loss') if score.is_mate() else None
+    return dict(cp=score.score(),mate=score.mate(),mate_outcome=outcome)
 
 
 def order(a,b,margin):
@@ -23,7 +26,8 @@ def order(a,b,margin):
         difference=a['cp']-b['cp']
         return 1 if difference>=margin else -1 if difference<=-margin else 0
     def category(value):
-        return 0 if value['mate'] is None else 1 if value['mate']>0 else -1
+        if value['mate'] is None:return 0
+        return 1 if value.get('mate_outcome')=='win' or value.get('mate_outcome') is None and value['mate']>0 else -1
     first,second=category(a),category(b)
     if first!=second:return 1 if first>second else -1
     if a['mate']==b['mate']:return 0
