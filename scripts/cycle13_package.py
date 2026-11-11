@@ -11,7 +11,7 @@ def run(out):
     out=Path(out).resolve();code=production_code_hash()
     gates=('baseline/reproduction-receipt.json','current/verified.json','acceptance.json','datasets/integrity.json',
         'architecture/boundary.json','clean-research/verified.json','performance/summary.json','ui/verification.json',
-        'cli-smoke/verified.json','final-checks/verified.json','reports.json')
+        'cli-smoke/verified.json','verified-transfer/summary.json','final-checks/verified.json','reports.json')
     for path in gates:assert read_json(out/path)['passed'],path
     assert code==read_json(out/'source-freeze.json')['production_code_hash']
     assert code==read_json(out/'final-checks/verified.json')['production_code_hash']
@@ -47,7 +47,8 @@ def run(out):
         legal_model_version=read_json(out/'acceptance.json')['default_model_version'],
         preference_model_version=read_json(out/'preferences/summary.json')['model_version'],
         temporal_model_version=read_json(out/'temporal/summary.json')['model_version'],
-        transfer_research_target_met=read_json(out/'transfer/summary.json')['target_met'],
+        inspectable_successful_transfer_demonstrations=read_json(out/'verified-transfer/summary.json')['demonstrations'],
+        successful_transfer_illustrations_are_posthoc=True,
         cycle14_recommendation='A: continue preference learning',preferences_promoted=False,
         automatic_move_selection=False,github_push_performed=False,external_deployment_performed=False,
         upstream_modified=False,new_native_operators=False,
