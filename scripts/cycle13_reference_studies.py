@@ -1,5 +1,6 @@
 """Run registered reference supervision only after the complete baseline gate."""
 import argparse
+import json
 import os
 from pathlib import Path
 import subprocess
@@ -13,16 +14,22 @@ from scripts.cycle9_baseline import sha
 def run(out, wait_baseline=False):
     out = Path(out).resolve()
     gate = out / 'baseline/reproduction-receipt.json'
-    while wait_baseline and not gate.exists():
-        time.sleep(2)
-    baseline = read_json(gate)
+    while True:
+        try:
+            baseline = read_json(gate)
+            break
+        except (FileNotFoundError,json.JSONDecodeError):
+            if not wait_baseline:
+                raise
+            time.sleep(2)
     assert baseline['passed'] and baseline['legal_shards'] == 206 and baseline['exact_native_proof_parity']
     target = out / 'reference-studies'
     target.mkdir(parents=True,exist_ok=True)
     for name,module,extra in (
         ('pair-labels','training.cycle13_labels',[]),
         ('label-audit','evaluation.cycle13_data_audit',['--require-labels']),
-        ('temporal-labels','training.cycle13_temporal_sources',[])):
+        ('temporal-labels','training.cycle13_temporal_sources',[]),
+        ('temporal-audit','evaluation.cycle13_temporal_audit',[])):
         argv = [sys.executable,'-u','-m',module,'--out',str(out),*extra]
         log = target / (name + '.txt')
         started = time.time()
@@ -38,6 +45,7 @@ def run(out, wait_baseline=False):
         pair_labels_sha256=sha(out / 'datasets/reference-labels.json'),
         temporal_labels_sha256=sha(out / 'datasets/temporal-labels.json'),
         label_audit_sha256=sha(out / 'datasets/audit.json'),
+        temporal_audit_sha256=sha(out / 'datasets/temporal-audit.json'),
         scope='Offline registered reference labels only; not evidence of native preference accuracy.'))
     print('REGISTERED REFERENCE STUDIES COMPLETE',flush=True)
 
