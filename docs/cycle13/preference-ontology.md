@@ -2,6 +2,27 @@
 
 This specification separates five claims: observed relational changes, a learned conditional, a native conditional application, a host comparison, and unsupported strategic conclusions. A preference is not a proof of legal play, safe continuation, optimality, or competitive strength.
 
+```mermaid
+flowchart TD
+    S[Supplied position and candidate moves] --> L[Unchanged native legality inference]
+    S --> H[Host reconstruction of explicit successors]
+    H --> F[Separate native field and concept proofs]
+    F --> P[Host categorical relative packet]
+    subgraph Offline supervision
+        R[Registered reference comparisons] --> E[Append-only preference evidence]
+        P --> E
+        E --> V[Native revision with ancestry grouping]
+        V --> M[Separate experimental conditional checkpoint]
+    end
+    P --> N[Native modus ponens on the supplied packet]
+    M --> N
+    N --> C[Three raw channels and explicit uncertainty]
+    L --> I[Inspector: independent claims and provenance]
+    C --> I
+```
+
+The diagram's arrows are data dependencies, not native logical conjunctions. Reference labels enter only the offline training path. The legal model and its evidence never receive a preference update.
+
 ## Types and signatures
 
 | Predicate | Argument types | Meaning and origin |
