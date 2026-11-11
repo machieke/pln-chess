@@ -97,7 +97,7 @@ def training_records(out, temporal=False):
             label = temporal_labels[receipt['id']]
             root = by_id[label['plan_id']]
             records.append({**root, 'id':receipt['id'], 'label':label['label'], 'packet':receipt['packet'],
-                'temporal_context':label['temporal_context'], 'reference_evidence_id':label['evidence_id'],
+                'temporal_context':{'horizon':label['horizon'], **label['temporal_context']}, 'reference_evidence_id':label['evidence_id'],
                 'feature_artifact':receipt['artifact']})
     return records
 
