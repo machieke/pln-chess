@@ -23,8 +23,9 @@ def run(out):
     immediate = {r['id']:r for r in read_gzip(out / 'preferences/relational.json.xz')}
     temporal = [r for r in all_rows if r['temporal_context']['horizon'] > 1]
     runtime = Runtime(timeout=600)
-    model = train([r for r in all_rows if r['split'] == 'train'], runtime, out / 'learning/with-temporal',
-        dataset_hash=digest(all_rows), baseline_root=out, variant='C13-preference-with-temporal')
+    training = [r for r in all_rows if r['split'] == 'train']
+    model = train(training, runtime, out / 'learning/with-temporal',
+        dataset_hash=digest(training), baseline_root=out, variant='C13-preference-with-temporal')
     model.export(out / 'model/C13-preference-temporal.json')
     session = PreferenceNativeSession(runtime)
     rows = []

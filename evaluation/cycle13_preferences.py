@@ -40,6 +40,7 @@ def run(out):
     records = training_records(out)
     train_rows = [r for r in records if r['split'] == 'train']
     dataset_hash = digest(records)
+    training_hash = digest(train_rows)
     runtime = Runtime(timeout=600)
     options = FieldOptions(timeout_seconds=600)
 
@@ -62,7 +63,7 @@ def run(out):
     summaries = {}
     for abstraction in ABSTRACTIONS:
         model = train(train_rows, runtime, out / 'learning' / abstraction,
-            dataset_hash=dataset_hash, abstraction=abstraction, baseline_root=out)
+            dataset_hash=training_hash, abstraction=abstraction, baseline_root=out)
         models[abstraction] = model
         rows = evaluate(model)
         outcomes[abstraction] = rows
@@ -79,7 +80,7 @@ def run(out):
     write_json(out / 'preferences/calibration.json', dict(model_version=main.version,
         panels={name:calibration(population) for name,population in groups.items()},
         calibrator_fitted=False, confidence_is_probability=False, inference_changed=False))
-    write_json(out / 'preferences/summary.json', dict(passed=True, dataset_hash=dataset_hash,
+    write_json(out / 'preferences/summary.json', dict(passed=True, dataset_hash=dataset_hash, training_dataset_hash=training_hash,
         source_pairs=len(records), independent_groups=len({r['dependence_group'] for r in records}),
         model_version=main.version, panels=summaries['relational']['panels'],
         bootstrap={name:bootstrap(population) for name,population in groups.items() if name != 'train'},
@@ -153,7 +154,7 @@ def run(out):
             model = main
         else:
             model = train(selected, runtime, out / 'learning' / ('volume-' + str(size)),
-                dataset_hash=dataset_hash, baseline_root=out, variant='C13-volume-' + str(size))
+                dataset_hash=digest(selected), baseline_root=out, variant='C13-volume-' + str(size))
         result = evaluate(model, [r for r in records if r['split'] == 'test'])
         pack(out / 'preferences' / ('volume-' + str(size) + '.json.xz'), result)
         volume.append(dict(training_pairs=len(selected), training_groups=len({r['dependence_group'] for r in selected}),
@@ -165,7 +166,7 @@ def run(out):
     for cohort in ('independent-games','external-tactical'):
         selected = [r for r in train_rows if r['source_record']['source']['cohort'] == cohort]
         model = train(selected, runtime, out / 'learning' / ('source-only-' + cohort),
-            dataset_hash=dataset_hash, baseline_root=out, variant='C13-source-only-' + cohort)
+            dataset_hash=digest(selected), baseline_root=out, variant='C13-source-only-' + cohort)
         result = evaluate(model, [r for r in records if r['split'] == 'test'])
         pack(out / 'preferences' / ('source-only-' + cohort + '.json.xz'), result)
         shift[cohort] = dict(training_pairs=len(selected), model_version=model.version,
