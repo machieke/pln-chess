@@ -173,15 +173,16 @@ For a new run, use a new output directory and checkout path. The commands below 
 
 ```bash
 bash scripts/bootstrap.sh --dependencies-only
-.venv/bin/python -m scripts.cycle10_bootstrap --out /data/c13-replay-bootstrap --checkout /data/c13-replay-source --commit <local-commit>
 .venv/bin/python -m scripts.cycle13_clean_research run --out artifacts/cycle13 --generation /data/c13-research-new-output --checkout /data/c13-research-new-source --commit <local-commit> --workers 4
 .venv/bin/python -m scripts.cycle13_clean_research compare --out artifacts/cycle13 --generation /data/c13-research-new-output
-.venv/bin/python -m evaluation.cycle13_delivery boundary --out artifacts/cycle13
-.venv/bin/python -m evaluation.cycle13_cli --out artifacts/cycle13
+.venv/bin/python -m evaluation.cycle13_cli --out /data/c13-research-new-output/run
+.venv/bin/python -m evaluation.cycle13_performance --out /data/c13-research-new-output/run
 .venv/bin/python -m pytest -q
 ```
 
-The delivered output is the comparison reference. `--generation` names a new replay directory, so the reproduction driver copies only its six explicitly listed source/baseline inputs into the new run and regenerates every research output. The complete command receipts include actual arguments, checkout identities and logs. The baseline/current legal replay drivers are `scripts.cycle13_baseline` and `scripts.cycle13_regression`; both use the unchanged 206-job panel. Run performance in a fresh output generation only after other native jobs finish; the driver refuses reused benchmark receipts.
+The delivered output is the comparison reference. `--generation` names a new replay directory, so the reproduction driver creates its fresh source checkout, copies only its six explicitly listed source/baseline inputs into the new run and regenerates every research output. CLI and performance outputs above also go into that new generation. Run the commands sequentially, and start performance only after other native jobs finish; the driver refuses reused benchmark receipts.
+
+The complete command receipts include actual arguments, checkout identities and logs. The baseline/current legal replay drivers are `scripts.cycle13_baseline` and `scripts.cycle13_regression`; both use the unchanged 206-job panel. Boundary, legal acceptance and complete-delivery drivers require their complete prerequisite receipts in a new package output root. Do not rerun those writing commands against the delivered reference directory. The executed command records and linked receipts document the complete delivery sequence.
 
 Browser verification uses the [ProofShot skill](/home/purplezky/.codex/skills/proofshot/SKILL.md), with a dedicated agent-browser session and `--run` server capture. Its screenshots, video, logs and exact downloaded response are retained. The download instrumentation merely grants the recording context permission to save the actual UI export; it does not alter application data.
 
