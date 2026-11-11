@@ -47,6 +47,8 @@ def run(out):
     label_reasons=Counter((r['label'],r['reason']) for r in labels['records'])
     learning=f'''The fixed corpus contains {pref['source_pairs']} pairs from {pref['independent_groups']} independent source games and ancestry groups: 222 training, 62 calibration and 56 test. It combines 148 published-game positions and 192 external tactical positions, including 141 quiet pairs and 16 promotion pairs. Candidate alternatives and A/B order were fixed by hashes before labels or PLN predictions.
 
+The partition audit excludes shared source games and exact registered geometry/transform classes. It does not prove the absence of every semantically related tactical motif. Shared coarse learned consequence patterns are the intended transfer test; they must not be confused with an independent proof of semantic family separation.
+
 The reference is pinned [Stockfish 18](https://github.com/official-stockfish/Stockfish/releases/tag/sf_18), restricted to two explicit roots and 20,000/80,000 nodes with one thread. The [Lichess puzzle source](https://database.lichess.org/#puzzles) is a frozen CC0 prefix. Scores and reference PVs remain offline supervision. A direction requires agreement at both budgets and the registered margin; score bounds, intermediate margins and disagreements remain unknown.
 '''+table(['Label','Reason','Pairs'],[(label,reason,n) for (label,reason),n in label_reasons.items()])+f'''
 Only registered training observations update the separate model. Unknown labels, incomplete packets and directional labels whose abstraction collapses A/B remain in the ledger but do not update a direction. Independent opposing labels remain visible; inconsistent dependent groups are withheld.
