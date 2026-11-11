@@ -1,0 +1,74 @@
+{
+  "argv": [
+    "/data/pln-chess-cycle13-current/.venv/bin/python",
+    "-m",
+    "scripts.cycle12_legal_review",
+    "--out",
+    "/data/pln-chess-cycle6-delivery/artifacts/cycle13/current",
+    "--source",
+    "/data/pln-chess-cycle13-current",
+    "--worker",
+    "cycle10-frozen-operational-external-test-lichess-broadcast-2024-01-0180"
+  ],
+  "cwd": "/data/pln-chess-cycle13-current",
+  "driver_sha256": "d363d1a8ab43a850bda52601553193ceaa9fa230f48a7ea66d2276eb8e6d002d",
+  "elapsed_seconds": 246.27758288383484,
+  "identity": {
+    "production_code_hash": "7ac9cac3ef48d9c48c48681d03cd56a472b12d3cbc861865afc9df3d3dbdec8b",
+    "runtime": {
+      "atomspace": "PeTTa native in-process MeTTa space (no Hyperon AtomSpace dependency)",
+      "petta": {
+        "branch": "main",
+        "commit": "ee5cacb6a6ecdd554a1c773aaf47e9a0f8a5af0f",
+        "files": {
+          "run.sh": "269a50bc47e8a5f614f1999161d7f5f6ea51c4615d39f12a404540071f124ff0",
+          "src/ext_points.pl": "0b5f1b115e29892ab1bf5833c022df4c2f3f1558cb04f57a8f52de5ccdad8436",
+          "src/filereader.pl": "fb677e03ffbf945f8c752aa02c8db481cebfbdd219660bee387af596e3ce7bc1",
+          "src/load_cache.pl": "619fc64d253221d06907234d2b94d8c3395b4a6facbe56b2a4bb38c84c9c0ac3",
+          "src/main.pl": "2a57276bb0cd32f29e0bd983c2640f1e9bc1646e22bfc266230d3dc13b9ecc6c",
+          "src/metta.pl": "9ee89a19768c82052606b738e7abd88971c5ac826b7cf9fc1ab770e02779337d",
+          "src/parser.pl": "69ab6dd840fcc585d916fd25a496a09dd30ca9aaacf6e55baaa67c8c020c84c1",
+          "src/spaces.pl": "553acea6a6ad210ff46cb0c883af7587295c689fcd5d768566428607417f0bb0",
+          "src/specializer.pl": "b27a2a6430914c11dc9cd0d27b9a3aa5945064607c48979b7a2a0e50bd0f5141",
+          "src/translator.pl": "cda4dcfc4f77ff0d3feb858b1502ec685fb8b1ddbd7cc555193b76ac7de12220",
+          "src/typecheck.pl": "c45a5a66001255004944731e72dc7a2b71872328027c0f23117442896767e91c",
+          "src/typecheck/abstract_domain.pl": "7fafddae3126fc3ab6f9c2380a4809d0dc5331ae1a622df3be6176167d90d8b9",
+          "src/typecheck/analysis_proofs.pl": "96687dbdd49730b355200eb8135aec8a55953daa1dc250196743951565b5350f",
+          "src/typecheck/builtin_registry.pl": "e0a65099592fa3283ff6f31e90f776366f499eb8e172102393b96bd8183d5005",
+          "src/typecheck/call_summaries.pl": "adb9383a34fd3c0cbaa6e898fd1ee41fcbe2a90327af1b96f4db29bd22c46c00",
+          "src/typecheck/clause_checks.pl": "3b072c51563542b85d8195137dfc06d60932fe25acf14c2dafdadc53367fefc3",
+          "src/typecheck/decl_store.pl": "52f5c17cf51e871a11d81f284094bdb945d3876b799f9157e5131eea3dfdd615",
+          "src/typecheck/dependency_graph.pl": "f344d62ad9e084d2b9ab7dc235094de83db87815cb7b1935c97794490abddaf1",
+          "src/typecheck/det_analysis.pl": "bc04e7791253c3e12b45c81be3f0a7fc419c310898a7b2dab89f86cb329eca9a",
+          "src/typecheck/det_proofs.pl": "1e34de0eb4fad3e79ff5b551e2f966595063db5a6cb268aac45e90448f80fd74",
+          "src/typecheck/det_validate.pl": "98738eb738f4aa76b64d1412ab5e839d151e1bef1fda1019396151a4e1d6ac58",
+          "src/typecheck/flags_arrows.pl": "454f1a1d6b47fe390fc3a8fc11297c6acc798bab6a4f5dc3f009ce79fcc844ed",
+          "src/typecheck/inference.pl": "62d0f2ae9ca97b622cec0676dd3de50016311d940e981e98d243f345579f4430",
+          "src/typecheck/ir_analyzer.pl": "02520b61ccccaba064f62f72f68162bc9b033abec64b77f6e2374e9134b1fe83",
+          "src/typecheck/oracles.pl": "c3ec9fc6e02cf78f58a7f441977fe7ceedad34a78a2a27a43fa52e809256b649",
+          "src/typecheck/relational_ir.pl": "c35f43237b3178ae81f207a79905e9aeb998f8eeac3cc9dce323c6fe62fc0037",
+          "src/typecheck/type_lang.pl": "d9cc0fbdc06002a8249c5b77fa999fb50be4b040626728b66a7e80f2b46255e0",
+          "src/typecheck/unified_checker_bridge.pl": "53ae3521a8265b9680f5434caa2384e0a3831739c53325a6bc2c737b02c2a01a",
+          "src/typecheck/unified_checker_cache.pl": "684f13666c61a1b15ecaf42443d41f15d76efa5d032225a87c873b76ca1da930",
+          "src/typecheck/value_checks.pl": "a8013f13afffd637ba9038c9cf2ef1d8cd056a135696fa676ca5fe88ada25ae6"
+        },
+        "repository": "https://github.com/trueagi-io/PeTTa"
+      },
+      "pln": {
+        "branch": "main",
+        "commit": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+        "repository": "https://github.com/trueagi-io/PLN",
+        "sha256": "cdfb3f18bd7b336440fc7b4409209afddf0e64c41f17dee7eefc8f02718de433",
+        "source": "vendor/pln/lib_pln.metta"
+      },
+      "python": "3.12.12",
+      "schema": 1,
+      "swipl": "SWI-Prolog version 10.0.1 for x86_64-linux",
+      "truth_value": "(stv strength confidence)"
+    }
+  },
+  "log": "current/logs/legal-cycle10-frozen-operational-external-test-lichess-broadcast-2024-01-0180.txt",
+  "returncode": 0,
+  "source_head": "3e5aae6b6e4989cc8f0a5ad4eafcbd7df352f9dc",
+  "started_unix": 1794369901.15281
+}

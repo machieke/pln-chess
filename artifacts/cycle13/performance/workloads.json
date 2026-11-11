@@ -1,0 +1,426 @@
+{
+  "inference_oracle": false,
+  "repetitions": 5,
+  "selection": "Hash-selected from registered sources without consulting predictions or preference labels.",
+  "workloads": {
+    "multiple": {
+      "kind": "pairs",
+      "pairs": [
+        {
+          "canonical_pair": "relative-pair:5f09a1ec93b0812bcc3c96ea5ea56591374c89a1d28544ba6ed59bc2d53c6b96",
+          "dependence_group": "c13-ancestry:e5cfe8359215f6cfa9e8d08fe30e8cd5186555c6875f52b8e3dc9be2baf2ae2e",
+          "fen": "r3k2r/1p2nppp/1pb5/8/4PQ2/P1N5/1qP2PPP/R2R2K1 w kq - 0 17",
+          "history": {
+            "initial_fen": "r3k2r/pp2nppp/1Bb5/8/4PQ2/P1N5/1qP2PPP/R2R2K1 b kq - 0 16",
+            "moves": [
+              "a7b6"
+            ],
+            "source": "https://lichess.org/game/XU0EuLbL/black#32"
+          },
+          "id": "c13-puzzle-06Zoz",
+          "moves": [
+            "f4d2",
+            "a1b1"
+          ],
+          "offline_reference": {
+            "captures": [
+              false,
+              false
+            ],
+            "checks": [
+              false,
+              false
+            ],
+            "legal_candidates": true,
+            "mover_kind": "queen",
+            "pieces": 22,
+            "promotions": [
+              false,
+              false
+            ],
+            "quiet_pair": true,
+            "valid_board": true
+          },
+          "partition_source": "Connected source game / canonical unordered pair / local relative motif; fixed hash partition before teacher labels.",
+          "raw_structural_family": "relative-motif:2f565de89e9838f33ee34ce4ef7489e73b5aed19f878372600c53a472daba5ab",
+          "selection": "Published move and hash-selected legal alternative; A/B order fixed by independent hash before preference evaluation.",
+          "source": {
+            "cohort": "external-tactical",
+            "collection": "lichess-puzzles-frozen-prefix",
+            "game_id": "https://lichess.org/game/XU0EuLbL",
+            "game_url": "https://lichess.org/game/XU0EuLbL/black#32",
+            "original_fen": "r3k2r/pp2nppp/1Bb5/8/4PQ2/P1N5/1qP2PPP/R2R2K1 b kq - 0 16",
+            "preceding_move": "a7b6",
+            "puzzle_id": "06Zoz",
+            "puzzle_url": "https://lichess.org/training/06Zoz",
+            "rating": 2608,
+            "selection_theme": "trappedPiece",
+            "source_sha256": "44ea2054dd77257e55e95798791e440b3982814f7f675f9db995a87750060d8b",
+            "supplied_solution": [
+              "f4d2",
+              "e8g8",
+              "a1a2",
+              "b2a2",
+              "c3a2"
+            ]
+          },
+          "source_game": "https://lichess.org/game/XU0EuLbL",
+          "source_primary_move": "f4d2",
+          "split": "calibration",
+          "themes": [
+            "advantage",
+            "long",
+            "middlegame",
+            "quietMove",
+            "trappedPiece"
+          ],
+          "transformation_lineage": [
+            "c13-ancestry:e5cfe8359215f6cfa9e8d08fe30e8cd5186555c6875f52b8e3dc9be2baf2ae2e"
+          ],
+          "unknown_squares": []
+        },
+        {
+          "canonical_pair": "relative-pair:c50b34753e95b895f0946ebe72c8c88b68db77e713fdd8c046fc2cc3f030816e",
+          "dependence_group": "c13-ancestry:992fbfe7bba3e970d8f84f5c68c0795fcd7e558ab0a44a6e23c1e0a116c522a5",
+          "fen": "6rk/p1q4P/8/2p5/3p1b2/1P6/1PP2P2/1n1K2R1 w - - 0 33",
+          "history": {
+            "initial_fen": "4r1Qk/p1q4P/8/2p5/3p1b2/1P6/1PP2P2/1n1K2R1 b - - 2 32",
+            "moves": [
+              "e8g8"
+            ],
+            "source": "https://lichess.org/game/GJTm2Nku/black#64"
+          },
+          "id": "c13-puzzle-08V6S",
+          "moves": [
+            "h7g8q",
+            "g1g5"
+          ],
+          "offline_reference": {
+            "captures": [
+              true,
+              false
+            ],
+            "checks": [
+              true,
+              false
+            ],
+            "legal_candidates": true,
+            "mover_kind": "pawn",
+            "pieces": 15,
+            "promotions": [
+              true,
+              false
+            ],
+            "quiet_pair": false,
+            "valid_board": true
+          },
+          "partition_source": "Connected source game / canonical unordered pair / local relative motif; fixed hash partition before teacher labels.",
+          "raw_structural_family": "relative-motif:8fcd732526fd0791f29a4f5e57110f99471df532958ba0cec3ff908887462d58",
+          "selection": "Published move and hash-selected legal alternative; A/B order fixed by independent hash before preference evaluation.",
+          "source": {
+            "cohort": "external-tactical",
+            "collection": "lichess-puzzles-frozen-prefix",
+            "game_id": "https://lichess.org/game/GJTm2Nku",
+            "game_url": "https://lichess.org/game/GJTm2Nku/black#64",
+            "original_fen": "4r1Qk/p1q4P/8/2p5/3p1b2/1P6/1PP2P2/1n1K2R1 b - - 2 32",
+            "preceding_move": "e8g8",
+            "puzzle_id": "08V6S",
+            "puzzle_url": "https://lichess.org/training/08V6S",
+            "rating": 1485,
+            "selection_theme": "promotion",
+            "source_sha256": "44ea2054dd77257e55e95798791e440b3982814f7f675f9db995a87750060d8b",
+            "supplied_solution": [
+              "h7g8q"
+            ]
+          },
+          "source_game": "https://lichess.org/game/GJTm2Nku",
+          "source_primary_move": "h7g8q",
+          "split": "test",
+          "themes": [
+            "advancedPawn",
+            "endgame",
+            "mate",
+            "mateIn1",
+            "oneMove",
+            "promotion"
+          ],
+          "transformation_lineage": [
+            "c13-ancestry:992fbfe7bba3e970d8f84f5c68c0795fcd7e558ab0a44a6e23c1e0a116c522a5"
+          ],
+          "unknown_squares": []
+        },
+        {
+          "canonical_pair": "relative-pair:5f09a1ec93b0812bcc3c96ea5ea56591374c89a1d28544ba6ed59bc2d53c6b96",
+          "dependence_group": "c13-ancestry:e5cfe8359215f6cfa9e8d08fe30e8cd5186555c6875f52b8e3dc9be2baf2ae2e",
+          "fen": "r3k2r/1p2nppp/1pb5/8/4PQ2/P1N5/1qP2PPP/R2R2K1 w kq - 0 17",
+          "history": {
+            "initial_fen": "r3k2r/pp2nppp/1Bb5/8/4PQ2/P1N5/1qP2PPP/R2R2K1 b kq - 0 16",
+            "moves": [
+              "a7b6"
+            ],
+            "source": "https://lichess.org/game/XU0EuLbL/black#32"
+          },
+          "id": "c13-puzzle-06Zoz",
+          "moves": [
+            "f4d2",
+            "a1b1"
+          ],
+          "offline_reference": {
+            "captures": [
+              false,
+              false
+            ],
+            "checks": [
+              false,
+              false
+            ],
+            "legal_candidates": true,
+            "mover_kind": "queen",
+            "pieces": 22,
+            "promotions": [
+              false,
+              false
+            ],
+            "quiet_pair": true,
+            "valid_board": true
+          },
+          "partition_source": "Connected source game / canonical unordered pair / local relative motif; fixed hash partition before teacher labels.",
+          "raw_structural_family": "relative-motif:2f565de89e9838f33ee34ce4ef7489e73b5aed19f878372600c53a472daba5ab",
+          "selection": "Published move and hash-selected legal alternative; A/B order fixed by independent hash before preference evaluation.",
+          "source": {
+            "cohort": "external-tactical",
+            "collection": "lichess-puzzles-frozen-prefix",
+            "game_id": "https://lichess.org/game/XU0EuLbL",
+            "game_url": "https://lichess.org/game/XU0EuLbL/black#32",
+            "original_fen": "r3k2r/pp2nppp/1Bb5/8/4PQ2/P1N5/1qP2PPP/R2R2K1 b kq - 0 16",
+            "preceding_move": "a7b6",
+            "puzzle_id": "06Zoz",
+            "puzzle_url": "https://lichess.org/training/06Zoz",
+            "rating": 2608,
+            "selection_theme": "trappedPiece",
+            "source_sha256": "44ea2054dd77257e55e95798791e440b3982814f7f675f9db995a87750060d8b",
+            "supplied_solution": [
+              "f4d2",
+              "e8g8",
+              "a1a2",
+              "b2a2",
+              "c3a2"
+            ]
+          },
+          "source_game": "https://lichess.org/game/XU0EuLbL",
+          "source_primary_move": "f4d2",
+          "split": "calibration",
+          "themes": [
+            "advantage",
+            "long",
+            "middlegame",
+            "quietMove",
+            "trappedPiece"
+          ],
+          "transformation_lineage": [
+            "c13-ancestry:e5cfe8359215f6cfa9e8d08fe30e8cd5186555c6875f52b8e3dc9be2baf2ae2e"
+          ],
+          "unknown_squares": []
+        }
+      ]
+    },
+    "single": {
+      "kind": "pairs",
+      "pairs": [
+        {
+          "canonical_pair": "relative-pair:5f09a1ec93b0812bcc3c96ea5ea56591374c89a1d28544ba6ed59bc2d53c6b96",
+          "dependence_group": "c13-ancestry:e5cfe8359215f6cfa9e8d08fe30e8cd5186555c6875f52b8e3dc9be2baf2ae2e",
+          "fen": "r3k2r/1p2nppp/1pb5/8/4PQ2/P1N5/1qP2PPP/R2R2K1 w kq - 0 17",
+          "history": {
+            "initial_fen": "r3k2r/pp2nppp/1Bb5/8/4PQ2/P1N5/1qP2PPP/R2R2K1 b kq - 0 16",
+            "moves": [
+              "a7b6"
+            ],
+            "source": "https://lichess.org/game/XU0EuLbL/black#32"
+          },
+          "id": "c13-puzzle-06Zoz",
+          "moves": [
+            "f4d2",
+            "a1b1"
+          ],
+          "offline_reference": {
+            "captures": [
+              false,
+              false
+            ],
+            "checks": [
+              false,
+              false
+            ],
+            "legal_candidates": true,
+            "mover_kind": "queen",
+            "pieces": 22,
+            "promotions": [
+              false,
+              false
+            ],
+            "quiet_pair": true,
+            "valid_board": true
+          },
+          "partition_source": "Connected source game / canonical unordered pair / local relative motif; fixed hash partition before teacher labels.",
+          "raw_structural_family": "relative-motif:2f565de89e9838f33ee34ce4ef7489e73b5aed19f878372600c53a472daba5ab",
+          "selection": "Published move and hash-selected legal alternative; A/B order fixed by independent hash before preference evaluation.",
+          "source": {
+            "cohort": "external-tactical",
+            "collection": "lichess-puzzles-frozen-prefix",
+            "game_id": "https://lichess.org/game/XU0EuLbL",
+            "game_url": "https://lichess.org/game/XU0EuLbL/black#32",
+            "original_fen": "r3k2r/pp2nppp/1Bb5/8/4PQ2/P1N5/1qP2PPP/R2R2K1 b kq - 0 16",
+            "preceding_move": "a7b6",
+            "puzzle_id": "06Zoz",
+            "puzzle_url": "https://lichess.org/training/06Zoz",
+            "rating": 2608,
+            "selection_theme": "trappedPiece",
+            "source_sha256": "44ea2054dd77257e55e95798791e440b3982814f7f675f9db995a87750060d8b",
+            "supplied_solution": [
+              "f4d2",
+              "e8g8",
+              "a1a2",
+              "b2a2",
+              "c3a2"
+            ]
+          },
+          "source_game": "https://lichess.org/game/XU0EuLbL",
+          "source_primary_move": "f4d2",
+          "split": "calibration",
+          "themes": [
+            "advantage",
+            "long",
+            "middlegame",
+            "quietMove",
+            "trappedPiece"
+          ],
+          "transformation_lineage": [
+            "c13-ancestry:e5cfe8359215f6cfa9e8d08fe30e8cd5186555c6875f52b8e3dc9be2baf2ae2e"
+          ],
+          "unknown_squares": []
+        }
+      ]
+    },
+    "three-ply": {
+      "horizon": 3,
+      "kind": "temporal",
+      "plan": {
+        "branches": {
+          "A": [
+            "f4d2",
+            "e8g8",
+            "a1a2"
+          ],
+          "B": [
+            "a1b1",
+            "b2c3",
+            "d1d6"
+          ]
+        },
+        "dependence_group": "c13-ancestry:e5cfe8359215f6cfa9e8d08fe30e8cd5186555c6875f52b8e3dc9be2baf2ae2e",
+        "fen": "r3k2r/1p2nppp/1pb5/8/4PQ2/P1N5/1qP2PPP/R2R2K1 w kq - 0 17",
+        "history": {
+          "initial_fen": "r3k2r/pp2nppp/1Bb5/8/4PQ2/P1N5/1qP2PPP/R2R2K1 b kq - 0 16",
+          "moves": [
+            "a7b6"
+          ],
+          "source": "https://lichess.org/game/XU0EuLbL/black#32"
+        },
+        "id": "c13-puzzle-06Zoz",
+        "independent_of_pln_predictions": true,
+        "moves": [
+          "f4d2",
+          "a1b1"
+        ],
+        "reference_legal_replay": true,
+        "response_selection": "First three plies of each explicit root PV at the registered 80,000-node offline search.",
+        "response_source_evidence": "reference-preference:e267b08af537088ed9aa2101c7cc071e466ae70faac20fe88ada4a3020155932",
+        "selection_rank": "5b7695c6332fe5bf58f09e8bbd134f162490287246bf12657967f154f4bc2622",
+        "source": {
+          "cohort": "external-tactical",
+          "collection": "lichess-puzzles-frozen-prefix",
+          "game_id": "https://lichess.org/game/XU0EuLbL",
+          "game_url": "https://lichess.org/game/XU0EuLbL/black#32",
+          "original_fen": "r3k2r/pp2nppp/1Bb5/8/4PQ2/P1N5/1qP2PPP/R2R2K1 b kq - 0 16",
+          "preceding_move": "a7b6",
+          "puzzle_id": "06Zoz",
+          "puzzle_url": "https://lichess.org/training/06Zoz",
+          "rating": 2608,
+          "selection_theme": "trappedPiece",
+          "source_sha256": "44ea2054dd77257e55e95798791e440b3982814f7f675f9db995a87750060d8b",
+          "supplied_solution": [
+            "f4d2",
+            "e8g8",
+            "a1a2",
+            "b2a2",
+            "c3a2"
+          ]
+        },
+        "source_game": "https://lichess.org/game/XU0EuLbL",
+        "split": "calibration",
+        "unexamined_responses": "All responses outside these supplied lines remain unexamined; no exhaustive-response claim."
+      }
+    },
+    "two-ply": {
+      "horizon": 2,
+      "kind": "temporal",
+      "plan": {
+        "branches": {
+          "A": [
+            "f4d2",
+            "e8g8",
+            "a1a2"
+          ],
+          "B": [
+            "a1b1",
+            "b2c3",
+            "d1d6"
+          ]
+        },
+        "dependence_group": "c13-ancestry:e5cfe8359215f6cfa9e8d08fe30e8cd5186555c6875f52b8e3dc9be2baf2ae2e",
+        "fen": "r3k2r/1p2nppp/1pb5/8/4PQ2/P1N5/1qP2PPP/R2R2K1 w kq - 0 17",
+        "history": {
+          "initial_fen": "r3k2r/pp2nppp/1Bb5/8/4PQ2/P1N5/1qP2PPP/R2R2K1 b kq - 0 16",
+          "moves": [
+            "a7b6"
+          ],
+          "source": "https://lichess.org/game/XU0EuLbL/black#32"
+        },
+        "id": "c13-puzzle-06Zoz",
+        "independent_of_pln_predictions": true,
+        "moves": [
+          "f4d2",
+          "a1b1"
+        ],
+        "reference_legal_replay": true,
+        "response_selection": "First three plies of each explicit root PV at the registered 80,000-node offline search.",
+        "response_source_evidence": "reference-preference:e267b08af537088ed9aa2101c7cc071e466ae70faac20fe88ada4a3020155932",
+        "selection_rank": "5b7695c6332fe5bf58f09e8bbd134f162490287246bf12657967f154f4bc2622",
+        "source": {
+          "cohort": "external-tactical",
+          "collection": "lichess-puzzles-frozen-prefix",
+          "game_id": "https://lichess.org/game/XU0EuLbL",
+          "game_url": "https://lichess.org/game/XU0EuLbL/black#32",
+          "original_fen": "r3k2r/pp2nppp/1Bb5/8/4PQ2/P1N5/1qP2PPP/R2R2K1 b kq - 0 16",
+          "preceding_move": "a7b6",
+          "puzzle_id": "06Zoz",
+          "puzzle_url": "https://lichess.org/training/06Zoz",
+          "rating": 2608,
+          "selection_theme": "trappedPiece",
+          "source_sha256": "44ea2054dd77257e55e95798791e440b3982814f7f675f9db995a87750060d8b",
+          "supplied_solution": [
+            "f4d2",
+            "e8g8",
+            "a1a2",
+            "b2a2",
+            "c3a2"
+          ]
+        },
+        "source_game": "https://lichess.org/game/XU0EuLbL",
+        "split": "calibration",
+        "unexamined_responses": "All responses outside these supplied lines remain unexamined; no exhaustive-response claim."
+      }
+    }
+  }
+}

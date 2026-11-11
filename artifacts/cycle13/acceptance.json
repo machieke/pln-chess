@@ -1,0 +1,103 @@
+{
+  "accepted_legacy_model_versions": [
+    "3b14445d136a01d77dd60e5b2dca2d49f525903a85db2283f0281dc86d74859c",
+    "801834df61c75a99c3a3e1d0a91b0fc30ba6875238ba5ea0f5731fe2fe2a1a08"
+  ],
+  "accepted_model_versions": [
+    "a6d3d826d93ee01b8accb7dc9948c0bd9bb0048cc54755bf45e92ec82502743d"
+  ],
+  "all_required_checks_executed": true,
+  "checks": {
+    "api_compatibility": true,
+    "artifact_preservation": true,
+    "baseline": true,
+    "cache_parity": true,
+    "clean_bootstrap": true,
+    "concept_preservation": true,
+    "current_native_parity": true,
+    "dataset_integrity": true,
+    "native_boundary": true,
+    "negative_controls": true,
+    "preference_isolation": true,
+    "research_reproduction": true,
+    "temporal_robustness": true,
+    "tests": true
+  },
+  "completed_unix": 1794376124.7158115,
+  "default_model_version": "a6d3d826d93ee01b8accb7dc9948c0bd9bb0048cc54755bf45e92ec82502743d",
+  "gate_receipts": {
+    "api_compatibility": {
+      "path": "cli-smoke/verified.json",
+      "sha256": "5944c9dff1fbccf993fe6b8b22121c1814404c9a50a799f268881bfaacb8e5c6"
+    },
+    "artifact_preservation": {
+      "path": "architecture/boundary.json",
+      "sha256": "79f7b96e65c92f8f820b31428864e9db6e9f5df13d35d0c0849fe9232da7468d"
+    },
+    "baseline": {
+      "path": "baseline/reproduction-receipt.json",
+      "sha256": "b9d47ec7ed98cde05c5261d951863d9cef14f1a89c50ee90a5c4f89ef0567ad2"
+    },
+    "cache_parity": {
+      "path": "performance/summary.json",
+      "sha256": "282ccd81af7cae9cdd024df192d4eaf0ed3a284d691aaf34c111dd1705abff89"
+    },
+    "clean_bootstrap": {
+      "path": "bootstrap/verified.json",
+      "sha256": "72a94c0ef831ae6c5e746efb3c9c6054f7c4626b4b8faa83cb7ed72d7c856f38"
+    },
+    "concept_preservation": {
+      "path": "concepts/summary.json",
+      "sha256": "0197d70fdff5829b0703e0ce5be8a58cc20983a3055def7c3c08e3bbf490afcc"
+    },
+    "current_native_parity": {
+      "path": "current/verified.json",
+      "sha256": "1f8ffa6785f1332a0b63f6db5f73cf357faac0ec3748956382baa7dce37ab7f7"
+    },
+    "dataset_integrity": {
+      "path": "datasets/integrity.json",
+      "sha256": "9d8cc449184b665d59277b7cfb4cf2ae16195b2729df00596cedf9a6e643f94b"
+    },
+    "native_boundary": {
+      "path": "architecture/boundary.json",
+      "sha256": "79f7b96e65c92f8f820b31428864e9db6e9f5df13d35d0c0849fe9232da7468d"
+    },
+    "negative_controls": {
+      "path": "current/verified.json",
+      "sha256": "1f8ffa6785f1332a0b63f6db5f73cf357faac0ec3748956382baa7dce37ab7f7"
+    },
+    "preference_isolation": {
+      "path": "architecture/boundary.json",
+      "sha256": "79f7b96e65c92f8f820b31428864e9db6e9f5df13d35d0c0849fe9232da7468d"
+    },
+    "research_reproduction": {
+      "path": "clean-research/verified.json",
+      "sha256": "31a5192bb0e10096b89f30fe861f72429aab40029f4f537a42c8ce81d4ff07a4"
+    },
+    "temporal_robustness": {
+      "path": "temporal/summary.json",
+      "sha256": "03c3df3812bfdd5b778d2cc797afaed683d4d4e62e1c4004c1b5f70c948b433d"
+    },
+    "tests": {
+      "path": "current/verified.json",
+      "sha256": "1f8ffa6785f1332a0b63f6db5f73cf357faac0ec3748956382baa7dce37ab7f7"
+    }
+  },
+  "legacy_registrations": {
+    "10": "c125ca2bba82215ec7d84c66edeefd80ffd6c7c4c44293fa4607798c07f4cbb2",
+    "11": "4ac7f066d32593e49f329bf1d187b78ec6a15014f8f5b5874bee8dfc9d90ec2d",
+    "12": "4a0194347f3548aa65082e6167cd7141908fe97bafa2a9885b443d154df983da",
+    "6": "cc8685591e9b460caeb0c890395d47f14aefdccbabad90d6ad7b9b093b0ccef6",
+    "7": "e86847169c3fe8b4209c4903684c9359a21a993e1edb1e83fe556a8a3783a37a",
+    "8": "e9b7566389d8d0865a5fdc2013fe81985c15646fa05d6b1b1e83f533198a96d9",
+    "9": "2a446e4566e7c72188d10dd2a548057f6f852c623f34615a6a201f4869f3553f"
+  },
+  "new_legal_learning_promoted": false,
+  "passed": true,
+  "preference_model_is_default": false,
+  "production_code_hash": "7ac9cac3ef48d9c48c48681d03cd56a472b12d3cbc861865afc9df3d3dbdec8b",
+  "registration_hash": "cd9b369b9cad56a0dd145d839d1ae4b2dffbfed19f5ae39528af294b44a9ce27",
+  "runtime_version": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+  "scope": "Source-bound recognition of the byte-identical accepted Cycle 12 legal checkpoint. Experimental preference accuracy never changes legal classifications or enables move selection.",
+  "source_head": "3e5aae6b6e4989cc8f0a5ad4eafcbd7df352f9dc"
+}
