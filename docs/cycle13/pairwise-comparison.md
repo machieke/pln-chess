@@ -1,6 +1,6 @@
 # Pairwise comparison contract
 
-Status: design registration; implementation and measurements remain pending the baseline gate.
+Implemented in `src/pln_chess/cycle13/api.py`, with lazy public entry points in `pln_chess.api`. The installed `pln-chess compare-moves --input request.json --output result.json` command and `/preferences` inspector expose the same contract. The input contains `fen`, `move_a`, `move_b` and optional supplied `history`; `preference_model` selects a separately trained experimental checkpoint. Missing checkpoints produce an explicitly untrained, indeterminate comparison.
 
 The experimental API accepts a supplied position and two explicit structural candidates. It returns an independent legality belief for each, separately inferred before/after fields, bounded concept candidates, diagnostic relational changes, the supplied categorical comparison packet, native preference channels, provenance, proof graphs and gaps. It never chooses a move to play.
 
@@ -14,4 +14,6 @@ The A, B and no-demonstrated-preference channels have independent raw PLN truth 
 
 Full recomputation and cached inference must retain identical semantic records and proof graphs. Cache identity binds the field/concept/preference models, native runtime, options and actual observation dependencies. Changed occupancy, unknown cells and hypothetical successors cannot reuse stale observations. Returned structures must not allow callers to mutate cached provenance.
 
-The API validates the entire supplied envelope before native work, rejects reference labels or engine scores as inference inputs, bounds pair batches and response branches, and discloses whether a budget applies to a stage or to the entire request. It does not infer transitivity or exhaustively enumerate opponent replies.
+The API validates the entire supplied envelope before native work, rejects reference labels or engine scores as inference inputs, bounds batches to 16 pairs and continuations to two supplied branches per candidate and three plies. The native-node allowance applies to each field/concept/legal/preference stage; the request deadline bounds native calls across stages. A deadline includes native execution rather than a guarantee on JSON export time. It does not infer transitivity or exhaustively enumerate opponent replies.
+
+The catalog and HTTP transport contain no teacher labels or centipawn scores. UI exports preserve the original response bytes because JavaScript number reserialization can change canonical Python proof identities (`1.0` versus `1`, for example). The UI may parse a separate copy for display. All graph and proof IDs remain checkable in the exported original response.

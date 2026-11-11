@@ -1,6 +1,6 @@
 # Preference evidence contract
 
-Status: registered before fitting. The implementation and measured ledger identities will be added after the starting baseline gate passes.
+The registered contract is implemented in `src/pln_chess/cycle13/evidence.py` and the isolated offline learner in `training/cycle13_learning.py`. The starting baseline passed before fitting. Each study retains its complete `ledger.jsonl`, checkpoint and ordered native training trace under `artifacts/cycle13/learning/`.
 
 Preference evidence is separate from the Boolean legal-move ledger. It records a supplied position, two candidate moves, independently inferred field records, their relative categorical descriptor, the external supervision source, a four-way label, source-game and dependence ancestry, temporal context, and field/concept/preference/native-runtime identities. Evidence and proof identifiers bind content; measured elapsed time cannot change a scientific observation's identity.
 

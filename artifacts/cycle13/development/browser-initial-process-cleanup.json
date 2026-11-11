@@ -1,0 +1,23 @@
+{
+  "owned_processes": [
+    {
+      "args": "ffmpeg -y -avioflags direct -fpsprobesize 0 -probesize 32 -analyzeduration 0 -f image2pipe -c:v mjpeg -framerate 10 -i pipe:0 -vf pad=ceil(iw/2)*2:ceil(ih/2)*2 -c:v libvpx -crf 30 -b:v 1M -pix_fmt yuv420p -threads 1 /data/pln-chess-cycle6-delivery/artifacts/cycle13/development/browser-initial/2026-11-11_02-20-10_cycle-13-isolated-browser-verification-d/session.webm ",
+      "pid": 1825899,
+      "ppid": 1825561,
+      "signal": "SIGINT"
+    },
+    {
+      "args": "/home/purplezky/.agent-browser/browsers/chrome-152.0.7977.42/chrome --remote-debugging-port=0 --no-first-run --no-default-browser-check --disable-background-networking --disable-backgrounding-occluded-windows --disable-component-update --disable-default-apps --disable-hang-monitor --disable-popup-blocking --disable-prompt-on-repost --disable-sync --disable-features=Translate --enable-features=NetworkService,NetworkServiceInProcess --metrics-recording-only --password-store=basic --use-mock-keychain --headless=new --enable-unsafe-swiftshader --user-data-dir=/dev/shm/agent-browser-chrome-0aefb860-64d8-4443-9b97-9bbc99d90611 --window-size=1280,720 --noerrdialogs --ozone-platform=headless --ozone-override-screen-size=800,600 --use-angle=swiftshader-webgl ",
+      "pid": 1825588,
+      "ppid": 1825561,
+      "signal": "SIGTERM"
+    },
+    {
+      "args": "/home/purplezky/.nvm/versions/node/v22.20.0/lib/node_modules/agent-browser/bin/agent-browser-linux-x64 ",
+      "pid": 1825561,
+      "ppid": 1,
+      "signal": "SIGTERM"
+    }
+  ],
+  "reason": "Initial browser daemon retained recording after documented ProofShot stop. Session-scoped stop command hung; terminated only verified descendants of pln-cycle13-initial."
+}

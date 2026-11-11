@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/data/pln-chess-cycle6-delivery/evaluation/cycle13_concepts.py", line 114, in <module>
+    run(parser.parse_args().out)
+  File "/data/pln-chess-cycle6-delivery/evaluation/cycle13_concepts.py", line 51, in run
+    assert legacy[name] == old['result'][name], (record['id'], name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('pin-R-(1, 0)-2-2-k/base', 'proof_trace')

@@ -1,0 +1,72 @@
+[
+  {
+    "action": "scrollintoview #compare",
+    "relativeTimeSec": 5,
+    "timestamp": "2026-11-11T02:34:16.271Z"
+  },
+  {
+    "action": "click #compare",
+    "relativeTimeSec": 5.4,
+    "timestamp": "2026-11-11T02:34:16.636Z"
+  },
+  {
+    "action": "get cdp-url",
+    "relativeTimeSec": 5.8,
+    "timestamp": "2026-11-11T02:34:16.991Z"
+  },
+  {
+    "action": "eval (async()=>{const raw=window.plnPreferenceResultRaw;if(!raw)return \"pending\";const bytes=new TextEncoder().encode(raw);return JSON.stringify({bytes:bytes.length,sha256:Array.from(new Uint8Array(await crypto.subtle.digest(\"SHA-256\",bytes))).map(x=>x.toString(16).padStart(2,\"0\")).join(\"\"),status:document.querySelector(\"#status\").textContent})})()",
+    "relativeTimeSec": 38.3,
+    "timestamp": "2026-11-11T02:34:49.493Z"
+  },
+  {
+    "action": "scrollintoview #export",
+    "relativeTimeSec": 40.2,
+    "timestamp": "2026-11-11T02:34:51.449Z"
+  },
+  {
+    "action": "click #export",
+    "relativeTimeSec": 40.6,
+    "timestamp": "2026-11-11T02:34:51.794Z"
+  },
+  {
+    "action": "scrollintoview #relations tr:first-child button",
+    "relativeTimeSec": 75.1,
+    "timestamp": "2026-11-11T02:35:26.346Z"
+  },
+  {
+    "action": "click #relations tr:first-child button",
+    "relativeTimeSec": 75.5,
+    "timestamp": "2026-11-11T02:35:26.703Z"
+  },
+  {
+    "action": "eval JSON.stringify({proofPage:document.querySelector(\"#proof-page\").textContent,hasNativeExpression:document.querySelector(\"#proof\").textContent.includes(\"native_expression\")})",
+    "relativeTimeSec": 75.9,
+    "timestamp": "2026-11-11T02:35:27.079Z"
+  },
+  {
+    "action": "screenshot native-field-proof.png",
+    "relativeTimeSec": 76.2,
+    "timestamp": "2026-11-11T02:35:27.422Z"
+  },
+  {
+    "action": "set viewport 390 844",
+    "relativeTimeSec": 76.6,
+    "timestamp": "2026-11-11T02:35:27.863Z"
+  },
+  {
+    "action": "scrollintoview #after-board",
+    "relativeTimeSec": 77.2,
+    "timestamp": "2026-11-11T02:35:28.381Z"
+  },
+  {
+    "action": "screenshot mobile-endpoint.png",
+    "relativeTimeSec": 77.5,
+    "timestamp": "2026-11-11T02:35:28.726Z"
+  },
+  {
+    "action": "eval JSON.stringify({overflow:document.documentElement.scrollWidth>innerWidth,boardCells:document.querySelectorAll(\"#after-board button\").length})",
+    "relativeTimeSec": 77.9,
+    "timestamp": "2026-11-11T02:35:29.106Z"
+  }
+]

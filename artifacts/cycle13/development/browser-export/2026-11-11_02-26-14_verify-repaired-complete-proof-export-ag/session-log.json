@@ -1,0 +1,127 @@
+[
+  {
+    "action": "scrollintoview #compare",
+    "relativeTimeSec": 5,
+    "timestamp": "2026-11-11T02:27:23.180Z"
+  },
+  {
+    "action": "click #compare",
+    "relativeTimeSec": 5.3,
+    "timestamp": "2026-11-11T02:27:23.515Z"
+  },
+  {
+    "action": "eval JSON.stringify({status:document.querySelector(\"#status\").textContent,ready:!!window.plnPreferenceResult})",
+    "relativeTimeSec": 43.8,
+    "timestamp": "2026-11-11T02:28:01.952Z"
+  },
+  {
+    "action": "scrollintoview #export",
+    "relativeTimeSec": 51,
+    "timestamp": "2026-11-11T02:28:09.140Z"
+  },
+  {
+    "action": "download #export /tmp/pln-cycle13-ui-export-fixed.json",
+    "relativeTimeSec": 51.3,
+    "timestamp": "2026-11-11T02:28:09.486Z"
+  },
+  {
+    "action": "eval (async()=>{const bytes=new TextEncoder().encode(JSON.stringify(window.plnPreferenceResult,null,2));return JSON.stringify({bytes:bytes.length,sha256:Array.from(new Uint8Array(await crypto.subtle.digest(\"SHA-256\",bytes))).map(x=>x.toString(16).padStart(2,\"0\")).join(\"\")})})()",
+    "relativeTimeSec": 94.3,
+    "timestamp": "2026-11-11T02:28:52.494Z"
+  },
+  {
+    "action": "errors",
+    "relativeTimeSec": 105.7,
+    "timestamp": "2026-11-11T02:29:03.849Z"
+  },
+  {
+    "action": "get cdp-url",
+    "relativeTimeSec": 114.2,
+    "timestamp": "2026-11-11T02:29:12.369Z"
+  },
+  {
+    "action": "scrollintoview #export",
+    "relativeTimeSec": 147,
+    "timestamp": "2026-11-11T02:29:45.187Z"
+  },
+  {
+    "action": "click #export",
+    "relativeTimeSec": 147.4,
+    "timestamp": "2026-11-11T02:29:45.552Z"
+  },
+  {
+    "action": "tab new chrome://downloads/",
+    "relativeTimeSec": 167.1,
+    "timestamp": "2026-11-11T02:30:05.298Z"
+  },
+  {
+    "action": "eval JSON.stringify(document.querySelector(\"downloads-manager\")?.items?.map(x=>({fileName:x.fileName,state:x.state,dangerType:x.dangerType,lastReasonText:x.lastReasonText,failState:x.failState,filePath:x.filePath})))",
+    "relativeTimeSec": 167.5,
+    "timestamp": "2026-11-11T02:30:05.702Z"
+  },
+  {
+    "action": "snapshot -i",
+    "relativeTimeSec": 173.4,
+    "timestamp": "2026-11-11T02:30:11.574Z"
+  },
+  {
+    "action": "eval JSON.stringify({text:document.body.innerText,items:document.querySelector(\"downloads-manager\")?.items_,shadow:document.querySelector(\"downloads-manager\")?.shadowRoot?.innerText})",
+    "relativeTimeSec": 173.8,
+    "timestamp": "2026-11-11T02:30:11.945Z"
+  },
+  {
+    "action": "tab 0",
+    "relativeTimeSec": 202.4,
+    "timestamp": "2026-11-11T02:30:40.565Z"
+  },
+  {
+    "action": "eval JSON.stringify({ready:!!window.plnPreferenceResult})",
+    "relativeTimeSec": 217.1,
+    "timestamp": "2026-11-11T02:30:55.242Z"
+  },
+  {
+    "action": "scrollintoview #export",
+    "relativeTimeSec": 217.4,
+    "timestamp": "2026-11-11T02:30:55.615Z"
+  },
+  {
+    "action": "click #export",
+    "relativeTimeSec": 217.8,
+    "timestamp": "2026-11-11T02:30:55.966Z"
+  },
+  {
+    "action": "tab list",
+    "relativeTimeSec": 222.1,
+    "timestamp": "2026-11-11T02:31:00.236Z"
+  },
+  {
+    "action": "tab 1",
+    "relativeTimeSec": 228.5,
+    "timestamp": "2026-11-11T02:31:06.657Z"
+  },
+  {
+    "action": "eval JSON.stringify({ready:!!window.plnPreferenceResult})",
+    "relativeTimeSec": 228.8,
+    "timestamp": "2026-11-11T02:31:06.995Z"
+  },
+  {
+    "action": "scrollintoview #export",
+    "relativeTimeSec": 229.2,
+    "timestamp": "2026-11-11T02:31:07.366Z"
+  },
+  {
+    "action": "click #export",
+    "relativeTimeSec": 229.6,
+    "timestamp": "2026-11-11T02:31:07.739Z"
+  },
+  {
+    "action": "scrollintoview #verdict",
+    "relativeTimeSec": 291.9,
+    "timestamp": "2026-11-11T02:32:10.046Z"
+  },
+  {
+    "action": "screenshot export-verified.png",
+    "relativeTimeSec": 292.2,
+    "timestamp": "2026-11-11T02:32:10.401Z"
+  }
+]
