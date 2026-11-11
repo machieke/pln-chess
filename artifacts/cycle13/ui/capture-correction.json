@@ -1,0 +1,15 @@
+{
+  "corrected_evidence_removal": "Same-order requests with and without preference evidence have identical complete legal candidate hashes and values; see evidence-removal.json.",
+  "corrected_reversal": "See real-query-reversal.json; it explicitly does not claim legal DAG byte identity across reordered batches.",
+  "correction": "Capture complete legacy legal candidates and rerun the real HTTP reversal and evidence-removal comparisons. Initial observations and failure remain preserved.",
+  "full_capture_transport": "The full legal candidate could not be returned through the browser automation output bridge; compact browser hashes now cover its complete contents.",
+  "initial_summaries": [
+    "trained-desktop",
+    "empty-evidence",
+    "reversed-query"
+  ],
+  "initial_ui_preferences_valid": true,
+  "legacy_batch_scope": "Full legal-candidate JSON is not invariant to candidate ordering because inherited native DAG nodes use batch-scoped n0, n1, ... identifiers. Preference channels/evidence and per-move legal classifications/node counts are checked instead.",
+  "production_change": false,
+  "reason": "The legacy legal candidate has an ordered proof_trace but no top-level proof_id. Initial browser summaries therefore recorded an empty legalProofIds map and cannot establish legal proof parity."
+}

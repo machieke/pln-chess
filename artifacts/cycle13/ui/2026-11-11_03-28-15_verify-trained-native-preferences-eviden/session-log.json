@@ -1,0 +1,482 @@
+[
+  {
+    "action": "screenshot desktop-ready.png",
+    "relativeTimeSec": 5,
+    "timestamp": "2026-11-11T03:28:38.086Z"
+  },
+  {
+    "action": "select #example 42",
+    "relativeTimeSec": 12.4,
+    "timestamp": "2026-11-11T03:28:45.474Z"
+  },
+  {
+    "action": "scrollintoview #compare",
+    "relativeTimeSec": 13.1,
+    "timestamp": "2026-11-11T03:28:46.185Z"
+  },
+  {
+    "action": "click #compare",
+    "relativeTimeSec": 13.9,
+    "timestamp": "2026-11-11T03:28:47.005Z"
+  },
+  {
+    "action": "eval JSON.stringify({status:document.getElementById(\"status\").textContent, verdict:document.getElementById(\"verdict\").textContent, trained:window.plnPreferenceResult?.inspector_model, preference:window.plnPreferenceResult?.preference?.status, complete:window.plnPreferenceResult?.preference?.conditional_proof_complete, truncated:window.plnPreferenceResult?.execution?.truncated})",
+    "relativeTimeSec": 42.9,
+    "timestamp": "2026-11-11T03:29:16.032Z"
+  },
+  {
+    "action": "eval JSON.stringify({status:document.getElementById(\"status\").textContent, verdict:document.getElementById(\"verdict\").textContent, trained:window.plnPreferenceResult?.inspector_model?.trained, preference:window.plnPreferenceResult?.preference?.status, complete:window.plnPreferenceResult?.preference?.conditional_proof_complete, truncated:window.plnPreferenceResult?.execution?.truncated})",
+    "relativeTimeSec": 125.4,
+    "timestamp": "2026-11-11T03:30:38.481Z"
+  },
+  {
+    "action": "scrollintoview #verdict",
+    "relativeTimeSec": 164.6,
+    "timestamp": "2026-11-11T03:31:17.724Z"
+  },
+  {
+    "action": "screenshot trained-preference.png",
+    "relativeTimeSec": 165.3,
+    "timestamp": "2026-11-11T03:31:18.427Z"
+  },
+  {
+    "action": "scrollintoview #preference-proof",
+    "relativeTimeSec": 166,
+    "timestamp": "2026-11-11T03:31:19.080Z"
+  },
+  {
+    "action": "click #preference-proof",
+    "relativeTimeSec": 166.6,
+    "timestamp": "2026-11-11T03:31:19.709Z"
+  },
+  {
+    "action": "screenshot native-preference-proof.png",
+    "relativeTimeSec": 167.3,
+    "timestamp": "2026-11-11T03:31:20.393Z"
+  },
+  {
+    "action": "eval (async()=>{\n const r=window.plnPreferenceResult;\n if(!r||document.getElementById('compare').disabled)throw Error('No completed inspection');\n const raw=new TextEncoder().encode(window.plnPreferenceResultRaw);\n const hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',raw))).map(v=>v.toString(16).padStart(2,'0')).join('');\n const preferences=r.comparisons||[{preference:r.preference}];\n return JSON.stringify({url:location.href,sourceIndex:document.getElementById('example').value,\n  fen:r.fen,moves:r.moves,model:r.inspector_model,models:r.model_versions,runtime:r.runtime_version,\n  statusText:document.getElementById('status').textContent,verdict:document.getElementById('verdict').textContent,\n  preferences:preferences.map(p=>({horizon:p.horizon,status:p.preference.status,channels:p.preference.channels,\n   proofId:p.preference.proof_id,nativeNodes:p.preference.proof_trace.length,evidenceIds:p.preference.evidence_ids,\n   conditionalComplete:p.preference.conditional_proof_complete,jointComplete:p.preference.joint_proof_complete})),\n  legalProofIds:Object.fromEntries(Object.entries((r.legality||r.immediate.legality)).map(([k,v])=>[k,v.proof_id])),\n  stateNames:Object.keys(r.states),selectedState:document.getElementById('state').value,\n  boardCells:[document.querySelectorAll('#before-board .cell').length,document.querySelectorAll('#after-board .cell').length],\n  width:innerWidth,documentWidth:document.documentElement.scrollWidth,noHorizontalOverflow:document.documentElement.scrollWidth<=innerWidth,\n  proofPage:document.getElementById('proof-page').textContent,execution:r.execution,\n  rawBytes:raw.length,rawSha256:hash,unexaminedResponses:r.unexamined_responses||null});\n})()",
+    "relativeTimeSec": 208.6,
+    "timestamp": "2026-11-11T03:32:01.742Z"
+  },
+  {
+    "action": "scrollintoview #proof-section",
+    "relativeTimeSec": 239.1,
+    "timestamp": "2026-11-11T03:32:32.244Z"
+  },
+  {
+    "action": "screenshot native-rule-and-evidence.png",
+    "relativeTimeSec": 239.8,
+    "timestamp": "2026-11-11T03:32:32.930Z"
+  },
+  {
+    "action": "eval JSON.stringify({page:document.getElementById(\"proof-page\").textContent,hasNativeExpression:document.getElementById(\"proof\").textContent.includes(\"Truth_ModusPonens\"),hasEvidence:document.getElementById(\"proof\").textContent.includes(\"evidence_ids\"),hasRule:document.getElementById(\"proof\").textContent.includes(\"rule_id\")})",
+    "relativeTimeSec": 240.5,
+    "timestamp": "2026-11-11T03:32:33.611Z"
+  },
+  {
+    "action": "select #model empty",
+    "relativeTimeSec": 241.1,
+    "timestamp": "2026-11-11T03:32:34.238Z"
+  },
+  {
+    "action": "scrollintoview #compare",
+    "relativeTimeSec": 241.8,
+    "timestamp": "2026-11-11T03:32:34.946Z"
+  },
+  {
+    "action": "click #compare",
+    "relativeTimeSec": 242.5,
+    "timestamp": "2026-11-11T03:32:35.656Z"
+  },
+  {
+    "action": "eval JSON.stringify({status:document.getElementById(\"status\").textContent,verdict:document.getElementById(\"verdict\").textContent,model:window.plnPreferenceResult?.inspector_model?.requested,preference:window.plnPreferenceResult?.preference?.status})",
+    "relativeTimeSec": 355.3,
+    "timestamp": "2026-11-11T03:34:28.365Z"
+  },
+  {
+    "action": "eval (async()=>{\n const r=window.plnPreferenceResult;\n if(!r||document.getElementById('compare').disabled)throw Error('No completed inspection');\n const raw=new TextEncoder().encode(window.plnPreferenceResultRaw);\n const hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',raw))).map(v=>v.toString(16).padStart(2,'0')).join('');\n const preferences=r.comparisons||[{preference:r.preference}];\n return JSON.stringify({url:location.href,sourceIndex:document.getElementById('example').value,\n  fen:r.fen,moves:r.moves,model:r.inspector_model,models:r.model_versions,runtime:r.runtime_version,\n  statusText:document.getElementById('status').textContent,verdict:document.getElementById('verdict').textContent,\n  preferences:preferences.map(p=>({horizon:p.horizon,status:p.preference.status,channels:p.preference.channels,\n   proofId:p.preference.proof_id,nativeNodes:p.preference.proof_trace.length,evidenceIds:p.preference.evidence_ids,\n   conditionalComplete:p.preference.conditional_proof_complete,jointComplete:p.preference.joint_proof_complete})),\n  legalProofIds:Object.fromEntries(Object.entries((r.legality||r.immediate.legality)).map(([k,v])=>[k,v.proof_id])),\n  stateNames:Object.keys(r.states),selectedState:document.getElementById('state').value,\n  boardCells:[document.querySelectorAll('#before-board .cell').length,document.querySelectorAll('#after-board .cell').length],\n  width:innerWidth,documentWidth:document.documentElement.scrollWidth,noHorizontalOverflow:document.documentElement.scrollWidth<=innerWidth,\n  proofPage:document.getElementById('proof-page').textContent,execution:r.execution,\n  rawBytes:raw.length,rawSha256:hash,unexaminedResponses:r.unexamined_responses||null});\n})()",
+    "relativeTimeSec": 355.9,
+    "timestamp": "2026-11-11T03:34:29.051Z"
+  },
+  {
+    "action": "scrollintoview #verdict",
+    "relativeTimeSec": 365.5,
+    "timestamp": "2026-11-11T03:34:38.615Z"
+  },
+  {
+    "action": "screenshot evidence-removed.png",
+    "relativeTimeSec": 366.2,
+    "timestamp": "2026-11-11T03:34:39.354Z"
+  },
+  {
+    "action": "select #model relational",
+    "relativeTimeSec": 376.1,
+    "timestamp": "2026-11-11T03:34:49.175Z"
+  },
+  {
+    "action": "fill #move-a c8g4",
+    "relativeTimeSec": 376.7,
+    "timestamp": "2026-11-11T03:34:49.835Z"
+  },
+  {
+    "action": "fill #move-b f8e8",
+    "relativeTimeSec": 377.4,
+    "timestamp": "2026-11-11T03:34:50.537Z"
+  },
+  {
+    "action": "scrollintoview #compare",
+    "relativeTimeSec": 378.1,
+    "timestamp": "2026-11-11T03:34:51.238Z"
+  },
+  {
+    "action": "click #compare",
+    "relativeTimeSec": 378.8,
+    "timestamp": "2026-11-11T03:34:51.872Z"
+  },
+  {
+    "action": "eval JSON.stringify({busy:document.getElementById(\"compare\").disabled,verdict:document.getElementById(\"verdict\").textContent,mode:window.plnPreferenceResult.inspector_model.requested,moves:window.plnPreferenceResult.moves})",
+    "relativeTimeSec": 457.5,
+    "timestamp": "2026-11-11T03:36:10.563Z"
+  },
+  {
+    "action": "eval (async()=>{\n const r=window.plnPreferenceResult;\n if(!r||document.getElementById('compare').disabled)throw Error('No completed inspection');\n const raw=new TextEncoder().encode(window.plnPreferenceResultRaw);\n const hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',raw))).map(v=>v.toString(16).padStart(2,'0')).join('');\n const preferences=r.comparisons||[{preference:r.preference}];\n return JSON.stringify({url:location.href,sourceIndex:document.getElementById('example').value,\n  fen:r.fen,moves:r.moves,model:r.inspector_model,models:r.model_versions,runtime:r.runtime_version,\n  statusText:document.getElementById('status').textContent,verdict:document.getElementById('verdict').textContent,\n  preferences:preferences.map(p=>({horizon:p.horizon,status:p.preference.status,channels:p.preference.channels,\n   proofId:p.preference.proof_id,nativeNodes:p.preference.proof_trace.length,evidenceIds:p.preference.evidence_ids,\n   conditionalComplete:p.preference.conditional_proof_complete,jointComplete:p.preference.joint_proof_complete})),\n  legalProofIds:Object.fromEntries(Object.entries((r.legality||r.immediate.legality)).map(([k,v])=>[k,v.proof_id])),\n  stateNames:Object.keys(r.states),selectedState:document.getElementById('state').value,\n  boardCells:[document.querySelectorAll('#before-board .cell').length,document.querySelectorAll('#after-board .cell').length],\n  width:innerWidth,documentWidth:document.documentElement.scrollWidth,noHorizontalOverflow:document.documentElement.scrollWidth<=innerWidth,\n  proofPage:document.getElementById('proof-page').textContent,execution:r.execution,\n  rawBytes:raw.length,rawSha256:hash,unexaminedResponses:r.unexamined_responses||null});\n})()",
+    "relativeTimeSec": 467.5,
+    "timestamp": "2026-11-11T03:36:20.572Z"
+  },
+  {
+    "action": "scrollintoview #verdict",
+    "relativeTimeSec": 468.5,
+    "timestamp": "2026-11-11T03:36:21.594Z"
+  },
+  {
+    "action": "screenshot reversed-preference.png",
+    "relativeTimeSec": 469.2,
+    "timestamp": "2026-11-11T03:36:22.276Z"
+  },
+  {
+    "action": "set viewport 390 844",
+    "relativeTimeSec": 469.9,
+    "timestamp": "2026-11-11T03:36:22.987Z"
+  },
+  {
+    "action": "scrollintoview #verdict",
+    "relativeTimeSec": 470.8,
+    "timestamp": "2026-11-11T03:36:23.921Z"
+  },
+  {
+    "action": "screenshot mobile-preference.png",
+    "relativeTimeSec": 471.5,
+    "timestamp": "2026-11-11T03:36:24.630Z"
+  },
+  {
+    "action": "eval (async()=>{\n const r=window.plnPreferenceResult;\n if(!r||document.getElementById('compare').disabled)throw Error('No completed inspection');\n const raw=new TextEncoder().encode(window.plnPreferenceResultRaw);\n const hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',raw))).map(v=>v.toString(16).padStart(2,'0')).join('');\n const preferences=r.comparisons||[{preference:r.preference}];\n return JSON.stringify({url:location.href,sourceIndex:document.getElementById('example').value,\n  fen:r.fen,moves:r.moves,model:r.inspector_model,models:r.model_versions,runtime:r.runtime_version,\n  statusText:document.getElementById('status').textContent,verdict:document.getElementById('verdict').textContent,\n  preferences:preferences.map(p=>({horizon:p.horizon,status:p.preference.status,channels:p.preference.channels,\n   proofId:p.preference.proof_id,nativeNodes:p.preference.proof_trace.length,evidenceIds:p.preference.evidence_ids,\n   conditionalComplete:p.preference.conditional_proof_complete,jointComplete:p.preference.joint_proof_complete})),\n  legalCandidates:r.legality||r.immediate.legality,\n  stateNames:Object.keys(r.states),selectedState:document.getElementById('state').value,\n  boardCells:[document.querySelectorAll('#before-board .cell').length,document.querySelectorAll('#after-board .cell').length],\n  width:innerWidth,documentWidth:document.documentElement.scrollWidth,noHorizontalOverflow:document.documentElement.scrollWidth<=innerWidth,\n  proofPage:document.getElementById('proof-page').textContent,execution:r.execution,\n  rawBytes:raw.length,rawSha256:hash,unexaminedResponses:r.unexamined_responses||null});\n})()",
+    "relativeTimeSec": 575.2,
+    "timestamp": "2026-11-11T03:38:08.313Z"
+  },
+  {
+    "action": "fill #move-a f8e8",
+    "relativeTimeSec": 587.7,
+    "timestamp": "2026-11-11T03:38:20.828Z"
+  },
+  {
+    "action": "fill #move-b c8g4",
+    "relativeTimeSec": 588.4,
+    "timestamp": "2026-11-11T03:38:21.464Z"
+  },
+  {
+    "action": "scrollintoview #compare",
+    "relativeTimeSec": 589,
+    "timestamp": "2026-11-11T03:38:22.086Z"
+  },
+  {
+    "action": "click #compare",
+    "relativeTimeSec": 589.6,
+    "timestamp": "2026-11-11T03:38:22.711Z"
+  },
+  {
+    "action": "eval (async()=>{\n const r=window.plnPreferenceResult;\n if(!r||document.getElementById('compare').disabled)throw Error('No completed inspection');\n const raw=new TextEncoder().encode(window.plnPreferenceResultRaw);\n const hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',raw))).map(v=>v.toString(16).padStart(2,'0')).join('');\n const preferences=r.comparisons||[{preference:r.preference}];\n const legalCandidates=Object.fromEntries(await Promise.all(Object.entries(r.legality||r.immediate.legality).map(async([side,candidate])=>{\n  const bytes=new TextEncoder().encode(JSON.stringify(candidate));\n  const value=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))).map(v=>v.toString(16).padStart(2,'0')).join('');\n  return [side,{move:candidate.move,classification:candidate.classification,proof_nodes:candidate.proof_trace.length,\n   browser_json_sha256:value,scope:'Hash of the complete browser-parsed legal candidate, including its ordered native proof. This is not a model-supplied proof ID.'}];\n })));\n return JSON.stringify({url:location.href,sourceIndex:document.getElementById('example').value,\n  fen:r.fen,moves:r.moves,model:r.inspector_model,models:r.model_versions,runtime:r.runtime_version,\n  statusText:document.getElementById('status').textContent,verdict:document.getElementById('verdict').textContent,\n  preferences:preferences.map(p=>({horizon:p.horizon,status:p.preference.status,channels:p.preference.channels,\n   proofId:p.preference.proof_id,nativeNodes:p.preference.proof_trace.length,evidenceIds:p.preference.evidence_ids,\n   conditionalComplete:p.preference.conditional_proof_complete,jointComplete:p.preference.joint_proof_complete})),\n  legalCandidates,\n  stateNames:Object.keys(r.states),selectedState:document.getElementById('state').value,\n  boardCells:[document.querySelectorAll('#before-board .cell').length,document.querySelectorAll('#after-board .cell').length],\n  width:innerWidth,documentWidth:document.documentElement.scrollWidth,noHorizontalOverflow:document.documentElement.scrollWidth<=innerWidth,\n  proofPage:document.getElementById('proof-page').textContent,execution:r.execution,\n  rawBytes:raw.length,rawSha256:hash,unexaminedResponses:r.unexamined_responses||null});\n})()",
+    "relativeTimeSec": 657.6,
+    "timestamp": "2026-11-11T03:39:30.715Z"
+  },
+  {
+    "action": "fill #move-a c8g4",
+    "relativeTimeSec": 718.3,
+    "timestamp": "2026-11-11T03:40:31.379Z"
+  },
+  {
+    "action": "fill #move-b f8e8",
+    "relativeTimeSec": 719.1,
+    "timestamp": "2026-11-11T03:40:32.173Z"
+  },
+  {
+    "action": "scrollintoview #compare",
+    "relativeTimeSec": 719.7,
+    "timestamp": "2026-11-11T03:40:32.829Z"
+  },
+  {
+    "action": "click #compare",
+    "relativeTimeSec": 720.4,
+    "timestamp": "2026-11-11T03:40:33.475Z"
+  },
+  {
+    "action": "eval (async()=>{\n const r=window.plnPreferenceResult;\n if(!r||document.getElementById('compare').disabled)throw Error('No completed inspection');\n const raw=new TextEncoder().encode(window.plnPreferenceResultRaw);\n const hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',raw))).map(v=>v.toString(16).padStart(2,'0')).join('');\n const preferences=r.comparisons||[{preference:r.preference}];\n const legalCandidates=Object.fromEntries(await Promise.all(Object.entries(r.legality||r.immediate.legality).map(async([side,candidate])=>{\n  const bytes=new TextEncoder().encode(JSON.stringify(candidate));\n  const value=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))).map(v=>v.toString(16).padStart(2,'0')).join('');\n  return [side,{move:candidate.move,classification:candidate.classification,proof_nodes:candidate.proof_trace.length,\n   browser_json_sha256:value,scope:'Hash of the complete browser-parsed legal candidate, including its ordered native proof. This is not a model-supplied proof ID.'}];\n })));\n return JSON.stringify({url:location.href,sourceIndex:document.getElementById('example').value,\n  fen:r.fen,moves:r.moves,model:r.inspector_model,models:r.model_versions,runtime:r.runtime_version,\n  statusText:document.getElementById('status').textContent,verdict:document.getElementById('verdict').textContent,\n  preferences:preferences.map(p=>({horizon:p.horizon,status:p.preference.status,channels:p.preference.channels,\n   proofId:p.preference.proof_id,nativeNodes:p.preference.proof_trace.length,evidenceIds:p.preference.evidence_ids,\n   conditionalComplete:p.preference.conditional_proof_complete,jointComplete:p.preference.joint_proof_complete})),\n  legalCandidates,\n  stateNames:Object.keys(r.states),selectedState:document.getElementById('state').value,\n  boardCells:[document.querySelectorAll('#before-board .cell').length,document.querySelectorAll('#after-board .cell').length],\n  width:innerWidth,documentWidth:document.documentElement.scrollWidth,noHorizontalOverflow:document.documentElement.scrollWidth<=innerWidth,\n  proofPage:document.getElementById('proof-page').textContent,execution:r.execution,\n  rawBytes:raw.length,rawSha256:hash,unexaminedResponses:r.unexamined_responses||null});\n})()",
+    "relativeTimeSec": 862.2,
+    "timestamp": "2026-11-11T03:42:55.316Z"
+  },
+  {
+    "action": "eval JSON.stringify({keys:Object.keys(window.plnPreferenceResult.legality.A),traceKeys:Object.keys(window.plnPreferenceResult.legality.A.proof_trace[0]),firstNode:window.plnPreferenceResult.legality.A.proof_trace[0].id})",
+    "relativeTimeSec": 902.1,
+    "timestamp": "2026-11-11T03:43:35.185Z"
+  },
+  {
+    "action": "eval (async()=>{\n const r=window.plnPreferenceResult;\n if(!r||document.getElementById('compare').disabled)throw Error('No completed inspection');\n const raw=new TextEncoder().encode(window.plnPreferenceResultRaw);\n const hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',raw))).map(v=>v.toString(16).padStart(2,'0')).join('');\n const preferences=r.comparisons||[{preference:r.preference}];\n const legalCandidates=Object.fromEntries(await Promise.all(Object.entries(r.legality||r.immediate.legality).map(async([side,candidate])=>{\n  const bytes=new TextEncoder().encode(JSON.stringify(candidate));\n  const value=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))).map(v=>v.toString(16).padStart(2,'0')).join('');\n  return [side,{move:candidate.move,classification:candidate.classification,proof_nodes:candidate.proof_trace.length,\n   raw_stv:candidate.raw_stv,legal_move_truth_value:candidate.legal_move_truth_value,\n   evidence_ids:[...candidate.evidence_ids].sort(),\n   browser_json_sha256:value,scope:'Hash of the complete browser-parsed legal candidate, including its ordered native proof. This is not a model-supplied proof ID.'}];\n })));\n return JSON.stringify({url:location.href,sourceIndex:document.getElementById('example').value,\n  fen:r.fen,moves:r.moves,model:r.inspector_model,models:r.model_versions,runtime:r.runtime_version,\n  statusText:document.getElementById('status').textContent,verdict:document.getElementById('verdict').textContent,\n  preferences:preferences.map(p=>({horizon:p.horizon,status:p.preference.status,channels:p.preference.channels,\n   proofId:p.preference.proof_id,nativeNodes:p.preference.proof_trace.length,evidenceIds:p.preference.evidence_ids,\n   conditionalComplete:p.preference.conditional_proof_complete,jointComplete:p.preference.joint_proof_complete})),\n  legalCandidates,\n  stateNames:Object.keys(r.states),selectedState:document.getElementById('state').value,\n  boardCells:[document.querySelectorAll('#before-board .cell').length,document.querySelectorAll('#after-board .cell').length],\n  width:innerWidth,documentWidth:document.documentElement.scrollWidth,noHorizontalOverflow:document.documentElement.scrollWidth<=innerWidth,\n  proofPage:document.getElementById('proof-page').textContent,execution:r.execution,\n  rawBytes:raw.length,rawSha256:hash,unexaminedResponses:r.unexamined_responses||null});\n})()",
+    "relativeTimeSec": 971.8,
+    "timestamp": "2026-11-11T03:44:44.935Z"
+  },
+  {
+    "action": "select #model empty",
+    "relativeTimeSec": 989.2,
+    "timestamp": "2026-11-11T03:45:02.345Z"
+  },
+  {
+    "action": "scrollintoview #compare",
+    "relativeTimeSec": 989.9,
+    "timestamp": "2026-11-11T03:45:03.021Z"
+  },
+  {
+    "action": "click #compare",
+    "relativeTimeSec": 990.5,
+    "timestamp": "2026-11-11T03:45:03.604Z"
+  },
+  {
+    "action": "eval (async()=>{\n const r=window.plnPreferenceResult;\n if(!r||document.getElementById('compare').disabled)throw Error('No completed inspection');\n const raw=new TextEncoder().encode(window.plnPreferenceResultRaw);\n const hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',raw))).map(v=>v.toString(16).padStart(2,'0')).join('');\n const preferences=r.comparisons||[{preference:r.preference}];\n const legalCandidates=Object.fromEntries(await Promise.all(Object.entries(r.legality||r.immediate.legality).map(async([side,candidate])=>{\n  const bytes=new TextEncoder().encode(JSON.stringify(candidate));\n  const value=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))).map(v=>v.toString(16).padStart(2,'0')).join('');\n  return [side,{move:candidate.move,classification:candidate.classification,proof_nodes:candidate.proof_trace.length,\n   raw_stv:candidate.raw_stv,legal_move_truth_value:candidate.legal_move_truth_value,\n   evidence_ids:[...candidate.evidence_ids].sort(),\n   browser_json_sha256:value,scope:'Hash of the complete browser-parsed legal candidate, including its ordered native proof. This is not a model-supplied proof ID.'}];\n })));\n return JSON.stringify({url:location.href,sourceIndex:document.getElementById('example').value,\n  fen:r.fen,moves:r.moves,model:r.inspector_model,models:r.model_versions,runtime:r.runtime_version,\n  statusText:document.getElementById('status').textContent,verdict:document.getElementById('verdict').textContent,\n  preferences:preferences.map(p=>({horizon:p.horizon,status:p.preference.status,channels:p.preference.channels,\n   proofId:p.preference.proof_id,nativeNodes:p.preference.proof_trace.length,evidenceIds:p.preference.evidence_ids,\n   conditionalComplete:p.preference.conditional_proof_complete,jointComplete:p.preference.joint_proof_complete})),\n  legalCandidates,\n  stateNames:Object.keys(r.states),selectedState:document.getElementById('state').value,\n  boardCells:[document.querySelectorAll('#before-board .cell').length,document.querySelectorAll('#after-board .cell').length],\n  width:innerWidth,documentWidth:document.documentElement.scrollWidth,noHorizontalOverflow:document.documentElement.scrollWidth<=innerWidth,\n  proofPage:document.getElementById('proof-page').textContent,execution:r.execution,\n  rawBytes:raw.length,rawSha256:hash,unexaminedResponses:r.unexamined_responses||null});\n})()",
+    "relativeTimeSec": 1100.3,
+    "timestamp": "2026-11-11T03:46:53.454Z"
+  },
+  {
+    "action": "select #example 193",
+    "relativeTimeSec": 1243.8,
+    "timestamp": "2026-11-11T03:49:16.941Z"
+  },
+  {
+    "action": "select #model temporal",
+    "relativeTimeSec": 1244.5,
+    "timestamp": "2026-11-11T03:49:17.571Z"
+  },
+  {
+    "action": "scrollintoview #compare-form details:nth-of-type(1) summary",
+    "relativeTimeSec": 1245,
+    "timestamp": "2026-11-11T03:49:18.155Z"
+  },
+  {
+    "action": "click #compare-form details:nth-of-type(1) summary",
+    "relativeTimeSec": 1245.7,
+    "timestamp": "2026-11-11T03:49:18.804Z"
+  },
+  {
+    "action": "screenshot mobile-explicit-responses.png",
+    "relativeTimeSec": 1246.3,
+    "timestamp": "2026-11-11T03:49:19.457Z"
+  },
+  {
+    "action": "scrollintoview #continue",
+    "relativeTimeSec": 1247,
+    "timestamp": "2026-11-11T03:49:20.101Z"
+  },
+  {
+    "action": "click #continue",
+    "relativeTimeSec": 1247.6,
+    "timestamp": "2026-11-11T03:49:20.714Z"
+  },
+  {
+    "action": "eval JSON.stringify({busy:document.getElementById(\"continue\").disabled,status:document.getElementById(\"status\").textContent,model:window.plnPreferenceResult?.inspector_model?.requested,states:Object.keys(window.plnPreferenceResult?.states||{}),comparisons:window.plnPreferenceResult?.comparisons?.map(x=>({horizon:x.horizon,status:x.preference.status}))})",
+    "relativeTimeSec": 1407.1,
+    "timestamp": "2026-11-11T03:52:00.259Z"
+  },
+  {
+    "action": "eval (async()=>{\n const r=window.plnPreferenceResult;\n if(!r||document.getElementById('compare').disabled)throw Error('No completed inspection');\n const raw=new TextEncoder().encode(window.plnPreferenceResultRaw);\n const hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',raw))).map(v=>v.toString(16).padStart(2,'0')).join('');\n const preferences=r.comparisons||[{preference:r.preference}];\n const legalCandidates=Object.fromEntries(await Promise.all(Object.entries(r.legality||r.immediate.legality).map(async([side,candidate])=>{\n  const bytes=new TextEncoder().encode(JSON.stringify(candidate));\n  const value=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))).map(v=>v.toString(16).padStart(2,'0')).join('');\n  return [side,{move:candidate.move,classification:candidate.classification,proof_nodes:candidate.proof_trace.length,\n   raw_stv:candidate.raw_stv,legal_move_truth_value:candidate.legal_move_truth_value,\n   evidence_ids:[...candidate.evidence_ids].sort(),\n   browser_json_sha256:value,scope:'Hash of the complete browser-parsed legal candidate, including its ordered native proof. This is not a model-supplied proof ID.'}];\n })));\n return JSON.stringify({url:location.href,sourceIndex:document.getElementById('example').value,\n  fen:r.fen,moves:r.moves,model:r.inspector_model,models:r.model_versions,runtime:r.runtime_version,\n  statusText:document.getElementById('status').textContent,verdict:document.getElementById('verdict').textContent,\n  preferences:preferences.map(p=>({horizon:p.horizon,status:p.preference.status,channels:p.preference.channels,\n   proofId:p.preference.proof_id,nativeNodes:p.preference.proof_trace.length,evidenceIds:p.preference.evidence_ids,\n   conditionalComplete:p.preference.conditional_proof_complete,jointComplete:p.preference.joint_proof_complete})),\n  legalCandidates,\n  stateNames:Object.keys(r.states),selectedState:document.getElementById('state').value,\n  boardCells:[document.querySelectorAll('#before-board .cell').length,document.querySelectorAll('#after-board .cell').length],\n  width:innerWidth,documentWidth:document.documentElement.scrollWidth,noHorizontalOverflow:document.documentElement.scrollWidth<=innerWidth,\n  proofPage:document.getElementById('proof-page').textContent,execution:r.execution,\n  rawBytes:raw.length,rawSha256:hash,unexaminedResponses:r.unexamined_responses||null});\n})()",
+    "relativeTimeSec": 1434.6,
+    "timestamp": "2026-11-11T03:52:27.748Z"
+  },
+  {
+    "action": "eval JSON.stringify({buttons:Array.from(document.querySelectorAll(\"#comparison-controls button\")).map(x=>x.textContent),state:document.querySelector(\"#state\").outerHTML,proofs:Array.from(document.querySelectorAll(\"button\")).map(x=>({id:x.id,text:x.textContent})).filter(x=>x.id.includes(\"proof\"))})",
+    "relativeTimeSec": 1654.9,
+    "timestamp": "2026-11-11T03:56:08.026Z"
+  },
+  {
+    "action": "scrollintoview #comparison-controls",
+    "relativeTimeSec": 1663.2,
+    "timestamp": "2026-11-11T03:56:16.300Z"
+  },
+  {
+    "action": "click #comparison-controls button:nth-child(2)",
+    "relativeTimeSec": 1663.7,
+    "timestamp": "2026-11-11T03:56:16.765Z"
+  },
+  {
+    "action": "scrollintoview #verdict",
+    "relativeTimeSec": 1664.2,
+    "timestamp": "2026-11-11T03:56:17.322Z"
+  },
+  {
+    "action": "screenshot mobile-two-ply.png",
+    "relativeTimeSec": 1664.7,
+    "timestamp": "2026-11-11T03:56:17.763Z"
+  },
+  {
+    "action": "eval JSON.stringify({verdict:document.querySelector(\"#verdict\").textContent,state:document.querySelector(\"#state\").value})",
+    "relativeTimeSec": 1665.1,
+    "timestamp": "2026-11-11T03:56:18.258Z"
+  },
+  {
+    "action": "select #state B:0:2",
+    "relativeTimeSec": 1674.6,
+    "timestamp": "2026-11-11T03:56:27.663Z"
+  },
+  {
+    "action": "scrollintoview #after-board",
+    "relativeTimeSec": 1675.1,
+    "timestamp": "2026-11-11T03:56:28.203Z"
+  },
+  {
+    "action": "screenshot mobile-temporal-board.png",
+    "relativeTimeSec": 1675.6,
+    "timestamp": "2026-11-11T03:56:28.681Z"
+  },
+  {
+    "action": "scrollintoview #graph-proof",
+    "relativeTimeSec": 1676.1,
+    "timestamp": "2026-11-11T03:56:29.241Z"
+  },
+  {
+    "action": "click #graph-proof",
+    "relativeTimeSec": 1676.7,
+    "timestamp": "2026-11-11T03:56:29.776Z"
+  },
+  {
+    "action": "eval JSON.stringify(Array.from(document.querySelectorAll(\"[id]\")).map(x=>x.id).filter(x=>/proof|relation|concept/.test(x)))",
+    "relativeTimeSec": 1677.3,
+    "timestamp": "2026-11-11T03:56:30.364Z"
+  },
+  {
+    "action": "get cdp-url",
+    "relativeTimeSec": 1677.8,
+    "timestamp": "2026-11-11T03:56:30.917Z"
+  },
+  {
+    "action": "scrollintoview #proof-section",
+    "relativeTimeSec": 1688,
+    "timestamp": "2026-11-11T03:56:41.123Z"
+  },
+  {
+    "action": "screenshot mobile-endpoint-graph.png",
+    "relativeTimeSec": 1688.5,
+    "timestamp": "2026-11-11T03:56:41.597Z"
+  },
+  {
+    "action": "set viewport 1280 900",
+    "relativeTimeSec": 1689,
+    "timestamp": "2026-11-11T03:56:42.127Z"
+  },
+  {
+    "action": "scrollintoview #comparison-controls",
+    "relativeTimeSec": 1689.9,
+    "timestamp": "2026-11-11T03:56:43.011Z"
+  },
+  {
+    "action": "click #comparison-controls button:nth-child(3)",
+    "relativeTimeSec": 1690.4,
+    "timestamp": "2026-11-11T03:56:43.551Z"
+  },
+  {
+    "action": "select #state B:0:3",
+    "relativeTimeSec": 1691,
+    "timestamp": "2026-11-11T03:56:44.076Z"
+  },
+  {
+    "action": "scrollintoview #verdict",
+    "relativeTimeSec": 1691.5,
+    "timestamp": "2026-11-11T03:56:44.648Z"
+  },
+  {
+    "action": "screenshot desktop-three-ply.png",
+    "relativeTimeSec": 1692.1,
+    "timestamp": "2026-11-11T03:56:45.232Z"
+  },
+  {
+    "action": "eval (async()=>{\n const r=window.plnPreferenceResult;\n if(!r||document.getElementById('compare').disabled)throw Error('No completed inspection');\n const raw=new TextEncoder().encode(window.plnPreferenceResultRaw);\n const hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',raw))).map(v=>v.toString(16).padStart(2,'0')).join('');\n const preferences=r.comparisons||[{preference:r.preference}];\n const legalCandidates=Object.fromEntries(await Promise.all(Object.entries(r.legality||r.immediate.legality).map(async([side,candidate])=>{\n  const bytes=new TextEncoder().encode(JSON.stringify(candidate));\n  const value=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))).map(v=>v.toString(16).padStart(2,'0')).join('');\n  return [side,{move:candidate.move,classification:candidate.classification,proof_nodes:candidate.proof_trace.length,\n   raw_stv:candidate.raw_stv,legal_move_truth_value:candidate.legal_move_truth_value,\n   evidence_ids:[...candidate.evidence_ids].sort(),\n   browser_json_sha256:value,scope:'Hash of the complete browser-parsed legal candidate, including its ordered native proof. This is not a model-supplied proof ID.'}];\n })));\n return JSON.stringify({url:location.href,sourceIndex:document.getElementById('example').value,\n  fen:r.fen,moves:r.moves,model:r.inspector_model,models:r.model_versions,runtime:r.runtime_version,\n  statusText:document.getElementById('status').textContent,verdict:document.getElementById('verdict').textContent,\n  preferences:preferences.map(p=>({horizon:p.horizon,status:p.preference.status,channels:p.preference.channels,\n   proofId:p.preference.proof_id,nativeNodes:p.preference.proof_trace.length,evidenceIds:p.preference.evidence_ids,\n   conditionalComplete:p.preference.conditional_proof_complete,jointComplete:p.preference.joint_proof_complete})),\n  legalCandidates,\n  stateNames:Object.keys(r.states),selectedState:document.getElementById('state').value,\n  boardCells:[document.querySelectorAll('#before-board .cell').length,document.querySelectorAll('#after-board .cell').length],\n  width:innerWidth,documentWidth:document.documentElement.scrollWidth,noHorizontalOverflow:document.documentElement.scrollWidth<=innerWidth,\n  proofPage:document.getElementById('proof-page').textContent,execution:r.execution,\n  rawBytes:raw.length,rawSha256:hash,unexaminedResponses:r.unexamined_responses||null});\n})()",
+    "relativeTimeSec": 1692.8,
+    "timestamp": "2026-11-11T03:56:45.896Z"
+  },
+  {
+    "action": "scrollintoview #export",
+    "relativeTimeSec": 1695,
+    "timestamp": "2026-11-11T03:56:48.158Z"
+  },
+  {
+    "action": "click #export",
+    "relativeTimeSec": 1695.6,
+    "timestamp": "2026-11-11T03:56:48.680Z"
+  },
+  {
+    "action": "screenshot exact-native-export.png",
+    "relativeTimeSec": 1696.7,
+    "timestamp": "2026-11-11T03:56:49.811Z"
+  },
+  {
+    "action": "eval JSON.stringify({relations:Array.from(document.querySelectorAll(\"#relations button\")).slice(0,4).map(x=>x.textContent),concepts:Array.from(document.querySelectorAll(\"#concepts button\")).slice(0,4).map(x=>x.textContent)})",
+    "relativeTimeSec": 1718.5,
+    "timestamp": "2026-11-11T03:57:11.578Z"
+  },
+  {
+    "action": "scrollintoview #relations button",
+    "relativeTimeSec": 1719.1,
+    "timestamp": "2026-11-11T03:57:12.174Z"
+  },
+  {
+    "action": "click #relations button:first-child",
+    "relativeTimeSec": 1719.7,
+    "timestamp": "2026-11-11T03:57:12.774Z"
+  },
+  {
+    "action": "scrollintoview #proof-section",
+    "relativeTimeSec": 1720.2,
+    "timestamp": "2026-11-11T03:57:13.335Z"
+  },
+  {
+    "action": "screenshot temporal-field-proof.png",
+    "relativeTimeSec": 1720.7,
+    "timestamp": "2026-11-11T03:57:13.848Z"
+  },
+  {
+    "action": "scrollintoview #concepts button",
+    "relativeTimeSec": 1738.8,
+    "timestamp": "2026-11-11T03:57:31.865Z"
+  },
+  {
+    "action": "click #concepts button:first-child",
+    "relativeTimeSec": 1739.2,
+    "timestamp": "2026-11-11T03:57:32.322Z"
+  },
+  {
+    "action": "scrollintoview #proof-section",
+    "relativeTimeSec": 1739.8,
+    "timestamp": "2026-11-11T03:57:32.870Z"
+  },
+  {
+    "action": "screenshot temporal-concept-proof.png",
+    "relativeTimeSec": 1740.2,
+    "timestamp": "2026-11-11T03:57:33.349Z"
+  },
+  {
+    "action": "click #proof-next",
+    "relativeTimeSec": 1740.8,
+    "timestamp": "2026-11-11T03:57:33.947Z"
+  },
+  {
+    "action": "eval JSON.stringify({page:document.querySelector(\"#proof-page\").textContent,visible:document.querySelector(\"#proof\").textContent.slice(0,400)})",
+    "relativeTimeSec": 1741.3,
+    "timestamp": "2026-11-11T03:57:34.456Z"
+  }
+]

@@ -1,0 +1,132 @@
+[
+  {
+    "action": "set viewport 1280 900",
+    "relativeTimeSec": 5,
+    "timestamp": "2026-11-11T03:58:53.429Z"
+  },
+  {
+    "action": "select #example 42",
+    "relativeTimeSec": 5.8,
+    "timestamp": "2026-11-11T03:58:54.190Z"
+  },
+  {
+    "action": "select #model relational",
+    "relativeTimeSec": 6.3,
+    "timestamp": "2026-11-11T03:58:54.721Z"
+  },
+  {
+    "action": "scrollintoview #compare",
+    "relativeTimeSec": 6.8,
+    "timestamp": "2026-11-11T03:58:55.239Z"
+  },
+  {
+    "action": "click #compare",
+    "relativeTimeSec": 7.4,
+    "timestamp": "2026-11-11T03:58:55.764Z"
+  },
+  {
+    "action": "eval JSON.stringify({busy:document.querySelector(\"#compare\").disabled,status:document.querySelector(\"#status\").textContent})",
+    "relativeTimeSec": 15.2,
+    "timestamp": "2026-11-11T03:59:03.569Z"
+  },
+  {
+    "action": "eval JSON.stringify({busy:document.querySelector(\"#compare\").disabled,status:document.querySelector(\"#status\").textContent,concepts:document.querySelectorAll(\"#concepts .card button\").length})",
+    "relativeTimeSec": 33.9,
+    "timestamp": "2026-11-11T03:59:22.335Z"
+  },
+  {
+    "action": "scrollintoview #concepts .card:first-child button",
+    "relativeTimeSec": 45.2,
+    "timestamp": "2026-11-11T03:59:33.658Z"
+  },
+  {
+    "action": "click #concepts .card:first-child button",
+    "relativeTimeSec": 45.8,
+    "timestamp": "2026-11-11T03:59:34.199Z"
+  },
+  {
+    "action": "scrollintoview #proof-section",
+    "relativeTimeSec": 46.3,
+    "timestamp": "2026-11-11T03:59:34.727Z"
+  },
+  {
+    "action": "screenshot concept-roles-and-native-proof.png",
+    "relativeTimeSec": 46.8,
+    "timestamp": "2026-11-11T03:59:35.236Z"
+  },
+  {
+    "action": "eval JSON.stringify({concept:JSON.parse(document.querySelector(\"#proof\").textContent).concept,classification:JSON.parse(document.querySelector(\"#proof\").textContent).classification,page:document.querySelector(\"#proof-page\").textContent})",
+    "relativeTimeSec": 47.5,
+    "timestamp": "2026-11-11T03:59:35.877Z"
+  },
+  {
+    "action": "scrollintoview #preference-proof",
+    "relativeTimeSec": 57.5,
+    "timestamp": "2026-11-11T03:59:45.929Z"
+  },
+  {
+    "action": "click #preference-proof",
+    "relativeTimeSec": 58,
+    "timestamp": "2026-11-11T03:59:46.461Z"
+  },
+  {
+    "action": "scrollintoview #proof-section",
+    "relativeTimeSec": 58.6,
+    "timestamp": "2026-11-11T03:59:47.009Z"
+  },
+  {
+    "action": "click #proof-next",
+    "relativeTimeSec": 59.2,
+    "timestamp": "2026-11-11T03:59:47.591Z"
+  },
+  {
+    "action": "screenshot preference-proof-page-two.png",
+    "relativeTimeSec": 59.8,
+    "timestamp": "2026-11-11T03:59:48.212Z"
+  },
+  {
+    "action": "eval JSON.stringify({page:document.querySelector(\"#proof-page\").textContent,previousEnabled:!document.querySelector(\"#proof-prev\").disabled,nextDisabled:document.querySelector(\"#proof-next\").disabled,content:document.querySelector(\"#proof\").textContent.slice(0,200)})",
+    "relativeTimeSec": 60.4,
+    "timestamp": "2026-11-11T03:59:48.837Z"
+  },
+  {
+    "action": "click #proof-prev",
+    "relativeTimeSec": 60.9,
+    "timestamp": "2026-11-11T03:59:49.351Z"
+  },
+  {
+    "action": "eval document.querySelector(\"#proof-page\").textContent",
+    "relativeTimeSec": 61.5,
+    "timestamp": "2026-11-11T03:59:49.901Z"
+  },
+  {
+    "action": "scrollintoview #concepts .card:first-child button",
+    "relativeTimeSec": 80.3,
+    "timestamp": "2026-11-11T04:00:08.728Z"
+  },
+  {
+    "action": "click #concepts .card:first-child button",
+    "relativeTimeSec": 80.9,
+    "timestamp": "2026-11-11T04:00:09.313Z"
+  },
+  {
+    "action": "scrollintoview #proof-section",
+    "relativeTimeSec": 81.5,
+    "timestamp": "2026-11-11T04:00:09.886Z"
+  },
+  {
+    "action": "eval JSON.stringify({firstCard:document.querySelector(\"#concepts .card strong\").textContent,page:document.querySelector(\"#proof-page\").textContent,visible:document.querySelector(\"#proof\").textContent.slice(0,500),source:window.plnPreferenceResult.states[document.querySelector(\"#state\").value].concepts[0].concept})",
+    "relativeTimeSec": 82,
+    "timestamp": "2026-11-11T04:00:10.446Z"
+  },
+  {
+    "action": "screenshot concept-native-proof-confirmed.png",
+    "relativeTimeSec": 82.6,
+    "timestamp": "2026-11-11T04:00:10.972Z"
+  },
+  {
+    "action": "eval (async()=>{\n const r=window.plnPreferenceResult;\n if(!r||document.getElementById('compare').disabled)throw Error('No completed inspection');\n const raw=new TextEncoder().encode(window.plnPreferenceResultRaw);\n const hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',raw))).map(v=>v.toString(16).padStart(2,'0')).join('');\n const preferences=r.comparisons||[{preference:r.preference}];\n const legalCandidates=Object.fromEntries(await Promise.all(Object.entries(r.legality||r.immediate.legality).map(async([side,candidate])=>{\n  const bytes=new TextEncoder().encode(JSON.stringify(candidate));\n  const value=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))).map(v=>v.toString(16).padStart(2,'0')).join('');\n  return [side,{move:candidate.move,classification:candidate.classification,proof_nodes:candidate.proof_trace.length,\n   raw_stv:candidate.raw_stv,legal_move_truth_value:candidate.legal_move_truth_value,\n   evidence_ids:[...candidate.evidence_ids].sort(),\n   browser_json_sha256:value,scope:'Hash of the complete browser-parsed legal candidate, including its ordered native proof. This is not a model-supplied proof ID.'}];\n })));\n return JSON.stringify({url:location.href,sourceIndex:document.getElementById('example').value,\n  fen:r.fen,moves:r.moves,model:r.inspector_model,models:r.model_versions,runtime:r.runtime_version,\n  statusText:document.getElementById('status').textContent,verdict:document.getElementById('verdict').textContent,\n  preferences:preferences.map(p=>({horizon:p.horizon,status:p.preference.status,channels:p.preference.channels,\n   proofId:p.preference.proof_id,nativeNodes:p.preference.proof_trace.length,evidenceIds:p.preference.evidence_ids,\n   conditionalComplete:p.preference.conditional_proof_complete,jointComplete:p.preference.joint_proof_complete})),\n  legalCandidates,\n  stateNames:Object.keys(r.states),selectedState:document.getElementById('state').value,\n  boardCells:[document.querySelectorAll('#before-board .cell').length,document.querySelectorAll('#after-board .cell').length],\n  width:innerWidth,documentWidth:document.documentElement.scrollWidth,noHorizontalOverflow:document.documentElement.scrollWidth<=innerWidth,\n  proofPage:document.getElementById('proof-page').textContent,execution:r.execution,\n  rawBytes:raw.length,rawSha256:hash,unexaminedResponses:r.unexamined_responses||null});\n})()",
+    "relativeTimeSec": 83.4,
+    "timestamp": "2026-11-11T04:00:11.808Z"
+  }
+]

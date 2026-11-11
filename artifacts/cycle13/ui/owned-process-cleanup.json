@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "scope": "Only processes carrying the two explicitly owned Cycle 13 browser-session environment tags, after both ProofShot bundles completed. Other projects untouched.",
+  "targets": [
+    {
+      "command": "/home/purplezky/.nvm/versions/node/v22.20.0/lib/node_modules/agent-browser/bin/agent-browser-linux-x64 ",
+      "pid": 1978939,
+      "required_sigkill": true,
+      "session": "pln-cycle13-final",
+      "start_ticks": "697916794"
+    },
+    {
+      "command": "/home/purplezky/.agent-browser/browsers/chrome-152.0.7977.42/chrome_crashpad_handler --monitor-self --monitor-self-annotation=ptype=crashpad-handler --database=/home/purplezky/.config/google-chrome-for-testing/Crash Reports --annotation=lsb-release=Ubuntu 20.04.6 LTS --annotation=plat=Linux --annotation=prod=Chrome_Linux --annotation=ver=152.0.7977.42 --initial-client-fd=5 --shared-client-connection ",
+      "pid": 1978955,
+      "session": "pln-cycle13-final",
+      "start_ticks": "697916818"
+    },
+    {
+      "command": "/home/purplezky/.agent-browser/browsers/chrome-152.0.7977.42/chrome_crashpad_handler --no-periodic-tasks --monitor-self-annotation=ptype=crashpad-handler --database=/home/purplezky/.config/google-chrome-for-testing/Crash Reports --annotation=lsb-release=Ubuntu 20.04.6 LTS --annotation=plat=Linux --annotation=prod=Chrome_Linux --annotation=ver=152.0.7977.42 --initial-client-fd=4 --shared-client-connection ",
+      "pid": 1978958,
+      "session": "pln-cycle13-final",
+      "start_ticks": "697916823"
+    },
+    {
+      "command": "ffmpeg -y -avioflags direct -fpsprobesize 0 -probesize 32 -analyzeduration 0 -f image2pipe -c:v mjpeg -framerate 10 -i pipe:0 -vf pad=ceil(iw/2)*2:ceil(ih/2)*2 -c:v libvpx -crf 30 -b:v 1M -pix_fmt yuv420p -threads 1 /data/pln-chess-cycle6-delivery/artifacts/cycle13/ui/2026-11-11_03-28-15_verify-trained-native-preferences-eviden/session.webm ",
+      "pid": 1979380,
+      "required_sigkill": true,
+      "session": "pln-cycle13-final",
+      "start_ticks": "697917113"
+    },
+    {
+      "command": "sh -c .venv/bin/pln-chess serve --port 8773 ",
+      "pid": 2059700,
+      "session": "pln-cycle13-proof-detail",
+      "start_ticks": "698098257"
+    },
+    {
+      "command": "/home/purplezky/work/takopi/pln-chess/.venv/bin/python .venv/bin/pln-chess serve --port 8773 ",
+      "pid": 2059708,
+      "session": "pln-cycle13-proof-detail",
+      "start_ticks": "698098259"
+    }
+  ]
+}
