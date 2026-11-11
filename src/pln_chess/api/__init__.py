@@ -36,6 +36,18 @@ def inspect_interactions(position,field_model,concept_model,**options):
     return inspect(position,field_model,concept_model,**options)
 
 
+def compare_moves(position,move_a,move_b,**options):
+    """Experimental conditional preferences; never alters legal inference."""
+    from pln_chess.cycle13.api import compare_moves as compare
+    return compare(position,move_a,move_b,**options)
+
+
+def analyze_continuations(position,branches,**options):
+    """Inspect bounded explicit branches, without response search."""
+    from pln_chess.cycle13.temporal import analyze_continuations as analyze
+    return analyze(position,branches,**options)
+
+
 def replay_field_evolution(sequence,field_model,**options):
     from pln_chess.cycle12.temporal import replay_fields
     return replay_fields(sequence,field_model,**options)

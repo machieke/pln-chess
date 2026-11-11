@@ -1,0 +1,163 @@
+{
+  "dependence_group": "c13-ancestry:af904d219729035b9e3a96b8c9b5c21e21f1159abf816ffd28e583de99fa5bfa",
+  "evaluations": [
+    {
+      "candidates": [
+        {
+          "depth": 11,
+          "engine_seconds": 0.023,
+          "lowerbound": false,
+          "move": "d6d4",
+          "nodes": 20016,
+          "pv": [
+            "d6d4",
+            "a5c3",
+            "b8f8",
+            "h2h3",
+            "f8f1",
+            "g1h2",
+            "f1f2",
+            "h2g1"
+          ],
+          "scope": "Offline reference-engine output, not a native PLN conclusion.",
+          "score": {
+            "cp": 0,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 10,
+          "upperbound": false,
+          "wdl": [
+            1,
+            997,
+            2
+          ]
+        },
+        {
+          "depth": 11,
+          "engine_seconds": 0.023,
+          "lowerbound": false,
+          "move": "b8e8",
+          "nodes": 20016,
+          "pv": [
+            "b8e8",
+            "a5d2"
+          ],
+          "scope": "Offline reference-engine output, not a native PLN conclusion.",
+          "score": {
+            "cp": -145,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 15,
+          "upperbound": true,
+          "wdl": [
+            0,
+            52,
+            948
+          ]
+        }
+      ],
+      "elapsed_seconds": 0.04231543652713299,
+      "node_budget": 20000
+    },
+    {
+      "candidates": [
+        {
+          "depth": 14,
+          "engine_seconds": 0.077,
+          "lowerbound": true,
+          "move": "d6d4",
+          "nodes": 80072,
+          "pv": [
+            "d6d4"
+          ],
+          "scope": "Offline reference-engine output, not a native PLN conclusion.",
+          "score": {
+            "cp": 227,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 13,
+          "upperbound": false,
+          "wdl": [
+            1000,
+            0,
+            0
+          ]
+        },
+        {
+          "depth": 13,
+          "engine_seconds": 0.077,
+          "lowerbound": false,
+          "move": "b8e8",
+          "nodes": 80072,
+          "pv": [
+            "b8e8",
+            "h5e8",
+            "d6d4",
+            "a5e1",
+            "e3g4",
+            "g1g2",
+            "d4b2",
+            "g2f3",
+            "g4h2",
+            "f3e4",
+            "b2g2",
+            "e4d3",
+            "h2f3",
+            "e1e2"
+          ],
+          "scope": "Offline reference-engine output, not a native PLN conclusion.",
+          "score": {
+            "cp": -253,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 21,
+          "upperbound": false,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        }
+      ],
+      "elapsed_seconds": 0.09375692997127771,
+      "node_budget": 80000
+    }
+  ],
+  "evidence_id": "reference-preference:c2c6c402dd04ad928143fd88fb805af7b2dad8f734a88c5eb0c99425c8641b39",
+  "id": "c13-puzzle-0AK1R",
+  "identity": {
+    "config": {
+      "ambiguous_margin_cp": 20,
+      "hash_mib": 32,
+      "node_budgets": [
+        20000,
+        80000
+      ],
+      "preference_margin_cp": 80,
+      "release": "sf_18",
+      "threads": 1
+    },
+    "driver_sha256": "3cb14950417a460a5f1dc149795455fe8b0db63e5c688bb51f173c836ebf7690",
+    "reference_binary_sha256": "76ea026f6840620e542c263d166ab1711d2657bed5edbbc35f0334e78e52f520",
+    "row_hash": "d9bd10df80573be750c174d2983b23927e2a46d44443e26551fb4ad6e5694c49",
+    "source_hash": "66b12a19f465bec9313575475d5ee9a0f315923b75837579b74c9003937c4371"
+  },
+  "label": "unknown",
+  "probability_of_correctness": null,
+  "reason": "Unresolved score bound.",
+  "reference_selection_only": true,
+  "source": "Stockfish 18 fixed-node two-root comparisons",
+  "source_game": "https://lichess.org/game/upm97fkD",
+  "split": "train",
+  "temporal_context": {
+    "initial_fen": "1r5k/2p2Rp1/3q3p/QP5B/3P4/4n1P1/7P/6K1 w - - 0 32",
+    "moves": [
+      "f7c7"
+    ],
+    "source": "https://lichess.org/game/upm97fkD#63"
+  }
+}

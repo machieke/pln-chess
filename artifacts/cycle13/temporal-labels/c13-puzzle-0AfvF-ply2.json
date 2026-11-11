@@ -1,0 +1,179 @@
+{
+  "dependence_group": "c13-ancestry:36cf0d68be94899a4a26975aaaefa03a70a1b5d892f78a8389a5e50322695256",
+  "evaluations": [
+    {
+      "candidates": [
+        {
+          "channel": "A",
+          "depth": 245,
+          "engine_seconds": 0.003,
+          "fen": "4r2k/1QR4p/3p4/p7/1pB1P3/5P2/5qPK/6R1 b - - 0 33",
+          "lowerbound": false,
+          "nodes": 7846,
+          "pv": [
+            "f2h4"
+          ],
+          "scope": "Offline endpoint reference, original actor perspective; no production utility or native conclusion.",
+          "score": {
+            "cp": null,
+            "mate": 1,
+            "mate_outcome": "win"
+          },
+          "seldepth": 2,
+          "upperbound": false,
+          "wdl": [
+            1000,
+            0,
+            0
+          ]
+        },
+        {
+          "channel": "B",
+          "depth": 13,
+          "engine_seconds": 0.021,
+          "fen": "3r3k/1QR4p/3pB3/p6r/1p2P3/5P2/5qPP/6RK b - - 6 33",
+          "lowerbound": false,
+          "nodes": 20015,
+          "pv": [
+            "b4b3",
+            "h2h3",
+            "b3b2",
+            "e6f5",
+            "h5h4",
+            "c7h7",
+            "h8g8"
+          ],
+          "scope": "Offline endpoint reference, original actor perspective; no production utility or native conclusion.",
+          "score": {
+            "cp": -509,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 17,
+          "upperbound": false,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        }
+      ],
+      "elapsed_seconds": 0.08629456628113985,
+      "node_budget": 20000
+    },
+    {
+      "candidates": [
+        {
+          "channel": "A",
+          "depth": 245,
+          "engine_seconds": 0.003,
+          "fen": "4r2k/1QR4p/3p4/p7/1pB1P3/5P2/5qPK/6R1 b - - 0 33",
+          "lowerbound": false,
+          "nodes": 7846,
+          "pv": [
+            "f2h4"
+          ],
+          "scope": "Offline endpoint reference, original actor perspective; no production utility or native conclusion.",
+          "score": {
+            "cp": null,
+            "mate": 1,
+            "mate_outcome": "win"
+          },
+          "seldepth": 2,
+          "upperbound": false,
+          "wdl": [
+            1000,
+            0,
+            0
+          ]
+        },
+        {
+          "channel": "B",
+          "depth": 16,
+          "engine_seconds": 0.081,
+          "fen": "3r3k/1QR4p/3pB3/p6r/1p2P3/5P2/5qPP/6RK b - - 6 33",
+          "lowerbound": false,
+          "nodes": 80034,
+          "pv": [
+            "f2h4",
+            "h2h3",
+            "a5a4",
+            "b7b6",
+            "a4a3",
+            "b6d4",
+            "h5e5",
+            "c7f7",
+            "d8g8",
+            "f3f4"
+          ],
+          "scope": "Offline endpoint reference, original actor perspective; no production utility or native conclusion.",
+          "score": {
+            "cp": -481,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 21,
+          "upperbound": false,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        }
+      ],
+      "elapsed_seconds": 0.14995691366493702,
+      "node_budget": 80000
+    }
+  ],
+  "evidence_id": "reference-preference:6446ae996acbcd8f43bfcff340b41c0a4a076260e76a528f1392bceda3d15151",
+  "horizon": 2,
+  "id": "c13-puzzle-0AfvF-ply2",
+  "identity": {
+    "config": {
+      "ambiguous_margin_cp": 20,
+      "hash_mib": 32,
+      "node_budgets": [
+        20000,
+        80000
+      ],
+      "preference_margin_cp": 80,
+      "release": "sf_18",
+      "threads": 1
+    },
+    "driver_sha256": "e07bd9bc04d5c6de6d9fad61d0a238557bd509776dd0dd51c51bacf826de4966",
+    "horizon": 2,
+    "label_policy_sha256": "3cb14950417a460a5f1dc149795455fe8b0db63e5c688bb51f173c836ebf7690",
+    "plan_hash": "6d764779b41f6cf9754b224b12562b57c47642c18b4472d21f56b54590476ddf",
+    "reference_binary_sha256": "76ea026f6840620e542c263d166ab1711d2657bed5edbbc35f0334e78e52f520",
+    "source_hash": "546d2db64e6bdcd08a96cd04b5cc14668144692759d9819f24c4613b87d94c58"
+  },
+  "label": "A",
+  "original_actor": "black",
+  "plan_id": "c13-puzzle-0AfvF",
+  "probability_of_correctness": null,
+  "reason": "Same directional margin at both registered node budgets.",
+  "reference_selection_only": true,
+  "source": "Separate fixed-node endpoint evaluations after the explicitly supplied branch.",
+  "source_game": "https://lichess.org/game/vABluItw",
+  "split": "calibration",
+  "temporal_context": {
+    "branches": {
+      "A": [
+        "h5h2",
+        "h1h2"
+      ],
+      "B": [
+        "e8d8",
+        "c4e6"
+      ]
+    },
+    "history": {
+      "initial_fen": "4r2k/1QR4p/3p4/p6r/1pB1P3/5P2/5qPP/4R2K w - - 3 32",
+      "moves": [
+        "e1g1"
+      ],
+      "source": "https://lichess.org/game/vABluItw#63"
+    }
+  },
+  "unexamined_responses": "All responses outside these supplied lines remain unexamined; no exhaustive-response claim."
+}

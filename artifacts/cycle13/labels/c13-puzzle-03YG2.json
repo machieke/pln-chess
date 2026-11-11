@@ -1,0 +1,156 @@
+{
+  "dependence_group": "c13-ancestry:661f9e24edadb652cc5c0871319bee96ac23404abaf27f61083a85c33f394f28",
+  "evaluations": [
+    {
+      "candidates": [
+        {
+          "depth": 10,
+          "engine_seconds": 0.028,
+          "lowerbound": false,
+          "move": "a7a6",
+          "nodes": 20000,
+          "pv": [
+            "a7a6",
+            "f4f5"
+          ],
+          "scope": "Offline reference-engine output, not a native PLN conclusion.",
+          "score": {
+            "cp": -15,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 19,
+          "upperbound": true,
+          "wdl": [
+            1,
+            995,
+            4
+          ]
+        },
+        {
+          "depth": 10,
+          "engine_seconds": 0.028,
+          "lowerbound": false,
+          "move": "g8h8",
+          "nodes": 20000,
+          "pv": [
+            "g8h8",
+            "a4a7",
+            "f8g8",
+            "a7f7"
+          ],
+          "scope": "Offline reference-engine output, not a native PLN conclusion.",
+          "score": {
+            "cp": 142,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 15,
+          "upperbound": false,
+          "wdl": [
+            937,
+            63,
+            0
+          ]
+        }
+      ],
+      "elapsed_seconds": 0.04718947131186724,
+      "node_budget": 20000
+    },
+    {
+      "candidates": [
+        {
+          "depth": 12,
+          "engine_seconds": 0.098,
+          "lowerbound": false,
+          "move": "a7a6",
+          "nodes": 80012,
+          "pv": [
+            "a7a6",
+            "a4c2"
+          ],
+          "scope": "Offline reference-engine output, not a native PLN conclusion.",
+          "score": {
+            "cp": -25,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 32,
+          "upperbound": true,
+          "wdl": [
+            0,
+            992,
+            8
+          ]
+        },
+        {
+          "depth": 12,
+          "engine_seconds": 0.098,
+          "lowerbound": false,
+          "move": "g8h8",
+          "nodes": 80012,
+          "pv": [
+            "g8h8",
+            "a4b5",
+            "f8g8",
+            "d4d2",
+            "g1g3",
+            "h3h4",
+            "h1g1",
+            "b5f1",
+            "g8g4",
+            "h4h5"
+          ],
+          "scope": "Offline reference-engine output, not a native PLN conclusion.",
+          "score": {
+            "cp": 200,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 18,
+          "upperbound": false,
+          "wdl": [
+            998,
+            2,
+            0
+          ]
+        }
+      ],
+      "elapsed_seconds": 0.11793129052966833,
+      "node_budget": 80000
+    }
+  ],
+  "evidence_id": "reference-preference:cdf083f6fbb50784adf00666fbfa5170f2cdf09091da21bf891841dc61082a38",
+  "id": "c13-puzzle-03YG2",
+  "identity": {
+    "config": {
+      "ambiguous_margin_cp": 20,
+      "hash_mib": 32,
+      "node_budgets": [
+        20000,
+        80000
+      ],
+      "preference_margin_cp": 80,
+      "release": "sf_18",
+      "threads": 1
+    },
+    "driver_sha256": "3cb14950417a460a5f1dc149795455fe8b0db63e5c688bb51f173c836ebf7690",
+    "reference_binary_sha256": "76ea026f6840620e542c263d166ab1711d2657bed5edbbc35f0334e78e52f520",
+    "row_hash": "d022074b878381c8c085a083a26126d20673edad7fd2b72233eb2b870082a215",
+    "source_hash": "66b12a19f465bec9313575475d5ee9a0f315923b75837579b74c9003937c4371"
+  },
+  "label": "unknown",
+  "probability_of_correctness": null,
+  "reason": "Unresolved score bound.",
+  "reference_selection_only": true,
+  "source": "Stockfish 18 fixed-node two-root comparisons",
+  "source_game": "https://lichess.org/game/H3lFSqhl",
+  "split": "train",
+  "temporal_context": {
+    "initial_fen": "5rk1/p4p2/4p2p/4P3/Q3RP2/4P2K/P4R1P/6rq w - - 0 31",
+    "moves": [
+      "e4d4"
+    ],
+    "source": "https://lichess.org/game/H3lFSqhl#61"
+  }
+}

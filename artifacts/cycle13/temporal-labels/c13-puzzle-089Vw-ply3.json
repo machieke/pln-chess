@@ -1,0 +1,193 @@
+{
+  "dependence_group": "c13-ancestry:2d5bc3d9caaaf6c60edfeebac40d8a8c2f6b6208ab0ecea5681b4249d6155707",
+  "evaluations": [
+    {
+      "candidates": [
+        {
+          "channel": "A",
+          "depth": 13,
+          "engine_seconds": 0.012,
+          "fen": "8/6K1/5P2/8/8/8/8/qkr4R w - - 2 60",
+          "lowerbound": false,
+          "nodes": 20037,
+          "pv": [
+            "h1c1",
+            "b1c1"
+          ],
+          "scope": "Offline endpoint reference, original actor perspective; no production utility or native conclusion.",
+          "score": {
+            "cp": 465,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 26,
+          "upperbound": true,
+          "wdl": [
+            1000,
+            0,
+            0
+          ]
+        },
+        {
+          "channel": "B",
+          "depth": 11,
+          "engine_seconds": 0.015,
+          "fen": "8/6K1/5P2/8/1R6/8/p1k5/2r5 w - - 3 60",
+          "lowerbound": false,
+          "nodes": 20031,
+          "pv": [
+            "b4a4",
+            "c2b2"
+          ],
+          "scope": "Offline endpoint reference, original actor perspective; no production utility or native conclusion.",
+          "score": {
+            "cp": 3,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 15,
+          "upperbound": true,
+          "wdl": [
+            2,
+            997,
+            1
+          ]
+        }
+      ],
+      "elapsed_seconds": 0.06326823774725199,
+      "node_budget": 20000
+    },
+    {
+      "candidates": [
+        {
+          "channel": "A",
+          "depth": 16,
+          "engine_seconds": 0.043,
+          "fen": "8/6K1/5P2/8/8/8/8/qkr4R w - - 2 60",
+          "lowerbound": false,
+          "nodes": 80067,
+          "pv": [
+            "h1c1",
+            "b1c1",
+            "g7g6",
+            "c1d2",
+            "g6f5",
+            "d2d3",
+            "f5g6",
+            "d3e4",
+            "g6g5",
+            "a1b2",
+            "g5g6",
+            "b2e5",
+            "f6f7"
+          ],
+          "scope": "Offline endpoint reference, original actor perspective; no production utility or native conclusion.",
+          "score": {
+            "cp": 533,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 25,
+          "upperbound": false,
+          "wdl": [
+            1000,
+            0,
+            0
+          ]
+        },
+        {
+          "channel": "B",
+          "depth": 17,
+          "engine_seconds": 0.057,
+          "fen": "8/6K1/5P2/8/1R6/8/p1k5/2r5 w - - 3 60",
+          "lowerbound": false,
+          "nodes": 80135,
+          "pv": [
+            "b4a4",
+            "c1g1",
+            "g7h7",
+            "c2b2",
+            "a4a2",
+            "b2a2",
+            "h7h8",
+            "a2a1",
+            "f6f7",
+            "g1h1",
+            "h8g8",
+            "h1f1",
+            "g8g7",
+            "a1a2"
+          ],
+          "scope": "Offline endpoint reference, original actor perspective; no production utility or native conclusion.",
+          "score": {
+            "cp": 5,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 25,
+          "upperbound": false,
+          "wdl": [
+            2,
+            997,
+            1
+          ]
+        }
+      ],
+      "elapsed_seconds": 0.1432437775656581,
+      "node_budget": 80000
+    }
+  ],
+  "evidence_id": "reference-preference:ea0e68c08eddbbc8ad9afb27ba16c432f4ce6162a0045652a5b8b09481d8e7be",
+  "horizon": 3,
+  "id": "c13-puzzle-089Vw-ply3",
+  "identity": {
+    "config": {
+      "ambiguous_margin_cp": 20,
+      "hash_mib": 32,
+      "node_budgets": [
+        20000,
+        80000
+      ],
+      "preference_margin_cp": 80,
+      "release": "sf_18",
+      "threads": 1
+    },
+    "driver_sha256": "e07bd9bc04d5c6de6d9fad61d0a238557bd509776dd0dd51c51bacf826de4966",
+    "horizon": 3,
+    "label_policy_sha256": "3cb14950417a460a5f1dc149795455fe8b0db63e5c688bb51f173c836ebf7690",
+    "plan_hash": "88ca412311721b25229f42b4258eaf0b182005355ff75105442365f5e6949133",
+    "reference_binary_sha256": "76ea026f6840620e542c263d166ab1711d2657bed5edbbc35f0334e78e52f520",
+    "source_hash": "546d2db64e6bdcd08a96cd04b5cc14668144692759d9819f24c4613b87d94c58"
+  },
+  "label": "unknown",
+  "original_actor": "black",
+  "plan_id": "c13-puzzle-089Vw",
+  "probability_of_correctness": null,
+  "reason": "Unresolved score bound.",
+  "reference_selection_only": true,
+  "source": "Separate fixed-node endpoint evaluations after the explicitly supplied branch.",
+  "source_game": "https://lichess.org/game/OuctyO5F",
+  "split": "calibration",
+  "temporal_context": {
+    "branches": {
+      "A": [
+        "a2a1q",
+        "h4h1",
+        "c2c1"
+      ],
+      "B": [
+        "c2c1",
+        "h4b4",
+        "b1c2"
+      ]
+    },
+    "history": {
+      "initial_fen": "8/6K1/8/5P2/7R/8/p1r5/1k6 w - - 5 58",
+      "moves": [
+        "f5f6"
+      ],
+      "source": "https://lichess.org/game/OuctyO5F#115"
+    }
+  },
+  "unexamined_responses": "All responses outside these supplied lines remain unexamined; no exhaustive-response claim."
+}

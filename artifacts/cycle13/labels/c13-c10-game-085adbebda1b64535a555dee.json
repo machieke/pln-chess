@@ -1,0 +1,191 @@
+{
+  "dependence_group": "c13-ancestry:9ebcc0601957b46bc4300c8dc00740d8c000ec2b3245076c39129112a0d5e7e4",
+  "evaluations": [
+    {
+      "candidates": [
+        {
+          "depth": 10,
+          "engine_seconds": 0.058,
+          "lowerbound": false,
+          "move": "e5e3",
+          "nodes": 20001,
+          "pv": [
+            "e5e3",
+            "d4e3",
+            "c1e3",
+            "c5e3",
+            "a1e1",
+            "e3f2",
+            "g1f2",
+            "e8c8",
+            "h5e5",
+            "d8d2",
+            "f2e3"
+          ],
+          "scope": "Offline reference-engine output, not a native PLN conclusion.",
+          "score": {
+            "cp": -639,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 15,
+          "upperbound": false,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        {
+          "depth": 11,
+          "engine_seconds": 0.058,
+          "lowerbound": true,
+          "move": "c1g5",
+          "nodes": 20001,
+          "pv": [
+            "c1g5"
+          ],
+          "scope": "Offline reference-engine output, not a native PLN conclusion.",
+          "score": {
+            "cp": 68,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 27,
+          "upperbound": false,
+          "wdl": [
+            149,
+            851,
+            0
+          ]
+        }
+      ],
+      "elapsed_seconds": 0.08143960312008858,
+      "node_budget": 20000
+    },
+    {
+      "candidates": [
+        {
+          "depth": 12,
+          "engine_seconds": 0.128,
+          "lowerbound": false,
+          "move": "e5e3",
+          "nodes": 80035,
+          "pv": [
+            "e5e3",
+            "d4e3",
+            "c1e3",
+            "c5e3",
+            "f2e3",
+            "h7h6",
+            "h5e2",
+            "a8d8",
+            "a3c4",
+            "e6c4",
+            "e2c4"
+          ],
+          "scope": "Offline reference-engine output, not a native PLN conclusion.",
+          "score": {
+            "cp": -663,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 15,
+          "upperbound": false,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        {
+          "depth": 13,
+          "engine_seconds": 0.128,
+          "lowerbound": true,
+          "move": "c1g5",
+          "nodes": 80035,
+          "pv": [
+            "c1g5"
+          ],
+          "scope": "Offline reference-engine output, not a native PLN conclusion.",
+          "score": {
+            "cp": 91,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 31,
+          "upperbound": false,
+          "wdl": [
+            375,
+            625,
+            0
+          ]
+        }
+      ],
+      "elapsed_seconds": 0.14855355396866798,
+      "node_budget": 80000
+    }
+  ],
+  "evidence_id": "reference-preference:de28acc6314bd10bf285d03875a54f11630397c48f4cbd6ff11aff8d195684d1",
+  "id": "c13-c10-game-085adbebda1b64535a555dee",
+  "identity": {
+    "config": {
+      "ambiguous_margin_cp": 20,
+      "hash_mib": 32,
+      "node_budgets": [
+        20000,
+        80000
+      ],
+      "preference_margin_cp": 80,
+      "release": "sf_18",
+      "threads": 1
+    },
+    "driver_sha256": "3cb14950417a460a5f1dc149795455fe8b0db63e5c688bb51f173c836ebf7690",
+    "reference_binary_sha256": "76ea026f6840620e542c263d166ab1711d2657bed5edbbc35f0334e78e52f520",
+    "row_hash": "1474cdf72d94c835877a80f4e9d235495ab94c39e43dbe9aade5716c5af347cd",
+    "source_hash": "66b12a19f465bec9313575475d5ee9a0f315923b75837579b74c9003937c4371"
+  },
+  "label": "unknown",
+  "probability_of_correctness": null,
+  "reason": "Unresolved score bound.",
+  "reference_selection_only": true,
+  "source": "Stockfish 18 fixed-node two-root comparisons",
+  "source_game": "lichess-rated-2013-01:085adbebda1b64535a555deeaef9622407d9ec3d7602778077faf655ba31f58b",
+  "split": "train",
+  "temporal_context": {
+    "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    "moves": [
+      "e2e4",
+      "g8f6",
+      "b1c3",
+      "d7d5",
+      "e4e5",
+      "d5d4",
+      "c3b5",
+      "f6g4",
+      "g1f3",
+      "b8c6",
+      "f1c4",
+      "g4e5",
+      "f3e5",
+      "c6e5",
+      "d2d3",
+      "e5c4",
+      "d3c4",
+      "e7e5",
+      "e1g1",
+      "a7a6",
+      "b5a3",
+      "f8c5",
+      "d1h5",
+      "d8e7",
+      "f1e1",
+      "c5d6",
+      "c4c5",
+      "d6c5",
+      "e1e5",
+      "c8e6"
+    ],
+    "source": "https://lichess.org/t0qn56a5"
+  }
+}

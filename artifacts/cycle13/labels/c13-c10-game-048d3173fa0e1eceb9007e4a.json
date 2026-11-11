@@ -1,0 +1,233 @@
+{
+  "dependence_group": "c13-ancestry:366ed560bc1fe5d26d1742ef56f5851d28cb71cf96ce1b969241df0ac12b604b",
+  "evaluations": [
+    {
+      "candidates": [
+        {
+          "depth": 13,
+          "engine_seconds": 0.023,
+          "lowerbound": false,
+          "move": "g2g6",
+          "nodes": 20009,
+          "pv": [
+            "g2g6",
+            "c8a8",
+            "a4a5",
+            "g8f7",
+            "g6g3",
+            "a8a5",
+            "a1a5",
+            "c4a5",
+            "g3a3",
+            "a5c6",
+            "c2c3",
+            "b5b4",
+            "a3b3",
+            "b4c3"
+          ],
+          "scope": "Offline reference-engine output, not a native PLN conclusion.",
+          "score": {
+            "cp": -295,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 18,
+          "upperbound": false,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        {
+          "depth": 13,
+          "engine_seconds": 0.023,
+          "lowerbound": false,
+          "move": "a1b1",
+          "nodes": 20009,
+          "pv": [
+            "a1b1",
+            "g6e4",
+            "g2g7",
+            "g8g7",
+            "b1b4",
+            "e4d4",
+            "g1g2"
+          ],
+          "scope": "Offline reference-engine output, not a native PLN conclusion.",
+          "score": {
+            "cp": -809,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 15,
+          "upperbound": false,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        }
+      ],
+      "elapsed_seconds": 0.043633281253278255,
+      "node_budget": 20000
+    },
+    {
+      "candidates": [
+        {
+          "depth": 15,
+          "engine_seconds": 0.097,
+          "lowerbound": false,
+          "move": "g2g6",
+          "nodes": 80035,
+          "pv": [
+            "g2g6",
+            "c8a8",
+            "a1b1",
+            "g8f7",
+            "g6g2",
+            "a8a4",
+            "b1b5",
+            "b7b6",
+            "b5b1",
+            "a4a2",
+            "g2f2",
+            "f7g6",
+            "b1b3",
+            "a2a1"
+          ],
+          "scope": "Offline reference-engine output, not a native PLN conclusion.",
+          "score": {
+            "cp": -299,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 30,
+          "upperbound": false,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        {
+          "depth": 14,
+          "engine_seconds": 0.097,
+          "lowerbound": false,
+          "move": "a1b1",
+          "nodes": 80035,
+          "pv": [
+            "a1b1",
+            "g6e4",
+            "c1e3",
+            "e4e3",
+            "g2f2",
+            "e3e4",
+            "f2g2",
+            "e4d4",
+            "g2f2",
+            "d4e4",
+            "f2g2"
+          ],
+          "scope": "Offline reference-engine output, not a native PLN conclusion.",
+          "score": {
+            "cp": -888,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 17,
+          "upperbound": false,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        }
+      ],
+      "elapsed_seconds": 0.11843226943165064,
+      "node_budget": 80000
+    }
+  ],
+  "evidence_id": "reference-preference:a32e971aeea29eb30d85d40bd6e15972a7de01c6e414308647455b49997f772a",
+  "id": "c13-c10-game-048d3173fa0e1eceb9007e4a",
+  "identity": {
+    "config": {
+      "ambiguous_margin_cp": 20,
+      "hash_mib": 32,
+      "node_budgets": [
+        20000,
+        80000
+      ],
+      "preference_margin_cp": 80,
+      "release": "sf_18",
+      "threads": 1
+    },
+    "driver_sha256": "3cb14950417a460a5f1dc149795455fe8b0db63e5c688bb51f173c836ebf7690",
+    "reference_binary_sha256": "76ea026f6840620e542c263d166ab1711d2657bed5edbbc35f0334e78e52f520",
+    "row_hash": "beafd2c606b21e75a60399f877f1ad7dba6056c82636e1540789f837dc215ce5",
+    "source_hash": "66b12a19f465bec9313575475d5ee9a0f315923b75837579b74c9003937c4371"
+  },
+  "label": "A",
+  "probability_of_correctness": null,
+  "reason": "Same directional margin at both registered node budgets.",
+  "reference_selection_only": true,
+  "source": "Stockfish 18 fixed-node two-root comparisons",
+  "source_game": "lichess-broadcast-2024-01:048d3173fa0e1eceb9007e4a675c50dc7fee183bc3b15f26002206a70d7ac4c0",
+  "split": "calibration",
+  "temporal_context": {
+    "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    "moves": [
+      "e2e4",
+      "e7e6",
+      "d2d4",
+      "d7d5",
+      "b1c3",
+      "f8b4",
+      "e4e5",
+      "c7c5",
+      "a2a3",
+      "b4c3",
+      "b2c3",
+      "g8e7",
+      "h2h4",
+      "d8c7",
+      "g1f3",
+      "b8c6",
+      "h4h5",
+      "h7h6",
+      "f1e2",
+      "c8d7",
+      "e1g1",
+      "e8g8",
+      "f3h4",
+      "f7f5",
+      "f2f4",
+      "c5d4",
+      "c3d4",
+      "a8c8",
+      "c1e3",
+      "c6a5",
+      "e2d3",
+      "a7a6",
+      "g2g4",
+      "d7b5",
+      "d3b5",
+      "a6b5",
+      "f1f2",
+      "a5c4",
+      "e3c1",
+      "f5g4",
+      "d1g4",
+      "e7f5",
+      "h4f5",
+      "f8f5",
+      "f2g2",
+      "c7f7",
+      "g4g6",
+      "f5h5",
+      "a3a4",
+      "f7g6"
+    ],
+    "source": "?"
+  }
+}

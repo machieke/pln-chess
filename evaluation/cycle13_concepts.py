@@ -48,7 +48,9 @@ def run(out):
         legacy = result['starting_conditional']
         for name in ('classification', 'raw_stv', 'proof_id', 'proof_trace', 'rule_id', 'evidence_ids',
                      'dependence_groups', 'model_version', 'runtime_version'):
-            assert legacy[name] == old['result'][name], (record['id'], name)
+            # JSON transports tuples as arrays; compare the complete canonical
+            # value, including every ordered native premise and truth value.
+            assert digest(legacy[name]) == digest(old['result'][name]), (record['id'], name)
         current = dict(id=record['id'], split=record['split'], reference=record['reference'], result=result)
         if correct(old):
             assert correct(current), record['id']

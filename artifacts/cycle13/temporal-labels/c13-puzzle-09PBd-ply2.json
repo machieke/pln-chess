@@ -1,0 +1,207 @@
+{
+  "dependence_group": "c13-ancestry:e5e1e4e1ca0c003a5cd0824cff9988b0be7a40d2398e03c553523f55128eb5ce",
+  "evaluations": [
+    {
+      "candidates": [
+        {
+          "channel": "A",
+          "depth": 14,
+          "engine_seconds": 0.023,
+          "fen": "4r1k1/5p2/pN4pb/1pP4p/1R6/4PN1P/4K1P1/8 b - - 0 40",
+          "lowerbound": false,
+          "nodes": 20007,
+          "pv": [
+            "h6e3",
+            "e2d3",
+            "e3c5",
+            "b6d5",
+            "c5b4",
+            "d5b4",
+            "e8e6",
+            "f3d4"
+          ],
+          "scope": "Offline endpoint reference, original actor perspective; no production utility or native conclusion.",
+          "score": {
+            "cp": 346,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 15,
+          "upperbound": false,
+          "wdl": [
+            1000,
+            0,
+            0
+          ]
+        },
+        {
+          "channel": "B",
+          "depth": 14,
+          "engine_seconds": 0.015,
+          "fen": "2N3k1/5p2/p5pb/1pP4p/1R6/3bPN1P/4R1P1/5K2 b - - 0 40",
+          "lowerbound": false,
+          "nodes": 20005,
+          "pv": [
+            "h6e3",
+            "c5c6",
+            "e3c5",
+            "b4b3",
+            "d3c4",
+            "b3c3",
+            "g8h7",
+            "c3c4",
+            "b5c4",
+            "c6c7"
+          ],
+          "scope": "Offline endpoint reference, original actor perspective; no production utility or native conclusion.",
+          "score": {
+            "cp": -636,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 19,
+          "upperbound": false,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        }
+      ],
+      "elapsed_seconds": 0.0756116695702076,
+      "node_budget": 20000
+    },
+    {
+      "candidates": [
+        {
+          "channel": "A",
+          "depth": 17,
+          "engine_seconds": 0.095,
+          "fen": "4r1k1/5p2/pN4pb/1pP4p/1R6/4PN1P/4K1P1/8 b - - 0 40",
+          "lowerbound": false,
+          "nodes": 80100,
+          "pv": [
+            "h6e3",
+            "e2d3",
+            "e3c5",
+            "b6d5",
+            "c5b4",
+            "d5b4",
+            "a6a5",
+            "b4c6",
+            "a5a4",
+            "f3d4",
+            "e8e1",
+            "d4b5",
+            "e1g1",
+            "d3c4",
+            "g8h7"
+          ],
+          "scope": "Offline endpoint reference, original actor perspective; no production utility or native conclusion.",
+          "score": {
+            "cp": 363,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 28,
+          "upperbound": false,
+          "wdl": [
+            1000,
+            0,
+            0
+          ]
+        },
+        {
+          "channel": "B",
+          "depth": 16,
+          "engine_seconds": 0.051,
+          "fen": "2N3k1/5p2/p5pb/1pP4p/1R6/3bPN1P/4R1P1/5K2 b - - 0 40",
+          "lowerbound": false,
+          "nodes": 80035,
+          "pv": [
+            "h6e3",
+            "c5c6",
+            "e3c5",
+            "b4b3",
+            "d3c4",
+            "b3c3",
+            "g8h7",
+            "c6c7",
+            "h7g7",
+            "c3c4",
+            "b5c4",
+            "c8e7",
+            "c4c3",
+            "c7c8r"
+          ],
+          "scope": "Offline endpoint reference, original actor perspective; no production utility or native conclusion.",
+          "score": {
+            "cp": -657,
+            "mate": null,
+            "mate_outcome": null
+          },
+          "seldepth": 22,
+          "upperbound": false,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        }
+      ],
+      "elapsed_seconds": 0.18072511721402407,
+      "node_budget": 80000
+    }
+  ],
+  "evidence_id": "reference-preference:3c83a36c0731a4f0953cbbab81ff7ff599557417b1f86ae638b255aa5005f7ba",
+  "horizon": 2,
+  "id": "c13-puzzle-09PBd-ply2",
+  "identity": {
+    "config": {
+      "ambiguous_margin_cp": 20,
+      "hash_mib": 32,
+      "node_budgets": [
+        20000,
+        80000
+      ],
+      "preference_margin_cp": 80,
+      "release": "sf_18",
+      "threads": 1
+    },
+    "driver_sha256": "e07bd9bc04d5c6de6d9fad61d0a238557bd509776dd0dd51c51bacf826de4966",
+    "horizon": 2,
+    "label_policy_sha256": "3cb14950417a460a5f1dc149795455fe8b0db63e5c688bb51f173c836ebf7690",
+    "plan_hash": "0f609824861cc6c7c58bc3188868ef85d7d21e246429e0287870cfcdb9860686",
+    "reference_binary_sha256": "76ea026f6840620e542c263d166ab1711d2657bed5edbbc35f0334e78e52f520",
+    "source_hash": "546d2db64e6bdcd08a96cd04b5cc14668144692759d9819f24c4613b87d94c58"
+  },
+  "label": "A",
+  "original_actor": "black",
+  "plan_id": "c13-puzzle-09PBd",
+  "probability_of_correctness": null,
+  "reason": "Same directional margin at both registered node budgets.",
+  "reference_selection_only": true,
+  "source": "Separate fixed-node endpoint evaluations after the explicitly supplied branch.",
+  "source_game": "https://lichess.org/game/gVsxZXnp",
+  "split": "test",
+  "temporal_context": {
+    "branches": {
+      "A": [
+        "d3e2",
+        "f1e2"
+      ],
+      "B": [
+        "e8c8",
+        "b6c8"
+      ]
+    },
+    "history": {
+      "initial_fen": "4r1k1/5p2/pN4pb/1pP4p/1n1R4/3bPN1P/4R1P1/5K2 w - - 2 39",
+      "moves": [
+        "d4b4"
+      ],
+      "source": "https://lichess.org/game/gVsxZXnp#77"
+    }
+  },
+  "unexamined_responses": "All responses outside these supplied lines remain unexamined; no exhaustive-response claim."
+}

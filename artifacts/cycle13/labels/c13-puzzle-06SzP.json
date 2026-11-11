@@ -1,0 +1,152 @@
+{
+  "dependence_group": "c13-ancestry:db22594f7adde56febc4b36009b00a6dfddbb50d139f9425d277cf827db75b2b",
+  "evaluations": [
+    {
+      "candidates": [
+        {
+          "depth": 245,
+          "engine_seconds": 0.004,
+          "lowerbound": false,
+          "move": "e4c5",
+          "nodes": 9812,
+          "pv": [
+            "e4c5",
+            "b3c5"
+          ],
+          "scope": "Offline reference-engine output, not a native PLN conclusion.",
+          "score": {
+            "cp": null,
+            "mate": -1,
+            "mate_outcome": "loss"
+          },
+          "seldepth": 3,
+          "upperbound": false,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        {
+          "depth": 245,
+          "engine_seconds": 0.004,
+          "lowerbound": false,
+          "move": "e4c3",
+          "nodes": 9812,
+          "pv": [
+            "e4c3",
+            "a2a1",
+            "h2h1",
+            "b3c1",
+            "h1c1"
+          ],
+          "scope": "Offline reference-engine output, not a native PLN conclusion.",
+          "score": {
+            "cp": null,
+            "mate": 3,
+            "mate_outcome": "win"
+          },
+          "seldepth": 6,
+          "upperbound": false,
+          "wdl": [
+            1000,
+            0,
+            0
+          ]
+        }
+      ],
+      "elapsed_seconds": 0.06570741627365351,
+      "node_budget": 20000
+    },
+    {
+      "candidates": [
+        {
+          "depth": 245,
+          "engine_seconds": 0.005,
+          "lowerbound": false,
+          "move": "e4c5",
+          "nodes": 9812,
+          "pv": [
+            "e4c5",
+            "b3c5"
+          ],
+          "scope": "Offline reference-engine output, not a native PLN conclusion.",
+          "score": {
+            "cp": null,
+            "mate": -1,
+            "mate_outcome": "loss"
+          },
+          "seldepth": 3,
+          "upperbound": false,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        {
+          "depth": 245,
+          "engine_seconds": 0.005,
+          "lowerbound": false,
+          "move": "e4c3",
+          "nodes": 9812,
+          "pv": [
+            "e4c3",
+            "a2a1",
+            "h2h1",
+            "b3c1",
+            "h1c1"
+          ],
+          "scope": "Offline reference-engine output, not a native PLN conclusion.",
+          "score": {
+            "cp": null,
+            "mate": 3,
+            "mate_outcome": "win"
+          },
+          "seldepth": 6,
+          "upperbound": false,
+          "wdl": [
+            1000,
+            0,
+            0
+          ]
+        }
+      ],
+      "elapsed_seconds": 0.08664733078330755,
+      "node_budget": 80000
+    }
+  ],
+  "evidence_id": "reference-preference:07ab2b92665c5e24651895b5b5ac79e56551c638a699c419d63d5f2d59f7f0dc",
+  "id": "c13-puzzle-06SzP",
+  "identity": {
+    "config": {
+      "ambiguous_margin_cp": 20,
+      "hash_mib": 32,
+      "node_budgets": [
+        20000,
+        80000
+      ],
+      "preference_margin_cp": 80,
+      "release": "sf_18",
+      "threads": 1
+    },
+    "driver_sha256": "3cb14950417a460a5f1dc149795455fe8b0db63e5c688bb51f173c836ebf7690",
+    "reference_binary_sha256": "76ea026f6840620e542c263d166ab1711d2657bed5edbbc35f0334e78e52f520",
+    "row_hash": "49ab16bc5dcbc1ac2ea82e9d474f3451f464cb433513b44ae21158f1d90cfb2f",
+    "source_hash": "66b12a19f465bec9313575475d5ee9a0f315923b75837579b74c9003937c4371"
+  },
+  "label": "B",
+  "probability_of_correctness": null,
+  "reason": "Same directional margin at both registered node budgets.",
+  "reference_selection_only": true,
+  "source": "Stockfish 18 fixed-node two-root comparisons",
+  "source_game": "https://lichess.org/game/OWZuRZUv",
+  "split": "train",
+  "temporal_context": {
+    "initial_fen": "8/p3B2p/k7/8/1R2n3/PNP5/KP5r/8 w - - 2 39",
+    "moves": [
+      "e7d8"
+    ],
+    "source": "https://lichess.org/game/OWZuRZUv#77"
+  }
+}
