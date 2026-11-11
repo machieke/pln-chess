@@ -1,0 +1,71 @@
+{
+  "acceptance_sha256": "b5750937df84f8f40ddc3857a01a5282ad80fa03ece7e69397c12ba18b37a825",
+  "checkout": "/data/pln-chess-cycle13-final",
+  "default_model_version": "a6d3d826d93ee01b8accb7dc9948c0bd9bb0048cc54755bf45e92ec82502743d",
+  "elapsed_seconds": 202.07620930671692,
+  "fresh_checkout_cli": [
+    {
+      "argv": [
+        "/data/pln-chess-cycle13-final/.venv/bin/pln-chess",
+        "inspect",
+        "--fen",
+        "7k/8/8/8/R6p/8/8/6K1 w - - 0 1",
+        "--move",
+        "a4h4",
+        "--format",
+        "json"
+      ],
+      "classification": "supported-legal",
+      "mode": "operational",
+      "model_version": "a6d3d826d93ee01b8accb7dc9948c0bd9bb0048cc54755bf45e92ec82502743d",
+      "name": "automatic-default"
+    },
+    {
+      "argv": [
+        "/data/pln-chess-cycle13-final/.venv/bin/pln-chess",
+        "inspect",
+        "--fen",
+        "7k/8/8/8/R6p/8/8/6K1 w - - 0 1",
+        "--move",
+        "a4h4",
+        "--format",
+        "json",
+        "--mode",
+        "strict"
+      ],
+      "classification": "unknown",
+      "mode": "strict",
+      "model_version": "a6d3d826d93ee01b8accb7dc9948c0bd9bb0048cc54755bf45e92ec82502743d",
+      "name": "strict"
+    },
+    {
+      "argv": [
+        "/data/pln-chess-cycle13-final/.venv/bin/pln-chess",
+        "inspect",
+        "--fen",
+        "7k/8/8/8/R6p/8/8/6K1 w - - 0 1",
+        "--move",
+        "a4h4",
+        "--format",
+        "json",
+        "--mode",
+        "experimental"
+      ],
+      "classification": "unknown",
+      "mode": "experimental",
+      "model_version": "a6d3d826d93ee01b8accb7dc9948c0bd9bb0048cc54755bf45e92ec82502743d",
+      "name": "experimental"
+    }
+  ],
+  "original_legal_checkpoint_byte_identical": true,
+  "passed": true,
+  "production_code_hash": "7ac9cac3ef48d9c48c48681d03cd56a472b12d3cbc861865afc9df3d3dbdec8b",
+  "scope": "Final full tests and operational/strict/experimental CLI defaults after source-bound acceptance. No experimental preference checkpoint is selected for legality.",
+  "source_clean": true,
+  "source_head": "eb7f9ca5d71aa7d024dfd39374cf208b9a5e7122",
+  "test_partition_sha256": "78324b616624dcf6b53cba1163f5a6718fc9d6fa642ea4681a727e54d140704d",
+  "test_processes": 4,
+  "tests": 588,
+  "tests_sha256": "c2b854c3c0c8c731240b0278d533c947afc44dae6294ab6c10a8e5f4e367dc62",
+  "working_checkout_automatic_default_verified": true
+}
