@@ -1,0 +1,18 @@
+EXTERNAL CONCEPT SOURCE Pin {'positions_examined': 14, 'positive': 8, 'negative': 4, 'target_positive': 8, 'target_negative': 4, 'coverage_complete': True}
+EXTERNAL CONCEPT SOURCE Fork {'positions_examined': 15, 'positive': 8, 'negative': 4, 'target_positive': 8, 'target_negative': 4, 'coverage_complete': True}
+EXTERNAL CONCEPT SOURCE DiscoveredAttack {'positions_examined': 13, 'positive': 8, 'negative': 4, 'target_positive': 8, 'target_negative': 4, 'coverage_complete': True}
+EXTERNAL CONCEPT SOURCE DiscoveredDefense {'positions_examined': 71, 'positive': 8, 'negative': 4, 'target_positive': 8, 'target_negative': 4, 'coverage_complete': True}
+EXTERNAL CONCEPT SOURCE MultipleAttackers {'positions_examined': 16, 'positive': 8, 'negative': 4, 'target_positive': 8, 'target_negative': 4, 'coverage_complete': True}
+EXTERNAL CONCEPT SOURCE OverloadedDefender {'positions_examined': 18, 'positive': 8, 'negative': 4, 'target_positive': 8, 'target_negative': 4, 'coverage_complete': True}
+EXTERNAL CONCEPT SOURCE TrappedPiece {'positions_examined': 13, 'positive': 8, 'negative': 4, 'target_positive': 8, 'target_negative': 4, 'coverage_complete': True}
+EXTERNAL CONCEPT SOURCE ThreatRemoval {'positions_examined': 30, 'positive': 8, 'negative': 4, 'target_positive': 8, 'target_negative': 4, 'coverage_complete': True}
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/data/pln-chess-cycle6-delivery/training/cycle13_concept_sources.py", line 100, in <module>
+    parser=argparse.ArgumentParser();parser.add_argument('--out',default='artifacts/cycle13');run(parser.parse_args().out)
+                                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/pln-chess-cycle6-delivery/training/cycle13_concept_sources.py", line 94, in run
+    if destination.exists():assert read_json(destination)==payload
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
