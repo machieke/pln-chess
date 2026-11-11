@@ -161,6 +161,22 @@ def run(out):
     write_json(out / 'preferences/evidence-volume.json', dict(studies=volume, fixed_test_population=True,
         selection_before_predictions=True, no_model_selected_using_test=True))
 
+    shift = {}
+    for cohort in ('independent-games','external-tactical'):
+        selected = [r for r in train_rows if r['source_record']['source']['cohort'] == cohort]
+        model = train(selected, runtime, out / 'learning' / ('source-only-' + cohort),
+            dataset_hash=dataset_hash, baseline_root=out, variant='C13-source-only-' + cohort)
+        result = evaluate(model, [r for r in records if r['split'] == 'test'])
+        pack(out / 'preferences' / ('source-only-' + cohort + '.json.xz'), result)
+        shift[cohort] = dict(training_pairs=len(selected), model_version=model.version,
+            test_sources={target:dict(metrics=metrics(population), calibration=calibration(population), uncertainty=bootstrap(population))
+                for target in ('independent-games','external-tactical')
+                for population in [[r for r in result if r['source_record']['source']['cohort'] == target]]})
+    write_json(out / 'preferences/distribution-shift.json', dict(studies=shift,
+        source_holdout_in_training=True, fixed_test_partition=True,
+        scope='Source-only training evaluated both within source and on the other held-out source family. The mixed-source primary test strata alone are not an unseen-source experiment.',
+        limitations='Two curated source pools; this does not quantify arbitrary deployment shift.'))
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
