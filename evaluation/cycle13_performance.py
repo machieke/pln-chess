@@ -105,13 +105,17 @@ def worker(out, name, arm, repetition):
 
 
 def run(out):
+    from pln_chess.cycle6.inference import production_code_hash
     out = Path(out).resolve()
+    code = production_code_hash()
+    assert code == read_json(out/'source-freeze.json')['production_code_hash']
     assert read_json(out/'baseline/reproduction-receipt.json')['passed']
     population = workloads(out)
     write_json(out/'performance/workloads.json', dict(workloads=population,
         selection='Hash-selected from registered sources without consulting predictions or preference labels.',
         repetitions=5, inference_oracle=False))
     all_rows = []
+    identities = []
     for name in population:
         for repetition in range(5):
             order = ('full', 'incremental') if repetition % 2 == 0 else ('incremental', 'full')
@@ -126,7 +130,10 @@ def run(out):
                     subprocess.run([sys.executable, '-m', 'evaluation.cycle13_performance', '--out', str(out), '--worker',
                         name, '--arm', arm, '--repetition', str(repetition)], cwd=ROOT,
                         env=dict(os.environ, TMPDIR='/dev/shm'), stdout=stream, stderr=subprocess.STDOUT, check=True)
-                all_rows.extend(read_json(target)['rows'])
+                receipt = read_json(target)
+                assert receipt['production_code_hash'] == code
+                identities.append({key:receipt[key] for key in ('production_code_hash','runtime','model_versions')})
+                all_rows.extend(receipt['rows'])
                 print('BENCHMARK', name, arm, repetition, flush=True)
     parity = {}
     summaries = []
@@ -146,7 +153,8 @@ def run(out):
                     truncation_rate=sum(row['truncated'] for row in rows)/len(rows),
                     timeout_count=sum('timeout' in str(row['errors']).lower() for row in rows)))
     write_json(out/'performance/summary.json', dict(passed=True, rows=all_rows, summaries=summaries,
-        parity=parity, workload_count=len(population), isolated_processes=40, measured_requests=len(all_rows),
+        parity=parity, production_code_hash=code, identities=identities,
+        workload_count=len(population), isolated_processes=40, measured_requests=len(all_rows),
         repetitions=5, parallel_native_workloads=False, inference_includes_serialization=False,
         sampling_scope='Four fixed registered workloads; repeated timings are not independent chess examples.'))
 
