@@ -1,0 +1,23 @@
+{
+  "owned_processes": [
+    {
+      "action": "SIGKILL after unsuccessful graceful shutdown",
+      "command": "/home/purplezky/.nvm/versions/node/v22.20.0/lib/node_modules/agent-browser/bin/agent-browser-linux-x64 ",
+      "pid": 1825561,
+      "session": "pln-cycle13-initial"
+    },
+    {
+      "action": "SIGKILL after unsuccessful graceful shutdown",
+      "command": "ffmpeg -y -avioflags direct -fpsprobesize 0 -probesize 32 -analyzeduration 0 -f image2pipe -c:v mjpeg -framerate 10 -i pipe:0 -vf pad=ceil(iw/2)*2:ceil(ih/2)*2 -c:v libvpx -crf 30 -b:v 1M -pix_fmt yuv420p -threads 1 /data/pln-chess-cycle6-delivery/artifacts/cycle13/development/browser-initial/2026-11-11_02-20-10_cycle-13-isolated-browser-verification-d/session.webm ",
+      "pid": 1825899,
+      "session": "pln-cycle13-initial"
+    },
+    {
+      "action": "SIGKILL after unsuccessful graceful shutdown",
+      "command": "node /home/purplezky/.nvm/versions/node/v22.20.0/bin/proofshot start --run .venv/bin/pln-chess serve --port 8773 --port 8773 --url http://127.0.0.1:8773/preferences --description Verify original-response proof export with exact native graph identities, plus responsive inspector controls ",
+      "pid": 1845027,
+      "session": "pln-cycle13-raw"
+    }
+  ],
+  "scope": "Only processes carrying an explicit Cycle 13 test session tag; other projects and browser sessions untouched. Previously bundled and validated browser evidence retained."
+}

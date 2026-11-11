@@ -45,6 +45,7 @@ def run(out):
     boundary_text='The host assembles a categorical packet from independently inferred field and concept records. Native revision learns three separate conditional channels, and native modus ponens applies those channels to the supplied packet. This is a native conditional derivation, not a native conjunction of uncertain fields, a complete strategic theorem, a proof of legality or an optimal move claim. No scalar strategic utility or automatic move selection is implemented.'
     metric_scope='Answered accuracy excludes abstentions and unknown teacher labels. Coverage and abstention-inclusive accuracy use all directionally labeled pairs. Ambiguous labels have separate diagnostics. Undefined ratios remain undefined. A thousand bootstrap replicates resample connected ancestry components; these intervals do not include teacher-label or source-selection uncertainty.'
     label_reasons=Counter((r['label'],r['reason']) for r in labels['records'])
+    coverage=get('datasets/relational-coverage.json');assert coverage['fresh_replay_coverage_identical']
     learning=f'''The fixed corpus contains {pref['source_pairs']} pairs from {pref['independent_groups']} independent source games and ancestry groups: 222 training, 62 calibration and 56 test. It combines 148 published-game positions and 192 external tactical positions, including 141 quiet pairs and 16 promotion pairs. Candidate alternatives and A/B order were fixed by hashes before labels or PLN predictions.
 
 The partition audit excludes shared source games and exact registered geometry/transform classes. It does not prove the absence of every semantically related tactical motif. Shared coarse learned consequence patterns are the intended transfer test; they must not be confused with an independent proof of semantic family separation.
@@ -62,7 +63,8 @@ The primary model has {pref['hypotheses']} relative conditionals. Its native tra
 {boundary_text}
 
 {metric_scope}
-'''+metrics_table(pref['panels'])+table(['Panel','Precision A','Precision B','Recall A','Recall B','Contradictions','Conditional proofs','Joint proofs'],
+'''+table(['Observed relational consequence','Pairs with that observation'],coverage['observed_change_coverage'].items())+table(['Concept family','Pairs with structural candidates','Pairs with a supported conditional'],
+    [[name,n,coverage['supported_concept_pair_coverage'][name]] for name,n in coverage['concept_candidate_pair_coverage'].items()])+metrics_table(pref['panels'])+table(['Panel','Precision A','Precision B','Recall A','Recall B','Contradictions','Conditional proofs','Joint proofs'],
     [[name,m['precision']['A'],m['precision']['B'],m['recall_including_abstention']['A'],m['recall_including_abstention']['B'],m['contradictions'],m['native_conditional_proofs'],m['complete_joint_strategic_proofs']] for name,m in pref['panels'].items()])+table(['Test metric','95% lower','95% upper','Valid bootstrap replicates'],
     [[name,m['lower'],m['upper'],m['valid_replicates']] for name,m in pref['bootstrap']['test']['intervals'].items()])+'\nEvidence: '+', '.join(link(p) for p in ('preferences/summary.json','learning/relational/ledger.jsonl','learning/relational/native-training.json.xz','model/C13-preference-relational.json','datasets/integrity.json','ontology/manifest.json'))+'.'
     write('preference-learning','Native conditional preference learning',learning)
@@ -142,7 +144,7 @@ Evidence: {link('ablations/immediate.json')}, {link('ablations/dependence.json')
 '''+table(['Workload','Arm','Cache','Median s','Native ops','Processes','Atoms','Hits','Proof bytes','Parent MiB','Child MiB','Truncation','Timeouts'],performance_rows)+f'''
 All twenty runs per workload have exact semantic and native-proof parity. Full recomputation clears dependency-bound relation records before each state; incremental retains them. Both retain identical pure native math memoization. Query domains are rebuilt in both arms, preventing omitted or stale targets from becoming false evidence. The timing intervention therefore isolates dependency reuse under the same native formula cache.
 
-Elapsed time covers the complete API return, excluding archive/JSON transport serialization. Native operator calls and interpreter process launches are distinct counts. Peak parent and maximum-child RSS are reported separately, not added into an aggregate working set; warm memory includes retained cold outputs and caches. Repetitions measure runtime variation, not additional independent chess examples. Per-run timings, ranges, counters, errors and full proofs are retained.
+Elapsed time covers the complete API return, excluding archive/JSON transport serialization, model loading and interpreter imports. Cold means empty inference caches in a fresh worker with its models already loaded. Native operator calls and interpreter process launches are distinct counts. Peak parent and maximum-child RSS are reported separately, not added into an aggregate working set; warm memory includes retained cold outputs and caches. Repetitions measure runtime variation, not additional independent chess examples. Per-run timings, ranges, counters, errors and full proofs are retained.
 
 Evidence: {link('performance/summary.json')}, {link('performance/workloads.json')}, {link('performance/isolation.json')}.
 ''')
