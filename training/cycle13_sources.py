@@ -101,14 +101,15 @@ def run(out):
     for game in sorted(games['games'],key=lambda g:g['id']):
         board=chess.Board(game['initial_fen']);index=min(max(12,len(game['moves'])//2),60,len(game['moves'])-1)
         for move in game['moves'][:index]:board.push_uci(move)
-        provenance=dict(collection=game['source_collection'],game_id=game['original_game_identifier'],
+        provenance=dict(collection=game['source_collection'],game_id=game['source_collection']+':'+game['content_hash'],
+            game_url=game['original_game_identifier'],
             original_record=game['id'],source_dataset='artifacts/cycle10/datasets/dataset.json',
             source_dataset_sha256=sha(ROOT/'artifacts/cycle10/datasets/dataset.json'),ply=index,
             cohort='independent-games',opening_family=game['opening_family'])
         history=dict(initial_fen=game['initial_fen'],moves=game['moves'][:index],source=game['original_game_identifier'])
         row=make_record(board,chess.Move.from_uci(game['moves'][index]),'c13-'+game['id'],provenance,['published-game'],history)
         if row is None:skipped.append(dict(id=game['id'],reason='No alternative legal root'));continue
-        records.append(row);used_games.add(provenance['game_id'].split('#')[0].rstrip('/').removesuffix('/black'))
+        records.append(row);used_games.add(provenance['game_url'].split('#')[0].rstrip('/').removesuffix('/black'))
     pool=list(csv.DictReader((source/'lichess-puzzle-prefix.csv').open()))
     selected_puzzles=set();theme_counts=Counter()
     for theme in THEMES:
@@ -119,6 +120,7 @@ def run(out):
             if game_id in used_games or puzzle['PuzzleId'] in selected_puzzles:continue
             moves=puzzle['Moves'].split()
             if len(moves)<2:continue
+            if theme=='promotion' and len(moves[1])!=5:continue
             board=chess.Board(puzzle['FEN'])
             if not board.is_valid():continue
             board.push_uci(moves[0])
