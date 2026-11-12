@@ -14,16 +14,17 @@ from scripts.cycle14_baseline import START
 def run(out, source):
     out, source = Path(out).resolve(), Path(source).resolve()
     began = time.monotonic()
-    while not (out/'legal-proof-parity.json').exists():
+    jobs=read_json(out/'legal/panel.json')['jobs']
+    while not all((out/'legal/evaluation'/(job['id']+'.receipt.json')).exists() for job in jobs):
         if time.monotonic()-began > 24*3600:
             raise TimeoutError('Baseline legal proof comparison')
         time.sleep(5)
     assert subprocess.check_output(['git','rev-parse','HEAD'],cwd=source,text=True).strip() == START
     assert not subprocess.check_output(['git','status','--porcelain'],cwd=source,text=True)
     manifest = read_json(out/'manifest.json')
-    parity = read_json(out/'legal-proof-parity.json')
     tests = read_json(out/'tests.json')
-    assert parity['passed'] and (parity['shards'],parity['rows']) == (206,584112)
+    assert len(jobs)==206
+    assert all(read_json(out/'legal/evaluation'/(job['id']+'.receipt.json'))['passed'] for job in jobs)
     assert tests['passed'] and tests['tests'] == 588 and tests['exact_once']
     # The unchanged historical control runner requires evidence that its legal
     # predecessor was verified. Copy the genuine retained predecessor receipt;
@@ -75,6 +76,12 @@ def run(out, source):
     assert negative['passed'] and negative['cases']==287
     assert history['passed'] and history['cases']==27
     assert recovery['passed'] and recovery['production_code_hash']==manifest['production_code_hash']
+    while not (out/'legal-proof-parity.json').exists():
+        if time.monotonic()-began > 24*3600:
+            raise TimeoutError('Baseline legal proof comparison')
+        time.sleep(5)
+    parity=read_json(out/'legal-proof-parity.json')
+    assert parity['passed'] and (parity['shards'],parity['rows']) == (206,584112)
     assert not subprocess.check_output(['git','status','--porcelain'],cwd=source,text=True)
     write_json(out/'control-completion/verified.json',dict(passed=True,commands=records,
         predecessor_receipt_sha256=sha(prior),source_head=START,source_clean=True,
