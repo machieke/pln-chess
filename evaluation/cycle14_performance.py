@@ -101,9 +101,12 @@ def worker(out,name,arm,repetition):
             rows[-1]['data_access']=access_census(session,loaded,executions,result,store)
             del result
     assert rows[0]['semantic_hashes']==rows[1]['semantic_hashes']
+    self_usage=resource.getrusage(resource.RUSAGE_SELF);child_usage=resource.getrusage(resource.RUSAGE_CHILDREN)
     atomic_json(out/'performance/receipts'/f'{name}-{arm}-{repetition}.json',dict(passed=True,rows=rows,
         production_code_hash=production_code_hash(),runtime=runtime.manifest,models={k:v.version for k,v in loaded.items()},
         benchmark_driver_sha256=sha(__file__),
+        worker_cpu_seconds=dict(parent=self_usage.ru_utime+self_usage.ru_stime,
+            reaped_native_children=child_usage.ru_utime+child_usage.ru_stime),
         memory_scope='Fresh process per workload, arm and repetition; warm retains cold caches and prior peak. Child maximum is separate and never added to parent peak.',
         pure_native_cache_and_graph_reuse='Both retain native arithmetic memoization. Compact additionally reuses a source/state/history/model/options-bound durable response.'))
 

@@ -26,6 +26,51 @@ def scientific(value):
     return value
 
 
+def compare_responses(primary, replayed):
+    """Validate archive bindings before ignoring their telemetry-derived roots."""
+    from pln_chess.cycle14.proofs import ProofStore
+    comparisons=[]
+    def archive(relative, a_summary, b_summary):
+        values=[]
+        for directory,summary in ((primary,a_summary),(replayed,b_summary)):
+            raw=read_gzip(directory/relative)
+            assert summary['proof_root']==raw['root']
+            with ProofStore() as store:
+                root=store.import_archive(raw)
+                values.append(store.legacy_digest(root,omit_keys=('execution','incremental')))
+        assert values[0]==values[1],relative
+        comparisons.append(dict(path=str(relative),exact=True,method='verified-full-native-archive-semantic-parity',
+            semantic_sha256=values[0],primary_sha256=sha(primary/relative),replay_sha256=sha(replayed/relative)))
+    def summary(value):
+        result=scientific(value)
+        # These roots bind the complete archive, including elapsed telemetry.
+        # Full scientific archive parity was independently established above.
+        result.pop('proof_root',None)
+        return result
+    for plan in read_json(primary/'datasets/response-plans.json')['records']:
+        relative=Path('responses')/plan['id']/'result.json'
+        a,b=read_json(primary/relative),read_json(replayed/relative)
+        archived=relative.parent/'archive.json.xz'
+        assert a['archive_sha256']==sha(primary/archived) and b['archive_sha256']==sha(replayed/archived)
+        archive(archived,a['summary'],b['summary'])
+        a,b=scientific(a),scientific(b)
+        for row in (a,b):row.pop('archive_sha256');row['summary']=summary(row['summary'])
+        assert a==b,relative
+        comparisons.append(dict(path=str(relative),exact=True,method='all-response-fields-except-validated-archive-binding-and-elapsed-telemetry',
+            primary_sha256=sha(primary/relative),replay_sha256=sha(replayed/relative)))
+    a,b=read_gzip(primary/'responses/diagnostics.json.xz'),read_gzip(replayed/'responses/diagnostics.json.xz')
+    assert len(a)==len(b)
+    for first,second in zip(a,b):
+        assert first['case']==second['case']
+        relative=Path('responses/diagnostics')/(first['case']['id']+'.json.xz')
+        archive(relative,first['summary'],second['summary'])
+        assert summary(first['summary'])==summary(second['summary'])
+    assert sha(primary/'responses/summary.json')==sha(replayed/'responses/summary.json')
+    comparisons.append(dict(path='responses/summary.json',exact=True,method='exact-bytes',
+        primary_sha256=sha(primary/'responses/summary.json'),replay_sha256=sha(replayed/'responses/summary.json')))
+    return comparisons
+
+
 def run(out,checkout,commit,workers=2,generation='clean-research'):
     if not generation or Path(generation).name!=generation:raise ValueError('Use a single reproduction generation name')
     out=Path(out).resolve();checkout=Path(checkout).resolve();target=out/generation;runout=target/'run'
@@ -78,6 +123,7 @@ def run(out,checkout,commit,workers=2,generation='clean-research'):
     # claims that every engine analysis was independently re-searched here.
     for kind in ('immediate','temporal'):
         source_input(f'labels/{kind}-g1/index.json')
+    source_input('labels/responses-g1/index.json')
     for path in sorted((out/'labels/immediate-g1/records').glob('*.json')):source_input(str(path.relative_to(out)))
     command('temporal-partition','training.cycle14_temporal_sources',['bind'])
     command('response-partition','training.cycle14_response_sources',['bind'])
@@ -100,6 +146,7 @@ def run(out,checkout,commit,workers=2,generation='clean-research'):
     command('reversals','evaluation.cycle14_studies',['reversals'])
     command('concept-holdout','evaluation.cycle14_concepts')
     command('native-locality','evaluation.cycle14_locality')
+    command('bounded-responses','evaluation.cycle14_responses',['run'])
     comparisons=[]
     for folder in ('model','learning','development','calibration','evaluation','ablations','temporal','dependence','reversals','concepts','representation'):
         paths=[p for p in (runout/folder).rglob('*') if p.is_file() and p.name.endswith(('.json','.jsonl','.json.xz'))]
@@ -111,12 +158,14 @@ def run(out,checkout,commit,workers=2,generation='clean-research'):
             else:equal=sha(a)==sha(b);method='exact-bytes'
             comparisons.append(dict(path=str(relative),exact=equal,method=method,primary_sha256=sha(a),replay_sha256=sha(b)))
             assert equal,'Changed scientific evidence: '+str(relative)
+    comparisons.extend(compare_responses(out,runout))
     assert not subprocess.check_output(['git','status','--porcelain'],cwd=checkout,text=True)
     atomic_json(target/'comparison.json',dict(passed=True,artifacts=comparisons,inputs=inputs,
         scope='Complete model, ledger, native training/inference, calibration and matched study parity. Fixed supervision is an input; selected raw analyses are independently repeated.'))
     atomic_json(target/'verified.json',dict(passed=True,production_code_hash=code,source_head=commit,checkout=str(checkout),
         orchestration_sha256=sha(__file__),generation=generation,
         fresh_venv=True,fresh_runtime=True,fresh_reference_build=True,complete_native_feature_proof_replay=True,
+        bounded_response_panel_replayed=True,
         proof_replay_sha256=sha(target/'proof-replay/verified.json'),selected_fresh_extraction_sha256=sha(target/'selected/verified.json'),
         model_checkpoint_byte_parity=True,evidence_ledger_byte_parity=True,comparison_sha256=sha(target/'comparison.json'),
         compared_artifacts=len(comparisons),legal_regression_required_separately=True,browser_workflow_required_separately=True,
