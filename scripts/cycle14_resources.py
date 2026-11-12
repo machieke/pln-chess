@@ -73,7 +73,10 @@ def run(out):
     test_cpu=tests['child_user_cpu_seconds']+tests['child_system_cpu_seconds']
     baseline_cpu=read_json(out/'baseline/process-resources.json')['cpu_seconds_lower_bound']
     benchmark_cpu=sum(sum(read_json(p)['worker_cpu_seconds'].values()) for p in (out/'performance/receipts').glob('*.json'))
-    measured_cpu=sum(r['cpu_seconds'] for r in measured if r['included_in_nonoverlapping_sum'])+test_cpu+benchmark_cpu+baseline_cpu
+    comparison_path=out/'current/comparison-process-resources.json'
+    comparison=read_json(comparison_path);assert comparison['passed']
+    comparison_cpu=comparison['cpu_seconds_lower_bound']
+    measured_cpu=sum(r['cpu_seconds'] for r in measured if r['included_in_nonoverlapping_sum'])+test_cpu+benchmark_cpu+baseline_cpu+comparison_cpu
     perf=read_json(out/'performance/summary.json')
     interpreter=dict(benchmark_requests=sum(r['interpreter_process_launches'] for r in perf['rows']),
         completed_streamed_archive_replays=sum(read_json(p)['interpreter_launches']
@@ -100,6 +103,8 @@ def run(out):
         cpu_receipts=measured,current_test_cpu_seconds=test_cpu,benchmark_worker_cpu_seconds=benchmark_cpu,
         baseline_legal_tests_controls_cpu_seconds_lower_bound=baseline_cpu,
         baseline_process_counter_receipt_sha256=sha(out/'baseline/process-resources.json'),
+        current_comparison_cpu_seconds_lower_bound=comparison_cpu,
+        current_comparison_counter_receipt_sha256=sha(comparison_path),
         total_cycle_cpu_seconds=None,total_cycle_interpreter_launches=None,
         measured_interpreter_launches=interpreter,
         interpreter_scope='Exact launch counters in benchmark requests and completed native archive replay. Logical operator invocations in other receipts are not mislabeled as process launches. Interrupted in-memory work may lack a completed per-archive counter.',
