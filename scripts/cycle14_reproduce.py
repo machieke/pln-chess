@@ -5,6 +5,7 @@ extraction on hash-selected strata. Selected raw references are searched again;
 the full immutable reference generation remains an explicit scientific input.
 """
 import argparse
+import fcntl
 from concurrent.futures import ThreadPoolExecutor
 import json
 import os
@@ -75,6 +76,24 @@ def compare_responses(primary, replayed):
 def run(out,checkout,commit,workers=2,generation='clean-research'):
     if not generation or Path(generation).name!=generation:raise ValueError('Use a single reproduction generation name')
     out=Path(out).resolve();checkout=Path(checkout).resolve();target=out/generation;runout=target/'run'
+    if (target/'verified.json').exists():
+        completed=read_json(target/'verified.json')
+        assert completed['passed'] and completed['source_head']==commit
+        assert completed['orchestration_sha256']==sha(__file__)
+        assert completed['production_code_hash']==read_json(out/'source-freeze.json')['production_code_hash']
+        assert subprocess.check_output(['git','rev-parse','HEAD'],cwd=checkout,text=True).strip()==commit
+        assert not subprocess.check_output(['git','status','--porcelain'],cwd=checkout,text=True)
+        for name,field in [('comparison.json','comparison_sha256'),('proof-replay/verified.json','proof_replay_sha256'),
+                ('selected/verified.json','selected_fresh_extraction_sha256')]:
+            assert sha(target/name)==completed[field]
+        comparison=read_json(target/'comparison.json');assert comparison['passed']
+        for row in comparison['artifacts']:
+            assert row['exact'] and sha(out/row['path'])==row['primary_sha256']
+            assert sha(runout/row['path'])==row['replay_sha256']
+        for row in comparison['inputs']:
+            assert sha(out/row['path'])==row['sha256']==sha(runout/row['path'])
+        print('C14 COMPLETE CLEAN RESEARCH REVALIDATED',len(comparison['artifacts']),flush=True)
+        return
     boot_directory=target/'bootstrap'
     if (target/'bootstrap-audit/verified.json').exists():
         boot_directory=target/'bootstrap-audit'
@@ -229,4 +248,10 @@ def selected(source,out):
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--out',default='artifacts/cycle14');p.add_argument('--checkout');p.add_argument('--commit');p.add_argument('--workers',type=int,default=2);p.add_argument('--selected',action='store_true');p.add_argument('--replay-output');p.add_argument('--generation',default='clean-research');a=p.parse_args()
-    selected(a.out,a.replay_output) if a.selected else run(a.out,a.checkout,a.commit,a.workers,a.generation)
+    if a.selected:selected(a.out,a.replay_output)
+    else:
+        lock=ROOT/'.runtime/c14-research-locks'/digest([str(Path(a.out).resolve()),a.generation])
+        lock.parent.mkdir(parents=True,exist_ok=True)
+        with lock.open('a') as stream:
+            fcntl.flock(stream,fcntl.LOCK_EX)
+            run(a.out,a.checkout,a.commit,a.workers,a.generation)
