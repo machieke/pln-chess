@@ -14,7 +14,7 @@ from scripts.cycle9_baseline import sha
 from scripts.cycle12_baseline import compare_reports
 
 
-def run(out, source, workers=6):
+def run(out, source, workers=4):
     out, source = Path(out).resolve(), Path(source).resolve()
     baseline = read_json(out / 'baseline/reproduction-receipt.json')
     assert baseline['passed'] and baseline['legal_shards'] == 206
@@ -106,6 +106,6 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--out',default='artifacts/cycle14')
     parser.add_argument('--source',required=True)
-    parser.add_argument('--workers',type=int,default=6)
+    parser.add_argument('--workers',type=int,default=4)
     args = parser.parse_args()
     run(args.out,args.source,args.workers)
