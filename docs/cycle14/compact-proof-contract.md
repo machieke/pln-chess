@@ -81,3 +81,6 @@ The CLI accepts the same JSON payloads and performs each operation in a separate
 ```
 
 [Executed CLI receipts](../../artifacts/cycle14/interfaces/verified.json) and [browser receipts](../../artifacts/cycle14/ui/verified.json) bind the delivered source and models. Existing Cycle 13 comparison commands remain available.
+
+
+The default archive stream permits two million expanded object occurrences. A dense supplied-response root can exceed this bound; the export then reports an explicit budget error. The offline response study uses a separately recorded ten-million occurrence budget with the same proof encoding and byte-exact reconstruction, described in [proof storage](proof-storage.md). Summary and graph inspection do not require full expansion.

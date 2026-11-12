@@ -9,7 +9,7 @@ from pln_chess.pln import Runtime
 from pln_chess.cycle13.api import PreferenceOptions,PreferenceSession
 from pln_chess.cycle14.api import preference_summary
 from pln_chess.cycle14.temporal import analyze_continuations
-from pln_chess.cycle14.proofs import ProofStore
+from evaluation.cycle14_archive import OfflineAuditStore as ProofStore, archive_census
 from training.cycle14_labels import worker,atomic_json
 from evaluation.cycle14_profile import models
 from evaluation.cycle14_preferences import load_model
@@ -39,7 +39,8 @@ def run(out):
     options=PreferenceOptions(timeout_seconds=900);results=[]
     for plan in plans['records']:
         target=out/'responses'/plan['id'];receipt=target/'result.json'
-        identity=dict(plan_hash=digest(plan),models={k:m.version for k,m in loaded.items()},driver_sha256=sha(__file__))
+        identity=dict(plan_hash=digest(plan),models={k:m.version for k,m in loaded.items()},driver_sha256=sha(__file__),
+            archive_policy_sha256=sha(ROOT/'evaluation/cycle14_archive.py'))
         if receipt.exists():
             row=read_json(receipt);assert row['identity']==identity;results.append(row);continue
         with ProofStore() as store:
@@ -57,7 +58,7 @@ def run(out):
         by_horizon={h:{r['prediction']['status'] for r in comparisons if r['horizon']==h} for h in (2,3)}
         row=dict(identity=identity,id=plan['id'],summary=result,comparisons=comparisons,coverage=plan['coverage'],
             opposed_supported_branches={str(h):{'A-preferred','B-preferred'}<=states for h,states in by_horizon.items()},
-            archive_sha256=sha(target/'archive.json.xz'),independent_groups=1,global_preference=None)
+            archive_sha256=sha(target/'archive.json.xz'),archive_audit=archive_census(archive),independent_groups=1,global_preference=None)
         atomic_json(receipt,row);results.append(row);print('C14 RESPONSE PANEL',plan['id'],flush=True)
     diagnostics=[]
     for case in read_json(out/'datasets/response-panel-registration.json')['diagnostic_cases']:
@@ -65,7 +66,7 @@ def run(out):
             result=analyze_continuations(case['fen'],case['branches'],**loaded,runtime=runtime,options=options,
                 session=PreferenceSession(runtime),store=store,horizons=(2,3),source=case['id'],selection_provenance='Controlled diagnostic')
             archive=store.archive(result['proof_root']);pack(out/'responses/diagnostics'/(case['id']+'.json.xz'),archive)
-            diagnostics.append(dict(case=case,summary=result))
+            diagnostics.append(dict(case=case,summary=result,archive_audit=archive_census(archive)))
     assert diagnostics[0]['summary']['branch_coverage']['A'][0]['diagnostic_only']
     assert all(row['missing_horizons'] for rows in diagnostics[1]['summary']['branch_coverage'].values() for row in rows)
     # Three branches are a hard configurable interface bound, not a search tree.
@@ -87,6 +88,8 @@ def run(out):
         known_unexamined_replies=sum(v['unexamined_legal_replies'] for r in results for v in r['coverage'].values()),
         diagnostics=[dict(id=r['case']['id'],coverage=r['summary']['branch_coverage']) for r in diagnostics],
         more_than_three_responses_rejected=rejected_four,global_robust_preference=None,
+        offline_archive_policy_sha256=sha(ROOT/'evaluation/cycle14_archive.py'),
+        panels_exceeding_interactive_archive_budget=sum(not r['archive_audit']['within_interactive_default_limit'] for r in results),
         selection_policy=plans['records'][0]['response_selection'],
         scope='Separate conditional predictions on supplied teacher and hash-sampled branches. No average, product, worst-case robust native conclusion, or exhaustive-response assertion.'))
 

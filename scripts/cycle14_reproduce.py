@@ -28,7 +28,7 @@ def scientific(value):
 
 def compare_responses(primary, replayed):
     """Validate archive bindings before ignoring their telemetry-derived roots."""
-    from pln_chess.cycle14.proofs import ProofStore
+    from evaluation.cycle14_archive import OfflineAuditStore as ProofStore
     comparisons=[]
     def archive(relative, a_summary, b_summary):
         values=[]
@@ -74,8 +74,12 @@ def compare_responses(primary, replayed):
 def run(out,checkout,commit,workers=2,generation='clean-research'):
     if not generation or Path(generation).name!=generation:raise ValueError('Use a single reproduction generation name')
     out=Path(out).resolve();checkout=Path(checkout).resolve();target=out/generation;runout=target/'run'
-    if not (target/'bootstrap/verified.json').exists():bootstrap(target/'bootstrap',checkout,commit)
-    boot=read_json(target/'bootstrap/verified.json')
+    boot_directory=target/'bootstrap'
+    if (target/'bootstrap-audit/verified.json').exists():
+        boot_directory=target/'bootstrap-audit'
+    if not (boot_directory/'verified.json').exists():bootstrap(boot_directory,checkout,commit)
+    boot=read_json(boot_directory/'verified.json')
+    assert Path(boot['checkout']).resolve()==checkout
     actual_head=subprocess.check_output(['git','rev-parse','HEAD'],cwd=checkout,text=True).strip()
     assert actual_head==commit
     # A fresh dependency/runtime bootstrap may precede local verification-only
@@ -119,7 +123,14 @@ def run(out,checkout,commit,workers=2,generation='clean-research'):
     if reference_build.exists():
         built=read_json(reference_build)
         assert built['returncode']==0 and built['fresh_source_build'] and built['byte_identical_binary']
-        assert built['source_head']==commit
+        subprocess.run(['git','merge-base','--is-ancestor',built['source_head'],commit],cwd=checkout,check=True)
+        assert built['driver_sha256']==sha(checkout/'scripts/cycle13_reference_bootstrap.py')
+        assert built['binary_sha256']==sha(checkout/'.runtime/cycle13-reference/stockfish/src/stockfish')
+        atomic_json(target/'reference-build-lineage.json',dict(passed=True,
+            original_build_head=built['source_head'],research_verification_head=commit,
+            build_receipt_sha256=sha(reference_build),unchanged_bootstrap_driver=True,
+            binary_sha256=built['binary_sha256'],
+            scope='The independently compiled pinned teacher is reused byte-identically across verification-only source advancement. No second compiler execution is claimed.'))
     else:
         reference_build=target/'reference-bootstrap/build.txt'
         assert reference_build.exists(),'A binary identity check alone does not establish a fresh compiler execution'
@@ -173,6 +184,7 @@ def run(out,checkout,commit,workers=2,generation='clean-research'):
     atomic_json(target/'verified.json',dict(passed=True,production_code_hash=code,source_head=commit,checkout=str(checkout),
         orchestration_sha256=sha(__file__),generation=generation,
         fresh_venv=True,fresh_runtime=True,fresh_reference_build=True,complete_native_feature_proof_replay=True,
+        bootstrap_receipt_sha256=sha(boot_directory/'verified.json'),
         reference_build_receipt_sha256=sha(reference_build),
         bounded_response_panel_replayed=True,
         proof_replay_sha256=sha(target/'proof-replay/verified.json'),selected_fresh_extraction_sha256=sha(target/'selected/verified.json'),
