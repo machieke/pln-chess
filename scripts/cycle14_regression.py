@@ -7,6 +7,7 @@ from pathlib import Path
 import re
 import shutil
 import subprocess
+import threading
 import time
 
 from pln_chess.common import ROOT, digest, read_json, write_json
@@ -57,9 +58,39 @@ def run(out, source, workers=6):
         print('CURRENT PASSED',name,flush=True)
 
     def legal():
-        with ThreadPoolExecutor(max_workers=workers) as pool:
-            tasks = [pool.submit(command,'legal-' + job['id'],['-m','scripts.cycle12_legal_review',
-                '--out',str(target),'--source',str(source),'--worker',job['id']]) for job in population['jobs']]
+        # Four workers fit while both feature generations are active. Once
+        # those finish, each completely released proof partition makes its
+        # reserved slots available. Two slots remain for scientific/UI work.
+        condition=threading.Condition();active=0
+        adaptive=workers==4
+        def capacity():
+            if not adaptive or not all((out/'features'/g/'index.json').exists()
+                for g in ('immediate-g2','temporal-g1')):
+                return workers
+            proof=out/'clean-research/proof-replay'
+            return 4+sum(n for shard,n in ((0,1),(1,1),(2,4))
+                if (proof/f'stream-complete-shard{shard}-of-3.json').exists())
+        write_json(target/'legal-scheduling.json',dict(driver_sha256=sha(__file__),
+            initial_workers=workers,maximum_workers=10 if adaptive else workers,
+            registered_worker_ceiling=12,reserved_science_and_ui_workers=2,
+            rule='After both feature indexes exist, add one slot per completed proof shard 0/1 and four slots after all of shard 2 completes. Membership and native commands are unchanged.'))
+        def shard(job):
+            nonlocal active
+            with condition:
+                while active>=capacity():condition.wait(timeout=5)
+                active+=1
+                with (target/'legal-worker-launches.jsonl').open('a') as stream:
+                    stream.write(json.dumps(dict(job=job['id'],started_unix=time.time(),
+                        active_legal_workers=active,capacity=capacity()),sort_keys=True)+'\n')
+            try:
+                command('legal-' + job['id'],['-m','scripts.cycle12_legal_review',
+                    '--out',str(target),'--source',str(source),'--worker',job['id']])
+            finally:
+                with condition:
+                    active-=1
+                    condition.notify_all()
+        with ThreadPoolExecutor(max_workers=10 if adaptive else workers) as pool:
+            tasks = [pool.submit(shard,job) for job in population['jobs']]
             for task in tasks:
                 task.result()
 
