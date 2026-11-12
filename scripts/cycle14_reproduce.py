@@ -62,6 +62,7 @@ def compare_responses(primary, replayed):
     assert len(a)==len(b)
     for first,second in zip(a,b):
         assert first['case']==second['case']
+        assert first.get('archive_audit')==second.get('archive_audit')
         relative=Path('responses/diagnostics')/(first['case']['id']+'.json.xz')
         archive(relative,first['summary'],second['summary'])
         assert summary(first['summary'])==summary(second['summary'])

@@ -156,6 +156,8 @@ Selection retains the registered teacher-assisted PV and adds up to two determin
 The king-exposing candidate remains a diagnostic branch with separate legality status. Missing two/three-ply endpoints remain incomplete. A fourth response branch is rejected. A controlled native test produces opposing A/B answers on two supplied branches and verifies that both survive archive reconstruction while global preference and automatic selection remain absent. [Native branch test](../../tests/test_cycle14_branches.py) and [test receipt](../../artifacts/cycle14/branch-semantics-unit.txt) are disclosed unit evidence, not independent strategic successes.
 
 Identical final board layouts reached through different supplied histories have distinct request identities. The inspector exposes branch coverage and before/after conditional outputs; no average, product or minimum of branch strengths is labeled a native robust conclusion.
+
+The first dense archive attempt exceeded the interactive serialization limit and is retained. Offline export, import and full comparison use a separately registered ten-million object-occurrence limit; {response['panels_exceeding_interactive_archive_budget']} panels exceed the default interactive limit of two million. The default interface still rejects those full exports explicitly. See [the storage policy](proof-storage.md); summaries and paginated graphs remain available, and no scientific predictions or cohort membership changed.
 ''')
 
     timings=[];audits=[]
@@ -241,7 +243,7 @@ Per-request data-access records distinguish persistent learned checkpoint hypoth
         ('14','Factorial ablations','Delivered and evaluated','Matched supervision, representation, evidence, concept, dependence and temporal contrasts; negative and undefined estimates retained.'),
         ('15','Compact proof representation','Delivered and fully replayed',f"{proof['archives']} full archive reconstructions and complete native trace coverage; all 109 earlier-generation features match."),
         ('16','Caching and performance','Delivered and benchmarked','Twenty repetitions per arm/workload; exact evidence parity; measured summary gains distinguished from complete-audit cost.'),
-        ('17','API, CLI and inspector','Delivered with entry-navigation limitation','Actual CLI restarts, durable graph/archive retrieval, desktop/mobile and byte-exact browser reconstruction; use /compact-preferences directly because the legacy homepage link is absent.'),
+        ('17','API, CLI and inspector','Delivered with documented interface limits','Actual CLI restarts, durable graph/archive retrieval, desktop/mobile and byte-exact browser reconstruction. Direct /compact-preferences entry is required; dense bulk archives can exceed the interactive export budget.'),
         ('18','Preservation and isolation','Delivered; mandatory gates passed',f"{current['test_count']} tests, 584,112 legal rows, 287 negative and 27 history controls, two recoveries/76 holdouts; 16,596 old files unchanged."),
         ('19','Clean reproduction and resources','Delivered with resource-accounting shortfalls','Fresh pinned environment; all native feature proofs replayed, selected observations/references rerun, all model/ledger/study outputs compared. Complete global CPU/process/transient-byte totals remain unavailable; six baseline terminal analyses omitted node counters.'),
         ('20','Delivery and readiness','Delivered locally','Continue preference research; no move selection, new operator, legal promotion, push or deployment.')]

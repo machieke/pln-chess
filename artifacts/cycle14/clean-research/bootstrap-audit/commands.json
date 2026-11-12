@@ -1,0 +1,158 @@
+[
+  {
+    "argv": [
+      "git",
+      "clone",
+      "--shared",
+      "--no-checkout",
+      "/data/pln-chess-cycle6-delivery",
+      "/data/pln-chess-cycle14-audit-source"
+    ],
+    "cwd": "/data/pln-chess-cycle6-delivery",
+    "elapsed_seconds": 0.08553218841552734,
+    "log_sha256": "21c442b15d1f54d27657a9f0352057b9e40350d8bff05cbabfe37210634269a0",
+    "name": "clone",
+    "returncode": 0,
+    "started_unix": 1794494541.240259
+  },
+  {
+    "argv": [
+      "git",
+      "sparse-checkout",
+      "set",
+      "--cone",
+      "src",
+      "training",
+      "evaluation",
+      "scripts",
+      "configs",
+      "vendor",
+      "tests",
+      "artifacts/cycle10/datasets",
+      "artifacts/cycle10/sources",
+      "artifacts/cycle11/model",
+      "artifacts/cycle12/model",
+      "artifacts/cycle12/datasets",
+      "artifacts/cycle13/model",
+      "artifacts/cycle13/datasets",
+      "artifacts/cycle13/sources",
+      "artifacts/cycle13/concepts"
+    ],
+    "cwd": "/data/pln-chess-cycle14-audit-source",
+    "elapsed_seconds": 64.10403108596802,
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "name": "sparse",
+    "returncode": 0,
+    "started_unix": 1794494541.3261502
+  },
+  {
+    "argv": [
+      "git",
+      "checkout",
+      "--detach",
+      "de08667d3b6962b52797a968d8df0a949649aa6d"
+    ],
+    "cwd": "/data/pln-chess-cycle14-audit-source",
+    "elapsed_seconds": 0.1480703353881836,
+    "log_sha256": "6bf83fa17d9d01fcfee0d4599ca6216a6f9bd62e7e82070a463a2425d3ae3450",
+    "name": "checkout",
+    "returncode": 0,
+    "started_unix": 1794494605.4305758
+  },
+  {
+    "argv": [
+      "bash",
+      "scripts/bootstrap.sh",
+      "--dependencies-only"
+    ],
+    "cwd": "/data/pln-chess-cycle14-audit-source",
+    "elapsed_seconds": 0.35008716583251953,
+    "log_sha256": "36dddeb79c5720848a67a3e686a1fde4f5ab00a3fd3f05733441e03e54e69dc0",
+    "name": "bootstrap",
+    "returncode": 2,
+    "started_unix": 1794494605.6890092
+  },
+  {
+    "argv": [
+      "git",
+      "sparse-checkout",
+      "init",
+      "--cone"
+    ],
+    "cwd": "/data/pln-chess-cycle14-audit-source",
+    "elapsed_seconds": 1.7342324256896973,
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "name": "sparse-init",
+    "returncode": 0,
+    "started_unix": 1794494669.4121792
+  },
+  {
+    "argv": [
+      "git",
+      "sparse-checkout",
+      "set",
+      "src",
+      "training",
+      "evaluation",
+      "scripts",
+      "configs",
+      "vendor",
+      "tests",
+      "artifacts/cycle10/datasets",
+      "artifacts/cycle10/sources",
+      "artifacts/cycle11/model",
+      "artifacts/cycle12/model",
+      "artifacts/cycle12/datasets",
+      "artifacts/cycle13/model",
+      "artifacts/cycle13/datasets",
+      "artifacts/cycle13/sources",
+      "artifacts/cycle13/concepts"
+    ],
+    "cwd": "/data/pln-chess-cycle14-audit-source",
+    "elapsed_seconds": 0.4658210277557373,
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "name": "sparse",
+    "returncode": 0,
+    "started_unix": 1794494671.1469028
+  },
+  {
+    "argv": [
+      "git",
+      "checkout",
+      "--detach",
+      "de08667d3b6962b52797a968d8df0a949649aa6d"
+    ],
+    "cwd": "/data/pln-chess-cycle14-audit-source",
+    "elapsed_seconds": 0.6289427280426025,
+    "log_sha256": "6bf83fa17d9d01fcfee0d4599ca6216a6f9bd62e7e82070a463a2425d3ae3450",
+    "name": "checkout",
+    "returncode": 0,
+    "started_unix": 1794494671.6131508
+  },
+  {
+    "argv": [
+      "bash",
+      "scripts/bootstrap.sh",
+      "--dependencies-only"
+    ],
+    "cwd": "/data/pln-chess-cycle14-audit-source",
+    "elapsed_seconds": 4.773173093795776,
+    "log_sha256": "1d1818f3ac0d249fcb8a4c118c894615c7736d145c511bbf795a2de9c4027639",
+    "name": "bootstrap",
+    "returncode": 0,
+    "started_unix": 1794494672.263014
+  },
+  {
+    "argv": [
+      "/data/pln-chess-cycle14-audit-source/.venv/bin/python",
+      "-c",
+      "import json,sys,importlib.metadata;from pln_chess.pln import Runtime;from pln_chess.cycle6.inference import production_code_hash;r=Runtime();r.verify();print(json.dumps(dict(runtime=r.manifest,production_code_hash=production_code_hash(),python=sys.version,dependencies={k:importlib.metadata.version(k) for k in (\"pytest\",\"chess\",\"setuptools\")})))"
+    ],
+    "cwd": "/data/pln-chess-cycle14-audit-source",
+    "elapsed_seconds": 0.2400827407836914,
+    "log_sha256": "2d2e8cb09b60b17be3bb64bee87a1a0bf114d5dd9f3c061562bc8118ffb24699",
+    "name": "identity",
+    "returncode": 0,
+    "started_unix": 1794494677.0367367
+  }
+]

@@ -84,6 +84,7 @@ def run(out):
         if path.is_file():
             group=path.relative_to(out).parts[0];retained[group]+=path.stat().st_size;file_counts[group]+=1
     checkouts=[Path('/data/pln-chess-cycle14-baseline'),Path('/data/pln-chess-cycle14-final'),
+        Path('/data/pln-chess-cycle14-audit-source'),
         Path('/data/pln-chess-cycle14-feature-source'),Path('/data/pln-chess-cycle14-feature-source-g2')]
     usage=subprocess.check_output(['du','-sb',*[str(p) for p in checkouts if p.exists()]],text=True)
     temporary=[dict(bytes=int(line.split('\t',1)[0]),path=line.split('\t',1)[1]) for line in usage.splitlines()]

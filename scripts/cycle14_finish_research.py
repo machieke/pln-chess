@@ -10,8 +10,9 @@ from scripts.cycle9_baseline import sha
 
 
 def run():
-    out=ROOT/'artifacts/cycle14';fresh=Path('/data/pln-chess-cycle14-final')
-    commit='0acc1a6c41c73926f3a86d85ff0163f8a39807fa'
+    out=ROOT/'artifacts/cycle14'
+    source=read_json(out/'verification/research-audit-source.json')
+    fresh=Path(source['checkout']);commit=source['commit']
     def wait(predicate,description):
         began=time.monotonic()
         while not predicate():
@@ -44,6 +45,9 @@ def run():
     command('native-boundary','evaluation.cycle14_delivery',['boundary','--out',str(out)])
     wait(lambda:all((out/'clean-research/proof-replay'/f'stream-complete-shard{i}-of-3.json').exists()
         for i in range(3)),'Complete native proof shards exceeded the stage budget')
+    wait(lambda:(out/'clean-research/bootstrap-audit/verified.json').exists()
+        and (out/'clean-research/selected/verified.json').exists(),
+        'Sparse research bootstrap and selected observation replay')
     command('clean-research','scripts.cycle14_reproduce',['--out',str(out),'--checkout',str(fresh),'--commit',commit])
 
 
