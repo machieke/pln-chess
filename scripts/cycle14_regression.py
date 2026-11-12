@@ -98,7 +98,7 @@ def run(out, source, workers=6):
         baseline_receipt_sha256=sha(out / 'baseline/reproduction-receipt.json'),
         proof_parity_sha256=sha(target / 'proof-parity.json'),completed_unix=time.time(),
         scope='Complete accepted Cycle 12 checkpoint replay under the current frozen production source, including strict and experimental panel jobs.'))
-    print('COMPLETE CYCLE 13 LEGAL REGRESSION PASSED',flush=True)
+    print('COMPLETE CYCLE 14 LEGAL REGRESSION PASSED',flush=True)
 
 
 if __name__ == '__main__':
