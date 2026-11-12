@@ -1,0 +1,14 @@
+C14 DELIVERY VERIFICATION dataset-integrity PASSED
+C14 DELIVERY VERIFICATION native-boundary PASSED
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/data/pln-chess-cycle6-delivery/scripts/cycle14_finish_research.py", line 54, in <module>
+    if __name__=='__main__':run()
+                            ^^^^^
+  File "/data/pln-chess-cycle6-delivery/scripts/cycle14_finish_research.py", line 51, in run
+    command('clean-research','scripts.cycle14_reproduce',['--out',str(out),'--checkout',str(fresh),'--commit',commit])
+  File "/data/pln-chess-cycle6-delivery/scripts/cycle14_finish_research.py", line 41, in command
+    if result.returncode:raise RuntimeError(str(log))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: /data/pln-chess-cycle6-delivery/artifacts/cycle14/verification/logs/clean-research.txt

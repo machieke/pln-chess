@@ -1,0 +1,34 @@
+Traceback (most recent call last):
+  File "/data/pln-chess-cycle6-delivery/scripts/cycle14_replay_stream.py", line 192, in <module>
+    else:run(args.source,args.out,args.shard,args.shards,args.stop_when,args.early_receipt,args.subshard or 0,args.subshards)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/pln-chess-cycle6-delivery/scripts/cycle14_replay_stream.py", line 116, in run
+    atomic_json(out / f'stream-complete-shard{shard}-of-{shards}{suffix}.json', dict(passed=True, identity=identity,
+  File "/data/pln-chess-cycle14-final/training/cycle14_labels.py", line 18, in atomic_json
+    if read_json(path)!=value:raise ValueError('Immutable generation already exists: '+str(path))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Immutable generation already exists: /data/pln-chess-cycle6-delivery/artifacts/cycle14/clean-research/proof-replay/stream-complete-shard1-of-3.json
+Command exited with non-zero status 1
+	Command being timed: "/data/pln-chess-cycle14-final/.venv/bin/python -u /data/pln-chess-cycle6-delivery/scripts/cycle14_replay_stream.py --source /data/pln-chess-cycle6-delivery/artifacts/cycle14 --out /data/pln-chess-cycle6-delivery/artifacts/cycle14/clean-research/proof-replay --shard 1 --shards 3"
+	User time (seconds): 7.05
+	System time (seconds): 0.77
+	Percent of CPU this job got: 87%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:08.91
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 79772
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 217237
+	Voluntary context switches: 29
+	Involuntary context switches: 2773
+	Swaps: 0
+	File system inputs: 24
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1

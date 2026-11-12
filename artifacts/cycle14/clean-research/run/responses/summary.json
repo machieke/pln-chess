@@ -1,0 +1,308 @@
+{
+  "branch_comparisons": 180,
+  "counts": {
+    "N_all": 180,
+    "N_answered": 8,
+    "N_contradictions": 0,
+    "N_correct": 6,
+    "N_directional": 106,
+    "N_directional_abstentions": 98,
+    "N_incomplete": 30,
+    "N_model_abstentions_all": 171,
+    "N_model_answers_all": 9,
+    "N_nondirectional": 4,
+    "N_nondirectional_supported": 0,
+    "N_reference_unknown": 70,
+    "N_wrong": 2,
+    "answered_accuracy": 0.75,
+    "correct_answer_yield": 0.05660377358490566,
+    "directional_coverage": 0.07547169811320754,
+    "independent_ancestry_groups": 10,
+    "model_answer_rate_all": 0.05,
+    "reference_resolution_rate": 0.6111111111111112
+  },
+  "diagnostic_branch_occurrences": 5,
+  "diagnostics": [
+    {
+      "coverage": {
+        "A": [
+          {
+            "branch": 0,
+            "diagnostic_only": true,
+            "legality": [
+              {
+                "abstention_reason": [],
+                "classification": "supported-illegal",
+                "evidence_state": "contradicted",
+                "gaps": [
+                  "No verified independent-premise conjunction.",
+                  "No native proof of universal king safety from separate opponent frames."
+                ],
+                "legal_move_truth_value": {
+                  "confidence": 0.7387231788159763,
+                  "strength": 0.007442969297709157
+                },
+                "model_version": "a6d3d826d93ee01b8accb7dc9948c0bd9bb0048cc54755bf45e92ec82502743d",
+                "move": "e2f2",
+                "negative_proof_complete": true,
+                "proof_complete": true,
+                "proof_status": "negative-supported",
+                "raw_stv": {
+                  "confidence": 0.7387231788159763,
+                  "strength": 0.007442969297709157
+                },
+                "runtime_version": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+                "status": "native-negative-chain"
+              },
+              {
+                "abstention_reason": [],
+                "classification": "supported-legal",
+                "evidence_state": "supported",
+                "gaps": [
+                  "Conditional local support; global safety is unproved. No observed threat is not evidence of safety.",
+                  "No verified independent-premise conjunction.",
+                  "No native proof of universal king safety from separate opponent frames."
+                ],
+                "legal_move_truth_value": {
+                  "confidence": 0.9783282950423215,
+                  "strength": 0.9996941896024465
+                },
+                "model_version": "a6d3d826d93ee01b8accb7dc9948c0bd9bb0048cc54755bf45e92ec82502743d",
+                "move": "g8g7",
+                "negative_proof_complete": false,
+                "proof_complete": false,
+                "proof_status": "learned-conditional",
+                "raw_stv": {
+                  "confidence": 0.9783282950423215,
+                  "strength": 0.9996941896024465
+                },
+                "runtime_version": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+                "status": "native-partial / evidence-supported"
+              }
+            ],
+            "legality_unknown": false,
+            "missing_horizons": [
+              3
+            ],
+            "plies": 2,
+            "requested_horizons": [
+              2,
+              3
+            ],
+            "supported_illegal": true
+          }
+        ],
+        "B": [
+          {
+            "branch": 0,
+            "diagnostic_only": false,
+            "legality": [
+              {
+                "abstention_reason": [],
+                "classification": "supported-legal",
+                "evidence_state": "supported",
+                "gaps": [
+                  "Conditional local support; global safety is unproved. No observed threat is not evidence of safety.",
+                  "No verified independent-premise conjunction.",
+                  "No native proof of universal king safety from separate opponent frames."
+                ],
+                "legal_move_truth_value": {
+                  "confidence": 0.9304166666666666,
+                  "strength": 0.9983606557377048
+                },
+                "model_version": "a6d3d826d93ee01b8accb7dc9948c0bd9bb0048cc54755bf45e92ec82502743d",
+                "move": "e2e3",
+                "negative_proof_complete": false,
+                "proof_complete": false,
+                "proof_status": "learned-conditional",
+                "raw_stv": {
+                  "confidence": 0.9304166666666666,
+                  "strength": 0.9983606557377048
+                },
+                "runtime_version": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+                "status": "native-partial / evidence-supported"
+              },
+              {
+                "abstention_reason": [],
+                "classification": "supported-legal",
+                "evidence_state": "supported",
+                "gaps": [
+                  "Conditional local support; global safety is unproved. No observed threat is not evidence of safety.",
+                  "No verified independent-premise conjunction.",
+                  "No native proof of universal king safety from separate opponent frames."
+                ],
+                "legal_move_truth_value": {
+                  "confidence": 0.9783282950423215,
+                  "strength": 0.9996941896024465
+                },
+                "model_version": "a6d3d826d93ee01b8accb7dc9948c0bd9bb0048cc54755bf45e92ec82502743d",
+                "move": "g8g7",
+                "negative_proof_complete": false,
+                "proof_complete": false,
+                "proof_status": "learned-conditional",
+                "raw_stv": {
+                  "confidence": 0.9783282950423215,
+                  "strength": 0.9996941896024465
+                },
+                "runtime_version": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+                "status": "native-partial / evidence-supported"
+              }
+            ],
+            "legality_unknown": false,
+            "missing_horizons": [
+              3
+            ],
+            "plies": 2,
+            "requested_horizons": [
+              2,
+              3
+            ],
+            "supported_illegal": false
+          }
+        ]
+      },
+      "id": "controlled-king-exposure"
+    },
+    {
+      "coverage": {
+        "A": [
+          {
+            "branch": 0,
+            "diagnostic_only": false,
+            "legality": [
+              {
+                "abstention_reason": [],
+                "classification": "supported-legal",
+                "evidence_state": "supported",
+                "gaps": [
+                  "Conditional local support; global safety is unproved. No observed threat is not evidence of safety.",
+                  "No verified independent-premise conjunction.",
+                  "No native proof of universal king safety from separate opponent frames."
+                ],
+                "legal_move_truth_value": {
+                  "confidence": 0.9304166666666666,
+                  "strength": 0.9983606557377048
+                },
+                "model_version": "a6d3d826d93ee01b8accb7dc9948c0bd9bb0048cc54755bf45e92ec82502743d",
+                "move": "a1a2",
+                "negative_proof_complete": false,
+                "proof_complete": false,
+                "proof_status": "learned-conditional",
+                "raw_stv": {
+                  "confidence": 0.9304166666666666,
+                  "strength": 0.9983606557377048
+                },
+                "runtime_version": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+                "status": "native-partial / evidence-supported"
+              }
+            ],
+            "legality_unknown": false,
+            "missing_horizons": [
+              2,
+              3
+            ],
+            "plies": 1,
+            "requested_horizons": [
+              2,
+              3
+            ],
+            "supported_illegal": false
+          }
+        ],
+        "B": [
+          {
+            "branch": 0,
+            "diagnostic_only": false,
+            "legality": [
+              {
+                "abstention_reason": [],
+                "classification": "supported-legal",
+                "evidence_state": "supported",
+                "gaps": [
+                  "Conditional local support; global safety is unproved. No observed threat is not evidence of safety.",
+                  "No verified independent-premise conjunction.",
+                  "No native proof of universal king safety from separate opponent frames."
+                ],
+                "legal_move_truth_value": {
+                  "confidence": 0.9304166666666666,
+                  "strength": 0.9983606557377048
+                },
+                "model_version": "a6d3d826d93ee01b8accb7dc9948c0bd9bb0048cc54755bf45e92ec82502743d",
+                "move": "a1b1",
+                "negative_proof_complete": false,
+                "proof_complete": false,
+                "proof_status": "learned-conditional",
+                "raw_stv": {
+                  "confidence": 0.9304166666666666,
+                  "strength": 0.9983606557377048
+                },
+                "runtime_version": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+                "status": "native-partial / evidence-supported"
+              }
+            ],
+            "legality_unknown": false,
+            "missing_horizons": [
+              2,
+              3
+            ],
+            "plies": 1,
+            "requested_horizons": [
+              2,
+              3
+            ],
+            "supported_illegal": false
+          }
+        ]
+      },
+      "id": "controlled-missing-context"
+    }
+  ],
+  "global_robust_preference": null,
+  "incomplete_endpoint_comparisons": 30,
+  "independent_groups": 10,
+  "intervals": {
+    "estimates": {
+      "answered_accuracy": {
+        "defined_replicates": 974,
+        "high": 1.0,
+        "low": 0.0
+      },
+      "correct_answer_yield": {
+        "defined_replicates": 1000,
+        "high": 0.1481944444444444,
+        "low": 0.0
+      },
+      "directional_coverage": {
+        "defined_replicates": 1000,
+        "high": 0.16039334825711543,
+        "low": 0.0
+      },
+      "model_answer_rate_all": {
+        "defined_replicates": 1000,
+        "high": 0.10555555555555556,
+        "low": 0.0
+      },
+      "reference_resolution_rate": {
+        "defined_replicates": 1000,
+        "high": 0.7779166666666666,
+        "low": 0.42777777777777776
+      }
+    },
+    "groups": 10,
+    "interval": 0.95,
+    "method": "Percentile bootstrap resampling whole source-ancestry components with replacement",
+    "repetitions": 1000,
+    "scope": "Finite registered source groups; intervals do not establish universal transfer or eliminate source bias.",
+    "seed": 141414
+  },
+  "known_unexamined_replies": 478,
+  "more_than_three_responses_rejected": true,
+  "offline_archive_policy_sha256": "5f1c5e7bbbd76431e5401a4c6190468ef374a6858ba17e6e4b642808427d5067",
+  "opposed_supported_panels": 0,
+  "panels_exceeding_interactive_archive_budget": 4,
+  "passed": true,
+  "scope": "Separate conditional predictions on supplied teacher and hash-sampled branches. No average, product, worst-case robust native conclusion, or exhaustive-response assertion.",
+  "selection_policy": "Retain the registered teacher PV; add up to two hash-sampled legal responses and hash-sampled actor continuations without consulting scores or PLN outputs.",
+  "supported_illegal_branch_occurrences": 0,
+  "unknown_legality_branch_occurrences": 5
+}

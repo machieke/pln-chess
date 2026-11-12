@@ -1,0 +1,966 @@
+{
+  "cohorts": [
+    {
+      "calibration": {
+        "bootstrap_groups": 47,
+        "bootstrap_repetitions": 1000,
+        "clustered_95_intervals": {
+          "calibrated": {
+            "brier": {
+              "high": 0.3038175682291885,
+              "low": 0.25153342565781195
+            },
+            "log_loss": {
+              "high": 0.8051426244044835,
+              "low": 0.6960049480217286
+            }
+          },
+          "raw_A_strength": {
+            "brier": {
+              "high": 0.34526818018345534,
+              "low": 0.18667620884630048
+            },
+            "log_loss": {
+              "high": 1.2635471835557661,
+              "low": 0.5823949911466861
+            }
+          }
+        },
+        "log_loss_probability_clipping": [
+          1e-06,
+          0.999999
+        ],
+        "mapping_hash": "732ada3133f99e5bc1f1db4a181862d1501b2d08b7b19e1b723b678d0b7266ce",
+        "raw_channels_renormalized": false,
+        "reliability": [
+          {
+            "N": 6,
+            "arm": "raw_A_strength",
+            "bin": 0,
+            "mean_probability": 0.022970085470085475,
+            "observed_A_fraction": 0.5
+          },
+          {
+            "N": 0,
+            "arm": "raw_A_strength",
+            "bin": 1,
+            "mean_probability": null,
+            "observed_A_fraction": null
+          },
+          {
+            "N": 29,
+            "arm": "raw_A_strength",
+            "bin": 2,
+            "mean_probability": 0.5,
+            "observed_A_fraction": 0.5862068965517241
+          },
+          {
+            "N": 2,
+            "arm": "raw_A_strength",
+            "bin": 3,
+            "mean_probability": 0.6637931034482758,
+            "observed_A_fraction": 1.0
+          },
+          {
+            "N": 10,
+            "arm": "raw_A_strength",
+            "bin": 4,
+            "mean_probability": 0.9807117595048631,
+            "observed_A_fraction": 0.8
+          },
+          {
+            "N": 0,
+            "arm": "calibrated",
+            "bin": 0,
+            "mean_probability": null,
+            "observed_A_fraction": null
+          },
+          {
+            "N": 2,
+            "arm": "calibrated",
+            "bin": 1,
+            "mean_probability": 0.3333333333333333,
+            "observed_A_fraction": 1.0
+          },
+          {
+            "N": 39,
+            "arm": "calibrated",
+            "bin": 2,
+            "mean_probability": 0.47435897435897434,
+            "observed_A_fraction": 0.6410256410256411
+          },
+          {
+            "N": 6,
+            "arm": "calibrated",
+            "bin": 3,
+            "mean_probability": 0.6923076923076922,
+            "observed_A_fraction": 0.5
+          },
+          {
+            "N": 0,
+            "arm": "calibrated",
+            "bin": 4,
+            "mean_probability": null,
+            "observed_A_fraction": null
+          }
+        ],
+        "scope": "Host diagnostic scoring on resolved A/B references; unknown and nondirectional references excluded.",
+        "scores": {
+          "calibrated": {
+            "N": 47,
+            "brier": 0.27788898680879043,
+            "log_loss": 0.7508427499042711
+          },
+          "raw_A_strength": {
+            "N": 47,
+            "brier": 0.26202262666409987,
+            "log_loss": 0.8939367290828688
+          }
+        },
+        "selective_risk": [
+          {
+            "N": 16,
+            "N_wrong": 5,
+            "coverage": 0.3404255319148936,
+            "diagnostic_certainty_threshold": 0.5,
+            "risk": 0.3125
+          },
+          {
+            "N": 16,
+            "N_wrong": 5,
+            "coverage": 0.3404255319148936,
+            "diagnostic_certainty_threshold": 0.6,
+            "risk": 0.3125
+          },
+          {
+            "N": 0,
+            "N_wrong": 0,
+            "coverage": 0.0,
+            "diagnostic_certainty_threshold": 0.7,
+            "risk": null
+          },
+          {
+            "N": 0,
+            "N_wrong": 0,
+            "coverage": 0.0,
+            "diagnostic_certainty_threshold": 0.8,
+            "risk": null
+          },
+          {
+            "N": 0,
+            "N_wrong": 0,
+            "coverage": 0.0,
+            "diagnostic_certainty_threshold": 0.9,
+            "risk": null
+          }
+        ]
+      },
+      "counts": {
+        "N_all": 62,
+        "N_answered": 16,
+        "N_contradictions": 0,
+        "N_correct": 11,
+        "N_directional": 47,
+        "N_directional_abstentions": 31,
+        "N_incomplete": 0,
+        "N_model_abstentions_all": 43,
+        "N_model_answers_all": 19,
+        "N_nondirectional": 0,
+        "N_nondirectional_supported": 0,
+        "N_reference_unknown": 15,
+        "N_wrong": 5,
+        "answered_accuracy": 0.6875,
+        "correct_answer_yield": 0.23404255319148937,
+        "directional_coverage": 0.3404255319148936,
+        "independent_ancestry_groups": 62,
+        "model_answer_rate_all": 0.3064516129032258,
+        "reference_resolution_rate": 0.7580645161290323
+      },
+      "horizon": 1,
+      "intervals": {
+        "estimates": {
+          "answered_accuracy": {
+            "defined_replicates": 1000,
+            "high": 0.9168269230769229,
+            "low": 0.4209429824561403
+          },
+          "correct_answer_yield": {
+            "defined_replicates": 1000,
+            "high": 0.3673469387755102,
+            "low": 0.10416666666666667
+          },
+          "directional_coverage": {
+            "defined_replicates": 1000,
+            "high": 0.47828351449275364,
+            "low": 0.20408163265306123
+          },
+          "model_answer_rate_all": {
+            "defined_replicates": 1000,
+            "high": 0.4197580645161287,
+            "low": 0.1935483870967742
+          },
+          "reference_resolution_rate": {
+            "defined_replicates": 1000,
+            "high": 0.8548387096774194,
+            "low": 0.6451612903225806
+          }
+        },
+        "groups": 62,
+        "interval": 0.95,
+        "method": "Percentile bootstrap resampling whole source-ancestry components with replacement",
+        "repetitions": 1000,
+        "scope": "Finite registered source groups; intervals do not establish universal transfer or eliminate source bias.",
+        "seed": 141414
+      },
+      "split": "historical-calibration"
+    },
+    {
+      "calibration": {
+        "bootstrap_groups": 41,
+        "bootstrap_repetitions": 1000,
+        "clustered_95_intervals": {
+          "calibrated": {
+            "brier": {
+              "high": 0.286370808678501,
+              "low": 0.24829268292682927
+            },
+            "log_loss": {
+              "high": 0.7692253726159944,
+              "low": 0.6896959717240014
+            }
+          },
+          "raw_A_strength": {
+            "brier": {
+              "high": 0.3307848726856266,
+              "low": 0.21955470967431567
+            },
+            "log_loss": {
+              "high": 1.098674762342945,
+              "low": 0.6110989935068954
+            }
+          }
+        },
+        "log_loss_probability_clipping": [
+          1e-06,
+          0.999999
+        ],
+        "mapping_hash": "732ada3133f99e5bc1f1db4a181862d1501b2d08b7b19e1b723b678d0b7266ce",
+        "raw_channels_renormalized": false,
+        "reliability": [
+          {
+            "N": 2,
+            "arm": "raw_A_strength",
+            "bin": 0,
+            "mean_probability": 0.018910256410256416,
+            "observed_A_fraction": 0.0
+          },
+          {
+            "N": 1,
+            "arm": "raw_A_strength",
+            "bin": 1,
+            "mean_probability": 0.25324675324675333,
+            "observed_A_fraction": 1.0
+          },
+          {
+            "N": 34,
+            "arm": "raw_A_strength",
+            "bin": 2,
+            "mean_probability": 0.5,
+            "observed_A_fraction": 0.4411764705882353
+          },
+          {
+            "N": 0,
+            "arm": "raw_A_strength",
+            "bin": 3,
+            "mean_probability": null,
+            "observed_A_fraction": null
+          },
+          {
+            "N": 4,
+            "arm": "raw_A_strength",
+            "bin": 4,
+            "mean_probability": 0.9810897435897437,
+            "observed_A_fraction": 0.5
+          },
+          {
+            "N": 0,
+            "arm": "calibrated",
+            "bin": 0,
+            "mean_probability": null,
+            "observed_A_fraction": null
+          },
+          {
+            "N": 1,
+            "arm": "calibrated",
+            "bin": 1,
+            "mean_probability": 0.3333333333333333,
+            "observed_A_fraction": 1.0
+          },
+          {
+            "N": 38,
+            "arm": "calibrated",
+            "bin": 2,
+            "mean_probability": 0.48947368421052634,
+            "observed_A_fraction": 0.4473684210526316
+          },
+          {
+            "N": 2,
+            "arm": "calibrated",
+            "bin": 3,
+            "mean_probability": 0.6923076923076923,
+            "observed_A_fraction": 0.0
+          },
+          {
+            "N": 0,
+            "arm": "calibrated",
+            "bin": 4,
+            "mean_probability": null,
+            "observed_A_fraction": null
+          }
+        ],
+        "scope": "Host diagnostic scoring on resolved A/B references; unknown and nondirectional references excluded.",
+        "scores": {
+          "calibrated": {
+            "N": 41,
+            "brier": 0.26690303234393287,
+            "log_loss": 0.7287111983334105
+          },
+          "raw_A_strength": {
+            "N": 41,
+            "brier": 0.2679114020132301,
+            "log_loss": 0.8064006293113671
+          }
+        },
+        "selective_risk": [
+          {
+            "N": 6,
+            "N_wrong": 2,
+            "coverage": 0.14634146341463414,
+            "diagnostic_certainty_threshold": 0.5,
+            "risk": 0.3333333333333333
+          },
+          {
+            "N": 6,
+            "N_wrong": 2,
+            "coverage": 0.14634146341463414,
+            "diagnostic_certainty_threshold": 0.6,
+            "risk": 0.3333333333333333
+          },
+          {
+            "N": 0,
+            "N_wrong": 0,
+            "coverage": 0.0,
+            "diagnostic_certainty_threshold": 0.7,
+            "risk": null
+          },
+          {
+            "N": 0,
+            "N_wrong": 0,
+            "coverage": 0.0,
+            "diagnostic_certainty_threshold": 0.8,
+            "risk": null
+          },
+          {
+            "N": 0,
+            "N_wrong": 0,
+            "coverage": 0.0,
+            "diagnostic_certainty_threshold": 0.9,
+            "risk": null
+          }
+        ]
+      },
+      "counts": {
+        "N_all": 56,
+        "N_answered": 6,
+        "N_contradictions": 0,
+        "N_correct": 4,
+        "N_directional": 41,
+        "N_directional_abstentions": 35,
+        "N_incomplete": 0,
+        "N_model_abstentions_all": 47,
+        "N_model_answers_all": 9,
+        "N_nondirectional": 0,
+        "N_nondirectional_supported": 0,
+        "N_reference_unknown": 15,
+        "N_wrong": 2,
+        "answered_accuracy": 0.6666666666666666,
+        "correct_answer_yield": 0.0975609756097561,
+        "directional_coverage": 0.14634146341463414,
+        "independent_ancestry_groups": 56,
+        "model_answer_rate_all": 0.16071428571428573,
+        "reference_resolution_rate": 0.7321428571428571
+      },
+      "horizon": 1,
+      "intervals": {
+        "estimates": {
+          "answered_accuracy": {
+            "defined_replicates": 998,
+            "high": 1.0,
+            "low": 0.25
+          },
+          "correct_answer_yield": {
+            "defined_replicates": 1000,
+            "high": 0.20011363636363627,
+            "low": 0.022222222222222223
+          },
+          "directional_coverage": {
+            "defined_replicates": 1000,
+            "high": 0.2682926829268293,
+            "low": 0.047619047619047616
+          },
+          "model_answer_rate_all": {
+            "defined_replicates": 1000,
+            "high": 0.25,
+            "low": 0.07142857142857142
+          },
+          "reference_resolution_rate": {
+            "defined_replicates": 1000,
+            "high": 0.8392857142857143,
+            "low": 0.6071428571428571
+          }
+        },
+        "groups": 56,
+        "interval": 0.95,
+        "method": "Percentile bootstrap resampling whole source-ancestry components with replacement",
+        "repetitions": 1000,
+        "scope": "Finite registered source groups; intervals do not establish universal transfer or eliminate source bias.",
+        "seed": 141414
+      },
+      "split": "historical-test"
+    },
+    {
+      "calibration": {
+        "bootstrap_groups": 25,
+        "bootstrap_repetitions": 1000,
+        "clustered_95_intervals": {
+          "calibrated": {
+            "brier": {
+              "high": 0.2958579881656805,
+              "low": 0.2339692899408284
+            },
+            "log_loss": {
+              "high": 0.7902487437162854,
+              "low": 0.659882976226729
+            }
+          },
+          "raw_A_strength": {
+            "brier": {
+              "high": 0.37935117958740283,
+              "low": 0.20229982968512064
+            },
+            "log_loss": {
+              "high": 1.2655804603677177,
+              "low": 0.5715964214520677
+            }
+          }
+        },
+        "log_loss_probability_clipping": [
+          1e-06,
+          0.999999
+        ],
+        "mapping_hash": "732ada3133f99e5bc1f1db4a181862d1501b2d08b7b19e1b723b678d0b7266ce",
+        "raw_channels_renormalized": false,
+        "reliability": [
+          {
+            "N": 3,
+            "arm": "raw_A_strength",
+            "bin": 0,
+            "mean_probability": 0.06659118357487921,
+            "observed_A_fraction": 0.3333333333333333
+          },
+          {
+            "N": 0,
+            "arm": "raw_A_strength",
+            "bin": 1,
+            "mean_probability": null,
+            "observed_A_fraction": null
+          },
+          {
+            "N": 20,
+            "arm": "raw_A_strength",
+            "bin": 2,
+            "mean_probability": 0.5,
+            "observed_A_fraction": 0.65
+          },
+          {
+            "N": 0,
+            "arm": "raw_A_strength",
+            "bin": 3,
+            "mean_probability": null,
+            "observed_A_fraction": null
+          },
+          {
+            "N": 2,
+            "arm": "raw_A_strength",
+            "bin": 4,
+            "mean_probability": 0.9750000000000001,
+            "observed_A_fraction": 0.5
+          },
+          {
+            "N": 0,
+            "arm": "calibrated",
+            "bin": 0,
+            "mean_probability": null,
+            "observed_A_fraction": null
+          },
+          {
+            "N": 0,
+            "arm": "calibrated",
+            "bin": 1,
+            "mean_probability": null,
+            "observed_A_fraction": null
+          },
+          {
+            "N": 22,
+            "arm": "calibrated",
+            "bin": 2,
+            "mean_probability": 0.49090909090909096,
+            "observed_A_fraction": 0.6363636363636364
+          },
+          {
+            "N": 3,
+            "arm": "calibrated",
+            "bin": 3,
+            "mean_probability": 0.6923076923076922,
+            "observed_A_fraction": 0.3333333333333333
+          },
+          {
+            "N": 0,
+            "arm": "calibrated",
+            "bin": 4,
+            "mean_probability": null,
+            "observed_A_fraction": null
+          }
+        ],
+        "scope": "Host diagnostic scoring on resolved A/B references; unknown and nondirectional references excluded.",
+        "scores": {
+          "calibrated": {
+            "N": 25,
+            "brier": 0.2629301775147929,
+            "log_loss": 0.7206037895859064
+          },
+          "raw_A_strength": {
+            "N": 25,
+            "brier": 0.27722617958740287,
+            "log_loss": 0.8582819260907516
+          }
+        },
+        "selective_risk": [
+          {
+            "N": 5,
+            "N_wrong": 2,
+            "coverage": 0.2,
+            "diagnostic_certainty_threshold": 0.5,
+            "risk": 0.4
+          },
+          {
+            "N": 5,
+            "N_wrong": 2,
+            "coverage": 0.2,
+            "diagnostic_certainty_threshold": 0.6,
+            "risk": 0.4
+          },
+          {
+            "N": 0,
+            "N_wrong": 0,
+            "coverage": 0.0,
+            "diagnostic_certainty_threshold": 0.7,
+            "risk": null
+          },
+          {
+            "N": 0,
+            "N_wrong": 0,
+            "coverage": 0.0,
+            "diagnostic_certainty_threshold": 0.8,
+            "risk": null
+          },
+          {
+            "N": 0,
+            "N_wrong": 0,
+            "coverage": 0.0,
+            "diagnostic_certainty_threshold": 0.9,
+            "risk": null
+          }
+        ]
+      },
+      "counts": {
+        "N_all": 60,
+        "N_answered": 5,
+        "N_contradictions": 0,
+        "N_correct": 3,
+        "N_directional": 25,
+        "N_directional_abstentions": 20,
+        "N_incomplete": 0,
+        "N_model_abstentions_all": 51,
+        "N_model_answers_all": 9,
+        "N_nondirectional": 1,
+        "N_nondirectional_supported": 0,
+        "N_reference_unknown": 34,
+        "N_wrong": 2,
+        "answered_accuracy": 0.6,
+        "correct_answer_yield": 0.12,
+        "directional_coverage": 0.2,
+        "independent_ancestry_groups": 60,
+        "model_answer_rate_all": 0.15,
+        "reference_resolution_rate": 0.43333333333333335
+      },
+      "horizon": 1,
+      "intervals": {
+        "estimates": {
+          "answered_accuracy": {
+            "defined_replicates": 999,
+            "high": 1.0,
+            "low": 0.0
+          },
+          "correct_answer_yield": {
+            "defined_replicates": 1000,
+            "high": 0.2592995169082125,
+            "low": 0.0
+          },
+          "directional_coverage": {
+            "defined_replicates": 1000,
+            "high": 0.36363636363636365,
+            "low": 0.06056149732620321
+          },
+          "model_answer_rate_all": {
+            "defined_replicates": 1000,
+            "high": 0.25,
+            "low": 0.06666666666666667
+          },
+          "reference_resolution_rate": {
+            "defined_replicates": 1000,
+            "high": 0.55,
+            "low": 0.31666666666666665
+          }
+        },
+        "groups": 60,
+        "interval": 0.95,
+        "method": "Percentile bootstrap resampling whole source-ancestry components with replacement",
+        "repetitions": 1000,
+        "scope": "Finite registered source groups; intervals do not establish universal transfer or eliminate source bias.",
+        "seed": 141414
+      },
+      "split": "source-holdout"
+    },
+    {
+      "calibration": {
+        "bootstrap_groups": 145,
+        "bootstrap_repetitions": 1000,
+        "clustered_95_intervals": {
+          "calibrated": {
+            "brier": {
+              "high": 0.2777816454691786,
+              "low": 0.2493935840758122
+            },
+            "log_loss": {
+              "high": 0.751865954090642,
+              "low": 0.6924711074189008
+            }
+          },
+          "raw_A_strength": {
+            "brier": {
+              "high": 0.340115034288125,
+              "low": 0.2567271797535002
+            },
+            "log_loss": {
+              "high": 1.1542927962141047,
+              "low": 0.7957554495387745
+            }
+          }
+        },
+        "log_loss_probability_clipping": [
+          1e-06,
+          0.999999
+        ],
+        "mapping_hash": "732ada3133f99e5bc1f1db4a181862d1501b2d08b7b19e1b723b678d0b7266ce",
+        "raw_channels_renormalized": false,
+        "reliability": [
+          {
+            "N": 23,
+            "arm": "raw_A_strength",
+            "bin": 0,
+            "mean_probability": 0.03945336591737576,
+            "observed_A_fraction": 0.34782608695652173
+          },
+          {
+            "N": 0,
+            "arm": "raw_A_strength",
+            "bin": 1,
+            "mean_probability": null,
+            "observed_A_fraction": null
+          },
+          {
+            "N": 101,
+            "arm": "raw_A_strength",
+            "bin": 2,
+            "mean_probability": 0.5,
+            "observed_A_fraction": 0.5346534653465347
+          },
+          {
+            "N": 2,
+            "arm": "raw_A_strength",
+            "bin": 3,
+            "mean_probability": 0.6637931034482758,
+            "observed_A_fraction": 0.0
+          },
+          {
+            "N": 19,
+            "arm": "raw_A_strength",
+            "bin": 4,
+            "mean_probability": 0.9769230769230769,
+            "observed_A_fraction": 0.47368421052631576
+          },
+          {
+            "N": 0,
+            "arm": "calibrated",
+            "bin": 0,
+            "mean_probability": null,
+            "observed_A_fraction": null
+          },
+          {
+            "N": 2,
+            "arm": "calibrated",
+            "bin": 1,
+            "mean_probability": 0.3333333333333333,
+            "observed_A_fraction": 0.0
+          },
+          {
+            "N": 120,
+            "arm": "calibrated",
+            "bin": 2,
+            "mean_probability": 0.4841666666666667,
+            "observed_A_fraction": 0.525
+          },
+          {
+            "N": 23,
+            "arm": "calibrated",
+            "bin": 3,
+            "mean_probability": 0.6923076923076923,
+            "observed_A_fraction": 0.34782608695652173
+          },
+          {
+            "N": 0,
+            "arm": "calibrated",
+            "bin": 4,
+            "mean_probability": null,
+            "observed_A_fraction": null
+          }
+        ],
+        "scope": "Host diagnostic scoring on resolved A/B references; unknown and nondirectional references excluded.",
+        "scores": {
+          "calibrated": {
+            "N": 145,
+            "brier": 0.2638549502369131,
+            "log_loss": 0.722726148023623
+          },
+          "raw_A_strength": {
+            "N": 145,
+            "brier": 0.2975534926760717,
+            "log_loss": 0.9667769184346063
+          }
+        },
+        "selective_risk": [
+          {
+            "N": 42,
+            "N_wrong": 18,
+            "coverage": 0.2896551724137931,
+            "diagnostic_certainty_threshold": 0.5,
+            "risk": 0.42857142857142855
+          },
+          {
+            "N": 42,
+            "N_wrong": 18,
+            "coverage": 0.2896551724137931,
+            "diagnostic_certainty_threshold": 0.6,
+            "risk": 0.42857142857142855
+          },
+          {
+            "N": 0,
+            "N_wrong": 0,
+            "coverage": 0.0,
+            "diagnostic_certainty_threshold": 0.7,
+            "risk": null
+          },
+          {
+            "N": 0,
+            "N_wrong": 0,
+            "coverage": 0.0,
+            "diagnostic_certainty_threshold": 0.8,
+            "risk": null
+          },
+          {
+            "N": 0,
+            "N_wrong": 0,
+            "coverage": 0.0,
+            "diagnostic_certainty_threshold": 0.9,
+            "risk": null
+          }
+        ]
+      },
+      "counts": {
+        "N_all": 200,
+        "N_answered": 42,
+        "N_contradictions": 0,
+        "N_correct": 24,
+        "N_directional": 145,
+        "N_directional_abstentions": 103,
+        "N_incomplete": 0,
+        "N_model_abstentions_all": 143,
+        "N_model_answers_all": 57,
+        "N_nondirectional": 3,
+        "N_nondirectional_supported": 0,
+        "N_reference_unknown": 52,
+        "N_wrong": 18,
+        "answered_accuracy": 0.5714285714285714,
+        "correct_answer_yield": 0.16551724137931034,
+        "directional_coverage": 0.2896551724137931,
+        "independent_ancestry_groups": 200,
+        "model_answer_rate_all": 0.285,
+        "reference_resolution_rate": 0.74
+      },
+      "horizon": 1,
+      "intervals": {
+        "estimates": {
+          "answered_accuracy": {
+            "defined_replicates": 1000,
+            "high": 0.7142857142857143,
+            "low": 0.42857142857142855
+          },
+          "correct_answer_yield": {
+            "defined_replicates": 1000,
+            "high": 0.22535211267605634,
+            "low": 0.1085166561910748
+          },
+          "directional_coverage": {
+            "defined_replicates": 1000,
+            "high": 0.36296423135464234,
+            "low": 0.21475311601150526
+          },
+          "model_answer_rate_all": {
+            "defined_replicates": 1000,
+            "high": 0.34512499999999985,
+            "low": 0.225
+          },
+          "reference_resolution_rate": {
+            "defined_replicates": 1000,
+            "high": 0.8,
+            "low": 0.675
+          }
+        },
+        "groups": 200,
+        "interval": 0.95,
+        "method": "Percentile bootstrap resampling whole source-ancestry components with replacement",
+        "repetitions": 1000,
+        "scope": "Finite registered source groups; intervals do not establish universal transfer or eliminate source bias.",
+        "seed": 141414
+      },
+      "split": "test"
+    }
+  ],
+  "final_model_selection": false,
+  "freeze_hash": "e3bee45ab6595cdd102e11d872aef61a38b43729ce292252a996991c1ede41be",
+  "model_version": "115d224536c5418d4d05daef7c3c5c1a7ab1a796d0046a1a06237e981356ccc8",
+  "sources": [
+    {
+      "collection": "lichess-broadcast-2024-01",
+      "counts": {
+        "N_all": 56,
+        "N_answered": 5,
+        "N_contradictions": 0,
+        "N_correct": 3,
+        "N_directional": 30,
+        "N_directional_abstentions": 25,
+        "N_incomplete": 0,
+        "N_model_abstentions_all": 44,
+        "N_model_answers_all": 12,
+        "N_nondirectional": 0,
+        "N_nondirectional_supported": 0,
+        "N_reference_unknown": 26,
+        "N_wrong": 2,
+        "answered_accuracy": 0.6,
+        "correct_answer_yield": 0.1,
+        "directional_coverage": 0.16666666666666666,
+        "independent_ancestry_groups": 56,
+        "model_answer_rate_all": 0.21428571428571427,
+        "reference_resolution_rate": 0.5357142857142857
+      },
+      "horizon": 1
+    },
+    {
+      "collection": "lichess-puzzles-frozen-prefix",
+      "counts": {
+        "N_all": 91,
+        "N_answered": 27,
+        "N_contradictions": 0,
+        "N_correct": 18,
+        "N_directional": 85,
+        "N_directional_abstentions": 58,
+        "N_incomplete": 0,
+        "N_model_abstentions_all": 64,
+        "N_model_answers_all": 27,
+        "N_nondirectional": 0,
+        "N_nondirectional_supported": 0,
+        "N_reference_unknown": 6,
+        "N_wrong": 9,
+        "answered_accuracy": 0.6666666666666666,
+        "correct_answer_yield": 0.21176470588235294,
+        "directional_coverage": 0.3176470588235294,
+        "independent_ancestry_groups": 91,
+        "model_answer_rate_all": 0.2967032967032967,
+        "reference_resolution_rate": 0.9340659340659341
+      },
+      "horizon": 1
+    },
+    {
+      "collection": "lichess-rated-2013-01",
+      "counts": {
+        "N_all": 53,
+        "N_answered": 10,
+        "N_contradictions": 0,
+        "N_correct": 3,
+        "N_directional": 30,
+        "N_directional_abstentions": 20,
+        "N_incomplete": 0,
+        "N_model_abstentions_all": 35,
+        "N_model_answers_all": 18,
+        "N_nondirectional": 3,
+        "N_nondirectional_supported": 0,
+        "N_reference_unknown": 20,
+        "N_wrong": 7,
+        "answered_accuracy": 0.3,
+        "correct_answer_yield": 0.1,
+        "directional_coverage": 0.3333333333333333,
+        "independent_ancestry_groups": 53,
+        "model_answer_rate_all": 0.33962264150943394,
+        "reference_resolution_rate": 0.6226415094339622
+      },
+      "horizon": 1
+    },
+    {
+      "collection": "tcec-season26-divisionp",
+      "counts": {
+        "N_all": 60,
+        "N_answered": 5,
+        "N_contradictions": 0,
+        "N_correct": 3,
+        "N_directional": 25,
+        "N_directional_abstentions": 20,
+        "N_incomplete": 0,
+        "N_model_abstentions_all": 51,
+        "N_model_answers_all": 9,
+        "N_nondirectional": 1,
+        "N_nondirectional_supported": 0,
+        "N_reference_unknown": 34,
+        "N_wrong": 2,
+        "answered_accuracy": 0.6,
+        "correct_answer_yield": 0.12,
+        "directional_coverage": 0.2,
+        "independent_ancestry_groups": 60,
+        "model_answer_rate_all": 0.15,
+        "reference_resolution_rate": 0.43333333333333335
+      },
+      "horizon": 1
+    }
+  ],
+  "unknown_references_scored": false
+}

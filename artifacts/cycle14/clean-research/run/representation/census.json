@@ -1,0 +1,35 @@
+{
+  "cohorts": [
+    "train",
+    "development"
+  ],
+  "inspected_final_reference_labels": false,
+  "limitation": "Opposing labels can share a coarse key; refinement can reduce sharing while reducing support. Counts alone do not establish strategic sufficiency.",
+  "model_outcomes_used": false,
+  "orientation_checks": 2322,
+  "passed": true,
+  "summaries": {
+    "c13-relational": {
+      "N": 774,
+      "conflicting_keys": 71,
+      "distinguishable_directional": 520,
+      "examples_in_conflicting_keys": 475,
+      "keys": 227
+    },
+    "role-change-v1": {
+      "N": 774,
+      "conflicting_keys": 51,
+      "distinguishable_directional": 522,
+      "examples_in_conflicting_keys": 258,
+      "keys": 419
+    },
+    "shared-relation-v1": {
+      "N": 774,
+      "conflicting_keys": 32,
+      "distinguishable_directional": 524,
+      "examples_in_conflicting_keys": 107,
+      "keys": 560
+    }
+  },
+  "supplied_abstraction": "Fixed coarse contrasts, explicit missingness and mover/shared-role counts; native revision learns channel TVs on these supplied keys."
+}
