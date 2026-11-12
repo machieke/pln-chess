@@ -18,6 +18,8 @@ Immediate and temporal native integration tests compare reconstructed Cycle 14 o
 
 Run `.venv/bin/python -m pln_chess serve --port 8765` and open `/compact-preferences`. `C14_OUT` selects the research artifact directory; `C14_PROOF_STORE` selects the durable SQLite file. Defaults are `artifacts/cycle14` and `.runtime/cycle14/proofs.sqlite` under the repository root. The trained aliases require the delivered model registry.
 
+Use the direct URL `http://127.0.0.1:8765/compact-preferences`: the legacy legal homepage does not render the intended navigation link. This known entry-navigation limitation is recorded in the [browser note](../../artifacts/cycle14/ui/final-trained/navigation-note.json); direct access and the compact inspector's functional workflows are verified separately.
+
 | Request field | Contract |
 | --- | --- |
 | `fen` | Required observed position; coordinates identify the environment, not a learned preference key |
