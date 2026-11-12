@@ -7,7 +7,7 @@ relative role descriptors, matched continuation studies, and compact proof stora
 Read the [Cycle 14 engineering report](docs/cycle14/engineering-report.md),
 [20-package matrix](docs/cycle14/package-matrix.md), and
 [reproduction guide](docs/cycle14/reproduction.md).
-Open `/compact` for the experimental evidence inspector, including separate
+Open `/compact-preferences` for the experimental evidence inspector, including separate
 legality beliefs, supplied branches, proof pagination and exact archive reconstruction.
 The accepted legal checkpoint remains unchanged; preference checkpoints are opt-in.
 The [readiness decision](docs/cycle14/readiness-decision.md) separates engineering
@@ -18,6 +18,9 @@ verification from evidence for transferable preferences. No move is selected or 
 .venv/bin/python -m pln_chess compact-compare --input artifacts/cycle14/examples/compare.json --store /tmp/pln-c14-proofs.sqlite
 .venv/bin/python -m pln_chess compact-continuations --input artifacts/cycle14/examples/continuations.json --store /tmp/pln-c14-proofs.sqlite
 ```
+
+The [compact interface contract](docs/cycle14/compact-proof-contract.md) documents
+request fields, HTTP routes, durable proof retrieval, and archive reconstruction.
 
 Cycle 13 adds experimental native preference learning, candidate move comparison,
 and supplied two- and three-ply continuation inspection. Read the
