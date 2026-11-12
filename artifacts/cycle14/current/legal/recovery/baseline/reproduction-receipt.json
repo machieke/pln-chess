@@ -1,0 +1,39 @@
+{
+  "baseline_native_research_exact": true,
+  "discrepancies": [],
+  "historical_changes": [],
+  "historical_files_verified": 16596,
+  "history_controls": 27,
+  "holdouts": 76,
+  "identity": {
+    "accepted_model": "a6d3d826d93ee01b8accb7dc9948c0bd9bb0048cc54755bf45e92ec82502743d",
+    "production_code_hash": "7ac9cac3ef48d9c48c48681d03cd56a472b12d3cbc861865afc9df3d3dbdec8b"
+  },
+  "legal_receipt_sha256": "532c140eec504f5f35e9cb00e554d3d422cffac05b0ae8cc36a1f32cb231e9fe",
+  "legal_rows": 584112,
+  "legal_shards": 206,
+  "negative_controls": 287,
+  "passed": true,
+  "recoveries": 2,
+  "research_artifacts": 527,
+  "research_receipt_sha256": "8c56fef0799bd9c130d8188fa31b2f9dfdee851c639d7d1f637b1020e69b43fc",
+  "resolved_execution_incidents": [
+    {
+      "cause": "The original orchestration omitted the existing predecessor receipt required by the unchanged historical control runner.",
+      "kind": "orchestration-prerequisite",
+      "receipt": "control-completion/verified.json",
+      "receipt_sha256": "ff7752c4f8592cf5e1d6356549819d5c91169bd6309e80789940f0af6bf14e12",
+      "resolved": true
+    },
+    {
+      "kind": "comparison-scheduling",
+      "receipt": "serial-comparison-interruption.json",
+      "receipt_sha256": "22d53abf925c1a33863381ba2b36c837c3175d901474f95d157317199a5156c4",
+      "resolved": true,
+      "scope": "Completed native outputs retained; slow serial host comparison recomputed fully in bounded parallel workers."
+    }
+  ],
+  "scope": "Independent execution in a clean pinned starting-source checkout, followed by exact scientific and native proof comparisons.",
+  "starting_head": "54353579e7921f9b47f43bbde1aa61cb887bc6e4",
+  "tests": 588
+}
