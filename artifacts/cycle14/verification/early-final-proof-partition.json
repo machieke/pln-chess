@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "/data/pln-chess-cycle14-final/.venv/bin/python",
+    "-u",
+    "/data/pln-chess-cycle6-delivery/scripts/cycle14_replay_stream.py",
+    "--source",
+    "/data/pln-chess-cycle6-delivery/artifacts/cycle14",
+    "--out",
+    "/data/pln-chess-cycle6-delivery/artifacts/cycle14/clean-research/proof-replay",
+    "--shard",
+    "2",
+    "--shards",
+    "3"
+  ],
+  "driver_sha256": "77e21a3e4799ceafa1c5e7db0c5e3355ede4138179078721a649ec748f98589d",
+  "elapsed_seconds": 2081.3174347877502,
+  "registered_owned_worker_ceiling": 12,
+  "returncode": 0,
+  "scheduling": "Both first proof partitions and both feature generations complete before launch. At most three baseline comparison workers, one baseline control, four proof workers, and two scientific/UI workers run before current legal starts. After baseline closure, four current legal plus one control replace those baseline workers. A file lock prevents duplicate partition coordinators; later scheduling revalidates completed immutable receipts.",
+  "started_unix": 1794494279.6151435,
+  "workers": 4
+}
