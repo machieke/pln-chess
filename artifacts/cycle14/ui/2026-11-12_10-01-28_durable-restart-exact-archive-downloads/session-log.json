@@ -1,0 +1,97 @@
+[
+  {
+    "action": "open http://localhost:8790/compact-preferences",
+    "relativeTimeSec": 5,
+    "timestamp": "2026-11-12T10:01:52.445Z"
+  },
+  {
+    "action": "snapshot -i",
+    "relativeTimeSec": 20.8,
+    "timestamp": "2026-11-12T10:02:08.256Z"
+  },
+  {
+    "action": "fill #restore-handle proof-request:b7a0c40d62158cb9802c711469cbdb574e7fec4a9a7d9e3cde2453b61a0e09b0",
+    "relativeTimeSec": 30.4,
+    "timestamp": "2026-11-12T10:02:17.907Z"
+  },
+  {
+    "action": "eval document.getElementById(\"restore\").click(); \"restoring\"",
+    "relativeTimeSec": 31.2,
+    "timestamp": "2026-11-12T10:02:18.726Z"
+  },
+  {
+    "action": "eval JSON.stringify({status:document.getElementById(\"archive-status\").textContent,handle:window.plnCompactResult?.proof_handle})",
+    "relativeTimeSec": 32.1,
+    "timestamp": "2026-11-12T10:02:19.554Z"
+  },
+  {
+    "action": "eval document.getElementById(\"export\").click(); \"downloading\"",
+    "relativeTimeSec": 32.8,
+    "timestamp": "2026-11-12T10:02:20.288Z"
+  },
+  {
+    "action": "eval JSON.stringify({status:document.getElementById(\"archive-status\").textContent,objects:Object.keys(window.plnCompactArchive?.objects||{}).length})",
+    "relativeTimeSec": 45,
+    "timestamp": "2026-11-12T10:02:32.454Z"
+  },
+  {
+    "action": "download #export /data/pln-chess-cycle6-delivery/artifacts/cycle14/ui/browser-downloads/archive.json",
+    "relativeTimeSec": 66.3,
+    "timestamp": "2026-11-12T10:02:53.833Z"
+  },
+  {
+    "action": "eval document.getElementById(\"export\").click(); \"download-trigger\"",
+    "relativeTimeSec": 89.3,
+    "timestamp": "2026-11-12T10:03:16.816Z"
+  },
+  {
+    "action": "screenshot durable-summary.png",
+    "relativeTimeSec": 97,
+    "timestamp": "2026-11-12T10:03:24.467Z"
+  },
+  {
+    "action": "eval document.getElementById(\"reconstruct\").click(); \"reconstructing\"",
+    "relativeTimeSec": 106,
+    "timestamp": "2026-11-12T10:03:33.466Z"
+  },
+  {
+    "action": "eval document.getElementById(\"export\").click(); \"export triggered after explicit browser download configuration\"",
+    "relativeTimeSec": 119.9,
+    "timestamp": "2026-11-12T10:03:47.358Z"
+  },
+  {
+    "action": "eval JSON.stringify({archive:document.getElementById(\"archive-status\").textContent,reconstruction:window.plnCompactReconstruction})",
+    "relativeTimeSec": 128.2,
+    "timestamp": "2026-11-12T10:03:55.695Z"
+  },
+  {
+    "action": "eval document.getElementById(\"export\").click(); \"downloading\"",
+    "relativeTimeSec": 139.2,
+    "timestamp": "2026-11-12T10:04:06.687Z"
+  },
+  {
+    "action": "eval JSON.stringify({text:document.getElementById(\"archive-status\").textContent,downloadFunction:typeof download})",
+    "relativeTimeSec": 149.4,
+    "timestamp": "2026-11-12T10:04:16.927Z"
+  },
+  {
+    "action": "eval JSON.stringify({archive:document.getElementById(\"archive-status\").textContent})",
+    "relativeTimeSec": 197.3,
+    "timestamp": "2026-11-12T10:05:04.743Z"
+  },
+  {
+    "action": "upload #archive-file /data/pln-chess-cycle6-delivery/artifacts/cycle14/ui/browser-downloads/pln-cycle14-proof-archive.json",
+    "relativeTimeSec": 211.6,
+    "timestamp": "2026-11-12T10:05:19.134Z"
+  },
+  {
+    "action": "eval JSON.stringify({status:document.getElementById(\"archive-status\").textContent,reconstruction:window.plnCompactReconstruction})",
+    "relativeTimeSec": 219.2,
+    "timestamp": "2026-11-12T10:05:26.668Z"
+  },
+  {
+    "action": "eval JSON.stringify({disabled:document.getElementById(\"reconstruct\").disabled,files:document.getElementById(\"archive-file\").files.length})",
+    "relativeTimeSec": 232.2,
+    "timestamp": "2026-11-12T10:05:39.703Z"
+  }
+]

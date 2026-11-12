@@ -1,0 +1,70 @@
+# ProofShot Verification Report
+
+**Date:** 2026-11-12 10:06:42
+**Project:** pln-chess-cycle6-delivery
+**Dev Server:** .venv/bin/python -u -m pln_chess serve --port 8790 2>&1 | tee --output-error=warn-nopipe artifacts/cycle14/ui/server-durable.log on localhost:8790
+
+## What Was Verified
+
+Durable restart, exact archive downloads and proof retrieval
+
+## Video Recording
+
+Full session recording: [session.webm](./session.webm) (305s)
+
+## Screenshots
+
+![durable-summary.png](./durable-summary.png)
+
+## Console Errors
+
+No console errors detected.
+
+## Server Errors
+
+9 error(s) detected:
+
+```
+Native PLN inspector: http://127.0.0.1:8790
+127.0.0.1 - - [12/Nov/2026 10:01:33] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [12/Nov/2026 10:01:33] "GET /favicon.ico HTTP/1.1" 204 -
+127.0.0.1 - - [12/Nov/2026 10:01:34] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [12/Nov/2026 10:01:34] "GET /favicon.ico HTTP/1.1" 204 -
+127.0.0.1 - - [12/Nov/2026 10:01:52] "GET /compact-preferences HTTP/1.1" 200 -
+127.0.0.1 - - [12/Nov/2026 10:01:52] "GET /cycle14-catalog HTTP/1.1" 200 -
+127.0.0.1 - - [12/Nov/2026 10:01:52] "GET /favicon.ico HTTP/1.1" 204 -
+127.0.0.1 - - [12/Nov/2026 10:02:19] "GET /cycle14-proof?handle=proof-request%3Ab7a0c40d62158cb9802c711469cbdb574e7fec4a9a7d9e3cde2453b61a0e09b0 HTTP/1.1" 200 -
+127.0.0.1 - - [12/Nov/2026 10:02:25] "GET /cycle14-proof?handle=proof-request%3Ab7a0c40d62158cb9802c711469cbdb574e7fec4a9a7d9e3cde2453b61a0e09b0&view=full_archive HTTP/1.1" 200 -
+127.0.0.1 - - [12/Nov/2026 10:03:30] "GET /cycle14-proof?handle=proof-request%3Ab7a0c40d62158cb9802c711469cbdb574e7fec4a9a7d9e3cde2453b61a0e09b0&view=full_archive HTTP/1.1" 200 -
+127.0.0.1 - - [12/Nov/2026 10:03:37] "POST /cycle14-expand HTTP/1.1" 200 -
+127.0.0.1 - - [12/Nov/2026 10:03:52] "GET /cycle14-proof?handle=proof-request%3Ab7a0c40d62158cb9802c711469cbdb574e7fec4a9a7d9e3cde2453b61a0e09b0&view=full_archive HTTP/1.1" 200 -
+127.0.0.1 - - [12/Nov/2026 10:04:12] "GET /cycle14-proof?handle=proof-request%3Ab7a0c40d62158cb9802c711469cbdb574e7fec4a9a7d9e3cde2453b61a0e09b0&view=full_archive HTTP/1.1" 200 -
+127.0.0.1 - - [12/Nov/2026 10:04:52] "GET /cycle14-proof?handle=proof-request%3Ab7a0c40d62158cb9802c711469cbdb574e7fec4a9a7d9e3cde2453b61a0e09b0&view=full_archive HTTP/1.1" 200 -
+127.0.0.1 - - [12/Nov/2026 10:06:00] "POST /cycle14-expand HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 52138)
+Traceback (most recent call last):
+  File "/home/purplezky/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/home/purplezky/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/home/purplezky/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/home/purplezky/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/home/purplezky/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/http/server.py", line 424, in handle_one_request
+    method()
+  File "/home/purplezky/work/takopi/pln-chess/src/pln_chess/cli/web.py", line 217, in do_POST
+    if len(buffer)>=1048576:self.wfile.write(buffer);buffer.clear()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/purplezky/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+127.0.0.1 - - [12/Nov/2026 10:06:22] "POST /cycle14-expand HTTP/1.1" 200 -
+```
+
+## Environment
+- Browser: Chromium (headless)
+- Viewport: 1280x720
+- Duration: 305 seconds

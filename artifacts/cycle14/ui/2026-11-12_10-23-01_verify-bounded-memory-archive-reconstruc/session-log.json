@@ -1,0 +1,102 @@
+[
+  {
+    "action": "open http://localhost:8791/compact-preferences",
+    "relativeTimeSec": 5,
+    "timestamp": "2026-11-12T10:23:23.982Z"
+  },
+  {
+    "action": "upload #archive-file /data/pln-chess-cycle6-delivery/artifacts/cycle14/ui/browser-downloads/pln-cycle14-proof-archive.json",
+    "relativeTimeSec": 5.8,
+    "timestamp": "2026-11-12T10:23:24.782Z"
+  },
+  {
+    "action": "eval document.getElementById(\"reconstruct\").click(); \"reconstructing uploaded archive\"",
+    "relativeTimeSec": 6.6,
+    "timestamp": "2026-11-12T10:23:25.556Z"
+  },
+  {
+    "action": "eval JSON.stringify({status:document.getElementById(\"archive-status\").textContent,result:window.plnCompactReconstruction,disabled:document.getElementById(\"reconstruct\").disabled})",
+    "relativeTimeSec": 49,
+    "timestamp": "2026-11-12T10:24:07.966Z"
+  },
+  {
+    "action": "screenshot archive-reconstruction.png",
+    "relativeTimeSec": 58.5,
+    "timestamp": "2026-11-12T10:24:17.481Z"
+  },
+  {
+    "action": "set viewport 390 844",
+    "relativeTimeSec": 59.3,
+    "timestamp": "2026-11-12T10:24:18.270Z"
+  },
+  {
+    "action": "screenshot archive-mobile.png",
+    "relativeTimeSec": 60.3,
+    "timestamp": "2026-11-12T10:24:19.271Z"
+  },
+  {
+    "action": "eval document.getElementById(\"archive-status\").scrollIntoView({block:\"center\"}); JSON.stringify({status:document.getElementById(\"archive-status\").textContent,overflow:document.documentElement.scrollWidth>innerWidth,verified:window.plnCompactReconstruction?.verified})",
+    "relativeTimeSec": 84.9,
+    "timestamp": "2026-11-12T10:24:43.890Z"
+  },
+  {
+    "action": "screenshot archive-mobile-verified.png",
+    "relativeTimeSec": 85.7,
+    "timestamp": "2026-11-12T10:24:44.657Z"
+  },
+  {
+    "action": "fill #restore-handle proof-request:b7a0c40d62158cb9802c711469cbdb574e7fec4a9a7d9e3cde2453b61a0e09b0",
+    "relativeTimeSec": 86.4,
+    "timestamp": "2026-11-12T10:24:45.344Z"
+  },
+  {
+    "action": "eval document.getElementById(\"restore\").click(); \"restoring durable proof\"",
+    "relativeTimeSec": 87.1,
+    "timestamp": "2026-11-12T10:24:46.094Z"
+  },
+  {
+    "action": "eval document.getElementById(\"graph\").click(); \"opening proof graph\"",
+    "relativeTimeSec": 103,
+    "timestamp": "2026-11-12T10:25:01.977Z"
+  },
+  {
+    "action": "eval document.getElementById(\"next\").click(); \"next proof page\"",
+    "relativeTimeSec": 120.5,
+    "timestamp": "2026-11-12T10:25:19.473Z"
+  },
+  {
+    "action": "eval JSON.stringify({page:document.getElementById(\"page-status\").textContent,overflow:document.documentElement.scrollWidth>innerWidth,handle:window.plnCompactResult?.proof_handle})",
+    "relativeTimeSec": 121.2,
+    "timestamp": "2026-11-12T10:25:20.160Z"
+  },
+  {
+    "action": "screenshot paginated-proof-mobile.png",
+    "relativeTimeSec": 121.9,
+    "timestamp": "2026-11-12T10:25:20.893Z"
+  },
+  {
+    "action": "set viewport 1280 900",
+    "relativeTimeSec": 122.7,
+    "timestamp": "2026-11-12T10:25:21.634Z"
+  },
+  {
+    "action": "eval document.getElementById(\"results\").scrollIntoView({block:\"start\"}); \"restored proof\"",
+    "relativeTimeSec": 123.7,
+    "timestamp": "2026-11-12T10:25:22.687Z"
+  },
+  {
+    "action": "screenshot restored-summary-desktop.png",
+    "relativeTimeSec": 124.5,
+    "timestamp": "2026-11-12T10:25:23.477Z"
+  },
+  {
+    "action": "eval JSON.stringify({page:document.getElementById(\"page-status\").textContent,status:document.getElementById(\"archive-status\").textContent,overflow:document.documentElement.scrollWidth>innerWidth})",
+    "relativeTimeSec": 157.7,
+    "timestamp": "2026-11-12T10:25:56.647Z"
+  },
+  {
+    "action": "screenshot proof-page-verified.png",
+    "relativeTimeSec": 158.4,
+    "timestamp": "2026-11-12T10:25:57.335Z"
+  }
+]
