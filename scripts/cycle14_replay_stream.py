@@ -24,6 +24,22 @@ from training.cycle14_labels import atomic_json
 from scripts.cycle9_baseline import sha
 
 
+def complete_shard(path, identity, archives, elapsed_seconds, interpreter_launches):
+    """Reuse a validated completion without replacing its original telemetry."""
+    if path.exists():
+        previous=read_json(path)
+        assert previous['passed'] and previous['archives']==archives
+        # A new host wrapper may revalidate the same frozen native verifier.
+        # All native/source/runtime and partition identities must still match.
+        stable=lambda value:{k:v for k,v in value.items() if k!='wrapper_sha256'}
+        assert stable(previous['identity'])==stable(identity)
+        return False
+    atomic_json(path,dict(passed=True,identity=identity,archives=archives,
+        elapsed_seconds=elapsed_seconds,interpreter_launches=interpreter_launches,
+        scope='Early complete archive replay; completed-index aggregation is a separate mandatory step.'))
+    return True
+
+
 def run(source, out, shard=0, shards=1, stop_when=None, early_receipt=None,subshard=0,subshards=1):
     assert 0 <= shard < shards <= 4
     assert 0 <= subshard < subshards <= 4
@@ -81,6 +97,7 @@ def run(source, out, shard=0, shards=1, stop_when=None, early_receipt=None,subsh
                 target = out / 'receipts' / f'{kind}-{record["id"]}.json'
                 if target.exists():
                     receipt = read_json(target)
+                    assert receipt['passed'] and receipt['semantic_sha256']==record['semantic_sha256']
                     assert receipt['archive_sha256'] == record['archive_sha256']
                     assert receipt['production_code_hash'] == code and receipt['runtime'] == runtime.manifest
                 else:
@@ -113,10 +130,9 @@ def run(source, out, shard=0, shards=1, stop_when=None, early_receipt=None,subsh
         if not progress:
             time.sleep(5)
     suffix=f'-part{subshard}-of-{subshards}' if subshards>1 else ''
-    atomic_json(out / f'stream-complete-shard{shard}-of-{shards}{suffix}.json', dict(passed=True, identity=identity,
-        archives=len(processed), elapsed_seconds=time.time()-started,
-        interpreter_launches=runtime.process_launches,
-        scope='Early complete archive replay; completed-index aggregation is a separate mandatory step.'))
+    created=complete_shard(out / f'stream-complete-shard{shard}-of-{shards}{suffix}.json',
+        identity,len(processed),time.time()-started,runtime.process_launches)
+    if not created:print('C14 COMPLETE PROOF SHARD REVALIDATED',shard,len(processed),flush=True)
 
 
 def partitioned(source,out,shard,shards,workers,policy):

@@ -24,13 +24,17 @@ def run(out):
     assert all(r['engineering_delivery_status'] and r['research_outcome'] for r in matrix)
     documents=[ROOT/'docs/cycle14'/(name+'.md') for name in DOCUMENTS]
     assert all(p.is_file() and len(p.read_text())>200 for p in documents)
-    broken=[]
+    broken=[];link_targets=[]
+    generated={out/'delivery/artifact-inventory.json',out/'delivery/final-audit.json',out/'delivery/local-history.json'}
     all_documents=sorted(set(documents)|set((ROOT/'docs/cycle14').glob('*.md')))
     for path in all_documents:
         for target in re.findall(r'\]\(([^)]+)\)',path.read_text()):
             if target.startswith(('http:','https:','#')):continue
             local=target.split('#',1)[0]
-            if local and not (path.parent/local).exists():broken.append(dict(document=str(path.relative_to(ROOT)),target=target))
+            if local:
+                resolved=(path.parent/local).resolve();link_targets.append(resolved)
+                if not resolved.exists() and resolved not in generated:
+                    broken.append(dict(document=str(path.relative_to(ROOT)),target=target))
     assert not broken,broken
     protected=read_json(out/'baseline/manifest.json')['protected_files']
     changes=[name for name,expected in protected.items() if not (ROOT/name).is_file() or sha(ROOT/name)!=expected]
@@ -66,6 +70,9 @@ def run(out):
         report_generation_parent_head=parent,
         no_push_or_deployment_performed=True,preferences_promoted=False,automatic_selection=False,
         scope='Local complete package audit before its evidence/documentation commit; the final commit hash and clean worktree are reported after commit.'))
+    # These three targets are created by this invocation, including links to
+    # the inventory itself. Validate their existence after writing them.
+    assert all(path.exists() for path in link_targets)
 
 
 if __name__=='__main__':

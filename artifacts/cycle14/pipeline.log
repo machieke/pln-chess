@@ -1,0 +1,19 @@
+C14 SCIENTIFIC STAGE COMPLETE register-reversals
+C14 SCIENTIFIC STAGE COMPLETE representation
+C14 SCIENTIFIC STAGE COMPLETE fit
+C14 SCIENTIFIC STAGE COMPLETE calibration-freeze
+C14 SCIENTIFIC STAGE COMPLETE test
+C14 SCIENTIFIC STAGE COMPLETE factorial
+C14 SCIENTIFIC STAGE COMPLETE dependence
+C14 SCIENTIFIC STAGE COMPLETE reversals
+C14 SCIENTIFIC STAGE COMPLETE native-locality
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/data/pln-chess-cycle6-delivery/scripts/cycle14_pipeline.py", line 47, in <module>
+    p=argparse.ArgumentParser();p.add_argument('--out',default='artifacts/cycle14');run(p.parse_args().out)
+                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/pln-chess-cycle6-delivery/scripts/cycle14_pipeline.py", line 42, in run
+    if result.returncode:raise RuntimeError(str(log))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: /data/pln-chess-cycle6-delivery/artifacts/cycle14/pipeline/logs/bounded-responses.txt

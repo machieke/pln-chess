@@ -1,0 +1,80 @@
+{
+  "acceptance_sha256": "ef5764ae780612f383f6d394bf010bdaac854d7c15c1818c07ff453582cc9442",
+  "automatic_default_is_unchanged_accepted_legal_model": true,
+  "commands": [
+    {
+      "argv": [
+        "/data/pln-chess-cycle14-final/.venv/bin/python",
+        "-m",
+        "pln_chess",
+        "inspect",
+        "--fen",
+        "7k/8/8/8/R6p/8/8/6K1 w - - 0 1",
+        "--move",
+        "a4h4",
+        "--format",
+        "json"
+      ],
+      "artifact_sha256": "763afb6888349d2c9bcac00e78efa3dbd23142b4661b0f85b39d6d3462351a93",
+      "classification": "supported-legal",
+      "elapsed_seconds": 2.1918333396315575,
+      "mode": "automatic",
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "/data/pln-chess-cycle14-final/.venv/bin/python",
+        "-m",
+        "pln_chess",
+        "inspect",
+        "--fen",
+        "7k/8/8/8/R6p/8/8/6K1 w - - 0 1",
+        "--move",
+        "a4h4",
+        "--format",
+        "json",
+        "--mode",
+        "strict"
+      ],
+      "artifact_sha256": "37f658e2b260488a6e4d0ecbe19bdad3a79b63fabd20fdb2e70e781da7b02d1d",
+      "classification": "unknown",
+      "elapsed_seconds": 2.0062444284558296,
+      "mode": "strict",
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "/data/pln-chess-cycle14-final/.venv/bin/python",
+        "-m",
+        "pln_chess",
+        "inspect",
+        "--fen",
+        "7k/8/8/8/R6p/8/8/6K1 w - - 0 1",
+        "--move",
+        "a4h4",
+        "--format",
+        "json",
+        "--mode",
+        "experimental"
+      ],
+      "artifact_sha256": "9f4443e777f2f9bb75a534504cab9131036f94d2e73ac19c5cf67e9660082a94",
+      "classification": "unknown",
+      "elapsed_seconds": 1.9586030757054687,
+      "mode": "experimental",
+      "returncode": 0
+    }
+  ],
+  "identity": {
+    "accepted": true,
+    "mode": "operational",
+    "model_version": "a6d3d826d93ee01b8accb7dc9948c0bd9bb0048cc54755bf45e92ec82502743d",
+    "path": "/data/pln-chess-cycle6-delivery/artifacts/cycle14/model/C14-default.json",
+    "production_code_hash": "e88ff7969885be101af2ceedbbdf5d5499f4253b361a8cee18ff1814f055282c"
+  },
+  "passed": true,
+  "preferences_promoted": false,
+  "probe_driver_sha256": "85a7e74b18bdf5c8125ebd5fe35a3b19bf40e8f6ccd6607c0dba67ff13f11270",
+  "production_code_hash": "e88ff7969885be101af2ceedbbdf5d5499f4253b361a8cee18ff1814f055282c",
+  "source_head": "0acc1a6c41c73926f3a86d85ff0163f8a39807fa",
+  "strict_and_experimental_abstention_preserved": true
+}

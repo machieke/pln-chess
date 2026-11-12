@@ -1,0 +1,64 @@
+{
+  "completed_unix": 1794504414.0954344,
+  "cpu_seconds_lower_bound": 3984.39,
+  "observer_driver_sha256": "602f837d8707b8da7180415226e8724db5ef6002b30a2841dc6db9cbf9c1622d",
+  "parent_pid": 675520,
+  "passed": true,
+  "regression_driver_sha256": "4cf8a9119d5f7f91475ef99a3c134792a5991829b9d71e308fa2fd9edfee8689",
+  "scope": "Cumulative per-process CPU for the four post-replay aggregate comparison workers, sampled every five seconds. Includes CPU before observer launch; the final unsampled tail may be missing. No native replay child or parent CPU is included, so this does not overlap per-command GNU-time receipts. Individual RSS high-water marks are separate, not summed into simultaneous memory.",
+  "started_unix": 1794503513.9549239,
+  "workers": [
+    {
+      "argv": [
+        ".venv/bin/python",
+        "-u",
+        "-m",
+        "scripts.cycle14_schedule"
+      ],
+      "cpu_seconds": 991.34,
+      "parent_pid": 675520,
+      "peak_rss_kib": 9147676,
+      "pid": 1202725,
+      "start_ticks": 711487055
+    },
+    {
+      "argv": [
+        ".venv/bin/python",
+        "-u",
+        "-m",
+        "scripts.cycle14_schedule"
+      ],
+      "cpu_seconds": 1000.89,
+      "parent_pid": 675520,
+      "peak_rss_kib": 8541896,
+      "pid": 1202726,
+      "start_ticks": 711487055
+    },
+    {
+      "argv": [
+        ".venv/bin/python",
+        "-u",
+        "-m",
+        "scripts.cycle14_schedule"
+      ],
+      "cpu_seconds": 1000.98,
+      "parent_pid": 675520,
+      "peak_rss_kib": 9247352,
+      "pid": 1202727,
+      "start_ticks": 711487055
+    },
+    {
+      "argv": [
+        ".venv/bin/python",
+        "-u",
+        "-m",
+        "scripts.cycle14_schedule"
+      ],
+      "cpu_seconds": 991.18,
+      "parent_pid": 675520,
+      "peak_rss_kib": 6284908,
+      "pid": 1202728,
+      "start_ticks": 711487055
+    }
+  ]
+}

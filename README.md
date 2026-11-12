@@ -21,6 +21,11 @@ the recommendation is to continue preference research. See the
 [temporal failures](docs/cycle14/temporal-study.md), and
 [matched performance measurements](docs/cycle14/performance.md).
 
+Across four frozen workloads, median paired warm-summary latency improves by
+about 50–230× and interactive payloads shrink by over 99.98%. Cold compact
+requests take 1.17–1.68× as long, and complete-audit work takes 2.67–4.93× as long.
+The measurements use twenty repetitions per arm and preserve exact native evidence.
+
 ```bash
 .venv/bin/python -m pln_chess serve --port 8765
 .venv/bin/python -m pln_chess compact-compare --input artifacts/cycle14/examples/compare.json --store /tmp/pln-c14-proofs.sqlite

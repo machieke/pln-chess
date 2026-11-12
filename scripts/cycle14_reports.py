@@ -35,7 +35,8 @@ def run(out):
     gates={name:get(name) for name in ('acceptance.json','current/verified.json','baseline/reproduction-receipt.json',
         'clean-research/verified.json','clean-research/proof-replay/verified.json','interfaces/verified.json',
         'ui/verified.json','datasets/integrity.json','performance/summary.json','responses/summary.json',
-        'reversals/summary.json','dependence/summary.json','architecture/boundary.json')}
+        'reversals/summary.json','dependence/summary.json','architecture/boundary.json',
+        'verification/schedule-recovery.json')}
     assert all(x['passed'] for x in gates.values())
     acceptance=gates['acceptance.json'];current=gates['current/verified.json'];clean=gates['clean-research/verified.json']
     proof=gates['clean-research/proof-replay/verified.json'];perf=gates['performance/summary.json']
@@ -201,7 +202,28 @@ The first dense archive attempt exceeded the interactive serialization limit and
     ratios=[]
     for row in perf['comparisons']:
         r=row['paired_speed_ratio'];ratios.append([row['workload'],row['temperature'],f"{r['median']:.2f}×",
-            f"{r['median_bootstrap_95'][0]:.2f}–{r['median_bootstrap_95'][1]:.2f}×",pct(row['paired_payload_reduction']['median'])])
+            f"{r['median_bootstrap_95'][0]:.2f}–{r['median_bootstrap_95'][1]:.2f}×",f"{100*row['paired_payload_reduction']['median']:.4f}%"])
+    cold_payload={row['workload']:row['paired_payload_reduction']['median']
+        for row in perf['comparisons'] if row['temperature']=='cold'}
+    warm_goals=[dict(workload=row['workload'],median_paired_speed_ratio=row['paired_speed_ratio']['median'],
+        warm_median_paired_payload_reduction=row['paired_payload_reduction']['median'],
+        cold_median_paired_payload_reduction=cold_payload[row['workload']],
+        twofold_warm_latency_target_met=row['paired_speed_ratio']['median']>=2,
+        ninety_percent_payload_target_met=min(row['paired_payload_reduction']['median'],cold_payload[row['workload']])>=.9)
+        for row in perf['comparisons'] if row['temperature']=='warm']
+    assert len(warm_goals)==4
+    write_json(out/'delivery/performance-goals.json',dict(workloads=warm_goals,
+        scope='Descriptive assessment of the registered engineering targets using measured median paired ratios: warm latency and both cold/warm payload reduction. Not a service guarantee, native arithmetic speedup, or strategic-quality result.'))
+    speed_targets=sum(row['twofold_warm_latency_target_met'] for row in warm_goals)
+    payload_targets=sum(row['ninety_percent_payload_target_met'] for row in warm_goals)
+    cold_costs=[1/row['paired_speed_ratio']['median'] for row in perf['comparisons'] if row['temperature']=='cold']
+    by_arm={(r['workload'],r['arm'],r['temperature']):r['metrics'] for r in perf['summaries']}
+    audit_costs=[];archive_sizes=[]
+    for workload in cold_payload:
+        for temperature in ('cold','warm'):
+            old=by_arm[workload,'legacy',temperature];new=by_arm[workload,'compact',temperature]
+            audit_costs.append(new['full_audit_validation_and_compression_seconds']['median']/old['full_audit_validation_and_compression_seconds']['median'])
+            archive_sizes.append(new['compressed_audit_bytes']['median']/old['compressed_audit_bytes']['median'])
     write('performance.md',f'''# Matched performance measurements
 
 Four frozen workloads compare legacy full responses and compact summaries with the same C13 checkpoints, native evidence and inputs. Each arm has **{perf['repetitions']} repetitions**, in fresh processes, with cold and warm requests. All {len(perf['rows'])} measured request groups have exact native/evidence parity. Workloads cover one quiet pair, three mixed pairs including promotion/tactical cases, two supplied plies and three supplied plies. Alternating arm order reduces ordering bias.
@@ -209,6 +231,10 @@ Four frozen workloads compare legacy full responses and compact summaries with t
 {table(['Workload','Arm','Temperature','Median interactive seconds','Median inference seconds','Interactive bytes','Compressed audit bytes','Parent peak KiB','Interpreter launches'],timings)}
 
 {table(['Workload','Temperature','Median paired legacy/compact latency','95% median-ratio interval','Interactive payload reduction'],ratios)}
+
+Using the observed median paired ratios, **{speed_targets}/4 workloads meet the twofold warm-summary latency target** and **{payload_targets}/4 meet the 90% interactive-payload reduction target at both cold and warm requests**. The [target assessment](../../artifacts/cycle14/delivery/performance-goals.json) records each workload. These are measurements of the frozen workloads, not guarantees for arbitrary requests or complete-audit execution.
+
+Cold compact requests take longer in {sum(value>1 for value in cold_costs)}/4 workloads: the compact/legacy median paired latency ratios range from {min(cold_costs):.2f} to {max(cold_costs):.2f}. Complete-audit work takes {min(audit_costs):.2f}–{max(audit_costs):.2f} times the legacy median time, and compressed audit archives are {min(archive_sizes):.2f}–{max(archive_sizes):.2f} times the legacy median size. These audit and archive ratios divide the displayed arm medians. The compact summary gains carry measurable cold-request and audit costs.
 
 Complete-audit costs and interactive tail samples are separate measurements. The benchmark requests 64 proof objects per page. All time columns below are seconds; audit, retrieval, byte and RSS values are medians over twenty runs.
 
@@ -258,7 +284,7 @@ Per-request data-access records distinguish persistent learned checkpoint hypoth
         ('13','Evaluation and calibration','Delivered and frozen','Explicit denominators, source-clustered intervals, separate diagnostic calibration; no native-channel renormalization.'),
         ('14','Factorial ablations','Delivered and evaluated','Matched supervision, representation, evidence, concept, dependence and temporal contrasts; negative and undefined estimates retained.'),
         ('15','Compact proof representation','Delivered and fully replayed',f"{proof['archives']} full archive reconstructions and complete native trace coverage; all 109 earlier-generation features match."),
-        ('16','Caching and performance','Delivered and benchmarked','Twenty repetitions per arm/workload; exact evidence parity; measured summary gains distinguished from complete-audit cost.'),
+        ('16','Caching and performance','Delivered and benchmarked',f"Twenty repetitions per arm/workload; exact evidence parity; {speed_targets}/4 twofold warm-latency targets and {payload_targets}/4 payload-reduction targets met on observed median paired ratios; complete-audit cost reported separately."),
         ('17','API, CLI and inspector','Delivered with documented interface limits','Actual CLI restarts, durable graph/archive retrieval, desktop/mobile and byte-exact browser reconstruction. Direct /compact-preferences entry is required; dense bulk archives can exceed the interactive export budget.'),
         ('18','Preservation and isolation','Delivered; mandatory gates passed',f"{current['test_count']} tests, 584,112 legal rows, 287 negative and 27 history controls, two recoveries/76 holdouts; 16,596 old files unchanged."),
         ('19','Clean reproduction and resources','Delivered with resource-accounting shortfalls','Fresh pinned environment; all native feature proofs replayed, selected observations/references rerun, all model/ledger/study outputs compared. Complete global CPU/process/transient-byte totals remain unavailable; six baseline terminal analyses omitted node counters.'),
@@ -310,7 +336,7 @@ All **{proof['archives']}** registered compact feature archives reconstruct exac
 
 The inspector is available directly at `/compact-preferences`; the legacy homepage does not render its intended navigation link. This entry-navigation limitation remains explicit in [browser evidence](../../artifacts/cycle14/ui/final-trained/navigation-note.json) and the package matrix. The functional inspector checks do not claim that the homepage link passed.
 
-Dense response roots can also exceed the default interactive full-archive serialization budget. The offline response study uses the explicit ten-million occurrence policy, retaining the failed default-budget run and validating exact reconstruction without changing scientific predictions. A separate dense archive regression passes in the fresh research checkout, supplementing the full frozen-source test suite. Five additional response-comparison controls verify valid execution-derived request handles and reject changed scientific evidence or request bindings. These six verifier tests are reported separately from the frozen-source full suite. [The storage contract](proof-storage.md) states both archive limits, and [reproduction](reproduction.md) records the comparison failure and correction.
+Dense response roots can also exceed the default interactive full-archive serialization budget. The offline response study uses the explicit ten-million occurrence policy, retaining the failed default-budget run and validating exact reconstruction without changing scientific predictions. A separate dense archive regression passes in the fresh research checkout, supplementing the full frozen-source test suite. Five additional response-comparison controls verify valid execution-derived request handles and reject changed scientific evidence or request bindings. Three proof-stream resumption controls and two actual cached shard joins verify preservation of the original completion receipt after a redundant scheduler join attempted to replace its elapsed time. These nine verifier tests are reported separately from the frozen-source full suite. [The storage contract](proof-storage.md) states both archive limits, and [reproduction](reproduction.md) records the retained failures and their corrections.
 
 Clean reproduction compares {clean['compared_artifacts']} research artifacts with byte-identical models and ledgers. The full reference generation is an explicit immutable input; selected raw reference searches are repeated independently. It does not claim every new engine search or observation construction was rerun. Complete recorded native proofs are replayed.
 

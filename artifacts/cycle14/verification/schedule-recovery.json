@@ -1,0 +1,80 @@
+{
+  "cached_shard_archives": 385,
+  "commands": [
+    {
+      "argv": [
+        "/data/pln-chess-cycle6-delivery/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "/data/pln-chess-cycle6-delivery/tests/test_cycle14_stream_completion.py",
+        "--junitxml=/data/pln-chess-cycle6-delivery/artifacts/cycle14/verification/stream-completion-controls.xml"
+      ],
+      "cwd": "/data/pln-chess-cycle6-delivery",
+      "elapsed_seconds": 0.2724299430847168,
+      "log_sha256": "a09b4584af8cc13743ea60d6dce28f53b3617df9a235aa1d841ef3546480ffcb",
+      "name": "proof-stream-controls",
+      "returncode": 0,
+      "started_unix": 1794513377.9297276
+    },
+    {
+      "argv": [
+        "/data/pln-chess-cycle14-final/.venv/bin/python",
+        "-u",
+        "/data/pln-chess-cycle6-delivery/scripts/cycle14_replay_stream.py",
+        "--source",
+        "/data/pln-chess-cycle6-delivery/artifacts/cycle14",
+        "--out",
+        "/data/pln-chess-cycle6-delivery/artifacts/cycle14/clean-research/proof-replay",
+        "--shard",
+        "1",
+        "--shards",
+        "3"
+      ],
+      "cwd": "/data/pln-chess-cycle14-final",
+      "elapsed_seconds": 5.728385925292969,
+      "log_sha256": "47e8822c181a85d31fa1a9f39b2f67c7a6959d3ad8d27f7258de01b2da20d9a0",
+      "name": "proof-shard1-recovery-1",
+      "returncode": 0,
+      "started_unix": 1794513378.2035446
+    },
+    {
+      "argv": [
+        "/data/pln-chess-cycle14-final/.venv/bin/python",
+        "-u",
+        "/data/pln-chess-cycle6-delivery/scripts/cycle14_replay_stream.py",
+        "--source",
+        "/data/pln-chess-cycle6-delivery/artifacts/cycle14",
+        "--out",
+        "/data/pln-chess-cycle6-delivery/artifacts/cycle14/clean-research/proof-replay",
+        "--shard",
+        "1",
+        "--shards",
+        "3"
+      ],
+      "cwd": "/data/pln-chess-cycle14-final",
+      "elapsed_seconds": 4.890676498413086,
+      "log_sha256": "58a3b9d854e97b7596493a68fa65633b4a99711ce8a7e3b7fdb3f782593262ad",
+      "name": "proof-shard1-recovery-2",
+      "returncode": 0,
+      "started_unix": 1794513384.0849526
+    }
+  ],
+  "incident_sha256": "e40e2ef34746f0f336c6a8a30d687dff492b5eda7a506fcc630715c29fae7531",
+  "native_proof_verifier_sha256": "febd135c99fc4db19f0ce10aa0df8c87114d13104cd08ec31c207e99990bf20f",
+  "original_failure_retained": true,
+  "original_shard_completion_sha256": "8e73e743cd49f4a50cc043d53b89b45f89e28835bc3ebfd69602303204dc9daa",
+  "passed": true,
+  "production_code_hash": "e88ff7969885be101af2ceedbbdf5d5499f4253b361a8cee18ff1814f055282c",
+  "recovery_driver_sha256": "3e4dff7fcb683fb4c63a92a2edc99381484577c75d262b0d55876bff18b4cdcc",
+  "repaired_stream_wrapper_sha256": "69f10de9547a2fb580ba7e5a8e8b06a113b729f7279e0ee93d4e968d5422caca",
+  "scope": "The cached join validates the same registered archives and preserves the original immutable completion, including its telemetry. Three host-verifier controls reject changed native-verifier identity or archive count. Two fresh-process cached joins pass without rewriting any of the 1180 native receipts or the complete research/legal gates; this is not a new native corpus execution.",
+  "source_checkout": "/data/pln-chess-cycle14-final",
+  "source_head": "0acc1a6c41c73926f3a86d85ff0163f8a39807fa",
+  "successful_revalidations": 2,
+  "test_source_sha256": "1e9ae012a0334f10ccc9e0d06184da927765bff275cb380d104675a8f2cd44e5",
+  "test_xml_sha256": "25a2979a6b96e90812672aa038cbc953c292994923859d65d4ad90c4ccf5e8f4",
+  "unchanged_native_receipts": 1180,
+  "unchanged_receipt_map_sha256": "240b408bad0b777df1324bcdee5a11d11b50798d2082f310f058f9c2c290be73",
+  "unit_controls": 3
+}
