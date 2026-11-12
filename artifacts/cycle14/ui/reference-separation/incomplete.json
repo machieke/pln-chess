@@ -1,0 +1,210 @@
+{
+  "status": "Inspection incomplete \u00b7 inspect work limits and gaps.",
+  "verdict": "Incomplete comparison",
+  "reference": "Reference unresolved \u00b7 overlapping-or-one-sided-bounds \u00b7 immediate-g1. This is offline search evidence for c13-c10-game-009268d172c2c94ed5cd31a6.",
+  "preference": {
+    "actionable_move": null,
+    "channels": {
+      "A": {
+        "classification": "unknown",
+        "raw_stv": {
+          "confidence": 0,
+          "strength": 0.5
+        }
+      },
+      "B": {
+        "classification": "unknown",
+        "raw_stv": {
+          "confidence": 0,
+          "strength": 0.5
+        }
+      },
+      "no-demonstrated-preference": {
+        "classification": "unknown",
+        "raw_stv": {
+          "confidence": 0,
+          "strength": 0.5
+        }
+      }
+    },
+    "conditional_proof_complete": false,
+    "contradiction": false,
+    "dependence_groups": [],
+    "descriptor": {
+      "abstraction": "relational",
+      "concept_scope": "not-used",
+      "coverage": {
+        "attack": "partial",
+        "defense": "partial",
+        "king-exposure": "partial",
+        "mobility": "partial"
+      },
+      "features": {
+        "attack": 0,
+        "defense": 0,
+        "king-exposure": 0,
+        "mobility": 0
+      },
+      "grammar": "relative-preference-contrasts-v13",
+      "horizon": 1
+    },
+    "evidence_ids": [],
+    "gaps": [
+      "Legality beliefs remain separate and may be unknown or partial; preference cannot certify a move.",
+      "before: 414 unknown or incomplete queried field relations.",
+      "before: bounded concept enumeration omits candidates; omission is not negative evidence.",
+      "A: 401 unknown or incomplete queried field relations.",
+      "A: bounded concept enumeration omits candidates; omission is not negative evidence.",
+      "B: 414 unknown or incomplete queried field relations.",
+      "B: bounded concept enumeration omits candidates; omission is not negative evidence.",
+      "Required comparison observation or native work is incomplete.",
+      "The selected abstraction cannot distinguish the candidates directionally.",
+      "The complete requested inspection did not finish within its budgets."
+    ],
+    "joint_proof_complete": false,
+    "model_version": "09dd2e3179cd64a54e9e17a10a0058c240560af122c68a36fc2647ca7e11f886",
+    "no_preference_supported": false,
+    "observation_id": "preference-observation:575c2f2ef5d97475e5bf5b7adfbd1ddaa68d39aa07aaa3c888b0a3c415142a94",
+    "opposing_training_labels": false,
+    "proof_id": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "proof_status": "incomplete",
+    "rule_id": "preference-rule:b389c627fba759f6557f90e16360885b1d522749e3bdd65142e26fc493e3ccca",
+    "runtime_version": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+    "scope": "Native conditional on an explicit host-assembled relative count packet; neither a joint strategic theorem nor a legal-move decision.",
+    "status": "incomplete",
+    "strategic_score": null,
+    "training_provenance": {
+      "dataset_hash": null,
+      "ledger_digest": "",
+      "training_examples": 0
+    },
+    "truth_value_origin": "absence-prior"
+  },
+  "execution": {
+    "budget_scope": "Registered logical node limit applies to each legal, field/concept and preference stage, including warm caches. One request deadline limits all interpreter launches and subsequent stages.",
+    "cache_hits": 8,
+    "elapsed_seconds": 16.566865486092865,
+    "error": "Combined Cycle 4/5 proof budget exhausted",
+    "grounded_atoms": 2750,
+    "logical_native_nodes": 0,
+    "native_invocations": 0,
+    "proof_bytes": 6695,
+    "stages": [],
+    "truncated": true
+  },
+  "requests": [
+    {
+      "fen": "r4rk1/1pq2pb1/2bp2pp/3Bp3/1RP5/1Q1P2P1/3NPP1P/1R4K1 w - - 5 20",
+      "preference_model": "empty",
+      "mode": "operational",
+      "max_invocations": 100000,
+      "unknown_squares": [],
+      "view": "summary",
+      "history": {
+        "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "g1f3",
+          "c7c5",
+          "c2c4",
+          "b8c6",
+          "b1c3",
+          "g7g6",
+          "g2g3",
+          "f8g7",
+          "f1g2",
+          "e7e5",
+          "e1g1",
+          "g8e7",
+          "d2d3",
+          "e8g8",
+          "a2a3",
+          "a7a5",
+          "c1g5",
+          "d7d6",
+          "f3d2",
+          "h7h6",
+          "g5e7",
+          "c6e7",
+          "a1b1",
+          "a8b8",
+          "b2b4",
+          "a5b4",
+          "a3b4",
+          "c5b4",
+          "b1b4",
+          "d8c7",
+          "c3d5",
+          "e7d5",
+          "g2d5",
+          "c8d7",
+          "d1b3",
+          "d7c6",
+          "f1b1",
+          "b8a8"
+        ],
+        "source": "?"
+      },
+      "move_a": "d5c6",
+      "move_b": "c4c5"
+    },
+    {
+      "fen": "r4rk1/1pq2pb1/2bp2pp/3Bp3/1RP5/1Q1P2P1/3NPP1P/1R4K1 w - - 5 20",
+      "preference_model": "empty",
+      "mode": "operational",
+      "max_invocations": 0,
+      "unknown_squares": [],
+      "view": "summary",
+      "history": {
+        "initial_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": [
+          "g1f3",
+          "c7c5",
+          "c2c4",
+          "b8c6",
+          "b1c3",
+          "g7g6",
+          "g2g3",
+          "f8g7",
+          "f1g2",
+          "e7e5",
+          "e1g1",
+          "g8e7",
+          "d2d3",
+          "e8g8",
+          "a2a3",
+          "a7a5",
+          "c1g5",
+          "d7d6",
+          "f3d2",
+          "h7h6",
+          "g5e7",
+          "c6e7",
+          "a1b1",
+          "a8b8",
+          "b2b4",
+          "a5b4",
+          "a3b4",
+          "c5b4",
+          "b1b4",
+          "d8c7",
+          "c3d5",
+          "e7d5",
+          "g2d5",
+          "c8d7",
+          "d1b3",
+          "d7c6",
+          "f1b1",
+          "b8a8"
+        ],
+        "source": "?"
+      },
+      "move_a": "d5c6",
+      "move_b": "c4c5"
+    }
+  ],
+  "viewport": {
+    "width": 390,
+    "height": 844,
+    "documentWidth": 375
+  }
+}
