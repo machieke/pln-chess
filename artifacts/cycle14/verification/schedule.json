@@ -1,0 +1,22 @@
+{
+  "current_legal_workers": 4,
+  "driver_sha256": "78265d670ff107c6b4539a5b013d360c20d3ea9bed88dcaffd2bd07de7da3e03",
+  "fresh_source_head": "0acc1a6c41c73926f3a86d85ff0163f8a39807fa",
+  "proof_shards": 3,
+  "registered_maximum_workers": 12,
+  "scope": "Deterministic scheduling change only. No scientific inputs, model outcomes, native semantics or archive membership change.",
+  "stages": [
+    {
+      "condition": "Baseline and full current tests complete",
+      "workers": "4 legal + 1 controls + 4 immediate + 2 temporal + 1 proof = 12"
+    },
+    {
+      "condition": "Current controls complete",
+      "workers": "4 legal + 4 immediate + 2 temporal + 2 proof = 12"
+    },
+    {
+      "condition": "At least one feature generation complete",
+      "workers": "4 legal + at most 4 remaining features + 3 proof = at most 11"
+    }
+  ]
+}

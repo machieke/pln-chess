@@ -1,0 +1,49 @@
+# Reproduction and measurement scope
+
+The [baseline receipt](../../artifacts/cycle14/baseline/reproduction-receipt.json), [current legal/test receipt](../../artifacts/cycle14/current/verified.json), [clean research receipt](../../artifacts/cycle14/clean-research/verified.json), [CLI receipt](../../artifacts/cycle14/interfaces/verified.json), and [browser receipt](../../artifacts/cycle14/ui/verified.json) describe different executed checks. The [acceptance record](../../artifacts/cycle14/acceptance.json) joins their content hashes; a source inspection or a passing unit fixture is not substituted for corpus execution.
+
+## Source and environment identities
+
+Baseline execution uses the clean starting checkout `54353579e7921f9b47f43bbde1aa61cb887bc6e4`. The current legal suite and fresh native research environment use local commit `0acc1a6`, whose complete hash is recorded in their receipts. Production code is frozen at hash `e88ff7969885be101af2ceedbbdf5d5499f4253b361a8cee18ff1814f055282c`. Later verification, resource-accounting and documentation commits retain that identity. The outer clean-reproduction driver binds its own hash separately from the frozen child programs it invokes.
+
+The [fresh bootstrap receipt](../../artifacts/cycle14/clean-research/bootstrap/verified.json) binds Python 3.12.12, the dependency lock, fresh virtual environment and fresh native runtime. The runtime version is `4405956947c4b53c7ff01bd565aa3b114bc970a1`, with PeTTa commit `ee5cacb6a6ecdd554a1c773aaf47e9a0f8a5af0f`. Stockfish 18 is rebuilt separately from pinned sources and networks; the reference bootstrap verifies binary identity. These are pinned implementations, not permission to substitute current upstream releases.
+
+Use the repository virtual environment, not an unqualified `python` command: this workstation also has a Python 2 executable. Every subprocess receipt records its executable, arguments, source identity, output generation and log. `PLN_CHESS_ROOT` and `PYTHONPATH` point to the intended clean checkout. Output overrides for earlier cycles are removed before current verification.
+
+## What is rebuilt, replayed or supplied
+
+The baseline research run regenerates all 340 immediate labels, 120 temporal labels and 400 native feature artifacts, then refits and evaluates the original research models. It compares 527 artifacts with the delivered Cycle 13 evidence. Baseline legality, its 588 tests, negative/history controls and recoveries are independently executed. The [comparison](../../artifacts/cycle14/baseline/research/comparison.json) distinguishes byte identities from scientific/native proof equivalence.
+
+Current research reproduction rebuilds source partitions, concept cases and temporal/response plans. The complete frozen label generation is an explicit input. Selected raw searches are independently repeated by actor, horizon, label and unresolved-cause strata; the [selected verification receipt](../../artifacts/cycle14/clean-research/selected/verified.json) enumerates them. This is not a claim that every new reference-engine search was repeated. Selection covers verification strata and does not depend on model accuracy.
+
+All 940 immediate and 240 temporal compact feature archives undergo full hash/reachability validation, exact canonical expansion and native expression replay. Every archived native node must be covered by an ordered trace. Pure expression arithmetic may be memoized within an archive, while distinct evidence occurrences remain distinct. Three disjoint deterministic shards stream completed archives; the final [proof receipt](../../artifacts/cycle14/clean-research/proof-replay/verified.json) joins all 1,180 cases. Additional fresh observation construction covers collection, final-test membership and short-branch strata. Complete archive replay and selected fresh extraction are deliberately reported as different checks.
+
+The fresh environment refits all experimental checkpoints and evidence ledgers, repeats development selection and calibration freezing, and regenerates final predictions, factorial contrasts, dependence interventions, reversal/removal fits, concepts and locality controls. It also repeats all ten bounded response panels and both diagnostic archives. The [research comparison](../../artifacts/cycle14/clean-research/comparison.json) lists each compared artifact and method. JSON checkpoints, ledgers and scientific summaries require byte equality. Compressed native records compare canonical content after removing elapsed-time telemetry only. Complete response archives first validate their hashes and summary-root bindings, then compare all native scientific evidence; only validated archive-derived roots and timing fields are excluded from the corresponding response-summary comparison. Synthetic [verifier controls](../../artifacts/cycle14/verification/response-comparison-controls.json) establish that changed truth values and incorrect root bindings are rejected.
+
+The current legal replay separately executes all 206 shards and compares all 584,112 ordered candidate records with the independently reproduced baseline. Full tests and the 287 negative, 27 history, two recovery and 76 holdout controls run in that same clean source environment. Browser work exercises the frozen production code with delivered experimental models, actual downloads/uploads, mobile and desktop layouts, and durable retrieval across a server restart. CLI verification uses separate processes, not in-process calls presented as restarts.
+
+## Repeating the delivered research check
+
+From the completed delivery checkout, use a new output generation and a new checkout path. This command reads the delivered evidence and creates separate replay receipts; it does not replace the delivered `clean-research` generation:
+
+```bash
+.venv/bin/python -u -m scripts.cycle14_reproduce \
+  --out artifacts/cycle14 \
+  --checkout /tmp/pln-chess-c14-replay \
+  --commit 0acc1a6c41c73926f3a86d85ff0163f8a39807fa \
+  --generation clean-research-repeat
+```
+
+The command binds the full frozen verification commit. Dependencies/runtime are freshly bootstrapped when the new generation has no bootstrap receipt. Native corpus replay, selected searches and model refits are substantial jobs. A new repetition does not reuse the delivered replay receipts. The command logs under the generation record each stage, failed attempts and successful resumes.
+
+For an individual study, inspect the matching command in [the primary pipeline](../../artifacts/cycle14/pipeline/commands/) or [clean replay commands](../../artifacts/cycle14/clean-research/commands/). Those records bind the exact inputs and driver hashes. Re-running a changed driver into an existing scientific generation is rejected; preserve the old generation and choose a new one. Interrupted earlier feature and proof-stream attempts remain in the evidence inventory. The 109 completed earlier feature cases were all compared with the replacement serialization generation before selecting it.
+
+Benchmark repetitions run after owned corpus, legal, replay and UI verification jobs have finished. The [workload census](../../artifacts/cycle14/performance/workloads.json) records the process check, host load and fixed C13 workload identities. Each workload/arm/repetition has its own process and cold/warm measurements, with twenty repetitions and alternating arm order. Timing values are not expected to reproduce byte-for-byte. Native/evidence identities are. Parent and child RSS maxima remain separate, and sample p99 is not a service guarantee. See [performance](performance.md) for latency, archive cost and memory distributions.
+
+## Resource accounting and limits
+
+The registration sets 128 research CPU hours, 24 hours per stage, six billion reference nodes, one million interpreter launches, twelve concurrent owned workers, 40 GiB new retained artifacts and 64 GiB temporary checkouts. The [resource ledger](../../artifacts/cycle14/resources.json) records measured CPU receipts, reference nodes, native launches where instrumented, retained artifact sizes and temporary checkout usage. Reused labels are counted once, and cumulative MultiPV nodes are not added once per candidate. Model loading, native execution, serialization, audit export and retrieval have distinct benchmark fields.
+
+Continuous process accounting was not installed at the start of the cycle. Total early CPU use, interpreter launches, transient generated bytes and the complete historical concurrency peak cannot be reconstructed exactly. Reported CPU and launch totals are therefore lower bounds; missing counters are not zeros and global compliance with those ceilings is unverified. Retained bytes are a snapshot, not total filesystem write volume. Reference-node and retained-storage ceilings are checked from recorded evidence. This is an explicit resource-measurement shortfall in C14-19, not a waiver of any legal, native-proof or scientific preservation gate.
+
+The [final inventory](../../artifacts/cycle14/delivery/artifact-inventory.json) hashes retained successful, failed and interrupted evidence separately from the source-bound passing gates. Its two inventory/audit files exclude their own circular hashes. The ending local commit and clean worktree are reported after the final evidence commit; no remote write is part of reproduction or delivery.
