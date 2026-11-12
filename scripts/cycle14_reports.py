@@ -1,6 +1,7 @@
 """Render delivery tables from closed, source-bound Cycle 14 receipts."""
 import argparse
 from pathlib import Path
+import statistics
 
 from pln_chess.common import ROOT, read_json, write_json
 
@@ -115,7 +116,7 @@ The king-exposing candidate remains a diagnostic branch with separate legality s
 Identical final board layouts reached through different supplied histories have distinct request identities. The inspector exposes branch coverage and before/after conditional outputs; no average, product or minimum of branch strengths is labeled a native robust conclusion.
 ''')
 
-    timings=[]
+    timings=[];audits=[]
     for summary in perf['summaries']:
         metrics=summary['metrics']
         timings.append([summary['workload'],summary['arm'],summary['temperature'],
@@ -123,6 +124,20 @@ Identical final board layouts reached through different supplied histories have 
             f"{metrics['inference_seconds']['median']:.6f}",
             int(metrics['canonical_interactive_bytes']['median']),int(metrics['compressed_audit_bytes']['median']),
             int(metrics['process_peak_rss_kib']['median']),metrics['interpreter_process_launches']['median']])
+        retrieval=metrics['graph_page_retrieval_seconds']['median']
+        audits.append([summary['workload'],summary['arm'],summary['temperature'],
+            int(metrics['canonical_full_bytes']['median']),
+            f"{metrics['full_audit_validation_and_compression_seconds']['median']:.6f}",
+            'not applicable' if retrieval is None else f'{retrieval:.6f}',
+            f"{metrics['interactive_total_seconds']['p95']:.6f}",
+            f"{metrics['interactive_total_seconds']['sample_p99']:.6f}",
+            int(metrics['largest_child_peak_rss_kib']['median'])])
+    loading=[]
+    for workload in sorted({r['workload'] for r in perf['rows']}):
+        for arm in ('legacy','compact'):
+            rows=[r for r in perf['rows'] if r['workload']==workload and r['arm']==arm and r['temperature']=='cold']
+            loading.append([workload,arm,len(rows),f"{statistics.median(r['runtime_load_seconds'] for r in rows):.6f}",
+                f"{statistics.median(r['model_load_seconds'] for r in rows):.6f}"])
     ratios=[]
     for row in perf['comparisons']:
         r=row['paired_speed_ratio'];ratios.append([row['workload'],row['temperature'],f"{r['median']:.2f}×",
@@ -134,6 +149,12 @@ Four frozen workloads compare legacy full responses and compact summaries with t
 {table(['Workload','Arm','Temperature','Median interactive seconds','Median inference seconds','Interactive bytes','Compressed audit bytes','Parent peak KiB','Interpreter launches'],timings)}
 
 {table(['Workload','Temperature','Median paired legacy/compact latency','95% median-ratio interval','Interactive payload reduction'],ratios)}
+
+Complete-audit costs and interactive tail samples are separate measurements. The benchmark requests 64 proof objects per page. All time columns below are seconds; audit, retrieval, byte and RSS values are medians over twenty runs.
+
+{table(['Workload','Arm','Temperature','Reconstructed full bytes','Audit validation + compression seconds','Graph page seconds','Interactive p95 seconds','Interactive sample p99 seconds','Largest child peak KiB'],audits)}
+
+{table(['Workload','Arm','Fresh processes','Median runtime load seconds','Median model load seconds'],loading)}
 
 Interactive latency includes inference and canonical serialization. Model/runtime loading is measured separately and excluded symmetrically. Compact warm requests reuse a durable request bound to source, state, history, models, runtime, branches and options. This avoids repeated work; it is not a native interpreter speedup. Cold construction, complete archive validation/compression and graph-page retrieval have separate distributions in the [benchmark receipt](../../artifacts/cycle14/performance/summary.json). Returning less data is an interface improvement, not proof that complete-audit execution became equally fast.
 
