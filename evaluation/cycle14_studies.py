@@ -237,15 +237,25 @@ def reversals(out):
             resolved=root['label'] in ('A','B') and endpoint['label'] in ('A','B');reference_flip=resolved and root['label']!=endpoint['label']
             model_flip=before['status'] in ('A-preferred','B-preferred') and after['status'] in ('A-preferred','B-preferred') and before['status']!=after['status']
             correct_before=before['status']==root['label']+'-preferred';correct_after=after['status']==endpoint['label']+'-preferred'
-            success=resolved and correct_before and correct_after and (reference_flip if registered['arm']=='reversal-opportunity' else not reference_flip)
+            answered_pattern=resolved and correct_before and correct_after and (reference_flip if registered['arm']=='reversal-opportunity' else not reference_flip)
+            controls=dict(premise_removal_changes_answer=no_premise['status']!=after['status'],
+                conditional_removal_changes_answer=no_rule['status']!=after['status'],
+                ancestry_removal_changes_answer=no_evidence['status']!=after['status'])
+            native_before_after=before['conditional_proof_complete'] and after['conditional_proof_complete']
+            success=answered_pattern and registered['structural_criterion_met'] and native_before_after and all(controls.values())
             results.append(dict(registered,horizon=horizon,initial_label=root['label'],endpoint_label=endpoint['label'],
                 initial_reference=root['reference_evidence_id'],endpoint_reference=endpoint['reference_evidence_id'],
                 before=before,after=after,premise_omitted=no_premise,conditional_removed=no_rule,evidence_ancestry_removed=no_evidence,
                 removed_groups=sorted(supporting),removal_model_version=removal.version,resolved_both=resolved,
-                reference_reversal=reference_flip,model_reversal=model_flip,successful_registered_outcome=success,
+                reference_reversal=reference_flip,model_reversal=model_flip,answered_reference_pattern=answered_pattern,
+                removal_controls=controls,native_before_after=native_before_after,successful_registered_outcome=success,
                 failed_reasons=[reason for reason,failed in (('structural-criterion-unmet',not registered['structural_criterion_met']),
                     ('unresolved-reference',not resolved),('initial-answer-not-correct',not correct_before),('endpoint-answer-not-correct',not correct_after),
-                    ('registered-target-pattern-not-observed',resolved and (reference_flip!=(registered['arm']=='reversal-opportunity')))) if failed],
+                    ('registered-target-pattern-not-observed',resolved and (reference_flip!=(registered['arm']=='reversal-opportunity'))),
+                    ('native-before-after-proof-unavailable',not native_before_after),
+                    ('premise-removal-did-not-change-answer',not controls['premise_removal_changes_answer']),
+                    ('conditional-removal-did-not-change-answer',not controls['conditional_removal_changes_answer']),
+                    ('ancestry-removal-did-not-change-answer',not controls['ancestry_removal_changes_answer'])) if failed],
                 target_change='Root search versus supplied-branch endpoint search, always original actor; no optimal-play claim.'))
     pack(out/'reversals/panel.json.xz',results)
     summary=[]
@@ -254,7 +264,8 @@ def reversals(out):
             rows=[r for r in results if r['arm']==arm and r['horizon']==horizon]
             summary.append(dict(arm=arm,horizon=horizon,N=len(rows),structural_criteria_met=sum(r['structural_criterion_met'] for r in rows),
                 N_resolved_both=sum(r['resolved_both'] for r in rows),reference_reversals=sum(r['reference_reversal'] for r in rows),
-                model_reversals=sum(r['model_reversal'] for r in rows),successes=sum(r['successful_registered_outcome'] for r in rows),
+                model_reversals=sum(r['model_reversal'] for r in rows),answered_reference_patterns=sum(r['answered_reference_pattern'] for r in rows),
+                successes=sum(r['successful_registered_outcome'] for r in rows),
                 failures=[r['id'] for r in rows if not r['successful_registered_outcome']]))
     atomic_json(out/'reversals/summary.json',dict(passed=True,registration_hash=registration['hash'],panels=summary,
         independent_groups=20,primary_horizon=3,all_registered_cases_reported=True,proofs_and_removals_retained=True,

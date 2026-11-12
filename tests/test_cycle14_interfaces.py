@@ -32,6 +32,12 @@ def test_request_identity_binds_all_cache_dependencies(runtime):
     changed.append(identity(models_=modified))
     assert all(v!=original for v in changed)
     assert len({canonical(v) for v in changed})==len(changed)
+    # Both histories end at the identical layout, actor and FEN counters; their
+    # observation ancestry differs and must never share a proof request.
+    repeated_position=Position.from_fen('4k3/8/8/8/8/8/8/R3K3 w - - 4 3')
+    direct={'initial_fen':repeated_position.fen(),'moves':[]}
+    returned={'initial_fen':position.fen(),'moves':['a1a2','e8e7','a2a1','e7e8']}
+    assert identity(p=repeated_position,h=direct)!=identity(p=repeated_position,h=returned)
 
 
 @pytest.mark.parametrize('field',['label','reference_label','score','pv','source_game','proof_id'])

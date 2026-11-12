@@ -2,6 +2,23 @@
 
 A piece-relative chess research package using **actual native MeTTa PLN** rules. It includes a pinned runtime audit, six-piece candidate grammar, structural special-move states, append-only evidence, native revision learning, inference/proof APIs, CLI, local inspector, datasets, tests, ablations and measured reports.
 
+Cycle 14 adds audited offline preference labels, 940 registered root comparisons,
+relative role descriptors, matched continuation studies, and compact proof storage.
+Read the [Cycle 14 engineering report](docs/cycle14/engineering-report.md),
+[20-package matrix](docs/cycle14/package-matrix.md), and
+[reproduction guide](docs/cycle14/reproduction.md).
+Open `/compact` for the experimental evidence inspector, including separate
+legality beliefs, supplied branches, proof pagination and exact archive reconstruction.
+The accepted legal checkpoint remains unchanged; preference checkpoints are opt-in.
+The [readiness decision](docs/cycle14/readiness-decision.md) separates engineering
+verification from evidence for transferable preferences. No move is selected or played.
+
+```bash
+.venv/bin/python -m pln_chess serve --port 8765
+.venv/bin/python -m pln_chess compact-compare --input artifacts/cycle14/examples/compare.json --store /tmp/pln-c14-proofs.sqlite
+.venv/bin/python -m pln_chess compact-continuations --input artifacts/cycle14/examples/continuations.json --store /tmp/pln-c14-proofs.sqlite
+```
+
 Cycle 13 adds experimental native preference learning, candidate move comparison,
 and supplied two- and three-ply continuation inspection. Read the
 [Cycle 13 engineering report](docs/cycle13/engineering-report.md),

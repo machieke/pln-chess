@@ -27,7 +27,10 @@ def test_registered_fit_freeze_and_matched_endpoint_workflow(tmp_path,monkeypatc
     monkeypatch.setattr(study,'training_records',records);monkeypatch.setattr(controls,'training_records',records)
     write_json(tmp_path/'baseline/research/verified.json',{'passed':True,'scope':'unit fixture'})
     write_json(tmp_path/'datasets/partitions.json',{'scope':'unit partition'})
-    write_json(tmp_path/'datasets/reversal-registration.json',{'scope':'unit registration'})
+    registration=dict(scope='unit registration',records=[dict(id='unit-test-0',arm='reversal-opportunity',structural_criterion_met=False),
+        dict(id='unit-test-1',arm='persistence-control',structural_criterion_met=True)])
+    registration['hash']=digest(registration)
+    write_json(tmp_path/'datasets/reversal-registration.json',registration)
     study.fit(tmp_path);registry=read_json(tmp_path/'model/registry.json')
     assert registry['test_predictions_run'] is False
     assert not (tmp_path/'evaluation').exists()
@@ -40,3 +43,9 @@ def test_registered_fit_freeze_and_matched_endpoint_workflow(tmp_path,monkeypatc
         assert all(c['N_all']==2 for c in panel['counts'].values())
     controls.dependence(tmp_path)
     assert read_json(tmp_path/'dependence/summary.json')['rollback_checkpoint_byte_identical']
+    controls.reversals(tmp_path)
+    from evaluation.cycle3 import read_gzip
+    panel=read_gzip(tmp_path/'reversals/panel.json.xz')
+    assert len(panel)==4
+    assert not any(r['successful_registered_outcome'] for r in panel if not r['structural_criterion_met'])
+    assert all('removal_controls' in r and 'evidence_ancestry_removed' in r for r in panel)

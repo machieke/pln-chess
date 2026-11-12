@@ -47,6 +47,7 @@ def run(out):
                 options=options,session=PreferenceSession(runtime),store=store,history=plan['history'],
                 source='cycle14-registered-response/'+plan['id'],horizons=(2,3),selection_provenance=plan['response_selection'])
             archive=store.archive(result['proof_root']);pack(target/'archive.json.xz',archive)
+        assert result['global_robust_preference'] is None and not result['automatic_move_selection']
         comparisons=[]
         for c in result['comparisons']:
             a,b=c['branches']['A'],c['branches']['B'];identifier=plan['id']+f"-response-A{a}-B{b}-ply{c['horizon']}"
@@ -65,6 +66,8 @@ def run(out):
                 session=PreferenceSession(runtime),store=store,horizons=(2,3),source=case['id'],selection_provenance='Controlled diagnostic')
             archive=store.archive(result['proof_root']);pack(out/'responses/diagnostics'/(case['id']+'.json.xz'),archive)
             diagnostics.append(dict(case=case,summary=result))
+    assert diagnostics[0]['summary']['branch_coverage']['A'][0]['diagnostic_only']
+    assert all(row['missing_horizons'] for rows in diagnostics[1]['summary']['branch_coverage'].values() for row in rows)
     # Three branches are a hard configurable interface bound, not a search tree.
     case=read_json(out/'datasets/response-panel-registration.json')['diagnostic_cases'][1]
     try:
@@ -77,6 +80,10 @@ def run(out):
     atomic_json(out/'responses/summary.json',dict(passed=True,independent_groups=len(results),branch_comparisons=len(all_rows),
         counts=counts(all_rows),intervals=clustered_intervals(all_rows),
         opposed_supported_panels=sum(any(r['opposed_supported_branches'].values()) for r in results),
+        incomplete_endpoint_comparisons=sum(r['prediction']['status']=='incomplete' for r in all_rows),
+        diagnostic_branch_occurrences=sum(row['diagnostic_only'] for r in results for rows in r['summary']['branch_coverage'].values() for row in rows),
+        unknown_legality_branch_occurrences=sum(row['legality_unknown'] for r in results for rows in r['summary']['branch_coverage'].values() for row in rows),
+        supported_illegal_branch_occurrences=sum(row['supported_illegal'] for r in results for rows in r['summary']['branch_coverage'].values() for row in rows),
         known_unexamined_replies=sum(v['unexamined_legal_replies'] for r in results for v in r['coverage'].values()),
         diagnostics=[dict(id=r['case']['id'],coverage=r['summary']['branch_coverage']) for r in diagnostics],
         more_than_three_responses_rejected=rejected_four,global_robust_preference=None,
