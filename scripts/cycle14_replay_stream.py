@@ -7,6 +7,7 @@ joins exactly these receipts against the completed immutable indexes.
 """
 import argparse
 from concurrent.futures import ThreadPoolExecutor
+import fcntl
 import json
 from pathlib import Path
 import resource
@@ -124,6 +125,30 @@ def partitioned(source,out,shard,shards,workers,policy):
     while not all((source/'features'/selected[kind]/'index.json').exists() for kind in ('immediate','temporal')):
         if time.time()-started>24*3600:raise TimeoutError('Feature closure exceeded proof-partition scheduling budget')
         time.sleep(5)
+    completed=out/f'stream-complete-shard{shard}-of-{shards}.json'
+    if completed.exists():
+        receipt=read_json(completed);runtime=CountedRuntime(timeout=900)
+        assert receipt['passed'] and receipt['workers']==workers
+        assert not subprocess.check_output(['git','status','--porcelain'],cwd=ROOT,text=True)
+        head=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
+        code=production_code_hash();assert code==read_json(source/'source-freeze.json')['production_code_hash']
+        for part in receipt['parts']:
+            assert sha(out/part['path'])==part['sha256']
+            identity=read_json(out/part['path'])['identity']
+            assert identity['source_head']==head and identity['runtime']==runtime.manifest
+            assert identity['proof_driver_sha256']==sha(ROOT/'evaluation/cycle14_proof_replay.py')
+        count=0
+        for kind in ('immediate','temporal'):
+            for record in read_json(source/'features'/selected[kind]/'index.json')['records']:
+                if int(digest([kind,record['id']]),16)%shards!=shard:continue
+                replay=read_json(out/'receipts'/f'{kind}-{record["id"]}.json')
+                assert replay['passed'] and replay['runtime']==runtime.manifest and replay['production_code_hash']==code
+                assert replay['archive_sha256']==record['archive_sha256']==sha(source/record['archive'])
+                assert replay['semantic_sha256']==record['semantic_sha256']
+                count+=1
+        assert count==receipt['archives']==sum(p['result']['archives'] for p in receipt['parts'])
+        print('C14 COMPLETE PROOF PARTITION REVALIDATED',shard,count,flush=True)
+        return
     def part(index):
         log=out/'partition-logs'/f'shard{shard}-part{index}-of-{workers}.txt';log.parent.mkdir(parents=True,exist_ok=True)
         with log.open('w') as stream:
@@ -158,5 +183,9 @@ if __name__ == '__main__':
     workers=policy.get('workers_by_shard',{}).get(str(args.shard),1)
     if args.subshard is None and workers>1:
         assert not args.stop_when and 1<workers<=4
-        partitioned(args.source,args.out,args.shard,args.shards,workers,policy)
+        lock=ROOT/'.runtime/c14-proof-stream-locks'/digest([str(Path(args.out).resolve()),args.shard,args.shards])
+        lock.parent.mkdir(parents=True,exist_ok=True)
+        with lock.open('a') as stream:
+            fcntl.flock(stream,fcntl.LOCK_EX)
+            partitioned(args.source,args.out,args.shard,args.shards,workers,policy)
     else:run(args.source,args.out,args.shard,args.shards,args.stop_when,args.early_receipt,args.subshard or 0,args.subshards)
