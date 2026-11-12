@@ -26,11 +26,24 @@ def run():
         return all(success(name) for name in ('tests','negative-and-history-controls','recoveries-and-holdouts'))
     env=dict(os.environ,PLN_CHESS_ROOT=str(fresh),PYTHONPATH=f'{fresh}/src:{fresh}',TMPDIR='/dev/shm')
     def current():
-        wait_for(lambda:(out/'baseline/legal-reproduction.json').exists() and success('tests'),'Baseline and current tests')
+        wait_for(lambda:(out/'baseline/legal-reproduction.json').exists() and success('tests')
+            and (out/'clean-research/proof-replay/early-shard1-released.json').exists(),
+            'Baseline, current tests and early proof-worker release')
         from scripts.cycle14_baseline_receipt import run as join
         from scripts.cycle14_regression import run as regression
         join(out)
         regression(out,fresh,workers=4)
+    def early_proof():
+        wait_for(lambda:(out/'clean-research/selected/early-reference-replay.json').exists(),
+            'Early selected reference replay')
+        with (out/'clean-research/proof-stream-1-early.log').open('w') as stdout, \
+                (out/'clean-research/proof-stream-1-early.resources.log').open('w') as stderr:
+            subprocess.run(['/usr/bin/time','-v',str(fresh/'.venv/bin/python'),'-u',
+                str(ROOT/'scripts/cycle14_replay_stream.py'),'--source',str(out),
+                '--out',str(out/'clean-research/proof-replay'),'--shard','1','--shards','3',
+                '--stop-when',str(out/'baseline/legal-reproduction.json'),
+                '--early-receipt','early-shard1-released.json'],env=env,cwd=fresh,
+                stdout=stdout,stderr=stderr,check=True)
     def proof(shard):
         wait_for(controls_done,'Current negative/history/recovery controls')
         if shard==2:
@@ -45,12 +58,13 @@ def run():
     write_json(out/'verification/schedule.json',dict(driver_sha256=sha(__file__),
         fresh_source_head=subprocess.check_output(['git','rev-parse','HEAD'],cwd=fresh,text=True).strip(),
         current_legal_workers=4,proof_shards=3,registered_maximum_workers=12,
-        stages=[dict(condition='Baseline and full current tests complete',workers='4 legal + 1 controls + 4 immediate + 2 temporal + 1 proof = 12'),
+        stages=[dict(condition='Full current tests and early reference replay complete',workers='4 baseline + 4 immediate + 2 temporal + 2 proof = 12'),
+            dict(condition='Baseline complete and early shard releases its worker',workers='4 legal + 1 controls + 4 immediate + 2 temporal + 1 proof = 12'),
             dict(condition='Current controls complete',workers='4 legal + 4 immediate + 2 temporal + 2 proof = 12'),
             dict(condition='At least one feature generation complete',workers='4 legal + at most 4 remaining features + 3 proof = at most 11')],
         scope='Deterministic scheduling change only. No scientific inputs, model outcomes, native semantics or archive membership change.'))
-    with ThreadPoolExecutor(max_workers=3) as pool:
-        futures=[pool.submit(current),pool.submit(proof,1),pool.submit(proof,2)]
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        futures=[pool.submit(current),pool.submit(proof,1),pool.submit(proof,2),pool.submit(early_proof)]
         for future in futures:future.result()
 
 

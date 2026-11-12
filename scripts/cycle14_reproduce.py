@@ -115,6 +115,14 @@ def run(out,checkout,commit,workers=2,generation='clean-research'):
     for relative in ('baseline/research/verified.json','baseline/reproduction-receipt.json','source-freeze.json'):source_input(relative)
     command('reference-bootstrap','scripts.cycle13_reference_bootstrap',['--directory',str(checkout/'.runtime/cycle13-reference'),'--out',str(target/'reference-bootstrap')],False)
     assert read_json(target/'reference-bootstrap/verified.json')['byte_identical_binary']
+    reference_build=target/'reference-bootstrap/one-worker-build.json'
+    if reference_build.exists():
+        built=read_json(reference_build)
+        assert built['returncode']==0 and built['fresh_source_build'] and built['byte_identical_binary']
+        assert built['source_head']==commit
+    else:
+        reference_build=target/'reference-bootstrap/build.txt'
+        assert reference_build.exists(),'A binary identity check alone does not establish a fresh compiler execution'
     command('source-partitions','training.cycle14_sources')
     command('concept-partition','training.cycle14_concept_sources')
     for relative in ('datasets/source-pairs.json','datasets/partitions.json','datasets/concept-holdout.json'):
@@ -165,6 +173,7 @@ def run(out,checkout,commit,workers=2,generation='clean-research'):
     atomic_json(target/'verified.json',dict(passed=True,production_code_hash=code,source_head=commit,checkout=str(checkout),
         orchestration_sha256=sha(__file__),generation=generation,
         fresh_venv=True,fresh_runtime=True,fresh_reference_build=True,complete_native_feature_proof_replay=True,
+        reference_build_receipt_sha256=sha(reference_build),
         bounded_response_panel_replayed=True,
         proof_replay_sha256=sha(target/'proof-replay/verified.json'),selected_fresh_extraction_sha256=sha(target/'selected/verified.json'),
         model_checkpoint_byte_parity=True,evidence_ledger_byte_parity=True,comparison_sha256=sha(target/'comparison.json'),

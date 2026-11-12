@@ -21,7 +21,7 @@ from training.cycle14_labels import atomic_json
 from scripts.cycle9_baseline import sha
 
 
-def run(source, out, shard=0, shards=1):
+def run(source, out, shard=0, shards=1, stop_when=None, early_receipt=None):
     assert 0 <= shard < shards <= 4
     source, out = Path(source).resolve(), Path(out).resolve()
     runtime = CountedRuntime(timeout=900)
@@ -36,17 +36,32 @@ def run(source, out, shard=0, shards=1):
         proof_driver_sha256=sha(ROOT / 'evaluation/cycle14_proof_replay.py'),
         shard=shard, shards=shards)
     identity_name = f'stream-identity-{identity["wrapper_sha256"][:12]}-shard{shard}.json'
+    if stop_when:
+        assert early_receipt and Path(early_receipt).name == early_receipt
+        identity['stop_when'] = str(Path(stop_when).resolve())
+        identity_name = identity_name.replace('.json','-early.json')
     atomic_json(out / identity_name, identity)
     session = NativeSession(runtime, max_entries=50000)
     session.bind(digest(['c14-full-proof-replay', runtime.manifest]))
     selected = read_json(source / 'features/selected-generations.json')
     started = time.time()
     processed = set()
+    def release_slot(complete=False):
+        if stop_when and (complete or Path(stop_when).exists()):
+            atomic_json(out / early_receipt, dict(passed=True,identity=identity,
+                archives_validated_or_replayed=len(processed),elapsed_seconds=time.time()-started,
+                interpreter_launches=runtime.process_launches,stopped_between_archives=True,
+                complete_shard=complete,
+                scope='Release the early verification worker for current legal controls. Completed immutable archive receipts are retained for the later full shard; this is not a corpus-completion receipt.'))
+            return True
+        return False
     while True:
+        if release_slot():return
         progress = False
         for kind in ('immediate', 'temporal'):
             directory = source / 'features' / selected[kind]
             for path in sorted((directory / 'receipts').glob('*.json')):
+                if release_slot():return
                 token = (kind, path.name)
                 if token in processed:
                     continue
@@ -83,6 +98,7 @@ def run(source, out, shard=0, shards=1):
                 for kind in ('immediate', 'temporal')
                 for r in read_json(source / 'features' / selected[kind] / 'index.json')['records'])
             if len(processed) == expected:
+                if release_slot(complete=True):return
                 break
         if time.time()-started > 24*3600:
             raise TimeoutError('Streaming proof replay exceeded its registered stage budget')
@@ -100,5 +116,7 @@ if __name__ == '__main__':
     parser.add_argument('--out', required=True)
     parser.add_argument('--shard', type=int, default=0)
     parser.add_argument('--shards', type=int, default=1)
+    parser.add_argument('--stop-when')
+    parser.add_argument('--early-receipt')
     args = parser.parse_args()
-    run(args.source, args.out, args.shard, args.shards)
+    run(args.source, args.out, args.shard, args.shards,args.stop_when,args.early_receipt)

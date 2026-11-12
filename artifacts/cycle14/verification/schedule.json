@@ -1,13 +1,17 @@
 {
   "current_legal_workers": 4,
-  "driver_sha256": "78265d670ff107c6b4539a5b013d360c20d3ea9bed88dcaffd2bd07de7da3e03",
+  "driver_sha256": "1ccea7c816715168f55c5ed606028100c546b81ff6daff2c23c19046adb8b4c7",
   "fresh_source_head": "0acc1a6c41c73926f3a86d85ff0163f8a39807fa",
   "proof_shards": 3,
   "registered_maximum_workers": 12,
   "scope": "Deterministic scheduling change only. No scientific inputs, model outcomes, native semantics or archive membership change.",
   "stages": [
     {
-      "condition": "Baseline and full current tests complete",
+      "condition": "Full current tests and early reference replay complete",
+      "workers": "4 baseline + 4 immediate + 2 temporal + 2 proof = 12"
+    },
+    {
+      "condition": "Baseline complete and early shard releases its worker",
       "workers": "4 legal + 1 controls + 4 immediate + 2 temporal + 1 proof = 12"
     },
     {

@@ -210,7 +210,7 @@ Handled repeated evidence preserves native TVs; unsafe counting inflates {len(de
 
 ## Preservation, proof integrity and reproduction
 
-The starting environment independently regenerated 527 research artifacts, 340 immediate labels, 120 temporal labels and 400 native feature artifacts, with byte-identical checkpoints and native proof parity. Its 588 tests passed. The current source passes **{current['test_count']} tests**, all 206 legal shards / 584,112 candidate rows, 287 negative controls, 27 history controls, two recoveries and 76 holdouts. There are zero changed classifications and exact native proof parity; 16,596 historical files remain unchanged.
+The starting environment independently regenerated 527 research artifacts, 340 immediate labels, 120 temporal labels and 400 native feature artifacts, with byte-identical checkpoints and native proof parity. Its 588 tests passed. The frozen verification checkout passes **{current['test_count']} tests**, all 206 legal shards / 584,112 candidate rows, 287 negative controls, 27 history controls, two recoveries and 76 holdouts. There are zero changed classifications and exact native proof parity; 16,596 historical files remain unchanged.
 
 {legal_table}
 
