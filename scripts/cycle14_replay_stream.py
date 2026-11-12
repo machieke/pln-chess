@@ -21,7 +21,8 @@ from training.cycle14_labels import atomic_json
 from scripts.cycle9_baseline import sha
 
 
-def run(source, out):
+def run(source, out, shard=0, shards=1):
+    assert 0 <= shard < shards <= 4
     source, out = Path(source).resolve(), Path(out).resolve()
     runtime = CountedRuntime(timeout=900)
     runtime.verify()
@@ -32,8 +33,9 @@ def run(source, out):
         ['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
         production_code_hash=code, runtime=runtime.manifest,
         wrapper_path=str(Path(__file__).resolve()), wrapper_sha256=sha(__file__),
-        proof_driver_sha256=sha(ROOT / 'evaluation/cycle14_proof_replay.py'))
-    identity_name = 'stream-identity-' + identity['wrapper_sha256'][:12] + '.json'
+        proof_driver_sha256=sha(ROOT / 'evaluation/cycle14_proof_replay.py'),
+        shard=shard, shards=shards)
+    identity_name = f'stream-identity-{identity["wrapper_sha256"][:12]}-shard{shard}.json'
     atomic_json(out / identity_name, identity)
     session = NativeSession(runtime, max_entries=50000)
     session.bind(digest(['c14-full-proof-replay', runtime.manifest]))
@@ -49,6 +51,8 @@ def run(source, out):
                 if token in processed:
                     continue
                 record = read_json(path)
+                if int(digest([kind, record['id']]), 16) % shards != shard:
+                    continue
                 archive = source / record['archive']
                 assert sha(archive) == record['archive_sha256']
                 target = out / 'receipts' / f'{kind}-{record["id"]}.json'
@@ -75,15 +79,16 @@ def run(source, out):
                 processed.add(token)
                 progress = True
         if all((source / 'features' / selected[kind] / 'index.json').exists() for kind in ('immediate', 'temporal')):
-            expected = sum(len(read_json(source / 'features' / generation / 'index.json')['records'])
-                for generation in (selected['immediate'], selected['temporal']))
+            expected = sum(int(digest([kind, r['id']]),16) % shards == shard
+                for kind in ('immediate', 'temporal')
+                for r in read_json(source / 'features' / selected[kind] / 'index.json')['records'])
             if len(processed) == expected:
                 break
         if time.time()-started > 24*3600:
             raise TimeoutError('Streaming proof replay exceeded its registered stage budget')
         if not progress:
             time.sleep(5)
-    atomic_json(out / 'stream-complete.json', dict(passed=True, identity=identity,
+    atomic_json(out / f'stream-complete-shard{shard}-of-{shards}.json', dict(passed=True, identity=identity,
         archives=len(processed), elapsed_seconds=time.time()-started,
         interpreter_launches=runtime.process_launches,
         scope='Early complete archive replay; completed-index aggregation is a separate mandatory step.'))
@@ -93,5 +98,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--source', required=True)
     parser.add_argument('--out', required=True)
+    parser.add_argument('--shard', type=int, default=0)
+    parser.add_argument('--shards', type=int, default=1)
     args = parser.parse_args()
-    run(args.source, args.out)
+    run(args.source, args.out, args.shard, args.shards)

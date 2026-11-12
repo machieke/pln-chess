@@ -95,3 +95,14 @@ def test_refined_native_conditionals_preserve_three_channels_and_no_joint_claim(
         assert row['proof_id']==digest(row['proof_trace']) and row['actionable_move'] is None
         values=runtime.batch([(n['id'],n['native_expression']) for n in row['proof_trace']])
         assert all(values[n['id']].json()==n['truth_value'] for n in row['proof_trace'])
+    # A disclosed contradictory checkpoint must preserve both native channels
+    # and abstain; the host cannot choose a winner from supported opposites.
+    hypothesis=model.hypotheses[observation['rule_id']]
+    hypothesis['channels']['second']=dict(strength=.99,confidence=.9)
+    hypothesis['evidence_ids'].append('independent-two')
+    hypothesis['dependence_groups'].append('root-two')
+    hypothesis['supporting_evidence']['second']=['independent-two']
+    conflict=infer_preferences([p],model,runtime=runtime)['comparisons'][0]
+    assert conflict['channels']['A']['classification']==conflict['channels']['B']['classification']=='supported'
+    assert conflict['contradiction'] and conflict['status']=='indeterminate'
+    assert conflict['actionable_move'] is None and not conflict['joint_proof_complete']
