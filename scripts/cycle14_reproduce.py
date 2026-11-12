@@ -29,9 +29,17 @@ def scientific(value):
 def run(out,checkout,commit,workers=2):
     out=Path(out).resolve();checkout=Path(checkout).resolve();target=out/'clean-research';runout=target/'run'
     if not (target/'bootstrap/verified.json').exists():bootstrap(target/'bootstrap',checkout,commit)
-    boot=read_json(target/'bootstrap/verified.json');assert boot['initial_source_head']==commit
+    boot=read_json(target/'bootstrap/verified.json')
+    actual_head=subprocess.check_output(['git','rev-parse','HEAD'],cwd=checkout,text=True).strip()
+    assert actual_head==commit
+    # A fresh dependency/runtime bootstrap may precede local verification-only
+    # driver additions. Bind that advancement explicitly, retaining both heads.
+    subprocess.run(['git','merge-base','--is-ancestor',boot['initial_source_head'],commit],cwd=checkout,check=True)
     assert not subprocess.check_output(['git','status','--porcelain'],cwd=checkout,text=True)
     code=read_json(out/'source-freeze.json')['production_code_hash'];assert boot['identity']['production_code_hash']==code
+    atomic_json(target/'source-checkout.json',dict(passed=True,bootstrap_head=boot['initial_source_head'],
+        verification_head=commit,production_code_hash=code,checkout_clean=True,
+        scope='Fresh pinned dependencies and runtime retained across a local source advancement; frozen production code identity is unchanged.'))
     py=str(checkout/'.venv/bin/python');env=dict(os.environ,PLN_CHESS_ROOT=str(checkout),PYTHONPATH=f'{checkout}/src:{checkout}',C14_OUT=str(runout),TMPDIR='/dev/shm')
     for i in range(6,14):env.pop(f'C{i}_OUT',None)
     inputs=[]

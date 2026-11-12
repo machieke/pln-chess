@@ -21,6 +21,27 @@ from evaluation.cycle13_performance import CountedRuntime,workloads
 from evaluation.cycle14_profile import models
 from evaluation.cycle14_metrics import percentile
 from training.cycle14_labels import atomic_json
+from scripts.cycle9_baseline import sha
+
+
+def access_census(session, loaded, executions, result, store):
+    """Host counts and recorded grounding; never claim persistent native atoms."""
+    caches={}
+    for name,item in [('field-arithmetic',session.fields.native),
+            ('concept-arithmetic',session.forks.starting.native),
+            ('fork-arithmetic',session.forks.native),('preference-arithmetic',session.preferences.native)]:
+        caches[name]=dict(entries=len(item.cache),hits=item.hits,invalidations=item.invalidations,
+            maximum_entries=item.max_entries)
+    reused=all(r.get('delivery',{}).get('request_cache_hit',False) for r in result)
+    return dict(persistent_learned_hypotheses={k:len(v.hypotheses) for k,v in loaded.items()},
+        persistent_native_resident_atoms=0,
+        host_relation_records=len(session.fields.relations),
+        host_relation_invalidations=session.fields.invalidations,arithmetic_caches=caches,
+        stored_proof_objects=store.census(),
+        recorded_grounded_atoms=sum(e.get('grounded_atoms',0) for e in executions),
+        newly_materialized_grounded_atoms=0 if reused else sum(e.get('grounded_atoms',0) for e in executions),
+        recorded_logical_native_proof_nodes=sum(e.get('logical_native_nodes',0) for e in executions),
+        counts_scope='Grounding counts are stage-reported proposition occurrences, not a live native AtomSpace census. Cached requests retain their original proof counts; newly materialized counts are zero on full request reuse. Persistent checkpoints and relation records reside in the host.')
 
 
 def worker(out,name,arm,repetition):
@@ -77,10 +98,12 @@ def worker(out,name,arm,repetition):
                 largest_child_peak_rss_kib=resource.getrusage(resource.RUSAGE_CHILDREN).ru_maxrss,
                 runtime_load_seconds=runtime_load,model_load_seconds=model_load,store_census=census,
                 request_cache_hits=sum(r.get('delivery',{}).get('request_cache_hit',False) for r in result)))
+            rows[-1]['data_access']=access_census(session,loaded,executions,result,store)
             del result
     assert rows[0]['semantic_hashes']==rows[1]['semantic_hashes']
     atomic_json(out/'performance/receipts'/f'{name}-{arm}-{repetition}.json',dict(passed=True,rows=rows,
         production_code_hash=production_code_hash(),runtime=runtime.manifest,models={k:v.version for k,v in loaded.items()},
+        benchmark_driver_sha256=sha(__file__),
         memory_scope='Fresh process per workload, arm and repetition; warm retains cold caches and prior peak. Child maximum is separate and never added to parent peak.',
         pure_native_cache_and_graph_reuse='Both retain native arithmetic memoization. Compact additionally reuses a source/state/history/model/options-bound durable response.'))
 
