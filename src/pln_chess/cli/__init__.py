@@ -24,6 +24,13 @@ def main(argv=None):
     sub=parser.add_subparsers(dest='command',required=True)
     for name in ('compare-moves','preference-continuations'):
         p=sub.add_parser(name);p.add_argument('--input',required=True);p.add_argument('--output')
+    for name in ('compact-compare','compact-continuations'):
+        p=sub.add_parser(name);p.add_argument('--input',required=True);p.add_argument('--output');p.add_argument('--store')
+        p.add_argument('--view',choices=('summary','proof_graph','full_archive'),default='summary')
+    p=sub.add_parser('proof-view');p.add_argument('--handle',required=True);p.add_argument('--store');p.add_argument('--output')
+    p.add_argument('--view',choices=('summary','proof_graph','full_archive'),default='summary')
+    p.add_argument('--offset',type=int,default=0);p.add_argument('--limit',type=int,default=64)
+    p=sub.add_parser('proof-expand');p.add_argument('--input',required=True);p.add_argument('--output',required=True)
     p=sub.add_parser('concept-inspect');p.add_argument('--input',required=True);p.add_argument('--output')
     p=sub.add_parser('field-evolution');p.add_argument('--input',required=True);p.add_argument('--output')
     p=sub.add_parser('field-inspect');p.add_argument('--fen',required=True);p.add_argument('--field-checkpoint');p.add_argument('--piece')
@@ -83,7 +90,23 @@ def main(argv=None):
     p=sub.add_parser('serve'); p.add_argument('--port',type=int,default=8765); p.add_argument('--checkpoint',default=str(default_checkpoint))
     args=parser.parse_args(argv)
     try:
-        if args.command in ('compare-moves','preference-continuations'):
+        if args.command in ('compact-compare','compact-continuations','proof-view'):
+            from pln_chess.cycle14.inspector import inspect,proof,store_path
+            from pln_chess.cycle14.proofs import ProofStore
+            with ProofStore(args.store or store_path()) as store:
+                if args.command=='proof-view':result=proof(args.handle,view=args.view,offset=args.offset,limit=args.limit,store=store)
+                else:result=inspect({**read_json(args.input),'view':args.view},temporal=args.command=='compact-continuations',store=store)
+            if args.output:write_json(args.output,result)
+        elif args.command=='proof-expand':
+            from pln_chess.cycle14.proofs import ProofStore
+            archive=read_json(args.input);archive=archive.get('archive',archive)
+            with ProofStore() as store:
+                root=store.import_archive(archive)
+                target=Path(args.output);target.parent.mkdir(parents=True,exist_ok=True)
+                with target.open('wb') as stream:
+                    for block in store.canonical_chunks(root):stream.write(block)
+                result=dict(passed=True,root=root.id,canonical_legacy_sha256=store.legacy_digest(root),output=str(target),bytes=target.stat().st_size)
+        elif args.command in ('compare-moves','preference-continuations'):
             from pln_chess.cycle13.inspector import inspect
             result=inspect(read_json(args.input),temporal=args.command=='preference-continuations')
             if args.output:write_json(args.output,result)

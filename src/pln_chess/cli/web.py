@@ -127,6 +127,18 @@ def serve(port=8765,checkpoint=None):
         def do_GET(self):
             from urllib.parse import urlsplit,parse_qs
             url=urlsplit(self.path)
+            if url.path=='/compact-preferences':
+                from .web14 import HTML as compact_html
+                payload=compact_html.encode();self.send_response(200);self.send_header('Content-Type','text/html; charset=utf-8');self.send_header('Content-Length',str(len(payload)));self.end_headers();self.wfile.write(payload);return
+            if url.path in ('/cycle14-catalog','/cycle14-proof'):
+                from pln_chess.cycle14.inspector import catalog,proof
+                try:
+                    query=parse_qs(url.query)
+                    result=catalog() if url.path=='/cycle14-catalog' else proof(query.get('handle',[''])[0],
+                        view=query.get('view',['summary'])[0],offset=int(query.get('offset',['0'])[0]),limit=int(query.get('limit',['64'])[0]))
+                    code=200
+                except (ValueError,FileNotFoundError) as error:result={'error':str(error)};code=400
+                payload=json.dumps(result).encode();self.send_response(code);self.send_header('Content-Type','application/json');self.send_header('Content-Length',str(len(payload)));self.end_headers();self.wfile.write(payload);return
             if url.path=='/preferences':
                 from .web13 import HTML as preferences_html
                 payload=preferences_html.encode();self.send_response(200);self.send_header('Content-Type','text/html; charset=utf-8');self.send_header('Content-Length',str(len(payload)));self.end_headers();self.wfile.write(payload);return
@@ -185,16 +197,38 @@ def serve(port=8765,checkpoint=None):
                     payload=json.dumps({'error':'Run bootstrap to generate recorded comparisons'}).encode();self.send_response(404)
                 self.send_header('Content-Type','application/json');self.send_header('Content-Length',str(len(payload)));self.end_headers();self.wfile.write(payload);return
             if self.path!='/': self.send_error(404);return
-            payload=HTML.replace('<body>','<body><nav style="padding:12px"><a href="/preferences">Cycle 13 · Preference inspector</a> · <a href="/fields">Cycle 11 · Relative influence fields</a></nav>',1).encode();self.send_response(200);self.send_header('Content-Type','text/html; charset=utf-8');self.send_header('Content-Length',str(len(payload)));self.end_headers();self.wfile.write(payload)
+            payload=HTML.replace('<body>','<body><nav style="padding:12px"><a href="/compact-preferences">Cycle 14 · Compact evidence</a> · <a href="/preferences">Cycle 13 · Preference inspector</a> · <a href="/fields">Cycle 11 · Relative influence fields</a></nav>',1).encode();self.send_response(200);self.send_header('Content-Type','text/html; charset=utf-8');self.send_header('Content-Length',str(len(payload)));self.end_headers();self.wfile.write(payload)
 
         def do_POST(self):
-            if self.path not in ('/infer','/cycle10-compare','/cycle10-replay','/cycle11-fields','/cycle11-claims','/cycle12-fields','/cycle12-evolution','/cycle13-compare','/cycle13-continuations'): self.send_error(404);return
+            if self.path=='/cycle14-expand':
+                from pln_chess.cycle14.proofs import ProofStore
+                try:
+                    length=int(self.headers.get('Content-Length',0))
+                    if not 0<length<=134217728:raise ValueError('Archive is empty or exceeds 128 MiB')
+                    supplied=json.loads(self.rfile.read(length));archive=supplied.get('archive',supplied)
+                    with ProofStore() as store:
+                        root=store.import_archive(archive)
+                        self.send_response(200);self.send_header('Content-Type','application/json')
+                        self.send_header('X-Proof-Legacy-SHA256',archive['canonical_legacy_sha256'])
+                        self.send_header('X-Proof-Root',root.id);self.end_headers()
+                        buffer=bytearray()
+                        for block in store.canonical_chunks(root):
+                            buffer.extend(block)
+                            if len(buffer)>=1048576:self.wfile.write(buffer);buffer.clear()
+                        if buffer:self.wfile.write(buffer)
+                except (ValueError,KeyError,TypeError) as error:
+                    raw=json.dumps({'error':str(error)}).encode();self.send_response(400);self.send_header('Content-Type','application/json');self.send_header('Content-Length',str(len(raw)));self.end_headers();self.wfile.write(raw)
+                return
+            if self.path not in ('/infer','/cycle10-compare','/cycle10-replay','/cycle11-fields','/cycle11-claims','/cycle12-fields','/cycle12-evolution','/cycle13-compare','/cycle13-continuations','/cycle14-compare','/cycle14-continuations'): self.send_error(404);return
             try:
                 length=int(self.headers.get('Content-Length',0))
-                limit=2097152 if self.path in ('/cycle11-fields','/cycle11-claims','/cycle12-fields','/cycle12-evolution','/cycle13-compare','/cycle13-continuations') else 65536 if self.path=='/cycle10-replay' else 16384
+                limit=2097152 if self.path in ('/cycle11-fields','/cycle11-claims','/cycle12-fields','/cycle12-evolution','/cycle13-compare','/cycle13-continuations','/cycle14-compare','/cycle14-continuations') else 65536 if self.path=='/cycle10-replay' else 16384
                 if not 0<length<=limit: raise ValueError('Request body is too large or empty')
                 payload=json.loads(self.rfile.read(length))
-                if self.path in ('/cycle13-compare','/cycle13-continuations'):
+                if self.path in ('/cycle14-compare','/cycle14-continuations'):
+                    from pln_chess.cycle14.inspector import inspect
+                    result=inspect(payload,temporal=self.path=='/cycle14-continuations')
+                elif self.path in ('/cycle13-compare','/cycle13-continuations'):
                     from pln_chess.cycle13.inspector import inspect
                     result=inspect(payload,temporal=self.path=='/cycle13-continuations')
                 elif self.path in ('/cycle12-fields','/cycle12-evolution'):
@@ -216,7 +250,7 @@ def serve(port=8765,checkpoint=None):
                     from pln_chess.cycle10.temporal import replay
                     result=replay(**payload)
                 else:result=inspector_infer(payload,checkpoint)
-                if self.path not in ('/cycle11-fields','/cycle11-claims','/cycle12-fields','/cycle12-evolution','/cycle13-compare','/cycle13-continuations'):
+                if self.path not in ('/cycle11-fields','/cycle11-claims','/cycle12-fields','/cycle12-evolution','/cycle13-compare','/cycle13-continuations','/cycle14-compare','/cycle14-continuations'):
                     from pln_chess.cycle9.diagnostics import decorate_inspection
                     result=decorate_inspection(result)
                     from pln_chess.cycle10.diagnostics import decorate_inspection as decorate_external

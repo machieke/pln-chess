@@ -43,7 +43,8 @@ def preference_summary(result):
 def legal_summary(record):
     return {k:v for k,v in record.items() if k in ('move','uci','classification','raw_stv',
         'truth_value','model_version','runtime_version','proof_id','gaps','status',
-        'proof_complete','truth_value_origin','effect')}
+        'proof_complete','truth_value_origin','effect','legal_move_truth_value','proof_status',
+        'negative_proof_complete','abstention_reason','evidence_state')}
 
 
 def present(store,request,view,*,offset=0,limit=64,cache_hit=False,elapsed=0):

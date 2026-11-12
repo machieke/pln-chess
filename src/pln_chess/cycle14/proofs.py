@@ -8,6 +8,7 @@ from contextlib import contextmanager
 from dataclasses import dataclass
 import hashlib
 import json
+import math
 from pathlib import Path
 import re
 import sqlite3
@@ -18,6 +19,7 @@ from pln_chess.common import canonical, digest
 
 SCHEMA='pln-proof-dag-v14'
 DOMAIN=b'pln-proof-object-v14\0'
+IDENTIFIER=re.compile(r'[0-9a-f]{64}')
 
 
 class ProofError(ValueError):
@@ -29,12 +31,19 @@ class Ref:
     id: str
 
     def __post_init__(self):
-        if not isinstance(self.id,str) or not re.fullmatch(r'[0-9a-f]{64}',self.id):
+        if not isinstance(self.id,str) or not IDENTIFIER.fullmatch(self.id):
             raise ProofError('Invalid content-addressed proof reference')
 
 
 def object_id(encoded):
     return hashlib.sha256(DOMAIN+canonical(encoded).encode()).hexdigest()
+
+
+def scalar(value):
+    """Validate JSON primitives without repeatedly serializing each one."""
+    if value is None or type(value) in (str,int,bool):return
+    if type(value) is float and math.isfinite(value):return
+    raise ProofError('Proof scalar must be a finite JSON primitive')
 
 
 def dependencies(encoded):
@@ -43,7 +52,7 @@ def dependencies(encoded):
     kind,value=encoded
     if kind=='scalar':
         if isinstance(value,(dict,list)):raise ProofError('Container encoded as scalar')
-        canonical(value)
+        scalar(value)
         return []
     if not isinstance(value,list):raise ProofError('Invalid proof-object children')
     if kind=='dict':
@@ -57,10 +66,12 @@ def dependencies(encoded):
     for token in tokens:
         if not isinstance(token,list) or len(token)!=2:raise ProofError('Invalid proof-object token')
         tag,payload=token
-        if tag=='ref':refs.append(Ref(payload).id)
+        if tag=='ref':
+            if not isinstance(payload,str) or not IDENTIFIER.fullmatch(payload):raise ProofError('Invalid proof dependency identity')
+            refs.append(payload)
         elif tag=='value':
             if isinstance(payload,(dict,list)):raise ProofError('Inline container is not canonical')
-            canonical(payload)
+            scalar(payload)
         else:raise ProofError('Unsupported proof-object token')
     return refs
 
@@ -110,7 +121,7 @@ class ProofStore:
                     raise ProofError('Missing referenced proof object: '+node.id)
                 return ['ref',node.id]
             if isinstance(node,(dict,list,tuple)):return ['ref',walk(node).id]
-            canonical(node)
+            scalar(node)
             return ['value',node]
         def walk(node):
             if isinstance(node,Ref):token(node);return node
@@ -122,7 +133,7 @@ class ProofStore:
                 if any(not isinstance(key,str) for key in node):raise ProofError('Proof keys must be strings')
                 encoded=['dict',[[key,token(node[key])] for key in sorted(node)]]
             elif isinstance(node,(list,tuple)):encoded=['list',[token(item) for item in node]]
-            else:canonical(node);encoded=['scalar',node]
+            else:scalar(node);encoded=['scalar',node]
             raw=canonical(encoded).encode();identifier=hashlib.sha256(DOMAIN+raw).hexdigest()
             if identifier not in self.written:
                 self.db.execute('INSERT OR IGNORE INTO objects VALUES (?,?)',(identifier,zlib.compress(raw,1)))
@@ -169,38 +180,76 @@ class ProofStore:
             active.remove(identifier);return result
         with self.lock:return walk(root.id if isinstance(root,Ref) else Ref(root).id)
 
-    def canonical_chunks(self,root,*,omit_keys=(),max_nodes=2000000):
-        """Stream canonical legacy JSON; no expanded response allocation."""
-        remaining=max_nodes;active=set();omitted=set(omit_keys);verified={}
-        def read(identifier):
-            if identifier not in verified:verified[identifier]=self._read(identifier)
-            return verified[identifier]
-        def walk(identifier):
-            nonlocal remaining
-            remaining-=1
-            if remaining<0:raise ProofError('Proof stream exceeds its explicit node budget')
+    def canonical_chunks(self,root,*,omit_keys=(),max_nodes=2000000,inline_bytes=8192,memo_bytes=67108864):
+        """Compile shared JSON fragments, then stream without expanded objects.
+
+        Only bounded small subtrees become byte fragments. Large response/state
+        objects remain plans referencing child plans. Occurrence accounting still
+        charges every repeated premise, even when its bytes are shared.
+        """
+        if type(inline_bytes) is not int or inline_bytes<0 or type(memo_bytes) is not int or memo_bytes<0:
+            raise ProofError('Invalid bounded serialization cache')
+        omitted=set(omit_keys);plans={};sizes={};occurrences={};active=set();retained=0;scalars={}
+        def encoded_scalar(value):
+            key=(type(value),value.hex() if type(value) is float else value)
+            if key in scalars:return scalars[key]
+            raw=canonical(value).encode()
+            if len(raw)<=512 and len(scalars)<8192:scalars[key]=raw
+            return raw
+        def compile_node(identifier):
+            nonlocal retained
+            if identifier in plans:return
             if identifier in active:raise ProofError('Cyclic stored proof')
-            active.add(identifier);kind,value=read(identifier)
-            def item(token):
-                if token[0]=='ref':yield from walk(token[1])
-                else:yield canonical(token[1]).encode()
+            active.add(identifier);kind,value=self._read(identifier);parts=[];count=1;size=0
+            def literal(raw):
+                nonlocal size
+                parts.append(raw);size+=len(raw)
+            def token(item):
+                nonlocal count,size
+                if item[0]=='value':literal(encoded_scalar(item[1]));return
+                child=item[1];compile_node(child);count+=occurrences[child];size+=sizes[child]
+                # Reference the compiled child, retaining evidence multiplicity.
+                parts.append(child)
             if kind=='dict':
-                yield b'{';first=True
-                for key,token in value:
+                literal(b'{');first=True
+                for key,item in value:
                     if key in omitted:continue
-                    if not first:yield b','
-                    first=False;yield canonical(key).encode();yield b':'
-                    yield from item(token)
-                yield b'}'
+                    if not first:literal(b',')
+                    first=False;literal(encoded_scalar(key)+b':');token(item)
+                literal(b'}')
             elif kind=='list':
-                yield b'['
-                for index,token in enumerate(value):
-                    if index:yield b','
-                    yield from item(token)
-                yield b']'
-            else:yield canonical(value).encode()
+                literal(b'[')
+                for index,item in enumerate(value):
+                    if index:literal(b',')
+                    token(item)
+                literal(b']')
+            else:literal(encoded_scalar(value))
+            occurrences[identifier]=count;sizes[identifier]=size
+            if size<=inline_bytes and retained+size<=memo_bytes and all(isinstance(part,bytes) or len(plans[part])==1 and isinstance(plans[part][0],bytes) for part in parts):
+                fragment=b''.join(part if isinstance(part,bytes) else plans[part][0] for part in parts)
+                plans[identifier]=(fragment,);retained+=size
+            else:
+                # Coalesce adjacent syntax/scalar fragments only. Never flatten
+                # a referenced large subtree to construct a response-sized value.
+                compact=[];buffer=bytearray()
+                for part in parts:
+                    if isinstance(part,bytes):buffer.extend(part)
+                    else:
+                        if buffer:compact.append(bytes(buffer));buffer.clear()
+                        compact.append(part)
+                if buffer:compact.append(bytes(buffer))
+                plans[identifier]=tuple(compact)
             active.remove(identifier)
-        with self.lock:yield from walk(root.id if isinstance(root,Ref) else Ref(root).id)
+        identifier=root.id if isinstance(root,Ref) else Ref(root).id
+        with self.lock:
+            compile_node(identifier)
+            if occurrences[identifier]>max_nodes:raise ProofError('Proof stream exceeds its explicit node budget')
+            stack=[iter(plans[identifier])]
+            while stack:
+                try:part=next(stack[-1])
+                except StopIteration:stack.pop();continue
+                if isinstance(part,bytes):yield part
+                else:stack.append(iter(plans[part]))
 
     def legacy_digest(self,root,*,omit_keys=()):
         result=hashlib.sha256()

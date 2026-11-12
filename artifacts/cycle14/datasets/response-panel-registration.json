@@ -1,0 +1,114 @@
+{
+  "already_counted_in_primary_test": true,
+  "diagnostic_cases": [
+    {
+      "branches": {
+        "A": [
+          [
+            "e2f2",
+            "g8g7"
+          ]
+        ],
+        "B": [
+          [
+            "e2e3",
+            "g8g7"
+          ]
+        ]
+      },
+      "expected": "Candidate A exposes its king; retain only as an explicitly illegal diagnostic branch",
+      "fen": "4r1k1/8/8/8/8/8/4R3/4K3 w - - 0 1",
+      "id": "controlled-king-exposure"
+    },
+    {
+      "branches": {
+        "A": [
+          [
+            "a1a2"
+          ]
+        ],
+        "B": [
+          [
+            "a1b1"
+          ]
+        ]
+      },
+      "expected": "Missing second/third endpoints remain incomplete",
+      "fen": "4k3/8/8/8/8/8/8/R3K3 w - - 0 1",
+      "id": "controlled-missing-context"
+    }
+  ],
+  "hash": "0b2ef165259cda58b000660ecec36f96b1882984f62c726cccf84d85e497f21f",
+  "horizons": [
+    2,
+    3
+  ],
+  "maximum_responses_per_candidate": 3,
+  "new_independent_groups": 10,
+  "policy": "Retain the registered teacher PV; add up to two hash-sampled legal responses and hash-sampled actor continuations without consulting scores or PLN outputs.",
+  "prediction_or_label_filtering": false,
+  "records": [
+    {
+      "dependence_group": "c14-ancestry:d47ab1b7fa879b0b996bea683d70ed78a817f34bcea8ccb09ad0428b0aadecb6",
+      "id": "c14-puzzle-03qSg",
+      "source_game": "https://lichess.org/rGGCJKXp",
+      "split": "test"
+    },
+    {
+      "dependence_group": "c14-ancestry:153b0e9f4f094ae47f72e32c3ac4708109d2bb1b5bf3f36e9c2106b38bc5b1d3",
+      "id": "c14-puzzle-0ANFN",
+      "source_game": "https://lichess.org/7svZuirZ",
+      "split": "test"
+    },
+    {
+      "dependence_group": "c14-ancestry:17e238d9d3a90b7ac578c57ae67bf35c6ac16b8a8626ebc20abda770e1727f5e",
+      "id": "c14-c10-game-be728bae43522537e089bbcf",
+      "source_game": "game-content:be728bae43522537e089bbcfb6bd778443c924764a6928c5221335a595fc056e",
+      "split": "test"
+    },
+    {
+      "dependence_group": "c14-ancestry:cab2464888ce0d674ec8f962b5aa3c564393263a9720ff4f215bd2db163ea232",
+      "id": "c14-c10-game-16804d0851a8e2ce425cdcb1",
+      "source_game": "game-content:16804d0851a8e2ce425cdcb1b2dd5856af39537513f1e46fc860747889f9f17b",
+      "split": "test"
+    },
+    {
+      "dependence_group": "c14-ancestry:4c9b4b789a92a432d096c3abfd05d604a4e2bbb34d1cf9166a53a3d911b104b0",
+      "id": "c14-c10-game-45763b4652b0996455abc1a5",
+      "source_game": "game-content:45763b4652b0996455abc1a591c0ab426ffa92ddf6961dfdeb660d0d034d0245",
+      "split": "test"
+    },
+    {
+      "dependence_group": "c14-ancestry:ce9905af4afbcf68180c02c564c14b6fb4f381823ea5f2bd4d680714bf78bc4c",
+      "id": "c14-c10-game-e2109e55ab452a9611160c04",
+      "source_game": "game-content:e2109e55ab452a9611160c04f0291327d8b6afecd191b2492dfb1cec62ec6961",
+      "split": "test"
+    },
+    {
+      "dependence_group": "c14-ancestry:cb2567bc37f16b1f1590d1e35cbd87b27f6aadf156cce256b1c0581e4b7e3379",
+      "id": "c14-puzzle-07Vwb",
+      "source_game": "https://lichess.org/8LgxbP42",
+      "split": "test"
+    },
+    {
+      "dependence_group": "c14-ancestry:8d1550c10605ce22d9149c01f014fc9a96c5cf3958e40f6d7a1ad7e16b76f820",
+      "id": "c14-puzzle-03EWF",
+      "source_game": "https://lichess.org/D5BHJCPb",
+      "split": "test"
+    },
+    {
+      "dependence_group": "c14-ancestry:51e3ae8b4bfe6385ac9a1071450bfd410ec9be2ebbfad831069144cda7f54816",
+      "id": "c14-puzzle-08ct3",
+      "source_game": "https://lichess.org/j5DvEzjB",
+      "split": "test"
+    },
+    {
+      "dependence_group": "c14-ancestry:319524931c32106baf5c489913131d75f1669b69364597033ce55fdbfa8ac5e1",
+      "id": "c14-c10-game-7c369dafdf0ffb3f73ebe1d7",
+      "source_game": "game-content:7c369dafdf0ffb3f73ebe1d73eba047fc8177ad9903b00b66bfcfd85dcd3faf6",
+      "split": "test"
+    }
+  ],
+  "schema": "c14-response-registration-v1",
+  "temporal_registration_hash": "d92dba550a6d8a0c86573d979c8197131a6cbe46c6fa50c20dd02712917f0a00"
+}

@@ -74,12 +74,13 @@ def run(out,generation,workers=4,kind='immediate'):
 
 def training_records(out,*,temporal=False,labels='revised'):
     out=Path(out);sources={r['id']:r for r in read_json(out/'datasets/source-pairs.json')['records']}
+    generations=read_json(out/'features/selected-generations.json')
     latest={r['id']:r for r in read_json(out/'labels/immediate-g1/index.json')['records']}
     old={r['id']:r for r in read_json(ROOT/'artifacts/cycle13/datasets/reference-labels.json')['records']}
-    indexes=[read_json(out/'features/immediate-g1/index.json')]
+    indexes=[read_json(out/'features'/generations['immediate']/'index.json')]
     plans={}
     if temporal:
-        indexes.append(read_json(out/'features/temporal-g1/index.json'))
+        indexes.append(read_json(out/'features'/generations['temporal']/'index.json'))
         latest.update({r['id']:r for r in read_json(out/'labels/temporal-g1/index.json')['records']})
         old.update({r['id']:r for r in read_json(ROOT/'artifacts/cycle13/datasets/temporal-labels.json')['records']})
         plans={r['id']:r for r in read_json(out/'datasets/temporal-plans.json')['records']}

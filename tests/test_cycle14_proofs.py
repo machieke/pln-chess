@@ -88,3 +88,15 @@ def test_cycles_nonfinite_numbers_and_invalid_pagination_are_rejected():
         root=store.put({'execution':{'time':123},'proof':{'evidence_ids':['x']}})
         assert store.legacy_digest(root,omit_keys=('execution',))==digest({'proof':{'evidence_ids':['x']}})
         with pytest.raises(ProofError):store.page(root,limit=0)
+
+
+def test_compiled_stream_preserves_order_and_enforces_occurrence_budget():
+    with ProofStore() as store:
+        repeated={'evidence_ids':['same','same'],'values':[1.,-0.,True,None,'Unicode ♜']}
+        root=store.put({'copies':[repeated]*100,'execution':{'elapsed':1.}})
+        expected=canonical({'copies':[repeated]*100,'execution':{'elapsed':1.}}).encode()
+        for memory in (0,64,67108864):
+            assert b''.join(store.canonical_chunks(root,memo_bytes=memory))==expected
+        with pytest.raises(ProofError,match='node budget'):
+            b''.join(store.canonical_chunks(root,max_nodes=50))
+        assert b''.join(store.canonical_chunks(root,omit_keys=('execution',)))==canonical({'copies':[repeated]*100}).encode()
