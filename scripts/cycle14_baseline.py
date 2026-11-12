@@ -5,7 +5,9 @@ from concurrent.futures import ThreadPoolExecutor
 import json
 import os
 from pathlib import Path
+import shutil
 import subprocess
+import sys
 import time
 import xml.etree.ElementTree as ET
 
@@ -64,6 +66,13 @@ def run(out, source, workers=4):
     manifest = read_json(out/'manifest.json')
     assert subprocess.check_output(['git','rev-parse','HEAD'],cwd=source,text=True).strip() == START
     assert not subprocess.check_output(['git','status','--porcelain'],cwd=source,text=True)
+    prerequisite=source/'artifacts/cycle13/baseline/reproduction-receipt.json'
+    prior=read_json(prerequisite)
+    assert prior['passed'] and prior['identity']['accepted_model']==manifest['accepted_legal_version']
+    supplied=out/'baseline/reproduction-receipt.json'
+    supplied.parent.mkdir(parents=True,exist_ok=True)
+    if supplied.exists():assert sha(supplied)==sha(prerequisite)
+    else:shutil.copy2(prerequisite,supplied)
     py = str(source/'.venv/bin/python')
     env = {k:v for k,v in os.environ.items() if not (k.startswith('C') and k.endswith('_OUT'))}
     env.update(PLN_CHESS_ROOT=str(source), PYTHONPATH=f'{source}/src:{source}', TMPDIR='/dev/shm')
@@ -101,15 +110,12 @@ def run(out, source, workers=4):
                 '--source',str(source),'--worker',job['id']])
         with ThreadPoolExecutor(max_workers=workers) as pool:
             for _ in pool.map(shard,population['jobs']): pass
-        from scripts.cycle12_baseline import compare_reports
-        comparisons=[]
-        for job in population['jobs']:
-            comparisons.append(compare_reports(out/f"legal/evaluation/{job['id']}.json.xz",source/job['reference']))
-        receipts=[read_json(out/f"legal/evaluation/{job['id']}.receipt.json") for job in population['jobs']]
-        assert len(receipts)==206 and sum(r['rows'] for r in receipts)==584112
-        assert all(r['passed'] and not r['changes'] for r in receipts)
-        write_json(out/'legal-proof-parity.json',dict(passed=True,shards=206,rows=584112,
-            comparisons=comparisons,exact_native_proof_parity=True))
+        # A separate coordinator avoids forking a process pool from this
+        # multithreaded runner. Every full comparison has a resumable receipt.
+        with (out/'comparison.log').open('w') as stdout, (out/'comparison-resources.txt').open('w') as stderr:
+            subprocess.run(['/usr/bin/time','-v',sys.executable,'-u','-m','scripts.cycle14_baseline_parity',
+                '--out',str(out),'--source',str(source),'--workers',str(min(workers,3))],
+                cwd=ROOT,stdout=stdout,stderr=stderr,check=True)
 
     def tests_and_controls():
         collection=subprocess.check_output([py,'-m','pytest','--collect-only','-q'],cwd=source,env=env,text=True)
@@ -143,6 +149,7 @@ def run(out, source, workers=4):
     write_json(out/'legal-reproduction.json',dict(passed=True,source_head=START,source_clean=True,
         tests=588,legal_shards=206,legal_rows=584112,negative_controls=287,history_controls=27,
         recoveries=2,holdouts=76,proof_parity_sha256=sha(out/'legal-proof-parity.json'),
+        predecessor_prerequisite_sha256=sha(prerequisite),
         scope='Fresh execution under the frozen C13 source; research reproduction is a separate required receipt'))
     print('C14 BASELINE LEGAL REPRODUCTION COMPLETE',flush=True)
 

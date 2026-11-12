@@ -12,11 +12,21 @@ def run(out='artifacts/cycle14'):
     assert legal['source_head']==research['source_head']==manifest['starting_head']
     changed=[p for p,h in manifest['protected_files'].items() if not (ROOT/p).is_file() or sha(ROOT/p)!=h]
     assert not changed
-    completion=read_json(base/'control-completion/verified.json')
-    assert completion['passed']
-    incidents=[dict(kind='orchestration-prerequisite',resolved=True,
-        cause=completion['cause'],receipt='control-completion/verified.json',
-        receipt_sha256=sha(base/'control-completion/verified.json'))]
+    incidents=[]
+    if (base/'control-completion/verified.json').exists():
+        completion=read_json(base/'control-completion/verified.json')
+        assert completion['passed']
+        incidents.append(dict(kind='orchestration-prerequisite',resolved=True,
+            cause=completion['cause'],receipt='control-completion/verified.json',
+            receipt_sha256=sha(base/'control-completion/verified.json')))
+    else:
+        for name in ('negative-history-controls','recoveries-holdouts'):
+            command=read_json(base/'commands'/(name+'.json'))
+            assert command['returncode']==0 and command['identity']['source_head']==manifest['starting_head']
+    if (base/'serial-comparison-interruption.json').exists():
+        incidents.append(dict(kind='comparison-scheduling',resolved=True,
+            receipt='serial-comparison-interruption.json',receipt_sha256=sha(base/'serial-comparison-interruption.json'),
+            scope='Completed native outputs retained; slow serial host comparison recomputed fully in bounded parallel workers.'))
     atomic_json(base/'reproduction-receipt.json',dict(passed=True,starting_head=manifest['starting_head'],
         legal_shards=206,legal_rows=584112,negative_controls=287,history_controls=27,recoveries=2,holdouts=76,tests=588,
         identity=dict(accepted_model=manifest['accepted_legal_version'],production_code_hash=manifest['production_code_hash']),
