@@ -1,0 +1,198 @@
+{
+  "case": "c13-puzzle-03rGf",
+  "requests": [
+    {
+      "body": "{\"fen\":\"6Q1/1p6/4K3/p7/P7/8/3kp3/5rR1 b - - 0 67\",\"preference_model\":\"primary-immediate\",\"mode\":\"operational\",\"max_invocations\":100000,\"unknown_squares\":[],\"view\":\"summary\",\"history\":{\"initial_fen\":\"8/1p4P1/4K3/p7/P7/8/3kp3/5rR1 w - - 1 67\",\"moves\":[\"g7g8q\"],\"source\":\"https://lichess.org/game/yWXCWAq4#133\"},\"move_a\":\"e2e1q\",\"move_b\":\"d2c2\"}",
+      "url": "/cycle14-compare"
+    },
+    {
+      "body": "{\"fen\":\"6Q1/1p6/4K3/p7/P7/8/3kp3/5rR1 b - - 0 67\",\"preference_model\":\"empty\",\"mode\":\"operational\",\"max_invocations\":100000,\"unknown_squares\":[],\"view\":\"summary\",\"history\":{\"initial_fen\":\"8/1p4P1/4K3/p7/P7/8/3kp3/5rR1 w - - 1 67\",\"moves\":[\"g7g8q\"],\"source\":\"https://lichess.org/game/yWXCWAq4#133\"},\"move_a\":\"e2e1q\",\"move_b\":\"d2c2\"}",
+      "url": "/cycle14-compare"
+    }
+  ],
+  "result": {
+    "actor": "Black",
+    "automatic_move_selection": false,
+    "complete": true,
+    "delivery": {
+      "elapsed_seconds": 18.890047841705382,
+      "native_work_reused": false,
+      "original_execution_retained": true,
+      "request_cache_hit": false,
+      "storage_kind": "host-content-addressed-audit-DAG"
+    },
+    "execution": {
+      "budget_scope": "Registered logical node limit applies to each legal, field/concept and preference stage, including warm caches. One request deadline limits all interpreter launches and subsequent stages.",
+      "cache_hits": 1536,
+      "elapsed_seconds": 18.160825166851282,
+      "error": null,
+      "grounded_atoms": 3768,
+      "logical_native_nodes": 2696,
+      "native_invocations": 156,
+      "proof_bytes": 4526759,
+      "stages": [],
+      "truncated": false
+    },
+    "fen": "6Q1/1p6/4K3/p7/P7/8/3kp3/5rR1 b - - 0 67",
+    "horizon": 1,
+    "inspector_model": {
+      "requested": "empty",
+      "trained": false,
+      "version": "09dd2e3179cd64a54e9e17a10a0058c240560af122c68a36fc2647ca7e11f886"
+    },
+    "joint_proof_complete": false,
+    "legality": {
+      "A": {
+        "abstention_reason": [],
+        "classification": "supported-legal",
+        "evidence_state": "supported",
+        "gaps": [
+          "Conditional local support; global safety is unproved. No observed threat is not evidence of safety.",
+          "No verified independent-premise conjunction.",
+          "No native proof of universal king safety from separate opponent frames."
+        ],
+        "legal_move_truth_value": {
+          "confidence": 0.4950000000000001,
+          "strength": 0.9750000000000001
+        },
+        "model_version": "a6d3d826d93ee01b8accb7dc9948c0bd9bb0048cc54755bf45e92ec82502743d",
+        "move": "e2e1q",
+        "negative_proof_complete": false,
+        "proof_complete": false,
+        "proof_status": "learned-conditional",
+        "raw_stv": {
+          "confidence": 0.4950000000000001,
+          "strength": 0.9750000000000001
+        },
+        "runtime_version": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+        "status": "native-partial / evidence-supported"
+      },
+      "B": {
+        "abstention_reason": [],
+        "classification": "supported-legal",
+        "evidence_state": "supported",
+        "gaps": [
+          "Conditional local support; global safety is unproved. No observed threat is not evidence of safety.",
+          "No verified independent-premise conjunction.",
+          "No native proof of universal king safety from separate opponent frames."
+        ],
+        "legal_move_truth_value": {
+          "confidence": 0.9783282950423215,
+          "strength": 0.9996941896024465
+        },
+        "model_version": "a6d3d826d93ee01b8accb7dc9948c0bd9bb0048cc54755bf45e92ec82502743d",
+        "move": "d2c2",
+        "negative_proof_complete": false,
+        "proof_complete": false,
+        "proof_status": "learned-conditional",
+        "raw_stv": {
+          "confidence": 0.9783282950423215,
+          "strength": 0.9996941896024465
+        },
+        "runtime_version": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+        "status": "native-partial / evidence-supported"
+      }
+    },
+    "model_versions": {
+      "concept": "b476a14b9c7b7cab77b1c547d1c70c0fdf623096df3ef45135835ee649222b08",
+      "field": "d38e6c3c26e8d1f2e38a62d288394cb920038649041ec8d2cc5f9eb9d0a314f3",
+      "fork": "1ec0a73a377c7efa68fb5ac033677192a6cb287970104028604d9b3a6115fca3",
+      "legal": "a6d3d826d93ee01b8accb7dc9948c0bd9bb0048cc54755bf45e92ec82502743d",
+      "preference": "09dd2e3179cd64a54e9e17a10a0058c240560af122c68a36fc2647ca7e11f886"
+    },
+    "moves": {
+      "A": "e2e1q",
+      "B": "d2c2"
+    },
+    "packet_id": "relative-comparison:dfe4f81f1e7612458995d02c269ba91b4e71f0e4eb9c82a906bff13c68c7103c",
+    "preference": {
+      "actionable_move": null,
+      "channels": {
+        "A": {
+          "classification": "unknown",
+          "raw_stv": {
+            "confidence": 0,
+            "strength": 0.5
+          }
+        },
+        "B": {
+          "classification": "unknown",
+          "raw_stv": {
+            "confidence": 0,
+            "strength": 0.5
+          }
+        },
+        "no-demonstrated-preference": {
+          "classification": "unknown",
+          "raw_stv": {
+            "confidence": 0,
+            "strength": 0.5
+          }
+        }
+      },
+      "conditional_proof_complete": false,
+      "contradiction": false,
+      "dependence_groups": [],
+      "descriptor": {
+        "abstraction": "relational",
+        "concept_scope": "not-used",
+        "coverage": {
+          "attack": "partial",
+          "defense": "partial",
+          "king-exposure": "partial",
+          "mobility": "partial"
+        },
+        "features": {
+          "attack": 1,
+          "defense": 1,
+          "king-exposure": 0,
+          "mobility": 1
+        },
+        "grammar": "relative-preference-contrasts-v13",
+        "horizon": 1
+      },
+      "evidence_ids": [],
+      "gaps": [
+        "Legality beliefs remain separate and may be unknown or partial; preference cannot certify a move.",
+        "before: 34 unknown or incomplete queried field relations.",
+        "A: 12 unknown or incomplete queried field relations.",
+        "A: bounded concept enumeration omits candidates; omission is not negative evidence.",
+        "B: 33 unknown or incomplete queried field relations.",
+        "B: bounded concept enumeration omits candidates; omission is not negative evidence.",
+        "No learned conditional matches this relative packet."
+      ],
+      "joint_proof_complete": false,
+      "model_version": "09dd2e3179cd64a54e9e17a10a0058c240560af122c68a36fc2647ca7e11f886",
+      "no_preference_supported": false,
+      "observation_id": "preference-observation:fbcd0644a454aa9a378fb2101dab02559768bb073acab8efe58df547fd7ac138",
+      "opposing_training_labels": false,
+      "proof_id": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "proof_status": "no-native-conditional-proof",
+      "rule_id": "preference-rule:c2eccf3de0c7b420f8b86de6df4c958062aeaf8a16d665c7ef53a14c318fd54e",
+      "runtime_version": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+      "scope": "Native conditional on an explicit host-assembled relative count packet; neither a joint strategic theorem nor a legal-move decision.",
+      "status": "indeterminate",
+      "strategic_score": null,
+      "training_provenance": {
+        "dataset_hash": null,
+        "ledger_digest": "",
+        "training_examples": 0
+      },
+      "truth_value_origin": "absence-prior"
+    },
+    "proof_handle": "proof-request:c9bc1d282a157b055a255ed4acecff15d5fbbe47cccd0b4b98ee519a7ad34365",
+    "proof_root": "dd35b7f3a778bffb86c1bf144c75926d7019dbb39555d41d8dff4c05858cf66f",
+    "proof_store_schema": "pln-proof-dag-v14",
+    "runtime_version": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+    "schema": "compact-pairwise-inspection-v14",
+    "scope": "Experimental conditional evidence; legal beliefs and uncertainty remain separate.",
+    "view": "summary"
+  },
+  "scope": "No complete native conditional application \u00b7 joint strategic proof incomplete \u00b7 1 supplied ply/plies.",
+  "verdict": "Indeterminate comparison",
+  "viewport": {
+    "documentWidth": 375,
+    "height": 844,
+    "width": 390
+  }
+}

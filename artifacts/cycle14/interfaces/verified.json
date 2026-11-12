@@ -1,0 +1,146 @@
+{
+  "actual_cli_processes": 7,
+  "automatic_move_selection": false,
+  "browser_evidence": "ui/verified.json",
+  "browser_receipt_sha256": "3e42b1f1f28f371f02f53c83a1ddc374bb5ea8852aa94d2e77f02b124b66b057",
+  "commands": [
+    {
+      "argv": [
+        "/data/pln-chess-cycle14-final/.venv/bin/python",
+        "-m",
+        "pln_chess",
+        "compact-compare",
+        "--input",
+        "/data/pln-chess-cycle6-delivery/artifacts/cycle14/interfaces/compare-input.json",
+        "--store",
+        "/data/pln-chess-cycle6-delivery/artifacts/cycle14/interfaces/proofs.sqlite"
+      ],
+      "elapsed_seconds": 13.629610538482666,
+      "name": "compare",
+      "output_sha256": "8ab6adf5085b8388834453f9f277cb861835dc5820f0dd43cfba94bd1cf5a1eb",
+      "returncode": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/data/pln-chess-cycle14-final/.venv/bin/python",
+        "-m",
+        "pln_chess",
+        "compact-compare",
+        "--input",
+        "/data/pln-chess-cycle6-delivery/artifacts/cycle14/interfaces/compare-input.json",
+        "--store",
+        "/data/pln-chess-cycle6-delivery/artifacts/cycle14/interfaces/proofs.sqlite"
+      ],
+      "elapsed_seconds": 3.395160436630249,
+      "name": "restart-compare",
+      "output_sha256": "1082939619119e5f27167cf8e4fc7669b8570bdee69d3148a3190f2b82222d07",
+      "returncode": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/data/pln-chess-cycle14-final/.venv/bin/python",
+        "-m",
+        "pln_chess",
+        "proof-view",
+        "--handle",
+        "proof-request:83a3e4c80206ed76dee51c53ee8a1cfbdac8efabdeba4afd83879ef745dbd651",
+        "--store",
+        "/data/pln-chess-cycle6-delivery/artifacts/cycle14/interfaces/proofs.sqlite",
+        "--view",
+        "proof_graph",
+        "--offset",
+        "16",
+        "--limit",
+        "16"
+      ],
+      "elapsed_seconds": 2.557469367980957,
+      "name": "graph-page",
+      "output_sha256": "1e39df9bf0795cde63248d80cb04e721f404839132a6aba22958c13965ace3ec",
+      "returncode": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/data/pln-chess-cycle14-final/.venv/bin/python",
+        "-m",
+        "pln_chess",
+        "proof-view",
+        "--handle",
+        "proof-request:83a3e4c80206ed76dee51c53ee8a1cfbdac8efabdeba4afd83879ef745dbd651",
+        "--store",
+        "/data/pln-chess-cycle6-delivery/artifacts/cycle14/interfaces/proofs.sqlite",
+        "--view",
+        "full_archive"
+      ],
+      "elapsed_seconds": 7.059850692749023,
+      "name": "full-archive",
+      "output_sha256": "dd3455eca25bba33aca06c339fea594864fd94936e3834aca23889756fa5898c",
+      "returncode": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/data/pln-chess-cycle14-final/.venv/bin/python",
+        "-m",
+        "pln_chess",
+        "proof-expand",
+        "--input",
+        "/data/pln-chess-cycle6-delivery/artifacts/cycle14/interfaces/full-archive.json",
+        "--output",
+        "/data/pln-chess-cycle6-delivery/artifacts/cycle14/interfaces/reconstructed.json"
+      ],
+      "elapsed_seconds": 7.247685670852661,
+      "name": "reconstruct",
+      "output_sha256": "f35e1416b487d77755067d78e7411d7bf3948c8c98d12e4b53cd2e0853e9445a",
+      "returncode": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/data/pln-chess-cycle14-final/.venv/bin/python",
+        "-m",
+        "pln_chess",
+        "compact-continuations",
+        "--input",
+        "/data/pln-chess-cycle6-delivery/artifacts/cycle14/interfaces/temporal-input.json",
+        "--store",
+        "/data/pln-chess-cycle6-delivery/artifacts/cycle14/interfaces/proofs.sqlite"
+      ],
+      "elapsed_seconds": 35.024163484573364,
+      "name": "continuations",
+      "output_sha256": "8702e5e7092426e1c9e89f9baed4f495db89b6772ebc1944898bb777bbbaa44c",
+      "returncode": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/data/pln-chess-cycle14-final/.venv/bin/python",
+        "-m",
+        "pln_chess",
+        "compact-compare",
+        "--input",
+        "/data/pln-chess-cycle6-delivery/artifacts/cycle14/interfaces/removal-input.json",
+        "--store",
+        "/data/pln-chess-cycle6-delivery/artifacts/cycle14/interfaces/proofs.sqlite"
+      ],
+      "elapsed_seconds": 11.487676620483398,
+      "name": "preference-evidence-removed",
+      "output_sha256": "dde27d3195a30a4c87ba1db3f77733d49378f63a676b5b479d61fdac03319b38",
+      "returncode": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "durable_restart_reuse": true,
+  "empty_evidence_counterfactual": true,
+  "exact_archive_reconstruction": true,
+  "experimental_preference_is_opt_in": true,
+  "legal_model": "a6d3d826d93ee01b8accb7dc9948c0bd9bb0048cc54755bf45e92ec82502743d",
+  "paginated_graph": true,
+  "passed": true,
+  "production_code_hash": "e88ff7969885be101af2ceedbbdf5d5499f4253b361a8cee18ff1814f055282c",
+  "scope": "Actual separate CLI processes plus durable proof store. Browser verification is separately recorded using ProofShot.",
+  "trained_immediate_model": "115d224536c5418d4d05daef7c3c5c1a7ab1a796d0046a1a06237e981356ccc8",
+  "trained_temporal_model": "1d9d0646cbe4f352b1c98a7650ff8834a9c343ffadcab04420867a97990c7a03"
+}

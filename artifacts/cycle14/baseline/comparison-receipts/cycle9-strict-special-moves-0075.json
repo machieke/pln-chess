@@ -1,0 +1,223 @@
+{
+  "comparison": {
+    "artifact": "/data/pln-chess-cycle6-delivery/artifacts/cycle14/baseline/legal/evaluation/cycle9-strict-special-moves-0075.json.xz",
+    "exact_native_proof_parity": true,
+    "metrics": {
+      "abstention_rate": 0.35652173913043483,
+      "candidates": 230,
+      "classification_counts": {
+        "supported-illegal": 148,
+        "unknown": 82
+      },
+      "coverage": 0.6434782608695652,
+      "empty_terminal_exact": 0,
+      "exact_move_set_accuracy": 0.0,
+      "f1": 0.0,
+      "false_illegal": 0,
+      "false_legal_rate": 0.0,
+      "false_negative_including_abstention": 75,
+      "false_positive": 0,
+      "grounded_atoms": 11429,
+      "in_board_only": {
+        "abstention_rate": 0.640625,
+        "candidates": 128,
+        "coverage": 0.359375,
+        "exact_move_set_accuracy": 0.0,
+        "f1": 0.0,
+        "false_illegal": 0,
+        "false_legal_rate": 0.0,
+        "false_negative_including_abstention": 75,
+        "false_positive": 0,
+        "grounded_atoms": 11429,
+        "incomplete": 0,
+        "incomplete_positions": 0,
+        "latency_seconds": {
+          "p50": 5.670735066756606,
+          "p95": 6.073284160345793,
+          "p99": 6.073284160345793
+        },
+        "native_invocations": 1182,
+        "precision": null,
+        "recall": 0.0,
+        "selective_accuracy": 1.0,
+        "self_check_false_legal": 0,
+        "true_negative": 46,
+        "true_positive": 0,
+        "unknown": 82
+      },
+      "incomplete": 0,
+      "incomplete_positions": 0,
+      "latency_seconds": {
+        "p50": 5.670735066756606,
+        "p95": 6.073284160345793,
+        "p99": 6.073284160345793
+      },
+      "native_invocations": 1182,
+      "nonempty_exact": 0,
+      "per_family": {
+        "castle-transit-attack": {
+          "abstention_rate": 0.35652173913043483,
+          "candidates": 230,
+          "coverage": 0.6434782608695652,
+          "exact_move_set_accuracy": 0.0,
+          "f1": 0.0,
+          "false_illegal": 0,
+          "false_legal_rate": 0.0,
+          "false_negative_including_abstention": 75,
+          "false_positive": 0,
+          "grounded_atoms": 11429,
+          "incomplete": 0,
+          "incomplete_positions": 0,
+          "latency_seconds": {
+            "p50": 5.670735066756606,
+            "p95": 6.073284160345793,
+            "p99": 6.073284160345793
+          },
+          "native_invocations": 1182,
+          "precision": null,
+          "recall": 0.0,
+          "selective_accuracy": 1.0,
+          "self_check_false_legal": 0,
+          "true_negative": 148,
+          "true_positive": 0,
+          "unknown": 82
+        }
+      },
+      "per_piece": {
+        "King": {
+          "abstention_rate": 0.43999999999999995,
+          "candidates": 50,
+          "coverage": 0.56,
+          "exact_move_set_accuracy": null,
+          "f1": 0.0,
+          "false_illegal": 0,
+          "false_legal_rate": 0.0,
+          "false_negative_including_abstention": 22,
+          "false_positive": 0,
+          "grounded_atoms": 0,
+          "incomplete": 0,
+          "incomplete_positions": 0,
+          "latency_seconds": {
+            "p50": null,
+            "p95": null,
+            "p99": null
+          },
+          "native_invocations": 0,
+          "precision": null,
+          "recall": 0.0,
+          "selective_accuracy": 1.0,
+          "self_check_false_legal": 0,
+          "true_negative": 28,
+          "true_positive": 0,
+          "unknown": 22
+        },
+        "Knight": {
+          "abstention_rate": 0.475,
+          "candidates": 40,
+          "coverage": 0.525,
+          "exact_move_set_accuracy": null,
+          "f1": 0.0,
+          "false_illegal": 0,
+          "false_legal_rate": 0.0,
+          "false_negative_including_abstention": 17,
+          "false_positive": 0,
+          "grounded_atoms": 0,
+          "incomplete": 0,
+          "incomplete_positions": 0,
+          "latency_seconds": {
+            "p50": null,
+            "p95": null,
+            "p99": null
+          },
+          "native_invocations": 0,
+          "precision": null,
+          "recall": 0.0,
+          "selective_accuracy": 1.0,
+          "self_check_false_legal": 0,
+          "true_negative": 21,
+          "true_positive": 0,
+          "unknown": 19
+        },
+        "Rook": {
+          "abstention_rate": 0.2928571428571428,
+          "candidates": 140,
+          "coverage": 0.7071428571428572,
+          "exact_move_set_accuracy": null,
+          "f1": 0.0,
+          "false_illegal": 0,
+          "false_legal_rate": 0.0,
+          "false_negative_including_abstention": 36,
+          "false_positive": 0,
+          "grounded_atoms": 0,
+          "incomplete": 0,
+          "incomplete_positions": 0,
+          "latency_seconds": {
+            "p50": null,
+            "p95": null,
+            "p99": null
+          },
+          "native_invocations": 0,
+          "precision": null,
+          "recall": 0.0,
+          "selective_accuracy": 1.0,
+          "self_check_false_legal": 0,
+          "true_negative": 99,
+          "true_positive": 0,
+          "unknown": 41
+        }
+      },
+      "precision": null,
+      "promotion_specific": {
+        "abstention_rate": 0,
+        "candidates": 0,
+        "coverage": 0,
+        "exact_move_set_accuracy": null,
+        "f1": null,
+        "false_illegal": 0,
+        "false_legal_rate": null,
+        "false_negative_including_abstention": 0,
+        "false_positive": 0,
+        "grounded_atoms": 0,
+        "incomplete": 0,
+        "incomplete_positions": 0,
+        "latency_seconds": {
+          "p50": null,
+          "p95": null,
+          "p99": null
+        },
+        "native_invocations": 0,
+        "precision": null,
+        "recall": null,
+        "selective_accuracy": null,
+        "self_check_false_legal": 0,
+        "true_negative": 0,
+        "true_positive": 0,
+        "unknown": 0
+      },
+      "proof_coverage": {
+        "negative-supported": 148,
+        "unknown": 82
+      },
+      "recall": 0.0,
+      "selective_accuracy": 1.0,
+      "self_check_false_legal": 0,
+      "true_negative": 148,
+      "true_positive": 0,
+      "unknown": 82
+    },
+    "positions": 5,
+    "proof_hash": "6c26ac38f27c7e24832d52b84e8fd9b5552d4ef0431e970b36f7939e8e292bd3",
+    "reference": "/data/pln-chess-cycle14-baseline/artifacts/cycle13/current/legal/evaluation/cycle9-strict-special-moves-0075.json.xz",
+    "reference_sha256": "c9933feb6ecea878d66462b990a5b40c7a4570aeef4144cc6d1a795c14ed1229",
+    "rows": 230,
+    "sha256": "c81abc7da02f4e42b35eb601686a0992c69ef884360ec1ca0ce7a11b15a99356",
+    "validation": "Native worker full-proof rehash receipts bound to artifact bytes; final comparison checks every ordered canonical DAG node and every static candidate/provenance field."
+  },
+  "identity": {
+    "actual_sha256": "c81abc7da02f4e42b35eb601686a0992c69ef884360ec1ca0ce7a11b15a99356",
+    "comparator_sha256": "02aa325853723861f96d46ec710101dac7052a0e23d57e6e029b7f68f71d945d",
+    "reference_sha256": "c9933feb6ecea878d66462b990a5b40c7a4570aeef4144cc6d1a795c14ed1229"
+  },
+  "orchestration_sha256": "5a00f426bf00ba2903cdcb316803664cb5ca99acf549fb688a48ed839a98501e",
+  "passed": true
+}

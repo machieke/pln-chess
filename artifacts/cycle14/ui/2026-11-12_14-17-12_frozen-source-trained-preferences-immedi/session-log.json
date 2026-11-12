@@ -1,0 +1,207 @@
+[
+  {
+    "action": "snapshot -i",
+    "relativeTimeSec": 3.6,
+    "timestamp": "2026-11-12T14:17:23.540Z"
+  },
+  {
+    "action": "eval JSON.stringify({url:location.href,links:Array.from(document.querySelectorAll(\"a\")).map(a=>({text:a.textContent,href:a.getAttribute(\"href\")}))})",
+    "relativeTimeSec": 10.7,
+    "timestamp": "2026-11-12T14:17:30.638Z"
+  },
+  {
+    "action": "eval document.querySelector(\"a[href=\\\"/compact-preferences\\\"]\").click()",
+    "relativeTimeSec": 11.2,
+    "timestamp": "2026-11-12T14:17:31.179Z"
+  },
+  {
+    "action": "open http://localhost:8794/compact-preferences",
+    "relativeTimeSec": 32.4,
+    "timestamp": "2026-11-12T14:17:52.350Z"
+  },
+  {
+    "action": "set viewport 1280 900",
+    "relativeTimeSec": 94.1,
+    "timestamp": "2026-11-12T14:18:54.029Z"
+  },
+  {
+    "action": "eval window.c14Requests=[];const originalFetch=window.fetch.bind(window);window.fetch=(url,options)=>{if(options?.body&&String(url).includes(\"cycle14-\"))window.c14Requests.push({url:String(url),body:options.body});return originalFetch(url,options)};const index=catalog.examples.findIndex(x=>x.id===\"c13-puzzle-03rGf\");if(index<0)throw Error(\"Training illustration missing\");document.getElementById(\"example\").value=String(index);choose();document.getElementById(\"model\").value=\"primary-immediate\";JSON.stringify({case:selected.id,split:selected.split,models:catalog.models,width:innerWidth,height:innerHeight,overflow:document.documentElement.scrollWidth>innerWidth})",
+    "relativeTimeSec": 94.8,
+    "timestamp": "2026-11-12T14:18:54.750Z"
+  },
+  {
+    "action": "screenshot trained-desktop-ready.png",
+    "relativeTimeSec": 95.5,
+    "timestamp": "2026-11-12T14:18:55.433Z"
+  },
+  {
+    "action": "eval document.getElementById(\"compare\").click();\"submitted\"",
+    "relativeTimeSec": 96.1,
+    "timestamp": "2026-11-12T14:18:56.089Z"
+  },
+  {
+    "action": "eval JSON.stringify({status:document.getElementById(\"status\").textContent,result:window.plnCompactResult?{status:result.preference?.status,channels:result.preference?.channels,model:result.inspector_model,execution:result.execution.truncated}:null})",
+    "relativeTimeSec": 109.6,
+    "timestamp": "2026-11-12T14:19:09.591Z"
+  },
+  {
+    "action": "eval JSON.stringify({status:document.getElementById(\"status\").textContent,result:window.plnCompactResult?{status:result.preference?.status,channels:result.preference?.channels,model:result.inspector_model,execution:result.execution.truncated}:null})",
+    "relativeTimeSec": 121.3,
+    "timestamp": "2026-11-12T14:19:21.284Z"
+  },
+  {
+    "action": "eval JSON.stringify({status:document.getElementById(\"status\").textContent,result:window.plnCompactResult?{status:result.preference?.status,channels:result.preference?.channels,model:result.inspector_model,execution:result.execution.truncated}:null})",
+    "relativeTimeSec": 155.5,
+    "timestamp": "2026-11-12T14:19:55.496Z"
+  },
+  {
+    "action": "eval window.c14TrainedHandle=result.proof_handle;document.getElementById(\"results\").scrollIntoView();JSON.stringify({case:selected.id,split:selected.split,result:result,requests:window.c14Requests,viewport:{width:innerWidth,height:innerHeight,documentWidth:document.documentElement.scrollWidth},verdict:document.getElementById(\"verdict\").textContent,scope:document.getElementById(\"scope\").textContent})",
+    "relativeTimeSec": 180,
+    "timestamp": "2026-11-12T14:20:20.009Z"
+  },
+  {
+    "action": "screenshot trained-immediate-desktop.png",
+    "relativeTimeSec": 180.6,
+    "timestamp": "2026-11-12T14:20:20.570Z"
+  },
+  {
+    "action": "eval document.getElementById(\"model\").value=\"empty\";document.getElementById(\"compare\").click();\"empty evidence submitted\"",
+    "relativeTimeSec": 181.1,
+    "timestamp": "2026-11-12T14:20:21.099Z"
+  },
+  {
+    "action": "eval JSON.stringify({status:document.getElementById(\"status\").textContent,model:result.inspector_model,statusAfterRemoval:result.preference?.status})",
+    "relativeTimeSec": 218.4,
+    "timestamp": "2026-11-12T14:20:58.374Z"
+  },
+  {
+    "action": "set viewport 390 844",
+    "relativeTimeSec": 232,
+    "timestamp": "2026-11-12T14:21:11.988Z"
+  },
+  {
+    "action": "eval document.getElementById(\"results\").scrollIntoView();JSON.stringify({case:selected.id,result:result,requests:window.c14Requests,viewport:{width:innerWidth,height:innerHeight,documentWidth:document.documentElement.scrollWidth},verdict:document.getElementById(\"verdict\").textContent,scope:document.getElementById(\"scope\").textContent})",
+    "relativeTimeSec": 232.9,
+    "timestamp": "2026-11-12T14:21:12.889Z"
+  },
+  {
+    "action": "screenshot empty-evidence-mobile.png",
+    "relativeTimeSec": 233.7,
+    "timestamp": "2026-11-12T14:21:13.670Z"
+  },
+  {
+    "action": "eval document.getElementById(\"restore-handle\").value=window.c14TrainedHandle;document.getElementById(\"restore\").click();\"restore trained proof submitted\"",
+    "relativeTimeSec": 234.4,
+    "timestamp": "2026-11-12T14:21:14.323Z"
+  },
+  {
+    "action": "eval if(result.proof_handle!==window.c14TrainedHandle)throw Error(\"Restore pending\");document.getElementById(\"graph\").click();\"graph requested\"",
+    "relativeTimeSec": 246,
+    "timestamp": "2026-11-12T14:21:25.936Z"
+  },
+  {
+    "action": "eval JSON.stringify({status:document.getElementById(\"page-status\").textContent,nextDisabled:document.getElementById(\"next\").disabled,nodes:document.getElementById(\"nodes\").children.length})",
+    "relativeTimeSec": 257.4,
+    "timestamp": "2026-11-12T14:21:37.387Z"
+  },
+  {
+    "action": "eval document.getElementById(\"next\").click();document.getElementById(\"proof-panel\").scrollIntoView();\"next page requested\"",
+    "relativeTimeSec": 258.3,
+    "timestamp": "2026-11-12T14:21:38.305Z"
+  },
+  {
+    "action": "eval JSON.stringify({handle:result.proof_handle,pageStatus:document.getElementById(\"page-status\").textContent,nodes:document.getElementById(\"nodes\").children.length,offset:pageOffset,nextOffset,viewport:{width:innerWidth,height:innerHeight,documentWidth:document.documentElement.scrollWidth}})",
+    "relativeTimeSec": 269.1,
+    "timestamp": "2026-11-12T14:21:49.023Z"
+  },
+  {
+    "action": "screenshot proof-pagination-mobile.png",
+    "relativeTimeSec": 269.8,
+    "timestamp": "2026-11-12T14:21:49.747Z"
+  },
+  {
+    "action": "upload #archive-file /data/pln-chess-cycle6-delivery/artifacts/cycle14/ui/browser-downloads/final-trained/pln-cycle14-proof-archive.json",
+    "relativeTimeSec": 304.6,
+    "timestamp": "2026-11-12T14:22:24.620Z"
+  },
+  {
+    "action": "eval JSON.stringify({archiveStatus:document.getElementById(\"archive-status\").textContent,reconstruction:window.plnCompactReconstruction})",
+    "relativeTimeSec": 323.7,
+    "timestamp": "2026-11-12T14:22:43.633Z"
+  },
+  {
+    "action": "eval document.getElementById(\"archive-status\").scrollIntoView();\"reconstruction visible\"",
+    "relativeTimeSec": 364.3,
+    "timestamp": "2026-11-12T14:23:24.265Z"
+  },
+  {
+    "action": "screenshot exact-reconstruction-mobile.png",
+    "relativeTimeSec": 364.9,
+    "timestamp": "2026-11-12T14:23:24.870Z"
+  },
+  {
+    "action": "set viewport 1280 900",
+    "relativeTimeSec": 365.6,
+    "timestamp": "2026-11-12T14:23:25.527Z"
+  },
+  {
+    "action": "eval document.getElementById(\"example\").value=String(catalog.examples.findIndex(x=>x.id===\"controlled-relative-rook\"));choose();document.getElementById(\"model\").value=\"primary-temporal\";document.getElementById(\"continue\").click();document.getElementById(\"status\").scrollIntoView();\"trained temporal request submitted\"",
+    "relativeTimeSec": 366.4,
+    "timestamp": "2026-11-12T14:23:26.366Z"
+  },
+  {
+    "action": "eval JSON.stringify({status:document.getElementById(\"status\").textContent,model:result.inspector_model,comparisons:result.comparisons?.length})",
+    "relativeTimeSec": 417.1,
+    "timestamp": "2026-11-12T14:24:17.025Z"
+  },
+  {
+    "action": "eval document.getElementById(\"comparison\").value=\"2\";renderComparison();document.getElementById(\"results\").scrollIntoView();JSON.stringify({case:selected.id,result:result,requests:window.c14Requests,selectedHorizon:comparisons[Number(document.getElementById(\"comparison\").value)].horizon,verdict:document.getElementById(\"verdict\").textContent,scope:document.getElementById(\"scope\").textContent,viewport:{width:innerWidth,height:innerHeight,documentWidth:document.documentElement.scrollWidth}})",
+    "relativeTimeSec": 446.6,
+    "timestamp": "2026-11-12T14:24:46.556Z"
+  },
+  {
+    "action": "screenshot trained-three-ply-desktop.png",
+    "relativeTimeSec": 449.8,
+    "timestamp": "2026-11-12T14:24:49.812Z"
+  },
+  {
+    "action": "set viewport 390 844",
+    "relativeTimeSec": 450.5,
+    "timestamp": "2026-11-12T14:24:50.516Z"
+  },
+  {
+    "action": "eval document.getElementById(\"comparison\").value=\"1\";renderComparison();document.getElementById(\"verdict\").scrollIntoView();JSON.stringify({horizon:comparisons[Number(document.getElementById(\"comparison\").value)].horizon,verdict:document.getElementById(\"verdict\").textContent,scope:document.getElementById(\"scope\").textContent,width:innerWidth,documentWidth:document.documentElement.scrollWidth})",
+    "relativeTimeSec": 451.4,
+    "timestamp": "2026-11-12T14:24:51.354Z"
+  },
+  {
+    "action": "screenshot trained-two-ply-mobile.png",
+    "relativeTimeSec": 451.9,
+    "timestamp": "2026-11-12T14:24:51.910Z"
+  },
+  {
+    "action": "eval JSON.stringify({case:selected.id,result:{schema:result.schema,model_versions:result.model_versions,runtime_version:result.runtime_version,inspector_model:result.inspector_model,proof_handle:result.proof_handle,proof_root:result.proof_root,execution:{truncated:result.execution.truncated,error:result.execution.error},global_robust_preference:result.global_robust_preference,automatic_move_selection:result.automatic_move_selection,immediate:result.immediate.preference.status,comparisons:result.comparisons.map(x=>({horizon:x.horizon,branches:x.branches,status:x.preference.status,channels:x.preference.channels,conditional_proof_complete:x.preference.conditional_proof_complete})),branch_coverage:result.branch_coverage},requests:window.c14Requests,selectedHorizon:comparisons[Number(document.getElementById(\"comparison\").value)].horizon,verdict:document.getElementById(\"verdict\").textContent,scope:document.getElementById(\"scope\").textContent,viewport:{width:innerWidth,height:innerHeight,documentWidth:document.documentElement.scrollWidth}})",
+    "relativeTimeSec": 471.3,
+    "timestamp": "2026-11-12T14:25:11.243Z"
+  },
+  {
+    "action": "eval JSON.stringify({case:selected.id,result:{schema:result.schema,model_versions:result.model_versions,runtime_version:result.runtime_version,inspector_model:result.inspector_model,proof_handle:result.proof_handle,proof_root:result.proof_root,execution:{truncated:result.execution.truncated,error:result.execution.error},global_robust_preference:result.global_robust_preference,automatic_move_selection:result.automatic_move_selection,immediate:result.immediate.preference.status,comparisons:result.comparisons.map(x=>({horizon:x.horizon,branches:x.branches,status:x.preference.status,channels:x.preference.channels,conditional_proof_complete:x.preference.conditional_proof_complete})),branch_coverage:result.branch_coverage},requests:window.c14Requests.filter(x=>/cycle14-(compare|continuations)$/.test(x.url)),selectedHorizon:comparisons[Number(document.getElementById(\"comparison\").value)].horizon,verdict:document.getElementById(\"verdict\").textContent,scope:document.getElementById(\"scope\").textContent,viewport:{width:innerWidth,height:innerHeight,documentWidth:document.documentElement.scrollWidth}})",
+    "relativeTimeSec": 505.7,
+    "timestamp": "2026-11-12T14:25:45.641Z"
+  },
+  {
+    "action": "set viewport 1280 900",
+    "relativeTimeSec": 523.5,
+    "timestamp": "2026-11-12T14:26:03.424Z"
+  },
+  {
+    "action": "eval document.getElementById(\"comparison\").value=\"2\";renderComparison();document.getElementById(\"results\").scrollIntoView();JSON.stringify({horizon:comparisons[Number(document.getElementById(\"comparison\").value)].horizon,verdict:document.getElementById(\"verdict\").textContent,scope:document.getElementById(\"scope\").textContent,width:innerWidth,height:innerHeight,documentWidth:document.documentElement.scrollWidth})",
+    "relativeTimeSec": 524.4,
+    "timestamp": "2026-11-12T14:26:04.352Z"
+  },
+  {
+    "action": "screenshot trained-three-ply-final-desktop.png",
+    "relativeTimeSec": 525.1,
+    "timestamp": "2026-11-12T14:26:05.088Z"
+  }
+]

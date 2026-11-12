@@ -1,0 +1,190 @@
+{
+  "actor": "White",
+  "automatic_move_selection": false,
+  "complete": true,
+  "delivery": {
+    "elapsed_seconds": 0.16068083606660366,
+    "native_work_reused": true,
+    "original_execution_retained": true,
+    "request_cache_hit": true,
+    "storage_kind": "host-content-addressed-audit-DAG"
+  },
+  "execution": {
+    "budget_scope": "Registered logical node limit applies to each legal, field/concept and preference stage, including warm caches. One request deadline limits all interpreter launches and subsequent stages.",
+    "cache_hits": 829,
+    "elapsed_seconds": 9.655896408483386,
+    "error": null,
+    "grounded_atoms": 1603,
+    "logical_native_nodes": 1022,
+    "native_invocations": 79,
+    "proof_bytes": 2777702,
+    "stages": [],
+    "truncated": false
+  },
+  "fen": "4k3/8/8/8/8/8/8/R3K3 w - - 0 1",
+  "horizon": 1,
+  "inspector_model": {
+    "requested": "primary-immediate",
+    "trained": true,
+    "version": "115d224536c5418d4d05daef7c3c5c1a7ab1a796d0046a1a06237e981356ccc8"
+  },
+  "joint_proof_complete": false,
+  "legality": {
+    "A": {
+      "abstention_reason": [],
+      "classification": "supported-legal",
+      "evidence_state": "supported",
+      "gaps": [
+        "Conditional local support; global safety is unproved. No observed threat is not evidence of safety.",
+        "No verified independent-premise conjunction.",
+        "No native proof of universal king safety from separate opponent frames."
+      ],
+      "legal_move_truth_value": {
+        "confidence": 0.9304166666666666,
+        "strength": 0.9983606557377048
+      },
+      "model_version": "a6d3d826d93ee01b8accb7dc9948c0bd9bb0048cc54755bf45e92ec82502743d",
+      "move": "a1a2",
+      "negative_proof_complete": false,
+      "proof_complete": false,
+      "proof_status": "learned-conditional",
+      "raw_stv": {
+        "confidence": 0.9304166666666666,
+        "strength": 0.9983606557377048
+      },
+      "runtime_version": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+      "status": "native-partial / evidence-supported"
+    },
+    "B": {
+      "abstention_reason": [],
+      "classification": "supported-legal",
+      "evidence_state": "supported",
+      "gaps": [
+        "Conditional local support; global safety is unproved. No observed threat is not evidence of safety.",
+        "No verified independent-premise conjunction.",
+        "No native proof of universal king safety from separate opponent frames."
+      ],
+      "legal_move_truth_value": {
+        "confidence": 0.9304166666666666,
+        "strength": 0.9983606557377048
+      },
+      "model_version": "a6d3d826d93ee01b8accb7dc9948c0bd9bb0048cc54755bf45e92ec82502743d",
+      "move": "a1b1",
+      "negative_proof_complete": false,
+      "proof_complete": false,
+      "proof_status": "learned-conditional",
+      "raw_stv": {
+        "confidence": 0.9304166666666666,
+        "strength": 0.9983606557377048
+      },
+      "runtime_version": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+      "status": "native-partial / evidence-supported"
+    }
+  },
+  "model_versions": {
+    "concept": "b476a14b9c7b7cab77b1c547d1c70c0fdf623096df3ef45135835ee649222b08",
+    "field": "d38e6c3c26e8d1f2e38a62d288394cb920038649041ec8d2cc5f9eb9d0a314f3",
+    "fork": "1ec0a73a377c7efa68fb5ac033677192a6cb287970104028604d9b3a6115fca3",
+    "legal": "a6d3d826d93ee01b8accb7dc9948c0bd9bb0048cc54755bf45e92ec82502743d",
+    "preference": "115d224536c5418d4d05daef7c3c5c1a7ab1a796d0046a1a06237e981356ccc8"
+  },
+  "moves": {
+    "A": "a1a2",
+    "B": "a1b1"
+  },
+  "packet_id": "role-comparison:e76c6f319487d52981c2637c81bf5c2a8fa680a75e3673abe8a6e83942de5834",
+  "preference": {
+    "actionable_move": null,
+    "channels": {
+      "A": {
+        "classification": "unknown",
+        "raw_stv": {
+          "confidence": 0.0,
+          "strength": 0.5
+        }
+      },
+      "B": {
+        "classification": "unknown",
+        "raw_stv": {
+          "confidence": 0.0,
+          "strength": 0.5
+        }
+      },
+      "no-demonstrated-preference": {
+        "classification": "unknown",
+        "raw_stv": {
+          "confidence": 0.0,
+          "strength": 0.5
+        }
+      }
+    },
+    "conditional_proof_complete": false,
+    "contradiction": false,
+    "dependence_groups": [],
+    "descriptor": {
+      "abstraction": "shared-relation-v1",
+      "concept_scope": "not-used",
+      "coverage": {
+        "attack": "observed",
+        "defense": "observed",
+        "king-exposure": "observed",
+        "mobility": "observed",
+        "role:king-exposure": "observed",
+        "role:mover-attack": "observed",
+        "role:mover-defense": "observed",
+        "role:mover-mobility": "observed",
+        "role:shared-attack-target": "observed",
+        "role:shared-defense-ward": "observed",
+        "role:supported-mover": "observed"
+      },
+      "features": {
+        "attack": 0,
+        "defense": 1,
+        "king-exposure": 0,
+        "mobility": -1,
+        "role:king-exposure": 0,
+        "role:mover-attack": 0,
+        "role:mover-defense": 1,
+        "role:mover-mobility": -1,
+        "role:shared-attack-target": 0,
+        "role:shared-defense-ward": 0,
+        "role:supported-mover": 0
+      },
+      "grammar": "relative-role-preference-v14",
+      "horizon": 1
+    },
+    "evidence_ids": [],
+    "gaps": [
+      "Legality beliefs remain separate and may be unknown or partial; preference cannot certify a move.",
+      "before: bounded concept enumeration omits candidates; omission is not negative evidence.",
+      "A: bounded concept enumeration omits candidates; omission is not negative evidence.",
+      "B: bounded concept enumeration omits candidates; omission is not negative evidence.",
+      "No learned conditional matches this relative packet."
+    ],
+    "joint_proof_complete": false,
+    "model_version": "115d224536c5418d4d05daef7c3c5c1a7ab1a796d0046a1a06237e981356ccc8",
+    "no_preference_supported": false,
+    "observation_id": "preference-observation:24a5083e051255b01dc81b601ef9fbac8d82451d76cb2cca492d16933eb6977e",
+    "opposing_training_labels": false,
+    "proof_id": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "proof_status": "no-native-conditional-proof",
+    "rule_id": "preference-rule:f356bb325667c952dca3551b7e2dd11341015bf034272c3216dc9ed64d9fe52b",
+    "runtime_version": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+    "scope": "Native conditional on an explicit host-assembled relative role packet; neither a joint strategic theorem nor a legal-move decision.",
+    "status": "indeterminate",
+    "strategic_score": null,
+    "training_provenance": {
+      "dataset_hash": "6498dcc8e249c2bb3f16fab65e18908b39f4bd7d1d7a47e79cbb19fd5209f7a6",
+      "ledger_digest": "7e4730962457f156a396a842cf6ab621e42e952121af9530f8c3c8a666772992",
+      "training_examples": 422
+    },
+    "truth_value_origin": "absence-prior"
+  },
+  "proof_handle": "proof-request:83a3e4c80206ed76dee51c53ee8a1cfbdac8efabdeba4afd83879ef745dbd651",
+  "proof_root": "b93d047f063fcdfd06f7a9d8c41b254f989abd339c5aa63e4246b06854f58399",
+  "proof_store_schema": "pln-proof-dag-v14",
+  "runtime_version": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+  "schema": "compact-pairwise-inspection-v14",
+  "scope": "Experimental conditional evidence; legal beliefs and uncertainty remain separate.",
+  "view": "summary"
+}
