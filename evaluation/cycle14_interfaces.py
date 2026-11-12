@@ -52,12 +52,16 @@ def run(out,verification_root=None):
     empty=command('preference-evidence-removed',['compact-compare','--input',target/'removal-input.json','--store',store])
     assert not empty['preference']['conditional_proof_complete'] and empty['preference']['status']=='indeterminate'
     assert empty['model_versions']['legal']==summary['model_versions']['legal']
+    browser=read_json(out/'ui/verified.json')
+    assert browser['passed'] and browser['production_code_hash']==production_code_hash()
+    assert browser['exact_archive_reconstruction'] and browser['desktop_mobile_verified']
+    assert browser['trained_models_verified'] and browser['research_reference_separated']
     atomic_json(target/'verified.json',dict(passed=True,production_code_hash=production_code_hash(),commands=records,
         actual_cli_processes=len(records),durable_restart_reuse=True,exact_archive_reconstruction=True,
         paginated_graph=True,trained_immediate_model=summary['model_versions']['preference'],
         trained_temporal_model=temporal['model_versions']['preference'],legal_model=summary['model_versions']['legal'],
         empty_evidence_counterfactual=True,experimental_preference_is_opt_in=True,automatic_move_selection=False,
-        browser_evidence='ui/browser-downloads/http-framed/integrity.json',
+        browser_evidence='ui/verified.json',browser_receipt_sha256=sha(out/'ui/verified.json'),
         scope='Actual separate CLI processes plus durable proof store. Browser verification is separately recorded using ProofShot.'))
     print('C14 CLI AND DURABLE ARCHIVE VERIFIED',flush=True)
 
