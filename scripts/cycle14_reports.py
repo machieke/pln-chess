@@ -49,7 +49,7 @@ def run(out):
     headings=['Panel','All','Directional references','Answered','Correct','Wrong','Answered accuracy','Directional coverage','Unknown reference']
     primary_table=table(headings,[[name,*measurement(row)] for name,row in (
         ('Immediate / new final test',immediate),('Two supplied plies / same 50 roots',two),
-        ('Three supplied plies / same 50 roots',three),('TCEC / all-TCEC-excluded model',source))])
+        ('Three supplied plies / same 50 roots',three),('TCEC / TCEC-excluded preference fit',source))])
     uncertainty_table=table(['Panel','Independent groups','Answered accuracy 95% interval','Directional coverage 95% interval'],
         [[label,row['intervals']['groups'],interval(row,'answered_accuracy'),interval(row,'directional_coverage')]
          for label,row in (('Immediate',immediate),('Two supplied plies',two),
@@ -105,7 +105,7 @@ The immediate answered-accuracy 95% source-group bootstrap interval is {interval
 
 All fitted models remain experimental. Native `Truth_Revision` updates three independent channels from registered, generation-bound evidence. Native `Truth_ModusPonens` applies a learned conditional to an explicitly supplied observation packet. Host code supplies bounded descriptors, ancestry grouping and observation trust; it does not calculate substitute truth-value formulas. A, B and nondirectional channels are not a normalized distribution. Unknown labels are excluded from directional updates. Incomplete observations and indistinguishable directional packets are explicitly excluded, with counts in each [learning receipt](../../artifacts/cycle14/learning/).
 
-Frozen C13, old-label historical, revised-label historical, expanded-corpus, refined-descriptor, concept, source-family and temporal arms remain separate checkpoint identities. The matched studies distinguish their effects. New data and repeated old observations are separate arms; unsafe counting is never a default. All-TCEC exclusion, rather than the mixed-source primary model, supports the publisher-family holdout claim.
+Frozen C13, old-label historical, revised-label historical, expanded-corpus, refined-descriptor, concept, source-family and temporal arms remain separate checkpoint identities. The matched studies distinguish their effects. New data and repeated old observations are separate arms; unsafe counting is never a default. The dedicated source-family preference fit excludes all TCEC preference-training records. It retains the common development-selected descriptor and frozen upstream field/concept checkpoints; this is not an end-to-end claim of no prior exposure to that family.
 
 The accepted legal checkpoint remains `{current['model_version']}`. No experimental preference checkpoint becomes a legal default, strategic utility or automatic selector. Every answer is a native conditional on host-assembled relative evidence; complete joint strategic proofs remain unavailable.
 ''')
