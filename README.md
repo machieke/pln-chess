@@ -13,6 +13,14 @@ The accepted legal checkpoint remains unchanged; preference checkpoints are opt-
 The [readiness decision](docs/cycle14/readiness-decision.md) separates engineering
 verification from evidence for transferable preferences. No move is selected or played.
 
+On the untouched 200-pair test, the frozen immediate model answers 42 of 145
+resolved directions: 24 correct and 18 wrong (57.1% answered accuracy, 29.0%
+directional coverage). The registered accuracy and coverage targets are unmet;
+the recommendation is to continue preference research. See the
+[preference results and uncertainty](docs/cycle14/preference-learning.md),
+[temporal failures](docs/cycle14/temporal-study.md), and
+[matched performance measurements](docs/cycle14/performance.md).
+
 ```bash
 .venv/bin/python -m pln_chess serve --port 8765
 .venv/bin/python -m pln_chess compact-compare --input artifacts/cycle14/examples/compare.json --store /tmp/pln-c14-proofs.sqlite
