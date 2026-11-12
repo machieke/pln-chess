@@ -44,6 +44,7 @@ def run(out):
         return next(r for r in evaluation[model]['cohorts'] if r['split']==split and r['horizon']==horizon)
     immediate=cohort(primary);two=cohort(temporal,horizon=2);three=cohort(temporal,horizon=3)
     source=cohort('source-family-heldout','source-holdout')
+    resources=get('resources.json')
     headings=['Panel','All','Directional references','Answered','Correct','Wrong','Answered accuracy','Directional coverage','Unknown reference']
     primary_table=table(headings,[[name,*measurement(row)] for name,row in (
         ('Immediate / new final test',immediate),('Two supplied plies / same 50 roots',two),
@@ -56,6 +57,34 @@ def run(out):
     docs=ROOT/'docs/cycle14';docs.mkdir(parents=True,exist_ok=True)
     def write(name,text):
         (docs/name).write_text(text.strip()+'\n')
+
+    # Keep the methodological specification, then replace only the generated
+    # result section so rerendering cannot duplicate or alter the protocol.
+    calibration_path=docs/'evaluation-calibration.md'
+    calibration_spec=calibration_path.read_text().split('\n## Registered final results\n',1)[0]
+    score_rows=[];reliability_rows=[];risk_rows=[]
+    def number(value):return 'undefined' if value is None else f'{value:.6f}'
+    for label,row in (('Immediate final test',immediate),('Two supplied plies',two),
+                      ('Three supplied plies',three),('TCEC family holdout',source)):
+        diagnostic=row['calibration']
+        for arm,score in diagnostic['scores'].items():
+            intervals=diagnostic['clustered_95_intervals'][arm]
+            bounds=lambda metric: number(intervals[metric]['low'])+'–'+number(intervals[metric]['high'])
+            score_rows.append([label,arm,score['N'],number(score['brier']),bounds('brier'),
+                number(score['log_loss']),bounds('log_loss')])
+        for bin_ in diagnostic['reliability']:
+            reliability_rows.append([label,bin_['arm'],bin_['bin'],bin_['N'],
+                number(bin_['mean_probability']),number(bin_['observed_A_fraction'])])
+        for risk in diagnostic['selective_risk']:
+            risk_rows.append([label,risk['diagnostic_certainty_threshold'],risk['N'],
+                risk['N_wrong'],pct(risk['risk']),pct(risk['coverage'])])
+    write('evaluation-calibration.md',calibration_spec+'\n\n## Registered final results\n\n'+
+        'These scores use the frozen mappings and resolved directional references only. Lower Brier score and log loss indicate better diagnostic fit to that event; they do not establish useful move selection. Intervals resample source groups. Empty reliability bins and undefined selective risks remain visible.\n\n'+
+        table(['Panel','Diagnostic arm','Resolved N','Brier','Brier 95% interval','Log loss','Log-loss 95% interval'],score_rows)+
+        '\n\nReliability bin numbers 0–4 correspond to [0,.2), [.2,.4), [.4,.6), [.6,.8), and [.8,1]. These are evaluation-bin populations, separate from the calibration fitting populations retained in each frozen mapping.\n\n'+
+        table(['Panel','Arm','Bin','N','Mean diagnostic probability','Observed A fraction'],reliability_rows)+
+        '\n\nSelective-risk thresholds below are fixed diagnostics on native directional answers. No threshold was selected from final outcomes and native classifications remain unchanged.\n\n'+
+        table(['Panel','Diagnostic certainty threshold','Selected N','Wrong','Risk','Resolved-direction coverage'],risk_rows))
 
     write('preference-learning.md',f'''# Native preference learning
 
@@ -88,6 +117,8 @@ The accepted legal checkpoint remains `{current['model_version']}`. No experimen
             temporal_rows.append([panel['split'],panel['horizon'],contrast['factor'],
                 pct(effect['right_minus_left']['directional_coverage']),pct(effect['right_minus_left']['correct_answer_yield']),
                 f"{pct(ci['low'])}–{pct(ci['high'])}"])
+    majority_rows=[[row['split'],row['majority_class'],*measurement(row)]
+        for row in ablations['evaluation_only_majority']]
     write('ablations.md',f'''# Matched ablations
 
 Each contrast below uses the same evaluation rows, references and ancestry groups. Differences are right arm minus left arm. Percentage differences are percentage points. `correct/answered` displays directional answers only; unknown references remain outside agreement scoring. The [full receipt](../../artifacts/cycle14/ablations/summary.json) binds both checkpoint names, all denominators and 1,000 paired source-group bootstrap replicates.
@@ -98,7 +129,11 @@ Temporal contrasts hold the endpoint reference target fixed even when the input 
 
 {table(['Split','Horizon','Matched temporal contrast','Coverage difference','Correct-yield difference','Yield 95% interval'],temporal_rows)}
 
-The training-only majority baseline is evaluation code and never enters production inference. Repeated reference analyses and continuations preserve channel truth values with dependence handling; the unsafe control inflates confidence in {len(dependence['unsafe_inflated_rules'])} rules. The [dependence report](evidence-dependence.md) distinguishes identical native beliefs from different delivery provenance. Concept additions, descriptor refinements and omission training are not assumed beneficial because they were implemented. These finite controlled comparisons do not establish strategic playing strength or isolate every interaction among supervision, abstraction and source distribution.
+The training-only majority baseline is evaluation code and never enters production inference. Its class is chosen from training labels only; it answers every resolved test direction and retains unknown references outside agreement scoring.
+
+{table(['Split','Training majority',*headings[1:]],majority_rows)}
+
+Repeated reference analyses and continuations preserve channel truth values with dependence handling; the unsafe control inflates confidence in {len(dependence['unsafe_inflated_rules'])} rules. The [dependence report](evidence-dependence.md) distinguishes identical native beliefs from different delivery provenance. Concept additions, descriptor refinements and omission training are not assumed beneficial because they were implemented. These finite controlled comparisons do not establish strategic playing strength or isolate every interaction among supervision, abstraction and source distribution.
 ''')
 
     write('response-coverage.md',f'''# Bounded response coverage
@@ -239,7 +274,9 @@ The accepted checkpoint remains `{current['model_version']}`, byte-identical to 
 
 All **{proof['archives']}** selected compact archives reconstruct exactly and cover every archived native node with an ordered replayed trace. Selected fresh observation construction complements complete proof replay. All 109 completed pre-optimization features preserve exact observations and canonical evidence. Actual CLI restarts and browser upload/download reconstruction verify durable audit access. [Proof storage](proof-storage.md), [performance distributions](performance.md), and [reproduction scope](reproduction.md) distinguish host storage, cached computation, native inference, and audit cost.
 
-Clean reproduction compares {clean['compared_artifacts']} research artifacts with byte-identical models and ledgers. The full reference generation is an explicit immutable input; selected raw reference searches are repeated independently. It does not claim every new engine search or observation construction was rerun. Complete recorded native proofs are replayed. [Resource accounting](../../artifacts/cycle14/resources.json) reports measured scope and gaps rather than fabricating a total.
+Clean reproduction compares {clean['compared_artifacts']} research artifacts with byte-identical models and ledgers. The full reference generation is an explicit immutable input; selected raw reference searches are repeated independently. It does not claim every new engine search or observation construction was rerun. Complete recorded native proofs are replayed.
+
+[Resource accounting](../../artifacts/cycle14/resources.json) records {resources['reference_reported_nodes']['total']:,} available reported reference nodes, {resources['measured_cpu_hours_lower_bound']:.2f} measured CPU hours as a lower bound, and {resources['retained_artifact_bytes']/(1024**3):.2f} GiB of retained artifacts at its snapshot. Six baseline terminal analyses lack node counters, and early CPU, interpreter-launch and transient-byte accounting is incomplete. Available node counts and retained storage satisfy their recorded ceilings; complete global compute/launch/node compliance is unverified. The original missing-prerequisite baseline control failure remains retained beside its successful fresh recovery; it caused no scientific baseline discrepancy.
 
 Remaining limits include coarse/fine descriptor tradeoffs, sparse source-held-out directions, short teacher PVs, no new promotion roots, unresolved references, uncertain correlated premises, high concept abstention, non-exhaustive branches and absent native joint strategic composition. Preference agreement alone establishes no playing strength. [Readiness](readiness-decision.md) states the next research decision.
 ''')
