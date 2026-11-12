@@ -5,6 +5,7 @@ import statistics
 
 from pln_chess.common import ROOT, read_json, write_json
 from evaluation.cycle3 import read_gzip
+from evaluation.cycle14_metrics import counts as preference_counts
 
 
 def pct(value):
@@ -143,11 +144,26 @@ The training-only majority baseline is evaluation code and never enters producti
 Repeated reference analyses and continuations preserve channel truth values with dependence handling; the unsafe control inflates confidence in {len(dependence['unsafe_inflated_rules'])} rules. The [dependence report](evidence-dependence.md) distinguishes identical native beliefs from different delivery provenance. Concept additions, descriptor refinements and omission training are not assumed beneficial because they were implemented. These finite controlled comparisons do not establish strategic playing strength or isolate every interaction among supervision, abstraction and source distribution.
 ''')
 
+    response_roots=[]
+    for path in sorted((out/'responses').glob('*/result.json')):
+        root=read_json(path);root_counts=preference_counts(root['comparisons'])
+        response_roots.append(dict(id=root['id'],counts=root_counts,archive_audit=root['archive_audit']))
+    answering_roots=sum(r['counts']['N_answered']>0 for r in response_roots)
+    write_json(out/'delivery/response-evidence-census.json',dict(independent_roots=len(response_roots),
+        roots_with_answered_directional_references=answering_roots,roots=response_roots,
+        scope='Host reporting of every frozen response root; crossproducts remain dependent within each root.'))
+    response_root_table=table(['Root','Directional references','Answered','Correct','Wrong','Incomplete','Expanded proof occurrences'],
+        [[r['id'],*[r['counts'][k] for k in ('N_directional','N_answered','N_correct','N_wrong','N_incomplete')],
+          r['archive_audit']['expanded_object_occurrences']] for r in response_roots])
     write('response-coverage.md',f'''# Bounded response coverage
 
 The registered response panel contains **{response['branch_comparisons']} conditional comparisons in {response['independent_groups']} root groups**, with at most three supplied branches per candidate. Its labels comprise 106 directional, four nondirectional and 70 unknown observations. Twenty primary references are reused and 160 additional reference analyses are retained. The branch crossproducts are dependent, not 180 independent positions.
 
 {table(headings,[['Supplied branch crossproducts',*measurement({'counts':response['counts']})]])}
+
+Directional answers come from only **{answering_roots} of the ten root groups**. The whole-root bootstrap accuracy interval is {interval(response,'answered_accuracy')}; directional coverage is {interval(response,'directional_coverage')}. The dependent crossproducts do not provide eight independent answered groups.
+
+{response_root_table}
 
 There are {response['opposed_supported_panels']} panels with opposing supported branch-conditioned directions, {response['incomplete_endpoint_comparisons']} incomplete endpoint comparisons, {response['unknown_legality_branch_occurrences']} branch occurrences with unknown legality and {response['supported_illegal_branch_occurrences']} with supported illegality. Offline enumeration records {response['known_unexamined_replies']} unexamined legal replies across the candidate roots. No exhaustive coverage or global robust preference is asserted. [Every result and archive](../../artifacts/cycle14/responses/) retains branch indices, ancestry, selection provenance and coverage.
 
