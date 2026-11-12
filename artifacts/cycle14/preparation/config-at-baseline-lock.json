@@ -1,0 +1,43 @@
+{
+  "schema": 14,
+  "starting_head": "54353579e7921f9b47f43bbde1aa61cb887bc6e4",
+  "seed": 141414,
+  "accepted_legal_model_version": "a6d3d826d93ee01b8accb7dc9948c0bd9bb0048cc54755bf45e92ec82502743d",
+  "new_root_pairs": 600,
+  "historical_root_pairs": 340,
+  "new_partitions": {"train": 200, "development": 80, "calibration": 60, "test": 200, "source-holdout": 60},
+  "new_collection_targets": {"lichess-rated-2013-01": 140, "lichess-broadcast-2024-01": 140, "tcec-season26-divisionp": 60, "lichess-puzzles-frozen-prefix": 260},
+  "temporal_groups": {"train": 80, "development": 20, "calibration": 20, "test": 50, "source-holdout": 10},
+  "reversal_opportunities": 10,
+  "persistence_controls": 10,
+  "concept_holdout_groups": 80,
+  "reference": {
+    "release": "sf_18", "threads": 1, "hash_mib": 32,
+    "method": "separately-reset-single-candidate-root-searches",
+    "node_budget_ladder": [[20000, 80000], [320000, 1280000]],
+    "preference_margin_cp": 80, "nondirectional_margin_cp": 20,
+    "escalation": "Only unresolved reference comparisons; never conditioned on model predictions",
+    "exact": "UCI unflagged search score; not a proven game-theoretic value"
+  },
+  "descriptor_candidates": ["c13-relational", "role-change-v1", "shared-relation-v1"],
+  "thresholds": {"min_confidence": 0.25, "supported_strength": 0.8, "contradicted_strength": 0.2},
+  "observation_confidence": 0.5,
+  "maximum_responses_per_candidate": 3,
+  "benchmark_repetitions": 20,
+  "bootstrap_repetitions": 1000,
+  "budgets": {
+    "research_cpu_hours": 128,
+    "stage_timeout_hours": 24,
+    "reference_search_nodes": 6000000000,
+    "native_interpreter_launches": 1000000,
+    "research_workers": 4,
+    "legal_workers": 4,
+    "maximum_concurrent_owned_workers": 12,
+    "new_artifact_bytes": 42949672960,
+    "temporary_checkouts_bytes": 64424509440,
+    "on_exhaustion": "Retain all attempted registered cases, mark unexecuted cases incomplete and report shortfall; mandatory preservation gates cannot be waived"
+  },
+  "selection": "Development correct-answer yield, then answered accuracy, then smaller descriptor; frozen thresholds; final test never selects a model",
+  "proof_contract": "Native separate conditional channels on host-assembled relational observations; no joint uncertainty theorem",
+  "authorization": "Local implementation, experiments, verification and commits only; no push, deployment, new native operator or move selection"
+}

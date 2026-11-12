@@ -1,0 +1,68 @@
+         30636492 function calls (25357643 primitive calls) in 53.319 seconds
+
+   Ordered by: cumulative time
+   List reduced from 518 to 60 due to restriction <60>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.015    0.015   53.488   53.488 /home/purplezky/work/takopi/pln-chess/src/pln_chess/cycle13/temporal.py:18(analyze_continuations)
+        5    0.048    0.010   33.436    6.687 /home/purplezky/work/takopi/pln-chess/src/pln_chess/cycle13/fields.py:14(build_state)
+        1    0.001    0.001   25.305   25.305 /home/purplezky/work/takopi/pln-chess/src/pln_chess/cycle13/api.py:153(compare_moves)
+4691169/12273   10.803    0.000   22.882    0.002 /home/purplezky/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/copy.py:118(deepcopy)
+323741/16915    4.334    0.000   22.742    0.001 /home/purplezky/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/copy.py:217(_deepcopy_dict)
+266597/70907    1.180    0.000   19.022    0.000 /home/purplezky/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/copy.py:191(_deepcopy_list)
+        5    0.009    0.002   14.866    2.973 /home/purplezky/work/takopi/pln-chess/src/pln_chess/cycle13/concepts.py:100(infer_concepts)
+    89575    0.269    0.000   13.951    0.000 /home/purplezky/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/json/__init__.py:183(dumps)
+    89575    0.271    0.000   13.603    0.000 /home/purplezky/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/json/encoder.py:183(encode)
+        3    0.006    0.002   13.536    4.512 /home/purplezky/work/takopi/pln-chess/src/pln_chess/cycle13/api.py:100(legal_beliefs)
+        3    0.005    0.002   13.490    4.497 /home/purplezky/work/takopi/pln-chess/src/pln_chess/cycle8/inference.py:61(infer_moves)
+    89575   13.186    0.000   13.193    0.000 /home/purplezky/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/json/encoder.py:205(iterencode)
+        3    0.005    0.002   11.440    3.813 /home/purplezky/work/takopi/pln-chess/src/pln_chess/cycle7/inference.py:54(infer_moves)
+        5    0.008    0.002   11.143    2.229 /home/purplezky/work/takopi/pln-chess/src/pln_chess/cycle12/graph.py:75(build_graph)
+        5    0.008    0.002   11.137    2.227 /home/purplezky/work/takopi/pln-chess/src/pln_chess/cycle12/inference.py:63(infer_concepts)
+        4    0.003    0.001   10.421    2.605 /home/purplezky/work/takopi/pln-chess/src/pln_chess/cycle6/inference.py:60(infer_moves)
+      165    0.002    0.000   10.284    0.062 /home/purplezky/work/takopi/pln-chess/src/pln_chess/common.py:17(digest_dataclass)
+        4    0.005    0.001    9.255    2.314 /home/purplezky/work/takopi/pln-chess/src/pln_chess/cycle5/inference.py:39(infer_moves)
+       10    0.123    0.012    8.913    0.891 /home/purplezky/work/takopi/pln-chess/src/pln_chess/cycle11/fields/inference.py:108(infer_queries)
+      106    0.001    0.000    8.734    0.082 /home/purplezky/work/takopi/pln-chess/src/pln_chess/cycle11/fields/model.py:19(version)
+       26    0.050    0.002    8.471    0.326 /home/purplezky/work/takopi/pln-chess/src/pln_chess/cycle3/native.py:17(batch)
+       26    0.001    0.000    8.341    0.321 /home/purplezky/work/takopi/pln-chess/src/pln_chess/pln/runtime.py:82(batch)
+      8/6    0.000    0.000    8.336    1.389 /home/purplezky/work/takopi/pln-chess/src/pln_chess/cycle13/api.py:51(execute)
+        6    0.000    0.000    8.336    1.389 /data/pln-chess-cycle6-delivery/evaluation/cycle13_performance.py:26(execute)
+        6    0.000    0.000    8.336    1.389 /home/purplezky/work/takopi/pln-chess/src/pln_chess/pln/runtime.py:65(execute)
+        6    0.000    0.000    8.333    1.389 /home/purplezky/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/subprocess.py:506(run)
+        6    0.000    0.000    8.244    1.374 /home/purplezky/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/subprocess.py:1165(communicate)
+        6    0.001    0.000    8.244    1.374 /home/purplezky/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/subprocess.py:2062(_communicate)
+      270    0.001    0.000    8.241    0.031 /home/purplezky/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/selectors.py:402(select)
+      270    8.241    0.031    8.241    0.031 {method 'poll' of 'select.poll' objects}
+     2068    0.099    0.000    7.635    0.004 /home/purplezky/work/takopi/pln-chess/src/pln_chess/cycle12/graph.py:114(relation)
+    84670    0.237    0.000    7.325    0.000 /home/purplezky/work/takopi/pln-chess/src/pln_chess/common.py:14(digest)
+    87622    0.124    0.000    6.136    0.000 /home/purplezky/work/takopi/pln-chess/src/pln_chess/common.py:11(canonical)
+     2061    0.011    0.000    4.671    0.002 /home/purplezky/work/takopi/pln-chess/src/pln_chess/cycle12/graph.py:107(register_proof)
+        4    0.020    0.005    4.301    1.075 /home/purplezky/work/takopi/pln-chess/src/pln_chess/cycle4/inference.py:28(infer_moves)
+    84835    3.466    0.000    3.466    0.000 {built-in method _hashlib.openssl_sha256}
+  9700241    3.335    0.000    3.335    0.000 {method 'get' of 'dict' objects}
+        5    0.126    0.025    2.379    0.476 /home/purplezky/work/takopi/pln-chess/src/pln_chess/cycle12/graph.py:197(validate_graph)
+       16    0.342    0.021    2.234    0.140 /home/purplezky/work/takopi/pln-chess/src/pln_chess/cycle11/fields/model.py:28(validate)
+        3    0.002    0.001    1.665    0.555 /home/purplezky/work/takopi/pln-chess/src/pln_chess/cycle8/model.py:27(source_model)
+    31678    0.055    0.000    1.539    0.000 /home/purplezky/work/takopi/pln-chess/src/pln_chess/cycle11/fields/ontology.py:69(key)
+  5921032    1.370    0.000    1.370    0.000 {built-in method builtins.id}
+        4    0.002    0.000    0.901    0.225 /home/purplezky/work/takopi/pln-chess/src/pln_chess/cycle6/model.py:26(source_model)
+   590338    0.581    0.000    0.814    0.000 /home/purplezky/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/copy.py:231(_keep_alive)
+     2327    0.106    0.000    0.800    0.000 /home/purplezky/work/takopi/pln-chess/src/pln_chess/cycle11/fields/ontology.py:74(observe_relation)
+  3964338    0.682    0.000    0.682    0.000 /home/purplezky/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/copy.py:172(_deepcopy_atomic)
+        3    0.001    0.000    0.642    0.214 /home/purplezky/work/takopi/pln-chess/src/pln_chess/cycle7/model.py:32(source_model)
+    31678    0.427    0.000    0.640    0.000 /home/purplezky/work/takopi/pln-chess/src/pln_chess/cycle11/fields/ontology.py:33(validate_descriptor)
+    10214    0.083    0.000    0.620    0.000 /home/purplezky/work/takopi/pln-chess/src/pln_chess/cycle12/graph.py:83(edge)
+     5423    0.076    0.000    0.588    0.000 /home/purplezky/work/takopi/pln-chess/src/pln_chess/cycle12/graph.py:99(cell)
+  1761482    0.529    0.000    0.529    0.000 {method 'append' of 'list' objects}
+    34416    0.243    0.000    0.528    0.000 /home/purplezky/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/copy.py:200(_deepcopy_tuple)
+      448    0.003    0.000    0.499    0.001 {built-in method builtins.sum}
+     2078    0.015    0.000    0.483    0.000 /home/purplezky/work/takopi/pln-chess/src/pln_chess/cycle11/fields/inference.py:204(<genexpr>)
+    62098    0.086    0.000    0.472    0.000 /home/purplezky/work/takopi/pln-chess/src/pln_chess/pln/runtime.py:30(from_json)
+        6    0.055    0.009    0.463    0.077 /home/purplezky/work/takopi/pln-chess/src/pln_chess/cycle12/graph.py:22(compare_fields)
+       80    0.012    0.000    0.457    0.006 /home/purplezky/work/takopi/pln-chess/src/pln_chess/cycle12/ontology.py:101(observe_concept)
+    15181    0.012    0.000    0.434    0.000 /home/purplezky/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/dataclasses.py:1308(asdict)
+106962/15181    0.248    0.000    0.413    0.000 /home/purplezky/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/dataclasses.py:1332(_asdict_inner)
+       12    0.000    0.000    0.402    0.034 /home/purplezky/work/takopi/pln-chess/src/pln_chess/cycle5/model.py:27(version)
+
+
