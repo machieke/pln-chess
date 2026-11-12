@@ -124,7 +124,7 @@ def run(out,checkout,commit,workers=2,generation='clean-research'):
         built=read_json(reference_build)
         assert built['returncode']==0 and built['fresh_source_build'] and built['byte_identical_binary']
         subprocess.run(['git','merge-base','--is-ancestor',built['source_head'],commit],cwd=checkout,check=True)
-        assert built['driver_sha256']==sha(checkout/'scripts/cycle13_reference_bootstrap.py')
+        assert built['driver_sha256']==sha(checkout/'scripts/cycle14_reference_build.py')
         assert built['binary_sha256']==sha(checkout/'.runtime/cycle13-reference/stockfish/src/stockfish')
         atomic_json(target/'reference-build-lineage.json',dict(passed=True,
             original_build_head=built['source_head'],research_verification_head=commit,
