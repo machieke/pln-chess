@@ -4,6 +4,7 @@ from pathlib import Path
 import statistics
 
 from pln_chess.common import ROOT, read_json, write_json
+from evaluation.cycle3 import read_gzip
 
 
 def pct(value):
@@ -49,6 +50,10 @@ def run(out):
     primary_table=table(headings,[[name,*measurement(row)] for name,row in (
         ('Immediate / new final test',immediate),('Two supplied plies / same 50 roots',two),
         ('Three supplied plies / same 50 roots',three),('TCEC / all-TCEC-excluded model',source))])
+    uncertainty_table=table(['Panel','Independent groups','Answered accuracy 95% interval','Directional coverage 95% interval'],
+        [[label,row['intervals']['groups'],interval(row,'answered_accuracy'),interval(row,'directional_coverage')]
+         for label,row in (('Immediate',immediate),('Two supplied plies',two),
+                           ('Three supplied plies',three),('TCEC family holdout',source))])
     model_rows=[]
     for name,entry in registry['models'].items():
         report=read_json((ROOT if entry.get('historical') else out)/entry['path']).get('training_report',{})
@@ -93,6 +98,8 @@ Development selected **{registry['selected_descriptor']}**, using correct-answer
 {primary_table}
 
 The immediate answered-accuracy 95% source-group bootstrap interval is {interval(immediate,'answered_accuracy')}; directional coverage is {interval(immediate,'directional_coverage')}. The source-held-out accuracy interval is {interval(source,'answered_accuracy')}. Undefined or very sparse answered denominators do not establish reliable preference quality.
+
+{uncertainty_table}
 
 {table(['Model','Training observations','Hypotheses','Abstraction','Concepts','Dependence handled','Version'],model_rows)}
 
@@ -206,6 +213,15 @@ Per-request data-access records distinguish persistent learned checkpoint hypoth
     reversal_table=table(['Panel','Horizon','All','Structural criterion','Both references resolved','Reference flips','Model flips','Successful controlled outcome'],[
         [r['arm'],r['horizon'],r['N'],r['structural_criteria_met'],r['N_resolved_both'],r['reference_reversals'],r['model_reversals'],r['successes']]
         for r in reversal['panels']])
+    reversal_path=docs/'preference-reversals.md'
+    reversal_spec=reversal_path.read_text().split('\n## Registered final outcomes\n',1)[0]
+    cases=read_gzip(out/'reversals/panel.json.xz')
+    case_rows=[[r['id'],r['arm'],r['horizon'],r['initial_label']+' → '+r['endpoint_label'],
+        r['before']['status']+' → '+r['after']['status'],r['successful_registered_outcome'],
+        ', '.join(r['failed_reasons']) or 'none'] for r in cases]
+    write('preference-reversals.md',reversal_spec+'\n\n## Registered final outcomes\n\n'+
+        reversal_table+'\n\nEvery registered opportunity and persistence control appears below at both horizons. Three plies remains primary. The two horizons reuse the same twenty independent roots. Failure reasons are diagnostic criteria, not independent observations.\n\n'+
+        table(['Root','Registered arm','Horizon','Reference before → after','Native before → after','Successful outcome','Failed conditions'],case_rows))
     primary_counts=immediate['counts']
     target=primary_counts['N_answered']>=50 and (primary_counts['answered_accuracy'] or 0)>=.8 and (primary_counts['directional_coverage'] or 0)>=.5
     findings=[
