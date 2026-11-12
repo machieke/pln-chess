@@ -1,4 +1,5 @@
 {
+  "after_current_controls": "Two cached proof-partition validators may briefly replace the single control worker: 4 legal + 2 proof validators + 1 boundary audit + 1 refit = 8, within the unchanged registered ceiling of 12.",
   "identity": {
     "argv": [
       "/data/pln-chess-cycle6-delivery/.venv/bin/python",
@@ -16,7 +17,7 @@
     "production_code_hash": "e88ff7969885be101af2ceedbbdf5d5499f4253b361a8cee18ff1814f055282c"
   },
   "registered_maximum_workers": 12,
-  "scheduled_peak": 7,
+  "scheduled_peak": 8,
   "scope": "Independent frozen inputs permit concurrent verification. File locking prevents duplicate refits; the ordinary coordinator later validates all source/input/output hashes before accepting a cached complete receipt. No inference or evaluation change.",
   "workers": "4 current legal + 1 current control + 1 native-boundary audit + 1 independent research refit"
 }
