@@ -178,7 +178,8 @@ if __name__ == '__main__':
     parser.add_argument('--subshard',type=int)
     parser.add_argument('--subshards',type=int,default=1)
     args = parser.parse_args()
-    policy_path=Path(args.source)/'verification/proof-stream-policy.json'
+    policy_path=Path(args.source)/'verification/proof-stream-policy-v2.json'
+    if not policy_path.exists():policy_path=Path(args.source)/'verification/proof-stream-policy.json'
     policy=read_json(policy_path) if policy_path.exists() else {}
     workers=policy.get('workers_by_shard',{}).get(str(args.shard),1)
     if args.subshard is None and workers>1:

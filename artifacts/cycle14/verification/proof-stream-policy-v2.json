@@ -1,0 +1,15 @@
+{
+  "early_final_partition_requires": "Both feature generations and main partitions zero and one have finished; the early shard-one completion marker is sufficient.",
+  "parallel_launch_requires_both_feature_indexes": true,
+  "peak_after_feature_closure": "Before baseline closure: at most 3 baseline comparison + 1 baseline control + 4 proof + 1 scientific + 1 UI = 10. After baseline closure: at most 4 current legal + 1 control + 4 proof + 1 scientific + 1 UI = 11.",
+  "prior_policy_sha256": "c938317dd94335b206e0ebd6191ae9e60a51b1713c28a0b579f8e8e31cab27a2",
+  "reason": "Reuse released feature/first-partition slots while baseline full-proof comparison finishes. Main-partition locking and completed-receipt revalidation prevent duplicate workers. No native verifier, scientific input or partition membership change.",
+  "registered_research_worker_limit": 4,
+  "schema": "c14-proof-stream-schedule-v2",
+  "workers_by_shard": {
+    "0": 1,
+    "1": 1,
+    "2": 4
+  },
+  "wrapper_sha256": "515a7cb493aec8efa43de150de272471e1ad00b4e17b06c9036f2216483a2226"
+}
