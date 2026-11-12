@@ -50,6 +50,7 @@ def run(out):
     timing_paths=sorted(set(out.glob('*.resources.log'))|set(out.glob('clean-research/*resources.log*'))|
         set(out.glob('pipeline/logs/*.txt'))|set(out.glob('clean-research/logs/*.txt'))|
         set(out.glob('current/logs/*.txt'))|
+        set(out.glob('verification/logs/*.txt'))|
         set(out.glob('clean-research/reference-bootstrap/one-worker-build.txt'))|
         set(out.glob('*unit*.txt')))
     measured=[]
@@ -60,7 +61,7 @@ def run(out):
         if not users or len(users)!=len(systems):continue
         # Outer orchestration timing includes the per-stage timings below; do
         # not add the same child CPU twice. Preserve it as a separate receipt.
-        outer=path.name in ('reproduce.resources.log','clean-research.resources.log')
+        outer=path.name in ('reproduce.resources.log','clean-research.resources.log') or path==out/'verification/logs/clean-research.txt'
         measured.append(dict(path=str(path.relative_to(out)),sha256=sha(path),
             cpu_seconds=sum(map(float,users))+sum(map(float,systems)),
             included_in_nonoverlapping_sum=not outer,
