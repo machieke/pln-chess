@@ -37,6 +37,13 @@ def run(out):
     assert sha(out/'model/C14-default.json')==sha(ROOT/'artifacts/cycle12/model/C12-default.json')
     assert sha(ROOT/'artifacts/cycle13/model/C13-default.json')==sha(out/'model/C14-default.json')
     partials=list(out.rglob('*.partial'));assert not partials,partials
+    start=read_json(ROOT/'configs/cycle14.json')['starting_head']
+    parent=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
+    commits=subprocess.check_output(['git','rev-list','--reverse',start+'..'+parent],cwd=ROOT,text=True).splitlines()
+    write_json(out/'delivery/local-history.json',dict(starting_head=start,inventory_parent_head=parent,
+        commits=[dict(commit=commit,subject=subprocess.check_output(['git','show','-s','--format=%s',commit],cwd=ROOT,text=True).strip()) for commit in commits],
+        no_remote_write_performed=True,
+        scope='Local history through the parent of the final inventory/evidence commit. The final commit cannot contain its own hash; the ending hash and clean worktree are reported after commit.'))
     excluded={out/'delivery/artifact-inventory.json',out/'delivery/final-audit.json'}
     artifacts={str(path.relative_to(out)):dict(bytes=path.stat().st_size,sha256=sha(path))
         for path in sorted(out.rglob('*')) if path.is_file() and path not in excluded}
@@ -55,7 +62,7 @@ def run(out):
         legal_checkpoint_byte_identical=True,artifact_files=len(artifacts),artifact_bytes=sum(v['bytes'] for v in artifacts.values()),
         inventory_sha256=sha(out/'delivery/artifact-inventory.json'),acceptance_sha256=sha(out/'acceptance.json'),
         post_acceptance_probe_sha256=sha(out/'post-acceptance/verified.json'),
-        report_generation_parent_head=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
+        report_generation_parent_head=parent,
         no_push_or_deployment_performed=True,preferences_promoted=False,automatic_selection=False,
         scope='Local complete package audit before its evidence/documentation commit; the final commit hash and clean worktree are reported after commit.'))
 

@@ -192,7 +192,7 @@ Per-request data-access records distinguish persistent learned checkpoint hypoth
         ('16','Caching and performance','Delivered and benchmarked','Twenty repetitions per arm/workload; exact evidence parity; measured summary gains distinguished from complete-audit cost.'),
         ('17','API, CLI and inspector','Delivered and exercised','Actual CLI restarts, durable graph/archive retrieval, desktop/mobile and byte-exact browser reconstruction; current source bound.'),
         ('18','Preservation and isolation','Delivered; mandatory gates passed',f"{current['test_count']} tests, 584,112 legal rows, 287 negative and 27 history controls, two recoveries/76 holdouts; 16,596 old files unchanged."),
-        ('19','Clean reproduction and resources','Delivered; accounting scope disclosed','Fresh pinned environment; all native feature proofs replayed, selected observations/references rerun, all model/ledger/study outputs compared. Resource measurement gaps are explicit.'),
+        ('19','Clean reproduction and resources','Delivered with resource-accounting shortfalls','Fresh pinned environment; all native feature proofs replayed, selected observations/references rerun, all model/ledger/study outputs compared. Complete global CPU/process/transient-byte totals remain unavailable; six baseline terminal analyses omitted node counters.'),
         ('20','Delivery and readiness','Delivered locally','Continue preference research; no move selection, new operator, legal promotion, push or deployment.')]
     write_json(out/'delivery/package-matrix.json',dict(schema='c14-delivery-matrix-v1',packages=[dict(id='C14-'+number,
         title=title,engineering_delivery_status=engineering,research_outcome=research) for number,title,engineering,research in findings],
