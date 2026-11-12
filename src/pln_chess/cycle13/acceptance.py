@@ -14,7 +14,7 @@ def output_root():
     return Path(os.environ.get('C13_OUT',ROOT/'artifacts/cycle13'))
 
 
-def accepted_model(model,legacy=False):
+def _accepted_here(model,legacy=False):
     if getattr(model,'schema',None) not in (6,7,8):
         return False
     path=output_root()/'acceptance.json'
@@ -45,6 +45,13 @@ def accepted_model(model,legacy=False):
         if not target.is_file() or hashlib.sha256(target.read_bytes()).hexdigest()!=gate.get('sha256'):
             return False
     return True
+
+
+def accepted_model(model,legacy=False):
+    if _accepted_here(model,legacy):return True
+    if 'C13_OUT' in os.environ:return False
+    from pln_chess.cycle14.acceptance import accepted_model as current
+    return current(model,legacy)
 
 
 def default_checkpoint(fallback):

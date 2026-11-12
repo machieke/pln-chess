@@ -202,20 +202,27 @@ def serve(port=8765,checkpoint=None):
         def do_POST(self):
             if self.path=='/cycle14-expand':
                 from pln_chess.cycle14.proofs import ProofStore
+                import tempfile
+                import shutil
                 try:
                     length=int(self.headers.get('Content-Length',0))
                     if not 0<length<=134217728:raise ValueError('Archive is empty or exceeds 128 MiB')
                     supplied=json.loads(self.rfile.read(length));archive=supplied.get('archive',supplied)
-                    with ProofStore() as store:
+                    with ProofStore() as store, tempfile.SpooledTemporaryFile(max_size=1048576) as expanded:
                         root=store.import_archive(archive)
-                        self.send_response(200);self.send_header('Content-Type','application/json')
-                        self.send_header('X-Proof-Legacy-SHA256',archive['canonical_legacy_sha256'])
-                        self.send_header('X-Proof-Root',root.id);self.end_headers()
+                        # Bound RAM while providing an exact HTTP body length.
+                        # Validate and finish reconstruction before sending 200.
                         buffer=bytearray()
                         for block in store.canonical_chunks(root):
                             buffer.extend(block)
-                            if len(buffer)>=1048576:self.wfile.write(buffer);buffer.clear()
-                        if buffer:self.wfile.write(buffer)
+                            if len(buffer)>=1048576:expanded.write(buffer);buffer.clear()
+                        if buffer:expanded.write(buffer)
+                        length=expanded.tell();expanded.seek(0)
+                        self.send_response(200);self.send_header('Content-Type','application/json')
+                        self.send_header('Content-Length',str(length))
+                        self.send_header('X-Proof-Legacy-SHA256',archive['canonical_legacy_sha256'])
+                        self.send_header('X-Proof-Root',root.id);self.end_headers()
+                        shutil.copyfileobj(expanded,self.wfile,length=1048576)
                 except (ValueError,KeyError,TypeError) as error:
                     raw=json.dumps({'error':str(error)}).encode();self.send_response(400);self.send_header('Content-Type','application/json');self.send_header('Content-Length',str(len(raw)));self.end_headers();self.wfile.write(raw)
                 return

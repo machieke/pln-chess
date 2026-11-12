@@ -18,7 +18,7 @@ def main(argv=None):
     if not latest.exists():latest=ROOT/'artifacts/cycle7/model/C7-default.json'
     if not latest.exists():latest=ROOT/'artifacts/cycle6/model/C6-full.json'
     default_checkpoint=latest if latest.exists() else ROOT/'artifacts/model.json'
-    from pln_chess.cycle13.acceptance import default_checkpoint as verified_default
+    from pln_chess.cycle14.acceptance import default_checkpoint as verified_default
     default_checkpoint=verified_default(default_checkpoint)
     parser=argparse.ArgumentParser(prog='pln-chess',description='Piece-relative native PLN research inspector')
     sub=parser.add_subparsers(dest='command',required=True)
