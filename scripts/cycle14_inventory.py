@@ -25,7 +25,8 @@ def run(out):
     documents=[ROOT/'docs/cycle14'/(name+'.md') for name in DOCUMENTS]
     assert all(p.is_file() and len(p.read_text())>200 for p in documents)
     broken=[]
-    for path in documents:
+    all_documents=sorted(set(documents)|set((ROOT/'docs/cycle14').glob('*.md')))
+    for path in all_documents:
         for target in re.findall(r'\]\(([^)]+)\)',path.read_text()):
             if target.startswith(('http:','https:','#')):continue
             local=target.split('#',1)[0]
@@ -47,7 +48,7 @@ def run(out):
     excluded={out/'delivery/artifact-inventory.json',out/'delivery/final-audit.json'}
     artifacts={str(path.relative_to(out)):dict(bytes=path.stat().st_size,sha256=sha(path))
         for path in sorted(out.rglob('*')) if path.is_file() and path not in excluded}
-    source_paths=set(documents)|{ROOT/'README.md',ROOT/'configs/cycle14.json',ROOT/'PLN_Chess_Cycle_14_Codex_Brief.md',ROOT/'proofshot.config.json'}
+    source_paths=set(all_documents)|{ROOT/'README.md',ROOT/'configs/cycle14.json',ROOT/'PLN_Chess_Cycle_14_Codex_Brief.md',ROOT/'proofshot.config.json'}
     source_paths.update(ROOT/name for name in read_json(out/'source-freeze.json')['production_sources'])
     for pattern in ('src/pln_chess/cycle14/*.py','src/pln_chess/cli/*14.py','training/cycle14*.py',
             'evaluation/cycle14*.py','scripts/cycle14*','tests/test_cycle14*.py'):
@@ -57,7 +58,7 @@ def run(out):
         excluded_self_receipts=[str(p.relative_to(out)) for p in sorted(excluded)],
         scope='All retained Cycle 14 evidence, including failed/interrupted attempts; passing gates are identified separately by acceptance. Excludes these two mutually referring inventory/audit files to avoid circular hashes.'))
     write_json(out/'delivery/final-audit.json',dict(passed=True,production_code_hash=code,packages=20,
-        required_documents=len(documents),document_links_checked=True,broken_links=broken,
+        required_documents=len(documents),all_documents=len(all_documents),document_links_checked=True,broken_links=broken,
         unchanged_historical_files=len(protected),historical_changes=changes,
         legal_checkpoint_byte_identical=True,artifact_files=len(artifacts),artifact_bytes=sum(v['bytes'] for v in artifacts.values()),
         inventory_sha256=sha(out/'delivery/artifact-inventory.json'),acceptance_sha256=sha(out/'acceptance.json'),
