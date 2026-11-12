@@ -130,6 +130,11 @@ def serve(port=8765,checkpoint=None):
             if url.path=='/compact-preferences':
                 from .web14 import HTML as compact_html
                 payload=compact_html.encode();self.send_response(200);self.send_header('Content-Type','text/html; charset=utf-8');self.send_header('Content-Length',str(len(payload)));self.end_headers();self.wfile.write(payload);return
+            if url.path=='/cycle14-research-reference':
+                from .research14 import reference
+                try:result=reference(parse_qs(url.query).get('id',[''])[0]);code=200
+                except (ValueError,FileNotFoundError) as error:result={'error':str(error)};code=400
+                payload=json.dumps(result).encode();self.send_response(code);self.send_header('Content-Type','application/json');self.send_header('Content-Length',str(len(payload)));self.end_headers();self.wfile.write(payload);return
             if url.path in ('/cycle14-catalog','/cycle14-proof'):
                 from pln_chess.cycle14.inspector import catalog,proof
                 try:

@@ -64,3 +64,14 @@ def test_downloaded_archive_http_has_exact_bytes_and_rejects_corruption(tmp_path
             assert error.value.code==400
         finally:
             child.terminate();child.wait(timeout=10)
+
+
+def test_research_reference_disclosure_cannot_enter_inference(tmp_path,monkeypatch):
+    from pln_chess.common import write_json
+    from pln_chess.cli.research14 import reference
+    monkeypatch.setenv('C14_OUT',str(tmp_path))
+    write_json(tmp_path/'datasets/source-pairs.json',{'records':[dict(id='registered-unit',split='train',fen='4k3/8/8/8/8/8/8/R3K3 w - - 0 1',moves=['a1a2','a1b1'],history=None,source={'cohort':'unit'})]})
+    write_json(tmp_path/'labels/immediate-g1/records/registered-unit.json',dict(label='unknown',reason='budget-disagreement',generation='unit',evidence_id='unit-reference',original_actor='White',horizon=1))
+    disclosed=reference('registered-unit');assert disclosed['label']=='unknown' and disclosed['inference_input'] is False
+    with pytest.raises(ValueError):reference('../outside')
+    with pytest.raises(ValueError):inspect(disclosed)
