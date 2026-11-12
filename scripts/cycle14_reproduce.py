@@ -30,30 +30,36 @@ def scientific(value):
 def compare_responses(primary, replayed):
     """Validate archive bindings before ignoring their telemetry-derived roots."""
     from evaluation.cycle14_archive import OfflineAuditStore as ProofStore
+    from evaluation.cycle14_response_binding import validate_response_handle
     comparisons=[]
-    def archive(relative, a_summary, b_summary):
-        values=[]
+    def archive(relative, a_summary, b_summary,plan,diagnostic=False):
+        values=[];bindings=[]
         for directory,summary in ((primary,a_summary),(replayed,b_summary)):
             raw=read_gzip(directory/relative)
             assert summary['proof_root']==raw['root']
+            bindings.append(validate_response_handle(summary,plan,diagnostic=diagnostic))
             with ProofStore() as store:
                 root=store.import_archive(raw)
                 values.append(store.legacy_digest(root,omit_keys=('execution','incremental')))
         assert values[0]==values[1],relative
         comparisons.append(dict(path=str(relative),exact=True,method='verified-full-native-archive-semantic-parity',
-            semantic_sha256=values[0],primary_sha256=sha(primary/relative),replay_sha256=sha(replayed/relative)))
+            semantic_sha256=values[0],validated_request_bindings=bindings,
+            primary_sha256=sha(primary/relative),replay_sha256=sha(replayed/relative)))
     def summary(value):
         result=scientific(value)
         # These roots bind the complete archive, including elapsed telemetry.
         # Full scientific archive parity was independently established above.
         result.pop('proof_root',None)
+        # The handle additionally binds the request and original timed summary.
+        # Its exact production digest was validated against the registered plan.
+        result.pop('proof_handle',None)
         return result
     for plan in read_json(primary/'datasets/response-plans.json')['records']:
         relative=Path('responses')/plan['id']/'result.json'
         a,b=read_json(primary/relative),read_json(replayed/relative)
         archived=relative.parent/'archive.json.xz'
         assert a['archive_sha256']==sha(primary/archived) and b['archive_sha256']==sha(replayed/archived)
-        archive(archived,a['summary'],b['summary'])
+        archive(archived,a['summary'],b['summary'],plan)
         a,b=scientific(a),scientific(b)
         for row in (a,b):row.pop('archive_sha256');row['summary']=summary(row['summary'])
         assert a==b,relative
@@ -65,7 +71,7 @@ def compare_responses(primary, replayed):
         assert first['case']==second['case']
         assert first.get('archive_audit')==second.get('archive_audit')
         relative=Path('responses/diagnostics')/(first['case']['id']+'.json.xz')
-        archive(relative,first['summary'],second['summary'])
+        archive(relative,first['summary'],second['summary'],first['case'],diagnostic=True)
         assert summary(first['summary'])==summary(second['summary'])
     assert sha(primary/'responses/summary.json')==sha(replayed/'responses/summary.json')
     comparisons.append(dict(path='responses/summary.json',exact=True,method='exact-bytes',
@@ -80,6 +86,7 @@ def run(out,checkout,commit,workers=2,generation='clean-research'):
         completed=read_json(target/'verified.json')
         assert completed['passed'] and completed['source_head']==commit
         assert completed['orchestration_sha256']==sha(__file__)
+        assert completed['response_binding_verifier_sha256']==sha(ROOT/'evaluation/cycle14_response_binding.py')
         assert completed['production_code_hash']==read_json(out/'source-freeze.json')['production_code_hash']
         assert subprocess.check_output(['git','rev-parse','HEAD'],cwd=checkout,text=True).strip()==commit
         assert not subprocess.check_output(['git','status','--porcelain'],cwd=checkout,text=True)
@@ -203,6 +210,7 @@ def run(out,checkout,commit,workers=2,generation='clean-research'):
         scope='Complete model, ledger, native training/inference, calibration and matched study parity. Fixed supervision is an input; selected raw analyses are independently repeated.'))
     atomic_json(target/'verified.json',dict(passed=True,production_code_hash=code,source_head=commit,checkout=str(checkout),
         orchestration_sha256=sha(__file__),generation=generation,
+        response_binding_verifier_sha256=sha(ROOT/'evaluation/cycle14_response_binding.py'),
         fresh_venv=True,fresh_runtime=True,fresh_reference_build=True,complete_native_feature_proof_replay=True,
         bootstrap_receipt_sha256=sha(boot_directory/'verified.json'),
         reference_build_receipt_sha256=sha(reference_build),
