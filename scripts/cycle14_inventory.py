@@ -40,7 +40,8 @@ def run(out):
     excluded={out/'delivery/artifact-inventory.json',out/'delivery/final-audit.json'}
     artifacts={str(path.relative_to(out)):dict(bytes=path.stat().st_size,sha256=sha(path))
         for path in sorted(out.rglob('*')) if path.is_file() and path not in excluded}
-    source_paths=set(documents)|{ROOT/'README.md',ROOT/'configs/cycle14.json',ROOT/'PLN_Chess_Cycle_14_Codex_Brief.md'}
+    source_paths=set(documents)|{ROOT/'README.md',ROOT/'configs/cycle14.json',ROOT/'PLN_Chess_Cycle_14_Codex_Brief.md',ROOT/'proofshot.config.json'}
+    source_paths.update(ROOT/name for name in read_json(out/'source-freeze.json')['production_sources'])
     for pattern in ('src/pln_chess/cycle14/*.py','src/pln_chess/cli/*14.py','training/cycle14*.py',
             'evaluation/cycle14*.py','scripts/cycle14*','tests/test_cycle14*.py'):
         source_paths.update(p for p in ROOT.glob(pattern) if p.is_file())

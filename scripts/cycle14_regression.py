@@ -45,9 +45,11 @@ def run(out, source, workers=6):
         log = target / 'logs' / (name + '.txt')
         log.parent.mkdir(parents=True,exist_ok=True)
         started = time.time()
+        launch_argv=['/usr/bin/time','-v',*argv]
         with log.open('w') as stream:
-            result = subprocess.run(argv,cwd=source,env=env,stdout=stream,stderr=subprocess.STDOUT)
+            result = subprocess.run(launch_argv,cwd=source,env=env,stdout=stream,stderr=subprocess.STDOUT)
         write_json(path,dict(argv=argv,source_head=head,identity=identity,cwd=str(source),
+            launch_argv=launch_argv,resource_measurement='GNU time per independent command; no concurrent cumulative-counter subtraction',
             started_unix=started,elapsed_seconds=time.time()-started,returncode=result.returncode,
             log=str(log.relative_to(out)),driver_sha256=sha(__file__)))
         if result.returncode:

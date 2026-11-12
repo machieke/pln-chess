@@ -1,0 +1,13 @@
+{
+  "parallel_launch_requires_both_feature_indexes": true,
+  "peak_after_feature_closure": "4 current legal + 1 main proof shard 0 + 1 main proof shard 1 + 4 final-shard subdivisions + 1 scientific/UI job = 11; at most one auxiliary verifier fits the registered ceiling of 12.",
+  "reason": "Use workers released by completed feature extraction to finish the remaining disjoint proof shard; no active work is interrupted and no native/evidence criterion changes.",
+  "registered_research_worker_limit": 4,
+  "schema": "c14-proof-stream-schedule-v1",
+  "workers_by_shard": {
+    "0": 1,
+    "1": 1,
+    "2": 4
+  },
+  "wrapper_sha256": "659620caa62fa3972c3ec2de041e2ea7504c2d522ae6b63e72c00760e511b41e"
+}

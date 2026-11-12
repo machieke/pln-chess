@@ -49,6 +49,7 @@ def run(out):
     total_nodes=sum(primary.values())+sum(baseline.values())+audit+verification
     timing_paths=sorted(set(out.glob('*.resources.log'))|set(out.glob('clean-research/*resources.log*'))|
         set(out.glob('pipeline/logs/*.txt'))|set(out.glob('clean-research/logs/*.txt'))|
+        set(out.glob('current/logs/*.txt'))|
         set(out.glob('clean-research/reference-bootstrap/one-worker-build.txt'))|
         set(out.glob('*unit*.txt')))
     measured=[]
@@ -67,8 +68,9 @@ def run(out):
             scope='GNU time user plus system CPU, including reaped descendants of this command.'))
     tests=read_json(out/'current/tests-resources.json')
     test_cpu=tests['child_user_cpu_seconds']+tests['child_system_cpu_seconds']
+    baseline_cpu=read_json(out/'baseline/process-resources.json')['cpu_seconds_lower_bound']
     benchmark_cpu=sum(sum(read_json(p)['worker_cpu_seconds'].values()) for p in (out/'performance/receipts').glob('*.json'))
-    measured_cpu=sum(r['cpu_seconds'] for r in measured if r['included_in_nonoverlapping_sum'])+test_cpu+benchmark_cpu
+    measured_cpu=sum(r['cpu_seconds'] for r in measured if r['included_in_nonoverlapping_sum'])+test_cpu+benchmark_cpu+baseline_cpu
     perf=read_json(out/'performance/summary.json')
     interpreter=dict(benchmark_requests=sum(r['interpreter_process_launches'] for r in perf['rows']),
         completed_streamed_archive_replays=sum(read_json(p)['interpreter_launches']
@@ -92,6 +94,8 @@ def run(out):
             scope='Sum of available engine-reported analysis nodes; terminal analyses lacking a node counter are listed separately, not imputed as zero. Reused response labels are counted once and MultiPV cumulative nodes once per search. Compiler PGO/engine self-test work is outside reference supervision.'),
         measured_cpu_seconds_lower_bound=measured_cpu,measured_cpu_hours_lower_bound=measured_cpu/3600,
         cpu_receipts=measured,current_test_cpu_seconds=test_cpu,benchmark_worker_cpu_seconds=benchmark_cpu,
+        baseline_legal_tests_controls_cpu_seconds_lower_bound=baseline_cpu,
+        baseline_process_counter_receipt_sha256=sha(out/'baseline/process-resources.json'),
         total_cycle_cpu_seconds=None,total_cycle_interpreter_launches=None,
         measured_interpreter_launches=interpreter,
         interpreter_scope='Exact launch counters in benchmark requests and completed native archive replay. Logical operator invocations in other receipts are not mislabeled as process launches. Interrupted in-memory work may lack a completed per-archive counter.',

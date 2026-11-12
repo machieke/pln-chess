@@ -129,10 +129,10 @@ def run(out,repetitions=20):
     for process in Path('/proc').glob('[0-9]*'):
         if int(process.name)==os.getpid():continue
         try:
-            argv=(process/'cmdline').read_bytes().decode().strip('\0').split('\0')
             cwd=(process/'cwd').resolve()
+            if cwd!=ROOT and not str(cwd).startswith('/data/pln-chess-cycle14-'):continue
+            argv=(process/'cmdline').read_bytes().decode().strip('\0').split('\0')
         except (FileNotFoundError,PermissionError,ProcessLookupError,UnicodeDecodeError):continue
-        if cwd!=ROOT and not str(cwd).startswith('/data/pln-chess-cycle14-'):continue
         module=argv[argv.index('-m')+1] if '-m' in argv and argv.index('-m')+1<len(argv) else ''
         study=(module.startswith(('training.cycle14_','evaluation.cycle14_','scripts.cycle14_'))
             or module in ('pytest','scripts.cycle13_clean_research','scripts.cycle12_legal_review',

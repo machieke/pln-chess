@@ -6,10 +6,12 @@ from that clean checkout. The ordinary full-corpus driver later verifies and
 joins exactly these receipts against the completed immutable indexes.
 """
 import argparse
+from concurrent.futures import ThreadPoolExecutor
 import json
 from pathlib import Path
 import resource
 import subprocess
+import sys
 import time
 
 from pln_chess.common import ROOT, digest, read_json
@@ -21,8 +23,9 @@ from training.cycle14_labels import atomic_json
 from scripts.cycle9_baseline import sha
 
 
-def run(source, out, shard=0, shards=1, stop_when=None, early_receipt=None):
+def run(source, out, shard=0, shards=1, stop_when=None, early_receipt=None,subshard=0,subshards=1):
     assert 0 <= shard < shards <= 4
+    assert 0 <= subshard < subshards <= 4
     source, out = Path(source).resolve(), Path(out).resolve()
     runtime = CountedRuntime(timeout=900)
     runtime.verify()
@@ -34,8 +37,9 @@ def run(source, out, shard=0, shards=1, stop_when=None, early_receipt=None):
         production_code_hash=code, runtime=runtime.manifest,
         wrapper_path=str(Path(__file__).resolve()), wrapper_sha256=sha(__file__),
         proof_driver_sha256=sha(ROOT / 'evaluation/cycle14_proof_replay.py'),
-        shard=shard, shards=shards)
+        shard=shard, shards=shards,subshard=subshard,subshards=subshards)
     identity_name = f'stream-identity-{identity["wrapper_sha256"][:12]}-shard{shard}.json'
+    if subshards>1:identity_name=identity_name.replace('.json',f'-part{subshard}-of-{subshards}.json')
     if stop_when:
         assert early_receipt and Path(early_receipt).name == early_receipt
         identity['stop_when'] = str(Path(stop_when).resolve())
@@ -46,6 +50,9 @@ def run(source, out, shard=0, shards=1, stop_when=None, early_receipt=None):
     selected = read_json(source / 'features/selected-generations.json')
     started = time.time()
     processed = set()
+    def belongs(kind,identifier):
+        number=int(digest([kind,identifier]),16)
+        return number%shards==shard and (number//shards)%subshards==subshard
     def release_slot(complete=False):
         if stop_when and (complete or Path(stop_when).exists()):
             atomic_json(out / early_receipt, dict(passed=True,identity=identity,
@@ -66,7 +73,7 @@ def run(source, out, shard=0, shards=1, stop_when=None, early_receipt=None):
                 if token in processed:
                     continue
                 record = read_json(path)
-                if int(digest([kind, record['id']]), 16) % shards != shard:
+                if not belongs(kind,record['id']):
                     continue
                 archive = source / record['archive']
                 assert sha(archive) == record['archive_sha256']
@@ -94,7 +101,7 @@ def run(source, out, shard=0, shards=1, stop_when=None, early_receipt=None):
                 processed.add(token)
                 progress = True
         if all((source / 'features' / selected[kind] / 'index.json').exists() for kind in ('immediate', 'temporal')):
-            expected = sum(int(digest([kind, r['id']]),16) % shards == shard
+            expected = sum(belongs(kind,r['id'])
                 for kind in ('immediate', 'temporal')
                 for r in read_json(source / 'features' / selected[kind] / 'index.json')['records'])
             if len(processed) == expected:
@@ -104,10 +111,35 @@ def run(source, out, shard=0, shards=1, stop_when=None, early_receipt=None):
             raise TimeoutError('Streaming proof replay exceeded its registered stage budget')
         if not progress:
             time.sleep(5)
-    atomic_json(out / f'stream-complete-shard{shard}-of-{shards}.json', dict(passed=True, identity=identity,
+    suffix=f'-part{subshard}-of-{subshards}' if subshards>1 else ''
+    atomic_json(out / f'stream-complete-shard{shard}-of-{shards}{suffix}.json', dict(passed=True, identity=identity,
         archives=len(processed), elapsed_seconds=time.time()-started,
         interpreter_launches=runtime.process_launches,
         scope='Early complete archive replay; completed-index aggregation is a separate mandatory step.'))
+
+
+def partitioned(source,out,shard,shards,workers,policy):
+    source,out=Path(source).resolve(),Path(out).resolve();started=time.time()
+    selected=read_json(source/'features/selected-generations.json')
+    while not all((source/'features'/selected[kind]/'index.json').exists() for kind in ('immediate','temporal')):
+        if time.time()-started>24*3600:raise TimeoutError('Feature closure exceeded proof-partition scheduling budget')
+        time.sleep(5)
+    def part(index):
+        log=out/'partition-logs'/f'shard{shard}-part{index}-of-{workers}.txt';log.parent.mkdir(parents=True,exist_ok=True)
+        with log.open('w') as stream:
+            subprocess.run([sys.executable,'-u',str(Path(__file__).resolve()),'--source',str(source),'--out',str(out),
+                '--shard',str(shard),'--shards',str(shards),'--subshard',str(index),'--subshards',str(workers)],
+                cwd=ROOT,stdout=stream,stderr=subprocess.STDOUT,check=True)
+        receipt=out/f'stream-complete-shard{shard}-of-{shards}-part{index}-of-{workers}.json'
+        return dict(path=receipt.name,sha256=sha(receipt),result=read_json(receipt))
+    with ThreadPoolExecutor(max_workers=workers) as pool:parts=list(pool.map(part,range(workers)))
+    expected=sum(int(digest([kind,r['id']]),16)%shards==shard for kind in ('immediate','temporal')
+        for r in read_json(source/'features'/selected[kind]/'index.json')['records'])
+    assert all(p['result']['passed'] for p in parts) and sum(p['result']['archives'] for p in parts)==expected
+    atomic_json(out/f'stream-complete-shard{shard}-of-{shards}.json',dict(passed=True,archives=expected,
+        parts=parts,workers=workers,policy=policy,wrapper_sha256=sha(__file__),
+        feature_workers_completed_before_launch=True,
+        scope='Disjoint quotient/modulo subdivisions of one existing proof shard. Every archive retains the same full native verifier. No overlap with the other two main shards; final complete-index joining remains mandatory.'))
 
 
 if __name__ == '__main__':
@@ -118,5 +150,13 @@ if __name__ == '__main__':
     parser.add_argument('--shards', type=int, default=1)
     parser.add_argument('--stop-when')
     parser.add_argument('--early-receipt')
+    parser.add_argument('--subshard',type=int)
+    parser.add_argument('--subshards',type=int,default=1)
     args = parser.parse_args()
-    run(args.source, args.out, args.shard, args.shards,args.stop_when,args.early_receipt)
+    policy_path=Path(args.source)/'verification/proof-stream-policy.json'
+    policy=read_json(policy_path) if policy_path.exists() else {}
+    workers=policy.get('workers_by_shard',{}).get(str(args.shard),1)
+    if args.subshard is None and workers>1:
+        assert not args.stop_when and 1<workers<=4
+        partitioned(args.source,args.out,args.shard,args.shards,workers,policy)
+    else:run(args.source,args.out,args.shard,args.shards,args.stop_when,args.early_receipt,args.subshard or 0,args.subshards)

@@ -1,0 +1,40 @@
+{
+  "membership_sha256": "515797465795df7f9bb0f338cbcbb353d0a55a1e99e27a29a06353f01191b80e",
+  "native_verification_unchanged": true,
+  "partitions": [
+    {
+      "archives": 425,
+      "part": 0,
+      "shard": 0
+    },
+    {
+      "archives": 385,
+      "part": 0,
+      "shard": 1
+    },
+    {
+      "archives": 81,
+      "part": 0,
+      "shard": 2
+    },
+    {
+      "archives": 83,
+      "part": 1,
+      "shard": 2
+    },
+    {
+      "archives": 113,
+      "part": 2,
+      "shard": 2
+    },
+    {
+      "archives": 93,
+      "part": 3,
+      "shard": 2
+    }
+  ],
+  "passed": true,
+  "registered_archives": 1180,
+  "rule": "Main shard = hash(kind,id) modulo 3; shard 2 subpart = integer quotient by 3 modulo 4.",
+  "unique_archive_memberships": 1180
+}
