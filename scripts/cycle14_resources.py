@@ -50,6 +50,7 @@ def run(out):
     timing_paths=sorted(set(out.glob('*.resources.log'))|set(out.glob('clean-research/*resources.log*'))|
         set(out.glob('pipeline/logs/*.txt'))|set(out.glob('clean-research/logs/*.txt'))|
         set(out.glob('current/logs/*.txt'))|
+        set(out.glob('baseline/control-completion/logs/*.txt'))|
         set(out.glob('verification/logs/*.txt'))|
         set(out.glob('clean-research/reference-bootstrap/one-worker-build.txt'))|
         set(out.glob('*unit*.txt')))
