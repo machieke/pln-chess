@@ -1,0 +1,110 @@
+{
+  "actual_reported_nodes": 0,
+  "analyses": [],
+  "dependence_group": "c14-ancestry:29ac5c6ec30834c4c80e217f4c637e8a210077314272bfe5e4d166d8aa9a1399",
+  "evidence_id": "c14-reference:abfef284072652d9f796f7322e4d8cb3b9c100a0308261bdce4231cc0b33db95",
+  "generation": "temporal-g1",
+  "horizon": 3,
+  "id": "c14-c10-game-812bfa0d061084b42a0a84e5-ply3",
+  "identity": {
+    "adapter_sha256": "289b8a9a3db998c0cb3114bfc8ae3562736534946478add49918c5aeda0c92cd",
+    "config": {
+      "escalation": "Only unresolved reference comparisons; never conditioned on model predictions",
+      "exact": "UCI unflagged search score; not a proven game-theoretic value",
+      "hash_mib": 32,
+      "method": "separately-reset-single-candidate-root-searches",
+      "node_budget_ladder": [
+        [
+          20000,
+          80000
+        ],
+        [
+          320000,
+          1280000
+        ]
+      ],
+      "nondirectional_margin_cp": 20,
+      "preference_margin_cp": 80,
+      "release": "sf_18",
+      "threads": 1
+    },
+    "driver_sha256": "67d8234011e0bb82fe57cd72127345ed9232d7e159bef568eb14bfe07e804f54",
+    "kind": "temporal",
+    "reference_manifest_sha256": "11f190ca35b7958888cd3c064a2b495c20c919960b15b042029752e0fd119bcd",
+    "row_hash": "a8534e1c8dd93c8564fcd3298d3058c499dc99e2ab264e0969bca91f626ce2b1",
+    "source_hash": "c286fdf5facaef449044c2d9414e58adcb5a4d283dc5e048f58b71dbc45963f4"
+  },
+  "inference_prediction_used": false,
+  "label": "unknown",
+  "original_actor": "White",
+  "probability_of_correctness": null,
+  "raw_artifact": "labels/temporal-g1/raw/c14-c10-game-812bfa0d061084b42a0a84e5-ply3.json.xz",
+  "raw_sha256": "5d268b27ea661b69edfcd26bb15b426204aeca3672b9d1db056a34174308764a",
+  "reason": "missing-candidate-analysis",
+  "reference_scope": "Offline operational search agreement; no proven chess value or native PLN conclusion",
+  "schema": "c14-reference-label-generation-v1",
+  "selected_pv": {},
+  "source_game": "game-content:812bfa0d061084b42a0a84e55d441a01c733b86f9f8ab470c32dbcd69325ac05",
+  "split": "train",
+  "supersedes": null,
+  "tiers": [
+    {
+      "budgets": [
+        20000,
+        80000
+      ],
+      "evaluations": [
+        {
+          "candidates": {
+            "A": null,
+            "B": null
+          },
+          "history_verified": true,
+          "node_budget": 20000,
+          "termination": "incomplete"
+        },
+        {
+          "candidates": {
+            "A": null,
+            "B": null
+          },
+          "history_verified": true,
+          "node_budget": 80000,
+          "termination": "incomplete"
+        }
+      ],
+      "label": "unknown",
+      "reason": "missing-candidate-analysis",
+      "tier": 0
+    },
+    {
+      "budgets": [
+        320000,
+        1280000
+      ],
+      "evaluations": [
+        {
+          "candidates": {
+            "A": null,
+            "B": null
+          },
+          "history_verified": true,
+          "node_budget": 320000,
+          "termination": "incomplete"
+        },
+        {
+          "candidates": {
+            "A": null,
+            "B": null
+          },
+          "history_verified": true,
+          "node_budget": 1280000,
+          "termination": "incomplete"
+        }
+      ],
+      "label": "unknown",
+      "reason": "missing-candidate-analysis",
+      "tier": 1
+    }
+  ]
+}

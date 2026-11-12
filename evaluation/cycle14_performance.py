@@ -122,15 +122,27 @@ def run(out,repetitions=20):
     code=production_code_hash();assert code==read_json(out/'source-freeze.json')['production_code_hash']
     # Caller must have stopped completed owned research jobs. Record the exact
     # process census; do not infer contention-free execution from timings.
-    processes=subprocess.check_output(['ps','-eo','pid,ppid,args'],text=True)
-    active=[line for line in processes.splitlines() if any(token in line for token in (
-        '-m training.cycle14_features','-m training.cycle14_labels','-m scripts.cycle14_baseline run',
-        '-m scripts.cycle13_clean_research compare','-m evaluation.cycle14_responses','-m scripts.cycle14_regression',
-        '-m scripts.cycle14_reproduce')) and not line.strip().startswith(str(os.getpid())+' ')]
+    active=[]
+    for process in Path('/proc').glob('[0-9]*'):
+        if int(process.name)==os.getpid():continue
+        try:
+            argv=(process/'cmdline').read_bytes().decode().strip('\0').split('\0')
+            cwd=(process/'cwd').resolve()
+        except (FileNotFoundError,PermissionError,ProcessLookupError,UnicodeDecodeError):continue
+        if cwd!=ROOT and not str(cwd).startswith('/data/pln-chess-cycle14-'):continue
+        module=argv[argv.index('-m')+1] if '-m' in argv and argv.index('-m')+1<len(argv) else ''
+        study=(module.startswith(('training.cycle14_','evaluation.cycle14_','scripts.cycle14_'))
+            or module in ('pytest','scripts.cycle13_clean_research','scripts.cycle12_legal_review',
+                'evaluation.cycle12_legal_controls','evaluation.cycle12_legal_recovery')
+            or any(Path(a).name=='cycle14_replay_stream.py' for a in argv)
+            or (argv and Path(argv[0]).name=='swipl'))
+        if study:active.append(dict(pid=int(process.name),cwd=str(cwd),argv=argv))
     assert not active, 'Stop owned study jobs before headline benchmarking: '+str(active)
     atomic_json(out/'performance/workloads.json',dict(workloads=workloads(ROOT/'artifacts/cycle13'),repetitions=repetitions,
         matched_to_profile_before=True,production_code_hash=code,owned_study_processes=active,
-        process_census=processes,scope='No concurrent study jobs under this cycle; unrelated host activity is not controlled.'))
+        host_load_average=list(os.getloadavg()),host_logical_cpus=os.cpu_count(),
+        process_census_scope='Only relevant owned study/native processes are inspected; unrelated host command lines are not retained.',
+        scope='No concurrent study jobs under this cycle; unrelated host activity is not controlled.'))
     all_rows=[]
     for name in workloads(ROOT/'artifacts/cycle13'):
         for repetition in range(repetitions):

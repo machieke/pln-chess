@@ -1,0 +1,109 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+___________ test_registered_fit_freeze_and_matched_endpoint_workflow ___________
+
+tmp_path = PosixPath('/tmp/pytest-of-purplezky/pytest-521/test_registered_fit_freeze_and0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f42641a3ef0>
+
+    def test_registered_fit_freeze_and_matched_endpoint_workflow(tmp_path,monkeypatch):
+        rows=[]
+        for split,n in (('train',4),('development',2),('calibration',2),('test',2),('source-holdout',2)):
+            for i in range(n):
+                base=copy.deepcopy(examples()[0]);base.update(id=f'unit-{split}-{i}',split=split,
+                    source_game=f'{split}-game-{i}',dependence_group=f'{split}-game-{i}',transformation_lineage=[f'{split}-game-{i}'],
+                    source={'collection':'unit-collection'},label='A' if i%2==0 else 'B')
+                for h in (1,2,3):
+                    packet=copy.deepcopy(base['packet']);packet['base']['horizon']=h
+                    packet['base']['profiles']['A']['fields']['attack'].update(supported=1,contradicted=0)
+                    packet['base']=base_seal(packet['base']);packet=seal(packet)
+                    rows.append(dict(base,id=base['id']+(f'-ply{h}' if h>1 else ''),packet=packet,temporal_context={'horizon':h}))
+        def records(out,temporal=False,labels='revised'):
+            return copy.deepcopy([r for r in rows if temporal or r['temporal_context']['horizon']==1])
+        monkeypatch.setattr(study,'training_records',records);monkeypatch.setattr(controls,'training_records',records)
+        write_json(tmp_path/'baseline/research/verified.json',{'passed':True,'scope':'unit fixture'})
+        write_json(tmp_path/'datasets/partitions.json',{'scope':'unit partition'})
+        write_json(tmp_path/'datasets/reversal-registration.json',{'scope':'unit registration'})
+        study.fit(tmp_path);registry=read_json(tmp_path/'model/registry.json')
+        assert registry['test_predictions_run'] is False
+        assert not (tmp_path/'evaluation').exists()
+        study.freeze(tmp_path);study.evaluate(tmp_path)
+        assert read_json(tmp_path/'evaluation-freeze.json')['final_predictions_observed'] is False
+        controls.factorial(tmp_path)
+        summary=read_json(tmp_path/'ablations/summary.json')
+        assert summary['passed'] and len(summary['temporal'])==4
+>       for panel in summary['temporal']:
+
+tests/test_cycle14_study_pipeline.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+out = PosixPath('/tmp/pytest-of-purplezky/pytest-521/test_registered_fit_freeze_and0')
+
+    def dependence(out):
+        out=Path(out);runtime=Runtime();registry=read_json(out/'model/registry.json')
+        records=training_records(out,temporal=True);training=[r for r in records if r['split']=='train'];selected=registry['selected_descriptor']
+        original=load_model(out,registry['models']['temporal-selected'],runtime)
+        temporal=[r for r in training if r['temporal_context']['horizon']>1]
+        repeated=training+[dict(r,id=r['id']+'/repeated-reference-analysis') for r in temporal]+[dict(r,id=r['id']+'/repeated-continuation') for r in temporal]
+        fits={}
+        for name,handling in (('temporal-repeat-handled',True),('temporal-repeat-unsafe',False)):
+            fits[name]=train(repeated,runtime,out/'dependence'/name,dataset_hash=data_identity(repeated),abstraction=selected,
+                dependence=handling,baseline_root=out,variant='C14-'+name)
+        channels=lambda m:{k:v['channels'] for k,v in m.hypotheses.items()}
+        assert channels(original)==channels(fits['temporal-repeat-handled'])
+        unsafe=fits['temporal-repeat-unsafe'];inflated=[key for key,h in original.hypotheses.items() if any(unsafe.hypotheses[key]['channels'][c]['confidence']>v['confidence'] for c,v in h['channels'].items())]
+        primary=registry['primary_immediate'];immediate=[r for r in training if r['temporal_context']['horizon']==1]
+        replay=train(immediate,runtime,out/'dependence/primary-replay',dataset_hash=data_identity(immediate),abstraction=selected,
+            baseline_root=out,variant='C14-'+primary)
+        assert sha(out/'dependence/primary-replay/checkpoint.json')==registry['models'][primary]['sha256']
+        assert (out/'dependence/primary-replay/ledger.jsonl').read_bytes()==(out/'learning'/primary/'ledger.jsonl').read_bytes()
+        old=EvidenceLedger(out/'learning/old-labels-old-descriptor/ledger.jsonl').records()
+        new=EvidenceLedger(out/'learning/revised-labels-historical-only/ledger.jsonl').records()
+        ledger=EvidenceLedger(out/'dependence/supersession/ledger.jsonl')
+        for entries in (old,new):
+            grouped=defaultdict(list)
+            for entry in entries:grouped[entry['generation']].append(entry['payload'])
+            for gen,payloads in sorted(grouped.items()):ledger.append_many(payloads,generation=gen)
+        for gen in sorted({r['generation'] for r in old}):ledger.activate(gen,[r['payload']['observation_id'] for r in old if r['generation']==gen],rollback=True)
+        assert ledger.records()==sorted(old,key=lambda r:r['payload']['observation_id'])
+        old_rows=[r for r in training_records(out,labels='old') if r['split']=='train']
+        rollback=train(old_rows,runtime,out/'dependence/rollback-fit',dataset_hash=data_identity(old_rows),baseline_root=out,variant='C14-old-labels-old-descriptor')
+        assert sha(out/'dependence/rollback-fit/checkpoint.json')==registry['models']['old-labels-old-descriptor']['sha256']
+>       target=next(r for r in training if r['label'] in ('A','B') and project(r['packet'],selected)['distinguishable'] and project(r['packet'],selected)['complete'])
+E       StopIteration
+
+evaluation/cycle14_studies.py:206: StopIteration
+----------------------------- Captured stdout call -----------------------------
+C14 MODEL old-labels-old-descriptor 4 0
+C14 MODEL revised-labels-historical-only 4 0
+C14 MODEL immediate-c13-relational 4 0
+C14 MODEL immediate-role-change-v1 4 1
+C14 MODEL immediate-shared-relation-v1 4 1
+C14 MODEL immediate-selected-concepts 4 0
+C14 MODEL source-family-heldout 4 0
+C14 MODEL historical-dependent-repeat 8 0
+C14 MODEL historical-unsafe-repeat 8 0
+C14 MODEL temporal-old-descriptor 12 0
+C14 MODEL temporal-selected 12 0
+C14 MODEL temporal-selected-concepts 12 0
+C14 MODEL temporal-old-labels 12 0
+C14 MODEL temporal-revised-historical 12 0
+C14 MODEL temporal-omission-robust 20 0
+C14 FINAL EVALUATION frozen-c13
+C14 FINAL EVALUATION historical-dependent-repeat
+C14 FINAL EVALUATION historical-unsafe-repeat
+C14 FINAL EVALUATION immediate-c13-relational
+C14 FINAL EVALUATION immediate-role-change-v1
+C14 FINAL EVALUATION immediate-selected-concepts
+C14 FINAL EVALUATION immediate-shared-relation-v1
+C14 FINAL EVALUATION old-labels-old-descriptor
+C14 FINAL EVALUATION revised-labels-historical-only
+C14 FINAL EVALUATION source-family-heldout
+C14 FINAL EVALUATION temporal-old-descriptor
+C14 FINAL EVALUATION temporal-old-labels
+C14 FINAL EVALUATION temporal-omission-robust
+C14 FINAL EVALUATION temporal-revised-historical
+C14 FINAL EVALUATION temporal-selected
+C14 FINAL EVALUATION temporal-selected-concepts
+=========================== short test summary info ============================
+FAILED tests/test_cycle14_study_pipeline.py::test_registered_fit_freeze_and_matched_endpoint_workflow
+1 failed in 17.62s

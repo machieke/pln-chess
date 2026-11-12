@@ -26,8 +26,9 @@ def scientific(value):
     return value
 
 
-def run(out,checkout,commit,workers=2):
-    out=Path(out).resolve();checkout=Path(checkout).resolve();target=out/'clean-research';runout=target/'run'
+def run(out,checkout,commit,workers=2,generation='clean-research'):
+    if not generation or Path(generation).name!=generation:raise ValueError('Use a single reproduction generation name')
+    out=Path(out).resolve();checkout=Path(checkout).resolve();target=out/generation;runout=target/'run'
     if not (target/'bootstrap/verified.json').exists():bootstrap(target/'bootstrap',checkout,commit)
     boot=read_json(target/'bootstrap/verified.json')
     actual_head=subprocess.check_output(['git','rev-parse','HEAD'],cwd=checkout,text=True).strip()
@@ -114,6 +115,7 @@ def run(out,checkout,commit,workers=2):
     atomic_json(target/'comparison.json',dict(passed=True,artifacts=comparisons,inputs=inputs,
         scope='Complete model, ledger, native training/inference, calibration and matched study parity. Fixed supervision is an input; selected raw analyses are independently repeated.'))
     atomic_json(target/'verified.json',dict(passed=True,production_code_hash=code,source_head=commit,checkout=str(checkout),
+        orchestration_sha256=sha(__file__),generation=generation,
         fresh_venv=True,fresh_runtime=True,fresh_reference_build=True,complete_native_feature_proof_replay=True,
         proof_replay_sha256=sha(target/'proof-replay/verified.json'),selected_fresh_extraction_sha256=sha(target/'selected/verified.json'),
         model_checkpoint_byte_parity=True,evidence_ledger_byte_parity=True,comparison_sha256=sha(target/'comparison.json'),
@@ -155,5 +157,5 @@ def selected(source,out):
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--out',default='artifacts/cycle14');p.add_argument('--checkout');p.add_argument('--commit');p.add_argument('--workers',type=int,default=2);p.add_argument('--selected',action='store_true');p.add_argument('--replay-output');a=p.parse_args()
-    selected(a.out,a.replay_output) if a.selected else run(a.out,a.checkout,a.commit,a.workers)
+    p=argparse.ArgumentParser();p.add_argument('--out',default='artifacts/cycle14');p.add_argument('--checkout');p.add_argument('--commit');p.add_argument('--workers',type=int,default=2);p.add_argument('--selected',action='store_true');p.add_argument('--replay-output');p.add_argument('--generation',default='clean-research');a=p.parse_args()
+    selected(a.out,a.replay_output) if a.selected else run(a.out,a.checkout,a.commit,a.workers,a.generation)
