@@ -1,0 +1,63 @@
+{
+  "commit_mapping_sha256": "97432878e0b9a0ee4717d19549c2af3488cd16a66eb7d9f772ad0da4972228e3",
+  "counts": {
+    "bytes": 13057168229,
+    "files": 14597,
+    "git_bytes": 95382992,
+    "git_files": 6169,
+    "release_asset_bytes": 12209879040,
+    "release_files": 8428,
+    "release_unique_objects": 7134
+  },
+  "evidence_restoration": {
+    "changed": [],
+    "files": 14597,
+    "missing": [],
+    "passed": true
+  },
+  "largest_new_git_blob_bytes": 2838460,
+  "manifest_sha256": "1f94810e52f5f30ee42d9718e7c34e56793e73514fe12945859825e006a40e54",
+  "original_bundle": {
+    "bytes": 11061563006,
+    "sha256": "ffac3d31ce398c4f1384a7ea5a8e46f9c2475748ef343ba615cb3246ec6ee610"
+  },
+  "original_delivery": "4a603722a73f9f0280e5034186ee4dc26b0f1bbc",
+  "original_history_restoration": {
+    "commits": 60,
+    "expected_new_objects": 12938,
+    "missing_new_objects": [],
+    "objects_verified_in_restored_pack": 12953,
+    "original_head": "4a603722a73f9f0280e5034186ee4dc26b0f1bbc",
+    "passed": true,
+    "required_baseline": "54353579e7921f9b47f43bbde1aa61cb887bc6e4",
+    "scope": "Actual bundle unbundle/index-pack into an isolated bare repository; every object in the unpublished range is explicitly present in the new pack index. Baseline objects are available through an alternate. All 60 raw commit objects match."
+  },
+  "passed": true,
+  "preservation": {
+    "historical_changes": [],
+    "legal_checkpoint_byte_identical": true,
+    "legal_checkpoint_sha256": "5c655e99f45089b6049c4819f3db42bf09f38906984a057200ce04ef10e82de8",
+    "original_to_rewritten_source_differences": [],
+    "passed": true,
+    "production_code_hash": "e88ff7969885be101af2ceedbbdf5d5499f4253b361a8cee18ff1814f055282c",
+    "scope": "Fresh publication worktree; all protected historical files rehashed. Original scientific execution receipts remain historical. Publication tooling is tested separately.",
+    "unchanged_historical_files": 16596
+  },
+  "publication_sources": {
+    ".gitignore": "0f89177d64ebbe5031d8ec7b916a83941ac915a62397c5a77b3d191dc19e6145",
+    "README.md": "3ec6e2f477ba3e4f15a1c2620227723f9cecfbb2668fd2f77b14aa80bb36bae3",
+    "docs/cycle14/publication.md": "2ded8389fcc27ae7f2d4d77b5cba27bd63a999239bc411ee9b5b7c64d1c7fa1e",
+    "scripts/cycle14_evidence.py": "74187dfacaa8065e9779465d3454bf2defa9f6269bb91cd60e16026763800e32",
+    "scripts/cycle14_publication.py": "824879af9870620558686e485be5b999b4b4751009115a8df3effd934d2dfd8c",
+    "tests/test_cycle14_evidence.py": "a6ea5a1e6d753250c3616cbf7bcbcfe0b9446ad5a2e59f7b350d16997d85409e"
+  },
+  "rewritten_history_bundle_bytes": 6884933,
+  "rewritten_history_head": "eb6258954f6da1edc676da063b2c70f40e63cd02",
+  "schema": "cycle14-publication-verification-v1",
+  "scope": "Local transport and preservation verification before publication. This does not claim new scientific experiment execution or completed remote upload.",
+  "transport_tests": {
+    "passed": true,
+    "tests": 17,
+    "xml_sha256": "2f3bf14c3538d0b6ffe61190f2d5615a73ba5e45df19d0adeee3be5e8dea7ce4"
+  }
+}

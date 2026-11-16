@@ -7,6 +7,10 @@ relative role descriptors, matched continuation studies, and compact proof stora
 Read the [Cycle 14 engineering report](docs/cycle14/engineering-report.md),
 [20-package matrix](docs/cycle14/package-matrix.md), and
 [reproduction guide](docs/cycle14/reproduction.md).
+
+Large Cycle 14 evidence files are distributed through a versioned release.
+Run `python3 -m scripts.cycle14_evidence fetch` to restore and verify them.
+See [evidence downloads and original commit restoration](docs/cycle14/publication.md).
 Open `/compact-preferences` for the experimental evidence inspector, including separate
 legality beliefs, supplied branches, proof pagination and exact archive reconstruction.
 The accepted legal checkpoint remains unchanged; preference checkpoints are opt-in.
