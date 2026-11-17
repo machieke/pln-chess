@@ -1,0 +1,87 @@
+{
+  "arm": "D-BA",
+  "corpus_hash": "0ab9e103e4e72f29eaddf843961ed272a7d3ee48634b346fbe3edca113bf731e",
+  "ledger_hash": "678db823e494a836785b07e5e4edf4e6244b84ee72900f490d57157b13523a38",
+  "logical_structure_origin": "Supplied; no structure discovery",
+  "observation_trust": "Supplied confidence .5; not learned or calibrated",
+  "rules": {
+    "clear-two": {
+      "ancestry": [
+        "tcec_game_f0217919090b7105fa663428ee6aa638129e8bf4915c327b7f111a79140aac6c",
+        "tcec_game_c892d82470a76470380e5b2a1b8b9605ffe5cf1cc9f817b5a6679a17892d6d0f",
+        "tcec_game_2ccd1b7755c774559347bb84b937ad26963c4eddb7589c284eddc59bb6d3a6dc",
+        "tcec_game_a1c9b0a89d9abdbb3ba0a6aa7f03798fd148bcaf496b6a851c2ec0ff69e75ce9",
+        "tcec_game_888ebc2da2f10684396c20baddee1abd3e00f10dc7814db6371f09fde13fd365",
+        "tcec_game_048e64b89a2f66dc393a6054d9a4c648eda543ebeaf3e3a4e042fb7b96819001",
+        "tcec_game_3caa76aad528c2e68154535ceab44a2638268b06c9d1624a29a037815e253dc3",
+        "tcec_game_573a89f3343ab2a205f302c3d9c37266032171cf49683ffe27f41ddb9cfba2f3",
+        "tcec_game_4871dd75e59be4be9a445f4cea2da19cee4d9653cc279be484930297252687de",
+        "tcec_game_1c411d3dcb91555572483a86832ccc7404f122fdb45c7de0e17485319bcbcee6",
+        "tcec_game_db07417b165316ec91240593f7df083be99fd9285d69ead1c35904aa03c58908",
+        "tcec_game_c740520a6d9d62da468596e8fddb73b238d5bc3bf694aa235ec8dcdf6631f666"
+      ],
+      "declaration": "(Implication (RayPath $a $t (Cons $c1 (Cons $c2 Nil)) $shape $s) (Implication (Empty $c1 $s) (Implication (Empty $c2 $s) (Clear $a $t $shape $s))))",
+      "evidence": [
+        "a6e86ffb09f4acd5551c76c03fdea5956e04594328c3351705a0e1c565d752d9",
+        "195bcc8157857eed043f5456c2f0d2847428c585f58c57b89683dfb81a69cb67",
+        "61e939f28375411d749017ab495a24b6125cfe675dad59a00297e5205e189ddf",
+        "4ea82f84aca1c10daf763dca88d6645aa2df9c3e5502c5550a3520e3a866419d",
+        "75bf7b360421436c2b0e6700bb45e89e99864cecf5df38b9718ae8bb9ba089c7",
+        "320bc52cd74b6adab3200573bceba7892f7aaf374a6f3095f3abc4f0a16c5466",
+        "9080da6b7fcc598bacf62248a6ae46872e068a0ae8687ab4eec8b577bd5ab249",
+        "79831a7608870077a63ace8679079874f4d8fb5128fed8baccdf5ead70c1ba62",
+        "0369b34c8fd12a36199ee58575af7324a1d69250d760c593c7bd36027660cf24",
+        "4e20499b92336661628e3190b1fe7a22cea9e223ec0412b00b9c1e7f6e1becbd",
+        "8d9af1354aea16dc7d37bd3dc7e4adf559184bdd6f46ccfc80c519f8dca261c8",
+        "e55dfc60a262f61e0cdd53776dff854f4ef5a9a6c6168f60afc12e321098d0c4"
+      ],
+      "origin": "Supplied structure; Cycle 17 native parameter revision",
+      "rule_identity": "rule_clear-two",
+      "truth_value": {
+        "confidence": 0.923076923076923,
+        "strength": 1.0
+      }
+    },
+    "rook-attack": {
+      "ancestry": [
+        "tcec_game_718499ead0a557915ce15e688921d05cc8b2d249aab06f30c16bb87b767f0e4d",
+        "tcec_game_7671a8b976748dea2c15dc40879642ed3b913b07073391e461e707c313bfd06c",
+        "tcec_game_e9684d596a44af8801e11b753a2457802801b552f9b074ea1ba7c609868236b8",
+        "tcec_game_8b3a007b63fba8c5f4015a55472710a8f8c0edbdcc9157379725682d2fbc4858",
+        "tcec_game_2d765464d8874e71cb8f001bf1fc0d0a30d5d1f613ef54d889e8598066f68604",
+        "tcec_game_85c092c6eee3abbb869637790f047a3286acc7685747252b53c8ec3a6ba4bf8c",
+        "tcec_game_da18d5c77c24631fa561e5a2499fe263a5f08bfa4df67fec9c0660bf0a73879c",
+        "tcec_game_8a2b1c8bc05c05fb3cf8e02fb742bc6c372644b298566c0d0514de94dcf86f75",
+        "tcec_game_74159878275798b25e6895dc8fec9dc027db3b3543c190a9dc934910a6007ae3",
+        "tcec_game_68e10af574aa601e6a227b27eb7e39226131fd73be8813ce97cbd79e5f1a326c",
+        "tcec_game_feaa5b3244afc69c7ec76614a7d54446acfda476eaa35d37f2ba4890a3dae2ed",
+        "tcec_game_25732a217cb4add46aa08ca520ccfd8c31ba356c9863b1cd5f6c422e18b11c68"
+      ],
+      "declaration": "(Implication (PieceKind $a rook $s) (Implication (Clear $a $t orthogonal $s) (Attack $a $t $s)))",
+      "evidence": [
+        "54926224904d754fd41ee75a1bee1df768445257e9c805e480ee1ea4c517b205",
+        "f8da0bd7618770f0ca3c296d420c915e98f7b73093711dba615b75f19e4c6fa0",
+        "70f93894cef314c587dd924dfb3263e2ada0a3e2fc98859186350d8414c018bb",
+        "9d3c3331de8a56fe10f2dd31ce99e0833c8fc4786d93e3c5e1a56e1ee8cc71b8",
+        "a89b4869799afdb63d4347f5cb03f6224d5aacfe48aa774ea29b061a1842186f",
+        "e2d915ba085cef6dc5d60224145113b9f69ba4c7486f5561d9ce80bcc4889047",
+        "bb806bb758be2d53e46546a986a5b0b3476c5f8f8e601db5094ccb1fdb1ae78b",
+        "6a11fee40fd71f1623175658373b8cd733daa5b6f43659a431377d0c4004db41",
+        "e7c8109e06db29d3a1da9e590d0b7f0ff972862b9124f934393754628c8f7ef9",
+        "534abfd6dcc35f4672d84ed0760b0dec34c333aa7ad87070d5469de4201e2260",
+        "3af2bdefd53de39ede2bc803e9d0f02fb46f5f470ab777041aeeca2dca1f7f1d",
+        "eca485d55173d8a0e85c2d0dadd2e535b3f3816ae50f40d7d3cb4326f5e53c3e"
+      ],
+      "origin": "Supplied structure; Cycle 17 native parameter revision",
+      "rule_identity": "rule_rook-attack",
+      "truth_value": {
+        "confidence": 0.923076923076923,
+        "strength": 1.0
+      }
+    }
+  },
+  "runtime_version": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+  "schema": "cycle17-learned-pair-v1",
+  "structure_hash": "696045d7cb1f34a05bd1ef2b17d7097b6d02b28a3e49143dcd7b22276b054f0f",
+  "version": "f87f57463a82053b131d110d5a02f32caf41a145ec9c23c43a237329e2de1fc3"
+}

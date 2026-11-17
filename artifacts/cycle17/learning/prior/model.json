@@ -1,0 +1,35 @@
+{
+  "arm": "prior",
+  "corpus_hash": "0ab9e103e4e72f29eaddf843961ed272a7d3ee48634b346fbe3edca113bf731e",
+  "ledger_hash": "8bd301f6dfebdba120c00b67214eed5896200e03d83506cdb3f0cc4576d3ccae",
+  "logical_structure_origin": "Supplied; no structure discovery",
+  "observation_trust": "Supplied confidence .5; not learned or calibrated",
+  "rules": {
+    "clear-two": {
+      "ancestry": [],
+      "declaration": "(Implication (RayPath $a $t (Cons $c1 (Cons $c2 Nil)) $shape $s) (Implication (Empty $c1 $s) (Implication (Empty $c2 $s) (Clear $a $t $shape $s))))",
+      "evidence": [],
+      "origin": "Supplied structure; Cycle 17 native parameter revision",
+      "rule_identity": "rule_clear-two",
+      "truth_value": {
+        "confidence": 0,
+        "strength": 0.5
+      }
+    },
+    "rook-attack": {
+      "ancestry": [],
+      "declaration": "(Implication (PieceKind $a rook $s) (Implication (Clear $a $t orthogonal $s) (Attack $a $t $s)))",
+      "evidence": [],
+      "origin": "Supplied structure; Cycle 17 native parameter revision",
+      "rule_identity": "rule_rook-attack",
+      "truth_value": {
+        "confidence": 0,
+        "strength": 0.5
+      }
+    }
+  },
+  "runtime_version": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+  "schema": "cycle17-learned-pair-v1",
+  "structure_hash": "696045d7cb1f34a05bd1ef2b17d7097b6d02b28a3e49143dcd7b22276b054f0f",
+  "version": "eb689e317fa68e23f26a249e036aa93314ce95b2faf1020e875a1247264585e4"
+}
