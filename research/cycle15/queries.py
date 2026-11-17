@@ -1,5 +1,6 @@
 """Public opt-in local consequence interface; candidate is supplied, never chosen."""
-from pln_chess.common import digest
+from pathlib import Path
+from pln_chess.common import digest, read_json
 from .knowledge import load_rules
 from .native_reasoner import Budgets, NativeReasoner, Sentence
 from .observations import observe, successor
@@ -10,6 +11,8 @@ def infer_state(state, target_relation, knowledge_checkpoint=None, budgets=None,
     if set(target_relation)!={'attacker','target','predicate'} or target_relation['predicate'] not in ('Attack','KingExposed'):
         raise ValueError('Only explicit attack or own-king exposure queries are supported')
     reasoner=reasoner or NativeReasoner()
+    if isinstance(knowledge_checkpoint,(str,Path)):
+        knowledge_checkpoint=read_json(knowledge_checkpoint)
     a,t=target_relation['attacker'],target_relation['target'];sid=state['id']
     facts,scope=observe(state,a,t,full_scope=full_scope,candidate=candidate)
     facts=[f for f in facts if f.term not in omit_terms]
@@ -25,6 +28,9 @@ def infer_state(state, target_relation, knowledge_checkpoint=None, budgets=None,
     result=reasoner.infer(facts,rules,query,contrary=contrary,budgets=budgets or Budgets(64,128,256,15))
     result.update(observation_scope=scope,stage='A-imported-attack' if imported_attack else 'B-raw-observations',
         model_identity=digest([s.metta() for s in rules]),query_domain_valid=scope['attacker_present'] and scope['target_present'],
+        knowledge_checkpoint_identity=knowledge_checkpoint['version'] if knowledge_checkpoint else None,
+        learning_provenance={key:knowledge_checkpoint[key] for key in ('structure_hash','ledger_hash','evidence_policy')}
+            if knowledge_checkpoint else {'origin':'supplied domain rules; no learned checkpoint'},
         target_semantics='Occupancy-constrained sliding influence, including friendly destination; no legal capture or move legality',
         supplied_fact_count=len(facts),supplied_rule_count=len(rules),native_resident_state=False)
     return result
