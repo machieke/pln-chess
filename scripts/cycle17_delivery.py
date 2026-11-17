@@ -82,8 +82,9 @@ def compact(out):
     for group in ('baseline-replay', 'minimal-final', 'controls', 'evaluation', 'historical-evaluation', 'performance'):
         publish(group+'/summary.json')
     publish('reference-final/results.json')
-    for relative in ('historical-final.json', 'training-audit.json', 'resource-census.json', 'supplement/proof-audit.json',
-        'reproduction/verified.json', 'preservation/cycle17-verification.json', 'performance/proof-integrity.json'):
+    for relative in ('historical-final.json', 'training-audit.json', 'failure-census.json', 'historical-target-scope.json', 'resource-census.json',
+        'preservation-resource-observation.json', 'supplement/proof-audit.json', 'supplement/historical-bishop-diagnostic.json',
+        'reproduction/verified.json', 'preservation/cycle17-verification.json', 'preservation/tests.xml', 'performance/proof-integrity.json'):
         publish(relative)
     # Complete training ledgers and revision receipts are modest and useful for review.
     for path in sorted((out/'learning').rglob('*.json')):
@@ -106,6 +107,11 @@ def compact(out):
         destination = f'witnesses/historical-shared-{kind}.json'
         publish(str(Path(proof['path']).relative_to(out)), destination)
         published.setdefault('historical-shared', {})[kind] = dict(path='artifacts/cycle17/'+destination, sha256=proof['sha256'])
+    bishop = read_json(out/'supplement/historical-bishop-diagnostic.json')
+    for kind, proof in [('native', bishop['source']), ('guard', bishop['diagnostic']['proof'])]:
+        destination = f'witnesses/historical-bishop-{kind}.json'
+        publish(str(Path(proof['path']).relative_to(out)), destination)
+        published.setdefault('historical-bishop', {})[kind] = dict(path='artifacts/cycle17/'+destination, sha256=proof['sha256'])
     write_json(target/'witnesses/index.json', published)
     return published
 
@@ -161,10 +167,15 @@ def preflight(out):
             blobs.append(dict(oid=fields[0], bytes=int(fields[2]), path=fields[3] if len(fields)>3 else None))
     assert max(b['bytes'] for b in blobs) <= 10*1024**2
     assert sum(b['bytes'] for b in blobs) <= 100*1024**2
+    # Include superseded unpublished versions, not merely current files.
+    for blob in blobs:
+        data = subprocess.check_output(['git', 'cat-file', 'blob', blob['oid']])
+        assert not re.search(rb'(?m)^-----BEGIN (?:RSA |OPENSSH |EC )?PRIVATE KEY-----', data), blob['oid']
+        assert not re.search(rb'gh[pousr]_[A-Za-z0-9]{30,}', data), blob['oid']
     return record(Path(out), dict(passed=True, starting_commit=START, local_head=head,
         new_unique_blobs=len(blobs), new_blob_bytes=sum(b['bytes'] for b in blobs), largest_blob=max(b['bytes'] for b in blobs),
         inventory=blobs, only_cycle17_additions=True, secret_scan_passed=True,
-        scope='Reachable unpublished range size and local file scan; remote identity and final availability verified separately'))
+        scope='Entire reachable unpublished range size and secret-pattern scan; remote identity and final availability verified separately'))
 
 
 if __name__ == '__main__':

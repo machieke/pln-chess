@@ -42,6 +42,10 @@ confidence .5 is a supplied trust assumption, not a learned or calibrated value.
 The exact source/rule deduplication ledger rejects repeated delivery. Structures
 come from the unchanged twelve-rule finite knowledge file; no structure discovery
 is claimed. No model's parameters are manually overwritten to force equality.
+The existing native statement-level revision operator computes every admitted
+update; Python validates admission and records ancestry, rather than calculating
+the rule truth values. This training operation is distinct from the unguarded
+structural diagnostics that are prohibited from supplying inference answers.
 
 | Arm | Clearance sources | Rook terminal sources | Samples per rule | Unique games across pair | Shared games |
 | --- | --- | --- | --- | ---: | ---: |

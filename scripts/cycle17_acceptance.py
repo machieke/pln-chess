@@ -2,6 +2,7 @@
 from datetime import datetime, timezone
 import re
 import subprocess
+import xml.etree.ElementTree as ET
 from pln_chess.common import ROOT, read_json
 from pln_chess.pln import Runtime
 from research.cycle16.records import record
@@ -29,6 +30,11 @@ def run():
         history_controls=27, recoveries=2, holdouts=76, tests=748)
     assert all(preservation.get(k) == v for k,v in expected.items())
     assert preservation['source_head'] == source['source_head']
+    junit = ROOT/'artifacts/cycle17/preservation/tests.xml'
+    suites = list(ET.parse(junit).getroot().iter('testsuite'))
+    assert sum(int(s.get('tests', 0)) for s in suites) == 748
+    assert all(int(s.get(k, 0)) == 0 for s in suites for k in ('failures', 'errors', 'skipped'))
+    receipts[str(junit.relative_to(ROOT))] = sha(junit)
     historical = receipt('historical-final.json')
     assert historical['passed'] and historical['runtime_unchanged'] and not historical['changed']
     assert all(r['passed'] for r in historical['historical'].values())
@@ -63,6 +69,13 @@ def run():
     assert evaluation['transfer']['unseen_source_roots'] == 24
     regression = receipt('historical-evaluation/summary.json')
     assert all(v['roots']==24 and v['endpoints']==72 for v in regression['test'].values())
+    failure_audit = receipt('failure-census.json')
+    assert failure_audit['native_processes'] == 1
+    assert all(v['Attack']['endpoints']==96 for v in failure_audit['panels']['evaluation']['test'].values())
+    strata = receipt('historical-target-scope.json')['strata']
+    assert strata['rook']['D-AB']['roots']==23 and strata['bishop']['D-AB']['roots']==1
+    bishop = receipt('supplement/historical-bishop-diagnostic.json')
+    assert bishop['diagnostic']['markers'][0][1]=='false' and bishop['diagnostic']['markers'][2][1]
     controls = receipt('controls/summary.json'); rows = controls['interventions']
     def attack(name): return rows[name]['stages']['Attack']
     for name in ('remove-clear-two','remove-rook-attack','remove-empty-0','remove-empty-1','prior-clearance',
@@ -82,6 +95,8 @@ def run():
     performance = receipt('performance/summary.json')
     assert len(performance)==8 and all(v['repetitions']==10 for v in performance.values())
     resources = receipt('resource-census.json')
+    observed = receipt('preservation-resource-observation.json')
+    assert observed['samples'] > 0 and observed['comparison_observed_max_process_rss_kib'] > 0
     assert resources['unique_retained_native_processes'] < 10000 and resources['cpu_seconds'] < 8*3600
     assert resources['preservation_measured_cpu_seconds'] < 24*3600
     assert resources['research_bytes'] < 2*1024**3 and resources['preservation_bytes'] < 8*1024**3
