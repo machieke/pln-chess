@@ -102,6 +102,17 @@ Tracked files always come from Git. The clean reproduction receipt separately
 covers minimal native diagnostics, CLI comparison and an actual native refit.
 It does not claim a fresh dependency installation or second full corpus run.
 
+The first preservation process ended with SIGTERM before completing the shard
+set; its completed command receipts contained no failures. Successful same-source
+jobs, including the full 732-test run, were reused by the driver's existing
+resume mechanism. Unfinished logs and the partial recovery directory were moved
+to `preservation/interrupted-001/`, with a termination receipt, before restarting
+the interrupted and remaining jobs. The resumed driver uses the same clean
+source commit. The partial attempt is retained, not counted as a passed gate.
+Receipts in that archive retain their original paths; use the archive prefix
+when resolving interrupted-generation payloads. The final verification covers
+the complete population after resumption, rather than claiming an uninterrupted run.
+
 ## Performance and local evidence
 
 After competing preservation work stops:

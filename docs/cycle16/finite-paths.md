@@ -70,6 +70,12 @@ targets, friendly targets and the wrong actor suppress exposure while preserving
 attack. Renaming, translation, reflection and consistent owner swapping preserve
 the tested result. Correctly indexed stale facts do not satisfy a different state.
 
+The [stronger same-entity state controls](../../artifacts/cycle16/supplement/role-state-controls.json)
+mix before/after facts for identical entities. Omitting an after-state emptiness
+premise still removes support despite the same cell being explicitly empty in
+the before state. A wrong ray target removes attack; a friendly attacker
+preserves influence but cannot establish the tested exposure conclusion.
+
 Zero- and one-intervening-cell controls still work through existing knowledge.
 The three-cell empty path remains unknown even with generous budgets: `clear-two`
 does not match it. No three-cell template was introduced. Before/after comparison

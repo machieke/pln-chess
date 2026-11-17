@@ -1,6 +1,7 @@
 """Post-run provenance audits; no production answer is reconstructed here."""
 import argparse
 import json
+import re
 from pathlib import Path
 from pln_chess.common import ROOT,read_json,digest
 from research.cycle15.native_reasoner import alpha_key,parse
@@ -164,6 +165,13 @@ def resources(out):
             key=digest(receipt)
             if key in seen:continue
             seen.add(key);records.append(receipt)
+    timed_jobs=[]
+    for path in sorted((out/'preservation/commands').glob('*.json')):
+        command=read_json(path);log=Path(command['log']).read_text(errors='replace')
+        cpu=re.findall(r'(?:User|System) time \(seconds\): ([\d.]+)',log)
+        memory=re.search(r'Maximum resident set size \(kbytes\): (\d+)',log)
+        timed_jobs.append(dict(command=path.name,cpu_seconds=sum(map(float,cpu)) if len(cpu)==2 else None,
+            peak_rss_kib=int(memory[1]) if memory else None))
     result=dict(unique_retained_native_processes=len(records),
         cpu_seconds=sum(r.get('cpu_seconds') or 0 for r in records),
         peak_rss_kib=max((r.get('peak_rss_kib') or 0 for r in records),default=0),
@@ -171,9 +179,15 @@ def resources(out):
         generated_bytes_by_group=sizes,
         research_bytes=sum(v for k,v in sizes.items() if k!='preservation'),
         preservation_bytes=sizes.get('preservation',0),
-        accounting_scope='Deduplicated retained native receipts; tests and exploratory commands not fully metered here')
+        preservation_timed_jobs=len(timed_jobs),
+        preservation_measured_cpu_seconds=sum(r['cpu_seconds'] or 0 for r in timed_jobs),
+        preservation_max_job_rss_kib=max((r['peak_rss_kib'] or 0 for r in timed_jobs),default=0),
+        preservation_timing_records=timed_jobs,
+        accounting_scope='Deduplicated retained research receipts and GNU-time completed preservation jobs; '
+            'exploratory commands, interrupted partial work, and the final parallel proof-comparison CPU are not fully metered')
     assert result['unique_retained_native_processes']<10000 and result['cpu_seconds']<8*3600
     assert result['research_bytes']<2*1024**3 and result['preservation_bytes']<8*1024**3
+    assert result['preservation_measured_cpu_seconds']<24*3600
     return record(out/'resource-census.json',result)
 
 

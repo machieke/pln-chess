@@ -21,7 +21,7 @@ labels, forged ancestry, changed state identity and modified labels.
 Native revision starts from `(stv .5 0)` and admits `(stv label .5)` once per
 source-game ancestry and template. All admitted labels are positive. The
 [learned checkpoint](../../artifacts/cycle16/learning/learned/model.json) changes
-only `clear-two` to strength 1, confidence .9230769230769231. The fuller
+only `clear-two` to strength 1, confidence .923076923076923. The fuller
 [shared-chain checkpoint](../../artifacts/cycle16/learning/shared-chain/model.json)
 also learns the rook rule from eleven episodes and bishop rule from one; no
 queen terminal training example occurs. Unobserved terminal parameters remain
