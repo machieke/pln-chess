@@ -1,0 +1,68 @@
+{
+  "bishop-attack": {
+    "learned_parameters": "strength and confidence for terminal attack and obstruction only",
+    "origin": "supplied-domain-rule-template",
+    "scope": "occupancy-constrained sliding influence or explicit role-bound exposure",
+    "term": "(Implication (PieceKind $a bishop $s) (Implication (Clear $a $t diagonal $s) (Attack $a $t $s)))"
+  },
+  "clear-one": {
+    "learned_parameters": "strength and confidence for terminal attack and obstruction only",
+    "origin": "supplied-domain-rule-template",
+    "scope": "occupancy-constrained sliding influence or explicit role-bound exposure",
+    "term": "(Implication (RayPath $a $t (Cons $c Nil) $shape $s) (Implication (Empty $c $s) (Clear $a $t $shape $s)))"
+  },
+  "clear-path": {
+    "learned_parameters": "strength and confidence for terminal attack and obstruction only",
+    "origin": "supplied-domain-rule-template",
+    "scope": "occupancy-constrained sliding influence or explicit role-bound exposure",
+    "term": "(Implication (RayPath $a $t $path $shape $s) (Implication (PathEmpty $path $s) (Clear $a $t $shape $s)))"
+  },
+  "empty-tail": {
+    "learned_parameters": "strength and confidence for terminal attack and obstruction only",
+    "origin": "supplied-domain-rule-template",
+    "scope": "occupancy-constrained sliding influence or explicit role-bound exposure",
+    "term": "(Implication (State $s) (PathEmpty Nil $s))"
+  },
+  "exposure-black": {
+    "learned_parameters": "strength and confidence for terminal attack and obstruction only",
+    "origin": "supplied-domain-rule-template",
+    "scope": "occupancy-constrained sliding influence or explicit role-bound exposure",
+    "term": "(Implication (OriginalActor $s black) (Implication (Owner $a white $s) (Implication (Owner $t black $s) (Implication (PieceKind $t king $s) (Implication (Attack $a $t $s) (KingExposed $t black $s))))))"
+  },
+  "exposure-white": {
+    "learned_parameters": "strength and confidence for terminal attack and obstruction only",
+    "origin": "supplied-domain-rule-template",
+    "scope": "occupancy-constrained sliding influence or explicit role-bound exposure",
+    "term": "(Implication (OriginalActor $s white) (Implication (Owner $a black $s) (Implication (Owner $t white $s) (Implication (PieceKind $t king $s) (Implication (Attack $a $t $s) (KingExposed $t white $s))))))"
+  },
+  "extend-empty": {
+    "learned_parameters": "strength and confidence for terminal attack and obstruction only",
+    "origin": "supplied-domain-rule-template",
+    "scope": "occupancy-constrained sliding influence or explicit role-bound exposure",
+    "term": "(Implication (Empty $c $s) (Implication (PathEmpty $tail $s) (PathEmpty (Cons $c $tail) $s)))"
+  },
+  "obstruction": {
+    "learned_parameters": "strength and confidence for terminal attack and obstruction only",
+    "origin": "supplied-domain-rule-template",
+    "scope": "occupancy-constrained sliding influence or explicit role-bound exposure",
+    "term": "(Implication (RayMember $a $t $c $s) (Implication (Occupied $c $s) (NoAttack $a $t $s)))"
+  },
+  "queen-diagonal": {
+    "learned_parameters": "strength and confidence for terminal attack and obstruction only",
+    "origin": "supplied-domain-rule-template",
+    "scope": "occupancy-constrained sliding influence or explicit role-bound exposure",
+    "term": "(Implication (PieceKind $a queen $s) (Implication (Clear $a $t diagonal $s) (Attack $a $t $s)))"
+  },
+  "queen-orthogonal": {
+    "learned_parameters": "strength and confidence for terminal attack and obstruction only",
+    "origin": "supplied-domain-rule-template",
+    "scope": "occupancy-constrained sliding influence or explicit role-bound exposure",
+    "term": "(Implication (PieceKind $a queen $s) (Implication (Clear $a $t orthogonal $s) (Attack $a $t $s)))"
+  },
+  "rook-attack": {
+    "learned_parameters": "strength and confidence for terminal attack and obstruction only",
+    "origin": "supplied-domain-rule-template",
+    "scope": "occupancy-constrained sliding influence or explicit role-bound exposure",
+    "term": "(Implication (PieceKind $a rook $s) (Implication (Clear $a $t orthogonal $s) (Attack $a $t $s)))"
+  }
+}
