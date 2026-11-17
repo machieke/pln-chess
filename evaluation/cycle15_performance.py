@@ -1,9 +1,10 @@
 """Isolated latency categories; a stored answer is never called inference."""
 import argparse
+import json
 from pathlib import Path
 import statistics
 import time
-from pln_chess.common import digest,write_json
+from pln_chess.common import canonical,digest,write_json
 from pln_chess.cycle14.proofs import ProofStore
 from research.cycle15.native_reasoner import NativeReasoner,Budgets,save_result
 from research.cycle15.queries import infer_state
@@ -33,8 +34,12 @@ def run(out):
         repeated=reasoner.infer(facts,rules,result['query'],contrary=result['contrary_query'],budgets=Budgets(64,128,256,15))
         rows.append(dict(category='repeated-native-materialized-inputs',repetition=i,wall_seconds=time.perf_counter()-start,
             classification=repeated['classification'],native_processes=1,evidence=save_result(repeated,out/'raw')))
+    # ProofStore's contract is exact JSON. Dataclass tuples in the in-memory
+    # adapter result serialize as arrays; retain the entire serialized document.
+    document=json.loads(canonical(result))
+    assert canonical(document)==canonical(result)
     with ProofStore(out/'proofs.sqlite') as store:
-        ref=store.put(result);identity=dict(state=e['after'],query=e['query'],model=result['model_identity'],
+        ref=store.put(document);identity=dict(state=e['after'],query=e['query'],model=result['model_identity'],
             budgets=result['budgets'],runtime=result['receipt']['runtime'],program_sha256=result['receipt']['program_sha256'])
         summary={k:result[k] for k in ('classification','answer','contrary','query')}
         handle=store.publish(ref,summary,identity)
@@ -43,17 +48,21 @@ def run(out):
             assert retrieved['summary']==summary
             rows.append(dict(category='stored-answer-retrieval',repetition=i,wall_seconds=elapsed,native_processes=0))
             start=time.perf_counter();expanded=store.expand(ref);elapsed=time.perf_counter()-start
-            assert expanded==result
+            assert expanded==document
+            assert canonical(expanded)==canonical(result)
             rows.append(dict(category='full-proof-reconstruction',repetition=i,wall_seconds=elapsed,native_processes=0))
         changed={**identity,'state':{**e['after'],'history':'changed'}}
         assert store.lookup(changed) is None
         census=store.census();archive=store.archive(ref)
         with ProofStore() as clean:
             restored=clean.import_archive(archive)
-            assert clean.expand(restored)==result
+            assert clean.expand(restored)==document
+            assert clean.legacy_digest(restored)==digest(result)
         write_json(out/'proof-integrity.json',dict(exact_roundtrip=True,changed_history_cache_miss=True,
             root=ref.id,handle=handle,archive_hash=archive['manifest_sha256'],census=census,
-            evidence_occurrences_preserved=True,proof_scope=result['proof_status']))
+            evidence_occurrences_preserved=True,proof_scope=result['proof_status'],
+            comparison='Exact complete JSON document; in-memory tuples serialize as JSON arrays',
+            canonical_result_sha256=digest(result)))
     categories=sorted({r['category'] for r in rows})
     summary={name:dict(repetitions=len(selected:=[r for r in rows if r['category']==name]),
         median_seconds=statistics.median(r['wall_seconds'] for r in selected),

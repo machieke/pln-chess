@@ -21,7 +21,12 @@ def run(out):
     preservation=read_json(out/'preservation/verified.json');assert preservation['passed']
     print('Complete preservation receipt verified; starting isolated benchmarks',flush=True)
     from evaluation.cycle15_performance import run as benchmark
-    if not (out/'performance/summary.json').exists():benchmark(out/'performance')
+    if not (out/'performance/summary.json').exists():
+        # Keep the first tuple/list-mismatch attempt intact and use a separate
+        # generation for the corrected JSON-contract benchmark.
+        benchmark(out/'performance/verified')
+        for name in ('summary.json','samples.json','proof-integrity.json'):
+            shutil.copy2(out/'performance/verified'/name,out/'performance'/name)
     from scripts.cycle15_resource_census import run as resource_census
     resource_census(out)
     runtime=Runtime();assert runtime.manifest==read_json(out/'baseline.json')['runtime']
