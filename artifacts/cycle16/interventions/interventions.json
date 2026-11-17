@@ -1,0 +1,611 @@
+{
+  "base": {
+    "answer": {
+      "confidence": 0.866937899025,
+      "stamps": [
+        "obs_2e1dbacedd88cd39f2dfd425e67b",
+        "obs_8a31c05f33b3f0bf1ffd4e678892",
+        "obs_dfb66fa38cd4a0856697fe9b367f",
+        "obs_ebf2a85826d3b63ab9791d7d4cff",
+        "rule_clear-two",
+        "rule_rook-attack"
+      ],
+      "strength": 1.0
+    },
+    "budgets": {
+      "beliefs": 512,
+      "steps": 128,
+      "tasks": 256,
+      "timeout": 30
+    },
+    "classification": "supported-positive",
+    "completion": "task queue exhausted",
+    "contrary": null,
+    "incomplete": false,
+    "peak_rss_kib": 43980,
+    "proof": {
+      "bytes": 71225,
+      "path": "/home/purplezky/cycle16-evidence-20261117/interventions/raw/fec6c9b1d940442b881513cbd4e6d3bf91a0e0c802a752e8721547db7e970418.json",
+      "sha256": "fec6c9b1d940442b881513cbd4e6d3bf91a0e0c802a752e8721547db7e970418"
+    },
+    "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+    "query": "(Attack attacker_intervention target_intervention state_intervention)",
+    "usage": {
+      "derivation_calls": 1,
+      "derived_statements": 18,
+      "host_grounded_instances": 0,
+      "initial_beliefs": 31,
+      "initial_tasks": 31,
+      "native_processes": 1,
+      "native_schema_instances": "Not completely observable in native trace",
+      "repeated_selected_terms": 0,
+      "retained_beliefs": 49,
+      "retained_tasks": 0,
+      "selected_tasks": 49
+    },
+    "wall_seconds": 1.8863207660615444
+  },
+  "chess-recursive-witness": {
+    "diagnostic": {
+      "incomplete": false,
+      "left": {
+        "confidence": 0.9405,
+        "stamps": [
+          "obs_8a31c05f33b3f0bf1ffd4e678892",
+          "rule_extend-empty"
+        ],
+        "strength": 1.0,
+        "term": "(Implication (PathEmpty $_11 state_intervention) (PathEmpty (Cons cell_1 $_11) state_intervention))"
+      },
+      "markers": [
+        [
+          "C16DISJOINT",
+          "false"
+        ],
+        [
+          "C16STRUCTURAL",
+          []
+        ],
+        [
+          "C16STRUCTURAL_REVERSE",
+          [
+            [
+              [
+                "PathEmpty",
+                [
+                  "Cons",
+                  "cell_1",
+                  [
+                    "Cons",
+                    "cell_2",
+                    "Nil"
+                  ]
+                ],
+                "state_intervention"
+              ],
+              [
+                "stv",
+                "1.0",
+                "0.8319101051250001"
+              ]
+            ]
+          ]
+        ]
+      ],
+      "overlap": [
+        "rule_extend-empty"
+      ],
+      "proof": {
+        "bytes": 6117,
+        "path": "/home/purplezky/cycle16-evidence-20261117/interventions/raw/3a19de5c200b356abc7a9a65ebfd8c20bdf2058334e9db26f27ee9f4c42ada3e.json",
+        "sha256": "3a19de5c200b356abc7a9a65ebfd8c20bdf2058334e9db26f27ee9f4c42ada3e"
+      },
+      "right": {
+        "confidence": 0.88454025,
+        "stamps": [
+          "obs_2e1dbacedd88cd39f2dfd425e67b",
+          "obs_5236f13362dec3796ec696305a6f",
+          "rule_empty-tail",
+          "rule_extend-empty"
+        ],
+        "strength": 1.0,
+        "term": "(PathEmpty (Cons cell_2 Nil) state_intervention)"
+      },
+      "scope": "Admissibility and structural witness only; no claim the scheduler attempted this pair"
+    },
+    "result": {
+      "answer": null,
+      "budgets": {
+        "beliefs": 512,
+        "steps": 128,
+        "tasks": 256,
+        "timeout": 30
+      },
+      "classification": "unknown",
+      "completion": "task queue exhausted",
+      "contrary": null,
+      "incomplete": false,
+      "peak_rss_kib": 36308,
+      "proof": {
+        "bytes": 61646,
+        "path": "/home/purplezky/cycle16-evidence-20261117/interventions/raw/86885394d4565e3c77ba46aa0fe8ecc7853f4fd5449dc71cddf1a094583fb067.json",
+        "sha256": "86885394d4565e3c77ba46aa0fe8ecc7853f4fd5449dc71cddf1a094583fb067"
+      },
+      "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+      "query": "(Attack attacker_intervention target_intervention state_intervention)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 13,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 30,
+        "initial_tasks": 30,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 0,
+        "retained_beliefs": 43,
+        "retained_tasks": 0,
+        "selected_tasks": 43
+      },
+      "wall_seconds": 1.2189907971769571
+    }
+  },
+  "competing-occupancy-audit": {
+    "answer": {
+      "confidence": 0.866937899025,
+      "stamps": [
+        "obs_2e1dbacedd88cd39f2dfd425e67b",
+        "obs_8a31c05f33b3f0bf1ffd4e678892",
+        "obs_dfb66fa38cd4a0856697fe9b367f",
+        "obs_ebf2a85826d3b63ab9791d7d4cff",
+        "rule_clear-two",
+        "rule_rook-attack"
+      ],
+      "strength": 1.0
+    },
+    "budgets": {
+      "beliefs": 512,
+      "steps": 128,
+      "tasks": 256,
+      "timeout": 30
+    },
+    "classification": "conflicting",
+    "completion": "task queue exhausted",
+    "contrary": {
+      "confidence": 0.931095,
+      "stamps": [
+        "obs_70fc91cd6a8499de900a586d4cfc",
+        "obs_competing_occupancy",
+        "rule_obstruction"
+      ],
+      "strength": 1.0
+    },
+    "incomplete": false,
+    "peak_rss_kib": 40608,
+    "proof": {
+      "bytes": 73421,
+      "path": "/home/purplezky/cycle16-evidence-20261117/interventions/raw/0d4ca5f551aa652d8fa87cd8fbe7bf12d27c4eb8d228d0d082b0849013b30a7d.json",
+      "sha256": "0d4ca5f551aa652d8fa87cd8fbe7bf12d27c4eb8d228d0d082b0849013b30a7d"
+    },
+    "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+    "query": "(Attack attacker_intervention target_intervention state_intervention)",
+    "usage": {
+      "derivation_calls": 1,
+      "derived_statements": 19,
+      "host_grounded_instances": 0,
+      "initial_beliefs": 32,
+      "initial_tasks": 32,
+      "native_processes": 1,
+      "native_schema_instances": "Not completely observable in native trace",
+      "repeated_selected_terms": 0,
+      "retained_beliefs": 51,
+      "retained_tasks": 0,
+      "selected_tasks": 51
+    },
+    "wall_seconds": 1.4304104298353195
+  },
+  "confidence-cell-0": {
+    "answer": {
+      "confidence": 0.43784742375,
+      "stamps": [
+        "obs_2e1dbacedd88cd39f2dfd425e67b",
+        "obs_8a31c05f33b3f0bf1ffd4e678892",
+        "obs_dfb66fa38cd4a0856697fe9b367f",
+        "obs_ebf2a85826d3b63ab9791d7d4cff",
+        "rule_clear-two",
+        "rule_rook-attack"
+      ],
+      "strength": 1.0
+    },
+    "budgets": {
+      "beliefs": 512,
+      "steps": 128,
+      "tasks": 256,
+      "timeout": 30
+    },
+    "classification": "supported-positive",
+    "completion": "task queue exhausted",
+    "contrary": null,
+    "incomplete": false,
+    "peak_rss_kib": 44136,
+    "proof": {
+      "bytes": 71235,
+      "path": "/home/purplezky/cycle16-evidence-20261117/interventions/raw/af1a94345ce44b41fb2bd016bab554f67e4f22d2bd8d2e1fcdb3d6e5ac2143fd.json",
+      "sha256": "af1a94345ce44b41fb2bd016bab554f67e4f22d2bd8d2e1fcdb3d6e5ac2143fd"
+    },
+    "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+    "query": "(Attack attacker_intervention target_intervention state_intervention)",
+    "usage": {
+      "derivation_calls": 1,
+      "derived_statements": 18,
+      "host_grounded_instances": 0,
+      "initial_beliefs": 31,
+      "initial_tasks": 31,
+      "native_processes": 1,
+      "native_schema_instances": "Not completely observable in native trace",
+      "repeated_selected_terms": 0,
+      "retained_beliefs": 49,
+      "retained_tasks": 0,
+      "selected_tasks": 49
+    },
+    "wall_seconds": 1.4505923306569457
+  },
+  "confidence-cell-1": {
+    "answer": {
+      "confidence": 0.43784742375,
+      "stamps": [
+        "obs_2e1dbacedd88cd39f2dfd425e67b",
+        "obs_8a31c05f33b3f0bf1ffd4e678892",
+        "obs_dfb66fa38cd4a0856697fe9b367f",
+        "obs_ebf2a85826d3b63ab9791d7d4cff",
+        "rule_clear-two",
+        "rule_rook-attack"
+      ],
+      "strength": 1.0
+    },
+    "budgets": {
+      "beliefs": 512,
+      "steps": 128,
+      "tasks": 256,
+      "timeout": 30
+    },
+    "classification": "supported-positive",
+    "completion": "task queue exhausted",
+    "contrary": null,
+    "incomplete": false,
+    "peak_rss_kib": 44000,
+    "proof": {
+      "bytes": 71240,
+      "path": "/home/purplezky/cycle16-evidence-20261117/interventions/raw/3ba05b64bb062159f12dacaf2d3573bd089218cfc6a4e34c05488321ff0dd8b5.json",
+      "sha256": "3ba05b64bb062159f12dacaf2d3573bd089218cfc6a4e34c05488321ff0dd8b5"
+    },
+    "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+    "query": "(Attack attacker_intervention target_intervention state_intervention)",
+    "usage": {
+      "derivation_calls": 1,
+      "derived_statements": 18,
+      "host_grounded_instances": 0,
+      "initial_beliefs": 31,
+      "initial_tasks": 31,
+      "native_processes": 1,
+      "native_schema_instances": "Not completely observable in native trace",
+      "repeated_selected_terms": 0,
+      "retained_beliefs": 49,
+      "retained_tasks": 0,
+      "selected_tasks": 49
+    },
+    "wall_seconds": 1.6817170875146985
+  },
+  "indexed-stale-before-facts": {
+    "answer": {
+      "confidence": 0.866937899025,
+      "stamps": [
+        "obs_2e1dbacedd88cd39f2dfd425e67b",
+        "obs_8a31c05f33b3f0bf1ffd4e678892",
+        "obs_dfb66fa38cd4a0856697fe9b367f",
+        "obs_ebf2a85826d3b63ab9791d7d4cff",
+        "rule_clear-two",
+        "rule_rook-attack"
+      ],
+      "strength": 1.0
+    },
+    "budgets": {
+      "beliefs": 512,
+      "steps": 128,
+      "tasks": 256,
+      "timeout": 30
+    },
+    "classification": "supported-positive",
+    "completion": "task queue exhausted",
+    "contrary": null,
+    "incomplete": false,
+    "peak_rss_kib": 63100,
+    "proof": {
+      "bytes": 115565,
+      "path": "/home/purplezky/cycle16-evidence-20261117/interventions/raw/d66d93b64c4195258a9b3ea7c28c13160c4410e120378d8d67c2a41e338540b7.json",
+      "sha256": "d66d93b64c4195258a9b3ea7c28c13160c4410e120378d8d67c2a41e338540b7"
+    },
+    "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+    "query": "(Attack attacker_intervention target_intervention state_intervention)",
+    "usage": {
+      "derivation_calls": 1,
+      "derived_statements": 32,
+      "host_grounded_instances": 0,
+      "initial_beliefs": 56,
+      "initial_tasks": 56,
+      "native_processes": 1,
+      "native_schema_instances": "Not completely observable in native trace",
+      "repeated_selected_terms": 1,
+      "retained_beliefs": 88,
+      "retained_tasks": 0,
+      "selected_tasks": 88
+    },
+    "wall_seconds": 2.785423102788627
+  },
+  "lower-rule-tv": {
+    "answer": {
+      "confidence": 0.1825132419,
+      "stamps": [
+        "obs_2e1dbacedd88cd39f2dfd425e67b",
+        "obs_8a31c05f33b3f0bf1ffd4e678892",
+        "obs_dfb66fa38cd4a0856697fe9b367f",
+        "obs_ebf2a85826d3b63ab9791d7d4cff",
+        "rule_clear-two",
+        "rule_rook-attack"
+      ],
+      "strength": 1.0
+    },
+    "budgets": {
+      "beliefs": 512,
+      "steps": 128,
+      "tasks": 256,
+      "timeout": 30
+    },
+    "classification": "supported-positive",
+    "completion": "task queue exhausted",
+    "contrary": null,
+    "incomplete": false,
+    "peak_rss_kib": 43904,
+    "proof": {
+      "bytes": 71193,
+      "path": "/home/purplezky/cycle16-evidence-20261117/interventions/raw/647ef8bb6668dad53deefcdea4d51baf0e82fbfd12a895787e4323e6767c895c.json",
+      "sha256": "647ef8bb6668dad53deefcdea4d51baf0e82fbfd12a895787e4323e6767c895c"
+    },
+    "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+    "query": "(Attack attacker_intervention target_intervention state_intervention)",
+    "usage": {
+      "derivation_calls": 1,
+      "derived_statements": 18,
+      "host_grounded_instances": 0,
+      "initial_beliefs": 31,
+      "initial_tasks": 31,
+      "native_processes": 1,
+      "native_schema_instances": "Not completely observable in native trace",
+      "repeated_selected_terms": 0,
+      "retained_beliefs": 49,
+      "retained_tasks": 0,
+      "selected_tasks": 49
+    },
+    "wall_seconds": 1.6185025284066796
+  },
+  "remove-clear-two": {
+    "answer": null,
+    "budgets": {
+      "beliefs": 512,
+      "steps": 128,
+      "tasks": 256,
+      "timeout": 30
+    },
+    "classification": "unknown",
+    "completion": "task queue exhausted",
+    "contrary": null,
+    "incomplete": false,
+    "peak_rss_kib": 40344,
+    "proof": {
+      "bytes": 61960,
+      "path": "/home/purplezky/cycle16-evidence-20261117/interventions/raw/098f3ad091ff5dd24ee21d770b1fc4bda876bb9dbccd79a14a753441a267c9e8.json",
+      "sha256": "098f3ad091ff5dd24ee21d770b1fc4bda876bb9dbccd79a14a753441a267c9e8"
+    },
+    "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+    "query": "(Attack attacker_intervention target_intervention state_intervention)",
+    "usage": {
+      "derivation_calls": 1,
+      "derived_statements": 13,
+      "host_grounded_instances": 0,
+      "initial_beliefs": 30,
+      "initial_tasks": 30,
+      "native_processes": 1,
+      "native_schema_instances": "Not completely observable in native trace",
+      "repeated_selected_terms": 0,
+      "retained_beliefs": 43,
+      "retained_tasks": 0,
+      "selected_tasks": 43
+    },
+    "wall_seconds": 1.5246763844043016
+  },
+  "remove-empty-0": {
+    "answer": null,
+    "budgets": {
+      "beliefs": 512,
+      "steps": 128,
+      "tasks": 256,
+      "timeout": 30
+    },
+    "classification": "unknown",
+    "completion": "task queue exhausted",
+    "contrary": null,
+    "incomplete": false,
+    "peak_rss_kib": 36508,
+    "proof": {
+      "bytes": 61928,
+      "path": "/home/purplezky/cycle16-evidence-20261117/interventions/raw/b37b9bb41566b1a9dec6a4817be6862d85a36c2d0b423c385be49ee8b9f65c20.json",
+      "sha256": "b37b9bb41566b1a9dec6a4817be6862d85a36c2d0b423c385be49ee8b9f65c20"
+    },
+    "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+    "query": "(Attack attacker_intervention target_intervention state_intervention)",
+    "usage": {
+      "derivation_calls": 1,
+      "derived_statements": 12,
+      "host_grounded_instances": 0,
+      "initial_beliefs": 30,
+      "initial_tasks": 30,
+      "native_processes": 1,
+      "native_schema_instances": "Not completely observable in native trace",
+      "repeated_selected_terms": 0,
+      "retained_beliefs": 42,
+      "retained_tasks": 0,
+      "selected_tasks": 42
+    },
+    "wall_seconds": 1.385830830782652
+  },
+  "remove-empty-1": {
+    "answer": null,
+    "budgets": {
+      "beliefs": 512,
+      "steps": 128,
+      "tasks": 256,
+      "timeout": 30
+    },
+    "classification": "unknown",
+    "completion": "task queue exhausted",
+    "contrary": null,
+    "incomplete": false,
+    "peak_rss_kib": 36384,
+    "proof": {
+      "bytes": 63126,
+      "path": "/home/purplezky/cycle16-evidence-20261117/interventions/raw/ea4bee69596965c0c058ce6d8a2eeef3f7ecbab5a19ad3c23787da9972185e37.json",
+      "sha256": "ea4bee69596965c0c058ce6d8a2eeef3f7ecbab5a19ad3c23787da9972185e37"
+    },
+    "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+    "query": "(Attack attacker_intervention target_intervention state_intervention)",
+    "usage": {
+      "derivation_calls": 1,
+      "derived_statements": 13,
+      "host_grounded_instances": 0,
+      "initial_beliefs": 30,
+      "initial_tasks": 30,
+      "native_processes": 1,
+      "native_schema_instances": "Not completely observable in native trace",
+      "repeated_selected_terms": 0,
+      "retained_beliefs": 43,
+      "retained_tasks": 0,
+      "selected_tasks": 43
+    },
+    "wall_seconds": 2.0126025825738907
+  },
+  "reverse-input-order": {
+    "answer": {
+      "confidence": 0.866937899025,
+      "stamps": [
+        "obs_2e1dbacedd88cd39f2dfd425e67b",
+        "obs_8a31c05f33b3f0bf1ffd4e678892",
+        "obs_dfb66fa38cd4a0856697fe9b367f",
+        "obs_ebf2a85826d3b63ab9791d7d4cff",
+        "rule_clear-two",
+        "rule_rook-attack"
+      ],
+      "strength": 1.0
+    },
+    "budgets": {
+      "beliefs": 512,
+      "steps": 128,
+      "tasks": 256,
+      "timeout": 30
+    },
+    "classification": "supported-positive",
+    "completion": "task queue exhausted",
+    "contrary": null,
+    "incomplete": false,
+    "peak_rss_kib": 43696,
+    "proof": {
+      "bytes": 71225,
+      "path": "/home/purplezky/cycle16-evidence-20261117/interventions/raw/0291a424fc5daa65aeabb432bfe2e1ae4708cddf340e94421d22dc884208819d.json",
+      "sha256": "0291a424fc5daa65aeabb432bfe2e1ae4708cddf340e94421d22dc884208819d"
+    },
+    "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+    "query": "(Attack attacker_intervention target_intervention state_intervention)",
+    "usage": {
+      "derivation_calls": 1,
+      "derived_statements": 18,
+      "host_grounded_instances": 0,
+      "initial_beliefs": 31,
+      "initial_tasks": 31,
+      "native_processes": 1,
+      "native_schema_instances": "Not completely observable in native trace",
+      "repeated_selected_terms": 0,
+      "retained_beliefs": 49,
+      "retained_tasks": 0,
+      "selected_tasks": 49
+    },
+    "wall_seconds": 1.8106454983353615
+  },
+  "wrong-ray-role": {
+    "answer": null,
+    "budgets": {
+      "beliefs": 512,
+      "steps": 128,
+      "tasks": 256,
+      "timeout": 30
+    },
+    "classification": "unknown",
+    "completion": "task queue exhausted",
+    "contrary": null,
+    "incomplete": false,
+    "peak_rss_kib": 43944,
+    "proof": {
+      "bytes": 67193,
+      "path": "/home/purplezky/cycle16-evidence-20261117/interventions/raw/7601cf8c4cd076e2f1d3e0a7e3e9b3dcd1b14279953af1ac0dedfd93feb748e8.json",
+      "sha256": "7601cf8c4cd076e2f1d3e0a7e3e9b3dcd1b14279953af1ac0dedfd93feb748e8"
+    },
+    "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+    "query": "(Attack attacker_intervention target_intervention state_intervention)",
+    "usage": {
+      "derivation_calls": 1,
+      "derived_statements": 16,
+      "host_grounded_instances": 0,
+      "initial_beliefs": 31,
+      "initial_tasks": 31,
+      "native_processes": 1,
+      "native_schema_instances": "Not completely observable in native trace",
+      "repeated_selected_terms": 0,
+      "retained_beliefs": 47,
+      "retained_tasks": 0,
+      "selected_tasks": 47
+    },
+    "wall_seconds": 1.5035603418946266
+  },
+  "wrong-state": {
+    "answer": null,
+    "budgets": {
+      "beliefs": 512,
+      "steps": 128,
+      "tasks": 256,
+      "timeout": 30
+    },
+    "classification": "unknown",
+    "completion": "task queue exhausted",
+    "contrary": null,
+    "incomplete": false,
+    "peak_rss_kib": 43972,
+    "proof": {
+      "bytes": 63877,
+      "path": "/home/purplezky/cycle16-evidence-20261117/interventions/raw/13a8a54e052260b378bc84075125f7c67c1f5957d4d1c6b1a6722bdd39483121.json",
+      "sha256": "13a8a54e052260b378bc84075125f7c67c1f5957d4d1c6b1a6722bdd39483121"
+    },
+    "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+    "query": "(Attack attacker_intervention target_intervention state_intervention)",
+    "usage": {
+      "derivation_calls": 1,
+      "derived_statements": 13,
+      "host_grounded_instances": 0,
+      "initial_beliefs": 31,
+      "initial_tasks": 31,
+      "native_processes": 1,
+      "native_schema_instances": "Not completely observable in native trace",
+      "repeated_selected_terms": 0,
+      "retained_beliefs": 44,
+      "retained_tasks": 0,
+      "selected_tasks": 44
+    },
+    "wall_seconds": 1.7246258240193129
+  }
+}

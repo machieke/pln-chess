@@ -1,0 +1,50 @@
+{
+  "checkout_clean": true,
+  "commands": [
+    {
+      "argv": [
+        "/home/purplezky/cycle16-source-20261117/.venv/bin/python",
+        "-m",
+        "research.cycle16",
+        "minimal",
+        "--out",
+        "/home/purplezky/cycle16-evidence-20261117/reproduction/minimal",
+        "--proof-mode",
+        "summary"
+      ],
+      "log": "/home/purplezky/cycle16-evidence-20261117/reproduction/command-0.log",
+      "log_sha256": "d6476cafc76042b55b8da853d513031058977ec4ce8365ef9ff1ad6ec4771732",
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "/home/purplezky/cycle16-source-20261117/.venv/bin/python",
+        "-m",
+        "research.cycle16",
+        "compare",
+        "--out",
+        "/home/purplezky/cycle16-evidence-20261117/reproduction/compare",
+        "--proof-mode",
+        "summary"
+      ],
+      "log": "/home/purplezky/cycle16-evidence-20261117/reproduction/command-1.log",
+      "log_sha256": "b4ce2a1b3114b6715d42df37f33026c6b9a76e7935c6efe8517abdde693a3134",
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "/home/purplezky/cycle16-source-20261117/.venv/bin/python",
+        "-c",
+        "from training.cycle16_paths import evidence,fit; import sys; fit(evidence(),sys.argv[1])",
+        "/home/purplezky/cycle16-evidence-20261117/reproduction/learning"
+      ],
+      "log": "/home/purplezky/cycle16-evidence-20261117/reproduction/command-2.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "returncode": 0
+    }
+  ],
+  "exact_learned_parameters_and_ancestry": true,
+  "passed": true,
+  "scope": "Fresh Git checkout using verified existing runtime/virtualenv and historical evidence; minimal native diagnostics, R/F CLI comparison and native refit; not a fresh dependency installation or second full corpus run",
+  "source_head": "86b7760df8ef8efc3af80de21a58a9566417f5b6"
+}

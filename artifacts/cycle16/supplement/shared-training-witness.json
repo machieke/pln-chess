@@ -1,0 +1,103 @@
+{
+  "diagnostic": {
+    "incomplete": false,
+    "left": {
+      "confidence": 0.9075,
+      "stamps": [
+        "obs_0dd313bd3983495fbf9679ccc148",
+        "rule_rook-attack",
+        "train_0d666f4b5c7ce8aea236bc75",
+        "train_21fcbd138a35a2378755a77d",
+        "train_37db720886283ab0540b48f9",
+        "train_5d01c16a8c2b9fa38340065a",
+        "train_603d3d5f1f834f438c3b8e70",
+        "train_7b48cb09bf8ade6fa47ab17a",
+        "train_9d285d4b2cbf565ac33c4604",
+        "train_df4a20b93d37fabbb6fe9fdc",
+        "train_e8befabc824713f65eee24b6",
+        "train_e954f03fc9e9e98028d74a4d",
+        "train_efaee5c0c3e7def4484c4d82"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (Clear entity_e9fb8980616a1c6a2706 $_11 orthogonal variant_7c36089d9e3d954be14fa7d8) (Attack entity_e9fb8980616a1c6a2706 $_11 variant_7c36089d9e3d954be14fa7d8))"
+    },
+    "markers": [
+      [
+        "C16DISJOINT",
+        "false"
+      ],
+      [
+        "C16STRUCTURAL",
+        []
+      ],
+      [
+        "C16STRUCTURAL_REVERSE",
+        [
+          [
+            [
+              "Attack",
+              "entity_e9fb8980616a1c6a2706",
+              "entity_3a19f98b0f347885ea38",
+              "variant_7c36089d9e3d954be14fa7d8"
+            ],
+            [
+              "stv",
+              "1.0",
+              "0.8128120084615383"
+            ]
+          ]
+        ]
+      ]
+    ],
+    "overlap": [
+      "train_0d666f4b5c7ce8aea236bc75",
+      "train_21fcbd138a35a2378755a77d",
+      "train_37db720886283ab0540b48f9",
+      "train_5d01c16a8c2b9fa38340065a",
+      "train_603d3d5f1f834f438c3b8e70",
+      "train_7b48cb09bf8ade6fa47ab17a",
+      "train_9d285d4b2cbf565ac33c4604",
+      "train_df4a20b93d37fabbb6fe9fdc",
+      "train_e8befabc824713f65eee24b6",
+      "train_e954f03fc9e9e98028d74a4d",
+      "train_efaee5c0c3e7def4484c4d82"
+    ],
+    "proof": {
+      "bytes": 7161,
+      "path": "/home/purplezky/cycle16-evidence-20261117/supplement/raw/057eb2fdc4e4bc2b587656b629e1bbdf7cc60c47c89b437ff784f95c0c9ca012.json",
+      "sha256": "057eb2fdc4e4bc2b587656b629e1bbdf7cc60c47c89b437ff784f95c0c9ca012"
+    },
+    "right": {
+      "confidence": 0.8956606153846153,
+      "stamps": [
+        "obs_5607dc3ac63766f14b7c554c8ba1",
+        "obs_7a7b3463fa430671c445e235d51a",
+        "obs_c9706e29a9af4f878d9f008a1b12",
+        "rule_clear-two",
+        "train_0d666f4b5c7ce8aea236bc75",
+        "train_21fcbd138a35a2378755a77d",
+        "train_37db720886283ab0540b48f9",
+        "train_5d01c16a8c2b9fa38340065a",
+        "train_603d3d5f1f834f438c3b8e70",
+        "train_7b48cb09bf8ade6fa47ab17a",
+        "train_9d285d4b2cbf565ac33c4604",
+        "train_df4a20b93d37fabbb6fe9fdc",
+        "train_e238939233efd52f15cbcde7",
+        "train_e8befabc824713f65eee24b6",
+        "train_e954f03fc9e9e98028d74a4d",
+        "train_efaee5c0c3e7def4484c4d82"
+      ],
+      "strength": 1.0,
+      "term": "(Clear entity_e9fb8980616a1c6a2706 entity_3a19f98b0f347885ea38 orthogonal variant_7c36089d9e3d954be14fa7d8)"
+    },
+    "scope": "Admissibility and structural witness only; no claim the scheduler attempted this pair"
+  },
+  "explanation": "The terminal partial retains an unbound target. The earlier exact-ground lookup returned null; this audit selects the actually returned schema modulo variable renaming and lets the native operator bind it.",
+  "passed": true,
+  "scope": "Structural possibility plus verified guard rejection; no fabricated scheduler event or production answer",
+  "source": {
+    "bytes": 85112,
+    "path": "/home/purplezky/cycle16-evidence-20261117/budgets/raw/fddb7bc3fd1518eb5bc3a66bff1fd19525c406b227fd0ef358d13d7130aaa216.json",
+    "sha256": "fddb7bc3fd1518eb5bc3a66bff1fd19525c406b227fd0ef358d13d7130aaa216"
+  }
+}
