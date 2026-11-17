@@ -53,3 +53,15 @@ def test_no_zero_queue_hang():
 def test_native_variable_renaming_does_not_count_as_inference():
     assert alpha_key('(Implication (P $x) (Q $x))')==alpha_key('(Implication (P $_0) (Q $_0))')
     assert alpha_key('(Pair $x $x)')!=alpha_key('(Pair $x $y)')
+
+
+def test_invalid_native_truth_value_is_incomplete(reasoner,monkeypatch):
+    original=reasoner.execute_program
+    def malformed(program,timeout):
+        receipt=original('!(println! malformed)\n',timeout)
+        receipt['stdout']='(C15STATE () ((Sentence (P (stv 2.0 0.5)) (p))))\n'
+        return receipt
+    monkeypatch.setattr(reasoner,'execute_program',malformed)
+    result=reasoner.infer([Sentence('P',stamps=('p',))],[],'P')
+    assert result['classification']=='incomplete'
+    assert 'Invalid native STV' in result['receipt']['parse_error']

@@ -12,7 +12,7 @@ import tempfile
 import time
 
 from pln_chess.common import ROOT, digest
-from pln_chess.pln import Runtime, TV
+from pln_chess.pln import Runtime, TV, NativeError
 
 
 def parse(text):
@@ -211,7 +211,7 @@ class NativeReasoner:
             expected = {'C15ANSWER': 1, 'C15CONTRARY': int(contrary is not None), 'C15STATE': int(mode == 'derive')}
             if counts != expected:
                 raise ValueError(f'Ambiguous or missing native result: {counts}')
-        except (ValueError, TypeError, IndexError) as error:
+        except (ValueError, TypeError, IndexError, NativeError) as error:
             receipt.update(incomplete=True, parse_error=str(error))
         initial_terms = {alpha_key(sentence.term) for sentence in beliefs}
         derived = [s for s in retained if alpha_key(s['term']) not in initial_terms]
