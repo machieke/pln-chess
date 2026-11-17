@@ -78,6 +78,40 @@ def bounded_controls(out):
     return record(out/'supplement/bounded-controls.json',rows)
 
 
+def role_state_controls(out):
+    import copy
+    from dataclasses import replace
+    from research.cycle15.native_reasoner import NativeReasoner
+    from research.cycle15.observations import successor
+    from research.cycle16.experiments import fixture,observations,knowledge,GENEROUS,infer
+    from research.cycle16.records import compact
+    out=Path(out);reasoner=NativeReasoner();state,a,t=fixture('OE',tag='same_entity_states')
+    blocker=next(p for p in state['pieces'] if p['id'].startswith('blocker'))
+    after=successor(state,dict(id='move_same_entities',piece=blocker['id'],destination=[0,0]))
+    before_facts,_=observations(state,a,t);after_facts,_=observations(after,a,t)
+    query=f'(Attack {a} {t} {after["id"]})';rules=knowledge('F')
+    # The second ray cell is already empty before the move, but its old-state
+    # observation must not replace the omitted same-cell after-state observation.
+    before_empty={f.term.split()[1] for f in before_facts if f.term.startswith('(Empty ')}
+    removed=next(f for f in after_facts if f.term.startswith('(Empty ') and f.term.split()[1] in before_empty)
+    rows={}
+    for name,fs in [('mixed-correct-states',after_facts+before_facts),
+                    ('stale-empty-cannot-fill-after-gap',[f for f in after_facts if f!=removed]+before_facts)]:
+        rows[name]=compact(reasoner.infer(fs,rules,query,budgets=GENEROUS),out/'supplement')
+    assert rows['mixed-correct-states']['classification']=='supported-positive'
+    assert rows['stale-empty-cannot-fill-after-gap']['classification']=='unknown'
+    clear,a,t=fixture(tag='role_supplement');facts,_=observations(clear,a,t)
+    wrong=[replace(f,term=f.term.replace(t,'unrelated_target')) if f.term.startswith('(RayPath ') else f for f in facts]
+    rows['wrong-ray-target']=compact(reasoner.infer(wrong,rules,f'(Attack {a} {t} {clear["id"]})',budgets=GENEROUS),out/'supplement')
+    friendly=copy.deepcopy(clear);friendly['id']+='friendly_attacker';friendly['pieces'][0]['owner']='white'
+    result=infer(friendly,a,t,budgets=GENEROUS)
+    rows['friendly-attacker']=compact(result,out/'supplement')
+    assert result['stages']['Attack']['classification']=='supported-positive'
+    assert result['stages']['Exposure']['classification']=='unknown'
+    assert rows['wrong-ray-target']['classification']=='unknown'
+    return record(out/'supplement/role-state-controls.json',rows)
+
+
 def resources(out):
     out=Path(out);seen=set();records=[];sizes={}
     for path in out.rglob('*'):
@@ -107,5 +141,5 @@ def resources(out):
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('command',choices=('shared_witness','proof_audit','resources','bounded_controls'));p.add_argument('--out',required=True)
+    p=argparse.ArgumentParser();p.add_argument('command',choices=('shared_witness','proof_audit','resources','bounded_controls','role_state_controls'));p.add_argument('--out',required=True)
     a=p.parse_args();print(json.dumps(globals()[a.command](a.out),indent=2))
