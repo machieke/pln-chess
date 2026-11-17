@@ -53,6 +53,8 @@ TASK_OUT=/path/to/new/cycle15-evidence
 .venv/bin/python -m scripts.cycle15_query_audit --part chain --out "$TASK_OUT/supplement/query-audit"
 .venv/bin/python -m scripts.cycle15_partition_audit \
   --results "$TASK_OUT/evaluation/results.json" --out "$TASK_OUT/supplement/partition-audit.json"
+.venv/bin/python -m scripts.cycle15_data_access \
+  --results "$TASK_OUT/evaluation/results.json" --out "$TASK_OUT/supplement/data-access-census.json"
 .venv/bin/python -m evaluation.cycle15_performance --out "$TASK_OUT/performance"
 .venv/bin/python -m pytest -q tests/test_cycle15_*.py
 ```
