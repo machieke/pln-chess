@@ -30,6 +30,7 @@ def pair_diagnostic(left,right,out,reasoner=None):
     program=f'!(import! &self "{reasoner.runtime.library}")\n'
     program+=f'!(println! (C16DISJOINT (StampDisjoint {render(left["stamps"])} {render(right["stamps"])})))\n'
     program+=f'!(println! (C16STRUCTURAL (collapse (|- {statement(left)} {statement(right)}))))\n'
+    program+=f'!(println! (C16STRUCTURAL_REVERSE (collapse (|- {statement(right)} {statement(left)}))))\n'
     receipt=reasoner.execute_program(program,15)
     from research.cycle15.native_reasoner import save_result
     markers=[parse(line) for line in receipt['stdout'].splitlines() if line.startswith('(C16')]
