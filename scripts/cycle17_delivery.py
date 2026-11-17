@@ -1,10 +1,12 @@
 """Evidence transport, independent reproduction and publication-size preflight."""
 import argparse
+from collections import Counter
 import json
 import os
 from pathlib import Path
 import re
 import shutil
+import statistics
 import subprocess
 from pln_chess.common import ROOT, read_json, write_json
 from pln_chess.pln import Runtime
@@ -84,7 +86,8 @@ def compact(out):
     publish('reference-final/results.json')
     for relative in ('historical-final.json', 'training-audit.json', 'failure-census.json', 'historical-target-scope.json', 'resource-census.json',
         'preservation-resource-observation.json', 'benchmark-command.json', 'supplement/proof-audit.json', 'supplement/historical-bishop-diagnostic.json',
-        'reproduction/verified.json', 'preservation/cycle17-verification.json', 'preservation/tests.xml', 'performance/proof-integrity.json'):
+        'reproduction/verified.json', 'preservation/cycle17-verification.json', 'preservation/tests.xml',
+        'performance/proof-integrity.json', 'performance/workloads.json'):
         publish(relative)
     # Complete training ledgers and revision receipts are modest and useful for review.
     for path in sorted((out/'learning').rglob('*.json')):
@@ -114,6 +117,34 @@ def compact(out):
         published.setdefault('historical-bishop', {})[kind] = dict(path='artifacts/cycle17/'+destination, sha256=proof['sha256'])
     write_json(target/'witnesses/index.json', published)
     return published
+
+
+def workloads(out):
+    """Publish small measurement tables without modifying frozen benchmark runs."""
+    out = Path(out); source = out/'performance/samples.json'; samples = read_json(source)
+    results = {}
+    def stats(values):
+        return dict(minimum=min(values), median=statistics.median(values), maximum=max(values))
+    for name in sorted({r['category'] for r in samples}):
+        rows = [r for r in samples if r['category']==name]
+        result = dict(repetitions=len(rows), native_processes_per_request=rows[0]['native_processes'],
+            statistics={'wall_seconds': stats([r['wall_seconds'] for r in rows])})
+        assert len(rows)==10 and all(r['native_processes']==rows[0]['native_processes'] for r in rows)
+        if rows[0]['native_processes']:
+            for key in ('cpu_seconds','peak_rss_kib','selected_tasks','retained_beliefs'):
+                result['statistics'][key] = stats([r[key] for r in rows])
+            result['stage_outcomes'] = {stage: dict(Counter(r['result']['stages'][stage]['classification']
+                for r in rows)) for stage in ('Clear','Attack')}
+            result['remaining_tasks'] = stats([sum(s['usage']['retained_tasks'] for s in r['result']['stages'].values())
+                for r in rows])
+            result['complete_request_json_bytes'] = stats([r['result']['proof']['bytes'] for r in rows])
+            for row in rows:
+                proof = row['result']['proof']
+                assert sha(proof['path'])==proof['sha256'] and Path(proof['path']).stat().st_size==proof['bytes']
+        results[name] = result
+    return record(out/'performance/workloads.json', dict(samples_path='performance/samples.json',
+        samples_sha256=sha(source), workloads=results,
+        scope='Derived from retained frozen-source samples. Native request counts sum two fresh stages. Wall time spans infer(); serialization follows it. CPU and RSS come from native child receipts; cache timings execute no native process.'))
 
 
 def pack(out):
@@ -179,7 +210,7 @@ def preflight(out):
 
 
 if __name__ == '__main__':
-    p = argparse.ArgumentParser(); p.add_argument('command', choices=('historical', 'reproduce', 'compact', 'pack', 'preflight'))
+    p = argparse.ArgumentParser(); p.add_argument('command', choices=('historical', 'reproduce', 'workloads', 'compact', 'pack', 'preflight'))
     p.add_argument('--out', required=True); p.add_argument('--source'); a = p.parse_args()
     if a.command == 'reproduce' and not a.source:
         p.error('--source is required')

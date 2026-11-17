@@ -108,6 +108,12 @@ def run():
     assert receipt('performance/proof-integrity.json')['passed']
     performance = receipt('performance/summary.json')
     assert len(performance)==8 and all(v['repetitions']==10 for v in performance.values())
+    workloads = receipt('performance/workloads.json')
+    assert set(workloads['workloads'])==set(performance)
+    for name, value in workloads['workloads'].items():
+        assert value['repetitions']==10
+        assert value['statistics']['wall_seconds']['median']==performance[name]['median_seconds']
+        assert value['native_processes_per_request']==performance[name]['native_processes_per_request']
     benchmark_command = receipt('benchmark-command.json')
     assert benchmark_command['returncode']==0 and benchmark_command['source_head']==source['source_head']
     resources = receipt('resource-census.json')
@@ -127,6 +133,8 @@ def run():
             receipts[proof['path']] = proof['sha256']
     manifest_path = ROOT/'publication/cycle17/manifest.json'
     manifest = read_json(manifest_path); receipts[str(manifest_path.relative_to(ROOT))] = sha(manifest_path)
+    samples = next(row for row in manifest['files'] if row['path']==workloads['samples_path'])
+    assert samples['sha256']==workloads['samples_sha256']
     restored = receipt('restoration.json')
     assert restored['passed'] and not restored['missing_or_changed']
     assert restored['manifest_sha256']==sha(manifest_path) and restored['files']==manifest['counts']['files']
