@@ -51,6 +51,10 @@ class Observation:
     historical_measurement_time: str | None = None
 
     def __post_init__(self):
+        if not isinstance(self.ancestry_groups,tuple) or not isinstance(self.parent_event_ids,tuple):
+            raise ValueError('Immutable tuple ancestry and parent collections required')
+        if not all(isinstance(v,str) and v for v in (*self.ancestry_groups,*self.parent_event_ids)):
+            raise ValueError('Expected nonempty ancestry/parent identities')
         payload = json.loads(self.observed_variables_json)
         if identity(payload) != self.payload_hash:
             raise ValueError('Payload integrity mismatch')
@@ -137,10 +141,13 @@ class ParameterGeneration:
     native_checkpoint_reference: str | None
     generation_content_hash: str
     namespace: str
+    admitted_component_refs: tuple[tuple[str, tuple[str, ...]], ...]
+    admitted_payload_hashes: tuple[tuple[str, str], ...]
 
     @classmethod
     def create(cls, *, namespace, schema_id, events, excluded, groups, learner,
-               assumptions, uncertainty, prior=None, checkpoint=None):
+               assumptions, uncertainty, prior=None, checkpoint=None,
+               component_refs=(), payload_hashes=()):
         if namespace not in ('native-original', 'reference-only'):
             raise ValueError('Unknown generation namespace')
         if namespace == 'reference-only' and checkpoint is not None:
@@ -149,7 +156,11 @@ class ParameterGeneration:
             admitted_event_ids=tuple(sorted(set(events))), excluded_event_ids=tuple(sorted(set(excluded))),
             training_source_groups=tuple(sorted(set(groups))), learner_identity=learner,
             model_assumptions_id=assumptions, uncertainty_representation=uncertainty,
-            prior_generation_id=prior, native_checkpoint_reference=checkpoint)
+            prior_generation_id=prior, native_checkpoint_reference=checkpoint,
+            admitted_component_refs=tuple(sorted((eid,tuple(sorted(set(parts)))) for eid,parts in component_refs)),
+            admitted_payload_hashes=tuple(sorted(payload_hashes)))
+        if any(eid not in content['admitted_event_ids'] for eid,_ in (*content['admitted_component_refs'],*content['admitted_payload_hashes'])):
+            raise ValueError('Component/payload binding outside admitted event set')
         h = identity(content)
         return cls(parameter_generation_id=namespace+':'+h, generation_content_hash=h, **content)
 

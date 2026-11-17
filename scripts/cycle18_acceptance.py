@@ -42,6 +42,10 @@ def check():
         assert F(fitted['predictive_probability'])==sum(F(p['probability'])*F(p['theta_clear'])*F(p['theta_attack']) for p in fitted['posterior'])
         assert fitted['predictive_probability']==row['probability']
         assert fitted['parameter_generation']['native_checkpoint_reference'] is None
+        expected_components=sorted([[g['event_id'],list(g['components'])] for g in fitted['event_to_likelihood'].values()])
+        expected_payloads=sorted([[g['event_id'],g['payload_hash']] for g in fitted['event_to_likelihood'].values()])
+        assert fitted['parameter_generation']['admitted_component_refs']==expected_components
+        assert fitted['parameter_generation']['admitted_payload_hashes']==expected_payloads
         assert len(set(fitted['event_ids']))==len(fitted['event_ids'])
         assert len(fitted['prior_and_likelihoods'])<=25
         bound=read_json(directory/'contract/reference_cases'/key/'bounds.json')

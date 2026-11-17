@@ -146,7 +146,9 @@ def map_sources(root):
                 learner='training.cycle17_shared_evidence.fit@'+hashes['training/cycle17_shared_evidence.py'],
                 assumptions='C17 supplied structure / trust 0.5 / native revision / source-rule dedup',
                 uncertainty=json.dumps(parameter['truth_value'],sort_keys=True),
-                checkpoint=directory+'/model.json#'+rule)))
+                checkpoint=directory+'/model.json#'+rule,
+                component_refs=((eid,(rule,)) for eid in admitted_ids),
+                payload_hashes=((eid,registry.get(eid).payload_hash) for eid in admitted_ids))))
         memberships[arm] = {k:tuple(sorted(v)) for k,v in sorted(selected.items())}
     audit = dict(schema='cycle18-source-mapping-v1',preparation_records=len(rows),admitted_annotations=48,
         excluded_annotations=384,admitted_vector_events=24,source_games=24,

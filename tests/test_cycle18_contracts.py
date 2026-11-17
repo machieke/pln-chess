@@ -42,6 +42,7 @@ def test_payload_and_event_and_source_identities_are_distinct():
     assert registry.register(a) and registry.register(b) and not registry.register(a)
     assert len(registry.active())==2
     with pytest.raises(FrozenInstanceError):a.event_id='other'
+    with pytest.raises(ValueError):replace(a,ancestry_groups=['mutable-source'])
     payload=a.payload;payload['value']=False
     assert a.payload['value'] is True
     with pytest.raises(ValueError):registry.register(replace(a,observed_variables_json=canonical(payload),payload_hash=identity(payload)))

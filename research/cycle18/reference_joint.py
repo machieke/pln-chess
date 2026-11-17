@@ -166,7 +166,9 @@ def fit(registry, selection, model='M-J-copy', grid='primary', *, limits=Limits(
             variance=sum((w*(v-mean)**2 for v,w in law.items()),F(0)))
     generation=ParameterGeneration.create(namespace='reference-only',schema_id='pipeline-label-pair-v18',
         events=selection,excluded=[],groups=groups,learner='cycle18-exact-enumeration-v1',
-        assumptions=base['assumptions_id'],uncertainty=canonical(encode(posterior)),prior=prior_generation)
+        assumptions=base['assumptions_id'],uncertainty=canonical(encode(posterior)),prior=prior_generation,
+        component_refs=((g['event_id'],g['components']) for g in groups.values()),
+        payload_hashes=((g['event_id'],g['payload_hash']) for g in groups.values()))
     def rational_growth(value):
         if isinstance(value,F):return max(value.numerator.bit_length(),value.denominator.bit_length())
         if isinstance(value,dict):return max((rational_growth(v) for v in value.values()),default=0)

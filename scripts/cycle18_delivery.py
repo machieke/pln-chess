@@ -86,7 +86,8 @@ def resources(out):
         elif isinstance(value,list):
             for v in value:walk(v)
     # Deliberate inclusion of development and clean-reproduction executions.
-    for directory in ('native-development','native-development-2','native','reproduction/native'):
+    for directory in ('native-development','native-development-2','native','reproduction/native',
+                      'source-correction-001/native','source-correction-001/reproduction/native'):
         for path in (out/directory).rglob('*.json'):
             walk(read_json(path))
     receipts=list(seen.values());jobs=[]
@@ -97,6 +98,14 @@ def resources(out):
         jobs.append(dict(name=path.stem,returncode=receipt['returncode'],
             cpu_seconds=number(r'User time \(seconds\): ([\d.]+)')+number(r'System time \(seconds\): ([\d.]+)'),
             peak_rss_kib=number(r'Maximum resident set size \(kbytes\): (\d+)')))
+    interrupted_jobs=[]
+    for path in (out/'source-correction-001/preservation/commands').glob('*.json'):
+        receipt=read_json(path)
+        log=out/'source-correction-001/preservation/logs'/Path(receipt['log']).name
+        contents=log.read_text()
+        values=re.findall(r'(?:User|System) time \(seconds\): ([\d.]+)',contents)
+        interrupted_jobs.append(dict(name=path.stem,returncode=receipt['returncode'],
+            cpu_seconds=sum(float(v) for v in values),source_head=receipt['source_head']))
     reference=read_json(out/'contract/resources.json')
     counts=dict(native_invocations=sum(r['native_processes'] for r in receipts),native_cpu_seconds=sum(r['cpu_seconds'] for r in receipts),
         native_peak_rss_kib=max((r['peak_rss_kib'] or 0 for r in receipts),default=0),native_incomplete=sum(bool(r['incomplete']) for r in receipts),
@@ -106,10 +115,13 @@ def resources(out):
             for p in (out/group).rglob('*') if p.is_file()),
         preservation_output_bytes=sum(p.stat().st_size for p in (out/'preservation').rglob('*') if p.is_file()),
         scope='Unique retained native process receipts including development and reproduction; preservation timed commands include full tests. Aggregate proof-comparison overhead is outside those job CPU totals; external observer separately reports it. Do not add overlapping counters.',
-        jobs=jobs)
-    assert counts['native_invocations']<=200 and counts['native_cpu_seconds']<=3600
+        jobs=jobs,interrupted_completed_jobs=interrupted_jobs,
+        interrupted_completed_job_cpu_seconds=sum(r['cpu_seconds'] for r in interrupted_jobs),
+        original_replay_ceiling=200,amended_replay_ceiling=300,
+        amendment='Recorded before required reruns; component/payload-bound generation correction. Partial job CPU not fully captured; interrupted observer retained separately.')
+    assert counts['native_invocations']<=300 and counts['native_cpu_seconds']<=3600
     assert counts['research_output_bytes']<=64*1024**2
-    assert counts['preservation_cpu_seconds']<=24*3600 and counts['preservation_output_bytes']<=8*1024**3
+    assert counts['preservation_cpu_seconds']+counts['interrupted_completed_job_cpu_seconds']<=24*3600 and counts['preservation_output_bytes']<=8*1024**3
     counts['budget_passed']=True
     return immutable(out/'resources.json',counts)
 

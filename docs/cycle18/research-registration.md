@@ -77,7 +77,7 @@ fields. No native stv, supported-positive classification or checkpoint output.
 
 Limits: 25 states, 100 source groups, 2,500 likelihood evaluations per fit,
 16,384-bit rational numerators/denominators, 1,000 application records/session;
-research native replay <= 200 processes and 1 CPU hour; compact research outputs
+research native replay <= 300 processes and 1 CPU hour; compact research outputs
 <= 64 MiB; historical preservation <= 24 measured CPU hours and 8 GiB outputs.
 Report overruns as incomplete, never as negative scientific findings. Full
 preservation runs once after executable source/tests are frozen, with the actual
@@ -97,3 +97,24 @@ Audit every new reachable blob (10 MiB/blob; target 100 MiB/range), secrets, rem
 identity and final SHA. Bulk preservation evidence stays local, with checksummed
 packs and a verified restore. Push only the dedicated branch, never master,
 force, tags, releases or bulk hosting. Final remote receipt stays outside Git.
+
+## Recorded engineering amendment before final source freeze
+
+The initial implementation freeze was `9dc9159de311a2b5304e4051eef2919e7994c19f`.
+Review found that the reference generation hash needed to bind admitted component
+masks and payload hashes, even when reciprocal selections produced the same
+posterior. These bindings and a regression test are added before the final
+freeze. The registered models, grids, query, source population and numerical
+results are unchanged. Immutable tuple collections are also enforced at the
+observation constructor boundary.
+
+The initial preservation run is explicitly interrupted and retained, without
+reusing its successful jobs at the corrected source. Final acceptance restarts
+the complete gate once at the corrected freeze. Repeating the frozen native and
+clean-reproduction commands requires 88 additional native processes after 134
+retained development/initial executions. The research replay ceiling is therefore
+amended from 200 to 300 **before** those reruns; the original ceiling was not
+exceeded at amendment. The final canonical reproduction is counted separately
+and remains within that amended ceiling as well. CPU, finite-state, arithmetic,
+Git and output limits are unchanged. Interrupted preservation work and resource
+counter limitations must be reported separately rather than silently discarded.

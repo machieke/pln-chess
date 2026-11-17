@@ -51,6 +51,15 @@ def test_joint_assumptions_differ_on_same_recorded_vectors(mapped):
     assert upper['posterior_identity']!=lower['posterior_identity']
 
 
+def test_generation_binds_component_admissions_even_when_posteriors_coincide(mapped):
+    r,arms,_=mapped
+    ab=fit(r,arms['D-AB'],'M-F').json();ba=fit(r,arms['D-BA'],'M-F').json()
+    assert ab['event_ids']==ba['event_ids'] and ab['posterior_identity']==ba['posterior_identity']
+    assert ab['parameter_generation']['parameter_generation_id']!=ba['parameter_generation']['parameter_generation_id']
+    assert ab['parameter_generation']['admitted_component_refs']!=ba['parameter_generation']['admitted_component_refs']
+    assert len(ab['parameter_generation']['admitted_payload_hashes'])==24
+
+
 def test_sharp_marginal_coupling_witnesses_attain_bounds(mapped):
     r,arms,_=mapped;f=fit(r,arms['S-AA'],'M-F');d=f.json();b=posterior_bounds(f).json()
     for name,side in [('lower_witness',0),('upper_witness',1)]:
