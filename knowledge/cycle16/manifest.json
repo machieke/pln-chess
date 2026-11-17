@@ -1,0 +1,35 @@
+{
+  "F": {
+    "declarations": {
+      "bishop-attack": "(Implication (PieceKind $a bishop $s) (Implication (Clear $a $t diagonal $s) (Attack $a $t $s)))",
+      "clear-one": "(Implication (RayPath $a $t (Cons $c Nil) $shape $s) (Implication (Empty $c $s) (Clear $a $t $shape $s)))",
+      "clear-path": "(Implication (RayPath $a $t $path $shape $s) (Implication (PathEmpty $path $s) (Clear $a $t $shape $s)))",
+      "clear-two": "(Implication (RayPath $a $t (Cons $c1 (Cons $c2 Nil)) $shape $s) (Implication (Empty $c1 $s) (Implication (Empty $c2 $s) (Clear $a $t $shape $s))))",
+      "empty-tail": "(Implication (State $s) (PathEmpty Nil $s))",
+      "exposure-black": "(Implication (OriginalActor $s black) (Implication (Owner $a white $s) (Implication (Owner $t black $s) (Implication (PieceKind $t king $s) (Implication (Attack $a $t $s) (KingExposed $t black $s))))))",
+      "exposure-white": "(Implication (OriginalActor $s white) (Implication (Owner $a black $s) (Implication (Owner $t white $s) (Implication (PieceKind $t king $s) (Implication (Attack $a $t $s) (KingExposed $t white $s))))))",
+      "extend-empty": "(Implication (Empty $c $s) (Implication (PathEmpty $tail $s) (PathEmpty (Cons $c $tail) $s)))",
+      "obstruction": "(Implication (RayMember $a $t $c $s) (Implication (Occupied $c $s) (NoAttack $a $t $s)))",
+      "queen-diagonal": "(Implication (PieceKind $a queen $s) (Implication (Clear $a $t diagonal $s) (Attack $a $t $s)))",
+      "queen-orthogonal": "(Implication (PieceKind $a queen $s) (Implication (Clear $a $t orthogonal $s) (Attack $a $t $s)))",
+      "rook-attack": "(Implication (PieceKind $a rook $s) (Implication (Clear $a $t orthogonal $s) (Attack $a $t $s)))"
+    },
+    "structure_hash": "696045d7cb1f34a05bd1ef2b17d7097b6d02b28a3e49143dcd7b22276b054f0f"
+  },
+  "R": {
+    "declarations": {
+      "bishop-attack": "(Implication (PieceKind $a bishop $s) (Implication (Clear $a $t diagonal $s) (Attack $a $t $s)))",
+      "clear-one": "(Implication (RayPath $a $t (Cons $c Nil) $shape $s) (Implication (Empty $c $s) (Clear $a $t $shape $s)))",
+      "clear-path": "(Implication (RayPath $a $t $path $shape $s) (Implication (PathEmpty $path $s) (Clear $a $t $shape $s)))",
+      "empty-tail": "(Implication (State $s) (PathEmpty Nil $s))",
+      "exposure-black": "(Implication (OriginalActor $s black) (Implication (Owner $a white $s) (Implication (Owner $t black $s) (Implication (PieceKind $t king $s) (Implication (Attack $a $t $s) (KingExposed $t black $s))))))",
+      "exposure-white": "(Implication (OriginalActor $s white) (Implication (Owner $a black $s) (Implication (Owner $t white $s) (Implication (PieceKind $t king $s) (Implication (Attack $a $t $s) (KingExposed $t white $s))))))",
+      "extend-empty": "(Implication (Empty $c $s) (Implication (PathEmpty $tail $s) (PathEmpty (Cons $c $tail) $s)))",
+      "obstruction": "(Implication (RayMember $a $t $c $s) (Implication (Occupied $c $s) (NoAttack $a $t $s)))",
+      "queen-diagonal": "(Implication (PieceKind $a queen $s) (Implication (Clear $a $t diagonal $s) (Attack $a $t $s)))",
+      "queen-orthogonal": "(Implication (PieceKind $a queen $s) (Implication (Clear $a $t orthogonal $s) (Attack $a $t $s)))",
+      "rook-attack": "(Implication (PieceKind $a rook $s) (Implication (Clear $a $t orthogonal $s) (Attack $a $t $s)))"
+    },
+    "structure_hash": "43a9469e5f231ed8882cd816fedd6f01dbb726680d60748c929d1fd6b474046d"
+  }
+}
