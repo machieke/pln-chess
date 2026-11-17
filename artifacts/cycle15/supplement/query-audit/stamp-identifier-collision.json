@@ -1,0 +1,26 @@
+{
+  "correction": "Rename the same synthetic occurrences to chain_first and chain_second, preserving one identity per rule; no evidence overlap policy changes",
+  "failures": [
+    {
+      "classification": "incomplete",
+      "path": "/home/purplezky/cycle15-evidence-20261117/supplement/query-audit/raw/e1cc4193007dab0e1cfaeefb426e6752d2bb16e3de75751187f06b573968d2af.json",
+      "sha256": "e1cc4193007dab0e1cfaeefb426e6752d2bb16e3de75751187f06b573968d2af",
+      "stderr": "ERROR: [Thread main] /data/pln-chess-cycle6-delivery/.runtime/petta/src/main.pl:123: user:main msort/2: Type error: `list' expected, found `[second|partial(first,[])]' (an invalid_list)\n"
+    },
+    {
+      "classification": "incomplete",
+      "path": "/home/purplezky/cycle15-evidence-20261117/supplement/query-audit/raw/fccb5758ec77640ae21de4014bca69f5064154ae481645dfd4f46dd2373b37d9.json",
+      "sha256": "fccb5758ec77640ae21de4014bca69f5064154ae481645dfd4f46dd2373b37d9",
+      "stderr": "ERROR: [Thread main] /data/pln-chess-cycle6-delivery/.runtime/petta/src/main.pl:123: user:main msort/2: Type error: `list' expected, found `[premise|partial(first,[])]' (an invalid_list)\n"
+    },
+    {
+      "classification": "incomplete",
+      "path": "/home/purplezky/cycle15-evidence-20261117/supplement/query-audit/raw/bf1931b75e424340950e4583c7810a62172213bdcfdb16fba9bef8f4dc73374c.json",
+      "sha256": "bf1931b75e424340950e4583c7810a62172213bdcfdb16fba9bef8f4dc73374c",
+      "stderr": "ERROR: [Thread main] /data/pln-chess-cycle6-delivery/.runtime/petta/src/main.pl:123: user:main msort/2: Type error: `list' expected, found `[premise|partial(first,[])]' (an invalid_list)\n"
+    }
+  ],
+  "finding": "A bare first stamp makes the stamp tuple collide with the pinned PeTTa first function and produces a partial-function/list type error",
+  "observed": true,
+  "scope": "Low-level audit input; production observation/rule/training stamps already use stable namespaces"
+}

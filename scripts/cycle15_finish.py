@@ -22,6 +22,8 @@ def run(out):
     print('Complete preservation receipt verified; starting isolated benchmarks',flush=True)
     from evaluation.cycle15_performance import run as benchmark
     if not (out/'performance/summary.json').exists():benchmark(out/'performance')
+    from scripts.cycle15_resource_census import run as resource_census
+    resource_census(out)
     runtime=Runtime();assert runtime.manifest==read_json(out/'baseline.json')['runtime']
     assert production_code_hash()=='e88ff7969885be101af2ceedbbdf5d5499f4253b361a8cee18ff1814f055282c'
     protected=read_json(out/'protected-files.json')
@@ -36,6 +38,11 @@ def run(out):
     assert read_json(out/'supplement/proof-audit.json')['passed']
     assert read_json(out/'supplement/information/field-information-loss.json')['passed']
     assert read_json(out/'supplement/timeout-control.json')['passed']
+    assert read_json(out/'supplement/query-audit/query-boundary.json')['passed']
+    assert read_json(out/'supplement/query-audit/chain-interventions.json')['passed']
+    partition=read_json(out/'supplement/partition-audit.json')
+    assert partition['exact_registered_typed_splits_disjoint']
+    assert not partition['prior_predictions_or_splits_changed']
     import xml.etree.ElementTree as ET
     tests={}
     for name in ('research-tests-final.xml','transport-tests.xml'):
@@ -47,6 +54,12 @@ def run(out):
         operational_source_hash=production_code_hash(),runtime=runtime.manifest,
         historical_files=len(protected),cycle14_evidence_files=original['files'],remote_write_performed=False,
         native_execution=True,native_schema_binding=True,native_learning=True,
+        native_learning_scope='Native revision and parameter effects on held-out typed kind/geometry combinations; stronger spatial independence not demonstrated',
+        independent_unseen_geometry_transfer=False,
+        registered_test_families=partition['typed_families']['test'],
+        geometry_test_groups=partition['geometry_groups']['test'],
+        wholly_unseen_geometry_groups=partition['strictly_unseen_test_geometry_groups'],
+        unseen_geometry_results=partition['unseen_geometry_results'],
         chess_scope='One intervening cell positive; occupied-ray negative; longer empty path unsupported',
         architecture_decision='Outcome 2: native binding works; raw chess consequence remains partial',
         research_outcomes_independent_of_engineering_status=True,
@@ -54,7 +67,7 @@ def run(out):
         acceptance_scope='Complete legal/tests at preserved source plus final isolated research/transport tests; no operational source change',
         completed_unix=time.time()))
     # Only small summaries and manifests enter Git. All native bulk stays local.
-    copies=['acceptance.json','historical-files-final.json','historical-cycle14-final.json',
+    copies=['acceptance.json','historical-files-final.json','historical-cycle14-final.json','resource-census.json',
         'performance/summary.json','performance/proof-integrity.json','preservation/verified.json',
         'reproduction/verified.json','transport-tests.xml']
     for relative in copies:

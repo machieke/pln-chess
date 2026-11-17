@@ -6,7 +6,7 @@ Native execution and shared-role binding are demonstrated on the pinned runtime.
 The reasoner applies supplied reusable implications and can derive a local
 occupancy-constrained attack and role-correct exposure without Python selecting
 the conclusion. Native revision changes learned rule beliefs, and those beliefs
-support unfamiliar one-cell configurations. The intended architecture has a
+support held-out one-cell kind/geometry combinations and identities. The intended architecture has a
 working limited instance.
 
 The central unresolved boundary is composition over longer empty paths. Reusing
@@ -21,6 +21,12 @@ baseline answers all 96 correctly. There is no demonstrated accuracy advantage,
 rule-structure discovery, arbitrary-ray generalization or general legal-move
 reasoning. All admitted learning evidence is positive conditional support; noisy
 supervision and empirical calibration remain open.
+
+A coarser ancestry audit reduces the 48 registered typed test families to 44
+geometry groups, only 37 wholly unseen. There is no supported positive on the
+strictly unseen-geometry subset. Future transfer studies must group kind variants
+that share geometry, or use independently sourced episode ancestry, before
+splitting. This cycle does not claim the stronger independent-transfer target.
 
 The next experiment should isolate **repeated reusable-rule evidence on a
 two-intermediate-cell path**. Keep the native runtime unchanged and compare a

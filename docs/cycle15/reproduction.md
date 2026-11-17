@@ -49,6 +49,10 @@ TASK_OUT=/path/to/new/cycle15-evidence
 .venv/bin/python -m scripts.cycle15_information --out "$TASK_OUT/supplement/information"
 .venv/bin/python -m scripts.cycle15_supplement --out "$TASK_OUT/supplement" \
   --evaluation-root "$TASK_OUT/evaluation" --checkpoint "$TASK_OUT/learning/model.json"
+.venv/bin/python -m scripts.cycle15_query_audit --part query --out "$TASK_OUT/supplement/query-audit"
+.venv/bin/python -m scripts.cycle15_query_audit --part chain --out "$TASK_OUT/supplement/query-audit"
+.venv/bin/python -m scripts.cycle15_partition_audit \
+  --results "$TASK_OUT/evaluation/results.json" --out "$TASK_OUT/supplement/partition-audit.json"
 .venv/bin/python -m evaluation.cycle15_performance --out "$TASK_OUT/performance"
 .venv/bin/python -m pytest -q tests/test_cycle15_*.py
 ```

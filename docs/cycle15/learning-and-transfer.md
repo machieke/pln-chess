@@ -8,6 +8,24 @@ remain dependent descendants. These are designed synthetic families from one
 generator, not 84 independently sampled games. Bootstrap intervals describe this
 panel conditionally and do not estimate broad chess strength.
 
+The [coarser partition audit](../../artifacts/cycle15/supplement/partition-audit.json)
+finds that treating attacker kinds as dependent variants collapses training,
+development and test to 23, 11 and 44 geometry groups. Seven test roots share
+geometry with training/development under another kind. Only 37 geometry groups
+(41 typed roots, 82 endpoints) are wholly unseen. On that subset C/D return 41
+correct negatives, 41 unknown positives and no classified errors: positive recall
+is zero. Thus **48 independent unseen geometry groups and positive transfer to
+unseen ray geometry are not demonstrated**. The primary counts and splits are
+retained unchanged, rather than retroactively relabeling independence.
+
+All four positive final cases are held-out kind/geometry combinations whose
+coarser geometry was seen under another kind. Entity and board-location transfer
+remain demonstrated within that narrow scope. The geometry-cluster sensitivity
+interval for overall positive recall is 1.96%–17.02%; it still is not a natural-game
+population estimate. The shared obstruction template also admits two training
+kind variants from one geometry under the registered policy, so its independence
+assumption is weaker than its 24 distinct ancestry identifiers suggest.
+
 [Training](../../training/cycle15_consequences.py) learns truth values for four
 slider templates and the obstruction template. Logical structures are supplied.
 The [checkpoint](../../artifacts/cycle15/learning/model.json) records ancestry,

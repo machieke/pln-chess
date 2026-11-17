@@ -1,0 +1,113 @@
+{
+  "conclusion": "With the same fact and rule already in beliefs, empty tasks permit retrieval but not an absent conclusion; Query does not initiate backward chaining",
+  "earlier_probe_scope": "The original query-is-not-backward matrix row had no fact and was insufficient alone to distinguish chaining direction",
+  "passed": true,
+  "rows": [
+    {
+      "name": "query-retrieval-with-empty-tasks",
+      "result": {
+        "answer": {
+          "confidence": 0.99,
+          "stamps": [
+            "premise"
+          ],
+          "strength": 1.0
+        },
+        "classification": "supported-positive",
+        "contrary": null,
+        "grounding_mode": "native-schema-binding",
+        "incomplete": false,
+        "peak_rss_kib": 21576,
+        "proof": {
+          "bytes": 7149,
+          "path": "/home/purplezky/cycle15-evidence-20261117/supplement/query-audit/raw/6c24a98447aef25f5ac6dbf09f71ec504be4b6a614de33efa78a7d168055ee48.json",
+          "sha256": "6c24a98447aef25f5ac6dbf09f71ec504be4b6a614de33efa78a7d168055ee48"
+        },
+        "query": "(P entity)",
+        "usage": {
+          "derivation_calls": 1,
+          "derived_statements": null,
+          "host_grounded_instances": 0,
+          "initial_beliefs": 2,
+          "initial_tasks": 0,
+          "native_processes": 1,
+          "native_schema_instances": "Not completely observable in native trace",
+          "repeated_selected_terms": 0,
+          "retained_beliefs": null,
+          "retained_tasks": null,
+          "selected_tasks": 0
+        },
+        "wall_seconds": 0.7714294511824846
+      }
+    },
+    {
+      "name": "query-absent-conclusion-with-empty-tasks",
+      "result": {
+        "answer": null,
+        "classification": "unknown",
+        "contrary": null,
+        "grounding_mode": "native-schema-binding",
+        "incomplete": false,
+        "peak_rss_kib": 21392,
+        "proof": {
+          "bytes": 7029,
+          "path": "/home/purplezky/cycle15-evidence-20261117/supplement/query-audit/raw/d554aa3daa7537e6aed15cc0d2dd22c1a95b83dec1990fad2e0eb1f5b8e07dae.json",
+          "sha256": "d554aa3daa7537e6aed15cc0d2dd22c1a95b83dec1990fad2e0eb1f5b8e07dae"
+        },
+        "query": "(Q entity)",
+        "usage": {
+          "derivation_calls": 1,
+          "derived_statements": null,
+          "host_grounded_instances": 0,
+          "initial_beliefs": 2,
+          "initial_tasks": 0,
+          "native_processes": 1,
+          "native_schema_instances": "Not completely observable in native trace",
+          "repeated_selected_terms": 0,
+          "retained_beliefs": null,
+          "retained_tasks": null,
+          "selected_tasks": 0
+        },
+        "wall_seconds": 0.973822545260191
+      }
+    },
+    {
+      "name": "query-absent-conclusion-with-active-tasks",
+      "result": {
+        "answer": {
+          "confidence": 0.9405,
+          "stamps": [
+            "premise",
+            "rule"
+          ],
+          "strength": 1.0
+        },
+        "classification": "supported-positive",
+        "contrary": null,
+        "grounding_mode": "native-schema-binding",
+        "incomplete": false,
+        "peak_rss_kib": 23784,
+        "proof": {
+          "bytes": 7930,
+          "path": "/home/purplezky/cycle15-evidence-20261117/supplement/query-audit/raw/c398d7c05eb0efe2cf23c1faf6328af66d69d38946623af77b9c1927fa1e0b28.json",
+          "sha256": "c398d7c05eb0efe2cf23c1faf6328af66d69d38946623af77b9c1927fa1e0b28"
+        },
+        "query": "(Q entity)",
+        "usage": {
+          "derivation_calls": 1,
+          "derived_statements": null,
+          "host_grounded_instances": 0,
+          "initial_beliefs": 2,
+          "initial_tasks": 2,
+          "native_processes": 1,
+          "native_schema_instances": "Not completely observable in native trace",
+          "repeated_selected_terms": 0,
+          "retained_beliefs": null,
+          "retained_tasks": null,
+          "selected_tasks": 3
+        },
+        "wall_seconds": 0.8667048448696733
+      }
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "conclusion": "The absent two-rule conclusion requires both reusable rules and the sole initial fact",
+  "passed": true,
+  "rows": [
+    {
+      "name": "full-chain",
+      "result": {
+        "answer": {
+          "confidence": 0.8934749999999999,
+          "stamps": [
+            "chain_first",
+            "chain_second",
+            "premise"
+          ],
+          "strength": 1.0
+        },
+        "classification": "supported-positive",
+        "contrary": null,
+        "grounding_mode": "native-schema-binding",
+        "incomplete": false,
+        "peak_rss_kib": 21884,
+        "proof": {
+          "bytes": 10328,
+          "path": "/home/purplezky/cycle15-evidence-20261117/supplement/query-audit/raw/9f894a488af6d99e7afce3e898eaa5166cc846dad5df5911501ed99e7398e746.json",
+          "sha256": "9f894a488af6d99e7afce3e898eaa5166cc846dad5df5911501ed99e7398e746"
+        },
+        "query": "(R entity)",
+        "usage": {
+          "derivation_calls": 1,
+          "derived_statements": 2,
+          "host_grounded_instances": 0,
+          "initial_beliefs": 3,
+          "initial_tasks": 3,
+          "native_processes": 1,
+          "native_schema_instances": "Not completely observable in native trace",
+          "repeated_selected_terms": 0,
+          "retained_beliefs": 5,
+          "retained_tasks": 0,
+          "selected_tasks": 5
+        },
+        "wall_seconds": 0.7851777384057641
+      }
+    },
+    {
+      "name": "remove-first-rule",
+      "result": {
+        "answer": null,
+        "classification": "unknown",
+        "contrary": null,
+        "grounding_mode": "native-schema-binding",
+        "incomplete": false,
+        "peak_rss_kib": 23956,
+        "proof": {
+          "bytes": 8229,
+          "path": "/home/purplezky/cycle15-evidence-20261117/supplement/query-audit/raw/3b697483693cbe518260ab14443dc8f04f50bcfed8571e24fc17a32f46bccf3b.json",
+          "sha256": "3b697483693cbe518260ab14443dc8f04f50bcfed8571e24fc17a32f46bccf3b"
+        },
+        "query": "(R entity)",
+        "usage": {
+          "derivation_calls": 1,
+          "derived_statements": 0,
+          "host_grounded_instances": 0,
+          "initial_beliefs": 2,
+          "initial_tasks": 2,
+          "native_processes": 1,
+          "native_schema_instances": "Not completely observable in native trace",
+          "repeated_selected_terms": 0,
+          "retained_beliefs": 2,
+          "retained_tasks": 0,
+          "selected_tasks": 2
+        },
+        "wall_seconds": 0.7200488029047847
+      }
+    },
+    {
+      "name": "remove-second-rule",
+      "result": {
+        "answer": null,
+        "classification": "unknown",
+        "contrary": null,
+        "grounding_mode": "native-schema-binding",
+        "incomplete": false,
+        "peak_rss_kib": 23848,
+        "proof": {
+          "bytes": 8678,
+          "path": "/home/purplezky/cycle15-evidence-20261117/supplement/query-audit/raw/7d605e2439ff6cbc2079f9b28d6fd2f749d7355d90c67c218eb3bc8ab0bd41ab.json",
+          "sha256": "7d605e2439ff6cbc2079f9b28d6fd2f749d7355d90c67c218eb3bc8ab0bd41ab"
+        },
+        "query": "(R entity)",
+        "usage": {
+          "derivation_calls": 1,
+          "derived_statements": 1,
+          "host_grounded_instances": 0,
+          "initial_beliefs": 2,
+          "initial_tasks": 2,
+          "native_processes": 1,
+          "native_schema_instances": "Not completely observable in native trace",
+          "repeated_selected_terms": 0,
+          "retained_beliefs": 3,
+          "retained_tasks": 0,
+          "selected_tasks": 3
+        },
+        "wall_seconds": 0.7226393399760127
+      }
+    },
+    {
+      "name": "remove-premise",
+      "result": {
+        "answer": null,
+        "classification": "unknown",
+        "contrary": null,
+        "grounding_mode": "native-schema-binding",
+        "incomplete": false,
+        "peak_rss_kib": 23828,
+        "proof": {
+          "bytes": 8401,
+          "path": "/home/purplezky/cycle15-evidence-20261117/supplement/query-audit/raw/d379363fa95952ea0166e2630804073bc6e495a2ac584bc30d21b4c0766c2609.json",
+          "sha256": "d379363fa95952ea0166e2630804073bc6e495a2ac584bc30d21b4c0766c2609"
+        },
+        "query": "(R entity)",
+        "usage": {
+          "derivation_calls": 1,
+          "derived_statements": 0,
+          "host_grounded_instances": 0,
+          "initial_beliefs": 2,
+          "initial_tasks": 2,
+          "native_processes": 1,
+          "native_schema_instances": "Not completely observable in native trace",
+          "repeated_selected_terms": 0,
+          "retained_beliefs": 2,
+          "retained_tasks": 0,
+          "selected_tasks": 2
+        },
+        "wall_seconds": 0.5199866583570838
+      }
+    }
+  ]
+}

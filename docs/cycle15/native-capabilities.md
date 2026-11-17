@@ -56,7 +56,14 @@ Sentences have the exact form `(Sentence (proposition (stv strength confidence))
 logical operator is introduced. Knowledge files are parsed as declarative data.
 
 Query performs bounded forward derivation, then answer selection; no backward
-chaining is demonstrated. Steps start at one and stop when the counter exceeds
+chaining is demonstrated. The [explicit Query boundary](../../artifacts/cycle15/supplement/query-audit/query-boundary.json)
+supplies the same fact and rule in beliefs: empty tasks allow fact retrieval but
+not the absent conclusion, while active tasks derive it. The original matrix's
+no-fact probe alone was insufficient to distinguish chaining direction.
+[Two-rule interventions](../../artifacts/cycle15/supplement/query-audit/chain-interventions.json)
+separately remove each rule and the sole fact, retracting the absent final
+conclusion. These seven supplemental cases strengthen the original 41-case matrix.
+Steps start at one and stop when the counter exceeds
 the maximum. Zero steps preserves the initial belief collection. `LimitSize`
 returns a collection strictly smaller than its size argument: capacity one
 empties it. Zero capacities are rejected by the adapter because the pinned
@@ -68,6 +75,14 @@ Native schemas are printed with renamed variables. The final telemetry compares
 statements modulo variable renaming, preserving repeated-role structure. The
 earlier raw receipts remain immutable; the supplementary proof audit recomputes
 their derived-statement counts without changing programs, answers or stamps.
+
+The [stamp-name collision counterexample](../../artifacts/cycle15/supplement/query-audit/stamp-identifier-collision.json)
+retains an actual interpreter failure: the bare stamp `first` makes its tuple
+collide with a PeTTa builtin and produces a partial-function/list type error.
+Production stamps already use `obs_`, `rule_` and `train_` namespaces. The corrected
+audit uses stable `chain_first`/`chain_second` identities; it does not mint new
+evidence per firing or bypass stamp-overlap rejection. Low-level callers should
+use namespaced stamps. Such runtime errors remain incomplete, never false.
 
 ## Compatibility and runtime
 
