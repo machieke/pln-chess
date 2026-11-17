@@ -1,68 +1,187 @@
 {
   "bishop-attack": {
-    "learned_parameters": "strength and confidence for terminal attack and obstruction only",
+    "dependence_assumptions": "Stable rule stamp per template; learned templates also retain admitted root ancestry; atomic sensor occurrences from one state are not claimed statistically independent",
+    "evidence_source": "Registered training root conditional observations, native revision and ancestry ledger",
+    "intended_conclusion": "(Attack $a $t $s)",
+    "learned_parameters": [
+      "strength",
+      "confidence"
+    ],
+    "logical_structure_learned": false,
+    "native_calculus_changed": false,
     "origin": "supplied-domain-rule-template",
-    "scope": "occupancy-constrained sliding influence or explicit role-bound exposure",
+    "required_premises": [
+      "(PieceKind $a bishop $s)",
+      "(Clear $a $t diagonal $s)"
+    ],
+    "supported_and_unsupported_scope": "Diagonal sliding influence given supported clearance; one-cell held-out positive evidence",
     "term": "(Implication (PieceKind $a bishop $s) (Implication (Clear $a $t diagonal $s) (Attack $a $t $s)))"
   },
   "clear-one": {
-    "learned_parameters": "strength and confidence for terminal attack and obstruction only",
+    "dependence_assumptions": "Stable rule stamp per template; learned templates also retain admitted root ancestry; atomic sensor occurrences from one state are not claimed statistically independent",
+    "evidence_source": "Supplied domain hypothesis with disclosed (stv 1.0 0.95) assumption",
+    "intended_conclusion": "(Clear $a $t $shape $s)",
+    "learned_parameters": [],
+    "logical_structure_learned": false,
+    "native_calculus_changed": false,
     "origin": "supplied-domain-rule-template",
-    "scope": "occupancy-constrained sliding influence or explicit role-bound exposure",
+    "required_premises": [
+      "(RayPath $a $t (Cons $c Nil) $shape $s)",
+      "(Empty $c $s)"
+    ],
+    "supported_and_unsupported_scope": "Exactly one observed empty intermediate cell; no arbitrary-ray claim",
     "term": "(Implication (RayPath $a $t (Cons $c Nil) $shape $s) (Implication (Empty $c $s) (Clear $a $t $shape $s)))"
   },
   "clear-path": {
-    "learned_parameters": "strength and confidence for terminal attack and obstruction only",
+    "dependence_assumptions": "Stable rule stamp per template; learned templates also retain admitted root ancestry; atomic sensor occurrences from one state are not claimed statistically independent",
+    "evidence_source": "Supplied domain hypothesis with disclosed (stv 1.0 0.95) assumption",
+    "intended_conclusion": "(Clear $a $t $shape $s)",
+    "learned_parameters": [],
+    "logical_structure_learned": false,
+    "native_calculus_changed": false,
     "origin": "supplied-domain-rule-template",
-    "scope": "occupancy-constrained sliding influence or explicit role-bound exposure",
+    "required_premises": [
+      "(RayPath $a $t $path $shape $s)",
+      "(PathEmpty $path $s)"
+    ],
+    "supported_and_unsupported_scope": "Connects a supplied structural ray to a natively supported empty path; longer empty paths remain unsupported",
     "term": "(Implication (RayPath $a $t $path $shape $s) (Implication (PathEmpty $path $s) (Clear $a $t $shape $s)))"
   },
   "empty-tail": {
-    "learned_parameters": "strength and confidence for terminal attack and obstruction only",
+    "dependence_assumptions": "Stable rule stamp per template; learned templates also retain admitted root ancestry; atomic sensor occurrences from one state are not claimed statistically independent",
+    "evidence_source": "Supplied domain hypothesis with disclosed (stv 1.0 0.95) assumption",
+    "intended_conclusion": "(PathEmpty Nil $s)",
+    "learned_parameters": [],
+    "logical_structure_learned": false,
+    "native_calculus_changed": false,
     "origin": "supplied-domain-rule-template",
-    "scope": "occupancy-constrained sliding influence or explicit role-bound exposure",
+    "required_premises": [
+      "(State $s)"
+    ],
+    "supported_and_unsupported_scope": "Empty list initialization; does not assert an observed ray is clear",
     "term": "(Implication (State $s) (PathEmpty Nil $s))"
   },
   "exposure-black": {
-    "learned_parameters": "strength and confidence for terminal attack and obstruction only",
+    "dependence_assumptions": "Stable rule stamp per template; learned templates also retain admitted root ancestry; atomic sensor occurrences from one state are not claimed statistically independent",
+    "evidence_source": "Supplied domain hypothesis with disclosed (stv 1.0 0.95) assumption",
+    "intended_conclusion": "(KingExposed $t black $s)",
+    "learned_parameters": [],
+    "logical_structure_learned": false,
+    "native_calculus_changed": false,
     "origin": "supplied-domain-rule-template",
-    "scope": "occupancy-constrained sliding influence or explicit role-bound exposure",
+    "required_premises": [
+      "(OriginalActor $s black)",
+      "(Owner $a white $s)",
+      "(Owner $t black $s)",
+      "(PieceKind $t king $s)",
+      "(Attack $a $t $s)"
+    ],
+    "supported_and_unsupported_scope": "Symmetric supplied template; not an independent black-actor final-test estimate",
     "term": "(Implication (OriginalActor $s black) (Implication (Owner $a white $s) (Implication (Owner $t black $s) (Implication (PieceKind $t king $s) (Implication (Attack $a $t $s) (KingExposed $t black $s))))))"
   },
   "exposure-white": {
-    "learned_parameters": "strength and confidence for terminal attack and obstruction only",
+    "dependence_assumptions": "Stable rule stamp per template; learned templates also retain admitted root ancestry; atomic sensor occurrences from one state are not claimed statistically independent",
+    "evidence_source": "Supplied domain hypothesis with disclosed (stv 1.0 0.95) assumption",
+    "intended_conclusion": "(KingExposed $t white $s)",
+    "learned_parameters": [],
+    "logical_structure_learned": false,
+    "native_calculus_changed": false,
     "origin": "supplied-domain-rule-template",
-    "scope": "occupancy-constrained sliding influence or explicit role-bound exposure",
+    "required_premises": [
+      "(OriginalActor $s white)",
+      "(Owner $a black $s)",
+      "(Owner $t white $s)",
+      "(PieceKind $t king $s)",
+      "(Attack $a $t $s)"
+    ],
+    "supported_and_unsupported_scope": "White actor, white king target and black attacker, with same-state attack support; no full move-legality conclusion",
     "term": "(Implication (OriginalActor $s white) (Implication (Owner $a black $s) (Implication (Owner $t white $s) (Implication (PieceKind $t king $s) (Implication (Attack $a $t $s) (KingExposed $t white $s))))))"
   },
   "extend-empty": {
-    "learned_parameters": "strength and confidence for terminal attack and obstruction only",
+    "dependence_assumptions": "Stable rule stamp per template; learned templates also retain admitted root ancestry; atomic sensor occurrences from one state are not claimed statistically independent",
+    "evidence_source": "Supplied domain hypothesis with disclosed (stv 1.0 0.95) assumption",
+    "intended_conclusion": "(PathEmpty (Cons $c $tail) $s)",
+    "learned_parameters": [],
+    "logical_structure_learned": false,
+    "native_calculus_changed": false,
     "origin": "supplied-domain-rule-template",
-    "scope": "occupancy-constrained sliding influence or explicit role-bound exposure",
+    "required_premises": [
+      "(Empty $c $s)",
+      "(PathEmpty $tail $s)"
+    ],
+    "supported_and_unsupported_scope": "One use in a derivation; a second recursive use overlaps the same rule stamp",
     "term": "(Implication (Empty $c $s) (Implication (PathEmpty $tail $s) (PathEmpty (Cons $c $tail) $s)))"
   },
   "obstruction": {
-    "learned_parameters": "strength and confidence for terminal attack and obstruction only",
+    "dependence_assumptions": "Stable rule stamp per template; learned templates also retain admitted root ancestry; atomic sensor occurrences from one state are not claimed statistically independent",
+    "evidence_source": "Registered training root conditional observations, native revision and ancestry ledger",
+    "intended_conclusion": "(NoAttack $a $t $s)",
+    "learned_parameters": [
+      "strength",
+      "confidence"
+    ],
+    "logical_structure_learned": false,
+    "native_calculus_changed": false,
     "origin": "supplied-domain-rule-template",
-    "scope": "occupancy-constrained sliding influence or explicit role-bound exposure",
+    "required_premises": [
+      "(RayMember $a $t $c $s)",
+      "(Occupied $c $s)"
+    ],
+    "supported_and_unsupported_scope": "Specified occupied intervening cell; held-out negative endpoints cover ray lengths 2 through 7",
     "term": "(Implication (RayMember $a $t $c $s) (Implication (Occupied $c $s) (NoAttack $a $t $s)))"
   },
   "queen-diagonal": {
-    "learned_parameters": "strength and confidence for terminal attack and obstruction only",
+    "dependence_assumptions": "Stable rule stamp per template; learned templates also retain admitted root ancestry; atomic sensor occurrences from one state are not claimed statistically independent",
+    "evidence_source": "Registered training root conditional observations, native revision and ancestry ledger",
+    "intended_conclusion": "(Attack $a $t $s)",
+    "learned_parameters": [
+      "strength",
+      "confidence"
+    ],
+    "logical_structure_learned": false,
+    "native_calculus_changed": false,
     "origin": "supplied-domain-rule-template",
-    "scope": "occupancy-constrained sliding influence or explicit role-bound exposure",
+    "required_premises": [
+      "(PieceKind $a queen $s)",
+      "(Clear $a $t diagonal $s)"
+    ],
+    "supported_and_unsupported_scope": "Diagonal sliding influence given supported clearance; one-cell held-out positive evidence",
     "term": "(Implication (PieceKind $a queen $s) (Implication (Clear $a $t diagonal $s) (Attack $a $t $s)))"
   },
   "queen-orthogonal": {
-    "learned_parameters": "strength and confidence for terminal attack and obstruction only",
+    "dependence_assumptions": "Stable rule stamp per template; learned templates also retain admitted root ancestry; atomic sensor occurrences from one state are not claimed statistically independent",
+    "evidence_source": "Registered training root conditional observations, native revision and ancestry ledger",
+    "intended_conclusion": "(Attack $a $t $s)",
+    "learned_parameters": [
+      "strength",
+      "confidence"
+    ],
+    "logical_structure_learned": false,
+    "native_calculus_changed": false,
     "origin": "supplied-domain-rule-template",
-    "scope": "occupancy-constrained sliding influence or explicit role-bound exposure",
+    "required_premises": [
+      "(PieceKind $a queen $s)",
+      "(Clear $a $t orthogonal $s)"
+    ],
+    "supported_and_unsupported_scope": "Orthogonal sliding influence given supported clearance; one-cell held-out positive evidence",
     "term": "(Implication (PieceKind $a queen $s) (Implication (Clear $a $t orthogonal $s) (Attack $a $t $s)))"
   },
   "rook-attack": {
-    "learned_parameters": "strength and confidence for terminal attack and obstruction only",
+    "dependence_assumptions": "Stable rule stamp per template; learned templates also retain admitted root ancestry; atomic sensor occurrences from one state are not claimed statistically independent",
+    "evidence_source": "Registered training root conditional observations, native revision and ancestry ledger",
+    "intended_conclusion": "(Attack $a $t $s)",
+    "learned_parameters": [
+      "strength",
+      "confidence"
+    ],
+    "logical_structure_learned": false,
+    "native_calculus_changed": false,
     "origin": "supplied-domain-rule-template",
-    "scope": "occupancy-constrained sliding influence or explicit role-bound exposure",
+    "required_premises": [
+      "(PieceKind $a rook $s)",
+      "(Clear $a $t orthogonal $s)"
+    ],
+    "supported_and_unsupported_scope": "Orthogonal sliding influence given supported clearance; one-cell positive pilot/development evidence",
     "term": "(Implication (PieceKind $a rook $s) (Implication (Clear $a $t orthogonal $s) (Attack $a $t $s)))"
   }
 }
