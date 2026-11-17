@@ -1,0 +1,137 @@
+{
+  "attacker_kinds": {
+    "development": {
+      "rook": 6
+    },
+    "test": {
+      "bishop": 1,
+      "rook": 23
+    },
+    "train": {
+      "bishop": 1,
+      "rook": 11
+    }
+  },
+  "claim": "Unseen source episodes and identifiers; no unseen endpoint-location or coarse-geometry transfer. Transformations are dependent controls.",
+  "endpoint_location_pairs": {
+    "development": [
+      {
+        "attacker": [
+          0,
+          0
+        ],
+        "roots": 6,
+        "target": [
+          3,
+          0
+        ]
+      }
+    ],
+    "test": [
+      {
+        "attacker": [
+          0,
+          0
+        ],
+        "roots": 22,
+        "target": [
+          3,
+          0
+        ]
+      },
+      {
+        "attacker": [
+          5,
+          0
+        ],
+        "roots": 1,
+        "target": [
+          2,
+          3
+        ]
+      },
+      {
+        "attacker": [
+          7,
+          0
+        ],
+        "roots": 1,
+        "target": [
+          4,
+          0
+        ]
+      }
+    ],
+    "train": [
+      {
+        "attacker": [
+          0,
+          0
+        ],
+        "roots": 10,
+        "target": [
+          3,
+          0
+        ]
+      },
+      {
+        "attacker": [
+          5,
+          0
+        ],
+        "roots": 1,
+        "target": [
+          2,
+          3
+        ]
+      },
+      {
+        "attacker": [
+          7,
+          0
+        ],
+        "roots": 1,
+        "target": [
+          4,
+          0
+        ]
+      }
+    ]
+  },
+  "groups": {
+    "arbitrary_geometry_transfer_claim": false,
+    "geometry_strata": {
+      "development": [
+        "orthogonal-two-intervening-cells"
+      ],
+      "test": [
+        "diagonal-two-intervening-cells",
+        "orthogonal-two-intervening-cells"
+      ],
+      "train": [
+        "diagonal-two-intervening-cells",
+        "orthogonal-two-intervening-cells"
+      ]
+    },
+    "source_episode_counts": {
+      "development": 6,
+      "test": 24,
+      "train": 12
+    },
+    "test_roots_wholly_unseen_geometry": 0,
+    "unique_source_games": 42,
+    "wholly_unseen_test_geometry": []
+  },
+  "independence": "Common opening configurations and engine tournament source; no independent-population confidence interval",
+  "registered_before_learning": true,
+  "source_ancestry_overlap": [],
+  "test_query_bindings": 48,
+  "test_roots_with_unseen_endpoint_locations": 0,
+  "test_source_episodes": 24,
+  "test_target_kinds": {
+    "king": 1,
+    "pawn": 1,
+    "queen": 22
+  },
+  "unseen_test_query_identifiers": 48
+}

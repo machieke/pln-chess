@@ -127,6 +127,28 @@ def threshold_control(out):
         scope='Low-confidence supplied-rule diagnostic, not a change to any primary arm'))
 
 
+def transfer_audit(out):
+    from collections import Counter
+    from research.cycle16.corpus import roots,groups
+    items=roots();prior=[r for r in items if r['split']!='test'];test=[r for r in items if r['split']=='test']
+    def location(row):
+        pieces={p['id']:p for p in row['state']['pieces']}
+        return tuple(pieces[row['attacker']]['cell']),tuple(pieces[row['target']]['cell'])
+    seen={location(r) for r in prior};entities={r[k] for r in prior for k in ('attacker','target')}
+    result=dict(registered_before_learning=True,groups=groups(items),test_source_episodes=len(test),
+        source_ancestry_overlap=sorted({r['source_ancestry'] for r in test}&{r['source_ancestry'] for r in prior}),
+        test_query_bindings=2*len(test),unseen_test_query_identifiers=sum(r[k] not in entities for r in test for k in ('attacker','target')),
+        test_roots_with_unseen_endpoint_locations=sum(location(r) not in seen for r in test),
+        endpoint_location_pairs={s:[dict(attacker=list(a),target=list(t),roots=count) for (a,t),count in
+            Counter(location(r) for r in items if r['split']==s).items()] for s in ('train','development','test')},
+        attacker_kinds={s:dict(Counter(next(p['kind'] for p in r['state']['pieces'] if p['id']==r['attacker'])
+            for r in items if r['split']==s)) for s in ('train','development','test')},
+        test_target_kinds=dict(Counter(next(p['kind'] for p in r['state']['pieces'] if p['id']==r['target']) for r in test)),
+        claim='Unseen source episodes and identifiers; no unseen endpoint-location or coarse-geometry transfer. Transformations are dependent controls.',
+        independence='Common opening configurations and engine tournament source; no independent-population confidence interval')
+    return record(Path(out)/'supplement/transfer-audit.json',result)
+
+
 def resources(out):
     out=Path(out);seen=set();records=[];sizes={}
     for path in out.rglob('*'):
@@ -156,5 +178,5 @@ def resources(out):
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('command',choices=('shared_witness','proof_audit','resources','bounded_controls','role_state_controls','threshold_control'));p.add_argument('--out',required=True)
+    p=argparse.ArgumentParser();p.add_argument('command',choices=('shared_witness','proof_audit','resources','bounded_controls','role_state_controls','threshold_control','transfer_audit'));p.add_argument('--out',required=True)
     a=p.parse_args();print(json.dumps(globals()[a.command](a.out),indent=2))
