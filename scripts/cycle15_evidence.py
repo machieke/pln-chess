@@ -43,7 +43,8 @@ def build(source,packs,manifest_path,limit=512*1024*1024):
     if any(packs.iterdir()) or Path(manifest_path).exists():raise ValueError('Choose an unused pack generation and manifest')
     paths=sorted({p for group in GROUPS for p in (source/group).rglob('*') if p.is_file()
                   and '__pycache__' not in p.parts and not p.is_relative_to(source/'reproduction/source')}|
-                 {p for p in source.iterdir() if p.is_file() and p.suffix in ('.json','.log','.xml')})
+                 {p for p in source.iterdir() if p.is_file() and p.suffix in ('.json','.log','.xml')
+                  and p.name!='finish.log'})
     objects={};files=[]
     for path in paths:
         if path.is_symlink():raise ValueError('Evidence source must be an ordinary file')
