@@ -28,7 +28,8 @@ def run(out):
     proof_audit(out);resources(out);historical(out)
     copies=['evaluation/summary.json','performance/summary.json','performance/proof-integrity.json',
         'preservation/cycle16-verification.json','historical-final.json','resource-census.json',
-        'supplement/proof-audit.json','supplement/bounded-controls.json','supplement/role-state-controls.json']
+        'supplement/proof-audit.json','supplement/bounded-controls.json','supplement/role-state-controls.json',
+        'supplement/below-threshold.json']
     for relative in copies:
         target=ROOT/'artifacts/cycle16'/relative;target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(out/relative,target)
     restored=pack(out)

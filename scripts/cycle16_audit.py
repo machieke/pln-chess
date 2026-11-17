@@ -3,7 +3,7 @@ import argparse
 import json
 from pathlib import Path
 from pln_chess.common import ROOT,read_json,digest
-from research.cycle15.native_reasoner import alpha_key
+from research.cycle15.native_reasoner import alpha_key,parse
 from research.cycle16.evidence_audit import pair_diagnostic
 from research.cycle16.records import record
 
@@ -12,7 +12,7 @@ def shared_witness(out):
     out=Path(out)
     source=read_json(out/'budgets/budgets-learning.json')['shared-chain-witness']
     native=read_json(source['result']['stages']['Attack']['proof']['path'])
-    clear=source['clearance'];node=__import__('research.cycle15.native_reasoner',fromlist=['parse']).parse(clear['term'])
+    clear=source['clearance'];node=parse(clear['term'])
     _,attacker,target,shape,state=node
     expected=f'(Implication (Clear {attacker} $target {shape} {state}) (Attack {attacker} $target {state}))'
     partial=next(r for r in native['retained'] if alpha_key(r['term'])==alpha_key(expected))
@@ -112,6 +112,21 @@ def role_state_controls(out):
     return record(out/'supplement/role-state-controls.json',rows)
 
 
+def threshold_control(out):
+    from dataclasses import replace
+    from research.cycle15.native_reasoner import NativeReasoner
+    from research.cycle16.experiments import fixture,observations,knowledge,GENEROUS,support_status
+    from research.cycle16.records import compact
+    out=Path(out);state,a,t=fixture(tag='below_threshold');facts,_=observations(state,a,t)
+    rules=[replace(r,confidence=.05) if r.stamps[0]=='rule_clear-two' else r for r in knowledge('F')]
+    result=NativeReasoner().infer(facts,rules,f'(Attack {a} {t} {state["id"]})',budgets=GENEROUS)
+    assert result['classification']=='unknown' and result['answer'] is not None
+    assert result['answer']['confidence']<.1 and not result['incomplete']
+    return record(out/'supplement/below-threshold.json',dict(result=compact(result,out/'supplement'),
+        support_status=support_status(result),display_thresholds_unchanged=True,
+        scope='Low-confidence supplied-rule diagnostic, not a change to any primary arm'))
+
+
 def resources(out):
     out=Path(out);seen=set();records=[];sizes={}
     for path in out.rglob('*'):
@@ -141,5 +156,5 @@ def resources(out):
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('command',choices=('shared_witness','proof_audit','resources','bounded_controls','role_state_controls'));p.add_argument('--out',required=True)
+    p=argparse.ArgumentParser();p.add_argument('command',choices=('shared_witness','proof_audit','resources','bounded_controls','role_state_controls','threshold_control'));p.add_argument('--out',required=True)
     a=p.parse_args();print(json.dumps(globals()[a.command](a.out),indent=2))

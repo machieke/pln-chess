@@ -1,0 +1,51 @@
+{
+  "display_thresholds_unchanged": true,
+  "result": {
+    "answer": {
+      "confidence": 0.045628310475,
+      "stamps": [
+        "obs_057367c2907968de64bd9ce15095",
+        "obs_b0a00cbb76f3d9c24a1470f6f67b",
+        "obs_d6c3259b8eb573df0ca85b3999d6",
+        "obs_e2c76f5a956b70ce9053ee8e0fca",
+        "rule_clear-two",
+        "rule_rook-attack"
+      ],
+      "strength": 1.0
+    },
+    "budgets": {
+      "beliefs": 512,
+      "steps": 128,
+      "tasks": 256,
+      "timeout": 30
+    },
+    "classification": "unknown",
+    "completion": "task queue exhausted",
+    "contrary": null,
+    "incomplete": false,
+    "peak_rss_kib": 43912,
+    "proof": {
+      "bytes": 72519,
+      "path": "/home/purplezky/cycle16-evidence-20261117/supplement/raw/50fd3600dff6c8b9a930c83205ab0e222305f20815347a71944930084f11b796.json",
+      "sha256": "50fd3600dff6c8b9a930c83205ab0e222305f20815347a71944930084f11b796"
+    },
+    "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+    "query": "(Attack attacker_below_threshold target_below_threshold state_below_threshold)",
+    "usage": {
+      "derivation_calls": 1,
+      "derived_statements": 18,
+      "host_grounded_instances": 0,
+      "initial_beliefs": 31,
+      "initial_tasks": 31,
+      "native_processes": 1,
+      "native_schema_instances": "Not completely observable in native trace",
+      "repeated_selected_terms": 0,
+      "retained_beliefs": 49,
+      "retained_tasks": 0,
+      "selected_tasks": 49
+    },
+    "wall_seconds": 2.2296004127711058
+  },
+  "scope": "Low-confidence supplied-rule diagnostic, not a change to any primary arm",
+  "support_status": "native support below display threshold"
+}
