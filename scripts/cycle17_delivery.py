@@ -83,7 +83,7 @@ def compact(out):
         publish(group+'/summary.json')
     publish('reference-final/results.json')
     for relative in ('historical-final.json', 'training-audit.json', 'failure-census.json', 'historical-target-scope.json', 'resource-census.json',
-        'preservation-resource-observation.json', 'supplement/proof-audit.json', 'supplement/historical-bishop-diagnostic.json',
+        'preservation-resource-observation.json', 'benchmark-command.json', 'supplement/proof-audit.json', 'supplement/historical-bishop-diagnostic.json',
         'reproduction/verified.json', 'preservation/cycle17-verification.json', 'preservation/tests.xml', 'performance/proof-integrity.json'):
         publish(relative)
     # Complete training ledgers and revision receipts are modest and useful for review.

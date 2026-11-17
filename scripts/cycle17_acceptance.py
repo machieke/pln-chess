@@ -64,8 +64,21 @@ def run():
     evaluation = receipt('evaluation/summary.json')
     for value in evaluation['test'].values():
         assert value['roots'] == 24 and value['endpoints'] == 96
+        assert value['reference'] == {'positive':39, 'negative':33, 'unknown':24}
+        assert value['wrong_classified'] == 0
         for stage in ('Clear','Attack'):
             assert sum(value[stage]['outcomes'].values()) == 96
+            assert value[stage]['outcomes']['conflicting'] == value[stage]['outcomes']['incomplete'] == 0
+    for arm in ('D-AB', 'D-BA'):
+        value = evaluation['test'][arm]
+        assert value['correct_positive'] == {'numerator':39, 'denominator':39}
+        assert value['correct_negative'] == {'numerator':33, 'denominator':33}
+        assert value['Attack']['outcomes']['unknown'] == 24
+    for arm in ('S-AA', 'S-BB'):
+        value = evaluation['test'][arm]
+        assert value['Clear']['outcomes']['supported-positive'] == 39
+        assert value['Attack']['outcomes']['supported-positive'] == 0
+        assert value['Attack']['outcomes']['unknown'] == 63
     assert evaluation['transfer']['unseen_source_roots'] == 24
     regression = receipt('historical-evaluation/summary.json')
     assert all(v['roots']==24 and v['endpoints']==72 for v in regression['test'].values())
@@ -76,6 +89,7 @@ def run():
     assert strata['rook']['D-AB']['roots']==23 and strata['bishop']['D-AB']['roots']==1
     bishop = receipt('supplement/historical-bishop-diagnostic.json')
     assert bishop['diagnostic']['markers'][0][1]=='false' and bishop['diagnostic']['markers'][2][1]
+    assert len(bishop['diagnostic']['overlap']) == 1
     controls = receipt('controls/summary.json'); rows = controls['interventions']
     def attack(name): return rows[name]['stages']['Attack']
     for name in ('remove-clear-two','remove-rook-attack','remove-empty-0','remove-empty-1','prior-clearance',
@@ -94,6 +108,8 @@ def run():
     assert receipt('performance/proof-integrity.json')['passed']
     performance = receipt('performance/summary.json')
     assert len(performance)==8 and all(v['repetitions']==10 for v in performance.values())
+    benchmark_command = receipt('benchmark-command.json')
+    assert benchmark_command['returncode']==0 and benchmark_command['source_head']==source['source_head']
     resources = receipt('resource-census.json')
     observed = receipt('preservation-resource-observation.json')
     assert observed['samples'] > 0 and observed['comparison_observed_max_process_rss_kib'] > 0
@@ -137,7 +153,7 @@ def run():
         decision='A: bounded disjoint learned chains work; C: shared joint uncertainty not identified by current representation',
         generic_recursive_reuse='unresolved; retained native counterexample',
         preservation=expected, verified_receipt_sha256=receipts,
-        publication='Engineering contents accepted; final push and independent canonical fetch verified outside tracked checkout',
+        publication='Engineering contents accepted; final push and independent canonical fetch must be verified separately outside tracked checkout',
         scope='Source/evidence-bound acceptance; not an operational model promotion or proof of statistical independence'))
 
 

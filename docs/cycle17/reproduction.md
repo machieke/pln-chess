@@ -4,6 +4,30 @@ The small native comparison uses checked-in fixtures, models and rules; it does
 not require historical bulk evidence or the source PGN. The separate full legal
 verification requires restored historical evidence. Both use the pinned runtime,
 not an upgrade. Follow the repository's existing dependency/runtime setup first.
+A sparse partial clone can avoid fetching historical artifact blobs for the
+minimal experiment. The Cycle 16 artifact directory included here contains the
+small prior-panel registration needed by targeted tests, not the external packs.
+
+```bash
+git clone --depth 1 --filter=blob:none --no-checkout \
+  --branch cycle17-shared-evidence-semantics \
+  ssh://git@github.com/machieke/pln-chess /path/to/c17-minimal
+git -C /path/to/c17-minimal sparse-checkout init --cone
+git -C /path/to/c17-minimal sparse-checkout set \
+  src research training evaluation knowledge configs vendor scripts tests \
+  artifacts/cycle17 artifacts/cycle16 docs/cycle17
+git -C /path/to/c17-minimal checkout cycle17-shared-evidence-semantics
+```
+
+Run the following commands from that checkout after setting up the pinned
+dependencies. Full historical preservation is a separate, nonsparse workflow.
+When reusing a verified environment from another checkout, explicitly bind imports
+and data to the current checkout, as the clean reproduction does:
+
+```bash
+export PLN_CHESS_ROOT="$PWD"
+export PYTHONPATH="$PWD/src:$PWD"
+```
 
 ```bash
 .venv/bin/python -m research.cycle17 minimal --out /tmp/c17-minimal
@@ -80,6 +104,12 @@ retained under `preservation/interrupted-001`. Individual child exit statuses
 were not captured. The detached resumed run reuses only those successful
 same-source receipts and reruns unfinished jobs, including the full test suite.
 Final acceptance requires the complete resumed population and proof comparison.
+After the full test and historical research runs completed, one additional worker
+used the existing `scripts.cycle16_tail_workers` scheduler for distant, unstarted
+legal shards. It uses identical source-bound worker commands and receipts, keeps
+a conservative distance from the main six-worker frontier, and changes no
+inference or comparison criterion. The main driver remains responsible for the
+complete final proof comparison. The separate scheduling receipt is retained.
 
 Run benchmarks separately from competing study jobs:
 

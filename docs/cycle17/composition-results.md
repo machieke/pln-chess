@@ -56,6 +56,10 @@ Removing either learned rule from a known-obstruction fixture preserves the
 independent supplied negative derivation. Bishop and queen synthetic controls
 derive with learned clearance and supplied terminal rules; they are not learned
 two-rule transfer results.
+Each named intervention is one fixture, with 1/1 observed outcome as shown;
+the two emptiness removals are separate fixtures, and the independent negative
+derivation survives 2/2 learned-rule-removal fixtures. These controls are dependent
+diagnostics, not extra independent evaluation roots.
 
 All nine occupancy conditions are retained. EE yields Clear and Attack.
 EO, OE, OO, OU and UO yield NoAttack while Clear remains unknown. EU, UE and UU
@@ -88,11 +92,60 @@ historical Cycle 16 panel remains 72 dependent endpoints from its 24 test roots.
 Final executed counts are recorded in the
 [new-panel summary](../../artifacts/cycle17/evaluation/summary.json) and
 [historical regression summary](../../artifacts/cycle17/historical-evaluation/summary.json).
+
+The completed new test panel has 39 positive references, 33 negative references
+and 24 unresolved references. All arms have zero wrong classified answers,
+conflicting answers and incomplete requests. Counts below are per 96 dependent
+endpoints, not per independent sample:
+
+| Arm | Clear positive | Clear unknown | Attack positive | Attack negative | Attack unknown |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| D-AB | 39 | 57 | 39 | 33 | 24 |
+| D-BA | 39 | 57 | 39 | 33 | 24 |
+| S-AA | 39 | 57 | 0 | 33 | 63 |
+| S-BB | 39 | 57 | 0 | 33 | 63 |
+| Supplied F | 39 | 57 | 39 | 33 | 24 |
+| Learned clearance / supplied terminal | 39 | 57 | 39 | 33 | 24 |
+| Untrained pair | 0 | 96 | 0 | 33 | 63 |
+| Original Cycle 16 shared checkpoint | 39 | 57 | 0 | 33 | 63 |
+
+D-AB and D-BA each support 39/39 positive and 33/33 negative references; the
+24 unresolved occupancy cases remain unknown. Shared arms support 0/39 positives
+and 33/33 negatives despite deriving clearance for all 39 positive cases. These
+support counts are not calibrated population accuracy estimates. There is no
+negative Clear channel or implied king-safety claim.
+There are 0/96 below-threshold *returned answer channels* in each primary arm.
+The prior nevertheless retains a matching zero-confidence statement in 39/96
+Clear requests and 39/96 Attack requests, which its answer selector omits. The
+authoritative census records that distinction. The separate low-confidence
+diagnostic has below-threshold nonzero returned support in 1/1 request. All
+primary/sweep matched diagnostics and removal counts retain explicit denominators;
+nonexclusive failure categories must not be summed as distinct failed requests.
+
+Development has nine positive, nine negative and six unresolved references over
+24 endpoints. Disjoint arms, supplied F and the learned-clearance anchor return
+9/9 correct positives, 9/9 correct negatives and six unknowns. Shared arms and
+the prior return nine correct negatives and fifteen unknowns; the prior also
+leaves Clear unknown everywhere. No development outcome retuned the frozen arms,
+sample selection, budget or display thresholds.
+
+On the 72 historical endpoints, D-AB, D-BA and F return 30 positives and 42
+negatives with zero unknowns or errors. S-AA/S-BB return one positive, 42 negatives
+and 29 unknowns. The original Cycle 16 shared model returns 42 negatives and
+30 unknowns, exactly reproducing its reported classification counts. All
+non-prior historical arms derive Clear on the 30 positive references.
+
 The historical set includes 23 rook roots and one bishop root. Its
 [target-rule breakdown](../../artifacts/cycle17/historical-target-scope.json)
 separates the bishop's supplied-terminal behavior in Cycle 17 checkpoints from
 the two-learned-link rook result. The original Cycle 16 shared model also learned
 its bishop terminal and remains a separate anchor.
+The rook stratum has 69 endpoints: disjoint arms classify 29 positives and
+40 negatives correctly, while shared arms leave the 29 positives unknown. The
+three bishop endpoints contain one positive and two negatives; Cycle 17 models
+use supplied `bishop-attack` for that positive, while the original shared model
+leaves it unknown. A fresh native diagonal guard witness verifies the latter
+failure without inventing a scheduler event or changing its answer.
 
 There are 24 new registered source roots, 48/48 new entity bindings, 11/24 unseen
 endpoint-location pairs and 24/24 new query ancestries relative to training and
