@@ -116,3 +116,7 @@ receipts retain their original source-bound location; resolve them relative to
 the manifest's `original_local_root` when inspecting a restored copy. Historical
 receipts are not rewritten for relocation. Compact representative native proofs,
 checkpoints and summaries remain directly inspectable in Git.
+
+The delivered four-pack set was actually restored to
+`/home/purplezky/cycle15-evidence-20261117/restored-evidence`; all 1,960 files
+passed checksum verification. See the [restoration receipt](../../artifacts/cycle15/restoration.json).

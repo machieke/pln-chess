@@ -1,7 +1,7 @@
 # Native learning and transfer
 
 [The corpus registration](../../artifacts/cycle15/corpus-registration.json) fixes
-24 training, 12 development and 48 final-test structural families before fitting.
+24 training, 12 development and 48 final-test typed families before fitting.
 Ray direction, length, blocker position and attacker kind define a root. Its
 before/after observations, translations, renamed entities and scenario variants
 remain dependent descendants. These are designed synthetic families from one

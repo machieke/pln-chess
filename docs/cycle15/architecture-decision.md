@@ -15,7 +15,7 @@ native guard blocks the next combination. More steps and larger queues do not
 resolve the retained generous counterexample. This is a semantic/evidence-reuse
 question, not evidence that the board is obstructed.
 
-On 48 held-out structural roots, connected inference answers 52 of 96 endpoints
+On 48 registered held-out typed families, connected inference answers 52 of 96 endpoints
 correctly and abstains on 44. Its positive recall is 8.33%. The frozen conditional
 baseline answers all 96 correctly. There is no demonstrated accuracy advantage,
 rule-structure discovery, arbitrary-ray generalization or general legal-move
