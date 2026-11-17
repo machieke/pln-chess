@@ -1,0 +1,83 @@
+{
+  "diagnostic": {
+    "incomplete": false,
+    "left": {
+      "confidence": 0.495,
+      "stamps": [
+        "obs_a5a52d51f3c8297cf0be9f42cbc2",
+        "rule_bishop-attack",
+        "train_e238939233efd52f15cbcde7"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (Clear entity_167303c87514fa343435 $_11 diagonal variant_533c1bc44d49190dc5e531d8) (Attack entity_167303c87514fa343435 $_11 variant_533c1bc44d49190dc5e531d8))"
+    },
+    "markers": [
+      [
+        "C16DISJOINT",
+        "false"
+      ],
+      [
+        "C16STRUCTURAL",
+        []
+      ],
+      [
+        "C16STRUCTURAL_REVERSE",
+        [
+          [
+            [
+              "Attack",
+              "entity_167303c87514fa343435",
+              "entity_ae655740bf254a0373a3",
+              "variant_533c1bc44d49190dc5e531d8"
+            ],
+            [
+              "stv",
+              "1.0",
+              "0.44335200461538454"
+            ]
+          ]
+        ]
+      ]
+    ],
+    "overlap": [
+      "train_e238939233efd52f15cbcde7"
+    ],
+    "proof": {
+      "bytes": 6844,
+      "path": "/home/purplezky/cycle17-evidence-20261117/supplement/raw/0439f7622a31283fd891cca2630c8d797546c469867ba15c12e50f163e5497d0.json",
+      "sha256": "0439f7622a31283fd891cca2630c8d797546c469867ba15c12e50f163e5497d0"
+    },
+    "right": {
+      "confidence": 0.8956606153846153,
+      "stamps": [
+        "obs_5cb1bf5814c16e35134dc831b609",
+        "obs_6e7ef70d9f112e12a0d19e409083",
+        "obs_d69caf8e2817ec0d1ec325d3b4bc",
+        "rule_clear-two",
+        "train_0d666f4b5c7ce8aea236bc75",
+        "train_21fcbd138a35a2378755a77d",
+        "train_37db720886283ab0540b48f9",
+        "train_5d01c16a8c2b9fa38340065a",
+        "train_603d3d5f1f834f438c3b8e70",
+        "train_7b48cb09bf8ade6fa47ab17a",
+        "train_9d285d4b2cbf565ac33c4604",
+        "train_df4a20b93d37fabbb6fe9fdc",
+        "train_e238939233efd52f15cbcde7",
+        "train_e8befabc824713f65eee24b6",
+        "train_e954f03fc9e9e98028d74a4d",
+        "train_efaee5c0c3e7def4484c4d82"
+      ],
+      "strength": 1.0,
+      "term": "(Clear entity_167303c87514fa343435 entity_ae655740bf254a0373a3 diagonal variant_533c1bc44d49190dc5e531d8)"
+    },
+    "scope": "Admissibility and structural witness only; no claim the scheduler attempted this pair"
+  },
+  "endpoint": "EE",
+  "root": "episode_2372603a633f54fa7e4c",
+  "scope": "Actual historical diagonal query; separate native structural/guard witness, never a replacement answer",
+  "source": {
+    "bytes": 81181,
+    "path": "/home/purplezky/cycle17-evidence-20261117/historical-evaluation/raw/d704189357ff291facda40a8ef7c8dc0c371c4e2a12cc3f7aafe32c0ad178cb0.json",
+    "sha256": "d704189357ff291facda40a8ef7c8dc0c371c4e2a12cc3f7aafe32c0ad178cb0"
+  }
+}

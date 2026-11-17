@@ -1,0 +1,110 @@
+{
+  "controls": {
+    "cycle": {
+      "after": "1/3",
+      "assumption": "Deterministic A -> B -> A introduces no new observation or likelihood",
+      "before": "1/3"
+    },
+    "diamond": {
+      "assumption": "Both deterministic branches equal the very same source event",
+      "incorrect_independent_product": "1/9",
+      "joint": "1/3",
+      "source_probability": "1/3"
+    },
+    "false_hypothesis": {
+      "assumption": "Deterministic hypothesis H0 predicts no success; observe success without noise; alternative predicts success",
+      "likelihood": [
+        "0",
+        "1"
+      ],
+      "posterior": [
+        "0",
+        "1"
+      ],
+      "prior": [
+        "1/2",
+        "1/2"
+      ]
+    },
+    "missing_dependence": {
+      "bounds": [
+        "0",
+        "1/2"
+      ],
+      "point_estimate": null,
+      "status": "not identified under marginal-only assumptions"
+    },
+    "unequal": {
+      "assumption": "Product only under explicit independent-event model",
+      "bounds": [
+        "0",
+        "1/4"
+      ],
+      "factorized_joint": "3/16",
+      "marginals": [
+        "1/4",
+        "3/4"
+      ]
+    }
+  },
+  "equal_marginals": {
+    "independent": {
+      "assumption": "Explicit finite joint law: independent",
+      "joint": "1/4",
+      "marginal_a": "1/2",
+      "marginal_b": "1/2"
+    },
+    "negative_association": {
+      "assumption": "Explicit finite joint law: negative_association",
+      "joint": "0",
+      "marginal_a": "1/2",
+      "marginal_b": "1/2"
+    },
+    "positive_association": {
+      "assumption": "Explicit finite joint law: positive_association",
+      "joint": "1/2",
+      "marginal_a": "1/2",
+      "marginal_b": "1/2"
+    }
+  },
+  "native_processes": 0,
+  "native_stv_interpretation": "Unspecified; no Beta or full posterior interpretation assumed",
+  "observations": {
+    "assumptions": [
+      "Once: one Bernoulli likelihood; duplicate likelihood is an intentionally different two-event model",
+      "Shared coupled datum: uniform latent bits conditioned on equality",
+      "Factorized vector datum: independent theta priors and product of two local-success likelihoods",
+      "Sharing a dataset label alone imposes none of these joint laws"
+    ],
+    "coupled_shared_datum_joint": "1/2",
+    "coupled_shared_datum_marginals": [
+      "1/2",
+      "1/2"
+    ],
+    "duplicate_likelihood_posterior": [
+      "1/10",
+      "9/10"
+    ],
+    "duplicate_likelihood_prediction": "7/10",
+    "factorized_vector_record_joint": "25/64",
+    "posterior_once": [
+      "1/4",
+      "3/4"
+    ],
+    "predictive_once": "5/8",
+    "same_observation_replayed_posterior": [
+      "1/4",
+      "3/4"
+    ],
+    "two_predictions_after_one_update": "7/16"
+  },
+  "parameter_reuse": {
+    "assumption": "Two Bernoulli trials conditionally independent given shared theta; redrawing and same-event cases are distinct models",
+    "independently_redrawn": "1/4",
+    "mean": "1/2",
+    "same_event": "1/2",
+    "shared_parameter": "5/16"
+  },
+  "scope": "Illustrative finite probability models, not native PLN semantics or measured chess probabilities",
+  "wall_seconds": 0.00024892762303352356
+}

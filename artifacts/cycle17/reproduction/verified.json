@@ -1,0 +1,44 @@
+{
+  "checkout_clean": true,
+  "commands": [
+    {
+      "argv": [
+        "/home/purplezky/cycle17-source-20261117/.venv/bin/python",
+        "-c",
+        "import sys, runpy\ndef deny(event, args):\n    if event == 'open' and isinstance(args[0], (str, bytes)):\n        path = str(args[0])\n        if any(x in path for x in ('artifacts/cycle14', 'artifacts/cycle15', 'artifacts/cycle16', '.pgn')):\n            raise RuntimeError('Historical evidence forbidden in minimal reproduction: '+path)\nsys.addaudithook(deny)\nsys.argv=['research.cycle17','minimal','--out',sys.argv[1]]; runpy.run_module('research.cycle17',run_name='__main__')",
+        "/home/purplezky/cycle17-evidence-20261117/reproduction/minimal"
+      ],
+      "log": "/home/purplezky/cycle17-evidence-20261117/reproduction/command-0.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "/home/purplezky/cycle17-source-20261117/.venv/bin/python",
+        "-c",
+        "import sys, runpy\ndef deny(event, args):\n    if event == 'open' and isinstance(args[0], (str, bytes)):\n        path = str(args[0])\n        if any(x in path for x in ('artifacts/cycle14', 'artifacts/cycle15', 'artifacts/cycle16', '.pgn')):\n            raise RuntimeError('Historical evidence forbidden in minimal reproduction: '+path)\nsys.addaudithook(deny)\nfrom training.cycle17_shared_evidence import evidence,fit; fit(evidence(),sys.argv[1],'D-AB')",
+        "/home/purplezky/cycle17-evidence-20261117/reproduction/refit"
+      ],
+      "log": "/home/purplezky/cycle17-evidence-20261117/reproduction/command-1.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "/home/purplezky/cycle17-source-20261117/.venv/bin/python",
+        "-m",
+        "research.cycle17.reference_cli",
+        "--out",
+        "/home/purplezky/cycle17-evidence-20261117/reproduction/reference.json"
+      ],
+      "log": "/home/purplezky/cycle17-evidence-20261117/reproduction/command-2.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "returncode": 0
+    }
+  ],
+  "exact_native_refit": true,
+  "historical_bulk_and_pgn_access_denied": true,
+  "passed": true,
+  "scope": "Clean Git checkout and existing verified dependencies; minimal native arms, actual refit, separate reference CLI; no fresh dependency installation",
+  "source_head": "fb1981a52efdfe6b901c3aeae4f8205630f1d5b8"
+}

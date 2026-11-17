@@ -100,6 +100,10 @@ operational source and runtime pins remain unchanged. Full legal/proof acceptanc
 benchmark measurements, resource accounting and its limits are recorded in
 [performance and proofs](performance-and-proofs.md) and the
 [source-bound acceptance receipt](../../artifacts/cycle17/acceptance.json).
+The complete preservation run passed all 206 shards and 584,112 candidate rows
+with exact native proof parity and zero classification changes. All 287 evidence-
+removal controls, 27 history controls, both en-passant recoveries and 76 controlled
+legal holdouts also passed at the clean frozen source.
 
 The small native experiment and an actual D-AB refit reproduced from a clean
 checkout using the verified pinned environment, with historical artifact and PGN

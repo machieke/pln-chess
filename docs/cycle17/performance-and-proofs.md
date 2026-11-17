@@ -64,7 +64,8 @@ is not treated as a correctness-preserving speedup.
 The [full preservation receipt](../../artifacts/cycle17/preservation/cycle17-verification.json)
 is authoritative for 206 shards / 584,112 candidate rows, canonical native proof
 comparison, 287 removal controls, 27 history controls, both en-passant recoveries
-and 76 controlled legal holdouts. The complete frozen-source suite has 748 tests,
+and 76 controlled legal holdouts. All these gates passed, with exact native proof
+parity and zero classification changes. The complete frozen-source suite has 748 tests,
 zero failures, zero errors and zero skips. Its [JUnit receipt](../../artifacts/cycle17/preservation/tests.xml)
 records 2534.831 seconds. Initial interrupted attempts and same-source resumption
 are disclosed in the [reproduction guide](reproduction.md); no partial run counts
@@ -110,3 +111,40 @@ files and actual restore verification. Bulk packs remain local, with each pack
 at most 512 MiB. The Git size gate separately inventories every newly reachable
 blob across the entire Cycle 17 range, including superseded versions. Remote
 publication does not include the bulk proof store or repeated historical exports.
+
+Measured ten-repeat results are in the [timing summary](../../artifacts/cycle17/performance/summary.json) and workload census. Every outcome below occurred in all ten repetitions.
+
+| Workload | Median seconds | Range seconds | Clear / Attack |
+| --- | ---: | ---: | --- |
+| Shared chain | 2.0797 | 2.0292–2.2415 | positive / unknown |
+| Disjoint chain | 2.1070 | 2.0771–2.4371 | positive / positive |
+| Recursive | 1.9289 | 1.8679–2.1260 | unknown / unknown |
+| Known obstruction | 2.2829 | 2.2064–2.4777 | unknown / negative |
+| Unknown occupancy | 2.1214 | 2.0659–2.4361 | unknown / unknown |
+| Distractor-rich | 4.4741 | 4.2735–4.6274 | unknown / unknown |
+
+| Workload | Median native CPU seconds | Selected / retained across two stages | Highest native-process RSS (MiB) | Median complete request JSON (KiB) |
+| --- | ---: | ---: | ---: | ---: |
+| Shared chain | 1.960 | 94 / 94 | 47.21 | 181.35 |
+| Disjoint chain | 1.995 | 98 / 98 | 47.20 | 205.16 |
+| Recursive | 1.790 | 86 / 86 | 39.77 | 137.79 |
+| Known obstruction | 2.170 | 96 / 96 | 53.91 | 178.83 |
+| Unknown occupancy | 1.995 | 88 / 88 | 47.25 | 170.28 |
+| Distractor-rich | 4.335 | 128 / 168 | 90.05 | 283.68 |
+
+The distractor-rich input reaches 64 selected tasks per stage and leaves 20 tasks per stage queued. Both stages remain unknown in all ten repetitions. This is a fixed-budget execution limit, with no claimed correctness-preserving speedup. The other measured workloads leave no tasks queued.
+
+Cached answer lookup has median 0.1825 ms (range 0.1647–0.2926 ms), with ten repetitions and zero native processes.
+Full proof reconstruction has median 3.1313 ms (range 2.9489–12.0569 ms), with ten repetitions and zero native processes.
+
+The native benchmark uses 120 fresh processes. Its stored example has 195 host proof objects and zero native resident atoms. Exact complete-JSON roundtrip, fresh archive import and both history/knowledge cache-miss controls pass.
+
+The provenance audit checks 3,165 unique derivation records, 145,842 selected statements, 146,335 retained statements, 504 queued statements and 1,571 answer channels. No output stamp lacks an actual input origin. This audit does not create a complete fired-rule tree.
+
+The retained research census contains 3,463 unique native-process receipts, 5360.57 measured CPU seconds (1.489 hours), and 90.05 MiB highest native-process RSS. Its one incomplete native receipt is the deliberate timeout control. The 209 completed preservation commands account for 44502.65 CPU seconds (12.362 hours), with 5.462 GiB highest per-job RSS. These are measured scopes, not complete cycle-wide totals.
+
+The separate observer took 4,515 samples. During final proof comparison it observed a 7.794 GiB per-process high-water RSS and 5906.07 child CPU seconds as lower bounds. Its main-tree CPU counter reached 46819.85 seconds; that overlaps timed-job costs and excludes the independent tail-worker tree. These figures must not be added together as a certified cycle total.
+
+At census time, research payload is 614,984,242 bytes (586.49 MiB) and preservation payload is 1,559,740,148 bytes (1.453 GiB). All registered measured-process, CPU and payload ceilings pass.
+
+Final sealing contains 6,034 files and 6,022 unique content objects, totaling 2,174,761,149 payload bytes (2.025 GiB). Five local packs occupy 2,179,328,000 bytes (2.030 GiB); each is below 512 MiB. All 6,034 files were restored to a separate directory and checksum-verified, with no missing or changed content. Source evidence, packs and restored copies remain outside Git. The final entire-range Git blob inventory is a separate post-commit publication gate.
