@@ -33,7 +33,7 @@ owner, and state. A friendly occupied destination still receives influence;
 it does not imply legal capture.
 
 [All 27 occupancy runs](../../artifacts/cycle16/occupancy/occupancy.json) agree
-for the three compatible slider kinds:
+across orthogonal rooks, diagonal bishops and orthogonal queens:
 
 | First cell | Second cell | Attack | Clear / exposure |
 | --- | --- | --- | --- |

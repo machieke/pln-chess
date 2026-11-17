@@ -1,0 +1,364 @@
+{
+  "samples_path": "performance/samples.json",
+  "samples_sha256": "9fafb67169e5f9d7dc1c6f127c4d34788b333d4f3ccf6c905293b2998791187a",
+  "scope": "Derived directly from retained benchmark samples; wall time spans infer(), native CPU/RSS come from child receipts, evidence serialization follows the timed request. All selected-task and retained-belief counts sum three fresh stages.",
+  "workloads": {
+    "distractor-rich": {
+      "complete_request_json_bytes": {
+        "maximum": 382707,
+        "median": 382697.5,
+        "minimum": 382691
+      },
+      "native_processes_per_request": 3,
+      "remaining_tasks": {
+        "maximum": 60,
+        "minimum": 60
+      },
+      "repetitions": 10,
+      "stage_outcomes": {
+        "Attack": {
+          "unknown": 10
+        },
+        "Clear": {
+          "unknown": 10
+        },
+        "Exposure": {
+          "unknown": 10
+        }
+      },
+      "statistics": {
+        "cpu_seconds": {
+          "maximum": 6.699999999999999,
+          "median": 6.345,
+          "minimum": 6.15
+        },
+        "peak_rss_kib": {
+          "maximum": 92092,
+          "median": 91954.0,
+          "minimum": 91884
+        },
+        "retained_beliefs": {
+          "maximum": 252,
+          "median": 252.0,
+          "minimum": 252
+        },
+        "selected_tasks": {
+          "maximum": 192,
+          "median": 192.0,
+          "minimum": 192
+        },
+        "wall_seconds": {
+          "maximum": 6.900038906373084,
+          "median": 6.528867174871266,
+          "minimum": 6.31992987729609
+        }
+      }
+    },
+    "negative-obstruction": {
+      "complete_request_json_bytes": {
+        "maximum": 230161,
+        "median": 230146.5,
+        "minimum": 230143
+      },
+      "native_processes_per_request": 3,
+      "remaining_tasks": {
+        "maximum": 0,
+        "minimum": 0
+      },
+      "repetitions": 10,
+      "stage_outcomes": {
+        "Attack": {
+          "supported-negative": 10
+        },
+        "Clear": {
+          "unknown": 10
+        },
+        "Exposure": {
+          "unknown": 10
+        }
+      },
+      "statistics": {
+        "cpu_seconds": {
+          "maximum": 3.4400000000000004,
+          "median": 3.175,
+          "minimum": 3.0
+        },
+        "peak_rss_kib": {
+          "maximum": 45032,
+          "median": 44930.0,
+          "minimum": 44832
+        },
+        "retained_beliefs": {
+          "maximum": 144,
+          "median": 144.0,
+          "minimum": 144
+        },
+        "selected_tasks": {
+          "maximum": 144,
+          "median": 144.0,
+          "minimum": 144
+        },
+        "wall_seconds": {
+          "maximum": 3.6801055083051324,
+          "median": 3.382831338327378,
+          "minimum": 3.161609323695302
+        }
+      }
+    },
+    "one-cell": {
+      "complete_request_json_bytes": {
+        "maximum": 216350,
+        "median": 216335.0,
+        "minimum": 216321
+      },
+      "native_processes_per_request": 3,
+      "remaining_tasks": {
+        "maximum": 0,
+        "minimum": 0
+      },
+      "repetitions": 10,
+      "stage_outcomes": {
+        "Attack": {
+          "supported-positive": 10
+        },
+        "Clear": {
+          "supported-positive": 10
+        },
+        "Exposure": {
+          "supported-positive": 10
+        }
+      },
+      "statistics": {
+        "cpu_seconds": {
+          "maximum": 2.84,
+          "median": 2.735,
+          "minimum": 2.45
+        },
+        "peak_rss_kib": {
+          "maximum": 45956,
+          "median": 45796.0,
+          "minimum": 45772
+        },
+        "retained_beliefs": {
+          "maximum": 132,
+          "median": 132.0,
+          "minimum": 132
+        },
+        "selected_tasks": {
+          "maximum": 132,
+          "median": 132.0,
+          "minimum": 132
+        },
+        "wall_seconds": {
+          "maximum": 3.022056730464101,
+          "median": 2.915037979837507,
+          "minimum": 2.6475453693419695
+        }
+      }
+    },
+    "two-finite": {
+      "complete_request_json_bytes": {
+        "maximum": 234505,
+        "median": 234490.0,
+        "minimum": 234476
+      },
+      "native_processes_per_request": 3,
+      "remaining_tasks": {
+        "maximum": 0,
+        "minimum": 0
+      },
+      "repetitions": 10,
+      "stage_outcomes": {
+        "Attack": {
+          "supported-positive": 10
+        },
+        "Clear": {
+          "supported-positive": 10
+        },
+        "Exposure": {
+          "supported-positive": 10
+        }
+      },
+      "statistics": {
+        "cpu_seconds": {
+          "maximum": 3.17,
+          "median": 2.9000000000000004,
+          "minimum": 2.74
+        },
+        "peak_rss_kib": {
+          "maximum": 44052,
+          "median": 43986.0,
+          "minimum": 43908
+        },
+        "retained_beliefs": {
+          "maximum": 147,
+          "median": 147.0,
+          "minimum": 147
+        },
+        "selected_tasks": {
+          "maximum": 147,
+          "median": 147.0,
+          "minimum": 147
+        },
+        "wall_seconds": {
+          "maximum": 3.312934818677604,
+          "median": 3.0589640461839736,
+          "minimum": 2.9536504121497273
+        }
+      }
+    },
+    "two-learned": {
+      "complete_request_json_bytes": {
+        "maximum": 278368,
+        "median": 278353.0,
+        "minimum": 278350
+      },
+      "native_processes_per_request": 3,
+      "remaining_tasks": {
+        "maximum": 0,
+        "minimum": 0
+      },
+      "repetitions": 10,
+      "stage_outcomes": {
+        "Attack": {
+          "supported-positive": 10
+        },
+        "Clear": {
+          "supported-positive": 10
+        },
+        "Exposure": {
+          "supported-positive": 10
+        }
+      },
+      "statistics": {
+        "cpu_seconds": {
+          "maximum": 3.1799999999999997,
+          "median": 3.0250000000000004,
+          "minimum": 2.91
+        },
+        "peak_rss_kib": {
+          "maximum": 44344,
+          "median": 44224.0,
+          "minimum": 44076
+        },
+        "retained_beliefs": {
+          "maximum": 147,
+          "median": 147.0,
+          "minimum": 147
+        },
+        "selected_tasks": {
+          "maximum": 147,
+          "median": 147.0,
+          "minimum": 147
+        },
+        "wall_seconds": {
+          "maximum": 3.4461370334029198,
+          "median": 3.2367599210701883,
+          "minimum": 3.1054167933762074
+        }
+      }
+    },
+    "two-recursive": {
+      "complete_request_json_bytes": {
+        "maximum": 205578,
+        "median": 205552.0,
+        "minimum": 205550
+      },
+      "native_processes_per_request": 3,
+      "remaining_tasks": {
+        "maximum": 0,
+        "minimum": 0
+      },
+      "repetitions": 10,
+      "stage_outcomes": {
+        "Attack": {
+          "unknown": 10
+        },
+        "Clear": {
+          "unknown": 10
+        },
+        "Exposure": {
+          "unknown": 10
+        }
+      },
+      "statistics": {
+        "cpu_seconds": {
+          "maximum": 3.1100000000000003,
+          "median": 2.785,
+          "minimum": 2.64
+        },
+        "peak_rss_kib": {
+          "maximum": 40596,
+          "median": 40520.0,
+          "minimum": 40436
+        },
+        "retained_beliefs": {
+          "maximum": 129,
+          "median": 129.0,
+          "minimum": 129
+        },
+        "selected_tasks": {
+          "maximum": 129,
+          "median": 129.0,
+          "minimum": 129
+        },
+        "wall_seconds": {
+          "maximum": 3.373327285051346,
+          "median": 2.95521241100505,
+          "minimum": 2.810336722061038
+        }
+      }
+    },
+    "unknown-occupancy": {
+      "complete_request_json_bytes": {
+        "maximum": 212406,
+        "median": 212384.0,
+        "minimum": 212375
+      },
+      "native_processes_per_request": 3,
+      "remaining_tasks": {
+        "maximum": 0,
+        "minimum": 0
+      },
+      "repetitions": 10,
+      "stage_outcomes": {
+        "Attack": {
+          "unknown": 10
+        },
+        "Clear": {
+          "unknown": 10
+        },
+        "Exposure": {
+          "unknown": 10
+        }
+      },
+      "statistics": {
+        "cpu_seconds": {
+          "maximum": 3.47,
+          "median": 3.165,
+          "minimum": 2.88
+        },
+        "peak_rss_kib": {
+          "maximum": 44124,
+          "median": 43996.0,
+          "minimum": 43952
+        },
+        "retained_beliefs": {
+          "maximum": 132,
+          "median": 132.0,
+          "minimum": 132
+        },
+        "selected_tasks": {
+          "maximum": 132,
+          "median": 132.0,
+          "minimum": 132
+        },
+        "wall_seconds": {
+          "maximum": 3.647325199097395,
+          "median": 3.34504788601771,
+          "minimum": 3.062073526903987
+        }
+      }
+    }
+  }
+}

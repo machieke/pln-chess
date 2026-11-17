@@ -5,6 +5,8 @@ the repository root with `.venv/bin/python`; no dependency upgrade or download
 is required when the existing environment and historical evidence are present.
 Choose a fresh output directory for each run: experiment records and checkpoints
 refuse overwrite. The cycle introduces no operational CLI or model change.
+The [environment receipt](../../artifacts/cycle16/environment.json) records the
+installed Python, Prolog, dependencies and pinned runtime used for this delivery.
 
 ## Small executable cases
 
@@ -76,7 +78,7 @@ Additional executable controls are
 `research.cycle16.panel.budgets(out, learning_directory)`.
 The shared-chain variable-bearing witness can be replayed after creating that
 budget report with
-`python -m scripts.cycle16_audit shared_witness --out "$TASK_OUT"`.
+`.venv/bin/python -m scripts.cycle16_audit shared_witness --out "$TASK_OUT"`.
 The separate bounded-controls command verifies Query compatibility, retention
 pressure and an actual timeout.
 
@@ -97,7 +99,7 @@ previous summaries.
 
 The supplied delivery helper can link existing verified dependencies and missing
 ignored Cycle 14 evidence into a fresh worktree:
-`python -m scripts.cycle16_delivery prepare --path /path/to/clean/source-checkout`.
+`.venv/bin/python -m scripts.cycle16_delivery prepare --path /path/to/clean/source-checkout`.
 Tracked files always come from Git. The clean reproduction receipt separately
 covers minimal native diagnostics, CLI comparison and an actual native refit.
 It does not claim a fresh dependency installation or second full corpus run.
@@ -112,6 +114,12 @@ source commit. The partial attempt is retained, not counted as a passed gate.
 Receipts in that archive retain their original paths; use the archive prefix
 when resolving interrupted-generation payloads. The final verification covers
 the complete population after resumption, rather than claiming an uninterrupted run.
+
+One additional host worker executes only unstarted, distant tail shards with the
+same standard worker command, environment and receipt format. Its scheduling
+receipt identifies those jobs. The original driver reuses their verified
+same-source receipts and still performs the final complete proof comparison.
+This affects scheduling, not the manifest, inference, or acceptance criteria.
 
 ## Performance and local evidence
 
@@ -143,3 +151,15 @@ Manifest paths and checksums are authoritative. Raw receipts retain original
 source-bound paths; resolve them relative to `original_local_root` after moving
 the pack set. Historical receipts are not rewritten for relocation. No pack,
 release, branch or artifact is remotely published by this cycle.
+
+The closing [acceptance receipt](../../artifacts/cycle16/acceptance.json) binds
+all reports, compact scientific evidence, preservation and restoration receipts,
+and delivery helper sources. Revalidate those bindings on the delivery branch:
+
+```bash
+.venv/bin/python -m scripts.cycle16_acceptance
+```
+
+An existing receipt is checked without rewriting it. This command validates the
+retained acceptance evidence; it does not rerun the native experiments or replace
+the explicit pack-verification command above.

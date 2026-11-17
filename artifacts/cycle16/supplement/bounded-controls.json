@@ -1,0 +1,145 @@
+{
+  "actual-timeout": {
+    "answer": null,
+    "budgets": {
+      "beliefs": 256,
+      "steps": 64,
+      "tasks": 128,
+      "timeout": 0.001
+    },
+    "classification": "incomplete",
+    "completion": "incomplete execution",
+    "contrary": null,
+    "incomplete": true,
+    "peak_rss_kib": null,
+    "proof": {
+      "bytes": 24422,
+      "path": "/home/purplezky/cycle16-evidence-20261117/supplement/raw/f2722353832f4c7020ca49d902da14251f1f1945771bb3b40a6632c1e8454c4b.json",
+      "sha256": "f2722353832f4c7020ca49d902da14251f1f1945771bb3b40a6632c1e8454c4b"
+    },
+    "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+    "query": "(Attack attacker_bounded_audit target_bounded_audit state_bounded_audit)",
+    "usage": {
+      "derivation_calls": 1,
+      "derived_statements": 0,
+      "host_grounded_instances": 0,
+      "initial_beliefs": 31,
+      "initial_tasks": 31,
+      "native_processes": 1,
+      "native_schema_instances": "Not completely observable in native trace",
+      "repeated_selected_terms": 0,
+      "retained_beliefs": 0,
+      "retained_tasks": 0,
+      "selected_tasks": 0
+    },
+    "wall_seconds": 0.019417830742895603
+  },
+  "query-api": {
+    "answer": {
+      "confidence": 0.866937899025,
+      "stamps": [
+        "obs_49652617c46e241a9059fba70ee8",
+        "obs_5f897b42a89faef71e1f5df0f112",
+        "obs_a6fb3af017087416906b98e88aca",
+        "obs_d8534606a4855fd03ccf7f240a27",
+        "rule_clear-two",
+        "rule_rook-attack"
+      ],
+      "strength": 1.0
+    },
+    "budgets": {
+      "beliefs": 512,
+      "steps": 128,
+      "tasks": 256,
+      "timeout": 30
+    },
+    "classification": "supported-positive",
+    "completion": "bounded run; no completeness claim",
+    "contrary": null,
+    "incomplete": false,
+    "peak_rss_kib": 43792,
+    "proof": {
+      "bytes": 48674,
+      "path": "/home/purplezky/cycle16-evidence-20261117/supplement/raw/23e1c5532b85de48a9e3cf030fee61190b8d0223c51ec83712c7ba89e0ed04e0.json",
+      "sha256": "23e1c5532b85de48a9e3cf030fee61190b8d0223c51ec83712c7ba89e0ed04e0"
+    },
+    "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+    "query": "(Attack attacker_bounded_audit target_bounded_audit state_bounded_audit)",
+    "usage": {
+      "derivation_calls": 1,
+      "derived_statements": null,
+      "host_grounded_instances": 0,
+      "initial_beliefs": 31,
+      "initial_tasks": 31,
+      "native_processes": 1,
+      "native_schema_instances": "Not completely observable in native trace",
+      "repeated_selected_terms": 0,
+      "retained_beliefs": null,
+      "retained_tasks": null,
+      "selected_tasks": 49
+    },
+    "wall_seconds": 2.452146438881755
+  },
+  "retention-pressure": {
+    "answer": null,
+    "budgets": {
+      "beliefs": 8,
+      "steps": 64,
+      "tasks": 8,
+      "timeout": 15
+    },
+    "classification": "unknown",
+    "completion": "task queue exhausted",
+    "contrary": null,
+    "incomplete": false,
+    "initial_statements_not_retained": [
+      "(Empty cell_1 state_bounded_audit)",
+      "(Empty cell_2 state_bounded_audit)",
+      "(History state_bounded_audit history_bounded_audit)",
+      "(Implication (Empty $v0 $v1) (Implication (PathEmpty $v2 $v1) (PathEmpty (Cons $v0 $v2) $v1)))",
+      "(Implication (OriginalActor $v0 black) (Implication (Owner $v1 white $v0) (Implication (Owner $v2 black $v0) (Implication (PieceKind $v2 king $v0) (Implication (Attack $v1 $v2 $v0) (KingExposed $v2 black $v0))))))",
+      "(Implication (OriginalActor $v0 white) (Implication (Owner $v1 black $v0) (Implication (Owner $v2 white $v0) (Implication (PieceKind $v2 king $v0) (Implication (Attack $v1 $v2 $v0) (KingExposed $v2 white $v0))))))",
+      "(Implication (PieceKind $v0 bishop $v1) (Implication (Clear $v0 $v2 diagonal $v1) (Attack $v0 $v2 $v1)))",
+      "(Implication (PieceKind $v0 queen $v1) (Implication (Clear $v0 $v2 diagonal $v1) (Attack $v0 $v2 $v1)))",
+      "(Implication (PieceKind $v0 queen $v1) (Implication (Clear $v0 $v2 orthogonal $v1) (Attack $v0 $v2 $v1)))",
+      "(Implication (PieceKind $v0 rook $v1) (Implication (Clear $v0 $v2 orthogonal $v1) (Attack $v0 $v2 $v1)))",
+      "(Implication (RayMember $v0 $v1 $v2 $v3) (Implication (Occupied $v2 $v3) (NoAttack $v0 $v1 $v3)))",
+      "(Implication (RayPath $v0 $v1 $v2 $v3 $v4) (Implication (PathEmpty $v2 $v4) (Clear $v0 $v1 $v3 $v4)))",
+      "(Implication (RayPath $v0 $v1 (Cons $v2 (Cons $v3 Nil)) $v4 $v5) (Implication (Empty $v2 $v5) (Implication (Empty $v3 $v5) (Clear $v0 $v1 $v4 $v5))))",
+      "(Implication (RayPath $v0 $v1 (Cons $v2 Nil) $v3 $v4) (Implication (Empty $v2 $v4) (Clear $v0 $v1 $v3 $v4)))",
+      "(Implication (State $v0) (PathEmpty Nil $v0))",
+      "(Occupied cell_0 state_bounded_audit)",
+      "(Occupies attacker_bounded_audit cell_0 state_bounded_audit)",
+      "(Occupies target_bounded_audit cell_3 state_bounded_audit)",
+      "(OriginalActor state_bounded_audit white)",
+      "(Owner attacker_bounded_audit black state_bounded_audit)",
+      "(Owner target_bounded_audit white state_bounded_audit)",
+      "(PieceKind attacker_bounded_audit rook state_bounded_audit)",
+      "(PieceKind target_bounded_audit king state_bounded_audit)",
+      "(State state_bounded_audit)"
+    ],
+    "peak_rss_kib": 43948,
+    "proof": {
+      "bytes": 30898,
+      "path": "/home/purplezky/cycle16-evidence-20261117/supplement/raw/c2ad9dd374b59a29bb185c53d9812f285a95b92521c3bfd717e055cc692a007f.json",
+      "sha256": "c2ad9dd374b59a29bb185c53d9812f285a95b92521c3bfd717e055cc692a007f"
+    },
+    "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+    "query": "(Attack attacker_bounded_audit target_bounded_audit state_bounded_audit)",
+    "scope": "Observed retention loss, not an invented per-item eviction trace",
+    "usage": {
+      "derivation_calls": 1,
+      "derived_statements": 0,
+      "host_grounded_instances": 0,
+      "initial_beliefs": 31,
+      "initial_tasks": 31,
+      "native_processes": 1,
+      "native_schema_instances": "Not completely observable in native trace",
+      "repeated_selected_terms": 0,
+      "retained_beliefs": 7,
+      "retained_tasks": 0,
+      "selected_tasks": 8
+    },
+    "wall_seconds": 2.5860621901229024
+  }
+}
