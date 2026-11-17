@@ -60,6 +60,17 @@ this panel, with a degenerate all-correct bootstrap interval; the substantial
 abstention and designed sample make a general accuracy claim inappropriate.
 No preference-accuracy comparison is made.
 
+The [root bootstrap coverage receipt](../../artifacts/cycle15/supplement/coverage-uncertainty.json)
+gives 95% intervals of 2.08%–16.67% for positive recall and 51.04%–58.33% for
+overall classified coverage (1,000 draws, seed 15). These describe uncertainty
+within the synthetic design, without treating before/after rows as independent.
+
+The [information-loss challenge](../../artifacts/cycle15/supplement/information/field-information-loss.json)
+checks all 315 attack-field queries in each mirrored fixture. Both have 26
+supported, 284 contradicted and five unknown field results, yet the specified
+attacker/target reference and connected conclusion change. This is a connectivity
+diagnostic, separate from the final statistical panel.
+
 Native disjoint stamps are not a statistical independence guarantee. Distinct
 atomic observations from one state keep distinct occurrence stamps and share
 host ancestry metadata. Learned rules retain stable rule and training-ancestry

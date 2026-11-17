@@ -7,7 +7,7 @@ import tarfile
 
 from scripts.cycle14_evidence import sha256,matches,install
 
-GROUPS=('capabilities','learning','evaluation','diagnostics','performance','preservation','reproduction','pilots','supplement')
+GROUPS=('capabilities','learning','evaluation','evaluation-pre-freeze','diagnostics','performance','preservation','reproduction','pilots','supplement')
 SCHEMA='cycle15-local-evidence-v1'
 
 
@@ -41,8 +41,9 @@ def load(path):
 def build(source,packs,manifest_path,limit=512*1024*1024):
     source=Path(source).resolve();packs=Path(packs).resolve();packs.mkdir(parents=True,exist_ok=True)
     if any(packs.iterdir()) or Path(manifest_path).exists():raise ValueError('Choose an unused pack generation and manifest')
-    paths=sorted({p for group in GROUPS for p in (source/group).rglob('*') if p.is_file()}|
-                 {p for p in source.iterdir() if p.is_file() and p.suffix in ('.json','.log')})
+    paths=sorted({p for group in GROUPS for p in (source/group).rglob('*') if p.is_file()
+                  and '__pycache__' not in p.parts and not p.is_relative_to(source/'reproduction/source')}|
+                 {p for p in source.iterdir() if p.is_file() and p.suffix in ('.json','.log','.xml')})
     objects={};files=[]
     for path in paths:
         if path.is_symlink():raise ValueError('Evidence source must be an ordinary file')
