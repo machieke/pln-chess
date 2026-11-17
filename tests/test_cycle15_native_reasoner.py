@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 import pytest
-from research.cycle15.native_reasoner import Budgets, NativeReasoner, Sentence, proposition
+from research.cycle15.native_reasoner import Budgets, NativeReasoner, Sentence, proposition, alpha_key
 from evaluation.cycle15_capabilities import cases
 
 
@@ -48,3 +48,8 @@ def test_executable_input_rejected(bad):
 
 def test_no_zero_queue_hang():
     with pytest.raises(ValueError):Budgets(tasks=0)
+
+
+def test_native_variable_renaming_does_not_count_as_inference():
+    assert alpha_key('(Implication (P $x) (Q $x))')==alpha_key('(Implication (P $_0) (Q $_0))')
+    assert alpha_key('(Pair $x $x)')!=alpha_key('(Pair $x $y)')

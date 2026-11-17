@@ -1,0 +1,1763 @@
+{
+  "answer": {
+    "confidence": 0.7360403544253011,
+    "stamps": [
+      "obs_04e21d0ffb07bc17a61e8ae5aed3",
+      "obs_2701a767e19b515bf44aaf847b3e",
+      "obs_787a27019c4b569d121a60bd8778",
+      "obs_a927ecdb313403b6adff1eb05a7b",
+      "obs_b316e6870749bf83d20e0d2f7e09",
+      "obs_b547be32c31f5d7abaf77000d619",
+      "obs_f5bf59a17759052c11a901dd9d1a",
+      "rule_clear-one",
+      "rule_exposure-white",
+      "rule_queen-diagonal",
+      "train_0f9ffe7085ab2da3214d311f",
+      "train_14ef3efdf7f245a1a5891288",
+      "train_188ab57dadd470196b5e9838",
+      "train_1c44c57c7a9f5699f2a364ab",
+      "train_383cf307ffd52bc6861caa39",
+      "train_bd2b603b876dfabc596637f2",
+      "train_ce75302c29ace9146f1b6f70"
+    ],
+    "strength": 1.0
+  },
+  "api": "derive",
+  "budgets": {
+    "beliefs": 512,
+    "steps": 128,
+    "tasks": 256,
+    "timeout": 30
+  },
+  "classification": "supported-positive",
+  "completion": "task queue exhausted",
+  "contrary": null,
+  "contrary_query": "(NotKingExposed p_8a7348_target white after_5b54a7fcebc62e76be2bc563)",
+  "facts": [
+    {
+      "ancestry": [
+        "root_bed13fb553c4988a7348"
+      ],
+      "confidence": 0.99,
+      "origin": "environmental-observation",
+      "stamps": [
+        "obs_846fcca7328e6f88d2b780a3a3ed"
+      ],
+      "strength": 1.0,
+      "term": "(State after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "ancestry": [
+        "root_bed13fb553c4988a7348"
+      ],
+      "confidence": 0.99,
+      "origin": "environmental-observation",
+      "stamps": [
+        "obs_f5bf59a17759052c11a901dd9d1a"
+      ],
+      "strength": 1.0,
+      "term": "(OriginalActor after_5b54a7fcebc62e76be2bc563 white)"
+    },
+    {
+      "ancestry": [
+        "root_bed13fb553c4988a7348"
+      ],
+      "confidence": 0.99,
+      "origin": "environmental-observation",
+      "stamps": [
+        "obs_b9117c753754a550a545a1e99501"
+      ],
+      "strength": 1.0,
+      "term": "(History after_5b54a7fcebc62e76be2bc563 hypothetical_ddfa1b688c291f4a1f2581fb)"
+    },
+    {
+      "ancestry": [
+        "root_bed13fb553c4988a7348"
+      ],
+      "confidence": 0.99,
+      "origin": "environmental-observation",
+      "stamps": [
+        "obs_b316e6870749bf83d20e0d2f7e09"
+      ],
+      "strength": 1.0,
+      "term": "(PieceKind p_8a7348_attacker queen after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "ancestry": [
+        "root_bed13fb553c4988a7348"
+      ],
+      "confidence": 0.99,
+      "origin": "environmental-observation",
+      "stamps": [
+        "obs_2701a767e19b515bf44aaf847b3e"
+      ],
+      "strength": 1.0,
+      "term": "(Owner p_8a7348_attacker black after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "ancestry": [
+        "root_bed13fb553c4988a7348"
+      ],
+      "confidence": 0.99,
+      "origin": "environmental-observation",
+      "stamps": [
+        "obs_fd76689cc9a7f15fd6f66475f8aa"
+      ],
+      "strength": 1.0,
+      "term": "(Occupies p_8a7348_attacker cell_2 after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "ancestry": [
+        "root_bed13fb553c4988a7348"
+      ],
+      "confidence": 0.99,
+      "origin": "environmental-observation",
+      "stamps": [
+        "obs_04e21d0ffb07bc17a61e8ae5aed3"
+      ],
+      "strength": 1.0,
+      "term": "(PieceKind p_8a7348_target king after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "ancestry": [
+        "root_bed13fb553c4988a7348"
+      ],
+      "confidence": 0.99,
+      "origin": "environmental-observation",
+      "stamps": [
+        "obs_a927ecdb313403b6adff1eb05a7b"
+      ],
+      "strength": 1.0,
+      "term": "(Owner p_8a7348_target white after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "ancestry": [
+        "root_bed13fb553c4988a7348"
+      ],
+      "confidence": 0.99,
+      "origin": "environmental-observation",
+      "stamps": [
+        "obs_4b640b4e44ae856c01dc96f62576"
+      ],
+      "strength": 1.0,
+      "term": "(Occupies p_8a7348_target cell_0 after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "ancestry": [
+        "root_bed13fb553c4988a7348"
+      ],
+      "confidence": 0.99,
+      "origin": "environmental-observation",
+      "stamps": [
+        "obs_705637bafc99c4739dd94f67967f"
+      ],
+      "strength": 1.0,
+      "term": "(Occupied cell_0 after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "ancestry": [
+        "root_bed13fb553c4988a7348"
+      ],
+      "confidence": 0.99,
+      "origin": "environmental-observation",
+      "stamps": [
+        "obs_b547be32c31f5d7abaf77000d619"
+      ],
+      "strength": 1.0,
+      "term": "(Empty cell_1 after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "ancestry": [
+        "root_bed13fb553c4988a7348"
+      ],
+      "confidence": 0.99,
+      "origin": "environmental-observation",
+      "stamps": [
+        "obs_494c5c617d24b6a9b81cce4216ff"
+      ],
+      "strength": 1.0,
+      "term": "(Occupied cell_2 after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "ancestry": [
+        "root_bed13fb553c4988a7348"
+      ],
+      "confidence": 0.99,
+      "origin": "environmental-observation",
+      "stamps": [
+        "obs_fc85811c3707ad0d145bd542be85"
+      ],
+      "strength": 1.0,
+      "term": "(RelativeOffset p_8a7348_attacker p_8a7348_target -2 2 after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "ancestry": [
+        "root_bed13fb553c4988a7348"
+      ],
+      "confidence": 0.99,
+      "origin": "environmental-observation",
+      "stamps": [
+        "obs_787a27019c4b569d121a60bd8778"
+      ],
+      "strength": 1.0,
+      "term": "(RayPath p_8a7348_attacker p_8a7348_target (Cons cell_1 Nil) diagonal after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "ancestry": [
+        "root_bed13fb553c4988a7348"
+      ],
+      "confidence": 0.99,
+      "origin": "environmental-observation",
+      "stamps": [
+        "obs_eb95f1dff0a358bd81ddb00c846e"
+      ],
+      "strength": 1.0,
+      "term": "(RayMember p_8a7348_attacker p_8a7348_target cell_1 after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "ancestry": [
+        "root_bed13fb553c4988a7348"
+      ],
+      "confidence": 0.99,
+      "origin": "environmental-observation",
+      "stamps": [
+        "obs_0ede88a646a1c38f2f26339afd01"
+      ],
+      "strength": 1.0,
+      "term": "(OrderedRayCell p_8a7348_attacker p_8a7348_target 0 cell_1 after_5b54a7fcebc62e76be2bc563)"
+    }
+  ],
+  "grounding_mode": "native-schema-binding",
+  "incomplete": false,
+  "marginals": {},
+  "model_identity": "f890ad02d6f05a9f48c015f28f9d4cd4fb82a01b7ffd14282adcebdf25af3905",
+  "native_resident_state": false,
+  "observation_scope": {
+    "attacker": "p_8a7348_attacker",
+    "attacker_present": true,
+    "cell_roles": {
+      "cell_0": [
+        0,
+        2
+      ],
+      "cell_1": [
+        1,
+        1
+      ],
+      "cell_2": [
+        2,
+        0
+      ]
+    },
+    "fact_origins": [
+      {
+        "ancestry": "root_bed13fb553c4988a7348",
+        "category": "environmental-observation",
+        "source": "raw-observation",
+        "stamp": "obs_846fcca7328e6f88d2b780a3a3ed",
+        "state": "after_5b54a7fcebc62e76be2bc563",
+        "term": "(State after_5b54a7fcebc62e76be2bc563)"
+      },
+      {
+        "ancestry": "root_bed13fb553c4988a7348",
+        "category": "environmental-observation",
+        "source": "raw-observation",
+        "stamp": "obs_f5bf59a17759052c11a901dd9d1a",
+        "state": "after_5b54a7fcebc62e76be2bc563",
+        "term": "(OriginalActor after_5b54a7fcebc62e76be2bc563 white)"
+      },
+      {
+        "ancestry": "root_bed13fb553c4988a7348",
+        "category": "environmental-observation",
+        "source": "raw-observation",
+        "stamp": "obs_b9117c753754a550a545a1e99501",
+        "state": "after_5b54a7fcebc62e76be2bc563",
+        "term": "(History after_5b54a7fcebc62e76be2bc563 hypothetical_ddfa1b688c291f4a1f2581fb)"
+      },
+      {
+        "ancestry": "root_bed13fb553c4988a7348",
+        "category": "environmental-observation",
+        "source": "raw-observation",
+        "stamp": "obs_b316e6870749bf83d20e0d2f7e09",
+        "state": "after_5b54a7fcebc62e76be2bc563",
+        "term": "(PieceKind p_8a7348_attacker queen after_5b54a7fcebc62e76be2bc563)"
+      },
+      {
+        "ancestry": "root_bed13fb553c4988a7348",
+        "category": "environmental-observation",
+        "source": "raw-observation",
+        "stamp": "obs_2701a767e19b515bf44aaf847b3e",
+        "state": "after_5b54a7fcebc62e76be2bc563",
+        "term": "(Owner p_8a7348_attacker black after_5b54a7fcebc62e76be2bc563)"
+      },
+      {
+        "ancestry": "root_bed13fb553c4988a7348",
+        "category": "environmental-observation",
+        "source": "raw-observation",
+        "stamp": "obs_fd76689cc9a7f15fd6f66475f8aa",
+        "state": "after_5b54a7fcebc62e76be2bc563",
+        "term": "(Occupies p_8a7348_attacker cell_2 after_5b54a7fcebc62e76be2bc563)"
+      },
+      {
+        "ancestry": "root_bed13fb553c4988a7348",
+        "category": "environmental-observation",
+        "source": "raw-observation",
+        "stamp": "obs_04e21d0ffb07bc17a61e8ae5aed3",
+        "state": "after_5b54a7fcebc62e76be2bc563",
+        "term": "(PieceKind p_8a7348_target king after_5b54a7fcebc62e76be2bc563)"
+      },
+      {
+        "ancestry": "root_bed13fb553c4988a7348",
+        "category": "environmental-observation",
+        "source": "raw-observation",
+        "stamp": "obs_a927ecdb313403b6adff1eb05a7b",
+        "state": "after_5b54a7fcebc62e76be2bc563",
+        "term": "(Owner p_8a7348_target white after_5b54a7fcebc62e76be2bc563)"
+      },
+      {
+        "ancestry": "root_bed13fb553c4988a7348",
+        "category": "environmental-observation",
+        "source": "raw-observation",
+        "stamp": "obs_4b640b4e44ae856c01dc96f62576",
+        "state": "after_5b54a7fcebc62e76be2bc563",
+        "term": "(Occupies p_8a7348_target cell_0 after_5b54a7fcebc62e76be2bc563)"
+      },
+      {
+        "ancestry": "root_bed13fb553c4988a7348",
+        "category": "environmental-observation",
+        "source": "raw-observation",
+        "stamp": "obs_705637bafc99c4739dd94f67967f",
+        "state": "after_5b54a7fcebc62e76be2bc563",
+        "term": "(Occupied cell_0 after_5b54a7fcebc62e76be2bc563)"
+      },
+      {
+        "ancestry": "root_bed13fb553c4988a7348",
+        "category": "environmental-observation",
+        "source": "raw-observation",
+        "stamp": "obs_b547be32c31f5d7abaf77000d619",
+        "state": "after_5b54a7fcebc62e76be2bc563",
+        "term": "(Empty cell_1 after_5b54a7fcebc62e76be2bc563)"
+      },
+      {
+        "ancestry": "root_bed13fb553c4988a7348",
+        "category": "environmental-observation",
+        "source": "raw-observation",
+        "stamp": "obs_494c5c617d24b6a9b81cce4216ff",
+        "state": "after_5b54a7fcebc62e76be2bc563",
+        "term": "(Occupied cell_2 after_5b54a7fcebc62e76be2bc563)"
+      },
+      {
+        "ancestry": "root_bed13fb553c4988a7348",
+        "category": "environmental-observation",
+        "source": "structural-geometry",
+        "stamp": "obs_fc85811c3707ad0d145bd542be85",
+        "state": "after_5b54a7fcebc62e76be2bc563",
+        "term": "(RelativeOffset p_8a7348_attacker p_8a7348_target -2 2 after_5b54a7fcebc62e76be2bc563)"
+      },
+      {
+        "ancestry": "root_bed13fb553c4988a7348",
+        "category": "environmental-observation",
+        "source": "structural-geometry",
+        "stamp": "obs_787a27019c4b569d121a60bd8778",
+        "state": "after_5b54a7fcebc62e76be2bc563",
+        "term": "(RayPath p_8a7348_attacker p_8a7348_target (Cons cell_1 Nil) diagonal after_5b54a7fcebc62e76be2bc563)"
+      },
+      {
+        "ancestry": "root_bed13fb553c4988a7348",
+        "category": "environmental-observation",
+        "source": "structural-geometry",
+        "stamp": "obs_eb95f1dff0a358bd81ddb00c846e",
+        "state": "after_5b54a7fcebc62e76be2bc563",
+        "term": "(RayMember p_8a7348_attacker p_8a7348_target cell_1 after_5b54a7fcebc62e76be2bc563)"
+      },
+      {
+        "ancestry": "root_bed13fb553c4988a7348",
+        "category": "environmental-observation",
+        "source": "structural-geometry",
+        "stamp": "obs_0ede88a646a1c38f2f26339afd01",
+        "state": "after_5b54a7fcebc62e76be2bc563",
+        "term": "(OrderedRayCell p_8a7348_attacker p_8a7348_target 0 cell_1 after_5b54a7fcebc62e76be2bc563)"
+      }
+    ],
+    "full_scope": false,
+    "history": "hypothetical_ddfa1b688c291f4a1f2581fb",
+    "pieces": 2,
+    "relevant_ray_cells": [
+      [
+        1,
+        1
+      ]
+    ],
+    "root": "root_bed13fb553c4988a7348",
+    "scope_kind": "host-selected dependency neighborhood, not a proof",
+    "selection": "Whole structural endpoint ray and supplied moved piece; independent of occupancy answer and labels",
+    "shape": "diagonal",
+    "state_id": "after_5b54a7fcebc62e76be2bc563",
+    "state_identity": "74adcb29146b52223275992dca909276381e01983d3730e03cab81c739551996",
+    "target": "p_8a7348_target",
+    "target_present": true
+  },
+  "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+  "query": "(KingExposed p_8a7348_target white after_5b54a7fcebc62e76be2bc563)",
+  "query_domain_valid": true,
+  "receipt": {
+    "cpu_seconds": 1.42,
+    "execution_trace_scope": "Directly observed SELECTED tasks; no fired-rule tree",
+    "incomplete": false,
+    "native_processes": 1,
+    "output_bytes": 26032,
+    "peak_rss_kib": 47408,
+    "program": "!(import! &self \"/data/pln-chess-cycle6-delivery/vendor/pln/lib_pln.metta\")\n(= (c15beliefs) ((Sentence ((State after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_846fcca7328e6f88d2b780a3a3ed)) (Sentence ((OriginalActor after_5b54a7fcebc62e76be2bc563 white) (stv 1.0 0.99)) (obs_f5bf59a17759052c11a901dd9d1a)) (Sentence ((History after_5b54a7fcebc62e76be2bc563 hypothetical_ddfa1b688c291f4a1f2581fb) (stv 1.0 0.99)) (obs_b9117c753754a550a545a1e99501)) (Sentence ((PieceKind p_8a7348_attacker queen after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_b316e6870749bf83d20e0d2f7e09)) (Sentence ((Owner p_8a7348_attacker black after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_2701a767e19b515bf44aaf847b3e)) (Sentence ((Occupies p_8a7348_attacker cell_2 after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_fd76689cc9a7f15fd6f66475f8aa)) (Sentence ((PieceKind p_8a7348_target king after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_04e21d0ffb07bc17a61e8ae5aed3)) (Sentence ((Owner p_8a7348_target white after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_a927ecdb313403b6adff1eb05a7b)) (Sentence ((Occupies p_8a7348_target cell_0 after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_4b640b4e44ae856c01dc96f62576)) (Sentence ((Occupied cell_0 after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_705637bafc99c4739dd94f67967f)) (Sentence ((Empty cell_1 after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_b547be32c31f5d7abaf77000d619)) (Sentence ((Occupied cell_2 after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_494c5c617d24b6a9b81cce4216ff)) (Sentence ((RelativeOffset p_8a7348_attacker p_8a7348_target -2 2 after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_fc85811c3707ad0d145bd542be85)) (Sentence ((RayPath p_8a7348_attacker p_8a7348_target (Cons cell_1 Nil) diagonal after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_787a27019c4b569d121a60bd8778)) (Sentence ((RayMember p_8a7348_attacker p_8a7348_target cell_1 after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_eb95f1dff0a358bd81ddb00c846e)) (Sentence ((OrderedRayCell p_8a7348_attacker p_8a7348_target 0 cell_1 after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_0ede88a646a1c38f2f26339afd01)) (Sentence ((Implication (State $s) (PathEmpty Nil $s)) (stv 1.0 0.95)) (rule_empty-tail)) (Sentence ((Implication (Empty $c $s) (Implication (PathEmpty $tail $s) (PathEmpty (Cons $c $tail) $s))) (stv 1.0 0.95)) (rule_extend-empty)) (Sentence ((Implication (RayPath $a $t $path $shape $s) (Implication (PathEmpty $path $s) (Clear $a $t $shape $s))) (stv 1.0 0.95)) (rule_clear-path)) (Sentence ((Implication (RayPath $a $t (Cons $c Nil) $shape $s) (Implication (Empty $c $s) (Clear $a $t $shape $s))) (stv 1.0 0.95)) (rule_clear-one)) (Sentence ((Implication (PieceKind $a rook $s) (Implication (Clear $a $t orthogonal $s) (Attack $a $t $s))) (stv 1.0 0.8888888888888888)) (rule_rook-attack train_98e1a10d385599c4de5c61ca train_dde30f207a624ead9064e286 train_3c385a7be1978c46bed26ebe train_cceef621aeba2032208779b0 train_6e92905319e3d206375b69bc train_7c69c5754d46cfd83bb05454 train_61a4ac8c72120b56ac9c5348 train_8d2871789a34962437100143)) (Sentence ((Implication (PieceKind $a bishop $s) (Implication (Clear $a $t diagonal $s) (Attack $a $t $s))) (stv 1.0 0.8571428571428572)) (rule_bishop-attack train_c1e0771213830b61a2b017f5 train_36c5aaa65c53462c41917937 train_16803c3963c90a56100eec67 train_89650afc4510d4b59eda8b79 train_f86cecad12cd2e81a7bdd167 train_71f2c6bf92264c1876c4b8b4)) (Sentence ((Implication (PieceKind $a queen $s) (Implication (Clear $a $t orthogonal $s) (Attack $a $t $s))) (stv 1.0 0.75)) (rule_queen-orthogonal train_1936b074f913e417f052ee0e train_1dc302c71c87d207d4f7e145 train_656c276fefde5f4f7bb52708)) (Sentence ((Implication (PieceKind $a queen $s) (Implication (Clear $a $t diagonal $s) (Attack $a $t $s))) (stv 1.0 0.875)) (rule_queen-diagonal train_ce75302c29ace9146f1b6f70 train_14ef3efdf7f245a1a5891288 train_bd2b603b876dfabc596637f2 train_383cf307ffd52bc6861caa39 train_188ab57dadd470196b5e9838 train_0f9ffe7085ab2da3214d311f train_1c44c57c7a9f5699f2a364ab)) (Sentence ((Implication (RayMember $a $t $c $s) (Implication (Occupied $c $s) (NoAttack $a $t $s))) (stv 1.0 0.9599999999999999)) (rule_obstruction train_1936b074f913e417f052ee0e train_c1e0771213830b61a2b017f5 train_98e1a10d385599c4de5c61ca train_ce75302c29ace9146f1b6f70 train_dde30f207a624ead9064e286 train_3c385a7be1978c46bed26ebe train_36c5aaa65c53462c41917937 train_16803c3963c90a56100eec67 train_14ef3efdf7f245a1a5891288 train_bd2b603b876dfabc596637f2 train_89650afc4510d4b59eda8b79 train_383cf307ffd52bc6861caa39 train_188ab57dadd470196b5e9838 train_1dc302c71c87d207d4f7e145 train_cceef621aeba2032208779b0 train_6e92905319e3d206375b69bc train_0f9ffe7085ab2da3214d311f train_f86cecad12cd2e81a7bdd167 train_656c276fefde5f4f7bb52708 train_7c69c5754d46cfd83bb05454 train_71f2c6bf92264c1876c4b8b4 train_61a4ac8c72120b56ac9c5348 train_1c44c57c7a9f5699f2a364ab train_8d2871789a34962437100143)) (Sentence ((Implication (OriginalActor $s white) (Implication (Owner $a black $s) (Implication (Owner $t white $s) (Implication (PieceKind $t king $s) (Implication (Attack $a $t $s) (KingExposed $t white $s)))))) (stv 1.0 0.95)) (rule_exposure-white)) (Sentence ((Implication (OriginalActor $s black) (Implication (Owner $a white $s) (Implication (Owner $t black $s) (Implication (PieceKind $t king $s) (Implication (Attack $a $t $s) (KingExposed $t black $s)))))) (stv 1.0 0.95)) (rule_exposure-black))))\n(= (c15tasks) ((Sentence ((State after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_846fcca7328e6f88d2b780a3a3ed)) (Sentence ((OriginalActor after_5b54a7fcebc62e76be2bc563 white) (stv 1.0 0.99)) (obs_f5bf59a17759052c11a901dd9d1a)) (Sentence ((History after_5b54a7fcebc62e76be2bc563 hypothetical_ddfa1b688c291f4a1f2581fb) (stv 1.0 0.99)) (obs_b9117c753754a550a545a1e99501)) (Sentence ((PieceKind p_8a7348_attacker queen after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_b316e6870749bf83d20e0d2f7e09)) (Sentence ((Owner p_8a7348_attacker black after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_2701a767e19b515bf44aaf847b3e)) (Sentence ((Occupies p_8a7348_attacker cell_2 after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_fd76689cc9a7f15fd6f66475f8aa)) (Sentence ((PieceKind p_8a7348_target king after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_04e21d0ffb07bc17a61e8ae5aed3)) (Sentence ((Owner p_8a7348_target white after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_a927ecdb313403b6adff1eb05a7b)) (Sentence ((Occupies p_8a7348_target cell_0 after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_4b640b4e44ae856c01dc96f62576)) (Sentence ((Occupied cell_0 after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_705637bafc99c4739dd94f67967f)) (Sentence ((Empty cell_1 after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_b547be32c31f5d7abaf77000d619)) (Sentence ((Occupied cell_2 after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_494c5c617d24b6a9b81cce4216ff)) (Sentence ((RelativeOffset p_8a7348_attacker p_8a7348_target -2 2 after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_fc85811c3707ad0d145bd542be85)) (Sentence ((RayPath p_8a7348_attacker p_8a7348_target (Cons cell_1 Nil) diagonal after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_787a27019c4b569d121a60bd8778)) (Sentence ((RayMember p_8a7348_attacker p_8a7348_target cell_1 after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_eb95f1dff0a358bd81ddb00c846e)) (Sentence ((OrderedRayCell p_8a7348_attacker p_8a7348_target 0 cell_1 after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_0ede88a646a1c38f2f26339afd01)) (Sentence ((Implication (State $s) (PathEmpty Nil $s)) (stv 1.0 0.95)) (rule_empty-tail)) (Sentence ((Implication (Empty $c $s) (Implication (PathEmpty $tail $s) (PathEmpty (Cons $c $tail) $s))) (stv 1.0 0.95)) (rule_extend-empty)) (Sentence ((Implication (RayPath $a $t $path $shape $s) (Implication (PathEmpty $path $s) (Clear $a $t $shape $s))) (stv 1.0 0.95)) (rule_clear-path)) (Sentence ((Implication (RayPath $a $t (Cons $c Nil) $shape $s) (Implication (Empty $c $s) (Clear $a $t $shape $s))) (stv 1.0 0.95)) (rule_clear-one)) (Sentence ((Implication (PieceKind $a rook $s) (Implication (Clear $a $t orthogonal $s) (Attack $a $t $s))) (stv 1.0 0.8888888888888888)) (rule_rook-attack train_98e1a10d385599c4de5c61ca train_dde30f207a624ead9064e286 train_3c385a7be1978c46bed26ebe train_cceef621aeba2032208779b0 train_6e92905319e3d206375b69bc train_7c69c5754d46cfd83bb05454 train_61a4ac8c72120b56ac9c5348 train_8d2871789a34962437100143)) (Sentence ((Implication (PieceKind $a bishop $s) (Implication (Clear $a $t diagonal $s) (Attack $a $t $s))) (stv 1.0 0.8571428571428572)) (rule_bishop-attack train_c1e0771213830b61a2b017f5 train_36c5aaa65c53462c41917937 train_16803c3963c90a56100eec67 train_89650afc4510d4b59eda8b79 train_f86cecad12cd2e81a7bdd167 train_71f2c6bf92264c1876c4b8b4)) (Sentence ((Implication (PieceKind $a queen $s) (Implication (Clear $a $t orthogonal $s) (Attack $a $t $s))) (stv 1.0 0.75)) (rule_queen-orthogonal train_1936b074f913e417f052ee0e train_1dc302c71c87d207d4f7e145 train_656c276fefde5f4f7bb52708)) (Sentence ((Implication (PieceKind $a queen $s) (Implication (Clear $a $t diagonal $s) (Attack $a $t $s))) (stv 1.0 0.875)) (rule_queen-diagonal train_ce75302c29ace9146f1b6f70 train_14ef3efdf7f245a1a5891288 train_bd2b603b876dfabc596637f2 train_383cf307ffd52bc6861caa39 train_188ab57dadd470196b5e9838 train_0f9ffe7085ab2da3214d311f train_1c44c57c7a9f5699f2a364ab)) (Sentence ((Implication (RayMember $a $t $c $s) (Implication (Occupied $c $s) (NoAttack $a $t $s))) (stv 1.0 0.9599999999999999)) (rule_obstruction train_1936b074f913e417f052ee0e train_c1e0771213830b61a2b017f5 train_98e1a10d385599c4de5c61ca train_ce75302c29ace9146f1b6f70 train_dde30f207a624ead9064e286 train_3c385a7be1978c46bed26ebe train_36c5aaa65c53462c41917937 train_16803c3963c90a56100eec67 train_14ef3efdf7f245a1a5891288 train_bd2b603b876dfabc596637f2 train_89650afc4510d4b59eda8b79 train_383cf307ffd52bc6861caa39 train_188ab57dadd470196b5e9838 train_1dc302c71c87d207d4f7e145 train_cceef621aeba2032208779b0 train_6e92905319e3d206375b69bc train_0f9ffe7085ab2da3214d311f train_f86cecad12cd2e81a7bdd167 train_656c276fefde5f4f7bb52708 train_7c69c5754d46cfd83bb05454 train_71f2c6bf92264c1876c4b8b4 train_61a4ac8c72120b56ac9c5348 train_1c44c57c7a9f5699f2a364ab train_8d2871789a34962437100143)) (Sentence ((Implication (OriginalActor $s white) (Implication (Owner $a black $s) (Implication (Owner $t white $s) (Implication (PieceKind $t king $s) (Implication (Attack $a $t $s) (KingExposed $t white $s)))))) (stv 1.0 0.95)) (rule_exposure-white)) (Sentence ((Implication (OriginalActor $s black) (Implication (Owner $a white $s) (Implication (Owner $t black $s) (Implication (PieceKind $t king $s) (Implication (Attack $a $t $s) (KingExposed $t black $s)))))) (stv 1.0 0.95)) (rule_exposure-black))))\n!(let ($remaining $retained) (PLN.Derive (c15tasks) (c15beliefs) 1 128 256 512) (progn (println! (C15STATE $remaining $retained)) (println! (C15ANSWER (BestConfidenceCandidate (collapse (let (Sentence ($Term $TV) $Ev) (superpose $retained) (case (== $Term (KingExposed p_8a7348_target white after_5b54a7fcebc62e76be2bc563)) ((True ($TV $Ev))))))))) (println! (C15CONTRARY (BestConfidenceCandidate (collapse (let (Sentence ($Term $TV) $Ev) (superpose $retained) (case (== $Term (NotKingExposed p_8a7348_target white after_5b54a7fcebc62e76be2bc563)) ((True ($TV $Ev)))))))))))\n",
+    "program_sha256": "be7505dd1337172e0fbb5b2e5cd8d4cb1b5b506a7781a8fa05e75cb2399193cf",
+    "resource_raw": "\tCommand being timed: \"sh /data/pln-chess-cycle6-delivery/.runtime/petta/run.sh /tmp/c15-native-6lw1w6h1/input.metta --silent\"\n\tUser time (seconds): 1.38\n\tSystem time (seconds): 0.04\n\tPercent of CPU this job got: 66%\n\tElapsed (wall clock) time (h:mm:ss or m:ss): 0:02.14\n\tAverage shared text size (kbytes): 0\n\tAverage unshared data size (kbytes): 0\n\tAverage stack size (kbytes): 0\n\tAverage total size (kbytes): 0\n\tMaximum resident set size (kbytes): 47408\n\tAverage resident set size (kbytes): 0\n\tMajor (requiring I/O) page faults: 0\n\tMinor (reclaiming a frame) page faults: 19260\n\tVoluntary context switches: 24\n\tInvoluntary context switches: 656\n\tSwaps: 0\n\tFile system inputs: 0\n\tFile system outputs: 56\n\tSocket messages sent: 0\n\tSocket messages received: 0\n\tSignals delivered: 0\n\tPage size (bytes): 4096\n\tExit status: 0\n",
+    "returncode": 0,
+    "runtime": {
+      "atomspace": "PeTTa native in-process MeTTa space (no Hyperon AtomSpace dependency)",
+      "petta": {
+        "branch": "main",
+        "commit": "ee5cacb6a6ecdd554a1c773aaf47e9a0f8a5af0f",
+        "files": {
+          "run.sh": "269a50bc47e8a5f614f1999161d7f5f6ea51c4615d39f12a404540071f124ff0",
+          "src/ext_points.pl": "0b5f1b115e29892ab1bf5833c022df4c2f3f1558cb04f57a8f52de5ccdad8436",
+          "src/filereader.pl": "fb677e03ffbf945f8c752aa02c8db481cebfbdd219660bee387af596e3ce7bc1",
+          "src/load_cache.pl": "619fc64d253221d06907234d2b94d8c3395b4a6facbe56b2a4bb38c84c9c0ac3",
+          "src/main.pl": "2a57276bb0cd32f29e0bd983c2640f1e9bc1646e22bfc266230d3dc13b9ecc6c",
+          "src/metta.pl": "9ee89a19768c82052606b738e7abd88971c5ac826b7cf9fc1ab770e02779337d",
+          "src/parser.pl": "69ab6dd840fcc585d916fd25a496a09dd30ca9aaacf6e55baaa67c8c020c84c1",
+          "src/spaces.pl": "553acea6a6ad210ff46cb0c883af7587295c689fcd5d768566428607417f0bb0",
+          "src/specializer.pl": "b27a2a6430914c11dc9cd0d27b9a3aa5945064607c48979b7a2a0e50bd0f5141",
+          "src/translator.pl": "cda4dcfc4f77ff0d3feb858b1502ec685fb8b1ddbd7cc555193b76ac7de12220",
+          "src/typecheck.pl": "c45a5a66001255004944731e72dc7a2b71872328027c0f23117442896767e91c",
+          "src/typecheck/abstract_domain.pl": "7fafddae3126fc3ab6f9c2380a4809d0dc5331ae1a622df3be6176167d90d8b9",
+          "src/typecheck/analysis_proofs.pl": "96687dbdd49730b355200eb8135aec8a55953daa1dc250196743951565b5350f",
+          "src/typecheck/builtin_registry.pl": "e0a65099592fa3283ff6f31e90f776366f499eb8e172102393b96bd8183d5005",
+          "src/typecheck/call_summaries.pl": "adb9383a34fd3c0cbaa6e898fd1ee41fcbe2a90327af1b96f4db29bd22c46c00",
+          "src/typecheck/clause_checks.pl": "3b072c51563542b85d8195137dfc06d60932fe25acf14c2dafdadc53367fefc3",
+          "src/typecheck/decl_store.pl": "52f5c17cf51e871a11d81f284094bdb945d3876b799f9157e5131eea3dfdd615",
+          "src/typecheck/dependency_graph.pl": "f344d62ad9e084d2b9ab7dc235094de83db87815cb7b1935c97794490abddaf1",
+          "src/typecheck/det_analysis.pl": "bc04e7791253c3e12b45c81be3f0a7fc419c310898a7b2dab89f86cb329eca9a",
+          "src/typecheck/det_proofs.pl": "1e34de0eb4fad3e79ff5b551e2f966595063db5a6cb268aac45e90448f80fd74",
+          "src/typecheck/det_validate.pl": "98738eb738f4aa76b64d1412ab5e839d151e1bef1fda1019396151a4e1d6ac58",
+          "src/typecheck/flags_arrows.pl": "454f1a1d6b47fe390fc3a8fc11297c6acc798bab6a4f5dc3f009ce79fcc844ed",
+          "src/typecheck/inference.pl": "62d0f2ae9ca97b622cec0676dd3de50016311d940e981e98d243f345579f4430",
+          "src/typecheck/ir_analyzer.pl": "02520b61ccccaba064f62f72f68162bc9b033abec64b77f6e2374e9134b1fe83",
+          "src/typecheck/oracles.pl": "c3ec9fc6e02cf78f58a7f441977fe7ceedad34a78a2a27a43fa52e809256b649",
+          "src/typecheck/relational_ir.pl": "c35f43237b3178ae81f207a79905e9aeb998f8eeac3cc9dce323c6fe62fc0037",
+          "src/typecheck/type_lang.pl": "d9cc0fbdc06002a8249c5b77fa999fb50be4b040626728b66a7e80f2b46255e0",
+          "src/typecheck/unified_checker_bridge.pl": "53ae3521a8265b9680f5434caa2384e0a3831739c53325a6bc2c737b02c2a01a",
+          "src/typecheck/unified_checker_cache.pl": "684f13666c61a1b15ecaf42443d41f15d76efa5d032225a87c873b76ca1da930",
+          "src/typecheck/value_checks.pl": "a8013f13afffd637ba9038c9cf2ef1d8cd056a135696fa676ca5fe88ada25ae6"
+        },
+        "repository": "https://github.com/trueagi-io/PeTTa"
+      },
+      "pln": {
+        "branch": "main",
+        "commit": "4405956947c4b53c7ff01bd565aa3b114bc970a1",
+        "repository": "https://github.com/trueagi-io/PLN",
+        "sha256": "cdfb3f18bd7b336440fc7b4409209afddf0e64c41f17dee7eefc8f02718de433",
+        "source": "vendor/pln/lib_pln.metta"
+      },
+      "python": "3.12.12",
+      "schema": 1,
+      "swipl": "SWI-Prolog version 10.0.1 for x86_64-linux",
+      "truth_value": "(stv strength confidence)"
+    },
+    "stderr": "",
+    "stdout": "(SELECTED (Sentence ((State after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_846fcca7328e6f88d2b780a3a3ed)))\n(SELECTED (Sentence ((OriginalActor after_5b54a7fcebc62e76be2bc563 white) (stv 1.0 0.99)) (obs_f5bf59a17759052c11a901dd9d1a)))\n(SELECTED (Sentence ((History after_5b54a7fcebc62e76be2bc563 hypothetical_ddfa1b688c291f4a1f2581fb) (stv 1.0 0.99)) (obs_b9117c753754a550a545a1e99501)))\n(SELECTED (Sentence ((PieceKind p_8a7348_attacker queen after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_b316e6870749bf83d20e0d2f7e09)))\n(SELECTED (Sentence ((Owner p_8a7348_attacker black after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_2701a767e19b515bf44aaf847b3e)))\n(SELECTED (Sentence ((Occupies p_8a7348_attacker cell_2 after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_fd76689cc9a7f15fd6f66475f8aa)))\n(SELECTED (Sentence ((PieceKind p_8a7348_target king after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_04e21d0ffb07bc17a61e8ae5aed3)))\n(SELECTED (Sentence ((Owner p_8a7348_target white after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_a927ecdb313403b6adff1eb05a7b)))\n(SELECTED (Sentence ((Occupies p_8a7348_target cell_0 after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_4b640b4e44ae856c01dc96f62576)))\n(SELECTED (Sentence ((Occupied cell_0 after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_705637bafc99c4739dd94f67967f)))\n(SELECTED (Sentence ((Empty cell_1 after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_b547be32c31f5d7abaf77000d619)))\n(SELECTED (Sentence ((Occupied cell_2 after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_494c5c617d24b6a9b81cce4216ff)))\n(SELECTED (Sentence ((RelativeOffset p_8a7348_attacker p_8a7348_target -2 2 after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_fc85811c3707ad0d145bd542be85)))\n(SELECTED (Sentence ((RayPath p_8a7348_attacker p_8a7348_target (Cons cell_1 Nil) diagonal after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_787a27019c4b569d121a60bd8778)))\n(SELECTED (Sentence ((RayMember p_8a7348_attacker p_8a7348_target cell_1 after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_eb95f1dff0a358bd81ddb00c846e)))\n(SELECTED (Sentence ((OrderedRayCell p_8a7348_attacker p_8a7348_target 0 cell_1 after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_0ede88a646a1c38f2f26339afd01)))\n(SELECTED (Sentence ((Implication (RayMember $_0 $_1 $_2 $_3) (Implication (Occupied $_2 $_3) (NoAttack $_0 $_1 $_3))) (stv 1.0 0.9599999999999999)) (rule_obstruction train_1936b074f913e417f052ee0e train_c1e0771213830b61a2b017f5 train_98e1a10d385599c4de5c61ca train_ce75302c29ace9146f1b6f70 train_dde30f207a624ead9064e286 train_3c385a7be1978c46bed26ebe train_36c5aaa65c53462c41917937 train_16803c3963c90a56100eec67 train_14ef3efdf7f245a1a5891288 train_bd2b603b876dfabc596637f2 train_89650afc4510d4b59eda8b79 train_383cf307ffd52bc6861caa39 train_188ab57dadd470196b5e9838 train_1dc302c71c87d207d4f7e145 train_cceef621aeba2032208779b0 train_6e92905319e3d206375b69bc train_0f9ffe7085ab2da3214d311f train_f86cecad12cd2e81a7bdd167 train_656c276fefde5f4f7bb52708 train_7c69c5754d46cfd83bb05454 train_71f2c6bf92264c1876c4b8b4 train_61a4ac8c72120b56ac9c5348 train_1c44c57c7a9f5699f2a364ab train_8d2871789a34962437100143)))\n(SELECTED (Sentence ((Implication (Occupied cell_1 after_5b54a7fcebc62e76be2bc563) (NoAttack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563)) (stv 1.0 0.9503999999999998)) (obs_eb95f1dff0a358bd81ddb00c846e rule_obstruction train_0f9ffe7085ab2da3214d311f train_14ef3efdf7f245a1a5891288 train_16803c3963c90a56100eec67 train_188ab57dadd470196b5e9838 train_1936b074f913e417f052ee0e train_1c44c57c7a9f5699f2a364ab train_1dc302c71c87d207d4f7e145 train_36c5aaa65c53462c41917937 train_383cf307ffd52bc6861caa39 train_3c385a7be1978c46bed26ebe train_61a4ac8c72120b56ac9c5348 train_656c276fefde5f4f7bb52708 train_6e92905319e3d206375b69bc train_71f2c6bf92264c1876c4b8b4 train_7c69c5754d46cfd83bb05454 train_89650afc4510d4b59eda8b79 train_8d2871789a34962437100143 train_98e1a10d385599c4de5c61ca train_bd2b603b876dfabc596637f2 train_c1e0771213830b61a2b017f5 train_cceef621aeba2032208779b0 train_ce75302c29ace9146f1b6f70 train_dde30f207a624ead9064e286 train_f86cecad12cd2e81a7bdd167)))\n(SELECTED (Sentence ((Implication (State $_0) (PathEmpty Nil $_0)) (stv 1.0 0.95)) (rule_empty-tail)))\n(SELECTED (Sentence ((Implication (Empty $_0 $_1) (Implication (PathEmpty $_2 $_1) (PathEmpty (Cons $_0 $_2) $_1))) (stv 1.0 0.95)) (rule_extend-empty)))\n(SELECTED (Sentence ((Implication (RayPath $_0 $_1 $_2 $_3 $_4) (Implication (PathEmpty $_2 $_4) (Clear $_0 $_1 $_3 $_4))) (stv 1.0 0.95)) (rule_clear-path)))\n(SELECTED (Sentence ((Implication (RayPath $_0 $_1 (Cons $_2 Nil) $_3 $_4) (Implication (Empty $_2 $_4) (Clear $_0 $_1 $_3 $_4))) (stv 1.0 0.95)) (rule_clear-one)))\n(SELECTED (Sentence ((Implication (OriginalActor $_0 white) (Implication (Owner $_1 black $_0) (Implication (Owner $_2 white $_0) (Implication (PieceKind $_2 king $_0) (Implication (Attack $_1 $_2 $_0) (KingExposed $_2 white $_0)))))) (stv 1.0 0.95)) (rule_exposure-white)))\n(SELECTED (Sentence ((Implication (OriginalActor $_0 black) (Implication (Owner $_1 white $_0) (Implication (Owner $_2 black $_0) (Implication (PieceKind $_2 king $_0) (Implication (Attack $_1 $_2 $_0) (KingExposed $_2 black $_0)))))) (stv 1.0 0.95)) (rule_exposure-black)))\n(SELECTED (Sentence ((PathEmpty Nil after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.9405)) (obs_846fcca7328e6f88d2b780a3a3ed rule_empty-tail)))\n(SELECTED (Sentence ((Implication (Owner $_0 black after_5b54a7fcebc62e76be2bc563) (Implication (Owner $_1 white after_5b54a7fcebc62e76be2bc563) (Implication (PieceKind $_1 king after_5b54a7fcebc62e76be2bc563) (Implication (Attack $_0 $_1 after_5b54a7fcebc62e76be2bc563) (KingExposed $_1 white after_5b54a7fcebc62e76be2bc563))))) (stv 1.0 0.9405)) (obs_f5bf59a17759052c11a901dd9d1a rule_exposure-white)))\n(SELECTED (Sentence ((Implication (PathEmpty $_0 after_5b54a7fcebc62e76be2bc563) (PathEmpty (Cons cell_1 $_0) after_5b54a7fcebc62e76be2bc563)) (stv 1.0 0.9405)) (obs_b547be32c31f5d7abaf77000d619 rule_extend-empty)))\n(SELECTED (Sentence ((Implication (PathEmpty (Cons cell_1 Nil) after_5b54a7fcebc62e76be2bc563) (Clear p_8a7348_attacker p_8a7348_target diagonal after_5b54a7fcebc62e76be2bc563)) (stv 1.0 0.9405)) (obs_787a27019c4b569d121a60bd8778 rule_clear-path)))\n(SELECTED (Sentence ((Implication (Empty cell_1 after_5b54a7fcebc62e76be2bc563) (Clear p_8a7348_attacker p_8a7348_target diagonal after_5b54a7fcebc62e76be2bc563)) (stv 1.0 0.9405)) (obs_787a27019c4b569d121a60bd8778 rule_clear-one)))\n(SELECTED (Sentence ((Implication (Owner $_0 white after_5b54a7fcebc62e76be2bc563) (Implication (PieceKind $_0 king after_5b54a7fcebc62e76be2bc563) (Implication (Attack p_8a7348_attacker $_0 after_5b54a7fcebc62e76be2bc563) (KingExposed $_0 white after_5b54a7fcebc62e76be2bc563)))) (stv 1.0 0.931095)) (obs_2701a767e19b515bf44aaf847b3e obs_f5bf59a17759052c11a901dd9d1a rule_exposure-white)))\n(SELECTED (Sentence ((Clear p_8a7348_attacker p_8a7348_target diagonal after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.931095)) (obs_787a27019c4b569d121a60bd8778 obs_b547be32c31f5d7abaf77000d619 rule_clear-one)))\n(SELECTED (Sentence ((Implication (PieceKind p_8a7348_target king after_5b54a7fcebc62e76be2bc563) (Implication (Attack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563) (KingExposed p_8a7348_target white after_5b54a7fcebc62e76be2bc563))) (stv 1.0 0.92178405)) (obs_2701a767e19b515bf44aaf847b3e obs_a927ecdb313403b6adff1eb05a7b obs_f5bf59a17759052c11a901dd9d1a rule_exposure-white)))\n(SELECTED (Sentence ((Implication (Attack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563) (KingExposed p_8a7348_target white after_5b54a7fcebc62e76be2bc563)) (stv 1.0 0.9125662095)) (obs_04e21d0ffb07bc17a61e8ae5aed3 obs_2701a767e19b515bf44aaf847b3e obs_a927ecdb313403b6adff1eb05a7b obs_f5bf59a17759052c11a901dd9d1a rule_exposure-white)))\n(SELECTED (Sentence ((Implication (PieceKind $_0 rook $_1) (Implication (Clear $_0 $_2 orthogonal $_1) (Attack $_0 $_2 $_1))) (stv 1.0 0.8888888888888888)) (rule_rook-attack train_98e1a10d385599c4de5c61ca train_dde30f207a624ead9064e286 train_3c385a7be1978c46bed26ebe train_cceef621aeba2032208779b0 train_6e92905319e3d206375b69bc train_7c69c5754d46cfd83bb05454 train_61a4ac8c72120b56ac9c5348 train_8d2871789a34962437100143)))\n(SELECTED (Sentence ((PathEmpty (Cons cell_1 Nil) after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.88454025)) (obs_846fcca7328e6f88d2b780a3a3ed obs_b547be32c31f5d7abaf77000d619 rule_empty-tail rule_extend-empty)))\n(SELECTED (Sentence ((Implication (PieceKind $_0 queen $_1) (Implication (Clear $_0 $_2 diagonal $_1) (Attack $_0 $_2 $_1))) (stv 1.0 0.875)) (rule_queen-diagonal train_ce75302c29ace9146f1b6f70 train_14ef3efdf7f245a1a5891288 train_bd2b603b876dfabc596637f2 train_383cf307ffd52bc6861caa39 train_188ab57dadd470196b5e9838 train_0f9ffe7085ab2da3214d311f train_1c44c57c7a9f5699f2a364ab)))\n(SELECTED (Sentence ((Implication (Clear p_8a7348_attacker $_0 diagonal after_5b54a7fcebc62e76be2bc563) (Attack p_8a7348_attacker $_0 after_5b54a7fcebc62e76be2bc563)) (stv 1.0 0.86625)) (obs_b316e6870749bf83d20e0d2f7e09 rule_queen-diagonal train_0f9ffe7085ab2da3214d311f train_14ef3efdf7f245a1a5891288 train_188ab57dadd470196b5e9838 train_1c44c57c7a9f5699f2a364ab train_383cf307ffd52bc6861caa39 train_bd2b603b876dfabc596637f2 train_ce75302c29ace9146f1b6f70)))\n(SELECTED (Sentence ((Implication (PieceKind $_0 bishop $_1) (Implication (Clear $_0 $_2 diagonal $_1) (Attack $_0 $_2 $_1))) (stv 1.0 0.8571428571428572)) (rule_bishop-attack train_c1e0771213830b61a2b017f5 train_36c5aaa65c53462c41917937 train_16803c3963c90a56100eec67 train_89650afc4510d4b59eda8b79 train_f86cecad12cd2e81a7bdd167 train_71f2c6bf92264c1876c4b8b4)))\n(SELECTED (Sentence ((Clear p_8a7348_attacker p_8a7348_target diagonal after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.8319101051250001)) (obs_787a27019c4b569d121a60bd8778 obs_846fcca7328e6f88d2b780a3a3ed obs_b547be32c31f5d7abaf77000d619 rule_clear-path rule_empty-tail rule_extend-empty)))\n(SELECTED (Sentence ((Attack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.8065610437499999)) (obs_787a27019c4b569d121a60bd8778 obs_b316e6870749bf83d20e0d2f7e09 obs_b547be32c31f5d7abaf77000d619 rule_clear-one rule_queen-diagonal train_0f9ffe7085ab2da3214d311f train_14ef3efdf7f245a1a5891288 train_188ab57dadd470196b5e9838 train_1c44c57c7a9f5699f2a364ab train_383cf307ffd52bc6861caa39 train_bd2b603b876dfabc596637f2 train_ce75302c29ace9146f1b6f70)))\n(SELECTED (Sentence ((Implication (PieceKind $_0 queen $_1) (Implication (Clear $_0 $_2 orthogonal $_1) (Attack $_0 $_2 $_1))) (stv 1.0 0.75)) (rule_queen-orthogonal train_1936b074f913e417f052ee0e train_1dc302c71c87d207d4f7e145 train_656c276fefde5f4f7bb52708)))\n(SELECTED (Sentence ((Implication (Clear p_8a7348_attacker $_0 orthogonal after_5b54a7fcebc62e76be2bc563) (Attack p_8a7348_attacker $_0 after_5b54a7fcebc62e76be2bc563)) (stv 1.0 0.7424999999999999)) (obs_b316e6870749bf83d20e0d2f7e09 rule_queen-orthogonal train_1936b074f913e417f052ee0e train_1dc302c71c87d207d4f7e145 train_656c276fefde5f4f7bb52708)))\n(SELECTED (Sentence ((KingExposed p_8a7348_target white after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.7360403544253011)) (obs_04e21d0ffb07bc17a61e8ae5aed3 obs_2701a767e19b515bf44aaf847b3e obs_787a27019c4b569d121a60bd8778 obs_a927ecdb313403b6adff1eb05a7b obs_b316e6870749bf83d20e0d2f7e09 obs_b547be32c31f5d7abaf77000d619 obs_f5bf59a17759052c11a901dd9d1a rule_clear-one rule_exposure-white rule_queen-diagonal train_0f9ffe7085ab2da3214d311f train_14ef3efdf7f245a1a5891288 train_188ab57dadd470196b5e9838 train_1c44c57c7a9f5699f2a364ab train_383cf307ffd52bc6861caa39 train_bd2b603b876dfabc596637f2 train_ce75302c29ace9146f1b6f70)))\n(SELECTED (Sentence ((Attack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.7206421285645312)) (obs_787a27019c4b569d121a60bd8778 obs_846fcca7328e6f88d2b780a3a3ed obs_b316e6870749bf83d20e0d2f7e09 obs_b547be32c31f5d7abaf77000d619 rule_clear-path rule_empty-tail rule_extend-empty rule_queen-diagonal train_0f9ffe7085ab2da3214d311f train_14ef3efdf7f245a1a5891288 train_188ab57dadd470196b5e9838 train_1c44c57c7a9f5699f2a364ab train_383cf307ffd52bc6861caa39 train_bd2b603b876dfabc596637f2 train_ce75302c29ace9146f1b6f70)))\n(SELECTED (Sentence ((KingExposed p_8a7348_target white after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.657633655670146)) (obs_04e21d0ffb07bc17a61e8ae5aed3 obs_2701a767e19b515bf44aaf847b3e obs_787a27019c4b569d121a60bd8778 obs_846fcca7328e6f88d2b780a3a3ed obs_a927ecdb313403b6adff1eb05a7b obs_b316e6870749bf83d20e0d2f7e09 obs_b547be32c31f5d7abaf77000d619 obs_f5bf59a17759052c11a901dd9d1a rule_clear-path rule_empty-tail rule_exposure-white rule_extend-empty rule_queen-diagonal train_0f9ffe7085ab2da3214d311f train_14ef3efdf7f245a1a5891288 train_188ab57dadd470196b5e9838 train_1c44c57c7a9f5699f2a364ab train_383cf307ffd52bc6861caa39 train_bd2b603b876dfabc596637f2 train_ce75302c29ace9146f1b6f70)))\n(C15STATE () ((Sentence ((State after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_846fcca7328e6f88d2b780a3a3ed)) (Sentence ((OriginalActor after_5b54a7fcebc62e76be2bc563 white) (stv 1.0 0.99)) (obs_f5bf59a17759052c11a901dd9d1a)) (Sentence ((History after_5b54a7fcebc62e76be2bc563 hypothetical_ddfa1b688c291f4a1f2581fb) (stv 1.0 0.99)) (obs_b9117c753754a550a545a1e99501)) (Sentence ((PieceKind p_8a7348_attacker queen after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_b316e6870749bf83d20e0d2f7e09)) (Sentence ((Owner p_8a7348_attacker black after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_2701a767e19b515bf44aaf847b3e)) (Sentence ((Occupies p_8a7348_attacker cell_2 after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_fd76689cc9a7f15fd6f66475f8aa)) (Sentence ((PieceKind p_8a7348_target king after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_04e21d0ffb07bc17a61e8ae5aed3)) (Sentence ((Owner p_8a7348_target white after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_a927ecdb313403b6adff1eb05a7b)) (Sentence ((Occupies p_8a7348_target cell_0 after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_4b640b4e44ae856c01dc96f62576)) (Sentence ((Occupied cell_0 after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_705637bafc99c4739dd94f67967f)) (Sentence ((Empty cell_1 after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_b547be32c31f5d7abaf77000d619)) (Sentence ((Occupied cell_2 after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_494c5c617d24b6a9b81cce4216ff)) (Sentence ((RelativeOffset p_8a7348_attacker p_8a7348_target -2 2 after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_fc85811c3707ad0d145bd542be85)) (Sentence ((RayPath p_8a7348_attacker p_8a7348_target (Cons cell_1 Nil) diagonal after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_787a27019c4b569d121a60bd8778)) (Sentence ((RayMember p_8a7348_attacker p_8a7348_target cell_1 after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_eb95f1dff0a358bd81ddb00c846e)) (Sentence ((OrderedRayCell p_8a7348_attacker p_8a7348_target 0 cell_1 after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.99)) (obs_0ede88a646a1c38f2f26339afd01)) (Sentence ((Implication (State $_0) (PathEmpty Nil $_0)) (stv 1.0 0.95)) (rule_empty-tail)) (Sentence ((Implication (Empty $_1 $_0) (Implication (PathEmpty $_2 $_0) (PathEmpty (Cons $_1 $_2) $_0))) (stv 1.0 0.95)) (rule_extend-empty)) (Sentence ((Implication (RayPath $_3 $_4 $_5 $_6 $_0) (Implication (PathEmpty $_5 $_0) (Clear $_3 $_4 $_6 $_0))) (stv 1.0 0.95)) (rule_clear-path)) (Sentence ((Implication (RayPath $_3 $_4 (Cons $_1 Nil) $_6 $_0) (Implication (Empty $_1 $_0) (Clear $_3 $_4 $_6 $_0))) (stv 1.0 0.95)) (rule_clear-one)) (Sentence ((Implication (PieceKind $_3 rook $_0) (Implication (Clear $_3 $_4 orthogonal $_0) (Attack $_3 $_4 $_0))) (stv 1.0 0.8888888888888888)) (rule_rook-attack train_98e1a10d385599c4de5c61ca train_dde30f207a624ead9064e286 train_3c385a7be1978c46bed26ebe train_cceef621aeba2032208779b0 train_6e92905319e3d206375b69bc train_7c69c5754d46cfd83bb05454 train_61a4ac8c72120b56ac9c5348 train_8d2871789a34962437100143)) (Sentence ((Implication (PieceKind $_3 bishop $_0) (Implication (Clear $_3 $_4 diagonal $_0) (Attack $_3 $_4 $_0))) (stv 1.0 0.8571428571428572)) (rule_bishop-attack train_c1e0771213830b61a2b017f5 train_36c5aaa65c53462c41917937 train_16803c3963c90a56100eec67 train_89650afc4510d4b59eda8b79 train_f86cecad12cd2e81a7bdd167 train_71f2c6bf92264c1876c4b8b4)) (Sentence ((Implication (PieceKind $_3 queen $_0) (Implication (Clear $_3 $_4 orthogonal $_0) (Attack $_3 $_4 $_0))) (stv 1.0 0.75)) (rule_queen-orthogonal train_1936b074f913e417f052ee0e train_1dc302c71c87d207d4f7e145 train_656c276fefde5f4f7bb52708)) (Sentence ((Implication (PieceKind $_3 queen $_0) (Implication (Clear $_3 $_4 diagonal $_0) (Attack $_3 $_4 $_0))) (stv 1.0 0.875)) (rule_queen-diagonal train_ce75302c29ace9146f1b6f70 train_14ef3efdf7f245a1a5891288 train_bd2b603b876dfabc596637f2 train_383cf307ffd52bc6861caa39 train_188ab57dadd470196b5e9838 train_0f9ffe7085ab2da3214d311f train_1c44c57c7a9f5699f2a364ab)) (Sentence ((Implication (RayMember $_3 $_4 $_1 $_0) (Implication (Occupied $_1 $_0) (NoAttack $_3 $_4 $_0))) (stv 1.0 0.9599999999999999)) (rule_obstruction train_1936b074f913e417f052ee0e train_c1e0771213830b61a2b017f5 train_98e1a10d385599c4de5c61ca train_ce75302c29ace9146f1b6f70 train_dde30f207a624ead9064e286 train_3c385a7be1978c46bed26ebe train_36c5aaa65c53462c41917937 train_16803c3963c90a56100eec67 train_14ef3efdf7f245a1a5891288 train_bd2b603b876dfabc596637f2 train_89650afc4510d4b59eda8b79 train_383cf307ffd52bc6861caa39 train_188ab57dadd470196b5e9838 train_1dc302c71c87d207d4f7e145 train_cceef621aeba2032208779b0 train_6e92905319e3d206375b69bc train_0f9ffe7085ab2da3214d311f train_f86cecad12cd2e81a7bdd167 train_656c276fefde5f4f7bb52708 train_7c69c5754d46cfd83bb05454 train_71f2c6bf92264c1876c4b8b4 train_61a4ac8c72120b56ac9c5348 train_1c44c57c7a9f5699f2a364ab train_8d2871789a34962437100143)) (Sentence ((Implication (OriginalActor $_0 white) (Implication (Owner $_3 black $_0) (Implication (Owner $_4 white $_0) (Implication (PieceKind $_4 king $_0) (Implication (Attack $_3 $_4 $_0) (KingExposed $_4 white $_0)))))) (stv 1.0 0.95)) (rule_exposure-white)) (Sentence ((Implication (OriginalActor $_0 black) (Implication (Owner $_3 white $_0) (Implication (Owner $_4 black $_0) (Implication (PieceKind $_4 king $_0) (Implication (Attack $_3 $_4 $_0) (KingExposed $_4 black $_0)))))) (stv 1.0 0.95)) (rule_exposure-black)) (Sentence ((PathEmpty Nil after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.9405)) (obs_846fcca7328e6f88d2b780a3a3ed rule_empty-tail)) (Sentence ((Implication (Owner $_7 black after_5b54a7fcebc62e76be2bc563) (Implication (Owner $_8 white after_5b54a7fcebc62e76be2bc563) (Implication (PieceKind $_8 king after_5b54a7fcebc62e76be2bc563) (Implication (Attack $_7 $_8 after_5b54a7fcebc62e76be2bc563) (KingExposed $_8 white after_5b54a7fcebc62e76be2bc563))))) (stv 1.0 0.9405)) (obs_f5bf59a17759052c11a901dd9d1a rule_exposure-white)) (Sentence ((Implication (Clear p_8a7348_attacker $_9 orthogonal after_5b54a7fcebc62e76be2bc563) (Attack p_8a7348_attacker $_9 after_5b54a7fcebc62e76be2bc563)) (stv 1.0 0.7424999999999999)) (obs_b316e6870749bf83d20e0d2f7e09 rule_queen-orthogonal train_1936b074f913e417f052ee0e train_1dc302c71c87d207d4f7e145 train_656c276fefde5f4f7bb52708)) (Sentence ((Implication (Clear p_8a7348_attacker $_10 diagonal after_5b54a7fcebc62e76be2bc563) (Attack p_8a7348_attacker $_10 after_5b54a7fcebc62e76be2bc563)) (stv 1.0 0.86625)) (obs_b316e6870749bf83d20e0d2f7e09 rule_queen-diagonal train_0f9ffe7085ab2da3214d311f train_14ef3efdf7f245a1a5891288 train_188ab57dadd470196b5e9838 train_1c44c57c7a9f5699f2a364ab train_383cf307ffd52bc6861caa39 train_bd2b603b876dfabc596637f2 train_ce75302c29ace9146f1b6f70)) (Sentence ((Implication (Owner $_11 white after_5b54a7fcebc62e76be2bc563) (Implication (PieceKind $_11 king after_5b54a7fcebc62e76be2bc563) (Implication (Attack p_8a7348_attacker $_11 after_5b54a7fcebc62e76be2bc563) (KingExposed $_11 white after_5b54a7fcebc62e76be2bc563)))) (stv 1.0 0.931095)) (obs_2701a767e19b515bf44aaf847b3e obs_f5bf59a17759052c11a901dd9d1a rule_exposure-white)) (Sentence ((Implication (PieceKind p_8a7348_target king after_5b54a7fcebc62e76be2bc563) (Implication (Attack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563) (KingExposed p_8a7348_target white after_5b54a7fcebc62e76be2bc563))) (stv 1.0 0.92178405)) (obs_2701a767e19b515bf44aaf847b3e obs_a927ecdb313403b6adff1eb05a7b obs_f5bf59a17759052c11a901dd9d1a rule_exposure-white)) (Sentence ((Implication (PathEmpty $_12 after_5b54a7fcebc62e76be2bc563) (PathEmpty (Cons cell_1 $_12) after_5b54a7fcebc62e76be2bc563)) (stv 1.0 0.9405)) (obs_b547be32c31f5d7abaf77000d619 rule_extend-empty)) (Sentence ((Implication (PathEmpty (Cons cell_1 Nil) after_5b54a7fcebc62e76be2bc563) (Clear p_8a7348_attacker p_8a7348_target diagonal after_5b54a7fcebc62e76be2bc563)) (stv 1.0 0.9405)) (obs_787a27019c4b569d121a60bd8778 rule_clear-path)) (Sentence ((Implication (Empty cell_1 after_5b54a7fcebc62e76be2bc563) (Clear p_8a7348_attacker p_8a7348_target diagonal after_5b54a7fcebc62e76be2bc563)) (stv 1.0 0.9405)) (obs_787a27019c4b569d121a60bd8778 rule_clear-one)) (Sentence ((Implication (Occupied cell_1 after_5b54a7fcebc62e76be2bc563) (NoAttack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563)) (stv 1.0 0.9503999999999998)) (obs_eb95f1dff0a358bd81ddb00c846e rule_obstruction train_0f9ffe7085ab2da3214d311f train_14ef3efdf7f245a1a5891288 train_16803c3963c90a56100eec67 train_188ab57dadd470196b5e9838 train_1936b074f913e417f052ee0e train_1c44c57c7a9f5699f2a364ab train_1dc302c71c87d207d4f7e145 train_36c5aaa65c53462c41917937 train_383cf307ffd52bc6861caa39 train_3c385a7be1978c46bed26ebe train_61a4ac8c72120b56ac9c5348 train_656c276fefde5f4f7bb52708 train_6e92905319e3d206375b69bc train_71f2c6bf92264c1876c4b8b4 train_7c69c5754d46cfd83bb05454 train_89650afc4510d4b59eda8b79 train_8d2871789a34962437100143 train_98e1a10d385599c4de5c61ca train_bd2b603b876dfabc596637f2 train_c1e0771213830b61a2b017f5 train_cceef621aeba2032208779b0 train_ce75302c29ace9146f1b6f70 train_dde30f207a624ead9064e286 train_f86cecad12cd2e81a7bdd167)) (Sentence ((PathEmpty (Cons cell_1 Nil) after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.88454025)) (obs_846fcca7328e6f88d2b780a3a3ed obs_b547be32c31f5d7abaf77000d619 rule_empty-tail rule_extend-empty)) (Sentence ((Clear p_8a7348_attacker p_8a7348_target diagonal after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.8319101051250001)) (obs_787a27019c4b569d121a60bd8778 obs_846fcca7328e6f88d2b780a3a3ed obs_b547be32c31f5d7abaf77000d619 rule_clear-path rule_empty-tail rule_extend-empty)) (Sentence ((Clear p_8a7348_attacker p_8a7348_target diagonal after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.931095)) (obs_787a27019c4b569d121a60bd8778 obs_b547be32c31f5d7abaf77000d619 rule_clear-one)) (Sentence ((Attack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.8065610437499999)) (obs_787a27019c4b569d121a60bd8778 obs_b316e6870749bf83d20e0d2f7e09 obs_b547be32c31f5d7abaf77000d619 rule_clear-one rule_queen-diagonal train_0f9ffe7085ab2da3214d311f train_14ef3efdf7f245a1a5891288 train_188ab57dadd470196b5e9838 train_1c44c57c7a9f5699f2a364ab train_383cf307ffd52bc6861caa39 train_bd2b603b876dfabc596637f2 train_ce75302c29ace9146f1b6f70)) (Sentence ((Implication (Attack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563) (KingExposed p_8a7348_target white after_5b54a7fcebc62e76be2bc563)) (stv 1.0 0.9125662095)) (obs_04e21d0ffb07bc17a61e8ae5aed3 obs_2701a767e19b515bf44aaf847b3e obs_a927ecdb313403b6adff1eb05a7b obs_f5bf59a17759052c11a901dd9d1a rule_exposure-white)) (Sentence ((KingExposed p_8a7348_target white after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.7360403544253011)) (obs_04e21d0ffb07bc17a61e8ae5aed3 obs_2701a767e19b515bf44aaf847b3e obs_787a27019c4b569d121a60bd8778 obs_a927ecdb313403b6adff1eb05a7b obs_b316e6870749bf83d20e0d2f7e09 obs_b547be32c31f5d7abaf77000d619 obs_f5bf59a17759052c11a901dd9d1a rule_clear-one rule_exposure-white rule_queen-diagonal train_0f9ffe7085ab2da3214d311f train_14ef3efdf7f245a1a5891288 train_188ab57dadd470196b5e9838 train_1c44c57c7a9f5699f2a364ab train_383cf307ffd52bc6861caa39 train_bd2b603b876dfabc596637f2 train_ce75302c29ace9146f1b6f70)) (Sentence ((Attack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.7206421285645312)) (obs_787a27019c4b569d121a60bd8778 obs_846fcca7328e6f88d2b780a3a3ed obs_b316e6870749bf83d20e0d2f7e09 obs_b547be32c31f5d7abaf77000d619 rule_clear-path rule_empty-tail rule_extend-empty rule_queen-diagonal train_0f9ffe7085ab2da3214d311f train_14ef3efdf7f245a1a5891288 train_188ab57dadd470196b5e9838 train_1c44c57c7a9f5699f2a364ab train_383cf307ffd52bc6861caa39 train_bd2b603b876dfabc596637f2 train_ce75302c29ace9146f1b6f70)) (Sentence ((KingExposed p_8a7348_target white after_5b54a7fcebc62e76be2bc563) (stv 1.0 0.657633655670146)) (obs_04e21d0ffb07bc17a61e8ae5aed3 obs_2701a767e19b515bf44aaf847b3e obs_787a27019c4b569d121a60bd8778 obs_846fcca7328e6f88d2b780a3a3ed obs_a927ecdb313403b6adff1eb05a7b obs_b316e6870749bf83d20e0d2f7e09 obs_b547be32c31f5d7abaf77000d619 obs_f5bf59a17759052c11a901dd9d1a rule_clear-path rule_empty-tail rule_exposure-white rule_extend-empty rule_queen-diagonal train_0f9ffe7085ab2da3214d311f train_14ef3efdf7f245a1a5891288 train_188ab57dadd470196b5e9838 train_1c44c57c7a9f5699f2a364ab train_383cf307ffd52bc6861caa39 train_bd2b603b876dfabc596637f2 train_ce75302c29ace9146f1b6f70))))\n(C15ANSWER ((stv 1.0 0.7360403544253011) (obs_04e21d0ffb07bc17a61e8ae5aed3 obs_2701a767e19b515bf44aaf847b3e obs_787a27019c4b569d121a60bd8778 obs_a927ecdb313403b6adff1eb05a7b obs_b316e6870749bf83d20e0d2f7e09 obs_b547be32c31f5d7abaf77000d619 obs_f5bf59a17759052c11a901dd9d1a rule_clear-one rule_exposure-white rule_queen-diagonal train_0f9ffe7085ab2da3214d311f train_14ef3efdf7f245a1a5891288 train_188ab57dadd470196b5e9838 train_1c44c57c7a9f5699f2a364ab train_383cf307ffd52bc6861caa39 train_bd2b603b876dfabc596637f2 train_ce75302c29ace9146f1b6f70)))\n(C15CONTRARY ())\ntrue\ntrue\n",
+    "timed_out": false,
+    "wall_seconds": 2.2131309024989605
+  },
+  "remaining": [],
+  "retained": [
+    {
+      "confidence": 0.99,
+      "stamps": [
+        "obs_846fcca7328e6f88d2b780a3a3ed"
+      ],
+      "strength": 1.0,
+      "term": "(State after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "confidence": 0.99,
+      "stamps": [
+        "obs_f5bf59a17759052c11a901dd9d1a"
+      ],
+      "strength": 1.0,
+      "term": "(OriginalActor after_5b54a7fcebc62e76be2bc563 white)"
+    },
+    {
+      "confidence": 0.99,
+      "stamps": [
+        "obs_b9117c753754a550a545a1e99501"
+      ],
+      "strength": 1.0,
+      "term": "(History after_5b54a7fcebc62e76be2bc563 hypothetical_ddfa1b688c291f4a1f2581fb)"
+    },
+    {
+      "confidence": 0.99,
+      "stamps": [
+        "obs_b316e6870749bf83d20e0d2f7e09"
+      ],
+      "strength": 1.0,
+      "term": "(PieceKind p_8a7348_attacker queen after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "confidence": 0.99,
+      "stamps": [
+        "obs_2701a767e19b515bf44aaf847b3e"
+      ],
+      "strength": 1.0,
+      "term": "(Owner p_8a7348_attacker black after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "confidence": 0.99,
+      "stamps": [
+        "obs_fd76689cc9a7f15fd6f66475f8aa"
+      ],
+      "strength": 1.0,
+      "term": "(Occupies p_8a7348_attacker cell_2 after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "confidence": 0.99,
+      "stamps": [
+        "obs_04e21d0ffb07bc17a61e8ae5aed3"
+      ],
+      "strength": 1.0,
+      "term": "(PieceKind p_8a7348_target king after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "confidence": 0.99,
+      "stamps": [
+        "obs_a927ecdb313403b6adff1eb05a7b"
+      ],
+      "strength": 1.0,
+      "term": "(Owner p_8a7348_target white after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "confidence": 0.99,
+      "stamps": [
+        "obs_4b640b4e44ae856c01dc96f62576"
+      ],
+      "strength": 1.0,
+      "term": "(Occupies p_8a7348_target cell_0 after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "confidence": 0.99,
+      "stamps": [
+        "obs_705637bafc99c4739dd94f67967f"
+      ],
+      "strength": 1.0,
+      "term": "(Occupied cell_0 after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "confidence": 0.99,
+      "stamps": [
+        "obs_b547be32c31f5d7abaf77000d619"
+      ],
+      "strength": 1.0,
+      "term": "(Empty cell_1 after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "confidence": 0.99,
+      "stamps": [
+        "obs_494c5c617d24b6a9b81cce4216ff"
+      ],
+      "strength": 1.0,
+      "term": "(Occupied cell_2 after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "confidence": 0.99,
+      "stamps": [
+        "obs_fc85811c3707ad0d145bd542be85"
+      ],
+      "strength": 1.0,
+      "term": "(RelativeOffset p_8a7348_attacker p_8a7348_target -2 2 after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "confidence": 0.99,
+      "stamps": [
+        "obs_787a27019c4b569d121a60bd8778"
+      ],
+      "strength": 1.0,
+      "term": "(RayPath p_8a7348_attacker p_8a7348_target (Cons cell_1 Nil) diagonal after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "confidence": 0.99,
+      "stamps": [
+        "obs_eb95f1dff0a358bd81ddb00c846e"
+      ],
+      "strength": 1.0,
+      "term": "(RayMember p_8a7348_attacker p_8a7348_target cell_1 after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "confidence": 0.99,
+      "stamps": [
+        "obs_0ede88a646a1c38f2f26339afd01"
+      ],
+      "strength": 1.0,
+      "term": "(OrderedRayCell p_8a7348_attacker p_8a7348_target 0 cell_1 after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "confidence": 0.95,
+      "stamps": [
+        "rule_empty-tail"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (State $_0) (PathEmpty Nil $_0))"
+    },
+    {
+      "confidence": 0.95,
+      "stamps": [
+        "rule_extend-empty"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (Empty $_1 $_0) (Implication (PathEmpty $_2 $_0) (PathEmpty (Cons $_1 $_2) $_0)))"
+    },
+    {
+      "confidence": 0.95,
+      "stamps": [
+        "rule_clear-path"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (RayPath $_3 $_4 $_5 $_6 $_0) (Implication (PathEmpty $_5 $_0) (Clear $_3 $_4 $_6 $_0)))"
+    },
+    {
+      "confidence": 0.95,
+      "stamps": [
+        "rule_clear-one"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (RayPath $_3 $_4 (Cons $_1 Nil) $_6 $_0) (Implication (Empty $_1 $_0) (Clear $_3 $_4 $_6 $_0)))"
+    },
+    {
+      "confidence": 0.8888888888888888,
+      "stamps": [
+        "rule_rook-attack",
+        "train_98e1a10d385599c4de5c61ca",
+        "train_dde30f207a624ead9064e286",
+        "train_3c385a7be1978c46bed26ebe",
+        "train_cceef621aeba2032208779b0",
+        "train_6e92905319e3d206375b69bc",
+        "train_7c69c5754d46cfd83bb05454",
+        "train_61a4ac8c72120b56ac9c5348",
+        "train_8d2871789a34962437100143"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (PieceKind $_3 rook $_0) (Implication (Clear $_3 $_4 orthogonal $_0) (Attack $_3 $_4 $_0)))"
+    },
+    {
+      "confidence": 0.8571428571428572,
+      "stamps": [
+        "rule_bishop-attack",
+        "train_c1e0771213830b61a2b017f5",
+        "train_36c5aaa65c53462c41917937",
+        "train_16803c3963c90a56100eec67",
+        "train_89650afc4510d4b59eda8b79",
+        "train_f86cecad12cd2e81a7bdd167",
+        "train_71f2c6bf92264c1876c4b8b4"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (PieceKind $_3 bishop $_0) (Implication (Clear $_3 $_4 diagonal $_0) (Attack $_3 $_4 $_0)))"
+    },
+    {
+      "confidence": 0.75,
+      "stamps": [
+        "rule_queen-orthogonal",
+        "train_1936b074f913e417f052ee0e",
+        "train_1dc302c71c87d207d4f7e145",
+        "train_656c276fefde5f4f7bb52708"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (PieceKind $_3 queen $_0) (Implication (Clear $_3 $_4 orthogonal $_0) (Attack $_3 $_4 $_0)))"
+    },
+    {
+      "confidence": 0.875,
+      "stamps": [
+        "rule_queen-diagonal",
+        "train_ce75302c29ace9146f1b6f70",
+        "train_14ef3efdf7f245a1a5891288",
+        "train_bd2b603b876dfabc596637f2",
+        "train_383cf307ffd52bc6861caa39",
+        "train_188ab57dadd470196b5e9838",
+        "train_0f9ffe7085ab2da3214d311f",
+        "train_1c44c57c7a9f5699f2a364ab"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (PieceKind $_3 queen $_0) (Implication (Clear $_3 $_4 diagonal $_0) (Attack $_3 $_4 $_0)))"
+    },
+    {
+      "confidence": 0.9599999999999999,
+      "stamps": [
+        "rule_obstruction",
+        "train_1936b074f913e417f052ee0e",
+        "train_c1e0771213830b61a2b017f5",
+        "train_98e1a10d385599c4de5c61ca",
+        "train_ce75302c29ace9146f1b6f70",
+        "train_dde30f207a624ead9064e286",
+        "train_3c385a7be1978c46bed26ebe",
+        "train_36c5aaa65c53462c41917937",
+        "train_16803c3963c90a56100eec67",
+        "train_14ef3efdf7f245a1a5891288",
+        "train_bd2b603b876dfabc596637f2",
+        "train_89650afc4510d4b59eda8b79",
+        "train_383cf307ffd52bc6861caa39",
+        "train_188ab57dadd470196b5e9838",
+        "train_1dc302c71c87d207d4f7e145",
+        "train_cceef621aeba2032208779b0",
+        "train_6e92905319e3d206375b69bc",
+        "train_0f9ffe7085ab2da3214d311f",
+        "train_f86cecad12cd2e81a7bdd167",
+        "train_656c276fefde5f4f7bb52708",
+        "train_7c69c5754d46cfd83bb05454",
+        "train_71f2c6bf92264c1876c4b8b4",
+        "train_61a4ac8c72120b56ac9c5348",
+        "train_1c44c57c7a9f5699f2a364ab",
+        "train_8d2871789a34962437100143"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (RayMember $_3 $_4 $_1 $_0) (Implication (Occupied $_1 $_0) (NoAttack $_3 $_4 $_0)))"
+    },
+    {
+      "confidence": 0.95,
+      "stamps": [
+        "rule_exposure-white"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (OriginalActor $_0 white) (Implication (Owner $_3 black $_0) (Implication (Owner $_4 white $_0) (Implication (PieceKind $_4 king $_0) (Implication (Attack $_3 $_4 $_0) (KingExposed $_4 white $_0))))))"
+    },
+    {
+      "confidence": 0.95,
+      "stamps": [
+        "rule_exposure-black"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (OriginalActor $_0 black) (Implication (Owner $_3 white $_0) (Implication (Owner $_4 black $_0) (Implication (PieceKind $_4 king $_0) (Implication (Attack $_3 $_4 $_0) (KingExposed $_4 black $_0))))))"
+    },
+    {
+      "confidence": 0.9405,
+      "stamps": [
+        "obs_846fcca7328e6f88d2b780a3a3ed",
+        "rule_empty-tail"
+      ],
+      "strength": 1.0,
+      "term": "(PathEmpty Nil after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "confidence": 0.9405,
+      "stamps": [
+        "obs_f5bf59a17759052c11a901dd9d1a",
+        "rule_exposure-white"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (Owner $_7 black after_5b54a7fcebc62e76be2bc563) (Implication (Owner $_8 white after_5b54a7fcebc62e76be2bc563) (Implication (PieceKind $_8 king after_5b54a7fcebc62e76be2bc563) (Implication (Attack $_7 $_8 after_5b54a7fcebc62e76be2bc563) (KingExposed $_8 white after_5b54a7fcebc62e76be2bc563)))))"
+    },
+    {
+      "confidence": 0.7424999999999999,
+      "stamps": [
+        "obs_b316e6870749bf83d20e0d2f7e09",
+        "rule_queen-orthogonal",
+        "train_1936b074f913e417f052ee0e",
+        "train_1dc302c71c87d207d4f7e145",
+        "train_656c276fefde5f4f7bb52708"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (Clear p_8a7348_attacker $_9 orthogonal after_5b54a7fcebc62e76be2bc563) (Attack p_8a7348_attacker $_9 after_5b54a7fcebc62e76be2bc563))"
+    },
+    {
+      "confidence": 0.86625,
+      "stamps": [
+        "obs_b316e6870749bf83d20e0d2f7e09",
+        "rule_queen-diagonal",
+        "train_0f9ffe7085ab2da3214d311f",
+        "train_14ef3efdf7f245a1a5891288",
+        "train_188ab57dadd470196b5e9838",
+        "train_1c44c57c7a9f5699f2a364ab",
+        "train_383cf307ffd52bc6861caa39",
+        "train_bd2b603b876dfabc596637f2",
+        "train_ce75302c29ace9146f1b6f70"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (Clear p_8a7348_attacker $_10 diagonal after_5b54a7fcebc62e76be2bc563) (Attack p_8a7348_attacker $_10 after_5b54a7fcebc62e76be2bc563))"
+    },
+    {
+      "confidence": 0.931095,
+      "stamps": [
+        "obs_2701a767e19b515bf44aaf847b3e",
+        "obs_f5bf59a17759052c11a901dd9d1a",
+        "rule_exposure-white"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (Owner $_11 white after_5b54a7fcebc62e76be2bc563) (Implication (PieceKind $_11 king after_5b54a7fcebc62e76be2bc563) (Implication (Attack p_8a7348_attacker $_11 after_5b54a7fcebc62e76be2bc563) (KingExposed $_11 white after_5b54a7fcebc62e76be2bc563))))"
+    },
+    {
+      "confidence": 0.92178405,
+      "stamps": [
+        "obs_2701a767e19b515bf44aaf847b3e",
+        "obs_a927ecdb313403b6adff1eb05a7b",
+        "obs_f5bf59a17759052c11a901dd9d1a",
+        "rule_exposure-white"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (PieceKind p_8a7348_target king after_5b54a7fcebc62e76be2bc563) (Implication (Attack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563) (KingExposed p_8a7348_target white after_5b54a7fcebc62e76be2bc563)))"
+    },
+    {
+      "confidence": 0.9405,
+      "stamps": [
+        "obs_b547be32c31f5d7abaf77000d619",
+        "rule_extend-empty"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (PathEmpty $_12 after_5b54a7fcebc62e76be2bc563) (PathEmpty (Cons cell_1 $_12) after_5b54a7fcebc62e76be2bc563))"
+    },
+    {
+      "confidence": 0.9405,
+      "stamps": [
+        "obs_787a27019c4b569d121a60bd8778",
+        "rule_clear-path"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (PathEmpty (Cons cell_1 Nil) after_5b54a7fcebc62e76be2bc563) (Clear p_8a7348_attacker p_8a7348_target diagonal after_5b54a7fcebc62e76be2bc563))"
+    },
+    {
+      "confidence": 0.9405,
+      "stamps": [
+        "obs_787a27019c4b569d121a60bd8778",
+        "rule_clear-one"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (Empty cell_1 after_5b54a7fcebc62e76be2bc563) (Clear p_8a7348_attacker p_8a7348_target diagonal after_5b54a7fcebc62e76be2bc563))"
+    },
+    {
+      "confidence": 0.9503999999999998,
+      "stamps": [
+        "obs_eb95f1dff0a358bd81ddb00c846e",
+        "rule_obstruction",
+        "train_0f9ffe7085ab2da3214d311f",
+        "train_14ef3efdf7f245a1a5891288",
+        "train_16803c3963c90a56100eec67",
+        "train_188ab57dadd470196b5e9838",
+        "train_1936b074f913e417f052ee0e",
+        "train_1c44c57c7a9f5699f2a364ab",
+        "train_1dc302c71c87d207d4f7e145",
+        "train_36c5aaa65c53462c41917937",
+        "train_383cf307ffd52bc6861caa39",
+        "train_3c385a7be1978c46bed26ebe",
+        "train_61a4ac8c72120b56ac9c5348",
+        "train_656c276fefde5f4f7bb52708",
+        "train_6e92905319e3d206375b69bc",
+        "train_71f2c6bf92264c1876c4b8b4",
+        "train_7c69c5754d46cfd83bb05454",
+        "train_89650afc4510d4b59eda8b79",
+        "train_8d2871789a34962437100143",
+        "train_98e1a10d385599c4de5c61ca",
+        "train_bd2b603b876dfabc596637f2",
+        "train_c1e0771213830b61a2b017f5",
+        "train_cceef621aeba2032208779b0",
+        "train_ce75302c29ace9146f1b6f70",
+        "train_dde30f207a624ead9064e286",
+        "train_f86cecad12cd2e81a7bdd167"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (Occupied cell_1 after_5b54a7fcebc62e76be2bc563) (NoAttack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563))"
+    },
+    {
+      "confidence": 0.88454025,
+      "stamps": [
+        "obs_846fcca7328e6f88d2b780a3a3ed",
+        "obs_b547be32c31f5d7abaf77000d619",
+        "rule_empty-tail",
+        "rule_extend-empty"
+      ],
+      "strength": 1.0,
+      "term": "(PathEmpty (Cons cell_1 Nil) after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "confidence": 0.8319101051250001,
+      "stamps": [
+        "obs_787a27019c4b569d121a60bd8778",
+        "obs_846fcca7328e6f88d2b780a3a3ed",
+        "obs_b547be32c31f5d7abaf77000d619",
+        "rule_clear-path",
+        "rule_empty-tail",
+        "rule_extend-empty"
+      ],
+      "strength": 1.0,
+      "term": "(Clear p_8a7348_attacker p_8a7348_target diagonal after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "confidence": 0.931095,
+      "stamps": [
+        "obs_787a27019c4b569d121a60bd8778",
+        "obs_b547be32c31f5d7abaf77000d619",
+        "rule_clear-one"
+      ],
+      "strength": 1.0,
+      "term": "(Clear p_8a7348_attacker p_8a7348_target diagonal after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "confidence": 0.8065610437499999,
+      "stamps": [
+        "obs_787a27019c4b569d121a60bd8778",
+        "obs_b316e6870749bf83d20e0d2f7e09",
+        "obs_b547be32c31f5d7abaf77000d619",
+        "rule_clear-one",
+        "rule_queen-diagonal",
+        "train_0f9ffe7085ab2da3214d311f",
+        "train_14ef3efdf7f245a1a5891288",
+        "train_188ab57dadd470196b5e9838",
+        "train_1c44c57c7a9f5699f2a364ab",
+        "train_383cf307ffd52bc6861caa39",
+        "train_bd2b603b876dfabc596637f2",
+        "train_ce75302c29ace9146f1b6f70"
+      ],
+      "strength": 1.0,
+      "term": "(Attack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "confidence": 0.9125662095,
+      "stamps": [
+        "obs_04e21d0ffb07bc17a61e8ae5aed3",
+        "obs_2701a767e19b515bf44aaf847b3e",
+        "obs_a927ecdb313403b6adff1eb05a7b",
+        "obs_f5bf59a17759052c11a901dd9d1a",
+        "rule_exposure-white"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (Attack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563) (KingExposed p_8a7348_target white after_5b54a7fcebc62e76be2bc563))"
+    },
+    {
+      "confidence": 0.7360403544253011,
+      "stamps": [
+        "obs_04e21d0ffb07bc17a61e8ae5aed3",
+        "obs_2701a767e19b515bf44aaf847b3e",
+        "obs_787a27019c4b569d121a60bd8778",
+        "obs_a927ecdb313403b6adff1eb05a7b",
+        "obs_b316e6870749bf83d20e0d2f7e09",
+        "obs_b547be32c31f5d7abaf77000d619",
+        "obs_f5bf59a17759052c11a901dd9d1a",
+        "rule_clear-one",
+        "rule_exposure-white",
+        "rule_queen-diagonal",
+        "train_0f9ffe7085ab2da3214d311f",
+        "train_14ef3efdf7f245a1a5891288",
+        "train_188ab57dadd470196b5e9838",
+        "train_1c44c57c7a9f5699f2a364ab",
+        "train_383cf307ffd52bc6861caa39",
+        "train_bd2b603b876dfabc596637f2",
+        "train_ce75302c29ace9146f1b6f70"
+      ],
+      "strength": 1.0,
+      "term": "(KingExposed p_8a7348_target white after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "confidence": 0.7206421285645312,
+      "stamps": [
+        "obs_787a27019c4b569d121a60bd8778",
+        "obs_846fcca7328e6f88d2b780a3a3ed",
+        "obs_b316e6870749bf83d20e0d2f7e09",
+        "obs_b547be32c31f5d7abaf77000d619",
+        "rule_clear-path",
+        "rule_empty-tail",
+        "rule_extend-empty",
+        "rule_queen-diagonal",
+        "train_0f9ffe7085ab2da3214d311f",
+        "train_14ef3efdf7f245a1a5891288",
+        "train_188ab57dadd470196b5e9838",
+        "train_1c44c57c7a9f5699f2a364ab",
+        "train_383cf307ffd52bc6861caa39",
+        "train_bd2b603b876dfabc596637f2",
+        "train_ce75302c29ace9146f1b6f70"
+      ],
+      "strength": 1.0,
+      "term": "(Attack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "confidence": 0.657633655670146,
+      "stamps": [
+        "obs_04e21d0ffb07bc17a61e8ae5aed3",
+        "obs_2701a767e19b515bf44aaf847b3e",
+        "obs_787a27019c4b569d121a60bd8778",
+        "obs_846fcca7328e6f88d2b780a3a3ed",
+        "obs_a927ecdb313403b6adff1eb05a7b",
+        "obs_b316e6870749bf83d20e0d2f7e09",
+        "obs_b547be32c31f5d7abaf77000d619",
+        "obs_f5bf59a17759052c11a901dd9d1a",
+        "rule_clear-path",
+        "rule_empty-tail",
+        "rule_exposure-white",
+        "rule_extend-empty",
+        "rule_queen-diagonal",
+        "train_0f9ffe7085ab2da3214d311f",
+        "train_14ef3efdf7f245a1a5891288",
+        "train_188ab57dadd470196b5e9838",
+        "train_1c44c57c7a9f5699f2a364ab",
+        "train_383cf307ffd52bc6861caa39",
+        "train_bd2b603b876dfabc596637f2",
+        "train_ce75302c29ace9146f1b6f70"
+      ],
+      "strength": 1.0,
+      "term": "(KingExposed p_8a7348_target white after_5b54a7fcebc62e76be2bc563)"
+    }
+  ],
+  "rules": [
+    {
+      "ancestry": [],
+      "confidence": 0.95,
+      "origin": "supplied-domain-rule-template",
+      "stamps": [
+        "rule_empty-tail"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (State $s) (PathEmpty Nil $s))"
+    },
+    {
+      "ancestry": [],
+      "confidence": 0.95,
+      "origin": "supplied-domain-rule-template",
+      "stamps": [
+        "rule_extend-empty"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (Empty $c $s) (Implication (PathEmpty $tail $s) (PathEmpty (Cons $c $tail) $s)))"
+    },
+    {
+      "ancestry": [],
+      "confidence": 0.95,
+      "origin": "supplied-domain-rule-template",
+      "stamps": [
+        "rule_clear-path"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (RayPath $a $t $path $shape $s) (Implication (PathEmpty $path $s) (Clear $a $t $shape $s)))"
+    },
+    {
+      "ancestry": [],
+      "confidence": 0.95,
+      "origin": "supplied-domain-rule-template",
+      "stamps": [
+        "rule_clear-one"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (RayPath $a $t (Cons $c Nil) $shape $s) (Implication (Empty $c $s) (Clear $a $t $shape $s)))"
+    },
+    {
+      "ancestry": [
+        "synthetic-geometry-a550f5d3a0b68cab1d92",
+        "synthetic-geometry-831457c7d77343068ef7",
+        "synthetic-geometry-82107f6f9b8af0a3b02a",
+        "synthetic-geometry-40505c9adca8851ecda2",
+        "synthetic-geometry-408a0b111079efa3c5b9",
+        "synthetic-geometry-39da4696f2c9d9bc87c0",
+        "synthetic-geometry-e99911dc6c1cc13ce3df",
+        "synthetic-geometry-4b0d0e1637d707e6aeda"
+      ],
+      "confidence": 0.8888888888888888,
+      "origin": "learned-rule-truth-value",
+      "stamps": [
+        "rule_rook-attack",
+        "train_98e1a10d385599c4de5c61ca",
+        "train_dde30f207a624ead9064e286",
+        "train_3c385a7be1978c46bed26ebe",
+        "train_cceef621aeba2032208779b0",
+        "train_6e92905319e3d206375b69bc",
+        "train_7c69c5754d46cfd83bb05454",
+        "train_61a4ac8c72120b56ac9c5348",
+        "train_8d2871789a34962437100143"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (PieceKind $a rook $s) (Implication (Clear $a $t orthogonal $s) (Attack $a $t $s)))"
+    },
+    {
+      "ancestry": [
+        "synthetic-geometry-832d3af68e7a4a2cf912",
+        "synthetic-geometry-bd16f9fee9ba08c51cde",
+        "synthetic-geometry-a3474b5920d2c6eec48d",
+        "synthetic-geometry-5f999d8f6cd173de59da",
+        "synthetic-geometry-6ba244f2d1af7c855da0",
+        "synthetic-geometry-340d3766708c2438a9ef"
+      ],
+      "confidence": 0.8571428571428572,
+      "origin": "learned-rule-truth-value",
+      "stamps": [
+        "rule_bishop-attack",
+        "train_c1e0771213830b61a2b017f5",
+        "train_36c5aaa65c53462c41917937",
+        "train_16803c3963c90a56100eec67",
+        "train_89650afc4510d4b59eda8b79",
+        "train_f86cecad12cd2e81a7bdd167",
+        "train_71f2c6bf92264c1876c4b8b4"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (PieceKind $a bishop $s) (Implication (Clear $a $t diagonal $s) (Attack $a $t $s)))"
+    },
+    {
+      "ancestry": [
+        "synthetic-geometry-b0e43cf7dfc004e27302",
+        "synthetic-geometry-0b372b0515781ef63b77",
+        "synthetic-geometry-a6d527067e86ca1e0ccf"
+      ],
+      "confidence": 0.75,
+      "origin": "learned-rule-truth-value",
+      "stamps": [
+        "rule_queen-orthogonal",
+        "train_1936b074f913e417f052ee0e",
+        "train_1dc302c71c87d207d4f7e145",
+        "train_656c276fefde5f4f7bb52708"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (PieceKind $a queen $s) (Implication (Clear $a $t orthogonal $s) (Attack $a $t $s)))"
+    },
+    {
+      "ancestry": [
+        "synthetic-geometry-65bea457fc7bf0b87800",
+        "synthetic-geometry-833d06264c44b94f1312",
+        "synthetic-geometry-23dee8d5c1036143aa2e",
+        "synthetic-geometry-c92419a26e2bc5c9729b",
+        "synthetic-geometry-c0b47dfae5a52e6af723",
+        "synthetic-geometry-56436c9b3eba9ed0c7e1",
+        "synthetic-geometry-4ecf4ab581a89ab34815"
+      ],
+      "confidence": 0.875,
+      "origin": "learned-rule-truth-value",
+      "stamps": [
+        "rule_queen-diagonal",
+        "train_ce75302c29ace9146f1b6f70",
+        "train_14ef3efdf7f245a1a5891288",
+        "train_bd2b603b876dfabc596637f2",
+        "train_383cf307ffd52bc6861caa39",
+        "train_188ab57dadd470196b5e9838",
+        "train_0f9ffe7085ab2da3214d311f",
+        "train_1c44c57c7a9f5699f2a364ab"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (PieceKind $a queen $s) (Implication (Clear $a $t diagonal $s) (Attack $a $t $s)))"
+    },
+    {
+      "ancestry": [
+        "synthetic-geometry-b0e43cf7dfc004e27302",
+        "synthetic-geometry-832d3af68e7a4a2cf912",
+        "synthetic-geometry-a550f5d3a0b68cab1d92",
+        "synthetic-geometry-65bea457fc7bf0b87800",
+        "synthetic-geometry-831457c7d77343068ef7",
+        "synthetic-geometry-82107f6f9b8af0a3b02a",
+        "synthetic-geometry-bd16f9fee9ba08c51cde",
+        "synthetic-geometry-a3474b5920d2c6eec48d",
+        "synthetic-geometry-833d06264c44b94f1312",
+        "synthetic-geometry-23dee8d5c1036143aa2e",
+        "synthetic-geometry-5f999d8f6cd173de59da",
+        "synthetic-geometry-c92419a26e2bc5c9729b",
+        "synthetic-geometry-c0b47dfae5a52e6af723",
+        "synthetic-geometry-0b372b0515781ef63b77",
+        "synthetic-geometry-40505c9adca8851ecda2",
+        "synthetic-geometry-408a0b111079efa3c5b9",
+        "synthetic-geometry-56436c9b3eba9ed0c7e1",
+        "synthetic-geometry-6ba244f2d1af7c855da0",
+        "synthetic-geometry-a6d527067e86ca1e0ccf",
+        "synthetic-geometry-39da4696f2c9d9bc87c0",
+        "synthetic-geometry-340d3766708c2438a9ef",
+        "synthetic-geometry-e99911dc6c1cc13ce3df",
+        "synthetic-geometry-4ecf4ab581a89ab34815",
+        "synthetic-geometry-4b0d0e1637d707e6aeda"
+      ],
+      "confidence": 0.9599999999999999,
+      "origin": "learned-rule-truth-value",
+      "stamps": [
+        "rule_obstruction",
+        "train_1936b074f913e417f052ee0e",
+        "train_c1e0771213830b61a2b017f5",
+        "train_98e1a10d385599c4de5c61ca",
+        "train_ce75302c29ace9146f1b6f70",
+        "train_dde30f207a624ead9064e286",
+        "train_3c385a7be1978c46bed26ebe",
+        "train_36c5aaa65c53462c41917937",
+        "train_16803c3963c90a56100eec67",
+        "train_14ef3efdf7f245a1a5891288",
+        "train_bd2b603b876dfabc596637f2",
+        "train_89650afc4510d4b59eda8b79",
+        "train_383cf307ffd52bc6861caa39",
+        "train_188ab57dadd470196b5e9838",
+        "train_1dc302c71c87d207d4f7e145",
+        "train_cceef621aeba2032208779b0",
+        "train_6e92905319e3d206375b69bc",
+        "train_0f9ffe7085ab2da3214d311f",
+        "train_f86cecad12cd2e81a7bdd167",
+        "train_656c276fefde5f4f7bb52708",
+        "train_7c69c5754d46cfd83bb05454",
+        "train_71f2c6bf92264c1876c4b8b4",
+        "train_61a4ac8c72120b56ac9c5348",
+        "train_1c44c57c7a9f5699f2a364ab",
+        "train_8d2871789a34962437100143"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (RayMember $a $t $c $s) (Implication (Occupied $c $s) (NoAttack $a $t $s)))"
+    },
+    {
+      "ancestry": [],
+      "confidence": 0.95,
+      "origin": "supplied-domain-rule-template",
+      "stamps": [
+        "rule_exposure-white"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (OriginalActor $s white) (Implication (Owner $a black $s) (Implication (Owner $t white $s) (Implication (PieceKind $t king $s) (Implication (Attack $a $t $s) (KingExposed $t white $s))))))"
+    },
+    {
+      "ancestry": [],
+      "confidence": 0.95,
+      "origin": "supplied-domain-rule-template",
+      "stamps": [
+        "rule_exposure-black"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (OriginalActor $s black) (Implication (Owner $a white $s) (Implication (Owner $t black $s) (Implication (PieceKind $t king $s) (Implication (Attack $a $t $s) (KingExposed $t black $s))))))"
+    }
+  ],
+  "selected": [
+    {
+      "confidence": 0.99,
+      "stamps": [
+        "obs_846fcca7328e6f88d2b780a3a3ed"
+      ],
+      "strength": 1.0,
+      "term": "(State after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "confidence": 0.99,
+      "stamps": [
+        "obs_f5bf59a17759052c11a901dd9d1a"
+      ],
+      "strength": 1.0,
+      "term": "(OriginalActor after_5b54a7fcebc62e76be2bc563 white)"
+    },
+    {
+      "confidence": 0.99,
+      "stamps": [
+        "obs_b9117c753754a550a545a1e99501"
+      ],
+      "strength": 1.0,
+      "term": "(History after_5b54a7fcebc62e76be2bc563 hypothetical_ddfa1b688c291f4a1f2581fb)"
+    },
+    {
+      "confidence": 0.99,
+      "stamps": [
+        "obs_b316e6870749bf83d20e0d2f7e09"
+      ],
+      "strength": 1.0,
+      "term": "(PieceKind p_8a7348_attacker queen after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "confidence": 0.99,
+      "stamps": [
+        "obs_2701a767e19b515bf44aaf847b3e"
+      ],
+      "strength": 1.0,
+      "term": "(Owner p_8a7348_attacker black after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "confidence": 0.99,
+      "stamps": [
+        "obs_fd76689cc9a7f15fd6f66475f8aa"
+      ],
+      "strength": 1.0,
+      "term": "(Occupies p_8a7348_attacker cell_2 after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "confidence": 0.99,
+      "stamps": [
+        "obs_04e21d0ffb07bc17a61e8ae5aed3"
+      ],
+      "strength": 1.0,
+      "term": "(PieceKind p_8a7348_target king after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "confidence": 0.99,
+      "stamps": [
+        "obs_a927ecdb313403b6adff1eb05a7b"
+      ],
+      "strength": 1.0,
+      "term": "(Owner p_8a7348_target white after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "confidence": 0.99,
+      "stamps": [
+        "obs_4b640b4e44ae856c01dc96f62576"
+      ],
+      "strength": 1.0,
+      "term": "(Occupies p_8a7348_target cell_0 after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "confidence": 0.99,
+      "stamps": [
+        "obs_705637bafc99c4739dd94f67967f"
+      ],
+      "strength": 1.0,
+      "term": "(Occupied cell_0 after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "confidence": 0.99,
+      "stamps": [
+        "obs_b547be32c31f5d7abaf77000d619"
+      ],
+      "strength": 1.0,
+      "term": "(Empty cell_1 after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "confidence": 0.99,
+      "stamps": [
+        "obs_494c5c617d24b6a9b81cce4216ff"
+      ],
+      "strength": 1.0,
+      "term": "(Occupied cell_2 after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "confidence": 0.99,
+      "stamps": [
+        "obs_fc85811c3707ad0d145bd542be85"
+      ],
+      "strength": 1.0,
+      "term": "(RelativeOffset p_8a7348_attacker p_8a7348_target -2 2 after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "confidence": 0.99,
+      "stamps": [
+        "obs_787a27019c4b569d121a60bd8778"
+      ],
+      "strength": 1.0,
+      "term": "(RayPath p_8a7348_attacker p_8a7348_target (Cons cell_1 Nil) diagonal after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "confidence": 0.99,
+      "stamps": [
+        "obs_eb95f1dff0a358bd81ddb00c846e"
+      ],
+      "strength": 1.0,
+      "term": "(RayMember p_8a7348_attacker p_8a7348_target cell_1 after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "confidence": 0.99,
+      "stamps": [
+        "obs_0ede88a646a1c38f2f26339afd01"
+      ],
+      "strength": 1.0,
+      "term": "(OrderedRayCell p_8a7348_attacker p_8a7348_target 0 cell_1 after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "confidence": 0.9599999999999999,
+      "stamps": [
+        "rule_obstruction",
+        "train_1936b074f913e417f052ee0e",
+        "train_c1e0771213830b61a2b017f5",
+        "train_98e1a10d385599c4de5c61ca",
+        "train_ce75302c29ace9146f1b6f70",
+        "train_dde30f207a624ead9064e286",
+        "train_3c385a7be1978c46bed26ebe",
+        "train_36c5aaa65c53462c41917937",
+        "train_16803c3963c90a56100eec67",
+        "train_14ef3efdf7f245a1a5891288",
+        "train_bd2b603b876dfabc596637f2",
+        "train_89650afc4510d4b59eda8b79",
+        "train_383cf307ffd52bc6861caa39",
+        "train_188ab57dadd470196b5e9838",
+        "train_1dc302c71c87d207d4f7e145",
+        "train_cceef621aeba2032208779b0",
+        "train_6e92905319e3d206375b69bc",
+        "train_0f9ffe7085ab2da3214d311f",
+        "train_f86cecad12cd2e81a7bdd167",
+        "train_656c276fefde5f4f7bb52708",
+        "train_7c69c5754d46cfd83bb05454",
+        "train_71f2c6bf92264c1876c4b8b4",
+        "train_61a4ac8c72120b56ac9c5348",
+        "train_1c44c57c7a9f5699f2a364ab",
+        "train_8d2871789a34962437100143"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (RayMember $_0 $_1 $_2 $_3) (Implication (Occupied $_2 $_3) (NoAttack $_0 $_1 $_3)))"
+    },
+    {
+      "confidence": 0.9503999999999998,
+      "stamps": [
+        "obs_eb95f1dff0a358bd81ddb00c846e",
+        "rule_obstruction",
+        "train_0f9ffe7085ab2da3214d311f",
+        "train_14ef3efdf7f245a1a5891288",
+        "train_16803c3963c90a56100eec67",
+        "train_188ab57dadd470196b5e9838",
+        "train_1936b074f913e417f052ee0e",
+        "train_1c44c57c7a9f5699f2a364ab",
+        "train_1dc302c71c87d207d4f7e145",
+        "train_36c5aaa65c53462c41917937",
+        "train_383cf307ffd52bc6861caa39",
+        "train_3c385a7be1978c46bed26ebe",
+        "train_61a4ac8c72120b56ac9c5348",
+        "train_656c276fefde5f4f7bb52708",
+        "train_6e92905319e3d206375b69bc",
+        "train_71f2c6bf92264c1876c4b8b4",
+        "train_7c69c5754d46cfd83bb05454",
+        "train_89650afc4510d4b59eda8b79",
+        "train_8d2871789a34962437100143",
+        "train_98e1a10d385599c4de5c61ca",
+        "train_bd2b603b876dfabc596637f2",
+        "train_c1e0771213830b61a2b017f5",
+        "train_cceef621aeba2032208779b0",
+        "train_ce75302c29ace9146f1b6f70",
+        "train_dde30f207a624ead9064e286",
+        "train_f86cecad12cd2e81a7bdd167"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (Occupied cell_1 after_5b54a7fcebc62e76be2bc563) (NoAttack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563))"
+    },
+    {
+      "confidence": 0.95,
+      "stamps": [
+        "rule_empty-tail"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (State $_0) (PathEmpty Nil $_0))"
+    },
+    {
+      "confidence": 0.95,
+      "stamps": [
+        "rule_extend-empty"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (Empty $_0 $_1) (Implication (PathEmpty $_2 $_1) (PathEmpty (Cons $_0 $_2) $_1)))"
+    },
+    {
+      "confidence": 0.95,
+      "stamps": [
+        "rule_clear-path"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (RayPath $_0 $_1 $_2 $_3 $_4) (Implication (PathEmpty $_2 $_4) (Clear $_0 $_1 $_3 $_4)))"
+    },
+    {
+      "confidence": 0.95,
+      "stamps": [
+        "rule_clear-one"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (RayPath $_0 $_1 (Cons $_2 Nil) $_3 $_4) (Implication (Empty $_2 $_4) (Clear $_0 $_1 $_3 $_4)))"
+    },
+    {
+      "confidence": 0.95,
+      "stamps": [
+        "rule_exposure-white"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (OriginalActor $_0 white) (Implication (Owner $_1 black $_0) (Implication (Owner $_2 white $_0) (Implication (PieceKind $_2 king $_0) (Implication (Attack $_1 $_2 $_0) (KingExposed $_2 white $_0))))))"
+    },
+    {
+      "confidence": 0.95,
+      "stamps": [
+        "rule_exposure-black"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (OriginalActor $_0 black) (Implication (Owner $_1 white $_0) (Implication (Owner $_2 black $_0) (Implication (PieceKind $_2 king $_0) (Implication (Attack $_1 $_2 $_0) (KingExposed $_2 black $_0))))))"
+    },
+    {
+      "confidence": 0.9405,
+      "stamps": [
+        "obs_846fcca7328e6f88d2b780a3a3ed",
+        "rule_empty-tail"
+      ],
+      "strength": 1.0,
+      "term": "(PathEmpty Nil after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "confidence": 0.9405,
+      "stamps": [
+        "obs_f5bf59a17759052c11a901dd9d1a",
+        "rule_exposure-white"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (Owner $_0 black after_5b54a7fcebc62e76be2bc563) (Implication (Owner $_1 white after_5b54a7fcebc62e76be2bc563) (Implication (PieceKind $_1 king after_5b54a7fcebc62e76be2bc563) (Implication (Attack $_0 $_1 after_5b54a7fcebc62e76be2bc563) (KingExposed $_1 white after_5b54a7fcebc62e76be2bc563)))))"
+    },
+    {
+      "confidence": 0.9405,
+      "stamps": [
+        "obs_b547be32c31f5d7abaf77000d619",
+        "rule_extend-empty"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (PathEmpty $_0 after_5b54a7fcebc62e76be2bc563) (PathEmpty (Cons cell_1 $_0) after_5b54a7fcebc62e76be2bc563))"
+    },
+    {
+      "confidence": 0.9405,
+      "stamps": [
+        "obs_787a27019c4b569d121a60bd8778",
+        "rule_clear-path"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (PathEmpty (Cons cell_1 Nil) after_5b54a7fcebc62e76be2bc563) (Clear p_8a7348_attacker p_8a7348_target diagonal after_5b54a7fcebc62e76be2bc563))"
+    },
+    {
+      "confidence": 0.9405,
+      "stamps": [
+        "obs_787a27019c4b569d121a60bd8778",
+        "rule_clear-one"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (Empty cell_1 after_5b54a7fcebc62e76be2bc563) (Clear p_8a7348_attacker p_8a7348_target diagonal after_5b54a7fcebc62e76be2bc563))"
+    },
+    {
+      "confidence": 0.931095,
+      "stamps": [
+        "obs_2701a767e19b515bf44aaf847b3e",
+        "obs_f5bf59a17759052c11a901dd9d1a",
+        "rule_exposure-white"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (Owner $_0 white after_5b54a7fcebc62e76be2bc563) (Implication (PieceKind $_0 king after_5b54a7fcebc62e76be2bc563) (Implication (Attack p_8a7348_attacker $_0 after_5b54a7fcebc62e76be2bc563) (KingExposed $_0 white after_5b54a7fcebc62e76be2bc563))))"
+    },
+    {
+      "confidence": 0.931095,
+      "stamps": [
+        "obs_787a27019c4b569d121a60bd8778",
+        "obs_b547be32c31f5d7abaf77000d619",
+        "rule_clear-one"
+      ],
+      "strength": 1.0,
+      "term": "(Clear p_8a7348_attacker p_8a7348_target diagonal after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "confidence": 0.92178405,
+      "stamps": [
+        "obs_2701a767e19b515bf44aaf847b3e",
+        "obs_a927ecdb313403b6adff1eb05a7b",
+        "obs_f5bf59a17759052c11a901dd9d1a",
+        "rule_exposure-white"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (PieceKind p_8a7348_target king after_5b54a7fcebc62e76be2bc563) (Implication (Attack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563) (KingExposed p_8a7348_target white after_5b54a7fcebc62e76be2bc563)))"
+    },
+    {
+      "confidence": 0.9125662095,
+      "stamps": [
+        "obs_04e21d0ffb07bc17a61e8ae5aed3",
+        "obs_2701a767e19b515bf44aaf847b3e",
+        "obs_a927ecdb313403b6adff1eb05a7b",
+        "obs_f5bf59a17759052c11a901dd9d1a",
+        "rule_exposure-white"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (Attack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563) (KingExposed p_8a7348_target white after_5b54a7fcebc62e76be2bc563))"
+    },
+    {
+      "confidence": 0.8888888888888888,
+      "stamps": [
+        "rule_rook-attack",
+        "train_98e1a10d385599c4de5c61ca",
+        "train_dde30f207a624ead9064e286",
+        "train_3c385a7be1978c46bed26ebe",
+        "train_cceef621aeba2032208779b0",
+        "train_6e92905319e3d206375b69bc",
+        "train_7c69c5754d46cfd83bb05454",
+        "train_61a4ac8c72120b56ac9c5348",
+        "train_8d2871789a34962437100143"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (PieceKind $_0 rook $_1) (Implication (Clear $_0 $_2 orthogonal $_1) (Attack $_0 $_2 $_1)))"
+    },
+    {
+      "confidence": 0.88454025,
+      "stamps": [
+        "obs_846fcca7328e6f88d2b780a3a3ed",
+        "obs_b547be32c31f5d7abaf77000d619",
+        "rule_empty-tail",
+        "rule_extend-empty"
+      ],
+      "strength": 1.0,
+      "term": "(PathEmpty (Cons cell_1 Nil) after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "confidence": 0.875,
+      "stamps": [
+        "rule_queen-diagonal",
+        "train_ce75302c29ace9146f1b6f70",
+        "train_14ef3efdf7f245a1a5891288",
+        "train_bd2b603b876dfabc596637f2",
+        "train_383cf307ffd52bc6861caa39",
+        "train_188ab57dadd470196b5e9838",
+        "train_0f9ffe7085ab2da3214d311f",
+        "train_1c44c57c7a9f5699f2a364ab"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (PieceKind $_0 queen $_1) (Implication (Clear $_0 $_2 diagonal $_1) (Attack $_0 $_2 $_1)))"
+    },
+    {
+      "confidence": 0.86625,
+      "stamps": [
+        "obs_b316e6870749bf83d20e0d2f7e09",
+        "rule_queen-diagonal",
+        "train_0f9ffe7085ab2da3214d311f",
+        "train_14ef3efdf7f245a1a5891288",
+        "train_188ab57dadd470196b5e9838",
+        "train_1c44c57c7a9f5699f2a364ab",
+        "train_383cf307ffd52bc6861caa39",
+        "train_bd2b603b876dfabc596637f2",
+        "train_ce75302c29ace9146f1b6f70"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (Clear p_8a7348_attacker $_0 diagonal after_5b54a7fcebc62e76be2bc563) (Attack p_8a7348_attacker $_0 after_5b54a7fcebc62e76be2bc563))"
+    },
+    {
+      "confidence": 0.8571428571428572,
+      "stamps": [
+        "rule_bishop-attack",
+        "train_c1e0771213830b61a2b017f5",
+        "train_36c5aaa65c53462c41917937",
+        "train_16803c3963c90a56100eec67",
+        "train_89650afc4510d4b59eda8b79",
+        "train_f86cecad12cd2e81a7bdd167",
+        "train_71f2c6bf92264c1876c4b8b4"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (PieceKind $_0 bishop $_1) (Implication (Clear $_0 $_2 diagonal $_1) (Attack $_0 $_2 $_1)))"
+    },
+    {
+      "confidence": 0.8319101051250001,
+      "stamps": [
+        "obs_787a27019c4b569d121a60bd8778",
+        "obs_846fcca7328e6f88d2b780a3a3ed",
+        "obs_b547be32c31f5d7abaf77000d619",
+        "rule_clear-path",
+        "rule_empty-tail",
+        "rule_extend-empty"
+      ],
+      "strength": 1.0,
+      "term": "(Clear p_8a7348_attacker p_8a7348_target diagonal after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "confidence": 0.8065610437499999,
+      "stamps": [
+        "obs_787a27019c4b569d121a60bd8778",
+        "obs_b316e6870749bf83d20e0d2f7e09",
+        "obs_b547be32c31f5d7abaf77000d619",
+        "rule_clear-one",
+        "rule_queen-diagonal",
+        "train_0f9ffe7085ab2da3214d311f",
+        "train_14ef3efdf7f245a1a5891288",
+        "train_188ab57dadd470196b5e9838",
+        "train_1c44c57c7a9f5699f2a364ab",
+        "train_383cf307ffd52bc6861caa39",
+        "train_bd2b603b876dfabc596637f2",
+        "train_ce75302c29ace9146f1b6f70"
+      ],
+      "strength": 1.0,
+      "term": "(Attack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "confidence": 0.75,
+      "stamps": [
+        "rule_queen-orthogonal",
+        "train_1936b074f913e417f052ee0e",
+        "train_1dc302c71c87d207d4f7e145",
+        "train_656c276fefde5f4f7bb52708"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (PieceKind $_0 queen $_1) (Implication (Clear $_0 $_2 orthogonal $_1) (Attack $_0 $_2 $_1)))"
+    },
+    {
+      "confidence": 0.7424999999999999,
+      "stamps": [
+        "obs_b316e6870749bf83d20e0d2f7e09",
+        "rule_queen-orthogonal",
+        "train_1936b074f913e417f052ee0e",
+        "train_1dc302c71c87d207d4f7e145",
+        "train_656c276fefde5f4f7bb52708"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (Clear p_8a7348_attacker $_0 orthogonal after_5b54a7fcebc62e76be2bc563) (Attack p_8a7348_attacker $_0 after_5b54a7fcebc62e76be2bc563))"
+    },
+    {
+      "confidence": 0.7360403544253011,
+      "stamps": [
+        "obs_04e21d0ffb07bc17a61e8ae5aed3",
+        "obs_2701a767e19b515bf44aaf847b3e",
+        "obs_787a27019c4b569d121a60bd8778",
+        "obs_a927ecdb313403b6adff1eb05a7b",
+        "obs_b316e6870749bf83d20e0d2f7e09",
+        "obs_b547be32c31f5d7abaf77000d619",
+        "obs_f5bf59a17759052c11a901dd9d1a",
+        "rule_clear-one",
+        "rule_exposure-white",
+        "rule_queen-diagonal",
+        "train_0f9ffe7085ab2da3214d311f",
+        "train_14ef3efdf7f245a1a5891288",
+        "train_188ab57dadd470196b5e9838",
+        "train_1c44c57c7a9f5699f2a364ab",
+        "train_383cf307ffd52bc6861caa39",
+        "train_bd2b603b876dfabc596637f2",
+        "train_ce75302c29ace9146f1b6f70"
+      ],
+      "strength": 1.0,
+      "term": "(KingExposed p_8a7348_target white after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "confidence": 0.7206421285645312,
+      "stamps": [
+        "obs_787a27019c4b569d121a60bd8778",
+        "obs_846fcca7328e6f88d2b780a3a3ed",
+        "obs_b316e6870749bf83d20e0d2f7e09",
+        "obs_b547be32c31f5d7abaf77000d619",
+        "rule_clear-path",
+        "rule_empty-tail",
+        "rule_extend-empty",
+        "rule_queen-diagonal",
+        "train_0f9ffe7085ab2da3214d311f",
+        "train_14ef3efdf7f245a1a5891288",
+        "train_188ab57dadd470196b5e9838",
+        "train_1c44c57c7a9f5699f2a364ab",
+        "train_383cf307ffd52bc6861caa39",
+        "train_bd2b603b876dfabc596637f2",
+        "train_ce75302c29ace9146f1b6f70"
+      ],
+      "strength": 1.0,
+      "term": "(Attack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563)"
+    },
+    {
+      "confidence": 0.657633655670146,
+      "stamps": [
+        "obs_04e21d0ffb07bc17a61e8ae5aed3",
+        "obs_2701a767e19b515bf44aaf847b3e",
+        "obs_787a27019c4b569d121a60bd8778",
+        "obs_846fcca7328e6f88d2b780a3a3ed",
+        "obs_a927ecdb313403b6adff1eb05a7b",
+        "obs_b316e6870749bf83d20e0d2f7e09",
+        "obs_b547be32c31f5d7abaf77000d619",
+        "obs_f5bf59a17759052c11a901dd9d1a",
+        "rule_clear-path",
+        "rule_empty-tail",
+        "rule_exposure-white",
+        "rule_extend-empty",
+        "rule_queen-diagonal",
+        "train_0f9ffe7085ab2da3214d311f",
+        "train_14ef3efdf7f245a1a5891288",
+        "train_188ab57dadd470196b5e9838",
+        "train_1c44c57c7a9f5699f2a364ab",
+        "train_383cf307ffd52bc6861caa39",
+        "train_bd2b603b876dfabc596637f2",
+        "train_ce75302c29ace9146f1b6f70"
+      ],
+      "strength": 1.0,
+      "term": "(KingExposed p_8a7348_target white after_5b54a7fcebc62e76be2bc563)"
+    }
+  ],
+  "stage": "B-raw-observations",
+  "supplied_fact_count": 16,
+  "supplied_rule_count": 11,
+  "target_semantics": "Occupancy-constrained sliding influence, including friendly destination; no legal capture or move legality",
+  "usage": {
+    "derivation_calls": 1,
+    "derived_statements": 29,
+    "host_grounded_instances": 0,
+    "initial_beliefs": 27,
+    "initial_tasks": 27,
+    "native_processes": 1,
+    "native_schema_instances": "Not completely observable in native trace",
+    "repeated_selected_terms": 3,
+    "retained_beliefs": 45,
+    "retained_tasks": 0,
+    "selected_tasks": 45
+  }
+}

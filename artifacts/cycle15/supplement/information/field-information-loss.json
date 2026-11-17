@@ -1,0 +1,222 @@
+{
+  "panel": [
+    {
+      "connected_result": {
+        "answer": null,
+        "classification": "supported-negative",
+        "contrary": {
+          "confidence": 0.931095,
+          "stamps": [
+            "obs_2923fac9967bc531dfb7438bdec1",
+            "obs_3dc6c634a5b9a9eb03a80505bc7d",
+            "rule_obstruction"
+          ],
+          "strength": 1.0
+        },
+        "grounding_mode": "native-schema-binding",
+        "incomplete": false,
+        "peak_rss_kib": 40396,
+        "proof": {
+          "bytes": 63699,
+          "path": "/home/purplezky/cycle15-evidence-20261117/supplement/information/raw/6057f99e6eb9d24d50730903208687abde157eb7f9c47a6f9eac330cbc17662d.json",
+          "sha256": "6057f99e6eb9d24d50730903208687abde157eb7f9c47a6f9eac330cbc17662d"
+        },
+        "query": "(Attack specified_attacker specified_target field_before)",
+        "usage": {
+          "derivation_calls": 1,
+          "derived_statements": 10,
+          "host_grounded_instances": 0,
+          "initial_beliefs": 30,
+          "initial_tasks": 30,
+          "native_processes": 1,
+          "native_schema_instances": "Not completely observable in native trace",
+          "repeated_selected_terms": 0,
+          "retained_beliefs": 40,
+          "retained_tasks": 0,
+          "selected_tasks": 40
+        },
+        "wall_seconds": 2.3943634163588285
+      },
+      "field_evidence": {
+        "bytes": 7065623,
+        "path": "/home/purplezky/cycle15-evidence-20261117/supplement/information/raw/3d3e3a58c52065a23afe548f49dc5a924d84eed9fb4aaedd15b463f30068e040.json",
+        "sha256": "3d3e3a58c52065a23afe548f49dc5a924d84eed9fb4aaedd15b463f30068e040"
+      },
+      "full_attack_field_counts": {
+        "contradicted": 284,
+        "supported": 26,
+        "unknown": 5
+      },
+      "query_count": 315,
+      "reference": {
+        "label": false,
+        "reason": "python-chess occupancy-constrained influence; not legal capture"
+      },
+      "state": {
+        "actor": "white",
+        "history": "observed",
+        "id": "field_before",
+        "pieces": [
+          {
+            "cell": [
+              0,
+              0
+            ],
+            "id": "specified_attacker",
+            "kind": "rook",
+            "owner": "black"
+          },
+          {
+            "cell": [
+              7,
+              0
+            ],
+            "id": "other_attacker",
+            "kind": "rook",
+            "owner": "black"
+          },
+          {
+            "cell": [
+              0,
+              2
+            ],
+            "id": "specified_target",
+            "kind": "knight",
+            "owner": "white"
+          },
+          {
+            "cell": [
+              7,
+              2
+            ],
+            "id": "other_target",
+            "kind": "knight",
+            "owner": "white"
+          },
+          {
+            "cell": [
+              0,
+              1
+            ],
+            "id": "blocker",
+            "kind": "pawn",
+            "owner": "white"
+          }
+        ],
+        "root": "equal_field_root",
+        "unknown": []
+      }
+    },
+    {
+      "connected_result": {
+        "answer": {
+          "confidence": 0.8756948475,
+          "stamps": [
+            "obs_5bd9c231a18b500e7560b521ff53",
+            "obs_940822ebefdb80d3bf15cbe67ae1",
+            "obs_998d86c556d30717e1a92b44185f",
+            "rule_clear-one",
+            "rule_rook-attack"
+          ],
+          "strength": 1.0
+        },
+        "classification": "supported-positive",
+        "contrary": null,
+        "grounding_mode": "native-schema-binding",
+        "incomplete": false,
+        "peak_rss_kib": 45988,
+        "proof": {
+          "bytes": 69139,
+          "path": "/home/purplezky/cycle15-evidence-20261117/supplement/information/raw/4eff6da2b8d1609ee649ce83107941a0eb15b7dfbf90f7b98c2494da06cc64f5.json",
+          "sha256": "4eff6da2b8d1609ee649ce83107941a0eb15b7dfbf90f7b98c2494da06cc64f5"
+        },
+        "query": "(Attack specified_attacker specified_target after_a940199d563c184f8276f6ad)",
+        "usage": {
+          "derivation_calls": 1,
+          "derived_statements": 14,
+          "host_grounded_instances": 0,
+          "initial_beliefs": 27,
+          "initial_tasks": 27,
+          "native_processes": 1,
+          "native_schema_instances": "Not completely observable in native trace",
+          "repeated_selected_terms": 2,
+          "retained_beliefs": 41,
+          "retained_tasks": 0,
+          "selected_tasks": 41
+        },
+        "wall_seconds": 2.1152996625751257
+      },
+      "field_evidence": {
+        "bytes": 7065839,
+        "path": "/home/purplezky/cycle15-evidence-20261117/supplement/information/raw/ce04bcf3e46e28bea9663112511a19294d75a17958a9d57de8318f494b23ebfb.json",
+        "sha256": "ce04bcf3e46e28bea9663112511a19294d75a17958a9d57de8318f494b23ebfb"
+      },
+      "full_attack_field_counts": {
+        "contradicted": 284,
+        "supported": 26,
+        "unknown": 5
+      },
+      "query_count": 315,
+      "reference": {
+        "label": true,
+        "reason": "python-chess occupancy-constrained influence; not legal capture"
+      },
+      "state": {
+        "actor": "white",
+        "history": "hypothetical_20695f03c0a1455c281b5220",
+        "id": "after_a940199d563c184f8276f6ad",
+        "pieces": [
+          {
+            "cell": [
+              0,
+              0
+            ],
+            "id": "specified_attacker",
+            "kind": "rook",
+            "owner": "black"
+          },
+          {
+            "cell": [
+              7,
+              0
+            ],
+            "id": "other_attacker",
+            "kind": "rook",
+            "owner": "black"
+          },
+          {
+            "cell": [
+              0,
+              2
+            ],
+            "id": "specified_target",
+            "kind": "knight",
+            "owner": "white"
+          },
+          {
+            "cell": [
+              7,
+              2
+            ],
+            "id": "other_target",
+            "kind": "knight",
+            "owner": "white"
+          },
+          {
+            "cell": [
+              7,
+              1
+            ],
+            "id": "blocker",
+            "kind": "pawn",
+            "owner": "white"
+          }
+        ],
+        "root": "equal_field_root",
+        "unknown": []
+      }
+    }
+  ],
+  "passed": true,
+  "scope": "All source pieces to all distinct board cells, attack family only; mirrored structural fixture pair, not independent samples"
+}

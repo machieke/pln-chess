@@ -10,10 +10,12 @@ LEARNED=('rook-attack','bishop-attack','queen-orthogonal','queen-diagonal','obst
 
 
 def evidence(roots):
-    from evaluation.cycle15_corpus import episode, reference
+    from evaluation.cycle15_corpus import episode, reference, registration
+    registered={r['id']:r for r in registration() if r['split']=='train'}
     rows=[]
     for root in roots:
-        if root['split']!='train':raise ValueError('Only registered training roots may supply evidence')
+        if root['split']!='train' or registered.get(root['id'])!=root:
+            raise ValueError('Only exact preregistered training roots may supply evidence')
         e=episode(root);kind=root['family']['kind'];direction=root['family']['direction']
         rule=kind+'-attack' if kind!='queen' else 'queen-'+('orthogonal' if 0 in direction else 'diagonal')
         for endpoint in ('state','after'):
@@ -35,10 +37,14 @@ def evidence(roots):
 
 def fit(rows, out, *, exclude_ancestry=(), reasoner=None):
     reasoner=reasoner or NativeReasoner();out=Path(out);out.mkdir(parents=True,exist_ok=True)
+    from evaluation.cycle15_corpus import registration
+    admitted_records={digest(row) for row in evidence([r for r in registration() if r['split']=='train'])}
     rules={name:dict(truth_value=TV(.5,0).json(),ancestry=[],evidence=[]) for name in LEARNED}
     ledger=[];seen=set()
     for row in rows:
         if row.get('split')!='train':raise ValueError('Development/test labels cannot update rules')
+        if digest(row) not in admitted_records:
+            raise ValueError('Evidence is not an exact registered training observation')
         if row['rule'] not in rules:raise ValueError('Unknown learned template')
         item=dict(row)
         key=(row['rule'],row['ancestry'])

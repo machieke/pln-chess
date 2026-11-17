@@ -18,6 +18,10 @@ def test_test_evidence_cannot_update(tmp_path):
     root=next(r for r in registration() if r['split']=='test')
     with pytest.raises(ValueError):evidence([root])
     with pytest.raises(ValueError):fit([dict(split='test')],tmp_path)
+    with pytest.raises(ValueError):evidence([{**root,'split':'train'}])
+    training_root=next(r for r in registration() if r['split']=='train')
+    forged={**evidence([training_root])[1],'label':False}
+    with pytest.raises(ValueError):fit([forged],tmp_path/'forged')
 
 
 def test_native_revision_replay_and_ancestry_removal(tmp_path):

@@ -45,6 +45,18 @@ def render(value):
     return '(' + ' '.join(map(render, value)) + ')' if isinstance(value, (list, tuple)) else str(value)
 
 
+def alpha_key(term):
+    """Telemetry identity only: ignore native variable renaming, preserve roles."""
+    names={}
+    def walk(value):
+        if isinstance(value,list):return [walk(v) for v in value]
+        if value.startswith('$'):
+            if value not in names:names[value]='$v'+str(len(names))
+            return names[value]
+        return value
+    return render(walk(parse(term)))
+
+
 def proposition(text):
     node = parse(text)
     forbidden = {'=', '!', 'progn', 'case', 'let', 'let*', 'if', 'collapse', 'superpose',
@@ -201,8 +213,8 @@ class NativeReasoner:
                 raise ValueError(f'Ambiguous or missing native result: {counts}')
         except (ValueError, TypeError, IndexError) as error:
             receipt.update(incomplete=True, parse_error=str(error))
-        initial_terms = {sentence.term for sentence in beliefs}
-        derived = [s for s in retained if s['term'] not in initial_terms]
+        initial_terms = {alpha_key(sentence.term) for sentence in beliefs}
+        derived = [s for s in retained if alpha_key(s['term']) not in initial_terms]
         def supported(channel):
             return channel is not None and channel['strength'] >= .6 and channel['confidence'] >= .1
         positive, negative = supported(answers['answer']), supported(answers['contrary'])

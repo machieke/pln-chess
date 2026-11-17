@@ -1,0 +1,1837 @@
+[
+  {
+    "name": "scenario-2-sole-blocker-leaves",
+    "reference": {
+      "label": true,
+      "reason": "python-chess occupancy-constrained influence; not legal capture"
+    },
+    "result": {
+      "answer": {
+        "confidence": 0.8065610437499999,
+        "stamps": [
+          "obs_787a27019c4b569d121a60bd8778",
+          "obs_b316e6870749bf83d20e0d2f7e09",
+          "obs_b547be32c31f5d7abaf77000d619",
+          "rule_clear-one",
+          "rule_queen-diagonal",
+          "train_0f9ffe7085ab2da3214d311f",
+          "train_14ef3efdf7f245a1a5891288",
+          "train_188ab57dadd470196b5e9838",
+          "train_1c44c57c7a9f5699f2a364ab",
+          "train_383cf307ffd52bc6861caa39",
+          "train_bd2b603b876dfabc596637f2",
+          "train_ce75302c29ace9146f1b6f70"
+        ],
+        "strength": 1.0
+      },
+      "classification": "supported-positive",
+      "contrary": null,
+      "grounding_mode": "native-schema-binding",
+      "incomplete": false,
+      "peak_rss_kib": 47404,
+      "proof": {
+        "bytes": 100574,
+        "path": "/home/purplezky/cycle15-evidence-20261117/diagnostics/raw/4034f66890516dadcc1049e7e55646d40d686714f847d2ee4daef2ed972383d5.json",
+        "sha256": "4034f66890516dadcc1049e7e55646d40d686714f847d2ee4daef2ed972383d5"
+      },
+      "query": "(Attack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 29,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 27,
+        "initial_tasks": 27,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 3,
+        "retained_beliefs": 45,
+        "retained_tasks": 0,
+        "selected_tasks": 45
+      },
+      "wall_seconds": 3.5722645157948136
+    }
+  },
+  {
+    "name": "scenario-2-unknown-cell",
+    "reference": {
+      "label": null,
+      "reason": "relevant-occupancy-unknown"
+    },
+    "result": {
+      "answer": null,
+      "classification": "unknown",
+      "contrary": null,
+      "grounding_mode": "native-schema-binding",
+      "incomplete": false,
+      "peak_rss_kib": 47424,
+      "proof": {
+        "bytes": 85749,
+        "path": "/home/purplezky/cycle15-evidence-20261117/diagnostics/raw/c7bc4a00f518318e8247d37c80ae81b3211d78160274f9a197a59c0ac4b4bc01.json",
+        "sha256": "c7bc4a00f518318e8247d37c80ae81b3211d78160274f9a197a59c0ac4b4bc01"
+      },
+      "query": "(Attack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563unknown)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 21,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 27,
+        "initial_tasks": 27,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 0,
+        "retained_beliefs": 37,
+        "retained_tasks": 0,
+        "selected_tasks": 37
+      },
+      "wall_seconds": 3.162768902257085
+    }
+  },
+  {
+    "name": "scenario-2-unrelated-move",
+    "reference": {
+      "label": false,
+      "reason": "python-chess occupancy-constrained influence; not legal capture"
+    },
+    "result": {
+      "answer": null,
+      "classification": "supported-negative",
+      "contrary": {
+        "confidence": 0.9408959999999998,
+        "stamps": [
+          "obs_1945d5a37ea11f4d7c29c011ba4d",
+          "obs_b68bf3f6bcafeae3778d4e475d55",
+          "rule_obstruction",
+          "train_0f9ffe7085ab2da3214d311f",
+          "train_14ef3efdf7f245a1a5891288",
+          "train_16803c3963c90a56100eec67",
+          "train_188ab57dadd470196b5e9838",
+          "train_1936b074f913e417f052ee0e",
+          "train_1c44c57c7a9f5699f2a364ab",
+          "train_1dc302c71c87d207d4f7e145",
+          "train_36c5aaa65c53462c41917937",
+          "train_383cf307ffd52bc6861caa39",
+          "train_3c385a7be1978c46bed26ebe",
+          "train_61a4ac8c72120b56ac9c5348",
+          "train_656c276fefde5f4f7bb52708",
+          "train_6e92905319e3d206375b69bc",
+          "train_71f2c6bf92264c1876c4b8b4",
+          "train_7c69c5754d46cfd83bb05454",
+          "train_89650afc4510d4b59eda8b79",
+          "train_8d2871789a34962437100143",
+          "train_98e1a10d385599c4de5c61ca",
+          "train_bd2b603b876dfabc596637f2",
+          "train_c1e0771213830b61a2b017f5",
+          "train_cceef621aeba2032208779b0",
+          "train_ce75302c29ace9146f1b6f70",
+          "train_dde30f207a624ead9064e286",
+          "train_f86cecad12cd2e81a7bdd167"
+        ],
+        "strength": 1.0
+      },
+      "grounding_mode": "native-schema-binding",
+      "incomplete": false,
+      "peak_rss_kib": 48368,
+      "proof": {
+        "bytes": 97151,
+        "path": "/home/purplezky/cycle15-evidence-20261117/diagnostics/raw/4f65382c3d9368bf770963fb8246cea7ddc9defb118ea9f04bef924745fe7a2c.json",
+        "sha256": "4f65382c3d9368bf770963fb8246cea7ddc9defb118ea9f04bef924745fe7a2c"
+      },
+      "query": "(Attack p_8a7348_attacker p_8a7348_target after_f5b9e894f76b479703191725)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 23,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 30,
+        "initial_tasks": 30,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 0,
+        "retained_beliefs": 42,
+        "retained_tasks": 0,
+        "selected_tasks": 42
+      },
+      "wall_seconds": 2.9607531363144517
+    }
+  },
+  {
+    "name": "scenario-2-attacker-removed",
+    "reference": {
+      "label": null,
+      "reason": "query-entity-absent"
+    },
+    "result": {
+      "answer": null,
+      "classification": "unknown",
+      "contrary": null,
+      "grounding_mode": "native-schema-binding",
+      "incomplete": false,
+      "peak_rss_kib": 35568,
+      "proof": {
+        "bytes": 54276,
+        "path": "/home/purplezky/cycle15-evidence-20261117/diagnostics/raw/35b67741a040e036840486f39422f7d1bfac070ae6b334c12a6350bf85a2bdaf.json",
+        "sha256": "35b67741a040e036840486f39422f7d1bfac070ae6b334c12a6350bf85a2bdaf"
+      },
+      "query": "(Attack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563attacker-removed)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 13,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 18,
+        "initial_tasks": 18,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 0,
+        "retained_beliefs": 20,
+        "retained_tasks": 0,
+        "selected_tasks": 20
+      },
+      "wall_seconds": 1.688848126679659
+    }
+  },
+  {
+    "name": "scenario-2-target-removed",
+    "reference": {
+      "label": null,
+      "reason": "query-entity-absent"
+    },
+    "result": {
+      "answer": null,
+      "classification": "unknown",
+      "contrary": null,
+      "grounding_mode": "native-schema-binding",
+      "incomplete": false,
+      "peak_rss_kib": 35476,
+      "proof": {
+        "bytes": 60138,
+        "path": "/home/purplezky/cycle15-evidence-20261117/diagnostics/raw/4dd52f16de84139383c878a420ffbeae2c1d583a14b92bad4b5153fb2dacdcaa.json",
+        "sha256": "4dd52f16de84139383c878a420ffbeae2c1d583a14b92bad4b5153fb2dacdcaa"
+      },
+      "query": "(Attack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563target-removed)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 16,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 18,
+        "initial_tasks": 18,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 0,
+        "retained_beliefs": 23,
+        "retained_tasks": 0,
+        "selected_tasks": 23
+      },
+      "wall_seconds": 1.7280099112540483
+    }
+  },
+  {
+    "name": "scenario-2-target-replaced",
+    "reference": {
+      "label": null,
+      "reason": "query-entity-absent"
+    },
+    "result": {
+      "answer": null,
+      "classification": "unknown",
+      "contrary": null,
+      "grounding_mode": "native-schema-binding",
+      "incomplete": false,
+      "peak_rss_kib": 35460,
+      "proof": {
+        "bytes": 59766,
+        "path": "/home/purplezky/cycle15-evidence-20261117/diagnostics/raw/be639456a2bd69acb97a551a8011824f97bb7afac8f24fee174ce00224493f7d.json",
+        "sha256": "be639456a2bd69acb97a551a8011824f97bb7afac8f24fee174ce00224493f7d"
+      },
+      "query": "(Attack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563replacement)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 16,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 18,
+        "initial_tasks": 18,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 0,
+        "retained_beliefs": 23,
+        "retained_tasks": 0,
+        "selected_tasks": 23
+      },
+      "wall_seconds": 1.961787930689752
+    }
+  },
+  {
+    "name": "scenario-2-ordinary-target",
+    "reference": {
+      "label": true,
+      "reason": "python-chess occupancy-constrained influence; not legal capture"
+    },
+    "result": {
+      "answer": {
+        "confidence": 0.8065610437499999,
+        "stamps": [
+          "obs_b2be32e0e9cd491e405070357786",
+          "obs_c82fb2a43729047a0dd59f8b65c5",
+          "obs_fc42656614b235bdfcea788f8e9b",
+          "rule_clear-one",
+          "rule_queen-diagonal",
+          "train_0f9ffe7085ab2da3214d311f",
+          "train_14ef3efdf7f245a1a5891288",
+          "train_188ab57dadd470196b5e9838",
+          "train_1c44c57c7a9f5699f2a364ab",
+          "train_383cf307ffd52bc6861caa39",
+          "train_bd2b603b876dfabc596637f2",
+          "train_ce75302c29ace9146f1b6f70"
+        ],
+        "strength": 1.0
+      },
+      "classification": "supported-positive",
+      "contrary": null,
+      "grounding_mode": "native-schema-binding",
+      "incomplete": false,
+      "peak_rss_kib": 47424,
+      "proof": {
+        "bytes": 94775,
+        "path": "/home/purplezky/cycle15-evidence-20261117/diagnostics/raw/556e1977dc8dfc6ea717ab8e1b4082a6235fe025c115d56c5a3c9527fdffa8c6.json",
+        "sha256": "556e1977dc8dfc6ea717ab8e1b4082a6235fe025c115d56c5a3c9527fdffa8c6"
+      },
+      "query": "(Attack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563ordinary)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 26,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 27,
+        "initial_tasks": 27,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 2,
+        "retained_beliefs": 42,
+        "retained_tasks": 0,
+        "selected_tasks": 42
+      },
+      "wall_seconds": 2.596497851423919
+    }
+  },
+  {
+    "name": "scenario-2-friendly-source",
+    "reference": {
+      "label": true,
+      "reason": "python-chess occupancy-constrained influence; not legal capture"
+    },
+    "result": {
+      "answer": {
+        "confidence": 0.8065610437499999,
+        "stamps": [
+          "obs_1ca15045ecc0acefb6d7102f1f19",
+          "obs_285685720b135034c83dd780fc6a",
+          "obs_6baf162e4de5e7cd7ecc1ce3bca2",
+          "rule_clear-one",
+          "rule_queen-diagonal",
+          "train_0f9ffe7085ab2da3214d311f",
+          "train_14ef3efdf7f245a1a5891288",
+          "train_188ab57dadd470196b5e9838",
+          "train_1c44c57c7a9f5699f2a364ab",
+          "train_383cf307ffd52bc6861caa39",
+          "train_bd2b603b876dfabc596637f2",
+          "train_ce75302c29ace9146f1b6f70"
+        ],
+        "strength": 1.0
+      },
+      "classification": "supported-positive",
+      "contrary": null,
+      "grounding_mode": "native-schema-binding",
+      "incomplete": false,
+      "peak_rss_kib": 47444,
+      "proof": {
+        "bytes": 90982,
+        "path": "/home/purplezky/cycle15-evidence-20261117/diagnostics/raw/f69cec72560dbd213d1349e5ee784d27941382cba3b1e2bf4ce21340c2afb2f7.json",
+        "sha256": "f69cec72560dbd213d1349e5ee784d27941382cba3b1e2bf4ce21340c2afb2f7"
+      },
+      "query": "(Attack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563friendly)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 24,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 27,
+        "initial_tasks": 27,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 2,
+        "retained_beliefs": 40,
+        "retained_tasks": 0,
+        "selected_tasks": 40
+      },
+      "wall_seconds": 2.4112420240417123
+    }
+  },
+  {
+    "name": "scenario-4-sole-blocker-leaves",
+    "reference": {
+      "label": true,
+      "reason": "python-chess occupancy-constrained influence; not legal capture"
+    },
+    "result": {
+      "answer": null,
+      "classification": "unknown",
+      "contrary": null,
+      "grounding_mode": "native-schema-binding",
+      "incomplete": false,
+      "peak_rss_kib": 54924,
+      "proof": {
+        "bytes": 108911,
+        "path": "/home/purplezky/cycle15-evidence-20261117/diagnostics/raw/940dfd858be9af98aad2f54e8a00b8936db343783789f55d52936294dde01960.json",
+        "sha256": "940dfd858be9af98aad2f54e8a00b8936db343783789f55d52936294dde01960"
+      },
+      "query": "(Attack p_14473e_attacker p_14473e_target after_0326ebe3e1533afd238d675d)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 28,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 33,
+        "initial_tasks": 33,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 0,
+        "retained_beliefs": 50,
+        "retained_tasks": 0,
+        "selected_tasks": 50
+      },
+      "wall_seconds": 3.791850432753563
+    }
+  },
+  {
+    "name": "scenario-4-moves-along-ray",
+    "reference": {
+      "label": false,
+      "reason": "python-chess occupancy-constrained influence; not legal capture"
+    },
+    "result": {
+      "answer": null,
+      "classification": "supported-negative",
+      "contrary": {
+        "confidence": 0.9408959999999998,
+        "stamps": [
+          "obs_a2e3ef705d33b25959fa483427df",
+          "obs_ae5b439caf9c8ab29f1d41d785de",
+          "rule_obstruction",
+          "train_0f9ffe7085ab2da3214d311f",
+          "train_14ef3efdf7f245a1a5891288",
+          "train_16803c3963c90a56100eec67",
+          "train_188ab57dadd470196b5e9838",
+          "train_1936b074f913e417f052ee0e",
+          "train_1c44c57c7a9f5699f2a364ab",
+          "train_1dc302c71c87d207d4f7e145",
+          "train_36c5aaa65c53462c41917937",
+          "train_383cf307ffd52bc6861caa39",
+          "train_3c385a7be1978c46bed26ebe",
+          "train_61a4ac8c72120b56ac9c5348",
+          "train_656c276fefde5f4f7bb52708",
+          "train_6e92905319e3d206375b69bc",
+          "train_71f2c6bf92264c1876c4b8b4",
+          "train_7c69c5754d46cfd83bb05454",
+          "train_89650afc4510d4b59eda8b79",
+          "train_8d2871789a34962437100143",
+          "train_98e1a10d385599c4de5c61ca",
+          "train_bd2b603b876dfabc596637f2",
+          "train_c1e0771213830b61a2b017f5",
+          "train_cceef621aeba2032208779b0",
+          "train_ce75302c29ace9146f1b6f70",
+          "train_dde30f207a624ead9064e286",
+          "train_f86cecad12cd2e81a7bdd167"
+        ],
+        "strength": 1.0
+      },
+      "grounding_mode": "native-schema-binding",
+      "incomplete": false,
+      "peak_rss_kib": 54936,
+      "proof": {
+        "bytes": 120080,
+        "path": "/home/purplezky/cycle15-evidence-20261117/diagnostics/raw/aec3a2937cfd0820ea724955258d9501d47edff27f9ebcd302d4b0a0e38e7d98.json",
+        "sha256": "aec3a2937cfd0820ea724955258d9501d47edff27f9ebcd302d4b0a0e38e7d98"
+      },
+      "query": "(Attack p_14473e_attacker p_14473e_target after_6fc8aaea2128e023a299cf91)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 28,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 36,
+        "initial_tasks": 36,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 0,
+        "retained_beliefs": 53,
+        "retained_tasks": 0,
+        "selected_tasks": 53
+      },
+      "wall_seconds": 2.9469420770183206
+    }
+  },
+  {
+    "name": "scenario-4-second-blocker-remains",
+    "reference": {
+      "label": false,
+      "reason": "python-chess occupancy-constrained influence; not legal capture"
+    },
+    "result": {
+      "answer": null,
+      "classification": "supported-negative",
+      "contrary": {
+        "confidence": 0.9408959999999998,
+        "stamps": [
+          "obs_e495c84a07a7d1ac8b02c515b465",
+          "obs_ee7f74a3b2bbe179e894a858dca0",
+          "rule_obstruction",
+          "train_0f9ffe7085ab2da3214d311f",
+          "train_14ef3efdf7f245a1a5891288",
+          "train_16803c3963c90a56100eec67",
+          "train_188ab57dadd470196b5e9838",
+          "train_1936b074f913e417f052ee0e",
+          "train_1c44c57c7a9f5699f2a364ab",
+          "train_1dc302c71c87d207d4f7e145",
+          "train_36c5aaa65c53462c41917937",
+          "train_383cf307ffd52bc6861caa39",
+          "train_3c385a7be1978c46bed26ebe",
+          "train_61a4ac8c72120b56ac9c5348",
+          "train_656c276fefde5f4f7bb52708",
+          "train_6e92905319e3d206375b69bc",
+          "train_71f2c6bf92264c1876c4b8b4",
+          "train_7c69c5754d46cfd83bb05454",
+          "train_89650afc4510d4b59eda8b79",
+          "train_8d2871789a34962437100143",
+          "train_98e1a10d385599c4de5c61ca",
+          "train_bd2b603b876dfabc596637f2",
+          "train_c1e0771213830b61a2b017f5",
+          "train_cceef621aeba2032208779b0",
+          "train_ce75302c29ace9146f1b6f70",
+          "train_dde30f207a624ead9064e286",
+          "train_f86cecad12cd2e81a7bdd167"
+        ],
+        "strength": 1.0
+      },
+      "grounding_mode": "native-schema-binding",
+      "incomplete": false,
+      "peak_rss_kib": 54928,
+      "proof": {
+        "bytes": 119957,
+        "path": "/home/purplezky/cycle15-evidence-20261117/diagnostics/raw/523b9040526ac1c9aeace204dc9926a3a24d429908a4bc3f0183e008a5846c19.json",
+        "sha256": "523b9040526ac1c9aeace204dc9926a3a24d429908a4bc3f0183e008a5846c19"
+      },
+      "query": "(Attack p_14473e_attacker p_14473e_target after_128f2e1a460486089d791940)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 28,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 36,
+        "initial_tasks": 36,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 0,
+        "retained_beliefs": 53,
+        "retained_tasks": 0,
+        "selected_tasks": 53
+      },
+      "wall_seconds": 3.9611485050991178
+    }
+  },
+  {
+    "name": "scenario-4-unknown-cell",
+    "reference": {
+      "label": null,
+      "reason": "relevant-occupancy-unknown"
+    },
+    "result": {
+      "answer": null,
+      "classification": "unknown",
+      "contrary": null,
+      "grounding_mode": "native-schema-binding",
+      "incomplete": false,
+      "peak_rss_kib": 54928,
+      "proof": {
+        "bytes": 109280,
+        "path": "/home/purplezky/cycle15-evidence-20261117/diagnostics/raw/14b807a60361e509c43f48cb25b97953c109b4c53b612cdc278ee0c23ed2c909.json",
+        "sha256": "14b807a60361e509c43f48cb25b97953c109b4c53b612cdc278ee0c23ed2c909"
+      },
+      "query": "(Attack p_14473e_attacker p_14473e_target after_0326ebe3e1533afd238d675dunknown)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 26,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 33,
+        "initial_tasks": 33,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 0,
+        "retained_beliefs": 48,
+        "retained_tasks": 0,
+        "selected_tasks": 48
+      },
+      "wall_seconds": 4.447370490990579
+    }
+  },
+  {
+    "name": "scenario-4-unrelated-move",
+    "reference": {
+      "label": false,
+      "reason": "python-chess occupancy-constrained influence; not legal capture"
+    },
+    "result": {
+      "answer": null,
+      "classification": "supported-negative",
+      "contrary": {
+        "confidence": 0.9408959999999998,
+        "stamps": [
+          "obs_d0d777608f71b33b1f480bc963b7",
+          "obs_dd196ed1664b81240519b68d8409",
+          "rule_obstruction",
+          "train_0f9ffe7085ab2da3214d311f",
+          "train_14ef3efdf7f245a1a5891288",
+          "train_16803c3963c90a56100eec67",
+          "train_188ab57dadd470196b5e9838",
+          "train_1936b074f913e417f052ee0e",
+          "train_1c44c57c7a9f5699f2a364ab",
+          "train_1dc302c71c87d207d4f7e145",
+          "train_36c5aaa65c53462c41917937",
+          "train_383cf307ffd52bc6861caa39",
+          "train_3c385a7be1978c46bed26ebe",
+          "train_61a4ac8c72120b56ac9c5348",
+          "train_656c276fefde5f4f7bb52708",
+          "train_6e92905319e3d206375b69bc",
+          "train_71f2c6bf92264c1876c4b8b4",
+          "train_7c69c5754d46cfd83bb05454",
+          "train_89650afc4510d4b59eda8b79",
+          "train_8d2871789a34962437100143",
+          "train_98e1a10d385599c4de5c61ca",
+          "train_bd2b603b876dfabc596637f2",
+          "train_c1e0771213830b61a2b017f5",
+          "train_cceef621aeba2032208779b0",
+          "train_ce75302c29ace9146f1b6f70",
+          "train_dde30f207a624ead9064e286",
+          "train_f86cecad12cd2e81a7bdd167"
+        ],
+        "strength": 1.0
+      },
+      "grounding_mode": "native-schema-binding",
+      "incomplete": false,
+      "peak_rss_kib": 55000,
+      "proof": {
+        "bytes": 120081,
+        "path": "/home/purplezky/cycle15-evidence-20261117/diagnostics/raw/5caa384c97ea0091edd115bb4f894a4c8050cba1948e961bb8741863b4542a53.json",
+        "sha256": "5caa384c97ea0091edd115bb4f894a4c8050cba1948e961bb8741863b4542a53"
+      },
+      "query": "(Attack p_14473e_attacker p_14473e_target after_b3abdcd880930e78839737d5)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 28,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 36,
+        "initial_tasks": 36,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 0,
+        "retained_beliefs": 53,
+        "retained_tasks": 0,
+        "selected_tasks": 53
+      },
+      "wall_seconds": 2.9588561952114105
+    }
+  },
+  {
+    "name": "scenario-4-attacker-removed",
+    "reference": {
+      "label": null,
+      "reason": "query-entity-absent"
+    },
+    "result": {
+      "answer": null,
+      "classification": "unknown",
+      "contrary": null,
+      "grounding_mode": "native-schema-binding",
+      "incomplete": false,
+      "peak_rss_kib": 35412,
+      "proof": {
+        "bytes": 54276,
+        "path": "/home/purplezky/cycle15-evidence-20261117/diagnostics/raw/c13b7b531d7c421e0d5853ab2a5abdd7fdb1f35e8a5820e7a453c3c1cd493f10.json",
+        "sha256": "c13b7b531d7c421e0d5853ab2a5abdd7fdb1f35e8a5820e7a453c3c1cd493f10"
+      },
+      "query": "(Attack p_14473e_attacker p_14473e_target after_0326ebe3e1533afd238d675dattacker-removed)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 13,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 18,
+        "initial_tasks": 18,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 0,
+        "retained_beliefs": 20,
+        "retained_tasks": 0,
+        "selected_tasks": 20
+      },
+      "wall_seconds": 1.8293479355052114
+    }
+  },
+  {
+    "name": "scenario-4-target-removed",
+    "reference": {
+      "label": null,
+      "reason": "query-entity-absent"
+    },
+    "result": {
+      "answer": null,
+      "classification": "unknown",
+      "contrary": null,
+      "grounding_mode": "native-schema-binding",
+      "incomplete": false,
+      "peak_rss_kib": 35444,
+      "proof": {
+        "bytes": 60153,
+        "path": "/home/purplezky/cycle15-evidence-20261117/diagnostics/raw/3ff6c574f151b751b75bcdfa6ae3ea8a013adc5c19f46d314ba2e72aa323d300.json",
+        "sha256": "3ff6c574f151b751b75bcdfa6ae3ea8a013adc5c19f46d314ba2e72aa323d300"
+      },
+      "query": "(Attack p_14473e_attacker p_14473e_target after_0326ebe3e1533afd238d675dtarget-removed)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 16,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 18,
+        "initial_tasks": 18,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 0,
+        "retained_beliefs": 23,
+        "retained_tasks": 0,
+        "selected_tasks": 23
+      },
+      "wall_seconds": 2.8559132805094123
+    }
+  },
+  {
+    "name": "scenario-4-target-replaced",
+    "reference": {
+      "label": null,
+      "reason": "query-entity-absent"
+    },
+    "result": {
+      "answer": null,
+      "classification": "unknown",
+      "contrary": null,
+      "grounding_mode": "native-schema-binding",
+      "incomplete": false,
+      "peak_rss_kib": 35484,
+      "proof": {
+        "bytes": 59765,
+        "path": "/home/purplezky/cycle15-evidence-20261117/diagnostics/raw/c305d1e55ce618c11e8dce9d17d7e47bc4714d91d38bbcde731598a3c9860d8d.json",
+        "sha256": "c305d1e55ce618c11e8dce9d17d7e47bc4714d91d38bbcde731598a3c9860d8d"
+      },
+      "query": "(Attack p_14473e_attacker p_14473e_target after_0326ebe3e1533afd238d675dreplacement)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 16,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 18,
+        "initial_tasks": 18,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 0,
+        "retained_beliefs": 23,
+        "retained_tasks": 0,
+        "selected_tasks": 23
+      },
+      "wall_seconds": 2.230249603278935
+    }
+  },
+  {
+    "name": "scenario-4-ordinary-target",
+    "reference": {
+      "label": true,
+      "reason": "python-chess occupancy-constrained influence; not legal capture"
+    },
+    "result": {
+      "answer": null,
+      "classification": "unknown",
+      "contrary": null,
+      "grounding_mode": "native-schema-binding",
+      "incomplete": false,
+      "peak_rss_kib": 55012,
+      "proof": {
+        "bytes": 109988,
+        "path": "/home/purplezky/cycle15-evidence-20261117/diagnostics/raw/ef42f50c0ecfe687955a2a30a7331b21b48c0c85d1350a49111cbfed8cfb92a3.json",
+        "sha256": "ef42f50c0ecfe687955a2a30a7331b21b48c0c85d1350a49111cbfed8cfb92a3"
+      },
+      "query": "(Attack p_14473e_attacker p_14473e_target after_0326ebe3e1533afd238d675dordinary)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 27,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 33,
+        "initial_tasks": 33,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 0,
+        "retained_beliefs": 49,
+        "retained_tasks": 0,
+        "selected_tasks": 49
+      },
+      "wall_seconds": 3.707780523225665
+    }
+  },
+  {
+    "name": "scenario-4-friendly-source",
+    "reference": {
+      "label": true,
+      "reason": "python-chess occupancy-constrained influence; not legal capture"
+    },
+    "result": {
+      "answer": null,
+      "classification": "unknown",
+      "contrary": null,
+      "grounding_mode": "native-schema-binding",
+      "incomplete": false,
+      "peak_rss_kib": 55116,
+      "proof": {
+        "bytes": 106196,
+        "path": "/home/purplezky/cycle15-evidence-20261117/diagnostics/raw/4d6da73db11d9ddb43fdd44ae95b248fddf8118f7f5d9e467f0504775ed4ad92.json",
+        "sha256": "4d6da73db11d9ddb43fdd44ae95b248fddf8118f7f5d9e467f0504775ed4ad92"
+      },
+      "query": "(Attack p_14473e_attacker p_14473e_target after_0326ebe3e1533afd238d675dfriendly)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 25,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 33,
+        "initial_tasks": 33,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 0,
+        "retained_beliefs": 47,
+        "retained_tasks": 0,
+        "selected_tasks": 47
+      },
+      "wall_seconds": 3.9719561925157905
+    }
+  },
+  {
+    "name": "renamed",
+    "reference": {
+      "label": true,
+      "reason": "python-chess occupancy-constrained influence; not legal capture"
+    },
+    "result": {
+      "answer": {
+        "confidence": 0.8065610437499999,
+        "stamps": [
+          "obs_1825d8687334603f3d2c13468f6f",
+          "obs_21fcaccc052c5fa5c2756631fa65",
+          "obs_42bed68bf81251933c0c3a1bcc85",
+          "rule_clear-one",
+          "rule_queen-diagonal",
+          "train_0f9ffe7085ab2da3214d311f",
+          "train_14ef3efdf7f245a1a5891288",
+          "train_188ab57dadd470196b5e9838",
+          "train_1c44c57c7a9f5699f2a364ab",
+          "train_383cf307ffd52bc6861caa39",
+          "train_bd2b603b876dfabc596637f2",
+          "train_ce75302c29ace9146f1b6f70"
+        ],
+        "strength": 1.0
+      },
+      "classification": "supported-positive",
+      "contrary": null,
+      "grounding_mode": "native-schema-binding",
+      "incomplete": false,
+      "peak_rss_kib": 47424,
+      "proof": {
+        "bytes": 101040,
+        "path": "/home/purplezky/cycle15-evidence-20261117/diagnostics/raw/c19d5cadb6c13a9c13d8842e6884bff5d9c98519c942111cbde788327d4d1e8f.json",
+        "sha256": "c19d5cadb6c13a9c13d8842e6884bff5d9c98519c942111cbde788327d4d1e8f"
+      },
+      "query": "(Attack new_8a7348_attacker new_8a7348_target after_5b7c75ab1ba5a2fe73db7738)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 29,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 27,
+        "initial_tasks": 27,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 3,
+        "retained_beliefs": 45,
+        "retained_tasks": 0,
+        "selected_tasks": 45
+      },
+      "wall_seconds": 3.0845022331923246
+    }
+  },
+  {
+    "name": "translated",
+    "reference": {
+      "label": true,
+      "reason": "python-chess occupancy-constrained influence; not legal capture"
+    },
+    "result": {
+      "answer": {
+        "confidence": 0.8065610437499999,
+        "stamps": [
+          "obs_1d1134405ef29712604daf06db6b",
+          "obs_c9cedd548e06c633cb5b3be0c424",
+          "obs_f123c74d05ea3126d19e890faed5",
+          "rule_clear-one",
+          "rule_queen-diagonal",
+          "train_0f9ffe7085ab2da3214d311f",
+          "train_14ef3efdf7f245a1a5891288",
+          "train_188ab57dadd470196b5e9838",
+          "train_1c44c57c7a9f5699f2a364ab",
+          "train_383cf307ffd52bc6861caa39",
+          "train_bd2b603b876dfabc596637f2",
+          "train_ce75302c29ace9146f1b6f70"
+        ],
+        "strength": 1.0
+      },
+      "classification": "supported-positive",
+      "contrary": null,
+      "grounding_mode": "native-schema-binding",
+      "incomplete": false,
+      "peak_rss_kib": 47428,
+      "proof": {
+        "bytes": 100573,
+        "path": "/home/purplezky/cycle15-evidence-20261117/diagnostics/raw/6a1f321b16d74777d8e6d012baa12639a373f4f4f65ec3a548da03aaade4aa15.json",
+        "sha256": "6a1f321b16d74777d8e6d012baa12639a373f4f4f65ec3a548da03aaade4aa15"
+      },
+      "query": "(Attack p_8a7348_attacker p_8a7348_target after_aaffd2539f987dd405cba201)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 29,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 27,
+        "initial_tasks": 27,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 3,
+        "retained_beliefs": 45,
+        "retained_tasks": 0,
+        "selected_tasks": 45
+      },
+      "wall_seconds": 2.442352251149714
+    }
+  },
+  {
+    "name": "learned-baseline",
+    "reference": {
+      "label": true,
+      "reason": "python-chess occupancy-constrained influence; not legal capture"
+    },
+    "result": {
+      "answer": {
+        "confidence": 0.8065610437499999,
+        "stamps": [
+          "obs_787a27019c4b569d121a60bd8778",
+          "obs_b316e6870749bf83d20e0d2f7e09",
+          "obs_b547be32c31f5d7abaf77000d619",
+          "rule_clear-one",
+          "rule_queen-diagonal",
+          "train_0f9ffe7085ab2da3214d311f",
+          "train_14ef3efdf7f245a1a5891288",
+          "train_188ab57dadd470196b5e9838",
+          "train_1c44c57c7a9f5699f2a364ab",
+          "train_383cf307ffd52bc6861caa39",
+          "train_bd2b603b876dfabc596637f2",
+          "train_ce75302c29ace9146f1b6f70"
+        ],
+        "strength": 1.0
+      },
+      "classification": "supported-positive",
+      "contrary": null,
+      "grounding_mode": "native-schema-binding",
+      "incomplete": false,
+      "peak_rss_kib": 47432,
+      "proof": {
+        "bytes": 100573,
+        "path": "/home/purplezky/cycle15-evidence-20261117/diagnostics/raw/5b39c9f6f84283488d326a13b6f112cc241b0005cebb000782956f2fbae65268.json",
+        "sha256": "5b39c9f6f84283488d326a13b6f112cc241b0005cebb000782956f2fbae65268"
+      },
+      "query": "(Attack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 29,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 27,
+        "initial_tasks": 27,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 3,
+        "retained_beliefs": 45,
+        "retained_tasks": 0,
+        "selected_tasks": 45
+      },
+      "wall_seconds": 3.1432380182668567
+    }
+  },
+  {
+    "name": "remove-sole-attack-rule",
+    "result": {
+      "answer": null,
+      "classification": "unknown",
+      "contrary": null,
+      "grounding_mode": "native-schema-binding",
+      "incomplete": false,
+      "peak_rss_kib": 35168,
+      "proof": {
+        "bytes": 71593,
+        "path": "/home/purplezky/cycle15-evidence-20261117/diagnostics/raw/7a0bded72c41c5c7b073f6fc625b282d62a4b876ade97ef33504055983853679.json",
+        "sha256": "7a0bded72c41c5c7b073f6fc625b282d62a4b876ade97ef33504055983853679"
+      },
+      "query": "(Attack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 19,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 23,
+        "initial_tasks": 23,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 1,
+        "retained_beliefs": 35,
+        "retained_tasks": 0,
+        "selected_tasks": 35
+      },
+      "wall_seconds": 1.9450815850868821
+    }
+  },
+  {
+    "name": "remove-one-clearance-path-with-surviving-alternative",
+    "result": {
+      "answer": {
+        "confidence": 0.7206421285645312,
+        "stamps": [
+          "obs_787a27019c4b569d121a60bd8778",
+          "obs_846fcca7328e6f88d2b780a3a3ed",
+          "obs_b316e6870749bf83d20e0d2f7e09",
+          "obs_b547be32c31f5d7abaf77000d619",
+          "rule_clear-path",
+          "rule_empty-tail",
+          "rule_extend-empty",
+          "rule_queen-diagonal",
+          "train_0f9ffe7085ab2da3214d311f",
+          "train_14ef3efdf7f245a1a5891288",
+          "train_188ab57dadd470196b5e9838",
+          "train_1c44c57c7a9f5699f2a364ab",
+          "train_383cf307ffd52bc6861caa39",
+          "train_bd2b603b876dfabc596637f2",
+          "train_ce75302c29ace9146f1b6f70"
+        ],
+        "strength": 1.0
+      },
+      "classification": "supported-positive",
+      "contrary": null,
+      "grounding_mode": "native-schema-binding",
+      "incomplete": false,
+      "peak_rss_kib": 47292,
+      "proof": {
+        "bytes": 91932,
+        "path": "/home/purplezky/cycle15-evidence-20261117/diagnostics/raw/5044bbbf96dd6512f59dcdd401683d24015477c432a527671dad7f0665d99716.json",
+        "sha256": "5044bbbf96dd6512f59dcdd401683d24015477c432a527671dad7f0665d99716"
+      },
+      "query": "(Attack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 24,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 26,
+        "initial_tasks": 26,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 0,
+        "retained_beliefs": 40,
+        "retained_tasks": 0,
+        "selected_tasks": 40
+      },
+      "wall_seconds": 2.767319006845355
+    }
+  },
+  {
+    "name": "remove-essential-emptiness",
+    "result": {
+      "answer": null,
+      "classification": "unknown",
+      "contrary": null,
+      "grounding_mode": "native-schema-binding",
+      "incomplete": false,
+      "peak_rss_kib": 47168,
+      "proof": {
+        "bytes": 82794,
+        "path": "/home/purplezky/cycle15-evidence-20261117/diagnostics/raw/967b1f987912eab9fbb35bcef4d40ba5603af3c8b5b2c7456753c7b89b422ab1.json",
+        "sha256": "967b1f987912eab9fbb35bcef4d40ba5603af3c8b5b2c7456753c7b89b422ab1"
+      },
+      "query": "(Attack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 21,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 26,
+        "initial_tasks": 26,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 0,
+        "retained_beliefs": 36,
+        "retained_tasks": 0,
+        "selected_tasks": 36
+      },
+      "wall_seconds": 2.7889064960181713
+    }
+  },
+  {
+    "name": "untrained-prior",
+    "result": {
+      "answer": null,
+      "classification": "unknown",
+      "contrary": null,
+      "grounding_mode": "native-schema-binding",
+      "incomplete": false,
+      "peak_rss_kib": 47540,
+      "proof": {
+        "bytes": 99105,
+        "path": "/home/purplezky/cycle15-evidence-20261117/diagnostics/raw/5d1ebb1e7f7987d6d17ab3759d6313a33b6e681c774cf5578bb59b621c4ea817.json",
+        "sha256": "5d1ebb1e7f7987d6d17ab3759d6313a33b6e681c774cf5578bb59b621c4ea817"
+      },
+      "query": "(Attack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 29,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 27,
+        "initial_tasks": 27,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 3,
+        "retained_beliefs": 45,
+        "retained_tasks": 0,
+        "selected_tasks": 45
+      },
+      "wall_seconds": 3.07439714577049
+    }
+  },
+  {
+    "name": "changed-rule-strength",
+    "result": {
+      "answer": {
+        "confidence": 0.008296056450000002,
+        "stamps": [
+          "obs_787a27019c4b569d121a60bd8778",
+          "obs_b316e6870749bf83d20e0d2f7e09",
+          "obs_b547be32c31f5d7abaf77000d619",
+          "rule_clear-one",
+          "rule_queen-diagonal",
+          "train_0f9ffe7085ab2da3214d311f",
+          "train_14ef3efdf7f245a1a5891288",
+          "train_188ab57dadd470196b5e9838",
+          "train_1c44c57c7a9f5699f2a364ab",
+          "train_383cf307ffd52bc6861caa39",
+          "train_bd2b603b876dfabc596637f2",
+          "train_ce75302c29ace9146f1b6f70"
+        ],
+        "strength": 0.1
+      },
+      "classification": "unknown",
+      "contrary": null,
+      "grounding_mode": "native-schema-binding",
+      "incomplete": false,
+      "peak_rss_kib": 47468,
+      "proof": {
+        "bytes": 100564,
+        "path": "/home/purplezky/cycle15-evidence-20261117/diagnostics/raw/54c3359d14e2ef5b2df442553892b166bd50786c8ee0474d9e3c5c7de4a31671.json",
+        "sha256": "54c3359d14e2ef5b2df442553892b166bd50786c8ee0474d9e3c5c7de4a31671"
+      },
+      "query": "(Attack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 29,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 27,
+        "initial_tasks": 27,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 3,
+        "retained_beliefs": 45,
+        "retained_tasks": 0,
+        "selected_tasks": 45
+      },
+      "wall_seconds": 3.0438650585711002
+    }
+  },
+  {
+    "name": "stage-a-actor-king",
+    "reference": {
+      "label": true,
+      "reason": "python-chess occupancy-constrained influence; not legal capture"
+    },
+    "result": {
+      "answer": {
+        "confidence": 0.9040411162535348,
+        "stamps": [
+          "import_ab6a964a89e8aa89131791a0",
+          "obs_04e21d0ffb07bc17a61e8ae5aed3",
+          "obs_2701a767e19b515bf44aaf847b3e",
+          "obs_787a27019c4b569d121a60bd8778",
+          "obs_a927ecdb313403b6adff1eb05a7b",
+          "obs_b316e6870749bf83d20e0d2f7e09",
+          "obs_b547be32c31f5d7abaf77000d619",
+          "obs_f5bf59a17759052c11a901dd9d1a",
+          "rule_clear-one",
+          "rule_exposure-white",
+          "rule_queen-diagonal"
+        ],
+        "strength": 1.0
+      },
+      "classification": "supported-positive",
+      "contrary": null,
+      "grounding_mode": "native-schema-binding",
+      "incomplete": false,
+      "peak_rss_kib": 46240,
+      "proof": {
+        "bytes": 87096,
+        "path": "/home/purplezky/cycle15-evidence-20261117/diagnostics/raw/76b09e4936f7c571e6addee4e904ad14e7efdf8d427550f56047e8ed03f29a87.json",
+        "sha256": "76b09e4936f7c571e6addee4e904ad14e7efdf8d427550f56047e8ed03f29a87"
+      },
+      "query": "(KingExposed p_8a7348_target white after_5b54a7fcebc62e76be2bc563)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 30,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 28,
+        "initial_tasks": 28,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 9,
+        "retained_beliefs": 51,
+        "retained_tasks": 0,
+        "selected_tasks": 51
+      },
+      "wall_seconds": 2.5010769264772534
+    }
+  },
+  {
+    "name": "stage-a-ordinary-target",
+    "reference": {
+      "label": false,
+      "reason": "python-chess occupancy-constrained influence; not legal capture"
+    },
+    "result": {
+      "answer": null,
+      "classification": "unknown",
+      "contrary": null,
+      "grounding_mode": "native-schema-binding",
+      "incomplete": false,
+      "peak_rss_kib": 46292,
+      "proof": {
+        "bytes": 76572,
+        "path": "/home/purplezky/cycle15-evidence-20261117/diagnostics/raw/27e03c486b2a8abd5aee1d63a9a7ec187572adba52158266a8be415616de0876.json",
+        "sha256": "27e03c486b2a8abd5aee1d63a9a7ec187572adba52158266a8be415616de0876"
+      },
+      "query": "(KingExposed p_8a7348_target white after_5b54a7fcebc62e76be2bc563ordinary)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 24,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 28,
+        "initial_tasks": 28,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 5,
+        "retained_beliefs": 45,
+        "retained_tasks": 0,
+        "selected_tasks": 45
+      },
+      "wall_seconds": 2.5758073199540377
+    }
+  },
+  {
+    "name": "stage-a-friendly-source",
+    "reference": {
+      "label": false,
+      "reason": "python-chess occupancy-constrained influence; not legal capture"
+    },
+    "result": {
+      "answer": null,
+      "classification": "unknown",
+      "contrary": null,
+      "grounding_mode": "native-schema-binding",
+      "incomplete": false,
+      "peak_rss_kib": 46240,
+      "proof": {
+        "bytes": 72778,
+        "path": "/home/purplezky/cycle15-evidence-20261117/diagnostics/raw/4b7e8a57a486baea91be0ddc9856f12d209f0b8ba60c0e6170537dfa87924aad.json",
+        "sha256": "4b7e8a57a486baea91be0ddc9856f12d209f0b8ba60c0e6170537dfa87924aad"
+      },
+      "query": "(KingExposed p_8a7348_target white after_5b54a7fcebc62e76be2bc563friendly)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 22,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 28,
+        "initial_tasks": 28,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 5,
+        "retained_beliefs": 43,
+        "retained_tasks": 0,
+        "selected_tasks": 43
+      },
+      "wall_seconds": 2.477327142842114
+    }
+  },
+  {
+    "name": "stage-b-exposure",
+    "reference": {
+      "label": true,
+      "reason": "python-chess occupancy-constrained influence; not legal capture"
+    },
+    "result": {
+      "answer": {
+        "confidence": 0.7360403544253011,
+        "stamps": [
+          "obs_04e21d0ffb07bc17a61e8ae5aed3",
+          "obs_2701a767e19b515bf44aaf847b3e",
+          "obs_787a27019c4b569d121a60bd8778",
+          "obs_a927ecdb313403b6adff1eb05a7b",
+          "obs_b316e6870749bf83d20e0d2f7e09",
+          "obs_b547be32c31f5d7abaf77000d619",
+          "obs_f5bf59a17759052c11a901dd9d1a",
+          "rule_clear-one",
+          "rule_exposure-white",
+          "rule_queen-diagonal",
+          "train_0f9ffe7085ab2da3214d311f",
+          "train_14ef3efdf7f245a1a5891288",
+          "train_188ab57dadd470196b5e9838",
+          "train_1c44c57c7a9f5699f2a364ab",
+          "train_383cf307ffd52bc6861caa39",
+          "train_bd2b603b876dfabc596637f2",
+          "train_ce75302c29ace9146f1b6f70"
+        ],
+        "strength": 1.0
+      },
+      "classification": "supported-positive",
+      "contrary": null,
+      "grounding_mode": "native-schema-binding",
+      "incomplete": false,
+      "peak_rss_kib": 47408,
+      "proof": {
+        "bytes": 100898,
+        "path": "/home/purplezky/cycle15-evidence-20261117/diagnostics/raw/45544676f845839e2ae16d171e03fde8e818c0cff44254fb3721da7753aaef29.json",
+        "sha256": "45544676f845839e2ae16d171e03fde8e818c0cff44254fb3721da7753aaef29"
+      },
+      "query": "(KingExposed p_8a7348_target white after_5b54a7fcebc62e76be2bc563)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 29,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 27,
+        "initial_tasks": 27,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 3,
+        "retained_beliefs": 45,
+        "retained_tasks": 0,
+        "selected_tasks": 45
+      },
+      "wall_seconds": 2.2131309024989605
+    }
+  },
+  {
+    "name": "shared-target-swap",
+    "result": {
+      "answer": null,
+      "classification": "unknown",
+      "contrary": null,
+      "grounding_mode": "native-schema-binding",
+      "incomplete": false,
+      "peak_rss_kib": 47404,
+      "proof": {
+        "bytes": 86470,
+        "path": "/home/purplezky/cycle15-evidence-20261117/diagnostics/raw/f3d33f031bb1f0c43b1c66ac86db5f2fb614f7fe8234766c36c7b4638d718e8a.json",
+        "sha256": "f3d33f031bb1f0c43b1c66ac86db5f2fb614f7fe8234766c36c7b4638d718e8a"
+      },
+      "query": "(Attack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 27,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 27,
+        "initial_tasks": 27,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 2,
+        "retained_beliefs": 43,
+        "retained_tasks": 0,
+        "selected_tasks": 43
+      },
+      "wall_seconds": 2.381432612426579
+    }
+  },
+  {
+    "name": "stale-before-plus-after",
+    "result": {
+      "answer": {
+        "confidence": 0.8065610437499999,
+        "stamps": [
+          "obs_787a27019c4b569d121a60bd8778",
+          "obs_b316e6870749bf83d20e0d2f7e09",
+          "obs_b547be32c31f5d7abaf77000d619",
+          "rule_clear-one",
+          "rule_queen-diagonal",
+          "train_0f9ffe7085ab2da3214d311f",
+          "train_14ef3efdf7f245a1a5891288",
+          "train_188ab57dadd470196b5e9838",
+          "train_1c44c57c7a9f5699f2a364ab",
+          "train_383cf307ffd52bc6861caa39",
+          "train_bd2b603b876dfabc596637f2",
+          "train_ce75302c29ace9146f1b6f70"
+        ],
+        "strength": 1.0
+      },
+      "classification": "supported-positive",
+      "contrary": null,
+      "grounding_mode": "native-schema-binding",
+      "incomplete": false,
+      "peak_rss_kib": 63148,
+      "proof": {
+        "bytes": 141847,
+        "path": "/home/purplezky/cycle15-evidence-20261117/diagnostics/raw/963e3a6413abffa80dac3f12963e2a063665f051f7a674f5e9ece4c7dc3690ed.json",
+        "sha256": "963e3a6413abffa80dac3f12963e2a063665f051f7a674f5e9ece4c7dc3690ed"
+      },
+      "query": "(Attack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 41,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 46,
+        "initial_tasks": 46,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 3,
+        "retained_beliefs": 76,
+        "retained_tasks": 0,
+        "selected_tasks": 76
+      },
+      "wall_seconds": 4.852205286733806
+    }
+  },
+  {
+    "name": "competing-occupancy-audit",
+    "result": {
+      "answer": {
+        "confidence": 0.8065610437499999,
+        "stamps": [
+          "obs_787a27019c4b569d121a60bd8778",
+          "obs_b316e6870749bf83d20e0d2f7e09",
+          "obs_b547be32c31f5d7abaf77000d619",
+          "rule_clear-one",
+          "rule_queen-diagonal",
+          "train_0f9ffe7085ab2da3214d311f",
+          "train_14ef3efdf7f245a1a5891288",
+          "train_188ab57dadd470196b5e9838",
+          "train_1c44c57c7a9f5699f2a364ab",
+          "train_383cf307ffd52bc6861caa39",
+          "train_bd2b603b876dfabc596637f2",
+          "train_ce75302c29ace9146f1b6f70"
+        ],
+        "strength": 1.0
+      },
+      "classification": "conflicting",
+      "contrary": {
+        "confidence": 0.9408959999999998,
+        "stamps": [
+          "contrary_sensor",
+          "obs_eb95f1dff0a358bd81ddb00c846e",
+          "rule_obstruction",
+          "train_0f9ffe7085ab2da3214d311f",
+          "train_14ef3efdf7f245a1a5891288",
+          "train_16803c3963c90a56100eec67",
+          "train_188ab57dadd470196b5e9838",
+          "train_1936b074f913e417f052ee0e",
+          "train_1c44c57c7a9f5699f2a364ab",
+          "train_1dc302c71c87d207d4f7e145",
+          "train_36c5aaa65c53462c41917937",
+          "train_383cf307ffd52bc6861caa39",
+          "train_3c385a7be1978c46bed26ebe",
+          "train_61a4ac8c72120b56ac9c5348",
+          "train_656c276fefde5f4f7bb52708",
+          "train_6e92905319e3d206375b69bc",
+          "train_71f2c6bf92264c1876c4b8b4",
+          "train_7c69c5754d46cfd83bb05454",
+          "train_89650afc4510d4b59eda8b79",
+          "train_8d2871789a34962437100143",
+          "train_98e1a10d385599c4de5c61ca",
+          "train_bd2b603b876dfabc596637f2",
+          "train_c1e0771213830b61a2b017f5",
+          "train_cceef621aeba2032208779b0",
+          "train_ce75302c29ace9146f1b6f70",
+          "train_dde30f207a624ead9064e286",
+          "train_f86cecad12cd2e81a7bdd167"
+        ],
+        "strength": 1.0
+      },
+      "grounding_mode": "native-schema-binding",
+      "incomplete": false,
+      "peak_rss_kib": 47592,
+      "proof": {
+        "bytes": 101238,
+        "path": "/home/purplezky/cycle15-evidence-20261117/diagnostics/raw/da844bd930aff271a7288d7fb2abd9a56f1db04c70a50b612463ef4018b26bc1.json",
+        "sha256": "da844bd930aff271a7288d7fb2abd9a56f1db04c70a50b612463ef4018b26bc1"
+      },
+      "query": "(Attack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 30,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 28,
+        "initial_tasks": 28,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 3,
+        "retained_beliefs": 47,
+        "retained_tasks": 0,
+        "selected_tasks": 47
+      },
+      "wall_seconds": 3.3608754398301244
+    }
+  },
+  {
+    "name": "irrelevant-fact",
+    "result": {
+      "answer": {
+        "confidence": 0.8065610437499999,
+        "stamps": [
+          "obs_787a27019c4b569d121a60bd8778",
+          "obs_b316e6870749bf83d20e0d2f7e09",
+          "obs_b547be32c31f5d7abaf77000d619",
+          "rule_clear-one",
+          "rule_queen-diagonal",
+          "train_0f9ffe7085ab2da3214d311f",
+          "train_14ef3efdf7f245a1a5891288",
+          "train_188ab57dadd470196b5e9838",
+          "train_1c44c57c7a9f5699f2a364ab",
+          "train_383cf307ffd52bc6861caa39",
+          "train_bd2b603b876dfabc596637f2",
+          "train_ce75302c29ace9146f1b6f70"
+        ],
+        "strength": 1.0
+      },
+      "classification": "supported-positive",
+      "contrary": null,
+      "grounding_mode": "native-schema-binding",
+      "incomplete": false,
+      "peak_rss_kib": 47628,
+      "proof": {
+        "bytes": 94760,
+        "path": "/home/purplezky/cycle15-evidence-20261117/diagnostics/raw/ce0efca8fd0cecb923f8ab620804dea88179c9ad93f3b3145209ea79c988c4a7.json",
+        "sha256": "ce0efca8fd0cecb923f8ab620804dea88179c9ad93f3b3145209ea79c988c4a7"
+      },
+      "query": "(Attack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 29,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 28,
+        "initial_tasks": 28,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 3,
+        "retained_beliefs": 46,
+        "retained_tasks": 0,
+        "selected_tasks": 46
+      },
+      "wall_seconds": 2.704490525647998
+    }
+  },
+  {
+    "name": "chess-steps-8",
+    "result": {
+      "answer": null,
+      "classification": "unknown",
+      "contrary": null,
+      "grounding_mode": "native-schema-binding",
+      "incomplete": false,
+      "peak_rss_kib": 47408,
+      "proof": {
+        "bytes": 75298,
+        "path": "/home/purplezky/cycle15-evidence-20261117/diagnostics/raw/c403ca789b290b08de241e1422781ed1da7555f5630aaa9e1d4a2e1a91a51d53.json",
+        "sha256": "c403ca789b290b08de241e1422781ed1da7555f5630aaa9e1d4a2e1a91a51d53"
+      },
+      "query": "(Attack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 17,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 27,
+        "initial_tasks": 27,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 0,
+        "retained_beliefs": 33,
+        "retained_tasks": 25,
+        "selected_tasks": 8
+      },
+      "wall_seconds": 3.882691292092204
+    }
+  },
+  {
+    "name": "chess-steps-24",
+    "result": {
+      "answer": null,
+      "classification": "unknown",
+      "contrary": null,
+      "grounding_mode": "native-schema-binding",
+      "incomplete": false,
+      "peak_rss_kib": 47628,
+      "proof": {
+        "bytes": 83257,
+        "path": "/home/purplezky/cycle15-evidence-20261117/diagnostics/raw/3a65ce59294945514d21921b696a0b56510266d7f704edb3f89baf505d735417.json",
+        "sha256": "3a65ce59294945514d21921b696a0b56510266d7f704edb3f89baf505d735417"
+      },
+      "query": "(Attack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 21,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 27,
+        "initial_tasks": 27,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 0,
+        "retained_beliefs": 37,
+        "retained_tasks": 13,
+        "selected_tasks": 24
+      },
+      "wall_seconds": 2.3077438101172447
+    }
+  },
+  {
+    "name": "chess-steps-64",
+    "result": {
+      "answer": {
+        "confidence": 0.8065610437499999,
+        "stamps": [
+          "obs_787a27019c4b569d121a60bd8778",
+          "obs_b316e6870749bf83d20e0d2f7e09",
+          "obs_b547be32c31f5d7abaf77000d619",
+          "rule_clear-one",
+          "rule_queen-diagonal",
+          "train_0f9ffe7085ab2da3214d311f",
+          "train_14ef3efdf7f245a1a5891288",
+          "train_188ab57dadd470196b5e9838",
+          "train_1c44c57c7a9f5699f2a364ab",
+          "train_383cf307ffd52bc6861caa39",
+          "train_bd2b603b876dfabc596637f2",
+          "train_ce75302c29ace9146f1b6f70"
+        ],
+        "strength": 1.0
+      },
+      "classification": "supported-positive",
+      "contrary": null,
+      "grounding_mode": "native-schema-binding",
+      "incomplete": false,
+      "peak_rss_kib": 47508,
+      "proof": {
+        "bytes": 100574,
+        "path": "/home/purplezky/cycle15-evidence-20261117/diagnostics/raw/0b0310d4321aa60d7e7dff8ac97e71c507f2a58f0cc1ba156aa2d82f77c58ca2.json",
+        "sha256": "0b0310d4321aa60d7e7dff8ac97e71c507f2a58f0cc1ba156aa2d82f77c58ca2"
+      },
+      "query": "(Attack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 29,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 27,
+        "initial_tasks": 27,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 3,
+        "retained_beliefs": 45,
+        "retained_tasks": 0,
+        "selected_tasks": 45
+      },
+      "wall_seconds": 3.3430120954290032
+    }
+  },
+  {
+    "name": "chess-steps-128",
+    "result": {
+      "answer": {
+        "confidence": 0.8065610437499999,
+        "stamps": [
+          "obs_787a27019c4b569d121a60bd8778",
+          "obs_b316e6870749bf83d20e0d2f7e09",
+          "obs_b547be32c31f5d7abaf77000d619",
+          "rule_clear-one",
+          "rule_queen-diagonal",
+          "train_0f9ffe7085ab2da3214d311f",
+          "train_14ef3efdf7f245a1a5891288",
+          "train_188ab57dadd470196b5e9838",
+          "train_1c44c57c7a9f5699f2a364ab",
+          "train_383cf307ffd52bc6861caa39",
+          "train_bd2b603b876dfabc596637f2",
+          "train_ce75302c29ace9146f1b6f70"
+        ],
+        "strength": 1.0
+      },
+      "classification": "supported-positive",
+      "contrary": null,
+      "grounding_mode": "native-schema-binding",
+      "incomplete": false,
+      "peak_rss_kib": 47412,
+      "proof": {
+        "bytes": 100575,
+        "path": "/home/purplezky/cycle15-evidence-20261117/diagnostics/raw/b7bd780758a5fd208dfb26fcf849587ef2ea4391c712fc6711c0bbcaa29232e7.json",
+        "sha256": "b7bd780758a5fd208dfb26fcf849587ef2ea4391c712fc6711c0bbcaa29232e7"
+      },
+      "query": "(Attack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 29,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 27,
+        "initial_tasks": 27,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 3,
+        "retained_beliefs": 45,
+        "retained_tasks": 0,
+        "selected_tasks": 45
+      },
+      "wall_seconds": 2.7988676875829697
+    }
+  },
+  {
+    "name": "reversed-input-order",
+    "result": {
+      "answer": {
+        "confidence": 0.8065610437499999,
+        "stamps": [
+          "obs_787a27019c4b569d121a60bd8778",
+          "obs_b316e6870749bf83d20e0d2f7e09",
+          "obs_b547be32c31f5d7abaf77000d619",
+          "rule_clear-one",
+          "rule_queen-diagonal",
+          "train_0f9ffe7085ab2da3214d311f",
+          "train_14ef3efdf7f245a1a5891288",
+          "train_188ab57dadd470196b5e9838",
+          "train_1c44c57c7a9f5699f2a364ab",
+          "train_383cf307ffd52bc6861caa39",
+          "train_bd2b603b876dfabc596637f2",
+          "train_ce75302c29ace9146f1b6f70"
+        ],
+        "strength": 1.0
+      },
+      "classification": "supported-positive",
+      "contrary": null,
+      "grounding_mode": "native-schema-binding",
+      "incomplete": false,
+      "peak_rss_kib": 47388,
+      "proof": {
+        "bytes": 93813,
+        "path": "/home/purplezky/cycle15-evidence-20261117/diagnostics/raw/3ad29ffee55fc52e824169bd33a5b2274d9f8b82163c6fb09802e23d697aca4c.json",
+        "sha256": "3ad29ffee55fc52e824169bd33a5b2274d9f8b82163c6fb09802e23d697aca4c"
+      },
+      "query": "(Attack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 29,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 27,
+        "initial_tasks": 27,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 3,
+        "retained_beliefs": 45,
+        "retained_tasks": 0,
+        "selected_tasks": 45
+      },
+      "wall_seconds": 3.291918322443962
+    }
+  },
+  {
+    "name": "long-path-generous",
+    "result": {
+      "answer": null,
+      "classification": "unknown",
+      "contrary": null,
+      "grounding_mode": "native-schema-binding",
+      "incomplete": false,
+      "peak_rss_kib": 55016,
+      "proof": {
+        "bytes": 108913,
+        "path": "/home/purplezky/cycle15-evidence-20261117/diagnostics/raw/f7a300c8cdf66777c96bad2b304ac58d61f3afc4c81542ce3c99a0a4e45e607c.json",
+        "sha256": "f7a300c8cdf66777c96bad2b304ac58d61f3afc4c81542ce3c99a0a4e45e607c"
+      },
+      "query": "(Attack p_14473e_attacker p_14473e_target after_0326ebe3e1533afd238d675d)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 28,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 33,
+        "initial_tasks": 33,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 0,
+        "retained_beliefs": 50,
+        "retained_tasks": 0,
+        "selected_tasks": 50
+      },
+      "wall_seconds": 3.735523778013885
+    }
+  },
+  {
+    "after_rule": {
+      "confidence": 0.8571428571428572,
+      "strength": 1.0
+    },
+    "before_rule": {
+      "confidence": 0.875,
+      "strength": 1.0
+    },
+    "excluded_ancestry": "synthetic-geometry-65bea457fc7bf0b87800",
+    "name": "leave-one-ancestry-out",
+    "result": {
+      "answer": {
+        "confidence": 0.7901006142857143,
+        "stamps": [
+          "obs_787a27019c4b569d121a60bd8778",
+          "obs_b316e6870749bf83d20e0d2f7e09",
+          "obs_b547be32c31f5d7abaf77000d619",
+          "rule_clear-one",
+          "rule_queen-diagonal",
+          "train_0f9ffe7085ab2da3214d311f",
+          "train_14ef3efdf7f245a1a5891288",
+          "train_188ab57dadd470196b5e9838",
+          "train_1c44c57c7a9f5699f2a364ab",
+          "train_383cf307ffd52bc6861caa39",
+          "train_bd2b603b876dfabc596637f2"
+        ],
+        "strength": 1.0
+      },
+      "classification": "supported-positive",
+      "contrary": null,
+      "grounding_mode": "native-schema-binding",
+      "incomplete": false,
+      "peak_rss_kib": 47428,
+      "proof": {
+        "bytes": 99163,
+        "path": "/home/purplezky/cycle15-evidence-20261117/diagnostics/raw/a829ea0ac6c61a1591bb90e7a1edbf49cc5290d33fae84ddbf47f96bdaff8bc5.json",
+        "sha256": "a829ea0ac6c61a1591bb90e7a1edbf49cc5290d33fae84ddbf47f96bdaff8bc5"
+      },
+      "query": "(Attack p_8a7348_attacker p_8a7348_target after_5b54a7fcebc62e76be2bc563)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 29,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 27,
+        "initial_tasks": 27,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 3,
+        "retained_beliefs": 45,
+        "retained_tasks": 0,
+        "selected_tasks": 45
+      },
+      "wall_seconds": 3.8503672145307064
+    }
+  }
+]
