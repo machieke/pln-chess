@@ -39,6 +39,7 @@ def run(dest,meter):
     for rep in range(7):
         for name in modes[::1 if rep%2==0 else -1]:
             receipts=[];states=[];readouts=starts=derivations=0;parsing=0;classes=[];receipt_ids=[]
+            resident_peak=None;resident_frames=None
             def batch(r,requested,final=True):
                 nonlocal starts,derivations,parsing,readouts
                 starts+=1;derivations+=r['derivations'];readouts+=len(r['readouts']);parsing+=r['parse_seconds']
@@ -79,6 +80,9 @@ def run(dest,meter):
                     readouts+=1;receipts.append(live.frames[-1]);receipt_ids.append(digest(live.frames[-1]))
                     batch(live.advance(w.identity,init['state']['snapshot'],w.queries,48),w.queries)
                     starts=1
+                    status=Path(f'/proc/{live.proc.pid}/status').read_text().splitlines()
+                    resident_peak=int(next(line for line in status if line.startswith('VmHWM:')).split()[1])
+                    resident_frames=list(live.frames)
             elif name=='host-cache':
                 rows,hit=owner.read(ticket,w.queries);assert hit and len(rows)==6
             else:
@@ -86,16 +90,19 @@ def run(dest,meter):
                 _,rebuilt=cold.rebuild('corrected',replacement)
                 batch(rebuilt,replacement.queries)
             after=clock()
+            if resident_frames is not None:
+                record(dest/'resident-frames'/f'{rep}.json',resident_frames)
             def term(row):
                 from research.cycle15.native_reasoner import render
                 return alpha_key(row['term'] if isinstance(row,dict) else render(row[1][0]))
             input_spaces=local if name in ('legacy-separate','local-batch') else [replacement] if name=='corrected-rebuild' else [w]
             memory=[r['peak_rss_kib'] for r in receipts if r.get('peak_rss_kib') is not None]
+            if resident_peak is not None:memory.append(resident_peak)
             sample=dict(repetition=rep,mode=name,wall_seconds=after[0]-before[0],cpu_seconds=after[1]-before[1],
                 parse_seconds=parsing if name not in ('legacy-separate','combined-separate','host-cache') else None,
                 child_peak_rss_kib=max(memory) if memory else None,process_highwater_kib=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
                 native_receipts=receipt_ids,native_starts=starts,derivations=derivations,native_readouts=readouts,
-                semantic_targets=4,duplicate_requested_queries=0,cache_lookups=int(name=='host-cache'),
+                semantic_targets=4,duplicate_requested_queries=0,repeated_native_readout_terms=6 if name=='chunked' else 1 if name=='resident-load-read-continue' else 0,cache_lookups=int(name=='host-cache'),
                 input_bytes=sum(r.get('input_bytes',len(r['program'].encode())) for r in receipts),
                 output_bytes=sum(r['output_bytes'] for r in receipts),selected=sum(n for n,_ in states),
                 unique_input_facts=len({f.term for ws in input_spaces for f in ws.facts}),
@@ -114,4 +121,4 @@ def run(dest,meter):
         summary[name]=stats
     return record(dest/'summary.json',dict(paired_repetitions=7,sample_count=len(samples),hardware=platform.uname()._asdict(),
         fixture=state['id'],model=model['version'],modes=summary,ordering='alternating forward and reverse',
-        timing_scope='Single serial host. Wall and user/system CPU include construction, native work and result projection. Cache prewarmed. Resident mode includes startup and shutdown. Per-child memory where GNU time is available.'))
+        timing_scope='Single serial host. Wall and user/system CPU include construction, native work and result projection. Cache prewarmed. Resident mode includes startup and shutdown. Per-child high-water memory from GNU time or the resident process VmHWM.'))
