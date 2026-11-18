@@ -1,0 +1,2914 @@
+{
+  "arms": {
+    "D-AB": {
+      "diagnostic": {
+        "causes": [],
+        "clearance_present": true,
+        "diagnostic": {
+          "incomplete": false,
+          "left": {
+            "confidence": 0.9138461538461538,
+            "stamps": [
+              "obs_40fd0453df2c932254ecc531786d",
+              "rule_rook-attack",
+              "train_51053eaf6861562edf60d65f",
+              "train_5e67b0b7f3b7d2755d52dddc",
+              "train_6187dd97c149236909631c65",
+              "train_7d556a070d03251b289fa011",
+              "train_82a42048e143099fc8f7f626",
+              "train_94a0dac9d99c676c5d691502",
+              "train_a23a680fe83763ba57954212",
+              "train_bf4cefe4daa4ef1a2a94a1ff",
+              "train_bfd32b9fe3bf2d57e312693a",
+              "train_c38dca817e149d47717f8115",
+              "train_c39f977d820eecc959e461d3",
+              "train_f884eb2c90ff3179b2f0560c"
+            ],
+            "strength": 1.0,
+            "term": "(Implication (Clear attacker_c17_minimal $_11 orthogonal state_c17_minimal) (Attack attacker_c17_minimal $_11 state_c17_minimal))"
+          },
+          "markers": [
+            [
+              "C16DISJOINT",
+              "true"
+            ],
+            [
+              "C16STRUCTURAL",
+              []
+            ],
+            [
+              "C16STRUCTURAL_REVERSE",
+              [
+                [
+                  [
+                    "Attack",
+                    "attacker_c17_minimal",
+                    "target_c17_minimal",
+                    "state_c17_minimal"
+                  ],
+                  [
+                    "stv",
+                    "1.0",
+                    "0.8184960085207099"
+                  ]
+                ]
+              ]
+            ]
+          ],
+          "overlap": [],
+          "proof": {
+            "bytes": 7044,
+            "path": "/home/purplezky/cycle20-evidence-20261118/anchors/raw/9934cd9c55d66500daeb14334648a6374285619ce3319f2839bd282559e84f43.json",
+            "sha256": "9934cd9c55d66500daeb14334648a6374285619ce3319f2839bd282559e84f43"
+          },
+          "right": {
+            "confidence": 0.8956606153846153,
+            "stamps": [
+              "obs_3fc801ccd261fe72cad479445866",
+              "obs_84cbb0552836b5832dc8a066b6ae",
+              "obs_986269efa148edca323348dcddfe",
+              "rule_clear-two",
+              "train_0ed1751293a509f5724e374f",
+              "train_32775846708cef98b81eab9f",
+              "train_37a7eecab23780f2739eb087",
+              "train_3d1482f2966f82eb72a82742",
+              "train_427b1d4bfb5eef6b7478fc2b",
+              "train_42ec2c251fbd80a17c0a4851",
+              "train_44bfb85059c4fdaa07094e84",
+              "train_8df11543b83daaf8a5ee7aeb",
+              "train_a7bd497c9b8e0d818eeeda31",
+              "train_bcc1a8d54745b8aa9e004e1c",
+              "train_c07cd387dbe2e12da6a95222",
+              "train_e7402b843d431ca37d85e3ca"
+            ],
+            "strength": 1.0,
+            "term": "(Clear attacker_c17_minimal target_c17_minimal orthogonal state_c17_minimal)"
+          },
+          "scope": "Admissibility and structural witness only; no claim the scheduler attempted this pair"
+        },
+        "native_answer": {
+          "confidence": 0.8184960085207099,
+          "stamps": [
+            "obs_3fc801ccd261fe72cad479445866",
+            "obs_40fd0453df2c932254ecc531786d",
+            "obs_84cbb0552836b5832dc8a066b6ae",
+            "obs_986269efa148edca323348dcddfe",
+            "rule_clear-two",
+            "rule_rook-attack",
+            "train_0ed1751293a509f5724e374f",
+            "train_32775846708cef98b81eab9f",
+            "train_37a7eecab23780f2739eb087",
+            "train_3d1482f2966f82eb72a82742",
+            "train_427b1d4bfb5eef6b7478fc2b",
+            "train_42ec2c251fbd80a17c0a4851",
+            "train_44bfb85059c4fdaa07094e84",
+            "train_51053eaf6861562edf60d65f",
+            "train_5e67b0b7f3b7d2755d52dddc",
+            "train_6187dd97c149236909631c65",
+            "train_7d556a070d03251b289fa011",
+            "train_82a42048e143099fc8f7f626",
+            "train_8df11543b83daaf8a5ee7aeb",
+            "train_94a0dac9d99c676c5d691502",
+            "train_a23a680fe83763ba57954212",
+            "train_a7bd497c9b8e0d818eeeda31",
+            "train_bcc1a8d54745b8aa9e004e1c",
+            "train_bf4cefe4daa4ef1a2a94a1ff",
+            "train_bfd32b9fe3bf2d57e312693a",
+            "train_c07cd387dbe2e12da6a95222",
+            "train_c38dca817e149d47717f8115",
+            "train_c39f977d820eecc959e461d3",
+            "train_e7402b843d431ca37d85e3ca",
+            "train_f884eb2c90ff3179b2f0560c"
+          ],
+          "strength": 1.0
+        },
+        "native_classification": "supported-positive",
+        "scope": "Returned statements revalidated by native operator/guard; scheduler pair attempt not observable",
+        "terminal_partial_present": true
+      },
+      "observed_parent_refs": null,
+      "parent_observability": "Returned selections/retained beliefs and native guard diagnostic; fired-rule parents not exposed",
+      "stages": {
+        "Attack": {
+          "answer": {
+            "confidence": 0.8184960085207099,
+            "stamps": [
+              "obs_3fc801ccd261fe72cad479445866",
+              "obs_40fd0453df2c932254ecc531786d",
+              "obs_84cbb0552836b5832dc8a066b6ae",
+              "obs_986269efa148edca323348dcddfe",
+              "rule_clear-two",
+              "rule_rook-attack",
+              "train_0ed1751293a509f5724e374f",
+              "train_32775846708cef98b81eab9f",
+              "train_37a7eecab23780f2739eb087",
+              "train_3d1482f2966f82eb72a82742",
+              "train_427b1d4bfb5eef6b7478fc2b",
+              "train_42ec2c251fbd80a17c0a4851",
+              "train_44bfb85059c4fdaa07094e84",
+              "train_51053eaf6861562edf60d65f",
+              "train_5e67b0b7f3b7d2755d52dddc",
+              "train_6187dd97c149236909631c65",
+              "train_7d556a070d03251b289fa011",
+              "train_82a42048e143099fc8f7f626",
+              "train_8df11543b83daaf8a5ee7aeb",
+              "train_94a0dac9d99c676c5d691502",
+              "train_a23a680fe83763ba57954212",
+              "train_a7bd497c9b8e0d818eeeda31",
+              "train_bcc1a8d54745b8aa9e004e1c",
+              "train_bf4cefe4daa4ef1a2a94a1ff",
+              "train_bfd32b9fe3bf2d57e312693a",
+              "train_c07cd387dbe2e12da6a95222",
+              "train_c38dca817e149d47717f8115",
+              "train_c39f977d820eecc959e461d3",
+              "train_e7402b843d431ca37d85e3ca",
+              "train_f884eb2c90ff3179b2f0560c"
+            ],
+            "strength": 1.0
+          },
+          "classification": "supported-positive",
+          "contrary": null,
+          "exact_channels_and_trace": true,
+          "native": {
+            "bytes": 94845,
+            "path": "/home/purplezky/cycle20-evidence-20261118/anchors/raw/04fc4d0d2437ae6d7fbac9aeff81f7de2d46f8a8365851b43269ece4464f44dc.json",
+            "sha256": "04fc4d0d2437ae6d7fbac9aeff81f7de2d46f8a8365851b43269ece4464f44dc"
+          },
+          "source": {
+            "path": "artifacts/cycle17/witnesses/D-AB-native.json",
+            "sha256": "0f59ac478ce3afc5dccf7d3d6c3a16a0f07eb714986dea5d95627ff0e4230b32"
+          }
+        },
+        "Clear": {
+          "answer": {
+            "confidence": 0.8956606153846153,
+            "stamps": [
+              "obs_3fc801ccd261fe72cad479445866",
+              "obs_84cbb0552836b5832dc8a066b6ae",
+              "obs_986269efa148edca323348dcddfe",
+              "rule_clear-two",
+              "train_0ed1751293a509f5724e374f",
+              "train_32775846708cef98b81eab9f",
+              "train_37a7eecab23780f2739eb087",
+              "train_3d1482f2966f82eb72a82742",
+              "train_427b1d4bfb5eef6b7478fc2b",
+              "train_42ec2c251fbd80a17c0a4851",
+              "train_44bfb85059c4fdaa07094e84",
+              "train_8df11543b83daaf8a5ee7aeb",
+              "train_a7bd497c9b8e0d818eeeda31",
+              "train_bcc1a8d54745b8aa9e004e1c",
+              "train_c07cd387dbe2e12da6a95222",
+              "train_e7402b843d431ca37d85e3ca"
+            ],
+            "strength": 1.0
+          },
+          "classification": "supported-positive",
+          "contrary": null,
+          "exact_channels_and_trace": true,
+          "native": {
+            "bytes": 93587,
+            "path": "/home/purplezky/cycle20-evidence-20261118/anchors/raw/a7c041e1b18f6f21f745d84fed29d45197bb49c08c3d0a8cf5fc356c09c74dd0.json",
+            "sha256": "a7c041e1b18f6f21f745d84fed29d45197bb49c08c3d0a8cf5fc356c09c74dd0"
+          },
+          "source": {
+            "path": "artifacts/cycle17/witnesses/D-AB-native.json",
+            "sha256": "0f59ac478ce3afc5dccf7d3d6c3a16a0f07eb714986dea5d95627ff0e4230b32"
+          }
+        }
+      }
+    },
+    "D-BA": {
+      "diagnostic": {
+        "causes": [],
+        "clearance_present": true,
+        "diagnostic": {
+          "incomplete": false,
+          "left": {
+            "confidence": 0.9138461538461538,
+            "stamps": [
+              "obs_40fd0453df2c932254ecc531786d",
+              "rule_rook-attack",
+              "train_0ed1751293a509f5724e374f",
+              "train_32775846708cef98b81eab9f",
+              "train_37a7eecab23780f2739eb087",
+              "train_3d1482f2966f82eb72a82742",
+              "train_427b1d4bfb5eef6b7478fc2b",
+              "train_42ec2c251fbd80a17c0a4851",
+              "train_44bfb85059c4fdaa07094e84",
+              "train_8df11543b83daaf8a5ee7aeb",
+              "train_a7bd497c9b8e0d818eeeda31",
+              "train_bcc1a8d54745b8aa9e004e1c",
+              "train_c07cd387dbe2e12da6a95222",
+              "train_e7402b843d431ca37d85e3ca"
+            ],
+            "strength": 1.0,
+            "term": "(Implication (Clear attacker_c17_minimal $_11 orthogonal state_c17_minimal) (Attack attacker_c17_minimal $_11 state_c17_minimal))"
+          },
+          "markers": [
+            [
+              "C16DISJOINT",
+              "true"
+            ],
+            [
+              "C16STRUCTURAL",
+              []
+            ],
+            [
+              "C16STRUCTURAL_REVERSE",
+              [
+                [
+                  [
+                    "Attack",
+                    "attacker_c17_minimal",
+                    "target_c17_minimal",
+                    "state_c17_minimal"
+                  ],
+                  [
+                    "stv",
+                    "1.0",
+                    "0.8184960085207099"
+                  ]
+                ]
+              ]
+            ]
+          ],
+          "overlap": [],
+          "proof": {
+            "bytes": 7061,
+            "path": "/home/purplezky/cycle20-evidence-20261118/anchors/raw/0f02854483eb5fbfe9cafe1874fd429a9dd3a6ea12ba1a729663f5ab85013285.json",
+            "sha256": "0f02854483eb5fbfe9cafe1874fd429a9dd3a6ea12ba1a729663f5ab85013285"
+          },
+          "right": {
+            "confidence": 0.8956606153846153,
+            "stamps": [
+              "obs_3fc801ccd261fe72cad479445866",
+              "obs_84cbb0552836b5832dc8a066b6ae",
+              "obs_986269efa148edca323348dcddfe",
+              "rule_clear-two",
+              "train_51053eaf6861562edf60d65f",
+              "train_5e67b0b7f3b7d2755d52dddc",
+              "train_6187dd97c149236909631c65",
+              "train_7d556a070d03251b289fa011",
+              "train_82a42048e143099fc8f7f626",
+              "train_94a0dac9d99c676c5d691502",
+              "train_a23a680fe83763ba57954212",
+              "train_bf4cefe4daa4ef1a2a94a1ff",
+              "train_bfd32b9fe3bf2d57e312693a",
+              "train_c38dca817e149d47717f8115",
+              "train_c39f977d820eecc959e461d3",
+              "train_f884eb2c90ff3179b2f0560c"
+            ],
+            "strength": 1.0,
+            "term": "(Clear attacker_c17_minimal target_c17_minimal orthogonal state_c17_minimal)"
+          },
+          "scope": "Admissibility and structural witness only; no claim the scheduler attempted this pair"
+        },
+        "native_answer": {
+          "confidence": 0.8184960085207099,
+          "stamps": [
+            "obs_3fc801ccd261fe72cad479445866",
+            "obs_40fd0453df2c932254ecc531786d",
+            "obs_84cbb0552836b5832dc8a066b6ae",
+            "obs_986269efa148edca323348dcddfe",
+            "rule_clear-two",
+            "rule_rook-attack",
+            "train_0ed1751293a509f5724e374f",
+            "train_32775846708cef98b81eab9f",
+            "train_37a7eecab23780f2739eb087",
+            "train_3d1482f2966f82eb72a82742",
+            "train_427b1d4bfb5eef6b7478fc2b",
+            "train_42ec2c251fbd80a17c0a4851",
+            "train_44bfb85059c4fdaa07094e84",
+            "train_51053eaf6861562edf60d65f",
+            "train_5e67b0b7f3b7d2755d52dddc",
+            "train_6187dd97c149236909631c65",
+            "train_7d556a070d03251b289fa011",
+            "train_82a42048e143099fc8f7f626",
+            "train_8df11543b83daaf8a5ee7aeb",
+            "train_94a0dac9d99c676c5d691502",
+            "train_a23a680fe83763ba57954212",
+            "train_a7bd497c9b8e0d818eeeda31",
+            "train_bcc1a8d54745b8aa9e004e1c",
+            "train_bf4cefe4daa4ef1a2a94a1ff",
+            "train_bfd32b9fe3bf2d57e312693a",
+            "train_c07cd387dbe2e12da6a95222",
+            "train_c38dca817e149d47717f8115",
+            "train_c39f977d820eecc959e461d3",
+            "train_e7402b843d431ca37d85e3ca",
+            "train_f884eb2c90ff3179b2f0560c"
+          ],
+          "strength": 1.0
+        },
+        "native_classification": "supported-positive",
+        "scope": "Returned statements revalidated by native operator/guard; scheduler pair attempt not observable",
+        "terminal_partial_present": true
+      },
+      "observed_parent_refs": null,
+      "parent_observability": "Returned selections/retained beliefs and native guard diagnostic; fired-rule parents not exposed",
+      "stages": {
+        "Attack": {
+          "answer": {
+            "confidence": 0.8184960085207099,
+            "stamps": [
+              "obs_3fc801ccd261fe72cad479445866",
+              "obs_40fd0453df2c932254ecc531786d",
+              "obs_84cbb0552836b5832dc8a066b6ae",
+              "obs_986269efa148edca323348dcddfe",
+              "rule_clear-two",
+              "rule_rook-attack",
+              "train_0ed1751293a509f5724e374f",
+              "train_32775846708cef98b81eab9f",
+              "train_37a7eecab23780f2739eb087",
+              "train_3d1482f2966f82eb72a82742",
+              "train_427b1d4bfb5eef6b7478fc2b",
+              "train_42ec2c251fbd80a17c0a4851",
+              "train_44bfb85059c4fdaa07094e84",
+              "train_51053eaf6861562edf60d65f",
+              "train_5e67b0b7f3b7d2755d52dddc",
+              "train_6187dd97c149236909631c65",
+              "train_7d556a070d03251b289fa011",
+              "train_82a42048e143099fc8f7f626",
+              "train_8df11543b83daaf8a5ee7aeb",
+              "train_94a0dac9d99c676c5d691502",
+              "train_a23a680fe83763ba57954212",
+              "train_a7bd497c9b8e0d818eeeda31",
+              "train_bcc1a8d54745b8aa9e004e1c",
+              "train_bf4cefe4daa4ef1a2a94a1ff",
+              "train_bfd32b9fe3bf2d57e312693a",
+              "train_c07cd387dbe2e12da6a95222",
+              "train_c38dca817e149d47717f8115",
+              "train_c39f977d820eecc959e461d3",
+              "train_e7402b843d431ca37d85e3ca",
+              "train_f884eb2c90ff3179b2f0560c"
+            ],
+            "strength": 1.0
+          },
+          "classification": "supported-positive",
+          "contrary": null,
+          "exact_channels_and_trace": true,
+          "native": {
+            "bytes": 94845,
+            "path": "/home/purplezky/cycle20-evidence-20261118/anchors/raw/4c91eec503012178bf49eb2aadef948d5e41ff9abf5ab559673932879ba2c0b0.json",
+            "sha256": "4c91eec503012178bf49eb2aadef948d5e41ff9abf5ab559673932879ba2c0b0"
+          },
+          "source": {
+            "path": "artifacts/cycle17/witnesses/D-BA-native.json",
+            "sha256": "1e2ff218b70749ea61b12d37111cd4e9576db9515f6f0797045e63111b0c87dd"
+          }
+        },
+        "Clear": {
+          "answer": {
+            "confidence": 0.8956606153846153,
+            "stamps": [
+              "obs_3fc801ccd261fe72cad479445866",
+              "obs_84cbb0552836b5832dc8a066b6ae",
+              "obs_986269efa148edca323348dcddfe",
+              "rule_clear-two",
+              "train_51053eaf6861562edf60d65f",
+              "train_5e67b0b7f3b7d2755d52dddc",
+              "train_6187dd97c149236909631c65",
+              "train_7d556a070d03251b289fa011",
+              "train_82a42048e143099fc8f7f626",
+              "train_94a0dac9d99c676c5d691502",
+              "train_a23a680fe83763ba57954212",
+              "train_bf4cefe4daa4ef1a2a94a1ff",
+              "train_bfd32b9fe3bf2d57e312693a",
+              "train_c38dca817e149d47717f8115",
+              "train_c39f977d820eecc959e461d3",
+              "train_f884eb2c90ff3179b2f0560c"
+            ],
+            "strength": 1.0
+          },
+          "classification": "supported-positive",
+          "contrary": null,
+          "exact_channels_and_trace": true,
+          "native": {
+            "bytes": 93589,
+            "path": "/home/purplezky/cycle20-evidence-20261118/anchors/raw/1feeabba24c29583e5ae53542ff7cde82632f54d2e400f62898629e102f726ab.json",
+            "sha256": "1feeabba24c29583e5ae53542ff7cde82632f54d2e400f62898629e102f726ab"
+          },
+          "source": {
+            "path": "artifacts/cycle17/witnesses/D-BA-native.json",
+            "sha256": "1e2ff218b70749ea61b12d37111cd4e9576db9515f6f0797045e63111b0c87dd"
+          }
+        }
+      }
+    },
+    "S-AA": {
+      "diagnostic": {
+        "causes": [
+          "shared training ancestry"
+        ],
+        "clearance_present": true,
+        "diagnostic": {
+          "incomplete": false,
+          "left": {
+            "confidence": 0.9138461538461538,
+            "stamps": [
+              "obs_40fd0453df2c932254ecc531786d",
+              "rule_rook-attack",
+              "train_0ed1751293a509f5724e374f",
+              "train_32775846708cef98b81eab9f",
+              "train_37a7eecab23780f2739eb087",
+              "train_3d1482f2966f82eb72a82742",
+              "train_427b1d4bfb5eef6b7478fc2b",
+              "train_42ec2c251fbd80a17c0a4851",
+              "train_44bfb85059c4fdaa07094e84",
+              "train_8df11543b83daaf8a5ee7aeb",
+              "train_a7bd497c9b8e0d818eeeda31",
+              "train_bcc1a8d54745b8aa9e004e1c",
+              "train_c07cd387dbe2e12da6a95222",
+              "train_e7402b843d431ca37d85e3ca"
+            ],
+            "strength": 1.0,
+            "term": "(Implication (Clear attacker_c17_minimal $_11 orthogonal state_c17_minimal) (Attack attacker_c17_minimal $_11 state_c17_minimal))"
+          },
+          "markers": [
+            [
+              "C16DISJOINT",
+              "false"
+            ],
+            [
+              "C16STRUCTURAL",
+              []
+            ],
+            [
+              "C16STRUCTURAL_REVERSE",
+              [
+                [
+                  [
+                    "Attack",
+                    "attacker_c17_minimal",
+                    "target_c17_minimal",
+                    "state_c17_minimal"
+                  ],
+                  [
+                    "stv",
+                    "1.0",
+                    "0.8184960085207099"
+                  ]
+                ]
+              ]
+            ]
+          ],
+          "overlap": [
+            "train_0ed1751293a509f5724e374f",
+            "train_32775846708cef98b81eab9f",
+            "train_37a7eecab23780f2739eb087",
+            "train_3d1482f2966f82eb72a82742",
+            "train_427b1d4bfb5eef6b7478fc2b",
+            "train_42ec2c251fbd80a17c0a4851",
+            "train_44bfb85059c4fdaa07094e84",
+            "train_8df11543b83daaf8a5ee7aeb",
+            "train_a7bd497c9b8e0d818eeeda31",
+            "train_bcc1a8d54745b8aa9e004e1c",
+            "train_c07cd387dbe2e12da6a95222",
+            "train_e7402b843d431ca37d85e3ca"
+          ],
+          "proof": {
+            "bytes": 7045,
+            "path": "/home/purplezky/cycle20-evidence-20261118/anchors/raw/86fef3e1d7e36c2c3dcfecf6dbe674893f29af4bb355395538f6d8dea64bd480.json",
+            "sha256": "86fef3e1d7e36c2c3dcfecf6dbe674893f29af4bb355395538f6d8dea64bd480"
+          },
+          "right": {
+            "confidence": 0.8956606153846153,
+            "stamps": [
+              "obs_3fc801ccd261fe72cad479445866",
+              "obs_84cbb0552836b5832dc8a066b6ae",
+              "obs_986269efa148edca323348dcddfe",
+              "rule_clear-two",
+              "train_0ed1751293a509f5724e374f",
+              "train_32775846708cef98b81eab9f",
+              "train_37a7eecab23780f2739eb087",
+              "train_3d1482f2966f82eb72a82742",
+              "train_427b1d4bfb5eef6b7478fc2b",
+              "train_42ec2c251fbd80a17c0a4851",
+              "train_44bfb85059c4fdaa07094e84",
+              "train_8df11543b83daaf8a5ee7aeb",
+              "train_a7bd497c9b8e0d818eeeda31",
+              "train_bcc1a8d54745b8aa9e004e1c",
+              "train_c07cd387dbe2e12da6a95222",
+              "train_e7402b843d431ca37d85e3ca"
+            ],
+            "strength": 1.0,
+            "term": "(Clear attacker_c17_minimal target_c17_minimal orthogonal state_c17_minimal)"
+          },
+          "scope": "Admissibility and structural witness only; no claim the scheduler attempted this pair"
+        },
+        "native_answer": null,
+        "native_classification": "unknown",
+        "scope": "Returned statements revalidated by native operator/guard; scheduler pair attempt not observable",
+        "terminal_partial_present": true
+      },
+      "observed_parent_refs": null,
+      "parent_observability": "Returned selections/retained beliefs and native guard diagnostic; fired-rule parents not exposed",
+      "stages": {
+        "Attack": {
+          "answer": null,
+          "classification": "unknown",
+          "contrary": null,
+          "exact_channels_and_trace": true,
+          "native": {
+            "bytes": 82170,
+            "path": "/home/purplezky/cycle20-evidence-20261118/anchors/raw/483e3cf02ca4076cb5aae9dc0edd05ac0aaaadd05e792d798d0c4ffba34ecf7f.json",
+            "sha256": "483e3cf02ca4076cb5aae9dc0edd05ac0aaaadd05e792d798d0c4ffba34ecf7f"
+          },
+          "source": {
+            "path": "artifacts/cycle17/witnesses/S-AA-native.json",
+            "sha256": "90427c5ee5d471f7138d626d562bdf16712e45dfe9fee70aa0bbacb23bf85bb0"
+          }
+        },
+        "Clear": {
+          "answer": {
+            "confidence": 0.8956606153846153,
+            "stamps": [
+              "obs_3fc801ccd261fe72cad479445866",
+              "obs_84cbb0552836b5832dc8a066b6ae",
+              "obs_986269efa148edca323348dcddfe",
+              "rule_clear-two",
+              "train_0ed1751293a509f5724e374f",
+              "train_32775846708cef98b81eab9f",
+              "train_37a7eecab23780f2739eb087",
+              "train_3d1482f2966f82eb72a82742",
+              "train_427b1d4bfb5eef6b7478fc2b",
+              "train_42ec2c251fbd80a17c0a4851",
+              "train_44bfb85059c4fdaa07094e84",
+              "train_8df11543b83daaf8a5ee7aeb",
+              "train_a7bd497c9b8e0d818eeeda31",
+              "train_bcc1a8d54745b8aa9e004e1c",
+              "train_c07cd387dbe2e12da6a95222",
+              "train_e7402b843d431ca37d85e3ca"
+            ],
+            "strength": 1.0
+          },
+          "classification": "supported-positive",
+          "contrary": null,
+          "exact_channels_and_trace": true,
+          "native": {
+            "bytes": 83123,
+            "path": "/home/purplezky/cycle20-evidence-20261118/anchors/raw/0ba976f2bf0594af979b5d2dd7158933107c7c1408c2f3ed18009998496114ff.json",
+            "sha256": "0ba976f2bf0594af979b5d2dd7158933107c7c1408c2f3ed18009998496114ff"
+          },
+          "source": {
+            "path": "artifacts/cycle17/witnesses/S-AA-native.json",
+            "sha256": "90427c5ee5d471f7138d626d562bdf16712e45dfe9fee70aa0bbacb23bf85bb0"
+          }
+        }
+      }
+    },
+    "S-BB": {
+      "diagnostic": {
+        "causes": [
+          "shared training ancestry"
+        ],
+        "clearance_present": true,
+        "diagnostic": {
+          "incomplete": false,
+          "left": {
+            "confidence": 0.9138461538461538,
+            "stamps": [
+              "obs_40fd0453df2c932254ecc531786d",
+              "rule_rook-attack",
+              "train_51053eaf6861562edf60d65f",
+              "train_5e67b0b7f3b7d2755d52dddc",
+              "train_6187dd97c149236909631c65",
+              "train_7d556a070d03251b289fa011",
+              "train_82a42048e143099fc8f7f626",
+              "train_94a0dac9d99c676c5d691502",
+              "train_a23a680fe83763ba57954212",
+              "train_bf4cefe4daa4ef1a2a94a1ff",
+              "train_bfd32b9fe3bf2d57e312693a",
+              "train_c38dca817e149d47717f8115",
+              "train_c39f977d820eecc959e461d3",
+              "train_f884eb2c90ff3179b2f0560c"
+            ],
+            "strength": 1.0,
+            "term": "(Implication (Clear attacker_c17_minimal $_11 orthogonal state_c17_minimal) (Attack attacker_c17_minimal $_11 state_c17_minimal))"
+          },
+          "markers": [
+            [
+              "C16DISJOINT",
+              "false"
+            ],
+            [
+              "C16STRUCTURAL",
+              []
+            ],
+            [
+              "C16STRUCTURAL_REVERSE",
+              [
+                [
+                  [
+                    "Attack",
+                    "attacker_c17_minimal",
+                    "target_c17_minimal",
+                    "state_c17_minimal"
+                  ],
+                  [
+                    "stv",
+                    "1.0",
+                    "0.8184960085207099"
+                  ]
+                ]
+              ]
+            ]
+          ],
+          "overlap": [
+            "train_51053eaf6861562edf60d65f",
+            "train_5e67b0b7f3b7d2755d52dddc",
+            "train_6187dd97c149236909631c65",
+            "train_7d556a070d03251b289fa011",
+            "train_82a42048e143099fc8f7f626",
+            "train_94a0dac9d99c676c5d691502",
+            "train_a23a680fe83763ba57954212",
+            "train_bf4cefe4daa4ef1a2a94a1ff",
+            "train_bfd32b9fe3bf2d57e312693a",
+            "train_c38dca817e149d47717f8115",
+            "train_c39f977d820eecc959e461d3",
+            "train_f884eb2c90ff3179b2f0560c"
+          ],
+          "proof": {
+            "bytes": 7061,
+            "path": "/home/purplezky/cycle20-evidence-20261118/anchors/raw/d2bfdc3f36ca63349f4b5b303ff853b2a743aa960936276ad532416ab78923d2.json",
+            "sha256": "d2bfdc3f36ca63349f4b5b303ff853b2a743aa960936276ad532416ab78923d2"
+          },
+          "right": {
+            "confidence": 0.8956606153846153,
+            "stamps": [
+              "obs_3fc801ccd261fe72cad479445866",
+              "obs_84cbb0552836b5832dc8a066b6ae",
+              "obs_986269efa148edca323348dcddfe",
+              "rule_clear-two",
+              "train_51053eaf6861562edf60d65f",
+              "train_5e67b0b7f3b7d2755d52dddc",
+              "train_6187dd97c149236909631c65",
+              "train_7d556a070d03251b289fa011",
+              "train_82a42048e143099fc8f7f626",
+              "train_94a0dac9d99c676c5d691502",
+              "train_a23a680fe83763ba57954212",
+              "train_bf4cefe4daa4ef1a2a94a1ff",
+              "train_bfd32b9fe3bf2d57e312693a",
+              "train_c38dca817e149d47717f8115",
+              "train_c39f977d820eecc959e461d3",
+              "train_f884eb2c90ff3179b2f0560c"
+            ],
+            "strength": 1.0,
+            "term": "(Clear attacker_c17_minimal target_c17_minimal orthogonal state_c17_minimal)"
+          },
+          "scope": "Admissibility and structural witness only; no claim the scheduler attempted this pair"
+        },
+        "native_answer": null,
+        "native_classification": "unknown",
+        "scope": "Returned statements revalidated by native operator/guard; scheduler pair attempt not observable",
+        "terminal_partial_present": true
+      },
+      "observed_parent_refs": null,
+      "parent_observability": "Returned selections/retained beliefs and native guard diagnostic; fired-rule parents not exposed",
+      "stages": {
+        "Attack": {
+          "answer": null,
+          "classification": "unknown",
+          "contrary": null,
+          "exact_channels_and_trace": true,
+          "native": {
+            "bytes": 82170,
+            "path": "/home/purplezky/cycle20-evidence-20261118/anchors/raw/03557b667cbfdccad23dab7beaa33e0069c5a8c75d6691423774aa81c919e4a1.json",
+            "sha256": "03557b667cbfdccad23dab7beaa33e0069c5a8c75d6691423774aa81c919e4a1"
+          },
+          "source": {
+            "path": "artifacts/cycle17/witnesses/S-BB-native.json",
+            "sha256": "80d34a1c2e8b3e2dd01069cf573339f2bf95b3d6e6f162c59f9013061f302dc7"
+          }
+        },
+        "Clear": {
+          "answer": {
+            "confidence": 0.8956606153846153,
+            "stamps": [
+              "obs_3fc801ccd261fe72cad479445866",
+              "obs_84cbb0552836b5832dc8a066b6ae",
+              "obs_986269efa148edca323348dcddfe",
+              "rule_clear-two",
+              "train_51053eaf6861562edf60d65f",
+              "train_5e67b0b7f3b7d2755d52dddc",
+              "train_6187dd97c149236909631c65",
+              "train_7d556a070d03251b289fa011",
+              "train_82a42048e143099fc8f7f626",
+              "train_94a0dac9d99c676c5d691502",
+              "train_a23a680fe83763ba57954212",
+              "train_bf4cefe4daa4ef1a2a94a1ff",
+              "train_bfd32b9fe3bf2d57e312693a",
+              "train_c38dca817e149d47717f8115",
+              "train_c39f977d820eecc959e461d3",
+              "train_f884eb2c90ff3179b2f0560c"
+            ],
+            "strength": 1.0
+          },
+          "classification": "supported-positive",
+          "contrary": null,
+          "exact_channels_and_trace": true,
+          "native": {
+            "bytes": 83123,
+            "path": "/home/purplezky/cycle20-evidence-20261118/anchors/raw/712593844c6d2be0138d7302f9da113d4741843ebed5adc3861c5d8269276e91.json",
+            "sha256": "712593844c6d2be0138d7302f9da113d4741843ebed5adc3861c5d8269276e91"
+          },
+          "source": {
+            "path": "artifacts/cycle17/witnesses/S-BB-native.json",
+            "sha256": "80d34a1c2e8b3e2dd01069cf573339f2bf95b3d6e6f162c59f9013061f302dc7"
+          }
+        }
+      }
+    },
+    "historical-shared": {
+      "diagnostic": {
+        "causes": [
+          "shared training ancestry"
+        ],
+        "clearance_present": true,
+        "diagnostic": {
+          "incomplete": false,
+          "left": {
+            "confidence": 0.9075,
+            "stamps": [
+              "obs_0dd313bd3983495fbf9679ccc148",
+              "rule_rook-attack",
+              "train_0d666f4b5c7ce8aea236bc75",
+              "train_21fcbd138a35a2378755a77d",
+              "train_37db720886283ab0540b48f9",
+              "train_5d01c16a8c2b9fa38340065a",
+              "train_603d3d5f1f834f438c3b8e70",
+              "train_7b48cb09bf8ade6fa47ab17a",
+              "train_9d285d4b2cbf565ac33c4604",
+              "train_df4a20b93d37fabbb6fe9fdc",
+              "train_e8befabc824713f65eee24b6",
+              "train_e954f03fc9e9e98028d74a4d",
+              "train_efaee5c0c3e7def4484c4d82"
+            ],
+            "strength": 1.0,
+            "term": "(Implication (Clear entity_e9fb8980616a1c6a2706 $_11 orthogonal variant_7c36089d9e3d954be14fa7d8) (Attack entity_e9fb8980616a1c6a2706 $_11 variant_7c36089d9e3d954be14fa7d8))"
+          },
+          "markers": [
+            [
+              "C16DISJOINT",
+              "false"
+            ],
+            [
+              "C16STRUCTURAL",
+              []
+            ],
+            [
+              "C16STRUCTURAL_REVERSE",
+              [
+                [
+                  [
+                    "Attack",
+                    "entity_e9fb8980616a1c6a2706",
+                    "entity_3a19f98b0f347885ea38",
+                    "variant_7c36089d9e3d954be14fa7d8"
+                  ],
+                  [
+                    "stv",
+                    "1.0",
+                    "0.8128120084615383"
+                  ]
+                ]
+              ]
+            ]
+          ],
+          "overlap": [
+            "train_0d666f4b5c7ce8aea236bc75",
+            "train_21fcbd138a35a2378755a77d",
+            "train_37db720886283ab0540b48f9",
+            "train_5d01c16a8c2b9fa38340065a",
+            "train_603d3d5f1f834f438c3b8e70",
+            "train_7b48cb09bf8ade6fa47ab17a",
+            "train_9d285d4b2cbf565ac33c4604",
+            "train_df4a20b93d37fabbb6fe9fdc",
+            "train_e8befabc824713f65eee24b6",
+            "train_e954f03fc9e9e98028d74a4d",
+            "train_efaee5c0c3e7def4484c4d82"
+          ],
+          "proof": {
+            "bytes": 7172,
+            "path": "/home/purplezky/cycle20-evidence-20261118/anchors/raw/4f45f2d8601292a170af9867ffd00d9938c405cefee62938d02e4fdc9cbc37f5.json",
+            "sha256": "4f45f2d8601292a170af9867ffd00d9938c405cefee62938d02e4fdc9cbc37f5"
+          },
+          "right": {
+            "confidence": 0.8956606153846153,
+            "stamps": [
+              "obs_5607dc3ac63766f14b7c554c8ba1",
+              "obs_7a7b3463fa430671c445e235d51a",
+              "obs_c9706e29a9af4f878d9f008a1b12",
+              "rule_clear-two",
+              "train_0d666f4b5c7ce8aea236bc75",
+              "train_21fcbd138a35a2378755a77d",
+              "train_37db720886283ab0540b48f9",
+              "train_5d01c16a8c2b9fa38340065a",
+              "train_603d3d5f1f834f438c3b8e70",
+              "train_7b48cb09bf8ade6fa47ab17a",
+              "train_9d285d4b2cbf565ac33c4604",
+              "train_df4a20b93d37fabbb6fe9fdc",
+              "train_e238939233efd52f15cbcde7",
+              "train_e8befabc824713f65eee24b6",
+              "train_e954f03fc9e9e98028d74a4d",
+              "train_efaee5c0c3e7def4484c4d82"
+            ],
+            "strength": 1.0,
+            "term": "(Clear entity_e9fb8980616a1c6a2706 entity_3a19f98b0f347885ea38 orthogonal variant_7c36089d9e3d954be14fa7d8)"
+          },
+          "scope": "Admissibility and structural witness only; no claim the scheduler attempted this pair"
+        },
+        "native_answer": null,
+        "native_classification": "unknown",
+        "scope": "Returned statements revalidated by native operator/guard; scheduler pair attempt not observable",
+        "terminal_partial_present": true
+      },
+      "observed_parent_refs": null,
+      "parent_observability": "Returned selections/retained beliefs and native guard diagnostic; fired-rule parents not exposed",
+      "stages": {
+        "Attack": {
+          "answer": null,
+          "classification": "unknown",
+          "contrary": null,
+          "exact_channels_and_trace": true,
+          "native": {
+            "bytes": 85057,
+            "path": "/home/purplezky/cycle20-evidence-20261118/anchors/raw/d94a98560033dbbeec8ac744ae90a829c953e641fac700e095439fa8d69126db.json",
+            "sha256": "d94a98560033dbbeec8ac744ae90a829c953e641fac700e095439fa8d69126db"
+          },
+          "source": {
+            "path": "artifacts/cycle17/witnesses/historical-shared-native.json",
+            "sha256": "be3bbcf188169efc398586e0b48883b1a2e242767507db60f37eb7aec7912468"
+          }
+        }
+      }
+    },
+    "overlap-1": {
+      "diagnostic": {
+        "causes": [
+          "shared training ancestry"
+        ],
+        "clearance_present": true,
+        "diagnostic": {
+          "incomplete": false,
+          "left": {
+            "confidence": 0.9138461538461538,
+            "stamps": [
+              "obs_40fd0453df2c932254ecc531786d",
+              "rule_rook-attack",
+              "train_44bfb85059c4fdaa07094e84",
+              "train_51053eaf6861562edf60d65f",
+              "train_5e67b0b7f3b7d2755d52dddc",
+              "train_6187dd97c149236909631c65",
+              "train_7d556a070d03251b289fa011",
+              "train_82a42048e143099fc8f7f626",
+              "train_94a0dac9d99c676c5d691502",
+              "train_a23a680fe83763ba57954212",
+              "train_bf4cefe4daa4ef1a2a94a1ff",
+              "train_bfd32b9fe3bf2d57e312693a",
+              "train_c38dca817e149d47717f8115",
+              "train_f884eb2c90ff3179b2f0560c"
+            ],
+            "strength": 1.0,
+            "term": "(Implication (Clear attacker_c17_minimal $_11 orthogonal state_c17_minimal) (Attack attacker_c17_minimal $_11 state_c17_minimal))"
+          },
+          "markers": [
+            [
+              "C16DISJOINT",
+              "false"
+            ],
+            [
+              "C16STRUCTURAL",
+              []
+            ],
+            [
+              "C16STRUCTURAL_REVERSE",
+              [
+                [
+                  [
+                    "Attack",
+                    "attacker_c17_minimal",
+                    "target_c17_minimal",
+                    "state_c17_minimal"
+                  ],
+                  [
+                    "stv",
+                    "1.0",
+                    "0.8184960085207099"
+                  ]
+                ]
+              ]
+            ]
+          ],
+          "overlap": [
+            "train_44bfb85059c4fdaa07094e84"
+          ],
+          "proof": {
+            "bytes": 7045,
+            "path": "/home/purplezky/cycle20-evidence-20261118/anchors/raw/5d19d7a95f2349ada04facdea2a468f163064340a6c3e1fe4e51b23e82b6136d.json",
+            "sha256": "5d19d7a95f2349ada04facdea2a468f163064340a6c3e1fe4e51b23e82b6136d"
+          },
+          "right": {
+            "confidence": 0.8956606153846153,
+            "stamps": [
+              "obs_3fc801ccd261fe72cad479445866",
+              "obs_84cbb0552836b5832dc8a066b6ae",
+              "obs_986269efa148edca323348dcddfe",
+              "rule_clear-two",
+              "train_0ed1751293a509f5724e374f",
+              "train_32775846708cef98b81eab9f",
+              "train_37a7eecab23780f2739eb087",
+              "train_3d1482f2966f82eb72a82742",
+              "train_427b1d4bfb5eef6b7478fc2b",
+              "train_42ec2c251fbd80a17c0a4851",
+              "train_44bfb85059c4fdaa07094e84",
+              "train_8df11543b83daaf8a5ee7aeb",
+              "train_a7bd497c9b8e0d818eeeda31",
+              "train_bcc1a8d54745b8aa9e004e1c",
+              "train_c07cd387dbe2e12da6a95222",
+              "train_e7402b843d431ca37d85e3ca"
+            ],
+            "strength": 1.0,
+            "term": "(Clear attacker_c17_minimal target_c17_minimal orthogonal state_c17_minimal)"
+          },
+          "scope": "Admissibility and structural witness only; no claim the scheduler attempted this pair"
+        },
+        "native_answer": null,
+        "native_classification": "unknown",
+        "scope": "Returned statements revalidated by native operator/guard; scheduler pair attempt not observable",
+        "terminal_partial_present": true
+      },
+      "observed_parent_refs": null,
+      "parent_observability": "Returned selections/retained beliefs and native guard diagnostic; fired-rule parents not exposed",
+      "stages": {
+        "Attack": {
+          "answer": null,
+          "classification": "unknown",
+          "contrary": null,
+          "exact_channels_and_trace": true,
+          "native": {
+            "bytes": 82171,
+            "path": "/home/purplezky/cycle20-evidence-20261118/anchors/raw/88764d6240fbcd1c509914c6829f1da272fef2ff8fe85589439c31be8eece7d2.json",
+            "sha256": "88764d6240fbcd1c509914c6829f1da272fef2ff8fe85589439c31be8eece7d2"
+          },
+          "source": {
+            "path": "artifacts/cycle17/witnesses/overlap-1-native.json",
+            "sha256": "b8d70014315c2e110e4379bfd83d576b4bc98e5c23c424b3e3b8047b236f6322"
+          }
+        },
+        "Clear": {
+          "answer": {
+            "confidence": 0.8956606153846153,
+            "stamps": [
+              "obs_3fc801ccd261fe72cad479445866",
+              "obs_84cbb0552836b5832dc8a066b6ae",
+              "obs_986269efa148edca323348dcddfe",
+              "rule_clear-two",
+              "train_0ed1751293a509f5724e374f",
+              "train_32775846708cef98b81eab9f",
+              "train_37a7eecab23780f2739eb087",
+              "train_3d1482f2966f82eb72a82742",
+              "train_427b1d4bfb5eef6b7478fc2b",
+              "train_42ec2c251fbd80a17c0a4851",
+              "train_44bfb85059c4fdaa07094e84",
+              "train_8df11543b83daaf8a5ee7aeb",
+              "train_a7bd497c9b8e0d818eeeda31",
+              "train_bcc1a8d54745b8aa9e004e1c",
+              "train_c07cd387dbe2e12da6a95222",
+              "train_e7402b843d431ca37d85e3ca"
+            ],
+            "strength": 1.0
+          },
+          "classification": "supported-positive",
+          "contrary": null,
+          "exact_channels_and_trace": true,
+          "native": {
+            "bytes": 83136,
+            "path": "/home/purplezky/cycle20-evidence-20261118/anchors/raw/c8cfec6fff96216ea10c51acdebdcd3bbe92a2310e350ebfcd9fd085cf357299.json",
+            "sha256": "c8cfec6fff96216ea10c51acdebdcd3bbe92a2310e350ebfcd9fd085cf357299"
+          },
+          "source": {
+            "path": "artifacts/cycle17/witnesses/overlap-1-native.json",
+            "sha256": "b8d70014315c2e110e4379bfd83d576b4bc98e5c23c424b3e3b8047b236f6322"
+          }
+        }
+      }
+    },
+    "overlap-6": {
+      "diagnostic": {
+        "causes": [
+          "shared training ancestry"
+        ],
+        "clearance_present": true,
+        "diagnostic": {
+          "incomplete": false,
+          "left": {
+            "confidence": 0.9138461538461538,
+            "stamps": [
+              "obs_40fd0453df2c932254ecc531786d",
+              "rule_rook-attack",
+              "train_37a7eecab23780f2739eb087",
+              "train_3d1482f2966f82eb72a82742",
+              "train_44bfb85059c4fdaa07094e84",
+              "train_51053eaf6861562edf60d65f",
+              "train_5e67b0b7f3b7d2755d52dddc",
+              "train_82a42048e143099fc8f7f626",
+              "train_8df11543b83daaf8a5ee7aeb",
+              "train_94a0dac9d99c676c5d691502",
+              "train_a7bd497c9b8e0d818eeeda31",
+              "train_bfd32b9fe3bf2d57e312693a",
+              "train_c07cd387dbe2e12da6a95222",
+              "train_c38dca817e149d47717f8115"
+            ],
+            "strength": 1.0,
+            "term": "(Implication (Clear attacker_c17_minimal $_11 orthogonal state_c17_minimal) (Attack attacker_c17_minimal $_11 state_c17_minimal))"
+          },
+          "markers": [
+            [
+              "C16DISJOINT",
+              "false"
+            ],
+            [
+              "C16STRUCTURAL",
+              []
+            ],
+            [
+              "C16STRUCTURAL_REVERSE",
+              [
+                [
+                  [
+                    "Attack",
+                    "attacker_c17_minimal",
+                    "target_c17_minimal",
+                    "state_c17_minimal"
+                  ],
+                  [
+                    "stv",
+                    "1.0",
+                    "0.8184960085207099"
+                  ]
+                ]
+              ]
+            ]
+          ],
+          "overlap": [
+            "train_37a7eecab23780f2739eb087",
+            "train_3d1482f2966f82eb72a82742",
+            "train_44bfb85059c4fdaa07094e84",
+            "train_8df11543b83daaf8a5ee7aeb",
+            "train_a7bd497c9b8e0d818eeeda31",
+            "train_c07cd387dbe2e12da6a95222"
+          ],
+          "proof": {
+            "bytes": 7045,
+            "path": "/home/purplezky/cycle20-evidence-20261118/anchors/raw/9f6f364dce21affb1bc18f783509898263c3699c734be504d7b8cece1109b460.json",
+            "sha256": "9f6f364dce21affb1bc18f783509898263c3699c734be504d7b8cece1109b460"
+          },
+          "right": {
+            "confidence": 0.8956606153846153,
+            "stamps": [
+              "obs_3fc801ccd261fe72cad479445866",
+              "obs_84cbb0552836b5832dc8a066b6ae",
+              "obs_986269efa148edca323348dcddfe",
+              "rule_clear-two",
+              "train_0ed1751293a509f5724e374f",
+              "train_32775846708cef98b81eab9f",
+              "train_37a7eecab23780f2739eb087",
+              "train_3d1482f2966f82eb72a82742",
+              "train_427b1d4bfb5eef6b7478fc2b",
+              "train_42ec2c251fbd80a17c0a4851",
+              "train_44bfb85059c4fdaa07094e84",
+              "train_8df11543b83daaf8a5ee7aeb",
+              "train_a7bd497c9b8e0d818eeeda31",
+              "train_bcc1a8d54745b8aa9e004e1c",
+              "train_c07cd387dbe2e12da6a95222",
+              "train_e7402b843d431ca37d85e3ca"
+            ],
+            "strength": 1.0,
+            "term": "(Clear attacker_c17_minimal target_c17_minimal orthogonal state_c17_minimal)"
+          },
+          "scope": "Admissibility and structural witness only; no claim the scheduler attempted this pair"
+        },
+        "native_answer": null,
+        "native_classification": "unknown",
+        "scope": "Returned statements revalidated by native operator/guard; scheduler pair attempt not observable",
+        "terminal_partial_present": true
+      },
+      "observed_parent_refs": null,
+      "parent_observability": "Returned selections/retained beliefs and native guard diagnostic; fired-rule parents not exposed",
+      "stages": {
+        "Attack": {
+          "answer": null,
+          "classification": "unknown",
+          "contrary": null,
+          "exact_channels_and_trace": true,
+          "native": {
+            "bytes": 82171,
+            "path": "/home/purplezky/cycle20-evidence-20261118/anchors/raw/e8a09f7ae00e8bfe5ea9db625d7485a1708b70fb1573785b0007225fa70ac9cc.json",
+            "sha256": "e8a09f7ae00e8bfe5ea9db625d7485a1708b70fb1573785b0007225fa70ac9cc"
+          },
+          "source": {
+            "path": "artifacts/cycle17/witnesses/overlap-6-native.json",
+            "sha256": "8e1d2ac344d4764f432114235b22f14d4588c9506e3f07cabee31eea13fbf541"
+          }
+        },
+        "Clear": {
+          "answer": {
+            "confidence": 0.8956606153846153,
+            "stamps": [
+              "obs_3fc801ccd261fe72cad479445866",
+              "obs_84cbb0552836b5832dc8a066b6ae",
+              "obs_986269efa148edca323348dcddfe",
+              "rule_clear-two",
+              "train_0ed1751293a509f5724e374f",
+              "train_32775846708cef98b81eab9f",
+              "train_37a7eecab23780f2739eb087",
+              "train_3d1482f2966f82eb72a82742",
+              "train_427b1d4bfb5eef6b7478fc2b",
+              "train_42ec2c251fbd80a17c0a4851",
+              "train_44bfb85059c4fdaa07094e84",
+              "train_8df11543b83daaf8a5ee7aeb",
+              "train_a7bd497c9b8e0d818eeeda31",
+              "train_bcc1a8d54745b8aa9e004e1c",
+              "train_c07cd387dbe2e12da6a95222",
+              "train_e7402b843d431ca37d85e3ca"
+            ],
+            "strength": 1.0
+          },
+          "classification": "supported-positive",
+          "contrary": null,
+          "exact_channels_and_trace": true,
+          "native": {
+            "bytes": 83122,
+            "path": "/home/purplezky/cycle20-evidence-20261118/anchors/raw/cdb424dde1b09e83335fee1ab8d6d1e75aedc3b74582b598dba3d479bf3312f6.json",
+            "sha256": "cdb424dde1b09e83335fee1ab8d6d1e75aedc3b74582b598dba3d479bf3312f6"
+          },
+          "source": {
+            "path": "artifacts/cycle17/witnesses/overlap-6-native.json",
+            "sha256": "8e1d2ac344d4764f432114235b22f14d4588c9506e3f07cabee31eea13fbf541"
+          }
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "circular-chain": {
+      "answer": {
+        "confidence": 0.99,
+        "stamps": [
+          "obs_audit_origin"
+        ],
+        "strength": 1.0
+      },
+      "budgets": {
+        "beliefs": 512,
+        "steps": 128,
+        "tasks": 256,
+        "timeout": 30
+      },
+      "classification": "supported-positive",
+      "completion": "task queue exhausted",
+      "contrary": null,
+      "incomplete": false,
+      "peak_rss_kib": 21648,
+      "proof": {
+        "bytes": 10303,
+        "path": "/home/purplezky/cycle20-evidence-20261118/anchors/dependencies/raw/7180796706a69108c704f127b3969312519b65513d5817401668647d019a7cd3.json",
+        "sha256": "7180796706a69108c704f127b3969312519b65513d5817401668647d019a7cd3"
+      },
+      "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+      "query": "AuditA",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 1,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 3,
+        "initial_tasks": 3,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 1,
+        "retained_beliefs": 5,
+        "retained_tasks": 0,
+        "selected_tasks": 5
+      },
+      "wall_seconds": 0.41749288607388735
+    },
+    "diamond": {
+      "answer": null,
+      "budgets": {
+        "beliefs": 512,
+        "steps": 128,
+        "tasks": 256,
+        "timeout": 30
+      },
+      "classification": "unknown",
+      "completion": "task queue exhausted",
+      "contrary": null,
+      "incomplete": false,
+      "peak_rss_kib": 23756,
+      "proof": {
+        "bytes": 11728,
+        "path": "/home/purplezky/cycle20-evidence-20261118/anchors/dependencies/raw/ddd8780b193fcc903cfba56f8af6d43ddc4801bee421bbf449e3dcfb1a636183.json",
+        "sha256": "ddd8780b193fcc903cfba56f8af6d43ddc4801bee421bbf449e3dcfb1a636183"
+      },
+      "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+      "query": "AuditD",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 3,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 4,
+        "initial_tasks": 4,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 0,
+        "retained_beliefs": 7,
+        "retained_tasks": 0,
+        "selected_tasks": 7
+      },
+      "wall_seconds": 0.4660554490983486
+    },
+    "diamond-disjoint-inputs": {
+      "answer": {
+        "confidence": 0.9702989999999999,
+        "stamps": [
+          "obs_audit_b",
+          "obs_audit_c",
+          "rule_audit_join"
+        ],
+        "strength": 1.0
+      },
+      "budgets": {
+        "beliefs": 512,
+        "steps": 128,
+        "tasks": 256,
+        "timeout": 30
+      },
+      "classification": "supported-positive",
+      "completion": "task queue exhausted",
+      "contrary": null,
+      "incomplete": false,
+      "peak_rss_kib": 25108,
+      "proof": {
+        "bytes": 12062,
+        "path": "/home/purplezky/cycle20-evidence-20261118/anchors/dependencies/raw/ae85a4959e9a46f4723448fba2690704f43ef203f74492ba68236f0a1e919238.json",
+        "sha256": "ae85a4959e9a46f4723448fba2690704f43ef203f74492ba68236f0a1e919238"
+      },
+      "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+      "query": "AuditD",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 2,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 5,
+        "initial_tasks": 5,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 0,
+        "retained_beliefs": 7,
+        "retained_tasks": 0,
+        "selected_tasks": 7
+      },
+      "wall_seconds": 0.46540598198771477
+    },
+    "replayed-input": {
+      "answer": {
+        "confidence": 0.9801,
+        "stamps": [
+          "obs_audit_origin",
+          "rule_audit_ab"
+        ],
+        "strength": 1.0
+      },
+      "budgets": {
+        "beliefs": 512,
+        "steps": 128,
+        "tasks": 256,
+        "timeout": 30
+      },
+      "classification": "supported-positive",
+      "completion": "task queue exhausted",
+      "contrary": null,
+      "incomplete": false,
+      "peak_rss_kib": 21760,
+      "proof": {
+        "bytes": 9403,
+        "path": "/home/purplezky/cycle20-evidence-20261118/anchors/dependencies/raw/f8ccbb02b591cbce0f840492b1792e15754b93213839a669827e94e2b834d8b0.json",
+        "sha256": "f8ccbb02b591cbce0f840492b1792e15754b93213839a669827e94e2b834d8b0"
+      },
+      "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+      "query": "AuditB",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 1,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 3,
+        "initial_tasks": 3,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 0,
+        "retained_beliefs": 4,
+        "retained_tasks": 0,
+        "selected_tasks": 3
+      },
+      "wall_seconds": 0.46555638685822487
+    },
+    "shared-environment": {
+      "assumption": "Explicit synthetic stamp arrangement, not replacement provenance for real observations",
+      "diagnostic": {
+        "incomplete": false,
+        "left": {
+          "ancestry": [],
+          "confidence": 0.99,
+          "origin": "audit-input",
+          "stamps": [
+            "rule_audit_next",
+            "obs_audit_common"
+          ],
+          "strength": 1.0,
+          "term": "(Implication AuditB AuditC)"
+        },
+        "markers": [
+          [
+            "C16DISJOINT",
+            "false"
+          ],
+          [
+            "C16STRUCTURAL",
+            []
+          ],
+          [
+            "C16STRUCTURAL_REVERSE",
+            [
+              [
+                "AuditC",
+                [
+                  "stv",
+                  "1.0",
+                  "0.9801"
+                ]
+              ]
+            ]
+          ]
+        ],
+        "overlap": [
+          "obs_audit_common"
+        ],
+        "proof": {
+          "bytes": 5732,
+          "path": "/home/purplezky/cycle20-evidence-20261118/anchors/dependencies/raw/f967f5d965cbb0835ad3465b60997d1b6e344c1bb832395eca1abbb0013980cf.json",
+          "sha256": "f967f5d965cbb0835ad3465b60997d1b6e344c1bb832395eca1abbb0013980cf"
+        },
+        "right": {
+          "ancestry": [],
+          "confidence": 0.99,
+          "origin": "audit-input",
+          "stamps": [
+            "obs_audit_branch",
+            "obs_audit_common"
+          ],
+          "strength": 1.0,
+          "term": "AuditB"
+        },
+        "scope": "Admissibility and structural witness only; no claim the scheduler attempted this pair"
+      },
+      "result": {
+        "answer": null,
+        "budgets": {
+          "beliefs": 128,
+          "steps": 24,
+          "tasks": 64,
+          "timeout": 10.0
+        },
+        "classification": "unknown",
+        "completion": "task queue exhausted",
+        "contrary": null,
+        "incomplete": false,
+        "peak_rss_kib": 23972,
+        "proof": {
+          "bytes": 8578,
+          "path": "/home/purplezky/cycle20-evidence-20261118/anchors/dependencies/raw/76181876493770dabb47f1b2c3e7a82dda1c4ce4b5ee3f32afb4a87488a83c3f.json",
+          "sha256": "76181876493770dabb47f1b2c3e7a82dda1c4ce4b5ee3f32afb4a87488a83c3f"
+        },
+        "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+        "query": "AuditC",
+        "usage": {
+          "derivation_calls": 1,
+          "derived_statements": 0,
+          "host_grounded_instances": 0,
+          "initial_beliefs": 2,
+          "initial_tasks": 2,
+          "native_processes": 1,
+          "native_schema_instances": "Not completely observable in native trace",
+          "repeated_selected_terms": 0,
+          "retained_beliefs": 2,
+          "retained_tasks": 0,
+          "selected_tasks": 2
+        },
+        "wall_seconds": 0.4655652018263936
+      }
+    },
+    "shared-rule-only": {
+      "assumption": "Explicit synthetic stamp arrangement, not replacement provenance for real observations",
+      "diagnostic": {
+        "incomplete": false,
+        "left": {
+          "ancestry": [],
+          "confidence": 0.99,
+          "origin": "audit-input",
+          "stamps": [
+            "rule_audit_next",
+            "rule_audit_reuse"
+          ],
+          "strength": 1.0,
+          "term": "(Implication AuditB AuditC)"
+        },
+        "markers": [
+          [
+            "C16DISJOINT",
+            "false"
+          ],
+          [
+            "C16STRUCTURAL",
+            []
+          ],
+          [
+            "C16STRUCTURAL_REVERSE",
+            [
+              [
+                "AuditC",
+                [
+                  "stv",
+                  "1.0",
+                  "0.9801"
+                ]
+              ]
+            ]
+          ]
+        ],
+        "overlap": [
+          "rule_audit_reuse"
+        ],
+        "proof": {
+          "bytes": 5749,
+          "path": "/home/purplezky/cycle20-evidence-20261118/anchors/dependencies/raw/1879578134a4a966e6879ce49c47e389ad4b8a8e22061aeab1cb02867f8f5a6c.json",
+          "sha256": "1879578134a4a966e6879ce49c47e389ad4b8a8e22061aeab1cb02867f8f5a6c"
+        },
+        "right": {
+          "ancestry": [],
+          "confidence": 0.99,
+          "origin": "audit-input",
+          "stamps": [
+            "obs_audit_branch",
+            "rule_audit_reuse"
+          ],
+          "strength": 1.0,
+          "term": "AuditB"
+        },
+        "scope": "Admissibility and structural witness only; no claim the scheduler attempted this pair"
+      },
+      "result": {
+        "answer": null,
+        "budgets": {
+          "beliefs": 128,
+          "steps": 24,
+          "tasks": 64,
+          "timeout": 10.0
+        },
+        "classification": "unknown",
+        "completion": "task queue exhausted",
+        "contrary": null,
+        "incomplete": false,
+        "peak_rss_kib": 23860,
+        "proof": {
+          "bytes": 8563,
+          "path": "/home/purplezky/cycle20-evidence-20261118/anchors/dependencies/raw/637d608a3da41f7f4b38521055c64fe8b51abfe093700b7ea81bbec5cda29a60.json",
+          "sha256": "637d608a3da41f7f4b38521055c64fe8b51abfe093700b7ea81bbec5cda29a60"
+        },
+        "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+        "query": "AuditC",
+        "usage": {
+          "derivation_calls": 1,
+          "derived_statements": 0,
+          "host_grounded_instances": 0,
+          "initial_beliefs": 2,
+          "initial_tasks": 2,
+          "native_processes": 1,
+          "native_schema_instances": "Not completely observable in native trace",
+          "repeated_selected_terms": 0,
+          "retained_beliefs": 2,
+          "retained_tasks": 0,
+          "selected_tasks": 2
+        },
+        "wall_seconds": 0.4652214450761676
+      }
+    },
+    "shared-training": {
+      "assumption": "Explicit synthetic stamp arrangement, not replacement provenance for real observations",
+      "diagnostic": {
+        "incomplete": false,
+        "left": {
+          "ancestry": [],
+          "confidence": 0.99,
+          "origin": "audit-input",
+          "stamps": [
+            "rule_audit_next",
+            "train_audit_common"
+          ],
+          "strength": 1.0,
+          "term": "(Implication AuditB AuditC)"
+        },
+        "markers": [
+          [
+            "C16DISJOINT",
+            "false"
+          ],
+          [
+            "C16STRUCTURAL",
+            []
+          ],
+          [
+            "C16STRUCTURAL_REVERSE",
+            [
+              [
+                "AuditC",
+                [
+                  "stv",
+                  "1.0",
+                  "0.9801"
+                ]
+              ]
+            ]
+          ]
+        ],
+        "overlap": [
+          "train_audit_common"
+        ],
+        "proof": {
+          "bytes": 5736,
+          "path": "/home/purplezky/cycle20-evidence-20261118/anchors/dependencies/raw/7767ec42c782fc11b42c6289741b714b5c366dc494d3bc44f6634a69b2b1f48f.json",
+          "sha256": "7767ec42c782fc11b42c6289741b714b5c366dc494d3bc44f6634a69b2b1f48f"
+        },
+        "right": {
+          "ancestry": [],
+          "confidence": 0.99,
+          "origin": "audit-input",
+          "stamps": [
+            "obs_audit_branch",
+            "train_audit_common"
+          ],
+          "strength": 1.0,
+          "term": "AuditB"
+        },
+        "scope": "Admissibility and structural witness only; no claim the scheduler attempted this pair"
+      },
+      "result": {
+        "answer": null,
+        "budgets": {
+          "beliefs": 128,
+          "steps": 24,
+          "tasks": 64,
+          "timeout": 10.0
+        },
+        "classification": "unknown",
+        "completion": "task queue exhausted",
+        "contrary": null,
+        "incomplete": false,
+        "peak_rss_kib": 23976,
+        "proof": {
+          "bytes": 8592,
+          "path": "/home/purplezky/cycle20-evidence-20261118/anchors/dependencies/raw/210e35a447a24ed2ab371c9317e5cd37c84daeed008f70f418c4195931fb7151.json",
+          "sha256": "210e35a447a24ed2ab371c9317e5cd37c84daeed008f70f418c4195931fb7151"
+        },
+        "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+        "query": "AuditC",
+        "usage": {
+          "derivation_calls": 1,
+          "derived_statements": 0,
+          "host_grounded_instances": 0,
+          "initial_beliefs": 2,
+          "initial_tasks": 2,
+          "native_processes": 1,
+          "native_schema_instances": "Not completely observable in native trace",
+          "repeated_selected_terms": 0,
+          "retained_beliefs": 2,
+          "retained_tasks": 0,
+          "selected_tasks": 2
+        },
+        "wall_seconds": 0.4659249894320965
+      }
+    },
+    "single-delivery": {
+      "answer": {
+        "confidence": 0.9801,
+        "stamps": [
+          "obs_audit_origin",
+          "rule_audit_ab"
+        ],
+        "strength": 1.0
+      },
+      "budgets": {
+        "beliefs": 512,
+        "steps": 128,
+        "tasks": 256,
+        "timeout": 30
+      },
+      "classification": "supported-positive",
+      "completion": "task queue exhausted",
+      "contrary": null,
+      "incomplete": false,
+      "peak_rss_kib": 23896,
+      "proof": {
+        "bytes": 8926,
+        "path": "/home/purplezky/cycle20-evidence-20261118/anchors/dependencies/raw/c6a4c9bb157f6e717b909eacf77150c9cbf063034a01d967e1dade86f3f36d82.json",
+        "sha256": "c6a4c9bb157f6e717b909eacf77150c9cbf063034a01d967e1dade86f3f36d82"
+      },
+      "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+      "query": "AuditB",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 1,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 2,
+        "initial_tasks": 2,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 0,
+        "retained_beliefs": 3,
+        "retained_tasks": 0,
+        "selected_tasks": 3
+      },
+      "wall_seconds": 0.46550106536597013
+    },
+    "truly-disjoint": {
+      "assumption": "Explicit synthetic stamp arrangement, not replacement provenance for real observations",
+      "diagnostic": {
+        "incomplete": false,
+        "left": {
+          "ancestry": [],
+          "confidence": 0.99,
+          "origin": "audit-input",
+          "stamps": [
+            "rule_audit_next"
+          ],
+          "strength": 1.0,
+          "term": "(Implication AuditB AuditC)"
+        },
+        "markers": [
+          [
+            "C16DISJOINT",
+            "true"
+          ],
+          [
+            "C16STRUCTURAL",
+            []
+          ],
+          [
+            "C16STRUCTURAL_REVERSE",
+            [
+              [
+                "AuditC",
+                [
+                  "stv",
+                  "1.0",
+                  "0.9801"
+                ]
+              ]
+            ]
+          ]
+        ],
+        "overlap": [],
+        "proof": {
+          "bytes": 5697,
+          "path": "/home/purplezky/cycle20-evidence-20261118/anchors/dependencies/raw/6e29cfcb234a01dbfa445dd2f64df3920593a6abb1959c5bba79b5e6336ce682.json",
+          "sha256": "6e29cfcb234a01dbfa445dd2f64df3920593a6abb1959c5bba79b5e6336ce682"
+        },
+        "right": {
+          "ancestry": [],
+          "confidence": 0.99,
+          "origin": "audit-input",
+          "stamps": [
+            "obs_audit_branch"
+          ],
+          "strength": 1.0,
+          "term": "AuditB"
+        },
+        "scope": "Admissibility and structural witness only; no claim the scheduler attempted this pair"
+      },
+      "result": {
+        "answer": {
+          "confidence": 0.9801,
+          "stamps": [
+            "obs_audit_branch",
+            "rule_audit_next"
+          ],
+          "strength": 1.0
+        },
+        "budgets": {
+          "beliefs": 128,
+          "steps": 24,
+          "tasks": 64,
+          "timeout": 10.0
+        },
+        "classification": "supported-positive",
+        "completion": "task queue exhausted",
+        "contrary": null,
+        "incomplete": false,
+        "peak_rss_kib": 23908,
+        "proof": {
+          "bytes": 8935,
+          "path": "/home/purplezky/cycle20-evidence-20261118/anchors/dependencies/raw/78e2cb595da3074515a2715385556704a55adb1a600b54d59038e0f8b3b60f9f.json",
+          "sha256": "78e2cb595da3074515a2715385556704a55adb1a600b54d59038e0f8b3b60f9f"
+        },
+        "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+        "query": "AuditC",
+        "usage": {
+          "derivation_calls": 1,
+          "derived_statements": 1,
+          "host_grounded_instances": 0,
+          "initial_beliefs": 2,
+          "initial_tasks": 2,
+          "native_processes": 1,
+          "native_schema_instances": "Not completely observable in native trace",
+          "repeated_selected_terms": 0,
+          "retained_beliefs": 3,
+          "retained_tasks": 0,
+          "selected_tasks": 3
+        },
+        "wall_seconds": 0.46565630473196507
+      }
+    }
+  },
+  "oracle_disabled": true,
+  "passed": true,
+  "recursive": {
+    "arms": {
+      "F": {
+        "arm": "F",
+        "checkpoint_identity": null,
+        "domain_reason": null,
+        "inference_boundary": "raw facts and entire registered knowledge; no label or clearance oracle",
+        "knowledge_identity": "e0529c97771c436bb58a71b3561ac3cdc2e10f8dd992ac4d6fb3a0186fa2419f",
+        "observation_scope": {
+          "attacker": "attacker_minimal",
+          "attacker_present": true,
+          "cell_roles": {
+            "cell_0": [
+              1,
+              1
+            ],
+            "cell_1": [
+              2,
+              1
+            ],
+            "cell_2": [
+              3,
+              1
+            ],
+            "cell_3": [
+              4,
+              1
+            ]
+          },
+          "fact_origins": [
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "raw-observation",
+              "stamp": "obs_556511cf5ee5222ae0ecbb5ab676",
+              "state": "state_minimal",
+              "term": "(State state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "raw-observation",
+              "stamp": "obs_69366024739619661c2c8d430382",
+              "state": "state_minimal",
+              "term": "(OriginalActor state_minimal white)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "raw-observation",
+              "stamp": "obs_6deb76cd9f9ebbcf8b575e610536",
+              "state": "state_minimal",
+              "term": "(History state_minimal history_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "raw-observation",
+              "stamp": "obs_4f6b363221c51988dfc14c73cb6c",
+              "state": "state_minimal",
+              "term": "(PieceKind attacker_minimal rook state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "raw-observation",
+              "stamp": "obs_ad796249daeffa4b5ff19ef8a83b",
+              "state": "state_minimal",
+              "term": "(Owner attacker_minimal black state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "raw-observation",
+              "stamp": "obs_5e9298eb25085d810052cc25ec78",
+              "state": "state_minimal",
+              "term": "(Occupies attacker_minimal cell_0 state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "raw-observation",
+              "stamp": "obs_0f756cf350de7157c6f00d9eeb3a",
+              "state": "state_minimal",
+              "term": "(PieceKind target_minimal king state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "raw-observation",
+              "stamp": "obs_f4fc5389d6959f9996852131cca3",
+              "state": "state_minimal",
+              "term": "(Owner target_minimal white state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "raw-observation",
+              "stamp": "obs_45236e7d1b4809c019dc14045c9b",
+              "state": "state_minimal",
+              "term": "(Occupies target_minimal cell_3 state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "raw-observation",
+              "stamp": "obs_ec3ee70ff77638da4cbce3fb3875",
+              "state": "state_minimal",
+              "term": "(Occupied cell_0 state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "raw-observation",
+              "stamp": "obs_e761312fb4f1773f37138db18234",
+              "state": "state_minimal",
+              "term": "(Empty cell_1 state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "raw-observation",
+              "stamp": "obs_8b8af4f8c49af021b49c2f21bba2",
+              "state": "state_minimal",
+              "term": "(Empty cell_2 state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "raw-observation",
+              "stamp": "obs_02994a81e8fe891ea251371f2363",
+              "state": "state_minimal",
+              "term": "(Occupied cell_3 state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "structural-geometry",
+              "stamp": "obs_6ff99807c95ea5bd366b2443a64e",
+              "state": "state_minimal",
+              "term": "(RelativeOffset attacker_minimal target_minimal 3 0 state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "structural-geometry",
+              "stamp": "obs_a4eba9dc8c509f3bbb18fc18e96a",
+              "state": "state_minimal",
+              "term": "(RayPath attacker_minimal target_minimal (Cons cell_1 (Cons cell_2 Nil)) orthogonal state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "structural-geometry",
+              "stamp": "obs_443c6c60fb91a147097df1126f6f",
+              "state": "state_minimal",
+              "term": "(RayMember attacker_minimal target_minimal cell_1 state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "structural-geometry",
+              "stamp": "obs_2df6d4f1581076cfe0bfe468b72c",
+              "state": "state_minimal",
+              "term": "(OrderedRayCell attacker_minimal target_minimal 0 cell_1 state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "structural-geometry",
+              "stamp": "obs_5a5d3157c67a4001b8589173533a",
+              "state": "state_minimal",
+              "term": "(RayMember attacker_minimal target_minimal cell_2 state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "structural-geometry",
+              "stamp": "obs_d7bf27b64fb5875a4111460319f7",
+              "state": "state_minimal",
+              "term": "(OrderedRayCell attacker_minimal target_minimal 1 cell_2 state_minimal)"
+            }
+          ],
+          "full_scope": false,
+          "history": "history_minimal",
+          "pieces": 2,
+          "relevant_ray_cells": [
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "root": "root_minimal",
+          "scope_kind": "host-selected dependency neighborhood, not a proof",
+          "selection": "Whole structural endpoint ray and supplied moved piece; independent of occupancy answer and labels",
+          "shape": "orthogonal",
+          "state_id": "state_minimal",
+          "state_identity": "c334d27aac11a214dd15bb4d2d374c169384aae10f33ecfec7874762ce7c035a",
+          "target": "target_minimal",
+          "target_present": true
+        },
+        "proof": {
+          "bytes": 234521,
+          "path": "/home/purplezky/cycle20-evidence-20261118/anchors/recursive/raw/6d098147ece50806051233e604418c458e3b419f56a683a07815c680ae91be56.json",
+          "sha256": "6d098147ece50806051233e604418c458e3b419f56a683a07815c680ae91be56"
+        },
+        "proof_status": "native selected tasks, returned beliefs/stamps; no complete fired-rule tree",
+        "query_domain_valid": true,
+        "stages": {
+          "Attack": {
+            "answer": {
+              "confidence": 0.866937899025,
+              "stamps": [
+                "obs_4f6b363221c51988dfc14c73cb6c",
+                "obs_8b8af4f8c49af021b49c2f21bba2",
+                "obs_a4eba9dc8c509f3bbb18fc18e96a",
+                "obs_e761312fb4f1773f37138db18234",
+                "rule_clear-two",
+                "rule_rook-attack"
+              ],
+              "strength": 1.0
+            },
+            "budgets": {
+              "beliefs": 512,
+              "steps": 128,
+              "tasks": 256,
+              "timeout": 30
+            },
+            "classification": "supported-positive",
+            "completion": "task queue exhausted",
+            "contrary": null,
+            "incomplete": false,
+            "peak_rss_kib": 43768,
+            "proof": {
+              "bytes": 68577,
+              "path": "/home/purplezky/cycle20-evidence-20261118/anchors/recursive/raw/632e5b10338e519cfd26522c53577c07a7b3df064a44a166dd47d8dfe5d5bb34.json",
+              "sha256": "632e5b10338e519cfd26522c53577c07a7b3df064a44a166dd47d8dfe5d5bb34"
+            },
+            "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+            "query": "(Attack attacker_minimal target_minimal state_minimal)",
+            "usage": {
+              "derivation_calls": 1,
+              "derived_statements": 18,
+              "host_grounded_instances": 0,
+              "initial_beliefs": 31,
+              "initial_tasks": 31,
+              "native_processes": 1,
+              "native_schema_instances": "Not completely observable in native trace",
+              "repeated_selected_terms": 0,
+              "retained_beliefs": 49,
+              "retained_tasks": 0,
+              "selected_tasks": 49
+            },
+            "wall_seconds": 0.9661033730953932
+          },
+          "Clear": {
+            "answer": {
+              "confidence": 0.92178405,
+              "stamps": [
+                "obs_8b8af4f8c49af021b49c2f21bba2",
+                "obs_a4eba9dc8c509f3bbb18fc18e96a",
+                "obs_e761312fb4f1773f37138db18234",
+                "rule_clear-two"
+              ],
+              "strength": 1.0
+            },
+            "budgets": {
+              "beliefs": 512,
+              "steps": 128,
+              "tasks": 256,
+              "timeout": 30
+            },
+            "classification": "supported-positive",
+            "completion": "task queue exhausted",
+            "contrary": null,
+            "incomplete": false,
+            "peak_rss_kib": 43976,
+            "proof": {
+              "bytes": 68188,
+              "path": "/home/purplezky/cycle20-evidence-20261118/anchors/recursive/raw/c5055541a0accd7a8840514c9bc1723af449c4841ef9af26afa5b06a4a8d4e6b.json",
+              "sha256": "c5055541a0accd7a8840514c9bc1723af449c4841ef9af26afa5b06a4a8d4e6b"
+            },
+            "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+            "query": "(Clear attacker_minimal target_minimal orthogonal state_minimal)",
+            "usage": {
+              "derivation_calls": 1,
+              "derived_statements": 18,
+              "host_grounded_instances": 0,
+              "initial_beliefs": 31,
+              "initial_tasks": 31,
+              "native_processes": 1,
+              "native_schema_instances": "Not completely observable in native trace",
+              "repeated_selected_terms": 0,
+              "retained_beliefs": 49,
+              "retained_tasks": 0,
+              "selected_tasks": 49
+            },
+            "wall_seconds": 1.0671981247141957
+          },
+          "Exposure": {
+            "answer": {
+              "confidence": 0.7911382323851379,
+              "stamps": [
+                "obs_0f756cf350de7157c6f00d9eeb3a",
+                "obs_4f6b363221c51988dfc14c73cb6c",
+                "obs_69366024739619661c2c8d430382",
+                "obs_8b8af4f8c49af021b49c2f21bba2",
+                "obs_a4eba9dc8c509f3bbb18fc18e96a",
+                "obs_ad796249daeffa4b5ff19ef8a83b",
+                "obs_e761312fb4f1773f37138db18234",
+                "obs_f4fc5389d6959f9996852131cca3",
+                "rule_clear-two",
+                "rule_exposure-white",
+                "rule_rook-attack"
+              ],
+              "strength": 1.0
+            },
+            "budgets": {
+              "beliefs": 512,
+              "steps": 128,
+              "tasks": 256,
+              "timeout": 30
+            },
+            "classification": "supported-positive",
+            "completion": "task queue exhausted",
+            "contrary": null,
+            "incomplete": false,
+            "peak_rss_kib": 44160,
+            "proof": {
+              "bytes": 68913,
+              "path": "/home/purplezky/cycle20-evidence-20261118/anchors/recursive/raw/b65aa5abed02b28b62c34d71b0bd26b1b4b5609d8309c3b0ec8a2fb525ceeb42.json",
+              "sha256": "b65aa5abed02b28b62c34d71b0bd26b1b4b5609d8309c3b0ec8a2fb525ceeb42"
+            },
+            "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+            "query": "(KingExposed target_minimal white state_minimal)",
+            "usage": {
+              "derivation_calls": 1,
+              "derived_statements": 18,
+              "host_grounded_instances": 0,
+              "initial_beliefs": 31,
+              "initial_tasks": 31,
+              "native_processes": 1,
+              "native_schema_instances": "Not completely observable in native trace",
+              "repeated_selected_terms": 0,
+              "retained_beliefs": 49,
+              "retained_tasks": 0,
+              "selected_tasks": 49
+            },
+            "wall_seconds": 1.0689475610852242
+          }
+        },
+        "target_semantics": "Occupancy-constrained sliding influence, including friendly destination; not legal capture or move legality"
+      },
+      "F-minus": {
+        "arm": "F-minus",
+        "checkpoint_identity": null,
+        "domain_reason": null,
+        "inference_boundary": "raw facts and entire registered knowledge; no label or clearance oracle",
+        "knowledge_identity": "b083d4a52524ce54c147d8ed76ab533ba14e145faaf275f35f0fac0912529657",
+        "observation_scope": {
+          "attacker": "attacker_minimal",
+          "attacker_present": true,
+          "cell_roles": {
+            "cell_0": [
+              1,
+              1
+            ],
+            "cell_1": [
+              2,
+              1
+            ],
+            "cell_2": [
+              3,
+              1
+            ],
+            "cell_3": [
+              4,
+              1
+            ]
+          },
+          "fact_origins": [
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "raw-observation",
+              "stamp": "obs_556511cf5ee5222ae0ecbb5ab676",
+              "state": "state_minimal",
+              "term": "(State state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "raw-observation",
+              "stamp": "obs_69366024739619661c2c8d430382",
+              "state": "state_minimal",
+              "term": "(OriginalActor state_minimal white)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "raw-observation",
+              "stamp": "obs_6deb76cd9f9ebbcf8b575e610536",
+              "state": "state_minimal",
+              "term": "(History state_minimal history_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "raw-observation",
+              "stamp": "obs_4f6b363221c51988dfc14c73cb6c",
+              "state": "state_minimal",
+              "term": "(PieceKind attacker_minimal rook state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "raw-observation",
+              "stamp": "obs_ad796249daeffa4b5ff19ef8a83b",
+              "state": "state_minimal",
+              "term": "(Owner attacker_minimal black state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "raw-observation",
+              "stamp": "obs_5e9298eb25085d810052cc25ec78",
+              "state": "state_minimal",
+              "term": "(Occupies attacker_minimal cell_0 state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "raw-observation",
+              "stamp": "obs_0f756cf350de7157c6f00d9eeb3a",
+              "state": "state_minimal",
+              "term": "(PieceKind target_minimal king state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "raw-observation",
+              "stamp": "obs_f4fc5389d6959f9996852131cca3",
+              "state": "state_minimal",
+              "term": "(Owner target_minimal white state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "raw-observation",
+              "stamp": "obs_45236e7d1b4809c019dc14045c9b",
+              "state": "state_minimal",
+              "term": "(Occupies target_minimal cell_3 state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "raw-observation",
+              "stamp": "obs_ec3ee70ff77638da4cbce3fb3875",
+              "state": "state_minimal",
+              "term": "(Occupied cell_0 state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "raw-observation",
+              "stamp": "obs_e761312fb4f1773f37138db18234",
+              "state": "state_minimal",
+              "term": "(Empty cell_1 state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "raw-observation",
+              "stamp": "obs_8b8af4f8c49af021b49c2f21bba2",
+              "state": "state_minimal",
+              "term": "(Empty cell_2 state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "raw-observation",
+              "stamp": "obs_02994a81e8fe891ea251371f2363",
+              "state": "state_minimal",
+              "term": "(Occupied cell_3 state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "structural-geometry",
+              "stamp": "obs_6ff99807c95ea5bd366b2443a64e",
+              "state": "state_minimal",
+              "term": "(RelativeOffset attacker_minimal target_minimal 3 0 state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "structural-geometry",
+              "stamp": "obs_a4eba9dc8c509f3bbb18fc18e96a",
+              "state": "state_minimal",
+              "term": "(RayPath attacker_minimal target_minimal (Cons cell_1 (Cons cell_2 Nil)) orthogonal state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "structural-geometry",
+              "stamp": "obs_443c6c60fb91a147097df1126f6f",
+              "state": "state_minimal",
+              "term": "(RayMember attacker_minimal target_minimal cell_1 state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "structural-geometry",
+              "stamp": "obs_2df6d4f1581076cfe0bfe468b72c",
+              "state": "state_minimal",
+              "term": "(OrderedRayCell attacker_minimal target_minimal 0 cell_1 state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "structural-geometry",
+              "stamp": "obs_5a5d3157c67a4001b8589173533a",
+              "state": "state_minimal",
+              "term": "(RayMember attacker_minimal target_minimal cell_2 state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "structural-geometry",
+              "stamp": "obs_d7bf27b64fb5875a4111460319f7",
+              "state": "state_minimal",
+              "term": "(OrderedRayCell attacker_minimal target_minimal 1 cell_2 state_minimal)"
+            }
+          ],
+          "full_scope": false,
+          "history": "history_minimal",
+          "pieces": 2,
+          "relevant_ray_cells": [
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "root": "root_minimal",
+          "scope_kind": "host-selected dependency neighborhood, not a proof",
+          "selection": "Whole structural endpoint ray and supplied moved piece; independent of occupancy answer and labels",
+          "shape": "orthogonal",
+          "state_id": "state_minimal",
+          "state_identity": "c334d27aac11a214dd15bb4d2d374c169384aae10f33ecfec7874762ce7c035a",
+          "target": "target_minimal",
+          "target_present": true
+        },
+        "proof": {
+          "bytes": 205615,
+          "path": "/home/purplezky/cycle20-evidence-20261118/anchors/recursive/raw/34432b1697a70e5d2639a74a9b595ca67c7568f2273b1c52a36dab40e3bb54ba.json",
+          "sha256": "34432b1697a70e5d2639a74a9b595ca67c7568f2273b1c52a36dab40e3bb54ba"
+        },
+        "proof_status": "native selected tasks, returned beliefs/stamps; no complete fired-rule tree",
+        "query_domain_valid": true,
+        "stages": {
+          "Attack": {
+            "answer": null,
+            "budgets": {
+              "beliefs": 512,
+              "steps": 128,
+              "tasks": 256,
+              "timeout": 30
+            },
+            "classification": "unknown",
+            "completion": "task queue exhausted",
+            "contrary": null,
+            "incomplete": false,
+            "peak_rss_kib": 40552,
+            "proof": {
+              "bytes": 59652,
+              "path": "/home/purplezky/cycle20-evidence-20261118/anchors/recursive/raw/85d572e97afb2079d813df8cc227ac786c4e7f38e94291b03f57c93638ae2b2e.json",
+              "sha256": "85d572e97afb2079d813df8cc227ac786c4e7f38e94291b03f57c93638ae2b2e"
+            },
+            "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+            "query": "(Attack attacker_minimal target_minimal state_minimal)",
+            "usage": {
+              "derivation_calls": 1,
+              "derived_statements": 13,
+              "host_grounded_instances": 0,
+              "initial_beliefs": 30,
+              "initial_tasks": 30,
+              "native_processes": 1,
+              "native_schema_instances": "Not completely observable in native trace",
+              "repeated_selected_terms": 0,
+              "retained_beliefs": 43,
+              "retained_tasks": 0,
+              "selected_tasks": 43
+            },
+            "wall_seconds": 0.9161840872839093
+          },
+          "Clear": {
+            "answer": null,
+            "budgets": {
+              "beliefs": 512,
+              "steps": 128,
+              "tasks": 256,
+              "timeout": 30
+            },
+            "classification": "unknown",
+            "completion": "task queue exhausted",
+            "contrary": null,
+            "incomplete": false,
+            "peak_rss_kib": 40552,
+            "proof": {
+              "bytes": 59404,
+              "path": "/home/purplezky/cycle20-evidence-20261118/anchors/recursive/raw/13109394c4c84e25e2d684e55711253aef844732cc263ea34cffb527bc3e9bbb.json",
+              "sha256": "13109394c4c84e25e2d684e55711253aef844732cc263ea34cffb527bc3e9bbb"
+            },
+            "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+            "query": "(Clear attacker_minimal target_minimal orthogonal state_minimal)",
+            "usage": {
+              "derivation_calls": 1,
+              "derived_statements": 13,
+              "host_grounded_instances": 0,
+              "initial_beliefs": 30,
+              "initial_tasks": 30,
+              "native_processes": 1,
+              "native_schema_instances": "Not completely observable in native trace",
+              "repeated_selected_terms": 0,
+              "retained_beliefs": 43,
+              "retained_tasks": 0,
+              "selected_tasks": 43
+            },
+            "wall_seconds": 0.9667282430455089
+          },
+          "Exposure": {
+            "answer": null,
+            "budgets": {
+              "beliefs": 512,
+              "steps": 128,
+              "tasks": 256,
+              "timeout": 30
+            },
+            "classification": "unknown",
+            "completion": "task queue exhausted",
+            "contrary": null,
+            "incomplete": false,
+            "peak_rss_kib": 40516,
+            "proof": {
+              "bytes": 59630,
+              "path": "/home/purplezky/cycle20-evidence-20261118/anchors/recursive/raw/df166abb5d120e9940ca2483ee67bb63ccd270b10c635d1bfdf0a30fa7620c65.json",
+              "sha256": "df166abb5d120e9940ca2483ee67bb63ccd270b10c635d1bfdf0a30fa7620c65"
+            },
+            "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+            "query": "(KingExposed target_minimal white state_minimal)",
+            "usage": {
+              "derivation_calls": 1,
+              "derived_statements": 13,
+              "host_grounded_instances": 0,
+              "initial_beliefs": 30,
+              "initial_tasks": 30,
+              "native_processes": 1,
+              "native_schema_instances": "Not completely observable in native trace",
+              "repeated_selected_terms": 0,
+              "retained_beliefs": 43,
+              "retained_tasks": 0,
+              "selected_tasks": 43
+            },
+            "wall_seconds": 0.9659381695091724
+          }
+        },
+        "target_semantics": "Occupancy-constrained sliding influence, including friendly destination; not legal capture or move legality"
+      },
+      "R": {
+        "arm": "R",
+        "checkpoint_identity": null,
+        "domain_reason": null,
+        "inference_boundary": "raw facts and entire registered knowledge; no label or clearance oracle",
+        "knowledge_identity": "b083d4a52524ce54c147d8ed76ab533ba14e145faaf275f35f0fac0912529657",
+        "observation_scope": {
+          "attacker": "attacker_minimal",
+          "attacker_present": true,
+          "cell_roles": {
+            "cell_0": [
+              1,
+              1
+            ],
+            "cell_1": [
+              2,
+              1
+            ],
+            "cell_2": [
+              3,
+              1
+            ],
+            "cell_3": [
+              4,
+              1
+            ]
+          },
+          "fact_origins": [
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "raw-observation",
+              "stamp": "obs_556511cf5ee5222ae0ecbb5ab676",
+              "state": "state_minimal",
+              "term": "(State state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "raw-observation",
+              "stamp": "obs_69366024739619661c2c8d430382",
+              "state": "state_minimal",
+              "term": "(OriginalActor state_minimal white)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "raw-observation",
+              "stamp": "obs_6deb76cd9f9ebbcf8b575e610536",
+              "state": "state_minimal",
+              "term": "(History state_minimal history_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "raw-observation",
+              "stamp": "obs_4f6b363221c51988dfc14c73cb6c",
+              "state": "state_minimal",
+              "term": "(PieceKind attacker_minimal rook state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "raw-observation",
+              "stamp": "obs_ad796249daeffa4b5ff19ef8a83b",
+              "state": "state_minimal",
+              "term": "(Owner attacker_minimal black state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "raw-observation",
+              "stamp": "obs_5e9298eb25085d810052cc25ec78",
+              "state": "state_minimal",
+              "term": "(Occupies attacker_minimal cell_0 state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "raw-observation",
+              "stamp": "obs_0f756cf350de7157c6f00d9eeb3a",
+              "state": "state_minimal",
+              "term": "(PieceKind target_minimal king state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "raw-observation",
+              "stamp": "obs_f4fc5389d6959f9996852131cca3",
+              "state": "state_minimal",
+              "term": "(Owner target_minimal white state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "raw-observation",
+              "stamp": "obs_45236e7d1b4809c019dc14045c9b",
+              "state": "state_minimal",
+              "term": "(Occupies target_minimal cell_3 state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "raw-observation",
+              "stamp": "obs_ec3ee70ff77638da4cbce3fb3875",
+              "state": "state_minimal",
+              "term": "(Occupied cell_0 state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "raw-observation",
+              "stamp": "obs_e761312fb4f1773f37138db18234",
+              "state": "state_minimal",
+              "term": "(Empty cell_1 state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "raw-observation",
+              "stamp": "obs_8b8af4f8c49af021b49c2f21bba2",
+              "state": "state_minimal",
+              "term": "(Empty cell_2 state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "raw-observation",
+              "stamp": "obs_02994a81e8fe891ea251371f2363",
+              "state": "state_minimal",
+              "term": "(Occupied cell_3 state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "structural-geometry",
+              "stamp": "obs_6ff99807c95ea5bd366b2443a64e",
+              "state": "state_minimal",
+              "term": "(RelativeOffset attacker_minimal target_minimal 3 0 state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "structural-geometry",
+              "stamp": "obs_a4eba9dc8c509f3bbb18fc18e96a",
+              "state": "state_minimal",
+              "term": "(RayPath attacker_minimal target_minimal (Cons cell_1 (Cons cell_2 Nil)) orthogonal state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "structural-geometry",
+              "stamp": "obs_443c6c60fb91a147097df1126f6f",
+              "state": "state_minimal",
+              "term": "(RayMember attacker_minimal target_minimal cell_1 state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "structural-geometry",
+              "stamp": "obs_2df6d4f1581076cfe0bfe468b72c",
+              "state": "state_minimal",
+              "term": "(OrderedRayCell attacker_minimal target_minimal 0 cell_1 state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "structural-geometry",
+              "stamp": "obs_5a5d3157c67a4001b8589173533a",
+              "state": "state_minimal",
+              "term": "(RayMember attacker_minimal target_minimal cell_2 state_minimal)"
+            },
+            {
+              "ancestry": "root_minimal",
+              "category": "environmental-observation",
+              "source": "structural-geometry",
+              "stamp": "obs_d7bf27b64fb5875a4111460319f7",
+              "state": "state_minimal",
+              "term": "(OrderedRayCell attacker_minimal target_minimal 1 cell_2 state_minimal)"
+            }
+          ],
+          "full_scope": false,
+          "history": "history_minimal",
+          "pieces": 2,
+          "relevant_ray_cells": [
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "root": "root_minimal",
+          "scope_kind": "host-selected dependency neighborhood, not a proof",
+          "selection": "Whole structural endpoint ray and supplied moved piece; independent of occupancy answer and labels",
+          "shape": "orthogonal",
+          "state_id": "state_minimal",
+          "state_identity": "c334d27aac11a214dd15bb4d2d374c169384aae10f33ecfec7874762ce7c035a",
+          "target": "target_minimal",
+          "target_present": true
+        },
+        "proof": {
+          "bytes": 205594,
+          "path": "/home/purplezky/cycle20-evidence-20261118/anchors/recursive/raw/95b2da7833920601a3ad8d831845d64e0529bf90e2e1426780e9e28a778d4a58.json",
+          "sha256": "95b2da7833920601a3ad8d831845d64e0529bf90e2e1426780e9e28a778d4a58"
+        },
+        "proof_status": "native selected tasks, returned beliefs/stamps; no complete fired-rule tree",
+        "query_domain_valid": true,
+        "stages": {
+          "Attack": {
+            "answer": null,
+            "budgets": {
+              "beliefs": 512,
+              "steps": 128,
+              "tasks": 256,
+              "timeout": 30
+            },
+            "classification": "unknown",
+            "completion": "task queue exhausted",
+            "contrary": null,
+            "incomplete": false,
+            "peak_rss_kib": 40480,
+            "proof": {
+              "bytes": 59652,
+              "path": "/home/purplezky/cycle20-evidence-20261118/anchors/recursive/raw/3eb81d30140eb904cffed9ada341427eac5ff77eb7be5a85e83f28c85cde5166.json",
+              "sha256": "3eb81d30140eb904cffed9ada341427eac5ff77eb7be5a85e83f28c85cde5166"
+            },
+            "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+            "query": "(Attack attacker_minimal target_minimal state_minimal)",
+            "usage": {
+              "derivation_calls": 1,
+              "derived_statements": 13,
+              "host_grounded_instances": 0,
+              "initial_beliefs": 30,
+              "initial_tasks": 30,
+              "native_processes": 1,
+              "native_schema_instances": "Not completely observable in native trace",
+              "repeated_selected_terms": 0,
+              "retained_beliefs": 43,
+              "retained_tasks": 0,
+              "selected_tasks": 43
+            },
+            "wall_seconds": 0.9665906941518188
+          },
+          "Clear": {
+            "answer": null,
+            "budgets": {
+              "beliefs": 512,
+              "steps": 128,
+              "tasks": 256,
+              "timeout": 30
+            },
+            "classification": "unknown",
+            "completion": "task queue exhausted",
+            "contrary": null,
+            "incomplete": false,
+            "peak_rss_kib": 40584,
+            "proof": {
+              "bytes": 59389,
+              "path": "/home/purplezky/cycle20-evidence-20261118/anchors/recursive/raw/ffef6a09a3bd0733064b171354f02058d141be2e2541c0b7d07239a7fc197bfe.json",
+              "sha256": "ffef6a09a3bd0733064b171354f02058d141be2e2541c0b7d07239a7fc197bfe"
+            },
+            "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+            "query": "(Clear attacker_minimal target_minimal orthogonal state_minimal)",
+            "usage": {
+              "derivation_calls": 1,
+              "derived_statements": 13,
+              "host_grounded_instances": 0,
+              "initial_beliefs": 30,
+              "initial_tasks": 30,
+              "native_processes": 1,
+              "native_schema_instances": "Not completely observable in native trace",
+              "repeated_selected_terms": 0,
+              "retained_beliefs": 43,
+              "retained_tasks": 0,
+              "selected_tasks": 43
+            },
+            "wall_seconds": 0.9159492887556553
+          },
+          "Exposure": {
+            "answer": null,
+            "budgets": {
+              "beliefs": 512,
+              "steps": 128,
+              "tasks": 256,
+              "timeout": 30
+            },
+            "classification": "unknown",
+            "completion": "task queue exhausted",
+            "contrary": null,
+            "incomplete": false,
+            "peak_rss_kib": 40664,
+            "proof": {
+              "bytes": 59630,
+              "path": "/home/purplezky/cycle20-evidence-20261118/anchors/recursive/raw/7d46c732e7df605431d2cc7f2351734f67dabf2b5d9c777f651e6804f8fb6112.json",
+              "sha256": "7d46c732e7df605431d2cc7f2351734f67dabf2b5d9c777f651e6804f8fb6112"
+            },
+            "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+            "query": "(KingExposed target_minimal white state_minimal)",
+            "usage": {
+              "derivation_calls": 1,
+              "derived_statements": 13,
+              "host_grounded_instances": 0,
+              "initial_beliefs": 30,
+              "initial_tasks": 30,
+              "native_processes": 1,
+              "native_schema_instances": "Not completely observable in native trace",
+              "repeated_selected_terms": 0,
+              "retained_beliefs": 43,
+              "retained_tasks": 0,
+              "selected_tasks": 43
+            },
+            "wall_seconds": 0.9666085140779614
+          }
+        },
+        "target_semantics": "Occupancy-constrained sliding influence, including friendly destination; not legal capture or move legality"
+      }
+    },
+    "diagnostic": {
+      "incomplete": false,
+      "left": {
+        "confidence": 0.9405,
+        "stamps": [
+          "obs_audit_c1",
+          "rule_extend-empty"
+        ],
+        "strength": 1.0,
+        "term": "(Implication (PathEmpty $_3 audit_state) (PathEmpty (Cons audit_c1 $_3) audit_state))"
+      },
+      "markers": [
+        [
+          "C16DISJOINT",
+          "false"
+        ],
+        [
+          "C16STRUCTURAL",
+          []
+        ],
+        [
+          "C16STRUCTURAL_REVERSE",
+          [
+            [
+              [
+                "PathEmpty",
+                [
+                  "Cons",
+                  "audit_c1",
+                  [
+                    "Cons",
+                    "audit_c2",
+                    "Nil"
+                  ]
+                ],
+                "audit_state"
+              ],
+              [
+                "stv",
+                "1.0",
+                "0.8319101051250001"
+              ]
+            ]
+          ]
+        ]
+      ],
+      "overlap": [
+        "rule_extend-empty"
+      ],
+      "proof": {
+        "bytes": 6047,
+        "path": "/home/purplezky/cycle20-evidence-20261118/anchors/recursive/raw/5341c84d4b7d3d153fb58d799af52cdd85571adb68b7a5be235682a4936b44ec.json",
+        "sha256": "5341c84d4b7d3d153fb58d799af52cdd85571adb68b7a5be235682a4936b44ec"
+      },
+      "right": {
+        "confidence": 0.88454025,
+        "stamps": [
+          "obs_audit_c2",
+          "obs_audit_state",
+          "rule_empty-tail",
+          "rule_extend-empty"
+        ],
+        "strength": 1.0,
+        "term": "(PathEmpty (Cons audit_c2 Nil) audit_state)"
+      },
+      "scope": "Admissibility and structural witness only; no claim the scheduler attempted this pair"
+    },
+    "first_extension": {
+      "confidence": 0.88454025,
+      "stamps": [
+        "obs_audit_c2",
+        "obs_audit_state",
+        "rule_empty-tail",
+        "rule_extend-empty"
+      ],
+      "strength": 1.0,
+      "term": "(PathEmpty (Cons audit_c2 Nil) audit_state)"
+    },
+    "gate": "Minimal comparison executed before corpus expansion; success is reported separately",
+    "initial_empty_tail": {
+      "confidence": 0.9405,
+      "stamps": [
+        "obs_audit_state",
+        "rule_empty-tail"
+      ],
+      "strength": 1.0,
+      "term": "(PathEmpty Nil audit_state)"
+    },
+    "partial_other_cell": {
+      "confidence": 0.9405,
+      "stamps": [
+        "obs_audit_c1",
+        "rule_extend-empty"
+      ],
+      "strength": 1.0,
+      "term": "(Implication (PathEmpty $_3 audit_state) (PathEmpty (Cons audit_c1 $_3) audit_state))"
+    },
+    "symbolic": {
+      "answer": null,
+      "budgets": {
+        "beliefs": 512,
+        "steps": 128,
+        "tasks": 256,
+        "timeout": 30
+      },
+      "classification": "unknown",
+      "completion": "task queue exhausted",
+      "contrary": null,
+      "incomplete": false,
+      "peak_rss_kib": 25064,
+      "proof": {
+        "bytes": 15434,
+        "path": "/home/purplezky/cycle20-evidence-20261118/anchors/recursive/raw/663c5eee7e11eb4835bc9d07df5b90e81eb40811ee7252531b5adddbfb84e9fa.json",
+        "sha256": "663c5eee7e11eb4835bc9d07df5b90e81eb40811ee7252531b5adddbfb84e9fa"
+      },
+      "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+      "query": "(PathEmpty (Cons audit_c1 (Cons audit_c2 Nil)) audit_state)",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 5,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 5,
+        "initial_tasks": 5,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 0,
+        "retained_beliefs": 10,
+        "retained_tasks": 0,
+        "selected_tasks": 10
+      },
+      "wall_seconds": 0.6274972818791866
+    }
+  },
+  "schema": "cycle19-historical-anchors-v1",
+  "scope": "Exact original inputs and answer/selection/retention parity; reference outputs never passed to native execution"
+}
