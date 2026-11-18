@@ -1,0 +1,588 @@
+{
+  "circular-chain": {
+    "answer": {
+      "confidence": 0.99,
+      "stamps": [
+        "obs_audit_origin"
+      ],
+      "strength": 1.0
+    },
+    "budgets": {
+      "beliefs": 512,
+      "steps": 128,
+      "tasks": 256,
+      "timeout": 30
+    },
+    "classification": "supported-positive",
+    "completion": "task queue exhausted",
+    "contrary": null,
+    "incomplete": false,
+    "peak_rss_kib": 21596,
+    "proof": {
+      "bytes": 10314,
+      "path": "/home/purplezky/cycle18-evidence-20261117/native/dependencies/raw/9abca88363377b94280a996495461a328945a1e35b3cc9077316f6a87deae5c7.json",
+      "sha256": "9abca88363377b94280a996495461a328945a1e35b3cc9077316f6a87deae5c7"
+    },
+    "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+    "query": "AuditA",
+    "usage": {
+      "derivation_calls": 1,
+      "derived_statements": 1,
+      "host_grounded_instances": 0,
+      "initial_beliefs": 3,
+      "initial_tasks": 3,
+      "native_processes": 1,
+      "native_schema_instances": "Not completely observable in native trace",
+      "repeated_selected_terms": 1,
+      "retained_beliefs": 5,
+      "retained_tasks": 0,
+      "selected_tasks": 5
+    },
+    "wall_seconds": 1.0633830958977342
+  },
+  "diamond": {
+    "answer": null,
+    "budgets": {
+      "beliefs": 512,
+      "steps": 128,
+      "tasks": 256,
+      "timeout": 30
+    },
+    "classification": "unknown",
+    "completion": "task queue exhausted",
+    "contrary": null,
+    "incomplete": false,
+    "peak_rss_kib": 23780,
+    "proof": {
+      "bytes": 11738,
+      "path": "/home/purplezky/cycle18-evidence-20261117/native/dependencies/raw/ef0ea865b76f4ff24968527945f766c8b26cf0996bc105f5ce9943abdc7779c8.json",
+      "sha256": "ef0ea865b76f4ff24968527945f766c8b26cf0996bc105f5ce9943abdc7779c8"
+    },
+    "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+    "query": "AuditD",
+    "usage": {
+      "derivation_calls": 1,
+      "derived_statements": 3,
+      "host_grounded_instances": 0,
+      "initial_beliefs": 4,
+      "initial_tasks": 4,
+      "native_processes": 1,
+      "native_schema_instances": "Not completely observable in native trace",
+      "repeated_selected_terms": 0,
+      "retained_beliefs": 7,
+      "retained_tasks": 0,
+      "selected_tasks": 7
+    },
+    "wall_seconds": 1.1240428127348423
+  },
+  "diamond-disjoint-inputs": {
+    "answer": {
+      "confidence": 0.9702989999999999,
+      "stamps": [
+        "obs_audit_b",
+        "obs_audit_c",
+        "rule_audit_join"
+      ],
+      "strength": 1.0
+    },
+    "budgets": {
+      "beliefs": 512,
+      "steps": 128,
+      "tasks": 256,
+      "timeout": 30
+    },
+    "classification": "supported-positive",
+    "completion": "task queue exhausted",
+    "contrary": null,
+    "incomplete": false,
+    "peak_rss_kib": 24884,
+    "proof": {
+      "bytes": 12072,
+      "path": "/home/purplezky/cycle18-evidence-20261117/native/dependencies/raw/f36f92c1592b27cd6dc8643ea64f41f63fde128567eb5ed86309858ad345ceb1.json",
+      "sha256": "f36f92c1592b27cd6dc8643ea64f41f63fde128567eb5ed86309858ad345ceb1"
+    },
+    "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+    "query": "AuditD",
+    "usage": {
+      "derivation_calls": 1,
+      "derived_statements": 2,
+      "host_grounded_instances": 0,
+      "initial_beliefs": 5,
+      "initial_tasks": 5,
+      "native_processes": 1,
+      "native_schema_instances": "Not completely observable in native trace",
+      "repeated_selected_terms": 0,
+      "retained_beliefs": 7,
+      "retained_tasks": 0,
+      "selected_tasks": 7
+    },
+    "wall_seconds": 0.9060246599838138
+  },
+  "replayed-input": {
+    "answer": {
+      "confidence": 0.9801,
+      "stamps": [
+        "obs_audit_origin",
+        "rule_audit_ab"
+      ],
+      "strength": 1.0
+    },
+    "budgets": {
+      "beliefs": 512,
+      "steps": 128,
+      "tasks": 256,
+      "timeout": 30
+    },
+    "classification": "supported-positive",
+    "completion": "task queue exhausted",
+    "contrary": null,
+    "incomplete": false,
+    "peak_rss_kib": 21920,
+    "proof": {
+      "bytes": 9413,
+      "path": "/home/purplezky/cycle18-evidence-20261117/native/dependencies/raw/bbb312c61826c0ca65997b976b66768f7732bba132c690a118a31129423f3a1e.json",
+      "sha256": "bbb312c61826c0ca65997b976b66768f7732bba132c690a118a31129423f3a1e"
+    },
+    "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+    "query": "AuditB",
+    "usage": {
+      "derivation_calls": 1,
+      "derived_statements": 1,
+      "host_grounded_instances": 0,
+      "initial_beliefs": 3,
+      "initial_tasks": 3,
+      "native_processes": 1,
+      "native_schema_instances": "Not completely observable in native trace",
+      "repeated_selected_terms": 0,
+      "retained_beliefs": 4,
+      "retained_tasks": 0,
+      "selected_tasks": 3
+    },
+    "wall_seconds": 1.114131267182529
+  },
+  "shared-environment": {
+    "assumption": "Explicit synthetic stamp arrangement, not replacement provenance for real observations",
+    "diagnostic": {
+      "incomplete": false,
+      "left": {
+        "ancestry": [],
+        "confidence": 0.99,
+        "origin": "audit-input",
+        "stamps": [
+          "rule_audit_next",
+          "obs_audit_common"
+        ],
+        "strength": 1.0,
+        "term": "(Implication AuditB AuditC)"
+      },
+      "markers": [
+        [
+          "C16DISJOINT",
+          "false"
+        ],
+        [
+          "C16STRUCTURAL",
+          []
+        ],
+        [
+          "C16STRUCTURAL_REVERSE",
+          [
+            [
+              "AuditC",
+              [
+                "stv",
+                "1.0",
+                "0.9801"
+              ]
+            ]
+          ]
+        ]
+      ],
+      "overlap": [
+        "obs_audit_common"
+      ],
+      "proof": {
+        "bytes": 5744,
+        "path": "/home/purplezky/cycle18-evidence-20261117/native/dependencies/raw/8aa8c980ccec4bee10be3124356f35024b58815eead63f058c814a1699eec27f.json",
+        "sha256": "8aa8c980ccec4bee10be3124356f35024b58815eead63f058c814a1699eec27f"
+      },
+      "right": {
+        "ancestry": [],
+        "confidence": 0.99,
+        "origin": "audit-input",
+        "stamps": [
+          "obs_audit_branch",
+          "obs_audit_common"
+        ],
+        "strength": 1.0,
+        "term": "AuditB"
+      },
+      "scope": "Admissibility and structural witness only; no claim the scheduler attempted this pair"
+    },
+    "result": {
+      "answer": null,
+      "budgets": {
+        "beliefs": 128,
+        "steps": 24,
+        "tasks": 64,
+        "timeout": 10.0
+      },
+      "classification": "unknown",
+      "completion": "task queue exhausted",
+      "contrary": null,
+      "incomplete": false,
+      "peak_rss_kib": 23980,
+      "proof": {
+        "bytes": 8590,
+        "path": "/home/purplezky/cycle18-evidence-20261117/native/dependencies/raw/b29d6b2166a962eb2f85ce4b8670b202c9416877c953eacd78d230daed767a40.json",
+        "sha256": "b29d6b2166a962eb2f85ce4b8670b202c9416877c953eacd78d230daed767a40"
+      },
+      "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+      "query": "AuditC",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 0,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 2,
+        "initial_tasks": 2,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 0,
+        "retained_beliefs": 2,
+        "retained_tasks": 0,
+        "selected_tasks": 2
+      },
+      "wall_seconds": 1.1608071280643344
+    }
+  },
+  "shared-rule-only": {
+    "assumption": "Explicit synthetic stamp arrangement, not replacement provenance for real observations",
+    "diagnostic": {
+      "incomplete": false,
+      "left": {
+        "ancestry": [],
+        "confidence": 0.99,
+        "origin": "audit-input",
+        "stamps": [
+          "rule_audit_next",
+          "rule_audit_reuse"
+        ],
+        "strength": 1.0,
+        "term": "(Implication AuditB AuditC)"
+      },
+      "markers": [
+        [
+          "C16DISJOINT",
+          "false"
+        ],
+        [
+          "C16STRUCTURAL",
+          []
+        ],
+        [
+          "C16STRUCTURAL_REVERSE",
+          [
+            [
+              "AuditC",
+              [
+                "stv",
+                "1.0",
+                "0.9801"
+              ]
+            ]
+          ]
+        ]
+      ],
+      "overlap": [
+        "rule_audit_reuse"
+      ],
+      "proof": {
+        "bytes": 5744,
+        "path": "/home/purplezky/cycle18-evidence-20261117/native/dependencies/raw/7b89742875bf629d25aad4de4f2fb4695331cd358482c2d47fff3ba8e8db3db9.json",
+        "sha256": "7b89742875bf629d25aad4de4f2fb4695331cd358482c2d47fff3ba8e8db3db9"
+      },
+      "right": {
+        "ancestry": [],
+        "confidence": 0.99,
+        "origin": "audit-input",
+        "stamps": [
+          "obs_audit_branch",
+          "rule_audit_reuse"
+        ],
+        "strength": 1.0,
+        "term": "AuditB"
+      },
+      "scope": "Admissibility and structural witness only; no claim the scheduler attempted this pair"
+    },
+    "result": {
+      "answer": null,
+      "budgets": {
+        "beliefs": 128,
+        "steps": 24,
+        "tasks": 64,
+        "timeout": 10.0
+      },
+      "classification": "unknown",
+      "completion": "task queue exhausted",
+      "contrary": null,
+      "incomplete": false,
+      "peak_rss_kib": 23972,
+      "proof": {
+        "bytes": 8589,
+        "path": "/home/purplezky/cycle18-evidence-20261117/native/dependencies/raw/606a9232dde98fbacd2b2bc64f74ad8d8012ac2774ca5eefb65f55c8df051471.json",
+        "sha256": "606a9232dde98fbacd2b2bc64f74ad8d8012ac2774ca5eefb65f55c8df051471"
+      },
+      "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+      "query": "AuditC",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 0,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 2,
+        "initial_tasks": 2,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 0,
+        "retained_beliefs": 2,
+        "retained_tasks": 0,
+        "selected_tasks": 2
+      },
+      "wall_seconds": 1.6439029080793262
+    }
+  },
+  "shared-training": {
+    "assumption": "Explicit synthetic stamp arrangement, not replacement provenance for real observations",
+    "diagnostic": {
+      "incomplete": false,
+      "left": {
+        "ancestry": [],
+        "confidence": 0.99,
+        "origin": "audit-input",
+        "stamps": [
+          "rule_audit_next",
+          "train_audit_common"
+        ],
+        "strength": 1.0,
+        "term": "(Implication AuditB AuditC)"
+      },
+      "markers": [
+        [
+          "C16DISJOINT",
+          "false"
+        ],
+        [
+          "C16STRUCTURAL",
+          []
+        ],
+        [
+          "C16STRUCTURAL_REVERSE",
+          [
+            [
+              "AuditC",
+              [
+                "stv",
+                "1.0",
+                "0.9801"
+              ]
+            ]
+          ]
+        ]
+      ],
+      "overlap": [
+        "train_audit_common"
+      ],
+      "proof": {
+        "bytes": 5748,
+        "path": "/home/purplezky/cycle18-evidence-20261117/native/dependencies/raw/e54ff1c94b43d67bcee1da225ec2efe3cd66a985b9de35557788e14c16f552b6.json",
+        "sha256": "e54ff1c94b43d67bcee1da225ec2efe3cd66a985b9de35557788e14c16f552b6"
+      },
+      "right": {
+        "ancestry": [],
+        "confidence": 0.99,
+        "origin": "audit-input",
+        "stamps": [
+          "obs_audit_branch",
+          "train_audit_common"
+        ],
+        "strength": 1.0,
+        "term": "AuditB"
+      },
+      "scope": "Admissibility and structural witness only; no claim the scheduler attempted this pair"
+    },
+    "result": {
+      "answer": null,
+      "budgets": {
+        "beliefs": 128,
+        "steps": 24,
+        "tasks": 64,
+        "timeout": 10.0
+      },
+      "classification": "unknown",
+      "completion": "task queue exhausted",
+      "contrary": null,
+      "incomplete": false,
+      "peak_rss_kib": 23976,
+      "proof": {
+        "bytes": 8603,
+        "path": "/home/purplezky/cycle18-evidence-20261117/native/dependencies/raw/ff5f61c9c9929dfbed3bce09163033af201c8dff7d195ab1718f0beb55770c48.json",
+        "sha256": "ff5f61c9c9929dfbed3bce09163033af201c8dff7d195ab1718f0beb55770c48"
+      },
+      "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+      "query": "AuditC",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 0,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 2,
+        "initial_tasks": 2,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 0,
+        "retained_beliefs": 2,
+        "retained_tasks": 0,
+        "selected_tasks": 2
+      },
+      "wall_seconds": 1.2886215662583709
+    }
+  },
+  "single-delivery": {
+    "answer": {
+      "confidence": 0.9801,
+      "stamps": [
+        "obs_audit_origin",
+        "rule_audit_ab"
+      ],
+      "strength": 1.0
+    },
+    "budgets": {
+      "beliefs": 512,
+      "steps": 128,
+      "tasks": 256,
+      "timeout": 30
+    },
+    "classification": "supported-positive",
+    "completion": "task queue exhausted",
+    "contrary": null,
+    "incomplete": false,
+    "peak_rss_kib": 23940,
+    "proof": {
+      "bytes": 8921,
+      "path": "/home/purplezky/cycle18-evidence-20261117/native/dependencies/raw/c206e7ee88caf22d0c6d61492288efa794b97d3c6151f3f8f0c36ec205950736.json",
+      "sha256": "c206e7ee88caf22d0c6d61492288efa794b97d3c6151f3f8f0c36ec205950736"
+    },
+    "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+    "query": "AuditB",
+    "usage": {
+      "derivation_calls": 1,
+      "derived_statements": 1,
+      "host_grounded_instances": 0,
+      "initial_beliefs": 2,
+      "initial_tasks": 2,
+      "native_processes": 1,
+      "native_schema_instances": "Not completely observable in native trace",
+      "repeated_selected_terms": 0,
+      "retained_beliefs": 3,
+      "retained_tasks": 0,
+      "selected_tasks": 3
+    },
+    "wall_seconds": 1.0502657117322087
+  },
+  "truly-disjoint": {
+    "assumption": "Explicit synthetic stamp arrangement, not replacement provenance for real observations",
+    "diagnostic": {
+      "incomplete": false,
+      "left": {
+        "ancestry": [],
+        "confidence": 0.99,
+        "origin": "audit-input",
+        "stamps": [
+          "rule_audit_next"
+        ],
+        "strength": 1.0,
+        "term": "(Implication AuditB AuditC)"
+      },
+      "markers": [
+        [
+          "C16DISJOINT",
+          "true"
+        ],
+        [
+          "C16STRUCTURAL",
+          []
+        ],
+        [
+          "C16STRUCTURAL_REVERSE",
+          [
+            [
+              "AuditC",
+              [
+                "stv",
+                "1.0",
+                "0.9801"
+              ]
+            ]
+          ]
+        ]
+      ],
+      "overlap": [],
+      "proof": {
+        "bytes": 5723,
+        "path": "/home/purplezky/cycle18-evidence-20261117/native/dependencies/raw/44594ae01249ba0047f600b6d5768d9cdedfb84e71809626ebf4b6d92f33eadb.json",
+        "sha256": "44594ae01249ba0047f600b6d5768d9cdedfb84e71809626ebf4b6d92f33eadb"
+      },
+      "right": {
+        "ancestry": [],
+        "confidence": 0.99,
+        "origin": "audit-input",
+        "stamps": [
+          "obs_audit_branch"
+        ],
+        "strength": 1.0,
+        "term": "AuditB"
+      },
+      "scope": "Admissibility and structural witness only; no claim the scheduler attempted this pair"
+    },
+    "result": {
+      "answer": {
+        "confidence": 0.9801,
+        "stamps": [
+          "obs_audit_branch",
+          "rule_audit_next"
+        ],
+        "strength": 1.0
+      },
+      "budgets": {
+        "beliefs": 128,
+        "steps": 24,
+        "tasks": 64,
+        "timeout": 10.0
+      },
+      "classification": "supported-positive",
+      "completion": "task queue exhausted",
+      "contrary": null,
+      "incomplete": false,
+      "peak_rss_kib": 23960,
+      "proof": {
+        "bytes": 8959,
+        "path": "/home/purplezky/cycle18-evidence-20261117/native/dependencies/raw/bafffbce5db88383bd4a716eecece1613fed42ac762ef0fb7d56ad5f20992e27.json",
+        "sha256": "bafffbce5db88383bd4a716eecece1613fed42ac762ef0fb7d56ad5f20992e27"
+      },
+      "proof_status": "native-selected-tasks-and-returned-evidence-stamps; no reconstructed fired-rule tree",
+      "query": "AuditC",
+      "usage": {
+        "derivation_calls": 1,
+        "derived_statements": 1,
+        "host_grounded_instances": 0,
+        "initial_beliefs": 2,
+        "initial_tasks": 2,
+        "native_processes": 1,
+        "native_schema_instances": "Not completely observable in native trace",
+        "repeated_selected_terms": 0,
+        "retained_beliefs": 3,
+        "retained_tasks": 0,
+        "selected_tasks": 3
+      },
+      "wall_seconds": 0.9370285999029875
+    }
+  }
+}

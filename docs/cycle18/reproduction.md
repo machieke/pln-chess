@@ -65,7 +65,7 @@ and stamps are retained. Fired-rule parents remain unobserved.
 The [clean reproduction receipt](../../artifacts/cycle18/reproduction/verified.json)
 executes the full contract and native commands in a clean checkout at the
 [frozen executable source](../../artifacts/cycle18/source-provenance.json),
-`9dc9159de311a2b5304e4051eef2919e7994c19f`. Its audit hook denies PGN and Cycle
+`66a0ff66fa9dbb0e133421aeb4686e885e2aba45`. Its audit hook denies PGN and Cycle
 14–16 artifact reads. The historical eleven-stamp input is already preserved as
 a compact Cycle 17 witness. Existing verified dependencies are reused; this
 is not a fresh dependency install or a second full historical campaign.
@@ -86,6 +86,21 @@ recoveries and 76 legal holdouts, then compares every canonical native proof.
 It requires a clean source checkout and the actual registered acceptance panels.
 Successful same-source receipts can be resumed; incomplete/failed receipts
 must remain visible. Targeted tests do not substitute for this gate.
+
+After the full test suite and negative/history controls completed, one spare
+worker ran distant, unstarted tail shards with the unchanged
+`scripts.cycle16_tail_workers` helper. It uses the same frozen source, standard
+worker commands and receipt format. The six-worker main driver remains
+responsible for all 206 comparisons, reusing successful same-source tail receipts.
+During overlap with recovery, at most eight top-level commands were active.
+This scheduling change alters neither inference nor acceptance criteria.
+Timed job totals include tail work; the separate sampled main-process tree
+excludes that independently launched worker and must not be added to job totals.
+The worker completed 12 distant shards successfully; its
+[scheduling receipt](../../artifacts/cycle18/preservation/tail-scheduling.json),
+[launch](../../artifacts/cycle18/execution/tail-launch.json) and
+[completion](../../artifacts/cycle18/execution/tail-finished.json) retain the
+exact jobs and frozen source identity.
 
 Local bulk evidence is retained under
 `/home/purplezky/cycle18-evidence-20261117`, with checksummed packs and a verified
@@ -113,3 +128,32 @@ the stage lookup was corrected **before source freeze**, and the complete
 development, frozen and clean-reproduction replays were then run. This was a
 reporting error, not a native policy or outcome change. No failed development
 run is counted as complete acceptance.
+
+A subsequent identity review found that equal posteriors could conceal different
+admitted component masks. The corrected generation includes those masks and
+payload hashes, with a regression test. No model, grid, query or numeric result
+changed. The initial full preservation run at `9dc9159d` was explicitly stopped
+after nine successful job receipts; one nonzero interrupted receipt and all
+partial outputs are retained. None of those jobs is reused at the final source.
+The complete acceptance restarts at `66a0ff66`. The registered replay ceiling
+was transparently amended from 200 to 300 before the required reruns; finite
+model, CPU and publication limits did not change.
+
+Initial outputs are retained under `source-correction-001` in the local evidence
+root. Its `relocation.json` explains how to resolve old receipt paths to that
+archive rather than to the newer generation now occupying the original output
+prefixes. Original receipts are not rewritten. Interrupted CPU is reported as
+completed-job measurements and separately sampled lower bounds, not silently
+counted as a successful full run.
+
+The [final preservation receipt](../../artifacts/cycle18/preservation/cycle18-verification.json)
+records 771 passing tests, all 206 shards/584,112 rows with unchanged classifications
+and exact canonical proofs, 287 removal controls, 27 history controls, both
+recoveries and 76 holdouts. The post-run historical recheck also passed. The
+[resource receipt](../../artifacts/cycle18/resources.json) separates 222 retained
+research native invocations from preservation commands and comparison sampling;
+the [engineering report](engineering-report.md) states measured costs and coverage
+limits. All 1,956 files in the local evidence manifest were actually restored and
+verified. A separate post-push compact reproduction adds 44 native invocations
+outside that sealed census, for an expected combined 266 under the amended 300
+ceiling; its actual result is recorded in the external publication receipt.

@@ -18,7 +18,7 @@ obligations and next measurement study.
 Starting commit is `24f30ce8d4e0631f8937404929485dfdc0032f93`; delivery branch is
 `cycle18-shared-parameter-contract`. Registration was committed before new
 reference execution. Executable source/tests/delivery gates are frozen at
-`9dc9159de311a2b5304e4051eef2919e7994c19f`, bound by the
+`66a0ff66fa9dbb0e133421aeb4686e885e2aba45`, bound by the
 [source manifest](../../artifacts/cycle18/source-provenance.json). Later reports
 and compact evidence do not alter those files. The
 [eight-package matrix](package-matrix.md) separates delivery status from findings.
@@ -81,30 +81,66 @@ The [correspondence](../../artifacts/cycle18/correspondence.json) relates actual
 native applications to external events and reference assumptions without a
 numerical accuracy competition.
 
-All 26 targeted tests passed, including four unchanged Cycle 17 reference
-regressions and 22 new Cycle 18 cases. Static imports, literal dynamic-import
+All 27 targeted tests passed, including four unchanged Cycle 17 reference
+regressions and 23 new Cycle 18 cases. Static imports, literal dynamic-import
 targets, reference runtime process denial, output destinations, checkpoint
 construction and native oracle denial are tested. The clean compact reproduction
 passed at the frozen source with historical Cycle 14–16 artifact and PGN reads
-denied; it reused verified dependencies. Full historical preservation is running;
-its complete source-bound receipt is required before final acceptance.
+denied; it reused verified dependencies. The complete frozen-source test suite
+also passed **771 tests with zero failures, errors or skips**, in 1,628.99 seconds
+of JUnit suite time. [Complete frozen-source preservation](../../artifacts/cycle18/preservation/cycle18-verification.json)
+passed all **206 legal shards and 584,112 candidate rows**, with zero
+classification changes and exact canonical native proof parity. All **287**
+evidence-removal controls, **27** history controls, both en-passant recoveries
+and **76** controlled legal holdouts passed. The accepted checkpoint bytes,
+semantic identity, operational source and pinned runtime remain unchanged.
+The [post-run integrity check](../../artifacts/cycle18/historical-post/historical-final.json)
+also verified all **23,920** protected starting files and the actual Cycle 14–17
+external evidence manifests, with no missing or changed files.
+
+Generation identities bind admitted component masks and payload hashes, so
+coincidentally equal posteriors do not erase different evidence selections.
+This review correction triggered a documented final source freeze and a complete
+restart of preservation. The initial partial run is retained without reusing
+old-source jobs. The [registration amendment](research-registration.md) records
+the necessary replay ceiling increase before reruns; mathematical assumptions
+and predictions did not change.
 
 The frozen reference command executes 72 registered fits and 37 control fits,
 with **14,740** group-likelihood evaluations total, at most **25** states and
 **155-bit** rational numerators/denominators. It uses zero native processes.
-Its measured wall time is about 2.79 seconds, CPU 2.14 seconds and process peak
-RSS 30,968 KiB on this shared host. These timings include mapping/report output
-and are not a benchmark for general correlated inference. Separate native,
-preservation, memory and retained-byte accounting will be finalized after the
-full run, including the limits of sampled process observations.
+Its measured wall time is about 2.41 seconds, CPU 2.20 seconds and process peak
+RSS 30,872 KiB on this shared host. These timings include mapping/report output
+and are not a benchmark for general correlated inference. The
+[resource receipt](../../artifacts/cycle18/resources.json) records **222** retained
+research native invocations, including development and reproduction, with
+240.66 CPU seconds and peak process RSS 48,364 KiB. These are separate from
+native calls made by the historical preservation jobs.
+
+The final preservation run took about **148.94 minutes** through comparison.
+Its 209 timed commands consumed **44,088.09 CPU seconds**, with maximum job RSS
+5,986,716 KiB and **1,559,740,567 bytes** of preservation output. Proof-comparison
+overhead is outside those command totals. The
+[process observer](../../artifacts/cycle18/preservation-observer-summary.json)
+recorded a separate comparison-phase lower bound of 5,925.45 child CPU seconds
+and maximum observed process RSS 8,172,180 KiB. Its full-tree lower bound of
+47,189.76 CPU seconds overlaps timed commands and excludes the independent tail
+worker; these counters must not be summed. The interrupted initial run retains
+1,046.73 measured completed-job CPU seconds plus separately sampled partial-run
+evidence, with incomplete CPU coverage explicitly disclosed. All registered
+measured resource gates passed; four deliberate reference budget failures return
+resource-incomplete status, and no unexpected reference budget failure occurred.
 
 Ordinary Git contains the decisive mappings, exact finite results, native replay
 records and all reports. Full historical exports stay in local checksummed packs;
 no bulk hosting or release is authorized. [Reproduction](reproduction.md) gives
 four levels, from compact contract example to full preservation.
 [Publication](publication.md) describes whole-range blob/secret/remote checks and
-independent final SHA/retrieval verification. Final engineering acceptance and
-verified branch publication remain delivery gates, not scientific conclusions.
+independent final SHA/retrieval verification. Engineering acceptance at
+`artifacts/cycle18/acceptance.json` binds the final reports and compact evidence.
+Final commit, remote SHA and fresh published-checkout
+reproduction are verified separately after commit to avoid self-referential
+receipts. Those delivery checks do not change the scientific conclusions.
 
 The next useful experiment is an independently measured, explicitly sampled
 pipeline-error/annotation variable with a registered noise model. It should

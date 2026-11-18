@@ -5,8 +5,11 @@ The authorized destination is exactly `machieke/pln-chess`, on
 `24f30ce8d4e0631f8937404929485dfdc0032f93`. The initial branch was the accepted
 Cycle 17 branch, with only the new user brief untracked. No unrelated work was
 reset. The registration commit precedes reference execution; executable source,
-tests and delivery gates are frozen at
-`9dc9159de311a2b5304e4051eef2919e7994c19f`. Later commits carry reports and evidence.
+tests and delivery gates are finally frozen at
+`66a0ff66fa9dbb0e133421aeb4686e885e2aba45`. The initial `9dc9159d` freeze and its
+interrupted outputs remain in history and local evidence; the
+[registration amendment](research-registration.md) records the generation-identity
+correction and replay-budget change. Later commits carry reports and evidence.
 
 Ordinary Git contains source, typed contracts, tests, eleven reports, complete
 small mapping records, all registered exact reference cases and extremal
@@ -21,6 +24,15 @@ records an actual checksum-verified restore. Bulk data stay at
 `/home/purplezky/cycle18-evidence-20261117`. There is no release upload, external
 artifact hosting, deployment, tag publication or master/main update.
 
+The sealed manifest covers **1,956 files**, **1,396 unique objects** and
+**1,659,117,837 original bytes**. Four local tar packs total **1,629,757,440 bytes**;
+each is below the registered 512 MiB pack ceiling. An actual restore verified
+every file with zero missing or changed objects. The compact artifact tree before
+its final acceptance receipt contains **220 files / 11,651,344 bytes**; the bulk
+manifest itself is **554,819 bytes**. Whole-range Git totals also include source,
+reports, acceptance and earlier committed versions, so they are measured separately
+by the final publication preflight.
+
 Publication preflight inventories **every new reachable blob across the entire
 Cycle 18 commit range**, including superseded versions. Project ceilings are
 10 MiB per blob and a target of 100 MiB total new unique content. They are project
@@ -32,6 +44,8 @@ The actual fetch and push URLs are inspected, including multiple push URLs and
 URL rewriting. At registration, origin had one SSH URL for the authorized
 repository and only an unrelated dhall-lang rewrite. This is checked again
 immediately before pushing. No credential-bearing URLs are printed or committed.
+The baseline receipt's working-tree snapshot includes newly prepared registration
+files; the first task discovery showed only the supplied brief untracked.
 The explicit refspec changes only the dedicated branch:
 
 ```bash
@@ -48,7 +62,7 @@ historical/PGN access. Remote-tracking refs alone are insufficient.
 
 The final SHA, full object inventory and publication verification receipt remain
 outside the tracked checkout to avoid self-referential commits. The engineering
-[acceptance receipt](../../artifacts/cycle18/acceptance.json) binds source,
-evidence and reports; it cannot prove a later push. Final publication status is
+acceptance receipt at `artifacts/cycle18/acceptance.json` binds source, evidence
+and reports; it cannot prove a later push. Final publication status is
 reported only after the independent remote checks. Already published history is
 never rewritten and no force push is used.

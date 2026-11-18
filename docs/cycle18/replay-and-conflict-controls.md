@@ -33,6 +33,8 @@ application ancestry. The unchanged native runtime's actual diamond/cycle
 controls are separate and preserved in the
 [native replay](../../artifacts/cycle18/native/summary.json). There is no claim
 that the journal solves native recursion.
+Application sequence IDs are local to their journal/output generation; they are
+not external observation IDs or claims of globally independent events.
 
 The noise-free copy model gives zero likelihood to a vector with disagreeing
 labels. The corrupt vector is an explicit synthetic alteration of a real source

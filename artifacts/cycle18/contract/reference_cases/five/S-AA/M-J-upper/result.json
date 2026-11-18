@@ -1,0 +1,2154 @@
+{
+  "assumptions": {
+    "across_groups": "Conditionally independent given parameters; supplied and unverified for TCEC games",
+    "empirical_status": "Hypothetical stochastic pipeline, not calibrated from selected deterministic positives",
+    "faithful_to_copy_operation": false,
+    "grid": "five",
+    "model": "M-J-upper",
+    "observation_identity": "A vector enters once; selected components share its one group likelihood",
+    "observation_model": "Joint Bernoulli vector; P(11)=min(a,b)",
+    "parameter_support": [
+      "1/10",
+      "3/10",
+      "1/2",
+      "7/10",
+      "9/10"
+    ],
+    "prior": "Uniform product prior",
+    "query": "Two distinct future antecedent-qualified episode/channel trials with conditionally independent outcomes given one shared parameter pair; q(a,b)=a*b. This future-trial assumption is separate from within-training-vector dependence.",
+    "selection": "Conditional on natural EE antecedent qualification; no blocked paths counted as failures"
+  },
+  "assumptions_id": "604510ad6d83d225e510610d6a4bf4f26b5c628a57f52b56a5a4fbcbdfc5a2c1",
+  "confidence_mapping": "unresolved; no conversion to native confidence",
+  "empirical_evaluation_uncertainty": null,
+  "event_ids": [
+    "c17-event-v1:episode_25732a217cb4add46aa0:EE:evaluation",
+    "c17-event-v1:episode_2d765464d8874e71cb8f:EE:evaluation",
+    "c17-event-v1:episode_68e10af574aa601e6a22:EE:evaluation",
+    "c17-event-v1:episode_718499ead0a557915ce1:EE:evaluation",
+    "c17-event-v1:episode_74159878275798b25e68:EE:evaluation",
+    "c17-event-v1:episode_7671a8b976748dea2c15:EE:evaluation",
+    "c17-event-v1:episode_85c092c6eee3abbb8696:EE:evaluation",
+    "c17-event-v1:episode_8a2b1c8bc05c05fb3cf8:EE:evaluation",
+    "c17-event-v1:episode_8b3a007b63fba8c5f401:EE:evaluation",
+    "c17-event-v1:episode_da18d5c77c24631fa561:EE:evaluation",
+    "c17-event-v1:episode_e9684d596a44af8801e1:EE:evaluation",
+    "c17-event-v1:episode_feaa5b3244afc69c7ec7:EE:evaluation"
+  ],
+  "event_to_likelihood": {
+    "tcec_game_25732a217cb4add46aa08ca520ccfd8c31ba356c9863b1cd5f6c422e18b11c68": {
+      "components": [
+        "clear-two",
+        "rook-attack"
+      ],
+      "event_id": "c17-event-v1:episode_25732a217cb4add46aa0:EE:evaluation",
+      "label_relationship": "same-result-copied",
+      "labels": {
+        "clear-two": true,
+        "rook-attack": true
+      },
+      "payload_hash": "af6325f4423fdb937c1159c453ae93ea0a68376a45c39d0fcfbb4f4ef6bb0869",
+      "source_episode_id": "episode_25732a217cb4add46aa0"
+    },
+    "tcec_game_2d765464d8874e71cb8f001bf1fc0d0a30d5d1f613ef54d889e8598066f68604": {
+      "components": [
+        "clear-two",
+        "rook-attack"
+      ],
+      "event_id": "c17-event-v1:episode_2d765464d8874e71cb8f:EE:evaluation",
+      "label_relationship": "same-result-copied",
+      "labels": {
+        "clear-two": true,
+        "rook-attack": true
+      },
+      "payload_hash": "39c743dbfc66aa199f832afb382f94dd490fa849c9edea4c427ead730bf693ca",
+      "source_episode_id": "episode_2d765464d8874e71cb8f"
+    },
+    "tcec_game_68e10af574aa601e6a227b27eb7e39226131fd73be8813ce97cbd79e5f1a326c": {
+      "components": [
+        "clear-two",
+        "rook-attack"
+      ],
+      "event_id": "c17-event-v1:episode_68e10af574aa601e6a22:EE:evaluation",
+      "label_relationship": "same-result-copied",
+      "labels": {
+        "clear-two": true,
+        "rook-attack": true
+      },
+      "payload_hash": "5e2928ebbc884acb1c82792ebf342e91e96e4442111677a4ccd982952bcb0096",
+      "source_episode_id": "episode_68e10af574aa601e6a22"
+    },
+    "tcec_game_718499ead0a557915ce15e688921d05cc8b2d249aab06f30c16bb87b767f0e4d": {
+      "components": [
+        "clear-two",
+        "rook-attack"
+      ],
+      "event_id": "c17-event-v1:episode_718499ead0a557915ce1:EE:evaluation",
+      "label_relationship": "same-result-copied",
+      "labels": {
+        "clear-two": true,
+        "rook-attack": true
+      },
+      "payload_hash": "779714785375e5bdddc8922c50cecb72e746e465f5d4e355b786741347a406d2",
+      "source_episode_id": "episode_718499ead0a557915ce1"
+    },
+    "tcec_game_74159878275798b25e6895dc8fec9dc027db3b3543c190a9dc934910a6007ae3": {
+      "components": [
+        "clear-two",
+        "rook-attack"
+      ],
+      "event_id": "c17-event-v1:episode_74159878275798b25e68:EE:evaluation",
+      "label_relationship": "same-result-copied",
+      "labels": {
+        "clear-two": true,
+        "rook-attack": true
+      },
+      "payload_hash": "bd5fd5bf8d5e1c8082395ac58bb2531a9398e083974ee28dcc1db320e5cc52f2",
+      "source_episode_id": "episode_74159878275798b25e68"
+    },
+    "tcec_game_7671a8b976748dea2c15dc40879642ed3b913b07073391e461e707c313bfd06c": {
+      "components": [
+        "clear-two",
+        "rook-attack"
+      ],
+      "event_id": "c17-event-v1:episode_7671a8b976748dea2c15:EE:evaluation",
+      "label_relationship": "same-result-copied",
+      "labels": {
+        "clear-two": true,
+        "rook-attack": true
+      },
+      "payload_hash": "c56f04251589930ec7717fdc194f1d66c65335a683ce603ecaae632856c44a2e",
+      "source_episode_id": "episode_7671a8b976748dea2c15"
+    },
+    "tcec_game_85c092c6eee3abbb869637790f047a3286acc7685747252b53c8ec3a6ba4bf8c": {
+      "components": [
+        "clear-two",
+        "rook-attack"
+      ],
+      "event_id": "c17-event-v1:episode_85c092c6eee3abbb8696:EE:evaluation",
+      "label_relationship": "same-result-copied",
+      "labels": {
+        "clear-two": true,
+        "rook-attack": true
+      },
+      "payload_hash": "02238a8425b264791c1cc6a3cb41b04a87394b33877545e28c3e2eb9948746f5",
+      "source_episode_id": "episode_85c092c6eee3abbb8696"
+    },
+    "tcec_game_8a2b1c8bc05c05fb3cf8e02fb742bc6c372644b298566c0d0514de94dcf86f75": {
+      "components": [
+        "clear-two",
+        "rook-attack"
+      ],
+      "event_id": "c17-event-v1:episode_8a2b1c8bc05c05fb3cf8:EE:evaluation",
+      "label_relationship": "same-result-copied",
+      "labels": {
+        "clear-two": true,
+        "rook-attack": true
+      },
+      "payload_hash": "a4d249c6f5402f889061a99a459615b30af1879f717b3a2462facd6d8c1b1091",
+      "source_episode_id": "episode_8a2b1c8bc05c05fb3cf8"
+    },
+    "tcec_game_8b3a007b63fba8c5f4015a55472710a8f8c0edbdcc9157379725682d2fbc4858": {
+      "components": [
+        "clear-two",
+        "rook-attack"
+      ],
+      "event_id": "c17-event-v1:episode_8b3a007b63fba8c5f401:EE:evaluation",
+      "label_relationship": "same-result-copied",
+      "labels": {
+        "clear-two": true,
+        "rook-attack": true
+      },
+      "payload_hash": "cb9ef4584b5282ae3b8954272cabd0652681c862bffd3c6c0f42e04000e3b810",
+      "source_episode_id": "episode_8b3a007b63fba8c5f401"
+    },
+    "tcec_game_da18d5c77c24631fa561e5a2499fe263a5f08bfa4df67fec9c0660bf0a73879c": {
+      "components": [
+        "clear-two",
+        "rook-attack"
+      ],
+      "event_id": "c17-event-v1:episode_da18d5c77c24631fa561:EE:evaluation",
+      "label_relationship": "same-result-copied",
+      "labels": {
+        "clear-two": true,
+        "rook-attack": true
+      },
+      "payload_hash": "29dd99bb77304ed69eba6a11faaaf5b2207347bf4a4b2f41ef711d4e9545f9d4",
+      "source_episode_id": "episode_da18d5c77c24631fa561"
+    },
+    "tcec_game_e9684d596a44af8801e11b753a2457802801b552f9b074ea1ba7c609868236b8": {
+      "components": [
+        "clear-two",
+        "rook-attack"
+      ],
+      "event_id": "c17-event-v1:episode_e9684d596a44af8801e1:EE:evaluation",
+      "label_relationship": "same-result-copied",
+      "labels": {
+        "clear-two": true,
+        "rook-attack": true
+      },
+      "payload_hash": "b4393fa39332ea2b5509da2bfb5581d3374835ec6340b337b41b0449909a1506",
+      "source_episode_id": "episode_e9684d596a44af8801e1"
+    },
+    "tcec_game_feaa5b3244afc69c7ec76614a7d54446acfda476eaa35d37f2ba4890a3dae2ed": {
+      "components": [
+        "clear-two",
+        "rook-attack"
+      ],
+      "event_id": "c17-event-v1:episode_feaa5b3244afc69c7ec7:EE:evaluation",
+      "label_relationship": "same-result-copied",
+      "labels": {
+        "clear-two": true,
+        "rook-attack": true
+      },
+      "payload_hash": "7d72c54626f2310c8b0113d75aa6acedd3b740ba91e0cea73fb592b980d31daa",
+      "source_episode_id": "episode_feaa5b3244afc69c7ec7"
+    }
+  },
+  "limits": {
+    "groups": 100,
+    "likelihood_evaluations": 2500,
+    "rational_bits": 16384,
+    "states": 25
+  },
+  "model": "M-J-upper",
+  "model_family": "M-J",
+  "native_confidence": null,
+  "native_strength": null,
+  "normalizer": "65035564261/5000000000000",
+  "parameter_generation": {
+    "admitted_component_refs": [
+      [
+        "c17-event-v1:episode_25732a217cb4add46aa0:EE:evaluation",
+        [
+          "clear-two",
+          "rook-attack"
+        ]
+      ],
+      [
+        "c17-event-v1:episode_2d765464d8874e71cb8f:EE:evaluation",
+        [
+          "clear-two",
+          "rook-attack"
+        ]
+      ],
+      [
+        "c17-event-v1:episode_68e10af574aa601e6a22:EE:evaluation",
+        [
+          "clear-two",
+          "rook-attack"
+        ]
+      ],
+      [
+        "c17-event-v1:episode_718499ead0a557915ce1:EE:evaluation",
+        [
+          "clear-two",
+          "rook-attack"
+        ]
+      ],
+      [
+        "c17-event-v1:episode_74159878275798b25e68:EE:evaluation",
+        [
+          "clear-two",
+          "rook-attack"
+        ]
+      ],
+      [
+        "c17-event-v1:episode_7671a8b976748dea2c15:EE:evaluation",
+        [
+          "clear-two",
+          "rook-attack"
+        ]
+      ],
+      [
+        "c17-event-v1:episode_85c092c6eee3abbb8696:EE:evaluation",
+        [
+          "clear-two",
+          "rook-attack"
+        ]
+      ],
+      [
+        "c17-event-v1:episode_8a2b1c8bc05c05fb3cf8:EE:evaluation",
+        [
+          "clear-two",
+          "rook-attack"
+        ]
+      ],
+      [
+        "c17-event-v1:episode_8b3a007b63fba8c5f401:EE:evaluation",
+        [
+          "clear-two",
+          "rook-attack"
+        ]
+      ],
+      [
+        "c17-event-v1:episode_da18d5c77c24631fa561:EE:evaluation",
+        [
+          "clear-two",
+          "rook-attack"
+        ]
+      ],
+      [
+        "c17-event-v1:episode_e9684d596a44af8801e1:EE:evaluation",
+        [
+          "clear-two",
+          "rook-attack"
+        ]
+      ],
+      [
+        "c17-event-v1:episode_feaa5b3244afc69c7ec7:EE:evaluation",
+        [
+          "clear-two",
+          "rook-attack"
+        ]
+      ]
+    ],
+    "admitted_event_ids": [
+      "c17-event-v1:episode_25732a217cb4add46aa0:EE:evaluation",
+      "c17-event-v1:episode_2d765464d8874e71cb8f:EE:evaluation",
+      "c17-event-v1:episode_68e10af574aa601e6a22:EE:evaluation",
+      "c17-event-v1:episode_718499ead0a557915ce1:EE:evaluation",
+      "c17-event-v1:episode_74159878275798b25e68:EE:evaluation",
+      "c17-event-v1:episode_7671a8b976748dea2c15:EE:evaluation",
+      "c17-event-v1:episode_85c092c6eee3abbb8696:EE:evaluation",
+      "c17-event-v1:episode_8a2b1c8bc05c05fb3cf8:EE:evaluation",
+      "c17-event-v1:episode_8b3a007b63fba8c5f401:EE:evaluation",
+      "c17-event-v1:episode_da18d5c77c24631fa561:EE:evaluation",
+      "c17-event-v1:episode_e9684d596a44af8801e1:EE:evaluation",
+      "c17-event-v1:episode_feaa5b3244afc69c7ec7:EE:evaluation"
+    ],
+    "admitted_payload_hashes": [
+      [
+        "c17-event-v1:episode_25732a217cb4add46aa0:EE:evaluation",
+        "af6325f4423fdb937c1159c453ae93ea0a68376a45c39d0fcfbb4f4ef6bb0869"
+      ],
+      [
+        "c17-event-v1:episode_2d765464d8874e71cb8f:EE:evaluation",
+        "39c743dbfc66aa199f832afb382f94dd490fa849c9edea4c427ead730bf693ca"
+      ],
+      [
+        "c17-event-v1:episode_68e10af574aa601e6a22:EE:evaluation",
+        "5e2928ebbc884acb1c82792ebf342e91e96e4442111677a4ccd982952bcb0096"
+      ],
+      [
+        "c17-event-v1:episode_718499ead0a557915ce1:EE:evaluation",
+        "779714785375e5bdddc8922c50cecb72e746e465f5d4e355b786741347a406d2"
+      ],
+      [
+        "c17-event-v1:episode_74159878275798b25e68:EE:evaluation",
+        "bd5fd5bf8d5e1c8082395ac58bb2531a9398e083974ee28dcc1db320e5cc52f2"
+      ],
+      [
+        "c17-event-v1:episode_7671a8b976748dea2c15:EE:evaluation",
+        "c56f04251589930ec7717fdc194f1d66c65335a683ce603ecaae632856c44a2e"
+      ],
+      [
+        "c17-event-v1:episode_85c092c6eee3abbb8696:EE:evaluation",
+        "02238a8425b264791c1cc6a3cb41b04a87394b33877545e28c3e2eb9948746f5"
+      ],
+      [
+        "c17-event-v1:episode_8a2b1c8bc05c05fb3cf8:EE:evaluation",
+        "a4d249c6f5402f889061a99a459615b30af1879f717b3a2462facd6d8c1b1091"
+      ],
+      [
+        "c17-event-v1:episode_8b3a007b63fba8c5f401:EE:evaluation",
+        "cb9ef4584b5282ae3b8954272cabd0652681c862bffd3c6c0f42e04000e3b810"
+      ],
+      [
+        "c17-event-v1:episode_da18d5c77c24631fa561:EE:evaluation",
+        "29dd99bb77304ed69eba6a11faaaf5b2207347bf4a4b2f41ef711d4e9545f9d4"
+      ],
+      [
+        "c17-event-v1:episode_e9684d596a44af8801e1:EE:evaluation",
+        "b4393fa39332ea2b5509da2bfb5581d3374835ec6340b337b41b0449909a1506"
+      ],
+      [
+        "c17-event-v1:episode_feaa5b3244afc69c7ec7:EE:evaluation",
+        "7d72c54626f2310c8b0113d75aa6acedd3b740ba91e0cea73fb592b980d31daa"
+      ]
+    ],
+    "excluded_event_ids": [],
+    "generation_content_hash": "bb97d32ebabe75090eb13c6acf27e67d8e0677e83367d350d54fc91cb9db6f35",
+    "learner_identity": "cycle18-exact-enumeration-v1",
+    "model_assumptions_id": "604510ad6d83d225e510610d6a4bf4f26b5c628a57f52b56a5a4fbcbdfc5a2c1",
+    "namespace": "reference-only",
+    "native_checkpoint_reference": null,
+    "parameter_generation_id": "reference-only:bb97d32ebabe75090eb13c6acf27e67d8e0677e83367d350d54fc91cb9db6f35",
+    "prior_generation_id": null,
+    "schema_id": "pipeline-label-pair-v18",
+    "training_source_groups": [
+      "tcec_game_25732a217cb4add46aa08ca520ccfd8c31ba356c9863b1cd5f6c422e18b11c68",
+      "tcec_game_2d765464d8874e71cb8f001bf1fc0d0a30d5d1f613ef54d889e8598066f68604",
+      "tcec_game_68e10af574aa601e6a227b27eb7e39226131fd73be8813ce97cbd79e5f1a326c",
+      "tcec_game_718499ead0a557915ce15e688921d05cc8b2d249aab06f30c16bb87b767f0e4d",
+      "tcec_game_74159878275798b25e6895dc8fec9dc027db3b3543c190a9dc934910a6007ae3",
+      "tcec_game_7671a8b976748dea2c15dc40879642ed3b913b07073391e461e707c313bfd06c",
+      "tcec_game_85c092c6eee3abbb869637790f047a3286acc7685747252b53c8ec3a6ba4bf8c",
+      "tcec_game_8a2b1c8bc05c05fb3cf8e02fb742bc6c372644b298566c0d0514de94dcf86f75",
+      "tcec_game_8b3a007b63fba8c5f4015a55472710a8f8c0edbdcc9157379725682d2fbc4858",
+      "tcec_game_da18d5c77c24631fa561e5a2499fe263a5f08bfa4df67fec9c0660bf0a73879c",
+      "tcec_game_e9684d596a44af8801e11b753a2457802801b552f9b074ea1ba7c609868236b8",
+      "tcec_game_feaa5b3244afc69c7ec76614a7d54446acfda476eaa35d37f2ba4890a3dae2ed"
+    ],
+    "uncertainty_representation": "[{\"probability\":\"1/325177821305\",\"theta_attack\":\"1/10\",\"theta_clear\":\"1/10\"},{\"probability\":\"1/325177821305\",\"theta_attack\":\"3/10\",\"theta_clear\":\"1/10\"},{\"probability\":\"1/325177821305\",\"theta_attack\":\"1/2\",\"theta_clear\":\"1/10\"},{\"probability\":\"1/325177821305\",\"theta_attack\":\"7/10\",\"theta_clear\":\"1/10\"},{\"probability\":\"1/325177821305\",\"theta_attack\":\"9/10\",\"theta_clear\":\"1/10\"},{\"probability\":\"1/325177821305\",\"theta_attack\":\"1/10\",\"theta_clear\":\"3/10\"},{\"probability\":\"531441/325177821305\",\"theta_attack\":\"3/10\",\"theta_clear\":\"3/10\"},{\"probability\":\"531441/325177821305\",\"theta_attack\":\"1/2\",\"theta_clear\":\"3/10\"},{\"probability\":\"531441/325177821305\",\"theta_attack\":\"7/10\",\"theta_clear\":\"3/10\"},{\"probability\":\"531441/325177821305\",\"theta_attack\":\"9/10\",\"theta_clear\":\"3/10\"},{\"probability\":\"1/325177821305\",\"theta_attack\":\"1/10\",\"theta_clear\":\"1/2\"},{\"probability\":\"531441/325177821305\",\"theta_attack\":\"3/10\",\"theta_clear\":\"1/2\"},{\"probability\":\"48828125/65035564261\",\"theta_attack\":\"1/2\",\"theta_clear\":\"1/2\"},{\"probability\":\"48828125/65035564261\",\"theta_attack\":\"7/10\",\"theta_clear\":\"1/2\"},{\"probability\":\"48828125/65035564261\",\"theta_attack\":\"9/10\",\"theta_clear\":\"1/2\"},{\"probability\":\"1/325177821305\",\"theta_attack\":\"1/10\",\"theta_clear\":\"7/10\"},{\"probability\":\"531441/325177821305\",\"theta_attack\":\"3/10\",\"theta_clear\":\"7/10\"},{\"probability\":\"48828125/65035564261\",\"theta_attack\":\"1/2\",\"theta_clear\":\"7/10\"},{\"probability\":\"13841287201/325177821305\",\"theta_attack\":\"7/10\",\"theta_clear\":\"7/10\"},{\"probability\":\"13841287201/325177821305\",\"theta_attack\":\"9/10\",\"theta_clear\":\"7/10\"},{\"probability\":\"1/325177821305\",\"theta_attack\":\"1/10\",\"theta_clear\":\"9/10\"},{\"probability\":\"531441/325177821305\",\"theta_attack\":\"3/10\",\"theta_clear\":\"9/10\"},{\"probability\":\"48828125/65035564261\",\"theta_attack\":\"1/2\",\"theta_clear\":\"9/10\"},{\"probability\":\"13841287201/325177821305\",\"theta_attack\":\"7/10\",\"theta_clear\":\"9/10\"},{\"probability\":\"282429536481/325177821305\",\"theta_attack\":\"9/10\",\"theta_clear\":\"9/10\"}]"
+  },
+  "parameter_uncertainty": {
+    "theta_attack": {
+      "distribution": [
+        {
+          "probability": "1/65035564261",
+          "value": "1/10"
+        },
+        {
+          "probability": "425153/65035564261",
+          "value": "3/10"
+        },
+        {
+          "probability": "732953317/325177821305",
+          "value": "1/2"
+        },
+        {
+          "probability": "27927246469/325177821305",
+          "value": "7/10"
+        },
+        {
+          "probability": "296515495749/325177821305",
+          "value": "9/10"
+        }
+      ],
+      "mean": "2867801330909/3251778213050",
+      "variance": "9176570714695582556386/2643515386716662797575625"
+    },
+    "theta_clear": {
+      "distribution": [
+        {
+          "probability": "1/65035564261",
+          "value": "1/10"
+        },
+        {
+          "probability": "425153/65035564261",
+          "value": "3/10"
+        },
+        {
+          "probability": "732953317/325177821305",
+          "value": "1/2"
+        },
+        {
+          "probability": "27927246469/325177821305",
+          "value": "7/10"
+        },
+        {
+          "probability": "296515495749/325177821305",
+          "value": "9/10"
+        }
+      ],
+      "mean": "2867801330909/3251778213050",
+      "variance": "9176570714695582556386/2643515386716662797575625"
+    }
+  },
+  "posterior": [
+    {
+      "probability": "1/325177821305",
+      "theta_attack": "1/10",
+      "theta_clear": "1/10"
+    },
+    {
+      "probability": "1/325177821305",
+      "theta_attack": "3/10",
+      "theta_clear": "1/10"
+    },
+    {
+      "probability": "1/325177821305",
+      "theta_attack": "1/2",
+      "theta_clear": "1/10"
+    },
+    {
+      "probability": "1/325177821305",
+      "theta_attack": "7/10",
+      "theta_clear": "1/10"
+    },
+    {
+      "probability": "1/325177821305",
+      "theta_attack": "9/10",
+      "theta_clear": "1/10"
+    },
+    {
+      "probability": "1/325177821305",
+      "theta_attack": "1/10",
+      "theta_clear": "3/10"
+    },
+    {
+      "probability": "531441/325177821305",
+      "theta_attack": "3/10",
+      "theta_clear": "3/10"
+    },
+    {
+      "probability": "531441/325177821305",
+      "theta_attack": "1/2",
+      "theta_clear": "3/10"
+    },
+    {
+      "probability": "531441/325177821305",
+      "theta_attack": "7/10",
+      "theta_clear": "3/10"
+    },
+    {
+      "probability": "531441/325177821305",
+      "theta_attack": "9/10",
+      "theta_clear": "3/10"
+    },
+    {
+      "probability": "1/325177821305",
+      "theta_attack": "1/10",
+      "theta_clear": "1/2"
+    },
+    {
+      "probability": "531441/325177821305",
+      "theta_attack": "3/10",
+      "theta_clear": "1/2"
+    },
+    {
+      "probability": "48828125/65035564261",
+      "theta_attack": "1/2",
+      "theta_clear": "1/2"
+    },
+    {
+      "probability": "48828125/65035564261",
+      "theta_attack": "7/10",
+      "theta_clear": "1/2"
+    },
+    {
+      "probability": "48828125/65035564261",
+      "theta_attack": "9/10",
+      "theta_clear": "1/2"
+    },
+    {
+      "probability": "1/325177821305",
+      "theta_attack": "1/10",
+      "theta_clear": "7/10"
+    },
+    {
+      "probability": "531441/325177821305",
+      "theta_attack": "3/10",
+      "theta_clear": "7/10"
+    },
+    {
+      "probability": "48828125/65035564261",
+      "theta_attack": "1/2",
+      "theta_clear": "7/10"
+    },
+    {
+      "probability": "13841287201/325177821305",
+      "theta_attack": "7/10",
+      "theta_clear": "7/10"
+    },
+    {
+      "probability": "13841287201/325177821305",
+      "theta_attack": "9/10",
+      "theta_clear": "7/10"
+    },
+    {
+      "probability": "1/325177821305",
+      "theta_attack": "1/10",
+      "theta_clear": "9/10"
+    },
+    {
+      "probability": "531441/325177821305",
+      "theta_attack": "3/10",
+      "theta_clear": "9/10"
+    },
+    {
+      "probability": "48828125/65035564261",
+      "theta_attack": "1/2",
+      "theta_clear": "9/10"
+    },
+    {
+      "probability": "13841287201/325177821305",
+      "theta_attack": "7/10",
+      "theta_clear": "9/10"
+    },
+    {
+      "probability": "282429536481/325177821305",
+      "theta_attack": "9/10",
+      "theta_clear": "9/10"
+    }
+  ],
+  "posterior_identity": "fe4e18fc31a26100e7f9fc8ababc6ea7a664ed3e9c48ee30e7a047955e196796",
+  "predictive_probability": "5068851095069/6503556426100",
+  "prior_and_likelihoods": [
+    {
+      "group_likelihoods": [
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_25732a217cb4add46aa08ca520ccfd8c31ba356c9863b1cd5f6c422e18b11c68"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_2d765464d8874e71cb8f001bf1fc0d0a30d5d1f613ef54d889e8598066f68604"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_68e10af574aa601e6a227b27eb7e39226131fd73be8813ce97cbd79e5f1a326c"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_718499ead0a557915ce15e688921d05cc8b2d249aab06f30c16bb87b767f0e4d"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_74159878275798b25e6895dc8fec9dc027db3b3543c190a9dc934910a6007ae3"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_7671a8b976748dea2c15dc40879642ed3b913b07073391e461e707c313bfd06c"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_85c092c6eee3abbb869637790f047a3286acc7685747252b53c8ec3a6ba4bf8c"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_8a2b1c8bc05c05fb3cf8e02fb742bc6c372644b298566c0d0514de94dcf86f75"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_8b3a007b63fba8c5f4015a55472710a8f8c0edbdcc9157379725682d2fbc4858"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_da18d5c77c24631fa561e5a2499fe263a5f08bfa4df67fec9c0660bf0a73879c"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_e9684d596a44af8801e11b753a2457802801b552f9b074ea1ba7c609868236b8"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_feaa5b3244afc69c7ec76614a7d54446acfda476eaa35d37f2ba4890a3dae2ed"
+        }
+      ],
+      "prior": "1/25",
+      "theta_attack": "1/10",
+      "theta_clear": "1/10",
+      "unnormalized": "1/25000000000000",
+      "within_source_table": {
+        "(0, 0)": "9/10",
+        "(0, 1)": "0",
+        "(1, 0)": "0",
+        "(1, 1)": "1/10"
+      }
+    },
+    {
+      "group_likelihoods": [
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_25732a217cb4add46aa08ca520ccfd8c31ba356c9863b1cd5f6c422e18b11c68"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_2d765464d8874e71cb8f001bf1fc0d0a30d5d1f613ef54d889e8598066f68604"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_68e10af574aa601e6a227b27eb7e39226131fd73be8813ce97cbd79e5f1a326c"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_718499ead0a557915ce15e688921d05cc8b2d249aab06f30c16bb87b767f0e4d"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_74159878275798b25e6895dc8fec9dc027db3b3543c190a9dc934910a6007ae3"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_7671a8b976748dea2c15dc40879642ed3b913b07073391e461e707c313bfd06c"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_85c092c6eee3abbb869637790f047a3286acc7685747252b53c8ec3a6ba4bf8c"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_8a2b1c8bc05c05fb3cf8e02fb742bc6c372644b298566c0d0514de94dcf86f75"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_8b3a007b63fba8c5f4015a55472710a8f8c0edbdcc9157379725682d2fbc4858"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_da18d5c77c24631fa561e5a2499fe263a5f08bfa4df67fec9c0660bf0a73879c"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_e9684d596a44af8801e11b753a2457802801b552f9b074ea1ba7c609868236b8"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_feaa5b3244afc69c7ec76614a7d54446acfda476eaa35d37f2ba4890a3dae2ed"
+        }
+      ],
+      "prior": "1/25",
+      "theta_attack": "3/10",
+      "theta_clear": "1/10",
+      "unnormalized": "1/25000000000000",
+      "within_source_table": {
+        "(0, 0)": "7/10",
+        "(0, 1)": "1/5",
+        "(1, 0)": "0",
+        "(1, 1)": "1/10"
+      }
+    },
+    {
+      "group_likelihoods": [
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_25732a217cb4add46aa08ca520ccfd8c31ba356c9863b1cd5f6c422e18b11c68"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_2d765464d8874e71cb8f001bf1fc0d0a30d5d1f613ef54d889e8598066f68604"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_68e10af574aa601e6a227b27eb7e39226131fd73be8813ce97cbd79e5f1a326c"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_718499ead0a557915ce15e688921d05cc8b2d249aab06f30c16bb87b767f0e4d"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_74159878275798b25e6895dc8fec9dc027db3b3543c190a9dc934910a6007ae3"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_7671a8b976748dea2c15dc40879642ed3b913b07073391e461e707c313bfd06c"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_85c092c6eee3abbb869637790f047a3286acc7685747252b53c8ec3a6ba4bf8c"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_8a2b1c8bc05c05fb3cf8e02fb742bc6c372644b298566c0d0514de94dcf86f75"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_8b3a007b63fba8c5f4015a55472710a8f8c0edbdcc9157379725682d2fbc4858"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_da18d5c77c24631fa561e5a2499fe263a5f08bfa4df67fec9c0660bf0a73879c"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_e9684d596a44af8801e11b753a2457802801b552f9b074ea1ba7c609868236b8"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_feaa5b3244afc69c7ec76614a7d54446acfda476eaa35d37f2ba4890a3dae2ed"
+        }
+      ],
+      "prior": "1/25",
+      "theta_attack": "1/2",
+      "theta_clear": "1/10",
+      "unnormalized": "1/25000000000000",
+      "within_source_table": {
+        "(0, 0)": "1/2",
+        "(0, 1)": "2/5",
+        "(1, 0)": "0",
+        "(1, 1)": "1/10"
+      }
+    },
+    {
+      "group_likelihoods": [
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_25732a217cb4add46aa08ca520ccfd8c31ba356c9863b1cd5f6c422e18b11c68"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_2d765464d8874e71cb8f001bf1fc0d0a30d5d1f613ef54d889e8598066f68604"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_68e10af574aa601e6a227b27eb7e39226131fd73be8813ce97cbd79e5f1a326c"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_718499ead0a557915ce15e688921d05cc8b2d249aab06f30c16bb87b767f0e4d"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_74159878275798b25e6895dc8fec9dc027db3b3543c190a9dc934910a6007ae3"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_7671a8b976748dea2c15dc40879642ed3b913b07073391e461e707c313bfd06c"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_85c092c6eee3abbb869637790f047a3286acc7685747252b53c8ec3a6ba4bf8c"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_8a2b1c8bc05c05fb3cf8e02fb742bc6c372644b298566c0d0514de94dcf86f75"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_8b3a007b63fba8c5f4015a55472710a8f8c0edbdcc9157379725682d2fbc4858"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_da18d5c77c24631fa561e5a2499fe263a5f08bfa4df67fec9c0660bf0a73879c"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_e9684d596a44af8801e11b753a2457802801b552f9b074ea1ba7c609868236b8"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_feaa5b3244afc69c7ec76614a7d54446acfda476eaa35d37f2ba4890a3dae2ed"
+        }
+      ],
+      "prior": "1/25",
+      "theta_attack": "7/10",
+      "theta_clear": "1/10",
+      "unnormalized": "1/25000000000000",
+      "within_source_table": {
+        "(0, 0)": "3/10",
+        "(0, 1)": "3/5",
+        "(1, 0)": "0",
+        "(1, 1)": "1/10"
+      }
+    },
+    {
+      "group_likelihoods": [
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_25732a217cb4add46aa08ca520ccfd8c31ba356c9863b1cd5f6c422e18b11c68"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_2d765464d8874e71cb8f001bf1fc0d0a30d5d1f613ef54d889e8598066f68604"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_68e10af574aa601e6a227b27eb7e39226131fd73be8813ce97cbd79e5f1a326c"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_718499ead0a557915ce15e688921d05cc8b2d249aab06f30c16bb87b767f0e4d"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_74159878275798b25e6895dc8fec9dc027db3b3543c190a9dc934910a6007ae3"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_7671a8b976748dea2c15dc40879642ed3b913b07073391e461e707c313bfd06c"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_85c092c6eee3abbb869637790f047a3286acc7685747252b53c8ec3a6ba4bf8c"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_8a2b1c8bc05c05fb3cf8e02fb742bc6c372644b298566c0d0514de94dcf86f75"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_8b3a007b63fba8c5f4015a55472710a8f8c0edbdcc9157379725682d2fbc4858"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_da18d5c77c24631fa561e5a2499fe263a5f08bfa4df67fec9c0660bf0a73879c"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_e9684d596a44af8801e11b753a2457802801b552f9b074ea1ba7c609868236b8"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_feaa5b3244afc69c7ec76614a7d54446acfda476eaa35d37f2ba4890a3dae2ed"
+        }
+      ],
+      "prior": "1/25",
+      "theta_attack": "9/10",
+      "theta_clear": "1/10",
+      "unnormalized": "1/25000000000000",
+      "within_source_table": {
+        "(0, 0)": "1/10",
+        "(0, 1)": "4/5",
+        "(1, 0)": "0",
+        "(1, 1)": "1/10"
+      }
+    },
+    {
+      "group_likelihoods": [
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_25732a217cb4add46aa08ca520ccfd8c31ba356c9863b1cd5f6c422e18b11c68"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_2d765464d8874e71cb8f001bf1fc0d0a30d5d1f613ef54d889e8598066f68604"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_68e10af574aa601e6a227b27eb7e39226131fd73be8813ce97cbd79e5f1a326c"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_718499ead0a557915ce15e688921d05cc8b2d249aab06f30c16bb87b767f0e4d"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_74159878275798b25e6895dc8fec9dc027db3b3543c190a9dc934910a6007ae3"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_7671a8b976748dea2c15dc40879642ed3b913b07073391e461e707c313bfd06c"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_85c092c6eee3abbb869637790f047a3286acc7685747252b53c8ec3a6ba4bf8c"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_8a2b1c8bc05c05fb3cf8e02fb742bc6c372644b298566c0d0514de94dcf86f75"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_8b3a007b63fba8c5f4015a55472710a8f8c0edbdcc9157379725682d2fbc4858"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_da18d5c77c24631fa561e5a2499fe263a5f08bfa4df67fec9c0660bf0a73879c"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_e9684d596a44af8801e11b753a2457802801b552f9b074ea1ba7c609868236b8"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_feaa5b3244afc69c7ec76614a7d54446acfda476eaa35d37f2ba4890a3dae2ed"
+        }
+      ],
+      "prior": "1/25",
+      "theta_attack": "1/10",
+      "theta_clear": "3/10",
+      "unnormalized": "1/25000000000000",
+      "within_source_table": {
+        "(0, 0)": "7/10",
+        "(0, 1)": "0",
+        "(1, 0)": "1/5",
+        "(1, 1)": "1/10"
+      }
+    },
+    {
+      "group_likelihoods": [
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_25732a217cb4add46aa08ca520ccfd8c31ba356c9863b1cd5f6c422e18b11c68"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_2d765464d8874e71cb8f001bf1fc0d0a30d5d1f613ef54d889e8598066f68604"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_68e10af574aa601e6a227b27eb7e39226131fd73be8813ce97cbd79e5f1a326c"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_718499ead0a557915ce15e688921d05cc8b2d249aab06f30c16bb87b767f0e4d"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_74159878275798b25e6895dc8fec9dc027db3b3543c190a9dc934910a6007ae3"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_7671a8b976748dea2c15dc40879642ed3b913b07073391e461e707c313bfd06c"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_85c092c6eee3abbb869637790f047a3286acc7685747252b53c8ec3a6ba4bf8c"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_8a2b1c8bc05c05fb3cf8e02fb742bc6c372644b298566c0d0514de94dcf86f75"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_8b3a007b63fba8c5f4015a55472710a8f8c0edbdcc9157379725682d2fbc4858"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_da18d5c77c24631fa561e5a2499fe263a5f08bfa4df67fec9c0660bf0a73879c"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_e9684d596a44af8801e11b753a2457802801b552f9b074ea1ba7c609868236b8"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_feaa5b3244afc69c7ec76614a7d54446acfda476eaa35d37f2ba4890a3dae2ed"
+        }
+      ],
+      "prior": "1/25",
+      "theta_attack": "3/10",
+      "theta_clear": "3/10",
+      "unnormalized": "531441/25000000000000",
+      "within_source_table": {
+        "(0, 0)": "7/10",
+        "(0, 1)": "0",
+        "(1, 0)": "0",
+        "(1, 1)": "3/10"
+      }
+    },
+    {
+      "group_likelihoods": [
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_25732a217cb4add46aa08ca520ccfd8c31ba356c9863b1cd5f6c422e18b11c68"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_2d765464d8874e71cb8f001bf1fc0d0a30d5d1f613ef54d889e8598066f68604"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_68e10af574aa601e6a227b27eb7e39226131fd73be8813ce97cbd79e5f1a326c"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_718499ead0a557915ce15e688921d05cc8b2d249aab06f30c16bb87b767f0e4d"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_74159878275798b25e6895dc8fec9dc027db3b3543c190a9dc934910a6007ae3"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_7671a8b976748dea2c15dc40879642ed3b913b07073391e461e707c313bfd06c"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_85c092c6eee3abbb869637790f047a3286acc7685747252b53c8ec3a6ba4bf8c"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_8a2b1c8bc05c05fb3cf8e02fb742bc6c372644b298566c0d0514de94dcf86f75"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_8b3a007b63fba8c5f4015a55472710a8f8c0edbdcc9157379725682d2fbc4858"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_da18d5c77c24631fa561e5a2499fe263a5f08bfa4df67fec9c0660bf0a73879c"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_e9684d596a44af8801e11b753a2457802801b552f9b074ea1ba7c609868236b8"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_feaa5b3244afc69c7ec76614a7d54446acfda476eaa35d37f2ba4890a3dae2ed"
+        }
+      ],
+      "prior": "1/25",
+      "theta_attack": "1/2",
+      "theta_clear": "3/10",
+      "unnormalized": "531441/25000000000000",
+      "within_source_table": {
+        "(0, 0)": "1/2",
+        "(0, 1)": "1/5",
+        "(1, 0)": "0",
+        "(1, 1)": "3/10"
+      }
+    },
+    {
+      "group_likelihoods": [
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_25732a217cb4add46aa08ca520ccfd8c31ba356c9863b1cd5f6c422e18b11c68"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_2d765464d8874e71cb8f001bf1fc0d0a30d5d1f613ef54d889e8598066f68604"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_68e10af574aa601e6a227b27eb7e39226131fd73be8813ce97cbd79e5f1a326c"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_718499ead0a557915ce15e688921d05cc8b2d249aab06f30c16bb87b767f0e4d"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_74159878275798b25e6895dc8fec9dc027db3b3543c190a9dc934910a6007ae3"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_7671a8b976748dea2c15dc40879642ed3b913b07073391e461e707c313bfd06c"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_85c092c6eee3abbb869637790f047a3286acc7685747252b53c8ec3a6ba4bf8c"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_8a2b1c8bc05c05fb3cf8e02fb742bc6c372644b298566c0d0514de94dcf86f75"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_8b3a007b63fba8c5f4015a55472710a8f8c0edbdcc9157379725682d2fbc4858"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_da18d5c77c24631fa561e5a2499fe263a5f08bfa4df67fec9c0660bf0a73879c"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_e9684d596a44af8801e11b753a2457802801b552f9b074ea1ba7c609868236b8"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_feaa5b3244afc69c7ec76614a7d54446acfda476eaa35d37f2ba4890a3dae2ed"
+        }
+      ],
+      "prior": "1/25",
+      "theta_attack": "7/10",
+      "theta_clear": "3/10",
+      "unnormalized": "531441/25000000000000",
+      "within_source_table": {
+        "(0, 0)": "3/10",
+        "(0, 1)": "2/5",
+        "(1, 0)": "0",
+        "(1, 1)": "3/10"
+      }
+    },
+    {
+      "group_likelihoods": [
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_25732a217cb4add46aa08ca520ccfd8c31ba356c9863b1cd5f6c422e18b11c68"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_2d765464d8874e71cb8f001bf1fc0d0a30d5d1f613ef54d889e8598066f68604"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_68e10af574aa601e6a227b27eb7e39226131fd73be8813ce97cbd79e5f1a326c"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_718499ead0a557915ce15e688921d05cc8b2d249aab06f30c16bb87b767f0e4d"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_74159878275798b25e6895dc8fec9dc027db3b3543c190a9dc934910a6007ae3"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_7671a8b976748dea2c15dc40879642ed3b913b07073391e461e707c313bfd06c"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_85c092c6eee3abbb869637790f047a3286acc7685747252b53c8ec3a6ba4bf8c"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_8a2b1c8bc05c05fb3cf8e02fb742bc6c372644b298566c0d0514de94dcf86f75"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_8b3a007b63fba8c5f4015a55472710a8f8c0edbdcc9157379725682d2fbc4858"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_da18d5c77c24631fa561e5a2499fe263a5f08bfa4df67fec9c0660bf0a73879c"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_e9684d596a44af8801e11b753a2457802801b552f9b074ea1ba7c609868236b8"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_feaa5b3244afc69c7ec76614a7d54446acfda476eaa35d37f2ba4890a3dae2ed"
+        }
+      ],
+      "prior": "1/25",
+      "theta_attack": "9/10",
+      "theta_clear": "3/10",
+      "unnormalized": "531441/25000000000000",
+      "within_source_table": {
+        "(0, 0)": "1/10",
+        "(0, 1)": "3/5",
+        "(1, 0)": "0",
+        "(1, 1)": "3/10"
+      }
+    },
+    {
+      "group_likelihoods": [
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_25732a217cb4add46aa08ca520ccfd8c31ba356c9863b1cd5f6c422e18b11c68"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_2d765464d8874e71cb8f001bf1fc0d0a30d5d1f613ef54d889e8598066f68604"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_68e10af574aa601e6a227b27eb7e39226131fd73be8813ce97cbd79e5f1a326c"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_718499ead0a557915ce15e688921d05cc8b2d249aab06f30c16bb87b767f0e4d"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_74159878275798b25e6895dc8fec9dc027db3b3543c190a9dc934910a6007ae3"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_7671a8b976748dea2c15dc40879642ed3b913b07073391e461e707c313bfd06c"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_85c092c6eee3abbb869637790f047a3286acc7685747252b53c8ec3a6ba4bf8c"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_8a2b1c8bc05c05fb3cf8e02fb742bc6c372644b298566c0d0514de94dcf86f75"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_8b3a007b63fba8c5f4015a55472710a8f8c0edbdcc9157379725682d2fbc4858"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_da18d5c77c24631fa561e5a2499fe263a5f08bfa4df67fec9c0660bf0a73879c"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_e9684d596a44af8801e11b753a2457802801b552f9b074ea1ba7c609868236b8"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_feaa5b3244afc69c7ec76614a7d54446acfda476eaa35d37f2ba4890a3dae2ed"
+        }
+      ],
+      "prior": "1/25",
+      "theta_attack": "1/10",
+      "theta_clear": "1/2",
+      "unnormalized": "1/25000000000000",
+      "within_source_table": {
+        "(0, 0)": "1/2",
+        "(0, 1)": "0",
+        "(1, 0)": "2/5",
+        "(1, 1)": "1/10"
+      }
+    },
+    {
+      "group_likelihoods": [
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_25732a217cb4add46aa08ca520ccfd8c31ba356c9863b1cd5f6c422e18b11c68"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_2d765464d8874e71cb8f001bf1fc0d0a30d5d1f613ef54d889e8598066f68604"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_68e10af574aa601e6a227b27eb7e39226131fd73be8813ce97cbd79e5f1a326c"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_718499ead0a557915ce15e688921d05cc8b2d249aab06f30c16bb87b767f0e4d"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_74159878275798b25e6895dc8fec9dc027db3b3543c190a9dc934910a6007ae3"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_7671a8b976748dea2c15dc40879642ed3b913b07073391e461e707c313bfd06c"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_85c092c6eee3abbb869637790f047a3286acc7685747252b53c8ec3a6ba4bf8c"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_8a2b1c8bc05c05fb3cf8e02fb742bc6c372644b298566c0d0514de94dcf86f75"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_8b3a007b63fba8c5f4015a55472710a8f8c0edbdcc9157379725682d2fbc4858"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_da18d5c77c24631fa561e5a2499fe263a5f08bfa4df67fec9c0660bf0a73879c"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_e9684d596a44af8801e11b753a2457802801b552f9b074ea1ba7c609868236b8"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_feaa5b3244afc69c7ec76614a7d54446acfda476eaa35d37f2ba4890a3dae2ed"
+        }
+      ],
+      "prior": "1/25",
+      "theta_attack": "3/10",
+      "theta_clear": "1/2",
+      "unnormalized": "531441/25000000000000",
+      "within_source_table": {
+        "(0, 0)": "1/2",
+        "(0, 1)": "0",
+        "(1, 0)": "1/5",
+        "(1, 1)": "3/10"
+      }
+    },
+    {
+      "group_likelihoods": [
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_25732a217cb4add46aa08ca520ccfd8c31ba356c9863b1cd5f6c422e18b11c68"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_2d765464d8874e71cb8f001bf1fc0d0a30d5d1f613ef54d889e8598066f68604"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_68e10af574aa601e6a227b27eb7e39226131fd73be8813ce97cbd79e5f1a326c"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_718499ead0a557915ce15e688921d05cc8b2d249aab06f30c16bb87b767f0e4d"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_74159878275798b25e6895dc8fec9dc027db3b3543c190a9dc934910a6007ae3"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_7671a8b976748dea2c15dc40879642ed3b913b07073391e461e707c313bfd06c"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_85c092c6eee3abbb869637790f047a3286acc7685747252b53c8ec3a6ba4bf8c"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_8a2b1c8bc05c05fb3cf8e02fb742bc6c372644b298566c0d0514de94dcf86f75"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_8b3a007b63fba8c5f4015a55472710a8f8c0edbdcc9157379725682d2fbc4858"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_da18d5c77c24631fa561e5a2499fe263a5f08bfa4df67fec9c0660bf0a73879c"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_e9684d596a44af8801e11b753a2457802801b552f9b074ea1ba7c609868236b8"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_feaa5b3244afc69c7ec76614a7d54446acfda476eaa35d37f2ba4890a3dae2ed"
+        }
+      ],
+      "prior": "1/25",
+      "theta_attack": "1/2",
+      "theta_clear": "1/2",
+      "unnormalized": "1/102400",
+      "within_source_table": {
+        "(0, 0)": "1/2",
+        "(0, 1)": "0",
+        "(1, 0)": "0",
+        "(1, 1)": "1/2"
+      }
+    },
+    {
+      "group_likelihoods": [
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_25732a217cb4add46aa08ca520ccfd8c31ba356c9863b1cd5f6c422e18b11c68"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_2d765464d8874e71cb8f001bf1fc0d0a30d5d1f613ef54d889e8598066f68604"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_68e10af574aa601e6a227b27eb7e39226131fd73be8813ce97cbd79e5f1a326c"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_718499ead0a557915ce15e688921d05cc8b2d249aab06f30c16bb87b767f0e4d"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_74159878275798b25e6895dc8fec9dc027db3b3543c190a9dc934910a6007ae3"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_7671a8b976748dea2c15dc40879642ed3b913b07073391e461e707c313bfd06c"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_85c092c6eee3abbb869637790f047a3286acc7685747252b53c8ec3a6ba4bf8c"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_8a2b1c8bc05c05fb3cf8e02fb742bc6c372644b298566c0d0514de94dcf86f75"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_8b3a007b63fba8c5f4015a55472710a8f8c0edbdcc9157379725682d2fbc4858"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_da18d5c77c24631fa561e5a2499fe263a5f08bfa4df67fec9c0660bf0a73879c"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_e9684d596a44af8801e11b753a2457802801b552f9b074ea1ba7c609868236b8"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_feaa5b3244afc69c7ec76614a7d54446acfda476eaa35d37f2ba4890a3dae2ed"
+        }
+      ],
+      "prior": "1/25",
+      "theta_attack": "7/10",
+      "theta_clear": "1/2",
+      "unnormalized": "1/102400",
+      "within_source_table": {
+        "(0, 0)": "3/10",
+        "(0, 1)": "1/5",
+        "(1, 0)": "0",
+        "(1, 1)": "1/2"
+      }
+    },
+    {
+      "group_likelihoods": [
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_25732a217cb4add46aa08ca520ccfd8c31ba356c9863b1cd5f6c422e18b11c68"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_2d765464d8874e71cb8f001bf1fc0d0a30d5d1f613ef54d889e8598066f68604"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_68e10af574aa601e6a227b27eb7e39226131fd73be8813ce97cbd79e5f1a326c"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_718499ead0a557915ce15e688921d05cc8b2d249aab06f30c16bb87b767f0e4d"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_74159878275798b25e6895dc8fec9dc027db3b3543c190a9dc934910a6007ae3"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_7671a8b976748dea2c15dc40879642ed3b913b07073391e461e707c313bfd06c"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_85c092c6eee3abbb869637790f047a3286acc7685747252b53c8ec3a6ba4bf8c"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_8a2b1c8bc05c05fb3cf8e02fb742bc6c372644b298566c0d0514de94dcf86f75"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_8b3a007b63fba8c5f4015a55472710a8f8c0edbdcc9157379725682d2fbc4858"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_da18d5c77c24631fa561e5a2499fe263a5f08bfa4df67fec9c0660bf0a73879c"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_e9684d596a44af8801e11b753a2457802801b552f9b074ea1ba7c609868236b8"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_feaa5b3244afc69c7ec76614a7d54446acfda476eaa35d37f2ba4890a3dae2ed"
+        }
+      ],
+      "prior": "1/25",
+      "theta_attack": "9/10",
+      "theta_clear": "1/2",
+      "unnormalized": "1/102400",
+      "within_source_table": {
+        "(0, 0)": "1/10",
+        "(0, 1)": "2/5",
+        "(1, 0)": "0",
+        "(1, 1)": "1/2"
+      }
+    },
+    {
+      "group_likelihoods": [
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_25732a217cb4add46aa08ca520ccfd8c31ba356c9863b1cd5f6c422e18b11c68"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_2d765464d8874e71cb8f001bf1fc0d0a30d5d1f613ef54d889e8598066f68604"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_68e10af574aa601e6a227b27eb7e39226131fd73be8813ce97cbd79e5f1a326c"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_718499ead0a557915ce15e688921d05cc8b2d249aab06f30c16bb87b767f0e4d"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_74159878275798b25e6895dc8fec9dc027db3b3543c190a9dc934910a6007ae3"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_7671a8b976748dea2c15dc40879642ed3b913b07073391e461e707c313bfd06c"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_85c092c6eee3abbb869637790f047a3286acc7685747252b53c8ec3a6ba4bf8c"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_8a2b1c8bc05c05fb3cf8e02fb742bc6c372644b298566c0d0514de94dcf86f75"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_8b3a007b63fba8c5f4015a55472710a8f8c0edbdcc9157379725682d2fbc4858"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_da18d5c77c24631fa561e5a2499fe263a5f08bfa4df67fec9c0660bf0a73879c"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_e9684d596a44af8801e11b753a2457802801b552f9b074ea1ba7c609868236b8"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_feaa5b3244afc69c7ec76614a7d54446acfda476eaa35d37f2ba4890a3dae2ed"
+        }
+      ],
+      "prior": "1/25",
+      "theta_attack": "1/10",
+      "theta_clear": "7/10",
+      "unnormalized": "1/25000000000000",
+      "within_source_table": {
+        "(0, 0)": "3/10",
+        "(0, 1)": "0",
+        "(1, 0)": "3/5",
+        "(1, 1)": "1/10"
+      }
+    },
+    {
+      "group_likelihoods": [
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_25732a217cb4add46aa08ca520ccfd8c31ba356c9863b1cd5f6c422e18b11c68"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_2d765464d8874e71cb8f001bf1fc0d0a30d5d1f613ef54d889e8598066f68604"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_68e10af574aa601e6a227b27eb7e39226131fd73be8813ce97cbd79e5f1a326c"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_718499ead0a557915ce15e688921d05cc8b2d249aab06f30c16bb87b767f0e4d"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_74159878275798b25e6895dc8fec9dc027db3b3543c190a9dc934910a6007ae3"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_7671a8b976748dea2c15dc40879642ed3b913b07073391e461e707c313bfd06c"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_85c092c6eee3abbb869637790f047a3286acc7685747252b53c8ec3a6ba4bf8c"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_8a2b1c8bc05c05fb3cf8e02fb742bc6c372644b298566c0d0514de94dcf86f75"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_8b3a007b63fba8c5f4015a55472710a8f8c0edbdcc9157379725682d2fbc4858"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_da18d5c77c24631fa561e5a2499fe263a5f08bfa4df67fec9c0660bf0a73879c"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_e9684d596a44af8801e11b753a2457802801b552f9b074ea1ba7c609868236b8"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_feaa5b3244afc69c7ec76614a7d54446acfda476eaa35d37f2ba4890a3dae2ed"
+        }
+      ],
+      "prior": "1/25",
+      "theta_attack": "3/10",
+      "theta_clear": "7/10",
+      "unnormalized": "531441/25000000000000",
+      "within_source_table": {
+        "(0, 0)": "3/10",
+        "(0, 1)": "0",
+        "(1, 0)": "2/5",
+        "(1, 1)": "3/10"
+      }
+    },
+    {
+      "group_likelihoods": [
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_25732a217cb4add46aa08ca520ccfd8c31ba356c9863b1cd5f6c422e18b11c68"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_2d765464d8874e71cb8f001bf1fc0d0a30d5d1f613ef54d889e8598066f68604"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_68e10af574aa601e6a227b27eb7e39226131fd73be8813ce97cbd79e5f1a326c"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_718499ead0a557915ce15e688921d05cc8b2d249aab06f30c16bb87b767f0e4d"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_74159878275798b25e6895dc8fec9dc027db3b3543c190a9dc934910a6007ae3"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_7671a8b976748dea2c15dc40879642ed3b913b07073391e461e707c313bfd06c"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_85c092c6eee3abbb869637790f047a3286acc7685747252b53c8ec3a6ba4bf8c"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_8a2b1c8bc05c05fb3cf8e02fb742bc6c372644b298566c0d0514de94dcf86f75"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_8b3a007b63fba8c5f4015a55472710a8f8c0edbdcc9157379725682d2fbc4858"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_da18d5c77c24631fa561e5a2499fe263a5f08bfa4df67fec9c0660bf0a73879c"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_e9684d596a44af8801e11b753a2457802801b552f9b074ea1ba7c609868236b8"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_feaa5b3244afc69c7ec76614a7d54446acfda476eaa35d37f2ba4890a3dae2ed"
+        }
+      ],
+      "prior": "1/25",
+      "theta_attack": "1/2",
+      "theta_clear": "7/10",
+      "unnormalized": "1/102400",
+      "within_source_table": {
+        "(0, 0)": "3/10",
+        "(0, 1)": "0",
+        "(1, 0)": "1/5",
+        "(1, 1)": "1/2"
+      }
+    },
+    {
+      "group_likelihoods": [
+        {
+          "likelihood": "7/10",
+          "source_group": "tcec_game_25732a217cb4add46aa08ca520ccfd8c31ba356c9863b1cd5f6c422e18b11c68"
+        },
+        {
+          "likelihood": "7/10",
+          "source_group": "tcec_game_2d765464d8874e71cb8f001bf1fc0d0a30d5d1f613ef54d889e8598066f68604"
+        },
+        {
+          "likelihood": "7/10",
+          "source_group": "tcec_game_68e10af574aa601e6a227b27eb7e39226131fd73be8813ce97cbd79e5f1a326c"
+        },
+        {
+          "likelihood": "7/10",
+          "source_group": "tcec_game_718499ead0a557915ce15e688921d05cc8b2d249aab06f30c16bb87b767f0e4d"
+        },
+        {
+          "likelihood": "7/10",
+          "source_group": "tcec_game_74159878275798b25e6895dc8fec9dc027db3b3543c190a9dc934910a6007ae3"
+        },
+        {
+          "likelihood": "7/10",
+          "source_group": "tcec_game_7671a8b976748dea2c15dc40879642ed3b913b07073391e461e707c313bfd06c"
+        },
+        {
+          "likelihood": "7/10",
+          "source_group": "tcec_game_85c092c6eee3abbb869637790f047a3286acc7685747252b53c8ec3a6ba4bf8c"
+        },
+        {
+          "likelihood": "7/10",
+          "source_group": "tcec_game_8a2b1c8bc05c05fb3cf8e02fb742bc6c372644b298566c0d0514de94dcf86f75"
+        },
+        {
+          "likelihood": "7/10",
+          "source_group": "tcec_game_8b3a007b63fba8c5f4015a55472710a8f8c0edbdcc9157379725682d2fbc4858"
+        },
+        {
+          "likelihood": "7/10",
+          "source_group": "tcec_game_da18d5c77c24631fa561e5a2499fe263a5f08bfa4df67fec9c0660bf0a73879c"
+        },
+        {
+          "likelihood": "7/10",
+          "source_group": "tcec_game_e9684d596a44af8801e11b753a2457802801b552f9b074ea1ba7c609868236b8"
+        },
+        {
+          "likelihood": "7/10",
+          "source_group": "tcec_game_feaa5b3244afc69c7ec76614a7d54446acfda476eaa35d37f2ba4890a3dae2ed"
+        }
+      ],
+      "prior": "1/25",
+      "theta_attack": "7/10",
+      "theta_clear": "7/10",
+      "unnormalized": "13841287201/25000000000000",
+      "within_source_table": {
+        "(0, 0)": "3/10",
+        "(0, 1)": "0",
+        "(1, 0)": "0",
+        "(1, 1)": "7/10"
+      }
+    },
+    {
+      "group_likelihoods": [
+        {
+          "likelihood": "7/10",
+          "source_group": "tcec_game_25732a217cb4add46aa08ca520ccfd8c31ba356c9863b1cd5f6c422e18b11c68"
+        },
+        {
+          "likelihood": "7/10",
+          "source_group": "tcec_game_2d765464d8874e71cb8f001bf1fc0d0a30d5d1f613ef54d889e8598066f68604"
+        },
+        {
+          "likelihood": "7/10",
+          "source_group": "tcec_game_68e10af574aa601e6a227b27eb7e39226131fd73be8813ce97cbd79e5f1a326c"
+        },
+        {
+          "likelihood": "7/10",
+          "source_group": "tcec_game_718499ead0a557915ce15e688921d05cc8b2d249aab06f30c16bb87b767f0e4d"
+        },
+        {
+          "likelihood": "7/10",
+          "source_group": "tcec_game_74159878275798b25e6895dc8fec9dc027db3b3543c190a9dc934910a6007ae3"
+        },
+        {
+          "likelihood": "7/10",
+          "source_group": "tcec_game_7671a8b976748dea2c15dc40879642ed3b913b07073391e461e707c313bfd06c"
+        },
+        {
+          "likelihood": "7/10",
+          "source_group": "tcec_game_85c092c6eee3abbb869637790f047a3286acc7685747252b53c8ec3a6ba4bf8c"
+        },
+        {
+          "likelihood": "7/10",
+          "source_group": "tcec_game_8a2b1c8bc05c05fb3cf8e02fb742bc6c372644b298566c0d0514de94dcf86f75"
+        },
+        {
+          "likelihood": "7/10",
+          "source_group": "tcec_game_8b3a007b63fba8c5f4015a55472710a8f8c0edbdcc9157379725682d2fbc4858"
+        },
+        {
+          "likelihood": "7/10",
+          "source_group": "tcec_game_da18d5c77c24631fa561e5a2499fe263a5f08bfa4df67fec9c0660bf0a73879c"
+        },
+        {
+          "likelihood": "7/10",
+          "source_group": "tcec_game_e9684d596a44af8801e11b753a2457802801b552f9b074ea1ba7c609868236b8"
+        },
+        {
+          "likelihood": "7/10",
+          "source_group": "tcec_game_feaa5b3244afc69c7ec76614a7d54446acfda476eaa35d37f2ba4890a3dae2ed"
+        }
+      ],
+      "prior": "1/25",
+      "theta_attack": "9/10",
+      "theta_clear": "7/10",
+      "unnormalized": "13841287201/25000000000000",
+      "within_source_table": {
+        "(0, 0)": "1/10",
+        "(0, 1)": "1/5",
+        "(1, 0)": "0",
+        "(1, 1)": "7/10"
+      }
+    },
+    {
+      "group_likelihoods": [
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_25732a217cb4add46aa08ca520ccfd8c31ba356c9863b1cd5f6c422e18b11c68"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_2d765464d8874e71cb8f001bf1fc0d0a30d5d1f613ef54d889e8598066f68604"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_68e10af574aa601e6a227b27eb7e39226131fd73be8813ce97cbd79e5f1a326c"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_718499ead0a557915ce15e688921d05cc8b2d249aab06f30c16bb87b767f0e4d"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_74159878275798b25e6895dc8fec9dc027db3b3543c190a9dc934910a6007ae3"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_7671a8b976748dea2c15dc40879642ed3b913b07073391e461e707c313bfd06c"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_85c092c6eee3abbb869637790f047a3286acc7685747252b53c8ec3a6ba4bf8c"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_8a2b1c8bc05c05fb3cf8e02fb742bc6c372644b298566c0d0514de94dcf86f75"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_8b3a007b63fba8c5f4015a55472710a8f8c0edbdcc9157379725682d2fbc4858"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_da18d5c77c24631fa561e5a2499fe263a5f08bfa4df67fec9c0660bf0a73879c"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_e9684d596a44af8801e11b753a2457802801b552f9b074ea1ba7c609868236b8"
+        },
+        {
+          "likelihood": "1/10",
+          "source_group": "tcec_game_feaa5b3244afc69c7ec76614a7d54446acfda476eaa35d37f2ba4890a3dae2ed"
+        }
+      ],
+      "prior": "1/25",
+      "theta_attack": "1/10",
+      "theta_clear": "9/10",
+      "unnormalized": "1/25000000000000",
+      "within_source_table": {
+        "(0, 0)": "1/10",
+        "(0, 1)": "0",
+        "(1, 0)": "4/5",
+        "(1, 1)": "1/10"
+      }
+    },
+    {
+      "group_likelihoods": [
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_25732a217cb4add46aa08ca520ccfd8c31ba356c9863b1cd5f6c422e18b11c68"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_2d765464d8874e71cb8f001bf1fc0d0a30d5d1f613ef54d889e8598066f68604"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_68e10af574aa601e6a227b27eb7e39226131fd73be8813ce97cbd79e5f1a326c"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_718499ead0a557915ce15e688921d05cc8b2d249aab06f30c16bb87b767f0e4d"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_74159878275798b25e6895dc8fec9dc027db3b3543c190a9dc934910a6007ae3"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_7671a8b976748dea2c15dc40879642ed3b913b07073391e461e707c313bfd06c"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_85c092c6eee3abbb869637790f047a3286acc7685747252b53c8ec3a6ba4bf8c"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_8a2b1c8bc05c05fb3cf8e02fb742bc6c372644b298566c0d0514de94dcf86f75"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_8b3a007b63fba8c5f4015a55472710a8f8c0edbdcc9157379725682d2fbc4858"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_da18d5c77c24631fa561e5a2499fe263a5f08bfa4df67fec9c0660bf0a73879c"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_e9684d596a44af8801e11b753a2457802801b552f9b074ea1ba7c609868236b8"
+        },
+        {
+          "likelihood": "3/10",
+          "source_group": "tcec_game_feaa5b3244afc69c7ec76614a7d54446acfda476eaa35d37f2ba4890a3dae2ed"
+        }
+      ],
+      "prior": "1/25",
+      "theta_attack": "3/10",
+      "theta_clear": "9/10",
+      "unnormalized": "531441/25000000000000",
+      "within_source_table": {
+        "(0, 0)": "1/10",
+        "(0, 1)": "0",
+        "(1, 0)": "3/5",
+        "(1, 1)": "3/10"
+      }
+    },
+    {
+      "group_likelihoods": [
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_25732a217cb4add46aa08ca520ccfd8c31ba356c9863b1cd5f6c422e18b11c68"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_2d765464d8874e71cb8f001bf1fc0d0a30d5d1f613ef54d889e8598066f68604"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_68e10af574aa601e6a227b27eb7e39226131fd73be8813ce97cbd79e5f1a326c"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_718499ead0a557915ce15e688921d05cc8b2d249aab06f30c16bb87b767f0e4d"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_74159878275798b25e6895dc8fec9dc027db3b3543c190a9dc934910a6007ae3"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_7671a8b976748dea2c15dc40879642ed3b913b07073391e461e707c313bfd06c"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_85c092c6eee3abbb869637790f047a3286acc7685747252b53c8ec3a6ba4bf8c"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_8a2b1c8bc05c05fb3cf8e02fb742bc6c372644b298566c0d0514de94dcf86f75"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_8b3a007b63fba8c5f4015a55472710a8f8c0edbdcc9157379725682d2fbc4858"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_da18d5c77c24631fa561e5a2499fe263a5f08bfa4df67fec9c0660bf0a73879c"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_e9684d596a44af8801e11b753a2457802801b552f9b074ea1ba7c609868236b8"
+        },
+        {
+          "likelihood": "1/2",
+          "source_group": "tcec_game_feaa5b3244afc69c7ec76614a7d54446acfda476eaa35d37f2ba4890a3dae2ed"
+        }
+      ],
+      "prior": "1/25",
+      "theta_attack": "1/2",
+      "theta_clear": "9/10",
+      "unnormalized": "1/102400",
+      "within_source_table": {
+        "(0, 0)": "1/10",
+        "(0, 1)": "0",
+        "(1, 0)": "2/5",
+        "(1, 1)": "1/2"
+      }
+    },
+    {
+      "group_likelihoods": [
+        {
+          "likelihood": "7/10",
+          "source_group": "tcec_game_25732a217cb4add46aa08ca520ccfd8c31ba356c9863b1cd5f6c422e18b11c68"
+        },
+        {
+          "likelihood": "7/10",
+          "source_group": "tcec_game_2d765464d8874e71cb8f001bf1fc0d0a30d5d1f613ef54d889e8598066f68604"
+        },
+        {
+          "likelihood": "7/10",
+          "source_group": "tcec_game_68e10af574aa601e6a227b27eb7e39226131fd73be8813ce97cbd79e5f1a326c"
+        },
+        {
+          "likelihood": "7/10",
+          "source_group": "tcec_game_718499ead0a557915ce15e688921d05cc8b2d249aab06f30c16bb87b767f0e4d"
+        },
+        {
+          "likelihood": "7/10",
+          "source_group": "tcec_game_74159878275798b25e6895dc8fec9dc027db3b3543c190a9dc934910a6007ae3"
+        },
+        {
+          "likelihood": "7/10",
+          "source_group": "tcec_game_7671a8b976748dea2c15dc40879642ed3b913b07073391e461e707c313bfd06c"
+        },
+        {
+          "likelihood": "7/10",
+          "source_group": "tcec_game_85c092c6eee3abbb869637790f047a3286acc7685747252b53c8ec3a6ba4bf8c"
+        },
+        {
+          "likelihood": "7/10",
+          "source_group": "tcec_game_8a2b1c8bc05c05fb3cf8e02fb742bc6c372644b298566c0d0514de94dcf86f75"
+        },
+        {
+          "likelihood": "7/10",
+          "source_group": "tcec_game_8b3a007b63fba8c5f4015a55472710a8f8c0edbdcc9157379725682d2fbc4858"
+        },
+        {
+          "likelihood": "7/10",
+          "source_group": "tcec_game_da18d5c77c24631fa561e5a2499fe263a5f08bfa4df67fec9c0660bf0a73879c"
+        },
+        {
+          "likelihood": "7/10",
+          "source_group": "tcec_game_e9684d596a44af8801e11b753a2457802801b552f9b074ea1ba7c609868236b8"
+        },
+        {
+          "likelihood": "7/10",
+          "source_group": "tcec_game_feaa5b3244afc69c7ec76614a7d54446acfda476eaa35d37f2ba4890a3dae2ed"
+        }
+      ],
+      "prior": "1/25",
+      "theta_attack": "7/10",
+      "theta_clear": "9/10",
+      "unnormalized": "13841287201/25000000000000",
+      "within_source_table": {
+        "(0, 0)": "1/10",
+        "(0, 1)": "0",
+        "(1, 0)": "1/5",
+        "(1, 1)": "7/10"
+      }
+    },
+    {
+      "group_likelihoods": [
+        {
+          "likelihood": "9/10",
+          "source_group": "tcec_game_25732a217cb4add46aa08ca520ccfd8c31ba356c9863b1cd5f6c422e18b11c68"
+        },
+        {
+          "likelihood": "9/10",
+          "source_group": "tcec_game_2d765464d8874e71cb8f001bf1fc0d0a30d5d1f613ef54d889e8598066f68604"
+        },
+        {
+          "likelihood": "9/10",
+          "source_group": "tcec_game_68e10af574aa601e6a227b27eb7e39226131fd73be8813ce97cbd79e5f1a326c"
+        },
+        {
+          "likelihood": "9/10",
+          "source_group": "tcec_game_718499ead0a557915ce15e688921d05cc8b2d249aab06f30c16bb87b767f0e4d"
+        },
+        {
+          "likelihood": "9/10",
+          "source_group": "tcec_game_74159878275798b25e6895dc8fec9dc027db3b3543c190a9dc934910a6007ae3"
+        },
+        {
+          "likelihood": "9/10",
+          "source_group": "tcec_game_7671a8b976748dea2c15dc40879642ed3b913b07073391e461e707c313bfd06c"
+        },
+        {
+          "likelihood": "9/10",
+          "source_group": "tcec_game_85c092c6eee3abbb869637790f047a3286acc7685747252b53c8ec3a6ba4bf8c"
+        },
+        {
+          "likelihood": "9/10",
+          "source_group": "tcec_game_8a2b1c8bc05c05fb3cf8e02fb742bc6c372644b298566c0d0514de94dcf86f75"
+        },
+        {
+          "likelihood": "9/10",
+          "source_group": "tcec_game_8b3a007b63fba8c5f4015a55472710a8f8c0edbdcc9157379725682d2fbc4858"
+        },
+        {
+          "likelihood": "9/10",
+          "source_group": "tcec_game_da18d5c77c24631fa561e5a2499fe263a5f08bfa4df67fec9c0660bf0a73879c"
+        },
+        {
+          "likelihood": "9/10",
+          "source_group": "tcec_game_e9684d596a44af8801e11b753a2457802801b552f9b074ea1ba7c609868236b8"
+        },
+        {
+          "likelihood": "9/10",
+          "source_group": "tcec_game_feaa5b3244afc69c7ec76614a7d54446acfda476eaa35d37f2ba4890a3dae2ed"
+        }
+      ],
+      "prior": "1/25",
+      "theta_attack": "9/10",
+      "theta_clear": "9/10",
+      "unnormalized": "282429536481/25000000000000",
+      "within_source_table": {
+        "(0, 0)": "1/10",
+        "(0, 1)": "0",
+        "(1, 0)": "0",
+        "(1, 1)": "9/10"
+      }
+    }
+  ],
+  "query": "Two distinct future antecedent-qualified episode/channel trials with conditionally independent outcomes given one shared parameter pair; q(a,b)=a*b. This future-trial assumption is separate from within-training-vector dependence.",
+  "repeated_same_event_probability": null,
+  "resources": {
+    "likelihood_evaluations": 300,
+    "max_rational_bits": 82,
+    "source_groups": 12,
+    "states": 25
+  },
+  "schema": "reference-semantics-v18",
+  "source_group_ids": [
+    "tcec_game_25732a217cb4add46aa08ca520ccfd8c31ba356c9863b1cd5f6c422e18b11c68",
+    "tcec_game_2d765464d8874e71cb8f001bf1fc0d0a30d5d1f613ef54d889e8598066f68604",
+    "tcec_game_68e10af574aa601e6a227b27eb7e39226131fd73be8813ce97cbd79e5f1a326c",
+    "tcec_game_718499ead0a557915ce15e688921d05cc8b2d249aab06f30c16bb87b767f0e4d",
+    "tcec_game_74159878275798b25e6895dc8fec9dc027db3b3543c190a9dc934910a6007ae3",
+    "tcec_game_7671a8b976748dea2c15dc40879642ed3b913b07073391e461e707c313bfd06c",
+    "tcec_game_85c092c6eee3abbb869637790f047a3286acc7685747252b53c8ec3a6ba4bf8c",
+    "tcec_game_8a2b1c8bc05c05fb3cf8e02fb742bc6c372644b298566c0d0514de94dcf86f75",
+    "tcec_game_8b3a007b63fba8c5f4015a55472710a8f8c0edbdcc9157379725682d2fbc4858",
+    "tcec_game_da18d5c77c24631fa561e5a2499fe263a5f08bfa4df67fec9c0660bf0a73879c",
+    "tcec_game_e9684d596a44af8801e11b753a2457802801b552f9b074ea1ba7c609868236b8",
+    "tcec_game_feaa5b3244afc69c7ec76614a7d54446acfda476eaa35d37f2ba4890a3dae2ed"
+  ],
+  "status": "point_under_declared_model"
+}

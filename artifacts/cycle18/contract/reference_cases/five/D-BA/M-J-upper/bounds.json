@@ -1,0 +1,190 @@
+{
+  "bounds": [
+    "7833944431887/9883849858300",
+    "142794689857/179706361060"
+  ],
+  "constraints": "Exactly supplied posterior marginals; every nonnegative coupling with these row/column sums",
+  "event_ids": [
+    "c17-event-v1:episode_048e64b89a2f66dc393a:EE:evaluation",
+    "c17-event-v1:episode_1c411d3dcb9155557248:EE:evaluation",
+    "c17-event-v1:episode_25732a217cb4add46aa0:EE:evaluation",
+    "c17-event-v1:episode_2ccd1b7755c774559347:EE:evaluation",
+    "c17-event-v1:episode_2d765464d8874e71cb8f:EE:evaluation",
+    "c17-event-v1:episode_3caa76aad528c2e68154:EE:evaluation",
+    "c17-event-v1:episode_4871dd75e59be4be9a44:EE:evaluation",
+    "c17-event-v1:episode_573a89f3343ab2a205f3:EE:evaluation",
+    "c17-event-v1:episode_68e10af574aa601e6a22:EE:evaluation",
+    "c17-event-v1:episode_718499ead0a557915ce1:EE:evaluation",
+    "c17-event-v1:episode_74159878275798b25e68:EE:evaluation",
+    "c17-event-v1:episode_7671a8b976748dea2c15:EE:evaluation",
+    "c17-event-v1:episode_85c092c6eee3abbb8696:EE:evaluation",
+    "c17-event-v1:episode_888ebc2da2f10684396c:EE:evaluation",
+    "c17-event-v1:episode_8a2b1c8bc05c05fb3cf8:EE:evaluation",
+    "c17-event-v1:episode_8b3a007b63fba8c5f401:EE:evaluation",
+    "c17-event-v1:episode_a1c9b0a89d9abdbb3ba0:EE:evaluation",
+    "c17-event-v1:episode_c740520a6d9d62da4685:EE:evaluation",
+    "c17-event-v1:episode_c892d82470a76470380e:EE:evaluation",
+    "c17-event-v1:episode_da18d5c77c24631fa561:EE:evaluation",
+    "c17-event-v1:episode_db07417b165316ec9124:EE:evaluation",
+    "c17-event-v1:episode_e9684d596a44af8801e1:EE:evaluation",
+    "c17-event-v1:episode_f0217919090b7105fa66:EE:evaluation",
+    "c17-event-v1:episode_feaa5b3244afc69c7ec7:EE:evaluation"
+  ],
+  "feasible_set_identity": "fb1db01dfa083e9d7fa6ba3c46576987177e8d74398971cd61a595cf1ca67c4d",
+  "fixed_information": {
+    "theta_attack": [
+      {
+        "probability": "1/296515495749",
+        "value": "1/10"
+      },
+      {
+        "probability": "177147/98838498583",
+        "value": "3/10"
+      },
+      {
+        "probability": "244140625/296515495749",
+        "value": "1/2"
+      },
+      {
+        "probability": "13841287201/296515495749",
+        "value": "7/10"
+      },
+      {
+        "probability": "94143178827/98838498583",
+        "value": "9/10"
+      }
+    ],
+    "theta_clear": [
+      {
+        "probability": "1/296515495749",
+        "value": "1/10"
+      },
+      {
+        "probability": "177147/98838498583",
+        "value": "3/10"
+      },
+      {
+        "probability": "244140625/296515495749",
+        "value": "1/2"
+      },
+      {
+        "probability": "13841287201/296515495749",
+        "value": "7/10"
+      },
+      {
+        "probability": "94143178827/98838498583",
+        "value": "9/10"
+      }
+    ]
+  },
+  "limits": "Does not condition an unspecified prior coupling. Does not identify the actual empirical pipeline population.",
+  "lower_witness": [
+    {
+      "probability": "1/296515495749",
+      "theta_attack": "9/10",
+      "theta_clear": "1/10"
+    },
+    {
+      "probability": "177147/98838498583",
+      "theta_attack": "9/10",
+      "theta_clear": "3/10"
+    },
+    {
+      "probability": "244140625/296515495749",
+      "theta_attack": "9/10",
+      "theta_clear": "1/2"
+    },
+    {
+      "probability": "13841287201/296515495749",
+      "theta_attack": "9/10",
+      "theta_clear": "7/10"
+    },
+    {
+      "probability": "89447859071/98838498583",
+      "theta_attack": "9/10",
+      "theta_clear": "9/10"
+    },
+    {
+      "probability": "13841287201/296515495749",
+      "theta_attack": "7/10",
+      "theta_clear": "9/10"
+    },
+    {
+      "probability": "244140625/296515495749",
+      "theta_attack": "1/2",
+      "theta_clear": "9/10"
+    },
+    {
+      "probability": "177147/98838498583",
+      "theta_attack": "3/10",
+      "theta_clear": "9/10"
+    },
+    {
+      "probability": "1/296515495749",
+      "theta_attack": "1/10",
+      "theta_clear": "9/10"
+    }
+  ],
+  "model_family": "M-B",
+  "native_confidence": null,
+  "predictive_probability": null,
+  "query": "Two distinct future antecedent-qualified episode/channel trials with conditionally independent outcomes given one shared parameter pair; q(a,b)=a*b. This future-trial assumption is separate from within-training-vector dependence.",
+  "schema": "reference-semantics-v18",
+  "sharpness": "Finite rearrangement: moving mass from crossed to aligned pairs changes E[a*b] by mass*(a2-a1)*(b2-b1)>=0; quantile/antiquantile couplings attain endpoints",
+  "source_group_ids": [
+    "tcec_game_048e64b89a2f66dc393a6054d9a4c648eda543ebeaf3e3a4e042fb7b96819001",
+    "tcec_game_1c411d3dcb91555572483a86832ccc7404f122fdb45c7de0e17485319bcbcee6",
+    "tcec_game_25732a217cb4add46aa08ca520ccfd8c31ba356c9863b1cd5f6c422e18b11c68",
+    "tcec_game_2ccd1b7755c774559347bb84b937ad26963c4eddb7589c284eddc59bb6d3a6dc",
+    "tcec_game_2d765464d8874e71cb8f001bf1fc0d0a30d5d1f613ef54d889e8598066f68604",
+    "tcec_game_3caa76aad528c2e68154535ceab44a2638268b06c9d1624a29a037815e253dc3",
+    "tcec_game_4871dd75e59be4be9a445f4cea2da19cee4d9653cc279be484930297252687de",
+    "tcec_game_573a89f3343ab2a205f302c3d9c37266032171cf49683ffe27f41ddb9cfba2f3",
+    "tcec_game_68e10af574aa601e6a227b27eb7e39226131fd73be8813ce97cbd79e5f1a326c",
+    "tcec_game_718499ead0a557915ce15e688921d05cc8b2d249aab06f30c16bb87b767f0e4d",
+    "tcec_game_74159878275798b25e6895dc8fec9dc027db3b3543c190a9dc934910a6007ae3",
+    "tcec_game_7671a8b976748dea2c15dc40879642ed3b913b07073391e461e707c313bfd06c",
+    "tcec_game_85c092c6eee3abbb869637790f047a3286acc7685747252b53c8ec3a6ba4bf8c",
+    "tcec_game_888ebc2da2f10684396c20baddee1abd3e00f10dc7814db6371f09fde13fd365",
+    "tcec_game_8a2b1c8bc05c05fb3cf8e02fb742bc6c372644b298566c0d0514de94dcf86f75",
+    "tcec_game_8b3a007b63fba8c5f4015a55472710a8f8c0edbdcc9157379725682d2fbc4858",
+    "tcec_game_a1c9b0a89d9abdbb3ba0a6aa7f03798fd148bcaf496b6a851c2ec0ff69e75ce9",
+    "tcec_game_c740520a6d9d62da468596e8fddb73b238d5bc3bf694aa235ec8dcdf6631f666",
+    "tcec_game_c892d82470a76470380e5b2a1b8b9605ffe5cf1cc9f817b5a6679a17892d6d0f",
+    "tcec_game_da18d5c77c24631fa561e5a2499fe263a5f08bfa4df67fec9c0660bf0a73879c",
+    "tcec_game_db07417b165316ec91240593f7df083be99fd9285d69ead1c35904aa03c58908",
+    "tcec_game_e9684d596a44af8801e11b753a2457802801b552f9b074ea1ba7c609868236b8",
+    "tcec_game_f0217919090b7105fa663428ee6aa638129e8bf4915c327b7f111a79140aac6c",
+    "tcec_game_feaa5b3244afc69c7ec76614a7d54446acfda476eaa35d37f2ba4890a3dae2ed"
+  ],
+  "source_model": "M-J-upper",
+  "source_posterior_identity": "f5de2dad493d588e9bad908f3a6e597cf829fc7d9c05707afda3243a57c7b027",
+  "status": "bounded_under_declared_constraints",
+  "upper_witness": [
+    {
+      "probability": "1/296515495749",
+      "theta_attack": "1/10",
+      "theta_clear": "1/10"
+    },
+    {
+      "probability": "177147/98838498583",
+      "theta_attack": "3/10",
+      "theta_clear": "3/10"
+    },
+    {
+      "probability": "244140625/296515495749",
+      "theta_attack": "1/2",
+      "theta_clear": "1/2"
+    },
+    {
+      "probability": "13841287201/296515495749",
+      "theta_attack": "7/10",
+      "theta_clear": "7/10"
+    },
+    {
+      "probability": "94143178827/98838498583",
+      "theta_attack": "9/10",
+      "theta_clear": "9/10"
+    }
+  ]
+}

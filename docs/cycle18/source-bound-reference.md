@@ -72,6 +72,15 @@ model. Without supplied posterior marginals or a complete prior/likelihood, the
 [actual empirical query](../../artifacts/cycle18/contract/reference_cases/not-identified.json)
 returns `not_identified`, no point estimate and no invented interval.
 
+The actual S-AA M-F and M-J-copy fits have exactly the same posterior parameter
+marginals and event set, but different joint predictions. The
+[source-bound comparison](../../artifacts/cycle18/marginal-comparison.json)
+verifies their full marginal tables and shows that the copy law attains the
+upper coupling endpoint. Equal marginals therefore still omit relevant joint
+information in this actual-source example. The known copy operation is additional
+information: M-F remains a counterfactual independent-measurement hypothesis,
+not an equally faithful description of that operation.
+
 Registered grid sensitivity is substantial:
 
 | Support / shared S-AA | M-F | M-J-copy | M-J-upper | M-J-lower |

@@ -1,0 +1,720 @@
+{
+  "assumptions": {
+    "across_groups": "Conditionally independent given parameters; supplied and unverified for TCEC games",
+    "empirical_status": "Hypothetical stochastic pipeline, not calibrated from selected deterministic positives",
+    "faithful_to_copy_operation": false,
+    "grid": "two",
+    "model": "M-J-upper",
+    "observation_identity": "A vector enters once; selected components share its one group likelihood",
+    "observation_model": "Joint Bernoulli vector; P(11)=min(a,b)",
+    "parameter_support": [
+      "1/4",
+      "3/4"
+    ],
+    "prior": "Uniform product prior",
+    "query": "Two distinct future antecedent-qualified episode/channel trials with conditionally independent outcomes given one shared parameter pair; q(a,b)=a*b. This future-trial assumption is separate from within-training-vector dependence.",
+    "selection": "Conditional on natural EE antecedent qualification; no blocked paths counted as failures"
+  },
+  "assumptions_id": "1796db5a9d27fb2da0eb84d2a5f0a187323b420c311414b5c3a7fe1693540263",
+  "confidence_mapping": "unresolved; no conversion to native confidence",
+  "empirical_evaluation_uncertainty": null,
+  "event_ids": [
+    "c17-event-v1:episode_048e64b89a2f66dc393a:EE:evaluation",
+    "c17-event-v1:episode_1c411d3dcb9155557248:EE:evaluation",
+    "c17-event-v1:episode_2ccd1b7755c774559347:EE:evaluation",
+    "c17-event-v1:episode_3caa76aad528c2e68154:EE:evaluation",
+    "c17-event-v1:episode_4871dd75e59be4be9a44:EE:evaluation",
+    "c17-event-v1:episode_573a89f3343ab2a205f3:EE:evaluation",
+    "c17-event-v1:episode_888ebc2da2f10684396c:EE:evaluation",
+    "c17-event-v1:episode_a1c9b0a89d9abdbb3ba0:EE:evaluation",
+    "c17-event-v1:episode_c740520a6d9d62da4685:EE:evaluation",
+    "c17-event-v1:episode_c892d82470a76470380e:EE:evaluation",
+    "c17-event-v1:episode_db07417b165316ec9124:EE:evaluation",
+    "c17-event-v1:episode_f0217919090b7105fa66:EE:evaluation"
+  ],
+  "event_to_likelihood": {
+    "tcec_game_048e64b89a2f66dc393a6054d9a4c648eda543ebeaf3e3a4e042fb7b96819001": {
+      "components": [
+        "clear-two",
+        "rook-attack"
+      ],
+      "event_id": "c17-event-v1:episode_048e64b89a2f66dc393a:EE:evaluation",
+      "label_relationship": "same-result-copied",
+      "labels": {
+        "clear-two": true,
+        "rook-attack": true
+      },
+      "payload_hash": "bd4857173fa713937abd042f418489aade7a74f07317b595aa41a63f5ed9960b",
+      "source_episode_id": "episode_048e64b89a2f66dc393a"
+    },
+    "tcec_game_1c411d3dcb91555572483a86832ccc7404f122fdb45c7de0e17485319bcbcee6": {
+      "components": [
+        "clear-two",
+        "rook-attack"
+      ],
+      "event_id": "c17-event-v1:episode_1c411d3dcb9155557248:EE:evaluation",
+      "label_relationship": "same-result-copied",
+      "labels": {
+        "clear-two": true,
+        "rook-attack": true
+      },
+      "payload_hash": "8055300528ef5b29c070cc8c894af5408b142acedcfef0c8a9e646a9d22f2c04",
+      "source_episode_id": "episode_1c411d3dcb9155557248"
+    },
+    "tcec_game_2ccd1b7755c774559347bb84b937ad26963c4eddb7589c284eddc59bb6d3a6dc": {
+      "components": [
+        "clear-two",
+        "rook-attack"
+      ],
+      "event_id": "c17-event-v1:episode_2ccd1b7755c774559347:EE:evaluation",
+      "label_relationship": "same-result-copied",
+      "labels": {
+        "clear-two": true,
+        "rook-attack": true
+      },
+      "payload_hash": "97c8a50768b44eb02dfeb90168c3a6a5cd077718aaef13f3e28630ad2bb43047",
+      "source_episode_id": "episode_2ccd1b7755c774559347"
+    },
+    "tcec_game_3caa76aad528c2e68154535ceab44a2638268b06c9d1624a29a037815e253dc3": {
+      "components": [
+        "clear-two",
+        "rook-attack"
+      ],
+      "event_id": "c17-event-v1:episode_3caa76aad528c2e68154:EE:evaluation",
+      "label_relationship": "same-result-copied",
+      "labels": {
+        "clear-two": true,
+        "rook-attack": true
+      },
+      "payload_hash": "1baf0f3f972bd7e14650267c57cfef999e0c1669ea66932762f67e0cad9ad4ca",
+      "source_episode_id": "episode_3caa76aad528c2e68154"
+    },
+    "tcec_game_4871dd75e59be4be9a445f4cea2da19cee4d9653cc279be484930297252687de": {
+      "components": [
+        "clear-two",
+        "rook-attack"
+      ],
+      "event_id": "c17-event-v1:episode_4871dd75e59be4be9a44:EE:evaluation",
+      "label_relationship": "same-result-copied",
+      "labels": {
+        "clear-two": true,
+        "rook-attack": true
+      },
+      "payload_hash": "ad3f07c357ca3edab160b1f552d651cdfafd2477bc1f45a2e397449ce06eac78",
+      "source_episode_id": "episode_4871dd75e59be4be9a44"
+    },
+    "tcec_game_573a89f3343ab2a205f302c3d9c37266032171cf49683ffe27f41ddb9cfba2f3": {
+      "components": [
+        "clear-two",
+        "rook-attack"
+      ],
+      "event_id": "c17-event-v1:episode_573a89f3343ab2a205f3:EE:evaluation",
+      "label_relationship": "same-result-copied",
+      "labels": {
+        "clear-two": true,
+        "rook-attack": true
+      },
+      "payload_hash": "d45671cd3fbd4c5c0673ebf9c4b92e404ec1d2f4c3f321a818fee2f74fa6ee7f",
+      "source_episode_id": "episode_573a89f3343ab2a205f3"
+    },
+    "tcec_game_888ebc2da2f10684396c20baddee1abd3e00f10dc7814db6371f09fde13fd365": {
+      "components": [
+        "clear-two",
+        "rook-attack"
+      ],
+      "event_id": "c17-event-v1:episode_888ebc2da2f10684396c:EE:evaluation",
+      "label_relationship": "same-result-copied",
+      "labels": {
+        "clear-two": true,
+        "rook-attack": true
+      },
+      "payload_hash": "af86d1b4068147f91df07851df7b547460150832cd6c69961fc479bbef134cb2",
+      "source_episode_id": "episode_888ebc2da2f10684396c"
+    },
+    "tcec_game_a1c9b0a89d9abdbb3ba0a6aa7f03798fd148bcaf496b6a851c2ec0ff69e75ce9": {
+      "components": [
+        "clear-two",
+        "rook-attack"
+      ],
+      "event_id": "c17-event-v1:episode_a1c9b0a89d9abdbb3ba0:EE:evaluation",
+      "label_relationship": "same-result-copied",
+      "labels": {
+        "clear-two": true,
+        "rook-attack": true
+      },
+      "payload_hash": "4b1b4897f06df1cf472fcbe0748b90adcc87f3a02ab1206941a1f274d416b304",
+      "source_episode_id": "episode_a1c9b0a89d9abdbb3ba0"
+    },
+    "tcec_game_c740520a6d9d62da468596e8fddb73b238d5bc3bf694aa235ec8dcdf6631f666": {
+      "components": [
+        "clear-two",
+        "rook-attack"
+      ],
+      "event_id": "c17-event-v1:episode_c740520a6d9d62da4685:EE:evaluation",
+      "label_relationship": "same-result-copied",
+      "labels": {
+        "clear-two": true,
+        "rook-attack": true
+      },
+      "payload_hash": "f899eb62bddc338659658c2fefacd005895e28285cea2c101518758948fc9345",
+      "source_episode_id": "episode_c740520a6d9d62da4685"
+    },
+    "tcec_game_c892d82470a76470380e5b2a1b8b9605ffe5cf1cc9f817b5a6679a17892d6d0f": {
+      "components": [
+        "clear-two",
+        "rook-attack"
+      ],
+      "event_id": "c17-event-v1:episode_c892d82470a76470380e:EE:evaluation",
+      "label_relationship": "same-result-copied",
+      "labels": {
+        "clear-two": true,
+        "rook-attack": true
+      },
+      "payload_hash": "6a4ea979a5a5bdfbedf91e041f6ae88a30cc68253b7a193b1596475aa2d5a246",
+      "source_episode_id": "episode_c892d82470a76470380e"
+    },
+    "tcec_game_db07417b165316ec91240593f7df083be99fd9285d69ead1c35904aa03c58908": {
+      "components": [
+        "clear-two",
+        "rook-attack"
+      ],
+      "event_id": "c17-event-v1:episode_db07417b165316ec9124:EE:evaluation",
+      "label_relationship": "same-result-copied",
+      "labels": {
+        "clear-two": true,
+        "rook-attack": true
+      },
+      "payload_hash": "6edb14596234c138e1140a987009f60b03cf0f01d3dc4d0c7ce6194c2561c823",
+      "source_episode_id": "episode_db07417b165316ec9124"
+    },
+    "tcec_game_f0217919090b7105fa663428ee6aa638129e8bf4915c327b7f111a79140aac6c": {
+      "components": [
+        "clear-two",
+        "rook-attack"
+      ],
+      "event_id": "c17-event-v1:episode_f0217919090b7105fa66:EE:evaluation",
+      "label_relationship": "same-result-copied",
+      "labels": {
+        "clear-two": true,
+        "rook-attack": true
+      },
+      "payload_hash": "acf93b0d95a883b3588b6cd59cadd62f0189205cba7df3645771fc876dd970ba",
+      "source_episode_id": "episode_f0217919090b7105fa66"
+    }
+  },
+  "limits": {
+    "groups": 100,
+    "likelihood_evaluations": 2500,
+    "rational_bits": 16384,
+    "states": 25
+  },
+  "model": "M-J-upper",
+  "model_family": "M-J",
+  "native_confidence": null,
+  "native_strength": null,
+  "normalizer": "132861/16777216",
+  "parameter_generation": {
+    "admitted_component_refs": [
+      [
+        "c17-event-v1:episode_048e64b89a2f66dc393a:EE:evaluation",
+        [
+          "clear-two",
+          "rook-attack"
+        ]
+      ],
+      [
+        "c17-event-v1:episode_1c411d3dcb9155557248:EE:evaluation",
+        [
+          "clear-two",
+          "rook-attack"
+        ]
+      ],
+      [
+        "c17-event-v1:episode_2ccd1b7755c774559347:EE:evaluation",
+        [
+          "clear-two",
+          "rook-attack"
+        ]
+      ],
+      [
+        "c17-event-v1:episode_3caa76aad528c2e68154:EE:evaluation",
+        [
+          "clear-two",
+          "rook-attack"
+        ]
+      ],
+      [
+        "c17-event-v1:episode_4871dd75e59be4be9a44:EE:evaluation",
+        [
+          "clear-two",
+          "rook-attack"
+        ]
+      ],
+      [
+        "c17-event-v1:episode_573a89f3343ab2a205f3:EE:evaluation",
+        [
+          "clear-two",
+          "rook-attack"
+        ]
+      ],
+      [
+        "c17-event-v1:episode_888ebc2da2f10684396c:EE:evaluation",
+        [
+          "clear-two",
+          "rook-attack"
+        ]
+      ],
+      [
+        "c17-event-v1:episode_a1c9b0a89d9abdbb3ba0:EE:evaluation",
+        [
+          "clear-two",
+          "rook-attack"
+        ]
+      ],
+      [
+        "c17-event-v1:episode_c740520a6d9d62da4685:EE:evaluation",
+        [
+          "clear-two",
+          "rook-attack"
+        ]
+      ],
+      [
+        "c17-event-v1:episode_c892d82470a76470380e:EE:evaluation",
+        [
+          "clear-two",
+          "rook-attack"
+        ]
+      ],
+      [
+        "c17-event-v1:episode_db07417b165316ec9124:EE:evaluation",
+        [
+          "clear-two",
+          "rook-attack"
+        ]
+      ],
+      [
+        "c17-event-v1:episode_f0217919090b7105fa66:EE:evaluation",
+        [
+          "clear-two",
+          "rook-attack"
+        ]
+      ]
+    ],
+    "admitted_event_ids": [
+      "c17-event-v1:episode_048e64b89a2f66dc393a:EE:evaluation",
+      "c17-event-v1:episode_1c411d3dcb9155557248:EE:evaluation",
+      "c17-event-v1:episode_2ccd1b7755c774559347:EE:evaluation",
+      "c17-event-v1:episode_3caa76aad528c2e68154:EE:evaluation",
+      "c17-event-v1:episode_4871dd75e59be4be9a44:EE:evaluation",
+      "c17-event-v1:episode_573a89f3343ab2a205f3:EE:evaluation",
+      "c17-event-v1:episode_888ebc2da2f10684396c:EE:evaluation",
+      "c17-event-v1:episode_a1c9b0a89d9abdbb3ba0:EE:evaluation",
+      "c17-event-v1:episode_c740520a6d9d62da4685:EE:evaluation",
+      "c17-event-v1:episode_c892d82470a76470380e:EE:evaluation",
+      "c17-event-v1:episode_db07417b165316ec9124:EE:evaluation",
+      "c17-event-v1:episode_f0217919090b7105fa66:EE:evaluation"
+    ],
+    "admitted_payload_hashes": [
+      [
+        "c17-event-v1:episode_048e64b89a2f66dc393a:EE:evaluation",
+        "bd4857173fa713937abd042f418489aade7a74f07317b595aa41a63f5ed9960b"
+      ],
+      [
+        "c17-event-v1:episode_1c411d3dcb9155557248:EE:evaluation",
+        "8055300528ef5b29c070cc8c894af5408b142acedcfef0c8a9e646a9d22f2c04"
+      ],
+      [
+        "c17-event-v1:episode_2ccd1b7755c774559347:EE:evaluation",
+        "97c8a50768b44eb02dfeb90168c3a6a5cd077718aaef13f3e28630ad2bb43047"
+      ],
+      [
+        "c17-event-v1:episode_3caa76aad528c2e68154:EE:evaluation",
+        "1baf0f3f972bd7e14650267c57cfef999e0c1669ea66932762f67e0cad9ad4ca"
+      ],
+      [
+        "c17-event-v1:episode_4871dd75e59be4be9a44:EE:evaluation",
+        "ad3f07c357ca3edab160b1f552d651cdfafd2477bc1f45a2e397449ce06eac78"
+      ],
+      [
+        "c17-event-v1:episode_573a89f3343ab2a205f3:EE:evaluation",
+        "d45671cd3fbd4c5c0673ebf9c4b92e404ec1d2f4c3f321a818fee2f74fa6ee7f"
+      ],
+      [
+        "c17-event-v1:episode_888ebc2da2f10684396c:EE:evaluation",
+        "af86d1b4068147f91df07851df7b547460150832cd6c69961fc479bbef134cb2"
+      ],
+      [
+        "c17-event-v1:episode_a1c9b0a89d9abdbb3ba0:EE:evaluation",
+        "4b1b4897f06df1cf472fcbe0748b90adcc87f3a02ab1206941a1f274d416b304"
+      ],
+      [
+        "c17-event-v1:episode_c740520a6d9d62da4685:EE:evaluation",
+        "f899eb62bddc338659658c2fefacd005895e28285cea2c101518758948fc9345"
+      ],
+      [
+        "c17-event-v1:episode_c892d82470a76470380e:EE:evaluation",
+        "6a4ea979a5a5bdfbedf91e041f6ae88a30cc68253b7a193b1596475aa2d5a246"
+      ],
+      [
+        "c17-event-v1:episode_db07417b165316ec9124:EE:evaluation",
+        "6edb14596234c138e1140a987009f60b03cf0f01d3dc4d0c7ce6194c2561c823"
+      ],
+      [
+        "c17-event-v1:episode_f0217919090b7105fa66:EE:evaluation",
+        "acf93b0d95a883b3588b6cd59cadd62f0189205cba7df3645771fc876dd970ba"
+      ]
+    ],
+    "excluded_event_ids": [],
+    "generation_content_hash": "2677dc48ea891065fb964cc66b459dcb828fde85c1402658817ce7e3065f7336",
+    "learner_identity": "cycle18-exact-enumeration-v1",
+    "model_assumptions_id": "1796db5a9d27fb2da0eb84d2a5f0a187323b420c311414b5c3a7fe1693540263",
+    "namespace": "reference-only",
+    "native_checkpoint_reference": null,
+    "parameter_generation_id": "reference-only:2677dc48ea891065fb964cc66b459dcb828fde85c1402658817ce7e3065f7336",
+    "prior_generation_id": null,
+    "schema_id": "pipeline-label-pair-v18",
+    "training_source_groups": [
+      "tcec_game_048e64b89a2f66dc393a6054d9a4c648eda543ebeaf3e3a4e042fb7b96819001",
+      "tcec_game_1c411d3dcb91555572483a86832ccc7404f122fdb45c7de0e17485319bcbcee6",
+      "tcec_game_2ccd1b7755c774559347bb84b937ad26963c4eddb7589c284eddc59bb6d3a6dc",
+      "tcec_game_3caa76aad528c2e68154535ceab44a2638268b06c9d1624a29a037815e253dc3",
+      "tcec_game_4871dd75e59be4be9a445f4cea2da19cee4d9653cc279be484930297252687de",
+      "tcec_game_573a89f3343ab2a205f302c3d9c37266032171cf49683ffe27f41ddb9cfba2f3",
+      "tcec_game_888ebc2da2f10684396c20baddee1abd3e00f10dc7814db6371f09fde13fd365",
+      "tcec_game_a1c9b0a89d9abdbb3ba0a6aa7f03798fd148bcaf496b6a851c2ec0ff69e75ce9",
+      "tcec_game_c740520a6d9d62da468596e8fddb73b238d5bc3bf694aa235ec8dcdf6631f666",
+      "tcec_game_c892d82470a76470380e5b2a1b8b9605ffe5cf1cc9f817b5a6679a17892d6d0f",
+      "tcec_game_db07417b165316ec91240593f7df083be99fd9285d69ead1c35904aa03c58908",
+      "tcec_game_f0217919090b7105fa663428ee6aa638129e8bf4915c327b7f111a79140aac6c"
+    ],
+    "uncertainty_representation": "[{\"probability\":\"1/531444\",\"theta_attack\":\"1/4\",\"theta_clear\":\"1/4\"},{\"probability\":\"1/531444\",\"theta_attack\":\"3/4\",\"theta_clear\":\"1/4\"},{\"probability\":\"1/531444\",\"theta_attack\":\"1/4\",\"theta_clear\":\"3/4\"},{\"probability\":\"177147/177148\",\"theta_attack\":\"3/4\",\"theta_clear\":\"3/4\"}]"
+  },
+  "parameter_uncertainty": {
+    "theta_attack": {
+      "distribution": [
+        {
+          "probability": "1/265722",
+          "value": "1/4"
+        },
+        {
+          "probability": "265721/265722",
+          "value": "3/4"
+        }
+      ],
+      "mean": "199291/265722",
+      "variance": "265721/282432725136"
+    },
+    "theta_clear": {
+      "distribution": [
+        {
+          "probability": "1/265722",
+          "value": "1/4"
+        },
+        {
+          "probability": "265721/265722",
+          "value": "3/4"
+        }
+      ],
+      "mean": "199291/265722",
+      "variance": "265721/282432725136"
+    }
+  },
+  "posterior": [
+    {
+      "probability": "1/531444",
+      "theta_attack": "1/4",
+      "theta_clear": "1/4"
+    },
+    {
+      "probability": "1/531444",
+      "theta_attack": "3/4",
+      "theta_clear": "1/4"
+    },
+    {
+      "probability": "1/531444",
+      "theta_attack": "1/4",
+      "theta_clear": "3/4"
+    },
+    {
+      "probability": "177147/177148",
+      "theta_attack": "3/4",
+      "theta_clear": "3/4"
+    }
+  ],
+  "posterior_identity": "c4f43c49948393f9fc63d077760453608fbacb26abc1409978cc18708e1548fe",
+  "predictive_probability": "74734/132861",
+  "prior_and_likelihoods": [
+    {
+      "group_likelihoods": [
+        {
+          "likelihood": "1/4",
+          "source_group": "tcec_game_048e64b89a2f66dc393a6054d9a4c648eda543ebeaf3e3a4e042fb7b96819001"
+        },
+        {
+          "likelihood": "1/4",
+          "source_group": "tcec_game_1c411d3dcb91555572483a86832ccc7404f122fdb45c7de0e17485319bcbcee6"
+        },
+        {
+          "likelihood": "1/4",
+          "source_group": "tcec_game_2ccd1b7755c774559347bb84b937ad26963c4eddb7589c284eddc59bb6d3a6dc"
+        },
+        {
+          "likelihood": "1/4",
+          "source_group": "tcec_game_3caa76aad528c2e68154535ceab44a2638268b06c9d1624a29a037815e253dc3"
+        },
+        {
+          "likelihood": "1/4",
+          "source_group": "tcec_game_4871dd75e59be4be9a445f4cea2da19cee4d9653cc279be484930297252687de"
+        },
+        {
+          "likelihood": "1/4",
+          "source_group": "tcec_game_573a89f3343ab2a205f302c3d9c37266032171cf49683ffe27f41ddb9cfba2f3"
+        },
+        {
+          "likelihood": "1/4",
+          "source_group": "tcec_game_888ebc2da2f10684396c20baddee1abd3e00f10dc7814db6371f09fde13fd365"
+        },
+        {
+          "likelihood": "1/4",
+          "source_group": "tcec_game_a1c9b0a89d9abdbb3ba0a6aa7f03798fd148bcaf496b6a851c2ec0ff69e75ce9"
+        },
+        {
+          "likelihood": "1/4",
+          "source_group": "tcec_game_c740520a6d9d62da468596e8fddb73b238d5bc3bf694aa235ec8dcdf6631f666"
+        },
+        {
+          "likelihood": "1/4",
+          "source_group": "tcec_game_c892d82470a76470380e5b2a1b8b9605ffe5cf1cc9f817b5a6679a17892d6d0f"
+        },
+        {
+          "likelihood": "1/4",
+          "source_group": "tcec_game_db07417b165316ec91240593f7df083be99fd9285d69ead1c35904aa03c58908"
+        },
+        {
+          "likelihood": "1/4",
+          "source_group": "tcec_game_f0217919090b7105fa663428ee6aa638129e8bf4915c327b7f111a79140aac6c"
+        }
+      ],
+      "prior": "1/4",
+      "theta_attack": "1/4",
+      "theta_clear": "1/4",
+      "unnormalized": "1/67108864",
+      "within_source_table": {
+        "(0, 0)": "3/4",
+        "(0, 1)": "0",
+        "(1, 0)": "0",
+        "(1, 1)": "1/4"
+      }
+    },
+    {
+      "group_likelihoods": [
+        {
+          "likelihood": "1/4",
+          "source_group": "tcec_game_048e64b89a2f66dc393a6054d9a4c648eda543ebeaf3e3a4e042fb7b96819001"
+        },
+        {
+          "likelihood": "1/4",
+          "source_group": "tcec_game_1c411d3dcb91555572483a86832ccc7404f122fdb45c7de0e17485319bcbcee6"
+        },
+        {
+          "likelihood": "1/4",
+          "source_group": "tcec_game_2ccd1b7755c774559347bb84b937ad26963c4eddb7589c284eddc59bb6d3a6dc"
+        },
+        {
+          "likelihood": "1/4",
+          "source_group": "tcec_game_3caa76aad528c2e68154535ceab44a2638268b06c9d1624a29a037815e253dc3"
+        },
+        {
+          "likelihood": "1/4",
+          "source_group": "tcec_game_4871dd75e59be4be9a445f4cea2da19cee4d9653cc279be484930297252687de"
+        },
+        {
+          "likelihood": "1/4",
+          "source_group": "tcec_game_573a89f3343ab2a205f302c3d9c37266032171cf49683ffe27f41ddb9cfba2f3"
+        },
+        {
+          "likelihood": "1/4",
+          "source_group": "tcec_game_888ebc2da2f10684396c20baddee1abd3e00f10dc7814db6371f09fde13fd365"
+        },
+        {
+          "likelihood": "1/4",
+          "source_group": "tcec_game_a1c9b0a89d9abdbb3ba0a6aa7f03798fd148bcaf496b6a851c2ec0ff69e75ce9"
+        },
+        {
+          "likelihood": "1/4",
+          "source_group": "tcec_game_c740520a6d9d62da468596e8fddb73b238d5bc3bf694aa235ec8dcdf6631f666"
+        },
+        {
+          "likelihood": "1/4",
+          "source_group": "tcec_game_c892d82470a76470380e5b2a1b8b9605ffe5cf1cc9f817b5a6679a17892d6d0f"
+        },
+        {
+          "likelihood": "1/4",
+          "source_group": "tcec_game_db07417b165316ec91240593f7df083be99fd9285d69ead1c35904aa03c58908"
+        },
+        {
+          "likelihood": "1/4",
+          "source_group": "tcec_game_f0217919090b7105fa663428ee6aa638129e8bf4915c327b7f111a79140aac6c"
+        }
+      ],
+      "prior": "1/4",
+      "theta_attack": "3/4",
+      "theta_clear": "1/4",
+      "unnormalized": "1/67108864",
+      "within_source_table": {
+        "(0, 0)": "1/4",
+        "(0, 1)": "1/2",
+        "(1, 0)": "0",
+        "(1, 1)": "1/4"
+      }
+    },
+    {
+      "group_likelihoods": [
+        {
+          "likelihood": "1/4",
+          "source_group": "tcec_game_048e64b89a2f66dc393a6054d9a4c648eda543ebeaf3e3a4e042fb7b96819001"
+        },
+        {
+          "likelihood": "1/4",
+          "source_group": "tcec_game_1c411d3dcb91555572483a86832ccc7404f122fdb45c7de0e17485319bcbcee6"
+        },
+        {
+          "likelihood": "1/4",
+          "source_group": "tcec_game_2ccd1b7755c774559347bb84b937ad26963c4eddb7589c284eddc59bb6d3a6dc"
+        },
+        {
+          "likelihood": "1/4",
+          "source_group": "tcec_game_3caa76aad528c2e68154535ceab44a2638268b06c9d1624a29a037815e253dc3"
+        },
+        {
+          "likelihood": "1/4",
+          "source_group": "tcec_game_4871dd75e59be4be9a445f4cea2da19cee4d9653cc279be484930297252687de"
+        },
+        {
+          "likelihood": "1/4",
+          "source_group": "tcec_game_573a89f3343ab2a205f302c3d9c37266032171cf49683ffe27f41ddb9cfba2f3"
+        },
+        {
+          "likelihood": "1/4",
+          "source_group": "tcec_game_888ebc2da2f10684396c20baddee1abd3e00f10dc7814db6371f09fde13fd365"
+        },
+        {
+          "likelihood": "1/4",
+          "source_group": "tcec_game_a1c9b0a89d9abdbb3ba0a6aa7f03798fd148bcaf496b6a851c2ec0ff69e75ce9"
+        },
+        {
+          "likelihood": "1/4",
+          "source_group": "tcec_game_c740520a6d9d62da468596e8fddb73b238d5bc3bf694aa235ec8dcdf6631f666"
+        },
+        {
+          "likelihood": "1/4",
+          "source_group": "tcec_game_c892d82470a76470380e5b2a1b8b9605ffe5cf1cc9f817b5a6679a17892d6d0f"
+        },
+        {
+          "likelihood": "1/4",
+          "source_group": "tcec_game_db07417b165316ec91240593f7df083be99fd9285d69ead1c35904aa03c58908"
+        },
+        {
+          "likelihood": "1/4",
+          "source_group": "tcec_game_f0217919090b7105fa663428ee6aa638129e8bf4915c327b7f111a79140aac6c"
+        }
+      ],
+      "prior": "1/4",
+      "theta_attack": "1/4",
+      "theta_clear": "3/4",
+      "unnormalized": "1/67108864",
+      "within_source_table": {
+        "(0, 0)": "1/4",
+        "(0, 1)": "0",
+        "(1, 0)": "1/2",
+        "(1, 1)": "1/4"
+      }
+    },
+    {
+      "group_likelihoods": [
+        {
+          "likelihood": "3/4",
+          "source_group": "tcec_game_048e64b89a2f66dc393a6054d9a4c648eda543ebeaf3e3a4e042fb7b96819001"
+        },
+        {
+          "likelihood": "3/4",
+          "source_group": "tcec_game_1c411d3dcb91555572483a86832ccc7404f122fdb45c7de0e17485319bcbcee6"
+        },
+        {
+          "likelihood": "3/4",
+          "source_group": "tcec_game_2ccd1b7755c774559347bb84b937ad26963c4eddb7589c284eddc59bb6d3a6dc"
+        },
+        {
+          "likelihood": "3/4",
+          "source_group": "tcec_game_3caa76aad528c2e68154535ceab44a2638268b06c9d1624a29a037815e253dc3"
+        },
+        {
+          "likelihood": "3/4",
+          "source_group": "tcec_game_4871dd75e59be4be9a445f4cea2da19cee4d9653cc279be484930297252687de"
+        },
+        {
+          "likelihood": "3/4",
+          "source_group": "tcec_game_573a89f3343ab2a205f302c3d9c37266032171cf49683ffe27f41ddb9cfba2f3"
+        },
+        {
+          "likelihood": "3/4",
+          "source_group": "tcec_game_888ebc2da2f10684396c20baddee1abd3e00f10dc7814db6371f09fde13fd365"
+        },
+        {
+          "likelihood": "3/4",
+          "source_group": "tcec_game_a1c9b0a89d9abdbb3ba0a6aa7f03798fd148bcaf496b6a851c2ec0ff69e75ce9"
+        },
+        {
+          "likelihood": "3/4",
+          "source_group": "tcec_game_c740520a6d9d62da468596e8fddb73b238d5bc3bf694aa235ec8dcdf6631f666"
+        },
+        {
+          "likelihood": "3/4",
+          "source_group": "tcec_game_c892d82470a76470380e5b2a1b8b9605ffe5cf1cc9f817b5a6679a17892d6d0f"
+        },
+        {
+          "likelihood": "3/4",
+          "source_group": "tcec_game_db07417b165316ec91240593f7df083be99fd9285d69ead1c35904aa03c58908"
+        },
+        {
+          "likelihood": "3/4",
+          "source_group": "tcec_game_f0217919090b7105fa663428ee6aa638129e8bf4915c327b7f111a79140aac6c"
+        }
+      ],
+      "prior": "1/4",
+      "theta_attack": "3/4",
+      "theta_clear": "3/4",
+      "unnormalized": "531441/67108864",
+      "within_source_table": {
+        "(0, 0)": "1/4",
+        "(0, 1)": "0",
+        "(1, 0)": "0",
+        "(1, 1)": "3/4"
+      }
+    }
+  ],
+  "query": "Two distinct future antecedent-qualified episode/channel trials with conditionally independent outcomes given one shared parameter pair; q(a,b)=a*b. This future-trial assumption is separate from within-training-vector dependence.",
+  "repeated_same_event_probability": null,
+  "resources": {
+    "likelihood_evaluations": 48,
+    "max_rational_bits": 39,
+    "source_groups": 12,
+    "states": 4
+  },
+  "schema": "reference-semantics-v18",
+  "source_group_ids": [
+    "tcec_game_048e64b89a2f66dc393a6054d9a4c648eda543ebeaf3e3a4e042fb7b96819001",
+    "tcec_game_1c411d3dcb91555572483a86832ccc7404f122fdb45c7de0e17485319bcbcee6",
+    "tcec_game_2ccd1b7755c774559347bb84b937ad26963c4eddb7589c284eddc59bb6d3a6dc",
+    "tcec_game_3caa76aad528c2e68154535ceab44a2638268b06c9d1624a29a037815e253dc3",
+    "tcec_game_4871dd75e59be4be9a445f4cea2da19cee4d9653cc279be484930297252687de",
+    "tcec_game_573a89f3343ab2a205f302c3d9c37266032171cf49683ffe27f41ddb9cfba2f3",
+    "tcec_game_888ebc2da2f10684396c20baddee1abd3e00f10dc7814db6371f09fde13fd365",
+    "tcec_game_a1c9b0a89d9abdbb3ba0a6aa7f03798fd148bcaf496b6a851c2ec0ff69e75ce9",
+    "tcec_game_c740520a6d9d62da468596e8fddb73b238d5bc3bf694aa235ec8dcdf6631f666",
+    "tcec_game_c892d82470a76470380e5b2a1b8b9605ffe5cf1cc9f817b5a6679a17892d6d0f",
+    "tcec_game_db07417b165316ec91240593f7df083be99fd9285d69ead1c35904aa03c58908",
+    "tcec_game_f0217919090b7105fa663428ee6aa638129e8bf4915c327b7f111a79140aac6c"
+  ],
+  "status": "point_under_declared_model"
+}
