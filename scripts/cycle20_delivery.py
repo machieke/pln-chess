@@ -69,11 +69,26 @@ def catalog(out):
             for queue in queues:
                 for row in queue:sentence(row)
             recategorized.append(ref)
+    archive=Path(read_json(ROOT/'publication/cycle19/manifest.json')['original_local_root'])
+    comparisons=0
+    def tuples(text,marker):
+        return [line[len(marker):] for line in text.splitlines() if line.startswith(marker)]
+    for file in sorted((out/'comparison-A/rows').glob('*.json')):
+        row=read_json(file)
+        new=read_json(out/indexed[row['receipt']])['receipt']
+        for old_hash in row['baseline_proofs']:
+            old=read_json(archive/'study/evaluation/raw'/(old_hash+'.json'))['receipt']
+            for before,after in [('(C15STATE ','(C20STATE '),('(SELECTED ','(SELECTED ')]:
+                assert tuples(old['stdout'],before)==tuples(new['stdout'],after),(file,old_hash,before)
+            for before,after in [('c15tasks','c20tasks'),('c15beliefs','c20beliefs')]:
+                assert tuples(old['program'],'(= ('+before+') ')==tuples(new['program'],'(= ('+after+') '),(file,before)
+            comparisons+=1
+    assert comparisons==2512
     record(out/'catalog/native-receipts.json',indexed)
     return record(out/'catalog/summary.json',dict(reserved=sum(counts.values()),by_phase=dict(counts),
         stdio_receipts=len(indexed),resident_processes_without_file_runner_receipt=no_receipt,
         incomplete_file_runner=errors,revalidated_panel_native_outputs=len(recategorized),
-        final_transport_verified=True,ceiling=6000))
+        exact_raw_legacy_stages=comparisons,exact_fresh_input_tuple_text=True,final_transport_verified=True,ceiling=6000))
 
 def pack(out):
     from scripts import cycle15_evidence as transport
