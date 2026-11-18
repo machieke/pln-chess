@@ -1,0 +1,1870 @@
+{
+  "cases": [
+    {
+      "environment": {
+        "kind": "environment",
+        "parents": [],
+        "payload": {
+          "ancestry": "manual-fixture",
+          "attacker": "attacker_c19_hand",
+          "game": "manual-fixture",
+          "observed": {
+            "actor": "white",
+            "history": "history_c19_hand",
+            "id": "state_c19_hand",
+            "pieces": [
+              {
+                "cell": [
+                  1,
+                  1
+                ],
+                "id": "attacker_c19_hand",
+                "kind": "rook",
+                "owner": "black"
+              },
+              {
+                "cell": [
+                  4,
+                  1
+                ],
+                "id": "target_c19_hand",
+                "kind": "king",
+                "owner": "white"
+              }
+            ],
+            "root": "root_c19_hand",
+            "unknown": []
+          },
+          "reference": {
+            "actor": "white",
+            "history": "history_c19_hand",
+            "id": "state_c19_hand",
+            "pieces": [
+              {
+                "cell": [
+                  1,
+                  1
+                ],
+                "id": "attacker_c19_hand",
+                "kind": "rook",
+                "owner": "black"
+              },
+              {
+                "cell": [
+                  4,
+                  1
+                ],
+                "id": "target_c19_hand",
+                "kind": "king",
+                "owner": "white"
+              }
+            ],
+            "root": "root_c19_hand",
+            "unknown": []
+          },
+          "root": "root_c19_hand",
+          "source_collection": "manual-fixture",
+          "split": "diagnostic",
+          "target": "target_c19_hand",
+          "variant": "natural"
+        }
+      },
+      "expected": true,
+      "friendly": false,
+      "measurement": {
+        "Attack": {
+          "implementation_version": "1.11.2",
+          "method": "python-chess.Board.attacks",
+          "value": true
+        },
+        "Clear": {
+          "method": "explicit-coordinate-path-occupancy-v1",
+          "occupancy": [
+            "E",
+            "E"
+          ],
+          "value": true
+        },
+        "agreement": "agree",
+        "annotations": {
+          "Attack": "annotation_f82c312efcff51b73fc880209d1c294bf172cea37d4356b5a2ce229da8b2dc66",
+          "Clear": "annotation_05c9e21b11078c01cb8b18ce67dc749af5a7bd54bb53daf60809d78770e3a44e"
+        },
+        "bindings": {
+          "attacker": "attacker_c19_hand",
+          "cells": [
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "state": "state_c19_hand",
+          "target": "target_c19_hand"
+        },
+        "environment": "environment_d0b7c854ea4de27b4c79f60ba03df15ce38ce84ee2fcf83ba71a2093a36debb3",
+        "measurements": {
+          "Attack": "measurement_3ad118c3a4b2741ed1005ee71aed4fad210b170ca87a3d47e9c5cb84015b868c",
+          "Clear": "measurement_9c6efd184b6244747cddafe33cffe31a6a9403b92ab9becb62a34bf21a0b807a"
+        },
+        "raw_antecedent": true,
+        "unresolved": false
+      },
+      "occupancy": "EE",
+      "reverse": false
+    },
+    {
+      "environment": {
+        "kind": "environment",
+        "parents": [],
+        "payload": {
+          "ancestry": "manual-fixture",
+          "attacker": "attacker_c19_hand",
+          "game": "manual-fixture",
+          "observed": {
+            "actor": "white",
+            "history": "history_c19_hand",
+            "id": "state_c19_hand",
+            "pieces": [
+              {
+                "cell": [
+                  1,
+                  1
+                ],
+                "id": "attacker_c19_hand",
+                "kind": "rook",
+                "owner": "black"
+              },
+              {
+                "cell": [
+                  4,
+                  1
+                ],
+                "id": "target_c19_hand",
+                "kind": "king",
+                "owner": "black"
+              }
+            ],
+            "root": "root_c19_hand",
+            "unknown": []
+          },
+          "reference": {
+            "actor": "white",
+            "history": "history_c19_hand",
+            "id": "state_c19_hand",
+            "pieces": [
+              {
+                "cell": [
+                  1,
+                  1
+                ],
+                "id": "attacker_c19_hand",
+                "kind": "rook",
+                "owner": "black"
+              },
+              {
+                "cell": [
+                  4,
+                  1
+                ],
+                "id": "target_c19_hand",
+                "kind": "king",
+                "owner": "black"
+              }
+            ],
+            "root": "root_c19_hand",
+            "unknown": []
+          },
+          "root": "root_c19_hand",
+          "source_collection": "manual-fixture",
+          "split": "diagnostic",
+          "target": "target_c19_hand",
+          "variant": "natural"
+        }
+      },
+      "expected": true,
+      "friendly": true,
+      "measurement": {
+        "Attack": {
+          "implementation_version": "1.11.2",
+          "method": "python-chess.Board.attacks",
+          "value": true
+        },
+        "Clear": {
+          "method": "explicit-coordinate-path-occupancy-v1",
+          "occupancy": [
+            "E",
+            "E"
+          ],
+          "value": true
+        },
+        "agreement": "agree",
+        "annotations": {
+          "Attack": "annotation_04ca8bc1a8b47298ddeff57232e4041c3e0c7187b892e65827234edcff23eabc",
+          "Clear": "annotation_a0818d023dd872d850136450af5f97de354d97ec4a38be6d7a4d418b456f77cc"
+        },
+        "bindings": {
+          "attacker": "attacker_c19_hand",
+          "cells": [
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "state": "state_c19_hand",
+          "target": "target_c19_hand"
+        },
+        "environment": "environment_4336dd6bfc8939fc6d8164d3de2f8e020d3baa34ed583e294f75f0bfb9d68d1c",
+        "measurements": {
+          "Attack": "measurement_c2ed087dac1e6f55ee825438525d803c929b58c9948d5a44e83cbc7aa9a2d387",
+          "Clear": "measurement_c2d11cea53222761c84925cf0169a2bd6a715634c7969887147927cd0ba1dd9c"
+        },
+        "raw_antecedent": true,
+        "unresolved": false
+      },
+      "occupancy": "EE",
+      "reverse": false
+    },
+    {
+      "environment": {
+        "kind": "environment",
+        "parents": [],
+        "payload": {
+          "ancestry": "manual-fixture",
+          "attacker": "attacker_c19_hand",
+          "game": "manual-fixture",
+          "observed": {
+            "actor": "white",
+            "history": "history_c19_hand",
+            "id": "state_c19_hand",
+            "pieces": [
+              {
+                "cell": [
+                  6,
+                  6
+                ],
+                "id": "attacker_c19_hand",
+                "kind": "rook",
+                "owner": "black"
+              },
+              {
+                "cell": [
+                  3,
+                  6
+                ],
+                "id": "target_c19_hand",
+                "kind": "king",
+                "owner": "white"
+              }
+            ],
+            "root": "root_c19_hand",
+            "unknown": []
+          },
+          "reference": {
+            "actor": "white",
+            "history": "history_c19_hand",
+            "id": "state_c19_hand",
+            "pieces": [
+              {
+                "cell": [
+                  6,
+                  6
+                ],
+                "id": "attacker_c19_hand",
+                "kind": "rook",
+                "owner": "black"
+              },
+              {
+                "cell": [
+                  3,
+                  6
+                ],
+                "id": "target_c19_hand",
+                "kind": "king",
+                "owner": "white"
+              }
+            ],
+            "root": "root_c19_hand",
+            "unknown": []
+          },
+          "root": "root_c19_hand",
+          "source_collection": "manual-fixture",
+          "split": "diagnostic",
+          "target": "target_c19_hand",
+          "variant": "natural"
+        }
+      },
+      "expected": true,
+      "friendly": false,
+      "measurement": {
+        "Attack": {
+          "implementation_version": "1.11.2",
+          "method": "python-chess.Board.attacks",
+          "value": true
+        },
+        "Clear": {
+          "method": "explicit-coordinate-path-occupancy-v1",
+          "occupancy": [
+            "E",
+            "E"
+          ],
+          "value": true
+        },
+        "agreement": "agree",
+        "annotations": {
+          "Attack": "annotation_b048b244378edcf05db20a6ab5db5f4f022238e8eceaf057ae1296a615112b2e",
+          "Clear": "annotation_dfa3be569a19d2cc82a6ba88e15f1d6ae6b751f6cf77d310ed80e4d941c56d42"
+        },
+        "bindings": {
+          "attacker": "attacker_c19_hand",
+          "cells": [
+            [
+              5,
+              6
+            ],
+            [
+              4,
+              6
+            ]
+          ],
+          "state": "state_c19_hand",
+          "target": "target_c19_hand"
+        },
+        "environment": "environment_243080846331f65b3b5404aed5504b2bc9dc15464026f20a337bbaf27be83b76",
+        "measurements": {
+          "Attack": "measurement_8d4b759871411ac7e47595b912ded4a5460777373884bf13d7a15b2da98e47b1",
+          "Clear": "measurement_cb863154b954f81d2c62f7108873af52f2f925e70638adfd5f8374840ba93018"
+        },
+        "raw_antecedent": true,
+        "unresolved": false
+      },
+      "occupancy": "EE",
+      "reverse": true
+    },
+    {
+      "environment": {
+        "kind": "environment",
+        "parents": [],
+        "payload": {
+          "ancestry": "manual-fixture",
+          "attacker": "attacker_c19_hand",
+          "game": "manual-fixture",
+          "observed": {
+            "actor": "white",
+            "history": "history_c19_hand",
+            "id": "state_c19_hand",
+            "pieces": [
+              {
+                "cell": [
+                  1,
+                  1
+                ],
+                "id": "attacker_c19_hand",
+                "kind": "rook",
+                "owner": "black"
+              },
+              {
+                "cell": [
+                  4,
+                  1
+                ],
+                "id": "target_c19_hand",
+                "kind": "king",
+                "owner": "white"
+              },
+              {
+                "cell": [
+                  2,
+                  1
+                ],
+                "id": "blocker_1_c19_hand",
+                "kind": "knight",
+                "owner": "white"
+              }
+            ],
+            "root": "root_c19_hand",
+            "unknown": []
+          },
+          "reference": {
+            "actor": "white",
+            "history": "history_c19_hand",
+            "id": "state_c19_hand",
+            "pieces": [
+              {
+                "cell": [
+                  1,
+                  1
+                ],
+                "id": "attacker_c19_hand",
+                "kind": "rook",
+                "owner": "black"
+              },
+              {
+                "cell": [
+                  4,
+                  1
+                ],
+                "id": "target_c19_hand",
+                "kind": "king",
+                "owner": "white"
+              },
+              {
+                "cell": [
+                  2,
+                  1
+                ],
+                "id": "blocker_1_c19_hand",
+                "kind": "knight",
+                "owner": "white"
+              }
+            ],
+            "root": "root_c19_hand",
+            "unknown": []
+          },
+          "root": "root_c19_hand",
+          "source_collection": "manual-fixture",
+          "split": "diagnostic",
+          "target": "target_c19_hand",
+          "variant": "natural"
+        }
+      },
+      "expected": false,
+      "friendly": false,
+      "measurement": {
+        "Attack": {
+          "implementation_version": "1.11.2",
+          "method": "python-chess.Board.attacks",
+          "value": false
+        },
+        "Clear": {
+          "method": "explicit-coordinate-path-occupancy-v1",
+          "occupancy": [
+            "O",
+            "E"
+          ],
+          "value": false
+        },
+        "agreement": "agree",
+        "annotations": {
+          "Attack": "annotation_52fde534fc1eb1f6b9e9ef06718a2c8fb2449779badc2f7ebe855e5f903675fd",
+          "Clear": "annotation_442684b9347b50e623d107e38851456250f440da431c143baf0b0ed509a69728"
+        },
+        "bindings": {
+          "attacker": "attacker_c19_hand",
+          "cells": [
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "state": "state_c19_hand",
+          "target": "target_c19_hand"
+        },
+        "environment": "environment_b20086b22a9bb82c9e901203b417e10aefa5dbdbb61c21f274ba8bcc019b6246",
+        "measurements": {
+          "Attack": "measurement_7c4f109879aa74593790b3dbdb50141eddfd434cb31928206a3e34532c7845d5",
+          "Clear": "measurement_013bb8bb32d7f4796ba3e255a8709537097f24890bcec8f9a2f7c6232d0cbe08"
+        },
+        "raw_antecedent": false,
+        "unresolved": false
+      },
+      "occupancy": "OE",
+      "reverse": false
+    },
+    {
+      "environment": {
+        "kind": "environment",
+        "parents": [],
+        "payload": {
+          "ancestry": "manual-fixture",
+          "attacker": "attacker_c19_hand",
+          "game": "manual-fixture",
+          "observed": {
+            "actor": "white",
+            "history": "history_c19_hand",
+            "id": "state_c19_hand",
+            "pieces": [
+              {
+                "cell": [
+                  1,
+                  1
+                ],
+                "id": "attacker_c19_hand",
+                "kind": "rook",
+                "owner": "black"
+              },
+              {
+                "cell": [
+                  4,
+                  1
+                ],
+                "id": "target_c19_hand",
+                "kind": "king",
+                "owner": "black"
+              },
+              {
+                "cell": [
+                  2,
+                  1
+                ],
+                "id": "blocker_1_c19_hand",
+                "kind": "knight",
+                "owner": "white"
+              }
+            ],
+            "root": "root_c19_hand",
+            "unknown": []
+          },
+          "reference": {
+            "actor": "white",
+            "history": "history_c19_hand",
+            "id": "state_c19_hand",
+            "pieces": [
+              {
+                "cell": [
+                  1,
+                  1
+                ],
+                "id": "attacker_c19_hand",
+                "kind": "rook",
+                "owner": "black"
+              },
+              {
+                "cell": [
+                  4,
+                  1
+                ],
+                "id": "target_c19_hand",
+                "kind": "king",
+                "owner": "black"
+              },
+              {
+                "cell": [
+                  2,
+                  1
+                ],
+                "id": "blocker_1_c19_hand",
+                "kind": "knight",
+                "owner": "white"
+              }
+            ],
+            "root": "root_c19_hand",
+            "unknown": []
+          },
+          "root": "root_c19_hand",
+          "source_collection": "manual-fixture",
+          "split": "diagnostic",
+          "target": "target_c19_hand",
+          "variant": "natural"
+        }
+      },
+      "expected": false,
+      "friendly": true,
+      "measurement": {
+        "Attack": {
+          "implementation_version": "1.11.2",
+          "method": "python-chess.Board.attacks",
+          "value": false
+        },
+        "Clear": {
+          "method": "explicit-coordinate-path-occupancy-v1",
+          "occupancy": [
+            "O",
+            "E"
+          ],
+          "value": false
+        },
+        "agreement": "agree",
+        "annotations": {
+          "Attack": "annotation_f04b8140799a8a1eb3b148fbc1def4d0d2967c24ddd550dec97f4d5644eab08a",
+          "Clear": "annotation_a7b44a40f2f0c1fda27438fde70513639159f48301a69b1e17742b64aa795a83"
+        },
+        "bindings": {
+          "attacker": "attacker_c19_hand",
+          "cells": [
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "state": "state_c19_hand",
+          "target": "target_c19_hand"
+        },
+        "environment": "environment_b6783caaa1fa6091e5c638114658fb4b9534203e37b741108293beaef8791e08",
+        "measurements": {
+          "Attack": "measurement_ba69f6d8809c7ea2ad0793b63c942814aaebf880d2b5102da8277bd4b3cc0a7d",
+          "Clear": "measurement_7dbd3d3839fd88945915f4b7928ae586047f3a86c9305a8d105e451c3f4fd96a"
+        },
+        "raw_antecedent": false,
+        "unresolved": false
+      },
+      "occupancy": "OE",
+      "reverse": false
+    },
+    {
+      "environment": {
+        "kind": "environment",
+        "parents": [],
+        "payload": {
+          "ancestry": "manual-fixture",
+          "attacker": "attacker_c19_hand",
+          "game": "manual-fixture",
+          "observed": {
+            "actor": "white",
+            "history": "history_c19_hand",
+            "id": "state_c19_hand",
+            "pieces": [
+              {
+                "cell": [
+                  6,
+                  6
+                ],
+                "id": "attacker_c19_hand",
+                "kind": "rook",
+                "owner": "black"
+              },
+              {
+                "cell": [
+                  3,
+                  6
+                ],
+                "id": "target_c19_hand",
+                "kind": "king",
+                "owner": "white"
+              },
+              {
+                "cell": [
+                  5,
+                  6
+                ],
+                "id": "blocker_1_c19_hand",
+                "kind": "knight",
+                "owner": "white"
+              }
+            ],
+            "root": "root_c19_hand",
+            "unknown": []
+          },
+          "reference": {
+            "actor": "white",
+            "history": "history_c19_hand",
+            "id": "state_c19_hand",
+            "pieces": [
+              {
+                "cell": [
+                  6,
+                  6
+                ],
+                "id": "attacker_c19_hand",
+                "kind": "rook",
+                "owner": "black"
+              },
+              {
+                "cell": [
+                  3,
+                  6
+                ],
+                "id": "target_c19_hand",
+                "kind": "king",
+                "owner": "white"
+              },
+              {
+                "cell": [
+                  5,
+                  6
+                ],
+                "id": "blocker_1_c19_hand",
+                "kind": "knight",
+                "owner": "white"
+              }
+            ],
+            "root": "root_c19_hand",
+            "unknown": []
+          },
+          "root": "root_c19_hand",
+          "source_collection": "manual-fixture",
+          "split": "diagnostic",
+          "target": "target_c19_hand",
+          "variant": "natural"
+        }
+      },
+      "expected": false,
+      "friendly": false,
+      "measurement": {
+        "Attack": {
+          "implementation_version": "1.11.2",
+          "method": "python-chess.Board.attacks",
+          "value": false
+        },
+        "Clear": {
+          "method": "explicit-coordinate-path-occupancy-v1",
+          "occupancy": [
+            "O",
+            "E"
+          ],
+          "value": false
+        },
+        "agreement": "agree",
+        "annotations": {
+          "Attack": "annotation_fdf3542f1d31641ac7c537c162126dacd9dd9ed8bf2b99795025ffad7c8a2d93",
+          "Clear": "annotation_efed6144d2d5655ac07947f6f0fabea2356b41325505894b15c64cf85d2b4e71"
+        },
+        "bindings": {
+          "attacker": "attacker_c19_hand",
+          "cells": [
+            [
+              5,
+              6
+            ],
+            [
+              4,
+              6
+            ]
+          ],
+          "state": "state_c19_hand",
+          "target": "target_c19_hand"
+        },
+        "environment": "environment_5176d489c4f80f1409214df5efa7ea05fe2b0b026f471576f51c3b0988c33a91",
+        "measurements": {
+          "Attack": "measurement_f983b0f47fd79cd689acfd76d803c4ac74882cf651338d18a5cdab9de4f39842",
+          "Clear": "measurement_76c2a68d75d60fc731535439a0b5e2bff16a68931c31ba2174a13e1fca94ff04"
+        },
+        "raw_antecedent": false,
+        "unresolved": false
+      },
+      "occupancy": "OE",
+      "reverse": true
+    },
+    {
+      "environment": {
+        "kind": "environment",
+        "parents": [],
+        "payload": {
+          "ancestry": "manual-fixture",
+          "attacker": "attacker_c19_hand",
+          "game": "manual-fixture",
+          "observed": {
+            "actor": "white",
+            "history": "history_c19_hand",
+            "id": "state_c19_hand",
+            "pieces": [
+              {
+                "cell": [
+                  1,
+                  1
+                ],
+                "id": "attacker_c19_hand",
+                "kind": "rook",
+                "owner": "black"
+              },
+              {
+                "cell": [
+                  4,
+                  1
+                ],
+                "id": "target_c19_hand",
+                "kind": "king",
+                "owner": "white"
+              },
+              {
+                "cell": [
+                  3,
+                  1
+                ],
+                "id": "blocker_2_c19_hand",
+                "kind": "knight",
+                "owner": "white"
+              }
+            ],
+            "root": "root_c19_hand",
+            "unknown": []
+          },
+          "reference": {
+            "actor": "white",
+            "history": "history_c19_hand",
+            "id": "state_c19_hand",
+            "pieces": [
+              {
+                "cell": [
+                  1,
+                  1
+                ],
+                "id": "attacker_c19_hand",
+                "kind": "rook",
+                "owner": "black"
+              },
+              {
+                "cell": [
+                  4,
+                  1
+                ],
+                "id": "target_c19_hand",
+                "kind": "king",
+                "owner": "white"
+              },
+              {
+                "cell": [
+                  3,
+                  1
+                ],
+                "id": "blocker_2_c19_hand",
+                "kind": "knight",
+                "owner": "white"
+              }
+            ],
+            "root": "root_c19_hand",
+            "unknown": []
+          },
+          "root": "root_c19_hand",
+          "source_collection": "manual-fixture",
+          "split": "diagnostic",
+          "target": "target_c19_hand",
+          "variant": "natural"
+        }
+      },
+      "expected": false,
+      "friendly": false,
+      "measurement": {
+        "Attack": {
+          "implementation_version": "1.11.2",
+          "method": "python-chess.Board.attacks",
+          "value": false
+        },
+        "Clear": {
+          "method": "explicit-coordinate-path-occupancy-v1",
+          "occupancy": [
+            "E",
+            "O"
+          ],
+          "value": false
+        },
+        "agreement": "agree",
+        "annotations": {
+          "Attack": "annotation_fe67241af9c32448612a436500f048697802a7c9fb998572a0e8a3b6aaf92457",
+          "Clear": "annotation_073abfc8d86fa4473f345123e8c2676460a92fabffcc9169045a9e1b67b78b3d"
+        },
+        "bindings": {
+          "attacker": "attacker_c19_hand",
+          "cells": [
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "state": "state_c19_hand",
+          "target": "target_c19_hand"
+        },
+        "environment": "environment_056933d686150e0cdeb7d14e1185635a2f30d87456fb5bbadd79e058a0de7b11",
+        "measurements": {
+          "Attack": "measurement_de7cf4723774ae8ae20b500b663c294295e49a8d2004a9a28a1d8c45837b0ca3",
+          "Clear": "measurement_34c13ed25963b4bf11fa3f3694025464d3d2e8e2219260339b20eabc0116894d"
+        },
+        "raw_antecedent": false,
+        "unresolved": false
+      },
+      "occupancy": "EO",
+      "reverse": false
+    },
+    {
+      "environment": {
+        "kind": "environment",
+        "parents": [],
+        "payload": {
+          "ancestry": "manual-fixture",
+          "attacker": "attacker_c19_hand",
+          "game": "manual-fixture",
+          "observed": {
+            "actor": "white",
+            "history": "history_c19_hand",
+            "id": "state_c19_hand",
+            "pieces": [
+              {
+                "cell": [
+                  1,
+                  1
+                ],
+                "id": "attacker_c19_hand",
+                "kind": "rook",
+                "owner": "black"
+              },
+              {
+                "cell": [
+                  4,
+                  1
+                ],
+                "id": "target_c19_hand",
+                "kind": "king",
+                "owner": "black"
+              },
+              {
+                "cell": [
+                  3,
+                  1
+                ],
+                "id": "blocker_2_c19_hand",
+                "kind": "knight",
+                "owner": "white"
+              }
+            ],
+            "root": "root_c19_hand",
+            "unknown": []
+          },
+          "reference": {
+            "actor": "white",
+            "history": "history_c19_hand",
+            "id": "state_c19_hand",
+            "pieces": [
+              {
+                "cell": [
+                  1,
+                  1
+                ],
+                "id": "attacker_c19_hand",
+                "kind": "rook",
+                "owner": "black"
+              },
+              {
+                "cell": [
+                  4,
+                  1
+                ],
+                "id": "target_c19_hand",
+                "kind": "king",
+                "owner": "black"
+              },
+              {
+                "cell": [
+                  3,
+                  1
+                ],
+                "id": "blocker_2_c19_hand",
+                "kind": "knight",
+                "owner": "white"
+              }
+            ],
+            "root": "root_c19_hand",
+            "unknown": []
+          },
+          "root": "root_c19_hand",
+          "source_collection": "manual-fixture",
+          "split": "diagnostic",
+          "target": "target_c19_hand",
+          "variant": "natural"
+        }
+      },
+      "expected": false,
+      "friendly": true,
+      "measurement": {
+        "Attack": {
+          "implementation_version": "1.11.2",
+          "method": "python-chess.Board.attacks",
+          "value": false
+        },
+        "Clear": {
+          "method": "explicit-coordinate-path-occupancy-v1",
+          "occupancy": [
+            "E",
+            "O"
+          ],
+          "value": false
+        },
+        "agreement": "agree",
+        "annotations": {
+          "Attack": "annotation_71985e29194678233c170a5ab758b533263fa6375693cd530f4ad5edf85a59a7",
+          "Clear": "annotation_2525dfda767aec9d20649fa9f8ffe4c3ded88197f5431df4f2ce246b36258f89"
+        },
+        "bindings": {
+          "attacker": "attacker_c19_hand",
+          "cells": [
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "state": "state_c19_hand",
+          "target": "target_c19_hand"
+        },
+        "environment": "environment_7dc1d99aeb3df5497c8fa9ac4ed644b84d40aea71f236f895e0e37f2d3819159",
+        "measurements": {
+          "Attack": "measurement_a6b4debdec8018bc501fe41c895f4b34fa35828ceefaf47c7e9203d61e5f7f10",
+          "Clear": "measurement_e3fbf619efc085bbe30a26c5e53daedd26158619e6badbd2a14e3a354793daf7"
+        },
+        "raw_antecedent": false,
+        "unresolved": false
+      },
+      "occupancy": "EO",
+      "reverse": false
+    },
+    {
+      "environment": {
+        "kind": "environment",
+        "parents": [],
+        "payload": {
+          "ancestry": "manual-fixture",
+          "attacker": "attacker_c19_hand",
+          "game": "manual-fixture",
+          "observed": {
+            "actor": "white",
+            "history": "history_c19_hand",
+            "id": "state_c19_hand",
+            "pieces": [
+              {
+                "cell": [
+                  6,
+                  6
+                ],
+                "id": "attacker_c19_hand",
+                "kind": "rook",
+                "owner": "black"
+              },
+              {
+                "cell": [
+                  3,
+                  6
+                ],
+                "id": "target_c19_hand",
+                "kind": "king",
+                "owner": "white"
+              },
+              {
+                "cell": [
+                  4,
+                  6
+                ],
+                "id": "blocker_2_c19_hand",
+                "kind": "knight",
+                "owner": "white"
+              }
+            ],
+            "root": "root_c19_hand",
+            "unknown": []
+          },
+          "reference": {
+            "actor": "white",
+            "history": "history_c19_hand",
+            "id": "state_c19_hand",
+            "pieces": [
+              {
+                "cell": [
+                  6,
+                  6
+                ],
+                "id": "attacker_c19_hand",
+                "kind": "rook",
+                "owner": "black"
+              },
+              {
+                "cell": [
+                  3,
+                  6
+                ],
+                "id": "target_c19_hand",
+                "kind": "king",
+                "owner": "white"
+              },
+              {
+                "cell": [
+                  4,
+                  6
+                ],
+                "id": "blocker_2_c19_hand",
+                "kind": "knight",
+                "owner": "white"
+              }
+            ],
+            "root": "root_c19_hand",
+            "unknown": []
+          },
+          "root": "root_c19_hand",
+          "source_collection": "manual-fixture",
+          "split": "diagnostic",
+          "target": "target_c19_hand",
+          "variant": "natural"
+        }
+      },
+      "expected": false,
+      "friendly": false,
+      "measurement": {
+        "Attack": {
+          "implementation_version": "1.11.2",
+          "method": "python-chess.Board.attacks",
+          "value": false
+        },
+        "Clear": {
+          "method": "explicit-coordinate-path-occupancy-v1",
+          "occupancy": [
+            "E",
+            "O"
+          ],
+          "value": false
+        },
+        "agreement": "agree",
+        "annotations": {
+          "Attack": "annotation_7f4a7576f4fcea13bac8246820040b4134fc2757e8ddbfeb7a29ba120ed75e3a",
+          "Clear": "annotation_f4f10e396e03f0b0c0ff29c6f647d57a838f653f795545815055756808d9bdf1"
+        },
+        "bindings": {
+          "attacker": "attacker_c19_hand",
+          "cells": [
+            [
+              5,
+              6
+            ],
+            [
+              4,
+              6
+            ]
+          ],
+          "state": "state_c19_hand",
+          "target": "target_c19_hand"
+        },
+        "environment": "environment_a386085866bcfb176c7d262e67f2f322b36be539a202c66d9e0de67ce7943181",
+        "measurements": {
+          "Attack": "measurement_0431e804c31d4532d500bd91a0251b66b28e29423d8010067afeb979febc1316",
+          "Clear": "measurement_bc02e38e2dddb309f05d17c46c3ba71e2c3557c7b368b18310242716e1cdc5ca"
+        },
+        "raw_antecedent": false,
+        "unresolved": false
+      },
+      "occupancy": "EO",
+      "reverse": true
+    },
+    {
+      "environment": {
+        "kind": "environment",
+        "parents": [],
+        "payload": {
+          "ancestry": "manual-fixture",
+          "attacker": "attacker_c19_hand",
+          "game": "manual-fixture",
+          "observed": {
+            "actor": "white",
+            "history": "history_c19_hand",
+            "id": "state_c19_hand",
+            "pieces": [
+              {
+                "cell": [
+                  1,
+                  1
+                ],
+                "id": "attacker_c19_hand",
+                "kind": "rook",
+                "owner": "black"
+              },
+              {
+                "cell": [
+                  4,
+                  1
+                ],
+                "id": "target_c19_hand",
+                "kind": "king",
+                "owner": "white"
+              },
+              {
+                "cell": [
+                  2,
+                  1
+                ],
+                "id": "blocker_1_c19_hand",
+                "kind": "knight",
+                "owner": "white"
+              },
+              {
+                "cell": [
+                  3,
+                  1
+                ],
+                "id": "blocker_2_c19_hand",
+                "kind": "knight",
+                "owner": "white"
+              }
+            ],
+            "root": "root_c19_hand",
+            "unknown": []
+          },
+          "reference": {
+            "actor": "white",
+            "history": "history_c19_hand",
+            "id": "state_c19_hand",
+            "pieces": [
+              {
+                "cell": [
+                  1,
+                  1
+                ],
+                "id": "attacker_c19_hand",
+                "kind": "rook",
+                "owner": "black"
+              },
+              {
+                "cell": [
+                  4,
+                  1
+                ],
+                "id": "target_c19_hand",
+                "kind": "king",
+                "owner": "white"
+              },
+              {
+                "cell": [
+                  2,
+                  1
+                ],
+                "id": "blocker_1_c19_hand",
+                "kind": "knight",
+                "owner": "white"
+              },
+              {
+                "cell": [
+                  3,
+                  1
+                ],
+                "id": "blocker_2_c19_hand",
+                "kind": "knight",
+                "owner": "white"
+              }
+            ],
+            "root": "root_c19_hand",
+            "unknown": []
+          },
+          "root": "root_c19_hand",
+          "source_collection": "manual-fixture",
+          "split": "diagnostic",
+          "target": "target_c19_hand",
+          "variant": "natural"
+        }
+      },
+      "expected": false,
+      "friendly": false,
+      "measurement": {
+        "Attack": {
+          "implementation_version": "1.11.2",
+          "method": "python-chess.Board.attacks",
+          "value": false
+        },
+        "Clear": {
+          "method": "explicit-coordinate-path-occupancy-v1",
+          "occupancy": [
+            "O",
+            "O"
+          ],
+          "value": false
+        },
+        "agreement": "agree",
+        "annotations": {
+          "Attack": "annotation_e598463fb44a00c2f55f48338b5e261514ef540d694ea8063c2ade0736f1b98c",
+          "Clear": "annotation_4b93c7876ee10bf125170f2c1c3e7e6db21291dcc18909bd6cec3e7bde19bd25"
+        },
+        "bindings": {
+          "attacker": "attacker_c19_hand",
+          "cells": [
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "state": "state_c19_hand",
+          "target": "target_c19_hand"
+        },
+        "environment": "environment_ce23dbb0372ce06d0230919441ecc777bb089bf4a524c59d93552492dd3c362b",
+        "measurements": {
+          "Attack": "measurement_d455af72060c5acafe462317c46f65c6283efeab3a3e2f0e313d7edacbb87221",
+          "Clear": "measurement_0964a826398e5aa87d34890fdd419e1c3a222a82451e87a99b7370ff3150119f"
+        },
+        "raw_antecedent": false,
+        "unresolved": false
+      },
+      "occupancy": "OO",
+      "reverse": false
+    },
+    {
+      "environment": {
+        "kind": "environment",
+        "parents": [],
+        "payload": {
+          "ancestry": "manual-fixture",
+          "attacker": "attacker_c19_hand",
+          "game": "manual-fixture",
+          "observed": {
+            "actor": "white",
+            "history": "history_c19_hand",
+            "id": "state_c19_hand",
+            "pieces": [
+              {
+                "cell": [
+                  1,
+                  1
+                ],
+                "id": "attacker_c19_hand",
+                "kind": "rook",
+                "owner": "black"
+              },
+              {
+                "cell": [
+                  4,
+                  1
+                ],
+                "id": "target_c19_hand",
+                "kind": "king",
+                "owner": "black"
+              },
+              {
+                "cell": [
+                  2,
+                  1
+                ],
+                "id": "blocker_1_c19_hand",
+                "kind": "knight",
+                "owner": "white"
+              },
+              {
+                "cell": [
+                  3,
+                  1
+                ],
+                "id": "blocker_2_c19_hand",
+                "kind": "knight",
+                "owner": "white"
+              }
+            ],
+            "root": "root_c19_hand",
+            "unknown": []
+          },
+          "reference": {
+            "actor": "white",
+            "history": "history_c19_hand",
+            "id": "state_c19_hand",
+            "pieces": [
+              {
+                "cell": [
+                  1,
+                  1
+                ],
+                "id": "attacker_c19_hand",
+                "kind": "rook",
+                "owner": "black"
+              },
+              {
+                "cell": [
+                  4,
+                  1
+                ],
+                "id": "target_c19_hand",
+                "kind": "king",
+                "owner": "black"
+              },
+              {
+                "cell": [
+                  2,
+                  1
+                ],
+                "id": "blocker_1_c19_hand",
+                "kind": "knight",
+                "owner": "white"
+              },
+              {
+                "cell": [
+                  3,
+                  1
+                ],
+                "id": "blocker_2_c19_hand",
+                "kind": "knight",
+                "owner": "white"
+              }
+            ],
+            "root": "root_c19_hand",
+            "unknown": []
+          },
+          "root": "root_c19_hand",
+          "source_collection": "manual-fixture",
+          "split": "diagnostic",
+          "target": "target_c19_hand",
+          "variant": "natural"
+        }
+      },
+      "expected": false,
+      "friendly": true,
+      "measurement": {
+        "Attack": {
+          "implementation_version": "1.11.2",
+          "method": "python-chess.Board.attacks",
+          "value": false
+        },
+        "Clear": {
+          "method": "explicit-coordinate-path-occupancy-v1",
+          "occupancy": [
+            "O",
+            "O"
+          ],
+          "value": false
+        },
+        "agreement": "agree",
+        "annotations": {
+          "Attack": "annotation_43aad6ebbf4fa60a5bc9745467a9ad81661652460078d6b55deb8626a93ed661",
+          "Clear": "annotation_367a902ae8a87c1083ef740e84f86b26d2feb25d5d5b0a32b3d2622724953978"
+        },
+        "bindings": {
+          "attacker": "attacker_c19_hand",
+          "cells": [
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "state": "state_c19_hand",
+          "target": "target_c19_hand"
+        },
+        "environment": "environment_200fe4efcc024cd7bb3587abc49c416611150a430d019917272051bd616d04ae",
+        "measurements": {
+          "Attack": "measurement_deec44ec8d6c9cdee6932a0ae358fa98b57e6ae100b622afe688c27cd5851a46",
+          "Clear": "measurement_ba236e18668eb629638318ea2ac260f961b99afc62c934cca60f4823efa331e0"
+        },
+        "raw_antecedent": false,
+        "unresolved": false
+      },
+      "occupancy": "OO",
+      "reverse": false
+    },
+    {
+      "environment": {
+        "kind": "environment",
+        "parents": [],
+        "payload": {
+          "ancestry": "manual-fixture",
+          "attacker": "attacker_c19_hand",
+          "game": "manual-fixture",
+          "observed": {
+            "actor": "white",
+            "history": "history_c19_hand",
+            "id": "state_c19_hand",
+            "pieces": [
+              {
+                "cell": [
+                  6,
+                  6
+                ],
+                "id": "attacker_c19_hand",
+                "kind": "rook",
+                "owner": "black"
+              },
+              {
+                "cell": [
+                  3,
+                  6
+                ],
+                "id": "target_c19_hand",
+                "kind": "king",
+                "owner": "white"
+              },
+              {
+                "cell": [
+                  5,
+                  6
+                ],
+                "id": "blocker_1_c19_hand",
+                "kind": "knight",
+                "owner": "white"
+              },
+              {
+                "cell": [
+                  4,
+                  6
+                ],
+                "id": "blocker_2_c19_hand",
+                "kind": "knight",
+                "owner": "white"
+              }
+            ],
+            "root": "root_c19_hand",
+            "unknown": []
+          },
+          "reference": {
+            "actor": "white",
+            "history": "history_c19_hand",
+            "id": "state_c19_hand",
+            "pieces": [
+              {
+                "cell": [
+                  6,
+                  6
+                ],
+                "id": "attacker_c19_hand",
+                "kind": "rook",
+                "owner": "black"
+              },
+              {
+                "cell": [
+                  3,
+                  6
+                ],
+                "id": "target_c19_hand",
+                "kind": "king",
+                "owner": "white"
+              },
+              {
+                "cell": [
+                  5,
+                  6
+                ],
+                "id": "blocker_1_c19_hand",
+                "kind": "knight",
+                "owner": "white"
+              },
+              {
+                "cell": [
+                  4,
+                  6
+                ],
+                "id": "blocker_2_c19_hand",
+                "kind": "knight",
+                "owner": "white"
+              }
+            ],
+            "root": "root_c19_hand",
+            "unknown": []
+          },
+          "root": "root_c19_hand",
+          "source_collection": "manual-fixture",
+          "split": "diagnostic",
+          "target": "target_c19_hand",
+          "variant": "natural"
+        }
+      },
+      "expected": false,
+      "friendly": false,
+      "measurement": {
+        "Attack": {
+          "implementation_version": "1.11.2",
+          "method": "python-chess.Board.attacks",
+          "value": false
+        },
+        "Clear": {
+          "method": "explicit-coordinate-path-occupancy-v1",
+          "occupancy": [
+            "O",
+            "O"
+          ],
+          "value": false
+        },
+        "agreement": "agree",
+        "annotations": {
+          "Attack": "annotation_6c79869222442a7de552c072fac2760cbb36ca11a4f4e0f62bd8f54ca8ab887e",
+          "Clear": "annotation_21f23c13c93106a76c7f87e765572b31c6876b86918a7022a2ddf453e218a65b"
+        },
+        "bindings": {
+          "attacker": "attacker_c19_hand",
+          "cells": [
+            [
+              5,
+              6
+            ],
+            [
+              4,
+              6
+            ]
+          ],
+          "state": "state_c19_hand",
+          "target": "target_c19_hand"
+        },
+        "environment": "environment_75f0ff3609f0a79091c392f6c91ba3581fec4f44c728b0b0b3724f211c62c2b9",
+        "measurements": {
+          "Attack": "measurement_e6a6907ab673542a695331092d2cb260ed2f228ccba7139449c8d1d719e9fdd0",
+          "Clear": "measurement_797b9dcda2bf3f6fc88297b039b1e8dc8e420ee99ba621ca8cb9f06d8c6168dd"
+        },
+        "raw_antecedent": false,
+        "unresolved": false
+      },
+      "occupancy": "OO",
+      "reverse": true
+    },
+    {
+      "environment": {
+        "ancestry": "manual-fixture",
+        "attacker": "attacker_c19_hand",
+        "game": "manual-fixture",
+        "observed": {
+          "actor": "white",
+          "history": "history_c19_hand",
+          "id": "state_c19_hand",
+          "pieces": [
+            {
+              "cell": [
+                6,
+                6
+              ],
+              "id": "attacker_c19_hand",
+              "kind": "rook",
+              "owner": "black"
+            },
+            {
+              "cell": [
+                3,
+                6
+              ],
+              "id": "target_c19_hand",
+              "kind": "king",
+              "owner": "white"
+            },
+            {
+              "cell": [
+                5,
+                6
+              ],
+              "id": "blocker_1_c19_hand",
+              "kind": "knight",
+              "owner": "white"
+            },
+            {
+              "cell": [
+                4,
+                6
+              ],
+              "id": "blocker_2_c19_hand",
+              "kind": "knight",
+              "owner": "white"
+            }
+          ],
+          "root": "root_c19_hand",
+          "unknown": []
+        },
+        "reference": {
+          "actor": "white",
+          "history": "history_c19_hand",
+          "id": "state_c19_hand",
+          "pieces": [
+            {
+              "cell": [
+                6,
+                6
+              ],
+              "id": "attacker_c19_hand",
+              "kind": "rook",
+              "owner": "black"
+            },
+            {
+              "cell": [
+                3,
+                6
+              ],
+              "id": "target_c19_hand",
+              "kind": "king",
+              "owner": "white"
+            },
+            {
+              "cell": [
+                5,
+                6
+              ],
+              "id": "blocker_1_c19_hand",
+              "kind": "knight",
+              "owner": "white"
+            },
+            {
+              "cell": [
+                4,
+                6
+              ],
+              "id": "blocker_2_c19_hand",
+              "kind": "knight",
+              "owner": "white"
+            }
+          ],
+          "root": "root_c19_hand",
+          "unknown": []
+        },
+        "root": "root_c19_hand",
+        "source_collection": "manual-fixture",
+        "split": "diagnostic",
+        "target": "target_c19_hand",
+        "variant": "natural"
+      },
+      "fault": "state",
+      "measurement": {
+        "Attack": {
+          "method": "python-chess.Board.attacks",
+          "reason": "state-mismatch",
+          "value": null
+        },
+        "Clear": {
+          "method": "explicit-coordinate-path-occupancy-v1",
+          "reason": "state-mismatch",
+          "value": null
+        },
+        "agreement": "unresolved",
+        "annotations": {
+          "Attack": "annotation_d9c6129c75bfeff0779e368e4e1e22d2637fab6b59fd947b93ca3c9270a07365",
+          "Clear": "annotation_dbef1560a6200d931944a2b47125eca47a3382732921a022218e65d6074e0097"
+        },
+        "bindings": null,
+        "environment": "environment_75f0ff3609f0a79091c392f6c91ba3581fec4f44c728b0b0b3724f211c62c2b9",
+        "measurements": {
+          "Attack": "measurement_c537c003652bd44b7134f7e3764e6169cfa410feb77f50701bfcb9d76e101d64",
+          "Clear": "measurement_492f862741dc60226d3246e9efbfbafea72bf57c8e8049ba8e3ef44e45fa35fb"
+        },
+        "raw_antecedent": false,
+        "unresolved": true
+      }
+    },
+    {
+      "environment": {
+        "ancestry": "manual-fixture",
+        "attacker": "absent_attacker",
+        "game": "manual-fixture",
+        "observed": {
+          "actor": "white",
+          "history": "history_c19_hand",
+          "id": "state_c19_hand",
+          "pieces": [
+            {
+              "cell": [
+                6,
+                6
+              ],
+              "id": "attacker_c19_hand",
+              "kind": "rook",
+              "owner": "black"
+            },
+            {
+              "cell": [
+                3,
+                6
+              ],
+              "id": "target_c19_hand",
+              "kind": "king",
+              "owner": "white"
+            },
+            {
+              "cell": [
+                5,
+                6
+              ],
+              "id": "blocker_1_c19_hand",
+              "kind": "knight",
+              "owner": "white"
+            },
+            {
+              "cell": [
+                4,
+                6
+              ],
+              "id": "blocker_2_c19_hand",
+              "kind": "knight",
+              "owner": "white"
+            }
+          ],
+          "root": "root_c19_hand",
+          "unknown": []
+        },
+        "reference": {
+          "actor": "white",
+          "history": "history_c19_hand",
+          "id": "state_c19_hand",
+          "pieces": [
+            {
+              "cell": [
+                6,
+                6
+              ],
+              "id": "attacker_c19_hand",
+              "kind": "rook",
+              "owner": "black"
+            },
+            {
+              "cell": [
+                3,
+                6
+              ],
+              "id": "target_c19_hand",
+              "kind": "king",
+              "owner": "white"
+            },
+            {
+              "cell": [
+                5,
+                6
+              ],
+              "id": "blocker_1_c19_hand",
+              "kind": "knight",
+              "owner": "white"
+            },
+            {
+              "cell": [
+                4,
+                6
+              ],
+              "id": "blocker_2_c19_hand",
+              "kind": "knight",
+              "owner": "white"
+            }
+          ],
+          "root": "root_c19_hand",
+          "unknown": []
+        },
+        "root": "root_c19_hand",
+        "source_collection": "manual-fixture",
+        "split": "diagnostic",
+        "target": "target_c19_hand",
+        "variant": "natural"
+      },
+      "fault": "role",
+      "measurement": {
+        "Attack": {
+          "method": "python-chess.Board.attacks",
+          "reason": "role-mismatch",
+          "value": null
+        },
+        "Clear": {
+          "method": "explicit-coordinate-path-occupancy-v1",
+          "reason": "role-mismatch",
+          "value": null
+        },
+        "agreement": "unresolved",
+        "annotations": {
+          "Attack": "annotation_b7bd0e8111bebf03c29abb9b161e88e3bf7b59f1bc81aabfe55752d0ee7c3517",
+          "Clear": "annotation_ae84ff4ea5038f79613901ceda9abe5aec3a58587ae5cc99e495c0b1aa90a8f9"
+        },
+        "bindings": null,
+        "environment": "environment_9648b1b787b9028a02bd4ef6b2e5e09809f17b895191737c708253f33bf8e222",
+        "measurements": {
+          "Attack": "measurement_70c3275578767a6b458a326a69d52ea4874f7f7bc8eb4981458a44720ca9f9d2",
+          "Clear": "measurement_f958684b3ca9c9bcef5550c39a5394d422f56e508d6a10fcca54e0f37ddd4832"
+        },
+        "raw_antecedent": null,
+        "unresolved": true
+      }
+    }
+  ],
+  "passed": true,
+  "scope": "Hand-declared expected targets, not stochastic reliability observations"
+}

@@ -1,0 +1,1611 @@
+{
+  "ceiling": 4000,
+  "native_categories": {
+    "anchors": {
+      "calls": 44,
+      "cpu_seconds": 31.330000000000005,
+      "incomplete": 0,
+      "peak_rss_kib": 48380,
+      "wall_seconds": 33.25527808535844
+    },
+    "compact": {
+      "calls": 35,
+      "cpu_seconds": 30.490000000000006,
+      "incomplete": 0,
+      "peak_rss_kib": 48288,
+      "wall_seconds": 31.871028561145067
+    },
+    "compact.compact": {
+      "calls": 35,
+      "cpu_seconds": 52.14000000000001,
+      "incomplete": 0,
+      "peak_rss_kib": 48472,
+      "wall_seconds": 86.61826340202242
+    },
+    "full-control-pilot": {
+      "calls": 45,
+      "cpu_seconds": 33.37,
+      "incomplete": 0,
+      "peak_rss_kib": 48484,
+      "wall_seconds": 35.043879638426006
+    },
+    "study.inference": {
+      "calls": 2512,
+      "cpu_seconds": 4667.180000000015,
+      "incomplete": 0,
+      "peak_rss_kib": 55388,
+      "wall_seconds": 7521.320851128548
+    },
+    "study.lifecycle": {
+      "calls": 290,
+      "cpu_seconds": 225.5199999999997,
+      "incomplete": 0,
+      "peak_rss_kib": 55264,
+      "wall_seconds": 435.9029663903639
+    },
+    "study.training": {
+      "calls": 192,
+      "cpu_seconds": 127.49000000000002,
+      "incomplete": 0,
+      "peak_rss_kib": 22000,
+      "wall_seconds": 237.13926806114614
+    }
+  },
+  "native_incomplete": 0,
+  "native_receipts": 3153,
+  "native_reserved": 3153,
+  "observer": {
+    "comparison_observed_child_cpu_seconds_lower_bound": 5914.17,
+    "comparison_observed_max_process_rss_kib": 8312864,
+    "completed_unix": 1795004992.5707269,
+    "interval_seconds": 2,
+    "observed_max_process_rss_kib": 8312864,
+    "observed_process_tree_cpu_seconds_lower_bound": 47013.200000000004,
+    "passed": true,
+    "peak_process": 1226363,
+    "pid": 947409,
+    "samples": 4897,
+    "scope": "Read-only /proc sampling from Cycle19 preservation start. Process-tree CPU and per-process RSS are observed lower bounds. Comparison phase begins at 209 completed command receipts. These overlap timed command counters and must not be added to them.",
+    "started_unix": 1794995174.7813523
+  },
+  "phases": {
+    "corpus-preparation-resources": {
+      "category": "corpus-preparation",
+      "child_cpu_seconds": 0.0,
+      "child_peak_rss_kib": 41224,
+      "host_cpu_seconds": 2.502083,
+      "host_peak_rss_kib": 50236,
+      "incomplete": false,
+      "memory_scope": "Process high-water marks, not sum of concurrent RSS",
+      "native_calls": 3,
+      "wall_seconds": 4.502643760293722
+    },
+    "inference-resources": {
+      "category": "inference",
+      "child_cpu_seconds": 4702.778445,
+      "child_peak_rss_kib": 73680,
+      "host_cpu_seconds": 57.528406000000004,
+      "host_peak_rss_kib": 109004,
+      "incomplete": false,
+      "memory_scope": "Process high-water marks, not sum of concurrent RSS",
+      "native_calls": 2512,
+      "wall_seconds": 3844.791368337348
+    },
+    "lifecycle-resources": {
+      "category": "lifecycle",
+      "child_cpu_seconds": 229.40174300000015,
+      "child_peak_rss_kib": 172176,
+      "host_cpu_seconds": 9.26659600000001,
+      "host_peak_rss_kib": 172176,
+      "incomplete": false,
+      "memory_scope": "Process high-water marks, not sum of concurrent RSS",
+      "native_calls": 290,
+      "wall_seconds": 457.106488940306
+    },
+    "measurement-resources": {
+      "category": "measurement",
+      "child_cpu_seconds": 0.0,
+      "child_peak_rss_kib": 41224,
+      "host_cpu_seconds": 1.3725330000000002,
+      "host_peak_rss_kib": 71140,
+      "incomplete": false,
+      "memory_scope": "Process high-water marks, not sum of concurrent RSS",
+      "native_calls": 1,
+      "wall_seconds": 2.5241588037461042
+    },
+    "study-resources": {
+      "category": "study",
+      "child_cpu_seconds": 5062.168014000001,
+      "child_peak_rss_kib": 172176,
+      "host_cpu_seconds": 72.686746,
+      "host_peak_rss_kib": 172176,
+      "incomplete": false,
+      "memory_scope": "Process high-water marks, not sum of concurrent RSS",
+      "native_calls": 3029,
+      "wall_seconds": 4552.196874426678
+    },
+    "training-resources": {
+      "category": "training",
+      "child_cpu_seconds": 129.987826,
+      "child_peak_rss_kib": 71140,
+      "host_cpu_seconds": 1.9860249999999993,
+      "host_peak_rss_kib": 73680,
+      "incomplete": false,
+      "memory_scope": "Process high-water marks, not sum of concurrent RSS",
+      "native_calls": 223,
+      "wall_seconds": 243.19467529840767
+    }
+  },
+  "preservation_bytes": 1559743370,
+  "preservation_cpu_seconds": 44533.23,
+  "preservation_jobs": [
+    {
+      "cpu_seconds": 174.16,
+      "name": "legal-cycle9-operational-independent-games-0000",
+      "peak_rss_kib": 1972156,
+      "returncode": 0,
+      "wall_seconds": 261.2782824039459
+    },
+    {
+      "cpu_seconds": 232.69,
+      "name": "legal-cycle9-operational-calibration-0000",
+      "peak_rss_kib": 2897804,
+      "returncode": 0,
+      "wall_seconds": 359.94970083236694
+    },
+    {
+      "cpu_seconds": 197.74,
+      "name": "legal-cycle10-frozen-operational-external-test-tcec-season26-divisionp-0240",
+      "peak_rss_kib": 2733404,
+      "returncode": 0,
+      "wall_seconds": 238.49880576133728
+    },
+    {
+      "cpu_seconds": 240.8,
+      "name": "legal-cycle10-frozen-operational-external-calibration-lichess-broadcast-2024-01-0020",
+      "peak_rss_kib": 3237560,
+      "returncode": 0,
+      "wall_seconds": 394.9061768054962
+    },
+    {
+      "cpu_seconds": 266.19,
+      "name": "legal-cycle10-frozen-operational-external-calibration-lichess-rated-2013-01-0000",
+      "peak_rss_kib": 3142616,
+      "returncode": 0,
+      "wall_seconds": 443.888201713562
+    },
+    {
+      "cpu_seconds": 334.59000000000003,
+      "name": "legal-historical-C8-strict-cycle6-independent-games",
+      "peak_rss_kib": 5244288,
+      "returncode": 0,
+      "wall_seconds": 542.6178023815155
+    },
+    {
+      "cpu_seconds": 256.65,
+      "name": "legal-cycle10-temporal-operational-external-test-lichess-broadcast-2024-01-0300",
+      "peak_rss_kib": 3404284,
+      "returncode": 0,
+      "wall_seconds": 282.2759084701538
+    },
+    {
+      "cpu_seconds": 106.27,
+      "name": "legal-cycle10-frozen-experimental-external-test-tcec-season26-divisionp-0000",
+      "peak_rss_kib": 1791200,
+      "returncode": 0,
+      "wall_seconds": 160.77225947380066
+    },
+    {
+      "cpu_seconds": 103.67999999999999,
+      "name": "legal-historical-C8-promotion-relative-frozen-adversarial",
+      "peak_rss_kib": 925432,
+      "returncode": 0,
+      "wall_seconds": 165.46562719345093
+    },
+    {
+      "cpu_seconds": 319.66,
+      "name": "legal-historical-C8-promotion-relative-cycle8-adversarial",
+      "peak_rss_kib": 1304852,
+      "returncode": 0,
+      "wall_seconds": 563.8211607933044
+    },
+    {
+      "cpu_seconds": 228.98,
+      "name": "legal-cycle10-temporal-operational-external-test-lichess-broadcast-2024-01-0100",
+      "peak_rss_kib": 2830032,
+      "returncode": 0,
+      "wall_seconds": 253.04441857337952
+    },
+    {
+      "cpu_seconds": 218.98,
+      "name": "legal-cycle9-operational-independent-games-0200",
+      "peak_rss_kib": 2731600,
+      "returncode": 0,
+      "wall_seconds": 327.62911343574524
+    },
+    {
+      "cpu_seconds": 266.49,
+      "name": "legal-cycle10-temporal-operational-external-test-lichess-broadcast-2024-01-0000",
+      "peak_rss_kib": 3433380,
+      "returncode": 0,
+      "wall_seconds": 294.5219056606293
+    },
+    {
+      "cpu_seconds": 214.1,
+      "name": "legal-cycle10-frozen-operational-external-test-lichess-broadcast-2024-01-0260",
+      "peak_rss_kib": 2935060,
+      "returncode": 0,
+      "wall_seconds": 289.2703745365143
+    },
+    {
+      "cpu_seconds": 237.09,
+      "name": "legal-cycle10-frozen-operational-external-test-lichess-rated-2013-01-0220",
+      "peak_rss_kib": 3403416,
+      "returncode": 0,
+      "wall_seconds": 317.21069526672363
+    },
+    {
+      "cpu_seconds": 206.22,
+      "name": "legal-cycle10-frozen-operational-external-test-lichess-broadcast-2024-01-0240",
+      "peak_rss_kib": 2845976,
+      "returncode": 0,
+      "wall_seconds": 284.4988911151886
+    },
+    {
+      "cpu_seconds": 20.45,
+      "name": "legal-historical-C8-promotion-relative-cycle5-structural-holdout",
+      "peak_rss_kib": 179216,
+      "returncode": 0,
+      "wall_seconds": 32.317848920822144
+    },
+    {
+      "cpu_seconds": 278.71000000000004,
+      "name": "legal-cycle10-temporal-operational-external-test-lichess-broadcast-2024-01-0160",
+      "peak_rss_kib": 3649748,
+      "returncode": 0,
+      "wall_seconds": 308.5778477191925
+    },
+    {
+      "cpu_seconds": 201.97,
+      "name": "legal-cycle10-temporal-operational-external-test-tcec-season26-divisionp-0080",
+      "peak_rss_kib": 2511096,
+      "returncode": 0,
+      "wall_seconds": 221.72948098182678
+    },
+    {
+      "cpu_seconds": 206.88000000000002,
+      "name": "legal-cycle10-frozen-operational-external-test-tcec-season26-divisionp-0200",
+      "peak_rss_kib": 2720060,
+      "returncode": 0,
+      "wall_seconds": 271.53082609176636
+    },
+    {
+      "cpu_seconds": 95.17,
+      "name": "legal-cycle10-frozen-operational-external-adaptation-lichess-broadcast-2024-01-0040",
+      "peak_rss_kib": 1371092,
+      "returncode": 0,
+      "wall_seconds": 142.54362869262695
+    },
+    {
+      "cpu_seconds": 221.96,
+      "name": "legal-cycle10-temporal-operational-external-test-tcec-season26-divisionp-0180",
+      "peak_rss_kib": 2754436,
+      "returncode": 0,
+      "wall_seconds": 297.9781723022461
+    },
+    {
+      "cpu_seconds": 228.94,
+      "name": "legal-cycle10-frozen-operational-external-test-lichess-rated-2013-01-0200",
+      "peak_rss_kib": 3173544,
+      "returncode": 0,
+      "wall_seconds": 310.9348919391632
+    },
+    {
+      "cpu_seconds": 163.37,
+      "name": "legal-historical-C8-strict-cycle8-independent-games",
+      "peak_rss_kib": 2608888,
+      "returncode": 0,
+      "wall_seconds": 260.603303194046
+    },
+    {
+      "cpu_seconds": 221.8,
+      "name": "legal-cycle10-frozen-operational-external-adaptation-lichess-broadcast-2024-01-0020",
+      "peak_rss_kib": 3087696,
+      "returncode": 0,
+      "wall_seconds": 330.5927288532257
+    },
+    {
+      "cpu_seconds": 77.64,
+      "name": "legal-cycle10-frozen-operational-synthetic-adversarial-synthetic-controlled-edit-0080",
+      "peak_rss_kib": 380420,
+      "returncode": 0,
+      "wall_seconds": 90.75139808654785
+    },
+    {
+      "cpu_seconds": 243.45,
+      "name": "legal-cycle10-temporal-operational-external-test-lichess-rated-2013-01-0260",
+      "peak_rss_kib": 3007200,
+      "returncode": 0,
+      "wall_seconds": 328.87858152389526
+    },
+    {
+      "cpu_seconds": 345.79,
+      "name": "legal-historical-C8-promotion-relative-cycle8-validation",
+      "peak_rss_kib": 2091708,
+      "returncode": 0,
+      "wall_seconds": 611.0733327865601
+    },
+    {
+      "cpu_seconds": 90.34,
+      "name": "legal-cycle9-experimental-special-moves-0025",
+      "peak_rss_kib": 632380,
+      "returncode": 0,
+      "wall_seconds": 150.67639660835266
+    },
+    {
+      "cpu_seconds": 210.44,
+      "name": "legal-cycle9-operational-independent-games-0375",
+      "peak_rss_kib": 2709976,
+      "returncode": 0,
+      "wall_seconds": 322.3341293334961
+    },
+    {
+      "cpu_seconds": 184.19,
+      "name": "legal-cycle9-operational-calibration-0025",
+      "peak_rss_kib": 1983916,
+      "returncode": 0,
+      "wall_seconds": 288.579336643219
+    },
+    {
+      "cpu_seconds": 332.82,
+      "name": "legal-historical-C8-experimental-cycle6-independent-games",
+      "peak_rss_kib": 5244500,
+      "returncode": 0,
+      "wall_seconds": 528.350592136383
+    },
+    {
+      "cpu_seconds": 218.62,
+      "name": "legal-cycle10-temporal-operational-external-test-lichess-broadcast-2024-01-0080",
+      "peak_rss_kib": 2774376,
+      "returncode": 0,
+      "wall_seconds": 242.18163561820984
+    },
+    {
+      "cpu_seconds": 90.35,
+      "name": "legal-cycle9-operational-adversarial-0075",
+      "peak_rss_kib": 436356,
+      "returncode": 0,
+      "wall_seconds": 151.26088428497314
+    },
+    {
+      "cpu_seconds": 230.34,
+      "name": "legal-cycle10-frozen-operational-external-calibration-tcec-season26-divisionp-0020",
+      "peak_rss_kib": 3106780,
+      "returncode": 0,
+      "wall_seconds": 377.4514982700348
+    },
+    {
+      "cpu_seconds": 217.5,
+      "name": "legal-cycle10-temporal-operational-external-test-tcec-season26-divisionp-0020",
+      "peak_rss_kib": 2716156,
+      "returncode": 0,
+      "wall_seconds": 240.73746609687805
+    },
+    {
+      "cpu_seconds": 166.76,
+      "name": "legal-cycle9-operational-independent-games-0125",
+      "peak_rss_kib": 1883920,
+      "returncode": 0,
+      "wall_seconds": 256.8486785888672
+    },
+    {
+      "cpu_seconds": 224.13,
+      "name": "legal-cycle10-temporal-operational-external-test-tcec-season26-divisionp-0120",
+      "peak_rss_kib": 2834500,
+      "returncode": 0,
+      "wall_seconds": 239.31787872314453
+    },
+    {
+      "cpu_seconds": 295.28000000000003,
+      "name": "legal-historical-C8-promotion-relative-cycle4-independent-games",
+      "peak_rss_kib": 4207928,
+      "returncode": 0,
+      "wall_seconds": 473.83544278144836
+    },
+    {
+      "cpu_seconds": 260.05,
+      "name": "legal-cycle10-temporal-operational-external-test-lichess-rated-2013-01-0300",
+      "peak_rss_kib": 3207804,
+      "returncode": 0,
+      "wall_seconds": 355.24786019325256
+    },
+    {
+      "cpu_seconds": 249.78,
+      "name": "legal-cycle10-frozen-operational-external-test-lichess-rated-2013-01-0040",
+      "peak_rss_kib": 3504416,
+      "returncode": 0,
+      "wall_seconds": 344.4624922275543
+    },
+    {
+      "cpu_seconds": 260.38,
+      "name": "legal-cycle10-temporal-operational-external-test-lichess-rated-2013-01-0220",
+      "peak_rss_kib": 3422272,
+      "returncode": 0,
+      "wall_seconds": 289.2807686328888
+    },
+    {
+      "cpu_seconds": 263.79,
+      "name": "legal-cycle10-frozen-operational-external-calibration-lichess-broadcast-2024-01-0000",
+      "peak_rss_kib": 3599564,
+      "returncode": 0,
+      "wall_seconds": 418.35005927085876
+    },
+    {
+      "cpu_seconds": 144.62,
+      "name": "legal-historical-C8-strict-cycle8-adversarial",
+      "peak_rss_kib": 1324404,
+      "returncode": 0,
+      "wall_seconds": 243.6940634250641
+    },
+    {
+      "cpu_seconds": 169.60000000000002,
+      "name": "legal-cycle9-operational-independent-games-0350",
+      "peak_rss_kib": 1911404,
+      "returncode": 0,
+      "wall_seconds": 262.05531120300293
+    },
+    {
+      "cpu_seconds": 224.37,
+      "name": "legal-cycle10-temporal-operational-external-test-lichess-broadcast-2024-01-0040",
+      "peak_rss_kib": 2849176,
+      "returncode": 0,
+      "wall_seconds": 249.1137351989746
+    },
+    {
+      "cpu_seconds": 181.23999999999998,
+      "name": "legal-cycle10-frozen-operational-external-test-lichess-rated-2013-01-0160",
+      "peak_rss_kib": 2402324,
+      "returncode": 0,
+      "wall_seconds": 249.4012656211853
+    },
+    {
+      "cpu_seconds": 225.43,
+      "name": "legal-cycle10-frozen-operational-external-test-lichess-rated-2013-01-0020",
+      "peak_rss_kib": 3129376,
+      "returncode": 0,
+      "wall_seconds": 307.9995892047882
+    },
+    {
+      "cpu_seconds": 168.35,
+      "name": "legal-cycle9-operational-development-0075",
+      "peak_rss_kib": 1821200,
+      "returncode": 0,
+      "wall_seconds": 256.9697148799896
+    },
+    {
+      "cpu_seconds": 420.07,
+      "name": "legal-historical-C8-promotion-relative-cycle7-independent-games",
+      "peak_rss_kib": 5713372,
+      "returncode": 0,
+      "wall_seconds": 695.4370810985565
+    },
+    {
+      "cpu_seconds": 275.29,
+      "name": "legal-cycle10-temporal-operational-external-test-lichess-broadcast-2024-01-0060",
+      "peak_rss_kib": 3606972,
+      "returncode": 0,
+      "wall_seconds": 304.5748152732849
+    },
+    {
+      "cpu_seconds": 212.94,
+      "name": "legal-cycle10-frozen-operational-external-test-lichess-broadcast-2024-01-0100",
+      "peak_rss_kib": 2815000,
+      "returncode": 0,
+      "wall_seconds": 286.3827922344208
+    },
+    {
+      "cpu_seconds": 165.05,
+      "name": "legal-cycle9-operational-independent-games-0275",
+      "peak_rss_kib": 1677232,
+      "returncode": 0,
+      "wall_seconds": 258.3728451728821
+    },
+    {
+      "cpu_seconds": 190.29000000000002,
+      "name": "legal-cycle10-temporal-operational-external-test-lichess-rated-2013-01-0060",
+      "peak_rss_kib": 2193828,
+      "returncode": 0,
+      "wall_seconds": 211.36220049858093
+    },
+    {
+      "cpu_seconds": 190.39,
+      "name": "legal-historical-C8-promotion-relative-cycle8-independent-games",
+      "peak_rss_kib": 2608092,
+      "returncode": 0,
+      "wall_seconds": 308.243013381958
+    },
+    {
+      "cpu_seconds": 290.1,
+      "name": "legal-cycle10-temporal-operational-external-test-lichess-rated-2013-01-0280",
+      "peak_rss_kib": 3576268,
+      "returncode": 0,
+      "wall_seconds": 395.11352825164795
+    },
+    {
+      "cpu_seconds": 247.54,
+      "name": "legal-cycle10-frozen-operational-external-test-lichess-broadcast-2024-01-0000",
+      "peak_rss_kib": 3419536,
+      "returncode": 0,
+      "wall_seconds": 363.70634603500366
+    },
+    {
+      "cpu_seconds": 204.13,
+      "name": "legal-cycle10-frozen-operational-external-test-lichess-broadcast-2024-01-0080",
+      "peak_rss_kib": 2758600,
+      "returncode": 0,
+      "wall_seconds": 275.8897953033447
+    },
+    {
+      "cpu_seconds": 85.46,
+      "name": "legal-historical-C8-promotion-relative-cycle6-validation",
+      "peak_rss_kib": 1231072,
+      "returncode": 0,
+      "wall_seconds": 142.1793234348297
+    },
+    {
+      "cpu_seconds": 195.95999999999998,
+      "name": "legal-historical-C8-strict-cycle8-validation",
+      "peak_rss_kib": 2104260,
+      "returncode": 0,
+      "wall_seconds": 320.61797547340393
+    },
+    {
+      "cpu_seconds": 1713.55,
+      "name": "recoveries-and-holdouts",
+      "peak_rss_kib": 5458144,
+      "returncode": 0,
+      "wall_seconds": 2831.2794976234436
+    },
+    {
+      "cpu_seconds": 189.01000000000002,
+      "name": "legal-cycle9-operational-independent-games-0300",
+      "peak_rss_kib": 1829284,
+      "returncode": 0,
+      "wall_seconds": 289.1075818538666
+    },
+    {
+      "cpu_seconds": 254.78,
+      "name": "legal-cycle10-frozen-operational-external-test-lichess-broadcast-2024-01-0060",
+      "peak_rss_kib": 3592708,
+      "returncode": 0,
+      "wall_seconds": 344.85235810279846
+    },
+    {
+      "cpu_seconds": 165.87,
+      "name": "legal-cycle9-operational-development-0000",
+      "peak_rss_kib": 1830920,
+      "returncode": 0,
+      "wall_seconds": 256.584007024765
+    },
+    {
+      "cpu_seconds": 107.61999999999999,
+      "name": "legal-cycle10-frozen-operational-synthetic-adversarial-synthetic-controlled-edit-0020",
+      "peak_rss_kib": 727848,
+      "returncode": 0,
+      "wall_seconds": 122.14533972740173
+    },
+    {
+      "cpu_seconds": 236.76000000000002,
+      "name": "legal-cycle10-frozen-operational-external-test-lichess-rated-2013-01-0180",
+      "peak_rss_kib": 3459528,
+      "returncode": 0,
+      "wall_seconds": 323.53490376472473
+    },
+    {
+      "cpu_seconds": 206.41,
+      "name": "legal-cycle10-temporal-operational-external-test-lichess-broadcast-2024-01-0320",
+      "peak_rss_kib": 2566740,
+      "returncode": 0,
+      "wall_seconds": 229.4565839767456
+    },
+    {
+      "cpu_seconds": 19.72,
+      "name": "legal-cycle9-operational-special-moves-0075",
+      "peak_rss_kib": 197372,
+      "returncode": 0,
+      "wall_seconds": 29.554332733154297
+    },
+    {
+      "cpu_seconds": 209.64,
+      "name": "legal-cycle10-frozen-operational-external-test-lichess-broadcast-2024-01-0040",
+      "peak_rss_kib": 2833060,
+      "returncode": 0,
+      "wall_seconds": 299.8354821205139
+    },
+    {
+      "cpu_seconds": 279.62,
+      "name": "legal-cycle10-temporal-operational-external-test-lichess-broadcast-2024-01-0180",
+      "peak_rss_kib": 3616020,
+      "returncode": 0,
+      "wall_seconds": 309.04615688323975
+    },
+    {
+      "cpu_seconds": 205.46,
+      "name": "legal-cycle9-operational-calibration-0075",
+      "peak_rss_kib": 2242396,
+      "returncode": 0,
+      "wall_seconds": 315.2158432006836
+    },
+    {
+      "cpu_seconds": 193.68,
+      "name": "legal-cycle10-temporal-operational-external-test-lichess-rated-2013-01-0160",
+      "peak_rss_kib": 2416692,
+      "returncode": 0,
+      "wall_seconds": 213.551682472229
+    },
+    {
+      "cpu_seconds": 203.96,
+      "name": "legal-cycle10-frozen-operational-external-test-tcec-season26-divisionp-0020",
+      "peak_rss_kib": 2693932,
+      "returncode": 0,
+      "wall_seconds": 277.88817596435547
+    },
+    {
+      "cpu_seconds": 993.17,
+      "name": "negative-and-history-controls",
+      "peak_rss_kib": 1393644,
+      "returncode": 0,
+      "wall_seconds": 1711.1314771175385
+    },
+    {
+      "cpu_seconds": 160.51999999999998,
+      "name": "legal-cycle9-operational-special-moves-0000",
+      "peak_rss_kib": 732284,
+      "returncode": 0,
+      "wall_seconds": 261.051331281662
+    },
+    {
+      "cpu_seconds": 198.41,
+      "name": "legal-cycle9-operational-independent-games-0425",
+      "peak_rss_kib": 2185652,
+      "returncode": 0,
+      "wall_seconds": 312.2634530067444
+    },
+    {
+      "cpu_seconds": 232.3,
+      "name": "legal-cycle10-frozen-operational-external-test-lichess-rated-2013-01-0320",
+      "peak_rss_kib": 3480480,
+      "returncode": 0,
+      "wall_seconds": 314.275919675827
+    },
+    {
+      "cpu_seconds": 205.04,
+      "name": "legal-cycle10-frozen-operational-external-test-lichess-broadcast-2024-01-0140",
+      "peak_rss_kib": 2725288,
+      "returncode": 0,
+      "wall_seconds": 281.7302677631378
+    },
+    {
+      "cpu_seconds": 250.88,
+      "name": "legal-cycle10-temporal-operational-external-test-lichess-rated-2013-01-0180",
+      "peak_rss_kib": 3296784,
+      "returncode": 0,
+      "wall_seconds": 277.8447368144989
+    },
+    {
+      "cpu_seconds": 202.05,
+      "name": "legal-cycle10-frozen-operational-external-test-tcec-season26-divisionp-0040",
+      "peak_rss_kib": 2883796,
+      "returncode": 0,
+      "wall_seconds": 279.74592995643616
+    },
+    {
+      "cpu_seconds": 211.97,
+      "name": "legal-cycle10-frozen-operational-external-test-lichess-broadcast-2024-01-0200",
+      "peak_rss_kib": 2789072,
+      "returncode": 0,
+      "wall_seconds": 297.2277810573578
+    },
+    {
+      "cpu_seconds": 196.20999999999998,
+      "name": "legal-cycle10-frozen-operational-external-test-lichess-broadcast-2024-01-0320",
+      "peak_rss_kib": 2549772,
+      "returncode": 0,
+      "wall_seconds": 271.39521503448486
+    },
+    {
+      "cpu_seconds": 252.23999999999998,
+      "name": "legal-cycle10-temporal-operational-external-test-lichess-rated-2013-01-0240",
+      "peak_rss_kib": 3060868,
+      "returncode": 0,
+      "wall_seconds": 331.76725125312805
+    },
+    {
+      "cpu_seconds": 69.23,
+      "name": "legal-historical-C8-promotion-relative-cycle6-adversarial",
+      "peak_rss_kib": 403936,
+      "returncode": 0,
+      "wall_seconds": 116.49601936340332
+    },
+    {
+      "cpu_seconds": 90.57000000000001,
+      "name": "legal-cycle9-strict-special-moves-0025",
+      "peak_rss_kib": 632428,
+      "returncode": 0,
+      "wall_seconds": 141.05306434631348
+    },
+    {
+      "cpu_seconds": 270.28000000000003,
+      "name": "legal-cycle9-operational-special-moves-0025",
+      "peak_rss_kib": 615056,
+      "returncode": 0,
+      "wall_seconds": 438.914160490036
+    },
+    {
+      "cpu_seconds": 176.85999999999999,
+      "name": "legal-cycle10-frozen-operational-external-test-lichess-rated-2013-01-0060",
+      "peak_rss_kib": 2177452,
+      "returncode": 0,
+      "wall_seconds": 241.7644910812378
+    },
+    {
+      "cpu_seconds": 217.94,
+      "name": "legal-cycle10-frozen-operational-external-test-lichess-broadcast-2024-01-0120",
+      "peak_rss_kib": 3119312,
+      "returncode": 0,
+      "wall_seconds": 296.53027272224426
+    },
+    {
+      "cpu_seconds": 236.09,
+      "name": "legal-cycle10-temporal-operational-external-test-tcec-season26-divisionp-0220",
+      "peak_rss_kib": 2902424,
+      "returncode": 0,
+      "wall_seconds": 320.7788643836975
+    },
+    {
+      "cpu_seconds": 243.3,
+      "name": "legal-cycle10-frozen-operational-external-test-tcec-season26-divisionp-0000",
+      "peak_rss_kib": 3422840,
+      "returncode": 0,
+      "wall_seconds": 327.5654706954956
+    },
+    {
+      "cpu_seconds": 171.56,
+      "name": "legal-cycle9-operational-independent-games-0450",
+      "peak_rss_kib": 1901368,
+      "returncode": 0,
+      "wall_seconds": 266.28662753105164
+    },
+    {
+      "cpu_seconds": 197.22,
+      "name": "legal-cycle9-operational-independent-games-0150",
+      "peak_rss_kib": 2300396,
+      "returncode": 0,
+      "wall_seconds": 302.17641830444336
+    },
+    {
+      "cpu_seconds": 224.41,
+      "name": "legal-cycle10-frozen-operational-external-adaptation-tcec-season26-divisionp-0000",
+      "peak_rss_kib": 3012244,
+      "returncode": 0,
+      "wall_seconds": 342.8628122806549
+    },
+    {
+      "cpu_seconds": 173.73999999999998,
+      "name": "legal-cycle10-frozen-operational-external-test-tcec-season26-divisionp-0280",
+      "peak_rss_kib": 2386196,
+      "returncode": 0,
+      "wall_seconds": 201.65956830978394
+    },
+    {
+      "cpu_seconds": 293.3,
+      "name": "legal-historical-C8-promotion-relative-cycle8-combination-holdout",
+      "peak_rss_kib": 1283228,
+      "returncode": 0,
+      "wall_seconds": 524.64786028862
+    },
+    {
+      "cpu_seconds": 89.92999999999999,
+      "name": "legal-cycle10-frozen-operational-external-calibration-lichess-rated-2013-01-0040",
+      "peak_rss_kib": 1221464,
+      "returncode": 0,
+      "wall_seconds": 152.21430349349976
+    },
+    {
+      "cpu_seconds": 227.93,
+      "name": "legal-cycle10-frozen-operational-external-test-lichess-rated-2013-01-0240",
+      "peak_rss_kib": 3046952,
+      "returncode": 0,
+      "wall_seconds": 310.8390054702759
+    },
+    {
+      "cpu_seconds": 72.88,
+      "name": "legal-cycle10-frozen-operational-synthetic-adversarial-synthetic-controlled-edit-0060",
+      "peak_rss_kib": 428820,
+      "returncode": 0,
+      "wall_seconds": 83.51701188087463
+    },
+    {
+      "cpu_seconds": 420.52,
+      "name": "legal-historical-C8-promotion-relative-cycle5-independent-games",
+      "peak_rss_kib": 5665096,
+      "returncode": 0,
+      "wall_seconds": 703.2639977931976
+    },
+    {
+      "cpu_seconds": 114.19,
+      "name": "legal-historical-C8-promotion-relative-cycle3-independent-games",
+      "peak_rss_kib": 1616796,
+      "returncode": 0,
+      "wall_seconds": 177.81370782852173
+    },
+    {
+      "cpu_seconds": 354.09000000000003,
+      "name": "legal-historical-C8-experimental-cycle7-independent-games",
+      "peak_rss_kib": 5727440,
+      "returncode": 0,
+      "wall_seconds": 565.5738682746887
+    },
+    {
+      "cpu_seconds": 186.65,
+      "name": "legal-cycle10-frozen-operational-external-test-lichess-rated-2013-01-0140",
+      "peak_rss_kib": 2500200,
+      "returncode": 0,
+      "wall_seconds": 254.83114409446716
+    },
+    {
+      "cpu_seconds": 224.74,
+      "name": "legal-cycle9-operational-calibration-0050",
+      "peak_rss_kib": 2835652,
+      "returncode": 0,
+      "wall_seconds": 346.1388397216797
+    },
+    {
+      "cpu_seconds": 172.83,
+      "name": "legal-cycle9-operational-independent-games-0250",
+      "peak_rss_kib": 1931796,
+      "returncode": 0,
+      "wall_seconds": 266.5550582408905
+    },
+    {
+      "cpu_seconds": 189.72,
+      "name": "legal-cycle9-operational-independent-games-0050",
+      "peak_rss_kib": 2070932,
+      "returncode": 0,
+      "wall_seconds": 285.8331654071808
+    },
+    {
+      "cpu_seconds": 221.25,
+      "name": "legal-cycle10-frozen-operational-external-test-lichess-rated-2013-01-0080",
+      "peak_rss_kib": 3173748,
+      "returncode": 0,
+      "wall_seconds": 304.42108607292175
+    },
+    {
+      "cpu_seconds": 188.34,
+      "name": "legal-cycle9-operational-independent-games-0175",
+      "peak_rss_kib": 2013824,
+      "returncode": 0,
+      "wall_seconds": 284.279504776001
+    },
+    {
+      "cpu_seconds": 230.0,
+      "name": "legal-cycle10-frozen-operational-external-test-tcec-season26-divisionp-0320",
+      "peak_rss_kib": 3186464,
+      "returncode": 0,
+      "wall_seconds": 253.6155824661255
+    },
+    {
+      "cpu_seconds": 209.42999999999998,
+      "name": "legal-cycle10-temporal-operational-external-test-tcec-season26-divisionp-0140",
+      "peak_rss_kib": 2948856,
+      "returncode": 0,
+      "wall_seconds": 221.50686383247375
+    },
+    {
+      "cpu_seconds": 202.0,
+      "name": "legal-cycle10-frozen-operational-external-test-tcec-season26-divisionp-0060",
+      "peak_rss_kib": 2776120,
+      "returncode": 0,
+      "wall_seconds": 279.30481576919556
+    },
+    {
+      "cpu_seconds": 202.56,
+      "name": "legal-cycle9-operational-independent-games-0075",
+      "peak_rss_kib": 2498476,
+      "returncode": 0,
+      "wall_seconds": 306.04043340682983
+    },
+    {
+      "cpu_seconds": 134.78,
+      "name": "legal-cycle9-operational-adversarial-0025",
+      "peak_rss_kib": 943716,
+      "returncode": 0,
+      "wall_seconds": 222.27184867858887
+    },
+    {
+      "cpu_seconds": 174.41,
+      "name": "legal-cycle10-temporal-operational-external-test-tcec-season26-divisionp-0160",
+      "peak_rss_kib": 2428392,
+      "returncode": 0,
+      "wall_seconds": 181.1258203983307
+    },
+    {
+      "cpu_seconds": 239.59,
+      "name": "legal-cycle10-frozen-operational-external-test-lichess-broadcast-2024-01-0020",
+      "peak_rss_kib": 3259600,
+      "returncode": 0,
+      "wall_seconds": 336.4434597492218
+    },
+    {
+      "cpu_seconds": 217.25,
+      "name": "legal-cycle10-temporal-operational-external-test-lichess-broadcast-2024-01-0140",
+      "peak_rss_kib": 2741864,
+      "returncode": 0,
+      "wall_seconds": 241.18540167808533
+    },
+    {
+      "cpu_seconds": 239.36,
+      "name": "legal-cycle10-temporal-operational-external-test-tcec-season26-divisionp-0300",
+      "peak_rss_kib": 2946904,
+      "returncode": 0,
+      "wall_seconds": 316.77415442466736
+    },
+    {
+      "cpu_seconds": 163.4,
+      "name": "legal-cycle9-operational-independent-games-0100",
+      "peak_rss_kib": 1773100,
+      "returncode": 0,
+      "wall_seconds": 248.8127408027649
+    },
+    {
+      "cpu_seconds": 53.86,
+      "name": "legal-historical-C8-promotion-relative-cycle5-combination-holdout",
+      "peak_rss_kib": 339464,
+      "returncode": 0,
+      "wall_seconds": 89.13757300376892
+    },
+    {
+      "cpu_seconds": 253.21,
+      "name": "legal-cycle10-frozen-operational-external-test-lichess-broadcast-2024-01-0220",
+      "peak_rss_kib": 3638352,
+      "returncode": 0,
+      "wall_seconds": 347.8614203929901
+    },
+    {
+      "cpu_seconds": 258.42,
+      "name": "legal-cycle10-temporal-operational-external-test-lichess-rated-2013-01-0000",
+      "peak_rss_kib": 3482516,
+      "returncode": 0,
+      "wall_seconds": 286.0029854774475
+    },
+    {
+      "cpu_seconds": 273.29,
+      "name": "legal-cycle10-temporal-operational-external-test-tcec-season26-divisionp-0000",
+      "peak_rss_kib": 3443736,
+      "returncode": 0,
+      "wall_seconds": 367.3521912097931
+    },
+    {
+      "cpu_seconds": 245.07,
+      "name": "legal-cycle10-temporal-operational-external-test-lichess-rated-2013-01-0080",
+      "peak_rss_kib": 3188024,
+      "returncode": 0,
+      "wall_seconds": 267.2377095222473
+    },
+    {
+      "cpu_seconds": 52.51,
+      "name": "legal-cycle10-frozen-operational-synthetic-adversarial-synthetic-controlled-edit-0100",
+      "peak_rss_kib": 462680,
+      "returncode": 0,
+      "wall_seconds": 58.778337478637695
+    },
+    {
+      "cpu_seconds": 151.42,
+      "name": "legal-cycle9-experimental-independent-games-0000",
+      "peak_rss_kib": 1973604,
+      "returncode": 0,
+      "wall_seconds": 248.06256222724915
+    },
+    {
+      "cpu_seconds": 183.20999999999998,
+      "name": "legal-cycle9-operational-independent-games-0025",
+      "peak_rss_kib": 2058492,
+      "returncode": 0,
+      "wall_seconds": 268.8229491710663
+    },
+    {
+      "cpu_seconds": 255.81,
+      "name": "legal-cycle10-temporal-operational-external-test-lichess-broadcast-2024-01-0020",
+      "peak_rss_kib": 3274784,
+      "returncode": 0,
+      "wall_seconds": 282.9014446735382
+    },
+    {
+      "cpu_seconds": 253.65,
+      "name": "legal-cycle10-temporal-operational-external-test-lichess-broadcast-2024-01-0280",
+      "peak_rss_kib": 3303216,
+      "returncode": 0,
+      "wall_seconds": 280.23458647727966
+    },
+    {
+      "cpu_seconds": 241.82,
+      "name": "legal-cycle10-temporal-operational-external-test-lichess-rated-2013-01-0020",
+      "peak_rss_kib": 3141848,
+      "returncode": 0,
+      "wall_seconds": 267.50737285614014
+    },
+    {
+      "cpu_seconds": 86.87,
+      "name": "legal-cycle10-frozen-operational-synthetic-adversarial-synthetic-controlled-edit-0040",
+      "peak_rss_kib": 510484,
+      "returncode": 0,
+      "wall_seconds": 97.51619625091553
+    },
+    {
+      "cpu_seconds": 233.03,
+      "name": "legal-cycle10-frozen-operational-external-test-lichess-rated-2013-01-0300",
+      "peak_rss_kib": 3192800,
+      "returncode": 0,
+      "wall_seconds": 321.5791165828705
+    },
+    {
+      "cpu_seconds": 352.78,
+      "name": "legal-historical-C8-strict-cycle7-independent-games",
+      "peak_rss_kib": 5727292,
+      "returncode": 0,
+      "wall_seconds": 558.4516863822937
+    },
+    {
+      "cpu_seconds": 205.71,
+      "name": "legal-cycle10-frozen-operational-external-test-tcec-season26-divisionp-0260",
+      "peak_rss_kib": 2942732,
+      "returncode": 0,
+      "wall_seconds": 239.21422719955444
+    },
+    {
+      "cpu_seconds": 224.47,
+      "name": "legal-cycle10-temporal-operational-external-test-tcec-season26-divisionp-0240",
+      "peak_rss_kib": 2752928,
+      "returncode": 0,
+      "wall_seconds": 307.98747658729553
+    },
+    {
+      "cpu_seconds": 260.89,
+      "name": "legal-cycle10-frozen-operational-external-test-lichess-rated-2013-01-0280",
+      "peak_rss_kib": 3561880,
+      "returncode": 0,
+      "wall_seconds": 359.64440727233887
+    },
+    {
+      "cpu_seconds": 254.92999999999998,
+      "name": "legal-cycle10-temporal-operational-external-test-lichess-rated-2013-01-0320",
+      "peak_rss_kib": 3493132,
+      "returncode": 0,
+      "wall_seconds": 342.0151643753052
+    },
+    {
+      "cpu_seconds": 151.38,
+      "name": "legal-cycle9-strict-independent-games-0000",
+      "peak_rss_kib": 1973612,
+      "returncode": 0,
+      "wall_seconds": 228.2084310054779
+    },
+    {
+      "cpu_seconds": 108.82000000000001,
+      "name": "legal-cycle10-frozen-strict-external-test-lichess-broadcast-2024-01-0000",
+      "peak_rss_kib": 1872240,
+      "returncode": 0,
+      "wall_seconds": 119.6970603466034
+    },
+    {
+      "cpu_seconds": 87.68,
+      "name": "legal-cycle10-frozen-operational-synthetic-adversarial-synthetic-controlled-edit-0000",
+      "peak_rss_kib": 598160,
+      "returncode": 0,
+      "wall_seconds": 98.92204856872559
+    },
+    {
+      "cpu_seconds": 113.50999999999999,
+      "name": "legal-cycle10-frozen-experimental-external-test-lichess-broadcast-2024-01-0000",
+      "peak_rss_kib": 1872616,
+      "returncode": 0,
+      "wall_seconds": 170.0840780735016
+    },
+    {
+      "cpu_seconds": 220.22,
+      "name": "legal-cycle10-temporal-operational-external-test-tcec-season26-divisionp-0060",
+      "peak_rss_kib": 2799384,
+      "returncode": 0,
+      "wall_seconds": 242.68653893470764
+    },
+    {
+      "cpu_seconds": 73.05,
+      "name": "legal-cycle10-frozen-operational-external-calibration-tcec-season26-divisionp-0040",
+      "peak_rss_kib": 1093744,
+      "returncode": 0,
+      "wall_seconds": 133.60373950004578
+    },
+    {
+      "cpu_seconds": 232.82999999999998,
+      "name": "legal-cycle10-frozen-operational-external-adaptation-lichess-broadcast-2024-01-0000",
+      "peak_rss_kib": 3266356,
+      "returncode": 0,
+      "wall_seconds": 341.9790709018707
+    },
+    {
+      "cpu_seconds": 95.58,
+      "name": "legal-cycle9-experimental-special-moves-0000",
+      "peak_rss_kib": 736436,
+      "returncode": 0,
+      "wall_seconds": 162.7664031982422
+    },
+    {
+      "cpu_seconds": 78.92,
+      "name": "legal-cycle10-frozen-operational-external-adaptation-lichess-rated-2013-01-0040",
+      "peak_rss_kib": 1137476,
+      "returncode": 0,
+      "wall_seconds": 117.36491513252258
+    },
+    {
+      "cpu_seconds": 19.79,
+      "name": "legal-cycle9-experimental-special-moves-0075",
+      "peak_rss_kib": 197228,
+      "returncode": 0,
+      "wall_seconds": 33.538692235946655
+    },
+    {
+      "cpu_seconds": 188.76,
+      "name": "legal-cycle10-frozen-operational-external-adaptation-tcec-season26-divisionp-0020",
+      "peak_rss_kib": 2699620,
+      "returncode": 0,
+      "wall_seconds": 292.127277135849
+    },
+    {
+      "cpu_seconds": 232.35,
+      "name": "legal-cycle10-frozen-operational-external-adaptation-lichess-rated-2013-01-0020",
+      "peak_rss_kib": 3073572,
+      "returncode": 0,
+      "wall_seconds": 346.69963240623474
+    },
+    {
+      "cpu_seconds": 178.84,
+      "name": "legal-cycle9-operational-independent-games-0475",
+      "peak_rss_kib": 1834744,
+      "returncode": 0,
+      "wall_seconds": 276.5338807106018
+    },
+    {
+      "cpu_seconds": 268.75,
+      "name": "legal-cycle10-temporal-operational-external-test-tcec-season26-divisionp-0320",
+      "peak_rss_kib": 3206144,
+      "returncode": 0,
+      "wall_seconds": 447.75516724586487
+    },
+    {
+      "cpu_seconds": 238.26,
+      "name": "legal-cycle10-frozen-operational-external-test-lichess-broadcast-2024-01-0280",
+      "peak_rss_kib": 3289448,
+      "returncode": 0,
+      "wall_seconds": 326.9081175327301
+    },
+    {
+      "cpu_seconds": 241.61999999999998,
+      "name": "legal-cycle10-frozen-operational-external-adaptation-lichess-rated-2013-01-0000",
+      "peak_rss_kib": 3382308,
+      "returncode": 0,
+      "wall_seconds": 361.18954205513
+    },
+    {
+      "cpu_seconds": 218.73,
+      "name": "legal-cycle10-temporal-operational-external-test-lichess-broadcast-2024-01-0240",
+      "peak_rss_kib": 2860876,
+      "returncode": 0,
+      "wall_seconds": 242.95989775657654
+    },
+    {
+      "cpu_seconds": 218.83,
+      "name": "legal-cycle10-frozen-operational-external-test-tcec-season26-divisionp-0120",
+      "peak_rss_kib": 2812740,
+      "returncode": 0,
+      "wall_seconds": 301.38615369796753
+    },
+    {
+      "cpu_seconds": 19.8,
+      "name": "legal-cycle9-strict-special-moves-0075",
+      "peak_rss_kib": 197380,
+      "returncode": 0,
+      "wall_seconds": 32.3694794178009
+    },
+    {
+      "cpu_seconds": 221.03,
+      "name": "legal-cycle10-frozen-operational-external-test-lichess-rated-2013-01-0260",
+      "peak_rss_kib": 2990408,
+      "returncode": 0,
+      "wall_seconds": 299.2457785606384
+    },
+    {
+      "cpu_seconds": 189.37,
+      "name": "legal-cycle10-temporal-operational-external-test-lichess-rated-2013-01-0120",
+      "peak_rss_kib": 2207596,
+      "returncode": 0,
+      "wall_seconds": 213.89134621620178
+    },
+    {
+      "cpu_seconds": 202.28,
+      "name": "legal-cycle10-temporal-operational-external-test-lichess-rated-2013-01-0140",
+      "peak_rss_kib": 2515580,
+      "returncode": 0,
+      "wall_seconds": 225.2178816795349
+    },
+    {
+      "cpu_seconds": 210.56,
+      "name": "legal-cycle10-frozen-operational-external-test-tcec-season26-divisionp-0300",
+      "peak_rss_kib": 2925048,
+      "returncode": 0,
+      "wall_seconds": 233.7640838623047
+    },
+    {
+      "cpu_seconds": 255.39999999999998,
+      "name": "legal-cycle10-frozen-operational-external-calibration-lichess-rated-2013-01-0020",
+      "peak_rss_kib": 3376120,
+      "returncode": 0,
+      "wall_seconds": 432.6281487941742
+    },
+    {
+      "cpu_seconds": 229.32999999999998,
+      "name": "legal-cycle10-temporal-operational-external-test-lichess-broadcast-2024-01-0260",
+      "peak_rss_kib": 2954172,
+      "returncode": 0,
+      "wall_seconds": 253.5988278388977
+    },
+    {
+      "cpu_seconds": 197.43,
+      "name": "legal-cycle10-frozen-operational-external-test-tcec-season26-divisionp-0180",
+      "peak_rss_kib": 2734556,
+      "returncode": 0,
+      "wall_seconds": 264.90417098999023
+    },
+    {
+      "cpu_seconds": 179.30999999999997,
+      "name": "legal-cycle10-frozen-operational-external-test-lichess-rated-2013-01-0120",
+      "peak_rss_kib": 2190392,
+      "returncode": 0,
+      "wall_seconds": 251.76374316215515
+    },
+    {
+      "cpu_seconds": 212.26000000000002,
+      "name": "legal-historical-C8-promotion-relative-frozen-heldout-transfer",
+      "peak_rss_kib": 1926272,
+      "returncode": 0,
+      "wall_seconds": 345.0504686832428
+    },
+    {
+      "cpu_seconds": 98.24000000000001,
+      "name": "legal-cycle10-frozen-strict-external-test-lichess-rated-2013-01-0000",
+      "peak_rss_kib": 1679904,
+      "returncode": 0,
+      "wall_seconds": 106.89365649223328
+    },
+    {
+      "cpu_seconds": 141.36,
+      "name": "legal-historical-C8-strict-cycle8-combination-holdout",
+      "peak_rss_kib": 1295948,
+      "returncode": 0,
+      "wall_seconds": 236.33321070671082
+    },
+    {
+      "cpu_seconds": 192.29999999999998,
+      "name": "legal-cycle9-operational-development-0050",
+      "peak_rss_kib": 2261888,
+      "returncode": 0,
+      "wall_seconds": 282.53973841667175
+    },
+    {
+      "cpu_seconds": 12.28,
+      "name": "legal-cycle9-operational-adversarial-0125",
+      "peak_rss_kib": 157652,
+      "returncode": 0,
+      "wall_seconds": 20.774182319641113
+    },
+    {
+      "cpu_seconds": 143.35999999999999,
+      "name": "legal-cycle9-operational-special-moves-0050",
+      "peak_rss_kib": 616464,
+      "returncode": 0,
+      "wall_seconds": 230.22336721420288
+    },
+    {
+      "cpu_seconds": 1130.18,
+      "name": "tests",
+      "peak_rss_kib": 1152336,
+      "returncode": 0,
+      "wall_seconds": 1961.301263332367
+    },
+    {
+      "cpu_seconds": 103.25,
+      "name": "legal-cycle9-operational-adversarial-0100",
+      "peak_rss_kib": 601440,
+      "returncode": 0,
+      "wall_seconds": 175.8459722995758
+    },
+    {
+      "cpu_seconds": 99.84,
+      "name": "legal-cycle9-operational-adversarial-0050",
+      "peak_rss_kib": 541168,
+      "returncode": 0,
+      "wall_seconds": 167.07826852798462
+    },
+    {
+      "cpu_seconds": 238.86,
+      "name": "legal-cycle10-frozen-operational-external-test-lichess-rated-2013-01-0000",
+      "peak_rss_kib": 3469264,
+      "returncode": 0,
+      "wall_seconds": 326.1870834827423
+    },
+    {
+      "cpu_seconds": 228.87,
+      "name": "legal-cycle10-temporal-operational-external-test-lichess-broadcast-2024-01-0200",
+      "peak_rss_kib": 2803868,
+      "returncode": 0,
+      "wall_seconds": 254.232501745224
+    },
+    {
+      "cpu_seconds": 259.34,
+      "name": "legal-cycle10-frozen-operational-external-test-lichess-broadcast-2024-01-0180",
+      "peak_rss_kib": 3603120,
+      "returncode": 0,
+      "wall_seconds": 351.8911416530609
+    },
+    {
+      "cpu_seconds": 262.0,
+      "name": "legal-cycle10-frozen-operational-external-test-lichess-broadcast-2024-01-0160",
+      "peak_rss_kib": 3634892,
+      "returncode": 0,
+      "wall_seconds": 362.225802898407
+    },
+    {
+      "cpu_seconds": 95.77,
+      "name": "legal-cycle9-strict-special-moves-0000",
+      "peak_rss_kib": 736452,
+      "returncode": 0,
+      "wall_seconds": 148.03334641456604
+    },
+    {
+      "cpu_seconds": 187.38,
+      "name": "legal-cycle9-operational-independent-games-0325",
+      "peak_rss_kib": 2186476,
+      "returncode": 0,
+      "wall_seconds": 284.9468457698822
+    },
+    {
+      "cpu_seconds": 389.16999999999996,
+      "name": "legal-historical-C8-promotion-relative-cycle6-independent-games",
+      "peak_rss_kib": 5234660,
+      "returncode": 0,
+      "wall_seconds": 651.9747264385223
+    },
+    {
+      "cpu_seconds": 223.53,
+      "name": "legal-cycle10-frozen-operational-external-test-tcec-season26-divisionp-0140",
+      "peak_rss_kib": 2924792,
+      "returncode": 0,
+      "wall_seconds": 304.7075979709625
+    },
+    {
+      "cpu_seconds": 102.45,
+      "name": "legal-cycle10-frozen-experimental-external-test-lichess-rated-2013-01-0000",
+      "peak_rss_kib": 1680212,
+      "returncode": 0,
+      "wall_seconds": 151.53532671928406
+    },
+    {
+      "cpu_seconds": 189.29,
+      "name": "legal-cycle10-frozen-operational-external-test-tcec-season26-divisionp-0080",
+      "peak_rss_kib": 2483524,
+      "returncode": 0,
+      "wall_seconds": 258.04408740997314
+    },
+    {
+      "cpu_seconds": 141.39000000000001,
+      "name": "legal-historical-C8-experimental-cycle8-combination-holdout",
+      "peak_rss_kib": 1296048,
+      "returncode": 0,
+      "wall_seconds": 240.38062500953674
+    },
+    {
+      "cpu_seconds": 231.37,
+      "name": "legal-cycle10-frozen-operational-external-test-tcec-season26-divisionp-0100",
+      "peak_rss_kib": 3154824,
+      "returncode": 0,
+      "wall_seconds": 321.9702706336975
+    },
+    {
+      "cpu_seconds": 206.28,
+      "name": "legal-cycle10-frozen-operational-external-test-tcec-season26-divisionp-0220",
+      "peak_rss_kib": 2881728,
+      "returncode": 0,
+      "wall_seconds": 247.08414387702942
+    },
+    {
+      "cpu_seconds": 270.54999999999995,
+      "name": "legal-cycle10-temporal-operational-external-test-lichess-broadcast-2024-01-0220",
+      "peak_rss_kib": 3652004,
+      "returncode": 0,
+      "wall_seconds": 302.4353482723236
+    },
+    {
+      "cpu_seconds": 191.84,
+      "name": "legal-cycle10-frozen-operational-external-test-tcec-season26-divisionp-0160",
+      "peak_rss_kib": 2405868,
+      "returncode": 0,
+      "wall_seconds": 262.59033966064453
+    },
+    {
+      "cpu_seconds": 201.29,
+      "name": "legal-cycle9-operational-independent-games-0225",
+      "peak_rss_kib": 2145504,
+      "returncode": 0,
+      "wall_seconds": 304.91920137405396
+    },
+    {
+      "cpu_seconds": 239.60000000000002,
+      "name": "legal-cycle10-frozen-operational-external-test-lichess-broadcast-2024-01-0300",
+      "peak_rss_kib": 3778944,
+      "returncode": 0,
+      "wall_seconds": 326.70393443107605
+    },
+    {
+      "cpu_seconds": 233.5,
+      "name": "legal-cycle10-temporal-operational-external-test-tcec-season26-divisionp-0100",
+      "peak_rss_kib": 3184836,
+      "returncode": 0,
+      "wall_seconds": 249.74774718284607
+    },
+    {
+      "cpu_seconds": 89.83999999999999,
+      "name": "legal-cycle9-strict-special-moves-0050",
+      "peak_rss_kib": 624716,
+      "returncode": 0,
+      "wall_seconds": 145.82185649871826
+    },
+    {
+      "cpu_seconds": 215.15,
+      "name": "legal-cycle10-temporal-operational-external-test-tcec-season26-divisionp-0040",
+      "peak_rss_kib": 2899928,
+      "returncode": 0,
+      "wall_seconds": 237.44628620147705
+    },
+    {
+      "cpu_seconds": 237.42,
+      "name": "legal-cycle10-temporal-operational-external-test-tcec-season26-divisionp-0260",
+      "peak_rss_kib": 2959992,
+      "returncode": 0,
+      "wall_seconds": 319.7192621231079
+    },
+    {
+      "cpu_seconds": 260.21999999999997,
+      "name": "legal-cycle10-temporal-operational-external-test-lichess-rated-2013-01-0100",
+      "peak_rss_kib": 3626256,
+      "returncode": 0,
+      "wall_seconds": 288.07415223121643
+    },
+    {
+      "cpu_seconds": 153.04999999999998,
+      "name": "legal-cycle9-operational-development-0025",
+      "peak_rss_kib": 1655168,
+      "returncode": 0,
+      "wall_seconds": 235.78622269630432
+    },
+    {
+      "cpu_seconds": 101.03,
+      "name": "legal-cycle10-frozen-strict-external-test-tcec-season26-divisionp-0000",
+      "peak_rss_kib": 1791328,
+      "returncode": 0,
+      "wall_seconds": 111.52753448486328
+    },
+    {
+      "cpu_seconds": 245.76999999999998,
+      "name": "legal-cycle10-temporal-operational-external-test-lichess-rated-2013-01-0200",
+      "peak_rss_kib": 3635792,
+      "returncode": 0,
+      "wall_seconds": 271.0125069618225
+    },
+    {
+      "cpu_seconds": 245.42,
+      "name": "legal-cycle10-frozen-operational-external-test-lichess-rated-2013-01-0100",
+      "peak_rss_kib": 3613616,
+      "returncode": 0,
+      "wall_seconds": 330.88431882858276
+    },
+    {
+      "cpu_seconds": 100.11,
+      "name": "legal-historical-C8-promotion-relative-cycle5-validation",
+      "peak_rss_kib": 1449552,
+      "returncode": 0,
+      "wall_seconds": 158.33216094970703
+    },
+    {
+      "cpu_seconds": 233.19,
+      "name": "legal-cycle10-temporal-operational-external-test-tcec-season26-divisionp-0200",
+      "peak_rss_kib": 2741572,
+      "returncode": 0,
+      "wall_seconds": 319.35089325904846
+    },
+    {
+      "cpu_seconds": 268.44,
+      "name": "legal-cycle10-temporal-operational-external-test-lichess-rated-2013-01-0040",
+      "peak_rss_kib": 3516716,
+      "returncode": 0,
+      "wall_seconds": 295.5711507797241
+    },
+    {
+      "cpu_seconds": 243.14000000000001,
+      "name": "legal-cycle10-frozen-operational-external-calibration-tcec-season26-divisionp-0000",
+      "peak_rss_kib": 3019972,
+      "returncode": 0,
+      "wall_seconds": 415.65567231178284
+    },
+    {
+      "cpu_seconds": 236.66000000000003,
+      "name": "legal-cycle10-temporal-operational-external-test-lichess-broadcast-2024-01-0120",
+      "peak_rss_kib": 3137448,
+      "returncode": 0,
+      "wall_seconds": 261.08385157585144
+    },
+    {
+      "cpu_seconds": 144.86,
+      "name": "legal-historical-C8-experimental-cycle8-adversarial",
+      "peak_rss_kib": 1324452,
+      "returncode": 0,
+      "wall_seconds": 238.41092801094055
+    },
+    {
+      "cpu_seconds": 81.54,
+      "name": "legal-cycle10-frozen-operational-external-calibration-lichess-broadcast-2024-01-0040",
+      "peak_rss_kib": 1140436,
+      "returncode": 0,
+      "wall_seconds": 131.238383769989
+    },
+    {
+      "cpu_seconds": 90.01,
+      "name": "legal-cycle9-experimental-special-moves-0050",
+      "peak_rss_kib": 622676,
+      "returncode": 0,
+      "wall_seconds": 151.35273599624634
+    },
+    {
+      "cpu_seconds": 201.57999999999998,
+      "name": "legal-cycle10-temporal-operational-external-test-tcec-season26-divisionp-0280",
+      "peak_rss_kib": 2407964,
+      "returncode": 0,
+      "wall_seconds": 271.3466958999634
+    },
+    {
+      "cpu_seconds": 149.01000000000002,
+      "name": "legal-cycle9-operational-independent-games-0400",
+      "peak_rss_kib": 1396396,
+      "returncode": 0,
+      "wall_seconds": 230.95768332481384
+    },
+    {
+      "cpu_seconds": 108.12,
+      "name": "legal-cycle9-operational-adversarial-0000",
+      "peak_rss_kib": 684456,
+      "returncode": 0,
+      "wall_seconds": 184.94577169418335
+    },
+    {
+      "cpu_seconds": 64.5,
+      "name": "legal-cycle10-frozen-operational-external-adaptation-tcec-season26-divisionp-0040",
+      "peak_rss_kib": 886092,
+      "returncode": 0,
+      "wall_seconds": 99.0782356262207
+    }
+  ],
+  "publication_reserve_calls": 70,
+  "research_bytes": 419906721,
+  "research_native_cpu_seconds": 5167.520000000015,
+  "scope": "Native receipts are subsets of phase child CPU; do not add overlapping counters. Observer CPU/RSS are sampled lower bounds. Final published replay receipt is external to this sealed evidence root.",
+  "unreturned_reservations": 0
+}

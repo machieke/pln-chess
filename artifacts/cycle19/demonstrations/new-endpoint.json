@@ -1,0 +1,396 @@
+{
+  "arm": "D-AB",
+  "environment": "environment_90dda1f975840dfa3719742abac99f37bb18812938f406cdb1d39a4372aa678b",
+  "execution": {
+    "cache_hit": false,
+    "key": "7c159ed5553e1ab13d020a0007f9bd669920948c0f2ceeaa4252ad0a32d8a380",
+    "native_calls": 2
+  },
+  "game": "c5a139782c4f455d787f94c32b9d24380ba854c5fc9e773255422d9ceeb1008b",
+  "measurement": {
+    "Attack": {
+      "implementation_version": "1.11.2",
+      "method": "python-chess.Board.attacks",
+      "value": true
+    },
+    "Clear": {
+      "method": "explicit-coordinate-path-occupancy-v1",
+      "occupancy": [
+        "E",
+        "E"
+      ],
+      "value": true
+    },
+    "agreement": "agree",
+    "annotations": {
+      "Attack": "annotation_76e2f3639d2fed38b7098c647ee1c040d3a4ed82cd2a72de5d83a91f691fd1ec",
+      "Clear": "annotation_4733b35f9d9b0e1af544fd7f159919c0fe60d62f45a7791e72486202f6f69fd2"
+    },
+    "bindings": {
+      "attacker": "entity_398358fbda7027c12640",
+      "cells": [
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          5
+        ]
+      ],
+      "state": "state_2bde6291ef5bcdb535658552",
+      "target": "entity_fb652281e56c72bcbd2b"
+    },
+    "environment": "environment_90dda1f975840dfa3719742abac99f37bb18812938f406cdb1d39a4372aa678b",
+    "measurements": {
+      "Attack": "measurement_e8c30d0ccf6a3fec95097f1027c1c7eb44ac8c91043f3480af2f9d0bb62f9ed3",
+      "Clear": "measurement_40ef05e11b3e114b4f1b16fad3bc8fe8002890fddb4363e16ed477d185464169"
+    },
+    "raw_antecedent": true,
+    "unresolved": false
+  },
+  "native": {
+    "application": "application_463a3e365911fc48db98a9c5809b61e7ff220da5edd6c70a103455f952d1ae5d",
+    "arm": "D-AB",
+    "boundary": "Both native invocations start from the same raw facts and full supplied templates; no answer bridging",
+    "cache_identity": "7c159ed5553e1ab13d020a0007f9bd669920948c0f2ceeaa4252ad0a32d8a380",
+    "environment": "environment_90dda1f975840dfa3719742abac99f37bb18812938f406cdb1d39a4372aa678b",
+    "generation": "generation_ccef49d4924de9192cbfd996685ea66d15c4a8667747c63267ade658f2be5090",
+    "model": "f456f4ce99c65d284c65ee5c9e9f8ddf2b26948e14efe88b370a58308d6a92a0",
+    "proof_observability": "Selected and retained statements; fired-rule parents not exposed",
+    "query": {
+      "Attack": [
+        "(Attack entity_398358fbda7027c12640 entity_fb652281e56c72bcbd2b state_2bde6291ef5bcdb535658552)",
+        "(NoAttack entity_398358fbda7027c12640 entity_fb652281e56c72bcbd2b state_2bde6291ef5bcdb535658552)"
+      ],
+      "Clear": [
+        "(Clear entity_398358fbda7027c12640 entity_fb652281e56c72bcbd2b orthogonal state_2bde6291ef5bcdb535658552)",
+        null
+      ]
+    },
+    "schema": "cycle19-native-consequence-v1",
+    "scope": {
+      "attacker": "entity_398358fbda7027c12640",
+      "attacker_present": true,
+      "cell_roles": {
+        "cell_0": [
+          0,
+          4
+        ],
+        "cell_1": [
+          0,
+          5
+        ],
+        "cell_2": [
+          0,
+          6
+        ],
+        "cell_3": [
+          0,
+          7
+        ]
+      },
+      "fact_origins": [
+        {
+          "ancestry": "c19root_c5a139782c4f455d787f",
+          "category": "environmental-observation",
+          "source": "raw-observation",
+          "stamp": "obs_964f46a26d3b3ce016e6adacfd68",
+          "state": "state_2bde6291ef5bcdb535658552",
+          "term": "(State state_2bde6291ef5bcdb535658552)"
+        },
+        {
+          "ancestry": "c19root_c5a139782c4f455d787f",
+          "category": "environmental-observation",
+          "source": "raw-observation",
+          "stamp": "obs_bbc627b7c8d403b744be08366a7b",
+          "state": "state_2bde6291ef5bcdb535658552",
+          "term": "(OriginalActor state_2bde6291ef5bcdb535658552 white)"
+        },
+        {
+          "ancestry": "c19root_c5a139782c4f455d787f",
+          "category": "environmental-observation",
+          "source": "raw-observation",
+          "stamp": "obs_d1253e8872e33e14f1df8893c7e1",
+          "state": "state_2bde6291ef5bcdb535658552",
+          "term": "(History state_2bde6291ef5bcdb535658552 history_cdc25d0ee15884008073526e)"
+        },
+        {
+          "ancestry": "c19root_c5a139782c4f455d787f",
+          "category": "environmental-observation",
+          "source": "raw-observation",
+          "stamp": "obs_012b0847ec3a6e36beb27b48f421",
+          "state": "state_2bde6291ef5bcdb535658552",
+          "term": "(PieceKind entity_fb652281e56c72bcbd2b pawn state_2bde6291ef5bcdb535658552)"
+        },
+        {
+          "ancestry": "c19root_c5a139782c4f455d787f",
+          "category": "environmental-observation",
+          "source": "raw-observation",
+          "stamp": "obs_9d038bea57bc15c6635d273960ea",
+          "state": "state_2bde6291ef5bcdb535658552",
+          "term": "(Owner entity_fb652281e56c72bcbd2b black state_2bde6291ef5bcdb535658552)"
+        },
+        {
+          "ancestry": "c19root_c5a139782c4f455d787f",
+          "category": "environmental-observation",
+          "source": "raw-observation",
+          "stamp": "obs_549b0f97c2a639fbba92774d64a9",
+          "state": "state_2bde6291ef5bcdb535658552",
+          "term": "(Occupies entity_fb652281e56c72bcbd2b cell_0 state_2bde6291ef5bcdb535658552)"
+        },
+        {
+          "ancestry": "c19root_c5a139782c4f455d787f",
+          "category": "environmental-observation",
+          "source": "raw-observation",
+          "stamp": "obs_211d428f86015179b4a84901b883",
+          "state": "state_2bde6291ef5bcdb535658552",
+          "term": "(PieceKind entity_398358fbda7027c12640 rook state_2bde6291ef5bcdb535658552)"
+        },
+        {
+          "ancestry": "c19root_c5a139782c4f455d787f",
+          "category": "environmental-observation",
+          "source": "raw-observation",
+          "stamp": "obs_312a10f7c4245e7ace909b37d9ac",
+          "state": "state_2bde6291ef5bcdb535658552",
+          "term": "(Owner entity_398358fbda7027c12640 black state_2bde6291ef5bcdb535658552)"
+        },
+        {
+          "ancestry": "c19root_c5a139782c4f455d787f",
+          "category": "environmental-observation",
+          "source": "raw-observation",
+          "stamp": "obs_c09360769701797d140d0a4d86fa",
+          "state": "state_2bde6291ef5bcdb535658552",
+          "term": "(Occupies entity_398358fbda7027c12640 cell_3 state_2bde6291ef5bcdb535658552)"
+        },
+        {
+          "ancestry": "c19root_c5a139782c4f455d787f",
+          "category": "environmental-observation",
+          "source": "raw-observation",
+          "stamp": "obs_d8a0ffc1cab95e3a3253e13f88cf",
+          "state": "state_2bde6291ef5bcdb535658552",
+          "term": "(Occupied cell_0 state_2bde6291ef5bcdb535658552)"
+        },
+        {
+          "ancestry": "c19root_c5a139782c4f455d787f",
+          "category": "environmental-observation",
+          "source": "raw-observation",
+          "stamp": "obs_72694d76b295ecbcaabee136b8e9",
+          "state": "state_2bde6291ef5bcdb535658552",
+          "term": "(Empty cell_1 state_2bde6291ef5bcdb535658552)"
+        },
+        {
+          "ancestry": "c19root_c5a139782c4f455d787f",
+          "category": "environmental-observation",
+          "source": "raw-observation",
+          "stamp": "obs_9eb2014c083587ae98413762c645",
+          "state": "state_2bde6291ef5bcdb535658552",
+          "term": "(Empty cell_2 state_2bde6291ef5bcdb535658552)"
+        },
+        {
+          "ancestry": "c19root_c5a139782c4f455d787f",
+          "category": "environmental-observation",
+          "source": "raw-observation",
+          "stamp": "obs_be4cce7d10965fe3237708ca82b1",
+          "state": "state_2bde6291ef5bcdb535658552",
+          "term": "(Occupied cell_3 state_2bde6291ef5bcdb535658552)"
+        },
+        {
+          "ancestry": "c19root_c5a139782c4f455d787f",
+          "category": "environmental-observation",
+          "source": "structural-geometry",
+          "stamp": "obs_01e19dcba0045c92fa9d81dacd21",
+          "state": "state_2bde6291ef5bcdb535658552",
+          "term": "(RelativeOffset entity_398358fbda7027c12640 entity_fb652281e56c72bcbd2b 0 -3 state_2bde6291ef5bcdb535658552)"
+        },
+        {
+          "ancestry": "c19root_c5a139782c4f455d787f",
+          "category": "environmental-observation",
+          "source": "structural-geometry",
+          "stamp": "obs_c12a3446ff25d91668357370200d",
+          "state": "state_2bde6291ef5bcdb535658552",
+          "term": "(RayPath entity_398358fbda7027c12640 entity_fb652281e56c72bcbd2b (Cons cell_2 (Cons cell_1 Nil)) orthogonal state_2bde6291ef5bcdb535658552)"
+        },
+        {
+          "ancestry": "c19root_c5a139782c4f455d787f",
+          "category": "environmental-observation",
+          "source": "structural-geometry",
+          "stamp": "obs_f268cccf0eec1bd1cc4dad9cea09",
+          "state": "state_2bde6291ef5bcdb535658552",
+          "term": "(RayMember entity_398358fbda7027c12640 entity_fb652281e56c72bcbd2b cell_2 state_2bde6291ef5bcdb535658552)"
+        },
+        {
+          "ancestry": "c19root_c5a139782c4f455d787f",
+          "category": "environmental-observation",
+          "source": "structural-geometry",
+          "stamp": "obs_47e839d7e190b73ab933f4e1cdb7",
+          "state": "state_2bde6291ef5bcdb535658552",
+          "term": "(OrderedRayCell entity_398358fbda7027c12640 entity_fb652281e56c72bcbd2b 0 cell_2 state_2bde6291ef5bcdb535658552)"
+        },
+        {
+          "ancestry": "c19root_c5a139782c4f455d787f",
+          "category": "environmental-observation",
+          "source": "structural-geometry",
+          "stamp": "obs_3d355aa5005e0f4109f968766039",
+          "state": "state_2bde6291ef5bcdb535658552",
+          "term": "(RayMember entity_398358fbda7027c12640 entity_fb652281e56c72bcbd2b cell_1 state_2bde6291ef5bcdb535658552)"
+        },
+        {
+          "ancestry": "c19root_c5a139782c4f455d787f",
+          "category": "environmental-observation",
+          "source": "structural-geometry",
+          "stamp": "obs_ca313951ecd50bb4bf0e86c1546d",
+          "state": "state_2bde6291ef5bcdb535658552",
+          "term": "(OrderedRayCell entity_398358fbda7027c12640 entity_fb652281e56c72bcbd2b 1 cell_1 state_2bde6291ef5bcdb535658552)"
+        }
+      ],
+      "full_scope": false,
+      "history": "history_cdc25d0ee15884008073526e",
+      "pieces": 2,
+      "relevant_ray_cells": [
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          5
+        ]
+      ],
+      "root": "c19root_c5a139782c4f455d787f",
+      "scope_kind": "host-selected dependency neighborhood, not a proof",
+      "selection": "Whole structural endpoint ray and supplied moved piece; independent of occupancy answer and labels",
+      "shape": "orthogonal",
+      "state_id": "state_2bde6291ef5bcdb535658552",
+      "state_identity": "2cbe5c9aa4c3dd5335b79297757c72ceee92ad7cecfed5618ae4c6457e4574d2",
+      "target": "entity_fb652281e56c72bcbd2b",
+      "target_present": true
+    },
+    "stages": {
+      "Attack": {
+        "answer": {
+          "confidence": 0.8852852828159996,
+          "stamps": [
+            "obs_211d428f86015179b4a84901b883",
+            "obs_72694d76b295ecbcaabee136b8e9",
+            "obs_9eb2014c083587ae98413762c645",
+            "obs_c12a3446ff25d91668357370200d",
+            "rule_clear-two",
+            "rule_rook-attack",
+            "train_01ed4fdfd69add0e2c83450b",
+            "train_0713c2c199727006fbcf14ff",
+            "train_0803ef12e89bf3ae8de3ef36",
+            "train_124c4bbdc3d84b3897b16fcc",
+            "train_1c570668e4d723b694768efd",
+            "train_21bce66f96bc7e2756f5bac7",
+            "train_26df17037246768b136ea6f6",
+            "train_2911ae77a07d7069d2c96e65",
+            "train_29f92206aa6aa79fc52e6e62",
+            "train_3865c739f371d9b718e64faa",
+            "train_4210b61713882f7b188b4d13",
+            "train_43512a1a608f8ca50462e9f9",
+            "train_48b83a59b7726309ea4649bd",
+            "train_49e4841a730f05058d2c8e64",
+            "train_512dd5785789a4fb2e105c45",
+            "train_5bc047f84526869b5afff832",
+            "train_5cb0673ab5a0cd85f5ab3926",
+            "train_603d68614504725f2a7bacd8",
+            "train_748746997b46c55c96e9aa93",
+            "train_7b92ccda7058a064c57a0449",
+            "train_7e08e278746cecf46a9c870f",
+            "train_7e56314dea54f09147d42d6f",
+            "train_7f7fe8212a7310289210889c",
+            "train_7f8fb16ca39ca9a33e567cd0",
+            "train_818f82089fae883a8ba87d86",
+            "train_902bfa4684f7e172724a231f",
+            "train_927966ad15b55ddde21fcd44",
+            "train_9a932d558e8d5ef17e2312fb",
+            "train_9e9e024b0a1ad634234038b1",
+            "train_a0ec1b480d1409a3e1781948",
+            "train_a3a8729152d6450a6dfcf9a5",
+            "train_b134e7ac5fe8821b72c6c64f",
+            "train_bf0d1f8c21116eedee92668b",
+            "train_c17f653de1cbb690e3dc9c76",
+            "train_c385356016dedc1c82e21d2a",
+            "train_c58b255d4036ad40f0d93c65",
+            "train_c6735f66668c6b57f7233f35",
+            "train_cac9f3a1eb60c6f37da6c0bb",
+            "train_d89299c95bd26ff73cfea66e",
+            "train_dc4abf7fdacfd6fbe3ea6f14",
+            "train_ddc15c886b7173cae80c14a5",
+            "train_de54f5f0dd4d2c99f084c878",
+            "train_df0a386a68100303e80ff536",
+            "train_df283308dd7b1ac862c4a816",
+            "train_e4959685501caedd26d64f4e",
+            "train_ef7af5998eaf7e099caebc82",
+            "train_f460b4f4babaa725efac7883",
+            "train_fb379309628527814244662d"
+          ],
+          "strength": 1.0
+        },
+        "classification": "supported-positive",
+        "completion": "task queue exhausted",
+        "contrary": null,
+        "incomplete": false,
+        "native": {
+          "bytes": 113484,
+          "path": "artifacts/cycle19/proofs/9a21b3bb9c6d2fecf90dabc157e8b5a5030b5261792b33bffcb87d1b60effc1f.json",
+          "sha256": "9a21b3bb9c6d2fecf90dabc157e8b5a5030b5261792b33bffcb87d1b60effc1f"
+        },
+        "observable_sha256": "933d7e45aecade84f8e41cdf5e4fbaa361cdf277ce6a27ef48f548c4ec4c4d81",
+        "support_status": "supported at registered display thresholds"
+      },
+      "Clear": {
+        "answer": {
+          "confidence": 0.9314870399999998,
+          "stamps": [
+            "obs_72694d76b295ecbcaabee136b8e9",
+            "obs_9eb2014c083587ae98413762c645",
+            "obs_c12a3446ff25d91668357370200d",
+            "rule_clear-two",
+            "train_01ed4fdfd69add0e2c83450b",
+            "train_124c4bbdc3d84b3897b16fcc",
+            "train_26df17037246768b136ea6f6",
+            "train_3865c739f371d9b718e64faa",
+            "train_43512a1a608f8ca50462e9f9",
+            "train_48b83a59b7726309ea4649bd",
+            "train_49e4841a730f05058d2c8e64",
+            "train_5cb0673ab5a0cd85f5ab3926",
+            "train_748746997b46c55c96e9aa93",
+            "train_7e08e278746cecf46a9c870f",
+            "train_7e56314dea54f09147d42d6f",
+            "train_7f7fe8212a7310289210889c",
+            "train_818f82089fae883a8ba87d86",
+            "train_927966ad15b55ddde21fcd44",
+            "train_9a932d558e8d5ef17e2312fb",
+            "train_a3a8729152d6450a6dfcf9a5",
+            "train_c385356016dedc1c82e21d2a",
+            "train_c58b255d4036ad40f0d93c65",
+            "train_c6735f66668c6b57f7233f35",
+            "train_cac9f3a1eb60c6f37da6c0bb",
+            "train_ddc15c886b7173cae80c14a5",
+            "train_ef7af5998eaf7e099caebc82",
+            "train_f460b4f4babaa725efac7883",
+            "train_fb379309628527814244662d"
+          ],
+          "strength": 1.0
+        },
+        "classification": "supported-positive",
+        "completion": "task queue exhausted",
+        "contrary": null,
+        "incomplete": false,
+        "native": {
+          "bytes": 111314,
+          "path": "artifacts/cycle19/proofs/1a9169892862658c25c39afa4d73e5c82eb508dd0a7cac306665abef34dbd885.json",
+          "sha256": "1a9169892862658c25c39afa4d73e5c82eb508dd0a7cac306665abef34dbd885"
+        },
+        "observable_sha256": "c5df6160ff9dcdd323c130605c96e732b188ce866d91379adae4b649dc65a374",
+        "support_status": "supported at registered display thresholds"
+      }
+    }
+  },
+  "population": "natural-test",
+  "root": "c19root_c5a139782c4f455d787f",
+  "split": "test",
+  "variant": "natural"
+}

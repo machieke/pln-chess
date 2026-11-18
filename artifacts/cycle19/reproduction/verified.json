@@ -1,0 +1,19 @@
+{
+  "checkout_clean": true,
+  "command": {
+    "argv": [
+      "/home/purplezky/cycle19-frozen-20261118/.venv/bin/python",
+      "-c",
+      "import sys,runpy\ndef deny(event,args):\n    if event=='open' and isinstance(args[0],(str,bytes)):\n        path=str(args[0])\n        if any(s in path for s in ('artifacts/cycle14','artifacts/cycle15/','artifacts/cycle16/','.pgn')):\n            raise RuntimeError('Historical bulk/PGN forbidden: '+path)\nsys.addaudithook(deny)\nsys.argv=['research.cycle19','compact','--out',sys.argv[1],'--meter',sys.argv[2]]\nrunpy.run_module('research.cycle19',run_name='__main__')\n",
+      "/home/purplezky/cycle19-evidence-20261118/reproduction/compact",
+      "/home/purplezky/cycle19-evidence-20261118/meter"
+    ],
+    "log": "/home/purplezky/cycle19-evidence-20261118/reproduction/command.log",
+    "log_sha256": "05bfb9e5e1cf60b9a5603b0deb2dc9148c4c05671351b52c2ed509e1b165c8c9",
+    "returncode": 0
+  },
+  "dependencies": "Verified existing Python environment and pinned native runtime; not a fresh dependency installation",
+  "historical_bulk_and_pgn_access_denied": true,
+  "passed": true,
+  "source_head": "c059650fdf97fd06eea738b11db0e4dd2c370852"
+}

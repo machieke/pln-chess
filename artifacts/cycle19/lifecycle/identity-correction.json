@@ -1,0 +1,158 @@
+{
+  "measurement": {
+    "Attack": {
+      "method": "python-chess.Board.attacks",
+      "reason": "role-mismatch",
+      "value": null
+    },
+    "Clear": {
+      "method": "explicit-coordinate-path-occupancy-v1",
+      "reason": "role-mismatch",
+      "value": null
+    },
+    "agreement": "unresolved",
+    "annotations": {
+      "Attack": "annotation_71a4201551e2bb646324897fab268e975eeb853b27da72dcd9aad63011a07dae",
+      "Clear": "annotation_3dc93eb2fe4c13f4459b99131a4a979829093add7277e1a5e10fa1ab7c11b31b"
+    },
+    "bindings": null,
+    "environment": "environment_2cd0e68764ff19fc48df9ec3a2a2676a886aa1ead77906504074aff435848495",
+    "measurements": {
+      "Attack": "measurement_63faf6c486e2d443d1bc662d28bbbd8eec16e345827353cae283ba456e03a6bb",
+      "Clear": "measurement_33e1efc21d525151a4c93dcc26bfdd69d11d1e4ba1cf000c7122e73b0f408aa5"
+    },
+    "raw_antecedent": null,
+    "unresolved": true
+  },
+  "native": {
+    "application": "application_b04bbf306f4fc55aa092d97fdcd90e8efc2052f3058500ff12d6dd04f1263025",
+    "arm": "F",
+    "boundary": "Both native invocations start from the same raw facts and full supplied templates; no answer bridging",
+    "cache_identity": "9c21c5a4258d891905b971c777688d3c1817404780d35deb126576a2b999ad4f",
+    "environment": "environment_2cd0e68764ff19fc48df9ec3a2a2676a886aa1ead77906504074aff435848495",
+    "generation": null,
+    "model": "supplied",
+    "proof_observability": "Selected and retained statements; fired-rule parents not exposed",
+    "query": {
+      "Attack": [
+        "(Attack entity_5c3d3bf0fb888d931c85 entity_9c03a2af07506b86e0bd identity_correction_2389b9c7a089bbaf78ecd278)",
+        "(NoAttack entity_5c3d3bf0fb888d931c85 entity_9c03a2af07506b86e0bd identity_correction_2389b9c7a089bbaf78ecd278)"
+      ],
+      "Clear": [
+        "(Clear entity_5c3d3bf0fb888d931c85 entity_9c03a2af07506b86e0bd unaligned identity_correction_2389b9c7a089bbaf78ecd278)",
+        null
+      ]
+    },
+    "schema": "cycle19-native-consequence-v1",
+    "scope": {
+      "attacker": "entity_5c3d3bf0fb888d931c85",
+      "attacker_present": false,
+      "cell_roles": {
+        "cell_0": [
+          3,
+          0
+        ]
+      },
+      "fact_origins": [
+        {
+          "ancestry": "c19root_ad3338bf67bceedc086f",
+          "category": "environmental-observation",
+          "source": "raw-observation",
+          "stamp": "obs_6ce23ee57a0401613d578846185f",
+          "state": "identity_correction_2389b9c7a089bbaf78ecd278",
+          "term": "(State identity_correction_2389b9c7a089bbaf78ecd278)"
+        },
+        {
+          "ancestry": "c19root_ad3338bf67bceedc086f",
+          "category": "environmental-observation",
+          "source": "raw-observation",
+          "stamp": "obs_29ba3b61209db1852b0f3760dda9",
+          "state": "identity_correction_2389b9c7a089bbaf78ecd278",
+          "term": "(OriginalActor identity_correction_2389b9c7a089bbaf78ecd278 white)"
+        },
+        {
+          "ancestry": "c19root_ad3338bf67bceedc086f",
+          "category": "environmental-observation",
+          "source": "raw-observation",
+          "stamp": "obs_206d419e3b67d428753eec6e289f",
+          "state": "identity_correction_2389b9c7a089bbaf78ecd278",
+          "term": "(History identity_correction_2389b9c7a089bbaf78ecd278 history_62d3fbfd0f2ad6967708f6b6)"
+        },
+        {
+          "ancestry": "c19root_ad3338bf67bceedc086f",
+          "category": "environmental-observation",
+          "source": "raw-observation",
+          "stamp": "obs_ac9588c9f06be434be2af3427f19",
+          "state": "identity_correction_2389b9c7a089bbaf78ecd278",
+          "term": "(PieceKind entity_9c03a2af07506b86e0bd queen identity_correction_2389b9c7a089bbaf78ecd278)"
+        },
+        {
+          "ancestry": "c19root_ad3338bf67bceedc086f",
+          "category": "environmental-observation",
+          "source": "raw-observation",
+          "stamp": "obs_35eeb5a7d7432a855e0120a30676",
+          "state": "identity_correction_2389b9c7a089bbaf78ecd278",
+          "term": "(Owner entity_9c03a2af07506b86e0bd white identity_correction_2389b9c7a089bbaf78ecd278)"
+        },
+        {
+          "ancestry": "c19root_ad3338bf67bceedc086f",
+          "category": "environmental-observation",
+          "source": "raw-observation",
+          "stamp": "obs_e77271c00161fb2f766c6b06fade",
+          "state": "identity_correction_2389b9c7a089bbaf78ecd278",
+          "term": "(Occupies entity_9c03a2af07506b86e0bd cell_0 identity_correction_2389b9c7a089bbaf78ecd278)"
+        },
+        {
+          "ancestry": "c19root_ad3338bf67bceedc086f",
+          "category": "environmental-observation",
+          "source": "raw-observation",
+          "stamp": "obs_c3348e63b181e2bb7c0c9ef295d7",
+          "state": "identity_correction_2389b9c7a089bbaf78ecd278",
+          "term": "(Occupied cell_0 identity_correction_2389b9c7a089bbaf78ecd278)"
+        }
+      ],
+      "full_scope": false,
+      "history": "history_62d3fbfd0f2ad6967708f6b6",
+      "pieces": 1,
+      "relevant_ray_cells": [],
+      "root": "c19root_ad3338bf67bceedc086f",
+      "scope_kind": "host-selected dependency neighborhood, not a proof",
+      "selection": "Whole structural endpoint ray and supplied moved piece; independent of occupancy answer and labels",
+      "shape": null,
+      "state_id": "identity_correction_2389b9c7a089bbaf78ecd278",
+      "state_identity": "1af54a2e756faada6c8684b55551d777cfa88f9c1cb1a68c59f8079179f027d2",
+      "target": "entity_9c03a2af07506b86e0bd",
+      "target_present": true
+    },
+    "stages": {
+      "Attack": {
+        "answer": null,
+        "classification": "unknown",
+        "completion": "task queue exhausted",
+        "contrary": null,
+        "incomplete": false,
+        "native": {
+          "bytes": 40426,
+          "path": "artifacts/cycle19/proofs/1f0376c018fd9ed643c51b481a4c8c7e551cdb977f8b389eba64e6b795f07c40.json",
+          "sha256": "1f0376c018fd9ed643c51b481a4c8c7e551cdb977f8b389eba64e6b795f07c40"
+        },
+        "observable_sha256": "c3643d33b1525b323268a2a01417a2024c375f1504a491fd2226ba3d8daabcaa",
+        "support_status": "no matching support returned within budget"
+      },
+      "Clear": {
+        "answer": null,
+        "classification": "unknown",
+        "completion": "task queue exhausted",
+        "contrary": null,
+        "incomplete": false,
+        "native": {
+          "bytes": 40053,
+          "path": "artifacts/cycle19/proofs/d2d2336e1b90f79880fa1507a5fe9adcc6261039c245620ae089993f418d1267.json",
+          "sha256": "d2d2336e1b90f79880fa1507a5fe9adcc6261039c245620ae089993f418d1267"
+        },
+        "observable_sha256": "47c495d652ccbf827b1b70c9c15949c1a930f7d7c255764318d582a9dc2f4125",
+        "support_status": "no matching support returned within budget"
+      }
+    }
+  }
+}

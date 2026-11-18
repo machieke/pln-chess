@@ -1,0 +1,292 @@
+{
+  "measurement": {
+    "Attack": {
+      "implementation_version": "1.11.2",
+      "method": "python-chess.Board.attacks",
+      "value": true
+    },
+    "Clear": {
+      "method": "explicit-coordinate-path-occupancy-v1",
+      "occupancy": [
+        "E",
+        "E"
+      ],
+      "value": true
+    },
+    "agreement": "agree",
+    "annotations": {
+      "Attack": "annotation_5b854e8c86cee26174368dcd2102a7142a41f262ca7bd220ea099d0f519d8131",
+      "Clear": "annotation_15ecfc9ca7a0040ca07667ae353958a0862a7fd8cf7d2198ed38cb0a4439c24e"
+    },
+    "bindings": {
+      "attacker": "entity_5c3d3bf0fb888d931c85",
+      "cells": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "state": "variant_8c9f0f45b54de91e5e985c1d",
+      "target": "entity_9c03a2af07506b86e0bd"
+    },
+    "environment": "environment_226410a8b51ca6a4820c52bdc6ee87ce283323a1e391c10cda09ddf5f3fbb1cf",
+    "measurements": {
+      "Attack": "measurement_3440c4a4c92043a724842375e95fa10bcd9d5a01a5388d7c32fb2aa60f41c131",
+      "Clear": "measurement_84f963a75bcca39a100211f31cdcb0121cd0c5ee49ede176c125861a2a546cb8"
+    },
+    "raw_antecedent": null,
+    "unresolved": false
+  },
+  "native": {
+    "application": "application_d79e6b9eed22e21d5f04bdecbcd48ca4813a83e37b99bfaf65b0ec6be5a6252e",
+    "arm": "F",
+    "boundary": "Both native invocations start from the same raw facts and full supplied templates; no answer bridging",
+    "cache_identity": "b305cdd2150595220ea91972c27ef78385208434f9d61b893250ef69f8b61450",
+    "environment": "environment_226410a8b51ca6a4820c52bdc6ee87ce283323a1e391c10cda09ddf5f3fbb1cf",
+    "generation": null,
+    "model": "supplied",
+    "proof_observability": "Selected and retained statements; fired-rule parents not exposed",
+    "query": {
+      "Attack": [
+        "(Attack entity_5c3d3bf0fb888d931c85 entity_9c03a2af07506b86e0bd variant_8c9f0f45b54de91e5e985c1d)",
+        "(NoAttack entity_5c3d3bf0fb888d931c85 entity_9c03a2af07506b86e0bd variant_8c9f0f45b54de91e5e985c1d)"
+      ],
+      "Clear": [
+        "(Clear entity_5c3d3bf0fb888d931c85 entity_9c03a2af07506b86e0bd orthogonal variant_8c9f0f45b54de91e5e985c1d)",
+        null
+      ]
+    },
+    "schema": "cycle19-native-consequence-v1",
+    "scope": {
+      "attacker": "entity_5c3d3bf0fb888d931c85",
+      "attacker_present": true,
+      "cell_roles": {
+        "cell_0": [
+          0,
+          0
+        ],
+        "cell_1": [
+          1,
+          0
+        ],
+        "cell_2": [
+          2,
+          0
+        ],
+        "cell_3": [
+          3,
+          0
+        ]
+      },
+      "fact_origins": [
+        {
+          "ancestry": "c19root_ad3338bf67bceedc086f",
+          "category": "environmental-observation",
+          "source": "raw-observation",
+          "stamp": "obs_4cbb6caa1c7bc55f663ab849be4b",
+          "state": "variant_8c9f0f45b54de91e5e985c1d",
+          "term": "(State variant_8c9f0f45b54de91e5e985c1d)"
+        },
+        {
+          "ancestry": "c19root_ad3338bf67bceedc086f",
+          "category": "environmental-observation",
+          "source": "raw-observation",
+          "stamp": "obs_78fc6ee0bfda52338d52ce93b66c",
+          "state": "variant_8c9f0f45b54de91e5e985c1d",
+          "term": "(OriginalActor variant_8c9f0f45b54de91e5e985c1d white)"
+        },
+        {
+          "ancestry": "c19root_ad3338bf67bceedc086f",
+          "category": "environmental-observation",
+          "source": "raw-observation",
+          "stamp": "obs_8f8bf57f591df2b092464946166e",
+          "state": "variant_8c9f0f45b54de91e5e985c1d",
+          "term": "(History variant_8c9f0f45b54de91e5e985c1d hypothetical_61df9ad745110965d0703c96)"
+        },
+        {
+          "ancestry": "c19root_ad3338bf67bceedc086f",
+          "category": "environmental-observation",
+          "source": "raw-observation",
+          "stamp": "obs_2d2a38dcec2b32c829b42f374c5c",
+          "state": "variant_8c9f0f45b54de91e5e985c1d",
+          "term": "(PieceKind entity_5c3d3bf0fb888d931c85 rook variant_8c9f0f45b54de91e5e985c1d)"
+        },
+        {
+          "ancestry": "c19root_ad3338bf67bceedc086f",
+          "category": "environmental-observation",
+          "source": "raw-observation",
+          "stamp": "obs_8328057eb16ca20006054aeb7f7c",
+          "state": "variant_8c9f0f45b54de91e5e985c1d",
+          "term": "(Owner entity_5c3d3bf0fb888d931c85 white variant_8c9f0f45b54de91e5e985c1d)"
+        },
+        {
+          "ancestry": "c19root_ad3338bf67bceedc086f",
+          "category": "environmental-observation",
+          "source": "raw-observation",
+          "stamp": "obs_b7eb6f77c196de6570cb2005bb1b",
+          "state": "variant_8c9f0f45b54de91e5e985c1d",
+          "term": "(Occupies entity_5c3d3bf0fb888d931c85 cell_0 variant_8c9f0f45b54de91e5e985c1d)"
+        },
+        {
+          "ancestry": "c19root_ad3338bf67bceedc086f",
+          "category": "environmental-observation",
+          "source": "raw-observation",
+          "stamp": "obs_1a41c155c5fef0c5a5d26142ed05",
+          "state": "variant_8c9f0f45b54de91e5e985c1d",
+          "term": "(PieceKind entity_9c03a2af07506b86e0bd queen variant_8c9f0f45b54de91e5e985c1d)"
+        },
+        {
+          "ancestry": "c19root_ad3338bf67bceedc086f",
+          "category": "environmental-observation",
+          "source": "raw-observation",
+          "stamp": "obs_4f63a20754233cdd6ef4499abd76",
+          "state": "variant_8c9f0f45b54de91e5e985c1d",
+          "term": "(Owner entity_9c03a2af07506b86e0bd white variant_8c9f0f45b54de91e5e985c1d)"
+        },
+        {
+          "ancestry": "c19root_ad3338bf67bceedc086f",
+          "category": "environmental-observation",
+          "source": "raw-observation",
+          "stamp": "obs_5d3b10dca015508749c5f8eb3ca0",
+          "state": "variant_8c9f0f45b54de91e5e985c1d",
+          "term": "(Occupies entity_9c03a2af07506b86e0bd cell_3 variant_8c9f0f45b54de91e5e985c1d)"
+        },
+        {
+          "ancestry": "c19root_ad3338bf67bceedc086f",
+          "category": "environmental-observation",
+          "source": "raw-observation",
+          "stamp": "obs_32b78e0248818b516e1cf8e5d68c",
+          "state": "variant_8c9f0f45b54de91e5e985c1d",
+          "term": "(Occupied cell_0 variant_8c9f0f45b54de91e5e985c1d)"
+        },
+        {
+          "ancestry": "c19root_ad3338bf67bceedc086f",
+          "category": "environmental-observation",
+          "source": "raw-observation",
+          "stamp": "obs_dd6b2eacbad036fc58a7c6c017b3",
+          "state": "variant_8c9f0f45b54de91e5e985c1d",
+          "term": "(UnknownOccupancy cell_1 variant_8c9f0f45b54de91e5e985c1d)"
+        },
+        {
+          "ancestry": "c19root_ad3338bf67bceedc086f",
+          "category": "environmental-observation",
+          "source": "raw-observation",
+          "stamp": "obs_3b97c03d6fc07a6d9e887b462f28",
+          "state": "variant_8c9f0f45b54de91e5e985c1d",
+          "term": "(Empty cell_2 variant_8c9f0f45b54de91e5e985c1d)"
+        },
+        {
+          "ancestry": "c19root_ad3338bf67bceedc086f",
+          "category": "environmental-observation",
+          "source": "raw-observation",
+          "stamp": "obs_01c9f33bba3485138fd76a1c6c6d",
+          "state": "variant_8c9f0f45b54de91e5e985c1d",
+          "term": "(Occupied cell_3 variant_8c9f0f45b54de91e5e985c1d)"
+        },
+        {
+          "ancestry": "c19root_ad3338bf67bceedc086f",
+          "category": "environmental-observation",
+          "source": "structural-geometry",
+          "stamp": "obs_761133d1495cfb53319f9d04ea54",
+          "state": "variant_8c9f0f45b54de91e5e985c1d",
+          "term": "(RelativeOffset entity_5c3d3bf0fb888d931c85 entity_9c03a2af07506b86e0bd 3 0 variant_8c9f0f45b54de91e5e985c1d)"
+        },
+        {
+          "ancestry": "c19root_ad3338bf67bceedc086f",
+          "category": "environmental-observation",
+          "source": "structural-geometry",
+          "stamp": "obs_ff59cfd7074326978e0808f62b10",
+          "state": "variant_8c9f0f45b54de91e5e985c1d",
+          "term": "(RayPath entity_5c3d3bf0fb888d931c85 entity_9c03a2af07506b86e0bd (Cons cell_1 (Cons cell_2 Nil)) orthogonal variant_8c9f0f45b54de91e5e985c1d)"
+        },
+        {
+          "ancestry": "c19root_ad3338bf67bceedc086f",
+          "category": "environmental-observation",
+          "source": "structural-geometry",
+          "stamp": "obs_4b4711f678731a724c58f735ed1b",
+          "state": "variant_8c9f0f45b54de91e5e985c1d",
+          "term": "(RayMember entity_5c3d3bf0fb888d931c85 entity_9c03a2af07506b86e0bd cell_1 variant_8c9f0f45b54de91e5e985c1d)"
+        },
+        {
+          "ancestry": "c19root_ad3338bf67bceedc086f",
+          "category": "environmental-observation",
+          "source": "structural-geometry",
+          "stamp": "obs_bedb455b4281ac83d58dea7f8051",
+          "state": "variant_8c9f0f45b54de91e5e985c1d",
+          "term": "(OrderedRayCell entity_5c3d3bf0fb888d931c85 entity_9c03a2af07506b86e0bd 0 cell_1 variant_8c9f0f45b54de91e5e985c1d)"
+        },
+        {
+          "ancestry": "c19root_ad3338bf67bceedc086f",
+          "category": "environmental-observation",
+          "source": "structural-geometry",
+          "stamp": "obs_21ac6c72fd831b9e621ef8021398",
+          "state": "variant_8c9f0f45b54de91e5e985c1d",
+          "term": "(RayMember entity_5c3d3bf0fb888d931c85 entity_9c03a2af07506b86e0bd cell_2 variant_8c9f0f45b54de91e5e985c1d)"
+        },
+        {
+          "ancestry": "c19root_ad3338bf67bceedc086f",
+          "category": "environmental-observation",
+          "source": "structural-geometry",
+          "stamp": "obs_ffbb50d468496b83c57176ddb157",
+          "state": "variant_8c9f0f45b54de91e5e985c1d",
+          "term": "(OrderedRayCell entity_5c3d3bf0fb888d931c85 entity_9c03a2af07506b86e0bd 1 cell_2 variant_8c9f0f45b54de91e5e985c1d)"
+        }
+      ],
+      "full_scope": false,
+      "history": "hypothetical_61df9ad745110965d0703c96",
+      "pieces": 2,
+      "relevant_ray_cells": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "root": "c19root_ad3338bf67bceedc086f",
+      "scope_kind": "host-selected dependency neighborhood, not a proof",
+      "selection": "Whole structural endpoint ray and supplied moved piece; independent of occupancy answer and labels",
+      "shape": "orthogonal",
+      "state_id": "variant_8c9f0f45b54de91e5e985c1d",
+      "state_identity": "7775dac6c343c9ae851d92c98065ea145042fdc5bc9c7abc02f586a126966806",
+      "target": "entity_9c03a2af07506b86e0bd",
+      "target_present": true
+    },
+    "stages": {
+      "Attack": {
+        "answer": null,
+        "classification": "unknown",
+        "completion": "task queue exhausted",
+        "contrary": null,
+        "incomplete": false,
+        "native": {
+          "bytes": 65289,
+          "path": "artifacts/cycle19/proofs/5b6a590d9f378fa4cbda44e7f460434039cec341c10175a30a9304d5f319d433.json",
+          "sha256": "5b6a590d9f378fa4cbda44e7f460434039cec341c10175a30a9304d5f319d433"
+        },
+        "observable_sha256": "df9a26c5096bbccd5ed8684155cf6ae8f75546fcd0cb104bc1c05a2f95b153af",
+        "support_status": "no matching support returned within budget"
+      },
+      "Clear": {
+        "answer": null,
+        "classification": "unknown",
+        "completion": "task queue exhausted",
+        "contrary": null,
+        "incomplete": false,
+        "native": {
+          "bytes": 64940,
+          "path": "artifacts/cycle19/proofs/21bbca9ab5b280a265c766de3f10c2c9d86bddd759653360b3c1e8bdd7ce45dc.json",
+          "sha256": "21bbca9ab5b280a265c766de3f10c2c9d86bddd759653360b3c1e8bdd7ce45dc"
+        },
+        "observable_sha256": "25e02d7bedd4cac0069f8bdd2124dba4ac7a3fd562245b3f850a10cbb79702f0",
+        "support_status": "no matching support returned within budget"
+      }
+    }
+  }
+}
